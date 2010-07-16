@@ -13,10 +13,7 @@ setup(
     author_email = '',
     url = '',
     install_requires = [
-        "mapfish>=1.2,<=1.3.99",
-        #"httplib2>=0.6.0,<=0.6.99",
-        "GeoAlchemy",
-        "jsbuild"
+        "mapfish", "jstools"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
     packages = find_packages(exclude=['ez_setup']),

@@ -15,6 +15,7 @@ use = egg:chsdi
 full_stack = true
 static_files = false
 
+cache_dir = /dev/null
 beaker.session.type = memory
 beaker.cache.type = memory
 
