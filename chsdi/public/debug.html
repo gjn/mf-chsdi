@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <link rel="stylesheet" type="text/css" href="build/api.css"/>
+      <style>
+        .map {
+            width: 600px;
+            height: 400px;
+            border: 1px solid #ccc;
+        }
+      </style>
+      <script type="text/javascript" src="build/api.js"></script>
+      
+      <script type="text/javascript">
+          var api;
+          function init() {
+             api = new GeoAdmin.API();
+//              api.createMap({
+//                  div: "map_1",
+//                  layers: ["ch.babs.kulturgueter", "ch.bfs.gebaeude_wohnungs_register"],
+//                  layers_opacity: [0.3],
+//                  bgOpacity: 1.0
+//              });
+             api.createMap({
+                 div: "map_1"
+             });
+             api.createSearchBox({
+                 renderTo: "swisssearch_1"
+             });
+             api.createBodSearchCombo({
+                 renderTo: "bodsearch_1"
+             });
+
+             api.showMarker();
+
+             api.showMarker({
+                 easting: 600000,
+                 northing: 200000
+             });
+             var c = new GeoAdmin.BodFeature({});
+             api.map.addControls([c]);
+             c.activate();
+          }
+      </script>
+  </head>
+  <body onload="init()">
+    <div class="map" id="map_1"></div>
+    <div id="swisssearch_1"></div>
+    <div id="bodsearch_1"></div>
+  </body>
+</html>

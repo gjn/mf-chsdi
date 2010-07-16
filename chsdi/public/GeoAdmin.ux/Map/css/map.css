@@ -1,0 +1,76 @@
+.olMap {
+    background: #f9f9f9 url(../img/mapbg.png);
+}
+
+.olControlOverviewMapElement .olMap {
+    background: white;
+}
+
+.olImageLoadError {
+    display: none;
+}
+
+.olControlScaleLineBottom {
+    display: none;
+}
+
+.olControlScaleLine {
+    left: 10px;
+}
+
+.olControlAttribution {
+    left: 130px;
+    right: auto;
+}
+
+.olControlScaleLine,
+.olControlAttribution {
+    bottom: 6px;
+}
+
+.olControlPanel {
+    left: 10px;
+    top: 242px;
+}
+
+.olControlPanel .olControlZoomToMaxExtentItemActive,
+.olControlPanel .olControlZoomToMaxExtentItemInactive {
+    width: 31px;
+    height: 31px;
+    background-image: url(../img/zoomToMaxExtent.png);
+}
+
+.olControlOverviewMapElement {
+    background-color: white;
+    border: 1px solid #ccc;
+    -moz-border-radius: 0;
+    padding: 5px;
+}
+
+.olControlPanel,
+.olControlPanZoomBar,
+.olControlOverviewMapMaximizeButton,
+.olControlOverviewMapMinimizeButton {
+    cursor: pointer;
+}
+
+.olControlOverviewMapMaximizeButton {
+    bottom: 1px;
+    right: 1px;
+}
+
+.olControlOverviewMapMinimizeButton {
+    bottom: 99px;
+    right: 179px;
+}
+
+div.olControlMousePosition {
+    top: 10px;
+    bottom: auto;
+    right: 10px;
+    font-family: inherit;
+}
+
+div.olControlMousePosition, .olControlAttribution {
+    background-color: rgba(255, 255, 255, 0.7);
+}

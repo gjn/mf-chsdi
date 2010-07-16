@@ -1,0 +1,18 @@
+import site
+import os
+import sys
+from paste.deploy import loadapp
+
+site.addsitedir('%PYTHON_SITE%')
+
+# ?
+sys.path.append('%PROJECT_DIR%/%PROJECT%')
+
+os.environ['PYTHON_EGG_CACHE'] = '/tmp/python-eggs'
+
+# # configure the loggin system
+# from paste.script.util.logging_config import fileConfig
+# fileConfig('production.ini')
+
+application = loadapp('config:production.ini')
+

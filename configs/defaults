@@ -1,0 +1,17 @@
+export PYTHON_SITE=$PYTHON_HOME/lib/python2.5/site-packages
+
+export WSGI_BASE=""
+
+export DB_HOST="localhost"
+export DB_USER="www-data"
+export DB_PASS="www-data"
+export DB_PORT="5432"
+
+function post_fetch_project() {
+
+    echo "building javascript"
+    (cd $PROJECT_DIR && $PYTHON_ENV/bin/jsbuild $PROJECT_DIR/jsbuild/api.cfg -u -o $PROJECT_DIR/chsdi/public/build/)
+
+    # build css
+    # todo
+}

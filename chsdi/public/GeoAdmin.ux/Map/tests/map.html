@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../build/api.js"></script>
+      <script type="text/javascript">
+          function test_constructor(t) {
+              t.plan(0);
+              var map = new GeoAdmin.Map("map");
+
+              // todo: test map.aerial
+
+              map.destroy();
+          }
+
+          function test_addLayerByName(t) {
+              t.plan(3);
+              var map = new GeoAdmin.Map("map");
+
+              //
+              var count = map.layers.length;
+              var layer = map.addLayerByName("do not exists");
+              t.ok((count === map.layers.length) && (layer === null), "nonexistent layers are not added to the map");
+
+              //
+              var layer = map.addLayerByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+              var found = map.getLayersByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+              t.ok(found.length === 1 && OpenLayers.Util.indexOf(map.layers, found[0]) != -1, "valid layers are added to the map");
+
+              //
+              var layer = map.addLayerByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+              var found = map.getLayersByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+              t.ok(found.length === 1, "layers are added only once");
+
+              map.destroy();
+          }
+
+          function test_switchComplementaryLayer(t) {
+              t.plan(8);
+
+              var map = new GeoAdmin.Map("map");
+              var layer = map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
+
+              var found = map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
+              t.ok(found.length === 1 && OpenLayers.Util.indexOf(map.layers, found[0]) != -1, "complementary layer added to the map");
+
+              t.eq(layer.opacity, 1.0, "complementary layer default opacity");
+              t.eq(map.aerial.getVisibility(), false, "aerial layer is not visible when complementary layer opacity is 1.0");
+
+              layer.setOpacity(0.42);
+              t.eq(map.aerial.getVisibility(), true, "aerial layer is visible when complementary layer opacity is not 1.0");
+
+              // switch back
+              layer.setOpacity(1.0);
+              t.eq(map.aerial.getVisibility(), false, "aerial layer is not visible when complementary layer opacity is 1.0");
+
+              layer.setOpacity(0.7);
+
+              var newlayer = map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau");
+              var found = map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
+              t.ok(found.length === 0, "old complementary layer is gone");
+
+              t.eq(newlayer.opacity, 0.7, "opacity copied to the new complementary layer");
+              t.eq(map.aerial.getVisibility(), true, "aerial layer is visible when complementary layer opacity is not 1.0");
+
+              var layer = map.switchComplementaryLayer("invalid name");
+              // todo: layer is the original ComplementaryLayer
+              
+              map.destroy();
+          }
+
+          function test_getQueryable(t) {
+              t.plan(0);
+          }
+      </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>

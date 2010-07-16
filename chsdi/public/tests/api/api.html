@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../build/api.js"></script>
+      <script type="text/javascript">
+          function test_constructor(t) {
+              t.plan(2);
+              var api = new GeoAdmin.API();
+              t.eq(OpenLayers.Lang.getCode(), "de", "default lang is 'de'");
+
+              var api = new GeoAdmin.API({
+                  lang: "fr"
+              });
+              t.eq(OpenLayers.Lang.getCode(), "fr", "lang options changes the OpenLayers lang");
+          }
+
+          function test_destroy(t) {
+              t.plan(0);
+              // todo
+          }
+
+          function test_createMap(t) {
+              t.plan(3);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1"
+              });
+
+              // todo: map position is max extent
+
+              var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
+              t.ok(found.length === 1, "default layer is loaded");
+              t.eq(found[0].opacity, 1.0, "default opacity is 1.0");
+              t.eq(api.map.aerial.getVisibility(), false, "aerial layer is not visible");
+          }
+
+          function test_createMap_bgLayer(t) {
+              t.plan(4);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1",
+                  bgLayer: "ch.swisstopo.pixelkarte-grau",
+                  bgOpacity: 0.6
+              });
+
+              var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
+              t.ok(found.length === 0, "default layer not loaded");
+
+              var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-grau");
+              t.ok(found.length === 1, "bgLayer loaded");
+
+              t.eq(api.map.aerial.getVisibility(), true, "aerial layer is visible because bgLayer is transparent");
+              t.eq(found[0].opacity, 0.6, "bgOpacity");
+          }
+
+          function test_createMap_position(t) {
+              t.plan(3);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1",
+                  easting: 600000,
+                  northing: 200000,
+                  zoom: 1
+              });
+              var center = api.map.getCenter();
+
+              t.eq(center.lon, 600000, "longitude ok");
+              t.eq(center.lat, 200000, "latitude ok");
+              t.eq(api.map.getZoom(), 1, "zoom ok");
+          }
+
+          function test_createSearchBox(t) {
+              t.plan(1);
+              var api = new GeoAdmin.API();
+              api.createMap({div: "map_1"});
+              var combo = api.createSearchBox({
+                  renderTo: "search_1"
+              });
+              t.eq(combo.map.id, api.map.id, "map is set");
+          }
+
+          function test_BodSearchCombo(t) {
+              t.plan(1);
+              var api = new GeoAdmin.API();
+              api.createMap({div: "map_1"});
+              var combo = api.createBodSearchCombo({
+                  renderTo: "bod_1"
+              });
+              t.eq(combo.map.id, api.map.id, "map is set");
+          }
+
+          function test_recenterOnObjects(t) {
+              t.plan(0);
+          }
+
+          function test_showMarker_default(t) {
+              t.plan(5);
+
+              var api = new GeoAdmin.API();
+              api.createMap({div: "map_1"});
+              api.showMarker();
+
+              t.ok(api.vector.isVector, "api has a vector layer");
+              t.ok(api.vector.map && api.vector.getVisibility(), "api.vector is on the map and visible");
+
+              t.eq(api.vector.features.length, 1, "api.vector has a marker");
+              var marker = api.vector.features[0];
+              var center = api.map.getCenter();
+
+              t.eq(center.lon, marker.geometry.x, "marker lon");
+              t.eq(center.lat, marker.geometry.y, "marker lat");
+          }
+
+          function test_showMarker_position(t) {
+              t.plan(3);
+
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1",
+                  easting: 605000,
+                  northing: 210000,
+              });
+              api.showMarker({
+                 easting: 600000,
+                 northing: 200000
+              });
+              t.eq(api.vector.features.length, 1, "api.vector has a marker");
+              var marker = api.vector.features[0];
+              var center = api.map.getCenter();
+
+              t.eq(marker.geometry.x, 600000, "marker lon");
+              t.eq(marker.geometry.y, 200000, "marker lat");
+          }
+
+          function test_showFeatures(t) {
+              t.plan(0);
+          }
+
+      </script>
+  </head>
+  <body>
+    <div style="width: 200px; height: 200px" id="map_1"></div>
+    <div id="search_1"></div>
+    <div id="bod_1"></div>
+  </body>
+</html>

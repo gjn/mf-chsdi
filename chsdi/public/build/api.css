@@ -1,0 +1,6 @@
+/* FIXME: don't load all ext css */
+@import url(../lib/ext/Ext/resources/css/ext-all.css);
+@import url(../lib/ext/Ext/resources/css/xtheme-gray.css);
+@import url(../lib/openlayers/theme/default/style.css);
+@import url(../GeoAdmin.ux/Map/css/map.css);
+@import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);

@@ -1,0 +1,25 @@
+.bodsearch {
+    border-top: 1px solid #ddd;
+    white-space: normal;
+}
+
+.bodsearch .office-provider,
+.bodsearch .bod-title {
+    margin-bottom: 10px;
+}
+.bodsearch .bod-title {
+    color: red;
+}
+
+.bodsearch .match {
+    color: #333;
+    background-color: #999;
+}
+
+.bodsearch .bodsearch-details {
+    float: right;
+    width: 20px;
+    height: 20px;
+    border: 1px dotted #ccc;
+    /* todo */
+}
