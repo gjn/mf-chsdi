@@ -1,8 +1,8 @@
 # static files:
-Alias %WSGI_BASE%/api/   %PROJECT_DIR%/chsdi/public/api/
-Alias %WSGI_BASE%/build/ %PROJECT_DIR%/chsdi/public/build/
-Alias %WSGI_BASE%/GeoAdmin.ux/ %PROJECT_DIR%/chsdi/public/GeoAdmin.ux/
-Alias %WSGI_BASE%/lib/   %PROJECT_DIR%/chsdi/public/lib/
+Alias /%WSGI_BASE%/api/   %PROJECT_DIR%/chsdi/public/api/
+Alias /%WSGI_BASE%/build/ %PROJECT_DIR%/chsdi/public/build/
+Alias /%WSGI_BASE%/GeoAdmin.ux/ %PROJECT_DIR%/chsdi/public/GeoAdmin.ux/
+Alias /%WSGI_BASE%/lib/   %PROJECT_DIR%/chsdi/public/lib/
 
 # web services:
 WSGIScriptAlias /%WSGI_BASE%/ %PROJECT_DIR%/chsdi.wsgi.in
