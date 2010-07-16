@@ -72,7 +72,7 @@ PROJECT_SVN_BASE=https://svn.bgdi.admin.ch/mf-chsdi/trunk/chsdi/
 #PROJECT_MAPFISH_DIR=$PROJECT/MapFish
 
 # Set this to "1" if project contains a copy of MapFish (usually using svn:externals)
-HAS_MAPFISH=0
+#HAS_MAPFISH=0
 
 # You can define function that will be run at certain stages in the installation process
 # This is an example function that will be run after initialization
