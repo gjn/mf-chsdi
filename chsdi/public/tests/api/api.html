@@ -119,16 +119,35 @@
                   easting: 605000,
                   northing: 210000,
               });
+
               api.showMarker({
                  easting: 600000,
                  northing: 200000
               });
               t.eq(api.vector.features.length, 1, "api.vector has a marker");
               var marker = api.vector.features[0];
-              var center = api.map.getCenter();
 
               t.eq(marker.geometry.x, 600000, "marker lon");
               t.eq(marker.geometry.y, 200000, "marker lat");
+          }
+
+          function test_showMarker_recenter(t) {
+              t.plan(3);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1"
+              });
+              api.showMarker({
+                 easting: 602000,
+                 northing: 190000,
+                 recenter: true
+              });
+              t.eq(api.vector.features.length, 1, "api.vector has a marker");
+              var marker = api.vector.features[0];
+              var center = api.map.getCenter();
+              
+              t.eq(marker.geometry.x, center.lon, "api.map.getCenter().lon");
+              t.eq(marker.geometry.y, center.lat, "api.map.getCenter().lat");
           }
 
           function test_showFeatures(t) {

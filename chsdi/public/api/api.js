@@ -74,7 +74,7 @@ GeoAdmin.API = OpenLayers.Class({
         }
 
         // create the drawing layer
-        // FIXME: always on top
+        // FIXME: set style to the marker instead
         this.vector = new OpenLayers.Layer.Vector("drawing", {
             displayInLayerSwitcher: false,
             styleMap: new OpenLayers.StyleMap({
@@ -90,7 +90,7 @@ GeoAdmin.API = OpenLayers.Class({
                 pointRadius: 10
             })
         });
-
+        
         if (options.easting !== null && options.northing !== null && options.zoom !== null) {
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing), options.zoom);
         } else {
@@ -130,7 +130,8 @@ GeoAdmin.API = OpenLayers.Class({
         var center = this.map.getCenter();
         options = OpenLayers.Util.applyDefaults(options, {
             easting: center.lon,
-            northing: center.lat
+            northing: center.lat,
+            recenter: false
         });
 
         // FIXME: set style from options
@@ -142,10 +143,9 @@ GeoAdmin.API = OpenLayers.Class({
         }
         this.vector.addFeatures([marker]);
 
-//         if (options.recenter) {
-//             // FIXME: clone() ?
-//             this.map.setCenter(new OpenLayers.LonLat(lon, lat));
-//         }
+        if (options.recenter) {
+            this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
+        }
         return marker;
     }
 });
