@@ -14,6 +14,7 @@ error_email_from = paste@localhost
 use = egg:chsdi
 full_stack = true
 static_files = false
+api_version = %API_VERSION%
 
 cache_dir = /dev/null
 beaker.session.type = memory

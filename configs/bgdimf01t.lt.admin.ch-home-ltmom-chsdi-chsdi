@@ -1,1 +1,1 @@
-export WSGI_BASE="~ltmom"
+export WSGI_BASE="/~ltmom"

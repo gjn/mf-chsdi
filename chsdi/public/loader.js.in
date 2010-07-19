@@ -1,0 +1,15 @@
+(function() {
+    var head = document.getElementsByTagName("head").length ? document.getElementsByTagName("head")[0] : document.body;
+
+    // load javascript
+    var script = document.createElement("script");
+    script.setAttribute("src", "%WSGI_BASE%/%API_VERSION%/build/api.js");
+    head.appendChild(script);
+
+    // load css
+    var css = document.createElement("link");
+    css.setAttribute("rel", "stylesheet");
+    css.setAttribute("type", "text/css");
+    css.setAttribute("href", "%WSGI_BASE%/%API_VERSION%/build/api.css");
+    head.appendChild(css);
+})();

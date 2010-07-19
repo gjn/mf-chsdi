@@ -6,9 +6,8 @@ refer to the routes manual at http://routes.groovie.org/docs/
 """
 from pylons import config
 from routes import Mapper
-from mapfish.controllers import printer
 
-def make_map():
+def make_map(config):
     """Create, configure and return the routes Mapper"""
     map = Mapper(directory=config['pylons.paths']['controllers'],
                  always_scan=config['debug'])
@@ -20,8 +19,7 @@ def make_map():
     map.connect('/error/{action}/{id}', controller='error')
 
     # CUSTOM ROUTES HERE
-    map.connect('/', controller='entry', action='index')
-    printer.addRoutes(map, '/print/', 'printer')
+    #map.connect('/api.js', controller='api', action='index')
 
     # Uncomment this line if you need the OGC proxy in your application
     #map.connect('/ogcproxy', controller='ogcproxy', action='index')

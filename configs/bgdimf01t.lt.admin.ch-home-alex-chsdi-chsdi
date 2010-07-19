@@ -1,1 +1,1 @@
-export WSGI_BASE="~alex"
+export WSGI_BASE="/~alex"

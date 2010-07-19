@@ -1,16 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-      <link rel="stylesheet" type="text/css" href="../build/api.css"/>
+      <script type="text/javascript" src="../loader.js"></script>
       <style>
         .map {
             width: 600px;
             height: 400px;
             border: 1px solid #ccc;
         }
-      </style>
-      <script type="text/javascript" src="../build/api.js"></script>
-      
+      </style>      
       <script type="text/javascript">
+
+      // FIXME
+      OpenLayers.ImgPath = "http://mf-chsdi0t.bgdi.admin.ch/~fredj/" + GeoAdmin.version + "/GeoAdmin.ux/Map/img/";
+
           var api;
           function init() {
              api = new GeoAdmin.API();
@@ -36,9 +38,9 @@
                  easting: 600000,
                  northing: 200000
              });
-             var c = new GeoAdmin.BodFeature({});
-             api.map.addControls([c]);
-             c.activate();
+//              var c = new GeoAdmin.BodFeature({});
+//              api.map.addControls([c]);
+//              c.activate();
           }
       </script>
   </head>

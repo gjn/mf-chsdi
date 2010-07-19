@@ -48,7 +48,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 }),
                 new GeoAdmin.OverviewMap()
             ],
-            theme: null,
+            theme: false,
             allOverlays: true
         });
 

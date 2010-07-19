@@ -1,1 +1,1 @@
-export WSGI_BASE="~ltret"
+export WSGI_BASE="/~ltret"

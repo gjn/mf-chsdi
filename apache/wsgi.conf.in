@@ -1,9 +1,24 @@
-# static files:
-Alias /%WSGI_BASE%/api/   %PROJECT_DIR%/chsdi/public/api/
-Alias /%WSGI_BASE%/build/ %PROJECT_DIR%/chsdi/public/build/
-Alias /%WSGI_BASE%/GeoAdmin.ux/ %PROJECT_DIR%/chsdi/public/GeoAdmin.ux/
-Alias /%WSGI_BASE%/lib/   %PROJECT_DIR%/chsdi/public/lib/
-Alias /%WSGI_BASE%/tests/   %PROJECT_DIR%/chsdi/public/tests/
+RewriteEngine On
+
+#RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+
+# never cache the api loader
+Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
+<Location %WSGI_BASE%/loader.js>
+    Header set Cache-Control "no-cache"
+</Location>
+
+RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+<LocationMatch %WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)>
+    ExpiresActive on
+    ExpiresDefault "now plus 1 year"
+    Header merge Cache-Control "public"
+
+    Header set X-Powered-By http://imgs.xkcd.com/comics/python.png
+</LocationMatch>
+
+# unit tests
+Alias %WSGI_BASE%/tests/ %PROJECT_DIR%/chsdi/public/tests/
 
 # web services:
-WSGIScriptAlias /%WSGI_BASE%/ %PROJECT_DIR%/chsdi.wsgi
+WSGIScriptAlias %WSGI_BASE%/ws %PROJECT_DIR%/chsdi.wsgi

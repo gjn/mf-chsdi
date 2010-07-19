@@ -1,1 +1,1 @@
-export WSGI_BASE="~ltaul"
+export WSGI_BASE="/~ltaul"

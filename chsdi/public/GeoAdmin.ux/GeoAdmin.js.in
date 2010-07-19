@@ -1,11 +1,6 @@
-/*
- *
- */
 window.GeoAdmin = {
-    version: "dev",
+    version: "%API_VERSION%",
     webServicesUrl: "http://map.geo.admin.ch"
 };
 
 OpenLayers.DOTS_PER_INCH = 254;
-OpenLayers.ImgPath = "GeoAdmin.ux/Map/img/"; // FIXME
-

@@ -1,1 +1,1 @@
-export WSGI_BASE="~ltmoc"
+export WSGI_BASE="/~ltmoc"
