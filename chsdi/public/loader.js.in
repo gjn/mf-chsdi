@@ -1,4 +1,3 @@
-// FIXME: absolute urls here
 (function() {
     var head = document.getElementsByTagName("head").length ? document.getElementsByTagName("head")[0] : document.body;
 
