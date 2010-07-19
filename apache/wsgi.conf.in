@@ -1,13 +1,15 @@
 RewriteEngine On
 
-#RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
-
 # never cache the api loader
 Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
 <Location %WSGI_BASE%/loader.js>
     Header set Cache-Control "no-cache"
 </Location>
 
+# non cached urls:
+RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux|tests)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+
+# cached urls:
 RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
 <LocationMatch %WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)>
     ExpiresActive on
@@ -16,9 +18,6 @@ RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DI
 
     Header set X-Powered-By http://imgs.xkcd.com/comics/python.png
 </LocationMatch>
-
-# unit tests
-Alias %WSGI_BASE%/tests/ %PROJECT_DIR%/chsdi/public/tests/
 
 # web services:
 WSGIScriptAlias %WSGI_BASE%/ws %PROJECT_DIR%/chsdi.wsgi
