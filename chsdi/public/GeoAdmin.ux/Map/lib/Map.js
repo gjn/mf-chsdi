@@ -21,9 +21,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     initialize: function (div, options) {
         // FIXME: OpenLayers.Control.MousePosition: in the map in api mode
-
-        options = options || {};
-
         // set fixed options
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
             title: "hello world"
@@ -33,7 +30,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
         panel.addControls([zoom_max]);
 
-        OpenLayers.Util.extend(options, {
+        options = OpenLayers.Util.extend(options, {
             projection: new OpenLayers.Projection("EPSG:21781"),
             units: "m",
             controls: [
@@ -62,7 +59,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
-        this.events.register("changelayer", this, this.onChangeLayer);
+        this.events.on({
+            changelayer: this.onChangeLayer,
+            scope: this
+        });
     },
 
     setLayerZIndex: function(layer, zIdx) {
@@ -85,6 +85,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     addLayerByName: function(name, options) {
         var layer = GeoAdmin.layers.buildLayerByName(name, options);
         if (layer) {
+            // check if the layer is already loaded
+            // FIXME
             this.addLayer(layer);
         }
         return layer;
