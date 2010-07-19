@@ -3,11 +3,12 @@
  * @requires OpenLayers/Protocol/HTTP.js
  * @requires OpenLayers/Format/GeoJSON.js
  */
-
 // use http://trac.geoext.org/browser/sandbox/camptocamp/extensions/geoext.ux/ux/FeatureBrowser to display results
-
 GeoAdmin.BodFeature = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
+    /*
+     * drawing layer
+     */
     layer: null,
 
     initialize: function(options) {
@@ -16,26 +17,41 @@ GeoAdmin.BodFeature = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.protocol = new OpenLayers.Protocol.HTTP({
             url: GeoAdmin.webServicesUrl + "/bodfeature/search",
             format: new OpenLayers.Format.GeoJSON(),
-//             filter: new OpenLayers.Filter.Comparison({
-//                 type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                 property: "layers",
-//                 value: ['foo', 'bar'].join(',')
-//             }),
             params: {
                 lang: OpenLayers.Lang.getCode()
             }
         });
 
-        this.events.on({
-            "featuresselected": this.onSelect,
-            "featureunselected":this.onUnSelect,
-            scope: this
+//         this.events.on({
+//             "featuresselected": this.onSelect,
+//             "featureunselected":this.onUnSelect,
+//             scope: this
+//         });
+    },
+
+    setMap: function(map) {
+        OpenLayers.Control.GetFeature.prototype.setMap.apply(this, arguments);
+        this.map.events.on({
+            addlayer: this.updateLayersList,
+            removelayer: this.updateLayersList,
+            "scope": this
         });
+        this.updateLayersList();
+    },
+
+    updateLayersList: function(layer) {
+        this.queryable = [];
+        var layers = this.map.getLayersBy('geoadmin_queryable', true);
+        for (var i = 0, len = layers.length; i < len; i++) {
+            this.queryable.push(layers[i].name);
+        }
     },
 
     request: function(bounds, options) {
-        console.log(bounds, options);
-        OpenLayers.Control.GetFeature.prototype.request.apply(this, arguments);
+        if (this.queryable.length > 0) {
+            this.protocol.params.layers = this.queryable;
+            OpenLayers.Control.GetFeature.prototype.request.apply(this, arguments);
+        }
     },
 
     onSelect: function(evt) {
