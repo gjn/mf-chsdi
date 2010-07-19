@@ -28,8 +28,6 @@ GeoAdmin.API = OpenLayers.Class({
     vector: null,
 
     initialize: function(options) {
-        //OpenLayers.ImgPath = "../GeoAdmin.ux/Map/img/";
-
         options = OpenLayers.Util.applyDefaults(options, {
             lang: 'de'
         });
