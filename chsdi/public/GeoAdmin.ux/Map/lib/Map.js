@@ -65,20 +65,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.events.register("changelayer", this, this.onChangeLayer);
     },
 
-    /*
-     * Returns a list of all the queryable layers
-     */
-    getQueryable: function() {
-        var queryable = [];
-        for (var i = 0, len = this.layers.length; i < len; i++) {
-            var layer = this.layers[0];
-            if (layer.getVisibility() && layer.geoadmin_queryable) {
-                layer.push(layer);
-            }
-        }
-        return queryableLayers;
-    },
-
     setLayerZIndex: function(layer, zIdx) {
         // vector layers onlways on top
         layer.setZIndex((layer.isVector ? 325 : 100) + zIdx * 5);
