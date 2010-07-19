@@ -94,11 +94,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      * Name can be: "ch.swisstopo.pixelkarte-farbe" || "ch.swisstopo.pixelkarte-grau" || "white" (?)
      */
     switchComplementaryLayer: function(name, options) {
+        options = OpenLayers.Util.applyDefaults(options, {
+            opacity: 1.0
+        });
         if (!this.complementaryLayer || name !== this.complementaryLayer.name) {
             var layer = this.addLayerByName(name);
             if (layer) {
                 // layer is valid and added to ther map
-                var opacity = options.opacity != null ? options.opacity : 1.0;
+                var opacity = options.opacity;
                 if (this.complementaryLayer) {
                     opacity = this.complementaryLayer.opacity;
                     this.complementaryLayer.destroy();
