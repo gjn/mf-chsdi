@@ -8,6 +8,7 @@ export DB_PASS="www-data"
 export DB_PORT="5432"
 
 export API_VERSION="13d0c75cbd"
+export HOST="http://mf-chsdi0t.bgdi.admin.ch"
 
 function post_fetch_project() {
 
