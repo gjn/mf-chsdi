@@ -86,10 +86,16 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         var layer = GeoAdmin.layers.buildLayerByName(name, options);
         if (layer) {
             // check if the layer is already loaded
-            // FIXME
+            for (var i = 0, len = this.layers.length; i < len; i++) {
+                if (this.layers[i].layername === layer.layername) {
+                    return null;
+                }
+            }
             this.addLayer(layer);
+            return layer;
+        } else {
+            return null;
         }
-        return layer;
     },
 
     /*
