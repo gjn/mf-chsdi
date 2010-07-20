@@ -1,3 +1,5 @@
+/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     map: null,
 
@@ -6,14 +8,14 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     minChars: 4,
     queryDelay: 50,
     emptyText: OpenLayers.i18n('Search data...'),
-    loadingText: OpenLayers.i18n("loadingText"),
+    loadingText: OpenLayers.i18n('loadingText'),
     displayField: 'label',
     forceSelection: true,
 
     initComponent: function() {
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
-                url: GeoAdmin.webServicesUrl + "/bodsearch",
+                url: GeoAdmin.webServicesUrl + '/bodsearch',
                 method: 'GET',
                 nocache: false
             }),
@@ -30,10 +32,10 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         ).compile();
 
         GeoAdmin.BodSearchComboBox.superclass.initComponent.call(this);
-        this.on("select", this.recordSelected, this);
+        this.on('select', this.recordSelected, this);
     },
 
     recordSelected: function(combo, record, index) {
-        this.map.addLayerByName(record.get("id"))
+        this.map.addLayerByName(record.get('id'));
     }
 });

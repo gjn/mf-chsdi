@@ -43,6 +43,7 @@ GeoAdmin.BodFeature = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.queryable = [];
         var layers = this.map.getLayersBy('geoadmin_queryable', true);
         for (var i = 0, len = layers.length; i < len; i++) {
+            // FIXME: get the name ? not the layername ?
             this.queryable.push(layers[i].name);
         }
     },
