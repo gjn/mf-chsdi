@@ -2,7 +2,7 @@ import logging
 import httplib2
 from urlparse import urlparse
 
-from pylons import request, response, session, tmpl_context as c
+from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort, redirect
 
 from chsdi.lib.base import BaseController, render
