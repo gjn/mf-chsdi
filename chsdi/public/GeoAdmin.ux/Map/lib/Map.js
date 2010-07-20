@@ -13,15 +13,12 @@
  * @requires Map/lib/Layers.js
  * @requires Map/lib/OverviewMap.js
  */
-
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     aerial: null,
     complementaryLayer: null,
 
     initialize: function (div, options) {
-        // FIXME: OpenLayers.Control.MousePosition: in the map in api mode
-        // set fixed options
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
             title: "hello world"
         });
@@ -65,11 +62,16 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
     },
 
+    /*
+     * assert that vector layers are always on top.
+     */
     setLayerZIndex: function(layer, zIdx) {
-        // vector layers onlways on top
         layer.setZIndex((layer.isVector ? 325 : 100) + zIdx * 5);
     },
 
+    /*
+     * manage the base layer (aerial) opacity.
+     */
     onChangeLayer: function(evt) {
         // hide the aerial layer if the complementary layer opacity is full.
         if (evt.property === "opacity") {
@@ -80,7 +82,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /*
-     * Add a layer overlay to the map.
+     * add a layer overlay to the map.
      */
     addLayerByName: function(name, options) {
         var layer = GeoAdmin.layers.buildLayerByName(name, options);
@@ -99,7 +101,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /*
-     * Name can be: "ch.swisstopo.pixelkarte-farbe" || "ch.swisstopo.pixelkarte-grau" || "white" (?)
+     * switch the complementary layer.
+     * FIXME: white layer.
      */
     switchComplementaryLayer: function(name, options) {
         options = OpenLayers.Util.applyDefaults(options, {

@@ -63,7 +63,6 @@ GeoAdmin.Layers = OpenLayers.Class({
             },
 
             // overlays
-
             "ch.babs.kulturgueter": {
                 name: OpenLayers.i18n("ch.babs.kulturgueter"),
                 type: "point",
@@ -431,4 +430,5 @@ GeoAdmin.Layers = OpenLayers.Class({
         };
     }
 });
+
 GeoAdmin.layers = new GeoAdmin.Layers();
