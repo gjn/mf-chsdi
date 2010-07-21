@@ -1,3 +1,29 @@
 @import url(../lib/openlayers/theme/default/style.css);
 @import url(../GeoAdmin.ux/Map/css/map.css);
 @import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);
+
+
+/* extjs css is not included; we only defined the combo box style here */
+.x-combo-list {
+    border: 1px solid #ccc;
+    background-color: white;
+    overflow: hidden;
+}
+.x-combo-list-item {
+    border: 1px solid white;
+    padding: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.x-combo-list .x-combo-selected {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.x-combo-list-inner {
+    overflow:auto;
+    position:relative; /* for calculating scroll offsets */
+    overflow-x:hidden;
+}
