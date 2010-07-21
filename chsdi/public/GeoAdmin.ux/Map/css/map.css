@@ -18,6 +18,16 @@
     left: 10px;
 }
 
+.olControlScaleLineTop {
+    border-style: none solid solid !important;
+    border-width: medium 3px 3px !important;
+    font-weight: 900;
+}
+
+.olControlScaleLineBottom {
+    display: none;
+}
+
 .olControlAttribution {
     left: 130px;
     right: auto;
@@ -26,6 +36,8 @@
 .olControlScaleLine,
 .olControlAttribution {
     bottom: 6px;
+    font-size: 12px;
+    font-family: arial;
 }
 
 .olControlPanel {
@@ -68,9 +80,8 @@ div.olControlMousePosition {
     top: 10px;
     bottom: auto;
     right: 10px;
-    font-family: inherit;
-}
-
-div.olControlMousePosition, .olControlAttribution {
-    background-color: rgba(255, 255, 255, 0.7);
+    font-family: Arial;
+    font-weight: 900;
+    font-size: smaller;
+    letter-spacing: 0;
 }
