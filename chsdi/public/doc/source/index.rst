@@ -11,9 +11,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   sdiapi
-   sdiwidgets
-   sdiservices
+   api/sdiapi
+   widgets/sdiwidgets
+   services/sdiservices
 
 Indices and tables
 ==================
