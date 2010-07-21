@@ -7,7 +7,7 @@ Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
 </Location>
 
 # non cached urls:
-RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux|tests)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
 
 # cached urls:
 RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
