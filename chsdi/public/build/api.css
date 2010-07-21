@@ -1,5 +1,6 @@
 @import url(../lib/openlayers/theme/default/style.css);
 @import url(../GeoAdmin.ux/Map/css/map.css);
+@import url(../GeoAdmin.ux/SwissSearch/css/swisssearch.css);
 @import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);
 
 

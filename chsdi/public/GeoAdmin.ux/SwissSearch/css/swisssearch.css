@@ -1,0 +1,8 @@
+@import url(../../../lib/ext/Ext/resources/css/structure/combo.css);
+@import url(../../../lib/ext/Ext/resources/css/theme-gray/combo.css);
+
+.x-combo-list-item {
+    text-align: left;
+    letter-spacing: 0;
+    font-family: Arial
+}
