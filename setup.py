@@ -13,7 +13,7 @@ setup(
     author_email = '',
     url = '',
     install_requires = [
-        "mapfish", "JSTools", "sphinx"
+        "mapfish", "JSTools", "Sphinx"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
     packages = find_packages(exclude=['ez_setup']),
