@@ -28,3 +28,7 @@
     position:relative; /* for calculating scroll offsets */
     overflow-x:hidden;
 }
+
+.x-form-empty-field {
+    color: gray;
+}
