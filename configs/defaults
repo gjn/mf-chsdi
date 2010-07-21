@@ -1,6 +1,6 @@
 export PYTHON_SITE=$PYTHON_HOME/lib/python2.5/site-packages
 
-export WSGI_BASE="/"
+export WSGI_BASE=""
 
 export DB_HOST="localhost"
 export DB_USER="www-data"
