@@ -87,12 +87,38 @@ Map with Swiss search
   <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
   <div id="mysearch2" style="width:300px;height:30px;margin:10px;"></div>
 
+Map with overlay layers
+-----------------------
+
+.. raw:: html
+
+   <script type="text/javascript">
+      var api3;
+      function init3() {
+         api3 = new GeoAdmin.API();
+         api3.createMap({
+            div: "mymap3",
+            easting: 568550,
+            northing: 173975,
+            zoom: 6,
+            layers: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            layers_indices: '3,4',
+            layers_opacity: '0.2,0.7',
+            bgLayer: 'pixelmaps-gray',
+            bgOpacity: 50
+         });
+      }
+   </script>
+
+   <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+
 .. raw:: html
 
    <script type="text/javascript">
       window.onload=function(){
          setTimeout("init1()",500);
          setTimeout("init2()",500);
+         setTimeout("init3()",500);
       }
    </script>
 
