@@ -19,6 +19,7 @@ def make_map(config):
     map.connect('/error/{action}/{id}', controller='error')
 
     # CUSTOM ROUTES HERE
+    map.connect('/swisssearch', controller='swisssearch', action='index')
 
     # Uncomment this line if you need the OGC proxy in your application
     #map.connect('/ogcproxy', controller='ogcproxy', action='index')

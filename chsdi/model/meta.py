@@ -2,10 +2,10 @@
 from sqlalchemy import MetaData
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-__all__ = ['Session', 'engine', 'metadata']
+__all__ = ['Session', 'engines', 'metadata']
 
-# SQLAlchemy database engine. Updated by model.init_model()
-engine = None
+# SQLAlchemy database engines. Updated by model.init_model()
+engines = {}
 
 # SQLAlchemy session manager. Updated by model.init_model()
 Session = scoped_session(sessionmaker())

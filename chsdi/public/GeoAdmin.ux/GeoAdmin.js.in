@@ -1,6 +1,9 @@
 window.GeoAdmin = {
     version: "%API_VERSION%",
-    webServicesUrl: "http://map.geo.admin.ch"  // FIXME
+    webServicesUrl: "http://map.geo.admin.ch"
+
+    // FIXME: should be replaced by:
+    //webServicesUrl: "%HOST%%WSGI_BASE%/ws"
 };
 
 OpenLayers.DOTS_PER_INCH = 254;
