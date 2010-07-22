@@ -10,6 +10,13 @@
 
               map.destroy();
           }
+          function test_destroy(t) {
+              t.plan(2);
+              var map = new GeoAdmin.Map("map");
+              map.destroy();
+              t.eq(map.aerial, null, "map.aerial destroyed");
+              t.eq(map.complementaryLayer, null, "map.complementaryLayer destroyed");
+          }                       
 
           function test_addLayerByName(t) {
               t.plan(3);

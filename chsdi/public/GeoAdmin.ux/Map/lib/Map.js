@@ -61,6 +61,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             scope: this
         });
     },
+    
+    destroy: function() {
+        OpenLayers.Map.prototype.destroy.apply(this, arguments);
+        this.aerial = null;
+        this.complementaryLayer = null;
+    },
 
     /*
      * assert that vector layers are always on top.
