@@ -101,19 +101,7 @@ GeoAdmin.API = OpenLayers.Class({
         // create the drawing layer
         // FIXME: set style to the marker instead
         this.vector = new OpenLayers.Layer.Vector("drawing", {
-            displayInLayerSwitcher: false,
-            styleMap: new OpenLayers.StyleMap({
-                externalGraphic: OpenLayers.Util.getImagesLocation() + "marker-gold.png",
-                backgroundGraphic: OpenLayers.Util.getImagesLocation() + "marker-shadow.png",
-                graphicYOffset: -20,
-
-                backgroundXOffset: 0,
-                backgroundYOffset: -17,
-
-                graphicZIndex: 11,
-                backgroundGraphicZIndex: 10,
-                pointRadius: 10
-            })
+            displayInLayerSwitcher: false
         });
 
         if (options.easting !== null && options.northing !== null && options.zoom !== null) {
