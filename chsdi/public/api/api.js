@@ -169,14 +169,14 @@ GeoAdmin.API = OpenLayers.Class({
         var graphicHeight;
         var graphicWidth;
         var fillOpacity;
-        var html;
 
         var center = this.map.getCenter();
 
         options = OpenLayers.Util.applyDefaults(options, {
             easting: center.lon,
             northing: center.lat,
-            recenter: "false"
+            recenter: "false",
+            html: null
         });
 
         // Get the iconPath
@@ -226,11 +226,6 @@ GeoAdmin.API = OpenLayers.Class({
         } else {
             fillOpacity = 1;
         }
-        if (options.html) {
-            html = options.html;
-        } else {
-            html = null;
-        }
 
         // Set a style for the marker
         var style_mark = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
@@ -242,7 +237,7 @@ GeoAdmin.API = OpenLayers.Class({
         features[0] = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point(options.easting, options.northing),
         {
-            html: html
+            html: options.html
         }, style_mark);
 
         if (!this.vector.map) {
