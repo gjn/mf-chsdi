@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# variables set here:
+#   $TARGET: name of the symbolic remote host key (see remote_hosts 
+#            section in config file)
+#
+
+PROJECT_NAME=$1
+CODE_DIR=$2
+SVN_CO_OPTIONS="--username readonly --password readonly"
+
+cd $CODE_DIR
+sh deploy-$PROJECT_NAME.sh -r -c $PROJECT_NAME/configs/$TARGET
+
+echo "building javascript"
+(cd $CODE_DIR/chsdi && ../env/bin/jsbuild jsbuild/api.cfg -o chsdi/public/build/)
+
+exit 0
