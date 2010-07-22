@@ -1,7 +1,10 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
+
     map: null,
+
+    url: "http://map.geo.admin.ch/?layers={0}&lang={1}",
 
     // default Ext.form.ComboBox config
     hideTrigger: true,
@@ -36,6 +39,11 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     recordSelected: function(combo, record, index) {
-        this.map.addLayerByName(record.get('id'));
+        var id = record.get('id');
+        if (this.map) {
+            this.map.addLayerByName(id);
+        } else if (this.url) {
+            window.open(String.format(this.url, id, OpenLayers.Lang.getCode()));
+        }
     }
 });
