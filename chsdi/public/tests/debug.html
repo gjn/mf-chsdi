@@ -13,15 +13,15 @@
           var api;
           function init() {
              api = new GeoAdmin.API();
-//              api.createMap({
-//                  div: "map_1",
-//                  layers: ["ch.babs.kulturgueter", "ch.bfs.gebaeude_wohnungs_register"],
-//                  layers_opacity: [0.3],
-//                  bgOpacity: 1.0
-//              });
              api.createMap({
-                 div: "map_1"
+                 div: "map_1",
+                 layers: ["ch.babs.kulturgueter", "ch.bfs.gebaeude_wohnungs_register"],
+                 layers_opacity: [0.5, 0.3],
+                 bgOpacity: 1.0
              });
+//              api.createMap({
+//                  div: "map_1"
+//              });
              api.createSearchBox({
                  renderTo: "swisssearch_1"
              });
