@@ -25,6 +25,16 @@
              api.createBodSearchCombo({
                  renderTo: "bodsearch_1"
              });
+             api.createBaseLayerTool({
+                 renderTo: "baselayertool_1",
+                 label: 'Orthophoto',
+                 slider: {
+                     width: 150
+                 },
+                 combo: {
+                     width: 200
+                 }
+             });
 
              api.showMarker();
 
@@ -39,6 +49,7 @@
     <div class="map" id="map_1"></div>
     <div id="swisssearch_1"></div>
     <div id="bodsearch_1"></div>
+    <div id="baselayertool_1"></div>
 
     <script type="text/javascript" src="../loader.js"></script>
   </body>

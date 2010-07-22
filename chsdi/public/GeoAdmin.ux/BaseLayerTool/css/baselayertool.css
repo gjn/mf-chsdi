@@ -1,0 +1,37 @@
+.baselayertool_label {
+    font-family:arial,helvetica,verdana,sans-serif;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.x-form-field-wrap .x-form-trigger {
+    background:transparent url(../img/trigger.gif) no-repeat scroll 0 0;
+    border-color:-moz-use-text-color -moz-use-text-color #B5B8C8;
+    border-style:none none solid;
+    border-width:0 0 1px;
+    cursor:pointer;
+    height:21px;
+    position:absolute;
+    width:17px;
+}
+
+.x-slider-horz {
+    background:transparent url(../img/slider-bg.png) no-repeat scroll 0 -22px;
+    padding-left:7px;
+}
+
+.x-slider-horz .x-slider-inner {
+    background:transparent url(../img/slider-bg.png) repeat-x scroll 0 0 !important;
+}
+
+.x-slider-horz .x-slider-end {
+    background:transparent url(../img/slider-bg.png) no-repeat scroll right -44px !important;
+}
+
+.x-slider-horz .x-slider-thumb {
+    background:transparent url(../img/lo_cursor_opacity.png) no-repeat scroll 0 0;
+    height:28px;
+    top:7px;
+    width:7px;
+    position: absolute;
+}

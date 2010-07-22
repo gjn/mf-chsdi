@@ -1,9 +1,12 @@
 @import url(../lib/ext/Ext/resources/css/structure/combo.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/combo.css);
+@import url(../lib/ext/Ext/resources/css/structure/slider.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/slider.css);
 
 @import url(../lib/openlayers/theme/default/style.css);
 @import url(../GeoAdmin.ux/Map/css/map.css);
 @import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);
+@import url(../GeoAdmin.ux/BaseLayerTool/css/baselayertool.css);
 
 .x-form-empty-field {
     color: gray;

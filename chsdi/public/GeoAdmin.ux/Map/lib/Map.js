@@ -74,8 +74,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      * assert that vector layers are always on top.
      */
     setLayerZIndex: function(layer, zIdx) {
-        layer.setZIndex((layer.isVector ? 325 : 100) + zIdx * 5);
-    },
+        var baseZIndex = layer.isVector ? 325 :
+                         GeoAdmin.layers.layers[layer.name].isBgLayer ? 100 :
+                         150;
+        layer.setZIndex(baseZIndex + zIdx * 5);
+    },  
 
     /*
      * manage the base layer (aerial) opacity.
@@ -121,13 +124,17 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             var layer = this.addLayerByName(name);
             if (layer) {
                 // layer is valid and added to ther map
-                var opacity = options.opacity;
+                var opacity = options.opacity, zIndex;
                 if (this.complementaryLayer) {
                     opacity = this.complementaryLayer.opacity;
+                    zIndex = this.complementaryLayer.getZIndex();
                     this.complementaryLayer.destroy();
                 }
                 this.complementaryLayer = layer;
                 this.complementaryLayer.setOpacity(opacity);
+                if (zIndex) {
+                    this.complementaryLayer.setZIndex(zIndex);
+                }
             }
         }
         return this.complementaryLayer;

@@ -9,6 +9,7 @@
  * @requires Map/lib/Map.js
  * @requires SwissSearch/lib/SwissSearchComboBox.js
  * @requires BodSearch/lib/BodSearchComboBox.js
+ * @requires BaseLayerTool/lib/BaseLayerTool.js
  *
  * @requires OpenLayers/Lang.js
  * @requires i18n/de.js
@@ -134,6 +135,15 @@ GeoAdmin.API = OpenLayers.Class({
         return new GeoAdmin.BodSearchComboBox(OpenLayers.Util.extend(options, {
             map: this.map,
             width: options.width || 500
+        }));
+    },
+
+    createBaseLayerTool: function(options) {
+        var tool = new GeoAdmin.BaseLayerTool(OpenLayers.Util.extend(options, {
+            map: this.map
+        }));
+        return new Ext.Toolbar(OpenLayers.Util.extend(options, {
+            items: tool.items
         }));
     },
 
