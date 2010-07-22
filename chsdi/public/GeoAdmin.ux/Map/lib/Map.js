@@ -19,6 +19,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     complementaryLayer: null,
 
     initialize: function (div, options) {
+        OpenLayers.DOTS_PER_INCH = 254;
+
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
             title: "hello world"
         });

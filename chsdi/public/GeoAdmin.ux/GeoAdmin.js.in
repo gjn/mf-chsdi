@@ -6,5 +6,4 @@ window.GeoAdmin = {
     //webServicesUrl: "%HOST%%WSGI_BASE%/ws"
 };
 
-OpenLayers.DOTS_PER_INCH = 254;
 OpenLayers.ImgPath = "%HOST%%WSGI_BASE%/%API_VERSION%/GeoAdmin.ux/Map/img/";
