@@ -85,6 +85,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (evt.property === "opacity") {
             if (evt.layer == this.complementaryLayer) {
                 this.aerial.setVisibility(evt.layer.opacity < 1.0);
+                evt.layer.setVisibility(evt.layer.opacity > 0.0);
             }
         }
     },
