@@ -34,7 +34,7 @@ Example
 
 .. raw:: html
 
-   <script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/~ltmoc/loader.js"></script>
+
    <script type="text/javascript">
       function init() {
          var api = new GeoAdmin.API();
@@ -43,9 +43,9 @@ Example
          });
       }
    </script>
-   </head>
-   <body onload='setTimeout("init()",500)'>
+   <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/~ltmoc/loader.js"></script>
    </body>
 
 .. raw:: html

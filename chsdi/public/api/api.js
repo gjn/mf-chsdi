@@ -1,3 +1,5 @@
+/*global GeoAdmin:true, OpenLayers:true Image:true */
+
 /*
  * @requires OpenLayers/Feature/Vector.js
  * @requires OpenLayers/Layer/Vector.js
@@ -31,13 +33,13 @@ GeoAdmin.API = OpenLayers.Class({
      *  .. class:: GeoAdmin.API
      *
      *  Create an API instance. Possible options:
-     *     - lang: ``String`` information about the language. Currently supported: 'de', 'en' (beta) and 'fr' 
+     *     - lang: ``String`` information about the language. Currently supported: 'de', 'en' (beta) and 'fr'
      */
     initialize: function(options) {
         options = OpenLayers.Util.applyDefaults(options, {
             lang: 'de'
         });
-        OpenLayers.Lang.setCode(options.lang)
+        OpenLayers.Lang.setCode(options.lang);
     },
 
     /** api: method[createMap]
@@ -116,7 +118,7 @@ GeoAdmin.API = OpenLayers.Class({
         if (options.easting !== null && options.northing !== null && options.zoom !== null) {
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing), options.zoom);
         } else {
-            this.map.zoomToMaxExtent()
+            this.map.zoomToMaxExtent();
         }
         return this.map;
     },
@@ -148,26 +150,111 @@ GeoAdmin.API = OpenLayers.Class({
         // FIXME: recenter to features
     },
 
+    /** api: method[showMarker]
+     *  :param options: ``Object`` options for
+     *     - easting: ``Number`` optional CH1903 Y position of the marker, default: map center
+     *     - northing: ``Number`` optional CH1903 X position of the marker, default: map center
+     *     - iconPath: ``String`` path of a custom icon for the marker (url or relative), default: marker-gold.png (in repository GeoAdmin.ux/Map/img/)
+     *     - recenter:  ``String`` define if the map has to recentered at the marker position "true" or "false", default: "false"
+     *     - graphicHeight: ``Number`` height of the icon, default: the icon height
+     *     - graphicWidth: ``Number``  width of the image, default: the icon width
+     *     - fillOpacity: ``Number` opacity of the marker (from 0 to 1), default: 1
+     *     - html: ``String`` html content of a popup, default: null
+     *
+     *  :return: page :class:``OpenLayers.Feature.Vector``
+     *
+     *  Show a marker in the map
+     *
+     */
     showMarker: function(options) {
+        var iconPath;
+        var graphicHeight;
+        var graphicWidth;
+        var fillOpacity;
+        var html;
+
         var center = this.map.getCenter();
+
         options = OpenLayers.Util.applyDefaults(options, {
             easting: center.lon,
             northing: center.lat,
-            recenter: false
+            recenter: "false"
         });
 
-        // FIXME: set style from options
+        // Get the iconPath
+        if (options.iconPath) {
+            if (options.iconPath.indexOf('http://') === 0) {
+                iconPath = options.iconPath;
+            } else {
+                if (options.iconPath.indexOf('/') === 0) {
+                    iconPath = OpenLayers.Util.getImagesLocation() + options.iconPath;
+                } else {
+                    iconPath = OpenLayers.Util.getImagesLocation() + '/' + options.iconPath;
+                }
+            }
 
-        var geom = new OpenLayers.Geometry.Point(options.easting, options.northing);
-        var marker = new OpenLayers.Feature.Vector(geom);
+        } else {
+            iconPath = OpenLayers.Util.getImagesLocation() + "marker-gold.png";
+        }
+
+        // Get a custom height for the marker
+        var graphic = new Image();
+        graphic.src = iconPath;
+
+        if (options.graphicHeight) {
+            graphicHeight = options.graphicHeight;
+        } else {
+            if (graphic.height) {
+                graphicHeight = graphic.height;
+            } else {
+                graphicHeight = 25;
+            }
+        }
+
+        // Get a custom width for the marker
+        if (options.graphicWidth) {
+            graphicWidth = options.graphicWidth;
+        } else {
+
+            if (graphic.width) {
+                graphicWidth = graphic.width;
+            } else {
+                graphicWidth = 25;
+            }
+        }
+        // Get a custom fillOpacity for the marker
+        if (options.fillOpacity) {
+            fillOpacity = options.fillOpacity;
+        } else {
+            fillOpacity = 1;
+        }
+        if (options.html) {
+            html = options.html;
+        } else {
+            html = null;
+        }
+
+        // Set a style for the marker
+        var style_mark = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
+        style_mark.externalGraphic = iconPath;
+        style_mark.fillOpacity = fillOpacity;
+        style_mark.graphicHeight = graphicHeight;
+        style_mark.graphicWidth = graphicWidth;
+        var features = new Array(1);
+        features[0] = new OpenLayers.Feature.Vector(
+                new OpenLayers.Geometry.Point(options.easting, options.northing),
+        {
+            html: html
+        }, style_mark);
+
         if (!this.vector.map) {
             this.map.addLayer(this.vector);
         }
-        this.vector.addFeatures([marker]);
+        this.vector.addFeatures(features[0]);
 
-        if (options.recenter) {
+        if (options.recenter == 'true') {
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
         }
-        return marker;
+        return features[0];
     }
 });

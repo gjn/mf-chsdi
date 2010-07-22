@@ -140,7 +140,7 @@
               api.showMarker({
                  easting: 602000,
                  northing: 190000,
-                 recenter: true
+                 recenter: 'true'
               });
               t.eq(api.vector.features.length, 1, "api.vector has a marker");
               var marker = api.vector.features[0];
@@ -148,6 +148,56 @@
               
               t.eq(marker.geometry.x, center.lon, "api.map.getCenter().lon");
               t.eq(marker.geometry.y, center.lat, "api.map.getCenter().lat");
+          }
+
+          function test_showMarker_opacity(t) {
+              t.plan(1);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1"
+              });
+              api.showMarker({
+                 easting: 602000,
+                 northing: 190000,
+                 recenter: 'true',
+                 fillOpacity: 0.8
+              });
+              var marker = api.vector.features[0];
+
+              t.eq(marker.style.fillOpacity, 0.8, "marker's opacity has been set to 0.8");
+          }
+
+          function test_showMarker_html(t) {
+              t.plan(1);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1"
+              });
+              api.showMarker({
+                 easting: 602000,
+                 northing: 190000,
+                 recenter: 'true',
+                 html: 'Salut mon pote'
+              });
+              var marker = api.vector.features[0];
+
+              t.eq(marker.data.html, 'Salut mon pote', "marker's html has been set in data");
+          }
+
+          function test_showMarker_iconPath(t) {
+              t.plan(1);
+              var api = new GeoAdmin.API();
+              api.createMap({
+                  div: "map_1"
+              });
+              api.showMarker({
+                 easting: 602000,
+                 northing: 190000,
+                 iconPath: 'http://www.geo.admin.ch/images/logo.jpg'
+              });
+              var marker = api.vector.features[0];
+
+              t.eq(marker.style.externalGraphic, 'http://www.geo.admin.ch/images/logo.jpg', "marker's icon path has been set in style");
           }
 
           function test_showFeatures(t) {
