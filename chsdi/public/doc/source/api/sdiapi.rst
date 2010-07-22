@@ -112,6 +112,42 @@ Map with overlay layers
 
    <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
 
+Map recenter on feature
+-----------------------
+
+TODO
+
+Highlight feature
+-----------------
+
+TODO
+
+Marker
+------
+
+.. raw:: html
+
+   <script type="text/javascript">
+      var api1;
+      function init6() {
+         api6 = new GeoAdmin.API();
+         api6.createMap({
+            div: "mymap6",
+            easting: 600000,
+            northing: 200000,
+            zoom: 8
+         });
+         api6.showMarker();
+      }
+   </script>
+
+   <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+
+Custom marker
+-------------
+
+
+
 .. raw:: html
 
    <script type="text/javascript">
@@ -119,8 +155,12 @@ Map with overlay layers
          setTimeout("init1()",500);
          setTimeout("init2()",500);
          setTimeout("init3()",500);
+         //setTimeout("init4()",500);
+         //setTimeout("init5()",500);
+         setTimeout("init6()",500);
       }
    </script>
+
 
 API generator
 *************
