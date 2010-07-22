@@ -47,10 +47,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             fields: ['label', 'listlabel', 'service', 'bbox', 'objectorig']
         });
         this.tpl = new Ext.XTemplate(
-            '<tpl for="."><div class="x-combo-list-item {service}">',
-            '{listlabel}',
-            '</div></tpl>'
-        ).compile();
+                '<tpl for="."><div class="x-combo-list-item {service}">',
+                '{listlabel}',
+                '</div></tpl>'
+                ).compile();
 
         GeoAdmin.SwissSearchComboBox.superclass.initComponent.call(this);
 

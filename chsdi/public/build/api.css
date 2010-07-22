@@ -8,3 +8,9 @@
 .x-form-empty-field {
     color: gray;
 }
+
+.x-combo-list-item {
+    text-align: left;
+    letter-spacing: 0;
+    font-family: Arial
+}
