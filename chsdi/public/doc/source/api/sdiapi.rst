@@ -88,6 +88,27 @@ Custom marker
       <div id="mymap7" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
+BOD Search
+----------
+
+NOT FUNCTIONAL, now
+
+.. raw:: html
+
+   <body>
+      <div id="mysearch8" style="width:300px;height:30px;margin:10px;"></div>
+   </body>
+
+Map with Swissimage
+-------------------
+
+.. raw:: html
+
+   <body>
+      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+
 .. raw:: html
 
    <script type="text/javascript">
@@ -150,7 +171,22 @@ Custom marker
             northing: 255000,
             graphicHeight: 103,
             graphicWidth: 246
-        });
+         });
+
+         var api8 = new GeoAdmin.API({lang: 'fr'});
+         api8.createBodSearchCombo({
+            width: 500,
+            renderTo: 'mysearch8'
+         });
+
+         var api9 = new GeoAdmin.API();
+         api9.createMap({
+            div: 'mymap9',
+            easting: 568550,
+            northing: 173975,
+            zoom: 3,
+            bgOpacity: 0
+         });
       }
    </script>
 
