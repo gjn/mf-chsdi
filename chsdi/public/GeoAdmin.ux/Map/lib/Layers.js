@@ -5,7 +5,9 @@
 
 // FIXME: uuid ?
 
-GeoAdmin.Layers = OpenLayers.Class({
+(function() {
+
+var Layers = OpenLayers.Class({
 
     layers: null,
 
@@ -430,5 +432,7 @@ GeoAdmin.Layers = OpenLayers.Class({
         };
     }
 });
+// create the singleton
+GeoAdmin.layers = new Layers();
+})();
 
-GeoAdmin.layers = new GeoAdmin.Layers();
