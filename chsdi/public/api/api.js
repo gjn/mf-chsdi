@@ -258,3 +258,8 @@ GeoAdmin.API = OpenLayers.Class({
         return features[0];
     }
 });
+
+// backward compatibilty alias:
+window.geoadmin = {
+    API: GeoAdmin.API
+};
