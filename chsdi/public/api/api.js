@@ -125,16 +125,16 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     createSearchBox: function(options) {
-        return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.extend(options, {
+        return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             map: this.map,
-            width: options.width || 300
+            width: 300
         }));
     },
 
     createBodSearchCombo: function(options) {
-        return new GeoAdmin.BodSearchComboBox(OpenLayers.Util.extend(options, {
+        return new GeoAdmin.BodSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             map: this.map,
-            width: options.width || 500
+            width: 500
         }));
     },
 
