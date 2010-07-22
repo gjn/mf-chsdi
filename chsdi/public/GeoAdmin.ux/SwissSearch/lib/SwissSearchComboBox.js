@@ -59,6 +59,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     onBeforeQuery: function(queryEvent) {
+        // FIXME: check if this.map is valid
         var match = queryEvent.query.match(this.coordRegExp);
         if (match) {
             var left = parseFloat(match[1].replace("'", ""));
