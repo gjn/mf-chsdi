@@ -21,7 +21,7 @@ GeoAdmin.OverviewMap = OpenLayers.Class(OpenLayers.Control.OverviewMap, {
             size: new OpenLayers.Size(185, 105),
             isSuitableOverview: OpenLayers.Function.True,
             mapOptions: {
-                // fixme
+                theme: null
             }
         });
 
