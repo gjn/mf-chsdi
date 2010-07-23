@@ -3,11 +3,11 @@
       <script type="text/javascript" src="../../../build/api.js"></script>
       <script type="text/javascript">
           function test_constructor(t) {
-              t.plan(0);
+              t.plan(3);
               var map = new GeoAdmin.Map("map");
-
-              // todo: test map.aerial
-
+              t.ok(map.aerial, "aerial map is here");
+              t.ok(map.aerial.getVisibility(), "aerial map is visible");
+              t.ok(map.getCenter().equals(map.maxExtent.getCenterLonLat()), "map center");
               map.destroy();
           }
           function test_destroy(t) {
@@ -80,6 +80,6 @@
       </script>
   </head>
   <body>
-    <div id="map"></div>
+    <div style="width: 100px; height: 600px" id="map"></div>
   </body>
 </html>

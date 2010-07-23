@@ -82,7 +82,15 @@ GeoAdmin.API = OpenLayers.Class({
             zoom: null
         });
 
-        this.map = new GeoAdmin.Map(options.div);
+        var center = null;
+        if (options.easting !== null && options.northing !== null) {
+            var center = new OpenLayers.LonLat(options.easting, options.northing);
+        }
+
+        this.map = new GeoAdmin.Map(options.div, {
+            center: center,
+            zoom: options.zoom
+        });
 
         // set the complementary layer
         this.map.switchComplementaryLayer(options.bgLayer, {
@@ -110,11 +118,6 @@ GeoAdmin.API = OpenLayers.Class({
             displayInLayerSwitcher: false
         });
 
-        if (options.easting !== null && options.northing !== null && options.zoom !== null) {
-            this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing), options.zoom);
-        } else {
-            this.map.zoomToMaxExtent();
-        }
         return this.map;
     },
 

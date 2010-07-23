@@ -62,6 +62,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             changelayer: this.onChangeLayer,
             scope: this
         });
+        if (!this.getCenter()) {
+            this.zoomToMaxExtent();
+        }
     },
     
     destroy: function() {
