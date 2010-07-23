@@ -33,9 +33,7 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
         this.slider = new GeoExt.LayerOpacitySlider(OpenLayers.Util.extend({
             cls: 'baselayertool_slider',
             layer: this.map.complementaryLayer,
-            complementaryLayer: this.map.aerial,
             aggressive: true,
-            //changeVisibility: true,
             width: 200
         }, options));
         return this.slider;
@@ -72,7 +70,7 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
             forceSelection: true,
             triggerAction: 'all',
             mode: 'local',
-            value: store.getAt(0).data.name,
+            value: GeoAdmin.layers.layers[this.map.complementaryLayer.name].name,
             listeners: {
                 select: function(combo, record, index) {
                     var complementaryLayer = this.map.switchComplementaryLayer(record.data.id);

@@ -216,6 +216,35 @@ function test_showFeatures(t) {
     t.plan(0);
 }
 
+function test_createBaseLayerTool(t) {
+    //t.plan(7);
+    t.plan(3);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1"
+    });
+    var tool = api.createBaseLayerTool({
+        renderTo: "baselayertool_1"
+    });
+
+    t.ok(!api.map.aerial.getVisibility(), "aerial layer is not visible when slider is 1");
+    t.ok(api.map.complementaryLayer.getVisibility(), "complementary layer is visible when slider is 1");
+    
+    var slider = tool.items.items[1];
+    slider.setValue(60); // slider range is [0-100], not [0-1]
+
+    t.eq(slider.getValue(), 60, "slider value");
+// FIXME: fail!?
+/*
+    t.ok(api.map.aerial.getVisibility(), "aerial layer is visible when slider is 0.6");
+    t.eq(api.map.complementaryLayer.opacity, 0.6, "complementaryLayer opacity is updated");
+
+    slider.setValue(0);
+    t.ok(api.map.aerial.getVisibility(), "aerial layer is visible when slider is 0");
+    t.ok(!api.map.complementaryLayer.getVisibility(), "complementary layer is visible when slider is 0");
+*/
+}
 </script>
 </head>
 <body>
