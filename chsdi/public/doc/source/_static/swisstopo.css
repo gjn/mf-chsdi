@@ -1,0 +1,36 @@
+@import "basic.css";
+@import "pygments.css";
+@import "sphinxdoc.css";
+
+body {
+    font-family: 'Arial';
+}
+
+a {
+    color: #006699;
+}
+
+div.related ul li a {
+    color: #333333;
+}
+
+h1 {
+    color: #333333;
+}
+
+div.sphinxsidebar h3, div.sphinxsidebar h4 {
+    background-color: #333333;
+    border: 1px solid #333333;
+}
+
+div.sphinxsidebar {
+    width: 260px;
+}
+
+div.bodywrapper {
+    margin: 0 290px 0 0 !important;
+}
+
+div.sphinxsidebar input {
+    border: 1px solid #CCCCCC;
+}
