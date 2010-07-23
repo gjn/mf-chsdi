@@ -2,6 +2,7 @@
 
 /**
  * @include GeoExt/widgets/LayerOpacitySlider.js
+ * @include OpenLayers/Lang.js
  */
 
 GeoAdmin.BaseLayerTool = OpenLayers.Class({

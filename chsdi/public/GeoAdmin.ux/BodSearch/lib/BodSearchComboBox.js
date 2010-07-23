@@ -1,5 +1,9 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
+/**
+ * @include OpenLayers/Lang.js
+ */
+
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /*

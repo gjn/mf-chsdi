@@ -1,6 +1,7 @@
 /*
- * @requires OpenLayers/Layer/TileCache.js
- * @requires OpenLayers/Lang.js
+ * @include OpenLayers/Layer/TileCache.js
+ * @include OpenLayers/Lang.js
+ * @include OpenLayers/Projection.js
  */
 
 // FIXME: uuid ?

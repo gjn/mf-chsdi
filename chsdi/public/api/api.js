@@ -1,21 +1,21 @@
 /*global GeoAdmin:true, OpenLayers:true Image:true */
 
 /*
- * @requires OpenLayers/Feature/Vector.js
- * @requires OpenLayers/Layer/Vector.js
- * @requires OpenLayers/StyleMap.js
- * @requires OpenLayers/Geometry/Point.js
+ * @include OpenLayers/Feature/Vector.js
+ * @include OpenLayers/Layer/Vector.js
+ * @include OpenLayers/StyleMap.js
+ * @include OpenLayers/Geometry/Point.js
  *
- * @requires Map/lib/Map.js
- * @requires SwissSearch/lib/SwissSearchComboBox.js
- * @requires BodSearch/lib/BodSearchComboBox.js
- * @requires BaseLayerTool/lib/BaseLayerTool.js
+ * @include Map/lib/Map.js
+ * @include SwissSearch/lib/SwissSearchComboBox.js
+ * @include BodSearch/lib/BodSearchComboBox.js
+ * @include BaseLayerTool/lib/BaseLayerTool.js
  *
- * @requires OpenLayers/Lang.js
- * @requires i18n/de.js
- * @requires i18n/fr.js
- * @requires i18n/it.js
- * @requires i18n/en.js
+ * @include OpenLayers/Lang.js
+ * @include i18n/de.js
+ * @include i18n/fr.js
+ * @include i18n/it.js
+ * @include i18n/en.js
  */
 
 GeoAdmin.API = OpenLayers.Class({

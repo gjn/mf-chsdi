@@ -2,16 +2,18 @@
 
 /*
  * @requires OpenLayers/Map.js
- * @requires OpenLayers/Control/Navigation.js
- * @requires OpenLayers/Control/PanZoomBar.js
- * @requires OpenLayers/Control/Attribution.js
- * @requires OpenLayers/Control/ScaleLine.js
- * @requires OpenLayers/Control/MousePosition.js
- * @requires OpenLayers/Control/Panel.js
- * @requires OpenLayers/Control/ZoomToMaxExtent.js
+ * @include OpenLayers/Control/Navigation.js
+ * @include OpenLayers/Control/PanZoomBar.js
+ * @include OpenLayers/Control/Attribution.js
+ * @include OpenLayers/Control/ScaleLine.js
+ * @include OpenLayers/Control/MousePosition.js
+ * @include OpenLayers/Control/Panel.js
+ * @include OpenLayers/Control/ZoomToMaxExtent.js
+ * @include OpenLayers/Projection.js
+ * @include OpenLayers/Lang.js
  *
- * @requires Map/lib/Layers.js
- * @requires Map/lib/OverviewMap.js
+ * @include Map/lib/Layers.js
+ * @include Map/lib/OverviewMap.js
  */
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 

@@ -1,6 +1,6 @@
 /*
  * @requires OpenLayers/Control/OverviewMap.js
- * @requires OpenLayers/Layer/Image.js
+ * @include OpenLayers/Layer/Image.js
  */
 
 GeoAdmin.OverviewMap = OpenLayers.Class(OpenLayers.Control.OverviewMap, {

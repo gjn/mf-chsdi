@@ -1,7 +1,8 @@
 /*
  * @requires OpenLayers/Control/GetFeature.js
- * @requires OpenLayers/Protocol/HTTP.js
- * @requires OpenLayers/Format/GeoJSON.js
+ * @include OpenLayers/Protocol/HTTP.js
+ * @include OpenLayers/Format/GeoJSON.js
+ * @include OpenLayers/Lang.js
  */
 // use http://trac.geoext.org/browser/sandbox/camptocamp/extensions/geoext.ux/ux/FeatureBrowser to display results
 GeoAdmin.BodFeature = OpenLayers.Class(OpenLayers.Control.GetFeature, {

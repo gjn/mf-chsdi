@@ -1,7 +1,8 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /*
- * @requires OpenLayers/Projection.js
+ * @include OpenLayers/Projection.js
+ * @include OpenLayers/Lang.js
  * FIXME: requires proj4js
  */
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
