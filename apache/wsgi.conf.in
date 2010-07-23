@@ -4,6 +4,8 @@ RewriteEngine On
 Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
 <Location %WSGI_BASE%/loader.js>
     Header set Cache-Control "no-cache"
+    Header unset ETag
+    Header unset Last-Modified
 </Location>
 
 # non cached urls:
