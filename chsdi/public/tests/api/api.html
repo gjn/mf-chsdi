@@ -218,9 +218,9 @@ function test_createBaseLayerTool(t) {
     t.ok(!api.map.aerial.getVisibility(), "aerial layer is not visible when slider is 1");
     t.ok(api.map.complementaryLayer.getVisibility(), "complementary layer is visible when slider is 1");
     t.eq(tool.map.id, api.map.id, "map is set");
-    t.ok(tool.items.items[1].aggressive, "slider is set to aggressive");
-    t.eq(tool.items.items[2].width, 140, "default combo width is set");
-    var slider = tool.items.items[1];
+    t.ok(tool.items[1].aggressive, "slider is set to aggressive");
+    t.eq(tool.items[2].width, 140, "default combo width is set");
+    var slider = tool.items[1];
     slider.setValue(60); // slider range is [0-100], not [0-1]
     t.eq(slider.getValue(), 60, "slider value");
     t.delay_call(1, function() {

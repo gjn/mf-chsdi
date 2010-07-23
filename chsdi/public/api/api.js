@@ -143,7 +143,7 @@ GeoAdmin.API = OpenLayers.Class({
      *     - slider: ``Object`` optional object for setting slider options, like width
      *     - combo: ``Object`` optional object for setting combo options, like width 
      *
-     *  :return: page :class:``Ext.Toolbar`` containing the base layer tool
+     *  :return: page :class:``GeoAdmin.BaseLayerTool``
      *
      *  Create a base layer tool allowing the user to switch the background layer
      *
@@ -162,11 +162,8 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     createBaseLayerTool: function(options) {
-        var tool = new GeoAdmin.BaseLayerTool(OpenLayers.Util.extend(options, {
+        return new GeoAdmin.BaseLayerTool(OpenLayers.Util.extend(options, {
             map: this.map
-        }));
-        return new Ext.Toolbar(OpenLayers.Util.extend(options, {
-            items: tool.items
         }));
     },
 
