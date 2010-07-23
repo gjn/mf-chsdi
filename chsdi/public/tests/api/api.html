@@ -95,7 +95,6 @@ function test_createBaseLayerTool(t) {
     var baseLayerToolToolbar = api.createBaseLayerTool({
         renderTo: "baselayertool_1"
     });
-    console.log(baseLayerToolToolbar);
     t.eq(baseLayerToolToolbar.map.id, api.map.id, "map is set");
     t.ok(baseLayerToolToolbar.items.items[1].aggressive, "slider is set to aggressive");
     t.eq(baseLayerToolToolbar.items.items[2].width, 140, "default combo width is set");
