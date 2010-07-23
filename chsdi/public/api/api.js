@@ -30,6 +30,11 @@ GeoAdmin.API = OpenLayers.Class({
      */
     vector: null,
 
+    /*
+     * {String}
+     */
+    lang: null,
+
     /** api: constructor
      *  .. class:: GeoAdmin.API
      *
@@ -40,7 +45,8 @@ GeoAdmin.API = OpenLayers.Class({
         options = OpenLayers.Util.applyDefaults(options, {
             lang: 'de'
         });
-        OpenLayers.Lang.setCode(options.lang);
+        this.lang = options.lang;
+        OpenLayers.Lang.setCode(this.lang);
     },
 
     /** api: method[createMap]
@@ -121,6 +127,7 @@ GeoAdmin.API = OpenLayers.Class({
 
     createBodSearchCombo: function(options) {
         return new GeoAdmin.BodSearchComboBox(OpenLayers.Util.applyDefaults(options, {
+            lang: this.lang,
             map: this.map,
             width: 500
         }));
