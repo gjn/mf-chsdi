@@ -235,11 +235,13 @@ GeoAdmin.API = OpenLayers.Class({
         }
 
         // Set a style for the marker
-        var style_mark = OpenLayers.Util.extend({}, OpenLayers.Feature.Vector.style['default']);
-        style_mark.externalGraphic = iconPath;
-        style_mark.fillOpacity = fillOpacity;
-        style_mark.graphicHeight = graphicHeight;
-        style_mark.graphicWidth = graphicWidth;
+        var style_mark = OpenLayers.Util.applyDefaults({
+            externalGraphic: iconPath,
+            fillOpacity: fillOpacity,
+            graphicHeight: graphicHeight,
+            graphicWidth: graphicWidth
+        }, OpenLayers.Feature.Vector.style.default);
+
         var features = new Array(1);
         features[0] = new OpenLayers.Feature.Vector(
                 new OpenLayers.Geometry.Point(options.easting, options.northing),
