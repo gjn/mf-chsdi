@@ -69,7 +69,7 @@ Map
 
     </div>
 
-Map with Swiss search
+Map with Swiss Search
 ---------------------
 
 .. raw:: html

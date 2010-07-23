@@ -41,10 +41,15 @@ The base layer tool allows the user to manage the base layer (swissimage, pixelm
 It offers an opacity slider and the possibility to switch between pixelmaps and void layers.
 
 
-SwissSearch
------------
+Swiss Search
+------------
 
-SwissSearch is a combo box allowing the user to search within various data sources:  SwissNames, Postal Code, Cities, Canton and also coordinates (CH1903 and WGS84)
+SwissSearch is a combo box allowing the user to search within various data sources:  SwissNames, Postal Code, Cities, Canton and also coordinates (CH1903 and WGS84).
+
+BOD Search
+----------
+
+BOD Search is a combo box allowing the user to search within the layer offered by CH SDI.
 
 Widgets examples
 ****************
@@ -80,8 +85,8 @@ Default Map
 
     </div>
 
-Map with gray pixelmap and one overlay layer
---------------------------------------------
+Map with gray pixelmap and overlay layer
+----------------------------------------
 
 .. raw:: html
 
@@ -152,8 +157,8 @@ Base Layer Tool
     </div>
 
 
-Swisssearch
------------
+Swiss Search
+------------
 
 .. raw:: html
 
