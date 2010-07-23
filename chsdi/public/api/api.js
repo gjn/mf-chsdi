@@ -268,9 +268,8 @@ GeoAdmin.API = OpenLayers.Class({
         }, OpenLayers.Feature.Vector.style['default']);
 
         var features = new Array(1);
-        features[0] = new OpenLayers.Feature.Vector(
-                new OpenLayers.Geometry.Point(options.easting, options.northing),
-        {
+        var geom = new OpenLayers.Geometry.Point(options.easting, options.northing);
+        features[0] = new OpenLayers.Feature.Vector(geom, {
             html: options.html
         }, style_mark);
 
