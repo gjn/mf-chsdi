@@ -43,9 +43,9 @@ Map
 
 .. raw:: html
 
-    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')">Show code</a>
-    <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock1" style="display: none; visibility: hidden">
+    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock1" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -81,9 +81,9 @@ Map with Swiss search
 
 .. raw:: html
 
-    <a id="showRef2" href="javascript:showdiv('codeBlock2','showRef2','hideRef2')">Show code</a>
-    <a id="hideRef2" href="javascript:hidediv('codeBlock2','showRef2','hideRef2')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock2" style="display: none; visibility: hidden">
+    <a id="showRef2" href="javascript:showdiv('codeBlock2','showRef2','hideRef2')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef2" href="javascript:hidediv('codeBlock2','showRef2','hideRef2')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock2" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -125,9 +125,9 @@ Map with overlay layers
 
 .. raw:: html
 
-    <a id="showRef3" href="javascript:showdiv('codeBlock3','showRef3','hideRef3')">Show code</a>
-    <a id="hideRef3" href="javascript:hidediv('codeBlock3','showRef3','hideRef3')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock3" style="display: none; visibility: hidden">
+    <a id="showRef3" href="javascript:showdiv('codeBlock3','showRef3','hideRef3')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef3" href="javascript:hidediv('codeBlock3','showRef3','hideRef3')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock3" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -178,9 +178,9 @@ Marker
 
 .. raw:: html
 
-    <a id="showRef6" href="javascript:showdiv('codeBlock6','showRef6','hideRef6')">Show code</a>
-    <a id="hideRef6" href="javascript:hidediv('codeBlock6','showRef6','hideRef6')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock6" style="display: none; visibility: hidden">
+    <a id="showRef6" href="javascript:showdiv('codeBlock6','showRef6','hideRef6')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef6" href="javascript:hidediv('codeBlock6','showRef6','hideRef6')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock6" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -216,9 +216,9 @@ Custom marker
 
 .. raw:: html
 
-    <a id="showRef7" href="javascript:showdiv('codeBlock7','showRef7','hideRef7')">Show code</a>
-    <a id="hideRef7" href="javascript:hidediv('codeBlock7','showRef7','hideRef7')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock7" style="display: none; visibility: hidden">
+    <a id="showRef7" href="javascript:showdiv('codeBlock7','showRef7','hideRef7')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef7" href="javascript:hidediv('codeBlock7','showRef7','hideRef7')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock7" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -263,9 +263,9 @@ NOT FUNCTIONAL, now
 
 .. raw:: html
 
-    <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')">Show code</a>
-    <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock8" style="display: none; visibility: hidden">
+    <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock8" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -298,9 +298,9 @@ Map with Swissimage
 
 .. raw:: html
 
-    <a id="showRef9" href="javascript:showdiv('codeBlock9','showRef9','hideRef9')">Show code</a>
-    <a id="hideRef9" href="javascript:hidediv('codeBlock9','showRef9','hideRef9')" style="display: none; visibility: hidden">Hide code</a>
-    <div id="codeBlock9" style="display: none; visibility: hidden">
+    <a id="showRef9" href="javascript:showdiv('codeBlock9','showRef9','hideRef9')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef9" href="javascript:hidediv('codeBlock9','showRef9','hideRef9')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock9" style="display: none; visibility: hidden; margin:10px !important;">
 
 .. code-block:: html
 
@@ -319,6 +319,54 @@ Map with Swissimage
    <body onload="init();">
      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
+Base layer tool
+---------------
+
+.. raw:: html
+
+   <body>
+      <div id="baselayertool10" style="margin:10px !important;"></div>
+      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef10" href="javascript:showdiv('codeBlock10','showRef10','hideRef10')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef10" href="javascript:hidediv('codeBlock10','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock10" style="display: none; visibility: hidden; margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var api10 = new GeoAdmin.API();
+         api10.createMap({
+            div: "mymap10",
+            easting: 600000,
+            northing: 200000,
+            zoom: 1
+         });
+         api10.createBaseLayerTool({
+            renderTo: "baselayertool10",
+            label: 'Orthophoto',
+            slider: {
+               width: 170
+            },
+            combo: {
+               width: 242
+            }
+         });
+      }
+   </script>
+   <body onload="init();">
+      <div id="baselayertool10" style="margin:10px !important;"></div>
+      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
 .. raw:: html
@@ -403,6 +451,24 @@ Map with Swissimage
             northing: 173975,
             zoom: 3,
             bgOpacity: 0
+         });
+
+         var api10 = new GeoAdmin.API();
+         api10.createMap({
+            div: "mymap10",
+            easting: 600000,
+            northing: 200000,
+            zoom: 1
+         });
+         api10.createBaseLayerTool({
+            renderTo: "baselayertool10",
+            label: 'Orthophoto',
+            slider: {
+               width: 170
+            },
+            combo: {
+               width: 242
+            }
          });
       }
    </script>
