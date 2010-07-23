@@ -22,6 +22,11 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
             this.buildOpacitySlider(options.slider || {}),
             this.buildLayersCombo(options.combo || {})
         ];
+        if (options.renderTo) {
+           new Ext.Toolbar(OpenLayers.Util.extend(options, {
+               items: this.items
+           }));
+        }
     },
 
     buildLabel: function(options) {
