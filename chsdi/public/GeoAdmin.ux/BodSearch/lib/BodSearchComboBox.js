@@ -2,9 +2,20 @@
 
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
+    /*
+     * {<OpenLayers.Map>}
+     */
     map: null,
 
+    /*
+     * {String}
+     */
     url: "http://map.geo.admin.ch/?layers={0}&lang={1}",
+
+    /*
+     * {String}
+     */
+    lang: null,
 
     // default Ext.form.ComboBox config
     hideTrigger: true,
@@ -22,9 +33,6 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 method: 'GET',
                 nocache: false
             }),
-            baseParams: {
-                lang: OpenLayers.Lang.getCode()
-            },
             root: 'results',
             fields: ['id', 'label', 'datenherr', 'content']
         });
@@ -35,6 +43,12 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         ).compile();
 
         GeoAdmin.BodSearchComboBox.superclass.initComponent.call(this);
+        this.lang = this.lang || OpenLayers.Lang.getCode();
+
+        this.store.baseParams = {
+          lang: this.lang
+        };
+
         this.on('select', this.recordSelected, this);
     },
 
@@ -43,7 +57,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         if (this.map) {
             this.map.addLayerByName(id);
         } else if (this.url) {
-            window.open(String.format(this.url, id, OpenLayers.Lang.getCode()));
+            window.open(String.format(this.url, id, this.lang));
         }
     }
 });
