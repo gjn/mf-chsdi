@@ -253,8 +253,6 @@ Custom marker
 BOD Search
 ----------
 
-NOT FUNCTIONAL, now
-
 .. raw:: html
 
    <body>
