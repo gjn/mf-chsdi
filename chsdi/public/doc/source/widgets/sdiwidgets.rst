@@ -65,9 +65,9 @@ Default Map
 
 .. raw:: html
 
-    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')" style="margin:10px !important;">Show code</a>
-    <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
-    <div id="codeBlock1" style="display: none; visibility: hidden; margin:10px !important;">
+    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock1" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -96,9 +96,9 @@ Map with gray pixelmap and overlay layer
 
 .. raw:: html
 
-    <a id="showRef2" href="javascript:showdiv('codeBlock2','showRef2','hideRef2')" style="margin:10px !important;">Show code</a>
-    <a id="hideRef2" href="javascript:hidediv('codeBlock2','showRef2','hideRef2')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
-    <div id="codeBlock2" style="display: none; visibility: hidden; margin:10px !important;">
+    <a id="showRef2" href="javascript:showdiv('codeBlock2','showRef2','hideRef2')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef2" href="javascript:hidediv('codeBlock2','showRef2','hideRef2')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock2" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -124,15 +124,15 @@ Base Layer Tool
 .. raw:: html
 
    <body>
-      <div id="baselayertool3" style="margin:10px !important;"></div>
+      <div id="baselayertool3" style="display: none; visibility: hidden; margin:10px !important;"></div>
       <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef3" href="javascript:showdiv('codeBlock3','showRef3','hideRef3')" style="margin:10px !important;">Show code</a>
-    <a id="hideRef3" href="javascript:hidediv('codeBlock3','showRef3','hideRef3')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
-    <div id="codeBlock3" style="display: none; visibility: hidden; margin:10px !important;">
+    <a id="showRef3" href="javascript:showdiv('codeBlock3','showRef3','hideRef3')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef3" href="javascript:hidediv('codeBlock3','showRef3','hideRef3')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock3" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -147,7 +147,7 @@ Base Layer Tool
       }
    </script>
    <body onload="init();">
-     <div id="baselayertool3" style="margin:10px !important;"></div>
+     <div id="baselayertool3" style="display: none; visibility: hidden; margin:10px !important;"></div>
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
    </body>
@@ -163,15 +163,15 @@ Swiss Search
 .. raw:: html
 
    <body>
-      <div id="mysearch4" style="margin:10px !important;"></div>
+      <div id="mysearch4" style="display: none; visibility: hidden; margin:10px !important;"></div>
       <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef4" href="javascript:showdiv('codeBlock4','showRef4','hideRef4')" style="margin:10px !important;">Show code</a>
-    <a id="hideRef4" href="javascript:hidediv('codeBlock4','showRef4','hideRef4')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
-    <div id="codeBlock4" style="display: none; visibility: hidden; margin:10px !important;">
+    <a id="showRef4" href="javascript:showdiv('codeBlock4','showRef4','hideRef4')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef4" href="javascript:hidediv('codeBlock4','showRef4','hideRef4')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock4" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -188,7 +188,7 @@ Swiss Search
       }
    </script>
    <body onload="init();">
-     <div id="mysearch4" style="margin:10px !important;"></div>
+     <div id="mysearch4" style="display: none; visibility: hidden; margin:10px !important;"></div>
      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
    </body>
@@ -203,15 +203,15 @@ BOD Search
 .. raw:: html
 
    <body>
-      <div id="mysearch5" style="margin:10px !important;"></div>
+      <div id="mysearch5" style="display: none; visibility: hidden; margin:10px !important;"></div>
       <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef5" href="javascript:showdiv('codeBlock5','showRef5','hideRef5')" style="margin:10px !important;">Show code</a>
-    <a id="hideRef5" href="javascript:hidediv('codeBlock5','showRef5','hideRef5')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
-    <div id="codeBlock5" style="display: none; visibility: hidden; margin:10px !important;">
+    <a id="showRef5" href="javascript:showdiv('codeBlock5','showRef5','hideRef5')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef5" href="javascript:hidediv('codeBlock5','showRef5','hideRef5')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock5" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -226,7 +226,7 @@ BOD Search
       }
    </script>
    <body onload="init();">
-     <div id="mysearch5" style="margin:10px !important;"></div>
+     <div id="mysearch5" style="display: none; visibility: hidden; margin:10px !important;"></div>
      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
    </body>
