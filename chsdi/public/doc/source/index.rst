@@ -29,9 +29,6 @@
 Welcome to CH SDI's documentation!
 ==================================
 
-Example
-*******
-
 .. raw:: html
 
    <script type="text/javascript">

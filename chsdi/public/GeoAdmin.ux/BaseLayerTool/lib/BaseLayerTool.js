@@ -35,6 +35,7 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
             cls: 'baselayertool_slider',
             layer: this.map.complementaryLayer,
             aggressive: true,
+            changeVisibility: true,
             width: 200
         }, options));
         return this.slider;
