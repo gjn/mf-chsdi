@@ -192,6 +192,44 @@ Swisssearch
 
     </div>
 
+BOD Search
+----------
+
+.. raw:: html
+
+   <body>
+      <div id="mysearch5" style="margin:10px !important;"></div>
+      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef5" href="javascript:showdiv('codeBlock5','showRef5','hideRef5')" style="margin:10px !important;">Show code</a>
+    <a id="hideRef5" href="javascript:hidediv('codeBlock5','showRef5','hideRef5')" style="display: none; visibility: hidden; margin:10px !important;">Hide code</a>
+    <div id="codeBlock5" style="display: none; visibility: hidden; margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map5 = new GeoAdmin.Map("mymap5");
+         var swisssearch = new GeoAdmin.BodSearchComboBox({
+            width: 500,
+            renderTo: "mysearch5",
+            map: map5
+         });
+      }
+   </script>
+   <body onload="init();">
+     <div id="mysearch5" style="margin:10px !important;"></div>
+     <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
 
 
 
@@ -223,6 +261,13 @@ Swisssearch
             renderTo: "mysearch4",
             ref: 'geoadmin',
             map: map4
+         });
+
+         var map5 = new GeoAdmin.Map("mymap5");
+         var swisssearch = new GeoAdmin.BodSearchComboBox({
+            width: 500,
+            renderTo: "mysearch5",
+            map: map5
          });
       }
    </script>
