@@ -474,7 +474,7 @@ Base layer tool
    </script>
 
    <body onload="init();">
-     <script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/~ltmoc/loader.js"></script>
+     <script type="text/javascript" src="../../../loader.js"></script>
    </body>
 
 
