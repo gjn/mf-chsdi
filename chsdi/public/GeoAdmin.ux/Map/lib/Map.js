@@ -24,7 +24,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         OpenLayers.DOTS_PER_INCH = 254;
 
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
-            title: "hello world"
+            title: OpenLayers.i18n('Zoom to the max extent')
         });
         var panel = new OpenLayers.Control.Panel({
             defaultControl: zoom_max
@@ -106,7 +106,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (layer) {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {
-                if (this.layers[i].layername === layer.layername) {
+                // "name" is used because "layername" is not available
+                // for all layer types
+                if (this.layers[i].name === layer.name) {
                     return null;
                 }
             }
@@ -119,7 +121,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     /*
      * switch the complementary layer.
-     * FIXME: white layer.
      */
     switchComplementaryLayer: function(name, options) {
         options = OpenLayers.Util.applyDefaults(options, {

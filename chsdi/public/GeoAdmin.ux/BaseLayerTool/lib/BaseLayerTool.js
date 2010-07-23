@@ -46,10 +46,10 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
     },
 
     buildLayersCombo: function(options) {
-        // TODO: add white background
         var baseLayers = options.layers || [
             "ch.swisstopo.pixelkarte-farbe",
-            "ch.swisstopo.pixelkarte-grau"
+            "ch.swisstopo.pixelkarte-grau",
+            "voidLayer"
         ];
         
         var data = [], layerId;

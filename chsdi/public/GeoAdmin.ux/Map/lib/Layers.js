@@ -14,7 +14,24 @@ var Layers = OpenLayers.Class({
 
     buildLayerByName: function(name, options) {
         var config = this.layers[name];
+        
+        if (name == "voidLayer") {
+            if (Ext.isIE) {
+                // white image doesn't work with IE due to the image size at low scale
+                return new OpenLayers.Layer("voidLayer");
+            }
+
+            return new OpenLayers.Layer.Image("voidLayer",
+                OpenLayers.ImgPath + "white.png",
+                new OpenLayers.Bounds(420000,30000,900000,350000),
+                new OpenLayers.Size(1, 1), {
+                    transitionEffect: 'resize'
+                }
+            );
+        }
+
         if (config) {
+
             var layer_options = OpenLayers.Util.applyDefaults({
                 projection: new OpenLayers.Projection('EPSG:21781'),
                 units: 'm',
@@ -66,6 +83,10 @@ var Layers = OpenLayers.Class({
                 format: "image/jpeg",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
+            },
+            "voidLayer": {
+                name: OpenLayers.i18n("voidLayer"),
+                isBgLayer: true
             },
 
             // overlays
