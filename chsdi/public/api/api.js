@@ -200,7 +200,6 @@ GeoAdmin.API = OpenLayers.Class({
         var iconPath;
         var graphicHeight;
         var graphicWidth;
-        var fillOpacity;
 
         var center = this.map.getCenter();
 
@@ -208,6 +207,7 @@ GeoAdmin.API = OpenLayers.Class({
             easting: center.lon,
             northing: center.lat,
             recenter: "false",
+            fillOpacity: 1.0,
             html: null
         });
 
@@ -252,17 +252,11 @@ GeoAdmin.API = OpenLayers.Class({
                 graphicWidth = 25;
             }
         }
-        // Get a custom fillOpacity for the marker
-        if (options.fillOpacity) {
-            fillOpacity = options.fillOpacity;
-        } else {
-            fillOpacity = 1;
-        }
 
         // Set a style for the marker
         var style_mark = OpenLayers.Util.applyDefaults({
             externalGraphic: iconPath,
-            fillOpacity: fillOpacity,
+            fillOpacity: options.fillOpacity,
             graphicHeight: graphicHeight,
             graphicWidth: graphicWidth
         }, OpenLayers.Feature.Vector.style['default']);
