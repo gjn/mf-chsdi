@@ -12,7 +12,7 @@
       <script type="text/javascript">
           var api;
           function init() {
-             api = new GeoAdmin.API();
+             api = new GeoAdmin.API({lang: 'fr'});
              api.createMap({
                  div: "map_1",
                  layers: ["ch.babs.kulturgueter"],
@@ -41,12 +41,16 @@
                  }
              });
 
-             api.showMarker();
+             api.showMarker({
+                 iconPath: "http://bits.ohloh.net/attachments/3594/ol_med.png"
+             });
 
              api.showMarker({
                  easting: 600000,
                  northing: 200000
              });
+
+             new GeoAdmin.API();
           }
       </script>
   </head>
