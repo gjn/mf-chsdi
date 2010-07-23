@@ -133,6 +133,31 @@ GeoAdmin.API = OpenLayers.Class({
         }));
     },
 
+    /** api: method[createBaseLayerTool]
+     *  :param options: ``Object`` options for
+     *     - renderTo: ``Mixed`` Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
+     *     - label: ``String`` optional label on the left of the slider (representing the swissimage)
+     *     - slider: ``Object`` optional object for setting slider options, like width
+     *     - combo: ``Object`` optional object for setting combo options, like width 
+     *
+     *  :return: page :class:``Ext.Toolbar`` containing the base layer tool
+     *
+     *  Create a base layer tool allowing the user to switch the background layer
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.createBaseLayerTool({
+     *           renderTo: "baselayertool",
+     *           label: "Orthophoto",
+     *           slider: {
+     *               width: 150
+     *           },
+     *           combo: {
+     *               width: 200
+     *           }
+     *       });
+     *
+     */
     createBaseLayerTool: function(options) {
         var tool = new GeoAdmin.BaseLayerTool(OpenLayers.Util.extend(options, {
             map: this.map
@@ -240,7 +265,7 @@ GeoAdmin.API = OpenLayers.Class({
             fillOpacity: fillOpacity,
             graphicHeight: graphicHeight,
             graphicWidth: graphicWidth
-        }, OpenLayers.Feature.Vector.style.default);
+        }, OpenLayers.Feature.Vector.style['default']);
 
         var features = new Array(1);
         features[0] = new OpenLayers.Feature.Vector(
