@@ -84,7 +84,7 @@ GeoAdmin.API = OpenLayers.Class({
 
         var center = null;
         if (options.easting !== null && options.northing !== null) {
-            var center = new OpenLayers.LonLat(options.easting, options.northing);
+            center = new OpenLayers.LonLat(options.easting, options.northing);
         }
 
         this.map = new GeoAdmin.Map(options.div, {
