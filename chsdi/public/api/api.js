@@ -1,10 +1,13 @@
-/*global GeoAdmin:true, OpenLayers:true Image:true */
+/*global GeoAdmin:true, OpenLayers:true, GeoExt: true, Image:true */
 
 /*
  * @include OpenLayers/Feature/Vector.js
  * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/StyleMap.js
  * @include OpenLayers/Geometry/Point.js
+ * @include OpenLayers/Control/SelectFeature.js
+ *
+ * @include GeoExt/widgets/Popup.js
  *
  * @include Map/lib/Map.js
  * @include SwissSearch/lib/SwissSearchComboBox.js
@@ -31,9 +34,27 @@ GeoAdmin.API = OpenLayers.Class({
     vector: null,
 
     /*
+     * {<OpenLayers.Control.SelectFeature>}
+     *
+     * Select control associated to vector layer
+     */
+    selectCtrl: null,
+
+    /*
      * {String}
      */
     lang: null,
+
+    /*
+     * {<GeoExt.Popup>}
+     */
+    popup: null,
+
+    /**
+     * {Boolean}
+     * Activate the popups of the vector layer
+     */
+    activatePopup: true,
 
     /** api: constructor
      *  .. class:: GeoAdmin.API
@@ -117,6 +138,23 @@ GeoAdmin.API = OpenLayers.Class({
             displayInLayerSwitcher: false
         });
 
+         if (!this.selectCtrl) {
+                this.selectCtrl = new OpenLayers.Control.SelectFeature(this.vector);
+                this.map.addControl(this.selectCtrl);
+                this.selectCtrl.activate();
+                this.vector.events.on({
+                    featureselected: function(e) {
+                        if (this.activatePopup) {
+                            this.showPopup({
+                                feature: e.feature
+                            });
+                        }
+                        document.body.style.cursor = 'default';
+                    },
+                    scope: this
+                });
+            }
+
         return this.map;
     },
 
@@ -196,6 +234,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     showMarker: function(options) {
+
         var center = this.map.getCenter();
 
         options = OpenLayers.Util.applyDefaults(options, {
@@ -226,7 +265,7 @@ GeoAdmin.API = OpenLayers.Class({
 
             fillOpacity: options.fillOpacity,
             display: "none"
-        }, OpenLayers.Feature.Vector.style.default);
+        }, OpenLayers.Feature.Vector.style['default']);
         var feature = new OpenLayers.Feature.Vector(geom, attributes, style);
         if (!this.vector.map) {
             this.map.addLayer(this.vector);
@@ -251,6 +290,81 @@ GeoAdmin.API = OpenLayers.Class({
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
         }
         return feature;
+    },
+
+    /** api: method[showPopup]
+     *  :param options: ``Object`` options for
+     *     - easting: ``Number`` optional CH1903 Y position of the marker, default: map center
+     *     - northing: ``Number`` optional CH1903 X position of the marker, default: map center
+     *     - title:  ``String`` optional, title of the window, default: ""
+     *     - recenter:  ``String`` optional, define if the map has to be recentered at the popup position "true" or "false", default: "false"
+     *     - html: ``String`` optional, html content of the popup, default: null . If empty, no popup is shown
+     *     - width: ``Integer`` optional, width of the popup, default: 200
+     *     - feature: ``OpenLayers.Feature`` feature associated with the popup
+     *     - collapsible: ``Boolean`` optional, default false
+     *     - unpinnable: ``Boolean`` optional, default true
+     *
+     *  :return: page :class:``GeoExt.Popup``
+     *
+     *  Show a popup in the map
+     *
+     */
+    showPopup: function(options) {
+
+        var feature;
+
+        var center = this.map.getCenter();
+
+        options = OpenLayers.Util.applyDefaults(options, {
+            easting: center.lon,
+            northing: center.lat,
+            recenter: "false",
+            title: '',
+            html: null,
+            width: 200,
+            collapsible: false,
+            unpinnable: true
+        });
+
+        // Manage options
+        if (options.feature) {
+            feature = options.feature;
+            options.html = options.feature.attributes.html;
+        }
+
+        if (this.popup) {
+            this.popup.close();
+        }
+
+        if (options.html) {
+            this.popup = new GeoExt.Popup({
+                map: this.map,
+                feature: feature,
+                title: options.title,
+                lonlat: new OpenLayers.LonLat(options.easting, options.northing),
+                width: options.width,
+                html: options.html,
+                collapsible: options.collapsible,
+                unpinnable: options.unpinnable
+            });
+            if (feature) {
+                this.popup.on({
+                    close: function() {
+                        if (OpenLayers.Util.indexOf(this.vector.selectedFeatures,
+                                feature) > -1) {
+                            this.selectCtrl.unselect(feature);
+                        }
+                    },
+                    scope: this
+                });
+            }
+            this.popup.show();
+        }
+
+        if (options.recenter == "true") {
+            this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
+        }
+        return this.popup;
     }
 });
 

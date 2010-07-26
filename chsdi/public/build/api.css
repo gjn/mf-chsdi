@@ -2,6 +2,12 @@
 @import url(../lib/ext/Ext/resources/css/theme-gray/combo.css);
 @import url(../lib/ext/Ext/resources/css/structure/slider.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/slider.css);
+@import url(../lib/ext/Ext/resources/css/structure/window.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/window.css);
+@import url(../lib/ext/Ext/resources/css/structure/panel.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/panel.css);
+
+@import url(../lib/geoext/resources/css/gxtheme-gray.css);
 
 @import url(../lib/openlayers/theme/default/style.css);
 @import url(../GeoAdmin.ux/Map/css/map.css);
@@ -16,4 +22,94 @@
     text-align: left;
     letter-spacing: 0;
     font-family: Arial
+}
+
+/* ExtJS CSS have a wrong relative to images, so we fix that here */
+
+/* combo.css */
+
+.x-combo-list-hd {
+    background-image: url(../lib/ext/Ext/resources/images/default/layout/panel-title-light-bg.gif);
+}
+
+/* slider.css */
+
+.x-slider-horz, .x-slider-horz .x-slider-end, .x-slider-horz .x-slider-inner {
+    background-image:url(../lib/ext/Ext/resources/images/default/slider/slider-bg.png);
+}
+
+.x-slider-horz .x-slider-thumb {
+    background-image:url(../lib/ext/Ext/resources/images/gray/slider/slider-thumb.png);
+}
+
+.x-slider-vert, .x-slider-vert .x-slider-end, .x-slider-vert .x-slider-inner {
+    background-image:url(../lib/ext/Ext/resources/images/default/slider/slider-v-bg.png);
+}
+
+.x-slider-vert .x-slider-thumb {
+    background-image:url(../lib/ext/Ext/resources/images/gray/slider/slider-v-thumb.png);
+}
+
+/* window.css */
+
+.x-window-tc {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/top-bottom.png);
+}
+
+.x-window-tl {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/left-corners.png);
+}
+
+.x-window-tr {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/right-corners.png);
+}
+
+.x-window-bc {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/top-bottom.png);
+}
+
+.x-window-bl {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/left-corners.png);
+}
+
+.x-window-br {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/right-corners.png);
+}
+
+.x-window-ml {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/left-right.png);
+}
+
+.x-window-mr {
+	background-image: url(../lib/ext/Ext/resources/images/gray/window/left-right.png);
+}
+
+/* panel.css */
+
+.x-panel-header {
+    background-image: url(../lib/ext/Ext/resources/images/gray/panel/white-top-bottom.gif);
+}
+
+.x-panel-tc {
+	background-image: url(../lib/ext/Ext/resources/images/gray/panel/top-bottom.gif);
+}
+
+.x-panel-tl, .x-panel-tr, .x-panel-bl,  .x-panel-br{
+	background-image: url(../lib/ext/Ext/resources/images/gray/panel/corners-sprite.gif);
+}
+
+.x-panel-bc {
+	background-image: url(../lib/ext/Ext/resources/images/gray/panel/top-bottom.gif);
+}
+
+.x-panel-ml {
+    background-image:url(../lib/ext/Ext/resources/images/gray/panel/left-right.gif);
+}
+
+.x-panel-mr {
+	background-image: url(../lib/ext/Ext/resources/images/gray/panel/left-right.gif);
+}
+
+.x-tool {
+    background-image:url(../lib/ext/Ext/resources/images/gray/panel/tool-sprites.gif);
 }
