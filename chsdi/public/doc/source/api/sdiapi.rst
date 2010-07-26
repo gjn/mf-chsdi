@@ -329,7 +329,7 @@ Base layer tool
 .. raw:: html
 
    <body>
-      <div id="baselayertool10" style="display: none; visibility: hidden; margin:10px !important;"></div>
+      <div id="baselayertool10"></div>
       <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 

@@ -124,7 +124,7 @@ Base Layer Tool
 .. raw:: html
 
    <body>
-      <div id="baselayertool3" style="display: none; visibility: hidden; margin:10px !important;"></div>
+      <div id="baselayertool3"></div>
       <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
@@ -147,7 +147,7 @@ Base Layer Tool
       }
    </script>
    <body onload="init();">
-     <div id="baselayertool3" style="display: none; visibility: hidden; margin:10px !important;"></div>
+     <div id="baselayertool3"></div>
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
    </body>
