@@ -113,7 +113,6 @@ GeoAdmin.API = OpenLayers.Class({
         }
 
         // create the drawing layer
-        // FIXME: set style to the marker instead
         this.vector = new OpenLayers.Layer.Vector("drawing", {
             displayInLayerSwitcher: false
         });
@@ -141,7 +140,7 @@ GeoAdmin.API = OpenLayers.Class({
      *     - renderTo: ``Mixed`` Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
      *     - label: ``String`` optional label on the left of the slider (representing the swissimage)
      *     - slider: ``Object`` optional object for setting slider options, like width
-     *     - combo: ``Object`` optional object for setting combo options, like width 
+     *     - combo: ``Object`` optional object for setting combo options, like width
      *
      *  :return: page :class:``GeoAdmin.BaseLayerTool``
      *
@@ -197,10 +196,6 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     showMarker: function(options) {
-        var iconPath;
-        var graphicHeight;
-        var graphicWidth;
-
         var center = this.map.getCenter();
 
         options = OpenLayers.Util.applyDefaults(options, {
@@ -208,74 +203,54 @@ GeoAdmin.API = OpenLayers.Class({
             northing: center.lat,
             recenter: "false",
             fillOpacity: 1.0,
-            html: null
+            html: null,
+            iconPath: OpenLayers.Util.getImagesLocation() + "marker-gold.png",
+            graphicHeight: null,
+            graphicWidth: null
         });
 
-        // Get the iconPath
-        if (options.iconPath) {
-            if (options.iconPath.indexOf('http://') === 0) {
-                iconPath = options.iconPath;
-            } else {
-                if (options.iconPath.indexOf('/') === 0) {
-                    iconPath = OpenLayers.Util.getImagesLocation() + options.iconPath;
-                } else {
-                    iconPath = OpenLayers.Util.getImagesLocation() + '/' + options.iconPath;
-                }
-            }
-
-        } else {
-            iconPath = OpenLayers.Util.getImagesLocation() + "marker-gold.png";
+        if (options.iconPath.indexOf('://') === -1) {
+            // fix relative urls
+            options.iconPath = OpenLayers.Util.getImagesLocation() + options.iconPath;
         }
 
-        // Get a custom height for the marker
-        var graphic = new Image();
-        graphic.src = iconPath;
-
-        if (options.graphicHeight) {
-            graphicHeight = options.graphicHeight;
-        } else {
-            if (graphic.height) {
-                graphicHeight = graphic.height;
-            } else {
-                graphicHeight = 25;
-            }
-        }
-
-        // Get a custom width for the marker
-        if (options.graphicWidth) {
-            graphicWidth = options.graphicWidth;
-        } else {
-
-            if (graphic.width) {
-                graphicWidth = graphic.width;
-            } else {
-                graphicWidth = 25;
-            }
-        }
-
-        // Set a style for the marker
-        var style_mark = OpenLayers.Util.applyDefaults({
-            externalGraphic: iconPath,
-            fillOpacity: options.fillOpacity,
-            graphicHeight: graphicHeight,
-            graphicWidth: graphicWidth
-        }, OpenLayers.Feature.Vector.style['default']);
-
-        var features = new Array(1);
         var geom = new OpenLayers.Geometry.Point(options.easting, options.northing);
-        features[0] = new OpenLayers.Feature.Vector(geom, {
+        var attributes = {
             html: options.html
-        }, style_mark);
+        };
 
+        var style = OpenLayers.Util.applyDefaults({
+            externalGraphic: options.iconPath,
+            graphicHeight: options.graphicHeight,
+            graphicWidth: options.graphicWidth,
+
+            fillOpacity: options.fillOpacity,
+            display: "none"
+        }, OpenLayers.Feature.Vector.style.default);
+        var feature = new OpenLayers.Feature.Vector(geom, attributes, style);
         if (!this.vector.map) {
             this.map.addLayer(this.vector);
         }
-        this.vector.addFeatures(features[0]);
+        this.vector.addFeatures(feature);
+
+        var graphic = new Image();
+        OpenLayers.Event.observe(graphic, 'load', OpenLayers.Function.bind(function(evt) {
+            if (this.style.graphicHeight == null) {
+                this.style.graphicHeight = evt.target.height;
+            }
+            if (this.style.graphicWidth == null) {
+                this.style.graphicWidth = evt.target.width;
+            }
+            delete this.style.display;
+
+            this.layer.drawFeature(this);
+        }, feature));
+        graphic.src = options.iconPath;
 
         if (options.recenter == 'true') {
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
         }
-        return features[0];
+        return feature;
     }
 });
 
