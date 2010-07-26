@@ -18,7 +18,9 @@ var Layers = OpenLayers.Class({
         var config = this.layers[name];
         
         if (name === "voidLayer") {
-            return new GeoAdmin.VoidLayer(name);
+            return new GeoAdmin.VoidLayer(config.name, {
+                layername: name
+            });
         }
 
         if (config) {
