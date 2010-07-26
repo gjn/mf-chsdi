@@ -75,6 +75,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.complementaryLayer = null;
     },
 
+    getLayerByLayerName: function(layername) {
+        var layers = this.getLayersBy("layername", layername);
+        // assert layers.length === 0 || layers.length === 1
+        return layers[0];
+    },
+
     /*
      * assert that vector layers are always on top.
      */
@@ -106,9 +112,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (layer) {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {
-                // "name" is used because "layername" is not available
-                // for all layer types
-                if (this.layers[i].name === layer.name) {
+                if (this.layers[i].layername === layer.layername) {
                     return null;
                 }
             }
