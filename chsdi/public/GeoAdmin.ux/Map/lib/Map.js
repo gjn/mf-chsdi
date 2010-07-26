@@ -80,7 +80,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     setLayerZIndex: function(layer, zIdx) {
         var baseZIndex = layer.isVector ? 325 :
-                         GeoAdmin.layers.layers[layer.name].isBgLayer ? 100 :
+                         GeoAdmin.layers.layers[layer.layername].isBgLayer ? 100 :
                          150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },  
