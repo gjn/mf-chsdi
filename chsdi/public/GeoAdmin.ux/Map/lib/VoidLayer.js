@@ -1,3 +1,5 @@
+/*global GeoAdmin:true, OpenLayers:true */
+
 /*
  * @requires OpenLayers/Layer.js
  */
