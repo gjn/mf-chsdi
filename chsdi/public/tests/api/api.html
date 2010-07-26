@@ -200,6 +200,48 @@ function test_showMarker_iconPath(t) {
     t.eq(marker.style.externalGraphic, 'http://www.geo.admin.ch/images/logo.jpg', "marker's icon path has been set in style");
 }
 
+function test_showPopup_default(t) {
+    t.plan(3);
+
+    var api = new GeoAdmin.API();
+    api.createMap({div: "map_1"});
+    var popup1 = api.showPopup();
+
+    t.eq(popup1, null, "no popup is created if html or feature is not provided");
+
+    var popup2 = api.showPopup({html: 'test'});
+
+    console.log(popup2);
+
+    var center = api.map.getCenter();
+
+    t.eq(center.lon, popup2.lonlat.lon, "popup lon");
+    t.eq(center.lat, popup2.lonlat.lat, "popup lat");
+}
+
+function test_showPopup_position(t) {
+    t.plan(4);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_2",
+        easting: 600000,
+        northing: 200000});
+    var popup = api.showPopup({
+        easting: 601000,
+        northing: 201000,
+        html: 'test'
+    });
+
+    var center = api.map.getCenter();
+
+    t.eq(center.lon, 600000, "popup is not recentered in lon");
+    t.eq(center.lat, 200000, "popup is not recentered in lat");
+
+    t.eq(popup.lonlat.lon, 601000, "popup lon");
+    t.eq(popup.lonlat.lat, 201000, "popup lat");
+}
+
 function test_showFeatures(t) {
     t.plan(0);
 }
@@ -254,6 +296,7 @@ function test_createBaseLayerTool(t) {
 </head>
 <body>
 <div style="width: 200px; height: 200px" id="map_1"></div>
+<div style="width: 800px; height: 600px" id="map_2"></div>
 <div id="search_1"></div>
 <div id="bod_1"></div>
 <div id="baselayertool_1"></div>

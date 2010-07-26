@@ -303,10 +303,13 @@ GeoAdmin.API = OpenLayers.Class({
      *     - feature: ``OpenLayers.Feature`` feature associated with the popup
      *     - collapsible: ``Boolean`` optional, default false
      *     - unpinnable: ``Boolean`` optional, default true
+     *     - panIn: ``Boolean`` optional, The popup should pan the map so that the popup is fully in view when it is rendered.  Default is ``false``.
      *
      *  :return: page :class:``GeoExt.Popup``
      *
      *  Show a popup in the map
+     *
+     * TODO: backward compatibility issue: panIn is false per default
      *
      */
     showPopup: function(options) {
@@ -323,7 +326,8 @@ GeoAdmin.API = OpenLayers.Class({
             html: null,
             width: 200,
             collapsible: false,
-            unpinnable: true
+            unpinnable: true,
+            panIn: false
         });
 
         // Manage options
@@ -345,7 +349,8 @@ GeoAdmin.API = OpenLayers.Class({
                 width: options.width,
                 html: options.html,
                 collapsible: options.collapsible,
-                unpinnable: options.unpinnable
+                unpinnable: options.unpinnable,
+                panIn: options.panIn
             });
             if (feature) {
                 this.popup.on({
