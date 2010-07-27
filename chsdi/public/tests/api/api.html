@@ -211,8 +211,6 @@ function test_showPopup_default(t) {
 
     var popup2 = api.showPopup({html: 'test'});
 
-    console.log(popup2);
-
     var center = api.map.getCenter();
 
     t.eq(center.lon, popup2.lonlat.lon, "popup lon");
@@ -230,7 +228,8 @@ function test_showPopup_position(t) {
     var popup = api.showPopup({
         easting: 601000,
         northing: 201000,
-        html: 'test'
+        html: 'Test',
+        panIn: false
     });
 
     var center = api.map.getCenter();
@@ -240,6 +239,62 @@ function test_showPopup_position(t) {
 
     t.eq(popup.lonlat.lon, 601000, "popup lon");
     t.eq(popup.lonlat.lat, 201000, "popup lat");
+}
+
+function test_showPopup_title(t) {
+    t.plan(1);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_2",
+        easting: 600000,
+        northing: 200000});
+    var popup = api.showPopup({
+        easting: 601000,
+        northing: 201000,
+        title: 'My nice title',
+        html: 'Test'
+    });
+
+    t.eq(popup.title, 'My nice title', "popup title is set");
+}
+
+function test_showPopup_recenter(t) {
+    t.plan(2);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_2",
+        easting: 600000,
+        northing: 200000});
+    var popup = api.showPopup({
+        easting: 601000,
+        northing: 201000,
+        html: 'Test',
+        recenter: 'true'
+    });
+
+    var center = api.map.getCenter();
+
+    t.eq(center.lon, 601000, "popup is recentered in lon");
+    t.eq(center.lat, 201000, "popup is recentered in lat");
+}
+
+function test_showPopup_feature(t) {
+    t.plan(1);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_2",
+        easting: 600000,
+        northing: 200000});
+    var feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(601000, 201000));
+    feature.attributes.html = "Test"
+    var popup = api.showPopup({
+        feature: feature
+    });
+
+    t.eq(popup.body.dom.innerHTML, "Test", "feature html is set to popup");
 }
 
 function test_showFeatures(t) {

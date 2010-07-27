@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <style>
         .map {
             width: 600px;
@@ -10,57 +10,63 @@
         }
     </style>
 
-      <script type="text/javascript">
-          var api;
-          function init() {
-             api = new GeoAdmin.API({lang: 'fr'});
-             api.createMap({
-                 div: "map_1",
-                 layers: ["ch.babs.kulturgueter"],
-                 layers_opacity: [0.6],
-                 bgOpacity: 1.0
-             });
-             api.createSearchBox({
-                 renderTo: "swisssearch_1"
-             });
-             api.createBodSearchCombo({
-                 renderTo: "bodsearch_1"
-             });
-             api.createBodSearchCombo({
-                 map: null,
-                 renderTo: "bodsearch_2"
-             });
-             api.createBaseLayerTool({
-                 renderTo: "baselayertool_1",
-                 label: 'Orthophoto',
-                 slider: {
-                     width: 150
-                 },
-                 combo: {
-                     width: 200
-                 }
-             });
+    <script type="text/javascript">
+        var api;
+        function init() {
+            api = new GeoAdmin.API({lang: 'fr'});
+            api.createMap({
+                div: "map_1",
+                layers: ["ch.babs.kulturgueter"],
+                layers_opacity: [0.6],
+                bgOpacity: 1.0
+            });
+            api.createSearchBox({
+                renderTo: "swisssearch_1"
+            });
+            api.createBodSearchCombo({
+                renderTo: "bodsearch_1"
+            });
+            api.createBodSearchCombo({
+                map: null,
+                renderTo: "bodsearch_2"
+            });
+            api.createBaseLayerTool({
+                renderTo: "baselayertool_1",
+                label: 'Orthophoto',
+                slider: {
+                    width: 150
+                },
+                combo: {
+                    width: 200
+                }
+            });
 
-             api.showMarker({
-                 iconPath: "http://bits.ohloh.net/attachments/3594/ol_med.png"
-             });
+            api.showMarker({
+                iconPath: "http://bits.ohloh.net/attachments/3594/ol_med.png"
+            });
 
-             api.showMarker({
-                 easting: 600000,
-                 northing: 200000
-             });
+            api.showMarker({
+                easting: 600000,
+                northing: 200000
+            });
 
-             new GeoAdmin.API();
-          }
-      </script>
-  </head>
-  <body onload="init();">
-    <div class="map" id="map_1"></div>
-    <div id="swisssearch_1"></div>
-    <div id="bodsearch_1"></div>
-    <div id="bodsearch_2"></div>
-    <div id="baselayertool_1"></div>
+            var feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(701000, 201000));
+            feature.attributes.html = "Et ça marche !"
+            api.showPopup({
+                feature: feature
+            });
 
-    <script type="text/javascript" src="../loader.js"></script>
-  </body>
+            new GeoAdmin.API();
+        }
+    </script>
+</head>
+<body onload="init();">
+<div class="map" id="map_1"></div>
+<div id="swisssearch_1"></div>
+<div id="bodsearch_1"></div>
+<div id="bodsearch_2"></div>
+<div id="baselayertool_1"></div>
+
+<script type="text/javascript" src="../loader.js"></script>
+</body>
 </html>

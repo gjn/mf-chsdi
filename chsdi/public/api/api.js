@@ -303,13 +303,11 @@ GeoAdmin.API = OpenLayers.Class({
      *     - feature: ``OpenLayers.Feature`` feature associated with the popup
      *     - collapsible: ``Boolean`` optional, default false
      *     - unpinnable: ``Boolean`` optional, default true
-     *     - panIn: ``Boolean`` optional, The popup should pan the map so that the popup is fully in view when it is rendered.  Default is ``false``.
+     *     - panIn: ``Boolean`` optional, The popup should pan the map so that the popup is fully in view when it is rendered.  Default is ``true``.
      *
      *  :return: page :class:``GeoExt.Popup``
      *
      *  Show a popup in the map
-     *
-     * TODO: backward compatibility issue: panIn is false per default
      *
      */
     showPopup: function(options) {
@@ -327,31 +325,25 @@ GeoAdmin.API = OpenLayers.Class({
             width: 200,
             collapsible: false,
             unpinnable: true,
-            panIn: false
+            panIn: true
         });
 
         // Manage options
         if (options.feature) {
             feature = options.feature;
             options.html = options.feature.attributes.html;
+        } else {
+            options.lonlat = new OpenLayers.LonLat(options.easting, options.northing);
         }
 
         if (this.popup) {
             this.popup.close();
         }
 
+        options.map = this.map;
+
         if (options.html) {
-            this.popup = new GeoExt.Popup({
-                map: this.map,
-                feature: feature,
-                title: options.title,
-                lonlat: new OpenLayers.LonLat(options.easting, options.northing),
-                width: options.width,
-                html: options.html,
-                collapsible: options.collapsible,
-                unpinnable: options.unpinnable,
-                panIn: options.panIn
-            });
+            this.popup = new GeoExt.Popup(options);
             if (feature) {
                 this.popup.on({
                     close: function() {
