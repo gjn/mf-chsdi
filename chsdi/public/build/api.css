@@ -34,14 +34,6 @@
 
 /* slider.css */
 
-.x-slider-horz, .x-slider-horz .x-slider-end, .x-slider-horz .x-slider-inner {
-    background-image:url(../lib/ext/Ext/resources/images/default/slider/slider-bg.png);
-}
-
-.x-slider-horz .x-slider-thumb {
-    background-image:url(../lib/ext/Ext/resources/images/gray/slider/slider-thumb.png);
-}
-
 .x-slider-vert, .x-slider-vert .x-slider-end, .x-slider-vert .x-slider-inner {
     background-image:url(../lib/ext/Ext/resources/images/default/slider/slider-v-bg.png);
 }
