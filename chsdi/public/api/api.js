@@ -273,17 +273,17 @@ GeoAdmin.API = OpenLayers.Class({
         this.vector.addFeatures(feature);
 
         var graphic = new Image();
-        OpenLayers.Event.observe(graphic, 'load', OpenLayers.Function.bind(function(evt) {
-            if (this.style.graphicHeight == null) {
-                this.style.graphicHeight = evt.target.height;
+        OpenLayers.Event.observe(graphic, 'load', OpenLayers.Function.bind(function() {
+            if (this.feature.style.graphicHeight == null) {
+                this.feature.style.graphicHeight = this.graphic.height;
             }
-            if (this.style.graphicWidth == null) {
-                this.style.graphicWidth = evt.target.width;
+            if (this.feature.style.graphicWidth == null) {
+                this.feature.style.graphicWidth = this.graphic.width;
             }
-            delete this.style.display;
+            delete this.feature.style.display;
 
-            this.layer.drawFeature(this);
-        }, feature));
+            this.feature.layer.drawFeature(this.feature);
+        }, {feature: feature, graphic: graphic}));
         graphic.src = options.iconPath;
 
         if (options.recenter == 'true') {
