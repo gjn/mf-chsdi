@@ -68,7 +68,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             this.zoomToMaxExtent();
         }
     },
-    
+
     destroy: function() {
         OpenLayers.Map.prototype.destroy.apply(this, arguments);
         this.aerial = null;
@@ -89,7 +89,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                          GeoAdmin.layers.layers[layer.layername].isBgLayer ? 100 :
                          150;
         layer.setZIndex(baseZIndex + zIdx * 5);
-    },  
+    },
 
     /*
      * manage the base layer (aerial) opacity.
@@ -101,6 +101,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (evt.layer == this.complementaryLayer) {
                 this.aerial.setVisibility(opacity < 1.0);
                 this.complementaryLayer.setVisibility(opacity > 0.0);
+            } else if (evt.layer == this.aerial) {
+                this.aerial.setVisibility(opacity > 0.0);
             }
         }
     },
