@@ -97,9 +97,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     onChangeLayer: function(evt) {
         // hide the aerial layer if the complementary layer opacity is full.
         if (evt.property === "opacity") {
+            var opacity = evt.layer.opacity;
             if (evt.layer == this.complementaryLayer) {
-                this.aerial.setVisibility(evt.layer.opacity < 1.0);
-                evt.layer.setVisibility(evt.layer.opacity > 0.0);
+                this.aerial.setVisibility(opacity < 1.0);
+                this.complementaryLayer.setVisibility(opacity > 0.0);
             }
         }
     },
