@@ -3,7 +3,8 @@
 /*
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
- * FIXME: requires proj4js
+ *
+ * @include proj4js/lib/defs/EPSG21781.js
  */
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 

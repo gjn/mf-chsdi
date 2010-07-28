@@ -14,6 +14,8 @@
  *
  * @include Map/lib/Layers.js
  * @include Map/lib/OverviewMap.js
+ *
+ * @include proj4js/lib/defs/EPSG21781.js
  */
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
