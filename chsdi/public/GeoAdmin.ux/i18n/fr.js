@@ -70,6 +70,14 @@ OpenLayers.Lang.fr = OpenLayers.Util.applyDefaults({
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
+    'ch.swisstopo.swissimage': 'Photo aérienne',
+    'ch.swisstopo.pixelkarte-farbe': 'Carte couleur',
+    'ch.swisstopo.pixelkarte-grau': 'Carte noir & blanc',
+    'voidLayer': 'Fond blanc',
+    'ch.swisstopo.swissimage_attribution': 'Photo aérienne: swisstopo',
+    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carte couleur: swisstopo',
+    'ch.swisstopo.pixelkarte-grau_attribution': 'Carte noir & blanc: swisstopo',
+
 
     // Map/lib/Map.js
     'Zoom to the max extent': 'Voir toute la Suisse',

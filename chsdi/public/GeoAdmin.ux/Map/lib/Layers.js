@@ -58,7 +58,7 @@ var Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.swissimage_attribution"),
                 queryable: false
             },
             "ch.swisstopo.pixelkarte-farbe": {
@@ -66,7 +66,7 @@ var Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe_attribution"),
                 queryable: false
             },
             "ch.swisstopo.pixelkarte-grau": {
@@ -74,7 +74,7 @@ var Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau_attribution"),
                 queryable: false
             },
             "voidLayer": {

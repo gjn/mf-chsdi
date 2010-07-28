@@ -76,7 +76,7 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
             forceSelection: true,
             triggerAction: 'all',
             mode: 'local',
-            value: GeoAdmin.layers.layers[this.map.complementaryLayer.name].name,
+            value: GeoAdmin.layers.layers[this.map.complementaryLayer.layername].name,
             listeners: {
                 select: function(combo, record, index) {
                     var complementaryLayer = this.map.switchComplementaryLayer(record.data.id);
