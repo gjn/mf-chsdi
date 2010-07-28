@@ -8,10 +8,6 @@ from pylons.templating import render_mako as render
 from chsdi.model import meta
 
 from pylons import request, response
-try:
-    from json import dumps
-except ImportError:
-    from simplejson import dumps
 
 class BaseController(WSGIController):
 
@@ -25,31 +21,35 @@ class BaseController(WSGIController):
         finally:
             meta.Session.remove()
 
-# def jsonp(func, *args, **kwargs):
-#     pylons = get_pylons(args)
-#     fn_name = pylons.request.params.get('jsonp') or \
-#               pylons.request.params.get('callback') or \
-#               pylons.request.params.get('cb')
+import logging
+import warnings
+import simplejson
+from decorator import decorator
+from pylons.decorators.util import get_pylons
 
-#     body = func(*args, **kwargs)
-#     pylons.response.charset = 'utf8'
-#     if fn_name is not None:
-#         response.content_type = 'application/javascript'
-#         return "%s(%s);"%(func, body)
-#     else:
-#         response.content_type = 'application/json'
-#         return body
+log = logging.getLogger(__name__)
 
-
-def jsonify(data):
-    func = request.params.get('jsonp') or \
-           request.params.get('callback') or \
-           request.params.get('cb')
-    body = dumps(data, indent=None if request.is_xhr else 2)
-    response.charset = 'utf8'
-    if func is not None:
-        response.content_type = 'application/javascript'
-        return "%s(%s);"%(func, body)
-    else:
-        response.content_type = 'application/json'
-        return body
+def _jsonify(cb=None, **dumps_kwargs):
+    def wrapper(func, *args, **kwargs):
+        pylons = get_pylons(args)
+        cb_name = pylons.request.params.get(cb)
+        if cb_name is not None:
+            pylons.response.headers['Content-Type'] = 'text/javascript'
+        else:
+            pylons.response.headers['Content-Type'] = 'application/json'
+        data = func(*args, **kwargs)
+        output = simplejson.dumps(data, **dumps_kwargs)
+        if cb_name is not None:
+            output = str(cb_name) + '(' + output + ');'
+            log.debug("Returning JS wrapped action output")
+        else:
+            if isinstance(data, (list, tuple)):
+                msg = "JSON responses with Array envelopes are susceptible to " \
+                      "cross-site data leak attacks, see " \
+                      "http://pylonshq.com/warnings/JSONArray"
+                warnings.warn(msg, Warning, 2)
+                log.warning(msg)
+            log.debug("Returning JSON wrapped action output")
+        return output
+    return decorator(wrapper)
+jsonify = _jsonify()
