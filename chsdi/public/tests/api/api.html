@@ -27,9 +27,10 @@ function test_createMap(t) {
 
     // todo: map position is max extent
 
-    var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
-    t.ok(found.length === 1, "default layer is loaded");
-    t.eq(found[0].opacity, 1.0, "default opacity is 1.0");
+    var found = api.map.getLayerByLayerName("ch.swisstopo.pixelkarte-farbe");
+
+    t.ok(found, "default layer is loaded");
+    t.eq(found.opacity, 1.0, "default opacity is 1.0");
     t.eq(api.map.aerial.getVisibility(), false, "aerial layer is not visible");
 }
 
@@ -42,14 +43,14 @@ function test_createMap_bgLayer(t) {
         bgOpacity: 0.6
     });
 
-    var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-farbe");
-    t.ok(found.length === 0, "default layer not loaded");
+    var found = api.map.getLayerByLayerName("ch.swisstopo.pixelkarte-farbe");
+    t.ok(!found, "default layer not loaded");
 
-    var found = api.map.getLayersByName("ch.swisstopo.pixelkarte-grau");
-    t.ok(found.length === 1, "bgLayer loaded");
+    var found = api.map.getLayerByLayerName("ch.swisstopo.pixelkarte-grau");
+    t.ok(found, "bgLayer loaded");
 
     t.eq(api.map.aerial.getVisibility(), true, "aerial layer is visible because bgLayer is transparent");
-    t.eq(found[0].opacity, 0.6, "bgOpacity");
+    t.eq(found.opacity, 0.6, "bgOpacity");
 }
 
 function test_createMap_position(t) {

@@ -135,7 +135,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         options = OpenLayers.Util.applyDefaults(options, {
             opacity: 1.0
         });
-        if (!this.complementaryLayer || name !== this.complementaryLayer.name) {
+        if (!this.complementaryLayer || name !== this.complementaryLayer.layername) {
             var layer = this.addLayerByName(name);
             if (layer) {
                 // layer is valid and added to ther map
