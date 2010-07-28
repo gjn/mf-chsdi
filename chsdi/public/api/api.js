@@ -204,17 +204,42 @@ GeoAdmin.API = OpenLayers.Class({
         }));
     },
 
+    /**
+     * Alias for backward compatibility
+     * DEPRECATED
+     */
     recenterOnObjects: function(layer, ids) {
+        this.recenterFeatures(layer, ids);
+    },
 
+    recenterFeatures: function(layer, ids) {
+        var f = new GeoAdmin.Map.Features({
+            map: this.map
+        });
+        f.recenter(layer, ids);
+    },
+
+    /**
+     * Alias for backward compatibility
+     * DEPRECATED
+     */
+    highlightObjects: function(layer, ids) {
+        this.highlightFeatures(layer, ids);
+    },
+
+    highlightFeatures: function(layer, ids) {
+        // TODO
     },
 
     showFeatures: function(layer, ids) {
+        // TODO: move in Map UX
+
         // FIXME: get features from webservice
         this.vector.addFeatures(features);
         if (!this.vector.map) {
             this.map.addLayer(this.vector);
         }
-        // FIXME: recenter to features
+        this.map.zoomToExtent(this.vector.getDataExtent());
     },
 
     /** api: method[showMarker]

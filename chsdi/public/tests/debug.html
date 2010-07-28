@@ -11,7 +11,7 @@
     </style>
 
     <script type="text/javascript">
-        var api;
+        var api, api2;
         function init() {
             api = new GeoAdmin.API({lang: 'fr'});
             api.createMap({
@@ -56,7 +56,11 @@
                 feature: feature
             });
 
-            new GeoAdmin.API();
+            api2 = new GeoAdmin.API();
+            api2.createMap({
+                div: "map_2"
+            });
+            api2.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
         }
     </script>
 </head>
@@ -66,6 +70,8 @@
 <div id="bodsearch_1"></div>
 <div id="bodsearch_2"></div>
 <div id="baselayertool_1"></div>
+
+<div class="map" id="map_2"></div>
 
 <script type="text/javascript" src="../loader.js"></script>
 </body>

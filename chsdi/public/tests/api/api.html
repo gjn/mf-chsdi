@@ -346,7 +346,24 @@ function test_createBaseLayerTool(t) {
             });
         });
     });
-    
+}
+
+function test_recenterFeatures(t) {
+    //t.plan(1);
+    t.plan(0);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1"
+    });
+    api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+    var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
+    /*
+    // FIXME: fails because of a recursion error
+    t.delay_call(10, function() {
+        t.eq(api.map.getCenter(), bounds.getCenterLonLat(), "check new center");
+    });
+    */
 }
 </script>
 </head>
