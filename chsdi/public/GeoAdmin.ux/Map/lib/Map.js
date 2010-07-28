@@ -9,6 +9,7 @@
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/Panel.js
  * @include OpenLayers/Control/ZoomToMaxExtent.js
+ * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
  *
@@ -21,6 +22,7 @@
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     aerial: null,
+    vector: null,
     complementaryLayer: null,
 
     initialize: function (div, options) {
@@ -56,10 +58,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // set default options
         this.aerial = GeoAdmin.layers.buildLayerByName("ch.swisstopo.swissimage");
 
+        this.vector = new OpenLayers.Layer.Vector("drawing", {
+            displayInLayerSwitcher: false
+        });
+
         OpenLayers.Util.applyDefaults(options, {
             maxExtent: new OpenLayers.Bounds(420000,30000,900000,350000),
             resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
-            layers: [this.aerial]
+            layers: [this.aerial, this.vector]
         });
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 

@@ -100,11 +100,11 @@ function test_showMarker_default(t) {
     api.createMap({div: "map_1"});
     api.showMarker();
 
-    t.ok(api.vector.isVector, "api has a vector layer");
-    t.ok(api.vector.map && api.vector.getVisibility(), "api.vector is on the map and visible");
+    t.ok(api.map.vector.isVector, "api has a vector layer");
+    t.ok(api.map.vector.getVisibility(), "api.map.vector is on the map and visible");
 
-    t.eq(api.vector.features.length, 1, "api.vector has a marker");
-    var marker = api.vector.features[0];
+    t.eq(api.map.vector.features.length, 1, "api.map.vector has a marker");
+    var marker = api.map.vector.features[0];
     var center = api.map.getCenter();
 
     t.eq(center.lon, marker.geometry.x, "marker lon");
@@ -125,8 +125,8 @@ function test_showMarker_position(t) {
         easting: 600000,
         northing: 200000
     });
-    t.eq(api.vector.features.length, 1, "api.vector has a marker");
-    var marker = api.vector.features[0];
+    t.eq(api.map.vector.features.length, 1, "api.map.vector has a marker");
+    var marker = api.map.vector.features[0];
 
     t.eq(marker.geometry.x, 600000, "marker lon");
     t.eq(marker.geometry.y, 200000, "marker lat");
@@ -143,8 +143,8 @@ function test_showMarker_recenter(t) {
         northing: 190000,
         recenter: 'true'
     });
-    t.eq(api.vector.features.length, 1, "api.vector has a marker");
-    var marker = api.vector.features[0];
+    t.eq(api.map.vector.features.length, 1, "api.map.vector has a marker");
+    var marker = api.map.vector.features[0];
     var center = api.map.getCenter();
 
     t.eq(marker.geometry.x, center.lon, "api.map.getCenter().lon");
@@ -163,7 +163,7 @@ function test_showMarker_opacity(t) {
         recenter: 'true',
         fillOpacity: 0.8
     });
-    var marker = api.vector.features[0];
+    var marker = api.map.vector.features[0];
 
     t.eq(marker.style.fillOpacity, 0.8, "marker's opacity has been set to 0.8");
 }
@@ -180,7 +180,7 @@ function test_showMarker_html(t) {
         recenter: 'true',
         html: 'Salut mon pote'
     });
-    var marker = api.vector.features[0];
+    var marker = api.map.vector.features[0];
 
     t.eq(marker.data.html, 'Salut mon pote', "marker's html has been set in data");
 }
@@ -196,7 +196,7 @@ function test_showMarker_iconPath(t) {
         northing: 190000,
         iconPath: 'http://www.geo.admin.ch/images/logo.jpg'
     });
-    var marker = api.vector.features[0];
+    var marker = api.map.vector.features[0];
 
     t.eq(marker.style.externalGraphic, 'http://www.geo.admin.ch/images/logo.jpg', "marker's icon path has been set in style");
 }
@@ -349,7 +349,7 @@ function test_createBaseLayerTool(t) {
 }
 
 function test_recenterFeatures(t) {
-    //t.plan(1);
+    //t.plan(4);
     t.plan(0);
 
     var api = new GeoAdmin.API();
@@ -358,10 +358,22 @@ function test_recenterFeatures(t) {
     });
     api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
     var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
-    /*
+    var lonlat = bounds.getCenterLonLat();
+
     // FIXME: fails because of a recursion error
+    /*
     t.delay_call(10, function() {
-        t.eq(api.map.getCenter(), bounds.getCenterLonLat(), "check new center");
+        t.eq(api.map.getCenter(), lonlat, "check new center after recenterFeatures");
+        
+        api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+        t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after highlightFeatures");
+        
+        api.map.vector.destroyFeatures();
+        api.map.zoomToMaxExtent();
+
+        api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+        t.eq(api.map.getCenter(), lonlat, "check new center after showFeatures");
+        t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after showFeatures");
     });
     */
 }

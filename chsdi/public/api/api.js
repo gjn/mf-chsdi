@@ -2,7 +2,6 @@
 
 /*
  * @include OpenLayers/Feature/Vector.js
- * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/StyleMap.js
  * @include OpenLayers/Geometry/Point.js
  * @include OpenLayers/Control/SelectFeature.js
@@ -27,11 +26,6 @@ GeoAdmin.API = OpenLayers.Class({
      * {<OpenLayers.Map>}
      */
     map: null,
-
-    /*
-     * {<OpenLayers.Layer.Vector>}
-     */
-    vector: null,
 
     /*
      * {<OpenLayers.Control.SelectFeature>}
@@ -133,16 +127,11 @@ GeoAdmin.API = OpenLayers.Class({
             });
         }
 
-        // create the drawing layer
-        this.vector = new OpenLayers.Layer.Vector("drawing", {
-            displayInLayerSwitcher: false
-        });
-
          if (!this.selectCtrl) {
-                this.selectCtrl = new OpenLayers.Control.SelectFeature(this.vector);
+                this.selectCtrl = new OpenLayers.Control.SelectFeature(this.map.vector);
                 this.map.addControl(this.selectCtrl);
                 this.selectCtrl.activate();
-                this.vector.events.on({
+                this.map.vector.events.on({
                     featureselected: function(e) {
                         if (this.activatePopup) {
                             this.showPopup({
@@ -213,9 +202,7 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     recenterFeatures: function(layer, ids) {
-        var f = new GeoAdmin.Map.Features({
-            map: this.map
-        });
+        var f = new GeoAdmin.Map.Features({map: this.map});
         f.recenter(layer, ids);
     },
 
@@ -228,18 +215,13 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     highlightFeatures: function(layer, ids) {
-        // TODO
+        var f = new GeoAdmin.Map.Features({map: this.map});
+        f.highlight(layer, ids);
     },
 
     showFeatures: function(layer, ids) {
-        // TODO: move in Map UX
-
-        // FIXME: get features from webservice
-        this.vector.addFeatures(features);
-        if (!this.vector.map) {
-            this.map.addLayer(this.vector);
-        }
-        this.map.zoomToExtent(this.vector.getDataExtent());
+        var f = new GeoAdmin.Map.Features({map: this.map});
+        f.show(layer, ids);
     },
 
     /** api: method[showMarker]
@@ -292,10 +274,7 @@ GeoAdmin.API = OpenLayers.Class({
             display: "none"
         }, OpenLayers.Feature.Vector.style['default']);
         var feature = new OpenLayers.Feature.Vector(geom, attributes, style);
-        if (!this.vector.map) {
-            this.map.addLayer(this.vector);
-        }
-        this.vector.addFeatures(feature);
+        this.map.vector.addFeatures(feature);
 
         var graphic = new Image();
         OpenLayers.Event.observe(graphic, 'load', OpenLayers.Function.bind(function() {
@@ -372,7 +351,7 @@ GeoAdmin.API = OpenLayers.Class({
             if (feature) {
                 this.popup.on({
                     close: function() {
-                        if (OpenLayers.Util.indexOf(this.vector.selectedFeatures,
+                        if (OpenLayers.Util.indexOf(this.map.vector.selectedFeatures,
                                 feature) > -1) {
                             this.selectCtrl.unselect(feature);
                         }
