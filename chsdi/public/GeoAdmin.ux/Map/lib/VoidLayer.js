@@ -29,6 +29,6 @@ GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {
     setOpacity: function(opacity) {
         this.opacity = opacity;
         this.aerial.setVisibility(this.opacity > 0.0);
-        this.aerial.setOpacity(this.opacity);
+        this.aerial.setOpacity(1.0-this.opacity);
     }
 });
