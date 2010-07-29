@@ -59,7 +59,17 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.aerial = GeoAdmin.layers.buildLayerByName("ch.swisstopo.swissimage");
 
         this.vector = new OpenLayers.Layer.Vector("drawing", {
-            displayInLayerSwitcher: false
+            displayInLayerSwitcher: false,
+            styleMap: new OpenLayers.StyleMap({
+                "default": new OpenLayers.Style({
+                    pointRadius: "10",
+                    fillColor: "#FFFF00",
+                    fillOpacity: 0.8, 
+                    strokeColor: "#FF8000",
+                    strokeOpacity: 0.8, 
+                    strokeWidth: 2
+                })
+            })
         });
 
         OpenLayers.Util.applyDefaults(options, {
