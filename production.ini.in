@@ -20,13 +20,13 @@ beaker.session.type = memory
 beaker.cache.type = memory
 
 # SQLAlchemy database URL
-sqlalchemy.bod.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bod
-sqlalchemy.stopo.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/stopo
-sqlalchemy.edi.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/edi
-sqlalchemy.search.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/search
-sqlalchemy.bafu.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bafu
-sqlalchemy.kogis.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/kogis
-sqlalchemy.vbs.url = postgres://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/vbs
+sqlalchemy.bod.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bod
+sqlalchemy.stopo.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/stopo
+sqlalchemy.edi.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/edi
+sqlalchemy.search.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/search
+sqlalchemy.bafu.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bafu
+sqlalchemy.kogis.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/kogis
+sqlalchemy.vbs.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/vbs
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
