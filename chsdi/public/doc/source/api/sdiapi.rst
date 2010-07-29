@@ -160,12 +160,71 @@ Map with overlay layers
 Map recenter on feature
 -----------------------
 
-TODO
+.. raw:: html
+
+   <body>
+      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef4" href="javascript:showdiv('codeBlock4','showRef4','hideRef4')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef4" href="javascript:hidediv('codeBlock4','showRef4','hideRef4')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock4" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+         var api4 = new GeoAdmin.API();
+         api4.createMap({
+            div: "mymap4"
+         });
+         api4.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+      }
+   </script>
+   <body onload="init();">
+     <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
 
 Highlight feature
 -----------------
 
-TODO
+.. raw:: html
+
+   <body>
+      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef5" href="javascript:showdiv('codeBlock5','showRef5','hideRef5')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef5" href="javascript:hidediv('codeBlock5','showRef5','hideRef5')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock5" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+         var api5 = new GeoAdmin.API();
+         api5.createMap({
+            div: "mymap5"
+         });
+         api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
+
+      }
+   </script>
+   <body onload="init();">
+     <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
 
 Marker
 ------
@@ -450,6 +509,18 @@ Popup
             bgLayer: 'pixelmaps-gray',
             bgOpacity: 50
          });
+
+         var api4 = new GeoAdmin.API();
+         api4.createMap({
+            div: "mymap4"
+         });
+         api4.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+
+         var api5 = new GeoAdmin.API();
+         api5.createMap({
+            div: "mymap5"
+         });
+         api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
 
          var api6 = new GeoAdmin.API();
          api6.createMap({
