@@ -13,6 +13,9 @@ export HOST="http://mf-chsdi0t.bgdi.admin.ch"
 
 function post_fetch_project() {
 
+    echo "compiling i18n catalog"
+    (cd $PROJECT_DIR/$PROJECT/ && $PYTHON_ENV/bin/python setup.py compile_catalog)
+
     echo "building javascript"
     (cd $PROJECT_DIR && $PYTHON_ENV/bin/jsbuild $PROJECT_DIR/jsbuild/api.cfg -u -o $PROJECT_DIR/chsdi/public/build/)
 
