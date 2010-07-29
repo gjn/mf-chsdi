@@ -5,7 +5,7 @@
  * @include OpenLayers/Lang.js
  */
 // use http://trac.geoext.org/browser/sandbox/camptocamp/extensions/geoext.ux/ux/FeatureBrowser to display results
-GeoAdmin.BodFeature = OpenLayers.Class(OpenLayers.Control.GetFeature, {
+GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     /*
      * drawing layer
