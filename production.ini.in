@@ -16,7 +16,6 @@ full_stack = true
 static_files = false
 api_version = %API_VERSION%
 
-cache_dir = /dev/null
 beaker.session.type = memory
 beaker.cache.type = memory
 
