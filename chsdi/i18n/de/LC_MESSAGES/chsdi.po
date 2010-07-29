@@ -1,0 +1,366 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "springlinks"
+msgstr ""
+
+msgid "navigation link"
+msgstr ""
+
+msgid "content link"
+msgstr ""
+
+msgid "search link"
+msgstr ""
+
+msgid "accesskeys"
+msgstr ""
+
+msgid "help title"
+msgstr "Hilfe"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.html"
+
+msgid "start lang selector"
+msgstr ""
+
+msgid "contact title"
+msgstr "Kontakt"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Copyright & Datenschutzerklärung"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html#copyright"
+
+msgid "web browser warning"
+msgstr ""
+
+msgid "federal administration"
+msgstr "Bundesverwaltung admin.ch"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=de"
+
+msgid "home title"
+msgstr "Startseite"
+
+msgid "blind warning"
+msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch wird geladen."
+
+msgid "hide column"
+msgstr "Ausblenden der Themen"
+
+msgid "Legend"
+msgstr "Legende"
+
+msgid "Information"
+msgstr "Informationen"
+
+msgid "Gueltiger Massstabsbereich"
+msgstr "Gültiger Massstabsbereich"
+
+msgid "Metadaten"
+msgstr "Metadaten"
+
+msgid "Detailbeschreibung"
+msgstr "Detailbeschreibung"
+
+msgid "Datenbezug"
+msgstr "Datenbezug"
+
+msgid "Thematisches Geoportal"
+msgstr "Thematisches Geoportal"
+
+msgid "WMS Dienst"
+msgstr "WMS Dienst"
+
+msgid "Datenstand"
+msgstr "Datenstand"
+
+msgid "layer_url_text"
+msgstr "Link zu Detailbeschreibung"
+
+msgid "layer_url_download_text"
+msgstr "Link für Datenbezug"
+
+msgid "layer_url_portal_text"
+msgstr "Link zum Fachportal"
+
+msgid "wms_resource_text"
+msgstr "Link zum WMS"
+
+msgid "name"
+msgstr "Name"
+
+msgid "flaeche_ha"
+msgstr "Fläche (ha)"
+
+msgid "flaeche_km2"
+msgstr "Fläche (km2)"
+
+msgid "perimeter_m"
+msgstr "Umkreis (m)"
+
+msgid "identificator"
+msgstr "Identifikator"
+
+msgid "Link to object"
+msgstr "Link to object"
+
+msgid "gmde"
+msgstr "BFS-Gemeindenummer (Stand 2006)"
+
+msgid "objname"
+msgstr "Name"
+
+msgid "construct"
+msgstr "Kunstbaute"
+
+msgid "objval"
+msgstr "Typ"
+
+msgid "toll"
+msgstr "Strassenbenutzungsgebühr"
+
+msgid "fj85"
+msgstr "Luftbild Arealstatistik 1979/85 von"
+
+msgid "fj97"
+msgstr "Luftbild Arealstatistik 1992/97 von"
+
+msgid "id_arealstatistik_85"
+msgstr "Grundkategorie Arealstatistik 1979/85"
+
+msgid "id_arealstatistik_97"
+msgstr "Grundkategorie Arealstatistik 1992/97"
+
+msgid "am_g_name"
+msgstr "Name"
+
+msgid "am_g_obj"
+msgstr "Objektnr."
+
+msgid "am_l_fl"
+msgstr "Fläche [ha]"
+
+msgid "am_l_berei"
+msgstr "Bereich"
+
+msgid "am_l_name"
+msgstr "Name"
+
+msgid "am_l_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "am_l_obj"
+msgstr "Objektnr."
+
+msgid "edv_nr4"
+msgstr "Stationsnummer"
+
+msgid "lhg_name"
+msgstr "Stationsname"
+
+msgid "au_objtyp"
+msgstr "Typ"
+
+msgid "au_name"
+msgstr "Name"
+
+msgid "au_fl"
+msgstr "Fläche [ha]"
+
+msgid "au_obj"
+msgstr "Objektnr."
+
+msgid "bln_obj"
+msgstr "Objektnr."
+
+msgid "bln_fl"
+msgstr "Fläche [ha]"
+
+msgid "bln_name"
+msgstr "Objektname"
+
+msgid "hm_ke"
+msgstr "Kartiereinheiten"
+
+msgid "hm_typ"
+msgstr "Typ"
+
+msgid "hm_fl"
+msgstr "Fläche [ha]"
+
+msgid "hm_name"
+msgstr "Objektname"
+
+msgid "hm_obj"
+msgstr "Objektnr."
+
+msgid "jb_fl"
+msgstr "Fläche [ha]"
+
+msgid "jb_name"
+msgstr "Objektname"
+
+msgid "jb_obj"
+msgstr "Objektnr."
+
+msgid "jb_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "jb_kat"
+msgstr "Kategorie"
+
+msgid "ml_obj"
+msgstr "Objektnr."
+
+msgid "ml_name"
+msgstr "Objektname"
+
+msgid "ml_fl"
+msgstr "Fläche [ha]"
+
+msgid "wv_name"
+msgstr "Objektname"
+
+msgid "wv_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "wv_fl"
+msgstr "Fläche [ha]"
+
+msgid "wv_obj"
+msgstr "Objektnr."
+
+msgid "wv_kat"
+msgstr "Kategorie"
+
+msgid "kantoncode"
+msgstr "Kantonaler Code"
+
+msgid "rwknr"
+msgstr "Restwasserkarte Nr."
+
+msgid "kanton"
+msgstr "Kanton"
+
+msgid "ent_gew"
+msgstr "Fliessgewässer"
+
+msgid "egid"
+msgstr "EGID"
+
+msgid "strname1"
+msgstr "Strasse"
+
+msgid "deinr"
+msgstr "Nr."
+
+msgid "plz4"
+msgstr "PLZ"
+
+msgid "plzname"
+msgstr "Ort"
+
+msgid "gemeinde"
+msgstr "Gemeinde"
+
+msgid "kt_kz"
+msgstr "Kanton"
+
+msgid "x"
+msgstr "X-Koordinate"
+
+msgid "y"
+msgstr "Y-Koordinate"
+
+msgid "zkob"
+msgstr "Beschreibung"
+
+msgid "fm_name"
+msgstr "Objektname"
+
+msgid "fm_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "fm_obj"
+msgstr "Objektnr."
+
+msgid "park_obj"
+msgstr "Objektnr."
+
+msgid "park_fl"
+msgstr "Fläche [ha]"
+
+msgid "park_statu"
+msgstr "Status"
+
+msgid "park_name"
+msgstr "Objektname"
+
+msgid "park_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "no"
+msgstr "Name"
+
+msgid "url"
+msgstr "URL"
+
+msgid "ra_obj"
+msgstr "Objektnr."
+
+msgid "ra_fl"
+msgstr "Fläche [ha]"
+
+msgid "ra_name"
+msgstr "Objektname"
+
+msgid "ra_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "sb_fl"
+msgstr "Fläche [ha]"
+
+msgid "sb_name"
+msgstr "Objektname"
+
+msgid "sb_obj"
+msgstr "Objektnr."
+
+msgid "sb_gf"
+msgstr "Gesamtfläche [ha]"
+
+msgid "sb_kt"
+msgstr "Kanton"
+ 
+msgid "nummer"
+msgstr "Nummer"
+
+msgid "protokoll"
+msgstr "Protokoll"
+
+msgid "punktname"
+msgstr "Punktname"
+
+msgid "status"
+msgstr "Status"
+
+msgid "zugang"
+msgstr "Zugang"

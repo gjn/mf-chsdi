@@ -1,0 +1,367 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "springlinks"
+msgstr ""
+
+msgid "navigation link"
+msgstr ""
+
+msgid "content link"
+msgstr ""
+
+msgid "search link"
+msgstr ""
+
+msgid "accesskeys"
+msgstr ""
+
+msgid "help title"
+msgstr "Help"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.html"
+
+msgid "start lang selector"
+msgstr ""
+
+msgid "contact title"
+msgstr "Contact"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Copyright & Data protection"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html#copyright"
+
+msgid "web browser warning"
+msgstr ""
+
+msgid "federal administration"
+msgstr "The Federal Authorithies of the Swiss Confederation"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=en"
+
+msgid "home title"
+msgstr "Homepage"
+
+msgid "blind warning"
+msgstr "This page is a geographic application and is not optimized for blind persons."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch is loading..."
+
+msgid "hide column"
+msgstr "Hide layer manager"
+
+msgid "Legend"
+msgstr "Legend"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Gueltiger Massstabsbereich"
+msgstr "Valid scale range"
+
+msgid "Metadaten"
+msgstr "Metadata"
+
+msgid "Detailbeschreibung"
+msgstr "Detail description"
+
+msgid "Datenbezug"
+msgstr "Order data"
+
+msgid "Thematisches Geoportal"
+msgstr "Thematic geoportal"
+
+msgid "WMS Dienst"
+msgstr "WMS service"
+
+msgid "Datenstand"
+msgstr "Data status"
+
+msgid "layer_url_text"
+msgstr "Link to description"
+
+msgid "layer_url_download_text"
+msgstr "Link for download"
+
+msgid "layer_url_portal_text"
+msgstr "Link to portal"
+
+msgid "wms_resource_text"
+msgstr "Link to WMS"
+
+msgid "name"
+msgstr "Name"
+
+msgid "flaeche_ha"
+msgstr "Area (ha)"
+
+msgid "flaeche_km2"
+msgstr "Area (km2)"
+
+msgid "perimeter_m"
+msgstr "Perimeter (m)"
+
+msgid "identificator"
+msgstr "Identificator"
+
+msgid "Link to object"
+msgstr "Link to object"
+
+msgid "gmde"
+msgstr "BFS-City nummer (State 2006)"
+
+msgid "objname"
+msgstr "Name"
+
+msgid "construct"
+msgstr "Construction"
+
+msgid "objval"
+msgstr "Type"
+
+msgid "toll"
+msgstr "Toll"
+
+msgid "fj85"
+msgstr "Aerial photo, aera statistic 1979/85"
+
+msgid "fj97"
+msgstr "Aerial photo, aera statistic 1992/97"
+
+msgid "id_arealstatistik_85"
+msgstr "ID area statistic 1979/85"
+
+msgid "id_arealstatistik_97"
+msgstr "ID area statistic 1992/97"
+
+msgid "am_g_name"
+msgstr "Name"
+
+msgid "am_g_obj"
+msgstr "Object Nr."
+
+msgid "am_l_fl"
+msgstr "Area [ha]"
+
+msgid "am_l_berei"
+msgstr "Domain"
+
+msgid "am_l_name"
+msgstr "Name"
+
+msgid "am_l_gf"
+msgstr "Area [ha]"
+
+msgid "am_l_obj"
+msgstr "Object Nr."
+
+msgid "edv_nr4"
+msgstr "Station number"
+
+msgid "lhg_name"
+msgstr "Station name"
+
+msgid "au_objtyp"
+msgstr "Type"
+
+msgid "au_name"
+msgstr "Name"
+
+msgid "au_fl"
+msgstr "Area [ha]"
+
+msgid "au_obj"
+msgstr "Object Nr."
+
+msgid "bln_obj"
+msgstr "Object Nr."
+
+msgid "bln_fl"
+msgstr "Area [ha]"
+
+msgid "bln_name"
+msgstr "Object name"
+
+msgid "hm_ke"
+msgstr "Quartier unit"
+
+msgid "hm_typ"
+msgstr "Type"
+
+msgid "hm_fl"
+msgstr "Area [ha]"
+
+msgid "hm_name"
+msgstr "Object name"
+
+msgid "hm_obj"
+msgstr "Object Nr."
+
+msgid "jb_fl"
+msgstr "Area [ha]"
+
+msgid "jb_name"
+msgstr "Object name"
+
+msgid "jb_obj"
+msgstr "Object Nr."
+
+msgid "jb_gf"
+msgstr "Total area [ha]"
+
+msgid "jb_kat"
+msgstr "Category"
+
+msgid "ml_obj"
+msgstr "Object Nr."
+
+msgid "ml_name"
+msgstr "Object name"
+
+msgid "ml_fl"
+msgstr "Area [ha]"
+
+msgid "wv_name"
+msgstr "Object name"
+
+msgid "wv_gf"
+msgstr "Total area [ha]"
+
+msgid "wv_fl"
+msgstr "Area [ha]"
+
+msgid "wv_obj"
+msgstr "Object Nr."
+
+msgid "wv_kat"
+msgstr "Category"
+
+msgid "kantoncode"
+msgstr "Canton Code"
+
+msgid "rwknr"
+msgstr "Water map Nr."
+
+msgid "kanton"
+msgstr "Canton"
+
+msgid "ent_gew"
+msgstr "River"
+
+msgid "egid"
+msgstr "EGID"
+
+msgid "strname1"
+msgstr "Street"
+
+msgid "deinr"
+msgstr "Nr."
+
+msgid "plz4"
+msgstr "Zip"
+
+msgid "plzname"
+msgstr "Location"
+
+msgid "gemeinde"
+msgstr "City"
+
+msgid "kt_kz"
+msgstr "Canton"
+
+msgid "x"
+msgstr "X-Coordinate"
+
+msgid "y"
+msgstr "Y-Coordinate"
+
+msgid "zkob"
+msgstr "Description"
+
+msgid "fm_name"
+msgstr "Object name"
+
+msgid "fm_gf"
+msgstr "Total area [ha]"
+
+msgid "fm_obj"
+msgstr "Object Nr."
+
+msgid "park_obj"
+msgstr "Object Nr."
+
+msgid "park_fl"
+msgstr "Area [ha]"
+
+msgid "park_statu"
+msgstr "State"
+
+msgid "park_name"
+msgstr "Object name"
+
+msgid "park_gf"
+msgstr "Total area [ha]"
+
+msgid "no"
+msgstr "Name"
+
+msgid "url"
+msgstr "URL"
+
+msgid "ra_obj"
+msgstr "Object Nr."
+
+msgid "ra_fl"
+msgstr "Area [ha]"
+
+msgid "ra_name"
+msgstr "Object name"
+
+msgid "ra_gf"
+msgstr "Total area [ha]"
+
+msgid "sb_fl"
+msgstr "Area [ha]"
+
+msgid "sb_name"
+msgstr "Name"
+
+msgid "sb_obj"
+msgstr "Number"
+
+msgid "sb_gf"
+msgstr "Total area [ha]"
+
+msgid "sb_kt"
+msgstr "Canton"
+
+msgid "nummer"
+msgstr "Number"
+
+msgid "protokoll"
+msgstr "Protocoll"
+
+msgid "punktname"
+msgstr "Point name"
+
+msgid "status"
+msgstr "State"
+
+msgid "zugang"
+msgstr "Access"
+
