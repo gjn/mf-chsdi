@@ -40,7 +40,6 @@ Base Layer Tool
 The base layer tool allows the user to manage the base layer (swissimage, pixelmap and void).
 It offers an opacity slider and the possibility to switch between pixelmaps and void layers.
 
-
 Swiss Search
 ------------
 
@@ -50,6 +49,11 @@ BOD Search
 ----------
 
 BOD Search is a combo box allowing the user to search within the layer offered by CH SDI.
+
+Tooltip
+-------
+
+This widget allows the user to click in the map and get a tooltip of the selected features.
 
 Widgets examples
 ****************
