@@ -81,7 +81,7 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
                 select: function(combo, record, index) {
                     var complementaryLayer = this.map.switchComplementaryLayer(record.data.id);
                     if (this.slider) {
-                        this.slider.layer = complementaryLayer;
+                        this.slider.setLayer(complementaryLayer);
                     }
                 },
                 scope: this
