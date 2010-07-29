@@ -54,6 +54,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             allOverlays: true
         });
 
+        if (options.scale) {
+            var zoom = this._getZoomFromScale(options.scale);
+            if (zoom != null) {
+                options.zoom = zoom;
+            }
+            delete options.scale;
+        }
+
         // set default options
         this.aerial = GeoAdmin.layers.buildLayerByName("ch.swisstopo.swissimage");
 
@@ -169,5 +177,21 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             }
         }
         return this.complementaryLayer;
-     }
+    },
+
+    _getZoomFromScale: function(scale) {
+        if (scale == 6500000) return 0;
+        if (scale == 5000000) return 1;
+        if (scale == 2500000) return 2;
+        if (scale == 1000000) return 3;
+        if (scale == 500000) return 4;
+        if (scale == 200000) return 5;
+        if (scale == 100000) return 6;
+        if (scale == 50000) return 7;
+        if (scale == 25000) return 8;
+        if (scale == 20000) return 9;
+        if (scale == 10000) return 10; 
+        if (scale == 5000) return 11; 
+        return null;
+    }
 });

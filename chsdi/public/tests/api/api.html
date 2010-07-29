@@ -69,6 +69,22 @@ function test_createMap_position(t) {
     t.eq(api.map.getZoom(), 1, "zoom ok");
 }
 
+function test_createMap_position_scale(t) {
+    t.plan(3);
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1",
+        easting: 600000,
+        northing: 200000,
+        scale: 50000
+    });
+    var center = api.map.getCenter();
+
+    t.eq(center.lon, 600000, "longitude ok");
+    t.eq(center.lat, 200000, "latitude ok");
+    t.eq(api.map.getZoom(), 7, "zoom ok");
+}
+
 function test_createSearchBox(t) {
     t.plan(1);
     var api = new GeoAdmin.API();

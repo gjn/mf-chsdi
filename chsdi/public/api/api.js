@@ -68,10 +68,9 @@ GeoAdmin.API = OpenLayers.Class({
     /** api: method[createMap]
      *  :param options: ``Object`` options for
      *     - div: name of the div in which the map will be placed
-     *     - layers: ``String`` optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
-     *     - layers_opacity: ``String`` optional opacity information about the layer. Example: '0.2,0.7'
-     *     - layers_indices: ``String`` optional indices for ordering the layer. Starts at 3 and references the order of layers. Example:  '3,4'
-     *     - bgLayer: ``String`` optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.swissimage", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
+     *     - layers: ``Array``/``String`` optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
+     *     - layers_opacity: ``Array``/``String`` optional opacity information about the layer. Example: '0.2,0.7'
+     *     - bgLayer: ``String`` optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
      *     - bgOpacity: ``Number`` optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
      *     - easting: ``Number`` optional CH1903 Y coordinate of the map center. Example: 600000
      *     - northing: ``Number`` optional CH1903 X coordinate of the map center. Example: 200000
@@ -95,7 +94,8 @@ GeoAdmin.API = OpenLayers.Class({
             bgOpacity: 1.0,
             easting: null,
             northing: null,
-            zoom: null
+            zoom: null,
+            scale: null
         });
 
         var center = null;
@@ -105,7 +105,8 @@ GeoAdmin.API = OpenLayers.Class({
 
         this.map = new GeoAdmin.Map(options.div, {
             center: center,
-            zoom: options.zoom
+            zoom: options.zoom,
+            scale: options.scale
         });
 
         // set the complementary layer
@@ -128,22 +129,22 @@ GeoAdmin.API = OpenLayers.Class({
             });
         }
 
-         if (!this.selectCtrl) {
-                this.selectCtrl = new OpenLayers.Control.SelectFeature(this.map.vector);
-                this.map.addControl(this.selectCtrl);
-                this.selectCtrl.activate();
-                this.map.vector.events.on({
-                    featureselected: function(e) {
-                        if (this.activatePopup) {
-                            this.showPopup({
-                                feature: e.feature
-                            });
-                        }
-                        document.body.style.cursor = 'default';
-                    },
-                    scope: this
-                });
-            }
+        if (!this.selectCtrl) {
+            this.selectCtrl = new OpenLayers.Control.SelectFeature(this.map.vector);
+            this.map.addControl(this.selectCtrl);
+            this.selectCtrl.activate();
+            this.map.vector.events.on({
+                featureselected: function(e) {
+                    if (this.activatePopup) {
+                        this.showPopup({
+                            feature: e.feature
+                        });
+                    }
+                    document.body.style.cursor = 'default';
+                },
+                scope: this
+            });
+        }
 
         return this.map;
     },
