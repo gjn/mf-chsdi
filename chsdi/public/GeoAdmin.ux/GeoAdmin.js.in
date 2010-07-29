@@ -6,4 +6,4 @@ window.GeoAdmin = {
     //webServicesUrl: "%HOST%%WSGI_BASE%/ws"
 };
 
-OpenLayers.ImgPath = "%HOST%%WSGI_BASE%/%API_VERSION%/GeoAdmin.ux/Map/img/";
+OpenLayers.ImgPath = "%HOST%%WSGI_BASE%/%API_VERSION%GeoAdmin.ux/Map/img/";

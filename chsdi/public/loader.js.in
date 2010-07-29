@@ -1,4 +1,4 @@
 (function() {
-    document.write("<script type=text/javascript src=%HOST%%WSGI_BASE%/%API_VERSION%/build/api.js><\/script>");
-    document.write("<link rel=stylesheet type=text/css href=%HOST%%WSGI_BASE%/%API_VERSION%/build/api.css>");
+    document.write("<script type=text/javascript src=%HOST%%WSGI_BASE%/%API_VERSION%build/api.js><\/script>");
+    document.write("<link rel=stylesheet type=text/css href=%HOST%%WSGI_BASE%/%API_VERSION%build/api.css>");
 })();
