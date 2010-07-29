@@ -14,9 +14,7 @@ GeoAdmin.Map.Features = OpenLayers.Class({
     map: null,
 
     initialize: function(options) {
-        this.recenterUrl = options.recenterUrl || this.recenterUrl;
-        this.highlightUrl = options.highlightUrl || this.highlightUrl;
-        this.map = options.map;
+        OpenLayers.Util.extend(this, options || {});
     },
 
     recenter: function(layer, ids) {
