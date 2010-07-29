@@ -4,13 +4,18 @@ Provides the BaseController class for subclassing.
 """
 from pylons.controllers import WSGIController
 from pylons.templating import render_mako as render
+from pylons.i18n import get_lang, set_lang
 
 from chsdi.model import meta
 
-from pylons import request, response
+from pylons import request, response, tmpl_context as c
 
 class BaseController(WSGIController):
-
+    def __before__(self):
+        self.lang = request.params.get('lang', 'de')
+        c.lang = self.lang
+        set_lang(self.lang)
+        
     def __call__(self, environ, start_response):
         """Invoke the Controller"""
         # WSGIController.__call__ dispatches to the Controller method
@@ -21,6 +26,8 @@ class BaseController(WSGIController):
         finally:
             meta.Session.remove()
 
+
+######################################
 import logging
 import warnings
 import simplejson
