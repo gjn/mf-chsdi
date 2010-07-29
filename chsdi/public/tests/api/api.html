@@ -318,27 +318,27 @@ function test_createBaseLayerTool(t) {
     t.eq(tool.map.id, api.map.id, "map is set");
     t.ok(tool.items[1].aggressive, "slider is set to aggressive");
     t.eq(tool.items[2].width, 140, "default combo width is set");
-    
+
     var slider = tool.items[1];
-    
+
     slider.setValue(60); // slider range is [0-100], not [0-1]
     t.eq(slider.getValue(), 60, "slider value");
-    
+
     t.delay_call(1, function() {
         t.ok(api.map.aerial.getVisibility(), "aerial layer is visible when slider value is 60");
         t.eq(api.map.complementaryLayer.opacity, 0.6, "complementaryLayer opacity is updated");
-        
+
         slider.setValue(0);
-        
+
         t.delay_call(1, function() {
             t.ok(api.map.aerial.getVisibility(), "aerial layer is visible when slider is 0");
             t.ok(!api.map.complementaryLayer.getVisibility(), "complementary layer is visible when slider is 0");
-            
-            t.eq(api.map.complementaryLayer.layername, "ch.swisstopo.pixelkarte-farbe", "complementary layer is pixelkarte-farbe"); 
+
+            t.eq(api.map.complementaryLayer.layername, "ch.swisstopo.pixelkarte-farbe", "complementary layer is pixelkarte-farbe");
             api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau");
             slider.layer = api.map.complementaryLayer;
-            t.eq(api.map.complementaryLayer.layername, "ch.swisstopo.pixelkarte-grau", "complementary layer is pixelkarte-grau"); 
-            
+            t.eq(api.map.complementaryLayer.layername, "ch.swisstopo.pixelkarte-grau", "complementary layer is pixelkarte-grau");
+
             slider.setValue(60);
 
             t.delay_call(1, function() {
@@ -349,8 +349,7 @@ function test_createBaseLayerTool(t) {
 }
 
 function test_recenterFeatures(t) {
-    //t.plan(4);
-    t.plan(0);
+    t.plan(1);
 
     var api = new GeoAdmin.API();
     api.createMap({
@@ -360,23 +359,44 @@ function test_recenterFeatures(t) {
     var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
     var lonlat = bounds.getCenterLonLat();
 
-    // FIXME: fails because of a recursion error
-    /*
-    t.delay_call(10, function() {
-        t.eq(api.map.getCenter(), lonlat, "check new center after recenterFeatures");
-        
-        api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
-        t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after highlightFeatures");
-        
-        api.map.vector.destroyFeatures();
-        api.map.zoomToMaxExtent();
+    t.delay_call(3, function() {
+        t.ok(api.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
+    });
+}
 
-        api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
-        t.eq(api.map.getCenter(), lonlat, "check new center after showFeatures");
+function test_highlightFeatures(t) {
+    t.plan(1);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1"
+    });
+
+    api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+
+    t.delay_call(3, function() {
+        t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after highlightFeatures");
+    });
+}
+
+function test_showFeatures(t) {
+    t.plan(2);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1"
+    });
+
+    api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+    var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
+    var lonlat = bounds.getCenterLonLat();
+ 
+    t.delay_call(3, function() {
+        t.ok(api.map.getCenter().equals(lonlat), "check new center after showFeatures");
         t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after showFeatures");
     });
-    */
 }
+
 </script>
 </head>
 <body>
