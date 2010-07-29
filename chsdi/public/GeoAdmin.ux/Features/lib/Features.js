@@ -1,12 +1,11 @@
 /*global GeoAdmin:true, OpenLayers: true */
 
 /**
- * @requires Map/lib/Map.js
  * @include Ext/src/ext-core/examples/jsonp/jsonp.js
  * @include OpenLayers/Format/GeoJSON.js
  */
 
-GeoAdmin.Map.Features = OpenLayers.Class({
+GeoAdmin.Features = OpenLayers.Class({
 
     recenterUrl: GeoAdmin.webServicesUrl + "/bodfeature/bbox",
     highlightUrl: GeoAdmin.webServicesUrl + "/bodfeature/geometry",

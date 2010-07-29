@@ -12,6 +12,7 @@
  * @include SwissSearch/lib/SwissSearchComboBox.js
  * @include BodSearch/lib/BodSearchComboBox.js
  * @include BaseLayerTool/lib/BaseLayerTool.js
+ * @include Features/lib/Features.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
@@ -202,7 +203,7 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     recenterFeatures: function(layer, ids) {
-        var f = new GeoAdmin.Map.Features({map: this.map});
+        var f = new GeoAdmin.Features({map: this.map});
         f.recenter(layer, ids);
     },
 
@@ -215,12 +216,12 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     highlightFeatures: function(layer, ids) {
-        var f = new GeoAdmin.Map.Features({map: this.map});
+        var f = new GeoAdmin.Features({map: this.map});
         f.highlight(layer, ids);
     },
 
     showFeatures: function(layer, ids) {
-        var f = new GeoAdmin.Map.Features({map: this.map});
+        var f = new GeoAdmin.Features({map: this.map});
         f.show(layer, ids);
     },
 
