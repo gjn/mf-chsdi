@@ -54,11 +54,14 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
     _request: function(layer, ids, url, callback) {
+        if (ids instanceof Array) {
+            ids = ids.join(',');
+        }
         Ext.ux.JSONP.request(url, {
             callbackKey: "cb",
             params: {
                 layers: layer,
-                ids: (ids instanceof Array) ? ids : [ids]
+                ids: ids
             },
             scope: this,
             callback: callback
