@@ -157,8 +157,8 @@ Map with overlay layers
     </div>
 
 
-Map recenter on feature
------------------------
+Recenter features
+-----------------
 
 .. raw:: html
 
@@ -191,8 +191,10 @@ Map recenter on feature
 
     </div>
 
-Highlight feature
------------------
+Show features
+-------------
+
+The function showFeatures will highlight and recenter the features. The function highlightFeatures makes only an highlight. 
 
 .. raw:: html
 
@@ -214,7 +216,6 @@ Highlight feature
             div: "mymap5"
          });
          api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
-
       }
    </script>
    <body onload="init();">
