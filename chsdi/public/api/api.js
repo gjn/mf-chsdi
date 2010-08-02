@@ -361,7 +361,13 @@ GeoAdmin.API = OpenLayers.Class({
                     scope: this
                 });
             }
+            // hack: we set toFront to the empty function for executing
+            // show, this to avoid setting the focus and autoscrolling
+            // to the popup
+            var _toFront = this.popup.toFront;
+            this.popup.toFront = Ext.emptyFn;
             this.popup.show();
+            this.popup.toFront = _toFront;
         }
 
         if (options.recenter == "true") {
