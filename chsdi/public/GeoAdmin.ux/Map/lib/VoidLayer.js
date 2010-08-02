@@ -23,12 +23,11 @@ GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {
     setMap: function(map) {
         OpenLayers.Layer.prototype.setMap.apply(this, arguments);
         this.aerial = map.aerial;
-        //this.aerial.setVisibility(true);
     },
 
     setOpacity: function(opacity) {
         this.opacity = opacity;
         this.aerial.setVisibility(this.opacity > 0.0);
-        this.aerial.setOpacity(1.0-this.opacity);
+        this.aerial.setOpacity(1.0 - this.opacity);
     }
 });
