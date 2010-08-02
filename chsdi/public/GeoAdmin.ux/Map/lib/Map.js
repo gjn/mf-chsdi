@@ -71,9 +71,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 "default": new OpenLayers.Style({
                     pointRadius: "10",
                     fillColor: "#FFFF00",
-                    fillOpacity: 0.8, 
+                    fillOpacity: 0.8,
                     strokeColor: "#FF8000",
-                    strokeOpacity: 0.8, 
+                    strokeOpacity: 0.8,
                     strokeWidth: 2
                 })
             })
@@ -93,6 +93,40 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (!this.getCenter()) {
             this.zoomToMaxExtent();
         }
+    },
+
+    getState: function() {
+        var center = this.getCenter();
+        var state = {
+            x: center.lon,
+            y: center.lat,
+            zoom: this.getZoom(),
+            aerial: {
+                opacity: this.aerial.opacity
+            },
+            complementaryLayer: {
+                layername: this.complementaryLayer.layername,
+                opacity: this.complementaryLayer.opacity
+            },
+            layers: []
+        };
+
+        for (var i = 0, len = this.layers.length; i < len; i++) {
+            var layer = this.layers[i];
+            if (!layer.geoadmin_isBgLayer && layer.layername) {
+                state.layers.push({
+                    layername: layer.layername,
+                    opacity: layer.opacity
+                });
+            }
+        }
+
+        return state;
+    },
+
+    applyState: function(state) {
+
+
     },
 
     destroy: function() {
@@ -190,8 +224,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (scale == 50000) return 7;
         if (scale == 25000) return 8;
         if (scale == 20000) return 9;
-        if (scale == 10000) return 10; 
-        if (scale == 5000) return 11; 
+        if (scale == 10000) return 10;
+        if (scale == 5000) return 11;
         return null;
     }
 });
