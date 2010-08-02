@@ -2,6 +2,8 @@
 @import url(../lib/ext/Ext/resources/css/theme-gray/combo.css);
 @import url(../lib/ext/Ext/resources/css/structure/slider.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/slider.css);
+@import url(../lib/ext/Ext/resources/css/structure/resizable.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/resizable.css);
 @import url(../lib/ext/Ext/resources/css/structure/window.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/window.css);
 @import url(../lib/ext/Ext/resources/css/structure/panel.css);
