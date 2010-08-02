@@ -19,7 +19,8 @@ var Layers = OpenLayers.Class({
         
         if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
-                layername: name
+                layername: name,
+                geoadmin_isBgLayer: !!(config.isBgLayer)
             });
         }
 
@@ -34,7 +35,8 @@ var Layers = OpenLayers.Class({
                 attribution: config.datenherr,
                 transitionEffect: "resize",
 
-                geoadmin_queryable: config.queryable
+                geoadmin_queryable: config.queryable,
+                geoadmin_isBgLayer: !!(config.isBgLayer)
             }, options);
 
             var url = [
