@@ -23,9 +23,7 @@ GeoAdmin.Features = OpenLayers.Class({
     recenterCb: function(response) {
         if (response.rows.length > 0) {
             var bbox = response.rows[0].bbox;
-            this.map.zoomToExtent(
-                new OpenLayers.Bounds(bbox[0], bbox[1], bbox[2], bbox[3])
-            );
+            this.map.zoomToExtent(OpenLayers.Bounds.fromArray(bbox));
         }
     },
 
