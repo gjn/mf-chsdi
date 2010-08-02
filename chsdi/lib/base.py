@@ -27,6 +27,7 @@ class BaseController(WSGIController):
             meta.Session.remove()
 
 
+
 ######################################
 import logging
 import warnings
@@ -60,3 +61,14 @@ def _jsonify(cb=None, **dumps_kwargs):
         return output
     return decorator(wrapper)
 jsonify = _jsonify()
+
+
+@decorator
+def cacheable(func, *args, **kwargs):
+    pylons = get_pylons(args)
+    del pylons.response.headers['Pragma']
+    del pylons.response.headers['Cache-Control']
+    pylons.response.cache_control = {'public': None}
+    
+    return func(*args, **kwargs)
+        
