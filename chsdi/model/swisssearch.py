@@ -1,9 +1,9 @@
-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from geoalchemy import Geometry
 
-#from geojson.feature import Feature
+from pylons.i18n import _
+
 from shapely.wkb import loads
 
 from chsdi.model import *
@@ -27,17 +27,17 @@ class SwissSearch(Base):
         if self.origin == 'zipcode':
             o.update({'service': 'postalcodes',
                       'rank': 1,
-                      'label': ""})
+                      'label': "%s <b>%s - %s (%s)</b>"%(_('npa'), self.plz, self.ort_27, self.kanton)})
         elif self.origin == 'sn25':
             o.update({'service': 'swissnames',
                       'rank': 4,
-                      'label': "%s (%s) - %s"%(self.name, self.kanton, self.gemname)})
+                      'label': "<b>%s</b> (%s) - %s"%(self.name, self.kanton, self.gemname)})
         elif self.origin == 'gg25':
             o.update({'service': 'cities',
                       'rank': 3,
-                      'label': "%s (%s)"%(self.gemname, self.kanton)})
+                      'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
         elif self.origin == 'kantone':
             o.update({'service': 'cantons',
                       'rank': 2,
-                      'label': "%s"%(self.name)})
+                      'label': "%s <b>%s</b>"%(_('ct'), self.name)})
         return o
