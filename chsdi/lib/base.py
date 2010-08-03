@@ -46,6 +46,8 @@ def jsonify(cb=None, **dumps_kwargs):
         else:
             pylons.response.headers['Content-Type'] = 'application/json'
         data = func(*args, **kwargs)
+        if 'indent' not in dumps_kwargs:
+            dumps_kwargs['indent'] = None if pylons.request.is_xhr else 2
         output = simplejson.dumps(data, **dumps_kwargs)
         if cb_name is not None:
             output = str(cb_name) + '(' + output + ');'
