@@ -37,7 +37,7 @@ from pylons.decorators.util import get_pylons
 
 log = logging.getLogger(__name__)
 
-def _jsonify(cb=None, **dumps_kwargs):
+def jsonify(cb=None, **dumps_kwargs):
     def wrapper(func, *args, **kwargs):
         pylons = get_pylons(args)
         cb_name = pylons.request.params.get(cb)
@@ -60,8 +60,11 @@ def _jsonify(cb=None, **dumps_kwargs):
             log.debug("Returning JSON wrapped action output")
         return output
     return decorator(wrapper)
-jsonify = _jsonify()
 
+from functools import partial
+from geojson.codec import PyGFPEncoder
+
+geojsonify = partial(jsonify, cls=PyGFPEncoder)
 
 @decorator
 def cacheable(func, *args, **kwargs):
