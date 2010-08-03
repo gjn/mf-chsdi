@@ -23,7 +23,7 @@ class SwissSearch(Base):
     @property
     def json(self):
         o = {'service': '', 'rank': -1, 'id': self.gid, 'label': '',
-             'bbox': self.bbox}
+             'bbox': self.bbox, 'objectorig': self.objectorig}
         if self.origin == 'zipcode':
             o.update({'service': 'postalcodes',
                       'rank': 1,
