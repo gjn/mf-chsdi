@@ -19,9 +19,9 @@ msgstr ""
 
 #: chsdi/model/swisssearch.py:30
 msgid "npa"
-msgstr ""
+msgstr "PLZ"
 
 #: chsdi/model/swisssearch.py:42
 msgid "ct"
-msgstr ""
+msgstr "Kt."
 
