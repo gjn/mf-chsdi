@@ -9,7 +9,7 @@ class AM_G(Base, Queryable):
     __template__ = 'tooltips/am_g.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class AM_L(Base, Queryable):
     # view in a schema
@@ -18,7 +18,7 @@ class AM_L(Base, Queryable):
     __template__ = 'tooltips/am_l.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class LHG(Base, Queryable):
     # view in a schema
@@ -27,7 +27,7 @@ class LHG(Base, Queryable):
     __template__ = 'tooltips/lhg.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class AU(Base, Queryable):
     # view in a schema
@@ -36,7 +36,7 @@ class AU(Base, Queryable):
     __template__ = 'tooltips/au.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class BLN(Base, Queryable):
     # view in a schema
@@ -45,7 +45,7 @@ class BLN(Base, Queryable):
     __template__ = 'tooltips/bln.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class HM(Base, Queryable):
     # view in a schema
@@ -54,7 +54,7 @@ class HM(Base, Queryable):
     __template__ = 'tooltips/hm.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class JB(Base, Queryable):
     # view in a schema
@@ -63,7 +63,7 @@ class JB(Base, Queryable):
     __template__ = 'tooltips/jb.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class ML(Base, Queryable):
     # view in a schema
@@ -72,7 +72,7 @@ class ML(Base, Queryable):
     __template__ = 'tooltips/ml.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WV(Base, Queryable):
     # view in a schema
@@ -81,7 +81,7 @@ class WV(Base, Queryable):
     __template__ = 'tooltips/wv.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WEWB(Base, Queryable):
     # view in a schema
@@ -90,7 +90,7 @@ class WEWB(Base, Queryable):
     __template__ = 'tooltips/wewb.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WEWW(Base, Queryable):
     # view in a schema
@@ -99,7 +99,7 @@ class WEWW(Base, Queryable):
     __template__ = 'tooltips/weww.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WEANB(Base, Queryable):
     # view in a schema
@@ -108,7 +108,7 @@ class WEANB(Base, Queryable):
     __template__ = 'tooltips/weanb.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WEANW(Base, Queryable):
     # view in a schema
@@ -117,7 +117,7 @@ class WEANW(Base, Queryable):
     __template__ = 'tooltips/weanw.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WL(Base, Queryable):
     # view in a schema
@@ -126,7 +126,7 @@ class WL(Base, Queryable):
     __template__ = 'tooltips/wl.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class WR(Base, Queryable):
     # view in a schema
@@ -135,7 +135,7 @@ class WR(Base, Queryable):
     __template__ = 'tooltips/wr.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class FM(Base, Queryable):
     # view in a schema
@@ -144,7 +144,7 @@ class FM(Base, Queryable):
     __template__ = 'tooltips/fm.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class FM_REG(Base, Queryable):
     # view in a schema
@@ -153,7 +153,7 @@ class FM_REG(Base, Queryable):
     __template__ = 'tooltips/fm_reg.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
     # view in a schema
@@ -162,7 +162,7 @@ class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
     __template__ = 'tooltips/paerke_nationaler_bedeutung.mako'
 
     id = Column('park_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class RA(Base, Queryable):
     # view in a schema
@@ -171,7 +171,7 @@ class RA(Base, Queryable):
     __template__ = 'tooltips/ra.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class SB(Base, Queryable):
     # view in a schema
@@ -180,7 +180,7 @@ class SB(Base, Queryable):
     __template__ = 'tooltips/sb.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)

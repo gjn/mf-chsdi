@@ -17,7 +17,7 @@ class Kulturgueter(Base, Queryable):
     kt_kz = Column('kt_kz', Text)
     x = Column('x', Integer)
     y = Column('y', Integer)
-    the_geom = Column('the_geom', Geometry(21781))
+    the_geom = Column('the_geom', Geometry)
 
 register('ch.babs.kulturgueter', Kulturgueter)
 

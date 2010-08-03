@@ -17,7 +17,7 @@ class Gebaeuderegister(Base, Queryable):
     deinr = Column('deinr', Text)
     plz4 = Column('plz4', Integer)
     plzname = Column('plzname', Text)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
@@ -29,7 +29,7 @@ class AGNES(Base, Queryable):
     __template__ = 'tooltips/agnes.mako'
 
     id = Column('no', Text, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 register('ch.swisstopo.fixpunkte-agnes', AGNES)
 
@@ -41,7 +41,7 @@ class FIXPUNKTELAGE(Base, Queryable):
     __template__ = 'tooltips/fixpunkte.mako'
 
     id = Column('nummer', Text, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 class FIXPUNKTEHOEHE(Base, Queryable):
     # view in a schema
@@ -50,7 +50,7 @@ class FIXPUNKTEHOEHE(Base, Queryable):
     __template__ = 'tooltips/fixpunkte.mako'
 
     id = Column('pointid', Text, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 
 register('ch.swisstopo.fixpunkte-lage', FIXPUNKTELAGE)

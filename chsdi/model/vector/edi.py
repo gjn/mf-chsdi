@@ -12,7 +12,7 @@ class Arealstatistik1985(Base, Queryable):
     __maxscale__ = 25000
 
     id = Column('reli', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 register('ch.bfs.arealstatistik-1985', Arealstatistik1985)
 
@@ -26,6 +26,6 @@ class Arealstatistik1997(Base, Queryable):
     __maxscale__ = 25000
 
     id = Column('reli', Integer, primary_key=True)
-    the_geom = Column(Geometry(21781))
+    the_geom = Column(Geometry)
 
 register('ch.bfs.arealstatistik-1997', Arealstatistik1997)
