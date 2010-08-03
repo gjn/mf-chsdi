@@ -6,7 +6,7 @@ from sqlalchemy.sql import func
 from pylons import request, response
 from pylons.controllers.util import abort
 
-from chsdi.lib.base import BaseController, jsonify
+from chsdi.lib.base import BaseController, jsonify, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
 
@@ -14,6 +14,7 @@ log = logging.getLogger(__name__)
 
 class SwisssearchController(BaseController):
 
+    @cacheable
     @jsonify(cb="cb")
     def index(self):
         q = request.params.get('query')
