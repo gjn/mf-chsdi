@@ -1,69 +1,27 @@
+# Italian translations for chsdi.
+# Copyright (C) 2010 ORGANIZATION
+# This file is distributed under the same license as the chsdi project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Project-Id-Version: chsdi 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2010-08-03 12:20+0200\n"
+"PO-Revision-Date: 2010-08-03 12:22+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.5\n"
 
-msgid "app title"
-msgstr "Base CD Bund"
-
-msgid "springlinks"
+#: chsdi/model/swisssearch.py:30
+msgid "npa"
 msgstr ""
 
-msgid "navigation link"
+#: chsdi/model/swisssearch.py:42
+msgid "ct"
 msgstr ""
 
-msgid "content link"
-msgstr ""
-
-msgid "search link"
-msgstr ""
-
-msgid "accesskeys"
-msgstr ""
-
-msgid "help title"
-msgstr "Aiuto"
-
-msgid "help url"
-msgstr ""
-
-msgid "start lang selector"
-msgstr ""
-
-msgid "contact title"
-msgstr "Contatto"
-
-msgid "contact url"
-msgstr ""
-
-msgid "disclaimer title"
-msgstr "Diritto"
-
-msgid "disclaimer url"
-msgstr "http://www.disclaimer.admin.ch/basi_legali.html"
-
-msgid "department name"
-msgstr ""
-
-msgid "service name"
-msgstr ""
-
-msgid "service name logo"
-msgstr ""
-
-msgid "web browser warning"
-msgstr ""
-
-msgid "federal administration"
-msgstr "Amministrazione federale admin.ch"
-
-msgid "home url"
-msgstr "http://map.geo.admin.ch/?lang=it"
-
-msgid "department url"
-msgstr ""
-
-msgid "service url"
-msgstr ""
