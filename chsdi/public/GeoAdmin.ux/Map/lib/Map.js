@@ -126,8 +126,24 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     applyState: function(state) {
+        // apply position
+        this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
 
+        // aerial
+        this.aerial.setOpacity(state.aerial.opacity);
 
+        // complementaryLayer
+        this.switchComplementaryLayer(state.complementaryLayer.layername);
+        this.complementaryLayer.setOpacity(state.complementaryLayer.opacity);
+        
+        // layers
+        for (var i = 0, len = state.layers.length; i < len; i++) {
+            var layer = state.layers[i];
+            this.addLayerByName(layer.layername, {
+                visibility: layer.visibility,
+                opacity: layer.opacity
+            });
+        }
     },
 
     destroy: function() {
