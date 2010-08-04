@@ -38,9 +38,6 @@ class Queryable(object):
         if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
             return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'], box=bbox, tolerance=0, epsg=21781)
 
-#         if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
-#             return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'],
-#                            bbox=bbox, tolerance=0)
     @property
     def html(self):
         c.feature = self
