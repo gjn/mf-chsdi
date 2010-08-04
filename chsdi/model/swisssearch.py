@@ -2,6 +2,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from geoalchemy import Geometry
 
+from mapfish.lib.filters.spatial import Spatial
+
 from pylons.i18n import _
 
 from shapely.wkb import loads
@@ -14,11 +16,18 @@ class SwissSearch(Base):
     __table_args__ = ({'autoload': True})
 
     geom = Column('the_geom', Geometry)
+    geom_point = Column('the_geom_point', Geometry)
+    geom_poly = Column('the_geom_poly', Geometry)
 
     @property
     def bbox(self):
         bbox = loads(self.geom.geom_wkb.decode('hex')).bounds
         return tuple([int(c) for c in bbox])
+
+    @classmethod
+    def within_filter(cls, lon, lat, column, *args, **kwargs):
+        return Spatial(Spatial.WITHIN, cls.__table__.columns.get(column),
+                       lon=lon, lat=lat, epsg=21781, *args, **kwargs)
 
     @property
     def json(self):
