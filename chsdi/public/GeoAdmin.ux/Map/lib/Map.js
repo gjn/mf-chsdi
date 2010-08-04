@@ -116,6 +116,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (!layer.geoadmin_isBgLayer && layer.layername) {
                 state.layers.push({
                     layername: layer.layername,
+                    visibility: layer.getVisibility(),
                     opacity: layer.opacity
                 });
             }
