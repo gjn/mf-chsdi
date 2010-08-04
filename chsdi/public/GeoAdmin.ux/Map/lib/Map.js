@@ -24,6 +24,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     vector: null,
     complementaryLayer: null,
 
+    EVENT_TYPES: ["changecomplementarylayer"],
+
     initialize: function (div, options) {
         OpenLayers.DOTS_PER_INCH = 254;
 
@@ -84,6 +86,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
             layers: [this.aerial, this.vector]
         });
+
+        this.EVENT_TYPES =
+            GeoAdmin.Map.prototype.EVENT_TYPES.concat(
+            OpenLayers.Map.prototype.EVENT_TYPES
+        );
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -225,6 +232,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 if (zIndex) {
                     this.complementaryLayer.setZIndex(zIndex);
                 }
+                this.events.triggerEvent("changecomplementarylayer", {
+                    layer: this.complementaryLayer
+                });
             }
         }
         return this.complementaryLayer;
