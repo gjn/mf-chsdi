@@ -29,6 +29,22 @@ function test_createMap(t) {
     t.eq(api.map.aerial.getVisibility(), false, "aerial layer is not visible");
 }
 
+function test_createMap_opacity_visibility(t) {
+    t.plan(2);
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1",
+        layers: ["ch.babs.kulturgueter","ch.swisstopo.vec25-gebaeude"],
+        layers_opacity: [0.6, 0.7],
+        layers_visibility: [false,true],
+    });
+
+    var found = api.map.getLayerByLayerName("ch.babs.kulturgueter");
+
+    t.eq(found.opacity, 0.6, "layer opacity is 0.6");
+    t.ok(!found.visibility, "layer is not visible");
+}
+
 function test_createMap_bgLayer(t) {
     t.plan(4);
     var api = new GeoAdmin.API();

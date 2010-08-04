@@ -70,6 +70,7 @@ GeoAdmin.API = OpenLayers.Class({
      *     - div: name of the div in which the map will be placed
      *     - layers: ``Array``/``String`` optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
      *     - layers_opacity: ``Array``/``String`` optional opacity information about the layer. Example: '0.2,0.7'
+     *     - layers_visibility: ``Array``/``String`` optional boolean visibility information about the layer. Example: 'false,true'
      *     - bgLayer: ``String`` optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
      *     - bgOpacity: ``Number`` optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
      *     - easting: ``Number`` optional CH1903 Y coordinate of the map center. Example: 600000
@@ -90,6 +91,7 @@ GeoAdmin.API = OpenLayers.Class({
         OpenLayers.Util.applyDefaults(options, {
             layers: [],
             layers_opacity: [],
+            layers_visibility: [],
             bgLayer: "ch.swisstopo.pixelkarte-farbe",
             bgOpacity: 1.0,
             easting: null,
@@ -121,11 +123,17 @@ GeoAdmin.API = OpenLayers.Class({
         if (!(options.layers_opacity instanceof Array)) {
             options.layers_opacity = options.layers_opacity.split(",");
         }
+        if (!(options.layers_visibility instanceof Array)) {
+            options.layers_visibility = options.layers_visibility.split(",");
+        }
 
         for (var i = 0, len = options.layers.length; i < len; i++) {
             var opacity = options.layers_opacity[i];
+            var visibility = options.layers_visibility[i];
             this.map.addLayerByName(options.layers[i], {
-                opacity: opacity !== undefined ? opacity : 1.0
+                opacity: opacity !== undefined ? opacity : 1.0,
+                visibility: (visibility == undefined) ? true :
+                                (visibility == 'false') ? false : visibility,
             });
         }
 
