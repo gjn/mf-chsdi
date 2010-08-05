@@ -6,7 +6,6 @@
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/Attribution.js
  * @include OpenLayers/Control/ScaleLine.js
- * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/Panel.js
  * @include OpenLayers/Control/ZoomToMaxExtent.js
  * @include OpenLayers/Layer/Vector.js
@@ -46,10 +45,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 new OpenLayers.Control.Attribution(),
                 new OpenLayers.Control.ScaleLine(),
                 panel,
-                new OpenLayers.Control.MousePosition({
-                     numDigits: 0,
-                     prefix: OpenLayers.i18n("Coordinates (m): ")
-                }),
                 new GeoAdmin.OverviewMap()
             ],
             theme: false,

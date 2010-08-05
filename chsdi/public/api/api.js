@@ -5,6 +5,7 @@
  * @include OpenLayers/StyleMap.js
  * @include OpenLayers/Geometry/Point.js
  * @include OpenLayers/Control/SelectFeature.js
+ * @include OpenLayers/Control/MousePosition.js
  *
  * @include GeoExt/widgets/Popup.js
  *
@@ -382,6 +383,15 @@ GeoAdmin.API = OpenLayers.Class({
             this.map.setCenter(new OpenLayers.LonLat(options.easting, options.northing));
         }
         return this.popup;
+    },
+
+    showMousePosition: function(options) {
+        var control = new OpenLayers.Control.MousePosition(
+            OpenLayers.Util.applyDefaults(options, {
+                numDigits: 0,
+                prefix: OpenLayers.i18n("Coordinates (m): ")
+        }));
+        this.map.addControl(control);
     }
 });
 
