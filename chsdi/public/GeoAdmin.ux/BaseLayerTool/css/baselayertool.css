@@ -30,8 +30,8 @@
 
 .x-slider-horz .x-slider-thumb {
     background:transparent url(../img/lo_cursor_opacity.png) no-repeat scroll 0 0;
+    cursor: pointer;
     height:28px;
     top:7px;
     width:7px;
-    position: absolute;
 }
