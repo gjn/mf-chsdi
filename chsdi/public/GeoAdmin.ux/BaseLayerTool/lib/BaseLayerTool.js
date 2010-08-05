@@ -5,68 +5,68 @@
  * @include OpenLayers/Lang.js
  */
 
-GeoAdmin.BaseLayerTool = OpenLayers.Class({
+GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
 
     map: null,
 
-    items: null,
+    layout: 'column',
 
-    slider: null,
+    initComponent: function() {
+        var label = this.createLabel(this.label);
+        delete this.label;
 
-    combo: null,
+        var slider = this.createOpacitySlider(this.slider);
+        delete this.slider;
 
-    initialize: function(options) {
-        this.map = options.map;
-        this.items = [
-            this.buildLabel(options),
-            this.buildOpacitySlider(options.slider || {}),
-            this.buildLayersCombo(options.combo || {})
-        ];
-        if (options.renderTo) {
-           new Ext.Toolbar(OpenLayers.Util.extend(options, {
-               items: this.items
-           }));
-        }
+        var combo = this.createLayersCombo(this.combo, slider);
+        delete this.combo;
+
+        this.items = [label, slider, combo];
+
+        GeoAdmin.BaseLayerTool.superclass.initComponent.apply(this, arguments);
     },
 
-    buildLabel: function(options) {
-        return '<span class="baselayertool_label">' +
-               (options.label || OpenLayers.i18n('Aerial')) +
-               '</span>';
+    createLabel: function(label) {
+        label = label || OpenLayers.i18n('Aerial');
+        return new Ext.BoxComponent({
+            html: '<span class="baselayertool_label">' + label + '</span>'
+        });
     },
 
-    buildOpacitySlider: function(options) {
-        this.slider = new GeoExt.LayerOpacitySlider(OpenLayers.Util.extend({
-            cls: 'baselayertool_slider',
+    createOpacitySlider: function(options) {
+        options = Ext.apply({
             layer: this.map.complementaryLayer,
             aggressive: true,
+            style: {
+                margin: "0px 3px"
+            },
             width: 200
-        }, options));
-        return this.slider;
+        }, options);
+        return new GeoExt.LayerOpacitySlider(options);
     },
 
-    buildLayersCombo: function(options) {
-        var baseLayers = options.layers || [
+    createLayersCombo: function(options, slider) {
+        options = options || {};
+
+        var layers = options.layers || [
             "ch.swisstopo.pixelkarte-farbe",
             "ch.swisstopo.pixelkarte-grau",
             "voidLayer"
         ];
         
-        var data = [], layerId;
-        for  (var i = 0, len = baseLayers.length; i < len; i++) {
-            layerId = baseLayers[i];
-            if (GeoAdmin.layers.layers[layerId]) {
-                data.push([layerId, GeoAdmin.layers.layers[layerId].name]);
+        var data = [], id;
+        for (var i = 0, len = layers.length; i < len; i++) {
+            id = layers[i];
+            if (GeoAdmin.layers.layers[id]) {
+                data.push([id, GeoAdmin.layers.layers[id].name]);
             }
         }
-
         var store = new Ext.data.SimpleStore({
             fields: ['id', 'name'],
             data: data
         });
 
-        this.combo = new Ext.form.ComboBox(OpenLayers.Util.extend({
-            cls: 'baselayertool_combo',
+        options = Ext.apply({
             editable: false,
             hideLabel: true,
             width: 140,
@@ -80,14 +80,14 @@ GeoAdmin.BaseLayerTool = OpenLayers.Class({
             listeners: {
                 select: function(combo, record, index) {
                     var complementaryLayer = this.map.switchComplementaryLayer(record.data.id);
-                    if (this.slider) {
-                        this.slider.setLayer(complementaryLayer);
+                    if (slider) {
+                        slider.setLayer(complementaryLayer);
                     }
                 },
                 scope: this
             }
-        }, options));
+        }, options);
 
-        return this.combo;
+        return new Ext.form.ComboBox(options);
     }
 });

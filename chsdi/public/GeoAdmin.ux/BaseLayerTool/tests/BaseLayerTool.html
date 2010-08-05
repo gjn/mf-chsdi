@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../Map/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../Map/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../lib/BaseLayerTool.js"></script>
+      <script type="text/javascript">
+        function test_ctor(t) {
+            t.plan(2);
+
+            // set up
+
+            var map, tool;
+            map = new GeoAdmin.Map("map");
+
+            // test
+
+            tool = new GeoAdmin.BaseLayerTool({map: map});
+            t.ok(tool instanceof GeoAdmin.BaseLayerTool,
+                 "ctor returns a GeoAdmin.BaseLayerTool");
+            t.ok(tool instanceof Ext.Container,
+                 "ctor returns a Ext.Container");
+
+            // tear down
+
+            tool.destroy();
+            map.destroy();
+
+        }
+
+        function test_in_tbar(t) {
+            t.plan(0);
+
+            // set up
+
+            var map, tool;
+            map = new GeoAdmin.Map("map");
+            tool = new GeoAdmin.BaseLayerTool({map: map});
+
+            // test
+
+            var tbar = new Ext.Toolbar({
+                items: [tool],
+                renderTo: "tbar"
+            });
+
+            // tear down
+
+            tbar.destroy();
+            map.destroy();
+        }
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div id="tbar"></div>
+  </body>
+</html>

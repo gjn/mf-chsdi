@@ -32,13 +32,15 @@
             });
             api.createBaseLayerTool({
                 renderTo: "baselayertool_1",
-                label: 'Orthophoto',
-                slider: {
-                    width: 150
-                },
-                combo: {
-                    width: 200
-                }
+                label: 'Orthophoto'
+            });
+            new Ext.Toolbar({
+                renderTo: "baselayertool_2",
+                items: [
+                    {text: "a button"},
+                    api.createBaseLayerTool({label: "Ortho"}),
+                    {text: "and another button"}
+                ]
             });
 
             api.showMarker({
@@ -72,6 +74,7 @@
 <div id="bodsearch_1"></div>
 <div id="bodsearch_2"></div>
 <div id="baselayertool_1"></div>
+<div id="baselayertool_2"></div>
 
 <div class="map" id="map_2"></div>
 

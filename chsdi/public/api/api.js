@@ -198,9 +198,9 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     createBaseLayerTool: function(options) {
-        return new GeoAdmin.BaseLayerTool(OpenLayers.Util.extend(options, {
+        return new GeoAdmin.BaseLayerTool(Ext.applyIf({
             map: this.map
-        }));
+        }, options));
     },
 
     /**
