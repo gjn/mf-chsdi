@@ -47,7 +47,7 @@
           }
 
           function test_switchComplementaryLayer(t) {
-              t.plan(9);
+              t.plan(10);
 
               var map = new GeoAdmin.Map("map");
               var layer = map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
@@ -77,6 +77,11 @@
               t.eq(newlayer.opacity, 0.7, "opacity copied to the new complementary layer");
               t.eq(map.aerial.getVisibility(), true, "aerial layer is visible when complementary layer opacity is not 1.0");
 
+              var layer = map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {
+                  opacity: 0.66
+              });
+              t.eq(layer.opacity, 0.66, "options.opacity works");
+              
               var layer = map.switchComplementaryLayer("invalid name");
               // todo: layer is the original ComplementaryLayer
               

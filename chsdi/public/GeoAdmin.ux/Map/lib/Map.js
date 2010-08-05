@@ -214,22 +214,23 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      * switch the complementary layer.
      */
     switchComplementaryLayer: function(name, options) {
-        options = OpenLayers.Util.applyDefaults(options, {
-            opacity: 1.0
-        });
+        options = options || {};
         if (!this.complementaryLayer || name !== this.complementaryLayer.layername) {
             var layer = this.addLayerByName(name);
             if (layer) {
                 // layer is valid and added to ther map
-                var opacity = options.opacity, zIndex;
+                var opacity, zIndex;
                 if (this.complementaryLayer) {
                     opacity = this.complementaryLayer.opacity;
                     zIndex = this.complementaryLayer.getZIndex();
                     this.complementaryLayer.destroy();
                 }
                 this.complementaryLayer = layer;
-                this.complementaryLayer.setOpacity(opacity);
-                if (zIndex) {
+                if (options.opacity !== undefined) {
+                    opacity = options.opacity; 
+                }
+                this.complementaryLayer.setOpacity(opacity !== undefined ? opacity : 1.0);
+                if (zIndex !== undefined) {
                     this.complementaryLayer.setZIndex(zIndex);
                 }
                 this.events.triggerEvent("changecomplementarylayer", {
