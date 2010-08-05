@@ -2,6 +2,7 @@
   <head>
       <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
       <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../lib/VoidLayer.js"></script>
       <script type="text/javascript" src="../lib/Layers.js"></script>
       <script type="text/javascript" src="../lib/OverviewMap.js"></script>
       <script type="text/javascript" src="../lib/Map.js"></script>
@@ -47,7 +48,7 @@
           }
 
           function test_switchComplementaryLayer(t) {
-              t.plan(10);
+              t.plan(11);
 
               var map = new GeoAdmin.Map("map");
               var layer = map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
@@ -55,8 +56,11 @@
               var found = map.getLayerByLayerName("ch.swisstopo.pixelkarte-farbe");
               t.ok(found != null && OpenLayers.Util.indexOf(map.layers, found) != -1, "complementary layer added to the map");
 
-              t.eq(layer.opacity, 1.0, "complementary layer default opacity");
-              t.eq(map.aerial.getVisibility(), false, "aerial layer is not visible when complementary layer opacity is 1.0");
+              t.eq(layer.opacity, 0.0, "opacity is unchanged");
+              t.eq(map.aerial.getVisibility(), true, "aerial layer visibility is unchanged");
+
+              layer.setOpacity(1);
+              t.eq(map.aerial.getVisibility(), false, "aerial layer is invisible when complementary layer opacity is 1.0");
 
               layer.setOpacity(0.42);
               t.eq(map.aerial.getVisibility(), true, "aerial layer is visible when complementary layer opacity is not 1.0");
