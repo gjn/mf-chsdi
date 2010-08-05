@@ -1,4 +1,4 @@
-/*global GeoAdmin:true, OpenLayers:true, GeoExt: true, Image:true */
+/*global GeoAdmin, OpenLayers, GeoExt, Image */
 
 /*
  * @include OpenLayers/Feature/Vector.js
@@ -133,7 +133,7 @@ GeoAdmin.API = OpenLayers.Class({
             this.map.addLayerByName(options.layers[i], {
                 opacity: opacity !== undefined ? opacity : 1.0,
                 visibility: (visibility == undefined) ? true :
-                                (visibility == 'false') ? false : visibility,
+                                (visibility == 'false') ? false : visibility
             });
         }
 
