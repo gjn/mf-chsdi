@@ -50,4 +50,5 @@ class Queryable(object):
 
     @property
     def __geo_interface__(self):
-        return Feature(id=self.id, geometry=self.geometry)
+        return Feature(id=self.id, geometry=self.geometry,
+                       bbox=self.geometry.bounds)
