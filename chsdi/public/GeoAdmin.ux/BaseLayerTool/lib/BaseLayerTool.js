@@ -21,6 +21,12 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
         var combo = this.createLayersCombo(this.combo, slider);
         delete this.combo;
 
+        this.map.events.on({
+            'changecomplementarylayer': function(evt) {
+                combo.setValue(evt.layer.name);
+            }
+        });
+        
         this.items = [label, slider, combo];
 
         GeoAdmin.BaseLayerTool.superclass.initComponent.apply(this, arguments);
