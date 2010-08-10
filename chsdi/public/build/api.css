@@ -20,6 +20,8 @@
 @import url(../lib/ext/Ext/resources/css/theme-gray/tree.css);
 @import url(../lib/ext/Ext/resources/css/structure/button.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/button.css);
+@import url(../lib/ext/Ext/resources/css/structure/qtips.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/qtips.css);
 
 @import url(../lib/geoext/resources/css/gxtheme-gray.css);
 
@@ -42,6 +44,30 @@
 }
 
 /* ExtJS CSS have a wrong relative to images, so we fix that here */
+
+/* core.css */
+
+.x-drag-overlay {
+    background-image:url(../lib/ext/Ext/resources/images/default/s.gif);
+}
+.ext-el-mask-msg {
+    background-image:url(../lib/ext/Ext/resources/images/gray/panel/white-top-bottom.gif);
+}
+.x-mask-loading div {
+    background-image:url(../lib/ext/Ext/resources/images/default/grid/loading.gif);
+}
+.x-shadow .xsmc {
+    background-image: url(../lib/ext/Ext/resources/images/default/shadow-c.png);
+}
+.x-shadow .xsml, .x-shadow .xsmr {
+    background-image: url(../lib/ext/Ext/resources/images/default/shadow-lr.png);
+}
+.x-shadow .xstl, .x-shadow .xstc,  .x-shadow .xstr, .x-shadow .xsbl, .x-shadow .xsbc, .x-shadow .xsbr{
+    background-image: url(../lib/ext/Ext/resources/images/default/shadow.png);
+}
+.loading-indicator {
+    background-image: url(../lib/ext/Ext/resources/images/default/grid/loading.gif);
+}
 
 /* combo.css */
 
@@ -149,4 +175,23 @@
 
 .x-tree-node-leaf .x-tree-node-icon {
     background-image:url("../lib/ext/Ext/resources/images/default/tree/leaf.gif");
+}
+
+/* qtips.css */
+
+.x-tip .x-tip-close{
+	background-image: url(../lib/ext/Ext/resources/images/gray/qtip/close.gif);
+}
+.x-tip .x-tip-tc, .x-tip .x-tip-tl, .x-tip .x-tip-tr, .x-tip .x-tip-bc, .x-tip .x-tip-bl, .x-tip .x-tip-br, .x-tip .x-tip-ml, .x-tip .x-tip-mr {
+	background-image: url(../lib/ext/Ext/resources/images/gray/qtip/tip-sprite.gif);
+}
+.x-form-invalid-tip .x-tip-tc, .x-form-invalid-tip .x-tip-tl, .x-form-invalid-tip .x-tip-tr, .x-form-invalid-tip .x-tip-bc,
+.x-form-invalid-tip .x-tip-bl, .x-form-invalid-tip .x-tip-br, .x-form-invalid-tip .x-tip-ml, .x-form-invalid-tip .x-tip-mr {
+	background-image: url(../lib/ext/Ext/resources/images/default/form/error-tip-corners.gif);
+}
+.x-form-invalid-tip .x-tip-body {
+    background-image:url(../lib/ext/Ext/resources/images/default/form/exclamation.gif);
+}
+.x-tip-anchor {
+    background-image:url(../lib/ext/Ext/resources/images/gray/qtip/tip-anchor-sprite.gif);
 }

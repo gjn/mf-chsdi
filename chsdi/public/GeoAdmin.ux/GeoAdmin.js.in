@@ -6,4 +6,7 @@ window.GeoAdmin = {
     //webServicesUrl: "%HOST%%WSGI_BASE%/ws"
 };
 
+// enable Ext quick tips
+Ext.QuickTips.init();
+
 OpenLayers.ImgPath = "%HOST%%WSGI_BASE%/%API_VERSION%GeoAdmin.ux/Map/img/";
