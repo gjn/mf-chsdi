@@ -1,9 +1,11 @@
 <html>
     <head>
-        <script src="../../../../../../openlayers/lib/OpenLayers.js"></script>
-        <script src="../../../../../../ext/adapter/ext/ext-base.js"></script>
-        <script src="../../../../../../ext/ext-all-debug.js"></script>
-        <script src="../../../../../lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+        <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+        <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+        <script type="text/javascript" src="../lib/ComponentMixin.js"></script>
     
         <script>
 
@@ -16,7 +18,7 @@
 
             UI = Ext.extend(
                 GeoExt.tree.LayerNodeUI,
-                new GeoExt.tree.ComponentMixin()
+                new GeoAdmin.ComponentMixin()
             );
             component = new Ext.Panel({
                 id: "foo-id",
@@ -61,7 +63,7 @@
 
             UI = Ext.extend(
                 GeoExt.tree.LayerNodeUI,
-                new GeoExt.tree.ComponentMixin()
+                new GeoAdmin.ComponentMixin()
             );
             component = {
                 xtype: "panel",
@@ -104,7 +106,7 @@
 
             UI = Ext.extend(
                 GeoExt.tree.LayerNodeUI,
-                new GeoExt.tree.ComponentMixin()
+                new GeoAdmin.ComponentMixin()
             );
 
             // test

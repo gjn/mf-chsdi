@@ -1,9 +1,11 @@
 <html>
     <head>
-        <script src="../../../../../../openlayers/lib/OpenLayers.js"></script>
-        <script src="../../../../../../ext/adapter/ext/ext-base.js"></script>
-        <script src="../../../../../../ext/ext-all-debug.js"></script>
-        <script src="../../../../../lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+        <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+        <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+        <script type="text/javascript" src="../lib/ActionsMixin.js"></script>
     
         <script>
         function test_ui_node_action(t) {
@@ -15,7 +17,7 @@
 
             UI = Ext.extend(
                 GeoExt.tree.LayerNodeUI,
-                new GeoExt.tree.ActionsMixin()
+                new GeoAdmin.ActionsMixin()
             );
 
             node = new GeoExt.tree.LayerNode({
@@ -88,7 +90,7 @@
             UI = Ext.extend(
                 Ext.extend(
                     GeoExt.tree.LayerNodeUI,
-                    new GeoExt.tree.ActionsMixin()
+                    new GeoAdmin.ActionsMixin()
                 ),
                 {
                     actions: [{
