@@ -14,6 +14,7 @@
  * @include BodSearch/lib/BodSearchComboBox.js
  * @include BaseLayerTool/lib/BaseLayerTool.js
  * @include Features/lib/Features.js
+ * @include LayerTree/lib/LayerTree.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
@@ -392,6 +393,12 @@ GeoAdmin.API = OpenLayers.Class({
                 prefix: OpenLayers.i18n("Coordinates (m): ")
         }));
         this.map.addControl(control);
+    },
+
+    createLayerTree: function(options) {
+        return new GeoAdmin.LayerTree(Ext.applyIf({
+            map: this.map
+        }, options));
     }
 });
 

@@ -1,3 +1,7 @@
+@import url(../lib/ext/Ext/resources/css/structure/core.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/core.css);
+@import url(../lib/ext/Ext/resources/css/structure/reset.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/reset.css);
 @import url(../lib/ext/Ext/resources/css/structure/layout.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/layout.css);
 @import url(../lib/ext/Ext/resources/css/structure/combo.css);
@@ -10,13 +14,22 @@
 @import url(../lib/ext/Ext/resources/css/theme-gray/window.css);
 @import url(../lib/ext/Ext/resources/css/structure/panel.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/panel.css);
+@import url(../lib/ext/Ext/resources/css/structure/toolbar.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/toolbar.css);
+@import url(../lib/ext/Ext/resources/css/structure/tree.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/tree.css);
+@import url(../lib/ext/Ext/resources/css/structure/button.css);
+@import url(../lib/ext/Ext/resources/css/theme-gray/button.css);
 
 @import url(../lib/geoext/resources/css/gxtheme-gray.css);
 
 @import url(../lib/openlayers/theme/default/style.css);
+
+@import url(../GeoAdmin.ux/css/geoadmin.css);
 @import url(../GeoAdmin.ux/Map/css/map.css);
 @import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);
 @import url(../GeoAdmin.ux/BaseLayerTool/css/baselayertool.css);
+@import url(../GeoAdmin.ux/LayerTree/css/layertree.css);
 
 .x-form-empty-field {
     color: gray;
@@ -130,4 +143,10 @@
 }
 .x-resizable-over .x-resizable-handle-southwest, .x-resizable-pinned .x-resizable-handle-southwest {
     background-image:url(../lib/ext/Ext/resources/images/gray/sizer/sw-handle.gif);
+}
+
+/* tree.css */
+
+.x-tree-node-leaf .x-tree-node-icon {
+    background-image:url("../lib/ext/Ext/resources/images/default/tree/leaf.gif");
 }

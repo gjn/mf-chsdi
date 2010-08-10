@@ -1,0 +1,125 @@
+.geoadmin-layertree .x-tree-node {
+  border-bottom: 1px solid #ddd;
+}
+.geoadmin-layertree .gx-tree-layer-actions {
+  float: right;
+}
+.geoadmin-layertree .gx-tree-layer-action {
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 0 none;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+  cursor: pointer;
+}
+.geoadmin-layertree .line-height-zero {
+    line-height: 0;
+}
+.geoadmin-layertree .gx-tree-layer-actions .pipe,
+.geoadmin-layertree .gx-tree-layer-actions .pipe-up,
+.geoadmin-layertree .gx-tree-layer-actions .pipe-down {
+  background-image: url(../images/lt_pipe.png);
+  cursor: default;
+  width: 2px;
+}
+.geoadmin-layertree .gx-tree-layer-actions .delete {
+  background-image: url(../images/close_button.png);
+}
+.geoadmin-layertree .gx-tree-layer-actions .up {
+  background-image: url(../images/lt_layer_order_up_active.png);
+}
+.geoadmin-layertree .gx-tree-layer-actions .down {
+  background-image: url(../images/lt_layer_order_down_active.png);
+}
+.geoadmin-layertree .gx-tree-layer-actions .close {
+  background-image: url(../images/lt_close_options.png);
+  position: absolute;
+  left: 3px;
+  margin-top: 17px;
+  z-index: 1000;
+}
+.geoadmin-layertree .gx-tree-layer-actions .open {
+  background-image: url(../images/lt_open_options.png);
+  position: absolute;
+  left: 3px;
+  display: none;
+}
+.geoadmin-layertree .gx-tree-layer-actions .tbar {
+  background-image: url(../images/info_button_black.png);
+}
+.geoadmin-layertree .geoadmin-toolbar {
+  border: 0 !important;
+  padding-left: 30px;
+  border-top: 1px solid #eee !important;
+  height:18px;
+}
+.geoadmin-layertree .x-toolbar .ytb-text {
+  font-weight: normal;
+  font-size: 0.9em; 
+}
+.geoadmin-layertree .x-slider-thumb {
+  background-image: url(../images/lo_cursor_opacity.png);
+}
+.geoadmin-layertree .x-slider-thumb-over {
+  background-image: url(../images/lo_cursor_opacity.png);
+  background-position: 0px 0px;
+}
+.geoadmin-layertree .x-slider-thumb-drag {
+  background-image: url(../images/lo_cursor_opacity.png);
+  background-position: 0px 0px;
+}
+.geoadmin-layertree .x-slider-horz .x-slider-thumb {
+    height: 9px;
+    width: 7px;
+    top: 7px;
+}
+.geoadmin-layertree .x-slider-horz {
+    padding-left:7px;
+    background:transparent  url(../images/slider-bg.png) no-repeat 0 -22px;
+}
+.geoadmin-layertree .x-slider-horz .x-slider-inner {
+   background:transparent url(../images/slider-bg.png) repeat-x scroll 0 0 !important;
+}
+.geoadmin-layertree .x-slider-horz .x-slider-end {
+   background:transparent url(../images/slider-bg.png) no-repeat scroll right -44px !important;
+}
+.geoadmin-layertree .layer-info {
+  background: transparent url(../images/info_button_black.png) no-repeat center;
+  margin-right:-5px;
+}
+.geoadmin-layertree .x-tree-node-icon {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.geoadmin-layertree .tree-layer-icon-raster {
+  background-image: url(../images/raster.png);
+}
+.geoadmin-layertree .tree-layer-icon-point {
+  background-image: url(../images/point.png);
+}
+.geoadmin-layertree .tree-layer-icon-line {
+  background-image: url(../images/line.png);
+}
+.geoadmin-layertree .tree-layer-icon-polygon {
+  background-image: url(../images/polygon.png);
+}
+.geoadmin-layertree .tree-layer-icon-mixed {
+  background-image: url(../images/mixed.png);
+}
+.geoadmin-layertree .x-tree-node .x-tree-selected,
+.geoadmin-layertree .x-tree-node .x-tree-node-over {
+    background-color: transparent !important;
+    cursor: default;
+}
+.geoadmin-layertree .x-toolbar .x-btn-mc .visibility-on {
+  background: transparent url(../images/lt_visible.png) no-repeat center !important;
+  padding-top: 3px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-mc .visibility-off {
+  background: transparent url(../images/lt_unvisible.png) no-repeat center !important;
+  padding-top: 3px;
+}

@@ -61,6 +61,11 @@
                 feature: feature
             });
 
+            api.createLayerTree({
+                renderTo: "layertree_1",
+                width: 300
+            });
+
             api2 = new GeoAdmin.API();
             api2.createMap({
                 div: "map_2"
@@ -79,6 +84,7 @@
 <div id="baselayertool_1"></div>
 <div id="mousepos_1"></div>
 <div id="baselayertool_2"></div>
+<div id="layertree_1"></div>
 
 <div class="map" id="map_2"></div>
 
