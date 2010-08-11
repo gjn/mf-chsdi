@@ -1,3 +1,11 @@
+/*
+ * As discussed by email we're giving up with importing the
+ * Ext CSS files one by one. This is too painful, especially
+ * considering the overrides that we need to do for rules
+ * using url(). [ELE]
+ */
+
+/*
 @import url(../lib/ext/Ext/resources/css/structure/core.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/core.css);
 @import url(../lib/ext/Ext/resources/css/structure/reset.css);
@@ -22,6 +30,10 @@
 @import url(../lib/ext/Ext/resources/css/theme-gray/button.css);
 @import url(../lib/ext/Ext/resources/css/structure/qtips.css);
 @import url(../lib/ext/Ext/resources/css/theme-gray/qtips.css);
+*/
+
+@import url(../lib/ext/Ext/resources/css/ext-all.css);
+@import url(../lib/ext/Ext/resources/css/xtheme-gray.css);
 
 @import url(../lib/geoext/resources/css/gxtheme-gray.css);
 
@@ -47,6 +59,7 @@
 
 /* core.css */
 
+/*
 .x-drag-overlay {
     background-image:url(../lib/ext/Ext/resources/images/default/s.gif);
 }
@@ -68,15 +81,19 @@
 .loading-indicator {
     background-image: url(../lib/ext/Ext/resources/images/default/grid/loading.gif);
 }
+*/
 
 /* combo.css */
 
+/*
 .x-combo-list-hd {
     background-image: url(../lib/ext/Ext/resources/images/default/layout/panel-title-light-bg.gif);
 }
+*/
 
 /* slider.css */
 
+/*
 .x-slider-vert, .x-slider-vert .x-slider-end, .x-slider-vert .x-slider-inner {
     background-image:url(../lib/ext/Ext/resources/images/default/slider/slider-v-bg.png);
 }
@@ -84,9 +101,11 @@
 .x-slider-vert .x-slider-thumb {
     background-image:url(../lib/ext/Ext/resources/images/gray/slider/slider-v-thumb.png);
 }
+*/
 
 /* window.css */
 
+/*
 .x-window-tc {
 	background-image: url(../lib/ext/Ext/resources/images/gray/window/top-bottom.png);
 }
@@ -118,9 +137,12 @@
 .x-window-mr {
 	background-image: url(../lib/ext/Ext/resources/images/gray/window/left-right.png);
 }
+*/
+
 
 /* panel.css */
 
+/*
 .x-panel-header {
     background-image: url(../lib/ext/Ext/resources/images/gray/panel/white-top-bottom.gif);
 }
@@ -170,15 +192,21 @@
 .x-resizable-over .x-resizable-handle-southwest, .x-resizable-pinned .x-resizable-handle-southwest {
     background-image:url(../lib/ext/Ext/resources/images/gray/sizer/sw-handle.gif);
 }
+*/
+
 
 /* tree.css */
 
+/*
 .x-tree-node-leaf .x-tree-node-icon {
     background-image:url("../lib/ext/Ext/resources/images/default/tree/leaf.gif");
 }
+*/
+
 
 /* qtips.css */
 
+/*
 .x-tip .x-tip-close{
 	background-image: url(../lib/ext/Ext/resources/images/gray/qtip/close.gif);
 }
@@ -195,3 +223,4 @@
 .x-tip-anchor {
     background-image:url(../lib/ext/Ext/resources/images/gray/qtip/tip-anchor-sprite.gif);
 }
+*/
