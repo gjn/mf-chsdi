@@ -123,3 +123,30 @@
   background: transparent url(../images/lt_unvisible.png) no-repeat center !important;
   padding-top: 3px;
 }
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-tl{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-tr{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-tc{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-ml{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-mr{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-mc{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-bl{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-br{
+	background-position: 500px 500px;
+}
+.geoadmin-layertree .x-toolbar .x-btn-over .x-btn-bc{
+	background-position: 500px 500px;
+}
