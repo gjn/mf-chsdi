@@ -7,6 +7,7 @@
  * @include LayerTree/lib/LayerNode.js
  * @include LayerTree/lib/ActionsMixin.js
  * @include LayerTree/lib/ComponentMixin.js
+ * @include LayerTree/lib/TreeEventModel.js
  */
 
 /**
