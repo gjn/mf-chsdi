@@ -256,8 +256,9 @@ Layer Tree
 .. raw:: html
 
    <body>
-      <div id="mylayertree6" style="margin:10px !important;"></div>
-      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mylayertree6" style="float: left; margin:10px !important;"></div>
+      <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+       <div id="myclear" style="clear: both;"></div>
    </body>
 
 .. raw:: html
@@ -280,9 +281,9 @@ Layer Tree
       }
    </script>
    <body onload="init();">
-      <div id="mylayertree6" style="margin:10px !important;"></div>
-      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+      <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
+      <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
