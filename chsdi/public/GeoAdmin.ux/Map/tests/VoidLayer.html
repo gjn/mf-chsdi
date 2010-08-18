@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+    <script type="text/javascript" src="../lib/VoidLayer.js"></script>
+    <script type="text/javascript">
+
+    AerialMock = function(options) {
+        OpenLayers.Util.extend(this, options);
+    };
+    AerialMock.prototype = {
+        setVisibility: function(visibility) {
+            this.visibility = visibility
+        },
+        setOpacity: function(opacity) {
+            this.opacity = opacity;
+        }
+    };
+
+    function test_ctor(t) {
+        t.plan(1);
+
+        var layer = new GeoAdmin.VoidLayer();
+        t.ok(layer instanceof OpenLayers.Layer,
+             "the void layer is a layer");
+    }
+
+    function test_addLayer(t) {
+        t.plan(1);
+
+        var aerial = new AerialMock();
+        var map = new OpenLayers.Map({div: "map", aerial: aerial});
+        var layer = new GeoAdmin.VoidLayer();
+
+        map.addLayer(layer);
+        t.ok(layer.aerial === aerial,
+             "setMap stores a reference to the aerial layer");
+            
+    }
+
+    function test_setOpacity(t) {
+        t.plan(9);
+        
+        var aerial = new AerialMock();
+        var map = new OpenLayers.Map({div: "map", aerial: aerial});
+        var layer = new GeoAdmin.VoidLayer();
+        map.addLayer(layer);
+
+        delete aerial.visibility;
+        delete aerial.opacity;
+        layer.setOpacity(1.0);
+        t.eq(layer.opacity, 1.0,
+             "set opacity to 1, opacity correctly set");
+        t.eq(aerial.visibility, false,
+             "set opacity to 1, aerial is made invisible");
+        t.eq(aerial.opacity, 0,
+             "set opacity to 1, aerial is made transparent");
+
+        delete aerial.visibility;
+        delete aerial.opacity;
+        layer.setOpacity(0.3);
+        t.eq(layer.opacity, 0.3,
+             "set opacity to 0.3, opacity correctly set");
+        t.eq(aerial.visibility, true,
+             "set opacity to 0.3, aerial is made visible");
+        t.eq(aerial.opacity, 0.7,
+             "set opacity to 0.3, aerial opacity set to 0.7");
+
+        delete aerial.visibility;
+        delete aerial.opacity;
+        layer.setOpacity(0.0);
+        t.eq(layer.opacity, 0.0,
+             "set opacity to 0, opacity correctly set");
+        t.eq(aerial.visibility, true,
+             "set opacity to 0, aerial is made visible");
+        t.eq(aerial.opacity, 1,
+             "set opacity to 0, aerial is made opaque");
+
+    }
+    </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+  </body>
+</html>
