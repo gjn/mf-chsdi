@@ -109,7 +109,7 @@ Map with gray pixelmap and overlay layer
    <script type="text/javascript">
       function init() {
          var map2 = new GeoAdmin.Map("mymap2");
-         map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau");
+         map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
          map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
       }
    </script>
@@ -128,7 +128,7 @@ Base Layer Tool
 .. raw:: html
 
    <body>
-      <div id="baselayertool3"></div>
+      <div id="baselayertool3" style="margin:10px !important;"></div>
       <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
@@ -143,7 +143,7 @@ Base Layer Tool
    <script type="text/javascript">
       function init() {
          var map3 = new GeoAdmin.Map("mymap3");
-         map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
+         map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var baseLayerTool = new GeoAdmin.BaseLayerTool({
             renderTo: "baselayertool3",
             map: map3
@@ -182,7 +182,7 @@ Swiss Search
    <script type="text/javascript">
       function init() {
          var map4 = new GeoAdmin.Map("mymap4");
-         map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
+         map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
             renderTo: "mysearch4",
@@ -256,18 +256,18 @@ BOD Search
          var map1 = new GeoAdmin.Map("mymap1");
 
          var map2 = new GeoAdmin.Map("mymap2");
-         map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau");
+         map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
          map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
 
          var map3 = new GeoAdmin.Map("mymap3");
-         map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
+         map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var baseLayerTool = new GeoAdmin.BaseLayerTool({
             renderTo: "baselayertool3",
             map: map3
          });
 
          var map4 = new GeoAdmin.Map("mymap4");
-         map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe");
+         map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
             renderTo: "mysearch4",
