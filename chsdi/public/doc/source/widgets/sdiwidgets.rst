@@ -29,31 +29,42 @@ Widgets description
 
 The philosophy of the `GeoExt UX <http://trac.geoext.org/wiki/ux>`_ has been followed in order to create the CH SDI widgets.
 
-Map
----
-
-The map widget contains a map and all the layers of the Switzerland spatial data infrastructure.
-
 Base Layer Tool
 ---------------
 
 The base layer tool allows the user to manage the base layer (swissimage, pixelmap and void).
 It offers an opacity slider and the possibility to switch between pixelmaps and void layers.
 
-Swiss Search
-------------
-
-SwissSearch is a combo box allowing the user to search within various data sources:  SwissNames, Postal Code, Cities, Canton and also coordinates (CH1903 and WGS84).
-
 BOD Search
 ----------
 
 BOD Search is a combo box allowing the user to search within the layer offered by CH SDI.
 
-Tooltip
--------
+Features
+--------
 
 This widget allows the user to click in the map and get a tooltip of the selected features.
+
+Layer Tree
+----------
+
+This widget presents the layer visible in the map and offer various functions like: opacity management, visibility management, access to metadata and layer deletion.
+
+Map
+---
+
+The map widget contains a map and all the layers of the Switzerland spatial data infrastructure.
+
+Swiss Search
+------------
+
+SwissSearch is a combo box allowing the user to search within various data sources:  SwissNames, Postal Code, Cities, Canton and also coordinates (CH1903 and WGS84).
+
+
+
+
+
+
 
 Widgets examples
 ****************
@@ -239,9 +250,44 @@ BOD Search
 
     </div>
 
+Layer Tree
+----------
 
+.. raw:: html
 
+   <body>
+      <div id="mylayertree6" style="margin:10px !important;"></div>
+      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
 
+.. raw:: html
+
+    <a id="showRef6" href="javascript:showdiv('codeBlock6','showRef6','hideRef6')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef6" href="javascript:hidediv('codeBlock6','showRef6','hideRef6')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock6" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map6 = new GeoAdmin.Map("mymap6");
+         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         var layertree = new GeoAdmin.LayerTree({
+             map: map6,
+             renderTo: "mylayertree6",
+             width: 300
+         });
+      }
+   </script>
+   <body onload="init();">
+      <div id="mylayertree6" style="margin:10px !important;"></div>
+      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
 
 
 
@@ -281,6 +327,15 @@ BOD Search
             renderTo: "mysearch5",
             map: map5
          });
+
+         var map6 = new GeoAdmin.Map("mymap6");
+         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         var layertree = new GeoAdmin.LayerTree({
+             map: map6,
+             renderTo: "mylayertree6",
+             width: 300
+         });
+
       }
    </script>
 

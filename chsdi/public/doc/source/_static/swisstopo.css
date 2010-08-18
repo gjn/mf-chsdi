@@ -67,3 +67,16 @@ h3 {
     margin: 1em 0 -0.3em 0 !important;
     font-size: 1.2em !important;
 }
+
+/*
+ * Style Mix Fix
+ *
+ */
+div.x-panel-body ul {
+   list-style:none outside none !important;
+   padding:0 !important;
+}
+
+table {
+   margin: -3px -0.5em !important;
+}
