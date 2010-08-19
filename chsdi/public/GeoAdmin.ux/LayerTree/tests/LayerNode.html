@@ -9,7 +9,7 @@
     
         <script>
         function test_hideIfFirstLast(t) {
-            t.plan(12);
+            t.plan(30);
 
             // setup
 
@@ -18,17 +18,26 @@
             var node1 = new GeoAdmin.LayerNode({
                 layer: new OpenLayers.Layer()
             });
-            node1.getUI().updateActions = function() {};
+            var node1_updateActionsCalled;
+            node1.getUI().updateActions = function() {
+                node1_updateActionsCalled = true;
+            };
 
             var node2 = new GeoAdmin.LayerNode({
                 layer: new OpenLayers.Layer()
             });
-            node2.getUI().updateActions = function() {};
+            var node2_updateActionsCalled;
+            node2.getUI().updateActions = function() {
+                node2_updateActionsCalled = true;
+            };
 
             var node3 = new GeoAdmin.LayerNode({
                 layer: new OpenLayers.Layer()
             });
-            node3.getUI().updateActions = function() {};
+            var node3_updateActionsCalled;
+            node3.getUI().updateActions = function() {
+                node3_updateActionsCalled = true;
+            };
 
             root.appendChild([node1, node2, node3]);
 
@@ -51,40 +60,84 @@
             t.eq(node3.isLast(), true,
                  "node3 is last");
 
+            var el = Ext.fly("el");
+
+            function reset() {
+                node1_updateActionsCalled = false;
+                node2_updateActionsCalled = false;
+                node3_updateActionsCalled = false;
+                el.show();
+            }
+
             // now the actual tests
 
-            var el = Ext.fly("el");
-            
-            el.show();
+            reset();
             node1.hideIfFirst(el);
             t.ok(!el.isVisible(),
                  "hideIfFirst on node1 hides el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(node2_updateActionsCalled,
+                 "updateActions called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
-            el.show();
+            reset();
             node2.hideIfFirst(el);
             t.ok(el.isVisible(),
                  "hideIfFirst on node2 does not hide el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(!node2_updateActionsCalled,
+                 "updateActions not called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
-            el.show();
+            reset();
             node3.hideIfFirst(el);
             t.ok(el.isVisible(),
                  "hideIfFirst on node3 does not hide el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(!node2_updateActionsCalled,
+                 "updateActions not called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
-            el.show();
+            reset();
             node1.hideIfLast(el);
             t.ok(el.isVisible(),
                  "hideIfLast on node1 does not hide el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(!node2_updateActionsCalled,
+                 "updateActions not called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
-            el.show();
+            reset();
             node2.hideIfLast(el);
             t.ok(el.isVisible(),
                  "hideIfLast on node2 does not hide el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(!node2_updateActionsCalled,
+                 "updateActions not called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
-            el.show();
+            reset();
             node3.hideIfLast(el);
             t.ok(!el.isVisible(),
                  "hideIfLast on node3 hides el");
+            t.ok(!node1_updateActionsCalled,
+                 "updateActions not called on node1");
+            t.ok(node2_updateActionsCalled,
+                 "updateActions called on node2");
+            t.ok(!node3_updateActionsCalled,
+                 "updateActions not called on node3");
 
+            tree.destroy();
         }
         </script>
     </head>
