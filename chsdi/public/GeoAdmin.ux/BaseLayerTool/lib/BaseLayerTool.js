@@ -10,6 +10,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
     map: null,
 
     layout: 'column',
+    cls: 'geoadmin-baselayertool',
 
     initComponent: function() {
         var label = this.createLabel(this.label);
@@ -35,7 +36,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
     createLabel: function(label) {
         label = label || OpenLayers.i18n('Aerial');
         return new Ext.BoxComponent({
-            html: '<span class="baselayertool_label">' + label + '</span>'
+            html: '<span class="geoadmin-baselayertool-label">' + label + '</span>'
         });
     },
 

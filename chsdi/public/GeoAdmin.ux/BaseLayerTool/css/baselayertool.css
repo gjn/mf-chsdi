@@ -1,7 +1,5 @@
-.baselayertool_label {
-    font-family:arial,helvetica,verdana,sans-serif;
-    font-size:12px;
-    font-weight:bold;
+.geoadmin-baselayertool .geoadmin-baselayertool-label {
+    font: bold 12px arial,helvetica,verdana,sans-serif;
 }
 
 .x-form-field-wrap .x-form-trigger {
