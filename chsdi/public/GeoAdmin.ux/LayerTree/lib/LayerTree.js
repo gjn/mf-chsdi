@@ -158,19 +158,15 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 new GeoExt.LayerOpacitySlider({
                     layer: node.layer,
                     aggressive: true,
-                    // layer.bodid doesn't exist at this point. See this with
-                    // our favorite main developer...
-                    //plugins: new GeoAdmin.LayerTree.LayerOpacitySliderLabel(
-                    //    node.layer.bodid + '-opacity-lbl'
-                    //),
+                    plugins: new GeoAdmin.LayerTree.SliderLabel(
+                        node.layer.layername + '-opacity-lbl'
+                    ),
                     width: 100
                 }),
-                // layer.bodid doesn't exist at this point. See this with
-                // our favorite main developer...
-                //new GeoAdmin.LayerTree.TextItem({
-                //    id: node.layer.bodid + "-opacity-lbl",
-                //    opacity: node.layer.opacity
-                //}),
+                new GeoAdmin.LayerTree.TextItem({
+                    id: node.layer.layername + "-opacity-lbl",
+                    opacity: node.layer.opacity
+                }),
                 "->",
                 new Ext.Action({
                     iconCls: node.layer.visibility ? "visibility-on" : "visibility-off",
@@ -213,23 +209,27 @@ GeoAdmin.LayerTree.TextItem = Ext.extend(Ext.Toolbar.Item, {
 });
 
 /**
+ * A slider plugin that displays the slider value in a DOM
+ * element.
  */
-GeoAdmin.LayerTree.LayerOpacitySliderLabel = Ext.extend(Ext.Component, {
-    target: null,
-    el: null,
-    constructor: function(target) {
-        this.target = target;
-    },
+GeoAdmin.LayerTree.SliderLabel = function(target) {
+    this.target = target;
+};
+GeoAdmin.LayerTree.SliderLabel.prototype = {
     init: function(slider) {
-        slider.on("change", this.change, this);
-    },
-    change: function(slider, value) {
-        if (!this.el) {
-            this.el = Ext.get(this.target);
-        }
-        this.el.dom.innerHTML = value + "%";
+        slider.on({
+            "change": function(slider, value) {
+                if (!this.el) {
+                    this.el = Ext.get(this.target);
+                }
+                if (this.el) {
+                    this.el.dom.innerHTML = value + "%";
+                }
+            },
+            scope: this
+        });
     }
-});
+};
 
 /**
  */
