@@ -20,13 +20,21 @@ Ext.onReady(function() {
         ],
         bbar: [
         new GeoAdmin.Print({
-            text: OpenLayers.i18n('print map'),
+            text: OpenLayers.i18n('print map (popup)'),
             printPanelOptions: {
                 mapPanel: mapPanel
             },
             windowOptions: {
                 title: OpenLayers.i18n('print map')
             }
-        })]
+        }),
+        new GeoAdmin.Print({
+            text: OpenLayers.i18n('print map (panel)'),
+            printPanelOptions: {
+                renderTo: 'print',
+                mapPanel: mapPanel
+            }
+        })
+        ]
     })
 });
