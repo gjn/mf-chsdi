@@ -30,8 +30,23 @@ class SwisssearchController(BaseController):
 
     @jsonify(cb="cb")
     def geocoding(self):
-        lon = float(request.params.get('easting'))
-        lat = float(request.params.get('northing'))
+        lon = request.params.get('easting')
+        if lon is None:
+            abort(400, "missing 'easting' parameter")
+        try:
+            lon = float(lon)
+        except:
+            abort(400, "parameter 'easting' is not a number")
+
+        lat = request.params.get('northing')
+        if lat is None:
+            abort(400, "messing 'northing' parameter")
+        if lat is None:
+            abort(400, "missing 'northing' parameter")
+        try:
+            lat = float(lat)
+        except:
+            abort(400, "parameter 'northing' is not a number")
 
         # search for everything except sn25 data (who did not have 'the_geom_poly' geom)
         gfilter_poly = SwissSearch.within_filter(lon, lat, tolerance=10, column='the_geom_poly')
