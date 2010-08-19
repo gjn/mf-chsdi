@@ -54,10 +54,20 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 }
             }),
             hideRotation: true,
+            autoFit: true,
             labelWidth: 75,
             defaults: {
                 width: 100
-            }
+            },
+            dpiText: OpenLayers.i18n("DPI"),
+            scaleText: OpenLayers.i18n("Scale"),
+            rotationText: OpenLayers.i18n("Rotation"),
+            printText: OpenLayers.i18n("Print"),
+            creatingPdfText: OpenLayers.i18n("Creating PDF..."),
+            titleFieldLabel: OpenLayers.i18n("titlefieldlabel"),
+            defaultTitleText: OpenLayers.i18n("titlefieldvalue"),
+            commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
+            defaultCommentText: OpenLayers.i18n("commentfieldvalue")
         }, config.printPanelOptions);
         delete config.printPanelConfig;
 
@@ -79,7 +89,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, config.windowOptions);
             this.printPanel.tearDown();
         } else {
-            this.printPanel.hide();
+            //this.printPanel.hide();
         }
         delete config.windowOptions;
 
