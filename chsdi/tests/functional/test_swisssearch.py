@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import simplejson as sjson
+import simplejson as simplejson
 
 from chsdi.tests import *
 
@@ -19,13 +19,21 @@ class TestSwisssearchController(TestController):
         # test that content_type is "application/json"
         assert resp.response.content_type == "application/json"
 
-        # test that response is parsable and has expected form
-        results = sjson.loads(resp.response.body)
+        # test that response is parsable (simplejson throws an exception
+        # if it fails to parse the string)
+        results = simplejson.loads(resp.response.body)
+
+        # test the response structure
         assert isinstance(results, dict)
         assert "results" in results
         assert isinstance(results["results"], list)
         assert len(results["results"]) > 0
+        assert len(results["results"]) <= 50
         assert isinstance(results["results"][0], dict)
+
+        # test the response content (the first 5 results actually)
+        for i in range(0, 5):
+            assert "laus" in results["results"][i]["label"].lower()
 
     def test_index_with_accents(self):
         resp1 = self.app.get(url(controller='swisssearch', action='index'),
@@ -57,8 +65,11 @@ class TestSwisssearchController(TestController):
         # test that content_type is "application/json"
         assert resp.response.content_type == "application/json"
 
-        # test that response is parsable and has expected from
-        results = sjson.loads(resp.response.body)
+        # test that response is parsable (simplejson throws an exception
+        # if it fails to parse the string)
+        results = simplejson.loads(resp.response.body)
+
+        # test the response structure
         assert isinstance(results, list)
         assert len(results) > 0
         assert isinstance(results[0], dict)
