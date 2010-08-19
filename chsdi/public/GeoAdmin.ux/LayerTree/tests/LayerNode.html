@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+        <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+        <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+        <script type="text/javascript" src="../lib/LayerNode.js"></script>
+    
+        <script>
+        function test_hideIfFirstLast(t) {
+            t.plan(12);
+
+            // setup
+
+            var root = new Ext.tree.TreeNode();
+
+            var node1 = new GeoAdmin.LayerNode({
+                layer: new OpenLayers.Layer()
+            });
+            node1.getUI().updateActions = function() {};
+
+            var node2 = new GeoAdmin.LayerNode({
+                layer: new OpenLayers.Layer()
+            });
+            node2.getUI().updateActions = function() {};
+
+            var node3 = new GeoAdmin.LayerNode({
+                layer: new OpenLayers.Layer()
+            });
+            node3.getUI().updateActions = function() {};
+
+            root.appendChild([node1, node2, node3]);
+
+            var tree  = new Ext.tree.TreePanel({
+                renderTo: "tree",
+                root: root
+            });
+
+            // test initial state
+            t.eq(node1.isFirst(), true,
+                 "node1 is first");
+            t.eq(node1.isLast(), false,
+                 "node1 is not last");
+            t.eq(node2.isFirst(), false,
+                 "node2 is not first");
+            t.eq(node2.isLast(), false,
+                 "node2 is not last");
+            t.eq(node3.isFirst(), false,
+                 "node3 is not first");
+            t.eq(node3.isLast(), true,
+                 "node3 is last");
+
+            // now the actual tests
+
+            var el = Ext.fly("el");
+            
+            el.show();
+            node1.hideIfFirst(el);
+            t.ok(!el.isVisible(),
+                 "hideIfFirst on node1 hides el");
+
+            el.show();
+            node2.hideIfFirst(el);
+            t.ok(el.isVisible(),
+                 "hideIfFirst on node2 does not hide el");
+
+            el.show();
+            node3.hideIfFirst(el);
+            t.ok(el.isVisible(),
+                 "hideIfFirst on node3 does not hide el");
+
+            el.show();
+            node1.hideIfLast(el);
+            t.ok(el.isVisible(),
+                 "hideIfLast on node1 does not hide el");
+
+            el.show();
+            node2.hideIfLast(el);
+            t.ok(el.isVisible(),
+                 "hideIfLast on node2 does not hide el");
+
+            el.show();
+            node3.hideIfLast(el);
+            t.ok(!el.isVisible(),
+                 "hideIfLast on node3 hides el");
+
+        }
+        </script>
+    </head>
+    <body>
+        <div id="tree" style="width: 100px; height: 100px;"></div>
+        <div id="el">an element</div>
+    </body>
+</html>
