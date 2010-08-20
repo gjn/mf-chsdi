@@ -35,5 +35,5 @@ Ext.onReady(function() {
                 }
             })
         ]
-    })
+    });
 });

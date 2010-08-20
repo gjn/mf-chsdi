@@ -7,7 +7,7 @@
  */
 
 /**
- * As a Ext.Action, GeoAdmin.Print accepts usual Ext.Action arguments.
+ * As an :class:`Ext.Action`, GeoAdmin.Print accepts usual Ext.Action arguments.
  * Additional parameters are printPanelConfig (config for 
  * :class:`GeoExt.ux.SimplePrint`) and windowOptions (config for 
  * :class:`Ext.Window`, only useful if printPanelConfig.renderTo is not provided).
@@ -51,7 +51,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 capabilities: printCapabilities,
                 baseParams: {
                     url: printCapabilities.createURL
-                }
+                },
+                method: "GET"
             }),
             hideRotation: true,
             autoFit: true,
@@ -89,7 +90,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, config.windowOptions);
             this.printPanel.tearDown();
         } else {
-            //this.printPanel.hide();
+            this.printPanel.hide();
         }
         delete config.windowOptions;
 
