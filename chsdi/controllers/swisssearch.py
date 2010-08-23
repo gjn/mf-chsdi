@@ -7,7 +7,9 @@ from sqlalchemy.sql import func
 from pylons import request, response
 from pylons.controllers.util import abort
 
-from chsdi.lib.base import BaseController, jsonify, cacheable
+from mapfish.decorators import MapFishEncoder, _jsonify
+
+from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
 
@@ -16,7 +18,7 @@ log = logging.getLogger(__name__)
 class SwisssearchController(BaseController):
 
     @cacheable
-    @jsonify(cb="cb")
+    @_jsonify(cb="cb", cls=MapFishEncoder)
     def index(self):
         q = request.params.get('query')
         if q is None:
@@ -28,7 +30,7 @@ class SwisssearchController(BaseController):
 
         return {'results': sorted([f.json for f in query], key=itemgetter('rank'))}
 
-    @jsonify(cb="cb")
+    @_jsonify(cb="cb", cls=MapFishEncoder)
     def geocoding(self):
         lon = request.params.get('easting')
         if lon is None:
