@@ -1,5 +1,9 @@
 .geoadmin-baselayertool .geoadmin-baselayertool-label {
     font: bold 12px arial,helvetica,verdana,sans-serif;
+    /* line-height is set to a sensible value here. If not
+       set the label isn't postioned as we want it to when
+       the BaseLayerTool is placed in an Ext toolbar. */
+    line-height: 22px;
 }
 
 .x-form-field-wrap .x-form-trigger {
