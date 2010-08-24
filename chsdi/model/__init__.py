@@ -34,9 +34,10 @@ class Queryable(object):
     __maxscale__ = maxint
 
     @classmethod
-    def bbox_filter(cls, scale, bbox):
+    def bbox_filter(cls, scale, bbox, tolerance=0):
         if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
-            return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'], box=bbox, tolerance=0, epsg=21781)
+            return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'],
+                           box=bbox, tolerance=tolerance, epsg=21781)
 
     @property
     def html(self):
