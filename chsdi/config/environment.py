@@ -39,8 +39,7 @@ def load_environment(global_conf, app_conf):
     config['pylons.app_globals'].mako_lookup = TemplateLookup(
         directories=paths['templates'],
         error_handler=handle_mako_error,
-        input_encoding='utf-8', default_filters=['escape'],
-        imports=['from webhelpers.html import escape'])
+        input_encoding='utf-8')
 
     # Setup the SQLAlchemy database engine
     # FIXME: convert_unicode=True ?
