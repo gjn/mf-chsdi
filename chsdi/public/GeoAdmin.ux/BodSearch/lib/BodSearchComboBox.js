@@ -11,10 +11,16 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      */
     map: null,
 
+
     /*
      * {String}
      */
-    url: "http://map.geo.admin.ch/?layers={0}&lang={1}",
+    url: GeoAdmin.webServicesUrl + '/bodsearch/search',
+
+    /*
+     * {String}
+     */
+    redirectUrl: "http://map.geo.admin.ch/?layers={0}&lang={1}",
 
     /*
      * {String}
@@ -33,7 +39,8 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     initComponent: function() {
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
-                url: GeoAdmin.webServicesUrl + '/bodsearch',
+                url: this.url,
+                callbackParam: 'cb',
                 method: 'GET',
                 nocache: false
             }),
@@ -42,6 +49,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         });
         this.tpl = new Ext.XTemplate(
             '<tpl for="."><div class="x-combo-list-item bodsearch">',
+            '<div class="bodsearch-details">boo</div>',
             '{content}',
             '</div></tpl>'
         ).compile();
@@ -60,8 +68,8 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         var id = record.get('id');
         if (this.map) {
             this.map.addLayerByName(id);
-        } else if (this.url) {
-            window.open(String.format(this.url, id, this.lang));
+        } else if (this.redirectUrl) {
+            window.open(String.format(this.redirectUrl, id, this.lang));
         }
     }
 });
