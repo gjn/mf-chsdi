@@ -1,7 +1,7 @@
 # How to tunnel postgresql connections into ssh, with a hop
 # on a machine that has the vpn to chtopo open:
 # 
-# on the gateway machine (e.g. grange.wrk.lsn):
+# on the gateway machine (e.g. grange.wrk.lsn, kirishima.wrk.lsn)
 # $ ssh -N -L 3333:localhost:5432 bgdimf01t.lt.admin.ch
 #
 # on the local machine:
