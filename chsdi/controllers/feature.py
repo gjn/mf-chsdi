@@ -3,8 +3,9 @@ import logging
 from pylons import request, response, tmpl_context as c
 
 from geojson.feature import FeatureCollection
+from mapfish.decorators import MapFishEncoder, _jsonify
 
-from chsdi.lib.base import BaseController, jsonify, geojsonify, cacheable, validate_params
+from chsdi.lib.base import BaseController, cacheable, validate_params
 
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
@@ -24,7 +25,7 @@ def get_features(layer, ids):
 
 class FeatureController(BaseController):
 
-    @geojsonify(cb="cb")
+    @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(val_ids=False)
     def search(self):
         features = []
@@ -38,7 +39,7 @@ class FeatureController(BaseController):
         return FeatureCollection(features)
 
     @cacheable
-    @jsonify(cb="cb")
+    @_jsonify(cb="cb")
     @validate_params(val_scale=False)
     def bbox(self):
         bboxes =  [feature.geometry.bounds for feature in get_features(c.layers, c.ids)]
@@ -46,10 +47,11 @@ class FeatureController(BaseController):
         left = min([bbox[1] for bbox in bboxes])
         bottom = min([bbox[2] for bbox in bboxes])
         top = max([bbox[3] for bbox in bboxes])
-        return (right, left, bottom, top)
+
+        return {'bbox': (right, left, bottom, top)}
 
     @cacheable
-    @geojsonify(cb="cb")
+    @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(val_bbox=False, val_scale=False)
     def geometry(self):
         return FeatureCollection(get_features(c.layers, c.ids))
