@@ -1,6 +1,6 @@
 import logging
 
-from pylons import request, response, tmpl_context as c
+from pylons import request, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render, jsonify

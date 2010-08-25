@@ -2,10 +2,10 @@ import logging
 import httplib2
 from urlparse import urlparse
 
-from pylons import request, response, tmpl_context as c
-from pylons.controllers.util import abort, redirect
+from pylons import request, response
+from pylons.controllers.util import abort
 
-from chsdi.lib.base import BaseController, render
+from chsdi.lib.base import BaseController
 
 log = logging.getLogger(__name__)
 

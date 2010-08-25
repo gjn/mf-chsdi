@@ -4,7 +4,7 @@ from operator import itemgetter
 from sqlalchemy import or_
 from sqlalchemy.sql import func
 
-from pylons import request, response
+from pylons import request
 from pylons.controllers.util import abort
 
 from mapfish.decorators import MapFishEncoder, _jsonify
