@@ -42,7 +42,10 @@ class FeatureController(BaseController):
     @_jsonify(cb="cb")
     @validate_params(val_scale=False)
     def bbox(self):
-        bboxes =  [feature.geometry.bounds for feature in get_features(c.layers, c.ids)]
+        # if a list of layers was provided the first layer in the
+        # list will be taken
+        layer = c.layers[0]
+        bboxes =  [feature.geometry.bounds for feature in get_features(layer, c.ids)]
         right = max([bbox[0] for bbox in bboxes])
         left = min([bbox[1] for bbox in bboxes])
         bottom = min([bbox[2] for bbox in bboxes])
@@ -54,4 +57,7 @@ class FeatureController(BaseController):
     @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(val_bbox=False, val_scale=False)
     def geometry(self):
-        return FeatureCollection(get_features(c.layers, c.ids))
+        # if a list of layers was provided the first layer in the
+        # list will be taken
+        layer = c.layers[0]
+        return FeatureCollection(get_features(layer, c.ids))
