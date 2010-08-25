@@ -10,6 +10,7 @@ from geojson.feature import Feature
 from geoalchemy import Geometry
 from shapely.wkb import loads
 
+from chsdi.lib.base import render, c
 from chsdi.model import meta
 
 def init_model(key, engine):
