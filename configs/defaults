@@ -19,6 +19,9 @@ function post_fetch_project() {
     echo "building javascript"
     (cd $PROJECT_DIR && $PYTHON_ENV/bin/jsbuild $PROJECT_DIR/jsbuild/api.cfg -u -o $PROJECT_DIR/chsdi/public/build/)
 
+    echo "building javascript api docs"
+    (cd $PROJECT_DIR && $PYTHON_ENV/bin/python $PROJECT_DIR/jst/jst.py $PROJECT_DIR/jst/jst.cfg)
+
     echo "building documentation"
     (cd $PROJECT_DIR/chsdi/public/doc && $PYTHON_ENV/bin/sphinx-build -b html source build)
 }

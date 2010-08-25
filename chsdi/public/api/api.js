@@ -23,6 +23,11 @@
  * @include i18n/en.js
  */
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = API
+ */
+
 GeoAdmin.API = OpenLayers.Class({
 
     /*

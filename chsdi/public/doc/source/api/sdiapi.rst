@@ -27,7 +27,11 @@ API
 API DOC
 *******
 
-To be completed
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    apidocs/*
 
 API examples
 ************
