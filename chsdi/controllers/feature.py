@@ -1,8 +1,10 @@
 import logging
-from pylons import request, response
+
+from pylons import request, response, tmpl_context as c
+
 from geojson.feature import FeatureCollection
 
-from chsdi.lib.base import BaseController, jsonify, geojsonify, cacheable
+from chsdi.lib.base import BaseController, jsonify, geojsonify, cacheable, validate_params
 
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
@@ -22,24 +24,13 @@ def get_features(layer, ids):
 
 class FeatureController(BaseController):
 
-    def __before__(self):
-        super(FeatureController, self).__before__()
-        self.ids = request.params.get('ids', '').split(',')
-
     @geojsonify(cb="cb")
+    @validate_params(val_ids=False)
     def search(self):
-        bbox = request.params.get('bbox', '').split(',')
-        layers = request.params.get('layers', '').split(',')
-        scale = request.params.get('scale')
-        try:
-            scale = int(scale)
-        except ValueError:
-            scale = None
-
         features = []
-        for layer in layers:
+        for layer in c.layers:
             for model in models_from_name(layer):
-                geom_filter = model.bbox_filter(scale, bbox)
+                geom_filter = model.bbox_filter(c.scale, c.bbox)
                 if geom_filter:
                     query = Session.query(model).filter(geom_filter.to_sql_expr())
                     features.extend(query.all())
@@ -48,20 +39,17 @@ class FeatureController(BaseController):
 
     @cacheable
     @jsonify(cb="cb")
+    @validate_params(val_scale=False)
     def bbox(self):
-        layer = request.params.get('layers') or request.params.get('layer')
-        bboxes =  [feature.geometry.bounds for feature in get_features(layer, self.ids)]
-        # FIXME: validate
-
+        bboxes =  [feature.geometry.bounds for feature in get_features(c.layers, c.ids)]
         right = max([bbox[0] for bbox in bboxes])
         left = min([bbox[1] for bbox in bboxes])
         bottom = min([bbox[2] for bbox in bboxes])
         top = max([bbox[3] for bbox in bboxes])
-
         return (right, left, bottom, top)
 
     @cacheable
     @geojsonify(cb="cb")
+    @validate_params(val_bbox=False, val_scale=False)
     def geometry(self):
-        layer = request.params.get('layers') or request.params.get('layer')
-        return FeatureCollection(get_features(layer, self.ids))
+        return FeatureCollection(get_features(c.layers, c.ids))
