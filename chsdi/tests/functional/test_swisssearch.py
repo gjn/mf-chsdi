@@ -55,7 +55,8 @@ class TestSwisssearchController(TestController):
         assert resp.response.content_type == "text/javascript"
 
         # test that the response is wrapped
-        assert "callback({" in resp
+        assert resp.response.body.startswith("callback(")
+        assert resp.response.body.endswith(");")
 
     def test_geocoding(self):
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
@@ -83,7 +84,9 @@ class TestSwisssearchController(TestController):
 
         # test that content_type is "text/javascript"
         assert resp.response.content_type == "text/javascript"
+        print resp.response.body
 
         # test that the response is wrapped
-        assert "callback([" in resp
+        assert resp.response.body.startswith("callback(")
+        assert resp.response.body.endswith(");")
 
