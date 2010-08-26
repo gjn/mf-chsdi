@@ -1,5 +1,6 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
+Ext.namespace("GeoAdmin");
 
 GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
 
@@ -55,7 +56,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
         ];
         var defConfig = {
             width: 610,
-            title: OpenLayers.i18n('Feedback')
+            title: OpenLayers.i18n('Feedback'),
+            closable: false
         };
 
         Ext.applyIf(this, defConfig);
@@ -80,7 +82,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
     onSuccess:function(form, action) {
         Ext.Msg.show({
             title:'Success',
-            msg: OpenLayers.i18n('Form submitted successfully'),
+            msg: OpenLayers.i18n('Thanks a lot for your feedback !'),
             modal:true,
             icon:Ext.Msg.INFO,
             buttons:Ext.Msg.OK
@@ -110,7 +112,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
             buttons:Ext.Msg.OK
         });
     },
-    
+
     getPermalink: function() {
         return "blabla=tutu";
     }
