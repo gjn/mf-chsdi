@@ -1,9 +1,6 @@
 window.GeoAdmin = {
     version: "%API_VERSION%",
-    webServicesUrl: "http://map.geo.admin.ch"
-
-    // FIXME: should be replaced by:
-    //webServicesUrl: "%HOST%%WSGI_BASE%/ws"
+    webServicesUrl: "%HOST%%WSGI_BASE%/ws"
 };
 
 // the tests, and possibly other stuff, don't load Ext, so
