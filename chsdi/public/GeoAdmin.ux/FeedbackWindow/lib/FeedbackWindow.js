@@ -67,7 +67,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
     },
     sendAction: function() {
         this.panel.getForm().submit({
-            url: "/feedback",
+            url: this.url,
             scope: this,
             success:this.onSuccess,
             failure:this.onFailure,
