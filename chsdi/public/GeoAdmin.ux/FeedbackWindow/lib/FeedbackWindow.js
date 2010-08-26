@@ -56,7 +56,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
         ];
         var defConfig = {
             width: 610,
-            title: OpenLayers.i18n('Feedback'),
+            title: OpenLayers.i18n('Report'),
             closable: false,
             closeAction: 'hide'
         };
