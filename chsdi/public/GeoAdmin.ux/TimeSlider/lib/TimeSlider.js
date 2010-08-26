@@ -12,15 +12,33 @@ GeoAdmin.TimeSlider = OpenLayers.Class({
 
     slider: null,
 
+    layerToAdd: null,
+
+    layerToRemove: null,
+
     initialize: function(options) {
         this.map = options.map;
         this.items = [
-            this.buildTimeSlider(options)
+            this.buildTimeSlider(options),
+            this.buildVideoButton()
         ];
         if (options.renderTo) {
             new Ext.Toolbar(OpenLayers.Util.extend(options, {
                 items: this.items
             }));
+        }
+        // FIXME: not nice to use global variables
+        window.timeSlider = this;
+    },
+
+    switchLayer: function() {
+        if (this.layerToAdd.opacity < 1) {
+            this.layerToAdd.setOpacity(this.layerToAdd.opacity + 0.1);
+            this.layerToRemove.setOpacity(this.layerToRemove.opacity - 0.1);
+            window.setTimeout("window.timeSlider.switchLayer()", 100);
+        } else {
+            this.layerToAdd.setOpacity(1);
+            this.map.removeLayer(this.layerToRemove);
         }
     },
 
@@ -39,28 +57,46 @@ GeoAdmin.TimeSlider = OpenLayers.Class({
 
 
         this.slider.on({
-          'changecomplete': {
-            fn: function(slider, newValue) {
-                var layer = slider.layerList[slider.getValue() - 1][1];
-                // Remove current layer
-                var layersToRemove = this.map.getLayersByName(slider.currentLayer);
-
-                this.map.removeLayer(layersToRemove[0]);
-                // Add new layer
-                this.map.addLayerByName(layer);
-            },
-            scope: this
-        },'beforechange': {
-            fn: function(slider, newValue) {
-                if (slider.getValue()>0) {
+            'changecomplete': {
+                fn: function(slider, newValue) {
                     var layer = slider.layerList[slider.getValue() - 1][1];
-                    slider.currentLayer = layer;
-                }
-            },
-            scope: this
-        }
+                    // Get current layer
+                    this.layerToRemove = this.map.getLayersByName(slider.currentLayer)[0];
+
+                    // Add new layer
+                    this.layerToAdd = this.map.addLayerByName(layer, {
+                        opacity: 0
+                    });
+
+                    // Switch between old and new layer with a fading effect
+                    this.switchLayer();
+                },
+                scope: this
+            },'beforechange': {
+                fn: function(slider, newValue) {
+                    if (slider.getValue() > 0) {
+                        var layer = slider.layerList[slider.getValue() - 1][1];
+                        slider.currentLayer = layer;
+                    }
+                },
+                scope: this
+            }
         });
 
         return this.slider;
+    },
+
+    buildVideoButton: function() {
+        var box = new Ext.BoxComponent({
+            autoEl: {
+                id: 'playIcon',
+                tag: 'img',
+                src: '../img/play.png'
+            }
+        });
+        box.addListener('click', function(event, element) {
+            alert('clik');
+        });
+        return box;
     }
 });
