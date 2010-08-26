@@ -20,13 +20,13 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                             items: [
                                 {
                                     xtype:'textfield',
-                                    fieldLabel: OpenLayers.i18n('Your email'),
+                                    fieldLabel: OpenLayers.i18n('Your email (optional)'),
                                     name: 'email',
                                     anchor:'100%'
                                 },
                                 {
                                     xtype:'textarea',
-                                    fieldLabel: OpenLayers.i18n('Your feedback'),
+                                    fieldLabel: OpenLayers.i18n('Your feedback about current map extent'),
                                     name: 'feedback',
                                     height: 60,
                                     anchor:'100%',
