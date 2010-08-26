@@ -9,19 +9,30 @@ from chsdi.tests import *
 class TestFeatureController(TestController):
 
     def test_search_no_bbox(self):
+        params = {
+            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            }
         resp = self.app.get(url(controller='feature', action='search'),
+                            params=params,
                             status=400
                             )
 
     def test_search_bad_bbox(self):
+        params = {
+            'bbox': '1,2,3',
+            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            }
         resp = self.app.get(url(controller='feature', action='search'),
-                            params={'bbox': '1,2,3'},
+                            params=params,
                             status=400
                             )
 
     def test_search_no_layer(self):
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            }
         resp = self.app.get(url(controller='feature', action='search'),
-                            params={'bbox': '1,2,3,4'},
+                            params=params,
                             status=400
                             )
 
@@ -66,29 +77,40 @@ class TestFeatureController(TestController):
         assert "MultiPolygon" in resp
 
     def test_bbox_no_bbox(self):
+        params = {
+            'ids': '6083'
+            }
         resp = self.app.get(url(controller='feature', action='bbox'),
+                            params=params,
                             status=400
                             )
 
     def test_bbox_no_ids(self):
-        params = {'bbox': '600000,100000,610000,110000'}
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            'ids': '6083'
+            }
         resp = self.app.get(url(controller='feature', action='bbox'),
+                            params=params,
                             status=400
                             )
 
     def test_bbox_no_layer(self):
-        params = {'bbox': '600000,100000,610000,110000',
-                  'ids': '6083'}
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            'ids': '6083'
+            }
         resp = self.app.get(url(controller='feature', action='bbox'),
                             params=params,
                             status=400
                             )
 
     def test_bbox(self):
-        params = {'bbox': '600000,100000,610000,110000',
-                  'ids': '6083',
-                  'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
-                  }
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            'ids': '6083',
+            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            }
         resp1 = self.app.get(url(controller='feature', action='bbox'),
                             params=params
                             )
@@ -103,11 +125,12 @@ class TestFeatureController(TestController):
         assert resp1.response.body == resp2.response.body
 
     def test_bbox_with_cb(self):
-        params = {'bbox': '600000,100000,610000,110000',
-                  'ids': '6083',
-                  'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
-                  'cb': 'Ext.ux.JSONP'
-                  }
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            'ids': '6083',
+            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'cb': 'Ext.ux.JSONP'
+            }
         resp = self.app.get(url(controller='feature', action='bbox'),
                             params=params
                             )
@@ -115,23 +138,28 @@ class TestFeatureController(TestController):
         assert 'Ext.ux.JSONP(' in resp
 
     def test_geometry_no_layers(self):
-        params = {'ids': '6083'}
+        params = {
+            'ids': '6083'
+            }
         resp = self.app.get(url(controller='feature', action='geometry'),
                             params=params,
                             status=400
                             )
 
     def test_geometry_no_ids(self):
-        params = {'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'}
+        params = {
+            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            }
         resp = self.app.get(url(controller='feature', action='geometry'),
                             params=params,
                             status=400
                             )
 
     def test_geometry(self):
-        params = {'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
-                  'ids': '6083'
-                  }
+        params = {
+            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'ids': '6083'
+            }
         resp1 = self.app.get(url(controller='feature', action='geometry'),
                              params=params,
                              )
@@ -145,10 +173,11 @@ class TestFeatureController(TestController):
         assert resp1.response.body == resp2.response.body
 
     def test_geometry_with_cb(self):
-        params = {'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
-                  'ids': '6083',
-                  'cb': 'Ext.ux.JSONP'
-                  }
+        params = {
+            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'ids': '6083',
+            'cb': 'Ext.ux.JSONP'
+            }
         resp = self.app.get(url(controller='feature', action='geometry'),
                             params=params,
                             )
