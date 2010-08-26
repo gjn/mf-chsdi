@@ -7,13 +7,22 @@
 
 GeoAdmin.Features = OpenLayers.Class({
 
-    recenterUrl: GeoAdmin.webServicesUrl + "/bodfeature/bbox",
-    highlightUrl: GeoAdmin.webServicesUrl + "/bodfeature/geometry",
+    recenterUrl: GeoAdmin.webServicesUrl + "/feature/bbox",
+    highlightUrl: GeoAdmin.webServicesUrl + "/feature/geometry",
 
+    /*
+     * {<OpenLayers.Map>}
+     */
     map: null,
+
+    /*
+     * {<OpenLayers.Format.GeoJSON>}
+     */
+    format: null,
 
     initialize: function(options) {
         OpenLayers.Util.extend(this, options || {});
+        this.format = new OpenLayers.Format.GeoJSON();
     },
 
     recenter: function(layer, ids) {
@@ -21,9 +30,8 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
     recenterCb: function(response) {
-        if (response.rows.length > 0) {
-            var bbox = response.rows[0].bbox;
-            this.map.zoomToExtent(OpenLayers.Bounds.fromArray(bbox));
+        if (response.length === 4) {
+            this.map.zoomToExtent(OpenLayers.Bounds.fromArray(response));
         }
     },
 
@@ -32,12 +40,10 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
     highlightCb: function(response) {
-        if (response.rows.length > 0) {
-            var geojson = response.rows[0].features;
-            var format = new OpenLayers.Format.GeoJSON();
-            var features = format.read(geojson, "FeatureCollection");
-            this.map.vector.addFeatures(features);
-        }
+        var features = this.format.read(response);
+        this.map.vector.addFeatures(features);
+
+        return features;
     },
 
     show: function(layer, ids) {
@@ -45,9 +51,9 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
     showCb: function(response) {
-        if (response.rows.length > 0) {
-            this.highlightCb(response);
+        if (this.highlightCb(response)) {
             this.map.zoomToExtent(this.map.vector.getDataExtent());
+            
         }
     },
 
@@ -58,7 +64,7 @@ GeoAdmin.Features = OpenLayers.Class({
         Ext.ux.JSONP.request(url, {
             callbackKey: "cb",
             params: {
-                layers: layer,
+                layer: layer,
                 ids: ids
             },
             scope: this,

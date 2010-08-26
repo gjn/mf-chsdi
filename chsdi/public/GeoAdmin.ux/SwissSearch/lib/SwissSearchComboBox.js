@@ -39,25 +39,33 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             proxy: new Ext.data.ScriptTagProxy({
                 url: GeoAdmin.webServicesUrl + "/swisssearch",
                 method: 'GET',
+                callbackParam: 'cb',
                 nocache: false
             }),
             baseParams: {
-                lang: OpenLayers.Lang.getCode(),
-                ref: "geoadmin"
+                lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['label', 'listlabel', 'service', 'bbox', 'objectorig']
+            fields: ['label', 'service', 'bbox', 'objectorig']
         });
         this.tpl = new Ext.XTemplate(
-                '<tpl for="."><div class="x-combo-list-item {service}">',
-                '{listlabel}',
-                '</div></tpl>'
-                ).compile();
+            '<tpl for="."><div class="x-combo-list-item {service}">',
+            '{label}',
+            '</div></tpl>').compile();
 
         GeoAdmin.SwissSearchComboBox.superclass.initComponent.call(this);
 
         this.on("beforequery", this.onBeforeQuery, this);
         this.on("select", this.recordSelected, this);
+    },
+
+    // private
+    onSelect: function(record, index){
+        if(this.fireEvent('beforeselect', this, record, index) !== false){
+            this.setValue(record.get('label').replace(/<[\/]?[^>]*>/g, ''));
+            this.collapse();
+            this.fireEvent('select', this, record, index);
+        }
     },
 
     onBeforeQuery: function(queryEvent) {
