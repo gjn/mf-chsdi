@@ -35,7 +35,6 @@ def validator_ids():
     try:
         c.ids = map(int, ids)
     except ValueError:
-        abort(400)
         return False
     return True
 
