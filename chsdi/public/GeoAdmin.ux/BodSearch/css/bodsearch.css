@@ -7,6 +7,7 @@
 .bodsearch .bod-title {
     margin-bottom: 10px;
 }
+
 .bodsearch .bod-title {
     color: red;
 }
@@ -18,8 +19,7 @@
 
 .bodsearch .bodsearch-details {
     float: right;
-    width: 20px;
-    height: 20px;
-    border: 1px dotted #ccc;
-    /* todo */
+    width: 17px;
+    height: 19px;
+    background-image: url(../images/info_button_black.png);
 }

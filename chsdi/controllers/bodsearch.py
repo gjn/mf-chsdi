@@ -3,7 +3,9 @@ import logging
 from pylons import request, tmpl_context as c
 from pylons.controllers.util import abort
 
-from chsdi.lib.base import BaseController, render, jsonify
+from mapfish.decorators import _jsonify
+
+from chsdi.lib.base import BaseController, render
 from chsdi.model.bod import BodLayerDe, BodLayerFr, LayerLegend
 from chsdi.model.meta import Session
 
@@ -18,7 +20,7 @@ class BodsearchController(BaseController):
         else:
             self.BodLayer = BodLayerDe
 
-    @jsonify(cb='cb')
+    @_jsonify(cb='cb')
     def search(self):
         q = request.params.get('query')
         if q is None:

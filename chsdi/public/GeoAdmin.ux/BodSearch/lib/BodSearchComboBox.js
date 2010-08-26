@@ -49,7 +49,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         });
         this.tpl = new Ext.XTemplate(
             '<tpl for="."><div class="x-combo-list-item bodsearch">',
-            '<div class="bodsearch-details">boo</div>',
+            this.map ? '<div class="bodsearch-details"></div>' : '',
             '{content}',
             '</div></tpl>'
         ).compile();
