@@ -13,6 +13,54 @@ from chsdi.model.vector import *
 
 log = logging.getLogger(__name__)
 
+def validator_bbox():
+    """ Validator for the "bbox" parameter. For use with
+    the validate_params action decorator."""
+    bbox = request.params.get('bbox', '').split(',')
+    if len(bbox) < 4:
+        return False
+    try:
+        c.bbox = map(float, bbox)
+    except ValueError:
+        return False
+    return True
+
+def validator_ids():
+    """ Validator for the "ids" parameter. For use with
+    the validate_params action decorator."""
+    ids = request.params.get('ids')
+    if ids is None:
+        return False
+    ids = ids.split(',')
+    try:
+        c.ids = map(int, ids)
+    except ValueError:
+        abort(400)
+        return False
+    return True
+
+def validator_layers():
+    """ Validator for the "layers" parameter. For use with
+    the validate_params action decorator."""
+    layers = request.params.get('layers') or \
+              request.params.get('layer')
+    if layers is None:
+        return False
+    c.layers = layers.split(',')
+    return True
+
+def validator_scale():
+    """ Validator for the "scale" parameter. For use with
+    the validate_params action decorator."""
+    scale = request.params.get('')
+    if scale is not None:
+        try:
+            scale = int(scale)
+        except ValueError:
+            return False
+    c.scale = scale
+    return True
+
 def get_features(layer, ids):
     features = []
     for model in models_from_name(layer):
@@ -26,7 +74,7 @@ def get_features(layer, ids):
 class FeatureController(BaseController):
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
-    @validate_params(val_ids=False)
+    @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
         features = []
         for layer in c.layers:
@@ -40,7 +88,7 @@ class FeatureController(BaseController):
 
     @cacheable
     @_jsonify(cb="cb")
-    @validate_params(val_scale=False)
+    @validate_params(validator_bbox, validator_ids, validator_layers)
     def bbox(self):
         # if a list of layers was provided the first layer in the
         # list will be taken
@@ -55,7 +103,7 @@ class FeatureController(BaseController):
 
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
-    @validate_params(val_bbox=False, val_scale=False)
+    @validate_params(validator_layers, validator_ids)
     def geometry(self):
         # if a list of layers was provided the first layer in the
         # list will be taken

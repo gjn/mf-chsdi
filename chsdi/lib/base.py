@@ -38,41 +38,10 @@ def cacheable(func, *args, **kwargs):
     
     return func(*args, **kwargs)
 
-def validate_params(val_bbox=True, val_ids=True, val_layers=True, val_scale=True):
+def validate_params(*validators):
     def wrapper(func, *args, **kwargs):
-        if val_bbox:
-            bbox = request.params.get('bbox')
-            if bbox is None:
+        for v in validators:
+            if v() is False:
                 abort(400)
-            bbox = bbox.split(',')
-            if len(bbox) < 4:
-                abort(400)
-            try:
-                c.bbox = map(float, bbox)
-            except ValueError:
-                abort(400)
-        if val_ids:
-            ids = request.params.get('ids')
-            if ids is None:
-                abort(400)
-            ids = ids.split(',')
-            try:
-                c.ids = map(int, ids)
-            except ValueError:
-                abort(400)
-        if val_layers:
-            layers = request.params.get('layers') or \
-                      request.params.get('layer')
-            if layers is None:
-                abort(400)
-            c.layers = layers.split(',')
-        if val_scale:
-            scale = request.params.get('')
-            if scale is not None:
-                try:
-                    scale = int(scale)
-                except ValueError:
-                    abort(400)
-            c.scale = scale
         return func(*args, **kwargs)
     return decorator(wrapper)
