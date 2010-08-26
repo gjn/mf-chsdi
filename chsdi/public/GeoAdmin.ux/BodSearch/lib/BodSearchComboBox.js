@@ -2,15 +2,14 @@
 
 /**
  * @requires OpenLayers/Lang.js
+ * @requires BodSearch/lib/BodSearchWindow.js
  */
-
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /*
      * {<OpenLayers.Map>}
      */
     map: null,
-
 
     /*
      * {String}
@@ -47,9 +46,17 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             root: 'results',
             fields: ['id', 'label', 'datenherr', 'content']
         });
+        
+        var info = '';
+        if (this.map) {
+            info = ["<div class='bodsearch-details' ", 
+                    "     onclick='GeoAdmin.BodSearchWindow.show(\"{id}\")'>", 
+                    "</div>"].join('');
+        }
+
         this.tpl = new Ext.XTemplate(
             '<tpl for="."><div class="x-combo-list-item bodsearch">',
-            this.map ? '<div class="bodsearch-details"></div>' : '',
+            info,
             '{content}',
             '</div></tpl>'
         ).compile();
