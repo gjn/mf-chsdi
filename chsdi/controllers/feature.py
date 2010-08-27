@@ -97,7 +97,7 @@ class FeatureController(BaseController):
 
     @cacheable
     @_jsonify(cb="cb")
-    @validate_params(validator_bbox, validator_ids, validator_layers)
+    @validate_params(validator_ids, validator_layers)
     def bbox(self):
         # if a list of layers was provided the first layer in the
         # list will be taken
