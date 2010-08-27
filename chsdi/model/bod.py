@@ -46,12 +46,12 @@ class BodLayer(object):
 
         return " ".join([n for n in names if n is not None])
 
-    def legend(self, lang):
-        # FIXME: use get_lang
-        fpath = str("gfx/legend/%(id)s_%(lang)s.png"%{'id': self.bod_layer_id, 'lang': lang})
+    @property    
+    def legend(self):
+        fpath = str("legend/%(id)s_%(lang)s.png"%{'id': self.bod_layer_id, 'lang': c.lang})
         root = config['pylons.paths']['static_files']
         if os.path.exists(os.path.join(root, fpath)):
-            return h.url_for('/' + fpath)
+            return fpath
         else:
             return False
 

@@ -2,7 +2,7 @@
 
 <div class="bodsearch_header">
 
-  <p class='bod-title'><span style="font-weight:bold;">${h.hilight(c.layer.bezeichnung, c.hilight)}</span> (${h.hilight(c.layer.datenherr, c.hilight)})</p>
+  <p class='bod-title'><span style="font-weight:bold;">${h.hilight(c.layer.bezeichnung, c.hilight)}</span> (${h.hilight(c.layer.datenherr, c.hilight) | trim})</p>
   <p class='office-provider'>${h.hilight(c.layer.inspire_themes, c.hilight)}</p>
 
 % if not c.full:
@@ -15,9 +15,9 @@
 % if c.full:
 <div class="bodsearch_footer">
 
-% if c.layer.legend(c.lang):
+% if c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
-  <img src="${c.layer.legend(c.lang)}"></img><br>
+  <img src="${url(c.layer.legend)}" alt="layer legend img" /><br>
 % endif
 
   <span style="font-weight:bold;">${_('Information')}</span><br>
