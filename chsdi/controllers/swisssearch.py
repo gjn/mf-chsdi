@@ -42,8 +42,6 @@ class SwisssearchController(BaseController):
 
         lat = request.params.get('northing')
         if lat is None:
-            abort(400, "messing 'northing' parameter")
-        if lat is None:
             abort(400, "missing 'northing' parameter")
         try:
             lat = float(lat)
