@@ -30,39 +30,39 @@
 
 GeoAdmin.API = OpenLayers.Class({
 
-    /*
-     * {<OpenLayers.Map>}
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  The map instance of the API
      */
     map: null,
 
-    /*
-     * {<OpenLayers.Control.SelectFeature>}
-     *
-     * Select control associated to vector layer
+    /** api: config[selectCtrl]
+     *  ``OpenLayers.Control.SelectFeature``
+     *  Select control associated to vector layer
      */
     selectCtrl: null,
 
-    /*
-     * {String}
+    /** api: config[lang]
+     *  ``String``
+     *  Lang of the API, can be 'de' (default), 'it', 'fr', 'fi' (for rumantsch) or 'en'
      */
     lang: null,
 
-    /*
-     * {<GeoExt.Popup>}
+    /** private: config[popup]
+     *  ``GeoExt.Popup``
+     * Popup for the vector layer
      */
     popup: null,
 
-    /**
-     * {Boolean}
-     * Activate the popups of the vector layer
+   /** api: config[activatePopup]
+     *  ``Boolean``
+     *  Define if the popups are activated for the vector layer, per default true
      */
     activatePopup: true,
 
     /** api: constructor
      *  .. class:: GeoAdmin.API
      *
-     *  Create an API instance. Possible options:
-     *     - lang: ``String`` information about the language. Currently supported: 'de', 'en' (beta) and 'fr'
      */
     initialize: function(options) {
         options = OpenLayers.Util.applyDefaults(options, {
@@ -73,24 +73,27 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createMap]
-     *  :param options: ``Object`` options for
-     *     - div: name of the div in which the map will be placed
-     *     - layers: ``Array``/``String`` optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
-     *     - layers_opacity: ``Array``/``String`` optional opacity information about the layer. Example: '0.2,0.7'
-     *     - layers_visibility: ``Array``/``String`` optional boolean visibility information about the layer. Example: 'false,true'
-     *     - bgLayer: ``String`` optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
-     *     - bgOpacity: ``Number`` optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
-     *     - easting: ``Number`` optional CH1903 Y coordinate of the map center. Example: 600000
-     *     - northing: ``Number`` optional CH1903 X coordinate of the map center. Example: 200000
-     *     - Zoom: ``Integer`` optional zoom level. Possible values 0,1,2,3,4,5,6,7,8,9,10,11
+     *  :param options: ``Object`` options.
      *
-     *  :return: page :class:``OpenLayers.Map``
+     *  Valid properties for the ``options`` argument:
+     *   * ``div`` - ``String`` : name of the div in which the map will be placed
+     *   * ``layers`` - ``String`` or ``Array``: optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
+     *   * ``layers_opacity`` - ``String`` or ``Array``: optional opacity information about the layer. Example: '0.2,0.7'
+     *   * ``layers_visibility`` - ``String`` or ``Array``:optional boolean visibility information about the layer. Example: 'false,true'
+     *   * ``bgLayer`` - ``String``: optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
+     *   * ``bgOpacity`` - ``Number``:optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
+     *   * ``easting`` - ``Number``: optional CH1903 Y coordinate of the map center. Example: 600000
+     *   * ``northing`` - ``Number``: optional CH1903 X coordinate of the map center. Example: 200000
+     *   * ``zoom`` - ``Number``: optional zoom level. Possible values 0,1,2,3,4,5,6,7,8,9,10,11
+     *
+     *  :return: ``OpenLayers.Map``
      *
      *  Create an Openlayers.Map containing the GeoAdmin layer and configuration
      *
      *  TODO: API CHANGE: bgOpacity - [0-1], not [0-100]
      */
     createMap: function(options) {
+        
         if (this.map) {
             this.map.destroy();
         }
@@ -164,6 +167,17 @@ GeoAdmin.API = OpenLayers.Class({
         return this.map;
     },
 
+    /** api: method[createSearchBox]
+     *  :param options: ``Object`` options.
+     *
+     *  Valid properties for the ``options`` argument:
+     *   * ``width`` - ``Integer`` : width of the combo box, per default 300
+     *
+     *  :return: ``GeoAdmin.SwissSearchComboBox``
+     *
+     *  Create a Swiss Search combobox
+     *
+     */
     createSearchBox: function(options) {
         return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             map: this.map,
@@ -171,6 +185,24 @@ GeoAdmin.API = OpenLayers.Class({
         }));
     },
 
+    /** api: method[createBodSearchCombo]
+     *  :param options: ``Object`` options.
+     *
+     *  Valid properties for the ``options`` argument:
+     *   * ``width`` - ``Integer`` : width of the combo box, per default 500
+     *
+     *  :return: ``GeoAdmin.BodSearchComboBox``
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.createBodSearchCombo({
+     *        width: 500,
+     *        renderTo: 'mydiv'
+     *     });
+     *
+     *  Create a BOD (Betriebsobjektdatenbank) search combobox. It searches within the available layer.
+     *
+     */
     createBodSearchCombo: function(options) {
         return new GeoAdmin.BodSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             lang: this.lang,
@@ -180,13 +212,15 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createBaseLayerTool]
-     *  :param options: ``Object`` options for
-     *     - renderTo: ``Mixed`` Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
-     *     - label: ``String`` optional label on the left of the slider (representing the swissimage)
-     *     - slider: ``Object`` optional object for setting slider options, like width
-     *     - combo: ``Object`` optional object for setting combo options, like width
+     *  :param options: ``Object`` options
      *
-     *  :return: page :class:``GeoAdmin.BaseLayerTool``
+     *  Valid properties for the ``options`` argument:
+     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
+     *   * ``label`` - ``String``: optional label on the left of the slider (representing the swissimage)
+     *   * ``slider`` - ``Object``: optional object for setting slider options, like width
+     *   * ``combo`` - ``Object``: optional object for setting combo options, like width
+     *
+     *  :return: ``GeoAdmin.BaseLayerTool``
      *
      *  Create a base layer tool allowing the user to switch the background layer
      *
@@ -218,6 +252,17 @@ GeoAdmin.API = OpenLayers.Class({
         this.recenterFeatures(layer, ids);
     },
 
+    /** api: method[recenterFeatures]
+     *  :param layer: ``String`` layer name
+     *  :param ids: ``String`` or ``Array`` comma separated list of feature identifier
+     *
+     *  Recenter the map based on features
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+     *
+     */
     recenterFeatures: function(layer, ids) {
         var f = new GeoAdmin.Features({map: this.map});
         f.recenter(layer, ids);
@@ -231,28 +276,51 @@ GeoAdmin.API = OpenLayers.Class({
         this.highlightFeatures(layer, ids);
     },
 
+    /** api: method[highlightFeatures]
+     *  :param layer: ``String`` layer name
+     *  :param ids: ``String`` or ``Array`` comma separated list of feature identifier
+     *
+     *  Highlight the features in the map
+     *
+     *
+     */
     highlightFeatures: function(layer, ids) {
         var f = new GeoAdmin.Features({map: this.map});
         f.highlight(layer, ids);
     },
 
+    /** api: method[recenterFeatures]
+     *  :param layer: ``String`` layer name
+     *  :param ids: ``String`` or ``Array`` comma separated list of feature identifier
+     *
+     *  Recenter and highlight features in the map
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+     *
+     */
     showFeatures: function(layer, ids) {
         var f = new GeoAdmin.Features({map: this.map});
         f.show(layer, ids);
     },
 
     /** api: method[showMarker]
-     *  :param options: ``Object`` options for
-     *     - easting: ``Number`` optional CH1903 Y position of the marker, default: map center
-     *     - northing: ``Number`` optional CH1903 X position of the marker, default: map center
-     *     - iconPath: ``String`` path of a custom icon for the marker (url or relative), default: marker-gold.png (in repository GeoAdmin.ux/Map/img/)
-     *     - recenter:  ``String`` define if the map has to recentered at the marker position "true" or "false", default: "false"
-     *     - graphicHeight: ``Number`` height of the icon, default: the icon height
-     *     - graphicWidth: ``Number``  width of the image, default: the icon width
-     *     - fillOpacity: ``Number` opacity of the marker (from 0 to 1), default: 1
-     *     - html: ``String`` html content of a popup, default: null
+     *  :param options: ``Object`` options
      *
-     *  :return: page :class:``OpenLayers.Feature.Vector``
+     *  Valid properties for the ``options`` argument:
+     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
+
+     *   * ``easting`` - ``Number``: optional CH1903 Y position of the marker, default: map center
+     *   * ``northing`` - ``Number``: optional CH1903 X position of the marker, default: map center
+     *   * ``iconPath`` - ``String``: optional path of a custom icon for the marker (url or relative), default: marker-gold.png (in repository GeoAdmin.ux/Map/img/)
+     *   * ``recenter`` - ``String``: optional define if the map has to recentered at the marker position "true" or "false", default: "false"
+     *   * ``graphicHeight`` - ``Number``:optional  height of the icon, default: the icon height
+     *   * ``graphicWidth`` - ``Number``: optional  width of the image, default: the icon width
+     *   * ``fillOpacity`` - ``Number``: optional opacity of the marker (from 0 to 1), default: 1
+     *   * ``html`` - ``String```: optional html content of a popup, default: null
+     *
+     *  :return: ``OpenLayers.Feature.Vector``
      *
      *  Show a marker in the map
      *
@@ -312,21 +380,24 @@ GeoAdmin.API = OpenLayers.Class({
         }
         return feature;
     },
-
     /** api: method[showPopup]
-     *  :param options: ``Object`` options for
-     *     - easting: ``Number`` optional CH1903 Y position of the marker, default: map center
-     *     - northing: ``Number`` optional CH1903 X position of the marker, default: map center
-     *     - title:  ``String`` optional, title of the window, default: ""
-     *     - recenter:  ``String`` optional, define if the map has to be recentered at the popup position "true" or "false", default: "false"
-     *     - html: ``String`` optional, html content of the popup, default: null . If empty, no popup is shown
-     *     - width: ``Integer`` optional, width of the popup, default: 200
-     *     - feature: ``OpenLayers.Feature`` feature associated with the popup
-     *     - collapsible: ``Boolean`` optional, default false
-     *     - unpinnable: ``Boolean`` optional, default true
-     *     - panIn: ``Boolean`` optional, The popup should pan the map so that the popup is fully in view when it is rendered.  Default is ``true``.
+     *  :param options: ``Object`` options
      *
-     *  :return: page :class:``GeoExt.Popup``
+     *  Valid properties for the ``options`` argument:
+     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
+
+     *   * ``easting`` - ``Number``: optional CH1903 Y position of the marker, default: map center
+     *   * ``northing`` - ``Number``: optional CH1903 X position of the marker, default: map center
+     *   * ``recenter`` - ``String``: optional define if the map has to recentered at the marker position "true" or "false", default: "false"
+     *   * ``title`` - ``String``: optional, title of the window, default: ""
+     *   * ``html`` - ``String``: optional, html content of the popup, default: null . If empty, no popup is shown
+     *   * ``width`` - ``Integer``: optional, width of the popup, default: 200
+     *   * ``feature`` - ``OpenLayers.Feature``: optional feature associated with the popup
+     *   * ``collapsible`` - ``Boolean``: optional, default false
+     *   * ``unpinnable`` - ``Boolean``: optional, default true
+     *   * ``panIn`` - ``Boolean``: optional, The popup should pan the map so that the popup is fully in view when it is rendered.  Default is ``true``.
+     *
+     *  :return: ``GeoExt.Popup``
      *
      *  Show a popup in the map
      *
