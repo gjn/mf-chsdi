@@ -34,18 +34,21 @@ class Queryable(object):
     __minscale__ = 0
     __maxscale__ = maxint
 
+    html = None
+    
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
         if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
             return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'],
                            box=bbox, tolerance=tolerance, epsg=21781)
 
-    @property
-    def html(self):
+    def compute_template(self, layer_id, bodlayer):
         c.feature = self
-        c.layer = self.bodlayer
-        return render(self.__template__)
-
+        c.layer_bezeichnung = bodlayer.bezeichnung
+        c.layer_datenherr = bodlayer.datenherr
+        c.layer_id = layer_id
+        self.html = render(self.__template__)
+        
     @property
     def geometry(self):
         return loads(self.the_geom.geom_wkb.decode('hex'))
@@ -53,4 +56,5 @@ class Queryable(object):
     @property
     def __geo_interface__(self):
         return Feature(id=self.id, geometry=self.geometry,
-                       bbox=self.geometry.bounds)
+                       bbox=self.geometry.bounds,
+                       properties={'html': self.html})

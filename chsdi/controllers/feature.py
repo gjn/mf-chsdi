@@ -10,6 +10,7 @@ from chsdi.lib.base import BaseController, cacheable, validate_params
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
 from chsdi.model.vector import *
+from chsdi.model.bod import BodLayerDe, BodLayerFr
 
 log = logging.getLogger(__name__)
 
@@ -75,14 +76,23 @@ class FeatureController(BaseController):
     @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
+        if self.lang == 'fr':
+            bodsearch = BodLayerFr
+        else:
+            bodsearch = BodLayerDe            
+        
         features = []
-        for layer in c.layers:
-            for model in models_from_name(layer):
+        for layer_name in c.layers:
+            for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
                 if geom_filter:
                     query = Session.query(model).filter(geom_filter.to_sql_expr())
-                    features.extend(query.all())
+                    bodlayer = Session.query(bodsearch).get(layer_name)
 
+                    for feature in query.all():
+                        feature.compute_template(layer_name, bodlayer)
+                        features.append(feature)
+                    
         return FeatureCollection(features)
 
     @cacheable
