@@ -25,7 +25,7 @@ The following parameters are required:
 
 The service returns a maximum of 50 results.
 
-Example: http://sdi.geo.admin.ch/swisssearch?lang=fr&query=lausanne
+Example: http://sdi.geo.admin.ch/ws/swisssearch?lang=fr&query=lausanne
 
 Result
 ^^^^^^
