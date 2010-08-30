@@ -3,6 +3,10 @@
     white-space: normal;
 }
 
+.bodsearch .bodsearch_header {
+    background-color: #eee;
+}
+
 .bodsearch .office-provider,
 .bodsearch .bod-title {
     margin-bottom: 10px;
