@@ -43,7 +43,6 @@ class BodsearchController(BaseController):
             abort(404)
 
         if 'print' in request.params:
-            #baseUrl = request.params.get('baseUrl')
             return render('/bod-details-print.mako')
         else:
             return render('/bod-details.mako')
