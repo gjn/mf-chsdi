@@ -8,6 +8,8 @@
  * @include LayerTree/lib/ActionsMixin.js
  * @include LayerTree/lib/ComponentMixin.js
  * @include LayerTree/lib/TreeEventModel.js
+ *
+ * @include BodSearch/lib/BodSearchWindow.js
  */
 
 /**
@@ -178,9 +180,8 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 new Ext.Action({
                     iconCls: "layer-info",
                     tooltip: OpenLayers.i18n("about that layer"),
-                    // we need to couple this with the search combo. See this
-                    // with our favorite main developer...
                     handler: function() {
+                        GeoAdmin.BodSearchWindow.show(node.layer.layername);
                     }
                 })
             ]
