@@ -53,7 +53,6 @@ GeoAdmin.Features = OpenLayers.Class({
     showCb: function(response) {
         if (this.highlightCb(response)) {
             this.map.zoomToExtent(this.map.vector.getDataExtent());
-            
         }
     },
 
