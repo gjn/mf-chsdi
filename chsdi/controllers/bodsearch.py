@@ -31,6 +31,7 @@ class BodsearchController(BaseController):
 
         return {'results': [r.json(q) for r in query]}
 
+    @_jsonify(cb='cb')
     def details(self, id=None):
         c.full = True
         c.hilight = ''
