@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: chsdi 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-08-03 12:20+0200\n"
-"PO-Revision-Date: 2010-08-03 12:22+0200\n"
+"PO-Revision-Date: 2010-08-30 16:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -17,11 +17,260 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: chsdi/model/swisssearch.py:30
+#: chsdi/model/swisssearch.py:39
+#: chsdi/templates/tooltips/gebaeuderegister.mako:7
 msgid "npa"
 msgstr "PLZ"
 
-#: chsdi/model/swisssearch.py:42
+#: chsdi/model/swisssearch.py:51
 msgid "ct"
 msgstr "Kt."
+
+#: chsdi/templates/bod-details.mako:19
+msgid "Legend"
+msgstr "Legende"
+
+#: chsdi/templates/bod-details.mako:23 chsdi/templates/tooltips/base.mako:8
+msgid "Information"
+msgstr "Informationen"
+
+#: chsdi/templates/bod-details.mako:26
+msgid "Gueltiger Massstabsbereich"
+msgstr "Gültiger Massstabsbereich"
+
+#: chsdi/templates/bod-details.mako:27
+msgid "Metadaten"
+msgstr "Metadaten"
+
+#: chsdi/templates/bod-details.mako:28
+msgid "Detailbeschreibung"
+msgstr "Detailbeschreibung"
+
+#: chsdi/templates/bod-details.mako:30
+msgid "layer_url_text"
+msgstr "Link zu Detailbeschreibung"
+
+#: chsdi/templates/bod-details.mako:36
+msgid "Datenbezug"
+msgstr "Datenbezug"
+
+#: chsdi/templates/bod-details.mako:38
+msgid "layer_url_download_text"
+msgstr "Link für Datenbezug"
+
+#: chsdi/templates/bod-details.mako:44
+msgid "Thematisches Geoportal"
+msgstr "Thematisches Geoportal"
+
+#: chsdi/templates/bod-details.mako:46
+msgid "layer_url_portal_text"
+msgstr "Link zum Fachportal"
+
+#: chsdi/templates/bod-details.mako:52
+msgid "WMS Dienst"
+msgstr "WMS Dienst"
+
+#: chsdi/templates/bod-details.mako:54
+msgid "wms_resource_text"
+msgstr "Link zum WMS"
+
+#: chsdi/templates/bod-details.mako:60
+msgid "Datenstand"
+msgstr "Datenstand"
+
+#: chsdi/templates/tooltips/agnes.mako:4 chsdi/templates/tooltips/am_g.mako:4
+#: chsdi/templates/tooltips/am_l.mako:6 chsdi/templates/tooltips/au.mako:4
+#: chsdi/templates/tooltips/bezirke25.mako:4
+#: chsdi/templates/tooltips/bln.mako:4
+#: chsdi/templates/tooltips/fixpunkte.mako:5 chsdi/templates/tooltips/fm.mako:4
+#: chsdi/templates/tooltips/fm_reg.mako:4 chsdi/templates/tooltips/gg25.mako:4
+#: chsdi/templates/tooltips/hm.mako:4 chsdi/templates/tooltips/jb.mako:4
+#: chsdi/templates/tooltips/kanton25.mako:4 chsdi/templates/tooltips/lhg.mako:4
+#: chsdi/templates/tooltips/ml.mako:4
+#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:4
+#: chsdi/templates/tooltips/ra.mako:4 chsdi/templates/tooltips/sb.mako:4
+#: chsdi/templates/tooltips/vec200_customsoffice.mako:4
+#: chsdi/templates/tooltips/vec200_ship.mako:4
+#: chsdi/templates/tooltips/vec200_terminal.mako:4
+#: chsdi/templates/tooltips/vec200_trafficinfo.mako:4
+#: chsdi/templates/tooltips/wv.mako:4
+msgid "name"
+msgstr "Name"
+
+#: chsdi/templates/tooltips/agnes.mako:5
+msgid "url"
+msgstr "URL"
+
+#: chsdi/templates/tooltips/am_g.mako:5 chsdi/templates/tooltips/am_l.mako:8
+#: chsdi/templates/tooltips/au.mako:5 chsdi/templates/tooltips/bln.mako:5
+#: chsdi/templates/tooltips/fixpunkte.mako:4 chsdi/templates/tooltips/fm.mako:5
+#: chsdi/templates/tooltips/fm_reg.mako:5
+#: chsdi/templates/tooltips/gebaeuderegister.mako:6
+#: chsdi/templates/tooltips/hm.mako:5 chsdi/templates/tooltips/jb.mako:5
+#: chsdi/templates/tooltips/ml.mako:5
+#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:5
+#: chsdi/templates/tooltips/ra.mako:5 chsdi/templates/tooltips/sb.mako:5
+#: chsdi/templates/tooltips/wv.mako:5
+msgid "obj"
+msgstr "Objektnr."
+
+#: chsdi/templates/tooltips/am_l.mako:4 chsdi/templates/tooltips/au.mako:7
+#: chsdi/templates/tooltips/bln.mako:6 chsdi/templates/tooltips/hm.mako:7
+#: chsdi/templates/tooltips/jb.mako:7 chsdi/templates/tooltips/ml.mako:6
+#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:7
+#: chsdi/templates/tooltips/ra.mako:6 chsdi/templates/tooltips/sb.mako:7
+#: chsdi/templates/tooltips/wv.mako:7
+msgid "fl"
+msgstr "Fläche [ha]"
+
+#: chsdi/templates/tooltips/am_l.mako:5
+msgid "am_l_berei"
+msgstr ""
+
+#: chsdi/templates/tooltips/am_l.mako:7 chsdi/templates/tooltips/fm.mako:6
+#: chsdi/templates/tooltips/fm_reg.mako:6 chsdi/templates/tooltips/jb.mako:8
+#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:8
+#: chsdi/templates/tooltips/ra.mako:7 chsdi/templates/tooltips/sb.mako:8
+#: chsdi/templates/tooltips/wv.mako:8
+msgid "gf"
+msgstr "Gesamtfläche [ha]"
+
+#: chsdi/templates/tooltips/arealstatistik1985.mako:4
+#: chsdi/templates/tooltips/arealstatistik1997.mako:4
+msgid "gmde"
+msgstr "BFS-Gemeindenummer (Stand 2006)"
+
+#: chsdi/templates/tooltips/arealstatistik1985.mako:5
+#: chsdi/templates/tooltips/arealstatistik1997.mako:5
+msgid "fj85"
+msgstr "Luftbild Arealstatistik 1979/85 von"
+
+#: chsdi/templates/tooltips/arealstatistik1985.mako:6
+#: chsdi/templates/tooltips/arealstatistik1997.mako:8
+msgid "id_arealstatistik_85"
+msgstr "Grundkategorie Arealstatistik 1979/85"
+
+#: chsdi/templates/tooltips/arealstatistik1985.mako:7
+#: chsdi/templates/tooltips/arealstatistik1997.mako:7
+msgid "fj97"
+msgstr "Luftbild Arealstatistik 1992/97 von"
+
+#: chsdi/templates/tooltips/arealstatistik1985.mako:8
+#: chsdi/templates/tooltips/arealstatistik1997.mako:6
+msgid "id_arealstatistik_97"
+msgstr "Grundkategorie Arealstatistik 1992/97"
+
+#: chsdi/templates/tooltips/au.mako:6 chsdi/templates/tooltips/hm.mako:6
+#: chsdi/templates/tooltips/vec200_railway.mako:5
+#: chsdi/templates/tooltips/vec200_ramp.mako:5
+#: chsdi/templates/tooltips/vec200_road.mako:5
+#: chsdi/templates/tooltips/vec200_ship.mako:5
+#: chsdi/templates/tooltips/vec200_trafficinfo.mako:5
+msgid "type"
+msgstr ""
+
+#: chsdi/templates/tooltips/base.mako:12
+msgid "Link to object"
+msgstr "Link zum Objekt"
+
+#: chsdi/templates/tooltips/bezirke25.mako:5
+#: chsdi/templates/tooltips/gg25.mako:5
+msgid "flaeche_ha"
+msgstr "Fläche [ha]"
+
+#: chsdi/templates/tooltips/fixpunkte.mako:6
+#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:6
+msgid "status"
+msgstr "Status"
+
+#: chsdi/templates/tooltips/fixpunkte.mako:7
+msgid "zugang"
+msgstr "Zugang"
+
+#: chsdi/templates/tooltips/fixpunkte.mako:8
+msgid "protokoll"
+msgstr "Protokoll"
+
+#: chsdi/templates/tooltips/gebaeuderegister.mako:4
+msgid "egid"
+msgstr "EGID"
+
+#: chsdi/templates/tooltips/gebaeuderegister.mako:5
+msgid "strname1"
+msgstr ""
+
+#: chsdi/templates/tooltips/gebaeuderegister.mako:8
+msgid "plzname"
+msgstr ""
+
+#: chsdi/templates/tooltips/gg25.mako:6
+msgid "perimeter_m"
+msgstr "Perimeter [m]"
+
+#: chsdi/templates/tooltips/hm.mako:8
+msgid "hm_ke"
+msgstr ""
+
+#: chsdi/templates/tooltips/jb.mako:6 chsdi/templates/tooltips/wv.mako:6
+msgid "kat"
+msgstr "Kategorie"
+
+#: chsdi/templates/tooltips/kanton25.mako:5
+msgid "flaeche_km2"
+msgstr "Fläche [km2]"
+
+#: chsdi/templates/tooltips/kgs.mako:4
+msgid "zkob"
+msgstr ""
+
+#: chsdi/templates/tooltips/kgs.mako:5
+msgid "x"
+msgstr "X-Koordinate"
+
+#: chsdi/templates/tooltips/kgs.mako:6
+msgid "y"
+msgstr "Y-Koordinate"
+
+#: chsdi/templates/tooltips/kgs.mako:7
+msgid "gemeinde"
+msgstr "Gemeinde"
+
+#: chsdi/templates/tooltips/kgs.mako:8 chsdi/templates/tooltips/sb.mako:6
+#: chsdi/templates/tooltips/weanb.mako:5 chsdi/templates/tooltips/weanw.mako:5
+#: chsdi/templates/tooltips/wewb.mako:5 chsdi/templates/tooltips/weww.mako:5
+#: chsdi/templates/tooltips/wl.mako:4 chsdi/templates/tooltips/wr.mako:4
+msgid "kanton"
+msgstr "Kanton"
+
+#: chsdi/templates/tooltips/lhg.mako:5
+msgid "edv_nr4"
+msgstr ""
+
+#: chsdi/templates/tooltips/vec200_railway.mako:4
+#: chsdi/templates/tooltips/vec200_ramp.mako:4
+#: chsdi/templates/tooltips/vec200_road.mako:4
+msgid "construct"
+msgstr "Kunstbaute"
+
+#: chsdi/templates/tooltips/vec200_ramp.mako:6
+#: chsdi/templates/tooltips/vec200_road.mako:6
+msgid "toll"
+msgstr "Strassenbenutzungsgebühr"
+
+#: chsdi/templates/tooltips/weanb.mako:4 chsdi/templates/tooltips/weanw.mako:4
+#: chsdi/templates/tooltips/wewb.mako:4 chsdi/templates/tooltips/weww.mako:4
+msgid "ent_gew"
+msgstr ""
+
+#: chsdi/templates/tooltips/weanb.mako:6 chsdi/templates/tooltips/weanw.mako:6
+#: chsdi/templates/tooltips/wewb.mako:6 chsdi/templates/tooltips/weww.mako:6
+#: chsdi/templates/tooltips/wl.mako:5 chsdi/templates/tooltips/wr.mako:5
+msgid "kantoncode"
+msgstr "Kantonaler Code"
+
+#: chsdi/templates/tooltips/weanb.mako:7 chsdi/templates/tooltips/weanw.mako:7
+#: chsdi/templates/tooltips/wewb.mako:7 chsdi/templates/tooltips/weww.mako:7
+#: chsdi/templates/tooltips/wl.mako:6 chsdi/templates/tooltips/wr.mako:6
+msgid "rwknr"
+msgstr "Restwasserkarte Nr."
 
