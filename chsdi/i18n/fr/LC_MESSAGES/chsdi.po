@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: chsdi 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-08-03 12:20+0200\n"
-"PO-Revision-Date: 2010-08-27 10:58+0200\n"
+"PO-Revision-Date: 2010-08-30 16:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
@@ -212,8 +212,6 @@ msgid "hm_ke"
 msgstr "Unité de cartographie"
 
 #: chsdi/templates/tooltips/jb.mako:6 chsdi/templates/tooltips/wv.mako:6
-#, fuzzy
-#| msgid "wv_kat"
 msgid "kat"
 msgstr "Catégorie"
 
@@ -275,13 +273,4 @@ msgstr "Code cantonal"
 #: chsdi/templates/tooltips/wl.mako:6 chsdi/templates/tooltips/wr.mako:6
 msgid "rwknr"
 msgstr "Débit résiduel N°"
-
-#~ msgid "jb_kat"
-#~ msgstr ""
-
-#~ msgid "kt_kz"
-#~ msgstr ""
-
-#~ msgid "ame"
-#~ msgstr ""
 
