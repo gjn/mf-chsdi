@@ -25,18 +25,19 @@ GeoAdmin.Features = OpenLayers.Class({
         this.format = new OpenLayers.Format.GeoJSON();
     },
 
-    recenter: function(layer, ids) {
-        this._request(layer, ids, this.recenterUrl, this.recenterCb);
+    recenter: function(layer, ids, cb) {
+        this._request(layer, ids, this.recenterUrl, this.recenterCb, cb);
     },
 
     recenterCb: function(response) {
-        if (response.length === 4) {
-            this.map.zoomToExtent(OpenLayers.Bounds.fromArray(response));
+        var bbox = response.bbox;
+        if (bbox) {
+            this.map.zoomToExtent(OpenLayers.Bounds.fromArray(bbox));
         }
     },
 
-    highlight: function(layer, ids) {
-        this._request(layer, ids, this.highlightUrl, this.highlightCb);
+    highlight: function(layer, ids, cb) {
+        this._request(layer, ids, this.highlightUrl, this.highlightCb, cb);
     },
 
     highlightCb: function(response) {
@@ -46,8 +47,8 @@ GeoAdmin.Features = OpenLayers.Class({
         return features;
     },
 
-    show: function(layer, ids) {
-        this._request(layer, ids, this.highlightUrl, this.showCb);
+    show: function(layer, ids, cb) {
+        this._request(layer, ids, this.highlightUrl, this.showCb, cb);
     },
 
     showCb: function(response) {
@@ -56,10 +57,14 @@ GeoAdmin.Features = OpenLayers.Class({
         }
     },
 
-    _request: function(layer, ids, url, callback) {
+    _request: function(layer, ids, url, callback, next) {
         if (ids instanceof Array) {
             ids = ids.join(',');
         }
+        if (next) {
+            callback = callback.createSequence(next);
+        }
+
         Ext.ux.JSONP.request(url, {
             callbackKey: "cb",
             params: {

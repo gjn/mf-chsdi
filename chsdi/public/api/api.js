@@ -263,9 +263,9 @@ GeoAdmin.API = OpenLayers.Class({
      *     api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
      *
      */
-    recenterFeatures: function(layer, ids) {
+    recenterFeatures: function(layer, ids, cb) {
         var f = new GeoAdmin.Features({map: this.map});
-        f.recenter(layer, ids);
+        f.recenter(layer, ids, cb);
     },
 
     /**
@@ -284,9 +284,9 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *
      */
-    highlightFeatures: function(layer, ids) {
+    highlightFeatures: function(layer, ids, cb) {
         var f = new GeoAdmin.Features({map: this.map});
-        f.highlight(layer, ids);
+        f.highlight(layer, ids, cb);
     },
 
     /** api: method[recenterFeatures]
@@ -300,9 +300,9 @@ GeoAdmin.API = OpenLayers.Class({
      *     api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
      *
      */
-    showFeatures: function(layer, ids) {
+    showFeatures: function(layer, ids, cb) {
         var f = new GeoAdmin.Features({map: this.map});
-        f.show(layer, ids);
+        f.show(layer, ids, cb);
     },
 
     /** api: method[showMarker]
