@@ -111,7 +111,8 @@
   background-image: url(../images/mixed.png);
 }
 .geoadmin-layertree .x-tree-node .x-tree-selected,
-.geoadmin-layertree .x-tree-node .x-tree-node-over {
+.geoadmin-layertree .x-tree-node .x-tree-node-over,
+.geoadmin-layertree .x-tree-node .x-tree-node-anchor {
     background-color: transparent !important;
     cursor: default;
 }
