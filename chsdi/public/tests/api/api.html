@@ -374,13 +374,12 @@ function test_recenterFeatures(t) {
     api.createMap({
         div: "map_1"
     });
-    api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
-    var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
-    var lonlat = bounds.getCenterLonLat();
 
-    t.delay_call(3, function() {
+    api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+        var lonlat = OpenLayers.Bounds.fromArray(response.bbox).getCenterLonLat();
         t.ok(api.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
     });
+    t.wait_result(10);
 }
 
 function test_highlightFeatures(t) {
@@ -391,29 +390,28 @@ function test_highlightFeatures(t) {
         div: "map_1"
     });
 
-    api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
-
-    t.delay_call(3, function() {
+    api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function() {
         t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after highlightFeatures");
     });
+    t.wait_result(10);
 }
 
 function test_showFeatures(t) {
-    t.plan(2);
+    t.plan(3);
 
     var api = new GeoAdmin.API();
     api.createMap({
         div: "map_1"
     });
 
-    api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
-    var bounds = new OpenLayers.Bounds(535258.23780519736, 181384.51433542982, 538738.32847534434, 183343.89618228021);
-    var lonlat = bounds.getCenterLonLat();
- 
-    t.delay_call(3, function() {
-        t.ok(api.map.getCenter().equals(lonlat), "check new center after showFeatures");
+    api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+        var features = this.format.read(response);
+        t.eq(features.length, 1, "received 1 feature");
         t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after showFeatures");
+
+        t.ok(api.map.getExtent().containsBounds(api.map.vector.getDataExtent()), "check new center after showFeatures");
     });
+    t.wait_result(10);
 }
 
 function test_createMousePosition(t) {
