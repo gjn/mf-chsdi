@@ -36,7 +36,8 @@ var Layers = OpenLayers.Class({
                 transitionEffect: "resize",
 
                 geoadmin_queryable: config.queryable,
-                geoadmin_isBgLayer: !!(config.isBgLayer)
+                geoadmin_isBgLayer: !!(config.isBgLayer),
+                layerType: config.type
             }, options);
 
             var url = [

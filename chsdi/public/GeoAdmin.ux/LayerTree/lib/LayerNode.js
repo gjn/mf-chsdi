@@ -5,8 +5,6 @@
 GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
 
     constructor: function(config) {
-        // layer has no layerType at this point. Ask our favorite
-        // main developer about that...
         if (config.layer.layerType) {
             config.iconCls = 'tree-layer-icon-' + config.layer.layerType;
         }
