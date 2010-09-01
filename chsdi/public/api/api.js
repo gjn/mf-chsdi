@@ -121,6 +121,10 @@ GeoAdmin.API = OpenLayers.Class({
             scale: options.scale
         });
 
+        if (this.map.getCenter() == null) {
+            this.map.zoomToMaxExtent();
+        }
+
         // set the complementary layer
         this.map.switchComplementaryLayer(options.bgLayer, {
             opacity: options.bgOpacity

@@ -12,7 +12,7 @@
               var map = new GeoAdmin.Map("map");
               t.ok(map.aerial, "aerial map is here");
               t.ok(map.aerial.getVisibility(), "aerial map is visible");
-              t.ok(map.getCenter().equals(map.maxExtent.getCenterLonLat()), "map center");
+              t.eq(map.getCenter(), null, "map isn't centered");
               map.destroy();
           }
           function test_destroy(t) {
