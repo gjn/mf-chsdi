@@ -7,8 +7,8 @@
 
 GeoAdmin.Features = OpenLayers.Class({
 
-    recenterUrl: GeoAdmin.webServicesUrl + "/feature/bbox",
-    highlightUrl: GeoAdmin.webServicesUrl + "/feature/geometry",
+    recenterUrl: null,
+    highlightUrl: null,
 
     /*
      * {<OpenLayers.Map>}
@@ -21,6 +21,10 @@ GeoAdmin.Features = OpenLayers.Class({
     format: null,
 
     initialize: function(options) {
+        if (GeoAdmin.webServicesUrl != null) {
+            this.recenterUrl = GeoAdmin.webServicesUrl + "/feature/bbox";
+            this.highlightUrl = GeoAdmin.webServicesUrl + "/feature/geometry";
+        }
         OpenLayers.Util.extend(this, options || {});
         this.format = new OpenLayers.Format.GeoJSON();
     },

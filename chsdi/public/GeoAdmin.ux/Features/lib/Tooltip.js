@@ -12,11 +12,19 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
      */
     layer: null,
 
+    /*
+     *
+     */
+    url: null,
+
     initialize: function(options) {
+        if (GeoAdmin.webServicesUrl) {
+            this.url = GeoAdmin.webServicesUrl + "/bodfeature/search";
+        }
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
         this.protocol = new OpenLayers.Protocol.HTTP({
-            url: GeoAdmin.webServicesUrl + "/bodfeature/search",
+            url: url,
             format: new OpenLayers.Format.GeoJSON(),
             params: {
                 lang: OpenLayers.Lang.getCode()

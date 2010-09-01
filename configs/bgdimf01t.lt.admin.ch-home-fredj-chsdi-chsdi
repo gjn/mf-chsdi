@@ -1,1 +1,1 @@
-export WSGI_BASE="/~fredj"
+export INSTANCE_ID="/~fredj"

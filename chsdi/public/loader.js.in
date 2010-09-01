@@ -1,4 +1,0 @@
-(function() {
-    document.write('<scr' + 'ipt type="text/javascript" src="%HOST%%WSGI_BASE%/%API_VERSION%build/api.js"></scr' + 'ipt>');
-    document.write('<link rel="stylesheet" type="text/css" href="%HOST%%WSGI_BASE%/%API_VERSION%build/api.css" />');
-})();

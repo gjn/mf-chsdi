@@ -14,7 +14,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     /*
      * {String}
      */
-    url: GeoAdmin.webServicesUrl + '/bodsearch/search',
+    url: null,
 
     /*
      * {String}
@@ -36,6 +36,9 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     forceSelection: true,
 
     initComponent: function() {
+        if (!this.url && GeoAdmin.webServicesUrl != null) {
+            this.url = GeoAdmin.webServicesUrl + '/bodsearch/search';
+        }
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
                 url: this.url,

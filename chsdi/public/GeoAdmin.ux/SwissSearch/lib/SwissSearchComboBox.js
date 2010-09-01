@@ -10,6 +10,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     map: null,
 
+    /** config
+     */
+    url: null,
+
     defaultZoom: 5,
 
     // default Ext.form.ComboBox config
@@ -35,9 +39,14 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     initComponent: function() {
+        var url;
+        if (!this.url && GeoAdmin.webServicesUrl != null) {
+            url = GeoAdmin.webServicesUrl + "/swisssearch";
+            delete this.url;
+        }
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
-                url: GeoAdmin.webServicesUrl + "/swisssearch",
+                url: url,
                 method: 'GET',
                 callbackParam: 'cb',
                 nocache: false

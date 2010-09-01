@@ -2,8 +2,8 @@ RewriteEngine On
 ExpiresActive On
 
 # never cache the api loader
-Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
-<Location %WSGI_BASE%/loader.js>
+Alias %INSTANCE_ID%/ws/loader.js %PROJECT_DIR%/chsdi/public/loader.js
+<Location %INSTANCE_ID%/ws/loader.js>
     ExpiresDefault "access"
     Header merge Cache-Control "no-cache"
     Header unset ETag
@@ -11,11 +11,11 @@ Alias %WSGI_BASE%/loader.js %PROJECT_DIR%/chsdi/public/loader.js
 </Location>
 
 # non cached urls:
-RewriteRule ^%WSGI_BASE%/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+RewriteRule ^%INSTANCE_ID%/ws/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
 
 # cached urls:
-RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
-<LocationMatch %WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)>
+RewriteRule ^%INSTANCE_ID%/[0-9a-fA-F]*/ws/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
+<LocationMatch %INSTANCE_ID%/[0-9a-fA-F]*/ws/(build|lib|GeoAdmin.ux)>
     ExpiresDefault "now plus 1 year"
     Header merge Cache-Control "public"
 
@@ -23,4 +23,4 @@ RewriteRule ^%WSGI_BASE%/[0-9a-fA-F]*/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_DI
 </LocationMatch>
 
 # web services:
-WSGIScriptAlias %WSGI_BASE%/ws %PROJECT_DIR%/chsdi.wsgi
+WSGIScriptAlias %INSTANCE_ID%/ws %PROJECT_DIR%/chsdi.wsgi
