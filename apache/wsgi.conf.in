@@ -1,15 +1,6 @@
 RewriteEngine On
 ExpiresActive On
 
-# never cache the api loader
-Alias %INSTANCE_ID%/ws/loader.js %PROJECT_DIR%/chsdi/public/loader.js
-<Location %INSTANCE_ID%/ws/loader.js>
-    ExpiresDefault "access"
-    Header merge Cache-Control "no-cache"
-    Header unset ETag
-    Header unset Last-Modified
-</Location>
-
 # non cached urls:
 RewriteRule ^%INSTANCE_ID%/ws/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
 
@@ -24,3 +15,10 @@ RewriteRule ^%INSTANCE_ID%/[0-9a-fA-F]*/ws/(build|lib|GeoAdmin.ux)/(.*)$  %PROJE
 
 # web services:
 WSGIScriptAlias %INSTANCE_ID%/ws %PROJECT_DIR%/chsdi.wsgi
+# never cache the api loader
+<Location %INSTANCE_ID%/ws/loader.js>
+    ExpiresDefault "access"
+    Header merge Cache-Control "no-cache"
+    Header unset ETag
+    Header unset Last-Modified
+</Location>
