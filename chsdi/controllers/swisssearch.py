@@ -55,6 +55,6 @@ class SwisssearchController(BaseController):
         gfilter_point = SwissSearch.within_filter(lon, lat, tolerance=200, column='the_geom_point')
 
         query = Session.query(SwissSearch)
-        query = query.filter(or_(gfilter_poly.to_sql_expr(), gfilter_point.to_sql_expr()))
+        query = query.filter(or_(gfilter_poly, gfilter_point))
 
         return [f.json for f in query.all()]

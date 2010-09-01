@@ -85,8 +85,8 @@ class FeatureController(BaseController):
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
-                if geom_filter:
-                    query = Session.query(model).filter(geom_filter.to_sql_expr())
+                if geom_filter is not None:
+                    query = Session.query(model).filter(geom_filter)
                     bodlayer = Session.query(bodsearch).get(layer_name)
 
                     for feature in query.all():

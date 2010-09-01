@@ -1,14 +1,17 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column
-from geoalchemy import Geometry
-
-from mapfish.lib.filters.spatial import Spatial
-
 from pylons.i18n import _
 
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column
+
+from geoalchemy import Geometry
+
 from shapely.wkb import loads
+from shapely.geometry.point import Point
+
+from mapfish.sqlalchemygeom import within_distance
 
 from chsdi.model import *
+
 Base = declarative_base(bind=meta.engines['search'])
 
 class SwissSearch(Base):
@@ -25,9 +28,11 @@ class SwissSearch(Base):
         return tuple([int(c) for c in bbox])
 
     @classmethod
-    def within_filter(cls, lon, lat, column, *args, **kwargs):
-        return Spatial(Spatial.WITHIN, cls.__table__.columns.get(column),
-                       lon=lon, lat=lat, epsg=21781, *args, **kwargs)
+    def within_filter(cls, lon, lat, column, tolerance=0):
+        geom = Point(lon, lat)
+        wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
+        geom_column = cls.__table__.columns.get(column)
+        return within_distance(geom_column, wkb_geometry, tolerance)
 
     @property
     def json(self):

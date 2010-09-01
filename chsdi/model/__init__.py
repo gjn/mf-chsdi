@@ -4,11 +4,14 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from sqlalchemy.types import Integer, Text, String
 
-from mapfish.lib.filters.spatial import Spatial
+from geoalchemy import Geometry, WKBSpatialElement
+
+from mapfish.sqlalchemygeom import within_distance
 
 from geojson.feature import Feature
-from geoalchemy import Geometry
+
 from shapely.wkb import loads
+from shapely.geometry.polygon import Polygon
 
 from chsdi.lib.base import render, c
 from chsdi.model import meta
@@ -39,8 +42,13 @@ class Queryable(object):
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
         if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
-            return Spatial(Spatial.BOX, cls.__table__.columns['the_geom'],
-                           box=bbox, tolerance=tolerance, epsg=21781)
+            geom = Polygon(((bbox[0], bbox[1]), (bbox[0], bbox[3]),
+                            (bbox[2], bbox[3]), (bbox[2], bbox[1]),
+                            (bbox[0], bbox[1])))
+            wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
+            geom_column = cls.__table__.columns['the_geom']
+            return within_distance(geom_column, wkb_geometry, tolerance)
+        return None
 
     def compute_template(self, layer_id, bodlayer):
         c.feature = self
