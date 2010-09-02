@@ -1,4 +1,4 @@
-Widgets description
+Widgets Description
 ===================
 
 The philosophy of the `GeoExt UX <http://trac.geoext.org/wiki/ux>`_ has been followed in order to create the GeoAdmin widgets.
