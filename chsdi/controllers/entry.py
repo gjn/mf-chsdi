@@ -11,7 +11,7 @@ class EntryController(BaseController):
 
     def loader(self):
         c.wsgi_base = request.environ["SCRIPT_NAME"]
-        #response.headers['Content-Type'] = 'text/javascript'
+        response.content_type = 'application/javascript'
         return render("loader.js")
 
     def do_not_exist(self):
