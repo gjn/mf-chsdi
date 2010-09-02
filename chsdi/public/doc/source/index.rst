@@ -1,4 +1,4 @@
-.. CH SDI documentation master file, created by
+.. GeoAdmin API documentation master file, created by
    sphinx-quickstart on Wed Jul 21 07:44:14 2010.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -26,8 +26,8 @@
    }
    </script>
 
-Welcome to CH SDI's documentation!
-==================================
+Welcome to GeoAdmin API's documentation!
+========================================
 
 .. raw:: html
 
@@ -72,12 +72,46 @@ Welcome to CH SDI's documentation!
 Contents
 ********
 
+API
+---
+
+.. toctree::
+   :maxdepth: 1
+
+   api/sdiapitutorial
+   api/sdiapidoc
+   api/sdiapiexamples
+   api/sdiapigenerator
+
+Widgets
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   widgets/sdiwidgetsdescription
+   widgets/sdiwidgetsexamples
+   
+Services
+--------
+
 .. toctree::
    :maxdepth: 2
 
-   api/sdiapi
-   widgets/sdiwidgets
    services/sdiservices
+
+Unit tests
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   tests/unittests
+
+Terms of use
+************
+
+The GeoAdmin API terms of use are accessible here: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form_db.html
 
 Indices and tables
 ==================

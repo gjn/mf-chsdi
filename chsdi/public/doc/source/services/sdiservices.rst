@@ -1,19 +1,10 @@
 Services
 ========
 
-Services description
-********************
-
-Swisssearch
------------
-
-Swisssearch allows the user to search for swiss locations, like postcode, cantons, cities and swissnames
-
-Services usage
-**************
-
 Swissearch
 ----------
+
+Swisssearch allows the user to search for swiss locations, like postcode, cantons, cities and swissnames
 
 Input parameters
 ^^^^^^^^^^^^^^^^

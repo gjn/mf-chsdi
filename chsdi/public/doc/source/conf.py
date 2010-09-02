@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# CH SDI documentation build configuration file, created by
+# GeoAdmin API documentation build configuration file, created by
 # sphinx-quickstart on Wed Jul 21 07:44:14 2010.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'CH SDI'
+project = u'GeoAdmin API'
 copyright = u'2010, COGIS'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -180,7 +180,7 @@ htmlhelp_basename = 'CHSDIdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'CHSDI.tex', u'CH SDI Documentation',
+  ('index', 'CHSDI.tex', u'GeoAdmin API Documentation',
    u'COGIS', 'manual'),
 ]
 
@@ -213,6 +213,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'chsdi', u'CH SDI Documentation',
+    ('index', 'chsdi', u'GeoAdmin API Documentation',
      [u'COGIS'], 1)
 ]
