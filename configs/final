@@ -1,0 +1,6 @@
+if [ "$INSTANCE_ID" != "" ]; then
+    export WSGI_BASE=$INSTANCE_ID
+else
+    export WSGI_BASE="/"
+fi
+
