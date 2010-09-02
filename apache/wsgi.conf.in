@@ -18,7 +18,7 @@ RewriteRule ^/[0-9a-fA-F]*%INSTANCE_ID%/(build|lib|GeoAdmin.ux)/(.*)$  %PROJECT_
 # web services:
 WSGIScriptAlias %WSGI_BASE% %PROJECT_DIR%/chsdi.wsgi
 # never cache the api loader
-<Location %INSTANCE_ID%loader.js>
+<Location %INSTANCE_ID%/loader.js>
     ExpiresDefault "access"
     Header merge Cache-Control "no-cache"
     Header unset ETag
