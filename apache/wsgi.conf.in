@@ -1,6 +1,8 @@
 RewriteEngine On
 ExpiresActive On
 
+RedirectMatch ^/$ /doc/build/
+
 # non cached urls:
 RewriteRule ^%INSTANCE_ID%/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  %PROJECT_DIR%/chsdi/public/$1/$2
 
