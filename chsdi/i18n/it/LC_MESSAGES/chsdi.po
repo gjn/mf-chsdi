@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: chsdi 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2010-08-03 12:20+0200\n"
-"PO-Revision-Date: 2010-08-30 16:48+0200\n"
+"PO-Revision-Date: 2010-09-02 10:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: it <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: chsdi/model/swisssearch.py:39
+#: chsdi/model/swisssearch.py:44
 #: chsdi/templates/tooltips/gebaeuderegister.mako:7
 msgid "npa"
 msgstr "NPA"
 
-#: chsdi/model/swisssearch.py:51
+#: chsdi/model/swisssearch.py:56
 msgid "ct"
 msgstr "Ct."
 
@@ -220,8 +220,8 @@ msgid "flaeche_km2"
 msgstr ""
 
 #: chsdi/templates/tooltips/kgs.mako:4
-msgid "zkob"
-msgstr ""
+msgid "beschreibung"
+msgstr "Descrizione"
 
 #: chsdi/templates/tooltips/kgs.mako:5
 msgid "x"
@@ -273,4 +273,7 @@ msgstr ""
 #: chsdi/templates/tooltips/wl.mako:6 chsdi/templates/tooltips/wr.mako:6
 msgid "rwknr"
 msgstr ""
+
+#~ msgid "zkob"
+#~ msgstr ""
 
