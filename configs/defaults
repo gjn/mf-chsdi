@@ -1,6 +1,6 @@
 export PYTHON_SITE=$PYTHON_HOME/lib/python2.5/site-packages
 
-export INSTANCE_ID="/"
+export INSTANCE_ID=""
 
 export DB_HOST="localhost"
 export DB_USER="www-data"
@@ -10,6 +10,8 @@ export DB_PORT="5432"
 export API_VERSION="$(date +"%d%m%y%H%M")"
 
 export HOST="http://mf-chsdi0t.bgdi.admin.ch"
+
+export WSGI_BASE="/"
 
 function post_fetch_project() {
 
