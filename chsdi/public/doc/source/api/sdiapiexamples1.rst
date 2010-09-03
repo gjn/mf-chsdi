@@ -266,6 +266,8 @@ The function showFeatures will highlight and recenter the features. The function
             div: "mymap5"
          });
          api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
+         
+         }
    </script>
 
    <body onload="init();">
