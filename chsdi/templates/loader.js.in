@@ -1,8 +1,9 @@
 (function() {
     document.write('<scr' + 'ipt type="text/javascript" src="%HOST%/%API_VERSION%${url('/build/api.js')}"></scr' + 'ipt>');
     document.write('<scr' + 'ipt type="text/javascript">' +
-                   'window.GeoAdmin.version="%API_VERSION%";' +
-                   'window.GeoAdmin.webServicesUrl="%HOST%${c.wsgi_base}";' +
+                   'if (!window.GeoAdmin) window.GeoAdmin = {};' +
+                   'GeoAdmin.version="%API_VERSION%";' +
+                   'GeoAdmin.webServicesUrl="%HOST%${c.wsgi_base}";' +
                    'OpenLayers.ImgPath="%HOST%/%API_VERSION%${url('/GeoAdmin.ux/Map/img/')}";' +
                    '</scr' + 'ipt>');
     document.write('<link rel="stylesheet" type="text/css" href="%HOST%/%API_VERSION%${url('/build/api.css')}" />');
