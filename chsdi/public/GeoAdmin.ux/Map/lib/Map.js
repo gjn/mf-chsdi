@@ -96,6 +96,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // add the voidlayer as the complementary layer but keep
         // the aerial layer visible
         this.switchComplementaryLayer("voidLayer", {opacity: 0});
+        if (options.doZoomToMaxExtent) {
+            this.zoomToMaxExtent();
+        }
     },
 
     getState: function() {

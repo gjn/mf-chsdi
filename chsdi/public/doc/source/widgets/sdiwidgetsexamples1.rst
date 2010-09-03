@@ -40,12 +40,12 @@ Default Map
 
    <script type="text/javascript">
       function init() {
-         var map1 = new GeoAdmin.Map("mymap1");
+         var map1 = new GeoAdmin.Map("mymap1", {doZoomToMaxExtent: true});
       }
    </script>
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -71,14 +71,14 @@ Map with gray pixelmap and overlay layer
 
    <script type="text/javascript">
       function init() {
-         var map2 = new GeoAdmin.Map("mymap2");
+         var map2 = new GeoAdmin.Map("mymap2", {doZoomToMaxExtent: true});
          map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
          map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
       }
    </script>
    <body onload="init();">
      <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -105,7 +105,7 @@ Base Layer Tool
 
    <script type="text/javascript">
       function init() {
-         var map3 = new GeoAdmin.Map("mymap3");
+         var map3 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var baseLayerTool = new GeoAdmin.BaseLayerTool({
             renderTo: "baselayertool3",
@@ -116,7 +116,7 @@ Base Layer Tool
    <body onload="init();">
      <div id="baselayertool3"></div>
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -144,7 +144,7 @@ Swiss Search
 
    <script type="text/javascript">
       function init() {
-         var map4 = new GeoAdmin.Map("mymap4");
+         var map4 = new GeoAdmin.Map("mymap4", {doZoomToMaxExtent: true});
          map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
@@ -157,7 +157,7 @@ Swiss Search
    <body onload="init();">
      <div id="mysearch4" style="margin:10px !important;"></div>
      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -184,7 +184,7 @@ BOD Search
 
    <script type="text/javascript">
       function init() {
-         var map5 = new GeoAdmin.Map("mymap5");
+         var map5 = new GeoAdmin.Map("mymap5", {doZoomToMaxExtent: true});
          var swisssearch = new GeoAdmin.BodSearchComboBox({
             width: 500,
             renderTo: "mysearch5",
@@ -195,7 +195,7 @@ BOD Search
    <body onload="init();">
      <div id="mysearch5" style="margin:10px !important;"></div>
      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -213,20 +213,20 @@ BOD Search
 
    <script type="text/javascript">
       function init() {
-         var map1 = new GeoAdmin.Map("mymap1");
+         var map1 = new GeoAdmin.Map("mymap1", {doZoomToMaxExtent: true});
 
-         var map2 = new GeoAdmin.Map("mymap2");
+         var map2 = new GeoAdmin.Map("mymap2", {doZoomToMaxExtent: true});
          map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
          map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
 
-         var map3 = new GeoAdmin.Map("mymap3");
+         var map3 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var baseLayerTool = new GeoAdmin.BaseLayerTool({
             renderTo: "baselayertool3",
             map: map3
          });
 
-         var map4 = new GeoAdmin.Map("mymap4");
+         var map4 = new GeoAdmin.Map("mymap4", {doZoomToMaxExtent: true});
          map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
@@ -235,7 +235,7 @@ BOD Search
             map: map4
          });
 
-         var map5 = new GeoAdmin.Map("mymap5");
+         var map5 = new GeoAdmin.Map("mymap5", {doZoomToMaxExtent: true});
          var swisssearch = new GeoAdmin.BodSearchComboBox({
             width: 500,
             renderTo: "mysearch5",

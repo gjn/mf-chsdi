@@ -42,7 +42,7 @@ Layer Tree
 
    <script type="text/javascript">
       function init() {
-         var map6 = new GeoAdmin.Map("mymap6");
+         var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
          var layertree = new GeoAdmin.LayerTree({
              map: map6,
@@ -54,7 +54,7 @@ Layer Tree
    <body onload="init();">
       <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
       <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://sdi.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -66,7 +66,7 @@ Layer Tree
    <script type="text/javascript">
       function init() {
 
-         var map6 = new GeoAdmin.Map("mymap6");
+         var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
          var layertree = new GeoAdmin.LayerTree({
              map: map6,
