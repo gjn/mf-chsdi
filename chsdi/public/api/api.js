@@ -408,9 +408,7 @@ GeoAdmin.API = OpenLayers.Class({
      */
     showPopup: function(options) {
 
-        var feature;
-
-        var center = this.map.getCenter();
+        var feature, center = this.map.getCenter();
 
         options = OpenLayers.Util.applyDefaults(options, {
             easting: center.lon,
@@ -421,7 +419,8 @@ GeoAdmin.API = OpenLayers.Class({
             width: 200,
             collapsible: false,
             unpinnable: true,
-            panIn: true
+            panIn: true,
+            map: this.map
         });
 
         // Manage options
@@ -436,7 +435,10 @@ GeoAdmin.API = OpenLayers.Class({
             this.popup.close();
         }
 
-        options.map = this.map;
+        //options.map = this.map;
+
+        // popup.feature renamed to popup.location in GeoExt 1.0
+        options.location = options.feature;
 
         if (options.html) {
             this.popup = new GeoExt.Popup(options);
