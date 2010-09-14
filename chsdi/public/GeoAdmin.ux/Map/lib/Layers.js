@@ -6,11 +6,7 @@
  * @include Map/lib/VoidLayer.js
  */
 
-// FIXME: uuid ?
-
-(function() {
-
-var Layers = OpenLayers.Class({
+GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,
 
@@ -453,7 +449,6 @@ var Layers = OpenLayers.Class({
         };
     }
 });
-// create the singleton
-GeoAdmin.layers = new Layers();
-})();
+
+GeoAdmin.layers = new GeoAdmin._Layers();
 
