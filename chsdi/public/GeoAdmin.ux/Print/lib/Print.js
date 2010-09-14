@@ -73,8 +73,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         delete config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
-        this.printPanel.on('show', this.printPanel.setUp, this.printPanel);
-        this.printPanel.on('hide', this.printPanel.tearDown, this.printPanel);
+        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
+        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
     
         // If a renderTo config is provided, the print panel is rendered
         // in the given element, else a popup is used to display it.
@@ -88,7 +88,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 closeAction: 'hide',
                 items: [ this.printPanel ]
             }, config.windowOptions);
-            this.printPanel.tearDown();
+            this.printPanel.hideExtent();
         } else {
             this.printPanel.hide();
         }
