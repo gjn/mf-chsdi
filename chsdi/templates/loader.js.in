@@ -1,10 +1,22 @@
 (function() {
-    document.write('<scr' + 'ipt type="text/javascript" src="%HOST%/%API_VERSION%${url('/build/api.js')}"></scr' + 'ipt>');
+
+    // this function changes double slashes to single slashes
+    // in the URL, skipping the first double slash
+    function cleanup(url) {
+        var idx = url.indexOf("//") + 2;
+        return url.slice(0, idx) + url.slice(idx).replace(/\/\//g, "/");
+    }
+
+    var scriptSrc = cleanup("%HOST%/%API_VERSION%${url('/build/api.js')}");
+    var OLImgPath = cleanup("%HOST%/%API_VERSION%${url('/GeoAdmin.ux/Map/img/')}");
+    var cssHref = cleanup("%HOST%/%API_VERSION%${url('/build/api.css')}");
+
+    document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
     document.write('<scr' + 'ipt type="text/javascript">' +
                    'if (!window.GeoAdmin) window.GeoAdmin = {};' +
                    'GeoAdmin.version="%API_VERSION%";' +
                    'GeoAdmin.webServicesUrl="%HOST%${c.wsgi_base}";' +
-                   'OpenLayers.ImgPath="%HOST%/%API_VERSION%${url('/GeoAdmin.ux/Map/img/')}";' +
+                   'OpenLayers.ImgPath="' + OLImgPath + '";' +
                    '</scr' + 'ipt>');
-    document.write('<link rel="stylesheet" type="text/css" href="%HOST%/%API_VERSION%${url('/build/api.css')}" />');
+    document.write('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
 })();
