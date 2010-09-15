@@ -6,11 +6,17 @@
  * @include Map/lib/VoidLayer.js
  */
 
+
+
 GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,
 
     buildLayerByName: function(name, options) {
+
+	if (this.layers == null) {
+	    this.init();
+	}
         var config = this.layers[name];
         
         if (name === "voidLayer") {
@@ -50,6 +56,9 @@ GeoAdmin._Layers = OpenLayers.Class({
     },
 
     initialize: function() {
+    },
+
+    init: function() {
         this.layers = {
             // base layers
             "ch.swisstopo.swissimage": {
