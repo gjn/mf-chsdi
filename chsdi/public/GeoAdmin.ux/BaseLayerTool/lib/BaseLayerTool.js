@@ -19,6 +19,9 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
         var slider = this.createOpacitySlider(this.slider);
         delete this.slider;
 
+        // keep a reference to the slider, used in the combo event listener
+        this._slider = slider;
+
         var combo = this.createLayersCombo(this.combo, slider);
         delete this.combo;
 
@@ -27,7 +30,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
                 combo.setValue(evt.layer.name);
             }
         });
-        
+
         this.items = [label, slider, combo];
 
         GeoAdmin.BaseLayerTool.superclass.initComponent.apply(this, arguments);
@@ -60,7 +63,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
             "ch.swisstopo.pixelkarte-grau",
             "voidLayer"
         ];
-        
+
         var data = [], id;
         for (var i = 0, len = layers.length; i < len; i++) {
             id = layers[i];
@@ -87,9 +90,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
             listeners: {
                 select: function(combo, record, index) {
                     var complementaryLayer = this.map.switchComplementaryLayer(record.data.id);
-                    if (slider) {
-                        slider.setLayer(complementaryLayer);
-                    }
+                    this._slider.setLayer(complementaryLayer);
                 },
                 scope: this
             }
