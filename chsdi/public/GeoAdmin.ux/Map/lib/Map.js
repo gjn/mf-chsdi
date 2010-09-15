@@ -27,7 +27,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     initialize: function (div, options) {
         OpenLayers.DOTS_PER_INCH = 254;
-        OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
+        if (GeoAdmin.OpenLayersImgPath != null) {
+            OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
+        }
 
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
             title: OpenLayers.i18n('Zoom to the max extent')
