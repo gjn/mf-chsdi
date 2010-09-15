@@ -17,6 +17,8 @@
  *
  * @include proj4js/lib/defs/EPSG21781.js
  */
+Ext.ns("GeoAdmin");
+
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     aerial: null,
