@@ -26,15 +26,17 @@ GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {
     },
 
     setOpacity: function(opacity) {
-        this.opacity = opacity;
+        if (this.aerial) {
+            this.opacity = opacity;
 
-        // calling aerial.setVisibility isn't necessary here, as
-        // the Map will take care of setting the visibility of the
-        // aerial layer when setOpacity is called. But we do it
-        // anyway, because we're not supposed to know what the
-        // map does
-        this.aerial.setVisibility(this.opacity < 1.0);
+            // calling aerial.setVisibility isn't necessary here, as
+            // the Map will take care of setting the visibility of the
+            // aerial layer when setOpacity is called. But we do it
+            // anyway, because we're not supposed to know what the
+            // map does
+            this.aerial.setVisibility(this.opacity < 1.0);
 
-        this.aerial.setOpacity(1.0 - this.opacity);
+            this.aerial.setOpacity(1.0 - this.opacity);
+        }
     }
 });
