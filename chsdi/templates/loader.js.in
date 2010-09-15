@@ -8,15 +8,19 @@
     }
 
     var scriptSrc = cleanup("%HOST%/%API_VERSION%${url('/build/api.js')}");
-    var OLImgPath = cleanup("%HOST%/%API_VERSION%${url('/GeoAdmin.ux/Map/img/')}");
-    var cssHref = cleanup("%HOST%/%API_VERSION%${url('/build/api.css')}");
-
     document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
-    document.write('<scr' + 'ipt type="text/javascript">' +
-                   'if (!window.GeoAdmin) window.GeoAdmin = {};' +
-                   'GeoAdmin.version="%API_VERSION%";' +
-                   'GeoAdmin.webServicesUrl="%HOST%${c.wsgi_base}";' +
-                   'OpenLayers.ImgPath="' + OLImgPath + '";' +
-                   '</scr' + 'ipt>');
+
+    var OpenLayersImgPath = cleanup("%HOST%/%API_VERSION%${url('/GeoAdmin.ux/Map/img/')}");
+    document.write(
+        '<scr' + 'ipt type="text/javascript">' +
+            'if (!window.GeoAdmin) {' +
+                'window.GeoAdmin = {};' +
+            '}' +
+            'window.GeoAdmin.version = "%API_VERSION%";' +
+            'window.GeoAdmin.webServicesUrl = "%HOST%${c.wsgi_base}";' +
+            'window.GeoAdmin.OpenLayersImgPath = "' + OpenLayersImgPath + '";' +
+        '</scr' + 'ipt>');
+
+    var cssHref = cleanup("%HOST%/%API_VERSION%${url('/build/api.css')}");
     document.write('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
 })();
