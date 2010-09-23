@@ -57,7 +57,7 @@ GeoAdmin._Layers = OpenLayers.Class({
     },
 
     init: function() {
-        this.layers = {
+        return this.layers = {
             // base layers
             "ch.swisstopo.swissimage": {
                 name: OpenLayers.i18n("ch.swisstopo.swissimage"),
