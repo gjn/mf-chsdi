@@ -458,7 +458,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-19851"
                             },
                             {
-              checked: false,
+                                text: this.addtreeLayerLink("ch.bfs.arealstatistik-1997", "node_ch.bfs.arealstatistik-19971") + ' ' + this.layers["ch.bfs.arealstatistik-1997"].name,
+                                leaf: true,
+                                checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.arealstatistik-19971"
                             },
