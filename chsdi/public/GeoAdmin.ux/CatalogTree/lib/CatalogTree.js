@@ -7,14 +7,16 @@ Ext.namespace("GeoAdmin");
 
 GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
-    //id: 'inspire_catalog_panel', //fix this shit [ELE]
+    //id: 'inspire_catalog_panel', //FIXME we don't need this do we?
     animate: false,
     root: {
         nodeType: 'async'
     },
     border: false,
     rootVisible: false,
+
     // Big hack to avoid problem of this.getSelectionModel().getSelectedNode(); which provides the previous selected node...
+    // FIXME check this hack is still necessary
     selectedNode: null,
     selectedNodeId: '',
 
@@ -90,6 +92,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     addtreeLayerLink: function(id, nodeId) {
+        // FIXME BODSearchCombo doesn't exist
         var iconTypeClass = "treelayericon-" + this.layers[id].type;
         var layerlink = '<div class="' + iconTypeClass + '"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BODSearchCombo.openDetails(\'' + id + '\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + nodeId + '_cb" onclick="api.inspireCatalogPanel.toggleCheckbox(\'' + nodeId + '\');"></div><div class="treelayerpipe"></div></div>';
         return layerlink;
@@ -110,6 +113,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     setSelectedNode: function() {
         var node = null;
         // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
+        // FIXME: is this workaround still required?
         for (i = 0; i < this.root.childNodes.length; i++) {
             childNode = this.root.childNodes[i];
             if (childNode.id == this.selectedNodeId) {
@@ -140,11 +144,16 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         }
     },
 
+    /** private: method[getLayerIdFromNodeId]
+     *  :param nodeId: ``String`` The node id.
+     *  :returns: ``String`` The layer identifier.
+     */
     getLayerIdFromNodeId: function(nodeId) {
         return nodeId.replace('node_', '').slice(0, -1);
     },
 
-    /**
+    /** private: method[addLayer]
+     *  :param nodeId: ``String`` the node id.
      */
     addLayer: function(nodeId) {
         var layerId = this.getLayerIdFromNodeId(nodeId);
@@ -152,16 +161,19 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         this.layerStore.loadData([layer], /* append */ true);
     },
 
-    /**
+    /** private: method[removeLayer]
+     *  :param nodeId: ``String`` the node id.
      */
     removeLayer: function(nodeId) {
         var layerId = this.getLayerIdFromNodeId(nodeId);
         var map = this.layerStore.map;
-        map.removeLayer(map.getLayerByLayerName(layerId));
+        var layer = map.getLayerByLayerName(layerId); // FIXME layer name vs layer id
+        map.removeLayer(layer);
     },
 
     setCheckNodes: function(map) {
         // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
+        // FIXME: is this workaround still required?
         for (i = 0; i < this.root.childNodes.length; i++) {
             childNode = this.root.childNodes[i];
             childNode.expand();
