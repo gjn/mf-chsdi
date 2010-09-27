@@ -1,4 +1,5 @@
 /*
+ * @include GeoExt/data/LayerStore.js
  * @include Map/lib/layers
  */
 
@@ -19,6 +20,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     layers: null,
 
+    /**
+     */
+    layerStore: null,
+
+    /**
+     */
+    map: null,
+
     listeners: {
         dblclick: function(node, e) {
             this.nodeSelectionManagement(node);
@@ -30,7 +39,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         },
         checkchange: function(node, state) {
             if (state) {
-                if (api.getBodNumberLayer() == 5) {
+                if (this.layerStore.getCount() == 8) {
                     this.suspendEvents();
                     node.getUI().toggleCheck(false);
                     this.updateCustomizedCheckbox(node, false);
@@ -38,10 +47,10 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                     this.resumeEvents();
                 } else {
                     this.updateCustomizedCheckbox(node, true);
-                    api.addLayerToMap(this.getLayerIdFromNodeId(node.id));
+                    this.addLayer(node.id);
                 }
             } else {
-                api.removeLayerFromMap(this.getLayerIdFromNodeId(node.id));
+                this.removeLayer(node.id);
             }
         },
         beforeclick:  function(node, event) {
@@ -132,9 +141,23 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     getLayerIdFromNodeId: function(nodeId) {
-        var result = nodeId.replace('node_', '');
-        result = result.substring(0, result.length - 1);
-        return result;
+        return nodeId.replace('node_', '').slice(0, -1);
+    },
+
+    /**
+     */
+    addLayer: function(nodeId) {
+        var layerId = this.getLayerIdFromNodeId(nodeId);
+        var layer = GeoAdmin.layers.buildLayerByName(layerId);
+        this.layerStore.loadData([layer], /* append */ true);
+    },
+
+    /**
+     */
+    removeLayer: function(nodeId) {
+        var layerId = this.getLayerIdFromNodeId(nodeId);
+        var map = this.layerStore.map;
+        map.removeLayer(map.getLayerByLayerName(layerId));
     },
 
     setCheckNodes: function(map) {
@@ -294,6 +317,15 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
         this.layers = GeoAdmin.layers.init();
 
+        if(!this.layerStore) {
+            this.layerStore = this.map;
+        }
+        if (!(this.layerStore instanceof GeoExt.data.LayerStore)) {
+            this.layerStore = new GeoExt.data.LayerStore(
+                {map: this.layerStore}
+            );
+        }
+
         this.root.children = [
             {
                 text: OpenLayers.i18n('Basisdaten'),
@@ -410,7 +442,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     }/*,
                     {
-                        text: ' ' + OpenLayers.i18n('FlurstÃ¼cke / GrundstÃ¼cke'),
+                        text: ' ' + OpenLayers.i18n('Flurstücke / Grundstücke'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_6"
@@ -418,13 +450,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 ]
             },
             {
-                text: OpenLayers.i18n('OberflÃ¤chendarstellung'),
+                text: OpenLayers.i18n('Oberflächendarstellung'),
                 cls: 'nodeLT1',
                 singleClickExpand: true,
                 id: "LT1_2",
                 children: [
                    {
-                        text: ' ' + OpenLayers.i18n('GewÃ¤ssernetz'),
+                        text: ' ' + OpenLayers.i18n('Gewässernetz'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_7",
@@ -439,7 +471,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     },
                    /*{
-                        text: ' ' + OpenLayers.i18n('HÃ¶he'),
+                        text: ' ' + OpenLayers.i18n('Höhe'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_8"
@@ -496,7 +528,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 ]
             },
             /*{
-                text: OpenLayers.i18n('Raum und BevÃ¶lkerung'),
+                text: OpenLayers.i18n('Raum und Bevölkerung'),
                 cls: 'nodeLT1',
                 singleClickExpand: true,
                 id: "LT1_3",
@@ -508,7 +540,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_11"
                     },
                     {
-                        text: ' ' + OpenLayers.i18n('BevÃ¶lkerungsdichte'),
+                        text: ' ' + OpenLayers.i18n('Bevölkerungsdichte'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_12"
@@ -564,7 +596,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     },
                     {
-                        text: ' ' + OpenLayers.i18n('GebÃ¤ude'),
+                        text: ' ' + OpenLayers.i18n('Gebäude'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_15",
@@ -586,7 +618,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     }/*,
                     {
-                        text: ' ' + OpenLayers.i18n('Ã–ffentliche Einrichtungen und Dienste'),
+                        text: ' ' + OpenLayers.i18n('Öffentliche Einrichtungen und Dienste'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_16"
@@ -640,48 +672,49 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-hochmoore1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-jagdbanngebiete", "node_ch.bafu.bundesinventare-jagdbanngebiete1") + ' ' + this.layers["ch.bafu.bundesinventare-jagdbanngebiete"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-jagdbanngebiete1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.babs.kulturgueter", "node_ch.babs.kulturgueter1") + ' ' + this.layers["ch.babs.kulturgueter"].name,
                                 leaf: true,
-                         cls: 'nodeLT3',
+                                checked: false,
+                                cls: 'nodeLT3',
                                 id: "node_ch.babs.kulturgueter1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-moorlandschaften", "node_ch.bafu.bundesinventare-moorlandschaften1") + ' ' + this.layers["ch.bafu.bundesinventare-moorlandschaften"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-moorlandschaften1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-schweizerischer_nationalpark", "node_ch.bafu.schutzgebiete-schweizerischer_nationalpark1") + ' ' + this.layers["ch.bafu.schutzgebiete-schweizerischer_nationalpark"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-schweizerischer_nationalpark1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung", "node_ch.bafu.schutzgebiete-paerke_nationaler_bedeutung1") + ' ' + this.layers["ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-paerke_nationaler_bedeutung1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-ramsar", "node_ch.bafu.schutzgebiete-ramsar1") + ' ' + this.layers["ch.bafu.schutzgebiete-ramsar"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-ramsar1"
                             },
-                        {
+	                    {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate1") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
@@ -703,107 +736,107 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_19"
                     },*/
                     {
-                        text: ' ' + OpenLayers.i18n('UmweltÃ¼berwachung'),
+                        text: ' ' + OpenLayers.i18n('Umweltüberwachung'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_20",
                         children: [
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.hydrologie-hydromessstationen",  "node_ch.bafu.hydrologie-hydromessstationen1") + ' ' + this.layers["ch.bafu.hydrologie-hydromessstationen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.hydrologie-hydromessstationen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-entnahme",  "node_ch.bafu.wasser-entnahme1") + ' ' + this.layers["ch.bafu.wasser-entnahme"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-entnahme1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-leitungen",  "node_ch.bafu.wasser-leitungen1") + ' ' + this.layers["ch.bafu.wasser-leitungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-leitungen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-rueckgabe",  "node_ch.bafu.wasser-rueckgabe1") + ' ' + this.layers["ch.bafu.wasser-rueckgabe"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-rueckgabe1"
-                            }           
+                            }			
                         ]
                     },
                     {
-                        text: ' ' + OpenLayers.i18n('NatÃ¼rliche Risikozonen'),
+                        text: ' ' + OpenLayers.i18n('Natürliche Risikozonen'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_21",
                         children: [
-               {
+			   {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_hochwasser", "node_ch.bafu.showme-gemeinden_hochwasser1") + ' ' + this.layers["ch.bafu.showme-gemeinden_hochwasser"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_hochwasser1"
                             }, 
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_lawinen", "node_ch.bafu.showme-gemeinden_lawinen1") + ' ' + this.layers["ch.bafu.showme-gemeinden_lawinen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_lawinen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_rutschungen", "node_ch.bafu.showme-gemeinden_rutschungen1") + ' ' + this.layers["ch.bafu.showme-gemeinden_rutschungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_rutschungen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_sturzprozesse", "node_ch.bafu.showme-gemeinden_sturzprozesse1") + ' ' + this.layers["ch.bafu.showme-gemeinden_sturzprozesse"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_sturzprozesse1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_hochwasser", "node_ch.bafu.showme-kantone_hochwasser1") + ' ' + this.layers["ch.bafu.showme-kantone_hochwasser"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_hochwasser1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_lawinen", "node_ch.bafu.showme-kantone_lawinen1") + ' ' + this.layers["ch.bafu.showme-kantone_lawinen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_lawinen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_rutschungen", "node_ch.bafu.showme-kantone_rutschungen1") + ' ' + this.layers["ch.bafu.showme-kantone_rutschungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_rutschungen1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_sturzprozesse", "node_ch.bafu.showme-kantone_sturzprozesse1") + ' ' + this.layers["ch.bafu.showme-kantone_sturzprozesse"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_sturzprozesse1"
                             } 
-            ]
+			]
                     },
                     /*{
-                        text: ' ' + OpenLayers.i18n('AtmosphÃ¤rische Bedingungen'),
+                        text: ' ' + OpenLayers.i18n('Atmosphärische Bedingungen'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_22"
@@ -821,7 +854,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_24"
                     },*/
                     {
-                        text: ' ' + OpenLayers.i18n('LebensrÃ¤ume une Biotope'),
+                        text: ' ' + OpenLayers.i18n('Lebensräume une Biotope'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_25",
@@ -882,7 +915,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-jagdbanngebiete2"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-moorlandschaften", "node_ch.bafu.bundesinventare-moorlandschaften2") + ' ' + this.layers["ch.bafu.bundesinventare-moorlandschaften"].name,
                                 leaf: true,
                                 checked: false,
@@ -910,7 +943,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.ren-wald_ueber_1000_meter1"
                             },
-                {
+			    {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate2") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
@@ -935,7 +968,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     }/*,
                     {
-                        text: ' ' + OpenLayers.i18n('Mineralische BodenschÃ¤tze'),
+                        text: ' ' + OpenLayers.i18n('Mineralische Bodenschätze'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_27"
