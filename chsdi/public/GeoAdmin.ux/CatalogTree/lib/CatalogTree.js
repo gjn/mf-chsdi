@@ -331,6 +331,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
         if(!this.layerStore) {
             this.layerStore = this.map;
+            delete this.map;
         }
         if (!(this.layerStore instanceof GeoExt.data.LayerStore)) {
             this.layerStore = new GeoExt.data.LayerStore(
