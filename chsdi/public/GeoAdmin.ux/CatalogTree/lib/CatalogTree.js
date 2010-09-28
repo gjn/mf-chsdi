@@ -54,6 +54,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                     this.addLayer(node.id);
                 }
             } else {
+                this.updateCustomizedCheckbox(node, false);
                 this.removeLayer(node.id);
             }
         },
