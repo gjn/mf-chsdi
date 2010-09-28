@@ -132,3 +132,19 @@
 .nodeBackgroundSelected .checkboxOn {
   background-image: url(../images/lt_selected_white.png);
 }
+
+.layerNodeTools {
+  float: right;
+  clear: left;
+  height: 19px !important;
+  margin-top: -25px;
+  width: 45px;
+}
+
+.ext-safari .layerNodeTools {
+  margin-top: -25px;
+}
+
+.ext-ie  .layerNodeTools {
+  margin-top: -20px;
+}
