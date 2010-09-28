@@ -1,3 +1,7 @@
+/*global Ext, OpenLayers, GeoExt, GeoAdmin*/
+
+var map, tree;
+
 Ext.onReady(function() {
     
     // create a map, and center it to its maximum extent
@@ -6,5 +10,5 @@ Ext.onReady(function() {
     map.zoomToMaxExtent();
 
     // create a catalog tree bound to this map
-    new GeoAdmin.CatalogTree({renderTo: "catalog-tree", map: map});
+    tree = new GeoAdmin.CatalogTree({renderTo: "catalog-tree", map: map});
 });
