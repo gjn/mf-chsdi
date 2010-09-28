@@ -1,5 +1,51 @@
+/* toolbar */
 .x-toolbar {
   background: none;
   border: 0 !important;
   border-bottom: 1px solid black !important;
+}
+
+/* tool/action separator for layer nodes
+ * used in layer and catalog trees
+ * FIXME currently unused for the layer tree */
+.treelayerpipe {
+  float: left;
+  margin-top: 2px;
+  padding: 0 !important;
+  width: 1px;
+  height: 19px !important;
+  cursor: pointer;
+  background-image: url(../images/lt_pipe.png);
+}
+
+/* layer node icons
+ * used in layer and catalog trees
+ * FIXME currently unused for the layer tree */
+.treelayericon-raster, .treelayericon-point, .treelayericon-line, .treelayericon-polygon, .treelayericon-mixed {
+  float: left;
+  margin-top: -14px;
+  margin-left: 2px;
+  padding: 0 !important;
+  width: 17px;
+  height: 19px !important;
+  cursor: pointer;
+  background-repeat: no-repeat; 
+}
+.treelayericon-raster {
+  background-image: url(../images/raster.png);
+}
+.treelayericon-point {
+  background-image: url(../images/point.png);
+}
+.treelayericon-line {
+  background-image: url(../images/line.png);
+}
+.treelayericon-polygon {
+  background-image: url(../images/polygon.png);
+}
+.treelayericon-mixed {
+  background-image: url(../images/mixed.png);
+}
+.ext-safari .treelayericon-raster, .ext-safari .treelayericon-point, .ext-safari .treelayericon-line, .ext-safari .treelayericon-polygon, .ext-safari .treelayericon-mixed {
+  margin-top: 3px;
 }
