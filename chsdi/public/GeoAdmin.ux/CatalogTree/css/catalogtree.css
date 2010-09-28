@@ -19,6 +19,8 @@
     color: white;
 }
 
+/* FIXME: we need .geoadmin-catalog-tree for the rules below */
+
 .nodeLT1, .nodeLT1selected {
     border-bottom:1px solid #ccc;
     font-weight: bold;
@@ -84,8 +86,6 @@
 .geoadmin-catalog-tree .x-tree-node-loading a span {
     font-style:normal;
 }
-
-/* FIXME: we need .geoadmin-catalog-tree for the rules below */
 
 .nodeLT3 .treelayerlink, .nodeLT3selected .treelayerlink {
   float: left;
