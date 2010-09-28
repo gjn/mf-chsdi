@@ -1,3 +1,5 @@
+/*global Ext, OpenLayers, GeoExt, GeoAdmin*/
+
 /*
  * @include GeoExt/data/LayerStore.js
  * @include Map/lib/layers
@@ -117,6 +119,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         var node = null;
         // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
         // FIXME: is this workaround still required?
+        var i, j, k, childNode, childChildNode, childChildChildNode;
         for (i = 0; i < this.root.childNodes.length; i++) {
             childNode = this.root.childNodes[i];
             if (childNode.id == this.selectedNodeId) {
@@ -177,6 +180,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     setCheckNodes: function(map) {
         // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
         // FIXME: is this workaround still required?
+        var i, j, k, childNode, childChildNode, childChildChildNode;
         for (i = 0; i < this.root.childNodes.length; i++) {
             childNode = this.root.childNodes[i];
             childNode.expand();
@@ -234,6 +238,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             node.ui.removeClass('nodeLT1selected');
             node.ui.removeClass('nodeBackgroundSelected');
         }
+        var i, j, k, childNode, childChildNode, childChildChildNode;
         for (i = 0; i < this.root.childNodes.length; i++) {
             childNode = this.root.childNodes[i];
             if (childNode.attributes.cls == 'nodeLT1' || childNode.attributes.cls == 'nodeLT1selected') {
@@ -273,6 +278,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             node.ui.removeClass('nodeBackgroundSelected');
         }
 
+        var i, j, k, childNode, childChildNode, childChildChildNode;
         for (i = 0; i < node.parentNode.childNodes.length; i++) {
             childNode = node.parentNode.childNodes[i];
             if (childNode.attributes.cls == 'nodeLT2' || childNode.attributes.cls == 'nodeLT2selected') {
@@ -309,6 +315,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             node.ui.removeClass('nodeBackgroundSelected');
         }
 
+        var i, j, k, childNode, childChildNode, childChildChildNode;
         for (i = 0; i < node.parentNode.childNodes.length; i++) {
             childNode = node.parentNode.childNodes[i];
             if (childNode.attributes.cls == 'nodeLT3' || childNode.attributes.cls == 'nodeLT3selected') {
