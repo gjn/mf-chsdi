@@ -11,7 +11,6 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     cls: "geoadmin-catalog-tree",
 
-    //id: 'inspire_catalog_panel', //FIXME we don't need this do we?
     animate: false,
     root: {
         nodeType: 'async'
