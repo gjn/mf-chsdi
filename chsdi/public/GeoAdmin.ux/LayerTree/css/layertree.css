@@ -21,7 +21,7 @@
 .geoadmin-layertree .gx-tree-layer-actions .pipe,
 .geoadmin-layertree .gx-tree-layer-actions .pipe-up,
 .geoadmin-layertree .gx-tree-layer-actions .pipe-down {
-  background-image: url(../images/lt_pipe.png);
+  background-image: url(../../images/lt_pipe.png);
   cursor: default;
   width: 2px;
 }
@@ -97,19 +97,19 @@
   background-position: center;
 }
 .geoadmin-layertree .tree-layer-icon-raster {
-  background-image: url(../images/raster.png);
+  background-image: url(../../images/raster.png);
 }
 .geoadmin-layertree .tree-layer-icon-point {
-  background-image: url(../images/point.png);
+  background-image: url(../../images/point.png);
 }
 .geoadmin-layertree .tree-layer-icon-line {
-  background-image: url(../images/line.png);
+  background-image: url(../../images/line.png);
 }
 .geoadmin-layertree .tree-layer-icon-polygon {
-  background-image: url(../images/polygon.png);
+  background-image: url(../../images/polygon.png);
 }
 .geoadmin-layertree .tree-layer-icon-mixed {
-  background-image: url(../images/mixed.png);
+  background-image: url(../../images/mixed.png);
 }
 .geoadmin-layertree .x-tree-node .x-tree-selected,
 .geoadmin-layertree .x-tree-node .x-tree-node-over,
