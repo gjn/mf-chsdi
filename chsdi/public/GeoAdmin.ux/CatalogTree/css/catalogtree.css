@@ -19,6 +19,52 @@
     color: white;
 }
 
+.geoadmin-catalog-tree .treelayerpipe {
+  float: left;
+  margin-top: 2px;
+  padding: 0 !important;
+  width: 1px;
+  height: 19px !important;
+  cursor: pointer;
+  background-image: url(../../images/lt_pipe.png);
+}
+
+.geoadmin-catalog-tree .treelayericon-raster,
+.geoadmin-catalog-tree .treelayericon-point,
+.geoadmin-catalog-tree .treelayericon-line,
+.geoadmin-catalog-tree .treelayericon-polygon,
+.geoadmin-catalog-tree .treelayericon-mixed {
+  float: left;
+  margin-top: -14px;
+  margin-left: 2px;
+  padding: 0 !important;
+  width: 17px;
+  height: 19px !important;
+  cursor: pointer;
+  background-repeat: no-repeat; 
+}
+.geoadmin-catalog-tree .treelayericon-raster {
+  background-image: url(../../images/raster.png);
+}
+.geoadmin-catalog-tree .treelayericon-point {
+  background-image: url(../../images/point.png);
+}
+.geoadmin-catalog-tree .treelayericon-line {
+  background-image: url(../../images/line.png);
+}
+.geoadmin-catalog-tree .treelayericon-polygon {
+  background-image: url(../../images/polygon.png);
+}
+.geoadmin-catalog-tree .treelayericon-mixed {
+  background-image: url(../../images/mixed.png);
+}
+.geoadmin-catalog-tree .ext-safari .treelayericon-raster,
+.geoadmin-catalog-tree .ext-safari .treelayericon-point,
+.geoadmin-catalog-tree .ext-safari .treelayericon-line,
+.geoadmin-catalog-tree .ext-safari .treelayericon-polygon,
+.geoadmin-catalog-tree .ext-safari .treelayericon-mixed {
+  margin-top: 3px;
+}
 /* FIXME: we need .geoadmin-catalog-tree for the rules below */
 
 .nodeLT1, .nodeLT1selected {
