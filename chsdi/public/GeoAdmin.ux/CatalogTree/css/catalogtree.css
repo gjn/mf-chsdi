@@ -10,15 +10,12 @@
 .geoadmin-catalog-tree .x-tree-lines .x-tree-elbow-end {
     display: none;
 }
-
 .geoadmin-catalog-tree .x-tree-node .x-tree-selected {
     background-color: #ff0000 !important;
 }
-
 .geoadmin-catalog-tree .x-tree-node .x-tree-selected .x-tree-node-anchor span {
     color: white;
 }
-
 .geoadmin-catalog-tree .treelayerpipe {
   float: left;
   margin-top: 2px;
@@ -28,7 +25,6 @@
   cursor: pointer;
   background-image: url(../../images/lt_pipe.png);
 }
-
 .geoadmin-catalog-tree .treelayericon-raster,
 .geoadmin-catalog-tree .treelayericon-point,
 .geoadmin-catalog-tree .treelayericon-line,
@@ -66,7 +62,6 @@
   margin-top: 3px;
 }
 /* FIXME: we need .geoadmin-catalog-tree for the rules below */
-
 .nodeLT1, .nodeLT1selected {
     border-bottom:1px solid #ccc;
     font-weight: bold;
@@ -74,65 +69,52 @@
     padding: 1px 0 1px 0;
     clear: left;
 }
-
 .nodeLT1selected {
     background-color: white !important;
 }
-
 .nodeLT1selected .x-tree-node-anchor span {
     color: red !important;
     clear: left;
 }
-
 .nodeLT2, .nodeLT2selected {
     border-bottom:1px solid #ccc;
     text-indent: 2em;
     padding: 1px 0 1px 0;
     clear: left;
 }
-
 .nodeLT2selected {
     background-color: white !important;
 }
-
 .nodeLT2selected .x-tree-node-anchor span {
     color: red !important;
     clear: left;
 }
-
 .nodeLT3, .nodeLT3selected {
     border-bottom:1px solid #ccc;
     text-indent: 1.5em;
     padding: 1px 0 1px 0;
     clear: left;
 }
-
 .nodeLT3selected {
     background-color: white !important;
 }
-
 .nodeLT3selected .x-tree-node-anchor span {
     color: red !important;
     clear: left;    
 }
-
 .nodeBackgroundSelected {
     background-color: red !important;
 }
-
 .nodeBackgroundSelected .x-tree-node-anchor span {
     color: white !important;
 }
-
 .geoadmin-catalog-tree .x-tree-node-cb {
   vertical-align: middle;
   visibility: hidden;
 }
-
 .geoadmin-catalog-tree .x-tree-node-loading a span {
     font-style:normal;
 }
-
 .nodeLT3 .treelayerlink, .nodeLT3selected .treelayerlink {
   float: left;
   padding: 0 !important;
@@ -140,15 +122,12 @@
   height: 19px !important;
   cursor: pointer;
 }
-
 .nodeLT3 .treelayerlink {
   background-image: url(../../images/info_button_black.png);
 }
-
 .nodeLT3selected .treelayerlink {
   background-image: url(../../images/info_button_white.png);
 }
-
 .checkboxOff, .checkboxOn {
   float: left;
   margin-top: 2px;
@@ -158,27 +137,21 @@
   height: 19px !important;
   cursor: pointer;
 }
-
 .nodeBackgroundSelected .checkboxOff, .nodeBackgroundSelected .checkboxOn {
   margin-top: 1px;
 }
-
 .checkboxOff {
   background-image: url(../images/lt_unselected_black.png);
 }
-
 .nodeBackgroundSelected .checkboxOff {
   background-image: url(../images/lt_unselected_white.png);
 }
-
 .checkboxOn {
   background-image: url(../images/lt_selected_black.png);
 }
-
 .nodeBackgroundSelected .checkboxOn {
   background-image: url(../images/lt_selected_white.png);
 }
-
 .layerNodeTools {
   float: right;
   clear: left;
@@ -186,11 +159,9 @@
   margin-top: -25px;
   width: 45px;
 }
-
 .ext-safari .layerNodeTools {
   margin-top: -25px;
 }
-
 .ext-ie  .layerNodeTools {
   margin-top: -20px;
 }
