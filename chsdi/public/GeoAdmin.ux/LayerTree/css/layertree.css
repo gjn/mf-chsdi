@@ -49,7 +49,7 @@
   display: none;
 }
 .geoadmin-layertree .gx-tree-layer-actions .tbar {
-  background-image: url(../images/info_button_black.png);
+  background-image: url(../../images/info_button_black.png);
 }
 .geoadmin-layertree .geoadmin-toolbar {
   border: 0 !important;
@@ -88,7 +88,7 @@
    background:transparent url(../images/slider-bg.png) no-repeat scroll right -44px !important;
 }
 .geoadmin-layertree .layer-info {
-  background: transparent url(../images/info_button_black.png) no-repeat center;
+  background: transparent url(../../images/info_button_black.png) no-repeat center;
   margin-right:-5px;
 }
 .geoadmin-layertree .x-tree-node-icon {

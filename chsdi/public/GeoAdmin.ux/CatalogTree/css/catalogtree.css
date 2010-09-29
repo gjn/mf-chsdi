@@ -142,11 +142,11 @@
 }
 
 .nodeLT3 .treelayerlink {
-  background-image: url(../images/info_button_black.png);
+  background-image: url(../../images/info_button_black.png);
 }
 
 .nodeLT3selected .treelayerlink {
-  background-image: url(../images/info_button_white.png);
+  background-image: url(../../images/info_button_white.png);
 }
 
 .checkboxOff, .checkboxOn {
