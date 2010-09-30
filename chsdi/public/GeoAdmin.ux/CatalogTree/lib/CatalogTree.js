@@ -172,7 +172,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     removeLayer: function(nodeId) {
         var layerId = this.getLayerIdFromNodeId(nodeId);
         var map = this.layerStore.map;
-        var layer = map.getLayerByLayerName(layerId); // FIXME layer name vs layer id
+        var layer = map.getLayerByLayerName(layerId);
         map.removeLayer(layer);
     },
 
