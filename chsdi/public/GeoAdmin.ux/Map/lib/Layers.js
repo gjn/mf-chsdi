@@ -5,6 +5,7 @@
  *
  * @include Map/lib/VoidLayer.js
  */
+Ext.ns("GeoAdmin");
 
 GeoAdmin._Layers = OpenLayers.Class({
 
