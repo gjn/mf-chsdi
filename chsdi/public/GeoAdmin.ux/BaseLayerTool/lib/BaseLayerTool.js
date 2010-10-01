@@ -1,5 +1,7 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
+Ext.ns("GeoAdmin");
+
 /**
  * @include GeoExt/widgets/LayerOpacitySlider.js
  * @include OpenLayers/Lang.js
