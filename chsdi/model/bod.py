@@ -51,7 +51,7 @@ class BodLayer(object):
         fpath = str("legend/%(id)s_%(lang)s.png"%{'id': self.bod_layer_id, 'lang': c.lang})
         root = config['pylons.paths']['static_files']
         if os.path.exists(os.path.join(root, fpath)):
-            return fpath
+            return c.wsgi_base + '/' + fpath
         else:
             return False
 
