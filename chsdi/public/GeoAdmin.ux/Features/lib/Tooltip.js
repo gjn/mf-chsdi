@@ -105,16 +105,19 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             width: 450,
             autoScroll: true,
             map: this.map,
-            lonlat: this.lastClick,
+            layer: this.layer,
+            location: this.lastClick,
             unpinnable: false,
+            bodyStyle: "max-height: 280px;",
             listeners : {
-                close: this.unselectAll
-                //close: this.onUnselect.createDelegate(this)
-            },
-            buttons: [{
-                xtype: "button",
-                text: "print"
-            }]
+                close: function(popup) {
+                    popup.layer.removeAllFeatures();
+                }
+            }// ,
+//             buttons: [{
+//                 xtype: "button",
+//                 text: "print"
+//             }]
         });
 
         var items = [];
