@@ -25,6 +25,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             this.url = GeoAdmin.webServicesUrl + "/feature/search";
         }
         this.format = new OpenLayers.Format.GeoJSON();
+
         this.events.register("featuresselected", this, this.onSelect);
         this.events.register("featureunselected", this, this.onUnselect);
     },
@@ -53,6 +54,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             // Set the cursor to "wait" to tell the user we're working.
             OpenLayers.Element.addClass(this.map.viewPortDiv, "olCursorWait");
 
+            this.lastClick = bounds.getCenterLonLat();
+
             Ext.ux.JSONP.request(this.url, {
                 callbackKey: "cb",
                 params: {
@@ -79,11 +82,6 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             this.layer = new OpenLayers.Layer.Vector();
             this.map.addLayer(this.layer);
         }
-        if (!this.popup) {
-            this.popup = new GeoExt.Popup({
-                map: this.map
-            });
-        }
         return OpenLayers.Control.GetFeature.prototype.activate.apply(this, arguments);
     },
 
@@ -102,9 +100,43 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     onSelect: function(evt) {
         this.layer.addFeatures(evt.features);
+
+        this.popup = new GeoExt.Popup({
+            width: 450,
+            autoScroll: true,
+            map: this.map,
+            lonlat: this.lastClick,
+            unpinnable: false,
+            listeners : {
+                close: this.unselectAll
+                //close: this.onUnselect.createDelegate(this)
+            },
+            buttons: [{
+                xtype: "button",
+                text: "print"
+            }]
+        });
+
+        var items = [];
+        for (var i = 0, len = evt.features.length; i < len; i++) {
+            items.push({
+                xtype: "box",
+                html: evt.features[i].attributes.html
+            });
+        }
+        this.popup.add(items);
+        this.popup.show();
     },
 
     onUnselect: function(evt) {
-        this.layer.removeFeatures([evt.feature]);
+        if (evt && evt.feature) {
+            this.layer.removeFeatures([evt.feature]);
+        } else {
+//             this.features
+        }
+        if (this.popup) {
+            this.popup.destroy();
+            this.popup = null;
+        }
     }
 });
