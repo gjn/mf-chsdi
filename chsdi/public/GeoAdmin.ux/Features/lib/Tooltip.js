@@ -22,17 +22,9 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
         if (GeoAdmin.webServicesUrl) {
-            this.url = GeoAdmin.webServicesUrl + "/bodfeature/search";
+            this.url = GeoAdmin.webServicesUrl + "/feature/search";
         }
         this.format = new OpenLayers.Format.GeoJSON();
-        this.protocol = new OpenLayers.Protocol.HTTP({
-            url: url,
-            format: new OpenLayers.Format.GeoJSON(),
-            params: {
-                lang: OpenLayers.Lang.getCode()
-            }
-        });
-
         this.events.register("featuresselected", this, this.onSelect);
         this.events.register("featureunselected", this, this.onUnselect);
     },
@@ -96,11 +88,6 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     },
 
     deactivate: function() {
-        if (this.layer) {
-            this.layer.destroy();
-            this.layer = null;
-        }
-        
         if (this.popup) {
             this.popup.destroy();
             this.popup = null;
