@@ -1,0 +1,11 @@
+.tooltip_header,
+.tooltip_footer {
+  margin: 1px;
+  padding: 4px;
+}
+.tooltip_header {
+  background-color: #eee;
+}
+.tooltip_footer {
+  background-color: white;
+}
