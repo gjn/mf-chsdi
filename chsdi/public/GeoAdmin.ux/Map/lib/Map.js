@@ -41,13 +41,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
         panel.addControls([zoom_max]);
 
+        this.attributionCtrl = new OpenLayers.Control.Attribution();
+
         options = OpenLayers.Util.extend(options, {
             projection: new OpenLayers.Projection("EPSG:21781"),
             units: "m",
             controls: [
                 new OpenLayers.Control.Navigation(),
                 new OpenLayers.Control.PanZoomBar(),
-                new OpenLayers.Control.Attribution(),
+                this.attributionCtrl,
                 new OpenLayers.Control.ScaleLine(),
                 panel,
                 new GeoAdmin.OverviewMap()
@@ -104,6 +106,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (options.doZoomToMaxExtent) {
             this.zoomToMaxExtent();
         }
+    },
+
+
+    attribution: function() {
+        return this.attributionCtrl.div.innerHTML;
     },
 
     getState: function() {
