@@ -20,8 +20,6 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     hideTrigger: true,
     minChars: 2,
     queryDelay: 50,
-    emptyText: OpenLayers.i18n("Geo search..."),
-    loadingText: OpenLayers.i18n("loadingText"),
     displayField: 'label',
     forceSelection: true,
 
@@ -39,6 +37,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     initComponent: function() {
+        // i18n
+        this.emptyText = OpenLayers.i18n("Geo search...");
+
         if (!this.url && GeoAdmin.webServicesUrl != null) {
             this.url = GeoAdmin.webServicesUrl + "/swisssearch";
         }
