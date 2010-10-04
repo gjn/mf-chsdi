@@ -17,18 +17,18 @@ GeoAdmin.NavigationHistory = Ext.extend(Ext.BoxComponent, {
         this.map.addControl(history);
 
         this.items = [
-            new GeoExt.Action({
+            new GeoExt.Action(Ext.applyIf({
                 tooltip: OpenLayers.i18n("previous"),
                 control: history.previous,
                 iconCls: 'navigationhistory_previous',
                 disabled: true 
-            }),
-            new GeoExt.Action({
+            }, this.defaults || {})),
+            new GeoExt.Action(Ext.applyIf({
                 tooltip: OpenLayers.i18n("next"),
                 control: history.next,
                 iconCls: 'navigationhistory_next',
                 disabled: true 
-            })
+            }, this.defaults || {}))
         ];
     }
 });
