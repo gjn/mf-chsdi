@@ -30,12 +30,13 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     hideTrigger: true,
     minChars: 4,
     queryDelay: 50,
-    emptyText: OpenLayers.i18n('Search data...'),
-    loadingText: OpenLayers.i18n('loadingText'),
     displayField: 'label',
     forceSelection: true,
 
     initComponent: function() {
+        // i18n
+        this.emptyText = OpenLayers.i18n('Search data...');
+
         if (!this.url && GeoAdmin.webServicesUrl != null) {
             this.url = GeoAdmin.webServicesUrl + '/bodsearch/search';
         }
@@ -49,11 +50,11 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             root: 'results',
             fields: ['id', 'label', 'datenherr', 'content']
         });
-        
+
         var info = '';
         if (this.map) {
-            info = ["<div class='bodsearch-details' ", 
-                    "     onclick='GeoAdmin.BodSearchWindow.show(\"{id}\")'>", 
+            info = ["<div class='bodsearch-details' ",
+                    "     onclick='GeoAdmin.BodSearchWindow.show(\"{id}\")'>",
                     "</div>"].join('');
         }
 
