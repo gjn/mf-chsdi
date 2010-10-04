@@ -37,3 +37,7 @@
     top:7px;
     width:7px;
 }
+
+.geoadmin-baselayertool input {
+    font-weight: bold !important;
+}
