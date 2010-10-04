@@ -31,6 +31,10 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     height: 60,
                                     anchor:'100%',
                                     allowBlank: false
+                                },
+                                {
+                                    xtype:'label',
+                                    html:OpenLayers.i18n('The following URL will be transferred: <a href="') + this.getPermalink() + '" target="new">' + this.getPermalink() + '</a>'
                                 }
                             ]
                         }
