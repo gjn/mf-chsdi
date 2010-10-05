@@ -14,16 +14,16 @@ See example: :ref:`base-layer-tool`.
 BOD Search
 ----------
 
-BOD Search is a combo box allowing the user to search within the layer offered by GeoAdmin API.
+BOD (for Betriebsobjektdatenbank) Search is a combo box allowing the user to search within the layer offered by GeoAdmin API.
 
 See example: :ref:`bod-search`
 
-Tooltip
--------
+Catalog Tree
+------------
 
-This widget allows the user to click in the map and get a tooltip of the selected features.
+This widget contains a tree structure according to INSPIRE with the available layers.
 
-See example: :ref:`tooltip`
+See example: :ref:`catalog-tree`
 
 Layer Tree
 ----------
@@ -45,3 +45,10 @@ Swiss Search
 SwissSearch is a combo box allowing the user to search within various data sources:  SwissNames, Postal Code, Cities, Canton and also coordinates (CH1903 and WGS84).
 
 See example: :ref:`swiss-search`
+
+Tooltip
+-------
+
+This widget allows the user to click in the map and get a tooltip of the selected features.
+
+See example: :ref:`tooltip`

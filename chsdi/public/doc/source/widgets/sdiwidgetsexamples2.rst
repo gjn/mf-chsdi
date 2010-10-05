@@ -57,7 +57,7 @@ Layer Tree
       <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
       <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
+      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -96,7 +96,7 @@ Tooltip
    <body onload="init();">
       <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
+      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -135,7 +135,7 @@ Catalog Tree
       <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
       <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
+      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -177,5 +177,5 @@ Catalog Tree
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href=../../../build/api.css>
+     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>
