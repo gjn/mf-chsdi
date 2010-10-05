@@ -29,6 +29,9 @@
 Welcome to GeoAdmin API's documentation!
 ========================================
 
+The GeoAdmin API allows the integration of geospatial information provided by the Swiss Confederation in web pages.
+These pages are dedicated to developer interested in using the API. 
+
 .. raw:: html
 
    <script type="text/javascript">
@@ -111,7 +114,7 @@ Unit tests
 Terms of use
 ************
 
-The GeoAdmin API terms of use are accessible here: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form_db.html
+The GeoAdmin API terms of use are accessible here: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
 
 Indices and tables
 ==================
