@@ -44,6 +44,8 @@
 @import url(../GeoAdmin.ux/BodSearch/css/bodsearch.css);
 @import url(../GeoAdmin.ux/BaseLayerTool/css/baselayertool.css);
 @import url(../GeoAdmin.ux/LayerTree/css/layertree.css);
+@import url(../GeoAdmin.ux/CatalogTree/css/catalogtree.css);
+@import url(../GeoAdmin.ux/Features/css/tooltip.css);
 
 .x-form-empty-field {
     color: gray;

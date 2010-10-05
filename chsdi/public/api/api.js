@@ -16,6 +16,7 @@
  * @include Features/lib/Features.js
  * @include Features/lib/Tooltip.js
  * @include LayerTree/lib/LayerTree.js
+ * @include CatalogTree/lib/CatalogTree.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js

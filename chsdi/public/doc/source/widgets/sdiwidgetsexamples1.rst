@@ -83,6 +83,7 @@ Map with gray pixelmap and overlay layer
    <body onload="init();">
      <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
@@ -123,6 +124,7 @@ Base Layer Tool
      <div id="baselayertool3"></div>
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
@@ -166,6 +168,7 @@ Swiss Search
      <div id="mysearch4" style="margin:10px !important;"></div>
      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
@@ -206,6 +209,7 @@ BOD Search
      <div id="mysearch5" style="margin:10px !important;"></div>
      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
@@ -257,4 +261,5 @@ BOD Search
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
+     <link rel=stylesheet type=text/css href=../../../build/api.css>
    </body>

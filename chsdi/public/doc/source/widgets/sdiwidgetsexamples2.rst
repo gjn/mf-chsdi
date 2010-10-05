@@ -31,7 +31,7 @@ Layer Tree
    <body>
       <div id="mylayertree6" style="float: left; margin:10px !important;"></div>
       <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-       <div id="myclear" style="clear: both;"></div>
+      <div id="myclear" style="clear: both;"></div>
    </body>
 
 .. raw:: html
@@ -57,6 +57,7 @@ Layer Tree
       <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
       <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
@@ -95,11 +96,59 @@ Tooltip
    <body onload="init();">
       <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
    </body>
 
 .. raw:: html
 
     </div>
+
+.. _catalog-tree:
+
+Catalog Tree
+------------
+
+.. raw:: html
+
+   <body>
+      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
+      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock8" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
+
+      }
+   </script>
+   <body onload="init();">
+      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
+      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <link rel=stylesheet type=text/css href=http://api.geo.admin.ch/build/api.css>
+   </body>
+
+.. raw:: html
+
+    </div>
+
+
+
+
+
+
+
+
 
 .. raw:: html
 
@@ -120,9 +169,13 @@ Tooltip
          map7.addControl(tooltip);
          tooltip.activate();
 
+         var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
+
       }
    </script>
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
+     <link rel=stylesheet type=text/css href=../../../build/api.css>
    </body>
