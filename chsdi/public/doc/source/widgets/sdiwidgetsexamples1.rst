@@ -21,6 +21,8 @@
    }
    </script>
 
+.. _default-map:
+
 Default Map
 -----------
 
@@ -51,6 +53,8 @@ Default Map
 .. raw:: html
 
     </div>
+
+.. _map-with-gray-pixelmap-and-overlay-layer:
 
 Map with gray pixelmap and overlay layer
 ----------------------------------------
@@ -84,6 +88,8 @@ Map with gray pixelmap and overlay layer
 .. raw:: html
 
     </div>
+
+.. _base-layer-tool:
 
 Base Layer Tool
 ---------------
@@ -124,6 +130,8 @@ Base Layer Tool
     </div>
 
 
+.. _swiss-search:
+
 Swiss Search
 ------------
 
@@ -163,6 +171,8 @@ Swiss Search
 .. raw:: html
 
     </div>
+
+.. _bod-search:
 
 BOD Search
 ----------

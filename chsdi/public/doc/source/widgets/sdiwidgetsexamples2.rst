@@ -21,6 +21,8 @@
    }
    </script>
 
+.. _layer-tree1:
+
 Layer Tree
 ----------
 

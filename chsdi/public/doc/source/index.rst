@@ -111,6 +111,11 @@ Unit tests
 
    tests/unittests
 
+Source code
+-----------
+
+The source code of the API project can be found here: https://svn.bgdi.admin.ch/mf-chsdi/trunk/chsdi/
+
 Terms of use
 ************
 
