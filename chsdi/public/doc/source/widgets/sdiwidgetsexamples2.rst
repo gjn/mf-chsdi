@@ -63,10 +63,10 @@ Layer Tree
 
     </div>
 
-.. _features:
+.. _tooltip:
 
-Features
---------
+Tooltip
+-------
 
 .. raw:: html
 
@@ -85,8 +85,11 @@ Features
 
    <script type="text/javascript">
       function init() {
-         var map6 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
-         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+         map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         var tooltip = new GeoAdmin.Tooltip({});
+         map7.addControl(tooltip);
+         tooltip.activate();
       }
    </script>
    <body onload="init();">

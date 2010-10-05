@@ -18,10 +18,12 @@ BOD Search is a combo box allowing the user to search within the layer offered b
 
 See example: :ref:`bod-search`
 
-Features
---------
+Tooltip
+-------
 
 This widget allows the user to click in the map and get a tooltip of the selected features.
+
+See example: :ref:`tooltip`
 
 Layer Tree
 ----------
