@@ -1,9 +1,12 @@
-.navigationhistory_previous {
-    background-image: url("../img/tb_back_active.png") !important;
-    margin-top: -7px !important;
+.x-toolbar .navigationhistory_previous,
+.x-toolbar .navigationhistory_next {
+    background-image: url("../img/navigationhistory.png");
 }
 
-.navigationhistory_next {
-    background-image: url("../img/tb_forward_active.png") !important;
-    margin-top: -7px !important;
+.x-toolbar .navigationhistory_previous {
+    background-position: 0 0;
+}
+
+.x-toolbar .navigationhistory_next {
+    background-position: -16px 0;
 }
