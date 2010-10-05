@@ -63,6 +63,41 @@ Layer Tree
 
     </div>
 
+.. _features:
+
+Features
+--------
+
+.. raw:: html
+
+   <body>
+      <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef7" href="javascript:showdiv('codeBlock7','showRef7','hideRef7')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef7" href="javascript:hidediv('codeBlock7','showRef7','hideRef7')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock7" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map6 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+      }
+   </script>
+   <body onload="init();">
+      <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
 .. raw:: html
 
    <script type="text/javascript">
@@ -75,6 +110,12 @@ Layer Tree
              renderTo: "mylayertree6",
              width: 300
          });
+
+         var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+         map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         var tooltip = new GeoAdmin.Tooltip({});
+         map7.addControl(tooltip);
+         tooltip.activate();
 
       }
    </script>
