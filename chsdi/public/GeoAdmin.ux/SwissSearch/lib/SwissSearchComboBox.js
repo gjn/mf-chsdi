@@ -115,3 +115,5 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         }
     }
 });
+
+Ext.reg("ga_swisssearch", GeoAdmin.SwissSearchComboBox);
