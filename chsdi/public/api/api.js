@@ -14,6 +14,7 @@
  * @include BodSearch/lib/BodSearchComboBox.js
  * @include BaseLayerTool/lib/BaseLayerTool.js
  * @include Features/lib/Features.js
+ * @include Features/lib/Tooltip.js
  * @include LayerTree/lib/LayerTree.js
  *
  * @include OpenLayers/Lang.js
