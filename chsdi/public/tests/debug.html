@@ -37,11 +37,15 @@
                 renderTo: "baselayertool_1",
                 label: 'Orthophoto'
             });
+            api.createNavigationHistory({
+                renderTo: "navigationhistory_1"
+            });
             new Ext.Toolbar({
                 renderTo: "baselayertool_2",
                 items: [
                     {text: "a button"},
                     api.createBaseLayerTool({label: "Ortho"}),
+                    api.createNavigationHistory(),
                     {text: "and another button"}
                 ]
             });
@@ -82,6 +86,7 @@
 <div id="bodsearch_1"></div>
 <div id="bodsearch_2"></div>
 <div id="baselayertool_1"></div>
+<div id="navigationhistory_1"></div>
 <div id="mousepos_1"></div>
 <div id="baselayertool_2"></div>
 <div id="layertree_1"></div>

@@ -17,6 +17,7 @@
  * @include Features/lib/Tooltip.js
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
+ * @include NavigationHistory/lib/NavigationHistory.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
@@ -248,6 +249,16 @@ GeoAdmin.API = OpenLayers.Class({
         return new GeoAdmin.BaseLayerTool(Ext.applyIf({
             map: this.map
         }, options));
+    },
+
+    createNavigationHistory: function(options) {
+        return new GeoAdmin.NavigationHistory(Ext.applyIf({
+            map: this.map
+        }, options)).items;
+    },
+
+    createPrint: function(options) {
+
     },
 
     /**

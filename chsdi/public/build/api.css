@@ -46,6 +46,7 @@
 @import url(../GeoAdmin.ux/LayerTree/css/layertree.css);
 @import url(../GeoAdmin.ux/CatalogTree/css/catalogtree.css);
 @import url(../GeoAdmin.ux/Features/css/tooltip.css);
+@import url(../GeoAdmin.ux/NavigationHistory/css/navigationhistory.css);
 
 .x-form-empty-field {
     color: gray;
