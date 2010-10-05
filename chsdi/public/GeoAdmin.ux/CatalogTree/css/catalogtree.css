@@ -99,7 +99,10 @@
 }
 .geoadmin-catalog-tree .nodeLT3selected .x-tree-node-anchor span {
     color: red !important;
-    clear: left;    
+    clear: left;
+}
+.geoadmin-catalog-tree .x-tree-node-anchor {
+    text-decoration:none !important;
 }
 .geoadmin-catalog-tree .nodeBackgroundSelected {
     background-color: red !important;

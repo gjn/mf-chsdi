@@ -116,6 +116,7 @@
 .geoadmin-layertree .x-tree-node .x-tree-node-anchor {
     background-color: transparent !important;
     cursor: default;
+    text-decoration:none !important;
 }
 .geoadmin-layertree .x-toolbar .x-btn-mc .visibility-on {
   background: transparent url(../images/lt_visible.png) no-repeat center !important;
