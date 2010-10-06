@@ -2,7 +2,6 @@
  * @requires OpenLayers/Control/OverviewMap.js
  * @include OpenLayers/Layer/Image.js
  */
-Ext.ns("GeoAdmin");
 
 GeoAdmin.OverviewMap = OpenLayers.Class(OpenLayers.Control.OverviewMap, {
 
