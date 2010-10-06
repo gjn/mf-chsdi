@@ -7,7 +7,6 @@ GeoAdmin.BodSearchWindow = {
     show: function(id) {
         var _window = new Ext.Window({
             layout: 'anchor',
-//            closeAction: 'hide',
             resizable: true,
             autoScroll: true,
             width: 525,
@@ -19,7 +18,8 @@ GeoAdmin.BodSearchWindow = {
         Ext.ux.JSONP.request(_window._url, {
             callbackKey: "cb",
             params: {
-                lang: OpenLayers.Lang.getCode()
+                lang: OpenLayers.Lang.getCode(),
+                h: GeoAdmin.webServicesUrl
             },
             scope: _window,
             callback: function(response) {
