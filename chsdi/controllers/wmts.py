@@ -1,9 +1,9 @@
 import logging
 
 from pylons import request, response, session, tmpl_context as c
-from pylons.controllers.util import abort, redirect_to
+from pylons.controllers.util import abort
 
-from geoadmin.lib.base import BaseController, render
+from chsdi.lib.base import BaseController, render
 
 import mimetypes
 import urllib2
@@ -63,7 +63,7 @@ class WmtsController(BaseController):
         # url('edit_wmt', id=ID)
 
     def manager(self):
-        if (request.host != 'mf-geoadmin0t.bgdi.admin.ch:5000' and request.host != 'mf-geoadmin0t.bgdi.admin.ch' and request.host != 'mf-geoadmin0i.bgdi.admin.ch' and request.host != 'map.geo.admin.ch' and request.host != 'edison.nis.ch'):
+        if (request.host != 'api.geo.admin.ch' and request.host != 'mf-chsdi.bgdi.admin.ch' and request.host != 'mf-chsdi0i.bgdi.admin.ch' and request.host != 'mf-chsdi0t.bgdi.admin.ch' and request.host != 'mf-geoadmin0t.bgdi.admin.ch:5000' and request.host != 'mf-geoadmin0t.bgdi.admin.ch' and request.host != 'mf-geoadmin0i.bgdi.admin.ch' and request.host != 'map.geo.admin.ch' and request.host != 'edison.nis.ch'):
            response.status='403'
            return 'no right'
         else:
