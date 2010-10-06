@@ -49,3 +49,8 @@
 .bodsearch table td, .bodsearch table th{
    padding: 0 0 0 5px;    
 }
+
+.x-tool-close {
+    background-image: url(../images/close_button.png);
+    background-position: center center;
+}
