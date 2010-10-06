@@ -460,19 +460,16 @@ GeoAdmin.API = OpenLayers.Class({
         // Manage options
         if (options.feature) {
             feature = options.feature;
-            options.html = options.feature.attributes.html;
+            options.location = feature;
+            options.html = feature.attributes.html;
         } else {
-            options.lonlat = new OpenLayers.LonLat(options.easting, options.northing);
+            options.location = new OpenLayers.LonLat(
+                options.easting, options.northing);
         }
 
         if (this.popup) {
             this.popup.close();
         }
-
-        //options.map = this.map;
-
-        // popup.feature renamed to popup.location in GeoExt 1.0
-        options.location = options.feature;
 
         if (options.html) {
             this.popup = new GeoExt.Popup(options);
