@@ -118,6 +118,7 @@ class WmtsController(BaseController):
            response.headers['Content-Type'] = mimetypes.types_map['.'+format]
            response.headers['Cache-Control'] = r.headers['Cache-Control']
            response.headers['Expires'] = r.headers['Expires']
+           del response.headers['Pragma']
            return r.read()
 
     def zeroPad(self,number,length):
