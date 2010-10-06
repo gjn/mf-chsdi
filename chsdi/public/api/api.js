@@ -251,12 +251,32 @@ GeoAdmin.API = OpenLayers.Class({
         }, options));
     },
 
+    /** api: method[createNavigationHistory]
+     *  :param options: ``Object`` options
+     *
+     *  Valid properties for the ``options`` argument:
+     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component w    ill be rendered into.
+     *
+     *  :return: ``GeoAdmin.NavigationHistory``
+     *
+     *  Create a set of previous/next buttons allowing the user to undo/redo navigation actions on the map
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.createNavigationHistory({
+     *         renderTo: "navigationhistory"
+     *     });
+     *
+     */
     createNavigationHistory: function(options) {
         return new GeoAdmin.NavigationHistory(Ext.applyIf({
             map: this.map
         }, options));
     },
 
+    /** api: method[createPrint]
+     * TODO
+     */
     createPrint: function(options) {
          
     },
