@@ -531,6 +531,23 @@ GeoAdmin.API = OpenLayers.Class({
         return this.popup;
     },
 
+    /** api: method[showMousePosition]
+     *  :param options: ``Object`` options
+     *
+     *  Valid properties for the ``options`` arguments are those of the ``OpenLayers.Control.MousePosition``:
+     *   * ``prefix`` - ``String``: optional text befor the mouse position, default: ``Coordinates (m)``
+     *   * ``separator`` - ``String``: optional separator between northing and easting, default: ", "
+     *   * ``suffix`` - ``String``: optional text after the mouse coordinates, default: ``empty``
+     *   * ``numDigits`` - ``Integer``: optional, number of digits to display, default ``0``
+     *   * ``granularity`` - ``Integer``: optional, minimal distance in pixels before refreshing mouse position , default: ``10``
+     *   * ``emptyString`` - ``String``: optional, value to display when the mouse is outside the map, default ``null``
+     *   * ``displayProjection`` - ``OpenLayers.Projection``: optional, the projection in which the mouse is diplayed.  Default is same as the map (EPSG:21781).
+     *
+     *  :return: ``undefined``
+     *
+     *  Add a control displaying the current mouse position in the map
+     *
+     */
     showMousePosition: function(options) {
         var control = new OpenLayers.Control.MousePosition(
             OpenLayers.Util.applyDefaults(options, {
@@ -539,7 +556,17 @@ GeoAdmin.API = OpenLayers.Class({
         }));
         this.map.addControl(control);
     },
-
+   /** api: method[createLayerTree]
+    *  :param options: ``Object`` options
+    *
+    *  Valid properties for the ``options`` arguments:
+    *
+    *  :return: ``GeoAdmin.LayerTree``
+    *
+    *  Create a layer tree of layers associated to a map
+    *
+    *  TODO: widget not finished
+    */
     createLayerTree: function(options) {
         return new GeoAdmin.LayerTree(Ext.applyIf({
             map: this.map
