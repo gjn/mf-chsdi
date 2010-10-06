@@ -142,6 +142,47 @@ Catalog Tree
 
     </div>
 
+.. _mouse-position:
+
+Mouse Position
+--------------
+
+.. raw:: html
+
+   <body>
+      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition9" style="margin:10px !important;;height:25px"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef9" href="javascript:showdiv('codeBlock9','showRef9','hideRef9')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef9" href="javascript:hidediv('codeBlock9','showRef9','hideRef9')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock9" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
+         var mouseposition9  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition9"
+                map: map9
+         });
+      }
+   </script>
+   <body onload="init();">
+      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition9" style="margin:10px !important;height:25px"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
+   </body>
+
+.. raw:: html
+
+    </div>
+
 
 
 
@@ -171,6 +212,12 @@ Catalog Tree
 
          var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
+
+         var map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
+         var mouseposition9  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition9",
+                map: map9
+         });
 
       }
    </script>
