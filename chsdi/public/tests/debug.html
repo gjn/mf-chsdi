@@ -71,8 +71,9 @@
             });
 
             api2 = new GeoAdmin.API();
-            api2.createMap({
-                div: "map_2"
+            api2.createMapPanel({
+                height: 400,
+                renderTo: "map_2"
             });
             //api2.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
             //api2.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);

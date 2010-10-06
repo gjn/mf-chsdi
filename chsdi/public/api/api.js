@@ -40,6 +40,12 @@ GeoAdmin.API = OpenLayers.Class({
      */
     map: null,
 
+    /** api: config[mapPanel]
+     * ``GeoExt.MapPanel``
+     * Panel containing the map
+     */
+    mapPanel: null,
+
     /** api: config[selectCtrl]
      *  ``OpenLayers.Control.SelectFeature``
      *  Select control associated to vector layer
@@ -173,6 +179,32 @@ GeoAdmin.API = OpenLayers.Class({
         }
 
         return this.map;
+    },
+
+    /** api: method[createMapPanel]
+     *  :param options: ``Object`` options.
+     *
+     *  Valid properties for the ``options`` argument:
+     *  * any ``GeoExt.MapPanel`` parameter
+     *  * ``mapOptions`` - object containing options for the map, see createMap() options
+     *
+     *  :return: ``GeoExt.MapPanel``
+     *
+     *  Create a map panel
+     *
+     */
+    createMapPanel: function(options) {
+
+        OpenLayers.Util.applyDefaults(options, {
+            map: this.createMap(options.mapOptions || {})
+        });
+        if (options.mapOptions) {
+            delete options.mapOptions;
+        }
+
+        this.mapPanel = new GeoExt.MapPanel(options);
+
+        return this.mapPanel;
     },
 
     /** api: method[createSearchBox]
