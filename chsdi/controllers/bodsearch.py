@@ -19,7 +19,6 @@ class BodsearchController(BaseController):
             self.BodLayer = BodLayerFr
         else:
             self.BodLayer = BodLayerDe
-        c.wsgi_base = request.environ["SCRIPT_NAME"]
 
     @_jsonify(cb='cb')
     def search(self):
