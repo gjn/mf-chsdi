@@ -7,6 +7,7 @@
 GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {
 
     aerial: null,
+    displayInLayerSwitcher: false,
 
     initialize: function(name, options) {
         OpenLayers.Layer.prototype.initialize.apply(this, arguments);
