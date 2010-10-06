@@ -12,3 +12,8 @@
 .tooltip_footer {
   background-color: white;
 }
+
+.x-tool-close {
+    background-image: url(../images/close_button.png);
+    background-position: center center;
+}
