@@ -19,6 +19,7 @@
  * @include CatalogTree/lib/CatalogTree.js
  * @include NavigationHistory/lib/NavigationHistory.js
  * @include MousePosition/lib/MousePositionBox.js
+ * @include Print/lib/Print.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
@@ -186,7 +187,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Valid properties for the ``options`` argument:
      *  * any ``GeoExt.MapPanel`` parameter
-     *  * ``mapOptions`` - object containing options for the map, see createMap() options
+     *  * ``mapOptions`` - ``Object`` containing options for the map, see createMap() options
      *
      *  :return: ``GeoExt.MapPanel``
      *
@@ -196,7 +197,7 @@ GeoAdmin.API = OpenLayers.Class({
     createMapPanel: function(options) {
 
         OpenLayers.Util.applyDefaults(options, {
-            map: this.createMap(options.mapOptions || {})
+            map: this.map || this.createMap(options.mapOptions || {})
         });
         if (options.mapOptions) {
             delete options.mapOptions;
@@ -308,10 +309,34 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createPrint]
-     * TODO
+     *  :param options: ``Object`` options
+     *
+     *  Valid properties for the ``options`` argument:
+     *  * any ``Ext.Action`` option
+     *  * ``printPanelOptions`` - ``Object`` containing any ``GeoExt.ux.SimplePrint`` option
+     *  * ``windowOptions`` - ``Object`` containing any ``Ext.Window`` option. Only used if ``printPanelOptions.renderTo`` is not available (an Ext.Window is then used to display the print form).
+     *
+     *  :return: ``GeoAdmin.Print``
+     *
+     *  Create a printing button. Please note that this method implies the map is embedded in a ``GeoExt.MapPanel``.
+     *
+     *  .. code-block:: javascript
+     *
+     *      api.createPrint({
+     *          text: 'Print it!',
+     *          printPanelOptions: {
+     *              renderTo: 'print',
+     *              mapPanel: api.mapPanel
+     *          }
+     *      });
+     *
      */
     createPrint: function(options) {
-         
+        return new GeoAdmin.Print(OpenLayers.Util.applyDefaults(options, {
+            printPanelOptions: {
+                mapPanel: this.mapPanel
+            }
+        }));
     },
 
     /**
@@ -556,6 +581,7 @@ GeoAdmin.API = OpenLayers.Class({
         }));
         this.map.addControl(control);
     },
+
    /** api: method[createLayerTree]
     *  :param options: ``Object`` options
     *

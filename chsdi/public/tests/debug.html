@@ -73,8 +73,21 @@
             api2 = new GeoAdmin.API();
             api2.createMapPanel({
                 height: 400,
-                renderTo: "map_2"
+                renderTo: "map_2",
+                bbar: new Ext.Toolbar()
             });
+            api2.mapPanel.getBottomToolbar().add([
+                api2.createNavigationHistory(),
+                {text: "a button"},
+                '->',
+                api2.createPrint({
+                    text: OpenLayers.i18n('print map'),
+                    printPanelOptions: {
+                        renderTo: 'print_2',
+                        mapPanel: api2.mapPanel
+                    }
+                })
+            ]);
             //api2.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
             //api2.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
             api2.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586,5642]);
@@ -93,8 +106,10 @@
 <div id="layertree_1"></div>
 
 <div class="map" id="map_2"></div>
+<div id="print_2" style="width: 600px"></div>
 
 <script type="text/javascript" src="../lib/openlayers/lib/Firebug/firebug.js"></script>
 <script type="text/javascript" src="../loader.js"></script>
+<script type="text/javascript" src="http://map.geo.admin.ch/print/info.json?locale=fr_CH&url=http:%2F%2Fmap.geo.admin.ch%2Fprint%2Finfo.json&var=printCapabilities"></script>
 </body>
 </html>
