@@ -33,6 +33,7 @@ class BodsearchController(BaseController):
 
     @_jsonify(cb='cb')
     def details(self, id=None):
+        c.host = request.params.get('h', '')
         c.full = True
         c.hilight = ''
         c.layer = Session.query(self.BodLayer).get(id)
