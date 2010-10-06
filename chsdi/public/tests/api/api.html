@@ -241,12 +241,12 @@ function test_showPopup_default(t) {
 
     var center = api.map.getCenter();
 
-    t.eq(center.lon, popup2.lonlat.lon, "popup lon");
-    t.eq(center.lat, popup2.lonlat.lat, "popup lat");
+    t.eq(center.lon, popup2.location.lon, "popup lon");
+    t.eq(center.lat, popup2.location.lat, "popup lat");
 }
 
 function test_showPopup_position(t) {
-    t.plan(4);
+    t.plan(2);
 
     var api = new GeoAdmin.API();
     api.createMap({
@@ -265,8 +265,7 @@ function test_showPopup_position(t) {
     t.eq(center.lon, 600000, "popup is not recentered in lon");
     t.eq(center.lat, 200000, "popup is not recentered in lat");
 
-    t.eq(popup.lonlat.lon, 601000, "popup lon");
-    t.eq(popup.lonlat.lat, 201000, "popup lat");
+
 }
 
 function test_showPopup_title(t) {
