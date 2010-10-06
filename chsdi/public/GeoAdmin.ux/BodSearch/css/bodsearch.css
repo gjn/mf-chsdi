@@ -1,19 +1,37 @@
 .bodsearch {
     border-top: 1px solid #ddd;
     white-space: normal;
+    font-family: tahoma,arial;
+    font-size:11px;
+    letter-spacing:0;
+    text-align: left;
 }
 
 .bodsearch .bodsearch_header {
     background-color: #eee;
+    margin: 1px;
+    padding: 4px;
+}
+
+.bodsearch .bodsearch_footer {
+    margin: 1px;
+    padding: 4px;
 }
 
 .bodsearch .office-provider,
 .bodsearch .bod-title {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
 }
 
 .bodsearch .bod-title {
     color: red;
+}
+
+.bodsearch .office-provider {
+    color:red;
+    font-style:italic;
+    margin-bottom:5px;
+    margin-top:1px;
 }
 
 .bodsearch .match {
@@ -26,4 +44,8 @@
     width: 17px;
     height: 19px;
     background-image: url(../images/info_button_black.png);
+}
+
+.bodsearch table td, .bodsearch table th{
+   padding: 0 0 0 5px;    
 }
