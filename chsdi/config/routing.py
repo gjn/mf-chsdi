@@ -21,6 +21,13 @@ def make_map(config):
     # CUSTOM ROUTES HERE
     map.connect('/loader.js', controller='entry', action='loader')
     map.connect('/swisssearch', controller='swisssearch', action='index')
+    map.connect("/wmts/{path_info:.*}",controller="wmts", action="manager")
+    map.connect("/wmts5/{path_info:.*}",controller="wmts", action="manager")
+    map.connect("/wmts6/{path_info:.*}",controller="wmts", action="manager")
+    map.connect("/wmts7/{path_info:.*}",controller="wmts", action="manager")
+    map.connect("/wmts8/{path_info:.*}",controller="wmts", action="manager")
+    map.connect("/wmts9/{path_info:.*}",controller="wmts", action="manager")
+
 
     # Uncomment this line if you need the OGC proxy in your application
     #map.connect('/ogcproxy', controller='ogcproxy', action='index')
