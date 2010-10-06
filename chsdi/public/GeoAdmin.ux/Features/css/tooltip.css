@@ -1,6 +1,9 @@
 .tooltip_header, .tooltip_footer {
   margin: 1px;
   padding: 4px;
+  font-family: tahoma,arial;
+  font-size:11px;
+  letter-spacing:0;
   text-align: left;
 }
 .tooltip_header {

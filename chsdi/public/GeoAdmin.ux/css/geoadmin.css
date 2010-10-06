@@ -4,3 +4,13 @@
   border: 0 !important;
   border-bottom: 1px solid black !important;
 }
+
+.x-tool-close {
+  background-image:url("../images/close_button.png");
+  margin-top:-2px;
+}
+
+.x-tool-close-over {
+  background-image:url("../images/close_button.png");
+  background-position: 0 0;
+}
