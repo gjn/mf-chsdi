@@ -39,12 +39,19 @@ The map widget contains a map and all the layers of the Switzerland spatial data
 
 See examples: :ref:`default-map` and :ref:`map-with-gray-pixelmap-and-overlay-layer`
 
-Mouse position
+Mouse Position
 --------------
 
-The map widget presents the position of the mouse.
+The mouse position widget presents the position of the mouse.
 
-See examples: :ref:`mouse position`
+See examples: :ref:`mouse-position`
+
+Navigation History
+------------------
+
+The navigation history widget stores the various state of the map and allows the user to come back to previous state.
+
+See examples: :ref:`navigation-history`
 
 Swiss Search
 ------------

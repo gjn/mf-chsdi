@@ -57,7 +57,6 @@ Layer Tree
       <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
       <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -96,7 +95,6 @@ Tooltip
    <body onload="init();">
       <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -135,7 +133,6 @@ Catalog Tree
       <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
       <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -167,7 +164,7 @@ Mouse Position
       function init() {
          var map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
          var mouseposition9  = new GeoAdmin.MousePositionBox({
-                renderTo: "mymouseposition9"
+                renderTo: "mymouseposition9",
                 map: map9
          });
       }
@@ -176,7 +173,46 @@ Mouse Position
       <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="mymouseposition9" style="margin:10px !important;height:25px"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
+   </body>
+
+.. raw:: html
+
+    </div>
+
+.. _navigation-history:
+
+Navigation History
+------------------
+
+.. raw:: html
+
+   <body>
+      <div id="mynavigationhistory10" style="margin:10px !important;"></div>
+      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef10" href="javascript:showdiv('codeBlock10','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef10" href="javascript:hidediv('codeBlock10','showRef10','hideRef10')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock10" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
+         var navigationhistory10  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory10",
+                map: map10
+         });
+      }
+   </script>
+   <body onload="init();">
+      <div id="mynavigationhistory10" style="margin:10px !important;"></div>
+      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -219,10 +255,15 @@ Mouse Position
                 map: map9
          });
 
+         var map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
+         var navigationhistory10  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory10",
+                map: map10
+         });
+
       }
    </script>
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>
