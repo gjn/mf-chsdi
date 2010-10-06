@@ -10,3 +10,7 @@
 .navigationhistory_next {
     background-position: -16px 0 !important;
 }
+
+#geoadmin_navigation_history table {
+   margin: 0 !important; 
+}

@@ -15,6 +15,7 @@ GeoAdmin.NavigationHistory = Ext.extend(Ext.Container, {
         var history = new OpenLayers.Control.NavigationHistory();
         history.activate();
         this.map.addControl(history);
+        this.id = "geoadmin_navigation_history";
 
         this.items = [
             new Ext.Button(new GeoExt.Action(Ext.applyIf({
