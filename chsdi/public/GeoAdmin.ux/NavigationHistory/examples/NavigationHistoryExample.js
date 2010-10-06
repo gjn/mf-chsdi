@@ -9,8 +9,11 @@ Ext.onReady(function() {
         map: map,
         height: 400,
         width: 600,
-        bbar: new GeoAdmin.NavigationHistory({
-            map: map
-        }).items
+        bbar: [
+            new GeoAdmin.NavigationHistory({
+                map: map
+            }),
+            {text: "and another button"}
+        ]
     });
 });

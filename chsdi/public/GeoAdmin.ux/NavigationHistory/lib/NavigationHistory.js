@@ -6,10 +6,10 @@
  * @include GeoExt/widgets/Action.js
  */
 
-GeoAdmin.NavigationHistory = Ext.extend(Ext.BoxComponent, {
+GeoAdmin.NavigationHistory = Ext.extend(Ext.Container, {
 
     map: null,
-    items: null,
+    layout: 'column',
 
     initComponent: function() {
         var history = new OpenLayers.Control.NavigationHistory();
@@ -17,18 +17,20 @@ GeoAdmin.NavigationHistory = Ext.extend(Ext.BoxComponent, {
         this.map.addControl(history);
 
         this.items = [
-            new GeoExt.Action(Ext.applyIf({
+            new Ext.Button(new GeoExt.Action(Ext.applyIf({
                 tooltip: OpenLayers.i18n("previous"),
                 control: history.previous,
                 iconCls: 'navigationhistory_previous',
                 disabled: true 
-            }, this.defaults || {})),
-            new GeoExt.Action(Ext.applyIf({
+            }, this.defaults || {}))),
+            new Ext.Button(new GeoExt.Action(Ext.applyIf({
                 tooltip: OpenLayers.i18n("next"),
                 control: history.next,
                 iconCls: 'navigationhistory_next',
                 disabled: true 
-            }, this.defaults || {}))
+            }, this.defaults || {})))
         ];
+
+        GeoAdmin.NavigationHistory.superclass.initComponent.apply(this, arguments);
     }
 });

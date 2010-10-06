@@ -254,11 +254,11 @@ GeoAdmin.API = OpenLayers.Class({
     createNavigationHistory: function(options) {
         return new GeoAdmin.NavigationHistory(Ext.applyIf({
             map: this.map
-        }, options)).items;
+        }, options));
     },
 
     createPrint: function(options) {
-
+         
     },
 
     /**

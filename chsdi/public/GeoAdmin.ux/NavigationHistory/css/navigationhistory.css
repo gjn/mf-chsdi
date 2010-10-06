@@ -1,12 +1,12 @@
-.x-toolbar .navigationhistory_previous,
-.x-toolbar .navigationhistory_next {
-    background-image: url("../img/navigationhistory.png");
+.navigationhistory_previous,
+.navigationhistory_next {
+    background-image: url("../img/navigationhistory.png") !important;
 }
 
-.x-toolbar .navigationhistory_previous {
-    background-position: 0 0;
+.navigationhistory_previous {
+    background-position: 0 0 !important;
 }
 
-.x-toolbar .navigationhistory_next {
-    background-position: -16px 0;
+.navigationhistory_next {
+    background-position: -16px 0 !important;
 }
