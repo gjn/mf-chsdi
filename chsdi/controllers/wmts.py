@@ -54,7 +54,8 @@ class WmtsController(BaseController):
 
         # http://testmapfish-swisstopo.camptocamp.net:5000/wmts/WMTSCapabilities.xml
         if (id == 'WMTSCapabilities' and format == 'xml'):
-           response.headers['Content-Type'] = mimetypes.types_map['.'+format] 
+           response.headers['Content-Type'] = mimetypes.types_map['.'+format]
+           response.charset = 'utf8'
            return render('/WMTSCapabilities.mako')         
 
 
