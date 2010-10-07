@@ -10,6 +10,7 @@ GeoAdmin.BodSearchWindow = {
             resizable: true,
             autoScroll: true,
             width: 525,
+            bodyStyle: "max-height: 500px",
             items: {html: ''}
         });
 
