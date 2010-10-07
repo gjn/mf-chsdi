@@ -142,7 +142,7 @@ Result
 
 A tile.
 
-Example: http://api.admin.ch/wmts9/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
+Example: http://api.geo.admin.ch/wmts9/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
 
 Usage Example
 ^^^^^^^^^^^^^
@@ -198,7 +198,7 @@ Usage Example
          var layer = new OpenLayers.Layer.WMTS({
             requestEncoding: "REST",
             name: "ch.swisstopo.pixelkarte-farbe",
-            url: ['http://mf-chsdi.bgdi.admin.ch/wmts5/','http://mf-chsdi.bgdi.admin.ch/wmts6/','http://mf-chsdi.bgdi.admin.ch/wmts7/','http://mf-chsdi.bgdi.admin.ch/wmts8/','http://mf-chsdi.bgdi.admin.ch/wmts9/'],
+            url: ['http://api.geo.admin.ch/wmts5/','http://api.geo.admin.ch/wmts6/','http://api.geo.admin.ch/wmts7/','http://api.geo.admin.ch/wmts8/','http://api.geo.admin.ch/wmts9/'],
             layer: "ch.swisstopo.pixelkarte-farbe",
             matrixSet: "ch.swisstopo.pixelkarte-farbe",
             format: "image/jpeg",
