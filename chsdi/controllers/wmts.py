@@ -20,7 +20,9 @@ class WmtsController(BaseController):
     def index(self, format='html'):
         """GET /wmts: All items in the collection"""
         # url('wmts')
-        return 'index'
+        response.headers['Content-Type'] = mimetypes.types_map['.xml']
+        response.charset = 'utf8'
+        return render('/WMTSCapabilities.mako') 
 
     def create(self):
         """POST /wmts: Create a new item"""
