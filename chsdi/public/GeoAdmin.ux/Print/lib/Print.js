@@ -53,7 +53,16 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 baseParams: {
                     url: printCapabilities.createURL
                 },
-                method: "GET"
+                method: "GET",
+                listeners: {
+                    "beforeprint": function(provider, map, pages, options) {
+                        var overrides = {
+                            dataOwner: map.attribution()
+                        };
+                        overrides['lang' + OpenLayers.Lang.getCode()] = true;
+                        Ext.applyIf(pages[0].customParams, overrides);
+                    }
+                }
             }),
             hideRotation: true,
             autoFit: true,
