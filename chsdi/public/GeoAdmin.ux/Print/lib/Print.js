@@ -3,7 +3,7 @@
 /**
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Control/TransformFeature.js
- * @include SimplePrint/lib/GeoExt.ux/SimplePrint.js
+ * @include GeoExt.ux/SimplePrint.js
  * @include GeoExt/data/PrintProvider.js
  */
 
