@@ -30,6 +30,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     hideTrigger: true,
     minChars: 4,
     queryDelay: 50,
+    listWidth: 500,
     displayField: 'label',
     forceSelection: true,
 
