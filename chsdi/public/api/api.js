@@ -6,6 +6,7 @@
  * @include OpenLayers/Geometry/Point.js
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Control/MousePosition.js
+ * @include OpenLayers/Layer/WMTS.js
  *
  * @include GeoExt/widgets/Popup.js
  *

@@ -1,3 +1,26 @@
+.. raw:: html
+
+   <script language=javascript type='text/javascript'>
+
+   function hidediv(div, showDiv, hideDiv) {
+      document.getElementById(div).style.visibility = 'hidden';
+      document.getElementById(div).style.display = 'none';
+      document.getElementById(hideDiv).style.visibility = 'hidden';
+      document.getElementById(hideDiv).style.display = 'none';
+      document.getElementById(showDiv).style.visibility = 'visible';
+      document.getElementById(showDiv).style.display = 'block';
+   }
+
+   function showdiv(div, showDiv, hideDiv) {
+      document.getElementById(div).style.visibility = 'visible';
+      document.getElementById(div).style.display = 'block';
+      document.getElementById(showDiv).style.visibility = 'hidden';
+      document.getElementById(showDiv).style.display = 'none';
+      document.getElementById(hideDiv).style.visibility = 'visible';
+      document.getElementById(hideDiv).style.display = 'block';
+   }
+   </script>
+
 Services
 ========
 
@@ -9,7 +32,7 @@ Swisssearch allows the user to search for swiss locations, like postcode, canton
 URL
 ^^^
 
-http://sdi.geo.admin.ch/swisssearch
+http://api.geo.admin.ch/swisssearch
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -21,7 +44,7 @@ The following parameters are required:
 
 The service returns a maximum of 50 results.
 
-Example: http://sdi.geo.admin.ch/swisssearch?lang=fr&query=lausanne
+Example: http://api.geo.admin.ch/swisssearch?lang=fr&query=lausanne
 
 Result
 ^^^^^^
@@ -44,7 +67,7 @@ This service allows to query all layers present in geoadmin for a certain expres
 URL
 ^^^
 
-http://sdi.geo.admin.ch/bodsearch/search
+http://api.geo.admin.ch/bodsearch/search
 
 Input parameters
 ^^^^^^^^^^^^^^^^ 
@@ -55,7 +78,7 @@ The following parameters are required:
 - query: the query string
 - cb (optional): the name of the callback funtion
 
-Example: http://sdi.geo.admin.ch/bodsearch/search?lang=de&query=moor
+Example: http://api.geo.admin.ch/bodsearch/search?lang=de&query=moor
 
 Result
 ^^^^^^
@@ -76,7 +99,7 @@ This service display detailed informations on a layer, including a detailed desc
 URL
 ^^^
 
-http://sdi.geo.admin.ch/bodsearch/details/[bod id]
+http://api.geo.admin.ch/bodsearch/details/[bod id]
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -92,4 +115,203 @@ Result
 
 A HTML document
 
-Example: http://sdi.geo.admin.ch/bodsearch/details/ch.bafu.bundesinventare-moorlandschaften?lang=it&baseUrl=http://map.geo.admin.ch/
+Example: http://api.geo.admin.ch/bodsearch/details/ch.bafu.bundesinventare-moorlandschaften?lang=it&baseUrl=http://map.geo.admin.ch/
+
+WMTS
+----
+
+A RESTFul implementation of the WMTS norm.
+
+URL
+^^^
+
+- http://api.geo.admin.ch/wmts
+- http://api.geo.admin.ch/wmts5
+- http://api.geo.admin.ch/wmts6
+- http://api.geo.admin.ch/wmts7
+- http://api.geo.admin.ch/wmts8
+- http://api.geo.admin.ch/wmts9
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+See WMTS norm: http://www.opengeospatial.org/standards/wmts
+
+Result
+^^^^^^
+
+A tile.
+
+Example: http://api.admin.ch/wmts9/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
+
+Usage Example
+^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <body>
+      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
+      <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>  
+   </body>
+
+.. raw:: html
+
+    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')">Show code</a>
+    <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden">Hide code</a>
+    <div id="codeBlock1" style="display: none; visibility: hidden">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      var map;
+
+      var geolocate = function() {
+         if (navigator.geolocation) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition(function(position) {
+               positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
+               positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
+               map.setCenter(positionCH, 22);
+            });
+         } else {
+            alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
+         }
+      }
+
+      function init() {
+         OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
+         var lon = 600000;
+         var lat = 200000;
+         var zoom = 18;
+         var layers = [];
+
+         map = new OpenLayers.Map('mymap1', {
+            projection: new OpenLayers.Projection("EPSG:21781"),
+            units: "m",
+            maxExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
+            restrictedExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
+            allOverlays: false,
+            resolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+            controls: [ new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar() ]
+         });
+
+         var layer = new OpenLayers.Layer.WMTS({
+            requestEncoding: "REST",
+            name: "ch.swisstopo.pixelkarte-farbe",
+            url: ['http://mf-chsdi0t.bgdi.admin.ch/wmts5/','http://mf-chsdi0t.bgdi.admin.ch/wmts6/','http://mf-chsdi0t.bgdi.admin.ch/wmts7/','http://mf-chsdi0t.bgdi.admin.ch/wmts8/','http://mf-chsdi0t.bgdi.admin.ch/wmts9/'],
+            layer: "ch.swisstopo.pixelkarte-farbe",
+            matrixSet: "ch.swisstopo.pixelkarte-farbe",
+            format: "image/jpeg",
+            style: "default",
+            dimensions: ['DATE'],
+            params: {DATE: '100617'},
+            isBaseLayer: true,
+            buffer: 0,
+            transitionEffect: 'resize',
+            formatSuffixMap: {
+               "image/png": "png",
+               "image/png8": "png",
+               "image/png24": "png",
+               "image/png32": "png",
+               "png": "png",
+               "image/jpeg": "jpeg",
+               "image/jpg": "jpg",
+               "jpeg": "jpeg",
+               "jpg": "jpg"
+            }
+         });
+
+         layers.push(layer);
+
+         map.addLayers(layers);
+
+         map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
+      }
+   </script>
+   <body onload="init();">
+      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
+      <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
+
+
+
+
+
+.. raw:: html
+
+   <script type="text/javascript">
+      var map;
+
+      var geolocate = function() {
+         if (navigator.geolocation) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition(function(position) {
+               positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
+               positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
+               map.setCenter(positionCH, 22);
+            });
+         } else {
+            alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
+         }
+      }
+
+      function init() {
+         OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
+         var lon = 600000;
+         var lat = 200000;
+         var zoom = 18;
+         var layers = [];
+
+         map = new OpenLayers.Map('mymap1', {
+            projection: new OpenLayers.Projection("EPSG:21781"),
+            units: "m",
+            maxExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
+            restrictedExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
+            allOverlays: false,
+            resolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+            controls: [ new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar() ]
+         });
+
+         var layer = new OpenLayers.Layer.WMTS({
+            requestEncoding: "REST",
+            name: "ch.swisstopo.pixelkarte-farbe",
+            url: ['http://mf-chsdi0t.bgdi.admin.ch/wmts5/','http://mf-chsdi0t.bgdi.admin.ch/wmts6/','http://mf-chsdi0t.bgdi.admin.ch/wmts7/','http://mf-chsdi0t.bgdi.admin.ch/wmts8/','http://mf-chsdi0t.bgdi.admin.ch/wmts9/'],
+            layer: "ch.swisstopo.pixelkarte-farbe",
+            matrixSet: "ch.swisstopo.pixelkarte-farbe",
+            format: "image/jpeg",
+            style: "default",
+            dimensions: ['DATE'],
+            params: {DATE: '100617'},
+            isBaseLayer: true,
+            buffer: 0,
+            transitionEffect: 'resize',
+            formatSuffixMap: {
+               "image/png": "png",
+               "image/png8": "png",
+               "image/png24": "png",
+               "image/png32": "png",
+               "png": "png",
+               "image/jpeg": "jpeg",
+               "image/jpg": "jpg",
+               "jpeg": "jpeg",
+               "jpg": "jpg"
+            }
+         });
+
+         layers.push(layer);
+
+         map.addLayers(layers);
+
+         map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
+      }
+   </script>
+
+   <body onload="init();">
+     <script type="text/javascript" src="../../../loader.js"></script>
+   </body>
