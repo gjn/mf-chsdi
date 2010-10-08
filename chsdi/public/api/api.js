@@ -13,6 +13,9 @@
  *
  * @include GeoExt/widgets/Popup.js
  *
+ * @include GeoExt.ux/MeasureArea.js
+ * @include GeoExt.ux/MeasureLength.js
+ *
  * @include Map/lib/Map.js
  * @include SwissSearch/lib/SwissSearchComboBox.js
  * @include BodSearch/lib/BodSearchComboBox.js
