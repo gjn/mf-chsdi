@@ -1066,3 +1066,5 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         GeoAdmin.CatalogTree.superclass.constructor.call(this, config);
     }
 });
+
+Ext.reg("ga_catalogtree", GeoAdmin.CatalogTree);
