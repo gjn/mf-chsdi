@@ -86,4 +86,4 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     }
 });
 
-Ext.reg("ga_bodsearchcombo", GeoAdmin.SwissSearchComboBox);
+Ext.reg("ga_bodsearchcombo", GeoAdmin.BodSearchComboBox);
