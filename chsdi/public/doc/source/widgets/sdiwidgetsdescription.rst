@@ -18,6 +18,13 @@ BOD (for Betriebsobjektdatenbank) Search is a combo box allowing the user to sea
 
 See example: :ref:`bod-search`
 
+BOD Search Window
+-----------------
+
+BOD (for Betriebsobjektdatenbank) Search Window is a tool to present the metadata information about a layer.
+
+See example: :ref:`bod-search-window`
+
 Catalog Tree
 ------------
 

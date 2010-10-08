@@ -6,3 +6,4 @@ Widgets Examples
 
     sdiwidgetsexamples1
     sdiwidgetsexamples2
+    sdiwidgetsexamples3
