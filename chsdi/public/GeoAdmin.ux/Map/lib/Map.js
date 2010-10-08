@@ -126,11 +126,19 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
     },
 
-
+    /** api: method[attribution]
+      * :return: ``String`` - List with data owner of layers displayed in the map.
+      *
+      * Return the layers attribution
+      */ 
     attribution: function() {
         return this.attributionCtrl.div.innerHTML;
     },
-
+    /** api: method[getState]
+     *  :return: ``Object`` The state. 
+     *
+     *  Returns the current state of the map
+     */
     getState: function() {
         var center = this.getCenter();
         var state = {
@@ -160,7 +168,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         return state;
     },
-
+    /** api: method[applyState]
+     *  :param state: ``Object`` The state to apply.
+     *
+     *  Apply the state provided as argument
+     */
     applyState: function(state) {
         // apply position
         this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
@@ -181,13 +193,22 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             });
         }
     },
-
+    /** api: method[destroy]
+     *  
+     *  Destroy the map
+     */
     destroy: function() {
         OpenLayers.Map.prototype.destroy.apply(this, arguments);
         this.aerial = null;
         this.complementaryLayer = null;
     },
-
+    /** api: method[getLayerByLayerName]
+     *  :param layername: ``String`` Layer name (BOD Id), e.g ch.bafu.bundesinventare-amphibien
+     *
+     *  :return: ``OpenLayers.Layer``
+     * 
+     *  Get a layer of the map by its name
+     */
     getLayerByLayerName: function(layername) {
         var layers = this.getLayersBy("layername", layername);
         // assert layers.length === 0 || layers.length === 1
@@ -221,8 +242,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
     },
 
-    /*
-     * add a layer overlay to the map.
+    /** api: method[addLayerByName]
+     *  :param name: ``String`` - Layer name (BOD Id) see Url  TODO
+     *  :param options: ``Object`` Layer options (optional)
+     *
+     *  Add a layer overlay to the map.
      */
     addLayerByName: function(name, options) {
         var layer = GeoAdmin.layers.buildLayerByName(name, options);
@@ -240,8 +264,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
     },
 
-    /*
-     * switch the complementary layer.
+    /** api: method[switchComplementaryLayer]
+     *  :param name: ``String`` - Layer name (BOD Id)
+     *  :param options: ``Object`` - Layer option (optional)
+     *
+     *  :return:  ``OpenLayers:Layer``
+     *
+     *  Switch the complementary layer.
      */
     switchComplementaryLayer: function(name, options) {
         options = options || {};
