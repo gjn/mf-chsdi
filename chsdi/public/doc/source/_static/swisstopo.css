@@ -80,3 +80,9 @@ div.x-panel-body ul {
 table {
    margin: -3px -0.5em !important;
 }
+
+#apicode .x-window-body {
+    text-align: left !important;
+    font:12px tahoma,arial,helvetica,sans-serif;
+    letter-spacing: 0 !important;
+}
