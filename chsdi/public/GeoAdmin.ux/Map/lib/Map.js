@@ -18,6 +18,25 @@
  * @include proj4js/lib/defs/EPSG21781.js
  */
 
+/** api: (define)
+ *  module =  GeoAdmin
+ *  class = Map
+ * base_link = `OpenLayers.Map <http://dev.openlayers.org/apidocs/files/OpenLayers/Map-js.html>`
+ */
+
+/** api: constructor
+ *  .. class:: Map(div, config)
+ *  :param div:    ``String`` or ``DOMElement`` The element where the map will be rendered (or the id for that element)
+ *  :param config: ``Object`` options (optional).
+ *
+ *  Valid properties for the options argument:
+ *   * ``scale`` - ``Number`` : scaledenom of the map, e.g. 500000
+ *   * ``doZoomToMaxExtent`` - ``Boolean``: zoom to the maximal extent of the map
+ *
+ *  :return: ``OpenLayers.Map``
+ *
+ *  Create an Openlayers.Map containing the GeoAdmin layer and configuration
+ */
 GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     aerial: null,
