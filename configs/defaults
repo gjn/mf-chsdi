@@ -2,6 +2,11 @@ export PYTHON_SITE=$PYTHON_HOME/lib/python2.5/site-packages
 
 export INSTANCE_ID=""
 
+# Print module
+export PRINT_URL="$SERVER_PREFIX/print"
+export MAP_SCALES_PRINT="[2500000, 1000000, 500000, 200000, 100000, 50000, 25000, 20000, 10000, 5000]"
+
+# DB connection data
 export DB_HOST="localhost"
 export DB_USER="www-data"
 export DB_PASS="www-data"
@@ -12,6 +17,8 @@ export API_VERSION="$(date +"%d%m%y%H%M")"
 export HOST="http://mf-chsdi0t.bgdi.admin.ch"
 
 export WSGI_BASE="/"
+
+export TOMCAT_NAME="tomcat1"
 
 function post_fetch_project() {
 
@@ -26,4 +33,16 @@ function post_fetch_project() {
 
     echo "building documentation"
     (cd $PROJECT_DIR/chsdi/public/doc && $PYTHON_ENV/bin/sphinx-build -b html source build)
+
+    echo "compiling print"
+    PRINT_HOME=$PROJECT_DIR/print
+    VANILIA_WAR=$PRINT_HOME/print-vanilia.war
+    FINAL_WAR=$PRINT_HOME/print-chsdi.war
+    cp $VANILIA_WAR $FINAL_WAR
+    (cd $PROJECT_DIR/print; jar uf $FINAL_WAR *.yaml *.png WEB-INF/classes/*)
+    # install into tomcat
+    WEBAPPS=/srv/tomcat/$TOMCAT_NAME/webapps
+    rm -fr $WEBAPPS/print-chsdi/ $WEBAPPS/print-chsdi.war
+    cp $FINAL_WAR $WEBAPPS
+    sudo /etc/init.d/tomcat-$TOMCAT_NAME restart
 }

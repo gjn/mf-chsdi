@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# print with tomcat
+RewriteRule ^%PRINT_URL%/(.*) http://localhost:8080/print-chsdi/pdf/$1 [P]
+
+<Proxy http://localhost:8080/print-chsdi/pdf/*>
+  Order allow,deny
+  Allow from all
+</Proxy>
+
