@@ -86,3 +86,7 @@ table {
     font:12px tahoma,arial,helvetica,sans-serif;
     letter-spacing: 0 !important;
 }
+
+#ifrm {
+    border: 0px solid #ffffff;
+}

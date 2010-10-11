@@ -47,8 +47,8 @@ API Generator
          configurator = new Ext.FormPanel({
            title: 'GeoAdmin API configurator',
            frame: true,
-           labelWidth: 110,
-           width: 300,
+           labelWidth: 200,
+           width: 800,
            renderTo:'myconfigurator',
            bodyStyle: 'padding:0 10px 0;',
            items: [
@@ -59,7 +59,7 @@ API Generator
               value: mapWidth,
               listeners:{
                  'change': function(field,newValue, oldvalue) {
-                    mapWidth = newValue;
+                    mapWidth = parseInt(newValue);
                     dropPreview();
                     createPreview();
                     }
@@ -72,7 +72,7 @@ API Generator
               value: mapHeight,
               listeners:{
                  'change': function(field, newValue, oldvalue) {
-                    mapHeight = newValue;
+                    mapHeight = parseInt(newValue);
                     dropPreview();
                     createPreview();
                     }
@@ -87,8 +87,8 @@ API Generator
          var panel = document.getElementById("mypanel");
          iframeElement = document.createElement("iframe");
          iframeElement.setAttribute('id', 'ifrm');
-         iframeElement.setAttribute('width', 800);
-         iframeElement.setAttribute('height', 600);
+         iframeElement.setAttribute('width', mapWidth + 2);
+         iframeElement.setAttribute('height', mapHeight + 2);
          panel.appendChild(iframeElement);
          docIframe = iframeElement.contentWindow.document;
          docIframe.open();
@@ -136,7 +136,7 @@ API Generator
          code = code + separator;
          code = code + '   api.createMapPanel({';
          code = code + separator;
-         code = code + '      renderTo: "mymap1"';
+         code = code + '      renderTo: "mymap"';
          code = code + separator;
          code = code + '      });';
          code = code + separator;
@@ -146,7 +146,7 @@ API Generator
          code = code + separator;
          code = code + '<body onload="init();">';
          code = code + separator;
-         code = code + '  <div id="mymap1" style="width:'+mapWidth+'px;height:'+mapHeight+'px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"><\/div>';
+         code = code + '  <div id="mymap" style="width:'+mapWidth+'px;height:'+mapHeight+'px;padding: 0 0 0 0"><\/div>';
          code = code + separator;
          code = code + '  <script type="text/javascript" src="../../../loader.js"><\/script>';
          code = code + separator;
