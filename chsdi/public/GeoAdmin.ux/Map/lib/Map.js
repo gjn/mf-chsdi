@@ -132,12 +132,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
       * :return: ``String`` - List with data owner of layers displayed in the map.
       *
       * Return the layers attribution
-      */ 
+      */
     attribution: function() {
         return this.attributionCtrl.div.innerHTML;
     },
     /** api: method[getState]
-     *  :return: ``Object`` The state. 
+     *  :return: ``Object`` The state.
      *
      *  Returns the current state of the map
      */
@@ -170,33 +170,47 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         return state;
     },
+
     /** api: method[applyState]
      *  :param state: ``Object`` The state to apply.
      *
      *  Apply the state provided as argument
      */
     applyState: function(state) {
+        console.log(state);
         // apply position
-        this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
+        if (state.x != null && state.y != null && state.zoom != null) {
+            this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
+        }
 
         // aerial
-        this.aerial.setOpacity(state.aerial.opacity);
+        if (state.aerial && state.aerial.opacity != null) {
+            this.aerial.setOpacity(state.aerial.opacity);
+        }
 
         // complementaryLayer
-        this.switchComplementaryLayer(state.complementaryLayer.layername);
-        this.complementaryLayer.setOpacity(state.complementaryLayer.opacity);
-        
+        if (state.complementaryLayer) {
+            if (state.complementaryLayer.layername) {
+                this.switchComplementaryLayer(state.complementaryLayer.layername);
+                if (state.complementaryLayer.opacity != null) {
+                    this.complementaryLayer.setOpacity(state.complementaryLayer.opacity);
+                }
+            }
+        }
+
         // layers
-        for (var i = 0, len = state.layers.length; i < len; i++) {
-            var layer = state.layers[i];
-            this.addLayerByName(layer.layername, {
-                visibility: layer.visibility,
-                opacity: layer.opacity
-            });
+        if (state.layers) {
+            for (var i = 0, len = state.layers.length; i < len; i++) {
+                var layer = state.layers[i];
+                this.addLayerByName(layer.layername, {
+                    visibility: layer.visibility,
+                    opacity: layer.opacity
+                });
+            }
         }
     },
     /** api: method[destroy]
-     *  
+     *
      *  Destroy the map
      */
     destroy: function() {
@@ -208,7 +222,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      *  :param layername: ``String`` Layer name (BOD Id), e.g ch.bafu.bundesinventare-amphibien
      *
      *  :return: ``OpenLayers.Layer``
-     * 
+     *
      *  Get a layer of the map by its name
      */
     getLayerByLayerName: function(layername) {
@@ -288,7 +302,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 }
                 this.complementaryLayer = layer;
                 if (options.opacity !== undefined) {
-                    opacity = options.opacity; 
+                    opacity = options.opacity;
                 }
                 this.complementaryLayer.setOpacity(opacity !== undefined ? opacity : 1.0);
                 if (zIndex !== undefined) {
