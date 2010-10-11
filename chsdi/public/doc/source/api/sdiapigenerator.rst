@@ -18,6 +18,7 @@ API Generator
       var configurator;
       var mapWidth;
       var mapHeight;
+      var getScaleZoomFromPreview;
       // Replaces all instances of the given substring.
       String.prototype.replaceAll = function(
               strTarget, // The substring you want to replace
@@ -44,17 +45,18 @@ API Generator
       function init() {
          mapWidth = 500;
          mapHeight = 400;
+         getScaleZoomFromPreview = false;
          configurator = new Ext.FormPanel({
            title: 'GeoAdmin API configurator',
            frame: true,
-           labelWidth: 200,
+           labelWidth: 300,
            width: 800,
            renderTo:'myconfigurator',
            bodyStyle: 'padding:0 10px 0;',
            items: [
               {
               xtype: 'textfield',
-              fieldLabel: 'Map width',
+              fieldLabel: 'Map width [pixels]',
               anchor: '95%',
               value: mapWidth,
               listeners:{
@@ -67,7 +69,7 @@ API Generator
               },
               {
               xtype: 'textfield',
-              fieldLabel: 'Map height',
+              fieldLabel: 'Map height [pixels]',
               anchor: '95%',
               value: mapHeight,
               listeners:{
@@ -75,6 +77,16 @@ API Generator
                     mapHeight = parseInt(newValue);
                     dropPreview();
                     createPreview();
+                    }
+                 }
+              },
+              {
+              xtype: 'checkbox',
+              anchor: '95%',
+              fieldLabel: 'Get scale and zoom from preview',
+              listeners:{
+                 'check': function(field,checked) {
+                    getScaleZoomFromPreview = checked;
                     }
                  }
               }
@@ -128,19 +140,32 @@ API Generator
       
       function writeCode(htmlSeparator) {
          var separator = getReturnLine(htmlSeparator);
+
          var code = '<script type="text/javascript">';
+         code = code + separator;
+         code = code + 'var api';
          code = code + separator;
          code = code + 'function init() {';
          code = code + separator;
-         code = code + '   var api = new GeoAdmin.API();';
+         code = code + '   api = new GeoAdmin.API();';
          code = code + separator;
          code = code + '   api.createMapPanel({';
          code = code + separator;
          code = code + '      renderTo: "mymap"';
          code = code + separator;
-         code = code + '      });';
+         code = code + '   });';
          code = code + separator;
-         code = code + '   }';
+         if (htmlSeparator) {
+            if (getScaleZoomFromPreview) {
+               var myiframe = document.getElementById("ifrm");
+               var centerLat = myiframe.contentWindow.api.map.center.lat;
+               var centerLon = myiframe.contentWindow.api.map.center.lon;
+               var zoom = myiframe.contentWindow.api.map.zoom;
+               code = code + '   api.map.setCenter(new OpenLayers.LonLat('+centerLon+','+centerLat+'),'+zoom+');';
+               code = code + separator;
+            }    
+         }
+         code = code + '}';
          code = code + separator;
          code = code + '<\/script>';
          code = code + separator;
@@ -148,7 +173,11 @@ API Generator
          code = code + separator;
          code = code + '  <div id="mymap" style="width:'+mapWidth+'px;height:'+mapHeight+'px;padding: 0 0 0 0"><\/div>';
          code = code + separator;
-         code = code + '  <script type="text/javascript" src="../../../loader.js"><\/script>';
+         if (htmlSeparator) {
+             code = code + '  <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"><\/script>';
+         } else {
+            code = code + '  <script type="text/javascript" src="../../../loader.js"><\/script>';
+         }
          code = code + separator;
          code = code + '<\/body>';
          return code;
