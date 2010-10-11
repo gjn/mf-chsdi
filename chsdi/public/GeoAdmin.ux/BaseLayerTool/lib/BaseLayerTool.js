@@ -9,7 +9,7 @@ Ext.ns("GeoAdmin");
 
 
 /** api: (define)
- *  module = GeoAdmin 
+ *  module = GeoAdmin
  *  class  = BaseLayerTool
  */
 
@@ -29,7 +29,9 @@ Ext.ns("GeoAdmin");
 
  /** api: constructor
   *  .. class:: BaseLayerTool(config)
-  *  :param config: ``Object`` config 
+  *
+  *  :param config: ``Object`` config
+  *
   *
   *  Valid properties for the ``config`` argument:
   *   * ``map`` - ``GeoAdmin.Map``: map which will be controlled by the tool
