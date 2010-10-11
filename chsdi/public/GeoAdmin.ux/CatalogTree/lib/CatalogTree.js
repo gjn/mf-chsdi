@@ -24,6 +24,19 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     selectedNode: null,
     selectedNodeId: '',
 
+    /** api: config[catalog]
+     *  ``String`` The state id. Default value is "catalog".
+     */
+    /** private: property[catalog]
+     *  ``String``
+     */
+    stateId: "catalog",
+
+    /** private: property[stateEvents]
+     *  ``Array(String)`` Array of state events.
+     */
+    stateEvents: ["afterselection"],
+
     layers: null,
 
     /**
@@ -38,10 +51,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         dblclick: function(node, e) {
             this.nodeSelectionManagement(node);
             this.selectedNodeId = node.id;
+            this.fireEvent("afterselection");
         },
         click: function(node, e) {
             this.nodeSelectionManagement(node);
             this.selectedNodeId = node.id;
+            this.fireEvent("afterselection");
         },
         checkchange: function(node, state) {
             if (state) {
@@ -78,6 +93,33 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 return true;
             }
         }
+    },
+
+    /** private: method[afterRender]
+     */
+    afterRender: function() {
+        GeoAdmin.CatalogTree.superclass.afterRender.apply(this, arguments);
+        // call setSelectedNode to handle the case where
+        // selectedNode has been set before render
+        this.setSelectedNode();
+    },
+
+    /** private: method[applyState]
+     *  :param state: ``Object`` The state to apply.
+     *
+     *  Apply the state to the catalog tree.
+     */
+    applyState: function(state) {
+        this.selectedNodeId = state.selected;
+    },
+
+    /** private: method[getState]
+     *  :return: ``Object`` The state.
+     *
+     *  Returns the state of the catalog tree.
+     */
+    getState: function() {
+        return {selected: this.getSelectedNode()};
     },
 
     updateCustomizedCheckbox: function(node, state) {
@@ -146,6 +188,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             node.expand();
             node.ensureVisible();
             this.selectedNode = node;
+            this.fireEvent("afterselection");
         }
     },
 
@@ -1060,6 +1103,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             }
         ];
         GeoAdmin.CatalogTree.superclass.initComponent.call(this);
+
+        this.addEvents("afterselection");
     },
 
     constructor: function(config) {
