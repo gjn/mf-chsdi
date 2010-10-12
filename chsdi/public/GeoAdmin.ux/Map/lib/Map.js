@@ -177,7 +177,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      *  Apply the state provided as argument
      */
     applyState: function(state) {
-        console.log(state);
         // apply position
         if (state.x != null && state.y != null && state.zoom != null) {
             this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
