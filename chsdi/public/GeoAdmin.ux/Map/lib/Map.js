@@ -212,8 +212,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // recenter to feature
         if (state.recenter) {
             var f = new GeoAdmin.Features({map: this});
-            f.highlightFeatures(state.recenter.layername, 
-                                state.recenter.id);
+            f.show(state.recenter.layername, state.recenter.id);
         }
     },
     /** api: method[destroy]
