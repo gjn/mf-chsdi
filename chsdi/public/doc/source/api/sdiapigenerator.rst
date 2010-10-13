@@ -114,22 +114,32 @@ API Generator
 
       function createPreview() {
          var panel = document.getElementById("mypanel");
-         iframeElement = document.createElement("iframe");
-         iframeElement.setAttribute('id', 'ifrm');
-         iframeElement.setAttribute('width', mapWidth + 2);
-         iframeElement.setAttribute('height', mapHeight + 2);
-         panel.appendChild(iframeElement);
-         docIframe = iframeElement.contentWindow.document;
-         docIframe.open();
-         docIframe.writeln(writeCode(false));
-         docIframe.close();
+         if (Ext.isIE) {
+             if (panel.childNodes.length < 1) {
+                var txt = document.createTextNode(" Sorry, but Internet Explorer doesn't support iframe.... please use a modern browser like Firefox. No preview available.");
+                panel.appendChild(txt);
+             }
+         } else {
+            iframeElement = document.createElement("iframe");
+            iframeElement.setAttribute('id', 'ifrm');
+            iframeElement.setAttribute('width', mapWidth + 2);
+            iframeElement.setAttribute('height', mapHeight + 2);
+            panel.appendChild(iframeElement);
+            var docIframe = iframeElement.contentWindow.document;
+            docIframe.open();
+            docIframe.writeln(writeCode(false));
+            docIframe.close();
+         }
       }
 
       function dropPreview() {
          var panel = document.getElementById("mypanel");
-         panel.removeChild(iframeElement);
+         if (iframeElement) {
+           panel.removeChild(iframeElement);
+         }
+
       }
-      
+
       function init() {
          mapWidth = 500;
          mapHeight = 400;
