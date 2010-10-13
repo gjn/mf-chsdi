@@ -27,6 +27,7 @@
  * @include NavigationHistory/lib/NavigationHistory.js
  * @include MousePosition/lib/MousePositionBox.js
  * @include Print/lib/Print.js
+ * @include Permalink/lib/Permalink.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
@@ -204,7 +205,8 @@ GeoAdmin.API = OpenLayers.Class({
     createMapPanel: function(options) {
 
         OpenLayers.Util.applyDefaults(options, {
-            map: this.map || this.createMap(options.mapOptions || {})
+            map: this.map || this.createMap(options.mapOptions || {}),
+            mapId: "map" // make the map panel stateful by default
         });
         if (options.mapOptions) {
             delete options.mapOptions;
@@ -344,6 +346,26 @@ GeoAdmin.API = OpenLayers.Class({
                 mapPanel: this.mapPanel
             }
         }));
+    },
+
+    /** api: method[createPermalink]
+     *  :param options: ``Object`` Options to pass to the
+     *      ``GeoAdmin.Permalink`` constructor.
+     *  :return: ``GeoAdmin.Permalink`` An ``Ext.Action``
+     *      displaying the permalink when triggered.
+     *
+     *  The returned action is typically included as a button in a toolbar.
+     *  Example:
+     *
+     *  .. code-block: javascript
+     *
+     *      api.createMapPanel({
+     *          tbar: [api.createPermalink()]
+     *      });
+     *
+     */
+    createPermalink: function(options) {
+        return new GeoAdmin.Permalink(options);
     },
 
     /**
