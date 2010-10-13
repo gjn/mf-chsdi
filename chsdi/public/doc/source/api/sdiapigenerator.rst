@@ -5,7 +5,7 @@ API Generator
 .. raw:: html
 
    <body>
-      <div id="myconfigurator" style="width:800px;height:200px;padding: 0 0 0 0;"></div>
+      <div id="myconfigurator" style="width:800px;height:250px;padding: 0 0 0 0;"></div>
       <a href="javascript:showCode()">Show code</a>
       <h1> Preview </h1>
       <div id="mypanel" style="width:800px;height:600px;padding: 0 0 0 0;"></div>
@@ -19,6 +19,7 @@ API Generator
       var mapWidth;
       var mapHeight;
       var getScaleZoomFromPreview;
+      var selectedLayerArray;
       // Replaces all instances of the given substring.
       String.prototype.replaceAll = function(
               strTarget, // The substring you want to replace
@@ -67,6 +68,14 @@ API Generator
          code = code + separator;
          code = code + '   });';
          code = code + separator;
+         if (selectedLayerArray.length > 0) {
+             for each (var layer in selectedLayerArray) {
+                 if (layer.data) {
+                    code = code + '   api.map.addLayerByName(\'' + layer['data'].value + '\');'
+                    code = code + separator;
+                 }
+             }
+         }
          if (htmlSeparator) {
             if (getScaleZoomFromPreview) {
                var myiframe = document.getElementById("ifrm");
@@ -134,10 +143,9 @@ API Generator
 
       function dropPreview() {
          var panel = document.getElementById("mypanel");
-         if (iframeElement) {
-           panel.removeChild(iframeElement);
-         }
-
+          if (iframeElement) {
+             panel.removeChild(iframeElement);
+          }
       }
 
       function init() {
@@ -145,10 +153,25 @@ API Generator
          mapHeight = 400;
          getScaleZoomFromPreview = false;
 
+         var availableLayers = GeoAdmin.layers.init();
+         layerArray = [];
+         for (var layer in availableLayers) {
+             layerArray.push([layer, availableLayers[layer].name])
+         }
+
+         var ds = new Ext.data.ArrayStore({
+            data: layerArray,
+            fields: ['value','text'],
+            sortInfo: {
+               field: 'text',
+               direction: 'ASC'
+            }
+         });
+
          configurator = new Ext.FormPanel({
            title: 'GeoAdmin API configurator',
            frame: true,
-           labelWidth: 300,
+           labelWidth: 200,
            width: 800,
            renderTo:'myconfigurator',
            bodyStyle: 'padding:0 10px 0;',
@@ -188,6 +211,41 @@ API Generator
                     getScaleZoomFromPreview = checked;
                     }
                  }
+              },
+              {
+              xtype: 'itemselector',
+              name: 'itemselector',
+              fieldLabel: 'Layer selection',
+              imagePath: '../../../lib/ext/Ext/examples/ux/images/',
+              listeners:{
+                 'change': function(itemselector, value, hiddenvalue) {
+                     selectedLayerArray = itemselector.toStore.data.items;
+                     if (selectedLayerArray.length > 0) {
+                        dropPreview();
+                        createPreview();
+                     }
+                 }
+              },
+              multiselects: [{
+                 width: 240,
+                 height: 140,
+                 store: ds,
+                 displayField: 'text',
+                 valueField: 'value'
+                 },{
+                 width: 240,
+                 height: 140,
+                 store: [],
+                 tbar:[{
+                    text: 'clear',
+                    handler:function(){
+	                    configurator.getForm().findField('itemselector').reset();
+                        selectedLayerArray  = [];
+                        dropPreview();
+                        createPreview(); 
+	                }
+                  }]
+                }]
               }
            ]
          });
@@ -198,5 +256,10 @@ API Generator
    </script>
 
    <body onload="init();">
+
      <script type="text/javascript" src="../../../loader.js"></script>
+     <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/css/MultiSelect.css"/>
+
+     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/MultiSelect.js"></script>
+     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ItemSelector.js"></script>
    </body>
