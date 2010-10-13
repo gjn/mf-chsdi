@@ -32,11 +32,7 @@ def validator_ids():
     ids = request.params.get('ids')
     if ids is None:
         return False
-    ids = ids.split(',')
-    try:
-        c.ids = map(int, ids)
-    except ValueError:
-        return False
+    c.ids = ids.split(',')
     return True
 
 def validator_layers():
