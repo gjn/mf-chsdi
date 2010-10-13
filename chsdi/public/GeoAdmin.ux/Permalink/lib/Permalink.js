@@ -4,39 +4,72 @@
 
 Ext.namespace('GeoAdmin');
 
+// create the permalink provider and set it into
+// the state manager
+Ext.state.Manager.setProvider(
+    new GeoAdmin.PermalinkProvider());
+
+/**
+ */
 GeoAdmin.Permalink = Ext.extend(Ext.Action, {
 
+    /**
+     */
     constructor : function(config) {
-        GeoAdmin.Permalink.superclass.constructor.call(this, config);
 
-        this.permalink_text =  new Ext.form.TextField({
+        // the text field where the link is displayed
+        var permalinkTextField = new Ext.form.TextField({
             hideLabel: true,
             autoHeight: true,
             listeners: {
-                focus: function() {
+                'focus': function() {
                     this.selectText();
                 }
             }
         });
-        this.window = new Ext.Window({});
 
-        // Registers a statechange listener to update the value
-        // of the permalink text field.
+        // the window including the text field displaying
+        // the link, it is shown when the action is
+        // triggered
+        var permalinkWindow = new Ext.Window({
+            layout: 'fit',
+            renderTo: Ext.getBody(),
+            width: 400,
+            closeAction: 'hide',
+            plain: true,
+            title: OpenLayers.i18n('Permalink.title'),
+            items: permalinkTextField,
+            buttons: [{
+                text: OpenLayers.i18n('Permalink.openlink'),
+                handler: function() {
+                    window.open(permalinkTextField.getValue());
+                    permalinkWindow.hide();
+                }
+            }, {
+                text: OpenLayers.i18n('Permalink.close'),
+                handler: function() {
+                    permalinkWindow.hide();
+                }
+            }]
+        });
+
+        // registers a statechange listener to update the value
+        // of the permalink text field
         Ext.state.Manager.getProvider().on({
             statechange: function(provider) {
-                // FIXME: update this.permalink_text
+                permalinkTextField.setValue(provider.getLink());
             }
         });
-    },
 
-    handler: function() {}
+        config = Ext.apply({
+            allowDepress: false,
+            iconCls: 'permalink',
+            text: OpenLayers.i18n('Permalink'),
+            handler: function() {
+                permalinkWindow.show()
+            }
+        }, config);
+
+        GeoAdmin.Permalink.superclass.constructor.call(this, config);
+    }
 });
-
-Ext.reg("ga_permalink", GeoAdmin.Permalink);
-
-/**
- * Creates the permalink provider.
- */
-Ext.state.Manager.setProvider(
-    new GeoAdmin.PermalinkProvider()
-);
