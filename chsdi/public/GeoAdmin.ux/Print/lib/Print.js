@@ -53,7 +53,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 baseParams: {
                     url: printCapabilities.createURL
                 },
-                method: "GET",
+                //autoLoad: true,
+                //url: (GeoAdmin.webServicesUrl || '') + '/print/',
                 listeners: {
                     "beforeprint": function(provider, map, pages, options) {
                         var overrides = {
