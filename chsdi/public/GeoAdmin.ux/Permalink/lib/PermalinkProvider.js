@@ -8,14 +8,13 @@ Ext.namespace("GeoAdmin");
 GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
 
     readURL: function(url) {
-        var params = OpenLayers.Util.getParameters(url),
-            k, stateId;
+        var params = OpenLayers.Util.getParameters(url);
 
         var map_state = {
             layers: []
         };
 
-        for (k in params) {
+        for (var k in params) {
             if(params.hasOwnProperty(k)) {
                 if (k === 'X' || k === 'Y') {
                     map_state[k.toLowerCase()] = parseFloat(params[k]);
