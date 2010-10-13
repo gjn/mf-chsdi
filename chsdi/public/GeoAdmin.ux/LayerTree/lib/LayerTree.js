@@ -130,7 +130,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 break;
             case "delete":
                 layer.destroy();
-                break;core
+                break;
             case "close":
                 node.component.hide();
                 var openBtn = Ext.get(node.id + "_open");
