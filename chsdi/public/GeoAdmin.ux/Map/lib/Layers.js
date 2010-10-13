@@ -1,5 +1,6 @@
 /*
  * @include OpenLayers/Layer/TileCache.js
+ * @include OpenLayers/Layer/WMS.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
  *
@@ -16,16 +17,30 @@ GeoAdmin._Layers = OpenLayers.Class({
             this.init();
         }
         var config = this.layers[name];
+        if (!config) {
+            // layer not found
+            return null;
+        }
 
-        if (name === "voidLayer") {
+        if (config.wms) {
+            return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
+                layers: [name],
+                format: config.format
+            }, {
+                layername: name,
+                displayInLayerSwitcher: !config.isBgLayer,
+                attribution: config.datenherr,
+                singleTile: true,
+                geoadmin_queryable: config.queryable,
+                geoadmin_isBgLayer: !!(config.isBgLayer),
+                layerType: config.type
+            });
+        } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
-        }
-
-        if (config) {
-
+        } else {
             var layer_options = OpenLayers.Util.applyDefaults({
                 projection: new OpenLayers.Projection('EPSG:21781'),
                 units: 'm',
@@ -48,13 +63,10 @@ GeoAdmin._Layers = OpenLayers.Class({
                 'http://tile9.bgdi.admin.ch/geoadmin/'
             ];
             return new OpenLayers.Layer.TileCache(config.name, url, name, layer_options);
-        } else {
-            return null;
         }
     },
 
-    initialize: function() {
-    },
+    initialize: function() {},
 
     init: function() {
         return this.layers = {
@@ -280,8 +292,9 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.hydrologie-hydromessstationen": {
                 name: OpenLayers.i18n("ch.bafu.hydrologie-hydromessstationen"),
+                wms: true,
                 type: "point",
-                format: "image/png",
+                format: "image/pnga",
                 datenherr: OpenLayers.i18n("ch.bafu"),
                 queryable: true
             },
