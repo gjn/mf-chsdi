@@ -26,12 +26,13 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
 //                         opacity: parseInt(params.bgOpacity) / 100.0
 //                     };
                 } else if (k === 'bgLayer') {
-//                     if (params.bgLayer === 'pixelmaps-gray') {
-//                         params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
-//                     }
-//                     map_state.complementaryLayer = {
-//                         layername: params.bgLayer
-//                     };
+                    if (params.bgLayer === 'pixelmaps-gray') {
+                        params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
+                    }
+                    map_state.complementaryLayer = {
+                        layername: params.bgLayer,
+                        opacity: parseInt(params.bgOpacity) / 100.0
+                    };
                 } else if (k === 'layers') {
                     for (var i = 0, len = params.layers.length; i < len; i++) {
                         map_state.layers.push({
