@@ -15,6 +15,8 @@
  * @include Map/lib/Layers.js
  * @include Map/lib/OverviewMap.js
  *
+ * @include Features/lib/Features.js
+ *
  * @include proj4js/lib/defs/EPSG21781.js
  */
 
@@ -206,6 +208,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     opacity: layer.opacity
                 });
             }
+        }
+        // recenter to feature
+        if (state.recenter) {
+            var f = new GeoAdmin.Features({map: this});
+            f.highlightFeatures(state.recenter.layername, 
+                                state.recenter.id);
         }
     },
     /** api: method[destroy]
