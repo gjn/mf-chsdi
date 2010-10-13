@@ -34,6 +34,9 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                         opacity: parseInt(params.bgOpacity) / 100.0
                     };
                 } else if (k === 'layers') {
+                    if (!(params.layers instanceof Array)) {
+                        params.layers = [params.layers];
+                    }
                     for (var i = 0, len = params.layers.length; i < len; i++) {
                         map_state.layers.push({
                             layername: params.layers[i],
@@ -41,6 +44,15 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                             opacity: parseFloat(params.layers_opacity[i])
                         });
                     }
+                } else {
+                    // probably a layer to recenter on
+                    map_state.layers.push({
+                        layername: k
+                    });
+                    map_state.recenter = {
+                        layername: k,
+                        id: params[k]
+                    };
                 }
             }
         }
