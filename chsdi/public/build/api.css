@@ -58,6 +58,10 @@
     font-family: Arial
 }
 
+.x-small-editor .x-form-field {
+  margin-bottom:2px !important;
+}
+
 /* ExtJS CSS have a wrong relative to images, so we fix that here */
 
 /* core.css */

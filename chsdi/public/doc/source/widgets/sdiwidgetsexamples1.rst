@@ -157,7 +157,6 @@ Swiss Search
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
             renderTo: "mysearch4",
-            ref: 'geoadmin',
             map: map4
          });
       }
@@ -241,7 +240,6 @@ BOD Search
          var swisssearch = new GeoAdmin.SwissSearchComboBox({
             width: 500,
             renderTo: "mysearch4",
-            ref: 'geoadmin',
             map: map4
          });
 

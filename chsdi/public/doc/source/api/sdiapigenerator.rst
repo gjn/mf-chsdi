@@ -5,9 +5,10 @@ API Generator
 .. raw:: html
 
    <body>
-      <div id="myconfigurator" style="width:800px;height:250px;padding: 0 0 0 0;"></div>
-      <a href="javascript:showCode()">Show code</a>
+      <div id="myconfigurator" style="width:800px;height:350px;padding: 0 0 0 0;"></div>
+
       <h1> Preview </h1>
+      <a href="javascript:showCode()">Show code of preview</a>
       <div id="mypanel" style="width:800px;height:600px;padding: 0 0 0 0;"></div>
    </body>
 
@@ -20,6 +21,9 @@ API Generator
       var mapHeight;
       var getScaleZoomFromPreview;
       var selectedLayerArray;
+      var addSwissSearch;
+      var addBaseLayerTool;
+      var backgroundLayer;
       // Replaces all instances of the given substring.
       String.prototype.replaceAll = function(
               strTarget, // The substring you want to replace
@@ -56,17 +60,61 @@ API Generator
 
          var code = '<script type="text/javascript">';
          code = code + separator;
+
          code = code + 'var api';
          code = code + separator;
          code = code + 'function init() {';
          code = code + separator;
+         if (addSwissSearch || addBaseLayerTool) {
+              code = code + '   var toolbar = new Ext.Toolbar({});'
+              code = code + separator;
+         }
          code = code + '   api = new GeoAdmin.API();';
          code = code + separator;
          code = code + '   api.createMapPanel({';
          code = code + separator;
          code = code + '      renderTo: "mymap"';
+
+         if (addSwissSearch || addBaseLayerTool) {
+              code = code + separator;
+              code = code + '      ,tbar: toolbar'    
+         }
+
+
+
+
+          
          code = code + separator;
          code = code + '   });';
+
+         if (backgroundLayer == 1) {
+              code = code + separator;
+              code = code + '   api.map.complementaryLayer.setOpacity(0);'
+         }
+
+          if (backgroundLayer == 2) {
+              code = code + separator;
+              code = code + '   api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});'
+         }
+
+         if (addBaseLayerTool) {
+              code = code + separator;
+              code = code + '   var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});'
+              code = code + separator;
+              code = code + '   toolbar.add(baseLayerTool);toolbar.doLayout();'
+         }
+
+         if (addBaseLayerTool && addSwissSearch) {
+             code = code + separator;
+             code = code + '   toolbar.add(\' \');toolbar.doLayout();'
+         }
+          
+         if (addSwissSearch) {
+              code = code + separator;
+              code = code + '   var swissSearchCombo = api.createSearchBox({width: 180});'
+              code = code + separator;
+              code = code + '   toolbar.add(swissSearchCombo);toolbar.doLayout();' 
+         }
          code = code + separator;
          if (selectedLayerArray.length > 0) {
              for each (var layer in selectedLayerArray) {
@@ -131,8 +179,17 @@ API Generator
          } else {
             iframeElement = document.createElement("iframe");
             iframeElement.setAttribute('id', 'ifrm');
-            iframeElement.setAttribute('width', mapWidth + 2);
-            iframeElement.setAttribute('height', mapHeight + 2);
+
+            if (addSwissSearch) {
+                 iframeElement.setAttribute('width', mapWidth + 30);
+            } else {
+                 iframeElement.setAttribute('width', mapWidth + 2);
+            }
+            if (addSwissSearch) {
+                 iframeElement.setAttribute('height', mapHeight + 30);
+            } else {
+                 iframeElement.setAttribute('height', mapHeight + 2);
+            }
             panel.appendChild(iframeElement);
             var docIframe = iframeElement.contentWindow.document;
             docIframe.open();
@@ -149,14 +206,17 @@ API Generator
       }
 
       function init() {
-         mapWidth = 500;
-         mapHeight = 400;
-         getScaleZoomFromPreview = false;
+         mapWidth = 700;
+         mapHeight = 500;
+         getScaleZoomFromPreview = true;
+         backgroundLayer = 0;
 
          var availableLayers = GeoAdmin.layers.init();
          layerArray = [];
          for (var layer in availableLayers) {
-             layerArray.push([layer, availableLayers[layer].name])
+             if (layer != 'ch.swisstopo.swissimage' && layer != 'ch.swisstopo.pixelkarte-farbe' && layer != 'ch.swisstopo.pixelkarte-grau' &&  layer != 'voidLayer') {
+             layerArray.push([layer, availableLayers[layer].name]);
+             }   
          }
 
          var ds = new Ext.data.ArrayStore({
@@ -169,7 +229,7 @@ API Generator
          });
 
          configurator = new Ext.FormPanel({
-           title: 'GeoAdmin API configurator',
+           title: 'GeoAdmin API Generator',
            frame: true,
            labelWidth: 200,
            width: 800,
@@ -203,12 +263,58 @@ API Generator
                  }
               },
               {
+              xtype: 'combo',
+              fieldLabel: 'Background layer',
+              displayField:'value',
+              mode: 'local',
+              typeAhead: true,
+              triggerAction: 'all',
+              emptyText:'Default',
+              selectOnFocus:true,
+              store: new Ext.data.ArrayStore({
+                 fields: ['value'],
+                 data: [['Pixelmap'],['Swissimage'],['Gray pixelmap']]
+              }),
+              listeners:{
+                 'select': function(combo, record, index) {
+                    backgroundLayer = index;
+                    dropPreview();
+                    createPreview();
+                    }
+                 }
+              },
+              {
               xtype: 'checkbox',
               anchor: '95%',
-              fieldLabel: 'Get scale and zoom from preview',
+              fieldLabel: 'Use preview\'s map (zoom & scale)',
+              checked: true,
               listeners:{
                  'check': function(field,checked) {
                     getScaleZoomFromPreview = checked;
+                    }
+                 }
+              },
+              {
+              xtype: 'checkbox',
+              anchor: '95%',
+              fieldLabel: 'Add base layer tool',
+              listeners:{
+                 'check': function(field,checked) {
+                    addBaseLayerTool = checked;
+                    dropPreview();
+                    createPreview();
+                    }
+                 }
+              },
+              {
+              xtype: 'checkbox',
+              anchor: '95%',
+              fieldLabel: 'Add swiss search combo',
+              listeners:{
+                 'check': function(field,checked) {
+                    addSwissSearch = checked;
+                    dropPreview();
+                    createPreview();
                     }
                  }
               },
