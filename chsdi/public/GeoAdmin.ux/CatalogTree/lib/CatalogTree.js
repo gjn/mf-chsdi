@@ -619,7 +619,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 ]
             },*/
             {
-                text: OpenLayers.i18n('Infrastrucktur une Kommunikation'),
+                text: OpenLayers.i18n('Infrastruktur und Kommunikation'),
                 cls: 'nodeLT1',
                 singleClickExpand: true,
                 id: "LT1_4",
