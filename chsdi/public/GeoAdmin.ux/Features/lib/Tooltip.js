@@ -36,6 +36,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.map.events.on({
             addlayer: this.updateLayersList,
             removelayer: this.updateLayersList,
+            changelayer: this.updateLayersList,
             "scope": this
         });
         this.updateLayersList();
@@ -45,7 +46,15 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.queryable = [];
         var layers = this.map.getLayersBy("geoadmin_queryable", true);
         for (var i = 0, len = layers.length; i < len; i++) {
-            this.queryable.push(layers[i].layername);
+            if (layers[i].visibility) {
+                if (!layers[i].opacity) {
+                   this.queryable.push(layers[i].layername);
+                } else {
+                    if (layers[i].opacity > 0) {
+                       this.queryable.push(layers[i].layername);
+                    }
+                }
+            }
         }
     },
 
