@@ -460,7 +460,7 @@ GeoAdmin.API = OpenLayers.Class({
             recenter: "false",
             fillOpacity: 1.0,
             html: null,
-            iconPath: OpenLayers.Util.getImagesLocation() + "marker-gold.png",
+            iconPath: OpenLayers.Util.getImagesLocation() + "ch_bowl.png",
             graphicHeight: null,
             graphicWidth: null
         });
