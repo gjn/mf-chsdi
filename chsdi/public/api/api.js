@@ -322,6 +322,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Valid properties for the ``options`` argument:
      *  * any ``Ext.Action`` option
+     *  * ``printBaseUrl`` - ``String`` containing the print service base URL. Optional, default value is "/print". Please note that the domain must match the current page URL domain (a proxy may be required if using an external print service).
      *  * ``printPanelOptions`` - ``Object`` containing any ``GeoExt.ux.SimplePrint`` option
      *  * ``windowOptions`` - ``Object`` containing any ``Ext.Window`` option. Only used if ``printPanelOptions.renderTo`` is not available (an Ext.Window is then used to display the print form).
      *

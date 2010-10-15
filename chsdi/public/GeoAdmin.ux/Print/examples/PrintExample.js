@@ -28,6 +28,7 @@ Ext.onReady(function() {
                 }
             }),
             new GeoAdmin.Print({
+                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'print',

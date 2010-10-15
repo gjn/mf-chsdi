@@ -35,36 +35,63 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     showWindow: null,
 
+    /** private: property[config]
+     * ``Object`` Stores the UX configuration
+     */
+    config: null,
+
+    /**
+     * private: property[printProvider]
+     * :class:`GeoExt.data.PrintProvider` Interface for the print module
+     */
+    printProvider: null,
+
     /** private: method[constructor]
      *  Private constructor override.
      */
     constructor: function(config) {
-        config = Ext.apply({
+        this.config = Ext.apply({
             handler: this.pHandler,
             scope: this,
             text: OpenLayers.i18n('print'),
             printPanelConfig: {},
-            windowOptions: {}
+            windowOptions: {},
+            printBaseUrl: '/print'
         }, config);
 
-        var printOptions = Ext.apply({
-            printProvider: new GeoExt.data.PrintProvider({
-                capabilities: printCapabilities,
-                baseParams: {
-                    url: printCapabilities.createURL
-                },
-                //autoLoad: true,
-                //url: (GeoAdmin.webServicesUrl || '') + '/print/',
-                listeners: {
-                    "beforeprint": function(provider, map, pages, options) {
-                        var overrides = {
-                            dataOwner: map.attribution()
-                        };
-                        overrides['lang' + OpenLayers.Lang.getCode()] = true;
-                        Ext.applyIf(pages[0].customParams, overrides);
-                    }
+        this.printProvider = new GeoExt.data.PrintProvider({
+            baseParams: {
+                url: this.config.printBaseUrl
+            },
+            autoLoad: true,
+            url: this.config.printBaseUrl,
+            listeners: {
+                "beforeprint": function(provider, map, pages, options) {
+                    var overrides = {
+                        dataOwner: map.attribution()
+                    };
+                    overrides['lang' + OpenLayers.Lang.getCode()] = true;
+                    Ext.applyIf(pages[0].customParams, overrides);
                 }
-            }),
+            }
+        });
+
+        // Makes sure the print capabilities are fully loaded before rendering
+        // the print interface.
+        this.printProvider.on({
+            "loadcapabilities": this.initPanel,
+            scope: this
+        });
+
+        arguments.callee.superclass.constructor.call(this, this.config);
+    },
+
+    /** private: method[initPanel]
+     * Creates the print tool interface.
+     */
+    initPanel: function() {
+        var printOptions = Ext.apply({
+            printProvider: this.printProvider,
             hideRotation: true,
             autoFit: true,
             labelWidth: 75,
@@ -80,8 +107,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             defaultTitleText: OpenLayers.i18n("titlefieldvalue"),
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue")
-        }, config.printPanelOptions);
-        delete config.printPanelConfig;
+        }, this.config.printPanelOptions);
+        delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
         this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
@@ -98,14 +125,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 layout: "fit",
                 closeAction: 'hide',
                 items: [ this.printPanel ]
-            }, config.windowOptions);
+            }, this.config.windowOptions);
             this.printPanel.hideExtent();
         } else {
             this.printPanel.hide();
         }
-        delete config.windowOptions;
-
-        arguments.callee.superclass.constructor.call(this, config);
+        delete this.config.windowOptions;
     },
 
     /** private: method[pHandler]
