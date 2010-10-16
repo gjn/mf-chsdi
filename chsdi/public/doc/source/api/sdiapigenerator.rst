@@ -5,18 +5,20 @@ API Generator
 .. raw:: html
 
    <body>
-      <div id="myconfigurator" style="width:800px;height:350px;padding: 0 0 0 0;"></div>
-      <h1> Preview </h1>
-
-
-      <input class="button" onclick="showCode();" value="View code" name="viewCode" type="submit" />
-
-      <form onSubmit="return OnSubmitForm();" method="post" name="publisher" target="_blank">
+      <div id="myconfigurator" style="width:800px;height:350px;padding: 2 2 2 2;"></div>
+      <form onSubmit="return OnSubmitForm();" method="post" name="publisher" target="_blank" style="margin-top:2px;">
          <input type="hidden" id="codeValue" name="codeValue" value="">
          <input class="button" onclick="postCode();" value="Publish code" name="publishCode" type="submit" />
       </form>
-
-      <div id="mypanel" style="width:800px;height:600px;padding: 0 0 0 0;"></div>
+      <h1> Source code editor </h1>
+      <textarea id="code" cols="80" rows="30"></textarea>
+      <input class="button" onclick="runCode();" value="Run code in preview" name="runCode" type="submit" />        
+      <form onSubmit="return OnSubmitForm();" method="post" name="publisher1" target="_blank" style="margin-top:2px;">
+         <input type="hidden" id="codeValue" name="codeValue" value="">
+         <input class="button" onclick="postCode1();" value="Publish code" name="publishCode1" type="submit" />
+      </form>
+      <h1> Preview </h1>
+      <div id="mypanel" style="padding: 2 2 2 2;"></div>
    </body>
 
 .. raw:: html
@@ -33,6 +35,7 @@ API Generator
     var addBaseLayerTool;
     var backgroundLayer;
     var addTooltip;
+    var editor;
     // Replaces all instances of the given substring.
     String.prototype.replaceAll = function(
             strTarget, // The substring you want to replace
@@ -57,7 +60,8 @@ API Generator
     };
 
     function OnSubmitForm() {
-        document.publisher.action = GeoAdmin.webServicesUrl + "/publishers"
+        document.publisher.action = GeoAdmin.webServicesUrl + "/publishers";
+        document.publisher1.action = GeoAdmin.webServicesUrl + "/publishers"
     }
     function getReturnLine(html) {
         var separator = "\n";
@@ -68,7 +72,17 @@ API Generator
     }
 
     function postCode() {
-        document.getElementById('codeValue').value = writeCode(false, true);
+        document.publisher.codeValue.value = writeCode(false, true);
+    }
+
+    function postCode1() {
+        document.publisher1.codeValue.value = editor.getCode();
+    }
+
+    function runCode() {
+        configurator.disable();
+        dropPreview();
+        createPreview(editor.getCode());
     }
 
     function writeCode(htmlSeparator, forPublication) {
@@ -77,7 +91,7 @@ API Generator
         var code = '<script type="text/javascript">';
         code = code + separator;
 
-        code = code + 'var api';
+        code = code + 'var api;';
         code = code + separator;
         code = code + 'function init() {';
         code = code + separator;
@@ -200,24 +214,7 @@ API Generator
         return code;
     }
 
-    function showCode() {
-        var code = writeCode(true, false);
-        code = code.replaceAll('<br>', 'blablabla');
-        code = code.replaceAll('<', '&#60;');
-        code = code.replaceAll('>', '&#62;');
-        code = code.replaceAll(' ', '&nbsp;');
-        code = code.replaceAll('blablabla', '<br>');
-        new Ext.Window({
-            id: 'apicode',
-            width:800,
-            height:500,
-            autoScroll: true,
-            title:"API Code source",
-            html: code
-        }).show();
-    }
-
-    function createPreview() {
+    function createPreview(code) {
         var panel = document.getElementById("mypanel");
         if (Ext.isIE) {
             if (panel.childNodes.length < 1) {
@@ -241,8 +238,16 @@ API Generator
             panel.appendChild(iframeElement);
             var docIframe = iframeElement.contentWindow.document;
             docIframe.open();
-            docIframe.writeln(writeCode(false));
+            if (code) {
+                docIframe.writeln(code);
+            } else {
+                docIframe.writeln(writeCode(false,false));
+                editor.setCode(writeCode(false,false));
+            }
+
             docIframe.close();
+
+
         }
     }
 
@@ -253,11 +258,20 @@ API Generator
         }
     }
 
+
     function init() {
         mapWidth = 700;
         mapHeight = 500;
         getScaleZoomFromPreview = true;
         backgroundLayer = 0;
+
+        editor = CodeMirror.fromTextArea('code', {
+           height: "350px",
+           parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
+           stylesheet: ["../_static/CodeMirror-0.9/css/xmlcolors.css", "../_static/CodeMirror-0.9/css/jscolors.css", "../_static/CodeMirror-0.9/css/csscolors.css"],
+           path: "../_static/CodeMirror-0.9/js/"
+        });
+
 
         var availableLayers = GeoAdmin.layers.init();
         var layerArray = [];
@@ -338,7 +352,7 @@ API Generator
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: 'Use preview\'s map (zoom & scale)',
+                    fieldLabel: 'Use preview\'s map for publishing',
                     checked: true,
                     listeners:{
                         'check': function(field, checked) {
@@ -424,13 +438,15 @@ API Generator
                 }
             ]
         });
-        createPreview();
+        window.setTimeout("createPreview()", 2000);
+
 
     }
 
    </script>
 
    <body onload="init();">
+     <script src="../_static/CodeMirror-0.9/js/codemirror.js" type="text/javascript"></script>
 
      <script type="text/javascript" src="../../../loader.js"></script>
      <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/css/MultiSelect.css"/>
