@@ -105,3 +105,8 @@ table {
     margin-top:2px;
     width: 10em;
 }
+
+.CodeMirror-wrapping {
+   background: #EEEEEE;
+   border-width:0;
+}

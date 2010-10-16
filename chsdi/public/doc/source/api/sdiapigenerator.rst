@@ -1,6 +1,5 @@
-API Generator
-=============
-
+GeoAdmin API Generator
+======================
 
 .. raw:: html
 
@@ -10,7 +9,7 @@ API Generator
          <input type="hidden" id="codeValue" name="codeValue" value="">
          <input class="button" onclick="postCode();" value="Publish code" name="publishCode" type="submit" />
       </form>
-      <h1> Source code editor </h1>
+      <h1> Source Code Editor </h1>
       <textarea id="code" cols="80" rows="30"></textarea>
       <input class="button" onclick="runCode();" value="Run code in preview" name="runCode" type="submit" />        
       <form onSubmit="return OnSubmitForm();" method="post" name="publisher1" target="_blank" style="margin-top:2px;">
@@ -36,6 +35,7 @@ API Generator
     var backgroundLayer;
     var addTooltip;
     var editor;
+
     // Replaces all instances of the given substring.
     String.prototype.replaceAll = function(
             strTarget, // The substring you want to replace
@@ -63,6 +63,7 @@ API Generator
         document.publisher.action = GeoAdmin.webServicesUrl + "/publishers";
         document.publisher1.action = GeoAdmin.webServicesUrl + "/publishers"
     }
+
     function getReturnLine(html) {
         var separator = "\n";
         if (html) {
@@ -258,7 +259,6 @@ API Generator
         }
     }
 
-
     function init() {
         mapWidth = 700;
         mapHeight = 500;
@@ -291,10 +291,9 @@ API Generator
         });
 
         configurator = new Ext.FormPanel({
-            title: 'GeoAdmin API Generator',
             frame: true,
             labelWidth: 200,
-            width: 800,
+            width: 775,
             renderTo:'myconfigurator',
             bodyStyle: 'padding:0 10px 0;',
             items: [
