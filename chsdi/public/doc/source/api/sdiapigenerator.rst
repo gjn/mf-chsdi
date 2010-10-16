@@ -1,5 +1,5 @@
-GeoAdmin API Generator
-======================
+API Generator
+=============
 
 .. raw:: html
 
