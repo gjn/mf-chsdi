@@ -24,6 +24,7 @@ API Generator
       var addSwissSearch;
       var addBaseLayerTool;
       var backgroundLayer;
+      var addTooltip;
       // Replaces all instances of the given substring.
       String.prototype.replaceAll = function(
               strTarget, // The substring you want to replace
@@ -123,6 +124,10 @@ API Generator
                     code = code + separator;
                  }
              }
+         }
+         if (addTooltip) {
+             code = code + separator;
+             code = code + '   api.createTooltip({});'
          }
          if (htmlSeparator) {
             if (getScaleZoomFromPreview) {
@@ -313,6 +318,18 @@ API Generator
               listeners:{
                  'check': function(field,checked) {
                     addSwissSearch = checked;
+                    dropPreview();
+                    createPreview();
+                    }
+                 }
+              },
+              {
+              xtype: 'checkbox',
+              anchor: '95%',
+              fieldLabel: 'Add tooltip',
+              listeners:{
+                 'check': function(field,checked) {
+                    addTooltip = checked;
                     dropPreview();
                     createPreview();
                     }

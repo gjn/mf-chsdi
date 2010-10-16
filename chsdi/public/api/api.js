@@ -369,6 +369,26 @@ GeoAdmin.API = OpenLayers.Class({
         return new GeoAdmin.Permalink(options);
     },
 
+    /** api: method[createTooltip]
+     *  :param options: ``Object`` Options to pass to the
+     *      ``GeoAdmin.Tooltip`` constructor.
+     *  :return: ``GeoAdmin.Tooltip`` An ``OpenLayers.Control.GetFeature``
+     *      displaying feature tooltip after user click in the map.
+     *
+     *  Example:
+     *
+     *  .. code-block: javascript
+     *
+     *      api.createTooltip({});
+     *
+     */
+    createTooltip: function(options) {
+        var tooltip = new GeoAdmin.Tooltip(options);
+        this.map.addControl(tooltip);
+        tooltip.activate();
+        return tooltip;
+    },
+
     /**
      * Alias for backward compatibility
      * DEPRECATED
