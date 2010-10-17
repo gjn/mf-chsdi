@@ -13,7 +13,6 @@
  * @include OpenLayers/Strategy/Fixed.js
  * @include OpenLayers/Protocol/HTTP.js
  * @include OpenLayers/Format/KML.js
- * @include OpenLayers/Popup/FramedCloud.js
  * 
  * @include GeoExt/widgets/Popup.js
  *
