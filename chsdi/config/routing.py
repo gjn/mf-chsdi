@@ -34,7 +34,7 @@ def make_map(config):
 
 
     # Uncomment this line if you need the OGC proxy in your application
-    #map.connect('/ogcproxy', controller='ogcproxy', action='index')
+    map.connect('/ogcproxy', controller='ogcproxy', action='index')
 
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')

@@ -65,9 +65,9 @@ class OgcproxyController(BaseController):
             ct = resp["content-type"]
             if not ct.split(";")[0] in allowed_content_types:
                 # allow any content type from allowed hosts (any port)
-                if not parsed_url.netloc in allowed_hosts:
-                    abort(403) # Forbidden
-            response.headers["Content-Type"] = ct
+                #if not parsed_url.netloc in allowed_hosts:
+                #   abort(403) # Forbidden
+                response.headers["Content-Type"] = ct
         else:
             abort(406) # Not Acceptable
 

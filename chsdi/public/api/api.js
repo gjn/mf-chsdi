@@ -10,7 +10,11 @@
  * @include OpenLayers/Format/WMTSCapabilities.js
  * @include OpenLayers/Request.js
  * @include OpenLayers/Request/XMLHttpRequest.js
- *
+ * @include OpenLayers/Strategy/Fixed.js
+ * @include OpenLayers/Protocol/HTTP.js
+ * @include OpenLayers/Format/KML.js
+ * @include OpenLayers/Popup/FramedCloud.js
+ * 
  * @include GeoExt/widgets/Popup.js
  *
  * @include GeoExt.ux/MeasureArea.js
@@ -73,11 +77,13 @@ GeoAdmin.API = OpenLayers.Class({
      */
     popup: null,
 
-   /** api: config[activatePopup]
+    /** api: config[activatePopup]
      *  ``Boolean``
      *  Define if the popups are activated for the vector layer, per default true
      */
     activatePopup: true,
+
+    kmlSelect: null,
 
     /** api: constructor
      *  .. class:: GeoAdmin.API
@@ -89,6 +95,7 @@ GeoAdmin.API = OpenLayers.Class({
         });
         this.lang = options.lang;
         OpenLayers.Lang.setCode(this.lang);
+        OpenLayers.ProxyHost = GeoAdmin.webServicesUrl + "/ogcproxy?url=";
     },
 
     /** api: method[createMap]
@@ -112,7 +119,7 @@ GeoAdmin.API = OpenLayers.Class({
      *  TODO: API CHANGE: bgOpacity - [0-1], not [0-100]
      */
     createMap: function(options) {
-        
+
         if (this.map) {
             this.map.destroy();
         }
@@ -166,7 +173,7 @@ GeoAdmin.API = OpenLayers.Class({
             this.map.addLayerByName(options.layers[i], {
                 opacity: opacity !== undefined ? opacity : 1.0,
                 visibility: (visibility == undefined) ? true :
-                                (visibility == 'false') ? false : visibility
+                        (visibility == 'false') ? false : visibility
             });
         }
 
@@ -389,6 +396,66 @@ GeoAdmin.API = OpenLayers.Class({
         return tooltip;
     },
 
+    /** api: method[createKmlLayer]
+     *  :param kmlUrl: ``String`` URL of the KML file. Set the OpenLayers.ProxyHost
+     *    in order to use this function in your domain
+     *  :param showPopup: ``Boolean`` Defines if a popup is shown
+     *
+     *  :return: ``OpenLayers.Layer.Vector`` An ``OpenLayers.Layer.Vector``
+     *      containing the KML and placed in the map.
+     *
+     *  Example:
+     *
+     *  .. code-block: javascript
+     *
+     *      api.createKmlLayer('http://www.myurl.com/file.kml');
+     *
+     */
+    createKmlLayer: function(kmlPath, showPopup) {
+        var kmlLayer = new OpenLayers.Layer.Vector("KML", {
+            projection: this.map.projection,
+            strategies: [new OpenLayers.Strategy.Fixed()],
+            protocol: new OpenLayers.Protocol.HTTP({
+                url: kmlPath,
+                format: new OpenLayers.Format.KML({
+                    externalProjection: new OpenLayers.Projection("EPSG:4326"),
+                    internalProjection: this.map.projection,
+                    extractStyles: true,
+                    extractAttributes: true
+                })
+            })
+        });
+        this.map.addLayers([kmlLayer]);
+        if (showPopup) {
+            kmlSelect = new OpenLayers.Control.SelectFeature(kmlLayer);
+
+            kmlLayer.events.on({
+                "featureselected": this._onFeatureSelect,
+                "featureunselected": this._onFeatureUnselect,
+                scope: this
+            });
+
+            this.map.addControl(kmlSelect);
+            kmlSelect.activate();
+        }
+        return kmlLayer;
+    },
+
+    _onFeatureSelect: function(event) {
+        var feature = event.feature;
+        var fpopup = this.showPopup({feature:feature,width:350,title: feature.attributes.name, html: feature.attributes.description || feature.attributes.html});
+        feature.fpopup = fpopup;
+    },
+
+    _onFeatureUnselect: function (event) {
+        var feature = event.feature;
+        if (feature.fpopup) {
+            feature.fpopup.destroy();
+            delete feature.fpopup;
+        }
+    },
+
+
     /**
      * Alias for backward compatibility
      * DEPRECATED
@@ -568,10 +635,10 @@ GeoAdmin.API = OpenLayers.Class({
         if (options.feature) {
             feature = options.feature;
             options.location = feature;
-            options.html = feature.attributes.html;
+            options.html = feature.attributes.html || feature.attributes.description;
         } else {
             options.location = new OpenLayers.LonLat(
-                options.easting, options.northing);
+                    options.easting, options.northing);
         }
 
         if (this.popup) {
@@ -625,24 +692,24 @@ GeoAdmin.API = OpenLayers.Class({
      */
     showMousePosition: function(options) {
         var control = new OpenLayers.Control.MousePosition(
-            OpenLayers.Util.applyDefaults(options, {
-                numDigits: 0,
-                prefix: OpenLayers.i18n("Coordinates (m): ")
-        }));
+                OpenLayers.Util.applyDefaults(options, {
+                    numDigits: 0,
+                    prefix: OpenLayers.i18n("Coordinates (m): ")
+                }));
         this.map.addControl(control);
     },
 
-   /** api: method[createLayerTree]
-    *  :param options: ``Object`` options
-    *
-    *  Valid properties for the ``options`` arguments:
-    *
-    *  :return: ``GeoAdmin.LayerTree``
-    *
-    *  Create a layer tree of layers associated to a map
-    *
-    *  TODO: widget not finished
-    */
+    /** api: method[createLayerTree]
+     *  :param options: ``Object`` options
+     *
+     *  Valid properties for the ``options`` arguments:
+     *
+     *  :return: ``GeoAdmin.LayerTree``
+     *
+     *  Create a layer tree of layers associated to a map
+     *
+     *  TODO: widget not finished
+     */
     createLayerTree: function(options) {
         return new GeoAdmin.LayerTree(Ext.applyIf({
             map: this.map

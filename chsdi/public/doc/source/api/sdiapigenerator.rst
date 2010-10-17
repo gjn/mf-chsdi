@@ -6,7 +6,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
 .. raw:: html
 
    <body>
-      <div id="myconfigurator" style="width:800px;height:350px;padding: 2 2 2 2;"></div>
+      <div id="myconfigurator" style="width:800px;height:370px;padding: 2 2 2 2;"></div>
       <form onSubmit="return OnSubmitForm();" method="post" name="publisher" target="_blank" style="margin-top:2px;">
          <input type="hidden" id="codeValue" name="codeValue" value="">
          <input class="button" onclick="postCode();" value="Publish code" name="publishCode" type="submit" />
@@ -39,6 +39,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
     var easting;
     var northing;
     var zoom;
+    var kmlPath;
 
     // Replaces all instances of the given substring.
     String.prototype.replaceAll = function(
@@ -193,6 +194,14 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                     code = code + separator;
                 }
             }
+        }
+        if (kmlPath) {
+            code = code + separator;
+            code = code + '   //Add KML layer in the map';
+            code = code + separator;
+            code = code + '   var kmlLayer = api.createKmlLayer(\'' + kmlPath + '\',true);';
+            code = code + separator;
+            code = code + '';
         }
         if (addTooltip) {
             code = code + separator;
@@ -477,6 +486,18 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                     listeners:{
                         'check': function(field, checked) {
                             addTooltip = checked;
+                            dropPreview();
+                            createPreview();
+                        }
+                    }
+                },
+                {
+                    xtype: 'textfield',
+                    fieldLabel: 'KML URL',
+                    anchor: '95%',
+                    listeners:{
+                        'change': function(field, newValue, oldvalue) {
+                            kmlPath = newValue;
                             dropPreview();
                             createPreview();
                         }
