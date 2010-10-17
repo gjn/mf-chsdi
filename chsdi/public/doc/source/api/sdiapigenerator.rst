@@ -284,7 +284,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             }
 
             docIframe.close();
-            window.setTimeout('manageIframeMapEvent()',3000);
+            window.setTimeout('manageIframeMapEvent()',5000);
 
         }
     }
