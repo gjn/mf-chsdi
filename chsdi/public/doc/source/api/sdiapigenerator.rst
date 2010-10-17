@@ -1,6 +1,8 @@
 API Generator
 =============
 
+Please read the terms of use and register before using the GeoAdmin API: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
+
 .. raw:: html
 
    <body>
@@ -28,13 +30,15 @@ API Generator
     var configurator;
     var mapWidth;
     var mapHeight;
-    var getScaleZoomFromPreview;
     var selectedLayerArray;
     var addSwissSearch;
     var addBaseLayerTool;
     var backgroundLayer;
     var addTooltip;
     var editor;
+    var easting;
+    var northing;
+    var zoom;
 
     // Replaces all instances of the given substring.
     String.prototype.replaceAll = function(
@@ -92,21 +96,38 @@ API Generator
         var code = '<script type="text/javascript">';
         code = code + separator;
 
+        code = code + '//Create a global api variable to simplify debugging';
+        code = code + separator;
         code = code + 'var api;';
+        code = code + separator;
+        code = code + separator;
+        code = code + '//init function is started when page onload event is triggered';
         code = code + separator;
         code = code + 'function init() {';
         code = code + separator;
         if (addSwissSearch || addBaseLayerTool) {
+            code = code + separator;
+            code = code + '   //Create a toolbar placed above the map panel';
+            code = code + separator;
             code = code + '   var toolbar = new Ext.Toolbar({});';
             code = code + separator;
         }
+
+        code = code + separator;
+        code = code + '   //Create an instance of the GeoAdmin API';
+        code = code + separator;
         code = code + '   api = new GeoAdmin.API();';
+        code = code + separator;
+        code = code + separator;
+        code = code + '   //Create a GeoExt map panel placed in the mymap div';
         code = code + separator;
         code = code + '   api.createMapPanel({';
         code = code + separator;
         code = code + '      renderTo: "mymap"';
 
         if (addSwissSearch || addBaseLayerTool) {
+            code = code + separator;
+            code = code + '      //Add the toolbar in the map panel';
             code = code + separator;
             code = code + '      ,tbar: toolbar'
         }
@@ -117,15 +138,24 @@ API Generator
 
         if (backgroundLayer == 1) {
             code = code + separator;
+            code = code + separator;
+            code = code + '   //The complementary layer is the pixelmap. The Swissimage is place below the pixelmap.';
+            code = code + separator;
             code = code + '   api.map.complementaryLayer.setOpacity(0);'
         }
 
         if (backgroundLayer == 2) {
             code = code + separator;
+            code = code + separator;
+            code = code + '   //The complementary layer is per default the color pixelmap.';
+            code = code + separator;
             code = code + '   api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});'
         }
 
         if (addBaseLayerTool) {
+            code = code + separator;
+            code = code + separator;
+            code = code + '   //Add a tool to select the background layer.';
             code = code + separator;
             code = code + '   var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});';
             code = code + separator;
@@ -143,6 +173,9 @@ API Generator
 
         if (addSwissSearch) {
             code = code + separator;
+            code = code + separator;
+            code = code + '   //Add a tool to search for Swissnames, Zip code, Cities and Cantons';
+            code = code + separator;
             code = code + '   var swissSearchCombo = api.createSearchBox({width: 180});';
             code = code + separator;
             code = code + '   toolbar.add(swissSearchCombo);'
@@ -151,6 +184,9 @@ API Generator
         }
         code = code + separator;
         if (selectedLayerArray.length > 0) {
+            code = code + separator;
+            code = code + '   //Add layer in the map';
+            code = code + separator;
             for each (var layer in selectedLayerArray) {
                 if (layer.data) {
                     code = code + '   api.map.addLayerByName(\'' + layer['data'].value + '\');';
@@ -160,19 +196,20 @@ API Generator
         }
         if (addTooltip) {
             code = code + separator;
+            code = code + '   //Add a tooltip when the user clicks on a feature in the map';
+            code = code + separator;
             code = code + '   api.createTooltip({});';
             code = code + separator;
         }
-        if (htmlSeparator || forPublication) {
-            if (getScaleZoomFromPreview) {
-                var myiframe = document.getElementById("ifrm");
-                var centerLat = myiframe.contentWindow.api.map.center.lat;
-                var centerLon = myiframe.contentWindow.api.map.center.lon;
-                var zoom = myiframe.contentWindow.api.map.zoom;
-                code = code + '   api.map.setCenter(new OpenLayers.LonLat(' + centerLon + ',' + centerLat + '),' + zoom + ');';
-                code = code + separator;
-            }
-        }
+
+
+        code = code + separator;
+        code = code + '   //Recenter the map and define a zoom level';
+        code = code + separator;
+        code = code + '   api.map.setCenter(new OpenLayers.LonLat(' + easting + ',' + northing + '),' + zoom + ');';
+        code = code + separator;
+
+        
         code = code + '}';
         code = code + separator;
         code = code + '<\/script>';
@@ -247,9 +284,25 @@ API Generator
             }
 
             docIframe.close();
-
+            window.setTimeout('manageIframeMapEvent()',3000);
 
         }
+    }
+
+    function manageIframeMapEvent() {
+         var myiframe = document.getElementById("ifrm");
+         myiframe.contentWindow.api.map.events.register("moveend", null, mapMoveEnd);
+    }
+
+    function mapMoveEnd() {
+        var myiframe = document.getElementById("ifrm");
+        northing = myiframe.contentWindow.api.map.center.lat;
+        easting = myiframe.contentWindow.api.map.center.lon;
+        zoom = myiframe.contentWindow.api.map.zoom;
+        Ext.getCmp('northing').setValue(northing);
+        Ext.getCmp('easting').setValue(easting);
+        Ext.getCmp('zoom').setValue(zoom);
+        editor.setCode(writeCode(false,false));
     }
 
     function dropPreview() {
@@ -262,8 +315,10 @@ API Generator
     function init() {
         mapWidth = 700;
         mapHeight = 500;
-        getScaleZoomFromPreview = true;
         backgroundLayer = 0;
+        easting = 660000;
+        northing = 190000;
+        zoom = 0;
 
         editor = CodeMirror.fromTextArea('code', {
            height: "350px",
@@ -300,7 +355,7 @@ API Generator
                 {
                     xtype: 'textfield',
                     fieldLabel: 'Map width [pixels]',
-                    anchor: '95%',
+                    anchor: '50%',
                     value: mapWidth,
                     listeners:{
                         'change': function(field, newValue, oldvalue) {
@@ -313,7 +368,7 @@ API Generator
                 {
                     xtype: 'textfield',
                     fieldLabel: 'Map height [pixels]',
-                    anchor: '95%',
+                    anchor: '50%',
                     value: mapHeight,
                     listeners:{
                         'change': function(field, newValue, oldvalue) {
@@ -322,6 +377,49 @@ API Generator
                             createPreview();
                         }
                     }
+                },{
+                    xtype: 'compositefield',
+                    fieldLabel: 'Map position',
+                    labelWidth: 120,
+                    items: [
+                       {
+                       xtype: 'displayfield',
+                       value: 'Easting: '
+                       },
+                       {
+                       xtype     : 'textfield',
+                       width     : 80,
+                       value     : easting,
+                       id        : 'easting',
+                       disabled  : true
+                       },
+                       {
+                       xtype: 'displayfield',
+                       value: 'Northing: '
+                       },
+                       {
+                       xtype     : 'textfield',
+                       width     : 80,
+                       value     : northing,
+                       id        : 'northing',
+                       disabled  : true
+                       },
+                       {
+                       xtype: 'displayfield',
+                       value: 'Zoom: '
+                       },
+                       {
+                       xtype     : 'textfield',
+                       width     : 30,
+                       value     : zoom,
+                       id        : 'zoom',
+                       disabled  : true
+                       },
+                       {
+                       xtype: 'displayfield',
+                       value: '(navigate in the preview to set it)'
+                       }
+                    ]
                 },
                 {
                     xtype: 'combo',
@@ -351,18 +449,7 @@ API Generator
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: 'Use preview\'s map for publishing',
-                    checked: true,
-                    listeners:{
-                        'check': function(field, checked) {
-                            getScaleZoomFromPreview = checked;
-                        }
-                    }
-                },
-                {
-                    xtype: 'checkbox',
-                    anchor: '95%',
-                    fieldLabel: 'Add base layer tool',
+                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/api/sdiapiexamples2.html#base-layer-tool" target="new">Add base layer tool<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addBaseLayerTool = checked;
@@ -374,7 +461,7 @@ API Generator
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: 'Add swiss search combo',
+                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/api/sdiapiexamples1.html#map-with-swiss-search" target="new">Add swiss search combo<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addSwissSearch = checked;
@@ -386,7 +473,7 @@ API Generator
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: 'Add tooltip',
+                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/widgets/sdiwidgetsexamples2.html#tooltip" target="new">Add feature tooltip<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addTooltip = checked;
