@@ -241,7 +241,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      * assert that vector layers are always on top.
      */
     setLayerZIndex: function(layer, zIdx) {
-        var baseZIndex = layer.isVector ? 325 :
+        var baseZIndex = layer instanceof OpenLayers.Layer.Vector ? 325 :
                          GeoAdmin.layers.layers[layer.layername].isBgLayer ? 100 :
                          150;
         layer.setZIndex(baseZIndex + zIdx * 5);
