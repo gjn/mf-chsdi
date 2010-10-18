@@ -164,6 +164,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
             },
+            "ch.swisstopo.vec25-wander": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-wander"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
             "ch.swisstopo.gg25-gemeinde-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-gemeinde-flaeche.fill"),
                 type: "polygon",
