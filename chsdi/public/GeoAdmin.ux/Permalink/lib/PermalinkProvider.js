@@ -43,7 +43,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                             opacity: parseFloat(params.layers_opacity[i])
                         });
                     }
-                } else {
+                } else if (k !== 'lang') {
                     // probably a layer to recenter on
                     map_state.layers.push({
                         layername: k
