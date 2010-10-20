@@ -7,6 +7,7 @@ GeoAdmin.BodSearchWindow = {
     show: function(id) {
         var _window = new Ext.Window({
             layout: 'anchor',
+            title: OpenLayers.i18n('infobox'),
             resizable: true,
             autoScroll: true,
             width: 525,
