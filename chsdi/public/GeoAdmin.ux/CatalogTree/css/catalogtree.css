@@ -54,13 +54,6 @@
 .geoadmin-catalog-tree .treelayericon-mixed {
   background-image: url(../../images/mixed.png);
 }
-.geoadmin-catalog-tree .ext-safari .treelayericon-raster,
-.geoadmin-catalog-tree .ext-safari .treelayericon-point,
-.geoadmin-catalog-tree .ext-safari .treelayericon-line,
-.geoadmin-catalog-tree .ext-safari .treelayericon-polygon,
-.geoadmin-catalog-tree .ext-safari .treelayericon-mixed {
-  margin-top: 3px;
-}
 .geoadmin-catalog-tree .nodeLT1, .nodeLT1selected {
     border-bottom:1px solid #ccc;
     font-weight: bold;
@@ -160,6 +153,20 @@
   height: 19px !important;
   margin-top: -25px;
   width: 45px;
+}
+.ext-safari .geoadmin-catalog-tree .treelayericon-raster,
+.ext-safari .geoadmin-catalog-tree .treelayericon-point,
+.ext-safari .geoadmin-catalog-tree .treelayericon-line,
+.ext-safari .geoadmin-catalog-tree .treelayericon-polygon,
+.ext-safari .geoadmin-catalog-tree .treelayericon-mixed {
+  margin-top: 3px;
+}
+.ext-chrome .geoadmin-catalog-tree .treelayericon-raster,
+.ext-chrome .geoadmin-catalog-tree .treelayericon-point,
+.ext-chrome .geoadmin-catalog-tree .treelayericon-line,
+.ext-chrome .geoadmin-catalog-tree .treelayericon-polygon,
+.ext-chrome .geoadmin-catalog-tree .treelayericon-mixed {
+  margin-top: 4px;
 }
 .ext-safari .geoadmin-catalog-tree .layerNodeTools {
   margin-top: -25px;
