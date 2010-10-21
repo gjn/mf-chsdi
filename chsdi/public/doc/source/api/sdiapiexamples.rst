@@ -7,3 +7,4 @@ API Examples
     sdiapiexamples1
     sdiapiexamples2
     sdiapiexamples3
+    sdiapiexamples4
