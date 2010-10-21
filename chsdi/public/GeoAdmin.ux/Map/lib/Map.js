@@ -241,11 +241,45 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      * assert that vector layers are always on top.
      */
     setLayerZIndex: function(layer, zIdx) {
-        var baseZIndex = layer instanceof OpenLayers.Layer.Vector ? 325 :
-                         GeoAdmin.layers.layers[layer.layername].isBgLayer ? 100 :
-                         150;
+        var baseZIndex = layer.layername && GeoAdmin.layers.layers[layer.layername].isBgLayer
+                         ? 100 : 150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },
+
+    addLayer: function (layer) {
+        OpenLayers.Map.prototype.addLayer.apply(this, arguments);
+
+        // makes sure new layer is not above a vector layer if not already
+        // a vector layer
+        if (!(layer instanceof OpenLayers.Layer.Vector)) {
+            var idx = this.getLayerIndex(layer);
+            this.setLayerIndex(layer, idx);
+        }
+    },
+
+    setLayerIndex: function (layer, idx) {
+
+        if (idx < 0) {
+            idx = 0;
+        } else if (idx > this.layers.length) {
+            idx = this.layers.length;
+        }
+
+        // makes sure vector layers stay on top of the layers stack
+        if (!(layer instanceof OpenLayers.Layer.Vector)) {
+            for (var i = 0, vectorLayerIdx, len = this.layers.length; i < len; i++) {
+                if (this.layers[i] instanceof OpenLayers.Layer.Vector) {
+                    vectorLayerIdx = this.getLayerIndex(this.layers[i]);
+                    if (idx > vectorLayerIdx) {
+                        idx = vectorLayerIdx;
+                        break;
+                    }
+                }
+            }
+        }
+
+        OpenLayers.Map.prototype.setLayerIndex.apply(this, [layer, idx]);
+    }, 
 
     /*
      * manage the base layer (aerial) opacity.
