@@ -22,7 +22,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
                 } else if (k === 'bgOpacity') {
-                    map_state.complementaryLayer.opacity = 1 - (parseInt(params.bgOpacity) / 100.0);
+                    map_state.complementaryLayer.opacity = parseInt(params.bgOpacity) / 100.0;
                 } else if (k === 'bgLayer') {
                     if (params.bgLayer === 'pixelmaps-gray') {
                         params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
