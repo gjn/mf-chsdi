@@ -24,8 +24,8 @@
 GPX
 ---
 
-Display a `GPX <http://www.topografix.com/gpx.asp>`_ file on the map. You have to manually add the OpenLayers ``Format/GPX.js`` file.
-Nota on GPS track accuracy: in winter, the lac des Taillères is frozen, you can ski on it!
+Display a `GPX <http://www.topografix.com/gpx.asp>`_ file on the map. As GPX is not officialy supported, you have to manually add the OpenLayers ``Format/GPX.js`` file.
+Note on GPS track accuracy: yes the track is offshore on lake des Taillières which is frozen in winter, so you can ski on it!
 
 .. raw:: html
 
