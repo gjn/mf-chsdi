@@ -55,22 +55,21 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
         var label = this.createLabel(this.label);
         delete this.label;
 
-        var slider = this.createOpacitySlider(this.slider);
+        this._slider = this.createOpacitySlider(this.slider);
         delete this.slider;
 
-        // keep a reference to the slider, used in the combo event listener
-        this._slider = slider;
-
-        var combo = this.createLayersCombo(this.combo, slider);
+        this._combo = this.createLayersCombo(this.combo, this._slider);
         delete this.combo;
-
+    
         this.map.events.on({
-            'changecomplementarylayer': function(evt) {
-                combo.setValue(evt.layer.name);
-            }
+            changecomplementarylayer: function(evt) {
+                this._slider.setLayer(evt.layer);
+                this._combo.setValue(evt.layer.name);
+            },
+            scope: this
         });
 
-        this.items = [label, slider, combo];
+        this.items = [label, this._slider, this._combo];
 
         GeoAdmin.BaseLayerTool.superclass.initComponent.apply(this, arguments);
     },
