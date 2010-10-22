@@ -149,9 +149,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             x: center.lon,
             y: center.lat,
             zoom: this.getZoom(),
-            aerial: {
-                opacity: this.aerial.opacity
-            },
             complementaryLayer: {
                 layername: this.complementaryLayer.layername,
                 opacity: this.complementaryLayer.opacity
@@ -184,18 +181,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
         }
 
-        // aerial
-        if (state.aerial && state.aerial.opacity != null) {
-            this.aerial.setOpacity(state.aerial.opacity);
-        }
-
         // complementaryLayer
         if (state.complementaryLayer) {
             if (state.complementaryLayer.layername) {
                 this.switchComplementaryLayer(state.complementaryLayer.layername);
-                if (state.complementaryLayer.opacity != null) {
-                    this.complementaryLayer.setOpacity(state.complementaryLayer.opacity);
-                }
+            }
+            if (state.complementaryLayer.opacity != null) {
+                this.complementaryLayer.setOpacity(state.complementaryLayer.opacity);
             }
         }
 
