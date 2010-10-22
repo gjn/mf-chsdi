@@ -49,6 +49,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: config.format,
                 attribution: config.datenherr,
                 transitionEffect: "resize",
+                buffer: 0,
                 displayInLayerSwitcher: !config.isBgLayer,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
