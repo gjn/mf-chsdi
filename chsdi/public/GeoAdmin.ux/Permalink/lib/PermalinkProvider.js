@@ -11,7 +11,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         var params = OpenLayers.Util.getParameters(url);
 
         var map_state = {
-            layers: []
+            layers: [],
+            complementaryLayer: {}
         };
 
         for (var k in params) {
@@ -21,17 +22,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
                 } else if (k === 'bgOpacity') {
-//                     map_state.aerial = {
-//                         opacity: parseInt(params.bgOpacity) / 100.0
-//                     };
+                    map_state.complementaryLayer.opacity = 1 - (parseInt(params.bgOpacity) / 100.0);
                 } else if (k === 'bgLayer') {
                     if (params.bgLayer === 'pixelmaps-gray') {
                         params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
                     }
-                    map_state.complementaryLayer = {
-                        layername: params.bgLayer,
-                        opacity: parseInt(params.bgOpacity) / 100.0
-                    };
+                    map_state.complementaryLayer.layername = params.bgLayer;
                 } else if (k === 'layers') {
                     if (!(params.layers instanceof Array)) {
                         params.layers = [params.layers];
