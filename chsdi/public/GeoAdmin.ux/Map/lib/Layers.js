@@ -30,6 +30,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layername: name,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
+                opacity: config.opacity != undefined ? config.opacity : 1.0,
                 singleTile: true,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
@@ -38,6 +39,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
+                opacity: 1.0,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
         } else {
@@ -50,6 +52,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 attribution: config.datenherr,
                 transitionEffect: "resize",
                 buffer: 0,
+                opacity: config.opacity != undefined ? config.opacity : 1.0,
                 displayInLayerSwitcher: !config.isBgLayer,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
