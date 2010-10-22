@@ -72,7 +72,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 new OpenLayers.Control.Navigation(),
                 new OpenLayers.Control.PanZoomBar(),
                 this.attributionCtrl,
-                new OpenLayers.Control.ScaleLine(),
+                new OpenLayers.Control.ScaleLine({maxWidth: 120}),
                 panel,
                 new GeoAdmin.OverviewMap()
             ],
