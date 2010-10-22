@@ -17,6 +17,11 @@
     width:17px;
 }
 
+/* IE issue when displaying the tool into a toolbar */
+.x-panel-tbar .x-clear {
+    font: 0;
+}
+
 .x-slider-horz {
     background:transparent url(../img/slider-bg.png) no-repeat scroll 0 -22px;
     padding-left:7px;
