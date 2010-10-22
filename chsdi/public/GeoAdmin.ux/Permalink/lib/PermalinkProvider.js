@@ -39,7 +39,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                             opacity: parseFloat(params.layers_opacity[i])
                         });
                     }
-                } else if (k !== 'lang') {
+                } else if (k == 'selectedNode') {
+
+
+                
+                } else if (k !== 'lang' && k !== 'layers_opacity' && 
+                           k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
                     map_state.layers.push({
                         layername: k
