@@ -11,6 +11,9 @@ GeoAdmin.OverviewMap = OpenLayers.Class(OpenLayers.Control.OverviewMap, {
         var size = new OpenLayers.Size(150, 99);
 
         var layer = new OpenLayers.Layer.Image("overview", url, extent, size, {
+            projection: new OpenLayers.Projection("EPSG:21781"),
+            units: "m",
+
             // fixed size
             setTileSize: function() {
                 this.tileSize = this.size.clone();
@@ -24,7 +27,6 @@ GeoAdmin.OverviewMap = OpenLayers.Class(OpenLayers.Control.OverviewMap, {
                 theme: null
             }
         });
-
         OpenLayers.Control.OverviewMap.prototype.initialize.apply(this, [options]);
     }
 });
