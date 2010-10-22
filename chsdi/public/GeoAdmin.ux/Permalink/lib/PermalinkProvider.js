@@ -32,6 +32,13 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     if (!(params.layers instanceof Array)) {
                         params.layers = [params.layers];
                     }
+                    if (!(params.layers_opacity instanceof Array)) {
+                        params.layers_opacity = [params.layers_opacity];
+                    }
+                    if (!(params.layers_visibility instanceof Array)) {
+                        params.layers_visibility = [params.layers_visibility];
+                    }
+                    
                     for (var i = 0, len = params.layers.length; i < len; i++) {
                         map_state.layers.push({
                             layername: params.layers[i],
