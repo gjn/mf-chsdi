@@ -70,9 +70,41 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
     },
 
     getLink: function(base) {
+        base = base || document.location.href;
+        var params = {};
 
+        if (this.state.catalog && this.state.catalog.selected) {
+            params.selectedNode = this.state.catalog.selectede;
+        }
+        if (this.state.map) {
+            params.X = this.state.map.x;
+            params.Y = this.state.map.y;
+            params.zoom = this.state.map.zoom;
+            params.bgOpacity = this.state.map.complementaryLayer.opacity * 100;
+            params.bgLayer = this.state.map.complementaryLayer.layername;
 
+            params.layers = [];
+            params.layers_opacity = [];
+            params.layers_visibility = [];
+            
+            for (var i = 0, len = this.state.map.layers.length; i < len; i++) {
+                var layer = this.state.map.layers[i];
+                params.layers.push(layer.layername);
+                params.layers_opacity.push(layer.opacity);
+                params.layers_visibility.push(layer.visibility);
+            }
+        }
 
-
+        // merge params in the URL into the state params
+        OpenLayers.Util.applyDefaults(params, OpenLayers.Util.getParameters(base));
+        
+        var paramsStr = OpenLayers.Util.getParameterString(params);
+        
+        var qMark = base.indexOf("?");
+        if(qMark > 0) {
+            base = base.substring(0, qMark);
+        }
+        
+        return Ext.urlAppend(base, paramsStr);
     }
 });
