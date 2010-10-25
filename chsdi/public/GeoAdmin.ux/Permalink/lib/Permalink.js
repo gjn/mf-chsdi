@@ -11,54 +11,64 @@ Ext.state.Manager.setProvider(
 
 /**
  */
-GeoAdmin.Permalink = Ext.extend(Ext.Action, {
+GeoAdmin.PermalinkWindow = Ext.extend(Ext.Window, {
 
-    /**
-     */
-    constructor : function(config) {
+    initComponent: function() {
 
-        // the text field where the link is displayed
-        var permalinkTextField = new Ext.form.TextField({
+        this.layout = 'fit';
+        this.title = OpenLayers.i18n('Permalink.title');
+        this.closeAction = 'hide';
+
+        var provider = Ext.state.Manager.getProvider();
+
+        this.items = [new Ext.form.TextField({
             hideLabel: true,
             autoHeight: true,
             listeners: {
                 'focus': function() {
                     this.selectText();
                 }
-            }
-        });
+            },
+            value: provider.getLink()
+        })];
 
-        // the window including the text field displaying
-        // the link, it is shown when the action is
-        // triggered
-        var permalinkWindow = new Ext.Window({
-            layout: 'fit',
-            renderTo: Ext.getBody(),
-            width: 400,
-            closeAction: 'hide',
-            plain: true,
-            title: OpenLayers.i18n('Permalink.title'),
-            items: permalinkTextField,
-            buttons: [{
-                text: OpenLayers.i18n('Permalink.openlink'),
-                handler: function() {
-                    window.open(permalinkTextField.getValue());
-                    permalinkWindow.hide();
-                }
-            }, {
-                text: OpenLayers.i18n('Permalink.close'),
-                handler: function() {
-                    permalinkWindow.hide();
-                }
-            }]
-        });
-
-        // registers a statechange listener to update the value
-        // of the permalink text field
-        Ext.state.Manager.getProvider().on({
+        provider.on({
             statechange: function(provider) {
-                permalinkTextField.setValue(provider.getLink());
-            }
+                this.get(0).setValue(provider.getLink());
+            },
+            scope: this
+        });
+
+        this.buttons = [{
+            text: OpenLayers.i18n('Permalink.openlink'),
+            handler: function() {
+                window.open(this.get(0).getValue());
+                this.hide();
+            },
+            scope: this
+        }, {
+            text: OpenLayers.i18n('Permalink.close'),
+            handler: function() {
+                this.hide();
+            },
+            scope: this
+        }];
+
+        GeoAdmin.PermalinkWindow.superclass.initComponent.apply(this, arguments);
+    }
+});
+
+/**
+ */
+GeoAdmin.Permalink = Ext.extend(Ext.Action, {
+
+    /**
+     */
+    constructor : function(config) {
+
+        var permalinkWindow = new GeoAdmin.PermalinkWindow({
+            width: 400,
+            renderTo: Ext.getBody()
         });
 
         config = Ext.apply({
