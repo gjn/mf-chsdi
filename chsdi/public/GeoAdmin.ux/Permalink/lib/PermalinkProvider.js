@@ -80,7 +80,9 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
             params.X = this.state.map.x;
             params.Y = this.state.map.y;
             params.zoom = this.state.map.zoom;
-            params.bgOpacity = this.state.map.complementaryLayer.opacity * 100;
+            if (this.state.map.complementaryLayer.opacity < 1.0) {
+                params.bgOpacity = this.state.map.complementaryLayer.opacity * 100;
+            }
             params.bgLayer = this.state.map.complementaryLayer.layername;
 
             params.layers = [];
