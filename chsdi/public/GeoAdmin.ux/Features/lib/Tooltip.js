@@ -43,15 +43,17 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     },
 
     updateLayersList: function(layer) {
-        this.queryable = [];
-        var layers = this.map.getLayersBy("geoadmin_queryable", true);
-        for (var i = 0, len = layers.length; i < len; i++) {
-            if (layers[i].visibility) {
-                if (!layers[i].opacity) {
-                   this.queryable.push(layers[i].layername);
-                } else {
-                    if (layers[i].opacity > 0) {
-                       this.queryable.push(layers[i].layername);
+        if (this.map) {
+            this.queryable = [];
+            var layers = this.map.getLayersBy("geoadmin_queryable", true);
+            for (var i = 0, len = layers.length; i < len; i++) {
+                if (layers[i].visibility) {
+                    if (!layers[i].opacity) {
+                        this.queryable.push(layers[i].layername);
+                    } else {
+                        if (layers[i].opacity > 0) {
+                            this.queryable.push(layers[i].layername);
+                        }
                     }
                 }
             }
