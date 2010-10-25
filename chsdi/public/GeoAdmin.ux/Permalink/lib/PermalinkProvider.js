@@ -14,7 +14,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
             layers: [],
             complementaryLayer: {}
         };
-
+        var catalog_state = {};
+        
         for (var k in params) {
             if(params.hasOwnProperty(k)) {
                 if (k === 'X' || k === 'Y') {
@@ -47,9 +48,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                         });
                     }
                 } else if (k == 'selectedNode') {
-
-
-                
+                    catalog_state.selected = params.selectedNode;
                 } else if (k !== 'lang' && k !== 'layers_opacity' && 
                            k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
@@ -65,9 +64,15 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         }
         var state = {};
         state['map'] = map_state;
+        state['catalog'] = catalog_state;
+        
         return state;
     },
 
     getLink: function(base) {
+
+
+
+
     }
 });
