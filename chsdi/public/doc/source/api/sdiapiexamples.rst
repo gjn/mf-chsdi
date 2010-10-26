@@ -11,3 +11,4 @@ API Examples
     sdiapiexamples4
     gml
     showmarkers
+    geonames
