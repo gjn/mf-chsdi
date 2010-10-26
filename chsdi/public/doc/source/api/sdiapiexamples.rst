@@ -10,3 +10,4 @@ API Examples
     sdiapiexamples5
     sdiapiexamples4
     gml
+    showmarkers
