@@ -12,3 +12,4 @@ API Examples
     gml
     showmarkers
     geonames
+    streetview 
