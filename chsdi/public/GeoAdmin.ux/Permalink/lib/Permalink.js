@@ -10,6 +10,65 @@ Ext.state.Manager.setProvider(
     new GeoAdmin.PermalinkProvider());
 
 /**
+ *
+ */
+GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
+    hideLabel: true,
+    autoHeight: true,
+    width: 440,
+
+    initComponent: function() {
+        var provider = Ext.state.Manager.getProvider();
+        this.value = provider.getLink();
+
+        GeoAdmin.PermalinkField.superclass.initComponent.apply(this, arguments);
+
+        this.on("focus", this.selectText, this);
+        provider.on("statechange", this.onProviderStatechange, this);
+    },
+
+    beforeDestroy: function() {
+        var provider = Ext.state.Manager.getProvider();
+        provider.un("statechange", this.onProviderStatechange, this);
+    },
+
+    onProviderStatechange: function(provider) {
+        this.setValue(provider.getLink());
+    }
+});
+
+/**
+ *
+ * A permalink panel is meant to be added to an "absolute" layout,
+ * for example a map panel whose "layout" property is set to
+ * "absolute".
+ */
+GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
+    border: false,
+    anchor: "100%",
+    x: 100,
+    y: -1,
+    cls: "permalink-panel",
+    ctCls: "permalink-panel-ct",
+
+    initComponent: function() {
+        this.items = new GeoAdmin.PermalinkField({});
+        GeoAdmin.PermalinkPanel.superclass.initComponent.apply(
+            this, arguments);
+    },
+
+    afterRender: function() {
+        GeoAdmin.PermalinkPanel.superclass.afterRender.apply(
+            this, arguments);
+        // we want to swallow events not to have the map move
+        // when mouse actions occur on this panel
+        this.body.swallowEvent([
+            "mousedown", "mousemove", "mouseup", "click", "dblclick"
+        ]);
+    }
+});
+
+/**
  */
 GeoAdmin.PermalinkWindow = Ext.extend(Ext.Window, {
 

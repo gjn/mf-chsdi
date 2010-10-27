@@ -1,0 +1,12 @@
+.permalink-panel {
+    z-index: 1305;
+    background-color: white;
+    border-color: -moz-use-text-color -moz-use-text-color black black;
+    border-style: none none solid solid;
+    border-width: medium medium 1px 1px;
+    padding: 10px;
+    position: absolute;
+}
+.permalink-panel-ct {
+    overflow: visible;
+}
