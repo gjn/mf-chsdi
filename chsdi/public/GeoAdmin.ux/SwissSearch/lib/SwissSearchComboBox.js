@@ -48,7 +48,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 url: this.url,
                 method: 'GET',
                 callbackParam: 'cb',
-                nocache: false
+                nocache: false,
+                autoAbort: true
             }),
             baseParams: {
                 lang: OpenLayers.Lang.getCode()

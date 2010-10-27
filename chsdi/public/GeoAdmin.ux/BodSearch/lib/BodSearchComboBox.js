@@ -46,7 +46,8 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 url: this.url,
                 callbackParam: 'cb',
                 method: 'GET',
-                nocache: false
+                nocache: false,
+                autoAbort: true
             }),
             root: 'results',
             fields: ['id', 'label', 'datenherr', 'content']
