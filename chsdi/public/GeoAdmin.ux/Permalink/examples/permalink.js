@@ -13,6 +13,6 @@ Ext.onReady(function() {
         height: 400,
         map: new GeoAdmin.Map(),
         stateId: "map",
-        tbar: [new GeoAdmin.Permalink()]
+        tbar: ["->", new GeoAdmin.Permalink()]
     });
 });
