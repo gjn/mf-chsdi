@@ -7,6 +7,15 @@
     padding: 10px;
     position: absolute;
 }
+/*.permalink-panel .x-toolbar {*/
+    /*border: 0 none !important;*/
+    /*float: right;*/
+    /*margin-right: -10px;*/
+    /*margin-top: -33px;*/
+/*}*/
 .permalink-panel-ct {
     overflow: visible;
+}
+.permalink-panel-header-text {
+    font-weight:bold;
 }
