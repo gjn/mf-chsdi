@@ -49,8 +49,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     }
                 } else if (k == 'selectedNode') {
                     catalog_state.selected = params.selectedNode;
-                } else if (k !== 'lang' && k !== 'layers_opacity' && 
-                           k !== 'layers_visibility' && k !== 'layers_indices') {
+                } else if (k !== 'lang' && k!== 'noHeader' && 
+                           k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
                     map_state.layers.push({
                         layername: k
