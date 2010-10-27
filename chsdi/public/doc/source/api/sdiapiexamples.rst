@@ -10,6 +10,7 @@ API Examples
     sdiapiexamples5
     sdiapiexamples4
     mappanel
+    print
     gml
     showmarkers
     geonames
