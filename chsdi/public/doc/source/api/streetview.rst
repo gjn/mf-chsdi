@@ -118,7 +118,7 @@ StreetView
         
  
    </script> 
-   <§body onload="init();">
+   <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
      <link rel=stylesheet type=text/css href="../../../build/api.css">
      <!-- Use your own key please -->
