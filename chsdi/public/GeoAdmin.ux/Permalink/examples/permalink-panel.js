@@ -4,8 +4,11 @@ var mainPanel, mapPanel, permalinkPanel1, permalinkPanel2;
 
 Ext.onReady(function() {
 
-    // the GeoAdmin.Permalink will work with any PermalinkProvider
-    // it finds in the state provider
+    // the GeoAdmin permalink field, which is used in the permalink
+    // panel, works with any permalink provider is finds in the Ext
+    // state manager. By default it will work with the GeoAdmin
+    // permalink provider, so just comme the following statement
+    // to work with the GeoAdmin permalink provider
     Ext.state.Manager.setProvider(
         new GeoExt.state.PermalinkProvider({encodeType: false}));
 
@@ -17,6 +20,7 @@ Ext.onReady(function() {
         border: false,
         width: 600,
         map: new GeoAdmin.Map(),
+        stateful: true,
         stateId: "map",
         tbar: ["->", {
             text: "permalink 1",
