@@ -59,7 +59,6 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         this.items = new GeoAdmin.PermalinkField();
         this.tbar = [{
             iconCls: "close-button", 
-            text: "close", // FIXME
             toggleGroup: this.closeButtonToggleGroup,
             handler: function() { this.hide(); },
             scope: this

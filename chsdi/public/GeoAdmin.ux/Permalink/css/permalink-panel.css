@@ -19,3 +19,6 @@
 .permalink-panel-header-text {
     font-weight:bold;
 }
+.permalink-panel .close-button {
+    background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
+}
