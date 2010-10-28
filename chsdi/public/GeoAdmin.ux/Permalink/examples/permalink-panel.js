@@ -1,6 +1,6 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/ 
 
-var mapPanel, permalinkPanel;
+var mainPanel, mapPanel, permalinkPanel;
 
 Ext.onReady(function() {
 
@@ -11,19 +11,32 @@ Ext.onReady(function() {
 
     permalinkPanel = new GeoAdmin.PermalinkPanel();
 
-    var showHidePermalink = function() {
-        permalinkPanel.setVisible(!permalinkPanel.isVisible());
-    };
-
     mapPanel = new GeoExt.MapPanel({
-        renderTo: "map",
+        region: "center",
+        border: false,
         width: 600,
-        height: 400,
         map: new GeoAdmin.Map(),
         stateId: "map",
-        layout: "absolute",
-        tbar: [{text: "permalink", handler: showHidePermalink}],
-        items: permalinkPanel,
-        border: false
+        tbar: [{
+            text: "permalink",
+            handler: function() {
+                permalinkPanel.setVisible(!permalinkPanel.isVisible());
+            }
+        }],
+        items: permalinkPanel
+    });
+
+    mainPanel = new Ext.Panel({
+        renderTo: Ext.getBody(),
+        layout: "border",
+        width: 800,
+        height: 400,
+        items: [{
+            region: "west",
+            width: 200,
+            collapsible: true
+        }, 
+            mapPanel
+        ]
     });
 });

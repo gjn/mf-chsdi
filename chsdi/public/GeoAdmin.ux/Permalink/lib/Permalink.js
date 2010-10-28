@@ -39,15 +39,10 @@ GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
 
 /**
  *
- * A permalink panel is meant to be added to an "absolute" layout,
- * for example a map panel whose "layout" property is set to
- * "absolute".
  */
 GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     border: false,
-    anchor: "100%",
-    x: 100,
-    y: -1,
+    width: 450,
     cls: "permalink-panel",
     ctCls: "permalink-panel-ct",
     baseCls: "permalink-panel",
@@ -57,7 +52,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     initComponent: function() {
         this.title = OpenLayers.i18n("Map URL");
         this.items = new GeoAdmin.PermalinkField();
-        this.tbar = [{
+        this.tbar = ["->", {
             iconCls: "close-button", 
             toggleGroup: this.closeButtonToggleGroup,
             handler: function() { this.hide(); },
@@ -77,6 +72,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         ]);
     }
 });
+Ext.reg("ga_permalinkpanel", GeoAdmin.PermalinkPanel);
 
 /**
  */
