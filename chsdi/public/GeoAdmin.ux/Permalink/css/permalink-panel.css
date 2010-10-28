@@ -22,7 +22,14 @@
     overflow: visible;
 }
 .permalink-panel-header-text {
-    font-weight:bold;
+    font-family: arial,helvetica,verdana,sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+.permalink-panel-bwrap {
+    margin-top: 10px;
 }
 .permalink-panel .close-button {
     background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
