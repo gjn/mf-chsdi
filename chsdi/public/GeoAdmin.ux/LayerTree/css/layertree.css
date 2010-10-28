@@ -34,20 +34,25 @@
 .geoadmin-layertree .gx-tree-layer-actions .down {
   background-image: url(../images/lt_layer_order_down_active.png);
 }
+
+.geoadmin-layertree .gx-tree-layer-actions .open,
 .geoadmin-layertree .gx-tree-layer-actions .close {
-  background-image: url(../images/lt_close_options.png);
+  background-image: url(../images/lt_open-close_options.png);
   position: absolute;
   left: 3px;
-  margin-top: 18px;
   z-index: 1000;
 }
 .geoadmin-layertree .gx-tree-layer-actions .open {
-  background-image: url(../images/lt_open_options.png);
-  position: absolute;
-  left: 3px;
+  background-position: -15px 0;
   margin-top: 2px;
   display: none;
 }
+
+.geoadmin-layertree .gx-tree-layer-actions .close {
+  background-position: 0 0;
+  margin-top: 18px;
+}
+
 .geoadmin-layertree .gx-tree-layer-actions .tbar {
   background-image: url(../../images/info_button_black.png);
 }
@@ -59,7 +64,7 @@
 }
 .geoadmin-layertree .x-toolbar .ytb-text {
   font-weight: normal;
-  font-size: 0.9em; 
+  font-size: 0.9em;
 }
 .geoadmin-layertree .x-slider-thumb {
   background-image: url(../images/lo_cursor_opacity.png);
@@ -118,14 +123,18 @@
     cursor: default;
     text-decoration:none !important;
 }
+
+.geoadmin-layertree .x-toolbar .x-btn-mc .visibility-on,
+.geoadmin-layertree .x-toolbar .x-btn-mc .visibility-off {
+  background-image: url(../images/lt_visibility.png);
+}
 .geoadmin-layertree .x-toolbar .x-btn-mc .visibility-on {
-  background: transparent url(../images/lt_visible.png) no-repeat center !important;
-  padding-top: 3px;
+  background-position: 0 0;
 }
 .geoadmin-layertree .x-toolbar .x-btn-mc .visibility-off {
-  background: transparent url(../images/lt_unvisible.png) no-repeat center !important;
-  padding-top: 3px;
+  background-position: -15px 0;
 }
+
 .geoadmin-layertree .x-toolbar .x-btn-over .x-btn-tl{
 	background-position: 500px 500px;
 }
