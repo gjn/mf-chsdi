@@ -6,7 +6,8 @@
     border-width: medium medium 1px 1px;
     padding: 10px;
     position: absolute;
-    right: 0;
+    right: 0px;
+    top: -1px;
 }
 .permalink-panel .x-toolbar {
     border: 0 none !important;
