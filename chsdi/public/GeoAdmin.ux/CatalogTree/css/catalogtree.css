@@ -131,21 +131,22 @@
   width: 19px;
   height: 19px !important;
   cursor: pointer;
+  background-image: url(../images/lt_selection-sprite.png);
 }
 .geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOff, .nodeBackgroundSelected .checkboxOn {
   margin-top: 1px;
 }
 .geoadmin-catalog-tree .checkboxOff {
-  background-image: url(../images/lt_unselected_black.png);
+  background-position: -17px 0;
 }
 .geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOff {
-  background-image: url(../images/lt_unselected_white.png);
+  background-position: -17px 19px;
 }
 .geoadmin-catalog-tree .checkboxOn {
-  background-image: url(../images/lt_selected_black.png);
+  background-position: 0 0;
 }
 .geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOn {
-  background-image: url(../images/lt_selected_white.png);
+  background-position: 0 19px;
 }
 .geoadmin-catalog-tree .layerNodeTools {
   float: right;
