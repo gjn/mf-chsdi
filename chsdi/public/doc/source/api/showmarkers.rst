@@ -22,7 +22,7 @@
    </script>
 
 Showmarkers
-----------
+-----------
 
 This example shows a naive way to add custom markers and popup linking to external pages. Obviously the webcam locations are not accurate.
 
@@ -31,6 +31,8 @@ This example shows a naive way to add custom markers and popup linking to extern
    <body>
       <div id="mymap14" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
+
+
 Exemple provided by *P. Staub*
 
 .. raw:: html

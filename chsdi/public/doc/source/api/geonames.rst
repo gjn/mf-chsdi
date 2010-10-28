@@ -67,8 +67,6 @@ Adding custom GeoExt user extension (`geoext.ux <ttp://svn.geoext.org/extensions
            src="http://svn.geoext.org/extensions/geoext.ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux/GeoNamesSearchCombo.js"></script> 
    </body>    
 
-.. raw:: html
-
 
 .. raw:: html
 
