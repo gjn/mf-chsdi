@@ -14,7 +14,6 @@ Ext.state.Manager.setProvider(
  */
 GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
     autoHeight: true,
-    width: 440,
 
     initComponent: function() {
         var provider = Ext.state.Manager.getProvider();
@@ -42,7 +41,7 @@ GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
  */
 GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     border: false,
-    width: 450,
+    width: 460,
     cls: "permalink-panel",
     ctCls: "permalink-panel-ct",
     baseCls: "permalink-panel",
@@ -51,7 +50,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
 
     initComponent: function() {
         this.title = OpenLayers.i18n("Map URL");
-        this.items = new GeoAdmin.PermalinkField();
+        this.items = new GeoAdmin.PermalinkField({width: 440});
         this.tbar = ["->", {
             iconCls: "close-button", 
             toggleGroup: this.closeButtonToggleGroup,
