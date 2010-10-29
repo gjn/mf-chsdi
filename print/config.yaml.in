@@ -15,7 +15,7 @@ hosts:
 #
 # allowed scales
 #
-scales: %MAP_SCALES_PRINT%
+scales: ${vars:map_scales_print}
 
 globalParallelFetches: 25
 perHostParallelFetches: 25
@@ -40,7 +40,7 @@ layouts:
                 align: left
                 maxWidth: 516
                 maxHeight: 70
-                url: "${configDir}/print_logo.png"
+                url: "${vars:print_dir}/print_logo.png"
               - !text
                 condition: langde
                 fontSize: 24
@@ -93,31 +93,31 @@ layouts:
               fontSize: 9
               align: right
               text: |
-                Massstab 1: ${format %,d scale}
+                Massstab 1: $${format %,d scale}
             - !text
               condition: langfr
               fontSize: 9
               align: right
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle 1: $${format %,d scale}
             - !text
               condition: langen
               fontSize: 9
               align: right
               text: |
-                Scale 1: ${format %,d scale}
+                Scale 1: $${format %,d scale}
             - !text
               condition: langfi
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
             - !text
               condition: langit
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
 
 #---------------------------------------
 # C part
@@ -171,31 +171,31 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langen
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langfi
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langit
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
 
 #---------------------------------------
 # G part
