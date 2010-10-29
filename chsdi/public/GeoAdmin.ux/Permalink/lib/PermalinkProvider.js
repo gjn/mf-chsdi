@@ -95,6 +95,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 params.layers_opacity.push(layer.opacity);
                 params.layers_visibility.push(layer.visibility);
             }
+
+            if (params.layers.length === 0) {
+                delete params.layers;
+                delete params.layers_opacity;
+                delete params.layers_visibility;
+            }
         }
 
         // merge params in the URL into the state params
