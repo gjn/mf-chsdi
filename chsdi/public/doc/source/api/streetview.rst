@@ -113,14 +113,14 @@ StreetView
             streetViewPanel.doLayout();
         
             mainPanel.show();
-            api.map.zooToExtent(extent);
         };
         
  
    </script> 
    <body onload="init();">
-     <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
+     <div id="mypanel21" style="width:500px;height:500px;margin: 10px; !important;"></div>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
      <!-- Use your own key please -->
      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhSHRXVQO97xZDVElO7Kaxb3_E7dkBRAys4lZqDtTngdp3fHGDiZ-9QpCw" type="text/javascript"></script>
 
@@ -213,7 +213,7 @@ StreetView
             streetViewPanel.doLayout();
         
             mainPanel.show();
-            api.map.zooToExtent(extent);
+            map.zoomToExtent(extent);
         };
         
    </script>
@@ -221,8 +221,16 @@ StreetView
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
      <link rel=stylesheet type=text/css href="../../../build/api.css">
-     <!-- Use your own key please -->
-     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhSHRXVQO97xZDVElO7Kaxb3_E7dkBRAys4lZqDtTngdp3fHGDiZ-9QpCw" type="text/javascript"></script>
+     <script type="text/javascript">
+         var googleApiKey;
+         if (location.host.indexOf('bgdi.admin.ch') > -1) {
+             googleApiKey = 'ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhSHRXVQO97xZDVElO7Kaxb3_E7dkBRAys4lZqDtTngdp3fHGDiZ-9QpCw';
+         }
+         if (location.host.indexOf('api.geo.admin.ch') > -1) {
+             googleApiKey = 'ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhTmDF_rIO6ddF9-LXny6In2V76gexSHwsu1kNFXDUE1wI35QJW0iEd8mw'
+         }
+         document.write('<scr' + 'ipt type="text/javascript" src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=' + googleApiKey + '"></scr' + 'ipt>');
+    </script>
 
      <script type="text/javascript"
             src="http://svn.geoext.org/sandbox/cmoullet/ux/StreetViewPanel/ux/widgets/StreetViewPanel.js"></script>
