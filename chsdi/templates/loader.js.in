@@ -17,10 +17,10 @@
                 'window.GeoAdmin = {};' +
             '}' +
             'window.GeoAdmin.version = "${vars:api_version}";' +
-            'window.GeoAdmin.webServicesUrl = "${vars:host}${c.wsgi_base}";' +
+            'window.GeoAdmin.webServicesUrl = "${vars:host}$${c.wsgi_base}";' +
             'window.GeoAdmin.OpenLayersImgPath = "' + OpenLayersImgPath + '";' +
         '</scr' + 'ipt>');
 
-    var cssHref = cleanup("${vars:host}/${vars:api_version}${url('/build/api.css')}");
+    var cssHref = cleanup("${vars:host}/${vars:api_version}$${url('/build/api.css')}");
     document.write('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
 })();

@@ -14,7 +14,7 @@ error_email_from = paste@localhost
 use = egg:chsdi
 full_stack = true
 static_files = false
-api_version = %API_VERSION%
+api_version = ${vars:api_version}
 
 # default language
 lang = de
@@ -23,13 +23,13 @@ beaker.session.type = memory
 beaker.cache.type = memory
 
 # SQLAlchemy database URL
-sqlalchemy.bod.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bod
-sqlalchemy.stopo.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/stopo
-sqlalchemy.edi.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/edi
-sqlalchemy.search.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/search
-sqlalchemy.bafu.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/bafu
-sqlalchemy.kogis.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/kogis
-sqlalchemy.vbs.url = postgresql://%DB_USER%:%DB_PASS%@%DB_HOST%:%DB_PORT%/vbs
+sqlalchemy.bod.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bod
+sqlalchemy.stopo.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/stopo
+sqlalchemy.edi.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/edi
+sqlalchemy.search.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/search
+sqlalchemy.bafu.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bafu
+sqlalchemy.kogis.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/kogis
+sqlalchemy.vbs.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/vbs
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
