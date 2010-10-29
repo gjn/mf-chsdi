@@ -57,7 +57,19 @@
 % endif
     </tr>
 
-    <tr><td>${_('Datenstand')}</td>                  <td>${c.legend.datenstand or '-'}</td></tr>
+    <tr><td>${_('Datenstand')}</td>
+%if c.legend.datenstand:
+% if len(c.legend.datenstand) ==4:
+    <td>${c.legend.datenstand}</td>
+% elif len(c.legend.datenstand) ==6:
+    <td>${c.legend.datenstand[4:]}.${c.legend.datenstand[:4]}</td>
+% elif len(c.legend.datenstand) ==8:
+    <td>${c.legend.datenstand[6:]}.${c.legend.datenstand[4:6]}.${c.legend.datenstand[:4]}</td>
+%endif
+%else:
+    <td>-</td>
+% endif
+ </tr>    
   </table>
 </div>
 % endif
