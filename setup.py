@@ -13,7 +13,7 @@ setup(
     author_email = '',
     url = '',
     install_requires = [
-        "mapfish", "JSTools", "Sphinx", "Babel", "httplib2",
+        "mapfish", "httplib2",
         "psycopg2"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
