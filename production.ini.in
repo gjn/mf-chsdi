@@ -14,7 +14,7 @@ error_email_from = paste@localhost
 use = egg:chsdi
 full_stack = true
 static_files = false
-api_version = ${vars:api_version}
+api_version = ${api-version}
 
 # default language
 lang = de

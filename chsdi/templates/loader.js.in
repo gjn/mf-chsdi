@@ -7,20 +7,20 @@
         return url.slice(0, idx) + url.slice(idx).replace(/\/\//g, "/");
     }
 
-    var scriptSrc = cleanup("${vars:host}/${vars:api_version}$${url('/build/api.js')}");
+    var scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
     document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
 
-    var OpenLayersImgPath = cleanup("${vars:host}/${vars:api_version}$${url('/GeoAdmin.ux/Map/img/')}");
+    var OpenLayersImgPath = cleanup("${vars:host}/${api-version}$${url('/GeoAdmin.ux/Map/img/')}");
     document.write(
         '<scr' + 'ipt type="text/javascript">' +
             'if (!window.GeoAdmin) {' +
                 'window.GeoAdmin = {};' +
             '}' +
-            'window.GeoAdmin.version = "${vars:api_version}";' +
+            'window.GeoAdmin.version = "${api-version}";' +
             'window.GeoAdmin.webServicesUrl = "${vars:host}$${c.wsgi_base}";' +
             'window.GeoAdmin.OpenLayersImgPath = "' + OpenLayersImgPath + '";' +
         '</scr' + 'ipt>');
 
-    var cssHref = cleanup("${vars:host}/${vars:api_version}$${url('/build/api.css')}");
+    var cssHref = cleanup("${vars:host}/${api-version}$${url('/build/api.css')}");
     document.write('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
 })();
