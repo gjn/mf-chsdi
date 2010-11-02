@@ -1,10 +1,7 @@
-# RewriteEngine On
+<Proxy ajp://localhost:8009/print-chsdi-${instanceid}>
+    Order deny,allow
+    Allow from all
+</Proxy>
 
-# # print with tomcat
-# RewriteRule ^${vars:print_url}/(.*) http://localhost:8080/print-chsdi/pdf/$1 [P]
-
-# <Proxy http://localhost:8080/print-chsdi/pdf/*>
-#   Order allow,deny
-#   Allow from all
-# </Proxy>
-
+ProxyPass        ${vars:instanceid}/print/ ajp://localhost:8009/print-chsdi-${instanceid}/
+ProxyPassReverse ${vars:instanceid}/print/ ajp://localhost:8009/print-chsdi-${instanceid}/
