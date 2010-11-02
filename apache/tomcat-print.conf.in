@@ -1,10 +1,10 @@
-RewriteEngine On
+# RewriteEngine On
 
-# print with tomcat
-RewriteRule ^${vars:print_url}/(.*) http://localhost:8080/print-chsdi/pdf/$1 [P]
+# # print with tomcat
+# RewriteRule ^${vars:print_url}/(.*) http://localhost:8080/print-chsdi/pdf/$1 [P]
 
-<Proxy http://localhost:8080/print-chsdi/pdf/*>
-  Order allow,deny
-  Allow from all
-</Proxy>
+# <Proxy http://localhost:8080/print-chsdi/pdf/*>
+#   Order allow,deny
+#   Allow from all
+# </Proxy>
 

@@ -7,12 +7,17 @@
 
 PROJECT_NAME=$1
 CODE_DIR=$2
-export SVN_CO_OPTIONS="--username readonly --password readonly"
 
-cd $CODE_DIR
-sh deploy-$PROJECT_NAME.sh -r -c $PROJECT_NAME/configs/$TARGET
+# make sure that buildout is correctly installed
+##python bootstrap.py --distribute --version 1.5.2 > /dev/null
 
-echo "building javascript"
-(cd $CODE_DIR/chsdi && ../env/bin/jsbuild jsbuild/api.cfg -o chsdi/public/build/)
 
-exit 0
+if [ -f buildout_$TARGET.cfg ]; then
+    buildout/bin/buildout -c buildout_$TARGET.cfg
+elif [ -f buildout_main.cfg ]; then
+    buildout/bin/buildout -c buildout_main.cfg
+else
+    buildout/bin/buildout
+fi
+
+exit $?

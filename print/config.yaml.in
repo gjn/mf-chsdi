@@ -15,7 +15,7 @@ hosts:
 #
 # allowed scales
 #
-scales: ${vars:map_scales_print}
+scales: [2500000, 1000000, 500000, 200000, 100000, 50000, 25000, 20000, 10000, 5000]
 
 globalParallelFetches: 25
 perHostParallelFetches: 25
@@ -40,7 +40,7 @@ layouts:
                 align: left
                 maxWidth: 516
                 maxHeight: 70
-                url: "${vars:print_dir}/print_logo.png"
+                url: "${buildout:directory}/print/print_logo.png"
               - !text
                 condition: langde
                 fontSize: 24
