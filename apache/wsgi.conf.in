@@ -1,7 +1,7 @@
 RewriteEngine On
 ExpiresActive On
 
-RedirectMatch ^/${vars:instanceid}/wsgi/$ /${vars:instanceid}/wsgi/doc/build/
+RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
 RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
