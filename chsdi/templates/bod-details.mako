@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 <div class="bodsearch_header">
 
   <p class='bod-title'><span style="font-weight:bold;">${h.hilight(c.layer.bezeichnung, c.hilight)}</span> (${h.hilight(c.layer.datenherr, c.hilight) | trim})</p>
