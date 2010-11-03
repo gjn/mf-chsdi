@@ -51,7 +51,10 @@ Ext.onReady(function() {
         items: [{
             region: "west",
             width: 200,
-            collapsible: true
+            collapsible: true,
+            html: ["<p>If you collapse this panel,",
+                   "the permalink panel should not be",
+                   "resized</p>"].join(" ")
         }, 
             mapPanel
         ]
