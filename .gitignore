@@ -1,3 +1,9 @@
 print/*.war
+print/*.yaml
 .installed.cfg
 *.pyc
+apache/*.conf
+*.egg-info
+development.ini
+production.ini
+test.ini
