@@ -127,7 +127,7 @@ function test_showMarker_default(t) {
     api.createMap({div: "map_1"});
     api.showMarker();
 
-    t.ok(api.map.vector.isVector, "api has a vector layer");
+    t.ok(api.map.vector instanceof OpenLayers.Layer.Vector, "api has a vector layer");
     t.ok(api.map.vector.getVisibility(), "api.map.vector is on the map and visible");
 
     t.eq(api.map.vector.features.length, 1, "api.map.vector has a marker");
