@@ -1,3 +1,7 @@
+.x-window-header {
+    text-align: left;
+}
+
 .tooltip_header, .tooltip_footer {
   margin: 1px;
   padding: 4px;
