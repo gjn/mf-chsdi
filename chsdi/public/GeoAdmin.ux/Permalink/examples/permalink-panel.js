@@ -12,8 +12,8 @@ Ext.onReady(function() {
     Ext.state.Manager.setProvider(
         new GeoExt.state.PermalinkProvider({encodeType: false}));
 
-    permalinkPanel1 = new GeoAdmin.PermalinkPanel();
-    permalinkPanel2 = new GeoAdmin.PermalinkPanel();
+    permalinkPanel1 = new GeoAdmin.PermalinkPanel({hidden: true});
+    permalinkPanel2 = new GeoAdmin.PermalinkPanel({hidden: true});
 
     mapPanel = new GeoExt.MapPanel({
         region: "center",
@@ -29,7 +29,7 @@ Ext.onReady(function() {
             allowDepress: true,
             toggleHandler: function(btn, state) {
                 permalinkPanel1.setVisible(state);
-            },
+            }
         }, {
             text: "permalink 2",
             enableToggle: true,
@@ -37,8 +37,7 @@ Ext.onReady(function() {
             allowDepress: true,
             toggleHandler: function(btn, state) {
                 permalinkPanel2.setVisible(state);
-            },
-            toggleGroup: "export"
+            }
         }],
         items: [permalinkPanel1, permalinkPanel2]
     });
