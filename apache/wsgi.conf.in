@@ -1,25 +1,27 @@
 RewriteEngine On
 ExpiresActive On
 
-RedirectMatch ^${vars:instanceid}/$ ${vars:instanceid}/doc/build/
+RedirectMatch ^/${vars:instanceid}/wsgi/$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
-RewriteRule ^${vars:instanceid}/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|tests|doc)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
 
 # legend urls
-RewriteRule ^${vars:instanceid}/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
+RewriteRule ^/${vars:instanceid}/wsgi/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # cached urls:
-RewriteRule ^/[0-9a-fA-F]*${vars:instanceid}/(build|lib|GeoAdmin.ux)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
-<LocationMatch /[0-9a-fA-F]*${vars:instanceid}/(build|lib|GeoAdmin.ux)>
+RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+<LocationMatch /[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux)>
     ExpiresDefault "now plus 1 year"
     Header merge Cache-Control "public"
 </LocationMatch>
 
 # web services:
-WSGIScriptAlias ${vars:wsgi_base} ${buildout:directory/buildout/parts/modwsgi/wsgi}
+RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/ [PT]
+WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
+
 # never cache the api loader
-<Location ${vars:instanceid}/loader.js>
+<Location /${vars:instanceid}/wsgi/loader.js>
     ExpiresDefault "access"
     Header merge Cache-Control "no-cache"
     Header unset ETag
