@@ -14,8 +14,6 @@ RewriteRule ^/[0-9a-fA-F]*${vars:instanceid}/(build|lib|GeoAdmin.ux)/(.*)$  ${bu
 <LocationMatch /[0-9a-fA-F]*${vars:instanceid}/(build|lib|GeoAdmin.ux)>
     ExpiresDefault "now plus 1 year"
     Header merge Cache-Control "public"
-
-    Header set X-Powered-By http://imgs.xkcd.com/comics/python.png
 </LocationMatch>
 
 # web services:
