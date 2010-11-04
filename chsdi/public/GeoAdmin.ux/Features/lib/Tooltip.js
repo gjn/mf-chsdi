@@ -18,6 +18,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
      */
     url: null,
 
+    params: {},
+
     initialize: function(options) {
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
@@ -67,13 +69,15 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
             this.lastClick = bounds.getCenterLonLat();
 
+            this.params = {
+                lang: OpenLayers.Lang.getCode(),
+                layers: this.queryable.join(","),
+                bbox: bounds.toBBOX()
+            };
+
             Ext.ux.JSONP.request(this.url, {
                 callbackKey: "cb",
-                params: {
-                    lang: OpenLayers.Lang.getCode(),
-                    layers: this.queryable.join(","),
-                    bbox: bounds.toBBOX()
-                },
+                params: this.params,
                 scope: this,
                 callback: function(response) {
                     var features = this.format.read(response);
@@ -115,6 +119,19 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.popup = new GeoExt.Popup({
             width: 450,
             title: OpenLayers.i18n('Feature tooltip'),
+            tools:[{
+                id: 'print',
+                scope: this,
+                handler: function(evt, toolEl, panel, tc) {
+                    delete this.params['cb'];
+                    this.params['print'] = true;
+                    var url = Ext.urlAppend(this.url, Ext.urlEncode(this.params));
+                    window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
+                                         'directories=no, status=no, menubar=no, scrollbars=yes,' +
+                                         'copyhistory=no, resizable=no');
+
+                }
+            }],
             autoScroll: true,
             map: this.map,
             layer: this.layer,
@@ -125,11 +142,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 close: function(popup) {
                     popup.layer.removeAllFeatures();
                 }
-            }// ,
-//             buttons: [{
-//                 xtype: "button",
-//                 text: "print"
-//             }]
+            }
         });
 
         var items = [];
