@@ -8,6 +8,7 @@
 PROJECT_NAME=$1
 CODE_DIR=$2
 
+cd $CODE_DIR
 # make sure that buildout is correctly installed
 ##python bootstrap.py --distribute --version 1.5.2 > /dev/null
 
