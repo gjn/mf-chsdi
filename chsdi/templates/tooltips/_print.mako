@@ -17,6 +17,6 @@
 </head>
 <body onload="init()" class="x-window-mc" style="background-color: white">
 % for feature in c.features:
-  <div style="border: 1px solid #ddd">${feature.html.decode('utf-8')}</div>
+  <div style="border: 1px solid #ddd">${feature.html}</div>
 % endfor
 </body>
