@@ -5,13 +5,9 @@
   <meta name="content-language" content="${c.lang}" />
   <meta name="revisit-after" content="7 days" />
   <meta name="robots" content="index,follow " />
-
-<!--   <link rel="stylesheet" type="text/css" href="${url('/mfbase/ext/resources/css/ext-all.css')}"/> -->
-<!--   <link rel="stylesheet" type="text/css" href="${url('/mfbase/ext/resources/css/xtheme-gray.css')}"/> -->
-<!--   <link rel="stylesheet" type="text/css" href="${url('/MapFishApi/css/api.css')}"/> -->
-<!--   <link rel="stylesheet" type="text/css" href="${url('/css/geoadmin.css')}"/> -->
-<!--   <link rel="stylesheet" type="text/css" href="${url('/geoadminApi/css/api.css')}"/> -->
-<!--   <link rel="stylesheet" type="text/css" href="${url('/mfbase/geoext/resources/css/gxtheme-gray.css')}"/> -->
+  <style type="text/css">
+    <%include file="../../public/build/api.css" />
+  </style>
 
   <script type="text/javascript">
       function init() {
