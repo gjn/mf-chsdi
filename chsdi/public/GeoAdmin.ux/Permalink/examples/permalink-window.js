@@ -1,13 +1,7 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/ 
 
 Ext.onReady(function() {
-
-    // the GeoAdmin.Permalink will work with any PermalinkProvider
-    // it finds in the state provider
-    Ext.state.Manager.setProvider(
-        new GeoExt.state.PermalinkProvider({encodeType: false}));
-
-    var mapPanel = new GeoExt.MapPanel({
+    var mapPanel = new GeoAdmin.MapPanel({
         renderTo: "map",
         width: 600,
         height: 400,
