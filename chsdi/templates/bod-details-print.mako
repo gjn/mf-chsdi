@@ -15,10 +15,7 @@
       }
   </script>
 </head>
-<body onload="init()" class="x-window-mc" style="background-color: white">
-
-
-<%include file="bod-details.mako" />
-
+<body onload="init()" class="x-window-mc bodsearch">
+  <%include file="bod-details.mako" />
 </body>
 </html>
