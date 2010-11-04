@@ -15,8 +15,9 @@
   width: 16px;
   cursor: pointer;
 }
-.geoadmin-layertree .line-height-zero {
-    line-height: 0;
+.ext-ie .geoadmin-layertree .line-height-zero {
+  line-height: 0;
+  font: 1px;
 }
 .geoadmin-layertree .gx-tree-layer-actions .pipe,
 .geoadmin-layertree .gx-tree-layer-actions .pipe-up,
@@ -47,10 +48,16 @@
   margin-top: 2px;
   display: none;
 }
+.ext-ie .geoadmin-layertree .gx-tree-layer-actions .open {
+  top: 5px;
+}
 
 .geoadmin-layertree .gx-tree-layer-actions .close {
   background-position: 0 0;
   margin-top: 18px;
+}
+.ext-ie .geoadmin-layertree .gx-tree-layer-actions .close {
+  margin-top: 22px;
 }
 
 .geoadmin-layertree .gx-tree-layer-actions .tbar {
@@ -61,6 +68,9 @@
   padding-left: 30px;
   border-top: 1px solid #eee !important;
   height:18px;
+}
+.ext-ie .geoadmin-layertree .geoadmin-toolbar {
+  height: 24px;
 }
 .geoadmin-layertree .x-toolbar .ytb-text {
   font-weight: normal;

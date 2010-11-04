@@ -51,7 +51,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     constructor: function(config) {
         this.config = Ext.apply({
-            handler: this.pHandler,
+            toggleHandler: this.pHandler,
             scope: this,
             text: OpenLayers.i18n('print'),
             printPanelConfig: {},
@@ -108,11 +108,22 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue")
         }, this.config.printPanelOptions);
+		if (printOptions.renderTo) {
+			printOptions.title = OpenLayers.i18n("Print");
+			printOptions.tbar = ["->", {
+				iconCls: "close-button",
+				handler: function() {
+					this.printPanel.container.setVisible(false);
+					this.printPanel.hideExtent();
+				},
+				scope: this
+			}];
+		}
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
-        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
-        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
+//        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
+//        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
     
         // If a renderTo config is provided, the print panel is rendered
         // in the given element, else a popup is used to display it.
@@ -128,7 +139,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, this.config.windowOptions);
             this.printPanel.hideExtent();
         } else {
-            this.printPanel.hide();
+			this.printPanel.hideExtent();
+            this.printPanel.container.hide();
         }
         delete this.config.windowOptions;
     },
@@ -145,7 +157,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }
             this.popup.setVisible(!this.popup.isVisible());
         } else {
-            this.printPanel.setVisible(!this.printPanel.isVisible());
+            this.printPanel.container.setVisible(!this.printPanel.container.isVisible());
+			if (this.printPanel.container.isVisible()) {
+				this.printPanel.hideExtent();
+			}
+			else {
+				this.printPanel.hideExtent();
+			}
         }
     }
 });
