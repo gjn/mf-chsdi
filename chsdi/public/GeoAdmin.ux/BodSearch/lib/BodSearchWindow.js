@@ -12,17 +12,32 @@ GeoAdmin.BodSearchWindow = {
             autoScroll: true,
             width: 525,
             bodyStyle: "max-height: 500px",
-            items: {html: ''}
+            items: {html: ''},
+            tools: [{
+                id: 'print',
+                handler: function(evt, toolEl, panel, tc) {
+                    // remove the callbackKey introduced by
+                    // Ext.ux.JSONP.request and add the print key.
+                    delete panel._params['cb'];
+                    panel._params['print'] = true;
+                    var url = Ext.urlAppend(panel._url, Ext.urlEncode(panel._params));
+                    window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
+                                         'directories=no, status=no, menubar=no, scrollbars=yes,' +
+                                         'copyhistory=no, resizable=no');
+                }
+            }]
         });
-
+        
         _window._url = GeoAdmin.webServicesUrl + '/bodsearch/details/' + id;
+
+        _window._params = {
+            lang: OpenLayers.Lang.getCode(),
+            h: GeoAdmin.webServicesUrl
+        };
 
         Ext.ux.JSONP.request(_window._url, {
             callbackKey: "cb",
-            params: {
-                lang: OpenLayers.Lang.getCode(),
-                h: GeoAdmin.webServicesUrl
-            },
+            params: _window._params,
             scope: _window,
             callback: function(response) {
                 this.removeAll();
