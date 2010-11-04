@@ -7,6 +7,6 @@ cd $CODE_DIR
 
 echo "running unit tests (wd: '$(pwd)')"
 
-buildout/bin/python setup.py nosetests # > /dev/null 2>&1
+buildout/bin/nosetests # > /dev/null 2>&1
 
 exit $?
