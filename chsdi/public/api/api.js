@@ -420,7 +420,8 @@ GeoAdmin.API = OpenLayers.Class({
                     externalProjection: new OpenLayers.Projection("EPSG:4326"),
                     internalProjection: this.map.projection,
                     extractStyles: true,
-                    extractAttributes: true
+                    extractAttributes: true,
+                    kmlns: "http://www.opengis.net/kml/2.2"                    
                 })
             })
         });
