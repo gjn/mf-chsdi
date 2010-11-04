@@ -5,7 +5,7 @@ from pylons import request, response, tmpl_context as c
 from geojson.feature import FeatureCollection
 from mapfish.decorators import MapFishEncoder, _jsonify
 
-from chsdi.lib.base import BaseController, cacheable, validate_params
+from chsdi.lib.base import BaseController, cacheable, validate_params, render
 
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
@@ -88,6 +88,10 @@ class FeatureController(BaseController):
                     for feature in query.all():
                         feature.compute_template(layer_name, bodlayer)
                         features.append(feature)
+
+        if 'print' in request.params:
+            c.features = features
+            return render('/tooltips/_print.mako')
                     
         return FeatureCollection(features)
 
