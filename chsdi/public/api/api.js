@@ -218,7 +218,7 @@ GeoAdmin.API = OpenLayers.Class({
             delete options.mapOptions;
         }
 
-        this.mapPanel = new GeoExt.MapPanel(options);
+        this.mapPanel = new GeoAdmin.MapPanel(options);
 
         return this.mapPanel;
     },
