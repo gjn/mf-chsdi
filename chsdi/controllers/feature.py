@@ -1,4 +1,5 @@
 import logging
+import simplejson
 
 from pylons import request, response, tmpl_context as c
 
@@ -69,7 +70,6 @@ def get_features(layer, ids):
 
 class FeatureController(BaseController):
 
-    @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
         if self.lang == 'fr':
@@ -92,8 +92,16 @@ class FeatureController(BaseController):
         if 'print' in request.params:
             c.features = features
             return render('/tooltips/_print.mako')
-                    
-        return FeatureCollection(features)
+        else:
+            output = simplejson.dumps(FeatureCollection(features), cls=MapFishEncoder)
+            cb_name = request.params.get('cb')
+            if cb_name is not None:
+                response.headers['Content-Type'] = 'text/javascript'
+                return str(cb_name) + '(' + output + ');'
+            else:
+                response.headers['Content-Type'] = 'application/json'
+                return output
+
 
     @cacheable
     @_jsonify(cb="cb")
