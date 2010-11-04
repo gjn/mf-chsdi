@@ -18,6 +18,7 @@
  * @include Features/lib/Features.js
  *
  * @include proj4js/lib/defs/EPSG21781.js
+ * @requires GeoExt/widgets/MapPanel.js
  */
 
 /** api: (define)
@@ -176,10 +177,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      *  Apply the state provided as argument
      */
     applyState: function(state) {
-        // apply position
-        if (state.x != null && state.y != null && state.zoom != null) {
-            this.setCenter(new OpenLayers.LonLat(state.x, state.y), state.zoom);
-        }
 
         // complementaryLayer
         if (state.complementaryLayer) {
@@ -362,5 +359,24 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (scale == 10000) return 10;
         if (scale == 5000) return 11;
         return null;
+    }
+});
+
+GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
+    stateful: true,
+    prettyStateKeys: true,
+    stateId: "map",
+
+    getState: function() {
+        return this.map.getState();
+    },
+
+    applyState: function(state) {
+        if (state.x != null && state.y != null && state.zoom != null) {
+            this.center = new OpenLayers.LonLat(state.x, state.y);
+            this.zoom = state.zoom;
+        }
+        
+        this.map.applyState(state);
     }
 });
