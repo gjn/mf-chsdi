@@ -16,7 +16,7 @@
 
 % if c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
-  <img src="${c.host + url(c.layer.legend)}" alt="layer legend img" /><br>
+  <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>
 % endif
 
   <span style="font-weight:bold;">${_('Information')}</span><br>
