@@ -1,6 +1,7 @@
 import logging
+import simplejson
 
-from pylons import request, tmpl_context as c
+from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
 
 from mapfish.decorators import _jsonify
@@ -31,7 +32,6 @@ class BodsearchController(BaseController):
 
         return {'results': [r.json(q) for r in query]}
 
-    @_jsonify(cb='cb')
     def details(self, id=None):
         c.host = request.params.get('h', '')
         c.full = True
@@ -47,5 +47,11 @@ class BodsearchController(BaseController):
         if 'print' in request.params:
             return render('/bod-details-print.mako')
         else:
-            return render('/bod-details.mako')
-
+            output = simplejson.dumps(render('/bod-details.mako'))
+            cb_name = request.params.get('cb')
+            if cb_name is not None:
+                response.headers['Content-Type'] = 'text/javascript'
+                return str(cb_name) + '(' + output + ');'
+            else:
+                response.headers['Content-Type'] = 'application/json'
+                return output
