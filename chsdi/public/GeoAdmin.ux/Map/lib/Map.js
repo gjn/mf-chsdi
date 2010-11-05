@@ -163,7 +163,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 state.layers.push({
                     layername: layer.layername,
                     visibility: layer.getVisibility(),
-                    opacity: layer.opacity
+                    opacity: layer.opacity == null ? 1.0 : layer.opacity
                 });
             }
         }
