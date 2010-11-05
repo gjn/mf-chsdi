@@ -82,11 +82,11 @@ GeoAdmin.API = OpenLayers.Class({
      */
     activatePopup: true,
 
-    /** private: config[kmlSelect]
+    /** private: config[kmlSelectCtrl]
      *  ``OpenLayers.Control.SelectFeature``
      * OpenLayers control to select KML feature
      */
-    kmlSelect: null,
+    kmlSelectCtrl: null,
 
     /** api: constructor
      *  .. class:: GeoAdmin.API
@@ -431,7 +431,7 @@ GeoAdmin.API = OpenLayers.Class({
         });
         this.map.addLayers([kmlLayer]);
         if (showPopup) {
-            this.kmlSelect = new OpenLayers.Control.SelectFeature(kmlLayer);
+            this.kmlSelectCtrl = new OpenLayers.Control.SelectFeature(kmlLayer);
 
             kmlLayer.events.on({
                 "featureselected": this._onFeatureSelect,
@@ -439,8 +439,8 @@ GeoAdmin.API = OpenLayers.Class({
                 scope: this
             });
 
-            this.map.addControl(this.kmlSelect);
-            this.kmlSelect.activate();
+            this.map.addControl(this.kmlSelectCtrl);
+            this.kmlSelectCtrl.activate();
         }
         return kmlLayer;
     },
