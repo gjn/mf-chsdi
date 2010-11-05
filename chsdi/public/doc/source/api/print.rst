@@ -61,7 +61,6 @@ The print widget needs a Map Panel.
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint22',
@@ -125,7 +124,6 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint23',
@@ -190,7 +188,6 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint22',
@@ -218,7 +215,6 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint23',
