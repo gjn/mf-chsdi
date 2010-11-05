@@ -20,6 +20,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     printPanel: null,
 
+    /** private: property[printPanelOptions:]
+     * ``Object`` Options for the print panel
+     */
+    printPanelOptions: null,
+
     /** api: property[popup]
      * :class:`Ext.Window` Window containing print form
      */
@@ -29,7 +34,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * ``Object`` Options for the popup
      */
     windowOptions: null,
-    
+
     /** private: property[showWindow]
      * :boolean: Indicates if print form must be displayed in a popup
      */
@@ -51,13 +56,27 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     constructor: function(config) {
         this.config = Ext.apply({
-            toggleHandler: this.pHandler,
             scope: this,
             text: OpenLayers.i18n('print'),
-            printPanelConfig: {},
+            printPanelOptions: {},
             windowOptions: {},
             printBaseUrl: '/print'
         }, config);
+        // in segond pass to avoid that printPanelOptions don't exists
+        this.config = Ext.apply({
+            enableToggle: this.config.printPanelOptions.renderTo ? true : false
+        }, this.config);
+        // add the handler
+        if (this.config.enableToggle) {
+            this.config = Ext.apply({
+                toggleHandler: this.pHandler
+            }, this.config);
+        }
+        else {
+            this.config = Ext.apply({
+                handler: this.pHandler
+            }, this.config);
+        } 
 
         if (GeoAdmin.webServicesUrl != null) {
             this.config.printBaseUrl = GeoAdmin.webServicesUrl + '/print';
@@ -81,10 +100,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
-        this.printProvider.on({
-            "loadcapabilities": this.initPanel,
-            scope: this
-        });
+
+        // sbrunner: remove it because it make a print bounds flash, call init from pHandler
+//        this.printProvider.on({
+//            "loadcapabilities": this.initPanel,
+//            scope: this
+//        });
 
         arguments.callee.superclass.constructor.call(this, this.config);
     },
@@ -97,6 +118,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             printProvider: this.printProvider,
             hideRotation: true,
             autoFit: true,
+            border: false,
             labelWidth: 75,
             defaults: {
                 width: 100
@@ -111,20 +133,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue")
         }, this.config.printPanelOptions);
-		if (printOptions.renderTo) {
-			printOptions.title = OpenLayers.i18n("Print");
-			printOptions.tbar = ["->", {
-				iconCls: "close-button",
-				handler: function() {
-					this.printPanel.container.setVisible(false);
-					this.printPanel.hideExtent();
-				},
-				scope: this
-			}];
-		}
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
+		this.printPanel.hideExtent();
 //        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
 //        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
     
@@ -152,21 +164,32 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Displays/hides the print form
      */
     pHandler: function() {
+        if (!this.printPanel) {
+            this.initPanel();
+        }
         if (this.showWindow) {
             if (!this.popup) {
                 this.popup = new Ext.Window(this.windowOptions);
-                this.popup.on('hide', this.printPanel.hide, this.printPanel);
-                this.popup.on('show', this.printPanel.show, this.printPanel);
+                this.popup.on('hide', function() {
+                    this.printPanel.hideExtent();
+                }, this);				
+//                this.popup.on('show', this.printPanel.show, this.printPanel);
             }
             this.popup.setVisible(!this.popup.isVisible());
+            if (this.popup.isVisible()) {
+                this.printPanel.showExtent();
+            }
+            else {
+                this.printPanel.hideExtent();
+            }
         } else {
             this.printPanel.container.setVisible(!this.printPanel.container.isVisible());
-			if (this.printPanel.container.isVisible()) {
-				this.printPanel.hideExtent();
-			}
-			else {
-				this.printPanel.hideExtent();
-			}
+            if (this.printPanel.container.isVisible()) {
+                this.printPanel.showExtent();
+            }
+            else {
+                this.printPanel.hideExtent();
+            }
         }
     }
 });
