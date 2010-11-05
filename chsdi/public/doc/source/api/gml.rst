@@ -24,8 +24,7 @@
 GML
 ---
 
-Display a remote GML file with custom symbols. In this example, some triangulation point data from http://wfs.geo.admin.ch/. As GML is not
-officially supported, you have to add the missing OpenLayers libraries manually.
+Display a remote GML file with custom symbols. In this example, some triangulation point data from http://wfs.geo.admin.ch/. 
 
 .. raw:: html
 
@@ -76,9 +75,7 @@ officially supported, you have to add the missing OpenLayers libraries manually.
        }
    </script>
    <body onload="init();">
-       <script type="text/javascript" src="../../../loader.js"></script>
-       <script type="text/javascript" src="http://api.geo.admin.ch/lib/openlayers/lib/OpenLayers/Format/GML.js"></script>
-       <link rel=stylesheet type=text/css href="../../../build/api.css">
+       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>    
 
 .. raw:: html
@@ -125,6 +122,4 @@ officially supported, you have to add the missing OpenLayers libraries manually.
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-       <script type="text/javascript" src="http://api.geo.admin.ch/lib/openlayers/lib/OpenLayers/Format/GML.js"></script>
-       <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

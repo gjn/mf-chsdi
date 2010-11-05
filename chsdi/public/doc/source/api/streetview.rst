@@ -120,7 +120,6 @@ StreetView
    <body onload="init();">
      <div id="mypanel21" style="width:500px;height:500px;margin: 10px; !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
      <!-- Use your own key please -->
      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhSHRXVQO97xZDVElO7Kaxb3_E7dkBRAys4lZqDtTngdp3fHGDiZ-9QpCw" type="text/javascript"></script>
 
@@ -220,7 +219,6 @@ StreetView
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
      <script type="text/javascript">
          var googleApiKey;
          if (location.host.indexOf('bgdi.admin.ch') > -1) {

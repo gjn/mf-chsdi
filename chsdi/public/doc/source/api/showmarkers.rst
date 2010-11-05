@@ -79,8 +79,6 @@ Exemple provided by *P. Staub*
    </script>
    <body onload="init();">
        <script type="text/javascript" src="../../../loader.js"></script>
-       <script type="text/javascript" src="http://api.geo.admin.ch/lib/openlayers/lib/OpenLayers/Format/GML.js"></script>
-       <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>    
 
 .. raw:: html
@@ -225,5 +223,4 @@ Exemple provided by *P. Staub*
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

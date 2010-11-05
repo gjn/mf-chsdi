@@ -53,7 +53,6 @@ Marker
    <body onload="init();">
      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -99,7 +98,6 @@ Custom marker
    <body onload="init();">
      <div id="mymap7" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -135,7 +133,6 @@ BOD Search
    <body onload="init();">
      <div id="mysearch8" style="width:300px;height:30px;margin:10px;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -174,7 +171,6 @@ Map with Swissimage
    <body onload="init();">
      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -224,7 +220,6 @@ Base layer tool
       <div id="baselayertool10" style="display: none; visibility: hidden; margin:10px !important;"></div>
       <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -298,5 +293,4 @@ Base layer tool
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

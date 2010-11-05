@@ -65,7 +65,6 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
    </script>
    <body onload="init();">
       <div id="mymap13" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -98,5 +97,4 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

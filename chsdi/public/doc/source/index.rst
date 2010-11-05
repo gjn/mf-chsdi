@@ -45,7 +45,6 @@ These pages are dedicated to developer interested in using the API.
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../build/api.css">
    </body>
 
 .. raw:: html
@@ -67,7 +66,6 @@ These pages are dedicated to developer interested in using the API.
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html

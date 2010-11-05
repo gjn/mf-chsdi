@@ -73,8 +73,7 @@ The print widget needs a Map Panel.
    <body onload="init();">
       <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myprint22" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-     <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -155,7 +154,6 @@ can be printed! In this example, the surface layer is a KML and the point layer 
       <div id="mymap23" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myprint23" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -243,5 +241,4 @@ can be printed! In this example, the surface layer is a KML and the point layer 
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

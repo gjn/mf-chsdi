@@ -60,7 +60,6 @@ A Map panel is really an ExtJS Panel with an OpenLayers Map, allowing you you ad
    </script>
    <body onload="init();">
        <script type="text/javascript" src="../../../loader.js"></script>
-       <link rel=stylesheet type=text/css href="../../../build/api.css">
        <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>    
 
@@ -92,5 +91,4 @@ A Map panel is really an ExtJS Panel with an OpenLayers Map, allowing you you ad
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
    </body>

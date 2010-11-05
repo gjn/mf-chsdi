@@ -24,7 +24,7 @@
 GPX
 ---
 
-Display a `GPX <http://www.topografix.com/gpx.asp>`_ file on the map. As GPX is not officialy supported, you have to manually add the OpenLayers ``Format/GPX.js`` file.
+Display a `GPX <http://www.topografix.com/gpx.asp>`_ file on the map.
 Note on GPS track accuracy: yes the track is offshore on lake des Taillières which is frozen in winter, so you can ski on it!
 
 .. raw:: html
@@ -85,8 +85,6 @@ Note on GPS track accuracy: yes the track is offshore on lake des Taillières wh
    <body onload="init();">
       <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-      <script type="text/javascript" src="http://api.geo.admin.ch/lib/openlayers/lib/OpenLayers/Format/GPX.js"></script>  
-      <link rel=stylesheet type=text/css href="http://api.geo.admin.ch/build/api.css">
    </body>
 
 .. raw:: html
@@ -139,6 +137,4 @@ Note on GPS track accuracy: yes the track is offshore on lake des Taillières wh
 
    <body onload="init();">
      <script type="text/javascript" src="../../../loader.js"></script>
-     <link rel=stylesheet type=text/css href="../../../build/api.css">
-      <script type="text/javascript" src="http://api.geo.admin.ch/lib/openlayers/lib/OpenLayers/Format/GPX.js"></script>  
    </body>
