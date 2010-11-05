@@ -59,6 +59,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             printBaseUrl: '/print'
         }, config);
 
+        if (GeoAdmin.webServicesUrl != null) {
+            this.config.printBaseUrl = GeoAdmin.webServicesUrl + '/print';
+        }
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
                 url: this.config.printBaseUrl
