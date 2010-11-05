@@ -154,7 +154,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, this.config.windowOptions);
             this.printPanel.hideExtent();
         } else {
-			this.printPanel.hideExtent();
+            this.printPanel.hideExtent();
             this.printPanel.container.hide();
         }
         delete this.config.windowOptions;
