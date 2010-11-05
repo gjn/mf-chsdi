@@ -53,7 +53,7 @@ GeoAdmin.API = OpenLayers.Class({
     map: null,
 
     /** api: config[mapPanel]
-     * ``GeoExt.MapPanel``
+     * ``GeoAdmin.MapPanel``
      * Panel containing the map
      */
     mapPanel: null,
@@ -82,6 +82,10 @@ GeoAdmin.API = OpenLayers.Class({
      */
     activatePopup: true,
 
+    /** private: config[kmlSelect]
+     *  ``OpenLayers.Control.SelectFeature``
+     * OpenLayers control to select KML feature
+     */
     kmlSelect: null,
 
     /** api: constructor
@@ -146,7 +150,7 @@ GeoAdmin.API = OpenLayers.Class({
             scale: options.scale
         });
 
-        if (this.map.getCenter() == null) {
+        if (this.map.getCenter() === null) {
             this.map.zoomToMaxExtent();
         }
 
@@ -171,7 +175,7 @@ GeoAdmin.API = OpenLayers.Class({
             var visibility = options.layers_visibility[i];
             this.map.addLayerByName(options.layers[i], {
                 opacity: opacity !== undefined ? opacity : 1.0,
-                visibility: (visibility == undefined) ? true :
+                visibility: (visibility === undefined) ? true :
                         (visibility == 'false') ? false : visibility
             });
         }
@@ -200,10 +204,10 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param options: ``Object`` options.
      *
      *  Valid properties for the ``options`` argument:
-     *  * any ``GeoExt.MapPanel`` parameter
+     *  * any ``GeoAdmin.MapPanel`` parameter
      *  * ``mapOptions`` - ``Object`` containing options for the map, see createMap() options
      *
-     *  :return: ``GeoExt.MapPanel``
+     *  :return: ``GeoAdmin.MapPanel``
      *
      *  Create a map panel
      *
@@ -421,13 +425,13 @@ GeoAdmin.API = OpenLayers.Class({
                     internalProjection: this.map.projection,
                     extractStyles: true,
                     extractAttributes: true,
-                    kmlns: "http://www.opengis.net/kml/2.2"                    
+                    kmlns: "http://www.opengis.net/kml/2.2"
                 })
             })
         });
         this.map.addLayers([kmlLayer]);
         if (showPopup) {
-            kmlSelect = new OpenLayers.Control.SelectFeature(kmlLayer);
+            this.kmlSelect = new OpenLayers.Control.SelectFeature(kmlLayer);
 
             kmlLayer.events.on({
                 "featureselected": this._onFeatureSelect,
@@ -435,8 +439,8 @@ GeoAdmin.API = OpenLayers.Class({
                 scope: this
             });
 
-            this.map.addControl(kmlSelect);
-            kmlSelect.activate();
+            this.map.addControl(this.kmlSelect);
+            this.kmlSelect.activate();
         }
         return kmlLayer;
     },
@@ -575,10 +579,10 @@ GeoAdmin.API = OpenLayers.Class({
 
         var graphic = new Image();
         OpenLayers.Event.observe(graphic, 'load', OpenLayers.Function.bind(function() {
-            if (this.feature.style.graphicHeight == null) {
+            if (this.feature.style.graphicHeight === null) {
                 this.feature.style.graphicHeight = this.graphic.height;
             }
-            if (this.feature.style.graphicWidth == null) {
+            if (this.feature.style.graphicWidth === null) {
                 this.feature.style.graphicWidth = this.graphic.width;
             }
             delete this.feature.style.display;
