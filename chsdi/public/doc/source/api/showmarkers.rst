@@ -78,7 +78,7 @@ Exemple provided by *P. Staub*
        }
    </script>
    <body onload="init();">
-       <script type="text/javascript" src="../../../loader.js"></script>
+       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>       
    </body>    
 
 .. raw:: html
