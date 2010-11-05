@@ -77,6 +77,9 @@ div.x-panel-body ul {
    padding:0 !important;
 }
 
+.tooltip_footer table {
+   margin: 0px 0px !important; 
+}
 table {
    margin: -3px -0.5em !important;
 }
