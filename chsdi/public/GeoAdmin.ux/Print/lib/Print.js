@@ -59,9 +59,16 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             scope: this,
             text: OpenLayers.i18n('print'),
             printPanelOptions: {},
-            windowOptions: {},
-            printBaseUrl: '/print'
+            windowOptions: {}
         }, config);
+        if (!this.config.printBaseUrl) {
+            if (GeoAdmin.webServicesUrl != null) {
+                this.config.printBaseUrl = GeoAdmin.webServicesUrl + '/print';
+            } else {
+                this.config.printBaseUrl = '/print';
+            }
+        }
+
         // in segond pass to avoid that printPanelOptions don't exists
         this.config = Ext.apply({
             enableToggle: this.config.printPanelOptions.renderTo ? true : false
@@ -78,9 +85,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, this.config);
         } 
 
-        if (GeoAdmin.webServicesUrl != null) {
-            this.config.printBaseUrl = GeoAdmin.webServicesUrl + '/print';
-        }
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
                 url: this.config.printBaseUrl
