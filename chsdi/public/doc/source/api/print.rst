@@ -44,30 +44,29 @@ The print widget needs a Map Panel.
 
    <script type="text/javascript">
       function init() {
-         api22 = new GeoAdmin.API();
+           api22 = new GeoAdmin.API();
            api22.createMapPanel({
                height: 350,
                renderTo: "mymap22",
                tbar: new Ext.Toolbar()
            });
            api22.mapPanel.getTopToolbar().add([
-              new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (popup)'),
-                printPanelOptions: {
-                    mapPanel: api22.mapPanel
-                },
-                windowOptions: {
-                    title: OpenLayers.i18n('print map')
-                }
-            }),
-            new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (panel)'),
-                printPanelOptions: {
-                    renderTo: 'myprint22',
-                    mapPanel: api22.mapPanel
-                }
-            })
-
+               api22.createPrint({
+                  text: OpenLayers.i18n('print map (popup)'),
+                   printPanelOptions: {
+                      mapPanel: api22.mapPanel
+                   },
+                   windowOptions: {
+                      title: OpenLayers.i18n('print map')
+                   }
+               }),
+               api22.createPrint({
+                    text: OpenLayers.i18n('print map (panel)'),
+                    printPanelOptions: {
+                       renderTo: 'myprint22',
+                       mapPanel: api22.mapPanel
+                    }
+               })
            ]);
       }
    </script>
@@ -106,38 +105,37 @@ can be printed! In this example, the surface layer is a KML and the point layer 
 
    <script type="text/javascript">
       function init() {
-            api23 = new GeoAdmin.API();
-           
+           api23 = new GeoAdmin.API();
+
            api23.createMapPanel({
                height: 350,
                renderTo: "mymap23",
                tbar: new Ext.Toolbar()
            });
            api23.mapPanel.getTopToolbar().add([
-              new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (popup)'),
-                printPanelOptions: {
-                    mapPanel: api23.mapPanel
-                },
-                windowOptions: {
-                    title: OpenLayers.i18n('print map')
-                }
-            }),
-            new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (panel)'),
-                printPanelOptions: {
-                    renderTo: 'myprint23',
-                    mapPanel: api23.mapPanel
-                }
-            })
-
+              api23.createPrint({
+                  text: OpenLayers.i18n('print map (popup)'),
+                   printPanelOptions: {
+                      mapPanel: api23.mapPanel
+                   },
+                   windowOptions: {
+                      title: OpenLayers.i18n('print map')
+                   }
+               }),
+               api23.createPrint({
+                    text: OpenLayers.i18n('print map (panel)'),
+                    printPanelOptions: {
+                       renderTo: 'myprint23',
+                       mapPanel: api22.mapPanel
+                    }
+               })
            ]);
-           
+
            api23.createKmlLayer(
                 "../../data/bln-style.kml",
                 true
                 );
-                
+
            var restwasser = new OpenLayers.Layer.WMS("Restwasserkarte (BGDI WMS)",
                 "http://wms.geo.admin.ch/", {
                     layers: [
@@ -151,7 +149,6 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                     {singleTile: true}
               );
            api23.map.addLayer(restwasser);
-
       }
    </script>
    <body onload="init();">
@@ -178,23 +175,22 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                tbar: new Ext.Toolbar()
            });
            api22.mapPanel.getTopToolbar().add([
-              new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (popup)'),
-                printPanelOptions: {
-                    mapPanel: api22.mapPanel
-                },
-                windowOptions: {
-                    title: OpenLayers.i18n('print map')
-                }
-            }),
-            new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (panel)'),
-                printPanelOptions: {
-                    renderTo: 'myprint22',
-                    mapPanel: api22.mapPanel
-                }
-            })
-
+               api22.createPrint({
+                  text: OpenLayers.i18n('print map (popup)'),
+                   printPanelOptions: {
+                      mapPanel: api22.mapPanel
+                   },
+                   windowOptions: {
+                      title: OpenLayers.i18n('print map')
+                   }
+               }),
+               api22.createPrint({
+                    text: OpenLayers.i18n('print map (panel)'),
+                    printPanelOptions: {
+                       renderTo: 'myprint22',
+                       mapPanel: api22.mapPanel
+                    }
+               })
            ]);
       
            api23 = new GeoAdmin.API();
@@ -205,23 +201,22 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                tbar: new Ext.Toolbar()
            });
            api23.mapPanel.getTopToolbar().add([
-              new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (popup)'),
-                printPanelOptions: {
-                    mapPanel: api23.mapPanel
-                },
-                windowOptions: {
-                    title: OpenLayers.i18n('print map')
-                }
-            }),
-            new GeoAdmin.Print({
-                text: OpenLayers.i18n('print map (panel)'),
-                printPanelOptions: {
-                    renderTo: 'myprint23',
-                    mapPanel: api23.mapPanel
-                }
-            })
-
+              api23.createPrint({
+                  text: OpenLayers.i18n('print map (popup)'),
+                   printPanelOptions: {
+                      mapPanel: api23.mapPanel
+                   },
+                   windowOptions: {
+                      title: OpenLayers.i18n('print map')
+                   }
+               }),
+               api23.createPrint({
+                    text: OpenLayers.i18n('print map (panel)'),
+                    printPanelOptions: {
+                       renderTo: 'myprint23',
+                       mapPanel: api22.mapPanel
+                    }
+               })
            ]);
            
            api23.createKmlLayer(
