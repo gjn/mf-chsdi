@@ -31,7 +31,7 @@ The print widget needs a Map Panel.
 
    <body>
       <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="myprint22" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
+      <div id="myprint22" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
    </body>
 
 .. raw:: html
@@ -48,9 +48,9 @@ The print widget needs a Map Panel.
            api22.createMapPanel({
                height: 350,
                renderTo: "mymap22",
-               tbar: new Ext.Toolbar()
+               bbar: new Ext.Toolbar()
            });
-           api22.mapPanel.getTopToolbar().add([
+           api22.mapPanel.getBottomToolbar().add([
                api22.createPrint({
                   text: OpenLayers.i18n('print map (popup)'),
                    printPanelOptions: {
@@ -72,7 +72,7 @@ The print widget needs a Map Panel.
    </script>
    <body onload="init();">
       <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="myprint22" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
+      <div id="myprint22" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -91,7 +91,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
 
    <body>
       <div id="mymap23" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="myprint23" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
+      <div id="myprint23" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
    </body>
 
 .. raw:: html
@@ -109,9 +109,9 @@ can be printed! In this example, the surface layer is a KML and the point layer 
            api23.createMapPanel({
                height: 350,
                renderTo: "mymap23",
-               tbar: new Ext.Toolbar()
+               bbar: new Ext.Toolbar()
            });
-           api23.mapPanel.getTopToolbar().add([
+           api23.mapPanel.getBottomToolbar().add([
               api23.createPrint({
                   text: OpenLayers.i18n('print map (popup)'),
                    printPanelOptions: {
@@ -152,7 +152,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
    </script>
    <body onload="init();">
       <div id="mymap23" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="myprint23" style="width: 500px; margin-left: 10px; margin-top: 20px;"></div>
+      <div id="myprint23" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -170,9 +170,9 @@ can be printed! In this example, the surface layer is a KML and the point layer 
            api22.createMapPanel({
                height: 350,
                renderTo: "mymap22",
-               tbar: new Ext.Toolbar()
+               bbar: new Ext.Toolbar()
            });
-           api22.mapPanel.getTopToolbar().add([
+           api22.mapPanel.getBottomToolbar().add([
                api22.createPrint({
                   text: OpenLayers.i18n('print map (popup)'),
                    printPanelOptions: {
@@ -196,9 +196,9 @@ can be printed! In this example, the surface layer is a KML and the point layer 
            api23.createMapPanel({
                height: 350,
                renderTo: "mymap23",
-               tbar: new Ext.Toolbar()
+               bbar: new Ext.Toolbar()
            });
-           api23.mapPanel.getTopToolbar().add([
+           api23.mapPanel.getBottomToolbar().add([
               api23.createPrint({
                   text: OpenLayers.i18n('print map (popup)'),
                    printPanelOptions: {
