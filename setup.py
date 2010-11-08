@@ -14,7 +14,8 @@ setup(
     url = '',
     install_requires = [
         "mapfish", "httplib2",
-        "psycopg2"
+        "psycopg2",
+        "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
     packages = find_packages(exclude=['ez_setup']),
