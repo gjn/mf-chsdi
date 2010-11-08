@@ -10,7 +10,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     'Layer Tree': 'Themen',
     'Map Queries': 'Suchen',
-    'Print': 'Drucken',
+    'print': 'Drucken',
 
     'Background' : 'Hintergrund',
     'Nationales Maps' : 'Karte',

@@ -11,7 +11,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     'Map' : 'Carte',
     'Layer Tree' : 'Arbre des couches',
-    'Print' : 'Impression',
+    'print' : 'Impression',
     'Map Queries': 'Interrogation',
 
     'Background': 'Fonds de carte',

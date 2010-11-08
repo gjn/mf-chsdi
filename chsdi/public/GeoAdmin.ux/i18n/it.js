@@ -11,7 +11,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
     'Layer Tree': 'Temi',
     'Map Queries': 'Ricerca',
-    'Print': 'Stampa',
+    'print': 'Stampa',
 
     'Background' : 'Sfondo',
     'Nationales Maps' : 'Carta',

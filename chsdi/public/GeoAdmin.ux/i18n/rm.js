@@ -9,7 +9,7 @@ OpenLayers.Lang.rm = {
 
     'Layer Tree': 'Temas',
     'Map Queries': 'Tschertgar',
-    'Print': 'Stampar',
+    'print': 'Stampar',
 
     'Background' : 'Fund da la charta',
     'Nationales Maps' : 'Charta',
