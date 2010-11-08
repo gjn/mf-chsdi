@@ -18,8 +18,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         
         for (var k in params) {
             if(params.hasOwnProperty(k)) {
-                if (k === 'X' || k === 'Y') {
-                    map_state[k.toLowerCase()] = parseFloat(params[k]);
+                if (k === 'X') {
+                    // invert x coordinate.
+                    map_state['y'] = parseFloat(params.X);
+                } else if (k === 'Y') {
+                    // invert y coordinate.
+                    map_state['x'] = parseFloat(params.Y);
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
                 } else if (k === 'bgOpacity') {
@@ -77,8 +81,9 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
             params.selectedNode = this.state.catalog.selectede;
         }
         if (this.state.map) {
-            params.X = this.state.map.x;
-            params.Y = this.state.map.y;
+            // invert x and y coordinates.
+            params.Y = this.state.map.x;
+            params.X = this.state.map.y;
             params.zoom = this.state.map.zoom;
             if (this.state.map.complementaryLayer.opacity < 1.0) {
                 params.bgOpacity = this.state.map.complementaryLayer.opacity * 100;
