@@ -4,16 +4,112 @@
  * @requires OpenLayers/Lang/fr.js
  */
 
-OpenLayers.Lang.fr = OpenLayers.Util.applyDefaults({
+OpenLayers.Util.extend(OpenLayers.Lang.fr, {
+    'Overview Map': 'Carte de référence',
+    'Coordinates' : 'Coordonnées',
+    'Coordinates (m): ' : 'Coordonnées (m): ',
 
-    // BaseLayerTool/BaseLayerTool.js
-    'Aerial' : 'Photo aérienne',
+    'Map' : 'Carte',
+    'Layer Tree' : 'Arbre des couches',
+    'Print' : 'Impression',
+    'Map Queries': 'Interrogation',
 
-    // BodSearch/lib/BodSearchComboBox.js
-    'Search data...': 'Recherche données...',
-    'loadingText': 'Recherche données...',
+    'Background': 'Fonds de carte',
+    'Nationales Maps' : 'Carte',
+    'Grays Nationales Maps' : 'Cartes nationales noir/blanc',
+    'Aerial Images' : 'Photo aérienne',
+    'None' : 'Aucun',
+    'Gemeinde' : 'Commune',
+    'Bezirk' : 'District',
+    'Kanton' : 'Canton',
+    'Schweiz' : 'Suisse',
 
-    // Map/lib/Layers.js
+    'Measure' : 'Mesure',
+    'searcher' : '',
+    'Pan' : 'Déplacer la carte',
+
+    'Full extent' : 'Vue générale',
+    'Distance measurement (double-click to terminate)' : 'Mesure de distance (double-cliquer pour terminer)',
+    'Area measurement (double-click to terminate)' : 'Mesure de surface (double-cliquer pour terminer)',
+    'zoomout' : 'Zoom arrière',
+    'zoomin' : 'Zoom avant',
+
+    'Previous view' : 'Retour au cadrage précédent',
+    'Next view' : 'Retour au cadrage suivant',
+    'previous' : 'Retour au cadrage précédent',
+    'next' : 'Retour au cadrage suivant',
+
+    'Locate by coordinates': 'Centrage sur coordonnées',
+    'Locate' : 'Recentrer',
+
+    'Swiss Coordinate': 'CH03',
+    'WGS 84': 'WGS 84',
+    'Position': 'Position',
+    'Layer visibility': 'Visibilité de la couche',
+    'Link with bowl crosshair': 'Lien avec marqueur',
+    'Add KML/GML (Beta)...': 'Ajouter KML/GML (Beta)...',
+    'Import KML': 'Import KML/GML',
+    "KML data sucessfully imported in layer: ": "Données KML importées avec succès dans: ",
+    "Number of imported features: ": "Nombre d'objets importés: ",
+    'Activate dynamic location': 'Activate dynamic location',
+    'Deactivate dynamic location': 'Deactivate dynamic location',
+
+    // recenter services:
+    'Cities': 'Communes',
+    'Zoom to the max extent': 'Voir toute la Suisse',
+    'permalink action': 'Lien',
+    'print action': 'Imprimer',
+    'Search': 'Recherche',
+    'Catalog': 'Catalogue [INSPIRE]',
+    'Layer Selection': 'Sélection de couches',
+    'Warning screen resolution': "Avertissement résolution d'écran",
+    'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': "Votre résolution d'écran est inférieure à 1024x768 pixels. map.geo.admin.ch n'est pas optimisé pour de petites résolutions d'écrans.",
+    'Full map': 'Carte plus grande',
+    'Geo search...': 'Recherche lieu, NPA, coordonnées...',
+    'show column': 'Afficher le gestionaire des couches',
+    'hide column': 'Faire disparaître le gestionnaire de couches',
+    'Map URL': 'Collez le lien suivant dans un e-mail',
+    'URL': 'URL ',
+    'Basisdaten': 'Données de base',
+    'Referenzsysteme': 'Référentiels de coordonnées',
+    'Geografische Gittersysteme':'Systèmes de maillage géographique',
+    'Geografische Namen': 'Dénominations géographiques',
+    'Administrative Einheiten': 'Unités administratives',
+    'Adressen': 'Adresses',
+    'Flurstücke / Grundstücke': 'Parcelles cadastrales',
+    'Oberflächendarstellung': 'Couverture du sol',
+    'Gewässernetz': 'Hydrographie',
+    'Höhe': 'Altitude',
+    'Bodenbedeckung': 'Occupation des terres',
+    'Luft und Satellitenbilder': 'Ortho-imagerie',
+    'Raum und Bevölkerung': 'Territoire et population',
+    'Gesundheit une Sicherheit': 'Santé et sécurité des personnes',
+    'Bevölkerungsdichte': 'Répartition de la population - démographie',
+    'Raumplanung': 'Zones de réglementation et unités de déclaration',
+    'Infrastrucktur une Kommunikation': 'Infrastructure et communication',
+    'Verkehrsnetze': 'Réseaux de transport',
+    'Gebäude': 'Bâtiments',
+    'Öffentliche Einrichtungen und Dienste': 'Services d\'utilité publique et services publics',
+    'Umwelt, Biologie und Geologie': 'Environnement, biologie et géologie',
+    'Schutzgebiete': 'Sites protégés',
+    'Geologie': 'Géologie',
+    'Boden': 'Sols',
+    'Umweltüberwachung': 'Installations de suivi environnemental',
+    'Natürliche Risikozonen': 'Zones à risque naturel',
+    'Atmosphärische Bedingungen': 'Conditions atmosphériques',
+    'Meteorologie': 'Caractéristiques géographiques météorologiques',
+    'Biogeografische Regionen': 'Régions biogéographiques',
+    'Lebensräume une Biotope': 'Habitats et biotopes',
+    'Artenvielfalt': 'Répartition des espèces',
+    'Mineralische Bodenschätze': 'Ressources minérales',
+    'Energie und Wirtschaft': 'Energie et économie',
+    'Statistische Einheiten': 'Unités statistiques',
+    'Landnutzung': 'Usage des sols',
+    'Produktions- und Industrieanlagen': 'Lieux de production et sites industriels',
+    'Land- und Wassertwirtschaft': 'Installations agricoles et aquacoles',
+    'Energiequellen': 'Sources d\'énergie',
+
+    // Layer name
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',
@@ -67,23 +163,58 @@ OpenLayers.Lang.fr = OpenLayers.Util.applyDefaults({
     'ch.swisstopo.vec25-gwn-gewassernetz':'Réseau hydrographique VECTOR25',
     'ch.swisstopo.vec25-gebaeude':'Bâtiments VECTOR25',
     'ch.swisstopo.vec25-eisenbahnnetz':'Réseau ferroviaire VECTOR25',
+    'ch.swisstopo.vec25-wander':'Chemins de randonnée VECTOR25',
+    'ch.swisstopo.geologie-geophysik-totalintensitaet': 'Intensité champ magnétique CH',
+    'ch.swisstopo.geologie-geophysik-inklination': 'Inclinaison CH',
+    'ch.swisstopo.geologie-geophysik-deklination': 'Déclinaison CH',
+    'ch.swisstopo.geologie-geodaesie-bouguer_anomalien': 'Anomalies de Bouguer CH',
+    'ch.swisstopo.geologie-geodaesie-isostatische_anomalien': 'Anomalies isostatiques CH',
+    'ch.swisstopo.geologie-geophysik-geothermie': 'Géothermie CH',
+    'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz': 'Aéromagnétique CH',
+
+    // Datenherr
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
-    'ch.swisstopo.swissimage': 'Photo aérienne',
-    'ch.swisstopo.pixelkarte-farbe': 'Carte couleur',
-    'ch.swisstopo.pixelkarte-grau': 'Carte noir & blanc',
+
+    // layer tree
+    'show layer options': 'Afficher les options de la couche',
+    'hide layer options': 'Masquer les options de la couche',
+    'Opacity:': 'Opacité  :',
+    'about that layer': 'Informations sur la couche',
+    'move layer up': 'Modifier l\'ordre des couches',
+    'move layer down': 'Modifier l\'ordre des couches',
+    'remove layer': 'Supprimer la couche',
+
+    // Tooltip
+    'Feature tooltip': 'Information sur l\'objet',
+
+    // background layer switcher
+    'pixelmaps-color': 'Cartes couleurs',
+    'pixelmaps-gray': 'Cartes noir & blanc',
     'voidLayer': 'Fond blanc',
-    'ch.swisstopo.swissimage_attribution': 'Photo aérienne: swisstopo',
-    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carte couleur: swisstopo',
-    'ch.swisstopo.pixelkarte-grau_attribution': 'Carte noir & blanc: swisstopo',
+
+    // Attribution / copyright
+    'aerial attribution': 'Photo aérienne: swisstopo',
+    'pixelmap-color attribution': 'Carte nationale: swisstopo',
+    'pixelmap-gray attribution': 'Carte nationale N&B: swisstopo',
+    'loadingText'       : "En cours de chargement...",
 
 
-    // Map/lib/Map.js
-    'Zoom to the max extent': 'Voir toute la Suisse',
-    'Coordinates (m): ' : 'Coordonnées (m): ',
+    'Search data...': 'Recherche données...',
+    'Warning Internet Explorer 6': 'Mise en garde Internet Explorer 6',
+    'You are using Internet Explorer 6.': 'Vous utilisez Internet Explorer 6.',
+    'We recommend to upgrade to a newer release.': "Nous recommandons d'utiliser une version plus récente.",
+    'You can add only 5 layers in the layer tree.': 'Vous ne pouvez ajouter que 5 couches dans l\'arbre des couches.',
 
-    // SwissSearch/lib/SwissSearchComboBox.js
-    'Geo search...': 'Recherche lieu, NPA, coordonnées...'
+    // Feedback
+    'Your email (optional)': 'Votre email (optionnel)',
+    'Your feedback about current map extent': 'Votre description du problème concernant la carte',
+    'Cancel': 'Annuler',
+    'Send feedback': 'Annoncer le problème',
+    'Report': 'Annonce de problème',
+    'Sending feedback....': 'Envoi du rapport....',
+    'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
+    'Please fill the feedback': 'Merci de remplir la description'
 
-}, OpenLayers.Lang.fr);
+});

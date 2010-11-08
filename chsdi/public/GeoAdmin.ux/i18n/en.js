@@ -4,16 +4,110 @@
  * @requires OpenLayers/Lang/en.js
  */
 
-OpenLayers.Lang.en = OpenLayers.Util.applyDefaults({
+OpenLayers.Util.extend(OpenLayers.Lang.en, {
+    'Overview Map': 'Overview map',
+    'Coordinates (m): ' : 'Coordinates (m): ',
 
-    // BaseLayerTool/BaseLayerTool.js
-    'Aerial' : 'Aerial imagery',
+    'Layer Tree': 'Topics',
+    'Map Queries': 'Search',
+    'Print': 'Print',
 
-    // BodSearch/lib/BodSearchComboBox.js
-    'Search data...': 'Search data [DE] ...',
-    'loadingText': 'Data loading...',
+    'Background' : 'Background',
+    'Nationales Maps' : 'Pixelmaps',
+    'Aerial Images' : 'Aerial imagery',
+    'None' : 'None',
+    'Gemeinde' : 'City',
+    'Bezirk' : 'District',
+    'Kanton' : 'Canton',
+    'Schweiz' : 'Switzerland',
 
-    // Map/lib/Layers.js
+    'Measure' : 'Measure',
+    'Pan' : 'Pan',
+    'Full extent' : 'Full map extent',
+
+    'Distance measurement (double-click to terminate)' : 'Distance measurement (double-click to terminate)',
+    'Area measurement (double-click to terminate)' : 'Area measurement (double-click to terminate)',
+    'zoomin' : 'Zoom in',
+    'zoomout' : 'Zoom out',
+    'Next view' : 'Next',
+    'Previous view' : 'back',
+    'next' : 'Next',
+    'previous' : 'Back',
+    'Save context' : 'Save context',
+
+    'Locate by coordinates': 'Locate by coordinates',
+    'Locate' : 'Locate',
+
+    'Swiss Coordinate': 'CH03',
+    'WGS 84': 'WGS 84',
+    'Position': 'Position',
+    'Layer visibility': 'Layer visibility',
+    'Link with bowl crosshair': 'Link with bowl crosshair',
+    'Add KML/GML (Beta)...': 'Add KML/GML (Beta)...',
+    'Import KML': 'KML/GML Import',
+    "KML data sucessfully imported in layer: ": "KML data sucessfully imported in layer: ",
+    "Number of imported features: ": "Number of imported features: ",
+    'Activate dynamic location': 'Activate dynamic location',
+    'Deactivate dynamic location': 'Deactivate dynamic location',
+
+    // recenter services:
+    'Swissnames': '',
+    'Cantons': 'Canton',
+    'Cities': 'Cities',
+    'Zoom to the max extent': 'Full switzerland',
+    'permalink action': 'Link',
+    'print action': 'Print',
+    'Search': 'Search',
+    'Catalog': 'Catalog [INSPIRE]',
+    'Layer Selection': 'Selection',
+    'Warning screen resolution': 'Screen resolution warning',
+    'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': 'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optimized for small screen resolution',
+    'Full map': 'Enlarged map',
+    'Geo search...': 'Search location, zip, coordinate ...',
+    'show column': 'Open Topics',
+    'hide column': 'Close Topics',
+    'Map URL': 'Embed link below in e-mail',
+    'URL': 'URL',
+    'Basisdaten': 'Base data',
+    'Referenzsysteme': 'Coordinate reference systems',
+    'Geografische Gittersysteme':'Geographical grid systems',
+    'Geografische Namen': 'Geographical names',
+    'Administrative Einheiten': 'Administrative units',
+    'Adressen': 'Addresses',
+    'Flurstücke / Grundstücke': 'Cadastral parcels',
+    'Oberflächendarstellung': 'Surface representation',
+    'Gewässernetz': 'Hydrography',
+    'Höhe': 'Elevation',
+    'Bodenbedeckung': 'Land cover',
+    'Luft und Satellitenbilder': 'Orthoimagery',
+    'Raum und Bevölkerung': 'Raum und Bevölkerung',
+    'Gesundheit une Sicherheit': 'Human health and safety',
+    'Bevölkerungsdichte': 'Population distribution - demography',
+    'Raumplanung': 'Geregelte Gebiete und Berichterstattungseinheiten',
+    'Infrastrucktur une Kommunikation': 'Infrastructure and communication',
+    'Verkehrsnetze': 'Transport networks',
+    'Gebäude': 'Buildings',
+    'Öffentliche Einrichtungen und Dienste': 'Utility and governmental services',
+    'Umwelt, Biologie und Geologie': 'Environment, Biology and Geology',
+    'Schutzgebiete': 'Protected sites',
+    'Geologie': 'Geology',
+    'Boden': 'Soils',
+    'Umweltüberwachung': 'Environmental monitoring facilities',
+    'Natürliche Risikozonen': 'Natural risk zones',
+    'Atmosphärische Bedingungen': 'Atmospheric conditions',
+    'Meteorologie': 'Meteorological geographical features',
+    'Biogeografische Regionen': 'Bio-geographical regions',
+    'Lebensräume une Biotope': 'Habitats and biotopes',
+    'Artenvielfalt': 'Species distribution',
+    'Mineralische Bodenschätze': 'Mineral resources',
+    'Energie und Wirtschaft': 'Energy and economy',
+    'Statistische Einheiten': 'Statistical units',
+    'Landnutzung': 'Land use',
+    'Produktions- und Industrieanlagen': 'Production and industrial facilities',
+    'Land- und Wassertwirtschaft': 'Agricultural and aquaculture facilities',
+    'Energiequellen': 'Energy resources',
+
+    // Layer name
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
     'ch.swisstopo.fixpunkte-hoehe': 'Höhenfixpunkte',
@@ -67,22 +161,57 @@ OpenLayers.Lang.en = OpenLayers.Util.applyDefaults({
     'ch.swisstopo.vec25-gwn-gewassernetz':'Gewässernetz VECTOR25',
     'ch.swisstopo.vec25-gebaeude':'Gebäude VECTOR25',
     'ch.swisstopo.vec25-eisenbahnnetz':'Eisenbahnnetz VECTOR25',
+    'ch.swisstopo.vec25-wander': 'Wanderwege VECTOR25',
+    'ch.swisstopo.geologie-geophysik-totalintensitaet': 'Magnetfeldstärke CH',
+    'ch.swisstopo.geologie-geophysik-inklination': 'Inklination CH',
+    'ch.swisstopo.geologie-geophysik-deklination': 'Deklination CH',
+    'ch.swisstopo.geologie-geodaesie-bouguer_anomalien': 'Bouguer-Anomalien CH',
+    'ch.swisstopo.geologie-geodaesie-isostatische_anomalien': 'Isostatische Anomalien CH',
+    'ch.swisstopo.geologie-geophysik-geothermie': 'Geothermie CH',
+    'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz': 'Aeromagnetik CH',
+
+
+    // Datenherr
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
-    'ch.swisstopo.swissimage': 'Aerial imagery',
-    'ch.swisstopo.pixelkarte-farbe': 'Color map',
-    'ch.swisstopo.pixelkarte-grau': 'Grey map',
+
+    // layertree
+    'show layer options': 'Show layer options',
+    'hide layer options': 'Hide layer options',
+    'Opacity:': 'Opacity:',
+    'about that layer': 'Information about this layer',
+    'move layer up': 'Move layer up',
+    'move layer down': 'Move layer down',
+    'remove layer': 'Remove layer',
+
+    // Tooltip
+    'Feature tooltip': 'Object information',
+
+    // background layer switcher
+    'pixelmaps-color': 'Color map',
+    'pixelmaps-gray': 'Grey map',
     'voidLayer': 'White background',
-    'ch.swisstopo.swissimage_attribution': 'Aerial imagery: swisstopo',
-    'ch.swisstopo.pixelkarte-farbe_attribution': 'Color map: swisstopo',
-    'ch.swisstopo.pixelkarte-grau_attribution': 'Grey map: swisstopo',
 
-    // Map/lib/Map.js
-    'Zoom to the max extent': 'Full switzerland',
-    'Coordinates (m): ' : 'Coordinates (m): ',
+    // Attribution / copyright
+    'aerial attribution': 'Aerial imagery: swisstopo',
+    'pixelmap-color attribution': 'National map: swisstopo',
+    'pixelmap-gray attribution': 'National map grey: swisstopo',
+    'loadingText'       : "Data loading ...",
 
-    // SwissSearch/lib/SwissSearchComboBox.js
-    'Geo search...': 'Recherche lieu, NPA, coordonnées...'
+    'Search data...': 'Search data [in German] ...',
+    'Warning Internet Explorer 6': 'Warning Internet Explorer 6',
+    'You are using Internet Explorer 6.': 'Are you crazy ? You are using Internet Explorer 6.',
+    'We recommend to upgrade to a newer release.': 'We recommend to update to a newer release.',
+    'You can add only 5 layers in the layer tree.': 'You can add only 5 layers in the layer tree.',
 
-}, OpenLayers.Lang.en);
+    // Feedback
+    'Your email (optional)': 'Your email (optional)',
+    'Your feedback about current map extent': 'Your report about current map extent',
+    'Cancel': 'Cancel',
+    'Send feedback': 'Send report',
+    'Report': 'Report',
+    'Sending feedback....': 'Sending report....',
+    'Thanks a lot for your feedback !': "Thanks a lot for your report !",
+    'Please fill the feedback': 'Please fill the report'
+});
