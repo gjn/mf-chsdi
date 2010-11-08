@@ -78,7 +78,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         var params = {};
 
         if (this.state.catalog && this.state.catalog.selected) {
-            params.selectedNode = this.state.catalog.selectede;
+            params.selectedNode = this.state.catalog.selected;
         }
         if (this.state.map) {
             // invert x and y coordinates.
