@@ -32,8 +32,8 @@
  *
  *  :param div:    ``String`` The element where the map will be rendered (or the id for that element).
  *  :param config: ``Object`` options (optional).
- *  
- *  
+ *
+ *
  *  Valid properties for the options argument:
  *   * ``scale`` - ``Number`` : scaledenom of the map, e.g. 500000
  *   * ``doZoomToMaxExtent`` - ``Boolean``: zoom to the maximal extent of the map
@@ -107,15 +107,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
 
         OpenLayers.Util.applyDefaults(options, {
-            maxExtent: new OpenLayers.Bounds(420000,30000,900000,350000),
+            maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
             resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
             layers: [this.aerial, this.vector]
         });
 
         this.EVENT_TYPES =
-            GeoAdmin.Map.prototype.EVENT_TYPES.concat(
-            OpenLayers.Map.prototype.EVENT_TYPES
-        );
+                GeoAdmin.Map.prototype.EVENT_TYPES.concat(
+                        OpenLayers.Map.prototype.EVENT_TYPES
+                        );
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -132,10 +132,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[attribution]
-      * :return: ``String`` - List with data owner of layers displayed in the map.
-      *
-      * Return the layers attribution
-      */
+     * :return: ``String`` - List with data owner of layers displayed in the map.
+     *
+     * Return the layers attribution
+     */
     attribution: function() {
         return this.attributionCtrl.div.innerHTML;
     },
@@ -231,7 +231,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     setLayerZIndex: function(layer, zIdx) {
         var baseZIndex = layer.layername && GeoAdmin.layers.layers[layer.layername].isBgLayer
-                         ? 100 : 150;
+                ? 100 : 150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },
 
@@ -268,7 +268,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
 
         OpenLayers.Map.prototype.setLayerIndex.apply(this, [layer, idx]);
-    }, 
+    },
 
     /*
      * manage the base layer (aerial) opacity.
@@ -299,6 +299,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {
                 if (this.layers[i].layername === layer.layername) {
+                    if (options) {
+                        this.layers[i].setVisibility(options.visibility);
+                    }
                     return null;
                 }
             }
@@ -376,7 +379,7 @@ GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
             this.center = new OpenLayers.LonLat(state.x, state.y);
             this.zoom = state.zoom;
         }
-        
+
         this.map.applyState(state);
     }
 });
