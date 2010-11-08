@@ -74,7 +74,7 @@ OpenLayers.Lang.rm = {
     'Gesundheit une Sicherheit': 'Segirezza e sanadad',
     'Bevölkerungsdichte': 'Repartiziun da la populaziun - demografia',
     'Raumplanung': 'Secturs reglads ed unitads da rapport',
-    'Infrastrucktur und Kommunikation': 'Infrastructura e communicaziun',
+    'Infrastruktur und Kommunikation': 'Infrastructura e communicaziun',
     'Verkehrsnetze': 'Raits da traffic',
     'Gebäude': 'Edifizis',
     'Öffentliche Einrichtungen und Dienste': 'Economia da provediment e servetschs statals',

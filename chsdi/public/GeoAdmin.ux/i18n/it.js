@@ -77,7 +77,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Gesundheit une Sicherheit': 'Salute umana e sicurezza',
     'Bevölkerungsdichte': 'Distribuzione della popolazione - demografia',
     'Raumplanung': 'Zone sottoposte a gestione/limitazioni/regolamentazione e unità con obbligo di comunicare dati',
-    'Infrastrucktur und Kommunikation': 'Infrastrutture e comunicazione',
+    'Infrastruktur und Kommunikation': 'Infrastrutture e comunicazione',
     'Verkehrsnetze': 'Reti di trasporto',
     'Gebäude': 'Edifici',
     'Öffentliche Einrichtungen und Dienste': 'Servizi di pubblica utilità e servizi amministrativi',
