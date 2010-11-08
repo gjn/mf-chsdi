@@ -1,10 +1,10 @@
 /*global OpenLayers:true*/
 
 /**
- * @requires OpenLayers/Lang/de.js
+ * @requires mfbase/mapfish/lang/de.js
  */
 
-OpenLayers.Util.extend(OpenLayers.Lang.de, {
+OpenLayers.Util.extend(OpenLayers.Lang.de, { 
     'Overview Map': 'Übersichtskarte',
     'Coordinates (m): ' : 'Koordinaten (m): ',
 
@@ -132,7 +132,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.ren-fliessgewaesser_seen': 'REN  Fliessgewässer / Seen',
     'ch.bafu.ren-trockenstandorte': 'REN  Trockenstandort',
     'ch.bafu.ren-wald_ueber_1000_meter': 'REN  Wald>1000m',
-    'ch.bafu.ren-wald_unter_1000_meter': 'REN  Wald<1000m',
+    'ch.bafu.ren-wald_unter_1000_meter': 'REN  Wald<1000m',    
     'ch.bafu.hydrologie-hydromessstationen': 'Hydrologische Messstationen',
     'ch.bafu.bundesinventare-auen': 'Auengebiete',
     'ch.bafu.bundesinventare-bln': 'BLN Inventar',
@@ -169,7 +169,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-geodaesie-isostatische_anomalien': 'Isostatische Anomalien CH',
     'ch.swisstopo.geologie-geophysik-geothermie': 'Geothermie CH',
     'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz': 'Aeromagnetik CH',
-
+    
 
     // Datenherr
     'ch.swisstopo': 'swisstopo',

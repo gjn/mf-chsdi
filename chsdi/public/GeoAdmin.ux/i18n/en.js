@@ -1,7 +1,7 @@
 /*global OpenLayers:true*/
 
 /**
- * @requires OpenLayers/Lang/en.js
+ * @requires mfbase/mapfish/lang/en.js
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.en, {
@@ -49,7 +49,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     "Number of imported features: ": "Number of imported features: ",
     'Activate dynamic location': 'Activate dynamic location',
     'Deactivate dynamic location': 'Deactivate dynamic location',
-
+    
     // recenter services:
     'Swissnames': '',
     'Cantons': 'Canton',
