@@ -8,11 +8,6 @@
  */
 GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
 
-    /*
-     * GeoAdmin.Map
-     */
-    map: null,
-
     initialize: function(options) {
         OpenLayers.Control.Navigation.prototype.initialize.apply(this, arguments);
         this.map.addControl(this);
@@ -33,7 +28,7 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
             var content = "<table style='font-size: 12px;'><tr><td width=\"150\">" + OpenLayers.i18n('Swiss Coordinate') + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
             lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
             content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
-            content = content + "<tr><td><img src='gfx/ch_bowl.png' width='16px' height='16px'></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr></table>";
+            content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr></table>";
 
             var popup = new GeoExt.Popup({
                 cls: 'positionPopup',
