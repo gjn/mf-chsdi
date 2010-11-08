@@ -1,7 +1,7 @@
 /*global OpenLayers:true*/
 
 /**
- * @requires mfbase/mapfish/lang/de.js
+ * @requires OpenLayers/Lang/de.js
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.de, { 

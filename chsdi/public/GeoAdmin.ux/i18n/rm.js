@@ -3,7 +3,7 @@
 /**
  */
 
-OpenLayers.Util.extend(OpenLayers.Lang.fi, { 
+OpenLayers.Lang.rm = { 
     'Overview Map': 'Charta da survista',
     'Coordinates (m): ' : 'Coordinatas (m): ',
 
@@ -213,4 +213,4 @@ OpenLayers.Util.extend(OpenLayers.Lang.fi, {
     'mf.print.print': 'Stampar',
     'mf.print.scale': 'Scala'
 
-});
+};
