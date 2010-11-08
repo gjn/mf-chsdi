@@ -51,9 +51,13 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                             opacity: parseFloat(params.layers_opacity[i])
                         });
                     }
+                } else if (k == 'crosshair') {
+                    map_state.crosshair = {
+                        type: params.crosshair
+                    };
                 } else if (k == 'selectedNode') {
                     catalog_state.selected = params.selectedNode;
-                } else if (k !== 'lang' && k !== 'noHeader' && k !== 'crosshair' &&
+                } else if (k !== 'lang' && k !== 'noHeader' &&
                            k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
                     map_state.layers.push({

@@ -198,6 +198,18 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 });
             }
         }
+
+        // show crossair
+        if (state.crosshair) {
+            var g = new OpenLayers.Geometry.Point(state.x, state.y);
+            
+            this.vector.addFeatures(new OpenLayers.Feature.Vector(g, {}, {
+                externalGraphic: OpenLayers.ImgPath + 'ch_' + state.crosshair.type + '.png',
+                graphicWidth: 16,
+                graphicHeight: 16
+            }));
+        }
+
         // recenter to feature
         if (state.recenter) {
             var f = new GeoAdmin.Features({map: this});
