@@ -14,7 +14,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     'Background' : 'Hintergrund',
     'Nationales Maps' : 'Karte',
-    'Aerial Images' : 'Luftbild',
+    'Aerial' : 'Luftbild',
     'None' : 'Keine',
     'Gemeinde' : 'Gemeinde',
     'Bezirk' : 'Bezirk',
@@ -189,8 +189,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Feature tooltip': 'Objektinformation',
 
     // background layer switcher
-    'pixelmaps-color': 'Karte farbig',
-    'pixelmaps-gray': 'Karte SW',
+    'ch.swisstopo.pixelkarte-farbe': 'Karte farbig',
+    'ch.swisstopo.pixelkarte-grau': 'Karte SW',
     'voidLayer': 'kein Hintergrund',
 
     // Attribution / copyright

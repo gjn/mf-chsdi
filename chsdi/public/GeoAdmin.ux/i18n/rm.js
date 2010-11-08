@@ -10,7 +10,7 @@ OpenLayers.Lang.rm = {
 
     'Background' : 'Fund da la charta',
     'Nationales Maps' : 'Charta',
-    'Aerial Images' : "Fotografia or da l'aria",
+    'Aerial' : "Fotografia or da l'aria",
     'None' : 'Nagina',
     'Gemeinde' : 'Vischnanca',
     'Bezirk' : 'District',
@@ -178,8 +178,8 @@ OpenLayers.Lang.rm = {
     'Feature tooltip': 'Infurmaziuns davart ils objects',
 
     // background layer switcher
-    'pixelmaps-color': 'Charta en colur',
-    'pixelmaps-gray': 'Charta en alv e nair',
+    'ch.swisstopo.pixelkarte-farbe': 'Charta en colur',
+    'ch.swisstopo.pixelkarte-grau': 'Charta en alv e nair',
     'voidLayer': 'Nagina charta',
 
     // Attribution / copyright

@@ -17,7 +17,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Background': 'Fonds de carte',
     'Nationales Maps' : 'Carte',
     'Grays Nationales Maps' : 'Cartes nationales noir/blanc',
-    'Aerial Images' : 'Photo aérienne',
+    'Aerial' : 'Photo aérienne',
     'None' : 'Aucun',
     'Gemeinde' : 'Commune',
     'Bezirk' : 'District',
@@ -190,8 +190,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Feature tooltip': 'Information sur l\'objet',
 
     // background layer switcher
-    'pixelmaps-color': 'Cartes couleurs',
-    'pixelmaps-gray': 'Cartes noir & blanc',
+    'ch.swisstopo.pixelkarte-farbe': 'Cartes couleurs',
+    'ch.swisstopo.pixelkarte-grau': 'Cartes noir & blanc',
     'voidLayer': 'Fond blanc',
 
     // Attribution / copyright
