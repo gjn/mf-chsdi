@@ -19,7 +19,9 @@
 	right: 0;
 	background-color: transparent;
 }
-.print-panel .x-toolbar .x-btn-tl, .print-panel .x-toolbar .x-btn-tr, .print-panel .x-toolbar .x-btn-tc, .print-panel .x-toolbar .x-btn-ml, .print-panel .x-toolbar .x-btn-mr, .print-panel .x-toolbar .x-btn-mc, .print-panel .x-toolbar .x-btn-bl, .print-panel .x-toolbar .x-btn-br, .print-panel .x-toolbar .x-btn-bc {
+.print-panel .x-toolbar .x-btn-tl, .print-panel .x-toolbar .x-btn-tr, .print-panel .x-toolbar .x-btn-tc, 
+.print-panel .x-toolbar .x-btn-ml, .print-panel .x-toolbar .x-btn-mr, .print-panel .x-toolbar .x-btn-mc, 
+.print-panel .x-toolbar .x-btn-bl, .print-panel .x-toolbar .x-btn-br, .print-panel .x-toolbar .x-btn-bc {
     background: none;
 }
 .print-panel .x-panel-header {
