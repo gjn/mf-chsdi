@@ -19,7 +19,6 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
     map: null,
 
     // default settings
-    title: OpenLayers.i18n("Layer Selection"),
     rootVisible: false,
     autoScroll: true,
     containerScroll: true,
@@ -33,6 +32,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
     /**
      */
     initComponent: function() {
+        this.title = OpenLayers.i18n("Layer Selection");
 
         // the layer node UI class - a GeoExt LayerNodeUI with
         // actions and component
