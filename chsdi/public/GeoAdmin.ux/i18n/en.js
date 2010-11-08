@@ -84,7 +84,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Gesundheit une Sicherheit': 'Human health and safety',
     'Bevölkerungsdichte': 'Population distribution - demography',
     'Raumplanung': 'Geregelte Gebiete und Berichterstattungseinheiten',
-    'Infrastrucktur une Kommunikation': 'Infrastructure and communication',
+    'Infrastrucktur und Kommunikation': 'Infrastructure and communication',
     'Verkehrsnetze': 'Transport networks',
     'Gebäude': 'Buildings',
     'Öffentliche Einrichtungen und Dienste': 'Utility and governmental services',

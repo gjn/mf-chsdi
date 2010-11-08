@@ -84,7 +84,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Gesundheit une Sicherheit': 'Gesundheit und Sicherheit',
     'Bevölkerungsdichte': 'Verteilung der Bevölkerung - Demografie',
     'Raumplanung': 'Geregelte Gebiete und Berichterstattungseinheiten',
-    'Infrastrucktur une Kommunikation': 'Infrastruktur und Kommunikation',
+    'Infrastrucktur und Kommunikation': 'Infrastruktur und Kommunikation',
     'Verkehrsnetze': 'Verkehrsnetze',
     'Gebäude': 'Gebäude',
     'Öffentliche Einrichtungen und Dienste': 'Versorgungswirtschaft und staatliche Dienste',
