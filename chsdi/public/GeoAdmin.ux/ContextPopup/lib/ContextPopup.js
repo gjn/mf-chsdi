@@ -20,10 +20,8 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
         this.handlers.click.callbacks.rightclick = function() {
             var lonlatCH = this.map.getLonLatFromViewPortPx(this.handlers.click.evt.xy);
             var lonlat = lonlatCH.clone();
-            console.log(lonlat);
 
             var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
-            console.log(paramsObject);
             paramsObject.Y = lonlat.lon;
             paramsObject.X = lonlat.lat;
             if (!paramsObject.zoom) {
