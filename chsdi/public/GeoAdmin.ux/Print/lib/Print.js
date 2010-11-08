@@ -104,12 +104,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
-
-        // sbrunner: remove it because it make a print bounds flash, call init from pHandler
-//        this.printProvider.on({
-//            "loadcapabilities": this.initPanel,
-//            scope: this
-//        });
+        this.printProvider.on({
+            "loadcapabilities": function() { this.capabilitiesLoaded = true },
+            scope: this
+        });
 
         arguments.callee.superclass.constructor.call(this, this.config);
     },
@@ -140,7 +138,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
-		this.printPanel.hideExtent();
+        this.printPanel.hideExtent();
 //        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
 //        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
     
@@ -168,6 +166,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Displays/hides the print form
      */
     pHandler: function() {
+        if (!this.capabilitiesLoaded) {
+            // TODO add an alert message ?
+            return;
+        }
         if (!this.printPanel) {
             this.initPanel();
         }
