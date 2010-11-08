@@ -195,9 +195,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'voidLayer': 'Fond blanc',
 
     // Attribution / copyright
-    'aerial attribution': 'Photo aérienne: swisstopo',
-    'pixelmap-color attribution': 'Carte nationale: swisstopo',
-    'pixelmap-gray attribution': 'Carte nationale N&B: swisstopo',
+    'ch.swisstopo.swissimage_attribution': 'Photo aérienne: swisstopo',
+    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carte nationale: swisstopo',
+    'ch.swisstopo.pixelkarte-grau_attribution': 'Carte nationale N&B: swisstopo',
     'loadingText'       : "En cours de chargement...",
 
 

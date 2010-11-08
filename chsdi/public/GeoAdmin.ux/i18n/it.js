@@ -187,9 +187,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'voidLayer': 'Nessuna carta',
 
     // Attribution / copyright
-    'aerial attribution': 'Veduta aerea:swisstopo ',
-    'pixelmap-color attribution': 'Carta nazionale: swisstopo',
-    'pixelmap-gray attribution': 'Carta nazionale B/N: swisstopo',
+    'ch.swisstopo.swissimage_attribution': 'Veduta aerea:swisstopo ',
+    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carta nazionale: swisstopo',
+    'ch.swisstopo.pixelkarte-grau_attribution': 'Carta nazionale B/N: swisstopo',
     'loadingText'       : "Caricamento in atto ...",
 
     'Search data...': 'Ricerca di dati [in francese] ...',

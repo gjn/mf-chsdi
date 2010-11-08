@@ -183,9 +183,9 @@ OpenLayers.Lang.rm = {
     'voidLayer': 'Nagina charta',
 
     // Attribution / copyright
-    'aerial attribution': "Fotografia or da l'aria: swisstopo",
-    'pixelmap-color attribution': 'Charta naziunala: swisstopo',
-    'pixelmap-gray attribution': 'Charta naziunala A&N: swisstopo',
+    'ch.swisstopo.swissimage_attribution': "Fotografia or da l'aria: swisstopo",
+    'ch.swisstopo.pixelkarte-farbe_attribution': 'Charta naziunala: swisstopo',
+    'ch.swisstopo.pixelkarte-grau_attribution': 'Charta naziunala A&N: swisstopo',
     'loadingText'       : "Chargiar datas ...",
 
     'Search data...': 'Tschertgar datas [en tudestg] ...',

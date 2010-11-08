@@ -194,9 +194,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'voidLayer': 'White background',
 
     // Attribution / copyright
-    'aerial attribution': 'Aerial imagery: swisstopo',
-    'pixelmap-color attribution': 'National map: swisstopo',
-    'pixelmap-gray attribution': 'National map grey: swisstopo',
+    'ch.swisstopo.swissimage_attribution': 'Aerial imagery: swisstopo',
+    'ch.swisstopo.pixelkarte-farbe_attribution': 'National map: swisstopo',
+    'ch.swisstopo.pixelkarte-grau_attribution': 'National map grey: swisstopo',
     'loadingText'       : "Data loading ...",
 
     'Search data...': 'Search data [in German] ...',
