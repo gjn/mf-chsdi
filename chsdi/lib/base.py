@@ -16,8 +16,12 @@ from chsdi.model import meta
 class BaseController(WSGIController):
     def __before__(self):
         self.lang = request.params.get('lang', 'de')
+        if self.lang == 'rm':
+            set_lang('fi', fallback=True)
+        else:
+           set_lang(self.lang, fallback=True)
+
         c.lang = self.lang
-        set_lang(self.lang)
         
     def __call__(self, environ, start_response):
         """Invoke the Controller"""
