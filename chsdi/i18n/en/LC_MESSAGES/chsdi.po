@@ -17,6 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "help title"
+msgstr "Help"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/commons/help/viewer_help.html"
+
+msgid "contact title"
+msgstr "Contact"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Copyright & Data protection"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright"
+
+msgid "federal administration"
+msgstr "The Federal Authorities of the Swiss Confederation"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=en"
+
+msgid "home title"
+msgstr "Homepage"
+
+msgid "blind warning"
+msgstr "This page is a geographic application and is not optimized for blind persons."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch is loading..."
+
 msgid "hide column"
 msgstr "Hide layer manager"
 
@@ -75,7 +111,7 @@ msgid "objektname"
 msgstr "Object name"
 
 msgid "laenge_m"
-msgstr "Länge [m]"
+msgstr "LÃ¤nge [m]"
 
 msgid "flaeche_ha"
 msgstr "Area [ha]"
@@ -194,8 +230,21 @@ msgstr "State"
 msgid "zugang"
 msgstr "Access"
 
+msgid "rss url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/current.enhRSS.html"
+
+msgid "rss title"
+msgstr "RSS"
+
+msgid "twitter url"
+msgstr "http://www.twitter.com/swiss_geoportal"
+
+msgid "twitter title"
+msgstr "Twitter"
+
 msgid "report problem"
 msgstr "Report problem"
 
 msgid  "tilenumber"
 msgstr "Map sheet"
+

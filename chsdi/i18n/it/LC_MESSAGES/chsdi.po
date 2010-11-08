@@ -17,6 +17,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "help title"
+msgstr "Aiuto"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/commons/help/viewer_help.html"
+
+msgid "contact title"
+msgstr "Contatto"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Copyright e  dicariazione della protezione dei diritti dâ€™autore"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"
+
+msgid "federal administration"
+msgstr "Amministrazione federale admin.ch"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=it"
+
+msgid "home title"
+msgstr "Pagina iniziale"
+
+msgid "blind warning"
+msgstr "Questa pagina Web Ã¨ una  applicazione geografica, purtroppo non Ã¨ ottimizata per le persone videolese."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch viene caricata"
+
+msgid "hide column"
+msgstr "Chiudere la barra dei temi"
+
 msgid "Legend"
 msgstr "Leggenda"
 
@@ -63,7 +102,7 @@ msgid "wms_resource_text"
 msgstr "Link verso WMS"
 
 msgid "Link to object"
-msgstr "Link verso l’oggetto"
+msgstr "Link verso lâ€™oggetto"
 
 msgid "name"
 msgstr "Nom"
@@ -84,16 +123,16 @@ msgid "flaeche_km2"
 msgstr "Surface [km2]"
 
 msgid "perimeter_m"
-msgstr "Perimètre [m]"
+msgstr "PerimÃ¨tre [m]"
 
 msgid "objektnr"
-msgstr "Numéro de l'objet"
+msgstr "NumÃ©ro de l'objet"
 
 msgid "identificator"
 msgstr "Identifiant"
 
 msgid "gmde"
-msgstr "Numéro de commune OFS (état 2006)"
+msgstr "NumÃ©ro de commune OFS (Ã©tat 2006)"
 
 msgid "construct"
 msgstr "Ouvrage d'art"
@@ -102,43 +141,43 @@ msgid "typ"
 msgstr "Type"
 
 msgid "toll"
-msgstr "Péage"
+msgstr "PÃ©age"
 
 msgid "fj85"
-msgstr "Vue aérienne pour la statistique de la superficie 1979/85 prise en"
+msgstr "Vue aÃ©rienne pour la statistique de la superficie 1979/85 prise en"
 
 msgid "fj97"
-msgstr "Vue aérienne pour la statistique de la superficie 1992/97 prise en"
+msgstr "Vue aÃ©rienne pour la statistique de la superficie 1992/97 prise en"
 
 msgid "id_arealstatistik_85"
-msgstr "Catégorie de base de la statistique de la superficie 1979/85"
+msgstr "CatÃ©gorie de base de la statistique de la superficie 1979/85"
 
 msgid "id_arealstatistik_97"
-msgstr "Catégorie de base de la statistique de la superficie 1992/97"
+msgstr "CatÃ©gorie de base de la statistique de la superficie 1992/97"
 
 msgid "bereich"
 msgstr "Site"
 
 msgid "stationsnr"
-msgstr "Numéro de la station"
+msgstr "NumÃ©ro de la station"
 
 msgid "aktuelle_daten"
-msgstr "Données actuelles et historiques"
+msgstr "DonnÃ©es actuelles et historiques"
 
 msgid "stationsname"
 msgstr "Nom de la station"
 
 msgid "kartiereinheit"
-msgstr "Unité de cartographie"
+msgstr "UnitÃ© de cartographie"
 
 msgid "kategorie"
-msgstr "Catégorie"
+msgstr "CatÃ©gorie"
 
 msgid "kantoncode"
 msgstr "Code cantonal"
 
 msgid "rwknr"
-msgstr "Débit résiduel N°"
+msgstr "DÃ©bit rÃ©siduel NÂ°"
 
 msgid "kanton"
 msgstr "Canton"
@@ -153,22 +192,22 @@ msgid "strasse"
 msgstr "Rue"
 
 msgid "nr"
-msgstr "N°"
+msgstr "NÂ°"
 
 msgid "plz"
 msgstr "NPA"
 
 msgid "ort"
-msgstr "Localité "
+msgstr "LocalitÃ© "
 
 msgid "gemeinde"
 msgstr "Commune"
 
 msgid "x"
-msgstr "X-Coordonnée"
+msgstr "X-CoordonnÃ©e"
 
 msgid "y"
-msgstr "Y-Coordonnée"
+msgstr "Y-CoordonnÃ©e"
 
 msgid "beschreibung"
 msgstr "Description"
@@ -177,7 +216,7 @@ msgid "url"
 msgstr "URL"
 
 msgid "nummer"
-msgstr "Numéro"
+msgstr "NumÃ©ro"
 
 msgid "protokoll"
 msgstr "Protocole"
@@ -191,8 +230,21 @@ msgstr "Statut"
 msgid "zugang"
 msgstr "Accessible"
 
+msgid "rss url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/current.enhRSS.html"
+
+msgid "rss title"
+msgstr "RSS"
+
+msgid "twitter url"
+msgstr "http://www.twitter.com/swiss_geoportal"
+
+msgid "twitter title"
+msgstr "Twitter"
+
 msgid "report problem"
 msgstr "Segnala un problema"
 
 msgid  "tilenumber"
 msgstr "Foglio"
+

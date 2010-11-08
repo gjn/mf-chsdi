@@ -17,6 +17,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "app title"
+msgstr "map.geo.admin.ch"
+
+msgid "help title"
+msgstr "Aide"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/fr/commons/help/viewer_help.html"
+
+msgid "contact title"
+msgstr "Contact"
+
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/fr/tools/contact.html"
+
+msgid "disclaimer title"
+msgstr "Conditions d'utilisation"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/fr/home/geoadmin/contact.html#copyright"
+
+msgid "federal administration"
+msgstr "Administration fédérale admin.ch"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=fr"
+
+msgid "home title"
+msgstr "Accueil"
+
+msgid "blind warning"
+msgstr "Cette page est une application cartographique et n'est donc pas optimisée pour les aveugles."
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch en cours de chargement."
+
+msgid "hide column"
+msgstr "Masquer le gestionnaire de couches"
+
 msgid "Legend"
 msgstr "Légende"
 
@@ -190,6 +229,18 @@ msgstr "Statut"
 
 msgid "zugang"
 msgstr "Accessible"
+
+msgid "rss url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/fr/home/current.enhRSS.html"
+
+msgid "rss title"
+msgstr "RSS"
+
+msgid "twitter url"
+msgstr "http://www.twitter.com/swiss_geoportal"
+
+msgid "twitter title"
+msgstr "Twitter"
 
 msgid "report problem"
 msgstr "Annoncer un problème"
