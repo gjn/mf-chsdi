@@ -17,263 +17,182 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: chsdi/model/swisssearch.py:44
-#: chsdi/templates/tooltips/gebaeuderegister.mako:7
-msgid "npa"
-msgstr "NPA"
-
-#: chsdi/model/swisssearch.py:56
-msgid "ct"
-msgstr "Ct."
-
-#: chsdi/templates/bod-details.mako:19
 msgid "Legend"
 msgstr "Leggenda"
 
-#: chsdi/templates/bod-details.mako:23 chsdi/templates/tooltips/base.mako:8
 msgid "Information"
 msgstr "Informazioni"
 
-#: chsdi/templates/bod-details.mako:26
+msgid "geobasisdatensatz"
+msgstr "ID geodati di base"
+
 msgid "Gueltiger Massstabsbereich"
 msgstr "Selezione della scala dei valori"
 
-#: chsdi/templates/bod-details.mako:27
 msgid "Metadaten"
 msgstr "Metadati"
 
-#: chsdi/templates/bod-details.mako:28
 msgid "Detailbeschreibung"
 msgstr "Descrizione dettagliata"
 
-#: chsdi/templates/bod-details.mako:30
-msgid "layer_url_text"
-msgstr "Link per la descrizione dei dettagli"
-
-#: chsdi/templates/bod-details.mako:36
 msgid "Datenbezug"
 msgstr "Fonte dei dati"
 
-#: chsdi/templates/bod-details.mako:38
-msgid "layer_url_download_text"
-msgstr "Link per le fonti dei dati"
-
-#: chsdi/templates/bod-details.mako:44
 msgid "Thematisches Geoportal"
 msgstr "Geoportale tematico"
 
-#: chsdi/templates/bod-details.mako:46
-msgid "layer_url_portal_text"
-msgstr "Link per il portale"
-
-#: chsdi/templates/bod-details.mako:52
 msgid "WMS Dienst"
 msgstr "Servizio WMS"
 
-#: chsdi/templates/bod-details.mako:54
-msgid "wms_resource_text"
-msgstr "Link verso WMS"
-
-#: chsdi/templates/bod-details.mako:60
 msgid "Datenstand"
 msgstr "Aggiornamento"
 
-#: chsdi/templates/tooltips/agnes.mako:4 chsdi/templates/tooltips/am_g.mako:4
-#: chsdi/templates/tooltips/am_l.mako:6 chsdi/templates/tooltips/au.mako:4
-#: chsdi/templates/tooltips/bezirke25.mako:4
-#: chsdi/templates/tooltips/bln.mako:4
-#: chsdi/templates/tooltips/fixpunkte.mako:5 chsdi/templates/tooltips/fm.mako:4
-#: chsdi/templates/tooltips/fm_reg.mako:4 chsdi/templates/tooltips/gg25.mako:4
-#: chsdi/templates/tooltips/hm.mako:4 chsdi/templates/tooltips/jb.mako:4
-#: chsdi/templates/tooltips/kanton25.mako:4 chsdi/templates/tooltips/lhg.mako:4
-#: chsdi/templates/tooltips/ml.mako:4
-#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:4
-#: chsdi/templates/tooltips/ra.mako:4 chsdi/templates/tooltips/sb.mako:4
-#: chsdi/templates/tooltips/vec200_customsoffice.mako:4
-#: chsdi/templates/tooltips/vec200_ship.mako:4
-#: chsdi/templates/tooltips/vec200_terminal.mako:4
-#: chsdi/templates/tooltips/vec200_trafficinfo.mako:4
-#: chsdi/templates/tooltips/wv.mako:4
-msgid "name"
-msgstr ""
+msgid "layer_geocat_text"
+msgstr "Link per geocat.ch"
 
-#: chsdi/templates/tooltips/agnes.mako:5
+msgid "layer_url_text"
+msgstr "Link per la descrizione dei dettagli"
+
+msgid "layer_url_download_text"
+msgstr "Link per le fonti dei dati"
+
+msgid "layer_url_portal_text"
+msgstr "Link per il portale"
+
+msgid "wms_resource_text"
+msgstr "Link verso WMS"
+
+msgid "Link to object"
+msgstr "Link verso l’oggetto"
+
+msgid "name"
+msgstr "Nom"
+
+msgid "objektname"
+msgstr "Nom de l'objet"
+
+msgid "laenge_m"
+msgstr "Longueur [m]"
+
+msgid "flaeche_ha"
+msgstr "Surface [ha]"
+
+msgid "gesamtflaeche_ha"
+msgstr "Surface totale [ha]"
+
+msgid "flaeche_km2"
+msgstr "Surface [km2]"
+
+msgid "perimeter_m"
+msgstr "Perimètre [m]"
+
+msgid "objektnr"
+msgstr "Numéro de l'objet"
+
+msgid "identificator"
+msgstr "Identifiant"
+
+msgid "gmde"
+msgstr "Numéro de commune OFS (état 2006)"
+
+msgid "construct"
+msgstr "Ouvrage d'art"
+
+msgid "typ"
+msgstr "Type"
+
+msgid "toll"
+msgstr "Péage"
+
+msgid "fj85"
+msgstr "Vue aérienne pour la statistique de la superficie 1979/85 prise en"
+
+msgid "fj97"
+msgstr "Vue aérienne pour la statistique de la superficie 1992/97 prise en"
+
+msgid "id_arealstatistik_85"
+msgstr "Catégorie de base de la statistique de la superficie 1979/85"
+
+msgid "id_arealstatistik_97"
+msgstr "Catégorie de base de la statistique de la superficie 1992/97"
+
+msgid "bereich"
+msgstr "Site"
+
+msgid "stationsnr"
+msgstr "Numéro de la station"
+
+msgid "aktuelle_daten"
+msgstr "Données actuelles et historiques"
+
+msgid "stationsname"
+msgstr "Nom de la station"
+
+msgid "kartiereinheit"
+msgstr "Unité de cartographie"
+
+msgid "kategorie"
+msgstr "Catégorie"
+
+msgid "kantoncode"
+msgstr "Code cantonal"
+
+msgid "rwknr"
+msgstr "Débit résiduel N°"
+
+msgid "kanton"
+msgstr "Canton"
+
+msgid "fliessgewaesser"
+msgstr "Aquatique"
+
+msgid "egid"
+msgstr "EGID"
+
+msgid "strasse"
+msgstr "Rue"
+
+msgid "nr"
+msgstr "N°"
+
+msgid "plz"
+msgstr "NPA"
+
+msgid "ort"
+msgstr "Localité "
+
+msgid "gemeinde"
+msgstr "Commune"
+
+msgid "x"
+msgstr "X-Coordonnée"
+
+msgid "y"
+msgstr "Y-Coordonnée"
+
+msgid "beschreibung"
+msgstr "Description"
+
 msgid "url"
 msgstr "URL"
 
-#: chsdi/templates/tooltips/am_g.mako:5 chsdi/templates/tooltips/am_l.mako:8
-#: chsdi/templates/tooltips/au.mako:5 chsdi/templates/tooltips/bln.mako:5
-#: chsdi/templates/tooltips/fixpunkte.mako:4 chsdi/templates/tooltips/fm.mako:5
-#: chsdi/templates/tooltips/fm_reg.mako:5
-#: chsdi/templates/tooltips/gebaeuderegister.mako:6
-#: chsdi/templates/tooltips/hm.mako:5 chsdi/templates/tooltips/jb.mako:5
-#: chsdi/templates/tooltips/ml.mako:5
-#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:5
-#: chsdi/templates/tooltips/ra.mako:5 chsdi/templates/tooltips/sb.mako:5
-#: chsdi/templates/tooltips/wv.mako:5
-msgid "obj"
-msgstr ""
+msgid "nummer"
+msgstr "Numéro"
 
-#: chsdi/templates/tooltips/am_l.mako:4 chsdi/templates/tooltips/au.mako:7
-#: chsdi/templates/tooltips/bln.mako:6 chsdi/templates/tooltips/hm.mako:7
-#: chsdi/templates/tooltips/jb.mako:7 chsdi/templates/tooltips/ml.mako:6
-#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:7
-#: chsdi/templates/tooltips/ra.mako:6 chsdi/templates/tooltips/sb.mako:7
-#: chsdi/templates/tooltips/wv.mako:7
-msgid "fl"
-msgstr ""
-
-#: chsdi/templates/tooltips/am_l.mako:5
-msgid "am_l_berei"
-msgstr ""
-
-#: chsdi/templates/tooltips/am_l.mako:7 chsdi/templates/tooltips/fm.mako:6
-#: chsdi/templates/tooltips/fm_reg.mako:6 chsdi/templates/tooltips/jb.mako:8
-#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:8
-#: chsdi/templates/tooltips/ra.mako:7 chsdi/templates/tooltips/sb.mako:8
-#: chsdi/templates/tooltips/wv.mako:8
-msgid "gf"
-msgstr ""
-
-#: chsdi/templates/tooltips/arealstatistik1985.mako:4
-#: chsdi/templates/tooltips/arealstatistik1997.mako:4
-msgid "gmde"
-msgstr ""
-
-#: chsdi/templates/tooltips/arealstatistik1985.mako:5
-#: chsdi/templates/tooltips/arealstatistik1997.mako:5
-msgid "fj85"
-msgstr ""
-
-#: chsdi/templates/tooltips/arealstatistik1985.mako:6
-#: chsdi/templates/tooltips/arealstatistik1997.mako:8
-msgid "id_arealstatistik_85"
-msgstr ""
-
-#: chsdi/templates/tooltips/arealstatistik1985.mako:7
-#: chsdi/templates/tooltips/arealstatistik1997.mako:7
-msgid "fj97"
-msgstr ""
-
-#: chsdi/templates/tooltips/arealstatistik1985.mako:8
-#: chsdi/templates/tooltips/arealstatistik1997.mako:6
-msgid "id_arealstatistik_97"
-msgstr ""
-
-#: chsdi/templates/tooltips/au.mako:6 chsdi/templates/tooltips/hm.mako:6
-#: chsdi/templates/tooltips/vec200_railway.mako:5
-#: chsdi/templates/tooltips/vec200_ramp.mako:5
-#: chsdi/templates/tooltips/vec200_road.mako:5
-#: chsdi/templates/tooltips/vec200_ship.mako:5
-#: chsdi/templates/tooltips/vec200_trafficinfo.mako:5
-msgid "type"
-msgstr ""
-
-#: chsdi/templates/tooltips/base.mako:12
-msgid "Link to object"
-msgstr ""
-
-#: chsdi/templates/tooltips/bezirke25.mako:5
-#: chsdi/templates/tooltips/gg25.mako:5
-msgid "flaeche_ha"
-msgstr ""
-
-#: chsdi/templates/tooltips/fixpunkte.mako:6
-#: chsdi/templates/tooltips/paerke_nationaler_bedeutung.mako:6
-msgid "status"
-msgstr ""
-
-#: chsdi/templates/tooltips/fixpunkte.mako:7
-msgid "zugang"
-msgstr ""
-
-#: chsdi/templates/tooltips/fixpunkte.mako:8
 msgid "protokoll"
-msgstr ""
+msgstr "Protocole"
 
-#: chsdi/templates/tooltips/gebaeuderegister.mako:4
-msgid "egid"
-msgstr ""
+msgid "punktname"
+msgstr "Nom du point"
 
-#: chsdi/templates/tooltips/gebaeuderegister.mako:5
-msgid "strname1"
-msgstr ""
+msgid "status"
+msgstr "Statut"
 
-#: chsdi/templates/tooltips/gebaeuderegister.mako:8
-msgid "plzname"
-msgstr ""
+msgid "zugang"
+msgstr "Accessible"
 
-#: chsdi/templates/tooltips/gg25.mako:6
-msgid "perimeter_m"
-msgstr ""
+msgid "report problem"
+msgstr "Segnala un problema"
 
-#: chsdi/templates/tooltips/hm.mako:8
-msgid "hm_ke"
-msgstr ""
-
-#: chsdi/templates/tooltips/jb.mako:6 chsdi/templates/tooltips/wv.mako:6
-msgid "kat"
-msgstr ""
-
-#: chsdi/templates/tooltips/kanton25.mako:5
-msgid "flaeche_km2"
-msgstr ""
-
-#: chsdi/templates/tooltips/kgs.mako:4
-msgid "beschreibung"
-msgstr "Descrizione"
-
-#: chsdi/templates/tooltips/kgs.mako:5
-msgid "x"
-msgstr ""
-
-#: chsdi/templates/tooltips/kgs.mako:6
-msgid "y"
-msgstr ""
-
-#: chsdi/templates/tooltips/kgs.mako:7
-msgid "gemeinde"
-msgstr ""
-
-#: chsdi/templates/tooltips/kgs.mako:8 chsdi/templates/tooltips/sb.mako:6
-#: chsdi/templates/tooltips/weanb.mako:5 chsdi/templates/tooltips/weanw.mako:5
-#: chsdi/templates/tooltips/wewb.mako:5 chsdi/templates/tooltips/weww.mako:5
-#: chsdi/templates/tooltips/wl.mako:4 chsdi/templates/tooltips/wr.mako:4
-msgid "kanton"
-msgstr ""
-
-#: chsdi/templates/tooltips/lhg.mako:5
-msgid "edv_nr4"
-msgstr ""
-
-#: chsdi/templates/tooltips/vec200_railway.mako:4
-#: chsdi/templates/tooltips/vec200_ramp.mako:4
-#: chsdi/templates/tooltips/vec200_road.mako:4
-msgid "construct"
-msgstr ""
-
-#: chsdi/templates/tooltips/vec200_ramp.mako:6
-#: chsdi/templates/tooltips/vec200_road.mako:6
-msgid "toll"
-msgstr ""
-
-#: chsdi/templates/tooltips/weanb.mako:4 chsdi/templates/tooltips/weanw.mako:4
-#: chsdi/templates/tooltips/wewb.mako:4 chsdi/templates/tooltips/weww.mako:4
-msgid "ent_gew"
-msgstr ""
-
-#: chsdi/templates/tooltips/weanb.mako:6 chsdi/templates/tooltips/weanw.mako:6
-#: chsdi/templates/tooltips/wewb.mako:6 chsdi/templates/tooltips/weww.mako:6
-#: chsdi/templates/tooltips/wl.mako:5 chsdi/templates/tooltips/wr.mako:5
-msgid "kantoncode"
-msgstr ""
-
-#: chsdi/templates/tooltips/weanb.mako:7 chsdi/templates/tooltips/weanw.mako:7
-#: chsdi/templates/tooltips/wewb.mako:7 chsdi/templates/tooltips/weww.mako:7
-#: chsdi/templates/tooltips/wl.mako:6 chsdi/templates/tooltips/wr.mako:6
-msgid "rwknr"
-msgstr ""
-
-#~ msgid "zkob"
-#~ msgstr ""
-
+msgid  "tilenumber"
+msgstr "Foglio"
