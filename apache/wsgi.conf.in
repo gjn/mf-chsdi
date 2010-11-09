@@ -1,6 +1,10 @@
 RewriteEngine On
 ExpiresActive On
 
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json
+AddOutputFilterByType DEFLATE text/html text/plain text/xml
+
 RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
