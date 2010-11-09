@@ -475,6 +475,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.bafu"),
                 queryable: true
+            },
+            "ch.are.belastung-personenverkehr-strasse-2008": {
+                name: OpenLayers.i18n("ch.are.belastung-personenverkehr-strasse-2008"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
             }
         };
     }
