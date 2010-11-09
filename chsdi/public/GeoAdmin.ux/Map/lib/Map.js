@@ -47,6 +47,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     aerial: null,
     vector: null,
     complementaryLayer: null,
+    overviewMapCtrl: null,
 
     EVENT_TYPES: ["changecomplementarylayer"],
 
@@ -65,6 +66,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         panel.addControls([zoom_max]);
 
         this.attributionCtrl = new OpenLayers.Control.Attribution();
+        this.overviewMapCtrl = new GeoAdmin.OverviewMap();
 
         options = OpenLayers.Util.extend(options, {
             projection: new OpenLayers.Projection("EPSG:21781"),
@@ -75,7 +77,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.attributionCtrl,
                 new OpenLayers.Control.ScaleLine({maxWidth: 120}),
                 panel,
-                new GeoAdmin.OverviewMap()
+                this.overviewMapCtrl
             ],
             theme: false,
             allOverlays: true
