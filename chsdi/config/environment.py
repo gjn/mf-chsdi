@@ -50,5 +50,6 @@ def load_environment(global_conf, app_conf):
     init_model('bafu', engine_from_config(config, 'sqlalchemy.bafu.'))
     init_model('kogis', engine_from_config(config, 'sqlalchemy.kogis.'))
     init_model('vbs', engine_from_config(config, 'sqlalchemy.vbs.'))
+    init_model('are_mapfish', engine_from_config(config, 'sqlalchemy.are_mapfish.'))
 
     return config
