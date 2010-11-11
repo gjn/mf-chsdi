@@ -10,8 +10,11 @@
     top: -1px;
 }
 
-.print-panel  .x-btn-text {
+.print-panel .x-btn-text {
     font-weight: bold;
+}
+.print-panel .x-panel-btns, .print-panel .x-panel-btns td.x-toolbar-cell {
+    padding: 0;
 }
 
 .print-panel .x-panel-body {
