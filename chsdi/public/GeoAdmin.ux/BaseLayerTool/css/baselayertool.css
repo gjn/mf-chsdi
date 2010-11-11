@@ -8,6 +8,7 @@
        set the label isn't postioned as we want it to when
        the BaseLayerTool is placed in an Ext toolbar. */
     line-height: 22px;
+    cursor: default;
 }
 
 .x-form-field-wrap .x-form-trigger {
