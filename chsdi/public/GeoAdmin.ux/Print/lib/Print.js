@@ -125,6 +125,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             defaults: {
                 width: 100
             },
+            labelAlign: 'top',
             buttonAlign: 'left',
             dpiText: OpenLayers.i18n("DPI"),
             scaleText: OpenLayers.i18n("Scale"),
