@@ -66,63 +66,59 @@ class WmtsController(BaseController):
         # url('edit_wmt', id=ID)
 
     def manager(self):
-        if (request.host != 'api.geo.admin.ch' and request.host != 'mf-chsdi.bgdi.admin.ch' and request.host != 'mf-chsdi0i.bgdi.admin.ch' and request.host != 'mf-chsdi0t.bgdi.admin.ch' and request.host != 'mf-geoadmin0t.bgdi.admin.ch:5000' and request.host != 'mf-geoadmin0t.bgdi.admin.ch' and request.host != 'mf-geoadmin0i.bgdi.admin.ch' and request.host != 'map.geo.admin.ch' and request.host != 'edison.nis.ch'):
-           response.status='403'
-           return 'no right'
+        # TileCache configuration
+        tileCacheServers = ['http://tile5.bgdi.admin.ch/geoadmin','http://tile6.bgdi.admin.ch/geoadmin','http://tile7.bgdi.admin.ch/geoadmin','http://tile8.bgdi.admin.ch/geoadmin','http://tile9.bgdi.admin.ch/geoadmin']
+        tileCacheReferer = 'http://map.geo.admin.ch/'
+
+        # Get information from WMTS URL
+        urlContent = request.url.split("/")
+        service = urlContent[len(urlContent)-9]
+        version = urlContent[len(urlContent)-8]
+        layer = urlContent[len(urlContent)-7]
+        style = urlContent[len(urlContent)-6]
+        dimension = urlContent[len(urlContent)-5]
+        matrixSet =  urlContent[len(urlContent)-4]
+        scale = urlContent[len(urlContent)-3]
+        I = urlContent[len(urlContent)-2]
+        J = urlContent[len(urlContent)-1].split('.')[0]
+        format = urlContent[len(urlContent)-1].split('.')[1].split('?')[0]
+
+        # Manage a dict with scale: [#tileX, #tileY]: should be extracted from getCapabilities
+        tileSizeDict = {'0': [1,1], '1': [1,1], '2': [1,1], '3': [1,1], '4': [1,1], '5': [1,1], '6': [1,1], '7': [1,1], '8': [1,1], '9': [2,1], '10': [2,1], '11': [2,1], '12': [2,2], '13': [3,2], '14': [3,2], '15': [4,3], '16': [8,5], '17': [19,13],'18': [38,25],'19': [94,63],'20': [188,125],'21': [375,250],'22': [750,500],'23': [938,625],'24': [1250,833],'25': [1875,1250],'26': [3750,2500]}
+        tileX = int(J)
+        tileY = tileSizeDict[str(scale)][1] - 1 - int(I)
+
+        # Get the correct server
+        serviceNumber = service.replace('wmts','')
+
+        if (len(serviceNumber) == 1):
+           tileCacheServer = tileCacheServers[int(serviceNumber) - 5]
         else:
-           # TileCache configuration
-           tileCacheServers = ['http://tile5.bgdi.admin.ch/geoadmin','http://tile6.bgdi.admin.ch/geoadmin','http://tile7.bgdi.admin.ch/geoadmin','http://tile8.bgdi.admin.ch/geoadmin','http://tile9.bgdi.admin.ch/geoadmin']
-           tileCacheReferer = 'http://map.geo.admin.ch/'
-
-           # Get information from WMTS URL
-           urlContent = request.url.split("/")
-           service = urlContent[len(urlContent)-9]
-           version = urlContent[len(urlContent)-8]
-           layer = urlContent[len(urlContent)-7]
-           style = urlContent[len(urlContent)-6]
-           dimension = urlContent[len(urlContent)-5]
-           matrixSet =  urlContent[len(urlContent)-4]
-           scale = urlContent[len(urlContent)-3]
-           I = urlContent[len(urlContent)-2]
-           J = urlContent[len(urlContent)-1].split('.')[0]
-           format = urlContent[len(urlContent)-1].split('.')[1].split('?')[0]
-
-           # Manage a dict with scale: [#tileX, #tileY]: should be extracted from getCapabilities
-           tileSizeDict = {'0': [1,1], '1': [1,1], '2': [1,1], '3': [1,1], '4': [1,1], '5': [1,1], '6': [1,1], '7': [1,1], '8': [1,1], '9': [2,1], '10': [2,1], '11': [2,1], '12': [2,2], '13': [3,2], '14': [3,2], '15': [4,3], '16': [8,5], '17': [19,13],'18': [38,25],'19': [94,63],'20': [188,125],'21': [375,250],'22': [750,500],'23': [938,625],'24': [1250,833],'25': [1875,1250],'26': [3750,2500]}
-           tileX = int(J)
-           tileY = tileSizeDict[str(scale)][1] - 1 - int(I)
-
-           # Get the correct server
-           serviceNumber = service.replace('wmts','')
-
-           if (len(serviceNumber) == 1):
-              tileCacheServer = tileCacheServers[int(serviceNumber) - 5]
-           else:
-              tileCacheServer = tileCacheServers[0]
+           tileCacheServer = tileCacheServers[0]
         
-           # Generate a TileCache URL
-           tileCacheUrl = []
-           tileCacheUrl.append(tileCacheServer)
-           tileCacheUrl.append(layer)
-           tileCacheUrl.append(self.zeroPad(int(scale),2))
-           tileCacheUrl.append(self.zeroPad(int(tileX / 1000000),3))
-           tileCacheUrl.append(self.zeroPad(int(tileX / 1000) % 1000,3))
-           tileCacheUrl.append(self.zeroPad(int(tileX) % 1000,3))
-           tileCacheUrl.append(self.zeroPad(int(tileY / 1000000),3))
-           tileCacheUrl.append(self.zeroPad(int(tileY / 1000) % 1000,3))
-           tileCacheUrl.append(self.zeroPad(int(tileY) % 1000,3))
-           tileCacheUrlString = '/'.join(tileCacheUrl)
-           tileCacheUrlString = tileCacheUrlString + '.' + format
+        # Generate a TileCache URL
+        tileCacheUrl = []
+        tileCacheUrl.append(tileCacheServer)
+        tileCacheUrl.append(layer)
+        tileCacheUrl.append(self.zeroPad(int(scale),2))
+        tileCacheUrl.append(self.zeroPad(int(tileX / 1000000),3))
+        tileCacheUrl.append(self.zeroPad(int(tileX / 1000) % 1000,3))
+        tileCacheUrl.append(self.zeroPad(int(tileX) % 1000,3))
+        tileCacheUrl.append(self.zeroPad(int(tileY / 1000000),3))
+        tileCacheUrl.append(self.zeroPad(int(tileY / 1000) % 1000,3))
+        tileCacheUrl.append(self.zeroPad(int(tileY) % 1000,3))
+        tileCacheUrlString = '/'.join(tileCacheUrl)
+        tileCacheUrlString = tileCacheUrlString + '.' + format
 
-           # Load the tile and send it back
-           req = urllib2.Request(tileCacheUrlString)
-           req.add_header('Referer', tileCacheReferer)
-           r = urllib2.urlopen(req)
-           response.headers['Content-Type'] = mimetypes.types_map['.'+format]
-           response.headers['Cache-Control'] = r.headers['Cache-Control']
-           response.headers['Expires'] = r.headers['Expires']
-           del response.headers['Pragma']
-           return r.read()
+        # Load the tile and send it back
+        req = urllib2.Request(tileCacheUrlString)
+        req.add_header('Referer', tileCacheReferer)
+        r = urllib2.urlopen(req)
+        response.headers['Content-Type'] = mimetypes.types_map['.'+format]
+        response.headers['Cache-Control'] = r.headers['Cache-Control']
+        response.headers['Expires'] = r.headers['Expires']
+        del response.headers['Pragma']
+        return r.read()
 
     def zeroPad(self,number,length):
         number = str(number);
