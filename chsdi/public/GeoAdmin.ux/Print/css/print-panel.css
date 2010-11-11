@@ -9,6 +9,11 @@
     right: -1px;
     top: -1px;
 }
+
+.print-panel  .x-btn-text {
+    font-weight: bold;
+}
+
 .print-panel .x-panel-body {
     border: none;
 }
