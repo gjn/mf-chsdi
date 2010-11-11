@@ -123,7 +123,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             border: false,
             labelWidth: 75,
             defaults: {
-                width: 100
+                width: 200
             },
             labelAlign: 'top',
             buttonAlign: 'left',
