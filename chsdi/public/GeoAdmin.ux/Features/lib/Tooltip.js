@@ -26,7 +26,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         if (GeoAdmin.webServicesUrl) {
             this.url = GeoAdmin.webServicesUrl + "/feature/search";
         }
-        this.format = new OpenLayers.Format.GeoJSON();
+        this.format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
 
         this.events.register("featuresselected", this, this.onSelect);
         this.events.register("featureunselected", this, this.onUnselect);

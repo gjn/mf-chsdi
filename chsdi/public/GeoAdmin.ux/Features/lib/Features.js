@@ -26,7 +26,7 @@ GeoAdmin.Features = OpenLayers.Class({
             this.highlightUrl = GeoAdmin.webServicesUrl + "/feature/geometry";
         }
         OpenLayers.Util.extend(this, options || {});
-        this.format = new OpenLayers.Format.GeoJSON();
+        this.format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
     },
 
     recenter: function(layer, ids, cb) {
