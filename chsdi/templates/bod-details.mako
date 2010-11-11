@@ -23,7 +23,13 @@
 
   <table border="0" cellspacing="0" cellpadding="1" width="400px" style="font-size: 100%;" padding="1 1 1 1">
     <tr><td>${_('Gueltiger Massstabsbereich')}</td>  <td>${c.legend.scale_limit}</td></tr>
-    <tr><td>${_('Metadaten')}</td>                   <td>${c.legend.geocat_uuid or '-'}</td></tr>
+    <tr><td>${_('Metadaten')}</td>
+% if c.legend.geocat_uuid:
+        <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${c.legend.geocat_uuid}&currTab=simple">${_('layer_geocat_text')}</a></td>
+% else:
+        <td>-</td>
+% endif
+    </tr>
     <tr><td>${_('Detailbeschreibung')}</td>
 % if c.legend.url:
         <td><a href="${c.legend.url}" target="new">${_('layer_url_text')}</a></td>
