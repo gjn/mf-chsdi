@@ -248,3 +248,11 @@ msgstr "Report problem"
 msgid  "tilenumber"
 msgstr "Map sheet"
 
+
+# are2 translations
+
+msgid "belastung_personen"
+msgstr "Belastung [Pers./Jahr]"
+
+msgid "belastung_tonnen"
+msgstr "Belastung [t/Jahr]"
