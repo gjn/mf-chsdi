@@ -119,6 +119,14 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.popup = new GeoExt.Popup({
             width: 450,
             title: OpenLayers.i18n('Feature tooltip'),
+            toolTemplate: new Ext.XTemplate(
+                '<tpl if="id==\'print\'">',
+                '<div class="x-window-printtool">'+OpenLayers.i18n('print')+'</div>',
+                '</tpl>',
+                '<tpl if="id!=\'print\'">',
+                '<div class="x-tool x-tool-{id}">&#160;</div>',
+                '</tpl>'
+            ),
             tools:[{
                 id: 'print',
                 scope: this,
