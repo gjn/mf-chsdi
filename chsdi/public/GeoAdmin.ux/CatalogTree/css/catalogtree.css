@@ -16,6 +16,9 @@
 .geoadmin-catalog-tree .x-tree-node .x-tree-selected .x-tree-node-anchor span {
     color: white;
 }
+.geoadmin-catalog-tree .x-tree-node .x-tree-node-over {
+    background-color: white;
+}
 .geoadmin-catalog-tree .treelayerpipe {
   float: left;
   margin-top: 2px;
