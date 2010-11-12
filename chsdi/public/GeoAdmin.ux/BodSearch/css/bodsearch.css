@@ -1,3 +1,8 @@
+.x-window-printtool {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+}
 .x-window-header, .x-combo-list {
     text-align: left;
 }

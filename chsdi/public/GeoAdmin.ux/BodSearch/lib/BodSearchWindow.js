@@ -5,14 +5,24 @@
 GeoAdmin.BodSearchWindow = {
 
     show: function(id) {
+
         var _window = new Ext.Window({
             layout: 'anchor',
             title: OpenLayers.i18n('infobox'),
             resizable: true,
             autoScroll: true,
+            border: false,
             width: 525,
             bodyStyle: "max-height: 500px",
             items: {html: ''},
+            toolTemplate: new Ext.XTemplate(
+                '<tpl if="id==\'print\'">',
+                '<div class="x-window-printtool">'+OpenLayers.i18n('print')+'</div>',
+                '</tpl>',
+                '<tpl if="id!=\'print\'">',
+                '<div class="x-tool x-tool-{id}">&#160;</div>',
+                '</tpl>'
+            ),
             tools: [{
                 id: 'print',
                 handler: function(evt, toolEl, panel, tc) {
