@@ -247,3 +247,12 @@ msgstr "Annoncer un problème"
 
 msgid  "tilenumber"
 msgstr "Feuille"
+
+
+# are2 translations
+
+msgid "belastung_personen"
+msgstr "Charge [Pers./an]"
+
+msgid "belastung_tonnen"
+msgstr "Charge [t/an]"
