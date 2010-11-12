@@ -1,3 +1,8 @@
+.geoadmin-catalog-tree .x-tree-node a span,
+.geoadmin-catalog-tree .x-dd-drag-ghost a span {
+    color: #333;
+}
+
 .geoadmin-catalog-tree .x-tree-node-icon,
 .geoadmin-catalog-tree .x-tree-icon,
 .geoadmin-catalog-tree .x-tree-ec-icon,
