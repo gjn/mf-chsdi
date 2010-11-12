@@ -1,3 +1,8 @@
+.geoadmin-layertree .x-tree-node a span, 
+.geoadmin-layertree .x-dd-drag-ghost a span {
+  color: #333;
+}
+
 .geoadmin-layertree .x-tree-node {
   border-bottom: 1px solid #ddd;
 }
