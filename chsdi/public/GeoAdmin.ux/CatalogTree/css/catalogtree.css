@@ -84,6 +84,11 @@
     color: red !important;
     clear: left;
 }
+.geoadmin-catalog-tree .x-tree-node-leaf,
+.geoadmin-catalog-tree .x-tree-node-leaf * {
+  cursor: default;
+}
+
 .geoadmin-catalog-tree .nodeLT3, .nodeLT3selected {
     border-bottom:1px solid #ccc;
     text-indent: 1.5em;
