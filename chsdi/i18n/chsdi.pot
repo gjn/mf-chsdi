@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chsdi 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-11-12 08:28+0100\n"
+"POT-Creation-Date: 2010-11-12 10:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Generated-By: Babel 0.9.5\n"
 
 #: chsdi/model/swisssearch.py:44 chsdi/templates/tooltips/gebaeuderegister.mako:7
-msgid "npa"
+msgid "plz"
 msgstr ""
 
 #: chsdi/model/swisssearch.py:56

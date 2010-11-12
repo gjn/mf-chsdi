@@ -41,7 +41,7 @@ class SwissSearch(Base):
         if self.origin == 'zipcode':
             o.update({'service': 'postalcodes',
                       'rank': 1,
-                      'label': "%s <b>%s - %s (%s)</b>"%(_('npa'), self.plz, self.ort_27, self.kanton)})
+                      'label': "%s <b>%s - %s (%s)</b>"%(_('plz'), self.plz, self.ort_27, self.kanton)})
         elif self.origin == 'sn25':
             o.update({'service': 'swissnames',
                       'rank': 4,
