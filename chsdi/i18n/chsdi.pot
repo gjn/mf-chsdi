@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chsdi 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-09-02 10:49+0200\n"
+"POT-Creation-Date: 2010-11-12 08:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,55 +25,59 @@ msgstr ""
 msgid "ct"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:19
+#: chsdi/templates/bod-details.mako:18
 msgid "Legend"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:23 chsdi/templates/tooltips/base.mako:8
+#: chsdi/templates/bod-details.mako:22 chsdi/templates/tooltips/base.mako:8
 msgid "Information"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:26
+#: chsdi/templates/bod-details.mako:25
 msgid "Gueltiger Massstabsbereich"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:27
+#: chsdi/templates/bod-details.mako:26
 msgid "Metadaten"
 msgstr ""
 
 #: chsdi/templates/bod-details.mako:28
+msgid "layer_geocat_text"
+msgstr ""
+
+#: chsdi/templates/bod-details.mako:33
 msgid "Detailbeschreibung"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:30
+#: chsdi/templates/bod-details.mako:35
 msgid "layer_url_text"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:36
+#: chsdi/templates/bod-details.mako:41
 msgid "Datenbezug"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:38
+#: chsdi/templates/bod-details.mako:43
 msgid "layer_url_download_text"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:44
+#: chsdi/templates/bod-details.mako:49
 msgid "Thematisches Geoportal"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:46
+#: chsdi/templates/bod-details.mako:51
 msgid "layer_url_portal_text"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:52
+#: chsdi/templates/bod-details.mako:57
 msgid "WMS Dienst"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:54
+#: chsdi/templates/bod-details.mako:59
 msgid "wms_resource_text"
 msgstr ""
 
-#: chsdi/templates/bod-details.mako:60
+#: chsdi/templates/bod-details.mako:65
 msgid "Datenstand"
 msgstr ""
 
@@ -241,6 +245,10 @@ msgstr ""
 
 #: chsdi/templates/tooltips/lhg.mako:5
 msgid "edv_nr4"
+msgstr ""
+
+#: chsdi/templates/tooltips/personenstrasse.mako:4
+msgid "belastung_personen"
 msgstr ""
 
 #: chsdi/templates/tooltips/vec200_railway.mako:4
