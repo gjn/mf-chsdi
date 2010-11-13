@@ -6,13 +6,13 @@ Please read the terms of use and register before using the GeoAdmin API: http://
 .. raw:: html
 
    <body>
-      <div id="myconfigurator" style="width:800px;height:370px;padding: 2 2 2 2;"></div>
-      <form onSubmit="return OnSubmitForm();" method="post" name="publisher" target="_blank" style="margin-top:2px;">
+      <div id="myconfigurator" style="width:750px;height:370px;padding: 2 2 2 2;"></div>
+      <form onSubmit="return OnSubmitForm();" method="post" name="publisher" target="_blank" style="margin-top:10px;">
          <input type="hidden" id="codeValue" name="codeValue" value="">
          <input class="button" onclick="postCode();" value="Publish code" name="publishCode" type="submit" />
       </form>
       <h1> Source Code Editor </h1>
-      <textarea id="code" cols="80" rows="30"></textarea>
+      <textarea id="code" cols="80" rows="3"></textarea>
       <input class="button" onclick="runCode();" value="Run code in preview" name="runCode" type="submit" />        
       <form onSubmit="return OnSubmitForm();" method="post" name="publisher1" target="_blank" style="margin-top:2px;">
          <input type="hidden" id="codeValue" name="codeValue" value="">
@@ -30,7 +30,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
     var configurator;
     var mapWidth;
     var mapHeight;
-    var selectedLayerArray;
+    var selectedLayerArray = [];
     var addSwissSearch;
     var addBaseLayerTool;
     var backgroundLayer;
@@ -40,6 +40,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
     var northing;
     var zoom;
     var kmlPath;
+    var start = true;
 
     // Replaces all instances of the given substring.
     String.prototype.replaceAll = function(
@@ -66,7 +67,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
 
     function OnSubmitForm() {
         document.publisher.action = GeoAdmin.webServicesUrl + "/publishers";
-        document.publisher1.action = GeoAdmin.webServicesUrl + "/publishers"
+        document.publisher1.action = GeoAdmin.webServicesUrl + "/publishers";
     }
 
     function getReturnLine(html) {
@@ -77,24 +78,16 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         return separator;
     }
 
-    function postCode() {
-        document.publisher.codeValue.value = writeCode(false, true);
-    }
-
     function postCode1() {
-        document.publisher1.codeValue.value = editor.getCode();
-    }
-
-    function runCode() {
-        configurator.disable();
-        dropPreview();
-        createPreview(editor.getCode());
+        if (editor) {
+           document.publisher1.codeValue.value = editor.getCode();
+        }
     }
 
     function writeCode(htmlSeparator, forPublication) {
         var separator = getReturnLine(htmlSeparator);
 
-        var code = '<script type="text/javascript">';
+        var code = '<head><script type="text/javascript">';
         code = code + separator;
 
         code = code + '//Create a global api variable to simplify debugging';
@@ -124,13 +117,15 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         code = code + separator;
         code = code + '   api.createMapPanel({';
         code = code + separator;
-        code = code + '      renderTo: "mymap"';
+        code = code + '      renderTo: "mymap",';
+        code = code + separator;
+        code = code + '      height: ' + mapHeight;
 
         if (addSwissSearch || addBaseLayerTool) {
             code = code + separator;
             code = code + '      //Add the toolbar in the map panel';
             code = code + separator;
-            code = code + '      ,tbar: toolbar'
+            code = code + '      ,tbar: toolbar';
         }
 
 
@@ -142,7 +137,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   //The complementary layer is the pixelmap. The Swissimage is place below the pixelmap.';
             code = code + separator;
-            code = code + '   api.map.complementaryLayer.setOpacity(0);'
+            code = code + '   api.map.complementaryLayer.setOpacity(0);';
         }
 
         if (backgroundLayer == 2) {
@@ -150,7 +145,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   //The complementary layer is per default the color pixelmap.';
             code = code + separator;
-            code = code + '   api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});'
+            code = code + '   api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});';
         }
 
         if (addBaseLayerTool) {
@@ -160,14 +155,14 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});';
             code = code + separator;
-            code = code + '   toolbar.add(baseLayerTool);'
+            code = code + '   toolbar.add(baseLayerTool);';
             code = code + separator;
             code = code + '   toolbar.doLayout();';
         }
 
         if (addBaseLayerTool && addSwissSearch) {
             code = code + separator;
-            code = code + '   toolbar.add(\' \');'
+            code = code + '   toolbar.add(\' \');';
             code = code + separator;
             code = code + '   toolbar.doLayout();';
         }
@@ -179,7 +174,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   var swissSearchCombo = api.createSearchBox({width: 180});';
             code = code + separator;
-            code = code + '   toolbar.add(swissSearchCombo);'
+            code = code + '   toolbar.add(swissSearchCombo);';
             code = code + separator;
             code = code + '   toolbar.doLayout();';
         }
@@ -188,13 +183,14 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   //Add layer in the map';
             code = code + separator;
-            for each (var layer in selectedLayerArray) {
-                if (layer.data) {
-                    code = code + '   api.map.addLayerByName(\'' + layer['data'].value + '\');';
+            for (var key in selectedLayerArray) {
+                if (selectedLayerArray[key].data) {
+                    code = code + '   api.map.addLayerByName(\'' + selectedLayerArray[key].data.value + '\');';
                     code = code + separator;
                 }
             }
         }
+
         if (kmlPath) {
             code = code + separator;
             code = code + '   //Add KML layer in the map';
@@ -221,7 +217,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         
         code = code + '}';
         code = code + separator;
-        code = code + '<\/script>';
+        code = code + '<\/script><\/head>';
         code = code + separator;
         code = code + '<body onload="init();">';
         code = code + separator;
@@ -261,6 +257,10 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         return code;
     }
 
+    function postCode() {
+        document.publisher.codeValue.value = writeCode(false, true);
+    }
+
     function createPreview(code) {
         var panel = document.getElementById("mypanel");
         if (Ext.isIE) {
@@ -289,7 +289,9 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                 docIframe.writeln(code);
             } else {
                 docIframe.writeln(writeCode(false,false));
-                editor.setCode(writeCode(false,false));
+                if (editor) {
+                   editor.setCode(writeCode(false,false));
+                }
             }
 
             docIframe.close();
@@ -298,10 +300,6 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         }
     }
 
-    function manageIframeMapEvent() {
-         var myiframe = document.getElementById("ifrm");
-         myiframe.contentWindow.api.map.events.register("moveend", null, mapMoveEnd);
-    }
 
     function mapMoveEnd() {
         var myiframe = document.getElementById("ifrm");
@@ -311,13 +309,31 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         Ext.getCmp('northing').setValue(northing);
         Ext.getCmp('easting').setValue(easting);
         Ext.getCmp('zoom').setValue(zoom);
-        editor.setCode(writeCode(false,false));
+        if (editor) {
+           editor.setCode(writeCode(false,false));
+        }
     }
+    
+    function manageIframeMapEvent() {
+         var myiframe = document.getElementById("ifrm");
+         myiframe.contentWindow.api.map.events.register("moveend", null, mapMoveEnd);
+    }
+
+
 
     function dropPreview() {
         var panel = document.getElementById("mypanel");
         if (iframeElement) {
             panel.removeChild(iframeElement);
+        }
+    }
+
+
+    function runCode() {
+        configurator.disable();
+        dropPreview();
+        if (editor) {
+           createPreview(editor.getCode());
         }
     }
 
@@ -329,12 +345,16 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         northing = 190000;
         zoom = 0;
 
+        if (Ext.isIE) {
+            document.getElementById("code").innerHTML = "Sorry, but Internet Explorer doesn't support the source code editor.... please use a modern browser like Firefox. ";
+        } else {
         editor = CodeMirror.fromTextArea('code', {
            height: "350px",
            parserfile: ["parsexml.js", "parsecss.js", "tokenizejavascript.js", "parsejavascript.js", "parsehtmlmixed.js"],
            stylesheet: ["../_static/CodeMirror-0.9/css/xmlcolors.css", "../_static/CodeMirror-0.9/css/jscolors.css", "../_static/CodeMirror-0.9/css/csscolors.css"],
            path: "../_static/CodeMirror-0.9/js/"
         });
+        }
 
 
         var availableLayers = GeoAdmin.layers.init();
@@ -510,10 +530,12 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                     imagePath: '../../../lib/ext/Ext/examples/ux/images/',
                     listeners:{
                         'change': function(itemselector, value, hiddenvalue) {
-                            selectedLayerArray = itemselector.toStore.data.items;
-                            if (selectedLayerArray.length > 0) {
+                            if (!start) {
+                                selectedLayerArray = itemselector.toStore.data.items;
                                 dropPreview();
                                 createPreview();
+                            } else {
+                                start = false;
                             }
                         }
                     },
