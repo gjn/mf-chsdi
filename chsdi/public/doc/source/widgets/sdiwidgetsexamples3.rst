@@ -52,7 +52,7 @@ BOD Search Window
 Permalink
 ---------
 
-A Map Print Panel is required in order to add a toolbar with the permalink function.
+A Map Panel is required in order to add a toolbar with the permalink function.
 
 .. raw:: html
 
@@ -92,11 +92,12 @@ A Map Print Panel is required in order to add a toolbar with the permalink funct
 Print
 -----
 
-A Map Print Panel is required in order to add a toolbar with the print function.
+A Map Panel is required in order to add a toolbar with the print function.
 
 .. raw:: html
 
   <body>
+      <div id="myprint" style="margin-left:10px !important;width: 200px;"></div>
       <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
@@ -116,29 +117,31 @@ A Map Print Panel is required in order to add a toolbar with the print function.
             height: 340,
             map: new GeoAdmin.Map(),
             stateId: "map",
-            tbar: ["->",
+            tbar: ["->"
+            ]
+        });
+        mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
-                    mapPanel: mapPanel
+                    mapPanel: mapPanel2
                 },
                 windowOptions: {
                     title: OpenLayers.i18n('print map')
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
-                    renderTo: 'print',
-                    mapPanel: mapPanel
+                    renderTo: 'myprint',
+                    mapPanel: mapPanel2
                 }
             })
-            ]
-        });
+         ]);
       }
    </script>
    <body onload="init();">
+     <div id="myprint" style="margin-left:10px !important;width: 200px;"></div>
      <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
@@ -173,26 +176,27 @@ A Map Print Panel is required in order to add a toolbar with the print function.
             height: 340,
             map: new GeoAdmin.Map(),
             stateId: "map",
-            tbar: ["->",
+            tbar: ["->"
+            ]
+        });
+        mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
-                    mapPanel: mapPanel
+                    mapPanel: mapPanel2
                 },
                 windowOptions: {
                     title: OpenLayers.i18n('print map')
                 }
             }),
             new GeoAdmin.Print({
-                printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
-                    renderTo: 'print',
-                    mapPanel: mapPanel
+                    renderTo: 'myprint',
+                    mapPanel: mapPanel2
                 }
             })
-            ]
-        });
+         ]);
       }
    </script>
 
