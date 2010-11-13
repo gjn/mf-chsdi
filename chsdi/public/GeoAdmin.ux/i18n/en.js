@@ -213,5 +213,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Report': 'Report',
     'Sending feedback....': 'Sending report....',
     'Thanks a lot for your feedback !': "Thanks a lot for your report !",
-    'Please fill the feedback': 'Please fill the report'
+    'Please fill the feedback': 'Please fill the report',
+
+    //Permalink
+    'Permalink.title': 'Permalink',
+    'Permalink.openlink': 'Open',
+    'Permalink.close': 'Close'
 });

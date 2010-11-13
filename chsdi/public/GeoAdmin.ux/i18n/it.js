@@ -198,6 +198,21 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Warning Internet Explorer 6': 'Attenzione Explorer 6',
     'You are using Internet Explorer 6.': 'State utilizzando Explorer 6',
     'We recommend to upgrade to a newer release.': 'Vi preghiamo di utilizzare una versione più recente.',
-    'You can add only 5 layers in the layer tree.': 'Potete solamente aggiungere 5 strati di piani nell’albero dei piani.'
+    'You can add only 5 layers in the layer tree.': 'Potete solamente aggiungere 5 strati di piani nell’albero dei piani.',
+
+    // Feedback
+    'Your email (optional)': 'Votre email (optionnel)',
+    'Your feedback about current map extent': 'Votre description du problème concernant la carte',
+    'Cancel': 'Annuler',
+    'Send feedback': 'Annoncer le problème',
+    'Report': 'Annonce de problème',
+    'Sending feedback....': 'Envoi du rapport....',
+    'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
+    'Please fill the feedback': 'Merci de remplir la description',
+
+    //Permalink
+    'Permalink.title': 'Permalink',
+    'Permalink.openlink': 'Open',
+    'Permalink.close': 'Close'
 
 });

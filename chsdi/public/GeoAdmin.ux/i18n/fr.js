@@ -215,6 +215,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Report': 'Annonce de problème',
     'Sending feedback....': 'Envoi du rapport....',
     'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
-    'Please fill the feedback': 'Merci de remplir la description'
+    'Please fill the feedback': 'Merci de remplir la description',
+
+    //Permalink
+    'Permalink.title': 'Permalink',
+    'Permalink.openlink': 'Open',
+    'Permalink.close': 'Close'
 
 });
