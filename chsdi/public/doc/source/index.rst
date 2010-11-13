@@ -85,6 +85,7 @@ API
    api/sdiapidoc
    api/sdiapiexamples
    api/sdiapigenerator
+   api/sdiapilayerreference
 
 Widgets
 -------
