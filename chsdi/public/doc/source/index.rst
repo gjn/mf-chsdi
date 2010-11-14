@@ -72,6 +72,7 @@ These pages are dedicated to developer interested in using the API.
 
     </div>
 
+
 Contents
 ********
 
@@ -122,6 +123,43 @@ Terms of use
 
 The GeoAdmin API terms of use are accessible here: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
 
+Twitter
+*******
+
+.. raw:: html
+
+   <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+   <script>
+   new TWTR.Widget({
+   version: 2,
+   type: 'profile',
+   rpp: 4,
+   interval: 6000,
+   width: 250,
+   height: 120,
+   theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+   },
+   features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+    }
+   }).render().setUser('swiss_geoportal').start();
+   </script>
+   
 Indices and tables
 ==================
 

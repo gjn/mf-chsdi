@@ -9,13 +9,14 @@ The following layers are available through the API:
       <div id="mylayerference" style="margin-left:10px;"></div>
    </body>
 
+
 .. raw:: html
 
    <script type="text/javascript">
 
     function init() {
         GeoAdmin.layers.init();
-        var myInnerHtml = "<br><table border=\"1\">";
+        var myInnerHtml = "<br><table border=\"0\">";
         var myLayerArray = [];
         for (var layer in GeoAdmin.layers.layers) {
            myLayerArray.push(layer);

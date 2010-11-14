@@ -120,3 +120,7 @@ table {
    background: #EEEEEE;
    border-width:0;
 }
+
+ol.arabic {
+	margin-left:35px !important;
+}

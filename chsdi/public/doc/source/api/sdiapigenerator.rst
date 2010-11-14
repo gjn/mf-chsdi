@@ -1,6 +1,12 @@
 API Generator
 =============
 
+Use the API generator to create fantastic maps without development knowledge.
+
+  1. Use the following panel to configure the map
+  2. Test the configuration with the publish button
+  3. Place the code in your own web page. That's it ! 
+
 Please read the terms of use and register before using the GeoAdmin API: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
 
 .. raw:: html
@@ -347,6 +353,8 @@ Please read the terms of use and register before using the GeoAdmin API: http://
 
         if (Ext.isIE) {
             document.getElementById("code").innerHTML = "Sorry, but Internet Explorer doesn't support the source code editor.... please use a modern browser like Firefox. ";
+            document.getElementById("runCode").style.display='none';
+            document.getElementById("publisher1").style.display='none';
         } else {
         editor = CodeMirror.fromTextArea('code', {
            height: "350px",

@@ -32,9 +32,6 @@ This example shows a naive way to add custom markers and popup linking to extern
       <div id="mymap14" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>
 
-
-Exemple provided by *P. Staub*
-
 .. raw:: html
 
     <a id="showRef14" href="javascript:showdiv('codeBlock14','showRef14','hideRef14')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>

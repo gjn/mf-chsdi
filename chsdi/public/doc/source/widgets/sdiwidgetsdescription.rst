@@ -60,6 +60,20 @@ The navigation history widget stores the various state of the map and allows the
 
 See examples: :ref:`navigation-history`
 
+Permalink
+---------
+
+The permalink widget allows the creation and usage of permalinks containing the state of the application. It's based on the ExtJS state manager.
+
+See examples: :ref:`permalink`
+
+Print
+-----
+
+The print widget allows the generation of PDF files containing the map information. This UX communicates with a MapFish print server. The MapFish print server of api.geo.admin.ch can be used but if you need a custom configuration, you'll have to setup your own server.
+
+See examples: :ref:`print`
+
 Swiss Search
 ------------
 

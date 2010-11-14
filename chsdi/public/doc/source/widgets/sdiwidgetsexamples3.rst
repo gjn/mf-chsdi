@@ -49,6 +49,8 @@ BOD Search Window
 
     </div>
 
+.. _permalink:
+
 Permalink
 ---------
 
@@ -88,6 +90,8 @@ A Map Panel is required in order to add a toolbar with the permalink function.
 .. raw:: html
 
     </div>
+
+.. _print:
 
 Print
 -----
