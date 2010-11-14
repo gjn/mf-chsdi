@@ -19,10 +19,10 @@ Please read the terms of use and register before using the GeoAdmin API: http://
       </form>
       <h1> Source Code Editor </h1>
       <textarea id="code" cols="80" rows="3"></textarea>
-      <input class="button" onclick="runCode();" value="Run code in preview" name="runCode" type="submit" />        
-      <form onSubmit="return OnSubmitForm();" method="post" name="publisher1" target="_blank" style="margin-top:2px;">
+      <input class="button" onclick="runCode();" value="Run code in preview" id="runCode" name="runCode" type="submit" />        
+      <form onSubmit="return OnSubmitForm();" method="post" id="publisher1" name="publisher1" target="_blank" style="margin-top:2px;">
          <input type="hidden" id="codeValue" name="codeValue" value="">
-         <input class="button" onclick="postCode1();" value="Publish code" name="publishCode1" type="submit" />
+         <input class="button" onclick="postCode1();" value="Publish code" id="publishCode1" name="publishCode1" type="submit" />
       </form>
       <h1> Preview </h1>
       <div id="mypanel" style="padding: 2 2 2 2;"></div>
