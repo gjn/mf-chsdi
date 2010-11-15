@@ -25,7 +25,14 @@
     <tr><td>${_('Gueltiger Massstabsbereich')}</td>  <td>${c.legend.scale_limit}</td></tr>
     <tr><td>${_('Metadaten')}</td>
 % if c.legend.geocat_uuid:
+      % if c.lang == 'de':
         <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${c.legend.geocat_uuid}&currTab=simple">${_('layer_geocat_text')}</a></td>
+      % elif c.lang == 'fr':
+        <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/fra/metadata.show?uuid=${c.legend.geocat_uuid}&currTab=simple">${_('layer_geocat_text')}</a></td>
+      % else:
+        <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/eng/metadata.show?uuid=${c.legend.geocat_uuid}&currTab=simple">${_('layer_geocat_text')}</a></td>
+      % endif
+        
 % else:
         <td>-</td>
 % endif
