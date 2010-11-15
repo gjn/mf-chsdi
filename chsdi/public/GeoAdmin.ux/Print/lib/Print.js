@@ -191,8 +191,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.printPanel.hideExtent();
             }
         } else {
-            this.printPanel.container.setVisible(!this.printPanel.container.isVisible());
-            if (this.printPanel.container.isVisible()) {
+            this.printPanel.container.setVisible(this.items[0].pressed);
+            if (this.items[0].pressed) {
                 this.printPanel.showExtent();
             }
             else {
