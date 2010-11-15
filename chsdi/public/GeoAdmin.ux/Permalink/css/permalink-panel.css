@@ -16,7 +16,9 @@
     margin-right: -10px;
     margin-top: -33px;
 }
-.permalink-panel .x-btn-tl, .permalink-panel .x-btn-tr, .permalink-panel .x-btn-tc, .permalink-panel .x-btn-ml, .permalink-panel .x-btn-mr, .permalink-panel .x-btn-mc, .permalink-panel .x-btn-bl, .permalink-panel .x-btn-br, .permalink-panel .x-btn-bc {
+.permalink-panel .x-btn-tl, .permalink-panel .x-btn-tr, .permalink-panel .x-btn-tc, 
+.permalink-panel .x-btn-ml, .permalink-panel .x-btn-mr, .permalink-panel .x-btn-mc, 
+.permalink-panel .x-btn-bl, .permalink-panel .x-btn-br, .permalink-panel .x-btn-bc {
     background: none;
 }
 .permalink-panel-ct {
