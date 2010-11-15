@@ -231,7 +231,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 childChildNode.expand();
                 for (k = 0; k < childChildNode.childNodes.length; k++) {
                     childChildChildNode = childChildNode.childNodes[k];
-                    var layer = map.getLayersBy('bodid', this.getLayerIdFromNodeId(childChildChildNode.id));
+                    var layer = map.getLayersBy('layername', this.getLayerIdFromNodeId(childChildChildNode.id));
                     if (layer[0]) {
                         this.suspendEvents();
                         childChildChildNode.getUI().toggleCheck(true);
@@ -390,6 +390,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 {map: this.layerStore}
             );
         }
+        
+        this.registerMapEvent(this.layerStore.map);
 
         this.root.children = [
             {
