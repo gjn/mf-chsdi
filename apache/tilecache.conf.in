@@ -21,7 +21,7 @@ SetEnvIf X-FORWARDED-FOR ^160.92.125.32$ GOODIP # IGN Proxy
     PythonHandler TileCache.Service
     PythonOption TileCacheConfig ${buildout:directory/tilecache/tilecache.cfg}
 
-    Deny from all
+    Allow from all
     # Settings for AWS
     Allow from env=GOODIP
     # Setting for test server
