@@ -15,6 +15,9 @@ SetEnvIF X-FORWARDED-FOR ^128.179.66.4$  GOODIP # camptocamp gateway (exactly...
 SetEnvIF X-FORWARDED-FOR ^193.5.216      GOODIP # swisstopo network behind proxy? (contains...)
 SetEnvIf X-FORWARDED-FOR ^160.92.125.32$ GOODIP # IGN Proxy
 
+RewriteCond {HTTP_HOST} ^tilecache
+RewriteRule ^/(.*)$  /${vars:instanceid}/tilecache/$1
+
 
 <Location /${vars:instanceid}/tilecache>
     SetHandler python-program
