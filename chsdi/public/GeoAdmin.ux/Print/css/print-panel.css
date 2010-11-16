@@ -8,8 +8,8 @@
     position: absolute;
     right: -1px;
     top: -1px;
+    width: 220px;
 }
-
 .print-panel .x-btn-text {
     font-weight: bold;
 }
@@ -23,10 +23,29 @@
 .print-panel .x-toolbar {
     border: 0 none !important;
 	position: absolute;
-	top: 1;
+	top: 2px;
 	right: 0;
 	background-color: transparent;
 }
+.ext-gecko .print-panel .x-toolbar {
+    top: 1px;
+}
+.ext-ie .print-panel {
+    padding-top: 9px;
+    padding-right: 8px;
+}
+.ext-ie .print-panel .x-panel-bwrap {
+    font-size: 1px;
+}
+.ext-ie .print-panel .x-panel-header {
+    position: absolute;
+}
+.ext-ie .print-panel .x-toolbar {
+    position: relative;
+    top: -9px;
+    left: 7px;
+}
+
 .print-panel .x-toolbar .x-btn-tl, .print-panel .x-toolbar .x-btn-tr, .print-panel .x-toolbar .x-btn-tc, 
 .print-panel .x-toolbar .x-btn-ml, .print-panel .x-toolbar .x-btn-mr, .print-panel .x-toolbar .x-btn-mc, 
 .print-panel .x-toolbar .x-btn-bl, .print-panel .x-toolbar .x-btn-br, .print-panel .x-toolbar .x-btn-bc {
