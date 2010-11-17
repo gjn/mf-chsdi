@@ -214,6 +214,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Sending feedback....': 'Sending report....',
     'Thanks a lot for your feedback !': "Thanks a lot for your report !",
     'Please fill the feedback': 'Please fill the report',
+    
+    //Print
+    'mf.print.pdfReady': 'PDF is ready',
+    'mf.print.generatingPDF': "Generating PDF...",
+    'mf.print.print': 'Print',
+    'mf.print.scale': 'Scale',
+    'mf.print.print.title': 'PDF',
 
     //Permalink
     'Permalink.title': 'Permalink',
