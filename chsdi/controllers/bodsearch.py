@@ -16,7 +16,7 @@ class BodsearchController(BaseController):
 
     def __before__(self):
         super(BodsearchController, self).__before__()
-        if self.lang == 'fr':
+        if self.lang == 'fr' or self.lang == 'it':
             self.BodLayer = BodLayerFr
         else:
             self.BodLayer = BodLayerDe
