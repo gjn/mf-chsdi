@@ -101,6 +101,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         GeoAdmin.CatalogTree.superclass.afterRender.apply(this, arguments);
         // call setSelectedNode to handle the case where
         // selectedNode has been set before render
+        this.setCheckNodes(map);
         this.setSelectedNode();
     },
 
