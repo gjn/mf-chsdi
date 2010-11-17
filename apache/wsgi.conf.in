@@ -20,9 +20,12 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux)/(.*)$
     Header merge Cache-Control "public"
 </LocationMatch>
 
-# web services:
+# loader:
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
-RewriteRule ^/wmts(.*)$ /${vars:instanceid}/wsgi/wmts$1 [PT]
+
+# web services:
+RewriteRule ^/(wmts|bodsearch|feature|publishers|swisssearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
 
 # never cache the api loader
