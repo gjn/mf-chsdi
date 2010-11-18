@@ -9,12 +9,12 @@
 
 /**
  * As an :class:`Ext.Action`, GeoAdmin.Print accepts usual Ext.Action arguments.
- * Additional parameters are printPanelConfig (config for 
- * :class:`GeoExt.ux.SimplePrint`) and windowOptions (config for 
+ * Additional parameters are printPanelConfig (config for
+ * :class:`GeoExt.ux.SimplePrint`) and windowOptions (config for
  * :class:`Ext.Window`, only useful if printPanelConfig.renderTo is not provided).
  */
 GeoAdmin.Print = Ext.extend(Ext.Action, {
-    
+
     /** api: property[printPanel]
      * :class:`GeoExt.ux.SimplePrint` Panel containing the print form
      */
@@ -83,7 +83,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             this.config = Ext.apply({
                 handler: this.pHandler
             }, this.config);
-        } 
+        }
 
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
@@ -105,7 +105,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
         this.printProvider.on({
-            "loadcapabilities": function() { this.capabilitiesLoaded = true },
+            "loadcapabilities": function() {
+                this.capabilitiesLoaded = true
+            },
             scope: this
         });
 
@@ -135,22 +137,43 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             titleFieldLabel: OpenLayers.i18n("titlefieldlabel"),
             defaultTitleText: OpenLayers.i18n("titlefieldvalue"),
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
-            defaultCommentText: OpenLayers.i18n("commentfieldvalue")
+            defaultCommentText: OpenLayers.i18n("commentfieldvalue"),
+            layer: new OpenLayers.Layer.Vector(null, {
+                displayInLayerSwitcher: false,
+                styleMap: new OpenLayers.StyleMap({
+                    "default": new OpenLayers.Style({
+                        pointRadius: "10",
+                        fillColor: "#FF0000",
+                        fillOpacity: 0.5,
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWidth: 1
+                    }),
+                    "temporary": new OpenLayers.Style({
+                        pointRadius: "8",
+                        fillColor: "#FF0000",
+                        fillOpacity: 0,
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWidth: 2
+                    })
+                })
+            })
         }, this.config.printPanelOptions);
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
         this.printPanel.hideExtent();
-//        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
-//        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
-    
+        //        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
+        //        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
+
         // If a renderTo config is provided, the print panel is rendered
         // in the given element, else a popup is used to display it.
         this.showWindow = !printOptions.renderTo;
         if (this.showWindow) {
             this.windowOptions = Ext.apply({
                 height: 100,
-                width: 200, 
+                width: 200,
                 title: OpenLayers.i18n('print'),
                 layout: "fit",
                 closeAction: 'hide',
@@ -180,8 +203,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.popup = new Ext.Window(this.windowOptions);
                 this.popup.on('hide', function() {
                     this.printPanel.hideExtent();
-                }, this);				
-//                this.popup.on('show', this.printPanel.show, this.printPanel);
+                }, this);
+                //                this.popup.on('show', this.printPanel.show, this.printPanel);
             }
             this.popup.setVisible(!this.popup.isVisible());
             if (this.popup.isVisible()) {
