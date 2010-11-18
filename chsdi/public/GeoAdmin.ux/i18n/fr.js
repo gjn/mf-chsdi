@@ -5,6 +5,7 @@
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.fr, {
+    'Copyright &amp; Data protection': 'Conditions d\'utilisation',
     'Overview Map': 'Carte de référence',
     'Coordinates' : 'Coordonnées',
     'Coordinates (m): ' : 'Coordonnées (m): ',

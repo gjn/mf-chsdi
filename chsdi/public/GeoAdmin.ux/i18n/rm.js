@@ -4,6 +4,7 @@
  */
 
 OpenLayers.Lang.rm = { 
+    'Copyright &amp; Data protection': 'Copyright & decleraziun da protecziun da datas',
     'Overview Map': 'Charta da survista',
     'Coordinates (m): ' : 'Coordinatas (m): ',
 
