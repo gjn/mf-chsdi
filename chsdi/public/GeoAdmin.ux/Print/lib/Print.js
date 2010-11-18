@@ -51,6 +51,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     printProvider: null,
 
+    /**
+     * private: property[printLayer]
+     * :class:`OpenLayers.Layer.Vector` printLayer showing the print feature and extent
+     */
+    printLayer: null,
+
+
     /** private: method[constructor]
      *  Private constructor override.
      */
@@ -118,6 +125,27 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Creates the print tool interface.
      */
     initPanel: function() {
+        this.printLayer = new OpenLayers.Layer.Vector(null, {
+            displayInLayerSwitcher: false,
+            styleMap: new OpenLayers.StyleMap({
+                "default": new OpenLayers.Style({
+                    pointRadius: "10",
+                    fillColor: "#FF0000",
+                    fillOpacity: 0.5,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWidth: 1
+                }),
+                "temporary": new OpenLayers.Style({
+                    pointRadius: "8",
+                    fillColor: "#FF0000",
+                    fillOpacity: 0,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWidth: 2
+                })
+            })
+        });
         var printOptions = Ext.apply({
             printProvider: this.printProvider,
             hideRotation: true,
@@ -138,34 +166,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             defaultTitleText: OpenLayers.i18n("titlefieldvalue"),
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue"),
-            layer: new OpenLayers.Layer.Vector(null, {
-                displayInLayerSwitcher: false,
-                styleMap: new OpenLayers.StyleMap({
-                    "default": new OpenLayers.Style({
-                        pointRadius: "10",
-                        fillColor: "#FF0000",
-                        fillOpacity: 0.5,
-                        strokeColor: "#FF0000",
-                        strokeOpacity: 1.0,
-                        strokeWidth: 1
-                    }),
-                    "temporary": new OpenLayers.Style({
-                        pointRadius: "8",
-                        fillColor: "#FF0000",
-                        fillOpacity: 0,
-                        strokeColor: "#FF0000",
-                        strokeOpacity: 1.0,
-                        strokeWidth: 2
-                    })
-                })
-            })
+            layer: this.printLayer
         }, this.config.printPanelOptions);
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
         this.printPanel.hideExtent();
-        //        this.printPanel.on('show', this.printPanel.showExtent, this.printPanel);
-        //        this.printPanel.on('hide', this.printPanel.hideExtent, this.printPanel);
 
         // If a renderTo config is provided, the print panel is rendered
         // in the given element, else a popup is used to display it.
@@ -180,6 +186,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 items: [ this.printPanel ]
             }, this.config.windowOptions);
             this.printPanel.hideExtent();
+            this.printLayer.setVisibility(false);
         } else {
             this.printPanel.hideExtent();
             this.printPanel.container.hide();
@@ -203,23 +210,28 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.popup = new Ext.Window(this.windowOptions);
                 this.popup.on('hide', function() {
                     this.printPanel.hideExtent();
+                    this.printLayer.setVisibility(false);
                 }, this);
                 //                this.popup.on('show', this.printPanel.show, this.printPanel);
             }
             this.popup.setVisible(!this.popup.isVisible());
             if (this.popup.isVisible()) {
                 this.printPanel.showExtent();
+                this.printLayer.setVisibility(true);
             }
             else {
                 this.printPanel.hideExtent();
+                this.printLayer.setVisibility(false);
             }
         } else {
             this.printPanel.container.setVisible(this.items[0].pressed);
             if (this.items[0].pressed) {
                 this.printPanel.showExtent();
+                this.printLayer.setVisibility(true);
             }
             else {
                 this.printPanel.hideExtent();
+                this.printLayer.setVisibility(false);
             }
         }
     }
