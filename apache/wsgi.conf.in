@@ -24,7 +24,10 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux)/(.*)$
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
 
 # web services:
-RewriteRule ^/(wmts|bodsearch|feature|publishers|swisssearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(wmts|bodsearch|feature|publishers|swisssearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+
+# print
+RewriteRule ^${vars:apache-entry-point}print/(.*)$ /main/wsgi/print/$1 [PT]
 
 WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/modwsgi/wsgi}
 
