@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../Map/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../../Map/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../lib/NavigationHistory.js"></script>
+      <script type="text/javascript">
+        function test_ctor(t) {
+            t.plan(4);
+
+            // test
+            var map = new GeoAdmin.Map();
+
+            var c = new GeoAdmin.NavigationHistory({map: map});
+            t.ok(c instanceof GeoAdmin.NavigationHistory,
+                 "ctor gives an instance of NavigationHistory");
+            t.ok(c instanceof Ext.Container,
+                 "ctor gives an instance of Ext.Container");
+            t.ok(c.items.get(0) instanceof Ext.Button,
+                 "ctor creates a previous button");
+            t.ok(c.items.get(1) instanceof Ext.Button,
+                 "ctor creates a next button");
+           
+        }
+
+       
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+  </body>
+</html>
