@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../lib/SwissSearchComboBox.js"></script>
+      <script type="text/javascript">
+        function test_ctor(t) {
+            t.plan(6);
+
+            // test
+
+            var c = new GeoAdmin.SwissSearchComboBox();
+            t.ok(c instanceof GeoAdmin.SwissSearchComboBox,
+                 "ctor gives an instance of SwissSearchComboBox");
+            t.ok(c instanceof Ext.form.ComboBox,
+                 "ctor gives an instance of Ext.form.ComboBox");
+            t.ok(c.store instanceof Ext.data.Store,
+                 "ctor creates a store");
+            t.ok(c.store.proxy instanceof Ext.data.ScriptTagProxy,
+                 "ctor creates a store with a script tag proxy");
+            t.ok(c.tpl instanceof Ext.XTemplate,
+                 "ctor creates an XTemplate");
+            t.ok(c.hasListener("select"),
+                 "ctor registers a listener on \"select\"");
+        }
+
+        function test_query(t) {
+            t.plan(2);
+
+            // set up
+            var c = new GeoAdmin.SwissSearchComboBox({ url:"foo"});
+
+            // test
+
+            var query = "Genève", log = {};
+            c.store.proxy.on({beforeload: function(p, params) {
+                log.lang = params.lang;
+                log.query = params.query;
+                return false; // stop the request
+            }});
+            c.doQuery(query);
+            t.eq(log.lang, OpenLayers.Lang.getCode(), "lang param is correct");
+            t.eq(log.query, query , "query param is correct");
+        }
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+  </body>
+</html>
