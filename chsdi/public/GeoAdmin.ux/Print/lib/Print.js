@@ -212,7 +212,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     this.printPanel.hideExtent();
                     this.printLayer.setVisibility(false);
                 }, this);
-                //                this.popup.on('show', this.printPanel.show, this.printPanel);
             }
             this.popup.setVisible(!this.popup.isVisible());
             if (this.popup.isVisible()) {
