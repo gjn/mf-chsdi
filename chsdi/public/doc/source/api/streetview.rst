@@ -24,7 +24,7 @@
 StreetView
 ----------
 
- Showing the swiss maps and Google StreetView side-by-side. You need to load the `StreetViewPanel <http://svn.geoext.org/sandbox/cmoullet/ux/StreetViewPanel/>`_ GeoExt Ux for this example.
+ Showing the swiss maps and Google StreetView side-by-side. You need to load the `StreetViewPanel <http://svn.geoext.org/sandbox/cmoullet/ux/StreetViewPanel/>`_ GeoExt Ux for this example. In order to use the Google services, please read carefully their terms of use.
 
 .. raw:: html
 
@@ -51,8 +51,9 @@ StreetView
         function init() {
             var geo = new geoadmin.API();
             var map = geo.createMap({
-                bgOpacity: 0
-
+                easting: 600000,
+                northing: 200000,
+                zoom: 16
             });
         
             var extent = new OpenLayers.Bounds(600000, 199500, 600500, 200000);
@@ -74,7 +75,7 @@ StreetView
             var mainPanel = new Ext.Panel({
                 title: 'StreetView Demo',
                 //closable:true,
-                width: 800,
+                width: 700,
                 height: 500,
                 border: false,
                 margins: '0 0 0 0',
@@ -149,9 +150,7 @@ StreetView
             var map = geo.createMap({
                 easting: 600000,
                 northing: 200000,
-                zoom: 18,
-                bgOpacity: 0
-
+                zoom: 16
             });
         
             var extent = new OpenLayers.Bounds(600000, 199500, 600500, 200000);
@@ -173,7 +172,7 @@ StreetView
             var mainPanel = new Ext.Panel({
                 title: 'StreetView Demo',
                 //closable:true,
-                width: 800,
+                width: 700,
                 height: 500,
                 border: false,
                 margins: '0 0 0 0',

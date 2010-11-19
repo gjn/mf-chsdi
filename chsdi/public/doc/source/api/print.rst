@@ -125,7 +125,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                     text: OpenLayers.i18n('print map (panel)'),
                     printPanelOptions: {
                        renderTo: 'myprint23',
-                       mapPanel: api22.mapPanel
+                       mapPanel: api23.mapPanel
                     }
                })
            ]);
@@ -212,7 +212,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                     text: OpenLayers.i18n('print map (panel)'),
                     printPanelOptions: {
                        renderTo: 'myprint23',
-                       mapPanel: api22.mapPanel
+                       mapPanel: api23.mapPanel
                     }
                })
            ]);
