@@ -18,27 +18,9 @@
                  "ctor gives an instance of MousePositionBox");
             t.ok(c instanceof Ext.BoxComponent,
                  "ctor gives an instance of Ext.BoxComponent");
-        }
+        };
 
-   /*     function test_query(t) {
-            t.plan(2);
-
-            // set up
-
-            var c = new GeoAdmin.BodSearchComboBox({lang: "de", url: "foo"});
-
-            // test
-
-            var query = "dufour", log = {};
-            c.store.proxy.on({beforeload: function(p, params) {
-                log.lang = params.lang;
-                log.query = params.query;
-                return false; // stop the request
-            }});
-            c.doQuery(query);
-            t.eq(log.lang, "de", "lang param is correct");
-            t.eq(log.query, query , "query param is correct");
-        }  */
+   
       </script>
   </head>
   <body>
