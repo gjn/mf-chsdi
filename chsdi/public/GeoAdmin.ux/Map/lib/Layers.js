@@ -13,7 +13,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     buildLayerByName: function(name, options) {
 
-        if (this.layers == null) {
+        if (this.layers === null) {
             this.init();
         }
         var config = this.layers[name];

@@ -38,7 +38,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         // i18n
         this.emptyText = OpenLayers.i18n('Search data...');
 
-        if (!this.url && GeoAdmin.webServicesUrl != null) {
+        if (!this.url && GeoAdmin.webServicesUrl !== null) {
             this.url = GeoAdmin.webServicesUrl + '/bodsearch/search';
         }
         this.store = new Ext.data.JsonStore({

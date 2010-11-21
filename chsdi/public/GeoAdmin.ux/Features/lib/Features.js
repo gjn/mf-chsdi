@@ -21,7 +21,7 @@ GeoAdmin.Features = OpenLayers.Class({
     format: null,
 
     initialize: function(options) {
-        if (GeoAdmin.webServicesUrl != null) {
+        if (GeoAdmin.webServicesUrl !== null) {
             this.recenterUrl = GeoAdmin.webServicesUrl + "/feature/bbox";
             this.highlightUrl = GeoAdmin.webServicesUrl + "/feature/geometry";
         }

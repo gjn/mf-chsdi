@@ -94,7 +94,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     activate: function() {
         if (!this.layer) {
-            this.layer = new OpenLayers.Layer.Vector();
+            this.layer = new OpenLayers.Layer.Vector("", {
+               displayInLayerSwitcher: false});
             this.map.addLayer(this.layer);
         }
         return OpenLayers.Control.GetFeature.prototype.activate.apply(this, arguments);
@@ -167,9 +168,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     onUnselect: function(evt) {
         if (evt && evt.feature) {
             this.layer.removeFeatures([evt.feature]);
-        } else {
-//             this.features
-        }
+        } 
         if (this.popup) {
             this.popup.destroy();
             this.popup = null;
