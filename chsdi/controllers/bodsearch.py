@@ -28,7 +28,7 @@ class BodsearchController(BaseController):
             abort(400, "missing 'query' parameter")
         p = request.params.get('project') or 'mf-chsdi'
         query = Session.query(self.BodLayer)
-        query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p+'[,]?'))
+        query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p + '(,|\s|$)'))
 
         return {'results': [r.json(q) for r in query]}
 
