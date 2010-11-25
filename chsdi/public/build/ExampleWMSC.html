@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Démo WMS-C</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script
+            type="text/javascript"
+            src="http://openlayers.org/api/OpenLayers.js">
+    </script>
+
+    <script type="text/javascript">
+
+        var map;
+
+        var chtopoResolutions = [
+            0.035997544090479137,  /* zoom 0   resolution 4000.0 */
+            0.033747697584824196,  /* zoom 1   resolution 3750.0 */
+            0.031497851079169255,  /* zoom 2   resolution 3500.0 */
+            0.029248004573514307,  /* zoom 3   resolution 3250.0 */
+            0.026998158067859355,  /* zoom 4   resolution 3000.0 */
+            0.024748311562204410,  /* zoom 5   resolution 2750.0 */
+            0.022498465056549469,  /* zoom 6   resolution 2500.0 */
+            0.020248618550894520,  /* zoom 7   resolution 2250.0 */
+            0.017998772045239569,  /* zoom 8   resolution 2000.0 */
+            0.015748925539584627,  /* zoom 9   resolution 1750.0 */
+            0.013499079033929677,  /* zoom 10   resolution 1500.0 */
+            0.011249232528274734,  /* zoom 11   resolution 1250.0 */
+            0.008999386022619784,  /* zoom 12   resolution 1000.0 */
+            0.006749539516964839,  /* zoom 13   resolution 750.0 */
+            0.005849600914702860,  /* zoom 14   resolution 650.0 */
+            0.004499693011309892,  /* zoom 15   resolution 500.0 */
+            0.002249846505654946,  /* zoom 16   resolution 250.0 */
+            0.000899938602261979,  /* zoom 17   resolution 100.0 */
+            0.000449969301130989,  /* zoom 18   resolution 50.0 */
+            0.000179987720452396,  /* zoom 19   resolution 20.0 */
+            0.000089993860226198,  /* zoom 20   resolution 10.0 */
+            0.000044996930113099,  /* zoom 21   resolution 5.0 */
+            0.000022498465056549,  /* zoom 22   resolution 2.5 */
+            0.000017998772045240,  /* zoom 23   resolution 2.0 */
+            0.000008999386022620,  /* zoom 24   resolution 1.0 */
+            0.000004499693011310,  /* zoom 25   resolution 0.5 */
+        ];
+
+        function init() {
+            OpenLayers.DOTS_PER_INCH = 72;
+
+            map = new OpenLayers.Map('map', {
+                resolutions: chtopoResolutions,
+                controls: [
+                    new OpenLayers.Control.Navigation(),
+                    new OpenLayers.Control.PanZoomBar(),
+                    new OpenLayers.Control.ZoomToMaxExtent(),
+                    new OpenLayers.Control.ScaleLine(),
+                    new OpenLayers.Control.LayerSwitcher(
+                    {
+                        'ascending': false
+                    }),
+                    new OpenLayers.Control.MousePosition()
+                ],
+                maxExtent: new OpenLayers.Bounds(5.140879, 45.399275, 11.479044, 48.232047),
+                projection: new OpenLayers.Projection('EPSG:4258'),
+                units: 'degrees'
+            });
+
+            var wmsc_pk = new OpenLayers.Layer.WMS("Pixelmap (WMS-C)", "http://tilecache6.geo.admin.ch/", {
+                layers: "ch.swisstopo.pixelkarte-farbe-pk.etrs89",
+                format: 'image/jpeg'
+            }, {
+                serverResolutions: chtopoResolutions,
+                projection: new OpenLayers.Projection('EPSG:4258'),
+                maxExtent: new OpenLayers.Bounds(0.0, 0.0, 11.479044, 48.232047),
+                visibility: false,
+                isBaseLayer: true,
+                buffer: 0
+            });
+
+            var wmsc_img = new OpenLayers.Layer.WMS("swissimage (WMS-C)", "http://tilecache7.geo.admin.ch/", {
+                layers: "ch.swisstopo.swissimage.etrs89",
+                format: 'image/jpeg'
+            }, {
+                serverResolutions: chtopoResolutions,
+                projection: new OpenLayers.Projection('EPSG:4258'),
+                maxExtent: new OpenLayers.Bounds(0.0, 0.0, 11.479044, 48.232047),
+                visibility: true,
+                isBaseLayer: true,
+                buffer: 0
+            });
+
+            map.addLayers([wmsc_pk, wmsc_img]);
+            map.setCenter(new OpenLayers.LonLat(7.8, 46.5), 8);
+
+
+        }
+    </script>
+    <style type="text/css">
+        div#map {
+            width: 800px;
+            height: 600px;
+            border: 1px black;
+        }
+    </style>
+
+</head>
+<body onload="init();">
+<div id="map"></div>
+</body>
+</html>

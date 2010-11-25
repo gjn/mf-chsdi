@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+
+<STYLE type="text/css" media="screen">
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        overflow: hidden;
+    }
+
+    #where {
+        position: absolute;
+        top: 18px;
+        left: 60px;
+        background-color: #CCCCCC;
+        z-index: 16777271;
+        font: 14px tahoma, arial, helvetica, sans-serif;
+    }
+
+    #what {
+        position: absolute;
+        width: 300px;
+        top: 18px;
+        left: 400px;
+        background-color: #CCCCCC;
+        z-index: 16777271;
+        font: 14px tahoma, arial, helvetica, sans-serif;
+    }
+
+    #background {
+        position: absolute;
+        width: 220px;
+        top: 18px;
+        right: 10px;
+        background-color: #CCCCCC;
+        z-index: 16777271;
+        font: 14px tahoma, arial, helvetica, sans-serif;
+    }
+
+    #advanced {
+        position: absolute;
+        width: 220px;
+        top: 60px;
+        right: 10px;
+        background-color: #CCCCCC;
+        z-index: 16777271;
+        font: 14px tahoma, arial, helvetica, sans-serif;
+    }
+
+    #footer_left {
+        position: absolute;
+        bottom: 30px;
+        left: 60px;
+        background-color: #CCCCCC;
+        z-index: 16777270;
+        font: 12px tahoma, arial, helvetica, sans-serif;
+    }
+
+    #footer_right {
+        position: absolute;
+        bottom: 30px;
+        right: 200px;
+        background-color: #CCCCCC;
+        z-index: 16777271;
+        font: 12px tahoma, arial, helvetica, sans-serif;
+    }
+
+    a:link {
+        color: gray;
+    }
+
+    a:visited {
+        color: gray;
+    }
+
+    a:hover {
+        color: gray;
+    }
+
+    a:active {
+        color: gray;
+    }
+
+
+</STYLE>
+<SCRIPT type="text/javascript">
+    //Create a global api variable to simplify debugging
+    var api;
+    var layerTreeWindow;
+    var inspireCatalog;
+
+    //init function is started when page onload event is triggered
+    function init() {
+
+        //Create an instance of the GeoAdmin API
+        api = new GeoAdmin.API();
+
+        //Create a mapPanel placed in the map div
+        api.createMapPanel({
+            id: 'mapPanel',
+            renderTo: "map"
+        });
+
+        // Manage map size
+        resizeMap();
+        window.onresize = function() {
+            resizeMap();
+        };
+        api.createSearchBox({
+            width: 300,
+            renderTo: "where",
+            ref: 'geoadmin'
+        });
+
+
+        var store = new Ext.data.ArrayStore({
+            fields: ['topic'],
+            data : [
+                ['Wanderweg'],
+                ['Fixpunkt'],
+                ['Dufour']
+            ]
+        });
+
+        var combo = new Ext.form.ComboBox({
+            store: store,
+            displayField:'topic',
+            typeAhead: true,
+            mode: 'local',
+            forceSelection: true,
+            triggerAction: 'all',
+            emptyText:'Wählen Sie ein Thema...',
+            selectOnFocus:true,
+            renderTo: 'what',
+            width: 300,
+            removeLayer: function() {
+
+            },
+            listeners: {
+                select: function(combo, record, index) {
+                    if (index == 0) {
+                        api.map.addLayerByName('ch.swisstopo.vec25-wander');
+                    }
+                    if (index == 1) {
+                        api.map.addLayerByName('ch.swisstopo.fixpunkte-agnes');
+                        api.map.addLayerByName('ch.swisstopo.fixpunkte-hoehe');
+                        api.map.addLayerByName('ch.swisstopo.fixpunkte-lage');
+                    }
+                    if (index == 2) {
+                        api.map.addLayerByName('ch.swisstopo.hiks-dufour');
+                    }
+                }
+            }
+        });
+
+        //Add a tooltip when the user clicks on a feature in the map
+        api.createTooltip({});
+
+        api.map.setCenter(new OpenLayers.LonLat(660000, 190000), 0);
+    }
+
+    function resizeMap() {
+        var mapElement = document.getElementById('map');
+        mapElement.style.width = document.body.clientWidth + "px";
+        mapElement.style.height = document.body.clientHeight + "px";
+        var footerElement = document.getElementById('footer_left');
+        footerElement.style.width = document.body.clientWidth - 260 + "px";
+        var mapPanel = Ext.getCmp('mapPanel');
+        mapPanel.setHeight(document.body.clientHeight);
+        mapPanel.setWidth(document.body.clientWidth);
+        mapPanel.doLayout();
+    }
+
+    function setAerial() {
+        if (api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-grau')[0]) {
+            api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-grau')[0].setOpacity(0);
+        }
+        if (api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-farbe')[0]) {
+            api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-farbe')[0].setOpacity(0);
+        }
+
+
+    }
+    function setMapColor() {
+        if (api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-farbe')[0]) {
+            api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-farbe')[0].setOpacity(1);
+        } else {
+            api.map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe', {opacity: 1});
+        }
+    }
+    function setMapGray() {
+        if (api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-grau')[0]) {
+            api.map.getLayersBy('layername', 'ch.swisstopo.pixelkarte-grau')[0].setOpacity(1);
+        } else {
+            api.map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 1});
+        }
+    }
+    function setMapVoid() {
+        if (api.map.getLayersBy('layername', 'voidLayer')[0]) {
+            api.map.getLayersBy('layername', 'voidLayer')[0].setOpacity(1);
+        } else {
+            api.map.switchComplementaryLayer('voidLayer', {opacity: 1});
+        }
+    }
+
+    function showLayerTree() {
+        if (!layerTreeWindow) {
+            layerTreeWindow = new Ext.Window({
+                title: 'Layer Auswahl',
+                closeable: true,
+                closeAction: 'hide',
+                id: 'layerTree',
+                hidden: true,
+                resizable: false,
+                items: [new GeoAdmin.LayerTree({map: api.map})],
+                width: 350
+            });
+        }
+        layerTreeWindow.show();
+
+    }
+
+    function showInspireCatalog() {
+        if (!inspireCatalog) {
+            inspireCatalog = new Ext.Window({
+                title: 'Inspire Katalog',
+                closeable: true,
+                closeAction: 'hide',
+                id: 'inspireCatalog',
+                hidden: true,
+                resizable: false,
+                items: [new GeoAdmin.BodSearchComboBox({
+                    width: 337,
+                    listWidth: 337,
+                    map: api.map
+                }),new GeoAdmin.CatalogTree({map: api.map})],
+                width: 350
+            });
+        }
+        inspireCatalog.show();
+
+    }
+</SCRIPT>
+</HEAD>
+<BODY onload="init();">
+<SCRIPT type="text/javascript" src="http://api.geo.admin.ch/loader.js"></SCRIPT>
+<DIV id="map">
+</DIV>
+
+<DIV id="where">
+    <h1>&nbsp Wo ?</h1>
+</DIV>
+
+<DIV id="what">
+    <h1>&nbsp Was ?</h1>
+</DIV>
+
+<DIV id="background">
+    <h1>&nbsp Welche Hintergrund ?</h1>
+
+    <h3 style="color: gray; background-color: #FFFFFF;border: 1px solid;border-color:#C1C1C1">&nbsp <a
+            href="javascript:setAerial();">Aerial</a> | <a href="javascript:setMapColor();">Map</a> |
+        <a href="javascript:setMapGray();">Gray Map </a>| <a href="javascript:setMapVoid();">No</a></h3>
+</DIV>
+
+<DIV id="footer_left">
+    <h1>&nbsp Help | RSS | Twitter | Contact | Coypright</h1>
+</DIV>
+
+<DIV id="advanced">
+    <h1>&nbsp Andere Funktionen ?</h1>
+
+    <h3 style="color: gray; background-color: #FFFFFF;border: 1px solid;border-color:#C1C1C1">&nbsp Drucken</h3>
+
+    <h3 style="color: gray; background-color: #FFFFFF;border: 1px solid;border-color:#C1C1C1"><a
+            href="javascript:showLayerTree();">&nbsp Layer Auswahl</a></h3>
+
+    <h3 style="color: gray; background-color: #FFFFFF;border: 1px solid;border-color:#C1C1C1"><a
+            href="javascript:showInspireCatalog();">&nbsp Inspire Katalog</a></h3>
+</DIV>
+
+<DIV id="footer_right">
+    <h1>DE | FR | IT | RM | EN</h1>
+</DIV>
+
+</BODY>
+
+</html>
+
