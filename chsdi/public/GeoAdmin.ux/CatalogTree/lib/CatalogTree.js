@@ -540,13 +540,15 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     },
-                   /*{
+                    /*{
                         text: ' ' + OpenLayers.i18n('Höhe'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_8"
-                    },*/
-                    {
+                        id: "LT2_8",
+                        children: [
+                        ]
+                   },*/
+                   {
                         text: ' ' + OpenLayers.i18n('Bodenbedeckung'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
@@ -565,6 +567,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.arealstatistik-19971"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-eiszeit-lgm-raster", "node_ch.swisstopo.geologie-eiszeit-lgm-raster1") + ' ' + this.layers["ch.swisstopo.geologie-eiszeit-lgm-raster"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-eiszeit-lgm-raster1"
                             },
                             {
                                 text: this.addtreeLayerLink("ch.bfs.arealstatistik-hintergrund", "node_ch.bfs.arealstatistik-hintergrund1") + ' ' + this.layers["ch.bfs.arealstatistik-hintergrund"].name,
@@ -662,7 +671,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.vec25-eisenbahnnetz1"
-                            }
+                            },
+                            {
+ 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-wander", "node_ch.swisstopo.vec25-wander1") + ' ' + this.layers["ch.swisstopo.vec25-wander"].name,
+ 	  	                        leaf: true,
+ 	  	                        checked: false,
+ 	  	                        cls: 'nodeLT3',
+ 	  	                        id: "node_ch.swisstopo.vec25-wander1"
+ 	                        }
                         ]
                     },
                     {
@@ -742,49 +758,49 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-hochmoore1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-jagdbanngebiete", "node_ch.bafu.bundesinventare-jagdbanngebiete1") + ' ' + this.layers["ch.bafu.bundesinventare-jagdbanngebiete"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-jagdbanngebiete1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.babs.kulturgueter", "node_ch.babs.kulturgueter1") + ' ' + this.layers["ch.babs.kulturgueter"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.babs.kulturgueter1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-moorlandschaften", "node_ch.bafu.bundesinventare-moorlandschaften1") + ' ' + this.layers["ch.bafu.bundesinventare-moorlandschaften"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-moorlandschaften1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-schweizerischer_nationalpark", "node_ch.bafu.schutzgebiete-schweizerischer_nationalpark1") + ' ' + this.layers["ch.bafu.schutzgebiete-schweizerischer_nationalpark"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-schweizerischer_nationalpark1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung", "node_ch.bafu.schutzgebiete-paerke_nationaler_bedeutung1") + ' ' + this.layers["ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-paerke_nationaler_bedeutung1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-ramsar", "node_ch.bafu.schutzgebiete-ramsar1") + ' ' + this.layers["ch.bafu.schutzgebiete-ramsar"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-ramsar1"
                             },
-	                    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate1") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
@@ -793,13 +809,99 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     },
-                    /*{
+                    {
                         text: ' ' + OpenLayers.i18n('Geologie'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_18"
+                        id: "LT2_18",
+                        children: [
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz", "node_ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geodaesie-bouguer_anomalien", "node_ch.swisstopo.geologie-geodaesie-bouguer_anomalien1") + ' ' + this.layers["ch.swisstopo.geologie-geodaesie-bouguer_anomalien"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geodaesie-bouguer_anomalien1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-deklination", "node_ch.swisstopo.geologie-geophysik-deklination1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-deklination"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-deklination1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geologische_karte", "node_ch.swisstopo.geologie-geologische_karte1") + ' ' + this.layers["ch.swisstopo.geologie-geologische_karte"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geologische_karte1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-geothermie", "node_ch.swisstopo.geologie-geophysik-geothermie1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-geothermie"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-geothermie1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen", "node_ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen1") + ' ' + this.layers["ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet", "node_ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet1") + ' ' + this.layers["ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-inklination", "node_ch.swisstopo.geologie-geophysik-inklination1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-inklination"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-inklination1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geodaesie-isostatische_anomalien", "node_ch.swisstopo.geologie-geodaesie-isostatische_anomalien1") + ' ' + this.layers["ch.swisstopo.geologie-geodaesie-isostatische_anomalien"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geodaesie-isostatische_anomalien1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-eiszeit-lgm-raster", "node_ch.swisstopo.geologie-eiszeit-lgm-raster2") + ' ' + this.layers["ch.swisstopo.geologie-eiszeit-lgm-raster"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-eiszeit-lgm-raster2"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-totalintensitaet", "node_ch.swisstopo.geologie-geophysik-totalintensitaet1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-totalintensitaet"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-totalintensitaet1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-tektonische_karte", "node_ch.swisstopo.geologie-tektonische_karte1") + ' ' + this.layers["ch.swisstopo.geologie-tektonische_karte"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-tektonische_karte1"
+                            }
+                        ]
                     },
-                    {
+                    /*{
                         text: ' ' + OpenLayers.i18n('Boden'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
@@ -811,28 +913,28 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         singleClickExpand: true,
                         id: "LT2_20",
                         children: [
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.hydrologie-hydromessstationen",  "node_ch.bafu.hydrologie-hydromessstationen1") + ' ' + this.layers["ch.bafu.hydrologie-hydromessstationen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.hydrologie-hydromessstationen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-entnahme",  "node_ch.bafu.wasser-entnahme1") + ' ' + this.layers["ch.bafu.wasser-entnahme"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-entnahme1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-leitungen",  "node_ch.bafu.wasser-leitungen1") + ' ' + this.layers["ch.bafu.wasser-leitungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-leitungen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.wasser-rueckgabe",  "node_ch.bafu.wasser-rueckgabe1") + ' ' + this.layers["ch.bafu.wasser-rueckgabe"].name,
                                 leaf: true,
                                 checked: false,
@@ -847,63 +949,63 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         singleClickExpand: true,
                         id: "LT2_21",
                         children: [
-			   {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_hochwasser", "node_ch.bafu.showme-gemeinden_hochwasser1") + ' ' + this.layers["ch.bafu.showme-gemeinden_hochwasser"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_hochwasser1"
                             }, 
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_lawinen", "node_ch.bafu.showme-gemeinden_lawinen1") + ' ' + this.layers["ch.bafu.showme-gemeinden_lawinen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_lawinen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_rutschungen", "node_ch.bafu.showme-gemeinden_rutschungen1") + ' ' + this.layers["ch.bafu.showme-gemeinden_rutschungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_rutschungen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_sturzprozesse", "node_ch.bafu.showme-gemeinden_sturzprozesse1") + ' ' + this.layers["ch.bafu.showme-gemeinden_sturzprozesse"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_sturzprozesse1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_hochwasser", "node_ch.bafu.showme-kantone_hochwasser1") + ' ' + this.layers["ch.bafu.showme-kantone_hochwasser"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_hochwasser1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_lawinen", "node_ch.bafu.showme-kantone_lawinen1") + ' ' + this.layers["ch.bafu.showme-kantone_lawinen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_lawinen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_rutschungen", "node_ch.bafu.showme-kantone_rutschungen1") + ' ' + this.layers["ch.bafu.showme-kantone_rutschungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_rutschungen1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.showme-kantone_sturzprozesse", "node_ch.bafu.showme-kantone_sturzprozesse1") + ' ' + this.layers["ch.bafu.showme-kantone_sturzprozesse"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_sturzprozesse1"
                             } 
-			]
+                        ]
                     },
                     /*{
                         text: ' ' + OpenLayers.i18n('Atmosphärische Bedingungen'),
@@ -985,7 +1087,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-jagdbanngebiete2"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-moorlandschaften", "node_ch.bafu.bundesinventare-moorlandschaften2") + ' ' + this.layers["ch.bafu.bundesinventare-moorlandschaften"].name,
                                 leaf: true,
                                 checked: false,
@@ -1013,7 +1115,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.ren-wald_ueber_1000_meter1"
                             },
-			    {
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate2") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
@@ -1085,8 +1187,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-hintergrund2"
                             }
                         ]
-                    }/*,
-                    {
+                    },
+                    /*{
                         text: ' ' + OpenLayers.i18n('Produktions- und Industrieanlagen'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
@@ -1097,13 +1199,22 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_31"
-                    },
+                    }, */
                     {
                         text: ' ' + OpenLayers.i18n('Energiequellen'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_32"
-                    }*/
+                        id: "LT2_32",
+                        children: [
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-geothermie", "node_ch.swisstopo.geologie-geophysik-geothermie2") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-geothermie"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geophysik-geothermie2"
+                            }
+                        ]
+                    }
                 ]
             }
         ];

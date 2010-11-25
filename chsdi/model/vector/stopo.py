@@ -30,7 +30,7 @@ class GG25(Base, Queryable):
 register('ch.swisstopo.gg25-gemeinde-flaeche.fill', GG25)
 
 class Vec200Terminal(Base, Queryable):
-    __tablename__ = 'vec200_terminal'
+    __tablename__ = 'vec200_terminal_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_terminal.mako'
     id = Column('gtdboid', Text, primary_key=True)
@@ -44,7 +44,7 @@ class Vec200Runway(Base, Queryable):
     the_geom = Column(Geometry)
 
 class Vec200Railway(Base, Queryable):
-    __tablename__ = 'vec200_railway'
+    __tablename__ = 'vec200_railway_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_railway.mako'
     id = Column('gtdboid', Text, primary_key=True)
@@ -62,7 +62,7 @@ register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Railwa
 
 
 class Vec200Trafficinfo(Base, Queryable):
-    __tablename__ = 'vec200_trafficinfo'
+    __tablename__ = 'vec200_trafficinfo_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_trafficinfo.mako'
     id = Column('gtdboid', Text, primary_key=True)
@@ -76,14 +76,14 @@ class Vec200Ship(Base, Queryable):
     the_geom = Column(Geometry)
 
 class Vec200Road(Base, Queryable):
-    __tablename__ = 'vec200_road'
+    __tablename__ = 'vec200_road_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_road.mako'
     id = Column('gtdboid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
 class Vec200Ramp(Base, Queryable):
-    __tablename__ = 'vec200_ramp'
+    __tablename__ = 'vec200_ramp_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_ramp.mako'
     id = Column('gtdboid', Text, primary_key=True)
@@ -97,7 +97,7 @@ class Vec200Interchange(Base, Queryable):
     the_geom = Column(Geometry)
 
 class Vec200Customsoffice(Base, Queryable):
-    __tablename__ = 'vec200_customsoffice'
+    __tablename__ = 'vec200_customsoffice_tiles'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_customsoffice.mako'
     id = Column('gtdboid', Text, primary_key=True)
@@ -107,3 +107,32 @@ register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Trafficinfo)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Road)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Ramp)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Customsoffice)
+
+class Vec25Wanderwege(Base, Queryable):
+ 	__tablename__ = 'v25_wanderweg'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_wanderwege.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.vec25-wander', Vec25Wanderwege)
+
+class DufourErst(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'
+ 	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
+ 	__template__ = 'tooltips/dufour_erst.mako'
+ 	id = Column('gid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.hiks-dufour',DufourErst)
+
+class SiegfriedErst(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'view_gridstand_datenhaltung_siegfried_erst'
+ 	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
+ 	__template__ = 'tooltips/siegfried_erst.mako'
+ 	id = Column('gid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.hiks-siegfried',SiegfriedErst)

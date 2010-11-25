@@ -14,7 +14,22 @@
 % if c.full:
 <div class="bodsearch_footer">
 
-% if c.layer.legend:
+% if c.layer.bod_layer_id == "ch.swisstopo.geologie-eiszeit-lgm-raster":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-eiszeit-lgm-raster_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.swisstopo.geologie-geologische_karte":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.swisstopo.geologie-tektonische_karte":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>
 % endif
@@ -22,6 +37,7 @@
   <span style="font-weight:bold;">${_('Information')}</span><br>
 
   <table border="0" cellspacing="0" cellpadding="1" width="400px" style="font-size: 100%;" padding="1 1 1 1">
+    <tr><td>${_('geobasisdatensatz')}</td>  <td>${c.legend.fk_geobasisdaten_sammlung_bundesrecht or '-'}</td></tr>
     <tr><td>${_('Gueltiger Massstabsbereich')}</td>  <td>${c.legend.scale_limit}</td></tr>
     <tr><td>${_('Metadaten')}</td>
 % if c.legend.geocat_uuid:

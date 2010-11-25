@@ -170,7 +170,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.swisstopo.geologie-geodaesie-isostatische_anomalien': 'Isostatische Anomalien CH',
     'ch.swisstopo.geologie-geophysik-geothermie': 'Geothermie CH',
     'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz': 'Aeromagnetik CH',
-
+    'ch.swisstopo.geologie-eiszeit-lgm-raster': 'Letzteiszeitliches Maximum',
+ 	'ch.swisstopo.geologie-geologische_karte': 'Geologie',
+ 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen': 'Grundwasservorkommen',
+ 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet': 'Grundwasservulnerabilität',
+ 	'ch.swisstopo.geologie-tektonische_karte': 'Tektonik',
 
     // Datenherr
     'ch.swisstopo': 'swisstopo',

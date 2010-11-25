@@ -111,7 +111,7 @@ msgid "objektname"
 msgstr "Object name"
 
 msgid "laenge_m"
-msgstr "Länge [m]"
+msgstr "Length [m]"
 
 msgid "flaeche_ha"
 msgstr "Area [ha]"

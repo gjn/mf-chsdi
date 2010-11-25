@@ -123,14 +123,14 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.hiks-siegfried": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-siegfried"),
                 type: "raster",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-primaerflaechen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-primaerflaechen"),
@@ -250,6 +250,90 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
+            },
+	        "ch.swisstopo.geologie-geophysik-totalintensitaet": {
+ 	            name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
+		        type: "line",
+ 	  	        format: "image/png",
+ 	  	        datenherr: OpenLayers.i18n("ch.swisstopo"),
+ 	  	        queryable: false
+ 	        },
+            "ch.swisstopo.geologie-geophysik-inklination": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geophysik-deklination": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-deklination"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geophysik-geothermie": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-geothermie"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geodaesie-isostatische_anomalien": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-isostatische_anomalien"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geodaesie-bouguer_anomalien": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-bouguer_anomalien"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-eiszeit-lgm-raster": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-eiszeit-lgm-raster"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geologische_karte": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geologische_karte"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
+            "ch.swisstopo.geologie-tektonische_karte": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-tektonische_karte"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
             },
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),

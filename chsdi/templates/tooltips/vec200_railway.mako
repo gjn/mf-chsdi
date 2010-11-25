@@ -2,5 +2,5 @@
 
 <%def name="table_body()">
     <tr><td width="150">${_('construct')}</td><td>${c.feature.construct or '-'}</td></tr>
-    <tr><td width="150">${_('type')}</td><td>${c.feature.objval or '-'}</td></tr>
+    <tr><td width="150">${_('typ')}</td><td>${c.feature.objval or '-'}</td></tr>
 </%def>
