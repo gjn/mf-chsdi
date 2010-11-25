@@ -32,6 +32,14 @@ class BodsearchController(BaseController):
 
         return {'results': [r.json(q) for r in query]}
 
+    @_jsonify(cb='cb')
+    def layers(self):
+        p = request.params.get('project') or 'mf-chsdi'
+        query = Session.query(self.BodLayer)
+        query = query.filter(self.BodLayer.projekte.op('~')(p+'[,]?'))
+
+        return {'results': [r.json_layer() for r in query]}
+
     def details(self, id=None):
         c.host = request.params.get('h', '')
         c.full = True

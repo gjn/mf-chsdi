@@ -110,12 +110,33 @@ The following input parameters are required:
 - baseUrl (optional): application base url
 - print (optional): force window to print
 
+BodSearch: layers
+-----------------
+
+This service provides the list of available layers.
+
+URL
+^^^
+
+http://api.geo.admin.ch/bodsearch/layers
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/bodsearch/layers?lang=de
+
 Result
 ^^^^^^
 
-A HTML document
+A JSON
 
-Example: http://api.geo.admin.ch/bodsearch/details/ch.bafu.bundesinventare-moorlandschaften?lang=it&baseUrl=http://map.geo.admin.ch/
+- id: the BOD Id of the layer
+- description: a description of the layer
 
 WMTS
 ----

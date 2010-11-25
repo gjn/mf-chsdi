@@ -27,6 +27,12 @@ class BodLayer(object):
             'content': render('/bod-details.mako')
         }
 
+    def json_layer(self):
+      return {
+            'id': self.bod_layer_id,
+            'description': self.bezeichnung.strip()
+        }
+
     @property
     def short_abstract(self):
         if self.abstract:
