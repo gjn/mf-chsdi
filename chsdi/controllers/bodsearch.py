@@ -37,8 +37,14 @@ class BodsearchController(BaseController):
         p = request.params.get('project') or 'mf-chsdi'
         query = Session.query(self.BodLayer)
         query = query.filter(self.BodLayer.projekte.op('~')(p+'[,]?'))
-
-        return {'results': [r.json_layer() for r in query]}
+        swissimage =  [{'id': 'ch.swisstopo.swissimage', 'description': 'Swissimage'}]
+        pixelmap =  [{'id': 'ch.swisstopo.pixelkarte-farbe', 'description': 'Pixelmap Color'}]
+        pixelmap_gray =  [{'id': 'ch.swisstopo.pixelkarte-grau', 'description': 'Pixelmap Gray'}]
+        res = [r.json_layer() for r in query]
+        res.extend(swissimage)
+        res.extend(pixelmap)
+        res.extend(pixelmap_gray)
+        return {'results': res}
 
     def details(self, id=None):
         c.host = request.params.get('h', '')
