@@ -256,3 +256,15 @@ msgstr "Charge [Pers./an]"
 
 msgid "belastung_tonnen"
 msgstr "Charge [t/an]"
+
+msgid "stand"
+msgstr "Etat"
+
+msgid "typnummer"
+msgstr "N° du type"
+
+msgid "regname"
+msgstr "Région"
+
+msgid "klasse"
+msgstr "Classe"
