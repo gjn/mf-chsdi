@@ -257,3 +257,15 @@ msgstr "Belastung [Pers./Jahr]"
 
 msgid "belastung_tonnen"
 msgstr "Belastung [t/Jahr]"
+
+msgid "stand"
+msgstr "Stand"
+
+msgid "typnummer"
+msgstr "Typnummer"
+
+msgid "regname"
+msgstr "Grossraum"
+
+msgid "klasse"
+msgstr "Klasse"
