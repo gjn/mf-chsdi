@@ -7,6 +7,7 @@
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Layer/WMTS.js
+ * @include OpenLayers/Layer/GML.js
  * @include OpenLayers/Format/WMTSCapabilities.js
  * @include OpenLayers/Request.js
  * @include OpenLayers/Request/XMLHttpRequest.js
