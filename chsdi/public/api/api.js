@@ -91,6 +91,12 @@ GeoAdmin.API = OpenLayers.Class({
      */
     kmlSelectCtrl: null,
 
+    /** api: config[drawLayer]
+     *  ``OpenLayers.Layer``
+     * DEPRECATED OpenLayers layer uses to present vector information (like Marker). Use this.map.vector instead.
+     */
+    drawLayer: null,
+
     /** api: constructor
      *  .. class:: GeoAdmin.API
      *
@@ -152,6 +158,8 @@ GeoAdmin.API = OpenLayers.Class({
             zoom: options.zoom,
             scale: options.scale
         });
+
+        this.drawLayer = this.map.vector;
 
         if (this.map.getCenter() === null) {
             this.map.zoomToMaxExtent();
