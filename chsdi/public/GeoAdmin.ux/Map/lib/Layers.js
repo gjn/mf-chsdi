@@ -567,6 +567,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
             },
+            "ch.are.belastung-personenverkehr-bahn-2008": {
+                name: OpenLayers.i18n("ch.are.belastung-personenverkehr-bahn-2008"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
             "ch.are.belastung-gueterverkehr-strasse-2008": {
                 name: OpenLayers.i18n("ch.are.belastung-gueterverkehr-strasse-2008"),
                 type: "line",
@@ -580,7 +587,49 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
-            }
+            },
+            "ch.are.gueteklassen_oev": {
+                name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.alpenkonvention": {
+                name: OpenLayers.i18n("ch.are.alpenkonvention"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.bevoelkerungsdichte-vz00": {
+                name: OpenLayers.i18n("ch.are.bevoelkerungsdichte-vz00"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.beschaeftigtendichte-bz08": {
+                name: OpenLayers.i18n("ch.are.beschaeftigtendichte-bz08"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.agglomerationen_isolierte_staedte-2000": {
+                name: OpenLayers.i18n("ch.are.agglomerationen_isolierte_staedte-2000"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.landschaftstypen": {
+                name: OpenLayers.i18n("ch.are.landschaftstypen"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            } 
         };
     }
 });
