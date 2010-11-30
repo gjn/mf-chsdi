@@ -228,7 +228,7 @@ The function showFeatures will highlight and recenter the features. The function
             northing: 200000,
             zoom: 3
          });
-
+         
          var api2 = new GeoAdmin.API();
          api2.createMap({
             div: "mymap2",

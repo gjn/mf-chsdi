@@ -429,6 +429,40 @@ function test_createMousePosition(t) {
     t.ok(api.map.getControl('mousepos') instanceof OpenLayers.Control.MousePosition, 'map has a mouse position control');
 }
 
+function test_setBgLayer(t) {
+    t.plan(12);
+
+    var api = new GeoAdmin.API();
+    api.createMap({
+        div: "map_1"
+    });
+    api.setBgLayer('ch.swisstopo.swissimage',0);
+
+    t.eq(api.map.complementaryLayer.layername,'ch.swisstopo.pixelkarte-farbe', 'color pixelmap is set');
+    t.eq(api.map.complementaryLayer.opacity,1, 'color pixelmap is visible');
+
+    api.setBgLayer('voidLayer');
+    t.eq(api.map.complementaryLayer.layername,'voidLayer', 'void layer is set');
+    t.eq(api.map.complementaryLayer.opacity,1, 'void layer is visible');
+
+    api.setBgLayer('voidLayer',0.5);
+    t.eq(api.map.complementaryLayer.layername,'voidLayer', 'void layer is set');
+    t.eq(api.map.complementaryLayer.opacity,0.5, 'void layer is partially visible');
+
+    api.setBgLayer('ch.swisstopo.pixelkarte-farbe',0.5);
+    t.eq(api.map.complementaryLayer.layername,'ch.swisstopo.pixelkarte-farbe', 'ch.swisstopo.pixelkarte-farbe is set');
+    t.eq(api.map.complementaryLayer.opacity,0.5, 'ch.swisstopo.pixelkarte-farbe is partially visible');
+
+    api.setBgLayer('ch.swisstopo.pixelkarte-grau');
+    t.eq(api.map.complementaryLayer.layername,'ch.swisstopo.pixelkarte-grau', 'ch.swisstopo.pixelkarte-grau is set');
+    t.eq(api.map.complementaryLayer.opacity,1, 'ch.swisstopo.pixelkarte-grau is visible');
+
+    api.setBgLayer('ch.swisstopo.pixelkarte-grau',0.8);
+    t.eq(api.map.complementaryLayer.layername,'ch.swisstopo.pixelkarte-grau', 'ch.swisstopo.pixelkarte-grau is set');
+    t.eq(api.map.complementaryLayer.opacity,0.8, 'ch.swisstopo.pixelkarte-grau is partially visible');
+
+}
+
 </script>
 </head>
 <body>

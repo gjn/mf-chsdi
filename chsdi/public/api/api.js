@@ -119,7 +119,7 @@ GeoAdmin.API = OpenLayers.Class({
      *   * ``layers_opacity`` - ``String`` or ``Array``: optional opacity information about the layer. Example: '0.2,0.7'
      *   * ``layers_visibility`` - ``String`` or ``Array``:optional boolean visibility information about the layer. Example: 'false,true'
      *   * ``bgLayer`` - ``String``: optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
-     *   * ``bgOpacity`` - ``Number``:optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
+     *   * ``bgOpacity`` - ``Number``:optional opacity for layer "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer" from 0 to 1
      *   * ``easting`` - ``Number``: optional CH1903 Y coordinate of the map center. Example: 600000
      *   * ``northing`` - ``Number``: optional CH1903 X coordinate of the map center. Example: 200000
      *   * ``zoom`` - ``Number``: optional zoom level. Possible values 0,1,2,3,4,5,6,7,8,9,10,11
@@ -128,7 +128,6 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Create an Openlayers.Map containing the GeoAdmin layer and configuration
      *
-     *  TODO: API CHANGE: bgOpacity - [0-1], not [0-100]
      */
     createMap: function(options) {
 
@@ -723,12 +722,32 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Create a layer tree of layers associated to a map
      *
-     *  TODO: widget not finished
      */
     createLayerTree: function(options) {
         return new GeoAdmin.LayerTree(Ext.applyIf({
             map: this.map
         }, options));
+    },
+    /** api: method[setBgLayer]
+     *  :param layername: ``String`` name of the layer: voidLayer,ch.swisstopo.swissimage,ch.swisstopo.pixelkarte-farbe or ch.swisstopo.pixelkarte-grau
+     *  :param opacity: ``Float`` optional opacity of the layer between 0 and 1
+     *
+     *  Set the background layer with the corresponding opacity
+     *
+     */
+    setBgLayer: function(layername, opacity) {
+        if (!opacity && opacity != 0) {
+            opacity = 1;
+        }
+        if (layername === 'ch.swisstopo.swissimage') {
+            this.map.complementaryLayer.setOpacity(1-opacity);
+        } else {
+            if (layername === this.map.complementaryLayer.layername) {
+               this.map.complementaryLayer.setOpacity(opacity);
+            } else {
+               this.map.switchComplementaryLayer(layername, {opacity: opacity});
+            }
+        }
     }
 });
 

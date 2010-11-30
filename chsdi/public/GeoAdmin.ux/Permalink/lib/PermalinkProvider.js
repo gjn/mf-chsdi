@@ -27,7 +27,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
                 } else if (k === 'bgOpacity') {
-                    map_state.complementaryLayer.opacity = parseInt(params.bgOpacity) / 100.0;
+                    map_state.complementaryLayer.opacity = parseInt(params.bgOpacity);
                 } else if (k === 'bgLayer') {
                     if (params.bgLayer === 'pixelmaps-gray') {
                         params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
@@ -90,7 +90,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
             params.X = this.state.map.y;
             params.zoom = this.state.map.zoom;
             if (this.state.map.complementaryLayer.opacity < 1.0) {
-                params.bgOpacity = this.state.map.complementaryLayer.opacity * 100;
+                params.bgOpacity = this.state.map.complementaryLayer.opacity;
             }
             params.bgLayer = this.state.map.complementaryLayer.layername;
 
