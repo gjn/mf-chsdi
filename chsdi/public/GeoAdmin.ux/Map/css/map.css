@@ -85,3 +85,14 @@ div.olControlMousePosition {
     font-size: smaller;
     letter-spacing: 0;
 }
+
+.geoadmin-mappanel .x-panel-tbar .x-form-field-trigger-wrap {
+    margin-top: 1px;
+}
+.ext-ie .geoadmin-mappanel .x-panel-tbar .x-form-field-trigger-wrap {
+    padding-top: 1px;
+}
+.geoadmin-mappanel .x-panel-tbar {
+    height: 26px;
+}
+
