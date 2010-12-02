@@ -13,6 +13,16 @@
  *  base_link = `OpenLayers.Control.Navigation <http://dev.openlayers.org/apidocs/files/OpenLayers/Control/Navigation-js.html>`_
  */
 
+/** api: example
+ *  Sample code to create a context popup (click with right mouse button) (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#context-popup>`_)
+ *
+ *  .. code-block:: javascript
+ *
+ *     var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
+ *     var contextPopup = new GeoAdmin.ContextPopup({handleRightClicks: true, map: map13});
+ *
+ *
+ */
 GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
 
     initialize: function(options) {
