@@ -6,6 +6,46 @@
  * @include BodSearch/lib/BodSearchWindow.js
  */
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class  = CatalogTree
+ */
+
+/** api: example
+ *  Sample code to create a catalog tree:
+ *
+ *  .. code-block:: javascript
+ *
+ *     <script type="text/javascript">
+ *       function init() {
+ *          var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+ *          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
+ *
+ *       }
+ *     </script>
+ *     <body onload="init();">
+ *      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
+ *      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+ *      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+ *     </body>
+ *
+ */
+
+  /** api: constructor
+  *  .. class:: CatalogTree(config)
+  *
+  *  :param config: ``Object`` config
+  *
+  *
+  *  Valid properties for the ``config`` argument:
+  *   * ``map`` - ``GeoAdmin.Map``: map which will be controlled by the tool
+  *   * ``renderTo`` - ``String`` or ``DOMElement``:  Element where the tool will be rendered
+  *
+  *  :return:  ``GeoAdmin.CatalogTree``
+  *
+  *  Create a catalog tree
+  */
+
 Ext.namespace("GeoAdmin");
 
 GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
