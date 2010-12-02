@@ -6,6 +6,13 @@
  *
  * @include GeoExt/widgets/Popup.js
  */
+
+/** api: (define)
+ *  module =  GeoAdmin
+ *  class = ContextPopup
+ *  base_link = `OpenLayers.Control.Navigation <http://dev.openlayers.org/apidocs/files/OpenLayers/Control/Navigation-js.html>`_
+ */
+
 GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
 
     initialize: function(options) {
