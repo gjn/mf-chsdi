@@ -11,10 +11,11 @@ Ext.ns("GeoAdmin");
 /** api: (define)
  *  module = GeoAdmin
  *  class  = BaseLayerTool
+ *  base_link = `Ext.Container <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Container>`_
  */
 
 /** api: example
- *  Sample code to create a base layer tool:
+ *  Sample code to create a base layer tool (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#base-layer-tool>`_):
  *
  *  
  *  .. code-block:: javascript
@@ -34,6 +35,7 @@ Ext.ns("GeoAdmin");
   *
   *
   *  Valid properties for the ``config`` argument:
+  * 
   *   * ``map`` - ``GeoAdmin.Map``: map which will be controlled by the tool
   *   * ``renderTo`` - ``String`` or ``DOMElement``:  Element where the tool will be rendered
   *   * ``label`` - ``String``: optional label on the left of the slider (representing the swissimage)
@@ -46,9 +48,14 @@ Ext.ns("GeoAdmin");
   */
 GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
 
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  The map instance of the API
+     */
     map: null,
 
     layout: 'column',
+    
     cls: 'geoadmin-baselayertool',
 
     initComponent: function() {

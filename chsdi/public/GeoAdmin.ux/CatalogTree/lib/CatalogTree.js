@@ -9,25 +9,15 @@
 /** api: (define)
  *  module = GeoAdmin
  *  class  = CatalogTree
+ *  base_link = `Ext.tree.TreePanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.tree.TreePanel>`_
  */
 
 /** api: example
- *  Sample code to create a catalog tree:
+ *  Sample code to create a catalog tree (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#catalog-tree>`_):
  *
  *  .. code-block:: javascript
  *
- *     <script type="text/javascript">
- *       function init() {
- *          var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
- *          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
- *
- *       }
- *     </script>
- *     <body onload="init();">
- *      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
- *      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
- *      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
- *     </body>
+ *     var tree = new GeoAdmin.CatalogTree({renderTo: "catalogtreediv", map: map});
  *
  */
 

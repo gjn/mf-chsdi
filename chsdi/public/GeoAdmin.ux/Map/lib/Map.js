@@ -24,7 +24,18 @@
 /** api: (define)
  *  module =  GeoAdmin
  *  class = Map
- *  base_link = `OpenLayers.Map <http://dev.openlayers.org/apidocs/files/OpenLayers/Map-js.html>`
+ *  base_link = `OpenLayers.Map <http://dev.openlayers.org/apidocs/files/OpenLayers/Map-js.html>`_
+ */
+
+/** api: example
+ *  Sample code to create a map (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html>`_):
+ *
+ *
+ *  .. code-block:: javascript
+ *
+ *     var map = new GeoAdmin.Map("mapdiv", {doZoomToMaxExtent: true});
+ *
+ *
  */
 
 /** api: constructor

@@ -8,9 +8,22 @@
 /** api: (define)
  *  module =  GeoAdmin
  *  class = BodSearchComboBox
- *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`
+ *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
  */
 
+/** api: example
+ *  Sample code to create a bod search combo (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#bod-search>`_)
+ *
+ *  .. code-block:: javascript
+ *
+ *     var swisssearch = new GeoAdmin.BodSearchComboBox({
+ *       width: 500,
+ *       renderTo: "searchdiv",
+ *       map: map
+ *    });
+ *
+ *
+ */
 
 /** api: constructor
  *  .. class:: BodSearchComboBox(config)
