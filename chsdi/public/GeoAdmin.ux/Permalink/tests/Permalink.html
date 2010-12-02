@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+	<script type="text/javascript" src="../lib/PermalinkProvider.js"></script>
+	<script type="text/javascript" src="../lib/Permalink.js"></script>
+        <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Map.js"></script>
+    <script type="text/javascript">
+        function test_constructor(t) {
+            t.plan(1);
+            var permalink = new GeoAdmin.Permalink();
+			t.ok(permalink instanceof GeoAdmin.Permalink, "Is the object a Permalink");
+        }
+
+        function test_permalink_value(t) {
+            t.plan(1);
+            var permalink = new GeoAdmin.Permalink();
+            var mapPanel = new GeoAdmin.MapPanel({
+                     renderTo: "map",
+                     width: 500,
+                     height: 340,
+                     map: new GeoAdmin.Map(),
+                     stateId: "map",
+                     tbar: ["->", permalink]
+                 });
+			t.ok(mapPanel instanceof GeoAdmin.MapPanel, "Is the object a MapPanel");
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+</body>
+</html>
