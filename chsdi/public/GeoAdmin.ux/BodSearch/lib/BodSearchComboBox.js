@@ -4,25 +4,45 @@
  * @requires OpenLayers/Lang.js
  * @requires BodSearch/lib/BodSearchWindow.js
  */
+
+/** api: (define)
+ *  module =  GeoAdmin
+ *  class = BodSearchComboBox
+ *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`
+ */
+
+
+/** api: constructor
+ *  .. class:: BodSearchComboBox(config)
+ *
+ *  :return: ``GeoAdmin.BodSearchComboBox``
+ *
+ *  Create a ComboBox to search through available layers
+ */
+
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
-    /*
-     * {<OpenLayers.Map>}
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  The map instance of the API
      */
     map: null,
 
-    /*
-     * {String}
+    /** api: config[url]
+     *  ``String``
+     *  Address of the BodSearch service
      */
     url: null,
 
-    /*
-     * {String}
+    /** api: config[redirectUrl]
+     *  ``String``
+     *  Address of the target map where to open the selected layer
      */
     redirectUrl: "http://map.geo.admin.ch/?layers={0}&lang={1}",
 
-    /*
-     * {String}
+    /** api: config[lang]
+     *  ``String``
+     *  Lang of the API, can be 'de' (default), 'it', 'fr', 'fi' (for rumantsch) or 'en'
      */
     lang: null,
 
