@@ -463,6 +463,14 @@ function test_setBgLayer(t) {
 
 }
 
+function test_createLayerTree(t) {
+    t.plan(2);
+    var api = new GeoAdmin.API();
+    var layerTree = api.createLayerTree();
+    t.ok(layerTree instanceof GeoAdmin.LayerTree, "createLayerTree produces a GeoAdminLayerTree");
+    t.ok(layerTree instanceof Ext.tree.TreePanel, "createLayerTree produces a TreePanel");
+}
+
 </script>
 </head>
 <body>

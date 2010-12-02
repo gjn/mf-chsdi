@@ -93,7 +93,7 @@ GeoAdmin.API = OpenLayers.Class({
 
     /** api: config[drawLayer]
      *  ``OpenLayers.Layer``
-     * DEPRECATED OpenLayers layer uses to present vector information (like Marker). Use this.map.vector instead.
+     *  DEPRECATED OpenLayers layer uses to present vector information (like Marker). Use this.map.vector instead.
      */
     drawLayer: null,
 
