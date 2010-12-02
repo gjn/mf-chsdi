@@ -87,6 +87,7 @@ API
    api/sdiapiexamples
    api/sdiapigenerator
    api/sdiapilayerreference
+   api/sdiapimigrationfaq
 
 Widgets
 -------
