@@ -37,7 +37,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  The map instance of the API
+     *  A map instance
      */
     map: null,
 

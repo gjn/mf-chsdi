@@ -17,7 +17,10 @@
  *
  *  .. code-block:: javascript
  *
- *     var tree = new GeoAdmin.CatalogTree({renderTo: "catalogtreediv", map: map});
+ *     var tree = new GeoAdmin.CatalogTree({
+ *           renderTo: "catalogtreediv",
+ *           map: map
+ *     });
  *
  */
 
@@ -25,11 +28,6 @@
   *  .. class:: CatalogTree(config)
   *
   *  :param config: ``Object`` config
-  *
-  *
-  *  Valid properties for the ``config`` argument:
-  *   * ``map`` - ``GeoAdmin.Map``: map which will be controlled by the tool
-  *   * ``renderTo`` - ``String`` or ``DOMElement``:  Element where the tool will be rendered
   *
   *  :return:  ``GeoAdmin.CatalogTree``
   *
@@ -73,7 +71,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      */
     layerStore: null,
 
-    /**
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A map instance
      */
     map: null,
 
