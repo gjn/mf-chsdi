@@ -75,7 +75,7 @@ msgid "Detailbeschreibung"
 msgstr "Description détaillée"
 
 msgid "Datenbezug"
-msgstr "Données de référence"
+msgstr "Distribution des données"
 
 msgid "Thematisches Geoportal"
 msgstr "Géoportail thématique"
@@ -84,7 +84,7 @@ msgid "WMS Dienst"
 msgstr "Service WMS"
 
 msgid "Datenstand"
-msgstr "Mis à jour"
+msgstr "État d'actualité"
 
 msgid "layer_geocat_text"
 msgstr "Lien vers geocat.ch"
