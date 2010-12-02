@@ -16,7 +16,7 @@
  *
  *  .. code-block:: javascript
  *
- *     var swisssearch = new GeoAdmin.BodSearchComboBox({
+ *     var bodSearch = new GeoAdmin.BodSearchComboBox({
  *       width: 500,
  *       renderTo: "searchdiv",
  *       map: map
@@ -30,7 +30,7 @@
  *
  *  :return: ``GeoAdmin.BodSearchComboBox``
  *
- *  Create a ComboBox to search through available layers
+ *  Create a ComboBox to search through available layers. BOD means "Betriebsobjektdatenbank".
  */
 
 GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
@@ -59,7 +59,6 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      */
     lang: null,
 
-    // default Ext.form.ComboBox config
     hideTrigger: true,
     minChars: 4,
     queryDelay: 50,
@@ -68,7 +67,6 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     forceSelection: true,
 
     initComponent: function() {
-        // i18n
         this.emptyText = OpenLayers.i18n('Search data...');
 
         if (!this.url && GeoAdmin.webServicesUrl !== null) {

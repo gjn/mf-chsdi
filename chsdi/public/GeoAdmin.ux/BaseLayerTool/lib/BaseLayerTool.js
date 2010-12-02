@@ -7,7 +7,6 @@ Ext.ns("GeoAdmin");
  * @include OpenLayers/Lang.js
  */
 
-
 /** api: (define)
  *  module = GeoAdmin
  *  class  = BaseLayerTool
@@ -20,7 +19,7 @@ Ext.ns("GeoAdmin");
  *  
  *  .. code-block:: javascript
  * 
- *     var baseTool = new GeoAdmin.BaseLayerTool({
+ *     var baseLayerTool = new GeoAdmin.BaseLayerTool({
  *           map: new GeoAdmin.Map('mymap'), 
  *           renderTo: "baselayertool"
  *     })
@@ -28,19 +27,10 @@ Ext.ns("GeoAdmin");
  *
  */
 
- /** api: constructor
+/** api: constructor
   *  .. class:: BaseLayerTool(config)
   *
   *  :param config: ``Object`` config
-  *
-  *
-  *  Valid properties for the ``config`` argument:
-  * 
-  *   * ``map`` - ``GeoAdmin.Map``: map which will be controlled by the tool
-  *   * ``renderTo`` - ``String`` or ``DOMElement``:  Element where the tool will be rendered
-  *   * ``label`` - ``String``: optional label on the left of the slider (representing the swissimage)
-  *   * ``slider`` - ``Object``: optional object for setting slider options, like width
-  *   * ``combo`` - ``Object``: optional object for setting combo options, like width
   * 
   *  :return:  ``GeoAdmin.BaseLayerTool``
   *
@@ -50,7 +40,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  The map instance of the API
+     *  A map instance
      */
     map: null,
 
