@@ -2,6 +2,7 @@
 <head>
     <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
     <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
     <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
     <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
@@ -12,14 +13,19 @@
     <script type="text/javascript" src="../lib/Features.js"></script>
     <script type="text/javascript">
 
-    window.GeoAdmin.webServicesUrl = "../..";
+        window.GeoAdmin.webServicesUrl = "../../..";
 
-    function test_constructor(t) {
-            t.plan(1);
-            var features = new GeoAdmin.Features();
-            console.log(features);
+        function test_constructor(t) {
+            t.plan(2);
+            var map = new GeoAdmin.Map();
+            var features = new GeoAdmin.Features({map: map});
             t.ok(features instanceof GeoAdmin.Features, "Features give an instance of GeoAdmin.Features");
-    }
+            features.recenter('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+                var lonlat = OpenLayers.Bounds.fromArray(response.bbox).getCenterLonLat();
+                t.ok(features.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
+            });
+            t.wait_result(5);
+        }
 
     </script>
 </head>
