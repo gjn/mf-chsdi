@@ -599,13 +599,6 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-19971"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.swisstopo.geologie-eiszeit-lgm-raster", "node_ch.swisstopo.geologie-eiszeit-lgm-raster1") + ' ' + this.layers["ch.swisstopo.geologie-eiszeit-lgm-raster"].name,
-                                leaf: true,
-                                checked: false,
-                                cls: 'nodeLT3',
-                                id: "node_ch.swisstopo.geologie-eiszeit-lgm-raster1"
-                            },
-                            {
                                 text: this.addtreeLayerLink("ch.bfs.arealstatistik-hintergrund", "node_ch.bfs.arealstatistik-hintergrund1") + ' ' + this.layers["ch.bfs.arealstatistik-hintergrund"].name,
                                 leaf: true,
                                 checked: false,
@@ -909,11 +902,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.geologie-geodaesie-isostatische_anomalien1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.swisstopo.geologie-eiszeit-lgm-raster", "node_ch.swisstopo.geologie-eiszeit-lgm-raster2") + ' ' + this.layers["ch.swisstopo.geologie-eiszeit-lgm-raster"].name,
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-eiszeit-lgm-raster", "node_ch.swisstopo.geologie-eiszeit-lgm-raster1") + ' ' + this.layers["ch.swisstopo.geologie-eiszeit-lgm-raster"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
-                                id: "node_ch.swisstopo.geologie-eiszeit-lgm-raster2"
+                                id: "node_ch.swisstopo.geologie-eiszeit-lgm-raster1"
                             },
                             {
                                 text: this.addtreeLayerLink("ch.swisstopo.geologie-geophysik-totalintensitaet", "node_ch.swisstopo.geologie-geophysik-totalintensitaet1") + ' ' + this.layers["ch.swisstopo.geologie-geophysik-totalintensitaet"].name,
