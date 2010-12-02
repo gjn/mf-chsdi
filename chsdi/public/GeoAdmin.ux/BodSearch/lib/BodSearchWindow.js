@@ -2,6 +2,21 @@
  * @include Ext/src/ext-core/examples/jsonp/jsonp.js
  */
 
+/** api: (define)
+ *  module =  GeoAdmin
+ *  class = BodSearchWindow
+ */
+
+/** api: example
+ *  Sample code to create a bod search window (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#>`_)
+ *
+ *  .. code-block:: javascript
+ *
+ *     GeoAdmin.BodSearchWindow.show('ch.swisstopo.fixpunkte-agnes');
+ *
+ *  Show a layer metadata window
+ */
+
 GeoAdmin.BodSearchWindow = {
 
     show: function(id) {
