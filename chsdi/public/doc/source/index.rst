@@ -84,6 +84,7 @@ API
 
    api/sdiapitutorial
    api/sdiapidoc
+   api/sdiapipermalink
    api/sdiapiexamples
    api/sdiapigenerator
    api/sdiapilayerreference
