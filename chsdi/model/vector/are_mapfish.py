@@ -85,3 +85,39 @@ class AggloIsoStaedte(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.are.agglomerationen_isolierte_staedte-2000', AggloIsoStaedte)
+
+
+class GueteklasseOev(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'gueteklassen'
+    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
+    __template__ = 'tooltips/gueteklasseoev.mako'
+
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.gueteklassen_oev', GueteklasseOev)
+
+
+class Bevoelkerungsdichte(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'bevoelkerungsdichte_vz00'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/bevoelkerungsdichte.mako'
+
+    id = Column('row_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.bevoelkerungsdichte-vz00', Bevoelkerungsdichte)
+
+
+class Beschaeftigtendichte(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'beschaeftigtendichte_bz08'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/beschaeftigtendichte.mako'
+
+    id = Column('row_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.beschaeftigtendichte-bz08', Beschaeftigtendichte)
