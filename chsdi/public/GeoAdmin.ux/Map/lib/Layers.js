@@ -24,7 +24,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 
         if (config.wms) {
             return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
-                layers: [name],
+                layers: config.layers,
                 format: config.format
             }, {
                 layername: name,
@@ -387,6 +387,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.hydrologie-hydromessstationen": {
                 name: OpenLayers.i18n("ch.bafu.hydrologie-hydromessstationen"),
                 wms: true,
+                layers: ["ch.bafu.hydrologie-hydromessstationen"],
                 type: "point",
                 format: "image/pnga",
                 datenherr: OpenLayers.i18n("ch.bafu"),
@@ -629,7 +630,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
-            } 
+            }
         };
     }
 });
