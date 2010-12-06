@@ -269,3 +269,10 @@ msgstr "Grossraum"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "einwohner_ha"
+msgstr "Einwohner pro ha"
+
+msgid "beschaeftigte_ha"
+msgstr "Beschäftigte pro ha"
+
