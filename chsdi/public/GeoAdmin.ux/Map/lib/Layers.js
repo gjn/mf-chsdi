@@ -630,6 +630,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
+            },
+            "ch.are.gueteklassen_oev": {
+                name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
             }
         };
     }
