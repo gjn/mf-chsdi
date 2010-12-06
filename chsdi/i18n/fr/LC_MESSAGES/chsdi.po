@@ -268,3 +268,9 @@ msgstr "Région"
 
 msgid "klasse"
 msgstr "Classe"
+
+msgid "einwohner_ha"
+msgstr "Population par ha"
+
+msgid "beschaeftigte_ha"
+msgstr "Emplois par ha"
