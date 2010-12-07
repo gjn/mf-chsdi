@@ -82,15 +82,15 @@ API
 .. toctree::
    :maxdepth: 1
 
+
    api/sdiapitutorial
    api/sdiapidoc
-   api/sdiapipermalink
    api/sdiapiexamples
    api/sdiapigenerator
-   api/sdiapilayerreference
-   api/sdiapitechnicalinfo
-   api/sdiapimigrationfaq
-   api/sdiapigallery   
+   api/faq/index
+
+  
+
 
 Widgets
 -------
