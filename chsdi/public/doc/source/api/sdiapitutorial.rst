@@ -189,6 +189,10 @@ And finally, tell the web page to execute the javascript function you defined, a
 And test it in your web browser:  `http://localhost/map.html <../_static/map.html>`_
 
 
+8. Where to go from now ?
+-------------------------
+
+You can have a look at the :doc:`sdiapiexamples` or explore the :doc:`sdiapidoc` 
 
 
 .. raw:: html
