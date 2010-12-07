@@ -24,12 +24,12 @@
 API Tutorial
 ============
 
-Disclaimer. The following documentation ist only for the swiss federal administration.
+This step by step tutorial will show you how to add a map in any map page in 2 minutes.
 
-Create a basic HTML page
-------------------------
+1. Final result
+---------------
 
-This is a step by step example showing you how to add an interractive map to your web page. The final result will be like this:
+At the end of this tutorial you will have a map like this in you browser.
 
 .. raw:: html
 
@@ -45,7 +45,10 @@ This is a step by step example showing you how to add an interractive map to you
 
 
 
+2. Create an empty HTML page
+----------------------------
 
+Create an empty web page  `map.html` and place it in your localhost developpement environnement. Check that you can call it with http://localhost/map.html
 
 .. code-block:: html 
     
@@ -56,24 +59,44 @@ This is a step by step example showing you how to add an interractive map to you
             <title>My very first GeoAdmin Map</title>
         </head>
         <body>
+         <h1>This is my very first map</h1>
         </body>
     </html>
 
-Inlcude the API loader. This will load the whole Javascript and CSS to run your map
+3. Add the API loader
+---------------------
+
+Add a script tag to load the API at the end of your web page. This script will load all the necessary JavaScript code and CSS to run the map.
 
 .. code-block:: html
-        
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>My very first GeoAdmin Map</title>
+        </head>
         <body>
-           <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+             <h1>This is my very first map</h1>
+            <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
         </body>
- 
+    </html>
+        
+
+4. Create a simple javascript function initilizing a map
+--------------------------------------------------------
 
 
-Create a simple javascript function initilizing a map
+In the header section of your HTML page, create a small Javascript function creating a small map.
 
 .. code-block:: html
 
-    <script type="text/javascript">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>My very first GeoAdmin Map</title>
+                <script type="text/javascript">
         function init() {
             var geo = new GeoAdmin.API();
             geo.createMap({
@@ -84,62 +107,87 @@ Create a simple javascript function initilizing a map
             });
         }
     </script>
-
-
-
-Do no not forget to add a <div> to receive you map
-
-.. code-block:: html
-      
-     <body>
-        <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-        <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
-    </body>
-
-And launch the `init()` function at load time:
-
-.. code-block:: html
-
-    <body onload="init();">
-
-
-
-Final HTML doc
-
-.. code-block:: html
-    
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <title>My very fist GeoAdmin API Map</title>
-            <script type="text/javascript">
-                function init() {
-                    var geo = new GeoAdmin.API();
-                    geo.createMap({
-                        div: "mymap1",
-                        easting: 720000,
-                        northing: 90000,
-                        zoom: 5
-                    });
-                }
-            </script>
         </head>
-        <body onload="init();">
-            <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+        <body>
+             <h1>This is my very first map</h1>
             <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
         </body>
     </html>
 
 
-.. raw:: html
+5. Add a <div> where the map will be displayed
+----------------------------------------------
 
-    </div> 
+In the body section of your web page, add a `<div>` with `id="mymap1"`  where the map will be rendered. 
 
-Instruction for Day Communiqué
-------------------------------
 
-If your are using Day Communiqué to manage the Website of your office, this is how to create a basic map
+
+.. code-block:: html
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>My very first GeoAdmin Map</title>
+                <script type="text/javascript">
+        function init() {
+            var geo = new GeoAdmin.API();
+            geo.createMap({
+                div: "mymap1",
+                easting: 720000,
+                northing: 90000,
+                zoom: 5
+            });
+        }
+    </script>
+        </head>
+     <body>
+        <h1>This is my very first map</h1>
+        <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+        <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+    </body>
+    </html>
+      
+
+6. Initialise the map
+---------------------
+
+And finally, tell the web page to execute the javascript function you defined, adding  `onload="init()"` to the body tag:
+
+
+.. code-block:: html
+
+    
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>My very first GeoAdmin Map</title>
+        <script type="text/javascript">
+        function init() {
+            var geo = new GeoAdmin.API();
+            geo.createMap({
+                div: "mymap1",
+                easting: 720000,
+                northing: 90000,
+                zoom: 5
+            });
+        }
+    </script>
+        </head>
+     <body onload="init();">
+        <h1>This is my very first map</h1>
+        <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+        <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+    </body>
+    </html>
+
+7. Test it
+----------
+
+And test it in your web browser:  `http://localhost/map.html <../_static/map.html>`_
+
 
 
 
