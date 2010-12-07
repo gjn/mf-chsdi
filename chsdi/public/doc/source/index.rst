@@ -50,7 +50,7 @@ These pages are dedicated to developer interested in using the API.
 
 .. raw:: html
 
-    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')">Show code</a>
+    <a id="showRef1" href="javascript:showdiv('codeBlock1','showRef1','hideRef1')">Do you want to see the code ?</a>
     <a id="hideRef1" href="javascript:hidediv('codeBlock1','showRef1','hideRef1')" style="display: none; visibility: hidden">Hide code</a>
     <div id="codeBlock1" style="display: none; visibility: hidden">
 
@@ -73,52 +73,25 @@ These pages are dedicated to developer interested in using the API.
 
     </div>
 
-
-Contents
-********
-
 API
----
+***
 
 .. toctree::
    :maxdepth: 1
-
 
    api/sdiapitutorial
    api/sdiapidoc
    api/sdiapiexamples
    api/sdiapigenerator
    api/faq/index
-
-Widgets
--------
-
-.. toctree::
-   :maxdepth: 1
-
-   widgets/sdiwidgetsdescription
-   widgets/sdiwidgetsexamples
    
 Services
 --------
 
 .. toctree::
-   :maxdepth: 2
-
-   services/sdiservices
-
-Unit tests
-----------
-
-.. toctree::
    :maxdepth: 1
 
-   tests/unittests
-
-Source code
------------
-
-The source code of the API project can be found here: https://svn.bgdi.admin.ch/mf-chsdi/trunk/chsdi/
+   services/sdiservices
 
 Terms of use
 ************

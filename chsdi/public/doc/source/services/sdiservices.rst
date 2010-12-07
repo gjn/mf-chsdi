@@ -21,9 +21,6 @@
    }
    </script>
 
-Services
-========
-
 SwissSearch
 -----------
 
@@ -137,6 +134,8 @@ A JSON
 
 - id: the BOD Id of the layer
 - description: a description of the layer
+
+.. _wmts_description:
 
 WMTS
 ----
