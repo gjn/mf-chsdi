@@ -47,8 +47,8 @@ div.sphinxsidebar input {
 }
 
 div.section ul {
-   padding: 0px 0px 0px 40px !important;
-   list-style: square !important;
+    padding: 0px 0px 0px 40px !important;
+    list-style: square !important;
 }
 
 h1 {
@@ -73,27 +73,29 @@ h3 {
  *
  */
 div.x-panel-body ul {
-   list-style:none outside none !important;
-   padding:0 !important;
+    list-style: none outside none !important;
+    padding: 0 !important;
 }
 
 .x-panel-bbar {
-   margin-top: 10px;
+    margin-top: 10px;
 }
+
 .x-toolbar-layout-ct {
-   padding-left:5px;
+    padding-left: 5px;
 }
 
 .tooltip_footer table {
-   margin: 0px 0px !important; 
+    margin: 0px 0px !important;
 }
+
 table {
-   margin: -3px -0.5em !important;
+    margin: -3px -0.5em !important;
 }
 
 #apicode .x-window-body {
     text-align: left !important;
-    font:12px tahoma,arial,helvetica,sans-serif;
+    font: 12px tahoma, arial, helvetica, sans-serif;
     letter-spacing: 0 !important;
 }
 
@@ -104,23 +106,36 @@ table {
 .button {
     border: none;
     padding: 2px 8px;
-    margin-bottom:2px;
-    margin-top:2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
     width: 10em;
 }
+
 .button:hover {
     border: none;
     padding: 2px 8px;
-    margin-bottom:2px;
-    margin-top:2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
     width: 10em;
 }
 
 .CodeMirror-wrapping {
-   background: #EEEEEE;
-   border-width:0;
+    background: #EEEEEE;
+    border-width: 0;
 }
 
 ol.arabic {
-	margin-left:35px !important;
+    margin-left: 35px !important;
+}
+
+div.bodywrapper p {
+    margin: 0.8em 0 0.5em !important;
+}
+
+div.bodywrapper strong {
+    font-weight: bold;
+}
+
+table.docutils {
+    margin: 5px 10px !important;
 }

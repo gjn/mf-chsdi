@@ -29,8 +29,9 @@
 Welcome to GeoAdmin API's documentation!
 ========================================
 
-The GeoAdmin API allows the integration of geospatial information provided by the Swiss Confederation in web pages.
-These pages are dedicated to developer interested in using the API. 
+The GeoAdmin API allows the integration in web pages of geospatial information provided by the Swiss Confederation.
+
+These pages are dedicated to developer interested in using the API.
 
 .. raw:: html
 
@@ -88,9 +89,6 @@ API
    api/sdiapiexamples
    api/sdiapigenerator
    api/faq/index
-
-  
-
 
 Widgets
 -------

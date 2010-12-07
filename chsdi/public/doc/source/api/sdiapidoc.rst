@@ -1,7 +1,5 @@
-API Reference 
-=============
-
-
+API Doc
+=======
 
 :mod:`GeoAdmin`
 ---------------

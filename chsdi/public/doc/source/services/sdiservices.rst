@@ -141,29 +141,29 @@ A JSON
 WMTS
 ----
 
-A RESTFul implementation of the WMTS norm.
+A RESTFul implementation of the WMTS OGC standard.
 
 URL
 ^^^
 
-- http://api.geo.admin.ch/wmts
-- http://api.geo.admin.ch/wmts5
-- http://api.geo.admin.ch/wmts6
-- http://api.geo.admin.ch/wmts7
-- http://api.geo.admin.ch/wmts8
-- http://api.geo.admin.ch/wmts9
+- http://wmts.geo.admin.ch/wmts/
+- http://wmts5.geo.admin.ch/wmts/
+- http://wmts6.geo.admin.ch/wmts/
+- http://wmts7.geo.admin.ch/wmts/
+- http://wmts8.geo.admin.ch/wmts/
+- http://wmts9.geo.admin.ch/wmts/
 
 Input parameters
 ^^^^^^^^^^^^^^^^
 
-See WMTS norm: http://www.opengeospatial.org/standards/wmts
+See WMTS OGC standard: http://www.opengeospatial.org/standards/wmts
 
 Result
 ^^^^^^
 
 A tile.
 
-Example: http://api.geo.admin.ch/wmts9/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
+Example: http://wmts9.geo.admin.ch/wmts/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
 
 Usage Example
 ^^^^^^^^^^^^^
@@ -219,7 +219,7 @@ Usage Example
          var layer = new OpenLayers.Layer.WMTS({
             requestEncoding: "REST",
             name: "ch.swisstopo.pixelkarte-farbe",
-            url: ['http://api.geo.admin.ch/wmts5/','http://api.geo.admin.ch/wmts6/','http://api.geo.admin.ch/wmts7/','http://api.geo.admin.ch/wmts8/','http://api.geo.admin.ch/wmts9/'],
+            url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
             layer: "ch.swisstopo.pixelkarte-farbe",
             matrixSet: "ch.swisstopo.pixelkarte-farbe",
             format: "image/jpeg",
@@ -302,7 +302,7 @@ Usage Example
          var layer = new OpenLayers.Layer.WMTS({
             requestEncoding: "REST",
             name: "ch.swisstopo.pixelkarte-farbe",
-            url: ['http://api.geo.admin.ch/wmts5/','http://api.geo.admin.ch/wmts6/','http://api.geo.admin.ch/wmts7/','http://api.geo.admin.ch/wmts8/','http://api.geo.admin.ch/wmts9/'],
+            url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
             layer: "ch.swisstopo.pixelkarte-farbe",
             matrixSet: "ch.swisstopo.pixelkarte-farbe",
             format: "image/jpeg",
