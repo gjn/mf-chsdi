@@ -176,7 +176,7 @@ And test it in your web browser: `http://localhost/map.html <../_static/map.html
 8. What are the next steps ?
 ----------------------------
 
-You can have a look at the :doc:`sdiapiexamples` or explore the :doc:`sdiapidoc` 
+You can have a look at the :doc:`sdiapiexamples`,  explore the :doc:`sdiapidoc` or experiment with the fantastic :doc:`sdiapigenerator`.  
 
 .. raw:: html
 

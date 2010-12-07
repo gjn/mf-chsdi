@@ -11,6 +11,10 @@ What is the GeoAdmin API ?
 
 The GeoAdmin API allows the integration in web pages of geospatial information provided by the Swiss Confederation.
 
+The GeoAdmin API provides also some REST web services like :doc:`../../services/sdiservices`
+
+The GeoAdmin API integrates the ExtJS, GeoExt and OpenLayers library. You can use these libraries when you use the GeoAdmin API.
+
 Who can use the GeoAdmin API ?
 ------------------------------
 
@@ -81,8 +85,8 @@ Y                              easting value (from 450'000 to                   
                                900'000)
 X                              northing value, ranging from 50'000 to                        http://map.geo.admin.ch?X=150000
                                350'000 (always smaller than Y)
-bgOpacity                      Opacity of national map covering the                          http://map.geo.admin.ch?bgOpacity=20
-                               underlaying image (0 to 100)
+bgOpacity                      Opacity of national map covering the                          http://map.geo.admin.ch?bgOpacity=0.1
+                               underlaying image (0 to 1)
 bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           http://map.geo.admin.ch?bgLayer=voidLayer
                                `ch.swisstopo.pixelkarte-farbe` or `voidLayer`
 layers                         Layer to display, see :ref:`available_layers`                 http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour
@@ -177,7 +181,13 @@ Where is the source code ?
 --------------------------
 
 The source code of the GeoAdmin API project can be found here: https://svn.bgdi.admin.ch/mf-chsdi/trunk/chsdi/
-   
+
+The code of the API is accessible here: http://api.geo.admin.ch/main/wsgi/api/
+
+The code of the GeoAdmin widgets is accessible here: http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/
+
+The code of the base libraries is accessible here: http://api.geo.admin.ch/main/wsgi/lib/
+
 Migration from GeoAdmin API 1.0 to GeoAdmin API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -191,6 +201,14 @@ The GeoAdmin API and the CSS are now loaded with the http://api.geo.admin.ch/loa
    <body>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
+
+Is the backward compatibility broken ?
+--------------------------------------
+
+Everything has been done in order to keep a backward compatibility. Nevertheless, the following changes imply to modify the existing code:
+
+ * The background opacity parameter bgOpacity is now defined between 0 and 1. Percentage are not allowed anymore.
+ * Modifications in GeoExt (see http://trac.geoext.org/wiki/Release/1.0/Notes) can have an impact on existing implementation. Typically, the GeoExt.Popup have seen important changes.
 
 
 
