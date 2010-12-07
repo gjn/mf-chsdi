@@ -154,6 +154,14 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + '   api.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});';
         }
 
+        if (backgroundLayer == 3) {
+            code = code + separator;
+            code = code + separator;
+            code = code + '   //The complementary layer is per default the color pixelmap.';
+            code = code + separator;
+            code = code + '   api.map.switchComplementaryLayer("voidLayer", {opacity: 1});';
+        }
+
         if (addBaseLayerTool) {
             code = code + separator;
             code = code + separator;
@@ -472,7 +480,8 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                         data: [
                             ['Pixelmap'],
                             ['Swissimage'],
-                            ['Gray pixelmap']
+                            ['Gray pixelmap'],
+                            ['White background']
                         ]
                     }),
                     listeners:{
