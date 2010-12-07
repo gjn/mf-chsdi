@@ -68,7 +68,7 @@ class WmtsController(BaseController):
     def manager(self):
         # TileCache configuration
         tileCacheServers = ['http://tile5.bgdi.admin.ch/geoadmin','http://tile6.bgdi.admin.ch/geoadmin','http://tile7.bgdi.admin.ch/geoadmin','http://tile8.bgdi.admin.ch/geoadmin','http://tile9.bgdi.admin.ch/geoadmin']
-        tileCacheReferer = 'http://map.geo.admin.ch/'
+        tileCacheReferer = 'http://fake.wmts.geo.admin.ch/'
 
         # Get information from WMTS URL
         urlContent = request.url.split("/")
@@ -121,12 +121,12 @@ class WmtsController(BaseController):
         return r.read()
 
     def zeroPad(self,number,length):
-        number = str(number);
+        number = str(number)
         count = 0
         for char in number:
            count = count + 1
-        zeros = [];
+        zeros = []
         for i in range(0 ,length-count):
            zeros.append('0')
         zeros.append(number)
-        return ''.join(zeros);
+        return ''.join(zeros)
