@@ -4,13 +4,13 @@
 
 Ext.namespace('GeoAdmin');
 
+
+
 // create the permalink provider and set it into
 // the state manager
 Ext.state.Manager.setProvider(new GeoAdmin.PermalinkProvider());
 
-/**
- *
- */
+
 GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
     autoHeight: true,
 
@@ -35,8 +35,10 @@ GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
     }
 });
 
-/**
- *
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = PermalinkPanel
+ *  base_link = `Ext.form.FormPanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.FormPanel>`_
  */
 GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     border: false,
@@ -72,8 +74,29 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
 });
 Ext.reg("ga_permalinkpanel", GeoAdmin.PermalinkPanel);
 
-/**
+
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = PermalinkWindow
+ *  base_link = `Ext.Window <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Window>`_
  */
+
+/** api: example
+ *  Sample code to create a permalink window (see also :ref:`permalink`):
+ *
+ *  .. code-block:: javascript
+ *
+ *     var mapPanel = new GeoAdmin.MapPanel({
+ *         renderTo: "map",
+ *         width: 600,
+ *         height: 400,
+ *         map: new GeoAdmin.Map(),
+ *         stateId: "map",
+ *         tbar: ["->", new GeoAdmin.Permalink()]
+ *     });
+ *
+ */
+
 GeoAdmin.PermalinkWindow = Ext.extend(Ext.Window, {
 
     initComponent: function() {
@@ -105,8 +128,13 @@ GeoAdmin.PermalinkWindow = Ext.extend(Ext.Window, {
     }
 });
 
-/**
+
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = Permalink
+ *  base_link = `Ext.Action <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Action>`_
  */
+
 GeoAdmin.Permalink = Ext.extend(Ext.Action, {
 
     /**
