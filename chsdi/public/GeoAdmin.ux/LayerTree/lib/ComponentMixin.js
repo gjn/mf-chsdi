@@ -16,7 +16,8 @@ Ext.namespace("GeoAdmin");
 /** api: constructor
  *  ``Ext.Component or Object or Function`` This property is to be used
  *  when an Ext component is to be inserted in the node. This property can
- *  be used in several ways, it can reference
+ *  be used in several ways, it can reference:
+ *
  *  * ``Ext.Component`` a component instance. In this case the provided
  *    component is just rendered in the node.
  *  * ``Object`` a component config (using ``xtype``). In this case the
@@ -28,6 +29,7 @@ Ext.namespace("GeoAdmin");
  *  * ``Object`` an object with a ``fn`` and ``scope`` properties. ``fn``
  *    references a function returning a component instance or config (like
  *    previously), ``scope`` is its execution scope.
+ *
  *  This property applies only if the node is configured with a
  *  :class:`GeoAdmin.LayerNodeUI` UI instance (which is the default).
  */
