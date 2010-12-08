@@ -6,6 +6,12 @@
  *
  * @include proj4js/lib/defs/EPSG21781.js
  */
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = SwissSearchComboBox
+ *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
+ */
+
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     map: null,

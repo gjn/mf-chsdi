@@ -7,6 +7,13 @@
  * @include GeoExt/data/PrintProvider.js
  */
 
+
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = Print
+ *  base_link = `Ext.Action <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Action>`_
+ */
+
 /**
  * As an :class:`Ext.Action`, GeoAdmin.Print accepts usual Ext.Action arguments.
  * Additional parameters are printPanelConfig (config for
