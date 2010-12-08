@@ -6,6 +6,13 @@
  *
  * @include GeoExt/widgets/Popup.js
  */
+
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = Tooltips
+ *  base_link = `OpenLayers.Control.GetFeature <http://dev.openlayers.org/apidocs/files/OpenLayers/Control/GetFeature-js.html>`_
+ */
+
 GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     /*

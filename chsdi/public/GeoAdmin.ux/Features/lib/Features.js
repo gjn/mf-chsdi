@@ -5,6 +5,11 @@
  * @include OpenLayers/Format/GeoJSON.js
  */
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = Features
+ */
+
 GeoAdmin.Features = OpenLayers.Class({
 
     recenterUrl: null,
