@@ -93,6 +93,12 @@
     <td>${c.legend.datenstand[4:]}.${c.legend.datenstand[:4]}</td>
 % elif len(c.legend.datenstand) ==8:
     <td>${c.legend.datenstand[6:]}.${c.legend.datenstand[4:6]}.${c.legend.datenstand[:4]}</td>
+% elif len(c.legend.datenstand) ==9:
+    <td>${c.legend.datenstand}</td>
+% elif len(c.legend.datenstand) ==13:
+    <td>${c.legend.datenstand[4:6]}.${c.legend.datenstand[:4]}-${c.legend.datenstand[11:]}.${c.legend.datenstand[7:11]}</td>
+% elif len(c.legend.datenstand) ==17:
+    <td>${c.legend.datenstand[6:8]}.${c.legend.datenstand[4:6]}.${c.legend.datenstand[:4]}-${c.legend.datenstand[15:]}.${c.legend.datenstand[13:15]}.${c.legend.datenstand[9:13]}</td>
 %endif
 %else:
     <td>-</td>
