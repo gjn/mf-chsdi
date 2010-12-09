@@ -25,6 +25,7 @@ def make_map(config):
     
     map.connect('/loader.js', controller='entry', action='loader')
     map.connect('/swisssearch', controller='swisssearch', action='index')
+    map.connect('/swisssearch/geocoding', controller='swisssearch', action='index')
     map.connect("/wmts/{path_info:.*}",controller="wmts", action="manager")
     map.connect("/wmts5/{path_info:.*}",controller="wmts", action="manager")
     map.connect("/wmts6/{path_info:.*}",controller="wmts", action="manager")

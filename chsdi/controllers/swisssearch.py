@@ -31,7 +31,7 @@ class SwisssearchController(BaseController):
         return {'results': sorted([f.json for f in query], key=itemgetter('rank'))}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
-    def geocoding(self):
+    def reversegeocoding(self):
         lon = request.params.get('easting')
         if lon is None:
             abort(400, "missing 'easting' parameter")
@@ -48,11 +48,19 @@ class SwisssearchController(BaseController):
         except:
             abort(400, "parameter 'northing' is not a number")
 
+        tolerance = request.params.get('tolerance')
+        if tolerance is None:
+            tolerance = 10
+        try:
+            tolerance = float(tolerance)
+        except:
+            abort(400, "parameter 'tolerance' is not a number")
+
         # search for everything except sn25 data (who did not have 'the_geom_poly' geom)
-        gfilter_poly = SwissSearch.within_filter(lon, lat, tolerance=10, column='the_geom_poly')
+        gfilter_poly = SwissSearch.within_filter(lon, lat, tolerance=tolerance, column='the_geom_poly')
 
         # now search for sn25 data
-        gfilter_point = SwissSearch.within_filter(lon, lat, tolerance=200, column='the_geom_point')
+        gfilter_point = SwissSearch.within_filter(lon, lat, tolerance=tolerance, column='the_geom_point')
 
         query = Session.query(SwissSearch)
         query = query.filter(or_(gfilter_poly, gfilter_point))
