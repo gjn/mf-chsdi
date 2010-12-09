@@ -11,6 +11,7 @@ RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
 
 # legend urls
+RewriteRule ^/${vars:instanceid}/wsgi/legend/(.*)$   ${buildout:directory}/chsdi/public/legend/$1
 RewriteRule ^${vars:apache-entry-point}legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # cached urls:
