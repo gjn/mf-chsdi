@@ -58,8 +58,8 @@ class TestSwisssearchController(TestController):
         assert resp.response.body.startswith("callback(")
         assert resp.response.body.endswith(");")
 
-    def test_geocoding(self):
-        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+    def test_reversegeocoding(self):
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
                             params={"easting": 600000 , "northing": 200000}
                             )
 
@@ -75,8 +75,8 @@ class TestSwisssearchController(TestController):
         assert len(results) > 0
         assert isinstance(results[0], dict)
 
-    def test_geocoding_with_cb(self):
-        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+    def test_reversegeocoding_with_cb(self):
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
                             params={"easting": 600000 , "northing": 200000,
                                     "cb": "callback"
                                     }
