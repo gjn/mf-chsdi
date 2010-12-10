@@ -74,7 +74,10 @@ This proxy will redirect the requests to the print server provided by api.geo.ad
 
     </div>
 
-As exemple, we provide here the code of a MapFish controller that can be used as proxy. The important thing is to redirect the cookies, since the print is not stateless:
+Proxy Setup
+-----------
+
+As example, we provide here the code of a `MapFish <http://www.mapfish.org>`_ controller that can be used as proxy. The important thing is to redirect the cookies, since the print is not stateless.
 
 .. code-block:: python
 
@@ -116,9 +119,9 @@ As exemple, we provide here the code of a MapFish controller that can be used as
 
         try:
             if "url" in request.params:
-                resp, content = http.request("http://map.geo.admin.ch/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
+                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
             else:
-                resp, content = http.request("http://map.geo.admin.ch/print/" + str(printpath), method=method, body=body, headers=h)
+                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath), method=method, body=body, headers=h)
         except:
             abort(502) # Bad Gateway
 

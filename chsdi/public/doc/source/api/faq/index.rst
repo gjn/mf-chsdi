@@ -167,6 +167,15 @@ The philosophy of the `GeoExt UX <http://trac.geoext.org/wiki/ux>`_ has been fol
    ../../widgets/sdiwidgetsdescription
    ../../widgets/sdiwidgetsexamples
 
+How can I print from the GeoAdmin API ?
+---------------------------------------
+
+In order to print (means generate a PDF of the map), there is two ways:
+
+ * you can setup your own `MapFish Print server <http://www.mapfish.org/doc/print/index.html>`_. With that you have the possibility to define your own template (keep in mind that A4 is the maximum authorized size)
+ * you configure a proxy on your side. The goal of this proxy is to redirect the requests to the GeoAdmin API print server. All this is documented here: :doc:`../printproxy`  
+
+
 Where are the unit tests ?
 --------------------------
 
