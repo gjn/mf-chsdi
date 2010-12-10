@@ -11,6 +11,7 @@ API Examples
     sdiapiexamples4
     mappanel
     print
+    printproxy
     gml
     showmarkers
     geonames
