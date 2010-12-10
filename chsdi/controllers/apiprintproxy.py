@@ -36,9 +36,9 @@ class ApiprintproxyController(BaseController):
 
         try:
             if "url" in request.params:
-                resp, content = http.request("http://map.geo.admin.ch/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
+                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
             else:
-                resp, content = http.request("http://map.geo.admin.ch/print/" + str(printpath), method=method, body=body, headers=h)
+                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath), method=method, body=body, headers=h)
         except:
             abort(502) # Bad Gateway
 
