@@ -177,19 +177,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen': 'Réservoirs aquifères',
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet': 'Vulnérabilité des aquifères',
     'ch.swisstopo.geologie-tektonische_karte': 'Tectonique',
-
-
-    // Layer for are2
-    'ch.are.belastung-personenverkehr-strasse-2008':'Trafic voyageurs 2008',
-    'ch.are.belastung-personenverkehr-bahn-2008':'Trafic voyageurs 2008',
-    'ch.are.belastung-gueterverkehr-strasse-2008': 'Trafic marchandises poids lourds 2008',
-    'ch.are.belastung-gueterverkehr-bahn-2008': 'Trafic marchandises 2008',
-    'ch.are.gueteklassen_oev': 'Niveaux de qualité de la desserte en TP',
+    'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomérations et villes isolées 2000',
     'ch.are.alpenkonvention': 'Convention des Alpes',
-    'ch.are.bevoelkerungsdichte-vz00': 'Densité de population 2000',
-    'ch.are.beschaeftigtendichte-bz08': 'Densité de l`emploi 2008',
-    'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomérations et villes isolées',
-    'ch.are.landschaftstypen': 'Typologie des paysages suisses',
+    'ch.are.gemeindetyp-1990-9klassen': 'Typologie des communes ARE',
 
     
     // Datenherr
