@@ -57,7 +57,7 @@ The print widget needs a Map Panel.
                       mapPanel: api22.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                }),
                api22.createPrint({
@@ -118,7 +118,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                       mapPanel: api23.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                }),
                api23.createPrint({
@@ -179,7 +179,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                       mapPanel: api22.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                }),
                api22.createPrint({
@@ -205,7 +205,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                       mapPanel: api23.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                }),
                api23.createPrint({

@@ -163,7 +163,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 width: 200
             },
             labelAlign: 'top',
-            buttonAlign: 'left',
+            buttonAlign: 'right',
             dpiText: OpenLayers.i18n("DPI"),
             scaleText: OpenLayers.i18n("mf.print.scale"),
             rotationText: OpenLayers.i18n("Rotation"),
@@ -185,8 +185,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         this.showWindow = !printOptions.renderTo;
         if (this.showWindow) {
             this.windowOptions = Ext.apply({
-                height: 100,
-                width: 200,
+                height: 110,
+                width: 225,
+                bodyStyle: 'padding: 5px; background-color: #FFFFFF;',
                 title: OpenLayers.i18n('print'),
                 layout: "fit",
                 closeAction: 'hide',

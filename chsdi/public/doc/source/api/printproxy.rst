@@ -59,7 +59,7 @@ This proxy will redirect the requests to the print server provided by api.geo.ad
                       mapPanel: api22.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                })
            ]);
@@ -159,7 +159,7 @@ As example, we provide here the code of a `MapFish <http://www.mapfish.org>`_ co
                       mapPanel: api22.mapPanel
                    },
                    windowOptions: {
-                      title: OpenLayers.i18n('print map')
+                      title: OpenLayers.i18n('print')
                    }
                })
            ]);
