@@ -50,6 +50,8 @@ class ApiprintproxyController(BaseController):
             response.headers["Cookie"] = resp["Cookie"]
         if resp.has_key("Content-Disposition"):
             response.headers["Content-Disposition"] = resp["Content-Disposition"]
+        if resp.has_key("content-disposition"):
+            response.headers["Content-Disposition"] = resp["content-disposition"]
 
         response.status = resp.status
 
