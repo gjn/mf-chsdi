@@ -279,7 +279,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         var panel = document.getElementById("mypanel");
         if (Ext.isIE) {
             if (panel.childNodes.length < 1) {
-                var txt = document.createTextNode(" Sorry, but Internet Explorer doesn't support iframe.... please use a modern browser like Firefox. No preview available.");
+                var txt = document.createTextNode(" Sorry, but Internet Explorer has difficulty to support correctly iframe.... please use a modern browser like Firefox. No preview available.");
                 panel.appendChild(txt);
             }
         } else {
