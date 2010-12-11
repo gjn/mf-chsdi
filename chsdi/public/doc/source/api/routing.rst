@@ -74,6 +74,13 @@ Sorry for the layout, this is due to the documentation editor. Nicer examples he
       <div id="myroutingpanel6" style="float: left;margin:10px !important;width:350px;height: 340px;"></div>
       <div id="mymap6" style="float: right; width:350px;height:350px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript"
+               src="http://svn.geoext.org/extensions/geoext.ux/ux/GeoNamesSearchCombo/lib/GeoExt.ux/GeoNamesSearchCombo.js"></script>
+      <script type="text/javascript"
+               src="http://svn.geoext.org/sandbox/cmoullet/ux/OpenAddressesSearchCombo/lib/GeoExt.ux/OpenAddressesSearchCombo.js"></script>
+      <script type="text/javascript" src="http://svn.geoext.org/sandbox/cmoullet/ux/RoutingPanel/ux/widgets/RoutingPanel.js"></script>
+      <script type="text/javascript" src="http://api.geo.admin.ch/main/wsgi/lib/openlayers/lib/OpenLayers/Control/DrawFeature.js"></script>
+      <script type="text/javascript" src="http://api.geo.admin.ch/main/wsgi/lib/openlayers/lib/OpenLayers/Handler/Point.js"></script>
    </body>
 
 .. raw:: html
