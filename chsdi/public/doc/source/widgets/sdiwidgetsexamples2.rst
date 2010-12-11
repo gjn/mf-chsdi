@@ -29,8 +29,8 @@ Layer Tree
 .. raw:: html
 
    <body>
-      <div id="mylayertree6" style="float: left; margin:10px !important;"></div>
-      <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mylayertree6" style="float: left; margin:10px !important;width:285px;height: 340px;"></div>
+      <div id="mymap6" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
@@ -54,8 +54,8 @@ Layer Tree
       }
    </script>
    <body onload="init();">
-      <div id="mylayertree6" style="float: left;margin:10px !important;"></div>
-      <div id="mymap6" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mylayertree6" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
+      <div id="mymap6" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -109,8 +109,8 @@ Catalog Tree
 .. raw:: html
 
    <body>
-      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
-      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mycatalogtree8" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap8" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
@@ -130,8 +130,8 @@ Catalog Tree
       }
    </script>
    <body onload="init();">
-      <div id="mycatalogtree8" style="float: left; margin:10px !important;"></div>
-      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mycatalogtree8" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap8" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 

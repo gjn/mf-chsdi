@@ -16,3 +16,4 @@ API Examples
     showmarkers
     geonames
     streetview 
+    routing

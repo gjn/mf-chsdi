@@ -139,3 +139,11 @@ div.bodywrapper strong {
 table.docutils {
     margin: 5px 10px !important;
 }
+
+.ext-ie .geoadmin-catalog-tree .treelayericon-raster,
+.ext-ie .geoadmin-catalog-tree .treelayericon-point,
+.ext-ie .geoadmin-catalog-tree .treelayericon-line,
+.ext-ie .geoadmin-catalog-tree .treelayericon-polygon,
+.ext-ie .geoadmin-catalog-tree .treelayericon-mixed {
+    margin-top: -15px !important;
+}
