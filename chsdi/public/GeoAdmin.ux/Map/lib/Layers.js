@@ -5,6 +5,7 @@
  * @include OpenLayers/Projection.js
  *
  * @include Map/lib/VoidLayer.js
+ * @include Map/lib/AggregateLayer.js
  */
 
 GeoAdmin._Layers = OpenLayers.Class({
