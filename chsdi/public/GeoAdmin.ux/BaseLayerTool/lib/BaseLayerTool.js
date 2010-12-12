@@ -16,7 +16,6 @@ Ext.ns("GeoAdmin");
 /** api: example
  *  Sample code to create a base layer tool (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#base-layer-tool>`_):
  *
- *  
  *  .. code-block:: javascript
  * 
  *     var baseLayerTool = new GeoAdmin.BaseLayerTool({
@@ -34,15 +33,27 @@ Ext.ns("GeoAdmin");
   * 
   *  :return:  ``GeoAdmin.BaseLayerTool``
   *
-  *  Create a base layer tool
+  *  The base layer tool allows the user to manage the base layer (swissimage, pixelmap and void). It offers an opacity slider and the possibility to switch between pixelmaps and void layers.
   */
 GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  A map instance
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
+    
+    /** api: config[slider]
+     *  ``Object``
+     *  An options object used for the configuration of the `GeoExt.LayerOpacitySlider <http://www.geoext.org/lib/GeoExt/widgets/LayerOpacitySlider.html>`_
+     */
+    slider: null,
+    
+    /** api: config[combo]
+     *  ``Object``
+     *  An options object used for the configuration of the `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_ 
+     */
+    combo: null,
 
     layout: 'column',
     
@@ -134,3 +145,5 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
         return new Ext.form.ComboBox(options);
     }
 });
+
+Ext.reg("ga_baselayertool", GeoAdmin.BaseLayerTool);

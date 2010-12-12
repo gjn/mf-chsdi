@@ -23,7 +23,23 @@
  *
  *
  */
+ 
+ /** api: constructor
+  *  .. class:: ContextPopup(options)
+  *
+  *  :param config: ``Object`` options
+  *
+  *  :return:  ``GeoAdmin.ContextPopup``
+  *
+  *  Create context popup activated on right mouse click.
+  */
 GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
+	
+	  /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
+     */
+    map: null,
 
     initialize: function(options) {
         OpenLayers.Control.Navigation.prototype.initialize.apply(this, arguments);

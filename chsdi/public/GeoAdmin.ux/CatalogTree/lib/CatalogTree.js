@@ -31,7 +31,7 @@
   *
   *  :return:  ``GeoAdmin.CatalogTree``
   *
-  *  Create a catalog tree
+  *  Create a tree structure presented according to INSPIRE and containing the available layers
   */
 
 Ext.namespace("GeoAdmin");
@@ -52,7 +52,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     selectedNode: null,
     selectedNodeId: '',
 
-    /** api: config[catalog]
+    /** api: config[stateId]
      *  ``String`` The state id. Default value is "catalog".
      */
     /** private: property[catalog]
@@ -67,13 +67,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     layers: null,
 
-    /**
-     */
     layerStore: null,
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  A map instance
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
 

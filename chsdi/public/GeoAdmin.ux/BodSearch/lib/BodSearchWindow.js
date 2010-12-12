@@ -19,6 +19,11 @@
 
 GeoAdmin.BodSearchWindow = {
 
+   /** api: method[show]
+    *  :param id: ``String``: the layer id. The layer list can be found `here <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+    *
+    *  Show a layer metadata window
+    */
     show: function(id) {
 
         var _window = new Ext.Window({

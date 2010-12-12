@@ -9,20 +9,35 @@
 
 /** api: (define)
  *  module = GeoAdmin
- *  class = Tooltips
+ *  class = Tooltip
  *  base_link = `OpenLayers.Control.GetFeature <http://dev.openlayers.org/apidocs/files/OpenLayers/Control/GetFeature-js.html>`_
  */
 
+/** api: example
+ *  Sample code to create a tooltip (click with left mouse button) (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#tooltip>`_)
+ *
+ *  .. code-block:: javascript
+ *
+ *     var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+ *     map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+ *     var tooltip = new GeoAdmin.Tooltip({});
+ *     map7.addControl(tooltip);
+ *     tooltip.activate();
+ *
+ *
+ */
+ 
+ /** api: constructor
+  *  .. class:: Tooltip(options)
+  *
+  *  :param config: ``Object`` options
+  *
+  *  Create a GetFeature control used to show feature information on left mouse click. This control consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+  */
 GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
-    /*
-     * drawing layer
-     */
     layer: null,
 
-    /*
-     *
-     */
     url: null,
 
     params: {},

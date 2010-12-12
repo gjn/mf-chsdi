@@ -37,28 +37,23 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  A map instance
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
 
-    /** api: config[url]
-     *  ``String``
-     *  Address of the BodSearch service
-     */
-    url: null,
-
     /** api: config[redirectUrl]
      *  ``String``
-     *  Address of the target map where to open the selected layer
+     *  Address of the target map where to open the selected layer. Default value: "http://map.geo.admin.ch/?layers={0}&lang={1}".
      */
     redirectUrl: "http://map.geo.admin.ch/?layers={0}&lang={1}",
 
     /** api: config[lang]
      *  ``String``
-     *  Lang of the API, can be 'de' (default), 'it', 'fr', 'fi' (for rumantsch) or 'en'
+     *  Language. Default value: 'de'. Other possible values: 'it', 'fr', 'fi' (for rumantsch) or 'en'
      */
     lang: null,
 
+    url: null,
     hideTrigger: true,
     minChars: 4,
     queryDelay: 50,

@@ -172,6 +172,88 @@ A JSON
 
 .. _wmts_description:
 
+Feature: search
+---------------
+
+This service allows to search within the feature stored in the spatial data infrastructure.
+
+URL
+^^^
+
+http://api.geo.admin.ch/feature/search
+
+Input parameters
+^^^^^^^^^^^^^^^^ 
+
+The following parameters are required:
+
+- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
+- layers: list of searchable layers
+- bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
+
+Result
+^^^^^^
+
+A GeoJSON representation of the found features.
+
+Feature: bbox
+-------------
+
+This service allows to obtain the bbox of the searched features.
+
+URL
+^^^
+
+http://api.geo.admin.ch/feature/bbox
+
+Input parameters
+^^^^^^^^^^^^^^^^ 
+
+The following parameters are required:
+
+- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
+- layer: searchable layer
+- ids: comma separated list of feature id
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922&cb=Ext.ux.JSONP.callback
+
+Result
+^^^^^^
+
+A GeoJSON representation of the found features.
+
+Feature: geometry
+-----------------
+
+This service allows to obtain the geometry of the searched features.
+
+URL
+^^^
+
+http://api.geo.admin.ch/feature/geometry
+
+Input parameters
+^^^^^^^^^^^^^^^^ 
+
+The following parameters are required:
+
+- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
+- layer: searchable layer
+- ids: comma separated list of feature id
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922&cb=Ext.ux.JSONP.callback
+
+Result
+^^^^^^
+
+A GeoJSON representation of the found features.  
+
+
 WMTS
 ----
 
