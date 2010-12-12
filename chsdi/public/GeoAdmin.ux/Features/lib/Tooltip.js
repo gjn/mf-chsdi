@@ -30,7 +30,7 @@
  /** api: constructor
   *  .. class:: Tooltip(options)
   *
-  *  :param config: ``Object`` options
+  *  :param options: ``Object`` options
   *
   *  Create a GetFeature control used to show feature information on left mouse click. This control consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
   */

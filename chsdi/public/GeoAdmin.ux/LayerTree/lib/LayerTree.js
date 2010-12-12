@@ -12,10 +12,43 @@
  * @include BodSearch/lib/BodSearchWindow.js
  */
 
-/**
+/** api: (define)
+ *  module = GeoAdmin
+ *  class  = LayerTree
+ *  base_link = `Ext.tree.TreePanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.tree.TreePanel>`_
  */
+
+/** api: example
+ *  Sample code to create a layer tree (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#>`_):
+ *
+ *  .. code-block:: javascript
+ *
+ *     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
+ *     map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+ *     var layertree = new GeoAdmin.LayerTree({
+ *         map: map6,
+ *         renderTo: "mylayertree6",
+ *         width: 300
+ *     });
+ *
+ */
+
+  /** api: constructor
+  *  .. class:: LayerTree(config)
+  *
+  *  :param config: ``Object`` config
+  *
+  *  :return:  ``GeoAdmin.LayerTree``
+  *
+  *  Create a GeoAdmin layer tree. Visibility, opacity, metadata and display can be managed with this layer tree.
+  */
+
 GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
 
+	  /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
+     */
     map: null,
 
     // default settings
@@ -29,8 +62,6 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         applyLoader: false
     },
 
-    /**
-     */
     initComponent: function() {
         this.title = OpenLayers.i18n("Layer Selection");
 
@@ -148,8 +179,6 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         }
     },
 
-    /**
-     */
     createNodeComponent: function(node, ct) {
         return new Ext.Toolbar({
             cls: "geoadmin-toolbar",
@@ -216,6 +245,7 @@ GeoAdmin.LayerTree.TextItem = Ext.extend(Ext.Toolbar.Item, {
 GeoAdmin.LayerTree.SliderLabel = function(target) {
     this.target = target;
 };
+
 GeoAdmin.LayerTree.SliderLabel.prototype = {
     init: function(slider) {
         slider.on({
@@ -232,8 +262,6 @@ GeoAdmin.LayerTree.SliderLabel.prototype = {
     }
 };
 
-/**
- */
 GeoAdmin.LayerTree.toggleVisibility = function(layer, action) {
     layer.setVisibility(!layer.visibility);
     if (action) {

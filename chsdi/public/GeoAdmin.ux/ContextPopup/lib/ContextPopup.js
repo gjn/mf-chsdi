@@ -27,7 +27,7 @@
  /** api: constructor
   *  .. class:: ContextPopup(options)
   *
-  *  :param config: ``Object`` options
+  *  :param options: ``Object`` options
   *
   *  :return:  ``GeoAdmin.ContextPopup``
   *

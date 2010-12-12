@@ -10,13 +10,13 @@
  *  class = Features
  */
 
- /** api: constructor
-  *  .. class:: Features(options)
-  *
-  *  :param config: ``Object`` options
-  *
-  *  Class providing the functions necessary to recenter and highlight features. It consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
-  */
+/** api: constructor
+ *  .. class:: Features(options)
+ *
+ *  :param options: ``Object`` options
+ *
+ *  Class providing the functions necessary to recenter and highlight features. It consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+ */
 
 /** api: example
  *  Sample code to recenter the map based on feature

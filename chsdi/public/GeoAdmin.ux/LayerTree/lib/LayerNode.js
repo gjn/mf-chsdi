@@ -2,6 +2,20 @@
  * @requires GeoExt/widgets/tree/LayerNode.js
  */
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class  = LayerNode
+ *  base_link = `GeoExt.tree.LayerNode <http://www.geoext.org/lib/GeoExt/widgets/tree/LayerNode.html>`_
+ */
+
+/** api: constructor
+ *  .. class:: LayerNode(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  GeoAdmin layer node
+ */
+  
 GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
 
     constructor: function(config) {
