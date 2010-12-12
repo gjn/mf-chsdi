@@ -35,6 +35,7 @@
  * @include Print/lib/Print.js
  * @include Permalink/lib/Permalink.js
  * @include ContextPopup/lib/ContextPopup.js
+ * @include Map/lib/MapPanel.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js

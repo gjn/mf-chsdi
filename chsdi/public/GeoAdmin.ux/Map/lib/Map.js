@@ -18,7 +18,6 @@
  * @include Features/lib/Features.js
  *
  * @include proj4js/lib/defs/EPSG21781.js
- * @requires GeoExt/widgets/MapPanel.js
  */
 
 /** api: (define)
@@ -39,7 +38,7 @@
  */
 
 /** api: constructor
- *  .. class:: Map(div, config)
+ *  .. class:: Map(div, options)
  *
  *  :param div:    ``String`` The element where the map will be rendered (or the id for that element).
  *  :param config: ``Object`` options (optional).
@@ -239,7 +238,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.complementaryLayer = null;
     },
     /** api: method[getLayerByLayerName]
-     *  :param layername: ``String`` Layer name (BOD Id), e.g ch.bafu.bundesinventare-amphibien
+     *  :param layername: ``String`` Layer name id. The layer list can be found `here <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *
      *  :return: ``OpenLayers.Layer``
      *
@@ -313,13 +312,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[addLayerByName]
-     *  :param name: ``String`` - Layer name (BOD Id) see Url  TODO
+     *  :param layername: ``String`` Layer name id. The layer list can be found `there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *  :param options: ``Object`` Layer options (optional)
      *
      *  Add a layer overlay to the map.
      */
-    addLayerByName: function(name, options) {
-        var layer = GeoAdmin.layers.buildLayerByName(name, options);
+    addLayerByName: function(layername, options) {
+        var layer = GeoAdmin.layers.buildLayerByName(layername, options);
         if (layer) {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {
@@ -336,17 +335,17 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[switchComplementaryLayer]
-     *  :param name: ``String`` - Layer name (BOD Id)
+     *  :param layername: ``String`` Layer name id of the base layers. The complete layer list can be found `over there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *  :param options: ``Object`` - Layer option (optional)
      *
      *  :return:  ``OpenLayers:Layer``
      *
      *  Switch the complementary layer.
      */
-    switchComplementaryLayer: function(name, options) {
+    switchComplementaryLayer: function(layername, options) {
         options = options || {};
-        if (!this.complementaryLayer || name !== this.complementaryLayer.layername) {
-            var layer = this.addLayerByName(name);
+        if (!this.complementaryLayer || layername !== this.complementaryLayer.layername) {
+            var layer = this.addLayerByName(layername);
             if (layer) {
                 // layer is valid and added to ther map
                 var opacity, zIndex;
@@ -388,21 +387,3 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     }
 });
 
-GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
-    stateful: true,
-    prettyStateKeys: true,
-    stateId: "map",
-
-    getState: function() {
-        return this.map.getState();
-    },
-
-    applyState: function(state) {
-        if (state.x != null && state.y != null && state.zoom != null) {
-            this.center = new OpenLayers.LonLat(state.x, state.y);
-            this.zoom = state.zoom;
-        }
-
-        this.map.applyState(state);
-    }
-});
