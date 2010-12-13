@@ -10,6 +10,7 @@
     <script type="text/javascript" src="../../Map/lib/Layers.js"></script>
     <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
     <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
     <script type="text/javascript" src="../../../lib/geoext.ux/ux/SimplePrint/lib/GeoExt.ux/SimplePrint.js"></script>
     <script type="text/javascript" src="../lib/Print.js"></script>
 
@@ -20,7 +21,7 @@
             t.plan(4);
 
             var map = new GeoAdmin.Map();
-            var mapPanel = new GeoExt.MapPanel({
+            var mapPanel = new GeoAdmin.MapPanel({
                 region: 'center',
                 map: map 
             }); 
@@ -43,9 +44,8 @@
                 bbar: [print]
             }); 
 
-            t.delay_call(1, function() {
-                print.show(); // as if print button has been clicked 
-            
+            t.delay_call(3, function() {
+                print.initPanel(); // as if print button has been clicked 
                 t.ok(print.printPanel.printExtent, "PrintExtent created.");
                 t.ok(print.printPanel.printExtent.map == mapPanel.map, "PrintExtent added to map.");
                 t.ok(print.printPanel.printPage, "PrintPage assigned.");

@@ -27,7 +27,7 @@
  *  .. code-block:: javascript
  *
  *     map = new GeoAdmin.Map();
- *     mapPanel = new GeoExt.MapPanel({
+ *     mapPanel = new GeoAdmin.MapPanel({
  *         region: 'center',
  *         map: map
  *     });
