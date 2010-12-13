@@ -1,6 +1,16 @@
 API Doc
 =======
 
+
+:mod:`GeoAdmin.API`
+-------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    apidocs/api
+
 :mod:`GeoAdmin`
 ---------------
 
