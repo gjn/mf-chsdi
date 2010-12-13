@@ -272,3 +272,6 @@ GeoAdmin.LayerTree.toggleVisibility = function(layer, action) {
         }
     }
 };
+
+/** api: xtype = ga_layertree */
+Ext.reg("ga_layertree", GeoAdmin.LayerTree);
