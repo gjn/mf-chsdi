@@ -85,7 +85,7 @@ Map with Swiss Search
             northing: 200000,
             zoom: 7
          });
-         api2.createSearchBox({
+         api2.createSwissSearchCombo({
             width: 500,
             renderTo: "mysearch2",
             ref: 'geoadmin'
@@ -236,7 +236,7 @@ The function showFeatures will highlight and recenter the features. The function
             northing: 200000,
             zoom: 7
          });
-         api2.createSearchBox({
+         api2.createSwissSearchCombo({
             width: 500,
             renderTo: "mysearch2",
             ref: 'geoadmin'

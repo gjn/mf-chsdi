@@ -58,8 +58,6 @@
  *    api.createMap({
  *          div: "mymap1"
  *    });
- * 
- *
  *
  */
 
@@ -71,8 +69,9 @@
  *  :return:  ``GeoAdmin.API``
  *
  *  Create a GeoAdmin API instance.
- */ 
- 
+ *  An OpenLayers.ProxyHost is setup at the address /ogcproxy
+ */
+
 GeoAdmin.API = OpenLayers.Class({
 
     /** api: config[map]
@@ -137,7 +136,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Valid properties for the ``options`` argument:
      *   * ``div`` - ``String`` : name of the div in which the map will be placed
-     *   * ``layers`` - ``String`` or ``Array``: optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' TODO URL
+     *   * ``layers`` - ``String`` or ``Array``: optional list of layer name. Example: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill' See `layer list <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *   * ``layers_opacity`` - ``String`` or ``Array``: optional opacity information about the layer. Example: '0.2,0.7'
      *   * ``layers_visibility`` - ``String`` or ``Array``:optional boolean visibility information about the layer. Example: 'false,true'
      *   * ``bgLayer`` - ``String``: optional name of background layer. It can be "ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau" or "voidLayer"
@@ -148,7 +147,16 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  :return: ``OpenLayers.Map``
      *
-     *  Create an Openlayers.Map containing the GeoAdmin layer and configuration
+     *  Create an Openlayers.Map containing the GeoAdmin layer and configuration.
+     *
+     *  Example:
+     * 
+     *  .. code-block:: javascript
+     *
+     *    var api = new GeoAdmin.API();
+     *    api.createMap({
+     *          div: "mymap1"
+     *    });
      *
      */
     createMap: function(options) {
@@ -236,12 +244,23 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param options: ``Object`` options.
      *
      *  Valid properties for the ``options`` argument:
-     *  * any ``GeoAdmin.MapPanel`` parameter
-     *  * ``mapOptions`` - ``Object`` containing options for the map, see createMap() options
+     *   * any ``GeoAdmin.MapPanel`` parameter
+     *   * ``mapOptions`` - ``Object`` containing options for the map, see createMap() options
      *
      *  :return: ``GeoAdmin.MapPanel``
      *
      *  Create a map panel
+     *
+     *  Example:
+     *
+     *  .. code-block:: javascript
+     *
+     *     api = new GeoAdmin.API();
+     *     api.createMapPanel({
+     *         height: 340,
+     *         renderTo: "mymappanel",
+     *         tbar: new Ext.Toolbar()
+     *     });
      *
      */
     createMapPanel: function(options) {
@@ -259,7 +278,14 @@ GeoAdmin.API = OpenLayers.Class({
         return this.mapPanel;
     },
 
-    /** api: method[createSearchBox]
+    /**
+     *  DEPRECATED: use createSwissSearchCombo() instead.
+     */
+    createSearchBox: function(options) {
+        this.createSwissSearchCombo(options);
+    },
+
+    /** api: method[createSwissSearchCombo]
      *  :param options: ``Object`` options.
      *
      *  Valid properties for the ``options`` argument:
@@ -269,9 +295,27 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Create a Swiss Search combobox
      *
+     *
+     *  Example:
+     *
+     *  .. code-block:: javascript
+     * 
+     *     var api = new GeoAdmin.API();
+     *     api.createMap({
+     *        div: "mymap2",
+     *        easting: 600000,
+     *        northing: 200000,
+     *        zoom: 7
+     *     });
+     *     api.createSwissSearchCombo({
+     *        width: 500,
+     *        renderTo: "mysearch2",
+     *        ref: 'geoadmin'
+     *     });
+     *
      */
-    createSearchBox: function(options) {
-        return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
+    createSwissSearchCombo: function(options) {
+         return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             map: this.map,
             width: 300
         }));
@@ -340,7 +384,7 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param options: ``Object`` options
      *
      *  Valid properties for the ``options`` argument:
-     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component w    ill be rendered into.
+     *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
      *
      *  :return: ``GeoAdmin.NavigationHistory``
      *
@@ -363,10 +407,10 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param options: ``Object`` options
      *
      *  Valid properties for the ``options`` argument:
-     *  * any ``Ext.Action`` option
-     *  * ``printBaseUrl`` - ``String`` containing the print service base URL. Optional, default value is "/print". Please note that the domain must match the current page URL domain (a proxy may be required if using an external print service).
-     *  * ``printPanelOptions`` - ``Object`` containing any ``GeoExt.ux.SimplePrint`` option
-     *  * ``windowOptions`` - ``Object`` containing any ``Ext.Window`` option. Only used if ``printPanelOptions.renderTo`` is not available (an Ext.Window is then used to display the print form).
+     *   * any ``Ext.Action`` option
+     *   * ``printBaseUrl`` - ``String`` containing the print service base URL. Optional, default value is "/print". Please note that the domain must match the current page URL domain (a proxy may be required if using an external print service).
+     *   * ``printPanelOptions`` - ``Object`` containing any ``GeoExt.ux.SimplePrint`` option
+     *   * ``windowOptions`` - ``Object`` containing any ``Ext.Window`` option. Only used if ``printPanelOptions.renderTo`` is not available (an Ext.Window is then used to display the print form).
      *
      *  :return: ``GeoAdmin.Print``
      *
@@ -392,18 +436,19 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createPermalink]
-     *  :param options: ``Object`` Options to pass to the
-     *      ``GeoAdmin.Permalink`` constructor.
-     *  :return: ``GeoAdmin.Permalink`` An ``Ext.Action``
-     *      displaying the permalink when triggered.
+     *
+     *  :param options: ``Object`` Options to pass to the ``GeoAdmin.Permalink`` constructor.
+     *
+     *  :return: ``GeoAdmin.Permalink`` An ``Ext.Action`` displaying the permalink when triggered.
      *
      *  The returned action is typically included as a button in a toolbar.
+     *
      *  Example:
      *
-     *  .. code-block: javascript
+     *  .. code-block:: javascript
      *
      *      api.createMapPanel({
-     *          tbar: [api.createPermalink()]
+     *         tbar: [api.createPermalink()]
      *      });
      *
      */
@@ -412,14 +457,14 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createTooltip]
-     *  :param options: ``Object`` Options to pass to the
-     *      ``GeoAdmin.Tooltip`` constructor.
-     *  :return: ``GeoAdmin.Tooltip`` An ``OpenLayers.Control.GetFeature``
-     *      displaying feature tooltip after user click in the map.
+     *
+     *  :param options: ``Object`` Options to pass to the ``GeoAdmin.Tooltip`` constructor.
+     *
+     *  :return: ``GeoAdmin.Tooltip`` An ``OpenLayers.Control.GetFeature`` displaying feature tooltip after user click in the map.
      *
      *  Example:
      *
-     *  .. code-block: javascript
+     *  .. code-block:: javascript
      *
      *     api.createTooltip({});
      *
@@ -432,12 +477,11 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[createKmlLayer]
-     *  :param kmlUrl: ``String`` URL of the KML file. Set the OpenLayers.ProxyHost
-     *    in order to use this function in your domain
+     *
+     *  :param kmlUrl: ``String`` URL of the KML file. Set the OpenLayers.ProxyHost in order to use this function in your domain 
      *  :param showPopup: ``Boolean`` Defines if a popup is shown
      *
-     *  :return: ``OpenLayers.Layer.Vector`` An ``OpenLayers.Layer.Vector``
-     *      containing the KML and placed in the map.
+     *  :return: ``OpenLayers.Layer.Vector`` An ``OpenLayers.Layer.Vector`` containing the KML and placed in the map.
      *
      *  Create a KML layer
      *
@@ -506,6 +550,8 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Recenter the map based on features
      *
+     *  Example:
+     *
      *  .. code-block:: javascript
      *
      *     api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
@@ -528,8 +574,11 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param layer: ``String`` layer name
      *  :param ids: ``String`` or ``Array`` comma separated list of feature identifier
      *
-     *  Highlight the features in the map
+     *  Example:
      *
+     *  .. code-block:: javascript
+     *
+     *     api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
      *
      */
     highlightFeatures: function(layer, ids, cb) {
@@ -542,6 +591,8 @@ GeoAdmin.API = OpenLayers.Class({
      *  :param ids: ``String`` or ``Array`` comma separated list of feature identifier
      *
      *  Recenter and highlight features in the map
+     *
+     *  Example:
      *
      *  .. code-block:: javascript
      *
@@ -571,6 +622,19 @@ GeoAdmin.API = OpenLayers.Class({
      *  :return: ``OpenLayers.Feature.Vector``
      *
      *  Show a marker in the map
+     *
+     *  Example:
+     *
+     *  .. code-block:: javascript
+     * 
+     *     var api = new GeoAdmin.API();
+     *     api.createMap({
+     *        div: "mymap6",
+     *        easting: 600000,
+     *        northing: 200000,
+     *        zoom: 8
+     *     });
+     *     api.showMarker();
      *
      */
     showMarker: function(options) {
@@ -633,7 +697,6 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  Valid properties for the ``options`` argument:
      *   * ``renderTo`` - ``Mixed``: Specify the id of the element, a DOM element or an existing Element that this component will be rendered into.
-
      *   * ``easting`` - ``Number``: optional CH1903 Y position of the marker, default: map center
      *   * ``northing`` - ``Number``: optional CH1903 X position of the marker, default: map center
      *   * ``recenter`` - ``String``: optional define if the map has to recentered at the marker position "true" or "false", default: "false"
@@ -648,6 +711,22 @@ GeoAdmin.API = OpenLayers.Class({
      *  :return: ``GeoExt.Popup``
      *
      *  Show a popup in the map
+     *
+     *  Example:
+     *
+     *  .. code-block:: javascript
+     *
+     *     var api = new GeoAdmin.API();
+     *     api.createMap({
+     *        div: "mymap6",
+     *        easting: 600000,
+     *        northing: 200000,
+     *        zoom: 8
+     *     });
+     *     api.showPopup({
+     *        html: "My nice popup !",
+     *        title: "Title of my nice popup"
+     *     });
      *
      */
     showPopup: function(options) {
@@ -721,9 +800,7 @@ GeoAdmin.API = OpenLayers.Class({
      *   * ``emptyString`` - ``String``: optional, value to display when the mouse is outside the map, default ``null``
      *   * ``displayProjection`` - ``OpenLayers.Projection``: optional, the projection in which the mouse is diplayed.  Default is same as the map (EPSG:21781).
      *
-     *  :return: ``undefined``
-     *
-     *  Add a control displaying the current mouse position in the map
+     *  Add a control displaying the current mouse position in the map. This function is based on ``OpenLayers.Control.MousePosition`` and provides more configuration capabilities compared to GeoAdmin.MousePosition UX.
      *
      */
     showMousePosition: function(options) {
@@ -738,7 +815,6 @@ GeoAdmin.API = OpenLayers.Class({
     /** api: method[createLayerTree]
      *  :param options: ``Object`` options
      *
-     *
      *  :return: ``GeoAdmin.LayerTree``
      *
      *  Create a layer tree of layers associated to a map
@@ -749,7 +825,9 @@ GeoAdmin.API = OpenLayers.Class({
             map: this.map
         }, options));
     },
+
     /** api: method[setBgLayer]
+     * 
      *  :param layername: ``String`` name of the layer: voidLayer,ch.swisstopo.swissimage,ch.swisstopo.pixelkarte-farbe or ch.swisstopo.pixelkarte-grau
      *  :param opacity: ``Float`` optional opacity of the layer between 0 and 1
      *
@@ -761,12 +839,12 @@ GeoAdmin.API = OpenLayers.Class({
             opacity = 1;
         }
         if (layername === 'ch.swisstopo.swissimage') {
-            this.map.complementaryLayer.setOpacity(1-opacity);
+            this.map.complementaryLayer.setOpacity(1 - opacity);
         } else {
             if (layername === this.map.complementaryLayer.layername) {
-               this.map.complementaryLayer.setOpacity(opacity);
+                this.map.complementaryLayer.setOpacity(opacity);
             } else {
-               this.map.switchComplementaryLayer(layername, {opacity: opacity});
+                this.map.switchComplementaryLayer(layername, {opacity: opacity});
             }
         }
     }

@@ -100,11 +100,11 @@ function test_createMap_position_scale(t) {
     t.eq(api.map.getZoom(), 7, "zoom ok");
 }
 
-function test_createSearchBox(t) {
+function test_createSwissSearchCombo(t) {
     t.plan(1);
     var api = new GeoAdmin.API();
     api.createMap({div: "map_1"});
-    var combo = api.createSearchBox({
+    var combo = api.createSwissSearchCombo({
         renderTo: "search_1"
     });
     t.eq(combo.map.id, api.map.id, "map is set");

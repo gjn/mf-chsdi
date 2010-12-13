@@ -186,7 +186,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   //Add a tool to search for Swissnames, Zip code, Cities and Cantons';
             code = code + separator;
-            code = code + '   var swissSearchCombo = api.createSearchBox({width: 180});';
+            code = code + '   var swissSearchCombo = api.createSwissSearchCombo({width: 180});';
             code = code + separator;
             code = code + '   toolbar.add(swissSearchCombo);';
             code = code + separator;
