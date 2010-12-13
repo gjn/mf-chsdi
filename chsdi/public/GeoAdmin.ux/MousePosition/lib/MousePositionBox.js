@@ -12,7 +12,7 @@
 
 
 /** api: example
- *  Sample code to create a map panel with a mouse position control (see also :ref:`mouse-position`):
+ *  Sample code to create a map panel with a mouse position control (see demo :ref:`mouse-position`):
  *
  *  .. code-block:: javascript
  *
@@ -43,6 +43,12 @@
  */
 
 GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
+	
+	  /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
+     */
+    map: null,
 
     afterRender: function() {
         var control = new OpenLayers.Control.MousePosition({
