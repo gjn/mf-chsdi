@@ -197,6 +197,11 @@ The code of the GeoAdmin widgets is accessible here: http://api.geo.admin.ch/mai
 
 The code of the base libraries is accessible here: http://api.geo.admin.ch/main/wsgi/lib/
 
+Can I use http://localhost to test my developments ?
+----------------------------------------------------
+
+Yes, localhost and 127.0.0.1 can be used to test the developments. In all cases, you have to follow the terms of use: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
+
 Migration from GeoAdmin API 1.0 to GeoAdmin API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
