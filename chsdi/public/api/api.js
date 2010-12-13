@@ -49,11 +49,35 @@
  *  class = API
  */
 
+/** api: example
+ *  Sample code to create a map with the API:
+ *
+ *  .. code-block:: javascript
+ *
+ *    var api = new GeoAdmin.API();
+ *    api.createMap({
+ *          div: "mymap1"
+ *    });
+ * 
+ *
+ *
+ */
+
+/** api: constructor
+ *  .. class:: GeoAdmin.API (options)
+ *
+ *  :param options: ``Object`` options
+ *
+ *  :return:  ``GeoAdmin.API``
+ *
+ *  Create a GeoAdmin API instance.
+ */ 
+ 
 GeoAdmin.API = OpenLayers.Class({
 
     /** api: config[map]
      *  ``OpenLayers.Map``
-     *  The map instance of the API
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
 
@@ -99,10 +123,6 @@ GeoAdmin.API = OpenLayers.Class({
      */
     drawLayer: null,
 
-    /** api: constructor
-     *  .. class:: GeoAdmin.API
-     *
-     */
     initialize: function(options) {
         options = OpenLayers.Util.applyDefaults(options, {
             lang: 'de'
@@ -401,7 +421,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      *  .. code-block: javascript
      *
-     *      api.createTooltip({});
+     *     api.createTooltip({});
      *
      */
     createTooltip: function(options) {
@@ -419,11 +439,11 @@ GeoAdmin.API = OpenLayers.Class({
      *  :return: ``OpenLayers.Layer.Vector`` An ``OpenLayers.Layer.Vector``
      *      containing the KML and placed in the map.
      *
-     *  Example:
+     *  Create a KML layer
      *
-     *  .. code-block: javascript
+     *  .. code-block:: javascript
      *
-     *      api.createKmlLayer('http://www.myurl.com/file.kml');
+     *     api.createKmlLayer("http://www.myurl.com/file.kml");
      *
      */
     createKmlLayer: function(kmlPath, showPopup) {
@@ -718,7 +738,6 @@ GeoAdmin.API = OpenLayers.Class({
     /** api: method[createLayerTree]
      *  :param options: ``Object`` options
      *
-     *  Valid properties for the ``options`` arguments:
      *
      *  :return: ``GeoAdmin.LayerTree``
      *

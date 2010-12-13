@@ -12,8 +12,37 @@
  *  base_link = `Ext.form.ComboBox <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.ComboBox>`_
  */
 
+/** api: example
+ *  Sample code to swisssearch combo (see also :ref:`swiss-search`):
+ *
+ *  .. code-block:: javascript
+ 
+ *     var map4 = new GeoAdmin.Map("mymap4", {doZoomToMaxExtent: true});
+ *     map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+ *     var swisssearch = new GeoAdmin.SwissSearchComboBox({
+ *         width: 500,
+ *         renderTo: "mysearch4",
+ *         map: map4
+ *        });
+ *
+ *
+ */
+
+/** api: constructor
+ *  .. class:: SwissSearchComboBox(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.SwissSearchComboBox``
+ *
+ *  Create a swiss search combo box
+ */ 
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
+     */
     map: null,
 
     /** config
@@ -122,5 +151,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         }
     }
 });
+
+/** api: xtype = ga_swisssearchcombo */
+Ext.reg("ga_swisssearchcombo", GeoAdmin.SwissSearchComboBox);
 
 Ext.reg("ga_swisssearch", GeoAdmin.SwissSearchComboBox);
