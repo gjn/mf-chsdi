@@ -1,5 +1,5 @@
-Widgets Examples
-================
+API Widgets Examples
+====================
 
 .. toctree::
     :maxdepth: 1

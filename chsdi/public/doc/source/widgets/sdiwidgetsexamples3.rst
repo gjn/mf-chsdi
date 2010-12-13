@@ -154,6 +154,8 @@ A Map Panel is required in order to add a toolbar with the print function.
 
     </div>
 
+.. _context-popup:
+
 Context Popup
 -------------
 
@@ -188,6 +190,38 @@ A context popup provide information on the map right mouse click
 
     </div>
 
+
+Map Panel
+---------
+
+.. raw:: html
+
+  <body>
+      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef14" href="javascript:showdiv('codeBlock14','showRef14','hideRef14')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef14" href="javascript:hidediv('codeBlock14','showRef14','hideRef14')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock14" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      function init() {
+         var map14 = new GeoAdmin.Map();
+         var mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 500, height:340});
+      }
+   </script>
+   <body onload="init();">
+     <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
 
 
 
@@ -237,6 +271,9 @@ A context popup provide information on the map right mouse click
          ]);
          var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          var contextPopup = new GeoAdmin.ContextPopup({handleRightClicks: true, map: map13});
+
+         var map14 = new GeoAdmin.Map();
+         var mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 500, height:340});
 
       }
    </script>

@@ -83,6 +83,7 @@ API
    api/sdiapidoc
    api/sdiapiexamples
    api/sdiapigenerator
+   widgets/sdiwidgetsdescription
    api/faq/index
    
 Services

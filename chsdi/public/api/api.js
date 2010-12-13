@@ -150,7 +150,7 @@ GeoAdmin.API = OpenLayers.Class({
      *  Create an Openlayers.Map containing the GeoAdmin layer and configuration.
      *
      *  Example:
-     * 
+     *
      *  .. code-block:: javascript
      *
      *    var api = new GeoAdmin.API();
@@ -299,7 +299,7 @@ GeoAdmin.API = OpenLayers.Class({
      *  Example:
      *
      *  .. code-block:: javascript
-     * 
+     *
      *     var api = new GeoAdmin.API();
      *     api.createMap({
      *        div: "mymap2",
@@ -315,7 +315,7 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     createSwissSearchCombo: function(options) {
-         return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
+        return new GeoAdmin.SwissSearchComboBox(OpenLayers.Util.applyDefaults(options, {
             map: this.map,
             width: 300
         }));
@@ -478,7 +478,7 @@ GeoAdmin.API = OpenLayers.Class({
 
     /** api: method[createKmlLayer]
      *
-     *  :param kmlUrl: ``String`` URL of the KML file. Set the OpenLayers.ProxyHost in order to use this function in your domain 
+     *  :param kmlUrl: ``String`` URL of the KML file. Set the OpenLayers.ProxyHost in order to use this function in your domain
      *  :param showPopup: ``Boolean`` Defines if a popup is shown
      *
      *  :return: ``OpenLayers.Layer.Vector`` An ``OpenLayers.Layer.Vector`` containing the KML and placed in the map.
@@ -626,7 +626,7 @@ GeoAdmin.API = OpenLayers.Class({
      *  Example:
      *
      *  .. code-block:: javascript
-     * 
+     *
      *     var api = new GeoAdmin.API();
      *     api.createMap({
      *        div: "mymap6",
@@ -827,7 +827,7 @@ GeoAdmin.API = OpenLayers.Class({
     },
 
     /** api: method[setBgLayer]
-     * 
+     *
      *  :param layername: ``String`` name of the layer: voidLayer,ch.swisstopo.swissimage,ch.swisstopo.pixelkarte-farbe or ch.swisstopo.pixelkarte-grau
      *  :param opacity: ``Float`` optional opacity of the layer between 0 and 1
      *
