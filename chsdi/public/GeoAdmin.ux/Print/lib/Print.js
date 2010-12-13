@@ -20,6 +20,58 @@
  * :class:`GeoExt.ux.SimplePrint`) and windowOptions (config for
  * :class:`Ext.Window`, only useful if printPanelConfig.renderTo is not provided).
  */
+ 
+/** api: example
+ *  Sample code to create a print (see also :ref:`print`):
+ *
+ *  .. code-block:: javascript
+ *
+ *     map = new GeoAdmin.Map();
+ *     mapPanel = new GeoExt.MapPanel({
+ *         region: 'center',
+ *         map: map
+ *     });
+ * 
+ *     new Ext.Panel({
+ *         renderTo: "map",
+ *         layout: "border",
+ *         height: 400,
+ *         width: 600,
+ *         items: [
+ *             mapPanel
+ *         ],
+ *         bbar: [
+ *             new GeoAdmin.Print({
+ *                 text: OpenLayers.i18n('print map (popup)'),
+ *                 printPanelOptions: {
+ *                     mapPanel: mapPanel
+ *                 },
+ *                 windowOptions: {
+ *                     title: OpenLayers.i18n('print map')
+ *                 }
+ *             }),
+ *             new GeoAdmin.Print({
+ *                 printBaseUrl: '/print',
+ *                 text: OpenLayers.i18n('print map (panel)'),
+ *                 printPanelOptions: {
+ *                     renderTo: 'print',
+ *                     mapPanel: mapPanel
+ *                 }
+ *             })
+ *         ]
+ *     });
+ *
+ */
+
+/** api: constructor
+ *  .. class:: Print(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.Print``
+ *
+ *  Create a print action
+ */
 GeoAdmin.Print = Ext.extend(Ext.Action, {
 
     /** api: property[printPanel]
@@ -27,7 +79,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     printPanel: null,
 
-    /** private: property[printPanelOptions:]
+    /** api: property[printBaseUrl]
+     * :class:`String` Print base URL
+     */
+     
+    /** api: property[printPanelOptions]
      * ``Object`` Options for the print panel
      */
     printPanelOptions: null,
@@ -37,7 +93,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     popup: null,
 
-    /** private: property[windowOptions]
+    /** api: property[windowOptions]
      * ``Object`` Options for the popup
      */
     windowOptions: null,
@@ -244,4 +300,5 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
     }
 });
 
+/** api: xtype = ga_print */
 Ext.reg("ga_print", GeoAdmin.Print);
