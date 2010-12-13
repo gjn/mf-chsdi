@@ -14,7 +14,7 @@
 
 
 /** api: example
- *  Sample code to create a map panel with a navigation history control (see also :ref:`navigation-history`):
+ *  Sample code to create a map panel with a navigation history control (see demo :ref:`navigation-history`):
  *
  *  .. code-block:: javascript
  *
@@ -41,12 +41,17 @@
  *
  *  :return:  ``GeoAdmin.NavigationHistory``
  *
- *  Create a navigation history control with two button to navigate forward and backward in history 
+ *  Create a navigation history control with two buttons to navigate forward and backward in navigation history 
  */
 
 GeoAdmin.NavigationHistory = Ext.extend(Ext.Container, {
 
+    /** api: config[map]
+     *  ``OpenLayers.Map``
+     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
+     */
     map: null,
+    
     layout: 'column',
 
     initComponent: function() {
@@ -73,3 +78,6 @@ GeoAdmin.NavigationHistory = Ext.extend(Ext.Container, {
         GeoAdmin.NavigationHistory.superclass.initComponent.apply(this, arguments);
     }
 });
+
+/** api: xtype = ga_navigationhistory */
+Ext.reg("ga_navigationhistory", GeoAdmin.NavigationHistory);

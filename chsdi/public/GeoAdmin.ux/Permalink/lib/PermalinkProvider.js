@@ -1,8 +1,34 @@
+/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+
 /**
  * @requires GeoExt/state/PermalinkProvider.js
  * @requires GeoExt/widgets/MapPanel.js
  */
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = PermalinkProvider
+ *  base_link = `GeoExt.state.PermalinkProvider <http://www.geoext.org/lib/GeoExt/state/PermalinkProvider.html>`_
+ */
+
+/** api: example
+ *  Sample code to use the permalink provider.
+ *
+ *  .. code-block:: javascript
+ *
+ *     Ext.state.Manager.setProvider(new GeoAdmin.PermalinkProvider());
+ *
+ */
+
+/** api: constructor
+ *  .. class:: PermalinkProvider(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.PermalinkProvider``
+ *
+ */
+ 
 Ext.namespace("GeoAdmin");
 
 GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
@@ -77,6 +103,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         return state;
     },
 
+    /** api: method[getLink]
+     *  :param base: ``String`` The base URL, optional.
+     *  :return: ``String`` The permalink.
+     *
+     *  Return the permalink corresponding to the current state.
+     */
     getLink: function(base) {
         base = base || document.location.href;
         var params = {};

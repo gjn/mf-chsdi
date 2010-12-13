@@ -146,4 +146,5 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
     }
 });
 
+/** api: xtype = ga_baselayertool */
 Ext.reg("ga_baselayertool", GeoAdmin.BaseLayerTool);

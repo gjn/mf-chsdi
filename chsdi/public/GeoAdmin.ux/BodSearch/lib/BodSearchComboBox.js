@@ -113,4 +113,5 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     }
 });
 
+/** api: xtype = ga_bodsearchcombo */
 Ext.reg("ga_bodsearchcombo", GeoAdmin.BodSearchComboBox);

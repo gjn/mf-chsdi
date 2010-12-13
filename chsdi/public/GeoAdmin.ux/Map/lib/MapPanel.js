@@ -51,3 +51,6 @@ GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
         this.map.applyState(state);
     }
 });
+
+/** api: xtype = ga_mappanel */
+Ext.reg("ga_mappanel", GeoAdmin.MapPanel);

@@ -1249,4 +1249,5 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     }
 });
 
+/** api: xtype = ga_catalogtree */
 Ext.reg("ga_catalogtree", GeoAdmin.CatalogTree);

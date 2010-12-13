@@ -60,3 +60,7 @@ GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
         GeoAdmin.MousePositionBox.superclass.afterRender.apply(this, arguments);
     }
 });
+
+/** api: xtype = ga_mousepositionbox */
+Ext.reg("ga_mousepositionbox", GeoAdmin.MousePositionBox);
+
