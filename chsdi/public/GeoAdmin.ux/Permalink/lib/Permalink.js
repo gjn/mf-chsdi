@@ -65,3 +65,6 @@ GeoAdmin.Permalink = Ext.extend(Ext.Action, {
         GeoAdmin.Permalink.superclass.constructor.call(this, config);
     }
 });
+
+/** api: xtype = ga_permalink */
+Ext.reg("ga_permalink", GeoAdmin.Permalink);
