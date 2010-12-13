@@ -57,7 +57,7 @@ A JSON content is sent back with the following content:
 - id: id of the feature in the database
 - objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
 
-SwissSearch Reverse Geocoding
+SwissSearch: reversegeocoding
 -----------------------------
 
 Swisssearch reverse geocoding allows the user to search for swiss locations, like postcode, cantons, cities and swissnames based on a coordinate.
@@ -91,8 +91,8 @@ A JSON content is sent back with the following content:
 - id: id of the feature in the database
 - objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
 
-BodSearch
----------
+BodSearch: search
+-----------------
 
 This service allows to query all layers present in geoadmin for a certain expression present in their title and description.
 
@@ -123,8 +123,8 @@ A JSON
 - content: an HTML description of the data, where the searched keyword are highlighted
 
 
-BodSearch: detailed view
-------------------------
+BodSearch: details
+------------------
 
 This service display detailed informations on a layer, including a detailed description, a legend and various links to additional informations.
 
