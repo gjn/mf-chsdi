@@ -77,7 +77,7 @@ The following parameters are required:
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
 
-Example: http://api.geo.admin.ch/reversegeocoding?easting=606163&northing=199965
+Example: http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965
 
 Result
 ^^^^^^
@@ -141,6 +141,8 @@ The following input parameters are required:
 - lang (optional): de (default) or fr
 - baseUrl (optional): application base url
 - print (optional): force window to print
+
+Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill?lang=de&print=true
 
 BodSearch: layers
 -----------------
