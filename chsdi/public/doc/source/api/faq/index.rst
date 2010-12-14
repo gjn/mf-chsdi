@@ -100,6 +100,15 @@ crosshair                      crosshair=<type>, possible type: cross, circle, b
                                point                                                         http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
 ===================            ==========================================================    =========================================================
 
+How can I define the language ?
+-------------------------------
+
+This has to be setup on the API level, by providing a lang property in the API config object. Only french and german are for now completely supported.
+
+.. code-block:: html
+
+   var myapi = new GeoAdmin.API({lang: 'fr'});
+
 
 How can I accessed the tiles ?
 ------------------------------

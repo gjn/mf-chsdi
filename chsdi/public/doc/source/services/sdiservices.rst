@@ -170,8 +170,6 @@ A JSON
 - id: the BOD Id of the layer
 - description: a description of the layer
 
-.. _wmts_description:
-
 Feature: search
 ---------------
 
@@ -253,6 +251,7 @@ Result
 
 A GeoJSON representation of the found features.  
 
+.. _wmts_description:
 
 WMTS
 ----
