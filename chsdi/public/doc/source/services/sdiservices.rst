@@ -21,16 +21,14 @@
    }
    </script>
 
-SwissSearch
------------
+SwissSearch: geocoding
+----------------------
 
-Swisssearch allows the user to search for swiss locations, like postcode, cantons, cities and swissnames. It's a geocoding service.
+Swisssearch geocoding allows the user to search for swiss locations, like postcode, cantons, cities and swissnames.
 
 URL
 ^^^
 
-http://api.geo.admin.ch/swisssearch
-or
 http://api.geo.admin.ch/swisssearch/geocoding
 
 Input parameters
@@ -43,7 +41,7 @@ The following parameters are required:
 
 The service returns a maximum of 50 results.
 
-Example: http://api.geo.admin.ch/swisssearch?lang=fr&query=lausanne
+Example: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=lausanne
 
 Result
 ^^^^^^

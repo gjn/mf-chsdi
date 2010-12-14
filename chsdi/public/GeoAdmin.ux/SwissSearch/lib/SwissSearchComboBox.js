@@ -76,7 +76,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         this.emptyText = OpenLayers.i18n("Geo search...");
 
         if (!this.url && GeoAdmin.webServicesUrl != null) {
-            this.url = GeoAdmin.webServicesUrl + "/swisssearch";
+            this.url = GeoAdmin.webServicesUrl + "/swisssearch/geocoding";
         }
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
