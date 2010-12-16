@@ -68,7 +68,7 @@ class WmtsController(BaseController):
     def manager(self):
         # TileCache configuration
         tileCacheServers = ['http://tile5.bgdi.admin.ch/geoadmin','http://tile6.bgdi.admin.ch/geoadmin','http://tile7.bgdi.admin.ch/geoadmin','http://tile8.bgdi.admin.ch/geoadmin','http://tile9.bgdi.admin.ch/geoadmin']
-        tileCacheReferer = 'http://fake.wmts.geo.admin.ch/'
+        tileCacheReferer = 'tile-f5.bgdi.admin.ch'
 
         # Get information from WMTS URL
         urlContent = request.url.split("/")
