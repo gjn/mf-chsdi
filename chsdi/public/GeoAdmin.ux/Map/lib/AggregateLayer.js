@@ -6,11 +6,11 @@
  * @include OpenLayers/Layer.js
  */
 /**
- * Class: Geoportal.Layer.Aggregate
+ * Class: OpenLayers.Layer.Aggregate
  * A container of layers. The idea is to group layers to avoid big list to be
  * displayed in the LayerSwitcher. This aggregation also help in grouping
  * spared OGC services into a compound one.
- *      This feature is experimental.
+ * ATTENTION: only 4 aggregated layers can be added and if you use the function raiseLayer, you have to handle separately the layer ordering (zIndex).
  *
  * Inherits from:
  * - {<OpenLayers.Layer>}
@@ -36,6 +36,10 @@ OpenLayers.Layer.Aggregate =
              */
             initialize: function(name, layers, options) {
                 OpenLayers.Layer.prototype.initialize.apply(this, [name, options]);
+                if (layers.length > 4) {
+                     OpenLayers.Console.warn("Only 4 layers can be added as aggregated layers");
+                     return;
+                }
                 this.layers = [];
                 this.addLayers(layers);
             },

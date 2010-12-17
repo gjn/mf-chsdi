@@ -47,7 +47,7 @@ This example presents a combination of WMS and TileCache layers.
       function init() {
 
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
-    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+
 
     var wmsLayer = new OpenLayers.Layer.WMS("WMS", "http://wms.geo.admin.ch/", {
         layers: "ch.bafu.hydrologie-hydromessstationen",
@@ -63,13 +63,14 @@ This example presents a combination of WMS and TileCache layers.
         units: 'm',
         serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
             1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-        format: "image/jpeg",
+        format: "image/png",
         attribution: '',
         transitionEffect: "resize",
         buffer: 0,
         displayInLayerSwitcher: false,
         layerType: 'raster',
-        minResolution: 101
+        minResolution: 101,
+        isBaseLayer: false
     };
 
     var url = [
@@ -79,10 +80,10 @@ This example presents a combination of WMS and TileCache layers.
         'http://tile8.bgdi.admin.ch/geoadmin/',
         'http://tile9.bgdi.admin.ch/geoadmin/'
     ];
-    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.pixelkarte-grau', layer_options);
+    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.hiks-dufour', layer_options);
 
     var aggregateLayer = new OpenLayers.Layer.Aggregate('Aggregate TC / WMS',
-            [wmsLayer, tilecacheLayer],
+            [tilecacheLayer,wmsLayer],
     {
         attribution: 'aggregateAttribution',
         displayInLayerSwitcher: true,
@@ -90,7 +91,11 @@ This example presents a combination of WMS and TileCache layers.
         geoadmin_isBgLayer: false,
         layerType: 'mixed'
     });
+    map6.addLayerByName("ch.swisstopo.hiks-siegfried");
     map6.addLayer(aggregateLayer);
+    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+
+
     var layertree = new GeoAdmin.LayerTree({
         map: map6,
         renderTo: "mylayertree6",
@@ -118,7 +123,6 @@ This example presents a combination of WMS and TileCache layers.
    function init() {
 
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
-    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
 
     var wmsLayer = new OpenLayers.Layer.WMS("WMS", "http://wms.geo.admin.ch/", {
         layers: "ch.bafu.hydrologie-hydromessstationen",
@@ -134,13 +138,14 @@ This example presents a combination of WMS and TileCache layers.
         units: 'm',
         serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
             1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-        format: "image/jpeg",
+        format: "image/png",
         attribution: '',
         transitionEffect: "resize",
         buffer: 0,
         displayInLayerSwitcher: false,
         layerType: 'raster',
-        minResolution: 101
+        minResolution: 101,
+        isBaseLayer: false
     };
 
     var url = [
@@ -150,7 +155,7 @@ This example presents a combination of WMS and TileCache layers.
         'http://tile8.bgdi.admin.ch/geoadmin/',
         'http://tile9.bgdi.admin.ch/geoadmin/'
     ];
-    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.pixelkarte-grau', layer_options);
+    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.hiks-dufour', layer_options);
 
     var aggregateLayer = new OpenLayers.Layer.Aggregate('Aggregate TC / WMS',
             [wmsLayer, tilecacheLayer],
@@ -161,7 +166,10 @@ This example presents a combination of WMS and TileCache layers.
         geoadmin_isBgLayer: false,
         layerType: 'mixed'
     });
+    map6.addLayerByName("ch.swisstopo.hiks-siegfried");
     map6.addLayer(aggregateLayer);
+    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+
     var layertree = new GeoAdmin.LayerTree({
         map: map6,
         renderTo: "mylayertree6",

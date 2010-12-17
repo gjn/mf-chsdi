@@ -33,19 +33,19 @@
  *
  */
 
-  /** api: constructor
-  *  .. class:: LayerTree(config)
-  *
-  *  :param config: ``Object`` config
-  *
-  *  :return:  ``GeoAdmin.LayerTree``
-  *
-  *  Create a GeoAdmin layer tree. Visibility, opacity, metadata and display can be managed with this layer tree.
-  */
+/** api: constructor
+ *  .. class:: LayerTree(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.LayerTree``
+ *
+ *  Create a GeoAdmin layer tree. Visibility, opacity, metadata and display can be managed with this layer tree.
+ */
 
 GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
 
-	  /** api: config[map]
+    /** api: config[map]
      *  ``OpenLayers.Map``
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
@@ -68,12 +68,12 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         // the layer node UI class - a GeoExt LayerNodeUI with
         // actions and component
         var uiClass = Ext.extend(
-            Ext.extend(
-                GeoExt.tree.LayerNodeUI,
-                GeoAdmin.ActionsMixin()
-            ),
-            GeoAdmin.ComponentMixin()
-        );
+                Ext.extend(
+                        GeoExt.tree.LayerNodeUI,
+                        GeoAdmin.ActionsMixin()
+                        ),
+                GeoAdmin.ComponentMixin()
+                );
 
         // create a layer store for the GeoExt layer container
         var layerStore = new GeoExt.data.LayerStore({map: this.map});
@@ -90,50 +90,60 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     nodeType: "geoadmin_layer",
                     uiProvider: "ui",
                     checked: null,
-                    actions: [{
-                        action: "close",
-                        qtip: OpenLayers.i18n("hide layer options")
-                    }, {
-                        action: "open",
-                        qtip: OpenLayers.i18n("show layer options")
-                    }, {
-                        action: "pipe-up",
-                        qtip: "",
-                        update: function(el) {
-                            // "this" references the tree node
-                            this.hideIfFirst(el);
+                    actions: [
+                        {
+                            action: "close",
+                            qtip: OpenLayers.i18n("hide layer options")
+                        },
+                        {
+                            action: "open",
+                            qtip: OpenLayers.i18n("show layer options")
+                        },
+                        {
+                            action: "pipe-up",
+                            qtip: "",
+                            update: function(el) {
+                                // "this" references the tree node
+                                this.hideIfFirst(el);
+                            }
+                        },
+                        {
+                            action: "up",
+                            qtip: OpenLayers.i18n("move layer up"),
+                            update: function(el) {
+                                // "this" references the tree node
+                                this.hideIfFirst(el);
+                            }
+                        },
+                        {
+                            action: "pipe-down",
+                            qtip: "",
+                            update: function(el) {
+                                // "this" references the tree node
+                                this.hideIfLast(el);
+                            }
+                        },
+                        {
+                            action: "down",
+                            qtip: OpenLayers.i18n("move layer down"),
+                            update: function(el) {
+                                // "this" references the tree node
+                                this.hideIfLast(el);
+                            }
+                        },
+                        {
+                            action: "pipe",
+                            qtip: ""
+                        },
+                        {
+                            action: "delete",
+                            qtip: OpenLayers.i18n("remove layer")
+                        },
+                        {
+                            action: "pipe",
+                            qtip: ""
                         }
-                    }, {
-                        action: "up",
-                        qtip: OpenLayers.i18n("move layer up"),
-                        update: function(el) {
-                            // "this" references the tree node
-                            this.hideIfFirst(el);
-                        }
-                    }, {
-                        action: "pipe-down",
-                        qtip: "",
-                        update: function(el) {
-                            // "this" references the tree node
-                            this.hideIfLast(el);
-                        }
-                    }, {
-                        action: "down",
-                        qtip: OpenLayers.i18n("move layer down"),
-                        update: function(el) {
-                            // "this" references the tree node
-                            this.hideIfLast(el);
-                        }
-                    }, {
-                        action: "pipe",
-                        qtip: ""
-                    }, {
-                        action: "delete",
-                        qtip: OpenLayers.i18n("remove layer")
-                    }, {
-                        action: "pipe",
-                        qtip: ""
-                    }],
+                    ],
                     component: this.createNodeComponent
                 }
             }
@@ -154,10 +164,65 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         var layer = node.layer;
         switch (action) {
             case "down":
-                layer.map.raiseLayer(layer, -1);
+                // Determine the step intervall in order to support aggregated layers
+                var counter = 0;
+                var step = 1;
+                var notFound = true;
+                for (var z = parseInt(layer.div.style.zIndex) - 5; z > 105; z = z - 5) {
+                    counter++;
+                    for (var i = 0; i < layer.map.layers.length; i++) {
+                        if (z == layer.map.layers[i].div.style.zIndex) {
+                            if (notFound) {
+                                step = counter;
+                                notFound = false;
+                            }
+                            break;
+                        }
+                    }
+
+                }
+                layer.map.raiseLayer(layer, -step);
+
+                // Fix the zIndex of the aggregated layers
+                for (var i = 0; i < layer.map.layers.length; i++) {
+                    if (layer.map.layers[i].layers) {
+                        for (var j = 0; j < layer.map.layers[i].layers.length; j++) {
+                            layer.map.layers[i].layers[j].div.style.zIndex = layer.map.layers[i].div.style.zIndex - 1 - j;
+                        }
+                    }
+                }
                 break;
             case "up":
-                layer.map.raiseLayer(layer, +1);
+                // Determine the step intervall in order to support aggregated layers
+                var counter = 0;
+                var step = 1;
+                var notFound = true;
+                    
+                for (var z = parseInt(layer.div.style.zIndex) + 5; z < 300; z = z + 5) {
+
+                    counter++;
+                    for (var i = 0; i < layer.map.layers.length; i++) {
+                        if (z == layer.map.layers[i].div.style.zIndex) {
+                            if (notFound) {
+                                step = counter;
+                                notFound = false;
+                            }
+                            break;
+                        }
+                    }
+
+                }
+
+                layer.map.raiseLayer(layer, step);
+
+                // Fix the zIndex of the aggregated layers
+                for (var i = 0; i < layer.map.layers.length; i++) {
+                    if (layer.map.layers[i].layers) {
+                        for (var j = 0; j < layer.map.layers[i].layers.length; j++) {
+                            layer.map.layers[i].layers[j].div.style.zIndex = layer.map.layers[i].div.style.zIndex - 1 - j;
+                        }
+                    }
+                }
                 break;
             case "delete":
                 layer.destroy();
@@ -190,8 +255,8 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     layer: node.layer,
                     aggressive: true,
                     plugins: new GeoAdmin.LayerTree.SliderLabel(
-                        node.layer.layername + '-opacity-lbl'
-                    ),
+                            node.layer.layername + '-opacity-lbl'
+                            ),
                     width: 100
                 }),
                 new GeoAdmin.LayerTree.TextItem({

@@ -45,7 +45,9 @@ Layer Tree
    <script type="text/javascript">
       function init() {
          var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
+         map6.addLayerByName("ch.swisstopo.hiks-dufour");
          map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
          var layertree = new GeoAdmin.LayerTree({
              map: map6,
              renderTo: "mylayertree6",
@@ -233,7 +235,9 @@ Navigation History
       function init() {
 
          var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
+         map6.addLayerByName("ch.swisstopo.hiks-dufour");
          map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
          var layertree = new GeoAdmin.LayerTree({
              map: map6,
              renderTo: "mylayertree6",
