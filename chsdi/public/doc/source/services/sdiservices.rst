@@ -139,6 +139,7 @@ The following input parameters are required:
 - lang (optional): de (default) or fr
 - baseUrl (optional): application base url
 - print (optional): force window to print
+- cb (optional): the name of the callback funtion
 
 Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill?lang=de&print=true
 
