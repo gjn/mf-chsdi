@@ -24,7 +24,7 @@
 Aggregate layer
 ---------------
 
-EXPERIMENTAL ! An aggregate layer is a layer composed of several OpenLayers.Layer.
+An aggregate layer is a layer composed of several OpenLayers.Layer.
 This example presents a combination of WMS and TileCache layers.
 
 .. raw:: html
