@@ -126,8 +126,7 @@ GeoAdmin.API = OpenLayers.Class({
         options = OpenLayers.Util.applyDefaults(options, {
             lang: 'de'
         });
-        this.lang = options.lang;
-        this.map = options.map;
+        OpenLayers.Util.extend(this, options);
         OpenLayers.Lang.setCode(this.lang);
         OpenLayers.ProxyHost = GeoAdmin.webServicesUrl + "/ogcproxy?url=";
     },
