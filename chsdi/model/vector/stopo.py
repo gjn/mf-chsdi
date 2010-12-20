@@ -117,6 +117,24 @@ class Vec25Wanderwege(Base, Queryable):
 
 register('ch.swisstopo.vec25-wander', Vec25Wanderwege)
 
+class Vec25Strassennetz(Base, Queryable):
+ 	__tablename__ = 'v25_hptstr_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_strassennetz.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-strassennetz', Vec25Strassennetz)
+
+class Vec25Uebrige(Base, Queryable):
+ 	__tablename__ = 'v25_uvk_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_uebrigeverk.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-uebrigerverkehr', Vec25Uebrige)
+
 class DufourErst(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'

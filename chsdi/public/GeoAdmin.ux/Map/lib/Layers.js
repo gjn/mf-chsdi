@@ -638,6 +638,20 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
+            },
+            "ch.swisstopo.vec25-strassennetz": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-strassennetz"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.vec25-uebrigerverkehr": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-uebrigerverkehr"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
             }
         };
     }

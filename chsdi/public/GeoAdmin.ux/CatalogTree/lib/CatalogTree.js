@@ -694,6 +694,20 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-eisenbahnnetz1"
                             },
                             {
+ 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-strassennetz", "node_ch.swisstopo.vec25-strassennetz1") + ' ' + this.layers["ch.swisstopo.vec25-strassennetz"].name,
+ 	  	                        leaf: true,
+ 	  	                        checked: false,
+ 	  	                        cls: 'nodeLT3',
+ 	  	                        id: "node_ch.swisstopo.vec25-strassennetz1"
+ 	                        },
+                            {
+ 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-uebrigerverkehr", "node_ch.swisstopo.vec25-uebrigerverkehr1") + ' ' + this.layers["ch.swisstopo.vec25-uebrigerverkehr"].name,
+ 	  	                        leaf: true,
+                                checked: false,
+ 	  	                        cls: 'nodeLT3',
+ 	  	                        id: "node_ch.swisstopo.vec25-uebrigerverkehr1"
+ 	                        },
+                            {
  	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-wander", "node_ch.swisstopo.vec25-wander1") + ' ' + this.layers["ch.swisstopo.vec25-wander"].name,
  	  	                        leaf: true,
  	  	                        checked: false,
