@@ -129,7 +129,7 @@ This service display detailed informations on a layer, including a detailed desc
 URL
 ^^^
 
-http://api.geo.admin.ch/bodsearch/details/[bod id]
+http://api.geo.admin.ch/bodsearch/details/[id]
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -170,6 +170,32 @@ A JSON
 
 - id: the BOD Id of the layer
 - description: a description of the layer
+
+Feature
+-------
+
+This service allows to search for a feature ID stored in the spatial data infrastructure.
+
+URL
+^^^
+
+http://api.geo.admin.ch/feature/[id]
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- layer: searchable layer
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/feature/5922?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
+
+Result
+^^^^^^
+
+A GeoJSON representation of the found feature.
+
 
 Feature: search
 ---------------

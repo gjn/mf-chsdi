@@ -70,6 +70,31 @@ def get_features(layer, ids):
 
 class FeatureController(BaseController):
 
+    @validate_params(validator_layers)
+    def index(self):
+        # if a list of layers was provided the first layer in the
+        # list will be taken
+        layer = c.layers[0]
+
+        features = []
+        urlContent = request.url.split("?")
+        id = urlContent[0].split("/")[len(urlContent[0].split("/"))-1]
+        
+        for model in models_from_name(layer):
+            feature = Session.query(model).get(id)
+            if feature:
+                feature.compute_attribute()
+                features.append(feature)
+
+        output = simplejson.dumps(FeatureCollection(features), cls=MapFishEncoder)
+        cb_name = request.params.get('cb')
+        if cb_name is not None:
+            response.headers['Content-Type'] = 'text/javascript'
+            return str(cb_name) + '(' + output + ');'
+        else:
+            response.headers['Content-Type'] = 'application/json'
+            return output
+
     @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
         if self.lang == 'fr':

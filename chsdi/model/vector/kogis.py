@@ -1,8 +1,10 @@
 from chsdi.model import *
 
+from mapfish.sqlalchemygeom import GeometryTableMixIn
+
 Base = declarative_base(bind=meta.engines['kogis'])
 
-class Gebaeuderegister(Base, Queryable):
+class Gebaeuderegister(Base, Queryable, GeometryTableMixIn):
     # view in a schema
     __tablename__ = 'adr_tiles'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
@@ -22,7 +24,7 @@ class Gebaeuderegister(Base, Queryable):
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
-class AGNES(Base, Queryable):
+class AGNES(Base, Queryable, GeometryTableMixIn):
     # view in a schema
     __tablename__ = 'agnes'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
@@ -34,7 +36,7 @@ class AGNES(Base, Queryable):
 register('ch.swisstopo.fixpunkte-agnes', AGNES)
 
 
-class FIXPUNKTELAGE(Base, Queryable):
+class FIXPUNKTELAGE(Base, Queryable, GeometryTableMixIn):
     # view in a schema
     __tablename__ = 'punkt_tiles_lage'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
@@ -43,7 +45,7 @@ class FIXPUNKTELAGE(Base, Queryable):
     id = Column('nummer', Text, primary_key=True)
     the_geom = Column(Geometry)
 
-class FIXPUNKTEHOEHE(Base, Queryable):
+class FIXPUNKTEHOEHE(Base, Queryable, GeometryTableMixIn):
     # view in a schema
     __tablename__ = 'punkt_tiles_hoehe'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})

@@ -60,11 +60,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             }, options);
 
             var url = [
-                'http://tile5.bgdi.admin.ch/geoadmin/',
-                'http://tile6.bgdi.admin.ch/geoadmin/',
-                'http://tile7.bgdi.admin.ch/geoadmin/',
-                'http://tile8.bgdi.admin.ch/geoadmin/',
-                'http://tile9.bgdi.admin.ch/geoadmin/'
+                'http://tile5.geo.admin.ch/geoadmin/',
+                'http://tile6.geo.admin.ch/geoadmin/',
+                'http://tile7.geo.admin.ch/geoadmin/',
+                'http://tile8.geo.admin.ch/geoadmin/',
+                'http://tile9.geo.admin.ch/geoadmin/'
             ];
             return new OpenLayers.Layer.TileCache(config.name, url, name, layer_options);
         }

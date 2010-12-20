@@ -38,6 +38,7 @@ class Queryable(object):
     __maxscale__ = maxint
 
     html = None
+    attributes = {}
     
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
@@ -56,6 +57,18 @@ class Queryable(object):
         c.layer_datenherr = bodlayer.datenherr
         c.layer_id = layer_id
         self.html = render(self.__template__)
+
+    def compute_attribute(self):
+        c.feature = self
+        attributes = {}
+        fid_column = self.primary_key_column().name
+        geom_column = self.geometry_column().name
+        for column in self.__table__.c.keys():
+            column = str(column)
+            if column != fid_column and column != geom_column and hasattr(self, column):
+	            attributes[column] = getattr(self, column)
+        self.attributes = attributes
+
         
     @property
     def geometry(self):
@@ -63,6 +76,7 @@ class Queryable(object):
 
     @property
     def __geo_interface__(self):
+        self.attributes['html'] = self.html
         return Feature(id=self.id, geometry=self.geometry,
                        bbox=self.geometry.bounds,
-                       properties={'html': self.html})
+                       properties=self.attributes)
