@@ -1,10 +1,8 @@
 from chsdi.model import *
 
-from mapfish.sqlalchemygeom import GeometryTableMixIn
-
 Base = declarative_base(bind=meta.engines['bafu'])
 
-class AM_G(Base, Queryable, GeometryTableMixIn):
+class AM_G(Base, Queryable):
     # view in a schema
     __tablename__ = 'am_g'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -13,7 +11,7 @@ class AM_G(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class AM_L(Base, Queryable, GeometryTableMixIn):
+class AM_L(Base, Queryable):
     # view in a schema
     __tablename__ = 'am_l'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -22,7 +20,7 @@ class AM_L(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class LHG(Base, Queryable, GeometryTableMixIn):
+class LHG(Base, Queryable):
     # view in a schema
     __tablename__ = 'lhg'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
@@ -31,7 +29,7 @@ class LHG(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class AU(Base, Queryable, GeometryTableMixIn):
+class AU(Base, Queryable):
     # view in a schema
     __tablename__ = 'au'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -40,7 +38,7 @@ class AU(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class BLN(Base, Queryable, GeometryTableMixIn):
+class BLN(Base, Queryable):
     # view in a schema
     __tablename__ = 'bln'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -49,7 +47,7 @@ class BLN(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class HM(Base, Queryable, GeometryTableMixIn):
+class HM(Base, Queryable):
     # view in a schema
     __tablename__ = 'hm'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -58,7 +56,7 @@ class HM(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class JB(Base, Queryable, GeometryTableMixIn):
+class JB(Base, Queryable):
     # view in a schema
     __tablename__ = 'jb'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -67,7 +65,7 @@ class JB(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class ML(Base, Queryable, GeometryTableMixIn):
+class ML(Base, Queryable):
     # view in a schema
     __tablename__ = 'ml'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -76,7 +74,7 @@ class ML(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WV(Base, Queryable, GeometryTableMixIn):
+class WV(Base, Queryable):
     # view in a schema
     __tablename__ = 'wv'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -85,7 +83,7 @@ class WV(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WEWB(Base, Queryable, GeometryTableMixIn):
+class WEWB(Base, Queryable):
     # view in a schema
     __tablename__ = 'invent_ent_wknutz_bedeutend'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -94,7 +92,7 @@ class WEWB(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WEWW(Base, Queryable, GeometryTableMixIn):
+class WEWW(Base, Queryable):
     # view in a schema
     __tablename__ = 'invent_ent_wknutz_weitere'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -103,7 +101,7 @@ class WEWW(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WEANB(Base, Queryable, GeometryTableMixIn):
+class WEANB(Base, Queryable):
     # view in a schema
     __tablename__ = 'invent_ent_andere_bedeutend'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -112,7 +110,7 @@ class WEANB(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WEANW(Base, Queryable, GeometryTableMixIn):
+class WEANW(Base, Queryable):
     # view in a schema
     __tablename__ = 'invent_ent_andere_weitere'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -121,7 +119,7 @@ class WEANW(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WL(Base, Queryable, GeometryTableMixIn):
+class WL(Base, Queryable):
     # view in a schema
     __tablename__ = 'leitungen'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -130,7 +128,7 @@ class WL(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class WR(Base, Queryable, GeometryTableMixIn):
+class WR(Base, Queryable):
     # view in a schema
     __tablename__ = 'rueckgabe'
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
@@ -139,7 +137,7 @@ class WR(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class FM(Base, Queryable, GeometryTableMixIn):
+class FM(Base, Queryable):
     # view in a schema
     __tablename__ = 'fm'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -148,7 +146,7 @@ class FM(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class FM_REG(Base, Queryable, GeometryTableMixIn):
+class FM_REG(Base, Queryable):
     # view in a schema
     __tablename__ = 'fm_reg'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
@@ -157,7 +155,7 @@ class FM_REG(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable, GeometryTableMixIn):
+class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
     # view in a schema
     __tablename__ = 'paerke_nationaler_bedeutung'
     __table_args__ = ({'schema': 'schutzge', 'autoload': True})
@@ -166,7 +164,7 @@ class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable, GeometryTableMixIn):
     id = Column('park_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class RA(Base, Queryable, GeometryTableMixIn):
+class RA(Base, Queryable):
     # view in a schema
     __tablename__ = 'ra'
     __table_args__ = ({'schema': 'schutzge', 'autoload': True})
@@ -175,7 +173,7 @@ class RA(Base, Queryable, GeometryTableMixIn):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
-class SB(Base, Queryable, GeometryTableMixIn):
+class SB(Base, Queryable):
     # view in a schema
     __tablename__ = 'sb'
     __table_args__ = ({'schema': 'fauna', 'autoload': True})

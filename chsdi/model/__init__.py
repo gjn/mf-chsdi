@@ -51,6 +51,14 @@ class Queryable(object):
             return within_distance(geom_column, wkb_geometry, tolerance)
         return None
 
+    @classmethod
+    def geometry_column(cls):
+        return cls.__table__.columns['the_geom']
+
+    @classmethod
+    def primary_key_column(cls):
+        return cls.__table__.primary_key
+
     def compute_template(self, layer_id, bodlayer):
         c.feature = self
         c.layer_bezeichnung = bodlayer.bezeichnung

@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from chsdi.model import *
 
-from mapfish.sqlalchemygeom import GeometryTableMixIn
-
 Base = declarative_base(bind=meta.engines['are_mapfish'])
 
-class PersonenStrasse(Base, Queryable, GeometryTableMixIn):
+class PersonenStrasse(Base, Queryable):
     # view in a schema
     __tablename__ = 'belastung_personenverkehr_strasse_2008'
     __table_args__ = ({'schema': 'strassen', 'autoload': True})
@@ -17,7 +15,7 @@ class PersonenStrasse(Base, Queryable, GeometryTableMixIn):
 register('ch.are.belastung-personenverkehr-strasse-2008', PersonenStrasse)
 
 
-class GueterStrasse(Base, Queryable, GeometryTableMixIn):
+class GueterStrasse(Base, Queryable):
     # view in a schema
     __tablename__ = 'belastung_gueterverkehr_strasse_2008'
     __table_args__ = ({'schema': 'strassen', 'autoload': True})
@@ -29,7 +27,7 @@ class GueterStrasse(Base, Queryable, GeometryTableMixIn):
 register('ch.are.belastung-gueterverkehr-strasse-2008', GueterStrasse)
 
 
-class PersonenBahn(Base, Queryable, GeometryTableMixIn):
+class PersonenBahn(Base, Queryable):
     # view in a schema
     __tablename__ = 'belastung_personenverkehr_bahn_2008'
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
@@ -41,7 +39,7 @@ class PersonenBahn(Base, Queryable, GeometryTableMixIn):
 register('ch.are.belastung-personenverkehr-bahn-2008', PersonenBahn)
 
 
-class GueterBahn(Base, Queryable, GeometryTableMixIn):
+class GueterBahn(Base, Queryable):
     # view in a schema
     __tablename__ = 'belastung_gueterverkehr_bahn_2008'
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
@@ -53,7 +51,7 @@ class GueterBahn(Base, Queryable, GeometryTableMixIn):
 register('ch.are.belastung-gueterverkehr-bahn-2008', GueterBahn)
 
 
-class Landschaftstypen(Base, Queryable, GeometryTableMixIn):
+class Landschaftstypen(Base, Queryable):
     # view in a schema
     __tablename__ = 'landschaftstypen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
@@ -65,7 +63,7 @@ class Landschaftstypen(Base, Queryable, GeometryTableMixIn):
 register('ch.are.landschaftstypen', Landschaftstypen)
 
 
-class Alpenkonvention(Base, Queryable, GeometryTableMixIn):
+class Alpenkonvention(Base, Queryable):
     # view in a schema
     __tablename__ = 'alpenkonvention'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
@@ -77,7 +75,7 @@ class Alpenkonvention(Base, Queryable, GeometryTableMixIn):
 register('ch.are.alpenkonvention', Alpenkonvention)
 
 
-class AggloIsoStaedte(Base, Queryable, GeometryTableMixIn):
+class AggloIsoStaedte(Base, Queryable):
     # view in a schema
     __tablename__ = 'agglomerationen_isolierte_staedte_2000'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
@@ -89,7 +87,7 @@ class AggloIsoStaedte(Base, Queryable, GeometryTableMixIn):
 register('ch.are.agglomerationen_isolierte_staedte-2000', AggloIsoStaedte)
 
 
-class GueteklasseOev(Base, Queryable, GeometryTableMixIn):
+class GueteklasseOev(Base, Queryable):
     # view in a schema
     __tablename__ = 'gueteklassen'
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
@@ -101,7 +99,7 @@ class GueteklasseOev(Base, Queryable, GeometryTableMixIn):
 register('ch.are.gueteklassen_oev', GueteklasseOev)
 
 
-class Bevoelkerungsdichte(Base, Queryable, GeometryTableMixIn):
+class Bevoelkerungsdichte(Base, Queryable):
     # view in a schema
     __tablename__ = 'bevoelkerungsdichte_vz00'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
@@ -113,7 +111,7 @@ class Bevoelkerungsdichte(Base, Queryable, GeometryTableMixIn):
 register('ch.are.bevoelkerungsdichte-vz00', Bevoelkerungsdichte)
 
 
-class Beschaeftigtendichte(Base, Queryable, GeometryTableMixIn):
+class Beschaeftigtendichte(Base, Queryable):
     # view in a schema
     __tablename__ = 'beschaeftigtendichte_bz08'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})

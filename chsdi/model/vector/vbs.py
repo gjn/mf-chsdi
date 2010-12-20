@@ -1,10 +1,8 @@
 from chsdi.model import *
 
-from mapfish.sqlalchemygeom import GeometryTableMixIn
-
 Base = declarative_base(bind=meta.engines['vbs'])
 
-class Kulturgueter(Base, Queryable, GeometryTableMixIn):
+class Kulturgueter(Base, Queryable):
     # view in a schema
     __tablename__ = 'kgs'
     __table_args__ = ({'schema': 'babs', 'autoload': False})
