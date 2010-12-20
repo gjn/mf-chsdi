@@ -188,6 +188,7 @@ The following parameters are required:
 
 - layer: searchable layer
 - cb (optional): the name of the callback funtion
+- no_geom (optional): True if the geometry has to be ommitted (per default: False)
 
 Example: http://api.geo.admin.ch/feature/5922?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
 

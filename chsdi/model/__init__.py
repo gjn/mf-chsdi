@@ -77,7 +77,7 @@ class Queryable(object):
 	            attributes[column] = getattr(self, column)
         self.attributes = attributes
 
-        
+
     @property
     def geometry(self):
         return loads(self.the_geom.geom_wkb.decode('hex'))

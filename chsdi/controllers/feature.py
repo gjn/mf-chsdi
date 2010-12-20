@@ -4,6 +4,7 @@ import simplejson
 from pylons import request, response, tmpl_context as c
 
 from geojson.feature import FeatureCollection
+from geojson.feature import Feature
 from mapfish.decorators import MapFishEncoder, _jsonify
 
 from chsdi.lib.base import BaseController, cacheable, validate_params, render
@@ -12,6 +13,8 @@ from chsdi.model import models_from_name
 from chsdi.model.meta import Session
 from chsdi.model.vector import *
 from chsdi.model.bod import BodLayerDe, BodLayerFr
+
+from paste.deploy.converters import asbool
 
 log = logging.getLogger(__name__)
 
@@ -61,7 +64,7 @@ def validator_scale():
 def get_features(layer, ids):
     features = []
     for model in models_from_name(layer):
-        #FIXME: features.append(Session.query(model).filter(model.id.in_(ids)).all())
+    #FIXME: features.append(Session.query(model).filter(model.id.in_(ids)).all())
         for fid in ids:
             feature = Session.query(model).get(fid)
             if feature:
@@ -69,25 +72,37 @@ def get_features(layer, ids):
     return features
 
 class FeatureController(BaseController):
-
     @validate_params(validator_layers)
     def index(self):
-        # if a list of layers was provided the first layer in the
-        # list will be taken
+    # if a list of layers was provided the first layer in the
+    # list will be taken
         layer = c.layers[0]
 
         features = []
         urlContent = request.url.split("?")
         id = urlContent[0].split("/")[len(urlContent[0].split("/"))-1]
-        
+
+        no_geom = request.params.get('no_geom')
+        if no_geom is not None:
+            no_geom = asbool(no_geom)
+        else:
+            no_geom = False
+
         for model in models_from_name(layer):
             feature = Session.query(model).get(id)
             if feature:
                 feature.compute_attribute()
-                features.append(feature)
+                if (no_geom):
+                    features.append(Feature(id=feature.id,
+                                            bbox=feature.geometry.bounds,
+                                            properties=feature.attributes))
+                else:
+                    features.append(feature)
+
 
         output = simplejson.dumps(FeatureCollection(features), cls=MapFishEncoder)
         cb_name = request.params.get('cb')
+
         if cb_name is not None:
             response.headers['Content-Type'] = 'text/javascript'
             return str(cb_name) + '(' + output + ');'
@@ -100,8 +115,8 @@ class FeatureController(BaseController):
         if self.lang == 'fr':
             bodsearch = BodLayerFr
         else:
-            bodsearch = BodLayerDe            
-        
+            bodsearch = BodLayerDe
+
         features = []
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
@@ -132,8 +147,8 @@ class FeatureController(BaseController):
     @_jsonify(cb="cb")
     @validate_params(validator_ids, validator_layers)
     def bbox(self):
-        # if a list of layers was provided the first layer in the
-        # list will be taken
+    # if a list of layers was provided the first layer in the
+    # list will be taken
         layer = c.layers[0]
         bboxes =  [feature.geometry.bounds for feature in get_features(layer, c.ids)]
         right = max([bbox[0] for bbox in bboxes])
@@ -147,7 +162,7 @@ class FeatureController(BaseController):
     @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(validator_layers, validator_ids)
     def geometry(self):
-        # if a list of layers was provided the first layer in the
-        # list will be taken
+    # if a list of layers was provided the first layer in the
+    # list will be taken
         layer = c.layers[0]
         return FeatureCollection(get_features(layer, c.ids))
