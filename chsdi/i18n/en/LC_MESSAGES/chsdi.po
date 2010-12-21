@@ -246,7 +246,13 @@ msgid "report problem"
 msgstr "Report problem"
 
 msgid  "tilenumber"
-msgstr "Map sheet"
+msgstr "Sheet number"
+
+msgid  "sheetname"
+msgstr "Sheet name"
+
+msgid  "alexandria"
+msgstr "Catalogue Alexandria"
 
 msgid "zaehlstelle"
 msgstr "Zählstelle" 

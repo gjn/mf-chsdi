@@ -246,7 +246,13 @@ msgid "report problem"
 msgstr "Problem melden"
 
 msgid  "tilenumber"
-msgstr "Blatt"
+msgstr "Blattnummer"
+
+msgid  "sheetname"
+msgstr "Blattbezeichnung"
+
+msgid  "alexandria"
+msgstr "Katalog Alexandria"
 
 msgid "zaehlstelle"
 msgstr "Zählstelle" 
