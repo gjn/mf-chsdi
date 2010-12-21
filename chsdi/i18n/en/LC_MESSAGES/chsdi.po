@@ -248,6 +248,23 @@ msgstr "Report problem"
 msgid  "tilenumber"
 msgstr "Map sheet"
 
+msgid "zaehlstelle"
+msgstr "Zählstelle" 
+
+msgid "physischvirtuell"
+msgstr "Physisch-virtuell"
+
+msgid "messstellentyp"
+msgstr "Messstellentyp" 
+
+msgid "linkzurbeschreibung"
+msgstr "Detaillierte Beschreibung" 
+
+msgid "oeffentlich"
+msgstr "Öffentlich" 
+
+msgid "intern"
+msgstr "Intern" 
 
 # are2 translations
 

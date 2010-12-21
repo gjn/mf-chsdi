@@ -632,6 +632,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
             },
+            "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
+                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
+                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
+                wms: true,
+                url: "http://wms-bod0t.bgdi.admin.ch",
+                type: "point",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+			"ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
+                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
+                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
+                wms: true,
+                url: "http://wms-bod0t.bgdi.admin.ch",
+                type: "point",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
             "ch.are.gueteklassen_oev": {
                 name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
                 type: "polygon",

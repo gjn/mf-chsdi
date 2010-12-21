@@ -248,3 +248,20 @@ msgstr "Segnala un problema"
 msgid  "tilenumber"
 msgstr "Foglio"
 
+msgid "zaehlstelle"
+msgstr "Poste de comptage" 
+
+msgid "physischvirtuell"
+msgstr "Physique-virtuel"
+
+msgid "messstellentyp"
+msgstr "Type" 
+
+msgid "linkzurbeschreibung"
+msgstr "Description detaillee" 
+
+msgid "oeffentlich"
+msgstr "Öffentlich" 
+
+msgid "intern"
+msgstr "Intern" 

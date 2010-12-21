@@ -183,6 +183,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.are.alpenkonvention': 'Convention des Alpes',
     'ch.are.gemeindetyp-1990-9klassen': 'Typologie des communes ARE',
 
+     // Layer for astra
+    'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
+	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
+
     
     // Datenherr
     'ch.swisstopo': 'swisstopo',

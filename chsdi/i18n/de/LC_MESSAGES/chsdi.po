@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
@@ -249,6 +248,23 @@ msgstr "Problem melden"
 msgid  "tilenumber"
 msgstr "Blatt"
 
+msgid "zaehlstelle"
+msgstr "Zählstelle" 
+
+msgid "physischvirtuell"
+msgstr "Physisch-virtuell"
+
+msgid "messstellentyp"
+msgstr "Messstellentyp" 
+
+msgid "linkzurbeschreibung"
+msgstr "Detaillierte Beschreibung" 
+
+msgid "oeffentlich"
+msgstr "Öffentlich" 
+
+msgid "intern"
+msgstr "Intern" 
 
 # are2 translations
 
@@ -275,4 +291,3 @@ msgstr "Einwohner pro ha"
 
 msgid "beschaeftigte_ha"
 msgstr "Beschäftigte pro ha"
-

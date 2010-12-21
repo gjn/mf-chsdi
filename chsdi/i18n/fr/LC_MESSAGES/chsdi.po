@@ -248,6 +248,24 @@ msgstr "Annoncer un problème"
 msgid  "tilenumber"
 msgstr "Feuille"
 
+msgid "zaehlstelle"
+msgstr "Poste de comptage" 
+
+msgid "physischvirtuell"
+msgstr "Physique-virtuel"
+
+msgid "messstellentyp"
+msgstr "Type" 
+
+msgid "linkzurbeschreibung"
+msgstr "Description detaillée" 
+
+msgid "oeffentlich"
+msgstr "Public" 
+
+msgid "intern"
+msgstr "Interne" 
+
 
 # are2 translations
 
