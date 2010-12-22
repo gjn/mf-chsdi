@@ -254,6 +254,9 @@ msgstr "Nom de feuille"
 msgid  "alexandria"
 msgstr "Catalogue Alexandria"
 
+msgid  "Toposhop"
+msgstr  "Toposhop"
+
 msgid "zaehlstelle"
 msgstr "Poste de comptage" 
 

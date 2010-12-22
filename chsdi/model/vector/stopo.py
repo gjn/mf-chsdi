@@ -154,3 +154,23 @@ class SiegfriedErst(Base, Queryable):
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.hiks-siegfried',SiegfriedErst)
+
+class GridstandPk25(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'gridstand_datenhaltung_pk25'
+ 	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
+ 	__template__ = 'tooltips/pk25_metadata.mako'
+ 	id = Column('kbnum', Text, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.pixelkarte-pk25.metadata',GridstandPk25)
+
+class GridstandSwissimage(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'view_gridstand_datenhaltung_swissimage'
+ 	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
+ 	__template__ = 'tooltips/images_metadata.mako'
+ 	id = Column('tilenumber', Text, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.images-swissimage.metadata',GridstandSwissimage)

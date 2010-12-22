@@ -103,6 +103,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Energiequellen': 'Risorse energetiche',
 
     // Layer name
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte pixel 1:25000',
+	'ch.swisstopo.images-swissimage.metadata' : 'Swissimage',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',
@@ -138,6 +140,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.bafu.bundesinventare-vogelreservate': 'Réserves d\'oiseaux d\'eau et migrateurs',
     'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Parcs',
     'ch.bafu.schutzgebiete-ramsar': 'Ramsar',
+	'ch.bafu.schutzgebiete-wildruhezonen': 'Zones de tranquillité',
     'ch.bafu.schutzgebiete-schweizerischer_nationalpark': 'Parc national',
     'ch.bafu.showme-kantone_hochwasser': 'ShowMe cantons: crues',
     'ch.bafu.showme-kantone_rutschungen': 'ShowMe cantons: glissements',

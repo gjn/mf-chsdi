@@ -35,7 +35,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 singleTile: true,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
-                layerType: config.type
+                layerType: config.type,
+				ratio: 1.1
             });
         } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
@@ -660,6 +661,26 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec25-uebrigerverkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-uebrigerverkehr"),
                 type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+			"ch.swisstopo.pixelkarte-pk25.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
+				url: "http://wms-bod0t.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+			"ch.swisstopo.images-swissimage.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
+                layers: ["ch.swisstopo.images-swissimage.metadata"],
+				url: "http://wms-bod0t.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true

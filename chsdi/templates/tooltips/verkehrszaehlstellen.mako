@@ -7,4 +7,4 @@
 	<tr><td width="150">${_('messstellentyp')}</td><td>${c.feature.messstellentyp or '-'}</td></tr>
     <tr><td width="150">${_('oeffentlich')}</td><td><a href="http://bgdipg01t.lt.admin.ch/~ltret/verkehrszaehlstellen/version_b.php#n${c.feature.id or '-'}" target="_blank">${_('linkzurbeschreibung')}</a></td></tr>
 	<tr><td width="150">${_('intern')}</td><td><a href="http://bgdipg01t.lt.admin.ch/~ltret/verkehrszaehlstellen/index.php#n${c.feature.id or '-'}" target="_blank">${_('linkzurbeschreibung')}</a></td></tr>
-</%def> 
+</%def>

@@ -254,6 +254,9 @@ msgstr "Blattbezeichnung"
 msgid  "alexandria"
 msgstr "Katalog Alexandria"
 
+msgid  "Toposhop"
+msgstr  "Toposhop"
+
 msgid "zaehlstelle"
 msgstr "Zählstelle" 
 
