@@ -633,6 +633,34 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
             },
+            "ch.are.reisezeit_miv-2005": {
+                name: OpenLayers.i18n("ch.are.reisezeit_miv-2005"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.reisezeit_oev-2005": {
+                name: OpenLayers.i18n("ch.are.reisezeit_oev-2005"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.bauzonen-2007": {
+                name: OpenLayers.i18n("ch.are.bauzonen-2007"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
+            "ch.are.gemeindetyp-1990-9klassen": {
+                name: OpenLayers.i18n("ch.are.gemeindetyp-1990-9klassen"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.are"),
+                queryable: true
+            },
             "ch.swisstopo.vec25-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-strassennetz"),
                 type: "line",
@@ -647,7 +675,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-			"ch.swisstopo.pixelkarte-pk25.metadata": {
+            "ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
 				url: "http://wms-bod0t.bgdi.admin.ch",
