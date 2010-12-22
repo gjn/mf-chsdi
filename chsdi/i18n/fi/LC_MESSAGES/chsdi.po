@@ -119,6 +119,9 @@ msgstr "Fläche [ha]"
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
 
+msgid "flaeche_m2"
+msgstr "Fläche [m2]"
+
 msgid "flaeche_km2"
 msgstr "Fläche [km2]"
 
@@ -275,3 +278,35 @@ msgstr "Öffentlich"
 msgid "intern"
 msgstr "Intern" 
 
+
+# are2 translations
+
+msgid "belastung_personen"
+msgstr "Belastung [Pers./Jahr]"
+
+msgid "belastung_tonnen"
+msgstr "Belastung [t/Jahr]"
+
+msgid "stand"
+msgstr "Stand"
+
+msgid "typnummer"
+msgstr "Typnummer"
+
+msgid "regname"
+msgstr "Grossraum"
+
+msgid "klasse"
+msgstr "Klasse"
+
+msgid "einwohner_ha"
+msgstr "Einwohner pro ha"
+
+msgid "beschaeftigte_ha"
+msgstr "Beschäftigte pro ha"
+
+msgid "nutzung"
+msgstr "Hauptnutzung"
+
+msgid "reisezeit_min"
+msgstr "Reisezeit [Min]"

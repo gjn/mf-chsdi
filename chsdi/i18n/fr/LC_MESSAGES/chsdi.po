@@ -119,6 +119,9 @@ msgstr "Surface [ha]"
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
 
+msgid "flaeche_m2"
+msgstr "Surface [m2]"
+
 msgid "flaeche_km2"
 msgstr "Surface [km2]"
 
@@ -301,3 +304,9 @@ msgstr "Population par ha"
 
 msgid "beschaeftigte_ha"
 msgstr "Emplois par ha"
+
+msgid "nutzung"
+msgstr "Type"
+
+msgid "reisezeit_min"
+msgstr "Temps de parcours [min]"

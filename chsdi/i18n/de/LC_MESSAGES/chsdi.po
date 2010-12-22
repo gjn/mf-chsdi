@@ -119,6 +119,9 @@ msgstr "Fläche [ha]"
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
 
+msgid "flaeche_m2"
+msgstr "Fläche [m2]"
+
 msgid "flaeche_km2"
 msgstr "Fläche [km2]"
 
@@ -300,3 +303,9 @@ msgstr "Einwohner pro ha"
 
 msgid "beschaeftigte_ha"
 msgstr "Beschäftigte pro ha"
+
+msgid "nutzung"
+msgstr "Hauptnutzung"
+
+msgid "reisezeit_min"
+msgstr "Reisezeit [Min]"
