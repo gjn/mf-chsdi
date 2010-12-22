@@ -33,6 +33,8 @@ sqlalchemy.vbs.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhos
 sqlalchemy.are_mapfish.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/are_mapfish
 sqlalchemy.uvek.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/uvek
 
+dtm_path = /var/www/mf-chsdi/private/data/profile/
+
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
 # execute malicious code after an exception is raised.

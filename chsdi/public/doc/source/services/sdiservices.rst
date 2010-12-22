@@ -277,7 +277,92 @@ Example: http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.gg25-gemein
 Result
 ^^^^^^
 
-A GeoJSON representation of the found features.  
+A GeoJSON representation of the found features.
+
+Profile.json
+------------
+
+This service allows to obtain elevation information for a polyline.
+
+URL
+^^^
+
+http://api.geo.admin.ch/profile.json
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- geom: GeoJSON representation of the polyline (type = LineString)
+- elevation_models (optional): comma separated list of elevation models.  For now, only one elevation model available. Default: DTM25
+- nb_points (optional): number of points used for the polyline segmentization. Default: 200
+- cb (optional): the name of the callback funtion
+
+Example: `http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+
+Result
+^^^^^^
+
+A JSON, with a "profile" root:
+
+- alts: an object containing the elevation [m] obtained from the elevation model
+- dist: distance [m]  from the first vertex of the polyline
+- easting: the Y position in CH1903 coordinate system
+- northing: the X position in CH1903 coordinate system
+
+Profile.csv
+-----------
+
+This service allows to obtain elevation information for a polyline in CSV format.
+
+URL
+^^^
+
+http://api.geo.admin.ch/profile.csv
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- geom: GeoJSON representation of the polyline (type = LineString)
+- elevation_models (optional): comma separated list of elevation models. For now, only one elevation model available. Default: DTM25
+- nb_points (optional): number of points used for the polyline segmentization. Default: 200
+
+Example: `http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+
+Result
+^^^^^^
+
+A csv file with the distance, easting and northing information. One column per elevation model is provided.
+
+Height
+------
+
+This service allows to obtain elevation information for a point.
+
+URL
+^^^
+
+http://api.geo.admin.ch/height
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- easting: the Y position in CH1903 coordinate system
+- northing: the X position in CH1903 coordinate system
+- elevation_model (optional): elevation model. For now, only one elevation model available. Default: DTM25
+- cb (optional): the name of the callback funtion
+
+Example: http://api.geo.admin.ch/height?easting=600000&northing=200000
+
+Result
+^^^^^^
+
+A JSON containing the height information.
 
 .. _wmts_description:
 

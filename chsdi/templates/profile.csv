@@ -1,0 +1,13 @@
+## -- coding: utf-8 --
+Distance\
+% for layer in c.layers:
+;${layer}\
+% endfor
+;Easting;Northing
+% for point in c.points:
+${point['dist']};\
+%   for layer in c.layers:
+${point['alts'].get(layer, '')};\
+%   endfor
+${point['easting']};${point['northing']}
+% endfor
