@@ -121,3 +121,48 @@ class Beschaeftigtendichte(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.are.beschaeftigtendichte-bz08', Beschaeftigtendichte)
+
+
+class Bauzonen(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'bauzonen_2007'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/bauzonen.mako'
+
+    id = Column('row_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.bauzonen-2007', Bauzonen)
+
+class Reisezeit_Miv(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'reisezeit_miv_2005'
+    __table_args__ = ({'schema': 'strassen', 'autoload': True})
+    __template__ = 'tooltips/reisezeit_miv.mako'
+
+    id = Column('gem_no', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.reisezeit_miv-2005', Reisezeit_Miv)
+
+class Reisezeit_oev(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'reisezeit_oev_2005'
+    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
+    __template__ = 'tooltips/reisezeit_oev.mako'
+
+    id = Column('gem_no', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.reisezeit_oev-2005', Reisezeit_oev)
+
+class Gemeindetyp(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'gemeindetyp_1990_9klassen'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/gemeindetyp.mako'
+
+    id = Column('row_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.gemeindetyp-1990-9klassen', Gemeindetyp)
