@@ -674,7 +674,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
-            },
+            }
+/*          Sorry - These Layers are just needed for demo purposes - wont hopefully happen again (tobias.reber@swisstopo.ch)
             "ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
@@ -684,8 +685,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
-            }
-/*          Sorry - These Layers are just needed for demo purposes - wont hopefully happen again (tobias.reber@swisstopo.ch)
+            },
 			"ch.swisstopo.images-swissimage.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
                 layers: ["ch.swisstopo.images-swissimage.metadata"],
@@ -720,4 +720,3 @@ GeoAdmin._Layers = OpenLayers.Class({
 });
 
 GeoAdmin.layers = new GeoAdmin._Layers();
-
