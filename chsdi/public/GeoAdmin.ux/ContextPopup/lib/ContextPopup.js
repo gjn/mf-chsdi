@@ -23,19 +23,19 @@
  *
  *
  */
- 
- /** api: constructor
-  *  .. class:: ContextPopup(options)
-  *
-  *  :param options: ``Object`` options
-  *
-  *  :return:  ``GeoAdmin.ContextPopup``
-  *
-  *  Create context popup activated on right mouse click.
-  */
+
+/** api: constructor
+ *  .. class:: ContextPopup(options)
+ *
+ *  :param options: ``Object`` options
+ *
+ *  :return:  ``GeoAdmin.ContextPopup``
+ *
+ *  Create context popup activated on right mouse click.
+ */
 GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
-	
-	  /** api: config[map]
+
+    /** api: config[map]
      *  ``OpenLayers.Map``
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
@@ -53,27 +53,38 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control.Navigation, {
             paramsObject.Y = lonlat.lon;
             paramsObject.X = lonlat.lat;
             if (!paramsObject.zoom) {
-               paramsObject.zoom = 0; 
+                paramsObject.zoom = 0;
             }
             var params = OpenLayers.Util.getParameterString(paramsObject);
 
-            // Set popup content
-            var content = "<table style='font-size: 12px;'><tr><td width=\"150\">" + OpenLayers.i18n('Swiss Coordinate') + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
-            lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
-            content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
-            content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr></table>";
+            Ext.ux.JSONP.request(GeoAdmin.webServicesUrl + '/height', {
+                callbackKey: "cb",
+                params: {
+                    easting: lonlat.lon,
+                    northing: lonlat.lat
+                },
+                scope: this,
+                callback: function(response) {
+                    // Set popup content
+                    var content = "<table style='font-size: 12px;'><tr><td width=\"150\">" + OpenLayers.i18n('Swiss Coordinate') + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
+                    lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
+                    content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
+                    content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None','-') + ' [m] </td></tr>';
+                    content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr></table>";
 
-            var popup = new GeoExt.Popup({
-                cls: 'positionPopup',
-                title: OpenLayers.i18n('Position'),
-                location: this.map.getLonLatFromPixel(this.handlers.click.evt.xy),
-                width:300,
-                map: this.map,
-                html: content,
-                maximizable: false,
-                collapsible: false
+                    var popup = new GeoExt.Popup({
+                        cls: 'positionPopup',
+                        title: OpenLayers.i18n('Position'),
+                        location: this.map.getLonLatFromPixel(this.handlers.click.evt.xy),
+                        width:300,
+                        map: this.map,
+                        html: content,
+                        maximizable: false,
+                        collapsible: false
+                    });
+                    popup.show();
+                }
             });
-            popup.show();
         };
     }
 });

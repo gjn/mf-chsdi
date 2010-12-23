@@ -246,6 +246,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
-    'Permalink.close': 'Close'
+    'Permalink.close': 'Close',
+
+    // Context Popup
+    'Elevation': 'Altitude'
 
 });

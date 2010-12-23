@@ -30,7 +30,11 @@ The GeoAdmin API doesn't support mobile devices.
 Who is using the GeoAdmin API ?
 -------------------------------
 
-See for example the `GeoCat partner map <http://www.geocat.ch/internet/geocat/fr/home/about/members.html>`_
+Here is a non exhaustive list (don't hesitate to inform us about your own web site, we would be happy to add it here:
+
+- `GeoCat partner map <http://www.geocat.ch/internet/geocat/fr/home/about/members.html>`_
+- `Wildruehzonen Schweiz <http://www.wildruhezonen.ch/wr400.php?na=400>`_
+- `Agnes station <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/topics/survey/permnet/agnes/paye.html>`_
 
 .. _available_layers:
 
