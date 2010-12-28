@@ -113,6 +113,9 @@ msgstr "Objektname"
 msgid "laenge_m"
 msgstr "Länge [m]"
 
+msgid "laenge_strecke_m"
+msgstr "Länge der Strecke [m]"
+
 msgid "flaeche_ha"
 msgstr "Fläche [ha]"
 

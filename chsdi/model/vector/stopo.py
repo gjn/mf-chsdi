@@ -135,6 +135,42 @@ class Vec25Uebrige(Base, Queryable):
 
 register('ch.swisstopo.vec25-uebrigerverkehr', Vec25Uebrige)
 
+class Vec25Anlagen(Base, Queryable):
+ 	__tablename__ = 'v25_anl_25_a'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_anlagen.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-anlagen', Vec25Anlagen)
+
+class Vec25Eisenbahnnetz(Base, Queryable):
+ 	__tablename__ = 'v25_eis_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_eisenbahnnetz.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-eisenbahnnetz', Vec25Eisenbahnnetz)
+
+class Vec25Gebaeude(Base, Queryable):
+ 	__tablename__ = 'v25_geb_25_a'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_gebaeude.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-gebaeude', Vec25Gebaeude)
+
+class Vec25Primaerflaechen(Base, Queryable):
+ 	__tablename__ = 'v25_pri25_a'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_primaerflaechen.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-primaerflaechen', Vec25Primaerflaechen)
+
 class DufourErst(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'

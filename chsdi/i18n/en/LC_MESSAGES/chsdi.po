@@ -113,6 +113,9 @@ msgstr "Object name"
 msgid "laenge_m"
 msgstr "Length [m]"
 
+msgid "laenge_strecke_m"
+msgstr "Length of stretch [m]"
+
 msgid "flaeche_ha"
 msgstr "Area [ha]"
 

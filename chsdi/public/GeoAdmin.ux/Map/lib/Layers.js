@@ -139,14 +139,14 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-anlagen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-anlagen"),
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-gwn-gewassernetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-gwn-gewassernetz"),
@@ -160,14 +160,14 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-eisenbahnnetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-eisenbahnnetz"),
                 type: "line",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-wander": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-wander"),
