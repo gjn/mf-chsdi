@@ -495,6 +495,27 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_4",
                         children: [
                             {
+                                text: this.addtreeLayerLink("ch.are.agglomerationen_isolierte_staedte-2000", "node_ch.are.agglomerationen_isolierte_staedte-20001") + ' ' + this.layers["ch.are.agglomerationen_isolierte_staedte-2000"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.agglomerationen_isolierte_staedte-20001"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.are.alpenkonvention", "node_ch.are.alpenkonvention1") + ' ' + this.layers["ch.are.alpenkonvention"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.alpenkonvention1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.are.gemeindetyp-1990-9klassen", "node_ch.are.gemeindetyp-1990-9klassen1") + ' ' + this.layers["ch.are.gemeindetyp-1990-9klassen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.gemeindetyp-1990-9klassen1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.gg25-land-flaeche.fill", "node_ch.swisstopo.gg25-land-flaeche.fill1") + ' ' + this.layers["ch.swisstopo.gg25-land-flaeche.fill"].name,
                                 leaf: true,
                                 checked: false,
@@ -949,6 +970,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_20",
                         children: [
                             {
+                                text: this.addtreeLayerLink("ch.are.alpenkonvention", "node_ch.are.alpenkonvention2") + ' ' + this.layers["ch.are.alpenkonvention"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.alpenkonvention2"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.hydrologie-hydromessstationen",  "node_ch.bafu.hydrologie-hydromessstationen1") + ' ' + this.layers["ch.bafu.hydrologie-hydromessstationen"].name,
                                 leaf: true,
                                 checked: false,
@@ -1188,12 +1216,28 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 singleClickExpand: true,
                 id: "LT1_6",
                 children: [
-                   /* {
+                    {
                         text: ' ' + OpenLayers.i18n('Statistische Einheiten'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_28"
-                    },*/
+                        id: "LT2_28",
+                        children: [
+                            {
+                                text: this.addtreeLayerLink("ch.are.agglomerationen_isolierte_staedte-2000", "node_ch.are.agglomerationen_isolierte_staedte-20002") + ' ' + this.layers["ch.are.agglomerationen_isolierte_staedte-2000"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.agglomerationen_isolierte_staedte-20002"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.are.gemeindetyp-1990-9klassen", "node_ch.are.gemeindetyp-1990-9klassen2") + ' ' + this.layers["ch.are.gemeindetyp-1990-9klassen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.are.gemeindetyp-1990-9klassen2"
+                            }
+                        ]
+                    },
                     {
                         text: ' ' + OpenLayers.i18n('Landnutzung'),
                         cls: 'nodeLT2',
