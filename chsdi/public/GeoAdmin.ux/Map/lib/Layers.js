@@ -208,21 +208,21 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-agnes"),
                 type: "point",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.kt"),
                 queryable: true
             },
             "ch.swisstopo.fixpunkte-lage": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage"),
                 type: "point",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.kt"),
                 queryable: true
             },
             "ch.swisstopo.fixpunkte-hoehe": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe"),
                 type: "point",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                datenherr: OpenLayers.i18n("ch.swisstopo.kt"),
                 queryable: true
             },
             "ch.bfs.arealstatistik-1985": {
@@ -486,6 +486,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.bafu"),
                 queryable: false
             },
+			"ch.bafu.schutzgebiete-wildruhezonen": {
+                name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.kt.bafu"),
+                queryable: true
+            },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
                 type: "polygon",
@@ -695,10 +702,12 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
-            },
+            }
+			
 			"ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
+				url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "point",
                 format: "image/png",
@@ -708,13 +717,13 @@ GeoAdmin._Layers = OpenLayers.Class({
 			"ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
+				url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "point",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
-            }
-*/
+            }*/
         };
     }
 });

@@ -281,6 +281,15 @@ msgstr "Öffentlich"
 msgid "intern"
 msgstr "Intern" 
 
+msgid "bearbeitungsjahr"
+msgstr "Bearbeitungsjahr" 
+
+msgid "schonzeit"
+msgstr "Schonzeit" 
+
+msgid "einschraenkungen"
+msgstr "Einschränkungen"
+
 # are2 translations
 
 msgid "belastung_personen"

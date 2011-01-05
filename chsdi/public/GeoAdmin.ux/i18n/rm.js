@@ -185,6 +185,8 @@ OpenLayers.Lang.rm = {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
+	'ch.kt.bafu': 'Kt. [bafu]',
+	'ch.swisstopo.kt': 'swisstopo, Kt.',
 
     // layertree
     'show layer options': 'Mussar las opziuns da la stresa',

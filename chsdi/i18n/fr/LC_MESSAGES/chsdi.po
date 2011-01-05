@@ -281,6 +281,15 @@ msgstr "Public"
 msgid "intern"
 msgstr "Interne" 
 
+msgid "bearbeitungsjahr"
+msgstr "Année de réalisation" 
+
+msgid "schonzeit"
+msgstr "Période de fermeture de la chasse" 
+
+msgid "einschraenkungen"
+msgstr "Restrictions" 
+
 
 # are2 translations
 

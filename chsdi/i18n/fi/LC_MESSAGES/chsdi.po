@@ -252,13 +252,13 @@ msgid "report problem"
 msgstr "Rapportare problem"
 
 msgid  "tilenumber"
-msgstr "Numero di foglio"
+msgstr "Blattnummer"
 
 msgid  "sheetname"
-msgstr "Denominazione di foglio"
+msgstr "Blattbezeichnung"
 
 msgid  "alexandria"
-msgstr "Catalogo Alexandria"
+msgstr "Katalog Alexandria"
 
 msgid  "Toposhop"
 msgstr  "Toposhop"
@@ -280,6 +280,15 @@ msgstr "Öffentlich"
 
 msgid "intern"
 msgstr "Intern" 
+
+msgid "bearbeitungsjahr"
+msgstr "Bearbeitungsjahr" 
+
+msgid "schonzeit"
+msgstr "Schonzeit" 
+
+msgid "einschraenkungen"
+msgstr "Einschränkungen" 
 
 
 # are2 translations

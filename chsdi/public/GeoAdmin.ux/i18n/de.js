@@ -144,7 +144,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.bundesinventare-jagdbanngebiete': 'Jagdbanngebiete',
     'ch.bafu.bundesinventare-moorlandschaften': 'Moorlandschaften',
     'ch.bafu.bundesinventare-vogelreservate': 'Wasser- und Zugvogelreservate',
-    'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Pärke',
+	'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Pärke',
     'ch.bafu.schutzgebiete-ramsar': 'Ramsar',
 	'ch.bafu.schutzgebiete-wildruhezonen': 'Wildruhezonen',
     'ch.bafu.schutzgebiete-schweizerischer_nationalpark': 'Nationalpark',
@@ -193,6 +193,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
+	'ch.kt.bafu': 'Kt. [bafu]',
+	'ch.swisstopo.kt': 'swisstopo, Kt.',
 
     // layertree
     'show layer options': 'Layeroptionen anzeigen',

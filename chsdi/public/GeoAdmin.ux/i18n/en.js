@@ -192,6 +192,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
+	'ch.kt.bafu': 'ct. [foen]',
+	'ch.swisstopo.kt': 'swisstopo, ct.',
 
     // layertree
     'show layer options': 'Show layer options',

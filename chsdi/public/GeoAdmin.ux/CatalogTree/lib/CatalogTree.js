@@ -856,12 +856,19 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-ramsar1"
                             },
-                            {
+                          	{
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate1") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-vogelreservate1"
+                            },
+							{
+                                text: this.addtreeLayerLink("ch.bafu.schutzgebiete-wildruhezonen", "node_ch.bafu.schutzgebiete-wildruhezonen1") + ' ' + this.layers["ch.bafu.schutzgebiete-wildruhezonen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.schutzgebiete-wildruhezonen1"
                             }
                         ]
                     },

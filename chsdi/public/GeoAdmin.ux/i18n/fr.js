@@ -195,6 +195,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
+	'ch.kt.bafu': 'ct. [ofev]',
+	'ch.swisstopo.kt': 'swisstopo, ct.',
 
     // layer tree
     'show layer options': 'Afficher les options de la couche',

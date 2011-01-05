@@ -172,6 +172,15 @@ class RA(Base, Queryable):
 
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
+	
+class WILDRUHEZONEN(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wildruhezonen'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __template__ = 'tooltips/wildruhezonen.mako'
+
+    id = Column('wrz_obj', Integer, primary_key=True)
+    the_geom = Column(Geometry)
 
 class SB(Base, Queryable):
     # view in a schema
@@ -201,4 +210,5 @@ register('ch.bafu.bundesinventare-flachmoore', FM)
 register('ch.bafu.bundesinventare-flachmoore', FM_REG)
 register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', PAERKE_NATIONALER_BEDEUTUNG)
 register('ch.bafu.schutzgebiete-ramsar', RA)
+register('ch.bafu.schutzgebiete-wildruhezonen', WILDRUHEZONEN)
 register('ch.bafu.fauna-steinbockkolonien', SB)
