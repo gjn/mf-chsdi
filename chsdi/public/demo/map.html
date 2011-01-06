@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Swisstopo Map with 5 layers</title>
+</head>
+<body onload="init();" :>
+<div id="map" style="width:100%; height: 100%;"></div>
+<link rel=stylesheet type=text/css href=../build/api.css>
+<script type="text/javascript" src="../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../lib/ext/Ext/ext-all-debug.js"></script>
+<script type="text/javascript" src="../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="../lib/geoext/lib/GeoExt.js"></script>
+<script type="text/javascript" src="../GeoAdmin.ux/GeoAdmin.js"></script>
+<script type="text/javascript" src="../GeoAdmin.ux/Map/lib/Map.js"></script>
+<script type="text/javascript" src="../GeoAdmin.ux/Map/lib/Layers.js"></script>
+<script type="text/javascript" src="../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+<script type="text/javascript" src="../GeoAdmin.ux/Map/lib/VoidLayer.js"></script>
+<script type="text/javascript">
+    var map = null;
+    function init() {
+        window.GeoAdmin.OpenLayersImgPath = "http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/Map/img/";
+        map = new GeoAdmin.Map('map');
+        // http://map.geo.admin.ch/?zoom=1&X=190000&Y=660000&layers=ch.swisstopo.fixpunkte-agnes,ch.swisstopo.fixpunkte-lage,ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.gg25-land-flaeche.fill,ch.swisstopo.gg25-kanton-flaeche.fill&layers_indices=5,6,7,8,9&layers_opacity=1,1,1,1,1&layers_visibility=true,true,true,true,true&selectedNode=node_ch.swisstopo.gg25-kanton-flaeche.fill1
+        map.addLayerByName('ch.swisstopo.fixpunkte-agnes');
+        map.addLayerByName('ch.swisstopo.fixpunkte-lage');
+        map.addLayerByName('ch.swisstopo.fixpunkte-hoehe');
+        map.addLayerByName('ch.swisstopo.gg25-land-flaeche.fill');
+        map.addLayerByName('ch.swisstopo.gg25-kanton-flaeche.fill');
+        map.zoomToMaxExtent();
+    }
+</script>
+
+
+</body>
+</html>
