@@ -1311,6 +1311,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     constructor: function(config) {
         GeoAdmin.CatalogTree.superclass.constructor.call(this, config);
+        this.map = config.map;
     }
 });
 
