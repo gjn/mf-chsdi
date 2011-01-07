@@ -36,7 +36,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
-				ratio: 1.1
+                ratio: 1.1
             });
         } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
@@ -74,7 +74,7 @@ GeoAdmin._Layers = OpenLayers.Class({
     initialize: function() {},
 
     init: function() {
-        return this.layers = {
+        this.layers = {
             // base layers
             "ch.swisstopo.swissimage": {
                 name: OpenLayers.i18n("ch.swisstopo.swissimage"),
@@ -253,13 +253,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-	        "ch.swisstopo.geologie-geophysik-totalintensitaet": {
- 	            name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
-		        type: "line",
- 	  	        format: "image/png",
- 	  	        datenherr: OpenLayers.i18n("ch.swisstopo"),
- 	  	        queryable: false
- 	        },
+            "ch.swisstopo.geologie-geophysik-totalintensitaet": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: false
+            },
             "ch.swisstopo.geologie-geophysik-inklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
                 type: "line",
@@ -486,7 +486,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.bafu"),
                 queryable: false
             },
-			"ch.bafu.schutzgebiete-wildruhezonen": {
+            "ch.bafu.schutzgebiete-wildruhezonen": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
                 type: "polygon",
                 format: "image/png",
@@ -686,38 +686,38 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-				url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-			"ch.swisstopo.images-swissimage.metadata": {
+            "ch.swisstopo.images-swissimage.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
                 layers: ["ch.swisstopo.images-swissimage.metadata"],
-				url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             }
-			
-			"ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
+            
+            "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
-				url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "point",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-			"ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
+            "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
-				url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms-bod0t.bgdi.admin.ch",
                 wms: true,
                 type: "point",
                 format: "image/png",
@@ -725,6 +725,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true
             }*/
         };
+        return this.layers;
     }
 });
 
