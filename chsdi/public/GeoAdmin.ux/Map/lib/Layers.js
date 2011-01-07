@@ -44,7 +44,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
         } else {
-            var layer_options = OpenLayers.Util.applyDefaults({
+            var layer_options = OpenLayers.Util.extend({
                 projection: new OpenLayers.Projection('EPSG:21781'),
                 units: 'm',
                 serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
