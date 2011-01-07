@@ -140,6 +140,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         this.layer.addFeatures(evt.features);
 
         this.popup = new GeoExt.Popup({
+            cls: 'feature-popup',
             width: 450,
             title: OpenLayers.i18n('Feature tooltip'),
             toolTemplate: new Ext.XTemplate(
@@ -164,6 +165,9 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 }
             }],
             autoScroll: true,
+            panIn: true,
+            anchored: false,
+            draggable: true,
             map: this.map,
             layer: this.layer,
             location: this.lastClick,
