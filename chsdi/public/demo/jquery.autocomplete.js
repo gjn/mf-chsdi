@@ -419,6 +419,9 @@ $.Autocompleter.Cache = function(options) {
 	var length = 0;
 	
 	function matchSubset(s, sub) {
+		if (!s) {
+			return false;
+		}
 		if (!options.matchCase) 
 			s = s.toLowerCase();
 		var i = s.indexOf(sub);
