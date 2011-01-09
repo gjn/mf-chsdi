@@ -1,26 +1,22 @@
-<!-- FIXME: which doctype is best ? -->
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Swisstopo Mobile OpenLayers</title>
-
-    <!-- IPhone Meta Tags -->
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-
-    <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-        }
+	<meta charset="utf-8" />
+	<title>jQuery Mobile: Demos and Documentation</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+	<style type="text/css">
+.ui-content {
+    padding: 0px;
+}
     </style>
+    
+    <link rel="stylesheet" href="jquery.autocomplete.css" type="text/css" />
 
-    <script type="text/javascript"
+
+	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+	<script type="text/javascript" src="jquery.autocomplete.js"></script>
+<script type="text/javascript"
             src="http://c2c-rd-geospatial.demo-camptocamp.com/lib/openlayers/OpenLayers.mobile.min.js"></script>
     <script type="text/javascript"
             src="http://c2c-rd-geospatial.demo-camptocamp.com/lib/openlayers/lib/OpenLayers/Control/TouchNavigation.js"></script>
@@ -29,6 +25,24 @@
     <script type="text/javascript">
         var map;
         function init() {
+        	
+        	  // Set the height and width
+        	  var header = $.mobile.activePage.children("div[data-role='header']");
+    				var content = $.mobile.activePage.children("div[data-role='content']");
+    				var footer = $.mobile.activePage.children("div[data-role='footer']");
+    				var mapDiv = document.getElementById("map");
+    				mapHeight = $.mobile.activePage.innerHeight()
+        - header.outerHeight()
+        - content.outerHeight()
+        - footer.outerHeight();
+    				mapDiv.style.height =  mapHeight + "px";
+
+    				mapWidth = $.mobile.activePage.width()
+        - $.mobile.activePage.css('padding-left')
+        - $.mobile.activePage.css('padding-right');
+    				mapDiv.style.width =  mapWidth + "px";
+    				
+    				
 
             map = new OpenLayers.Map({
                 div: "map",
@@ -68,8 +82,90 @@
             map.setCenter(new OpenLayers.LonLat(600000, 200000), 5);
         }
     </script>
-</head>
-<body onload='init();'>
-<div id="map"></div>
+    <script type="text/javascript">
+  $(document).ready(function() {
+	$("#city").autocomplete("http://api.geo.admin.ch/swisssearch/geocoding?", {
+		dataType: 'jsonp',
+		jsonp: 'cb',
+		parse: function(data) {
+			var rows = new Array();
+			data = data.results;
+			for(var i=0; i<data.length; i++){
+				rows[i] = { data:data[i], value:data[i].name, result:data[i].name };
+			}
+			return rows;
+		},
+		formatItem: function(row, i, n) {
+			return row.label;
+		},
+
+		extraParams: {
+			// geonames doesn't support q and limit, which are the autocomplete plugin defaults, so let's blank them out.
+			q: '',
+			limit: '',
+			query: function () { return $("#city").val() }
+		}
+	}); 
+	$('#city').result(function(event, data, formatted) {
+		var extent = OpenLayers.Bounds.fromArray(data.bbox);
+        var zoom = {
+        'LK500': 4,
+        'LK200': 5,
+        'LK100': 6,
+        'LK50' : 7,
+        'LK25' : 8
+    }[data.objectorig];
+
+
+
+        if (zoom === undefined) {
+            map.zoomToExtent(extent);
+        } else {
+            map.setCenter(extent.getCenterLonLat(), zoom);
+        }
+});
+
+
+     
+  });
+</script>
+
+
+</head> 
+<body  onload='init();'>
+	
+	<div data-role="page" id="mapPage">
+
+	<div data-role="header">
+		<h1>Map</h1><a href="#layerPage">Select layers</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<div id="map"></div>
+        <input id="city" name="city" style="position:absolute; width:250px; top:50px; left: 5px; z-index: 1000;">
+		
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Copyrights: Swisstopo</h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="layerPage">
+
+	<div data-role="header">
+		<h1>Layer Selector</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p><a href="#mapPage">Back to map page</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Layer footer</h4>
+	</div><!-- /header -->
+</div><!-- /page --> 
+
 </body>
 </html>
