@@ -67,8 +67,7 @@ class WmtsController(BaseController):
 
     def manager(self):
         # TileCache configuration
-        tileCacheServers = ['http://tile5.bgdi.admin.ch/geoadmin','http://tile6.bgdi.admin.ch/geoadmin','http://tile7.bgdi.admin.ch/geoadmin','http://tile8.bgdi.admin.ch/geoadmin','http://tile9.bgdi.admin.ch/geoadmin']
-        tileCacheReferer = 'http://tile-f5.bgdi.admin.ch'
+        tileCacheServers = ['http://tile-f5.bgdi.admin.ch/geoadmin','http://tile-f6.bgdi.admin.ch/geoadmin','http://tile-f7.bgdi.admin.ch/geoadmin','http://tile-f8.bgdi.admin.ch/geoadmin','http://tile-f9.bgdi.admin.ch/geoadmin']
 
         # Get information from WMTS URL
         urlContent = request.url.split("/")
@@ -112,7 +111,7 @@ class WmtsController(BaseController):
 
         # Load the tile and send it back
         req = urllib2.Request(tileCacheUrlString)
-        req.add_header('Referer', tileCacheReferer)
+        req.add_header('Referer', request.headers['Referer'])
         r = urllib2.urlopen(req)
         response.headers['Content-Type'] = mimetypes.types_map['.'+format]
         response.headers['Cache-Control'] = r.headers['Cache-Control']
