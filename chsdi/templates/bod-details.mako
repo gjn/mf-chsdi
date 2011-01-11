@@ -29,6 +29,9 @@
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-tektonische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.astra.ivs-gelaendekarte":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.astra.ivs-gelaendekarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>    
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>
