@@ -681,6 +681,27 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
+            },
+            "ch.astra.ivs-nat": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.astra"),
+                queryable: true
+            },
+            "ch.astra.ivs-reg_loc": {
+                name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
+                type: "line",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.astra"),
+                queryable: true
+            },
+            "ch.astra.ivs-gelaendekarte": {
+                name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.astra"),
+                queryable: false
             }
 /*          Sorry - These Layers are just needed for demo purposes - wont hopefully happen again (tobias.reber@swisstopo.ch)
             "ch.swisstopo.pixelkarte-pk25.metadata": {

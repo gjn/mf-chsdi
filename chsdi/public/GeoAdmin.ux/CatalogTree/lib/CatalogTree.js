@@ -687,6 +687,27 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_14",
                         children: [
                             {
+                                text: this.addtreeLayerLink("ch.astra.ivs-nat", "node_ch.astra.ivs-nat1") + ' ' + this.layers["ch.astra.ivs-nat"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.astra.ivs-nat1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.astra.ivs-reg_loc", "node_ch.astra.ivs-reg_loc1") + ' ' + this.layers["ch.astra.ivs-reg_loc"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.astra.ivs-reg_loc1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.astra.ivs-gelaendekarte", "node_ch.astra.ivs-gelaendekarte1") + ' ' + this.layers["ch.astra.ivs-gelaendekarte"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.astra.ivs-gelaendekarte1"
+                            },    
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.vec200-transportation-oeffentliche-verkehr", "node_ch.swisstopo.vec200-transportation-oeffentliche-verkehr1") + ' ' + this.layers["ch.swisstopo.vec200-transportation-oeffentliche-verkehr"].name,
                                 leaf: true,
                                 checked: false,

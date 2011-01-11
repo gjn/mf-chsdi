@@ -183,6 +183,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomerationen und isolierte Städte',
     'ch.are.alpenkonvention': 'Alpenkonvention',
     'ch.are.gemeindetyp-1990-9klassen': 'Gemeindetypologie ARE',
+    'ch.astra.ivs-nat': 'IVS National',
+    'ch.astra.ivs-reg_loc' : 'IVS Regional & Lokal',
+    'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
