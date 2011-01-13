@@ -243,6 +243,9 @@ OpenLayers.Lang.rm = {
     'Permalink.close': 'Close',
 
     // Context Popup
-    'Elevation': 'Elevation'
+    'Elevation': 'Elevation',
+
+    // Advanced Windows
+    'AdvancedWindow.title': 'Advanced functions'
 
 };

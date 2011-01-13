@@ -250,5 +250,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Permalink.close': 'Close',
 
     // Context Popup
-    'Elevation': 'Elevation'
+    'Elevation': 'Elevation',
+
+    // Advanced Windows
+    'AdvancedWindow.title': 'Advanced functions'
 });

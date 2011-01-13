@@ -1,42 +1,11 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/
 
-var aw, mymap, mapPanel;
+var advancedWindow, mymap, mapPanel;
 
 Ext.onReady(function () {
 
 
-    mymap = new GeoAdmin.Map();
-    aw = new GeoAdmin.AdvancedFunctions({
-
-
-
-        items: [{
-            title: 'Panel 1',
-            html: '<p>Panel 1 content!</p>',
-            height: 200
-        },
-        new Ext.Panel({
-            title: 'Measure stuff',
-            items: [
-            new GeoExt.ux.MeasureLength({
-                autoDeactivate: true,
-                map: mymap,
-                cls: 'gx-map-measurelength'
-            }), new Ext.Button({
-                title: 'toto'
-            })]
-        })
-
-        , new Ext.Panel({
-            title: 'Permalink stuff',
-            items: [
-            new GeoAdmin.PermalinkPanel({
-                hidden: false
-            })]
-        })]
-    });
-
-
+    mymap = new GeoAdmin.Map('map',{lang: 'fr'});
 
     mapPanel = new GeoAdmin.MapPanel({
         renderTo: "map",
@@ -44,8 +13,34 @@ Ext.onReady(function () {
         height: 400,
         map: mymap,
         stateId: "map",
-        tbar: new Ext.Toolbar({
-            items: ["->", aw]
-        })
+        tbar: []
     });
+
+    advancedWindow = new GeoAdmin.AdvancedFunctions({
+
+    items :[
+       
+        {
+            title: 'Panel 1',
+            html: '<p>Panel 1 content!</p>',
+            height: 200
+        },
+          new GeoAdmin.Print({
+                title:  OpenLayers.i18n('print map (panel)'),
+                printBaseUrl: '/main/wsgi/print',
+                text: OpenLayers.i18n('print map (panel)'),
+                printPanelOptions: {
+                    renderTo: 'print',
+                    mapPanel: mapPanel
+                }
+         }),
+        new GeoAdmin.PermalinkPanel({
+                hidden: false
+            })
+         ]
+
+    });
+
+  mapPanel.getTopToolbar().add([ "->", advancedWindow ]);
+
 });

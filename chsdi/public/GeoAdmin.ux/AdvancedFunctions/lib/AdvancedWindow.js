@@ -12,11 +12,13 @@ GeoAdmin.AdvancedWindow = Ext.extend(Ext.Window, {
         this.title = OpenLayers.i18n('AdvancedWindow.title');
         this.closeAction = 'hide';
         this.height = 300;
+        this.width = 600;
         this.activeOnTop = true;
         this.cls = 'advanced-window';
-        this.border = true;
+        this.id = 'advanced-window';
+        /*this.border = true;
         this.frame = true;
-        this.shadow = true;
+        this.shadow = true;  */
 
         GeoAdmin.AdvancedWindow.superclass.initComponent.apply(
                 this, arguments);

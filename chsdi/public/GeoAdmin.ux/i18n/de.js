@@ -251,6 +251,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Permalink.close': 'Close',
 
     // Context Popup
-    'Elevation': 'Elevation'
+    'Elevation': 'Elevation',
+
+    // Advanced Windows
+    'AdvancedWindow.title': 'Profi Funktionen'
 
 });

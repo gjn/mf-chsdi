@@ -1,29 +1,42 @@
 .x-accordion-hd {
 	background-image: url(../images/light-hd.gif);
-     color: white;
-     font-weight: bold;
+    color: white;
+    font-weight: bold;
     background-color: #fff;
-    margin
+   
 }
 
 .x-panel-collapsed > .x-accordion-hd {
    background-repeat: no-repeat;
-   background-position: 0 4px;
-   padding-left: 25px;
+   /* background-position: 0 4px; */
+   /* padding-left: 25px;     */
    color: black;
 
 }
-x-tool {
-    float: left !important;
-    background-image: url(../images/closed.gif);
+.x-accordion-hd > .x-tool {
+    float: left;
+    /* background-image: url(../images/open.gif);
+    background: none no-repeat scroll 0 0 transparent;  */
+    cursor: pointer;
+    height: 15px;
+    margin-left: 4px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 15px;
+}
+
+.x-accordion-hd > .x-tool-toggle {
+
+    background-position: 0px 0px;
+    background-image: url(../images/ef_open-close_options.png);
+}
+  /* closed */
+.x-panel-collapsed >.x-accordion-hd > .x-tool-toggle {
+
+    background-position: -15px 0px;
+    background-image: url(../images/ef_open-close_options.png);
 }
 
 .advanced-window {
-
     background-color: white;
-    border-color: -moz-use-text-color -moz-use-text-color black black;
-    border-style: none none solid solid;
-    border-width: medium medium 1px 1px;
-
-
 }
