@@ -290,6 +290,39 @@ msgstr "Période de fermeture de la chasse"
 msgid "einschraenkungen"
 msgstr "Restrictions" 
 
+msgid "ivs_objekt"
+msgstr "Object IVS"
+
+msgid "ivs_gis"
+msgstr "(Object dans IVS-SIG)"
+
+msgid "strecke"
+msgstr "Itinéraire"
+
+msgid "ivs_bedeutung"
+msgstr "Importance (LPN)"
+
+msgid "national"
+msgstr "Nationale"
+
+msgid "regional"
+msgstr "Régionale"
+
+msgid "lokal"
+msgstr "Locale"
+
+msgid "substanzgrad"
+msgstr "Substance"
+
+msgid "viel_sub"
+msgstr "Beaucoup de substance"
+
+msgid "sub"
+msgstr "Substance"
+
+msgid "wenig_sub"
+msgstr "Tracé historique"
+
 
 # are2 translations
 

@@ -290,6 +290,39 @@ msgstr "Schonzeit"
 msgid "einschraenkungen"
 msgstr "Einschränkungen" 
 
+msgid "ivs_objekt"
+msgstr "IVS-Objekt"
+
+msgid "ivs_gis"
+msgstr "(Objekt in IVS-GIS)"
+
+msgid "strecke"
+msgstr "Strecke"
+
+msgid "ivs_bedeutung"
+msgstr "Bedeutung (NHG)"
+
+msgid "national"
+msgstr "national"
+
+msgid "regional"
+msgstr "regional"
+
+msgid "lokal"
+msgstr "lokal"
+
+msgid "substanzgrad"
+msgstr "Substanzgrad"
+
+msgid "viel_sub"
+msgstr "Historischer Verlauf mit viel Substanz"
+
+msgid "sub"
+msgstr "Historischer Verlauf mit Substanz"
+
+msgid "wenig_sub"
+msgstr "Historischer Verlauf"
+
 
 # are2 translations
 
