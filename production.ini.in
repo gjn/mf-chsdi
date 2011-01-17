@@ -32,6 +32,7 @@ sqlalchemy.kogis.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbh
 sqlalchemy.vbs.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/vbs
 sqlalchemy.are_mapfish.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/are_mapfish
 sqlalchemy.uvek.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/uvek
+sqlalchemy.ivs2b.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/ivs2b
 
 dtm_path = /var/www/mf-chsdi/private/data/profile/
 
