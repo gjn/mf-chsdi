@@ -1,4 +1,6 @@
-/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+/**
+ * @include AdvancedFunctions/lib/AdvancedWindow.js
+ */
 
 Ext.namespace("GeoAdmin");
 
