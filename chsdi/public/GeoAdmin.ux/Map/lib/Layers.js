@@ -682,6 +682,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
+			"ch.swisstopo.pixelkarte-pk25.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
+                url: "http://wms-bod0t.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.images-swissimage.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
+                layers: ["ch.swisstopo.images-swissimage.metadata"],
+                url: "http://wms-bod0t.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 type: "line",
@@ -703,7 +723,25 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.astra"),
                 queryable: false
             },
-            "ch.blw.steil_terrassenlagen_rebbau": {
+            "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
+                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
+                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
+                wms: true,
+                type: "point",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
+                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
+                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
+                wms: true,
+                type: "point",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+			 "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 type: "polygon",
                 format: "image/png",
@@ -717,48 +755,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.blw"),
                 queryable: false
             }
-/*          Sorry - These Layers are just needed for demo purposes - wont hopefully happen again (tobias.reber@swisstopo.ch)
-            "ch.swisstopo.pixelkarte-pk25.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
-                wms: true,
-                type: "polygon",
-                format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: true
-            },
-            "ch.swisstopo.images-swissimage.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
-                layers: ["ch.swisstopo.images-swissimage.metadata"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
-                wms: true,
-                type: "polygon",
-                format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: true
-            }
-            
-            "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
-                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
-                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
-                wms: true,
-                type: "point",
-                format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: true
-            },
-            "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
-                name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
-                layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
-                wms: true,
-                type: "point",
-                format: "image/png",
-                datenherr: OpenLayers.i18n("ch.swisstopo"),
-                queryable: true
-            }*/
         };
         return this.layers;
     }

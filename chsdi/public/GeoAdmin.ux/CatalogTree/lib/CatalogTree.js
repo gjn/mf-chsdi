@@ -479,6 +479,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.hiks-dufour1"
                             },
+							{
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk25.metadata", "ch.swisstopo.pixelkarte-pk25.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk25.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk25.metadata1"
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.swisstopo.hiks-siegfried", "node_ch.swisstopo.hiks-siegfried1") + ' ' + this.layers["ch.swisstopo.hiks-siegfried"].name,
                                 leaf: true,
@@ -639,13 +646,22 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-primaerflaechen1"
                             }
                         ]
-                    }/*,
+                    },
                     {
                         text: ' ' + OpenLayers.i18n('Luft und Satellitenbilder'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_10"
-                    }*/
+                        id: "LT2_10",
+						children: [
+							{
+							    text: this.addtreeLayerLink("ch.swisstopo.images-swissimage.metadata", "ch.swisstopo.images-swissimage.metadata1") + ' ' + this.layers["ch.swisstopo.images-swissimage.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.images-swissimage.metadata1"
+							}
+						]
+                    }
                 ]
             },
             /*{
@@ -755,6 +771,20 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
  	  	                        checked: false,
  	  	                        cls: 'nodeLT3',
  	  	                        id: "node_ch.swisstopo.vec25-wander1"
+ 	                        },
+							{
+ 	  	                        text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal", "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"].name,
+ 	  	                        leaf: true,
+ 	  	                        checked: false,
+ 	  	                        cls: 'nodeLT3',
+ 	  	                        id: "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1"
+ 	                        },
+							{
+ 	  	                        text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet", "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"].name,
+ 	  	                        leaf: true,
+ 	  	                        checked: false,
+ 	  	                        cls: 'nodeLT3',
+ 	  	                        id: "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1"
  	                        }
                         ]
                     },
