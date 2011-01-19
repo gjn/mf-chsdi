@@ -702,6 +702,20 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.astra"),
                 queryable: false
+            },
+            "ch.blw.steil_terrassenlagen_rebbau": {
+                name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.blw"),
+                queryable: false
+            },
+            "ch.blw.hang_steillagen": {
+                name: OpenLayers.i18n("ch.blw.hang_steillagen"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.blw"),
+                queryable: false
             }
 /*          Sorry - These Layers are just needed for demo purposes - wont hopefully happen again (tobias.reber@swisstopo.ch)
             "ch.swisstopo.pixelkarte-pk25.metadata": {

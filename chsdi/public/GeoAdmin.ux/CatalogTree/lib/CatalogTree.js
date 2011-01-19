@@ -985,12 +985,28 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     },
-                    /*{
+                    {
                         text: ' ' + OpenLayers.i18n('Boden'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_19"
-                    },*/
+                        id: "LT2_19",
+                        children: [
+                            {
+                                text: this.addtreeLayerLink("ch.blw.hang_steillagen", "node_ch.blw.hang_steillagen1") + ' ' + this.layers["ch.blw.hang_steillagen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.hang_steillagen1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.blw.steil_terrassenlagen_rebbau", "node_ch.blw.steil_terrassenlagen_rebbau1") + ' ' + this.layers["ch.blw.steil_terrassenlagen_rebbau"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.steil_terrassenlagen_rebbau1"
+                            }
+                        ]
+                    },
                     {
                         text: ' ' + OpenLayers.i18n('Umweltüberwachung'),
                         cls: 'nodeLT2',
