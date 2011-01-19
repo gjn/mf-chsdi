@@ -188,6 +188,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.astra.ivs-nat': 'IVS national',
     'ch.astra.ivs-reg_loc' : 'IVS régional & local',
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
+    'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en forte pente et en terrasses',
+    'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
 
      // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
@@ -200,6 +202,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.bfs': 'ofs',
 	'ch.kt.bafu': 'ct. [ofev]',
 	'ch.swisstopo.kt': 'swisstopo, ct.',
+    'ch.blw': 'OFAG',
 
     // layer tree
     'show layer options': 'Afficher les options de la couche',

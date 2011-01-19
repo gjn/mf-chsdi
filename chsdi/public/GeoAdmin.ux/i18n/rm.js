@@ -179,6 +179,8 @@ OpenLayers.Lang.rm = {
     'ch.astra.ivs-nat': 'IVS National',
     'ch.astra.ivs-reg_loc' : 'IVS Regional & Lokal',
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
+    'ch.blw.steil_terrassenlagen_rebbau' : 'Steil- und Terrassenlagen im Rebbau',
+    'ch.blw.hang_steillagen': 'Hang- und Steillagen',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
@@ -190,6 +192,7 @@ OpenLayers.Lang.rm = {
     'ch.bfs': 'bfs',
 	'ch.kt.bafu': 'Kt. [bafu]',
 	'ch.swisstopo.kt': 'swisstopo, Kt.',
+    'ch.blw': 'BLW',
 
     // layertree
     'show layer options': 'Mussar las opziuns da la stresa',
