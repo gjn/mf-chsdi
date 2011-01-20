@@ -71,3 +71,22 @@
     background-image: url(../images/close_button.png);
     background-position: center center;
 }
+
+.x-tool-infoTool {
+   background-image:url(../../images/info_logo_red.png);
+   margin-top:-3px;
+   height: 19px;
+}
+
+.x-tool-infoBox {
+   background-image: none;
+   margin-top:1px;
+   width: 42px;
+}
+
+.x-tool-pipe4 {
+   background-image:url(../../images/tb_pipe_transparent.png);
+   width: 350px;
+   height:23px;
+   margin-top:-10px;
+}
