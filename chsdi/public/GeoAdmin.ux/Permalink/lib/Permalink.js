@@ -2,6 +2,7 @@
  * @include Permalink/lib/PermalinkField.js
  * @include Permalink/lib/PermalinkWindow.js
  * @include Permalink/lib/PermalinkPanel.js
+ * @include Permalink/lib/PermalinkAdvancedPanel.js
  * @requires Permalink/lib/PermalinkProvider.js
  */
 
