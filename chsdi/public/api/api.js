@@ -3,9 +3,21 @@
 /*
  * @include OpenLayers/Feature/Vector.js
  * @include OpenLayers/StyleMap.js
+ * @include OpenLayers/Handler/Polygon.js
+ * @include OpenLayers/Handler/Box.js
+ * @include OpenLayers/Handler/Click.js
+ * @include OpenLayers/Handler/Drag.js
+ * @include OpenLayers/Handler/Feature.js
+ * @include OpenLayers/Handler/Hover.js
+ * @include OpenLayers/Handler/Keyboard.js
+ * @include OpenLayers/Handler/MouseWheel.js
+ * @include OpenLayers/Handler/Path.js
+ * @include OpenLayers/Handler/Point.js
+ * @include OpenLayers/Handler/RegularPolygon.js
  * @include OpenLayers/Geometry/Point.js
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Control/MousePosition.js
+ * @include OpenLayers/Control/DrawFeature.js
  * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Layer/GML.js
  * @include OpenLayers/Format/WMTSCapabilities.js
