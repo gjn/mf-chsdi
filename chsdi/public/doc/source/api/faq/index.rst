@@ -27,6 +27,22 @@ The GeoAdmin API has been tested in the following modern browsers: Firefox 3+, I
 
 The GeoAdmin API doesn't support mobile devices.
 
+Where can I find more documentation about the API ?
+---------------------------------------------------
+
+The API code is composed of various based libraries. You can access the code of these libraries here: http://api.geo.admin.ch/main/wsgi/lib/
+
+More information about these libraries can be found here:
+
+ * `ExtJS website <http://www.sencha.com/products/js/>`_ / `ExtJS examples <http://dev.sencha.com/deploy/dev/examples/>`_ / `ExtJS API doc <http://dev.sencha.com/deploy/dev/docs/>`_
+ * `GeoExt website <http://www.geoext.org/>`_ / `GeoExt examples <http://www.geoext.org/examples.html#examples>`_ / `GeoExt API doc <http://www.geoext.org/lib/index.html>`_
+ * `OpenLayers website <http://www.openlayers.org/>`_ / `OpenLayers examples <http://www.openlayers.org/dev/examples/>`_ / `OpenLayers API doc <http://dev.openlayers.org/releases/OpenLayers-2.10/doc/apidocs/files/OpenLayers-js.html>`_
+ * `Proj4js website <http://proj4js.org/>`_ / `Proj4js trac  <http://trac.osgeo.org/proj4js/>`_
+ * `GeoExt UX website <http://trac.geoext.org/wiki/Community>`_
+
+In order to optimize the size of the library, not all code has been integrated in the API. If you use a function that is not part of the API, you'll need to link the approriate source code yourself.
+We recommend using `JSBuild <http://dev.mapfish.org/sandbox/camptocamp/mapfish_workshop_fossgis2010/printing_src/_build/html/building_javascript.html>`_ when you deploy awebsite in production.
+
 Who is using the GeoAdmin API ?
 -------------------------------
 

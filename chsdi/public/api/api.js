@@ -18,6 +18,7 @@
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Control/MousePosition.js
  * @include OpenLayers/Control/DrawFeature.js
+ * @include OpenLayers/Control/ArgParser.js
  * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Layer/GML.js
  * @include OpenLayers/Format/WMTSCapabilities.js
