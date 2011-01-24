@@ -109,8 +109,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Energiequellen': 'Energy resources',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000',
-	'ch.swisstopo.images-swissimage.metadata' : 'Swissimage',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000 (Map Sheet Index)',
+	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Map Sheet Index)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
     'ch.swisstopo.fixpunkte-hoehe': 'Höhenfixpunkte',

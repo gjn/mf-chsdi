@@ -102,8 +102,8 @@ OpenLayers.Lang.rm = {
     'Energiequellen': "Funtaunas d'energia",
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000',
-	'ch.swisstopo.images-swissimage.metadata' : 'Swissimage',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000 (Blattübersicht)',
+	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
     'ch.swisstopo.fixpunkte-hoehe': 'Höhenfixpunkte',

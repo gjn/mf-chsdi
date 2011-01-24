@@ -111,8 +111,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Energiequellen': 'Sources d\'énergie',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte pixel 1:25000',
-	'ch.swisstopo.images-swissimage.metadata' : 'Swissimage',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte pixel 1:25000 (Tableaux des feuilles)',
+	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tableaux des feuilles)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',

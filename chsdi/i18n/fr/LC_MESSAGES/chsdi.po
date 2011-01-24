@@ -263,6 +263,9 @@ msgstr "Catalogue Alexandria"
 msgid  "Toposhop"
 msgstr  "Toposhop"
 
+msgid "Produkt"
+msgstr "Produit"
+
 msgid "zaehlstelle"
 msgstr "Poste de comptage" 
 
