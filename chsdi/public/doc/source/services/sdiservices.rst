@@ -107,6 +107,7 @@ The following parameters are required:
 - lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
 - query: the query string
 - cb (optional): the name of the callback funtion
+- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 
 Example: http://api.geo.admin.ch/bodsearch/search?lang=de&query=moor
 
@@ -119,6 +120,7 @@ A JSON
 - datenherr: the owner of the data, in full text
 - label: the short title of the data
 - content: an HTML description of the data, where the searched keyword are highlighted
+- all attributes if format is 'raw'
 
 
 BodSearch: details
@@ -188,7 +190,7 @@ The following parameters are required:
 
 - layer: searchable layer
 - cb (optional): the name of the callback funtion
-- no_geom (optional): True if the geometry has to be ommitted (per default: False)
+- no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back.
 
 Example: http://api.geo.admin.ch/feature/5922?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
 
@@ -217,6 +219,9 @@ The following parameters are required:
 - layers: list of searchable layers
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - cb (optional): the name of the callback funtion
+- baseUrl (optional): application base url
+- format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format
+- no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back.
 
 Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
 
@@ -243,7 +248,7 @@ The following parameters are required:
 - lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
 - layer: searchable layer
 - ids: comma separated list of feature id
-- cb (optional): the name of the callback funtion
+- cb (optional): the name of the callback function
 
 Example: http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922&cb=Ext.ux.JSONP.callback
 

@@ -20,6 +20,7 @@ class BodsearchController(BaseController):
             self.BodLayer = BodLayerFr
         else:
             self.BodLayer = BodLayerDe
+        self.rawjson = request.params.get('format') == 'raw' or False
 
     @_jsonify(cb='cb')
     def search(self):
@@ -29,8 +30,8 @@ class BodsearchController(BaseController):
         p = request.params.get('project') or 'mf-chsdi'
         query = Session.query(self.BodLayer)
         query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p + '(,|\s|$)'))
-
-        return {'results': [r.json(q) for r in query]}
+       
+        return {'results': [r.json(q, self.rawjson) for r in query]}
 
     @_jsonify(cb='cb')
     def layers(self):
@@ -61,7 +62,18 @@ class BodsearchController(BaseController):
         if 'print' in request.params:
             return render('/bod-details-print.mako')
         else:
-            output = simplejson.dumps(render('/bod-details.mako'))
+            if self.rawjson:
+                output =  {}
+                legend = {}
+                for col in c.layer.__table__.columns:
+                    output[col.name] = getattr(c.layer,col.name)
+                for col in c.legend.__table__.columns:
+                    legend[col.name] = getattr(c.legend,col.name)
+
+                output['legend'] = legend
+                output = simplejson.dumps(output)
+            else:
+                output = simplejson.dumps(render('/bod-details.mako'))
             cb_name = request.params.get('cb')
             if cb_name is not None:
                 response.headers['Content-Type'] = 'text/javascript'

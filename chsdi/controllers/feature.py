@@ -72,6 +72,8 @@ def get_features(layer, ids):
     return features
 
 class FeatureController(BaseController):
+
+
     @validate_params(validator_layers)
     def index(self):
     # if a list of layers was provided the first layer in the
@@ -116,7 +118,13 @@ class FeatureController(BaseController):
             bodsearch = BodLayerFr
         else:
             bodsearch = BodLayerDe
-
+        no_geom = request.params.get('no_geom')
+        if no_geom is not None:
+            no_geom = asbool(no_geom)
+        else:
+            no_geom = False
+        c.baseUrl =  request.params.get('baseUrl')  or ''
+        rawjson = request.params.get('format') == 'raw' or False
         features = []
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
@@ -126,8 +134,24 @@ class FeatureController(BaseController):
                     bodlayer = Session.query(bodsearch).get(layer_name)
 
                     for feature in query.all():
-                        feature.compute_template(layer_name, bodlayer)
-                        features.append(feature)
+                        properties = {}
+                        if rawjson:
+                            feature.compute_attribute()
+                            properties =  feature.attributes
+                        else:
+                            feature.compute_template(layer_name, bodlayer)
+                            properties['html'] = feature.html
+
+                        if no_geom:
+
+                            features.append(Feature(id=feature.id,
+                                            bbox=feature.geometry.bounds,
+                                            properties=properties))
+                        else:
+                            for feature in query.all():
+
+
+                                features.append(feature)
 
         if 'print' in request.params:
             c.features = features

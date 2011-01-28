@@ -84,6 +84,29 @@ class TestFeatureController(TestController):
                             params=params,
                             status=400
                             )
+    def test_search_nogeom(self):
+        params = {
+            'bbox': '717000,160750,719500,163250',
+            'layers': 'ch.bafu.bundesinventare-jagdbanngebiete,ch.bafu.schutzgebiete-wildruhezonen',
+            'no_geom': 'True'
+            }
+        resp = self.app.get(url(controller='feature', action='search'),
+                            params=params
+                            )
+        # test that we do not get geometries back
+        assert "MultiPolygon" not in resp
+
+    def test_search_rawjson(self):
+        params = {
+            'bbox': '717000,160750,719500,163250',
+            'layers': 'ch.bafu.bundesinventare-jagdbanngebiete,ch.bafu.schutzgebiete-wildruhezonen',
+            'format': 'raw'
+            }
+        resp = self.app.get(url(controller='feature', action='search'),
+                            params=params
+                            )
+        # test that we get not HTML formatted properties
+        assert "</table>" not in  resp
 
     def test_bbox_no_ids(self):
         params = {

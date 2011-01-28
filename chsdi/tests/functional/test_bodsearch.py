@@ -29,3 +29,13 @@ class TestBodsarchController(TestController):
         # test that the response is wrapped
         assert resp.response.body.startswith("callback(")
         assert resp.response.body.endswith(");")
+
+    def test_search_rawjson(self):
+        resp = self.app.get(url(controller='bodsearch', action='search'),
+                            params={"query": "dufou", "format": "raw"},
+                            )
+
+        assert resp.response.content_type == "application/json"
+
+        # test that the response is has not HTML
+        assert "<div"  not in resp.response.body
