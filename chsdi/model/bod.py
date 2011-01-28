@@ -13,19 +13,27 @@ class LayerLegend(Base):
     __tablename__ = 'bod_layer_legende'
     __table_args__ = ({'autoload': True})
 
+
 class BodLayer(object):
-    def json(self, hilight):
+
+    def json(self, hilight, rawjson=False):
         c.hilight = hilight
         c.layer = self
         # fixme
         c.full = False
 
-        return {
-            'id': self.bod_layer_id,
-            'label': self.bezeichnung.strip(),
-            'datenherr': self.datenherr,
-            'content': render('/bod-details.mako')
-        }
+        if rawjson:
+            results = {}
+            for col in self.__table__.columns:
+                results[col.name] = getattr(self,col.name)
+            return results
+        else:
+            return {
+                'id': self.bod_layer_id,
+                'label': self.bezeichnung.strip(),
+                'datenherr': self.datenherr,
+                'content': render('/bod-details.mako')
+            }     
 
     def json_layer(self):
       return {
@@ -64,6 +72,9 @@ class BodLayer(object):
 class BodLayerDe(Base, BodLayer):
     __tablename__ = 'bod_layer_suche_de'
     __table_args__ = ({'autoload': True})
+    # TODO, exclude some properties
+    # __mapper_args__ = {'exclude_properties': ['bgdi_modified', 'bgdi_created', 'bgdi_modified_by', 'bgdi_created_by'] }
+    
 
 class BodLayerFr(Base, BodLayer):
     __tablename__ = 'bod_layer_suche_fr'
