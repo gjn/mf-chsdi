@@ -231,9 +231,11 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         
         code = code + '}';
         code = code + separator;
+        code = code + 'window.onload = init;';
+        code = code + separator;
         code = code + '<\/script><\/head>';
         code = code + separator;
-        code = code + '<body onload="init();">';
+        code = code + '<body>';
         code = code + separator;
         if (forPublication) {
             code = code + '<h1 style="font-size:120%;font-family:\'Arial\';margin:2px;">Publication of your custom GeoAdmin API configuration<\/h1>';
