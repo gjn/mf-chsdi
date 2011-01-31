@@ -101,6 +101,8 @@ are from `Canton Neuchatel  <http://www.ne.ch/sitn>`_, with geoadmin's moore lan
            var wms = new OpenLayers.Layer.WMS("OpenLayers WMS", "http://sitn.ne.ch/ogc-sitn-open/wms?", {
                srs: 'EPSG:21781',
                layers: 'ombrage_laser_terrain,ortho'
+            }, {
+               singleTile: true
             });
            api14.map.addLayer(wms);
            api14.map.addLayerByName('ch.bafu.bundesinventare-moorlandschaften', {
@@ -148,7 +150,7 @@ are from `Canton Neuchatel  <http://www.ne.ch/sitn>`_, with geoadmin's moore lan
                zoom: 7
            });
 
-           var wms =  new OpenLayers.Layer.WMS( "OpenLayers WMS","http://sitn.ne.ch/ogc-sitn-open/wms?", {srs: 'EPSG:21781',layers: 'ombrage_laser_terrain,ortho'});
+           var wms =  new OpenLayers.Layer.WMS( "OpenLayers WMS","http://sitn.ne.ch/ogc-sitn-open/wms?", {srs: 'EPSG:21781',layers: 'ombrage_laser_terrain,ortho'}, {singleTile: true});
 
            api14.map.addLayer(wms);
 
