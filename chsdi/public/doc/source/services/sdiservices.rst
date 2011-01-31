@@ -142,6 +142,7 @@ The following input parameters are required:
 - baseUrl (optional): application base url
 - print (optional): force window to print
 - cb (optional): the name of the callback funtion
+- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 
 Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill?lang=de&print=true
 
