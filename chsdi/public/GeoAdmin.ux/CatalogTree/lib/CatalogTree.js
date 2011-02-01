@@ -479,6 +479,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.hiks-dufour1"
                             },
+                            /* not yet in geoadmin2 tobias.reber@swisstopo.ch
 							{
                                 text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk25.metadata", "ch.swisstopo.pixelkarte-pk25.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk25.metadata"].name,
                                 leaf: true,
@@ -486,6 +487,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "ch.swisstopo.pixelkarte-pk25.metadata1"
                             },
+                            */
                             {
                                 text: this.addtreeLayerLink("ch.swisstopo.hiks-siegfried", "node_ch.swisstopo.hiks-siegfried1") + ' ' + this.layers["ch.swisstopo.hiks-siegfried"].name,
                                 leaf: true,
@@ -646,7 +648,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-primaerflaechen1"
                             }
                         ]
-                    },
+                    }
+                     /*, not yet in geoadmin2 tobias.reber@swisstopo.ch
                     {
                         text: ' ' + OpenLayers.i18n('Luft und Satellitenbilder'),
                         cls: 'nodeLT2',
@@ -661,9 +664,10 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "ch.swisstopo.images-swissimage.metadata1"
 							}
 						]
-                    }
+                    }*/
                 ]
             },
+
             /*{
                 text: OpenLayers.i18n('Raum und Bevölkerung'),
                 cls: 'nodeLT1',
