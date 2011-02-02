@@ -19,9 +19,11 @@
 GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
 
     constructor: function(config) {
-        if (config.layer.layerType) {
-            config.iconCls = 'tree-layer-icon-' + config.layer.layerType;
-        }
+            if(config.layer.geoadmin_queryable){
+                config.iconCls = 'tree-layer-icon-queryable';
+            }else{
+                config.iconCls = 'tree-layer-icon';
+            }
         GeoAdmin.LayerNode.superclass.constructor.apply(this, arguments);
     },
 

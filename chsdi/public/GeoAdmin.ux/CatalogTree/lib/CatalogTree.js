@@ -170,7 +170,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     addtreeLayerLink: function(id, nodeId) {
-        var iconTypeClass = "treelayericon-" + this.layers[id].type;
+        if (this.layers[id].queryable){
+            var iconTypeClass = "treelayericon-queryable";
+        }else{
+            var iconTypeClass = "treelayericon";
+        }
         var layerlink = '<div class="' + iconTypeClass + '"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'' + id + '\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + nodeId + '_cb" onclick="Ext.getCmp(\'' + this.id + '\').getNodeById(\'' + nodeId + '\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>';
         return layerlink;
     },

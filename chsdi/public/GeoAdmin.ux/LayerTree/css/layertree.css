@@ -115,20 +115,11 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.geoadmin-layertree .tree-layer-icon-raster {
-  background-image: url(../../images/raster.png);
+.geoadmin-layertree .tree-layer-icon {
+  background-image: url(../../images/layer_not_queryable.png);
 }
-.geoadmin-layertree .tree-layer-icon-point {
-  background-image: url(../../images/point.png);
-}
-.geoadmin-layertree .tree-layer-icon-line {
-  background-image: url(../../images/line.png);
-}
-.geoadmin-layertree .tree-layer-icon-polygon {
-  background-image: url(../../images/polygon.png);
-}
-.geoadmin-layertree .tree-layer-icon-mixed {
-  background-image: url(../../images/mixed.png);
+.geoadmin-layertree .tree-layer-icon-queryable {
+  background-image: url(../../images/layer_queryable.png);
 }
 .geoadmin-layertree .x-tree-node .x-tree-selected,
 .geoadmin-layertree .x-tree-node .x-tree-node-over,
