@@ -247,6 +247,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'mf.print.print': 'Drucken',
     'mf.print.scale': 'Masstab',
     'mf.print.print.title': 'PDF',
+    'mf.print.layout': 'Layout',
 
     //Permalink
     'Permalink.title': 'Permalink',

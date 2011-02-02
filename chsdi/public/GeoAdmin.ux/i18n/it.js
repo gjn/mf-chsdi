@@ -240,6 +240,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'mf.print.print': 'Stampa',
     'mf.print.scale': 'Scala',
     'mf.print.print.title': 'PDF',
+    'mf.print.layout': 'Layout',
 
     //Permalink
     'Permalink.title': 'Permalink',
