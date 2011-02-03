@@ -252,7 +252,6 @@ Everything has been done in order to keep a backward compatibility. Nevertheless
 
  * The background opacity parameter bgOpacity is now defined between 0 and 1. Percentage are not allowed anymore.
  * Modifications in GeoExt (see http://trac.geoext.org/wiki/Release/1.0/Notes) can have an impact on existing implementation. Typically, the GeoExt.Popup have seen important changes.
- * The layer ch.swisstopo.vec25-gwn-gewassernetz has been renamed to ch.swisstopo.vec25-gewassernetz
 
 
 

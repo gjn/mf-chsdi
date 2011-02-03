@@ -162,7 +162,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.babs.kulturgueter': 'Kulturgüterschutz Inventar',
     'ch.swisstopo.vec25-primaerflaechen': 'Primärflächen VECTOR25',
     'ch.swisstopo.vec25-anlagen': 'Anlagen VECTOR25',
-    'ch.swisstopo.vec25-gewassernetz':'Gewässernetz VECTOR25',
+    'ch.swisstopo.vec25-gwn-gewassernetz':'Gewässernetz VECTOR25',
     'ch.swisstopo.vec25-gebaeude':'Gebäude VECTOR25',
     'ch.swisstopo.vec25-eisenbahnnetz':'Eisenbahnnetz VECTOR25',
     'ch.swisstopo.vec25-wander': 'Wanderwege VECTOR25',
