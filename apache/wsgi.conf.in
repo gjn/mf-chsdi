@@ -39,3 +39,32 @@ WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/mod
     Header unset ETag
     Header unset Last-Modified
 </Location>
+
+
+# Some services are not "free": TODO THIS IS A PROVISORY SOLUTION
+SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"   GOODREF
+SetEnvIf Referer "^http://mf-chmobil0t.bgdi.admin.ch" GOODREF
+SetEnvIf Referer "^http://mf-chmobil0i.bgdi.admin.ch" GOODREF
+SetEnvIf Referer "^http://map.schweizmobil.ch"        GOODREF
+SetEnvIf Referer "^http://map.wanderland.ch"          GOODREF
+SetEnvIf Referer "^http://map.veloland.ch"            GOODREF
+SetEnvIf Referer "^http://map.mountainbikeland.ch"    GOODREF
+SetEnvIf Referer "^http://map.kanuland.ch"            GOODREF
+SetEnvIf Referer "^http://map.skatingland.ch"         GOODREF
+SetEnvIf Referer "^http://dev.geoext.org"             GOODREF
+SetEnvIf Referer ".geo.admin.ch"                      GOODREF
+
+<LocationMatch "^/${vars:instanceid}/wsgi/(profile.json|profile.csv|height)"> 
+
+   Order Deny,Allow
+   Deny from all
+   # Nagios on AWS (integration & production)
+   Allow from 10.226.126.116  10.227.67.80
+
+   # swisstopo network (all this line)
+   Allow from 10.131.50. 10.131.51.
+    
+   Allow from env=GOODREF
+
+</LocationMatch>
+

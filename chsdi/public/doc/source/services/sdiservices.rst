@@ -288,7 +288,7 @@ A GeoJSON representation of the found features.
 Profile.json
 ------------
 
-This service allows to obtain elevation information for a polyline.
+This service allows to obtain elevation information for a polyline. **Note: this service is not freely accessible (fee required)**.
 
 URL
 ^^^
@@ -320,7 +320,7 @@ A JSON, with a "profile" root:
 Profile.csv
 -----------
 
-This service allows to obtain elevation information for a polyline in CSV format.
+This service allows to obtain elevation information for a polyline in CSV format. **Note: this service is not freely accessible (fee required)**.
 
 URL
 ^^^
@@ -346,7 +346,7 @@ A csv file with the distance, easting and northing information. One column per e
 Height
 ------
 
-This service allows to obtain elevation information for a point.
+This service allows to obtain elevation information for a point. **Note: this service is not freely accessible (fee required)**.
 
 URL
 ^^^
