@@ -148,8 +148,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-            "ch.swisstopo.vec25-gwn-gewassernetz": {
-                name: OpenLayers.i18n("ch.swisstopo.vec25-gwn-gewassernetz"),
+            "ch.swisstopo.vec25-gewassernetz": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-gewassernetz"),
                 type: "mixed",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
