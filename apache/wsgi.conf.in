@@ -45,6 +45,8 @@ WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/mod
 SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"   GOODREF
 SetEnvIf Referer "^http://mf-chmobil0t.bgdi.admin.ch" GOODREF
 SetEnvIf Referer "^http://mf-chmobil0i.bgdi.admin.ch" GOODREF
+SetEnvIf Referer "^http://mf-chsdi0t.bgdi.admin.ch"   GOODREF
+SetEnvIf Referer "^http://mf-chsdi0i.bgdi.admin.ch"   GOODREF
 SetEnvIf Referer "^http://map.schweizmobil.ch"        GOODREF
 SetEnvIf Referer "^http://map.wanderland.ch"          GOODREF
 SetEnvIf Referer "^http://map.veloland.ch"            GOODREF
