@@ -46,7 +46,7 @@ class HeightController(BaseController):
         cb_name = request.params.get('cb')
         response.headers['Pragma'] = 'public'
         response.headers['Expires'] = '0'
-        response.headers['Cache-Control'] = 'private'
+        response.headers['Cache-Control'] = 'no-cache'
 
         if cb_name is not None:
             response.headers['Content-Type'] = 'text/javascript'
