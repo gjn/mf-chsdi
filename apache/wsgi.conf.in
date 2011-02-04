@@ -42,19 +42,25 @@ WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/mod
 
 
 # Some services are not "free": TODO THIS IS A PROVISORY SOLUTION
-SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"   GOODREF
-SetEnvIf Referer "^http://mf-chmobil0t.bgdi.admin.ch" GOODREF
-SetEnvIf Referer "^http://mf-chmobil0i.bgdi.admin.ch" GOODREF
-SetEnvIf Referer "^http://mf-chsdi0t.bgdi.admin.ch"   GOODREF
-SetEnvIf Referer "^http://mf-chsdi0i.bgdi.admin.ch"   GOODREF
-SetEnvIf Referer "^http://map.schweizmobil.ch"        GOODREF
-SetEnvIf Referer "^http://map.wanderland.ch"          GOODREF
-SetEnvIf Referer "^http://map.veloland.ch"            GOODREF
-SetEnvIf Referer "^http://map.mountainbikeland.ch"    GOODREF
-SetEnvIf Referer "^http://map.kanuland.ch"            GOODREF
-SetEnvIf Referer "^http://map.skatingland.ch"         GOODREF
-SetEnvIf Referer "^http://dev.geoext.org"             GOODREF
-SetEnvIf Referer ".geo.admin.ch"                      GOODREF
+SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"      GOODREF
+SetEnvIf Referer "^http://mf-chmobil0i.bgdi.admin.ch"    GOODREF
+SetEnvIf Referer "^http://mf-chmobil0t.bgdi.admin.ch"    GOODREF
+SetEnvIf Referer "^http://mf-chmobil0t.lt.admin.ch"      GOODREF
+SetEnvIf Referer "^http://mf-chsdi0i.bgdi.admin.ch"      GOODREF
+SetEnvIf Referer "^http://mf-chsdi0t.bgdi.admin.ch"      GOODREF
+SetEnvIf Referer "^http://mf-chsdi0t.lt.admin.ch"        GOODREF
+SetEnvIf Referer "^http://mf-geoadmin2.bgdi.admin.ch"    GOODREF
+SetEnvIf Referer "^http://mf-geoadmin20i.bgdi.admin.ch"  GOODREF
+SetEnvIf Referer "^http://mf-geoadmin20t.bgdi.admin.ch"  GOODREF
+SetEnvIf Referer "^http://mf-geoadmin20t.lt.admin.ch"    GOODREF
+SetEnvIf Referer "^http://map.schweizmobil.ch"           GOODREF
+SetEnvIf Referer "^http://map.wanderland.ch"             GOODREF
+SetEnvIf Referer "^http://map.veloland.ch"               GOODREF
+SetEnvIf Referer "^http://map.mountainbikeland.ch"       GOODREF
+SetEnvIf Referer "^http://map.kanuland.ch"               GOODREF
+SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
+SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
+SetEnvIf Referer ".geo.admin.ch"                         GOODREF
 
 <LocationMatch "^/${vars:instanceid}/wsgi/(profile.json|profile.csv|height)"> 
 
