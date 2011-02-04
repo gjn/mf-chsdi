@@ -42,7 +42,7 @@ OpenLayers.Lang.rm = {
     'WGS 84': 'WGS 84',
     'Position': 'Position',
     'Layer visibility': 'Visibilitad da datas',
-    'Link with bowl crosshair': 'Link mit Fadenkreuz',
+    'Link with bowl crosshair': 'Link cun cruschera',
 
     // recenter services:
     'Swissnames': '',
@@ -102,7 +102,11 @@ OpenLayers.Lang.rm = {
     'Energiequellen': "Funtaunas d'energia",
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000 (Blattübersicht)',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Landeskarte 1:25000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk50.metadata' : 'Landeskarte 1:50000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk100.metadata' : 'Landeskarte 1:100000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk200.metadata' : 'Landeskarte 1:200000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk500.metadata' : 'Landeskarte 1:500000 (Blattübersicht)',
 	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
@@ -239,7 +243,7 @@ OpenLayers.Lang.rm = {
     'mf.print.print': 'Stampar',
     'mf.print.scale': 'Scala',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',
+    'mf.print.layout': 'Layout',  
 
     //Permalink
     'Permalink.title': 'Permalink',
@@ -247,7 +251,7 @@ OpenLayers.Lang.rm = {
     'Permalink.close': 'Close',
 
     // Context Popup
-    'Elevation': 'Elevation',
+    'Elevation': 'Autezza',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Advanced functions'

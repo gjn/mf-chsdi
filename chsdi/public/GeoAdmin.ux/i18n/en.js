@@ -109,8 +109,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Energiequellen': 'Energy resources',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000 (Map Sheet Index)',
-	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Map Sheet Index)',
+    'ch.swisstopo.pixelkarte-pk25.metadata' : 'Landeskarte 1:25000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk50.metadata' : 'Landeskarte 1:50000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk100.metadata' : 'Landeskarte 1:100000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk200.metadata' : 'Landeskarte 1:200000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk500.metadata' : 'Landeskarte 1:500000 (Blattübersicht)',
+	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
     'ch.swisstopo.fixpunkte-hoehe': 'Höhenfixpunkte',
@@ -246,7 +250,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'mf.print.print': 'Print',
     'mf.print.scale': 'Scale',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',
+    'mf.print.layout': 'Layout',  
 
     //Permalink
     'Permalink.title': 'Permalink',

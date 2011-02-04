@@ -109,7 +109,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Energiequellen': 'Energiequellen',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Pixelkarte 1:25000 (Blattübersicht)',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Landeskarte 1:25000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk50.metadata' : 'Landeskarte 1:50000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk100.metadata' : 'Landeskarte 1:100000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk200.metadata' : 'Landeskarte 1:200000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk500.metadata' : 'Landeskarte 1:500000 (Blattübersicht)',
 	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
@@ -247,7 +251,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'mf.print.print': 'Drucken',
     'mf.print.scale': 'Masstab',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',
+    'mf.print.layout': 'Layout',  
 
     //Permalink
     'Permalink.title': 'Permalink',

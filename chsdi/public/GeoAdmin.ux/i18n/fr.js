@@ -111,8 +111,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Energiequellen': 'Sources d\'énergie',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte pixel 1:25000 (Tableaux des feuilles)',
-	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tableaux des feuilles)',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte nationale 1:25000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk50.metadata' : 'Carte nationale 1:50000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk100.metadata' : 'Carte nationale 1:100000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk200.metadata' : 'Carte nationale 1:200000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk500.metadata' : 'Carte nationale 1:500000 (Tab. des feuilles)',
+	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tab. des feuilles)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',
@@ -250,7 +254,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'mf.print.print': 'Impression',
     'mf.print.scale': 'Echelle',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',
+    'mf.print.layout': 'Layout',  
 
     //Permalink
     'Permalink.title': 'Permalink',

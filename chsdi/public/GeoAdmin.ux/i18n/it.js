@@ -43,7 +43,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'WGS 84': 'WGS 84',
     'Position': 'Position',
     'Layer visibility': 'Visibilità del layer',
-    'Link with bowl crosshair': 'Link mit Fadenkreuz',
+    'Link with bowl crosshair': 'Link con mirino',
 
     // recenter services:
     'Swissnames': '',
@@ -103,8 +103,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Energiequellen': 'Risorse energetiche',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte pixel 1:25000 (Tavola dei fogli)',
-	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tavola dei fogli)',
+	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte nationale 1:25000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk50.metadata' : 'Carte nationale 1:50000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk100.metadata' : 'Carte nationale 1:100000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk200.metadata' : 'Carte nationale 1:200000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk500.metadata' : 'Carte nationale 1:500000 (Tab. des feuilles)',
+    'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tab. des feuilles)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',
@@ -240,7 +244,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'mf.print.print': 'Stampa',
     'mf.print.scale': 'Scala',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',
+    'mf.print.layout': 'Layout',                               
 
     //Permalink
     'Permalink.title': 'Permalink',
@@ -248,7 +252,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Permalink.close': 'Close',
 
     // Context Popup
-    'Elevation': 'Elevation',
+    'Elevation': 'Elevazione',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Advanced functions'
