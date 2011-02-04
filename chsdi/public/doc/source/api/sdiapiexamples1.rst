@@ -164,6 +164,7 @@ Recenter features
 .. code-block:: html
 
    <script type="text/javascript">
+      function init() {
          var api4 = new GeoAdmin.API();
          api4.createMap({
             div: "mymap4"
@@ -200,6 +201,7 @@ The function showFeatures will highlight and recenter the features. The function
 .. code-block:: html
 
    <script type="text/javascript">
+      function init() {
          var api5 = new GeoAdmin.API();
          api5.createMap({
             div: "mymap5"
