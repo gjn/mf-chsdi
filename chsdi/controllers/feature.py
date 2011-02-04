@@ -141,17 +141,12 @@ class FeatureController(BaseController):
                         else:
                             feature.compute_template(layer_name, bodlayer)
                             properties['html'] = feature.html
-
                         if no_geom:
-
                             features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
                                             properties=properties))
                         else:
-                            for feature in query.all():
-
-
-                                features.append(feature)
+                            features.append(feature)
 
         if 'print' in request.params:
             c.features = features
