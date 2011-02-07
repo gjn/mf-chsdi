@@ -397,7 +397,7 @@ Result
 
 A tile.
 
-Example: http://wmts9.geo.admin.ch/wmts/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/ch.swisstopo.pixelkarte-farbe/22/236/284.jpeg
+Example: http://wmts9.geo.admin.ch/wmts/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/21781/22/236/284.jpeg
 
 Usage Example
 ^^^^^^^^^^^^^
@@ -455,7 +455,7 @@ Usage Example
             name: "ch.swisstopo.pixelkarte-farbe",
             url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
             layer: "ch.swisstopo.pixelkarte-farbe",
-            matrixSet: "ch.swisstopo.pixelkarte-farbe",
+            matrixSet: "21781",
             format: "image/jpeg",
             style: "default",
             dimensions: ['DATE'],
@@ -538,7 +538,7 @@ Usage Example
             name: "ch.swisstopo.pixelkarte-farbe",
             url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
             layer: "ch.swisstopo.pixelkarte-farbe",
-            matrixSet: "ch.swisstopo.pixelkarte-farbe",
+            matrixSet: "21781",
             format: "image/jpeg",
             style: "default",
             dimensions: ['DATE'],
