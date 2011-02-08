@@ -3,53 +3,70 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['are_mapfish'])
 
-class PersonenStrasse(Base, Queryable):
+# not in mf-are2 redmine.bgdi.admin.ch #2246
+######################################################################################
+#class PersonenStrasse(Base, Queryable):
     # view in a schema
-    __tablename__ = 'belastung_personenverkehr_strasse_2008'
-    __table_args__ = ({'schema': 'strassen', 'autoload': True})
-    __template__ = 'tooltips/personenstrasse.mako'
+#    __tablename__ = 'belastung_personenverkehr_strasse_2008'
+#    __table_args__ = ({'schema': 'strassen', 'autoload': True})
+#    __template__ = 'tooltips/personenstrasse.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry)
+#    id = Column('row_id', Integer, primary_key=True)
+#    the_geom = Column(Geometry)
 
-register('ch.are.belastung-personenverkehr-strasse-2008', PersonenStrasse)
+#register('ch.are.belastung-personenverkehr-strasse-2008', PersonenStrasse)
 
 
-class GueterStrasse(Base, Queryable):
+
+#class GueterStrasse(Base, Queryable):
     # view in a schema
-    __tablename__ = 'belastung_gueterverkehr_strasse_2008'
-    __table_args__ = ({'schema': 'strassen', 'autoload': True})
-    __template__ = 'tooltips/gueterstrasse.mako'
+#    __tablename__ = 'belastung_gueterverkehr_strasse_2008'
+#    __table_args__ = ({'schema': 'strassen', 'autoload': True})
+#    __template__ = 'tooltips/gueterstrasse.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry)
+#    id = Column('row_id', Integer, primary_key=True)
+#    the_geom = Column(Geometry)
 
-register('ch.are.belastung-gueterverkehr-strasse-2008', GueterStrasse)
+#register('ch.are.belastung-gueterverkehr-strasse-2008', GueterStrasse)
 
 
-class PersonenBahn(Base, Queryable):
+#class PersonenBahn(Base, Queryable):
     # view in a schema
-    __tablename__ = 'belastung_personenverkehr_bahn_2008'
-    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
-    __template__ = 'tooltips/personenbahn.mako'
+#    __tablename__ = 'belastung_personenverkehr_bahn_2008'
+#    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
+#    __template__ = 'tooltips/personenbahn.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry)
+#    id = Column('row_id', Integer, primary_key=True)
+#    the_geom = Column(Geometry)
 
-register('ch.are.belastung-personenverkehr-bahn-2008', PersonenBahn)
+#register('ch.are.belastung-personenverkehr-bahn-2008', PersonenBahn)
 
 
-class GueterBahn(Base, Queryable):
+#class GueterBahn(Base, Queryable):
     # view in a schema
-    __tablename__ = 'belastung_gueterverkehr_bahn_2008'
-    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
-    __template__ = 'tooltips/gueterbahn.mako'
+#    __tablename__ = 'belastung_gueterverkehr_bahn_2008'
+#    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
+#    __template__ = 'tooltips/gueterbahn.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry)
+#    id = Column('row_id', Integer, primary_key=True)
+#    the_geom = Column(Geometry)
 
-register('ch.are.belastung-gueterverkehr-bahn-2008', GueterBahn)
+#register('ch.are.belastung-gueterverkehr-bahn-2008', GueterBahn)
 
+#register('ch.are.reisezeit_miv-2005', Reisezeit_Miv)
+
+#class Reisezeit_oev(Base, Queryable):
+    # view in a schema
+#    __tablename__ = 'reisezeit_oev_2005'
+#    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
+#    __template__ = 'tooltips/reisezeit_oev.mako'
+
+#    id = Column('gem_no', Integer, primary_key=True)
+#    the_geom = Column(Geometry)
+
+#register('ch.are.reisezeit_oev-2005', Reisezeit_oev)
+
+######################################################################################
 
 class Landschaftstypen(Base, Queryable):
     # view in a schema
@@ -142,19 +159,6 @@ class Reisezeit_Miv(Base, Queryable):
 
     id = Column('gem_no', Integer, primary_key=True)
     the_geom = Column(Geometry)
-
-register('ch.are.reisezeit_miv-2005', Reisezeit_Miv)
-
-class Reisezeit_oev(Base, Queryable):
-    # view in a schema
-    __tablename__ = 'reisezeit_oev_2005'
-    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': True})
-    __template__ = 'tooltips/reisezeit_oev.mako'
-
-    id = Column('gem_no', Integer, primary_key=True)
-    the_geom = Column(Geometry)
-
-register('ch.are.reisezeit_oev-2005', Reisezeit_oev)
 
 class Gemeindetyp(Base, Queryable):
     # view in a schema
