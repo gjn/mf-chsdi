@@ -47,7 +47,7 @@ Is there a forum or a mailing list ?
 ------------------------------------
 
 Yes, under http://groups.google.com/group/geoadmin-api
-Feel free to use it ans ask all teh questions you want.
+Feel free to use it and ask all the questions you want.
 
 Who is using the GeoAdmin API ?
 -------------------------------
