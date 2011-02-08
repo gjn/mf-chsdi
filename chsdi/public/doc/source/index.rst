@@ -33,6 +33,8 @@ The GeoAdmin API allows the integration in web pages of geospatial information p
 
 These pages are dedicated to developer interested in using the API.
 
+Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoadmin-api
+
 .. raw:: html
 
    <script type="text/javascript">
