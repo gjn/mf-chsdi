@@ -62,20 +62,19 @@ SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
 SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
 SetEnvIf Referer ".geo.admin.ch"                         GOODREF
 
-<LocationMatch "^/${vars:instanceid}/wsgi/(profile.json|profile.csv|height)"> 
+SetEnvIf X-Forwarded-For "10.226.126.116"                GOODIP
+SetEnvIf X-Forwarded-For "10.227.67.80"                  GOODIP
+SetEnvIf X-Forwarded-For "46.51.190.137"                 GOODIP
+
+<LocationMatch
+"^/${vars:instanceid}/wsgi/(profile.json|profile.csv|height)">
 
    Order Deny,Allow
    Deny from all
-   # Nagios on AWS (integration & production)
-   Allow from 10.226.126.116  10.227.67.80
 
-   # Public IP dev instance (for veloland)
-   Allow from 46.51.190.137
-
-   # swisstopo network (all this line)
-   Allow from 10.131.50. 10.131.51.
-    
+   Allow from env=GOODIP
    Allow from env=GOODREF
 
 </LocationMatch>
+
 
