@@ -69,6 +69,9 @@ SetEnvIf Referer ".geo.admin.ch"                         GOODREF
    # Nagios on AWS (integration & production)
    Allow from 10.226.126.116  10.227.67.80
 
+   # Public IP dev instance (for veloland)
+   Allow from 46.51.190.137
+
    # swisstopo network (all this line)
    Allow from 10.131.50. 10.131.51.
     
