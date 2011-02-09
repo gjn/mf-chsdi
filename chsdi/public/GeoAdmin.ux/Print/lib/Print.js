@@ -167,7 +167,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         dataOwner: map.attribution().replace(/\&amp;/g,'&')
                     };
                     overrides['lang' + OpenLayers.Lang.getCode()] = true;
-                    Ext.applyIf(pages[0].customParams, overrides);
+                    Ext.apply(pages[0].customParams, overrides);
                 }
             }
         });
