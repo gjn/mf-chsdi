@@ -1,19 +1,21 @@
-.x-accordion-hd {
+.advanced-window .x-accordion-hd {
 	background-image: url(../images/light-hd.gif);
+    background-position: -2px 0px;
     color: white;
-    font-weight: bold;
+    font-weight: bold !important;
     background-color: #fff;
+    text-align: left;
    
 }
 
-.x-panel-collapsed > .x-accordion-hd {
+.x-panel-collapsed  .x-accordion-hd {
    background-repeat: no-repeat;
    /* background-position: 0 4px; */
    /* padding-left: 25px;     */
    color: black;
 
 }
-.x-accordion-hd > .x-tool {
+.x-accordion-hd  .x-tool {
     float: left;
     /* background-image: url(../images/open.gif);
     background: none no-repeat scroll 0 0 transparent;  */
@@ -25,18 +27,24 @@
     width: 15px;
 }
 
-.x-accordion-hd > .x-tool-toggle {
+.x-accordion-hd .x-tool-toggle {
 
     background-position: 0px 0px;
     background-image: url(../images/ef_open-close_options.png);
 }
   /* closed */
-.x-panel-collapsed >.x-accordion-hd > .x-tool-toggle {
+.x-panel-collapsed .x-accordion-hd  .x-tool-toggle {
 
     background-position: -15px 0px;
     background-image: url(../images/ef_open-close_options.png);
 }
 
+
+.x-toolbar .advancedfunctions {
+    background-image: url(../images/advanced-functions.gif);
+     font-weight: bold;
+}
 .advanced-window {
     background-color: white;
+    text-align: left;
 }
