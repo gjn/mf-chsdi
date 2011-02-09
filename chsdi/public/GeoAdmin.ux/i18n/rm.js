@@ -255,6 +255,13 @@ OpenLayers.Lang.rm = {
     'Elevation': 'Autezza',
 
     // Advanced Windows
-    'AdvancedWindow.title': 'Advanced functions'
+    'AdvancedWindow.title': 'Advanced functions',
+
+    // Measure
+    'GeoAdmin.Measure.title': 'Distanzmessung & Flächenmessung',
+    'GeoAdmin.Measure.MeasureLength': 'Distanza',
+    'GeoAdmin.Measure.MeasureArea': 'Superficie',
+    'GeoAdmin.Measure.MeasureLength.ToolTip': 'Misurare une distanza',
+    'GeoAdmin.Measure.MeasureArea.ToolTip': 'Misurare une superficie'
 
 };

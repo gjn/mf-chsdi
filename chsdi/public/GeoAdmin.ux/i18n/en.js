@@ -262,5 +262,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Elevation': 'Elevation',
 
     // Advanced Windows
-    'AdvancedWindow.title': 'Advanced functions'
+    'AdvancedWindow.title': 'Advanced functions',
+
+    // Measure
+    'GeoAdmin.Measure.title': 'Distance and surface measurement',
+    'GeoAdmin.Measure.MeasureLength': 'Distanz',
+    'GeoAdmin.Measure.MeasureArea': 'Fläche',
+    'GeoAdmin.Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
+    'GeoAdmin.Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
 });

@@ -266,6 +266,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Elevation': 'Altitude',
 
     // Advanced Windows
-    'AdvancedWindow.title': 'Fonctions avancées'
+    'AdvancedWindow.title': 'Fonctions avancées',
+
+    // Measure
+    'GeoAdmin.Measure.title': 'Mesure de distance & surface',
+    'GeoAdmin.Measure.MeasureLength': 'Distance',
+    'GeoAdmin.Measure.MeasureArea': 'Surface',
+    'GeoAdmin.Measure.MeasureLength.ToolTip': 'Mesurer une distance',
+    'GeoAdmin.Measure.MeasureArea.ToolTip': 'Mesurer une surface'
 
 });
