@@ -609,21 +609,21 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.are.bevoelkerungsdichte-vz00"),
                 type: "polygon",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.are"),
+                datenherr: OpenLayers.i18n("ch.bfs"),
                 queryable: true
             },
             "ch.are.beschaeftigtendichte-bz08": {
                 name: OpenLayers.i18n("ch.are.beschaeftigtendichte-bz08"),
                 type: "polygon",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.are"),
+                datenherr: OpenLayers.i18n("ch.bfs"),
                 queryable: true
             },
             "ch.are.agglomerationen_isolierte_staedte-2000": {
                 name: OpenLayers.i18n("ch.are.agglomerationen_isolierte_staedte-2000"),
                 type: "polygon",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.are"),
+                datenherr: OpenLayers.i18n("ch.bfs"),
                 queryable: true
             },
             "ch.are.landschaftstypen": {
