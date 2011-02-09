@@ -242,8 +242,8 @@ OpenLayers.Lang.rm = {
     'mf.print.generatingPDF': "Il PDF vegn generà ...",
     'mf.print.print': 'Stampar',
     'mf.print.scale': 'Scala',
-    'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',  
+    'mf.print.print.title': 'PDF',  
+    'mf.print.layout': 'Layout',
 
     //Permalink
     'Permalink.title': 'Permalink',

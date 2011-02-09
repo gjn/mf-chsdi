@@ -250,7 +250,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'mf.print.print': 'Print',
     'mf.print.scale': 'Scale',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',  
+    'mf.print.layout': 'Orientation',
 
     //Permalink
     'Permalink.title': 'Permalink',

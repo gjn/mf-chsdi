@@ -249,9 +249,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'mf.print.pdfReady': 'PDF ist bereits',
     'mf.print.generatingPDF': "PDF herstellen",
     'mf.print.print': 'Drucken',
-    'mf.print.scale': 'Masstab',
+    'mf.print.scale': 'Massstab',
     'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',  
+    'mf.print.layout': 'Orientierung',
 
     //Permalink
     'Permalink.title': 'Permalink',

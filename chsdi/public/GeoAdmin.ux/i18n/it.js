@@ -243,8 +243,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'mf.print.generatingPDF': "Generating PDF...",
     'mf.print.print': 'Stampa',
     'mf.print.scale': 'Scala',
-    'mf.print.print.title': 'PDF',
-    'mf.print.layout': 'Layout',                               
+    'mf.print.print.title': 'PDF',                               
+    'mf.print.layout': 'Orientamento',
 
     //Permalink
     'Permalink.title': 'Permalink',
