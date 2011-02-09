@@ -415,21 +415,16 @@ width=1876, height=1251, total=2346876  -->
     </TileMatrixSet>
   </Contents>
   <Themes>
+  ## Main loop
+   % for layer in c.layers:
     <Theme>
-      <ows:Title>Foundation</ows:Title>
-      <ows:Abstract>World reference data</ows:Abstract>
-      <ows:Identifier>Foundation</ows:Identifier>
-      <Theme>
-        <ows:Title>Digital Elevation Model</ows:Title>
-        <ows:Identifier>DEM</ows:Identifier>
-        <LayerRef>etopo2</LayerRef>
+      <ows:Title>${layer.inspire_name|x}</ows:Title>
+      <ows:Abstract>${layer.inspire_abstract}</ows:Abstract>
+      <ows:Identifier>${layer.inspire_oberthema_name}</ows:Identifier>
+      <LayerRef>${layer.bod_layer_id|x}</LayerRef>
       </Theme>
-      <Theme>
-        <ows:Title>Administrative Boundaries</ows:Title>
-        <ows:Identifier>AdmBoundaries</ows:Identifier>
-        <LayerRef>AdminBoundaries</LayerRef>
-      </Theme>
-    </Theme>
+    % endfor
+## End main loop
   </Themes>
   <ServiceMetadataURL xlink:href="http://www.opengis.uab.es/SITiled/world/1.0.0/WMTSCapabilities.xml"/>
 </Capabilities>
