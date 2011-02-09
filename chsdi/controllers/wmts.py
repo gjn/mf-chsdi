@@ -4,6 +4,8 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render
+from chsdi.model.bod import BodLayerDe, BodLayerFr , LayerLegend
+from chsdi.model.meta import Session
 
 import mimetypes
 import urllib2
@@ -17,11 +19,27 @@ class WmtsController(BaseController):
     # file has a resource setup:
     #     map.resource('wmt', 'wmts')
 
+    def __before__(self):
+        super(WmtsController, self).__before__()
+        if self.lang == 'fr' or self.lang == 'it':
+            self.BodLayer = BodLayerFr
+        else:
+            self.BodLayer = BodLayerDe
+
     def index(self, format='html'):
-        """GET /wmts: All items in the collection"""
-        # url('wmts')
+        """GET /wmts: GetCapabilities document"""
+
         response.headers['Content-Type'] = mimetypes.types_map['.xml']
+        response.headers['Pragma'] = 'public'
+        response.headers['Expires'] = '0'
+        response.headers['Cache-Control'] = 'no-cache'
         response.charset = 'utf8'
+
+        c.layers = Session.query(self.BodLayer).all()
+
+        if c.layers is None:
+            abort(404)
+
         return render('/WMTSCapabilities.mako') 
 
     def create(self):
