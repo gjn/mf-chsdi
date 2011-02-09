@@ -38,6 +38,7 @@ The following parameters are required:
 
 - lang: optional lang: de (default) or fr
 - query: the query string to find
+- cb (optional): the name of the callback funtion
 
 The service returns a maximum of 50 results.
 
@@ -74,6 +75,7 @@ The following parameters are required:
 - easting: the Y position in CH1903 coordinate system
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
+- cb (optional): the name of the callback funtion
 
 Example: http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965
 
