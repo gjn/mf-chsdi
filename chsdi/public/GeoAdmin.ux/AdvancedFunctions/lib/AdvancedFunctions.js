@@ -18,7 +18,7 @@ GeoAdmin.AdvancedFunctions = Ext.extend(Ext.Action, {
         });
 
         config = Ext.apply({
-            text: OpenLayers.i18n('AdvancedWindow.title'),
+            // text: OpenLayers.i18n('AdvancedWindow.title'),
             allowDepress: false,
             iconCls: 'advancedfunctions',
             cls: 'x-btn-no-over',
