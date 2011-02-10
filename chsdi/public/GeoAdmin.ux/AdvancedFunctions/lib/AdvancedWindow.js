@@ -20,7 +20,10 @@ GeoAdmin.AdvancedWindow = Ext.extend(Ext.Window, {
         this.iconAlign = 'right';
         this.text = OpenLayers.i18n('print');
         this.toggleGroup = 'tools';
-      
+        this.defaults = {
+             // applied to each contained panel
+             baseCls: 'advanced-window-panel'
+        };      
         GeoAdmin.AdvancedWindow.superclass.initComponent.apply(
                 this, arguments);
     }
