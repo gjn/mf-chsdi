@@ -127,7 +127,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
     constructor: function(config) {
         this.config = Ext.apply({
             scope: this,
-            text: OpenLayers.i18n('print'),
+            // text: OpenLayers.i18n('print'),
             printPanelOptions: {},
             windowOptions: {}
         }, config);
