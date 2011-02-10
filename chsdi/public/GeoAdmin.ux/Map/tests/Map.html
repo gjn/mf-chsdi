@@ -27,7 +27,7 @@
         }
 
         function test_addLayerByName(t) {
-            t.plan(3);
+            t.plan(8);
             var map = new GeoAdmin.Map("map");
 
             //
@@ -46,6 +46,14 @@
             var layer = map.addLayerByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
 
             t.ok(map.layers.length === count, "layers are added only once");
+
+            t.eq(map.layers[0].arrayOrder, 0, "Test layers sort. First arrayOrder is 0");
+
+            var previousOrder = -1;
+            for (var i = 0; i < map.layers.length; i++) {
+                t.ok(previousOrder<map.layers[i].arrayOrder, "Test layers sort. Test order of: " + map.layers[i].layername);
+                previousOrder = map.layers[i].arrayOrder;
+            }
 
             map.destroy();
         }
