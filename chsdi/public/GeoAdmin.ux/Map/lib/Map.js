@@ -214,7 +214,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // show crossair
         if (state.crosshair) {
             var g = new OpenLayers.Geometry.Point(state.x, state.y);
-            
+
             this.vector.addFeatures(new OpenLayers.Feature.Vector(g, {}, {
                 externalGraphic: OpenLayers.ImgPath + 'ch_' + state.crosshair.type + '.png',
                 graphicWidth: 16,
@@ -323,15 +323,42 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {
                 if (this.layers[i].layername === layer.layername) {
-                    this.layers[i].addOptions(options);                    
+                    this.layers[i].addOptions(options);
                     return null;
                 }
             }
             this.addLayer(layer);
+            this.sortLayer();
+
             return layer;
         } else {
             return null;
         }
+    },
+
+    sortLayer: function() {
+        for (var i = 0, len = this.layers.length; i < len; i++) {
+            if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.swissimage') {
+                this.layers[i].arrayOrder = 0;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.pixelkarte-farbe') {
+                this.layers[i].arrayOrder = 1;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.pixelkarte-grau') {
+                this.layers[i].arrayOrder = 2;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
+                this.layers[i].arrayOrder = 3;
+            } else {
+                this.layers[i].arrayOrder = 100 + i;
+            }
+        }
+        this.layers.sort(this.sortNumber);
+    },
+
+    sortNumber: function(a, b) {
+        if (a.arrayOrder < b.arrayOrder)
+            return -1;
+        if (a.arrayOrder > b.arrayOrder)
+            return 1;
+        return 0;
     },
 
     /** api: method[switchComplementaryLayer]
