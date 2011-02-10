@@ -1,15 +1,15 @@
 .x-toolbar .gx-map-measurelength   {
     background-image: url("../images/measure_length.gif") !important;
-    height: 70px;
-    width: 50px;
+    height: 70px !important;
+    width: 50px !important;
     background-position: 0 0;
 }
 
 .x-toolbar .gx-map-measurearea {
     background-image: url("../images/measure_area.gif") !important;
-    height: 70px;
-    width: 50px;
-   background-position: 50px 0;     
+    height: 70px !important;
+    width: 50px !important;
+   background-position: 0 0;     
 }
 
 .x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea {
@@ -18,9 +18,12 @@
 }
 
 
-.measureTools.x-btn-text-icon.x-btn-pressed   {
+.x-btn-pressed  .gx-map-measurearea {
     /* border: 5px solid #006699;  */
     background-color: #dddddd;
 }
 
-
+.x-btn-pressed  .gx-map-measurelength {
+    /* border: 5px solid #006699;  */
+    background-color: #dddddd;
+}
