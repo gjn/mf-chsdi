@@ -40,7 +40,7 @@ OpenLayers.Lang.rm = {
 
     'Swiss Coordinate': 'CH03',
     'WGS 84': 'WGS 84',
-    'Position': 'Position',
+    'Position': 'Posiziun',
     'Layer visibility': 'Visibilitad da datas',
     'Link with bowl crosshair': 'Link cun cruschera',
 

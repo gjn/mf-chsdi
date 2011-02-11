@@ -41,7 +41,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
     'Swiss Coordinate': 'CH03',
     'WGS 84': 'WGS 84',
-    'Position': 'Position',
+    'Position': 'Posizione',
     'Layer visibility': 'Visibilità del layer',
     'Link with bowl crosshair': 'Link con mirino',
 
