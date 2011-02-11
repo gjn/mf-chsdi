@@ -24,15 +24,15 @@
  *
  */
 
-  /** api: constructor
-  *  .. class:: CatalogTree(config)
-  *
-  *  :param config: ``Object`` config
-  *
-  *  :return:  ``GeoAdmin.CatalogTree``
-  *
-  *  Create a tree structure presented according to INSPIRE and containing the available layers
-  */
+/** api: constructor
+ *  .. class:: CatalogTree(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.CatalogTree``
+ *
+ *  Create a tree structure presented according to INSPIRE and containing the available layers
+ */
 
 Ext.namespace("GeoAdmin");
 
@@ -130,7 +130,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         // call setSelectedNode to handle the case where
         // selectedNode has been set before render
         if (this.map) {
-           this.setCheckNodes(this.map);
+            this.setCheckNodes(this.map);
         }
         this.setSelectedNode();
     },
@@ -170,9 +170,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     addtreeLayerLink: function(id, nodeId) {
-        if (this.layers[id].queryable){
+        if (this.layers[id].queryable) {
             var iconTypeClass = "treelayericon-queryable";
-        }else{
+        } else {
             var iconTypeClass = "treelayericon";
         }
         var layerlink = '<div class="' + iconTypeClass + '"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'' + id + '\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + nodeId + '_cb" onclick="Ext.getCmp(\'' + this.id + '\').getNodeById(\'' + nodeId + '\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>';
@@ -416,16 +416,16 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
         this.layers = GeoAdmin.layers.init();
 
-        if(!this.layerStore) {
+        if (!this.layerStore) {
             this.layerStore = this.map;
             delete this.map;
         }
         if (!(this.layerStore instanceof GeoExt.data.LayerStore)) {
             this.layerStore = new GeoExt.data.LayerStore(
-                {map: this.layerStore}
-            );
+            {map: this.layerStore}
+                    );
         }
-        
+
         this.registerMapEvent(this.layerStore.map);
 
         this.root.children = [
@@ -464,12 +464,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     },
-                   /* {
-                        text: ' ' + OpenLayers.i18n('Geografische Gittersysteme'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_2"
-                    },*/
+                    /* {
+                     text: ' ' + OpenLayers.i18n('Geografische Gittersysteme'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_2"
+                     },*/
                     {
                         text: ' ' + OpenLayers.i18n('Geografische Namen'),
                         cls: 'nodeLT2',
@@ -483,15 +483,6 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.hiks-dufour1"
                             },
-                            /* not yet in geoadmin2 tobias.reber@swisstopo.ch
-							{
-                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk25.metadata", "ch.swisstopo.pixelkarte-pk25.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk25.metadata"].name,
-                                leaf: true,
-                                checked: false,
-                                cls: 'nodeLT3',
-                                id: "ch.swisstopo.pixelkarte-pk25.metadata1"
-                            },
-                            */
                             {
                                 text: this.addtreeLayerLink("ch.swisstopo.hiks-siegfried", "node_ch.swisstopo.hiks-siegfried1") + ' ' + this.layers["ch.swisstopo.hiks-siegfried"].name,
                                 leaf: true,
@@ -514,28 +505,35 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.are.agglomerationen_isolierte_staedte-20001"
                             },
-                                {
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk25.metadata", "ch.swisstopo.pixelkarte-pk25.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk25.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk25.metadata1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk50.metadata", "ch.swisstopo.pixelkarte-pk50.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk50.metadata"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "ch.swisstopo.pixelkarte-pk50.metadata1"
                             },
-                                {
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk100.metadata", "ch.swisstopo.pixelkarte-pk100.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk100.metadata"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "ch.swisstopo.pixelkarte-pk100.metadata1"
                             },
-                                {
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk200.metadata", "ch.swisstopo.pixelkarte-pk200.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk200.metadata"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "ch.swisstopo.pixelkarte-pk200.metadata1"
                             },
-                                {
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk500.metadata", "ch.swisstopo.pixelkarte-pk500.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk500.metadata"].name,
                                 leaf: true,
                                 checked: false,
@@ -590,7 +588,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         text: ' ' + OpenLayers.i18n('Adressen'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
-                        id: "LT2_5",                
+                        id: "LT2_5",
                         children: [
                             {
                                 text: this.addtreeLayerLink("ch.bfs.gebaeude_wohnungs_register", "node_ch.bfs.gebaeude_wohnungs_register1") + ' ' + this.layers["ch.bfs.gebaeude_wohnungs_register"].name,
@@ -601,12 +599,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     }/*,
-                    {
-                        text: ' ' + OpenLayers.i18n('Flurstücke / Grundstücke'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_6"
-                    }*/
+                     {
+                     text: ' ' + OpenLayers.i18n('Flurstücke / Grundstücke'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_6"
+                     }*/
                 ]
             },
             {
@@ -615,7 +613,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 singleClickExpand: true,
                 id: "LT1_2",
                 children: [
-                   {
+                    {
                         text: ' ' + OpenLayers.i18n('Gewässernetz'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
@@ -631,14 +629,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     },
                     /*{
-                        text: ' ' + OpenLayers.i18n('Höhe'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_8",
-                        children: [
-                        ]
-                   },*/
-                   {
+                     text: ' ' + OpenLayers.i18n('Höhe'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_8",
+                     children: [
+                     ]
+                     },*/
+                    {
                         text: ' ' + OpenLayers.i18n('Bodenbedeckung'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
@@ -680,52 +678,51 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-primaerflaechen1"
                             }
                         ]
-                    }
-                     /*, not yet in geoadmin2 tobias.reber@swisstopo.ch
+                    },
                     {
                         text: ' ' + OpenLayers.i18n('Luft und Satellitenbilder'),
                         cls: 'nodeLT2',
                         singleClickExpand: true,
                         id: "LT2_10",
-						children: [
-							{
-							    text: this.addtreeLayerLink("ch.swisstopo.images-swissimage.metadata", "ch.swisstopo.images-swissimage.metadata1") + ' ' + this.layers["ch.swisstopo.images-swissimage.metadata"].name,
+                        children: [
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.images-swissimage.metadata", "ch.swisstopo.images-swissimage.metadata1") + ' ' + this.layers["ch.swisstopo.images-swissimage.metadata"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "ch.swisstopo.images-swissimage.metadata1"
-							}
-						]
-                    }*/
+                            }
+                        ]
+                    }
                 ]
             },
 
             /*{
-                text: OpenLayers.i18n('Raum und Bevölkerung'),
-                cls: 'nodeLT1',
-                singleClickExpand: true,
-                id: "LT1_3",
-                children: [
-                    {
-                        text: ' ' + OpenLayers.i18n('Gesundheit une Sicherheit'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_11"
-                    },
-                    {
-                        text: ' ' + OpenLayers.i18n('Bevölkerungsdichte'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_12"
-                    },
-                    {
-                        text: ' ' + OpenLayers.i18n('Raumplanung'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_13"
-                    }
-                ]
-            },*/
+             text: OpenLayers.i18n('Raum und Bevölkerung'),
+             cls: 'nodeLT1',
+             singleClickExpand: true,
+             id: "LT1_3",
+             children: [
+             {
+             text: ' ' + OpenLayers.i18n('Gesundheit une Sicherheit'),
+             cls: 'nodeLT2',
+             singleClickExpand: true,
+             id: "LT2_11"
+             },
+             {
+             text: ' ' + OpenLayers.i18n('Bevölkerungsdichte'),
+             cls: 'nodeLT2',
+             singleClickExpand: true,
+             id: "LT2_12"
+             },
+             {
+             text: ' ' + OpenLayers.i18n('Raumplanung'),
+             cls: 'nodeLT2',
+             singleClickExpand: true,
+             id: "LT2_13"
+             }
+             ]
+             },*/
             {
                 text: OpenLayers.i18n('Infrastruktur und Kommunikation'),
                 cls: 'nodeLT1',
@@ -758,7 +755,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.astra.ivs-gelaendekarte1"
-                            },    
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.swisstopo.vec200-transportation-oeffentliche-verkehr", "node_ch.swisstopo.vec200-transportation-oeffentliche-verkehr1") + ' ' + this.layers["ch.swisstopo.vec200-transportation-oeffentliche-verkehr"].name,
                                 leaf: true,
@@ -788,40 +785,40 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-eisenbahnnetz1"
                             },
                             {
- 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-strassennetz", "node_ch.swisstopo.vec25-strassennetz1") + ' ' + this.layers["ch.swisstopo.vec25-strassennetz"].name,
- 	  	                        leaf: true,
- 	  	                        checked: false,
- 	  	                        cls: 'nodeLT3',
- 	  	                        id: "node_ch.swisstopo.vec25-strassennetz1"
- 	                        },
-                            {
- 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-uebrigerverkehr", "node_ch.swisstopo.vec25-uebrigerverkehr1") + ' ' + this.layers["ch.swisstopo.vec25-uebrigerverkehr"].name,
- 	  	                        leaf: true,
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-strassennetz", "node_ch.swisstopo.vec25-strassennetz1") + ' ' + this.layers["ch.swisstopo.vec25-strassennetz"].name,
+                                leaf: true,
                                 checked: false,
- 	  	                        cls: 'nodeLT3',
- 	  	                        id: "node_ch.swisstopo.vec25-uebrigerverkehr1"
- 	                        },
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec25-strassennetz1"
+                            },
                             {
- 	  	                        text: this.addtreeLayerLink("ch.swisstopo.vec25-wander", "node_ch.swisstopo.vec25-wander1") + ' ' + this.layers["ch.swisstopo.vec25-wander"].name,
- 	  	                        leaf: true,
- 	  	                        checked: false,
- 	  	                        cls: 'nodeLT3',
- 	  	                        id: "node_ch.swisstopo.vec25-wander1"
- 	                        },
-							{
- 	  	                        text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal", "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"].name,
- 	  	                        leaf: true,
- 	  	                        checked: false,
- 	  	                        cls: 'nodeLT3',
- 	  	                        id: "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1"
- 	                        },
-							{
- 	  	                        text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet", "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"].name,
- 	  	                        leaf: true,
- 	  	                        checked: false,
- 	  	                        cls: 'nodeLT3',
- 	  	                        id: "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1"
- 	                        }
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-uebrigerverkehr", "node_ch.swisstopo.vec25-uebrigerverkehr1") + ' ' + this.layers["ch.swisstopo.vec25-uebrigerverkehr"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec25-uebrigerverkehr1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-wander", "node_ch.swisstopo.vec25-wander1") + ' ' + this.layers["ch.swisstopo.vec25-wander"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec25-wander1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal", "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet", "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1") + ' ' + this.layers["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet1"
+                            }
                         ]
                     },
                     {
@@ -846,12 +843,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     }/*,
-                    {
-                        text: ' ' + OpenLayers.i18n('Öffentliche Einrichtungen und Dienste'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_16"
-                    }*/
+                     {
+                     text: ' ' + OpenLayers.i18n('Öffentliche Einrichtungen und Dienste'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_16"
+                     }*/
                 ]
             },
             {
@@ -943,14 +940,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-ramsar1"
                             },
-                          	{
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate1") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-vogelreservate1"
                             },
-							{
+                            {
                                 text: this.addtreeLayerLink("ch.bafu.schutzgebiete-wildruhezonen", "node_ch.bafu.schutzgebiete-wildruhezonen1") + ' ' + this.layers["ch.bafu.schutzgebiete-wildruhezonen"].name,
                                 leaf: true,
                                 checked: false,
@@ -1087,33 +1084,33 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.are.alpenkonvention2"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.hydrologie-hydromessstationen",  "node_ch.bafu.hydrologie-hydromessstationen1") + ' ' + this.layers["ch.bafu.hydrologie-hydromessstationen"].name,
+                                text: this.addtreeLayerLink("ch.bafu.hydrologie-hydromessstationen", "node_ch.bafu.hydrologie-hydromessstationen1") + ' ' + this.layers["ch.bafu.hydrologie-hydromessstationen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.hydrologie-hydromessstationen1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.wasser-entnahme",  "node_ch.bafu.wasser-entnahme1") + ' ' + this.layers["ch.bafu.wasser-entnahme"].name,
+                                text: this.addtreeLayerLink("ch.bafu.wasser-entnahme", "node_ch.bafu.wasser-entnahme1") + ' ' + this.layers["ch.bafu.wasser-entnahme"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-entnahme1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.wasser-leitungen",  "node_ch.bafu.wasser-leitungen1") + ' ' + this.layers["ch.bafu.wasser-leitungen"].name,
+                                text: this.addtreeLayerLink("ch.bafu.wasser-leitungen", "node_ch.bafu.wasser-leitungen1") + ' ' + this.layers["ch.bafu.wasser-leitungen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-leitungen1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.wasser-rueckgabe",  "node_ch.bafu.wasser-rueckgabe1") + ' ' + this.layers["ch.bafu.wasser-rueckgabe"].name,
+                                text: this.addtreeLayerLink("ch.bafu.wasser-rueckgabe", "node_ch.bafu.wasser-rueckgabe1") + ' ' + this.layers["ch.bafu.wasser-rueckgabe"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.wasser-rueckgabe1"
-                            }			
+                            }
                         ]
                     },
                     {
@@ -1128,7 +1125,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-gemeinden_hochwasser1"
-                            }, 
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_lawinen", "node_ch.bafu.showme-gemeinden_lawinen1") + ' ' + this.layers["ch.bafu.showme-gemeinden_lawinen"].name,
                                 leaf: true,
@@ -1177,27 +1174,27 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.showme-kantone_sturzprozesse1"
-                            } 
+                            }
                         ]
                     },
                     /*{
-                        text: ' ' + OpenLayers.i18n('Atmosphärische Bedingungen'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_22"
-                    },
-                    {
-                        text: ' ' + OpenLayers.i18n('Meteorologie'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_23"
-                    },
-                    {
-                        text: ' ' + OpenLayers.i18n('Biogeografische Regionen'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_24"
-                    },*/
+                     text: ' ' + OpenLayers.i18n('Atmosphärische Bedingungen'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_22"
+                     },
+                     {
+                     text: ' ' + OpenLayers.i18n('Meteorologie'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_23"
+                     },
+                     {
+                     text: ' ' + OpenLayers.i18n('Biogeografische Regionen'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_24"
+                     },*/
                     {
                         text: ' ' + OpenLayers.i18n('Lebensräume une Biotope'),
                         cls: 'nodeLT2',
@@ -1240,7 +1237,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bafu.bundesinventare-flachmoore2"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.ren-fliessgewaesser_seen",  "node_ch.bafu.ren-fliessgewaesser_seen1") + ' ' + this.layers["ch.bafu.ren-fliessgewaesser_seen"].name,
+                                text: this.addtreeLayerLink("ch.bafu.ren-fliessgewaesser_seen", "node_ch.bafu.ren-fliessgewaesser_seen1") + ' ' + this.layers["ch.bafu.ren-fliessgewaesser_seen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
@@ -1312,12 +1309,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                             }
                         ]
                     }/*,
-                    {
-                        text: ' ' + OpenLayers.i18n('Mineralische Bodenschätze'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_27"
-                    }*/
+                     {
+                     text: ' ' + OpenLayers.i18n('Mineralische Bodenschätze'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_27"
+                     }*/
                 ]
             },
             {
@@ -1367,7 +1364,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.arealstatistik-19972"
-                            },                           
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.bfs.arealstatistik-hintergrund", "node_ch.bfs.arealstatistik-hintergrund2") + ' ' + this.layers["ch.bfs.arealstatistik-hintergrund"].name,
                                 leaf: true,
@@ -1378,17 +1375,17 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         ]
                     },
                     /*{
-                        text: ' ' + OpenLayers.i18n('Produktions- und Industrieanlagen'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_30"
-                    },
-                    {
-                        text: ' ' + OpenLayers.i18n('Land- und Wassertwirtschaft'),
-                        cls: 'nodeLT2',
-                        singleClickExpand: true,
-                        id: "LT2_31"
-                    }, */
+                     text: ' ' + OpenLayers.i18n('Produktions- und Industrieanlagen'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_30"
+                     },
+                     {
+                     text: ' ' + OpenLayers.i18n('Land- und Wassertwirtschaft'),
+                     cls: 'nodeLT2',
+                     singleClickExpand: true,
+                     id: "LT2_31"
+                     }, */
                     {
                         text: ' ' + OpenLayers.i18n('Energiequellen'),
                         cls: 'nodeLT2',
