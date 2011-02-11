@@ -204,7 +204,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.kt.bafu': 'ct. [foen]',
 	'ch.swisstopo.kt': 'swisstopo, ct.',
     'ch.blw': 'FOAG',
-    'ch.are': 'INOFOPLAN-ARE',
+    'ch.are': 'are',
 
     // layertree
     'show layer options': 'Show layer options',
