@@ -514,6 +514,34 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.are.agglomerationen_isolierte_staedte-20001"
                             },
+                                {
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk50.metadata", "ch.swisstopo.pixelkarte-pk50.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk50.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk50.metadata1"
+                            },
+                                {
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk100.metadata", "ch.swisstopo.pixelkarte-pk100.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk100.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk100.metadata1"
+                            },
+                                {
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk200.metadata", "ch.swisstopo.pixelkarte-pk200.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk200.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk200.metadata1"
+                            },
+                                {
+                                text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk500.metadata", "ch.swisstopo.pixelkarte-pk500.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk500.metadata"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "ch.swisstopo.pixelkarte-pk500.metadata1"
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.are.alpenkonvention", "node_ch.are.alpenkonvention1") + ' ' + this.layers["ch.are.alpenkonvention"].name,
                                 leaf: true,

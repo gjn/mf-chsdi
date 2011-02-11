@@ -682,11 +682,50 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-            /* not yet in chsdi
 			"ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk50.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
+                url: "http://wms.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk100.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
+                url: "http://wms.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk200.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
+                url: "http://wms.bgdi.admin.ch",
+                wms: true,
+                type: "polygon",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk500.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
+                url: "http://wms.bgdi.admin.ch",
                 wms: true,
                 type: "polygon",
                 format: "image/png",
@@ -696,14 +735,13 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.images-swissimage.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
                 layers: ["ch.swisstopo.images-swissimage.metadata"],
-                url: "http://wms-bod0t.bgdi.admin.ch",
+                url: "http://wms.bgdi.admin.ch",
                 wms: true,
                 type: "polygon",
                 format: "image/png",
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: true
             },
-            */
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 type: "line",
