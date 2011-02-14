@@ -251,9 +251,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     
     //Print
     'mf.print.pdfReady': 'Le PDF vous attend',
-    'mf.print.generatingPDF': "On bosse",
+    'mf.print.generatingPDF': "Création du PDF",
     'mf.print.print': 'Impression',
-    'mf.print.scale': 'Echelle',
+    'mf.print.scale': 'Échelle',
     'mf.print.print.title': 'PDF',
     'mf.print.layout': 'Orientation',
 
