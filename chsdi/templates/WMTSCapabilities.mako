@@ -67,8 +67,8 @@
   </ows:OperationsMetadata>
   <Contents>
   ## Main loop
+  
    % for layer in c.layers:
-
     <Layer>
         <ows:Title>${layer.kurzbezeichnung|x}</ows:Title>
       <ows:Abstract>${layer.abstract|x}</ows:Abstract>
@@ -76,22 +76,24 @@
       <ows:LowerCorner>5.140242 45.398181</ows:LowerCorner>
         <ows:UpperCorner>11.47757 48.230651</ows:UpperCorner>
       </ows:WGS84BoundingBox>
-      <ows:Identifier>${layer.bod_layer_id}</ows:Identifier>
+      <ows:Identifier>${layer.id}</ows:Identifier>
       <ows:Metadata xlink:href="http://www.swisstopo.admin.ch/SITiled/world/AdminBoundaries/metadata.htm"/>
       <Style>
         <!-- Do not inlcude otherwise OL cannot parse <ows:Title>default</ows:Title> -->
         <ows:Identifier>default</ows:Identifier>
       </Style>
       
-      <Format>image/jpeg</Format>
-      <Dimension><ows:Identifier>Time</ows:Identifier><Default>100617</Default>
-      <Value>100617</Value><Value>2010-01</Value><Value>2010-06</Value></Dimension>
+      <Format>image/${str(layer.arr_all_formats).split(',')[0]}</Format>
+      <Dimension><ows:Identifier>Time</ows:Identifier>
+      <Default>${str(layer.timestamp).split(',')[0]}</Default>
+      <Value>${str(layer.timestamp).split(',')[0]}</Value>
+      </Dimension>
       <TileMatrixSetLink>
       <!-- this is really not a smart name -->
-        <TileMatrixSet>21781</TileMatrixSet>
+        <TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
       </TileMatrixSetLink>
-      <ResourceURL format="image/jpeg" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.bod_layer_id}/default/100617/21781/{TileMatrix}/{TileRow}/{TileCol}.jpeg"/>
-      <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.bod_layer_id}/default/100617/21781/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
+      <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/${str(layer.timestamp).split(',')[0]}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+      <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/${str(layer.timestamp).split(',')[0]}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
   </Layer>
 
 
@@ -416,12 +418,15 @@ width=1876, height=1251, total=2346876  -->
   </Contents>
   <Themes>
   ## Main loop
-   % for layer in c.layers:
+   % for theme in c.themes:
     <Theme>
-      <ows:Title>${layer.inspire_name|x}</ows:Title>
-      <ows:Abstract>${layer.inspire_abstract}</ows:Abstract>
-      <ows:Identifier>${layer.inspire_oberthema_name}</ows:Identifier>
-      <LayerRef>${layer.bod_layer_id|x}</LayerRef>
+      <ows:Title>${theme.inspire_name or '-'}</ows:Title>
+      <ows:Abstract>${theme.inspire_abstract or '-'}</ows:Abstract>
+      <ows:Identifier>${theme.id or '-'}</ows:Identifier>
+      
+		% for x in str(theme.fk_dataset_id).split(','):
+			<LayerRef>${x}</LayerRef>
+		% endfor
       </Theme>
     % endfor
 ## End main loop

@@ -4,7 +4,7 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model.bod import BodLayerDe, BodLayerFr , LayerLegend
+from chsdi.model.bod import LayerLegend, GetCapFr, GetCapDe, GetCapThemesFr, GetCapThemesDe
 from chsdi.model.meta import Session
 
 import mimetypes
@@ -22,9 +22,11 @@ class WmtsController(BaseController):
     def __before__(self):
         super(WmtsController, self).__before__()
         if self.lang == 'fr' or self.lang == 'it':
-            self.BodLayer = BodLayerFr
+            self.GetCap = GetCapFr
+            self.GetCapThemes = GetCapThemesFr
         else:
-            self.BodLayer = BodLayerDe
+            self.GetCap = GetCapDe
+            self.GetCapThemes = GetCapThemesDe
 
     def index(self, format='html'):
         """GET /wmts: GetCapabilities document"""
@@ -35,9 +37,10 @@ class WmtsController(BaseController):
         response.headers['Cache-Control'] = 'no-cache'
         response.charset = 'utf8'
 
-        c.layers = Session.query(self.BodLayer).all()
+        c.layers = Session.query(self.GetCap).all()
+        c.themes = Session.query(self.GetCapThemes).all()
 
-        if c.layers is None:
+        if c.layers is None or c.themes is None:
             abort(404)
 
         return render('/WMTSCapabilities.mako') 

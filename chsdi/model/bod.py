@@ -79,3 +79,29 @@ class BodLayerDe(Base, BodLayer):
 class BodLayerFr(Base, BodLayer):
     __tablename__ = 'bod_layer_suche_fr'
     __table_args__ = ({'autoload': True})
+
+
+class GetCapFr(Base):
+    __tablename__ = 'view_bod_wmts_getcapabilities_fr'
+    __table_args__ = ({'autoload': True, })
+    id = Column('fk_dataset_id', Text, primary_key=True)
+    arr_all_formats = Column('format', Text)
+    
+
+class GetCapDe(Base):
+    __tablename__ = 'view_bod_wmts_getcapabilities_de'
+    __table_args__ = ({'autoload': True})
+    id = Column('fk_dataset_id', Text, primary_key=True)
+    arr_all_formats = Column('format', Text)
+
+
+class GetCapThemesFr(Base):
+    __tablename__ = 'view_bod_wmts_getcapabilities_themes_fr'
+    __table_args__ = ({'autoload': True, })
+    id = Column('inspire_id', Text, primary_key=True)
+    
+
+class GetCapThemesDe(Base):
+    __tablename__ = 'view_bod_wmts_getcapabilities_themes_de'
+    __table_args__ = ({'autoload': True})
+    id = Column('inspire_id', Text, primary_key=True)
