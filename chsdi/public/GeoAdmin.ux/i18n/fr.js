@@ -186,7 +186,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen': 'Réservoirs aquifères',
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet': 'Vulnérabilité des aquifères',
     'ch.swisstopo.geologie-tektonische_karte': 'Tectonique',
-    'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomérations et villes isolées 2000',
+    'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomérations et villes isolées 2',
     'ch.are.alpenkonvention': 'Convention des Alpes',
     'ch.are.gemeindetyp-1990-9klassen': 'Typologie des communes ARE',
     'ch.astra.ivs-nat': 'IVS national',
