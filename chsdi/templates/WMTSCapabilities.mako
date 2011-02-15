@@ -92,8 +92,8 @@
       <!-- this is really not a smart name -->
         <TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
       </TileMatrixSetLink>
-      <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/${str(layer.timestamp).split(',')[0]}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
-      <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/${str(layer.timestamp).split(',')[0]}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
+      <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+      ##<ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="http://wmts9.geo.admin.ch/wmts/1.0.0/{Time}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
   </Layer>
 
 
