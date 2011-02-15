@@ -105,3 +105,38 @@ class GetCapThemesDe(Base):
     __tablename__ = 'view_bod_wmts_getcapabilities_themes_de'
     __table_args__ = ({'autoload': True})
     id = Column('inspire_id', Text, primary_key=True)
+
+class CmsLayer(object):
+    def toDict(self):
+        d = {}
+        for c in self.__table__.columns:
+           if hasattr(self,c.name):
+               value = getattr(self, c.name)
+               d[c.name] = value
+        return d
+
+        
+class CmsLayerDe(Base, CmsLayer):
+    __tablename__ = 'view_bod_export_cms_de'
+    __table_args__ = ({'autoload': True})
+    id = Column('pk', String, primary_key=True)
+
+class CmsLayerFr(Base, CmsLayer):
+    __tablename__ = 'view_bod_export_cms_fr'
+    __table_args__ = ({'autoload': True})
+    id = Column('pk', String, primary_key=True)
+
+class CmsLayerIt(Base, CmsLayer):
+    __tablename__ = 'view_bod_export_cms_it'
+    __table_args__ = ({'autoload': True})
+    id = Column('pk', String, primary_key=True)
+
+class CmsLayerRm(Base, CmsLayer):
+    __tablename__ = 'view_bod_export_cms_rm'
+    __table_args__ = ({'autoload': True})
+    id = Column('pk', String, primary_key=True)
+
+class CmsLayerEn(Base, CmsLayer):
+    __tablename__ = 'view_bod_export_cms_en'
+    __table_args__ = ({'autoload': True})
+    id = Column('pk', String, primary_key=True)

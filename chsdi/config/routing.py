@@ -21,6 +21,7 @@ def make_map(config):
     # CUSTOM ROUTES HERE
     map.resource('wmt', 'wmts')
     map.resource('publisher', 'publishers')
+    map.resource('cmslayer', 'cmslayer')
 
     
     map.connect('/loader.js', controller='entry', action='loader')
