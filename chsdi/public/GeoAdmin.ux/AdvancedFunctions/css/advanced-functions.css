@@ -26,6 +26,7 @@
     margin-right: 10px;
     overflow: hidden;
     width: 15px;
+
 }
 
 .x-accordion-hd .x-tool-toggle {
@@ -48,6 +49,7 @@
 .advanced-window-panel {
     background-color: white;
     text-align: left;
+    border-bottom: 1px solid black;
 }
 
 .advanced-window-panel-header {
@@ -55,6 +57,8 @@
     background-image: url(../images/light-hd.gif);
     background-position: -2px 0px;
     color: white;
+    /* border-top: 1px solid black;    */
+    /* border-bottom: 1px solid black;    */
 }
 #legendAction {
     position: relative !important;
