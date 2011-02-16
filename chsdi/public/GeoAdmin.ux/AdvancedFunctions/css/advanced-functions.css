@@ -54,6 +54,13 @@
     font-weight: bold;
     background-image: url(../images/light-hd.gif);
     background-position: -2px 0px;
+    color: white;
+}
+#legendAction {
+    position: relative !important;
+    float: left !important;
+    margin: 5px;
+
 }
 
 
