@@ -9,7 +9,7 @@
     background-image: url("../images/measure_area.gif") !important;
     height: 70px !important;
     width: 50px !important;
-   background-position: 0 0;     
+   background-position: 0 0 !important;     
 }
 
 .x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea {
