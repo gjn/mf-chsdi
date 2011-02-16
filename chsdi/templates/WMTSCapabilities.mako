@@ -67,7 +67,6 @@
   </ows:OperationsMetadata>
   <Contents>
   ## Main loop
-  
    % for layer in c.layers:
     <Layer>
         <ows:Title>${layer.kurzbezeichnung|x}</ows:Title>
@@ -78,11 +77,11 @@
       </ows:WGS84BoundingBox>
       <ows:Identifier>${layer.id}</ows:Identifier>
       <ows:Metadata xlink:href="http://www.swisstopo.admin.ch/SITiled/world/AdminBoundaries/metadata.htm"/>
-      <Style>
-        <!-- Do not inlcude otherwise OL cannot parse <ows:Title>default</ows:Title> -->
-        <ows:Identifier>default</ows:Identifier>
-      </Style>
-      
+          <Style>
+	  <ows:Title>${layer.kurzbezeichnung|x}</ows:Title>
+	   <ows:Identifier>${layer.id}</ows:Identifier>
+	    <LegendURL format="image/png" xlink:href="http://api.geo.admin.ch/legend/${layer.id}_${c.lang}.png" />
+  </Style> 
       <Format>image/${str(layer.arr_all_formats).split(',')[0]}</Format>
       <Dimension><ows:Identifier>Time</ows:Identifier>
       <Default>${str(layer.timestamp).split(',')[0]}</Default>
@@ -92,11 +91,9 @@
       <!-- this is really not a smart name -->
         <TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
       </TileMatrixSetLink>
-      <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+      <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="http://wmts9.geo.admin.ch/wmts/1.0.0/${layer.id}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}" />
       ##<ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="http://wmts9.geo.admin.ch/wmts/1.0.0/{Time}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
   </Layer>
-
-
   % endfor
   ## End main loop
     <TileMatrixSet>
@@ -251,7 +248,7 @@ bottomleft (0, 0, 12), topright (2, 1, 12)
 width=3, height=2, total=6  -->
       <TileMatrix>
         <ows:Identifier>12</ows:Identifier>
-        <ScaleDenominator>10000000</ScaleDenominator>
+        <ScaleDenominator>3571428.5714</ScaleDenominator>
         <TopLeftCorner>420000.0 350000.0</TopLeftCorner>
         <TileWidth>256</TileWidth>
         <TileHeight>256</TileHeight>
@@ -263,7 +260,7 @@ bottomleft (0, 0, 13), topright (3, 2, 13)
 width=4, height=3, total=12  -->
       <TileMatrix>
         <ows:Identifier>13</ows:Identifier>
-        <ScaleDenominator>7500000</ScaleDenominator>
+        <ScaleDenominator>2678571.4286</ScaleDenominator>
         <TopLeftCorner>420000.0 350000.0</TopLeftCorner>
         <TileWidth>256</TileWidth>
         <TileHeight>256</TileHeight>
@@ -275,7 +272,7 @@ bottomleft (0, 0, 14), topright (3, 2, 14)
 width=4, height=3, total=12  -->
       <TileMatrix>
         <ows:Identifier>14</ows:Identifier>
-        <ScaleDenominator>2321428</ScaleDenominator>
+        <ScaleDenominator>2321428.5714</ScaleDenominator>
         <TopLeftCorner>420000.0 350000.0</TopLeftCorner>
         <TileWidth>256</TileWidth>
         <TileHeight>256</TileHeight>
@@ -423,7 +420,6 @@ width=1876, height=1251, total=2346876  -->
       <ows:Title>${theme.inspire_name or '-'}</ows:Title>
       <ows:Abstract>${theme.inspire_abstract or '-'}</ows:Abstract>
       <ows:Identifier>${theme.id or '-'}</ows:Identifier>
-      
 		% for x in str(theme.fk_dataset_id).split(','):
 			<LayerRef>${x}</LayerRef>
 		% endfor

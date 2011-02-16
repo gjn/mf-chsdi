@@ -39,6 +39,7 @@ class WmtsController(BaseController):
 
         c.layers = Session.query(self.GetCap).all()
         c.themes = Session.query(self.GetCapThemes).all()
+        c.lang = self.lang
 
         if c.layers is None or c.themes is None:
             abort(404)
