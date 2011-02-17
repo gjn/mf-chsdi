@@ -416,32 +416,44 @@ width=1876, height=1251, total=2346876  -->
 		</TileMatrixSet>
 	</Contents>
 	<Themes>
-  ## Main loop
-   <% my_trigger = 'initial_value' %>
+  ## Main loop for the themes
+  ## The DB-list is ordered by oberthema_id
+   <% pre_oberthema= 'not_yet' %>
+   <% counter_i = 0 %>
    % for theme in c.themes:
-   % if not(my_trigger == theme.oberthema_id):
+   ## Oberthema
+   % if not(pre_oberthema== theme.oberthema_id):
 	   <Theme>
 				<ows:Title>${theme.inspire_oberthema_name|x,trim}</ows:Title>
 				<ows:Abstract>${theme.inspire_oberthema_abstract|x,trim}</ows:Abstract>
 				<ows:Identifier>${theme.oberthema_id|x,trim}</ows:Identifier>
-		## % for x in str(theme.fk_dataset_id).split(','):
-		##	<LayerRef>${x|x,trim}</LayerRef>
-		## % endfor
    % endif  
+   ## Thema
    <Theme>
 			<ows:Title>${theme.inspire_name|x,trim}</ows:Title>
 			<ows:Abstract>${theme.inspire_abstract|x,trim}</ows:Abstract>
 			<ows:Identifier>${theme.id|x,trim}</ows:Identifier>
+		## Refs
 		% for x in str(theme.fk_dataset_id).split(','):
 			<LayerRef>${x}</LayerRef>
 		% endfor
       </Theme>
-      % if not(my_trigger == theme.oberthema_id):
-      </Theme>
+      ## No overflow
+      % if counter_i < (len(c.themes) - 1):
+		  <% counter_i = counter_i + 1 %>
+      % endif
+      ## End Oberthema
+      % if not(theme.oberthema_id == c.themes[counter_i].oberthema_id):
+		  </Theme>
       % endif 
-      <% my_trigger = theme.oberthema_id %>
+      ## remember the precedent Oberthema
+       <% pre_oberthema= theme.oberthema_id %>
     % endfor
-## End main loop
+	## End main loop
+    ## could be that the db ist empty
+    % if len(c.themes) > 0:
+    </Theme>
+    % endif
   </Themes>
 	<ServiceMetadataURL xlink:href="http://www.opengis.uab.es/SITiled/world/1.0.0/WMTSCapabilities.xml"/>
 </Capabilities>
