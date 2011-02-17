@@ -259,10 +259,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'AdvancedWindow.title': 'Advanced functions',
 
     // Measure
-    'GeoAdmin.Measure.title': 'Distanzmessung & Flächenmessung',
-    'GeoAdmin.Measure.MeasureLength': 'Distanza',
-    'GeoAdmin.Measure.MeasureArea': 'Superficie',
-    'GeoAdmin.Measure.MeasureLength.ToolTip': 'Misurare une distanza',
-    'GeoAdmin.Measure.MeasureArea.ToolTip': 'Misurare une superficie'
+    'Measure.title': 'Distanzmessung & Flächenmessung',
+    'Measure.MeasureLength': 'Distanza',
+    'Measure.MeasureArea': 'Superficie',
+    'Measure.MeasureLength.ToolTip': 'Misurare une distanza',
+    'Measure.MeasureArea.ToolTip': 'Misurare une superficie'
 
 });

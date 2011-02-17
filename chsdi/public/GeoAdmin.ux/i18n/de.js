@@ -266,10 +266,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'AdvancedWindow.title': 'Profi Funktionen',
 
     // Measure
-    'GeoAdmin.Measure.title': 'Distanzmessung & Flächenmessung',
-    'GeoAdmin.Measure.MeasureLength': 'Distanz',
-    'GeoAdmin.Measure.MeasureArea': 'Fläche',
-    'GeoAdmin.Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
-    'GeoAdmin.Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
+    'Measure.title': 'Distanzmessung & Flächenmessung',
+    'Measure.MeasureLength': 'Distanz',
+    'Measure.MeasureArea': 'Fläche',
+    'Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
+    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
 
 });
