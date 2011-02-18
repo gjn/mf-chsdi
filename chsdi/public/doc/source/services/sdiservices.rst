@@ -306,6 +306,7 @@ The following parameters are required:
 - elevation_models (optional): comma separated list of elevation models.  For now, only one elevation model available. Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - cb (optional): the name of the callback funtion
+- douglaspeuckerepsilon (optional): epsilon value (float) in meters used for the usage of the Douglas Peucker algorithm (http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm)
 
 Example: `http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
@@ -337,6 +338,7 @@ The following parameters are required:
 - geom: GeoJSON representation of the polyline (type = LineString)
 - elevation_models (optional): comma separated list of elevation models. For now, only one elevation model available. Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
+- douglaspeuckerepsilon (optional): epsilon value (float) in meters used for the usage of the Douglas Peucker algorithm (http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm)
 
 Example: `http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 

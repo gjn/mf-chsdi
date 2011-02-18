@@ -72,8 +72,8 @@ class ProfileController(BaseController):
 
         coords = self._create_points(geom.coordinates, nb_points)
         dpcoords = None
-        if request.params.has_key('douglaspeukerepsilon'):
-            epsilon = int(request.params['douglaspeukerepsilon'])
+        if request.params.has_key('douglaspeuckerepsilon'):
+            epsilon = float(request.params['douglaspeuckerepsilon'])
 
             # Computing simplification
             dpcoords = {}
@@ -122,7 +122,7 @@ class ProfileController(BaseController):
                             break 
                         prevco = co                
                 if alt is not None:
-                    alts[layers[i]] = alt
+                    alts[layers[i]] = self._filter_alt(alt)
 
             if len(alts)>0:
                 rounded_dist = self._filter_dist(dist)
