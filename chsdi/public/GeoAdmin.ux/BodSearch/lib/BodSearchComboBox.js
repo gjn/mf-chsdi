@@ -104,6 +104,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     recordSelected: function(combo, record, index) {
+        this.reset();
         var id = record.get('id');
         if (this.map) {
             this.map.addLayerByName(id);

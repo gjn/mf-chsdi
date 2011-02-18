@@ -73,8 +73,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     for (var i = 0, len = params.layers.length; i < len; i++) {
                         map_state.layers.push({
                             layername: params.layers[i],
-                            visibility: params.layers_visibility[i] === 'true',
-                            opacity: parseFloat(params.layers_opacity[i])
+                            visibility: (params.layers_visibility[i]) ? params.layers_visibility[i] === 'true' : true,
+                            opacity: (params.layers_opacity[i]) ? parseFloat(params.layers_opacity[i]) : 1
                         });
                     }
                 } else if (k == 'crosshair') {
