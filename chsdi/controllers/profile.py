@@ -1,3 +1,4 @@
+
 from chsdi.lib.base import *
 from chsdi.lib.helpers import round
 from chsdi.lib.raster.georaster import GeoRaster
@@ -5,6 +6,7 @@ from pylons import request, response, config, tmpl_context as c
 import geojson
 import simplejson
 import math
+from shapely.geometry import LineString
 
 # cache of GeoRaster instances in function of the layer name
 _rasters = {}
@@ -61,23 +63,64 @@ class ProfileController(BaseController):
         c.points = []
         c.layers = layers
 
-        dist = 0
-        prev_coord = None
         if request.params.has_key('nbPoints'):
-           nb_points = int(request.params['nbPoints'])
+            nb_points = int(request.params['nbPoints'])
         elif request.params.has_key('nb_points'):
-           nb_points = int(request.params['nb_points'])
+            nb_points = int(request.params['nb_points'])
         else:
             nb_points = 200
 
         coords = self._create_points(geom.coordinates, nb_points)
+        dpcoords = None
+        if request.params.has_key('douglaspeukerepsilon'):
+            epsilon = int(request.params['douglaspeukerepsilon'])
+
+            # Computing simplification
+            dpcoords = {}
+            for i in range(0, len(layers)):                    
+                dpcoords[layers[i]] = []
+            prev_coord = None
+            xpos = 0
+            for coord in coords:
+                if prev_coord is not None:
+                    xpos += self._dist(prev_coord, coord)
+                for i in range(0, len(layers)):                    
+                    ypos = rasters[i].getVal(coord[0], coord[1])
+                    if ypos is not None:
+                        dpcoords[layers[i]].append((xpos, ypos))                
+                prev_coord = coord
+
+            for i in range(0, len(layers)):                    
+                ls = LineString(dpcoords[layers[i]])
+                ls = ls.simplify(epsilon, preserve_topology=False)
+                dpcoords[layers[i]] = ls.coords
+
+        dist = 0
+        prev_coord = None
         for coord in coords:
             if prev_coord is not None:
                 dist += self._dist(prev_coord, coord)
 
             alts = {}
             for i in range(0, len(layers)):
-                alt = self._filter_alt(rasters[i].getVal(coord[0], coord[1]))
+                alt = None
+                if dpcoords is None:
+
+                    # No simplification
+                    alt = self._filter_alt(rasters[i].getVal(coord[0], coord[1]))
+                else:               
+
+                    # Using simplification result to find height (by interpolation)
+                    prevco = None
+                    for co in dpcoords[layers[i]]:
+                        if co[0] == dist:
+                            alt = co[1]
+                            break
+                        if co[0] > dist:
+                            a = (co[1] - prevco[1]) / (co[0] - prevco[0])
+                            alt = a * (dist - prevco[0]) + prevco[1]
+                            break 
+                        prevco = co                
                 if alt is not None:
                     alts[layers[i]] = alt
 
