@@ -184,7 +184,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.astra.ivs-nat': 'IVS national',
     'ch.astra.ivs-reg_loc' : 'IVS régional & local',
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
-    'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en forte pente et terrasses',
+    'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en pente et terrasses',
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
 
     // Layer for astra
