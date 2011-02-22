@@ -44,6 +44,7 @@
 
 .x-toolbar .advancedfunctions {
     background-image: url(../images/advanced-functions.gif);
+    background-position: 0 2px;
      font-weight: bold;
 }
 .advanced-window-panel {
