@@ -14,7 +14,8 @@ GeoAdmin.AdvancedFunctions = Ext.extend(Ext.Action, {
         var advancedWindow  = new GeoAdmin.AdvancedWindow({
             width: 400,
             renderTo: Ext.getBody(),
-            items: config.items
+            items: config.items || [],
+            height: config.windowsHeight || 200
         });
 
         config = Ext.apply({
