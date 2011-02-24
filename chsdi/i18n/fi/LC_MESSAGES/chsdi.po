@@ -257,6 +257,21 @@ msgstr "Blattnummer"
 msgid  "sheetname"
 msgstr "Blattbezeichnung"
 
+msgid  "atlassheetnumber"
+msgstr "Nummer Geologischer Atlas"
+
+msgid  "kartenblattname"
+msgstr "Kartenblattname"
+
+msgid  "kartenblattnummer"
+msgstr "Kartenblattnummer"
+
+msgid  "ausgabejahr"
+msgstr "Ausgabejahr"
+
+msgid  "linkzurlegende"
+msgstr "Link zur Legende"
+
 msgid  "alexandria"
 msgstr "Katalog Alexandria"
 

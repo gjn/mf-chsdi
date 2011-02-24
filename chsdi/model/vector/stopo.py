@@ -250,3 +250,13 @@ class GridstandSwissimage(Base, Queryable):
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.images-swissimage.metadata',GridstandSwissimage)
+
+class GeologischerAtlasPK(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'kv_ga25_pk'
+ 	__table_args__ = ({'schema': 'geol', 'autoload': True})
+ 	__template__ = 'tooltips/geol_ga_pk.mako'
+ 	id = Column('nr', Text, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)

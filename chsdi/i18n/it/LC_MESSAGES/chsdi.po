@@ -257,6 +257,21 @@ msgstr "Numero di foglio"
 msgid  "sheetname"
 msgstr "Denominazione di foglio"
 
+msgid  "atlassheetnumber"
+msgstr "Numéro du atlas géologique"
+
+msgid  "kartenblattname"
+msgstr "Nom de feuille"
+
+msgid  "kartenblattnummer"
+msgstr "Numéro de feuille"
+
+msgid  "ausgabejahr"
+msgstr "Année de publication"
+
+msgid  "linkzurlegende"
+msgstr "Liens vers la légende"
+
 msgid  "alexandria"
 msgstr "Catalogo Alexandria"
 

@@ -984,6 +984,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.geologie-geophysik-deklination1"
                             },
                             {
+                                text: this.addtreeLayerLink("ch.swisstopo.geologie-geologischer_atlas", "node_ch.swisstopo.geologie-geologischer_atlas1") + ' ' + this.layers["ch.swisstopo.geologie-geologischer_atlas"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.geologie-geologischer_atlas1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.geologie-geologische_karte", "node_ch.swisstopo.geologie-geologische_karte1") + ' ' + this.layers["ch.swisstopo.geologie-geologische_karte"].name,
                                 leaf: true,
                                 checked: false,

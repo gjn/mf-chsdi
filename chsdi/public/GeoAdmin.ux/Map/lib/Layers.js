@@ -309,6 +309,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
             },
+            "ch.swisstopo.geologie-geologischer_atlas": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geologischer_atlas"),
+                type: "raster",
+                format: "image/png",
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
+                queryable: true
+            },
             "ch.swisstopo.geologie-geologische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geologische_karte"),
                 type: "raster",
@@ -623,7 +630,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.are.agglomerationen_isolierte_staedte-2000"),
                 type: "polygon",
                 format: "image/png",
-                datenherr: OpenLayers.i18n("ch.bfs"),
+                datenherr: OpenLayers.i18n("ch.are"),
                 queryable: true
             },
             "ch.are.landschaftstypen": {
