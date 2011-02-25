@@ -75,7 +75,24 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
         panel.addControls([zoom_max]);
 
-        this.attributionCtrl = new OpenLayers.Control.Attribution();
+        this.attributionCtrl = OpenLayers.Util.extend(new OpenLayers.Control.Attribution(), {
+          updateAttribution: function () {
+            var attributions = [];
+            if (this.map && this.map.layers) {
+                for (var i = 0, len = this.map.layers.length; i < len; i++) {
+                    var layer = this.map.layers[i];
+                    if (layer.attribution && layer.getVisibility()) {
+                        // add attribution only if attribution text is unique
+                        if (OpenLayers.Util.indexOf(
+                        attributions, layer.attribution) === -1) {
+                            attributions.push(layer.attribution);
+                        }
+                    }
+                }
+                this.div.innerHTML = OpenLayers.i18n('Data:') + attributions.join(this.separator);
+            }
+        }
+        });
         this.overviewMapCtrl = new GeoAdmin.OverviewMap();
 
         options = OpenLayers.Util.extend(options, {

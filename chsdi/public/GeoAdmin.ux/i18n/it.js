@@ -193,6 +193,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
     // Datenherr
+    'Data:': 'Dati: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
@@ -219,9 +220,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'voidLayer': 'Nessuna carta',
 
     // Attribution / copyright
-    'ch.swisstopo.swissimage_attribution': 'Veduta aerea:swisstopo ',
-    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carta nazionale: swisstopo',
-    'ch.swisstopo.pixelkarte-grau_attribution': 'Carta nazionale B/N: swisstopo',
     'loadingText'       : "Caricamento in atto ...",
 
     'Search data...': 'Ricerca di dati [in francese] ...',

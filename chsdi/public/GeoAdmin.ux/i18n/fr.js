@@ -202,6 +202,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     
     // Datenherr
+    'Data:': 'Données: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
@@ -228,9 +229,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'voidLayer': 'Fond blanc',
 
     // Attribution / copyright
-    'ch.swisstopo.swissimage_attribution': 'Photo aérienne: swisstopo',
-    'ch.swisstopo.pixelkarte-farbe_attribution': 'Carte nationale: swisstopo',
-    'ch.swisstopo.pixelkarte-grau_attribution': 'Carte nationale N&B: swisstopo',
     'loadingText'       : "En cours de chargement...",
 
 

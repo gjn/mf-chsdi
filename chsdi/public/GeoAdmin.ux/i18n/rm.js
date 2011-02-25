@@ -192,6 +192,7 @@ OpenLayers.Lang.rm = {
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
    
     // Datenherr
+    'Data:': 'Datas: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
@@ -218,9 +219,6 @@ OpenLayers.Lang.rm = {
     'voidLayer': 'Nagina charta',
 
     // Attribution / copyright
-    'ch.swisstopo.swissimage_attribution': "Fotografia or da l'aria: swisstopo",
-    'ch.swisstopo.pixelkarte-farbe_attribution': 'Charta naziunala: swisstopo',
-    'ch.swisstopo.pixelkarte-grau_attribution': 'Charta naziunala A&N: swisstopo',
     'loadingText'       : "Chargiar datas ...",
 
     'Search data...': 'Tschertgar datas [en tudestg] ...',

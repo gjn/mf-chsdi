@@ -81,7 +81,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo.swissimage_attribution"),
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
             },
             "ch.swisstopo.pixelkarte-farbe": {
@@ -89,7 +89,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe_attribution"),
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
             },
             "ch.swisstopo.pixelkarte-grau": {
@@ -97,7 +97,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                datenherr: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau_attribution"),
+                datenherr: OpenLayers.i18n("ch.swisstopo"),
                 queryable: false
             },
             "voidLayer": {
