@@ -29,6 +29,8 @@
  * @include OpenLayers/Format/KML.js
  * @include OpenLayers/Format/GML.js
  * @include OpenLayers/Format/GPX.js
+ * @include OpenLayers/Format/WMSGetFeatureInfo.js
+ * @include OpenLayers/Control/WMSGetFeatureInfo.js
  * 
  * @include GeoExt/widgets/Popup.js
  *

@@ -17,3 +17,4 @@ API Examples
     geonames
     streetview 
     routing
+    wms
