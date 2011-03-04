@@ -138,6 +138,8 @@ div.bodywrapper strong {
 
 table.docutils {
     margin: 5px 10px !important;
+    border-style: solid none solid;
+    border-width: 2px 0 2px;
 }
 
 .ext-ie .geoadmin-catalog-tree .treelayericon-raster,
@@ -146,4 +148,12 @@ table.docutils {
 .ext-ie .geoadmin-catalog-tree .treelayericon-polygon,
 .ext-ie .geoadmin-catalog-tree .treelayericon-mixed {
     margin-top: -15px !important;
+}
+
+table.docutils th {
+    border-style:  none none solid none;
+    border-width: 0  0 2px 0;
+    fon-weight: bold;
+    background-color: #ddd;
+    border-color: #000;
 }

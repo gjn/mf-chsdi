@@ -396,6 +396,70 @@ Input parameters
 
 See WMTS OGC standard: http://www.opengeospatial.org/standards/wmts
 
+
+See the WMTS `GetCapabilities <http://mf-chsdi0i.bgdi.admin.ch/wmts>`_ document.
+
+    ``http://<ServerName>/<Protocole>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
+
+===================    =============================   ==========================================================================
+Parameter              Example                         Explanation
+===================    =============================   ==========================================================================
+ServerName             wmts[5-9].geo.admin.ch
+Protocole              wmts                            constant
+Version                1.0.0                           WMTS protocol version
+Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://mf-chsdi0i.bgdi.admin.ch/wmts>`_ document.
+StyleName              default                         mostly constant
+Time                   2010, 2010-01                   Date of tile generation in (ISO-8601). Some dataset will be updated quite often.
+TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
+TileSetId              22                              Zoom level (see below)
+TileRow                236
+TileCol                284
+FormatExtension        png                             Mostly png, exept for some raster layer (pixelkarte and swissimage)
+===================    =============================   ==========================================================================
+
+
+The *<TileMatrixSet>* **21781** is as follow defined::
+
+  MinX              420000
+  MaxX              900000
+  MinY               30000
+  MaxY              350000
+  TileWidth            256
+
+==============   ========= ============ ======== ======== ========== =========
+Resolution [m]   Zoomlevel Tile width m Tiles X  Tiles Y    Tiles    Geoadmin
+==============   ========= ============ ======== ======== ========== =========
+      4000            0         1024000        1        1          1
+      3750            1          960000        1        1          1
+      3500            2          896000        1        1          1
+      3250            3          832000        1        1          1
+      3000            4          768000        1        1          1
+      2750            5          704000        1        1          1
+      2500            6          640000        1        1          1
+      2250            7          576000        1        1          1
+      2000            8          512000        1        1          1
+      1750            9          448000        2        1          2
+      1500           10          384000        2        1          2
+      1250           11          320000        2        1          2
+      1000           12          256000        2        2          4
+       750           13          192000        3        2          6
+       650           14          166400        3        2          6    x
+       500           15          128000        4        3         12    x
+       250           16           64000        8        5         40    x
+       100           17           25600       19       13        247    x
+        50           18           12800       38       25        950    x
+        20           19            5120       94       63      5'922    x
+        10           20            2560      188      125     23'500    x
+         5           21            1280      375      250     93'750    x
+       2.5           22             640      750      500    375'000    x
+         2           23             512      938      625    586'250    x
+       1.5           24             384     1250      834  1'042'500
+         1           25             256     1875     1250  2'343'750    x
+       0.5           26             128     3750     2500  9'375'000    x
+==============   ========= ============ ======== ======== ========== =========
+
+
+
 Result
 ^^^^^^
 
