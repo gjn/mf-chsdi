@@ -149,8 +149,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
        api20.createMapPanel({
             height: 340,
             renderTo: 'mymap20',
-            easting: 567965,
-            northing: 190430,
+            center: [673000,185000],
             zoom: 4,
             tbar: new Ext.Toolbar({items: ['->',{text: 'press me'}]})
         });
@@ -161,13 +160,12 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                 "http://wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
-            layers: 'ch.swisstopo-vd.geometa-standav,ch.swisstopo-vd.geometa-gemeinde', // 'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
+            layers:  'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
             format: 'image/png'
         }, {
             singleTile: true,
             opacity: 0.7,
-            isBaseLayer: false,
-            datenherr: 'v+d'
+            isBaseLayer: false
         });
 
 
@@ -177,7 +175,10 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
             //title: 'Identify features by clicking',
             //layers: [wms],
             //queryVisible: true,
-            infoFormat: 'application/vnd.ogc.gml'
+            infoFormat: 'application/vnd.ogc.gml',
+            vendorParams: {
+               "lang": OpenLayers.Lang.getCode() || 'de'
+            }
         });
 
         function formatInfo(features) {
