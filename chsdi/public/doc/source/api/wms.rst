@@ -57,10 +57,9 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
        api20.createMapPanel({
             height: 340,
             renderTo: 'mymap20',
-            easting: 567965,
-            northing: 190430,
+            center: [673000,185000],
             zoom: 4,
-            tbar: new Ext.Toolbar()
+            tbar: new Ext.Toolbar({items: ['->',{text: 'press me'}]})
         });
 
        OpenLayers.ProxyHost = "/main/wsgi/ogcproxy?url=";
@@ -69,22 +68,25 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                 "http://wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
-            layers: 'ch.swisstopo-vd.geometa-standav,ch.swisstopo-vd.geometa-gemeinde', // 'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
+            layers:  'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
             format: 'image/png'
         }, {
             singleTile: true,
             opacity: 0.7,
-            isBaseLayer: false,
-            datenherr: 'v+d'
+            isBaseLayer: false
         });
 
 
         var featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
-            //  format: new OpenLayers.Format.WMSGetFeatureInfo()  //default
+            format: new OpenLayers.Format.WMSGetFeatureInfo(), // default
             url: 'http://wms.geo.admin.ch/',
-            layers: [wms],  //layer to query
-            queryVisible: true,
-            infoFormat: 'application/vnd.ogc.gml'
+            //title: 'Identify features by clicking',
+            //layers: [wms],
+            //queryVisible: true,
+            infoFormat: 'application/vnd.ogc.gml',
+            vendorParams: {
+               "lang": OpenLayers.Lang.getCode() || 'de'
+            }
         });
 
         function formatInfo(features) {
@@ -120,7 +122,10 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                 OpenLayers.Element.removeClass(this.map.viewPortDiv, "olCursorWait");
             }
         });
+
+
         api20.map.addLayers([wms]);
+
         api20.map.addControl(featureInfo);
         featureInfo.activate();
        }
