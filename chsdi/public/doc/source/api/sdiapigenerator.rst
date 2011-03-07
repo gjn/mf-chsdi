@@ -497,7 +497,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/api/sdiapiexamples2.html#base-layer-tool" target="new">Add base layer tool<\/a>',
+                    fieldLabel: '<a href="./sdiapiexamples2.html#base-layer-tool" target="new">Add base layer tool<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addBaseLayerTool = checked;
@@ -509,7 +509,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/api/sdiapiexamples1.html#map-with-swiss-search" target="new">Add swiss search combo<\/a>',
+                    fieldLabel: '<a href="./sdiapiexamples1.html#map-with-swiss-search" target="new">Add swiss search combo<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addSwissSearch = checked;
@@ -521,7 +521,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: '<a href="http://api.geo.admin.ch/doc/build/widgets/sdiwidgetsexamples2.html#tooltip" target="new">Add feature tooltip<\/a>',
+                    fieldLabel: '<a href="../widgets/sdiwidgetsexamples2.html#tooltip" target="new">Add feature tooltip<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addTooltip = checked;
