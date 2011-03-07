@@ -265,7 +265,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Elevation': 'Altitude',
 
     // Advanced Windows
-    'AdvancedWindow.title': 'Fonctions avancées',
+    'AdvancedWindow.title': 'Fonctions complémentaires',
 
     // Measure
     'Measure.title': 'Mesure de distance & surface',

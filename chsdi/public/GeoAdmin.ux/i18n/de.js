@@ -262,7 +262,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Elevation': 'Höhe',
 
     // Advanced Windows
-    'AdvancedWindow.title': 'Profi Funktionen',
+    'AdvancedWindow.title': 'Zusatzfunktionen',
 
     // Measure
     'Measure.title': 'Distanzmessung & Flächenmessung',
