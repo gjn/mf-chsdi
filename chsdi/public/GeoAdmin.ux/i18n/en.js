@@ -199,7 +199,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
     // Datenherr
-    'Data:': 'Data: ',
+    'Data:': '(c)Data: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',

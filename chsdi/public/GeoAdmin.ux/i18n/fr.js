@@ -202,7 +202,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     
     // Datenherr
-    'Data:': 'Données: ',
+    'Data:': '(c)Données: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
