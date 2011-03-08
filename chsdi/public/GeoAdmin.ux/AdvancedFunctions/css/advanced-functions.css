@@ -68,5 +68,15 @@
 
 }
 
+.x-btn-text-icon .x-btn-icon-small-left .x-btn-text {
+    padding-left: 0 !important;
+    background-position: 0 0;
+}
+
+.gx-map-measurelength .x-btn-text {
+    background-repeat: no-repeat;
+    padding-top: 20px !important;
+}
+
 
 	
