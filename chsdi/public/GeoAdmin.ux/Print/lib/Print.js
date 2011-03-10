@@ -164,7 +164,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
                     var overrides = {
-                        dataOwner: map.attribution().replace(/\&amp;/g,'&')
+                        dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g,'&')
                     };
                     overrides['lang' + OpenLayers.Lang.getCode()] = true;
                     Ext.apply(pages[0].customParams, overrides);

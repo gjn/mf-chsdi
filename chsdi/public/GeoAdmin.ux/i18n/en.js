@@ -199,14 +199,27 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
     // Datenherr
-    'Data:': '(c)Data: ',
+    'Data:': '(c) Data: ',
     'ch.swisstopo': 'swisstopo',
-    'ch.bafu': 'bafu',
-    'ch.bfs': 'bfs',
+    'ch.bafu': 'foen',
+    'ch.bfs': 'fso',
 	'ch.kt.bafu': 'ct. [foen]',
 	'ch.swisstopo.kt': 'swisstopo, ct.',
     'ch.blw': 'FOAG',
     'ch.are': 'are',
+    'ch.babs': 'ufpp',
+    'ch.astra': 'fedro',
+
+    //url
+    'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html',
+    'ch.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=en',
+    'ch.bfs.url': 'http://www.bfs.admin.ch/bfs/portal/en/index.html',
+    'ch.kt.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=en',
+    'ch.swisstopo.kt.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html',
+    'ch.blw.url': 'http://www.blw.admin.ch/index.html?lang=en',
+    'ch.are.url': 'http://www.are.admin.ch/index.html?lang=en',
+    'ch.babs.url': 'http://www.bevoelkerungsschutz.admin.ch/internet/bs/en/home/das_babs.html',
+    'ch.astra.url': 'http://www.astra.admin.ch/index.html?lang=en',
 
     // layertree
     'show layer options': 'Show layer options',

@@ -202,7 +202,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     
     // Datenherr
-    'Data:': '(c)Données: ',
+    'Data:': '(c) Données: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'ofev',
     'ch.bfs': 'ofs',
@@ -210,6 +210,19 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.kt': 'swisstopo, ct.',
     'ch.blw': 'OFAG',
     'ch.are': 'are',
+    'ch.babs': 'ofpp',
+    'ch.astra': 'ofrou',
+
+    //url
+    'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/fr/home.html',
+    'ch.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=fr',
+    'ch.bfs.url': 'http://www.bfs.admin.ch/bfs/portal/fr/index.html',
+    'ch.kt.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=fr',
+    'ch.swisstopo.kt.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/swisstopo/org/cartography.html',
+    'ch.blw.url': 'http://www.blw.admin.ch/index.html?lang=fr',
+    'ch.are.url': 'http://www.are.admin.ch/index.html?lang=fr',
+    'ch.babs.url': 'http://www.bevoelkerungsschutz.admin.ch/internet/bs/fr/home/das_babs.html',
+    'ch.astra.url': 'http://www.astra.admin.ch/index.html?lang=fr',
 
     // layer tree
     'show layer options': 'Afficher les options de la couche',

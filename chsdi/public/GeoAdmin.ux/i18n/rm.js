@@ -192,7 +192,7 @@ OpenLayers.Lang.rm = {
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
    
     // Datenherr
-    'Data:': '(c)Datas: ',
+    'Data:': '(c) Datas: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'bafu',
     'ch.bfs': 'bfs',
@@ -200,6 +200,19 @@ OpenLayers.Lang.rm = {
 	'ch.swisstopo.kt': 'swisstopo, Kt.',
     'ch.blw': 'BLW',
     'ch.are': 'are',
+    'ch.babs': 'babs',
+    'ch.astra': 'astra',
+
+    //url
+    'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
+    'ch.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=de',
+    'ch.bfs.url': 'http://www.bfs.admin.ch/bfs/portal/de/index.html',
+    'ch.kt.bafu.url': 'http://www.bafu.admin.ch/index.html?lang=de',
+    'ch.swisstopo.kt.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html',
+    'ch.blw.url': 'http://www.blw.admin.ch/index.html?lang=de',
+    'ch.are.url': 'http://www.are.admin.ch/index.html?lang=de',
+    'ch.babs.url': 'http://www.bevoelkerungsschutz.admin.ch/internet/bs/de/home/das_babs.html',
+    'ch.astra.url': 'http://www.astra.admin.ch/index.html?lang=de',
 
     // layertree
     'show layer options': 'Mussar las opziuns da la stresa',

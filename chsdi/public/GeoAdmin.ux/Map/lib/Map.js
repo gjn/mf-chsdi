@@ -80,6 +80,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.attributionCtrl = OpenLayers.Util.extend(new OpenLayers.Control.Attribution(), {
             updateAttribution: function () {
                 var attributions = [];
+                var links =[];
                 if (this.map && this.map.layers) {
                     for (var i = 0, len = this.map.layers.length; i < len; i++) {
                         var layer = this.map.layers[i];
@@ -87,11 +88,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                             // add attribution only if attribution text is unique
                             if (OpenLayers.Util.indexOf(
                                     attributions, layer.attribution) === -1) {
-                                attributions.push(layer.attribution);
+                                        var link='<a href="'+OpenLayers.i18n(layer.attribution+'.url')+'" target="_blank">'+OpenLayers.i18n(layer.attribution)+'</a>';
+                                        links.push(link);
+                                        attributions.push(layer.attribution);
                             }
                         }
                     }
-                    this.div.innerHTML = OpenLayers.i18n('Data:') + attributions.join(this.separator);
+                    this.div.innerHTML = OpenLayers.i18n('Data:') + links.join(this.separator);
                 }
             }
         });
