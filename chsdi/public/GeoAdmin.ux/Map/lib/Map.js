@@ -100,6 +100,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         var navigationControl;
 
         if (isEventSupported('ontouchstart')) {
+            alert("cool");
             navigationControl = new OpenLayers.Control.TouchNavigation({
                 dragPanOptions: {
                     interval: 100,
