@@ -96,3 +96,8 @@ div.olControlMousePosition {
     height: 26px;
 }
 
+.olControlAttribution a:link, .olControlAttribution a:visited, .olControlAttribution a:hover, .olControlAttribution a:active {
+   text-decoration: none;
+   color: #000000;
+}
+
