@@ -2,6 +2,8 @@
 
 /*
  * @requires OpenLayers/Map.js
+ * @requires OpenLayers/Kinetic.js
+ * @include OpenLayers/Control/TouchNavigation.js
  * @include OpenLayers/Control/Navigation.js
  * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/Attribution.js
@@ -76,30 +78,43 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         panel.addControls([zoom_max]);
 
         this.attributionCtrl = OpenLayers.Util.extend(new OpenLayers.Control.Attribution(), {
-          updateAttribution: function () {
-            var attributions = [];
-            if (this.map && this.map.layers) {
-                for (var i = 0, len = this.map.layers.length; i < len; i++) {
-                    var layer = this.map.layers[i];
-                    if (layer.attribution && layer.getVisibility()) {
-                        // add attribution only if attribution text is unique
-                        if (OpenLayers.Util.indexOf(
-                        attributions, layer.attribution) === -1) {
-                            attributions.push(layer.attribution);
+            updateAttribution: function () {
+                var attributions = [];
+                if (this.map && this.map.layers) {
+                    for (var i = 0, len = this.map.layers.length; i < len; i++) {
+                        var layer = this.map.layers[i];
+                        if (layer.attribution && layer.getVisibility()) {
+                            // add attribution only if attribution text is unique
+                            if (OpenLayers.Util.indexOf(
+                                    attributions, layer.attribution) === -1) {
+                                attributions.push(layer.attribution);
+                            }
                         }
                     }
+                    this.div.innerHTML = OpenLayers.i18n('Data:') + attributions.join(this.separator);
                 }
-                this.div.innerHTML = OpenLayers.i18n('Data:') + attributions.join(this.separator);
             }
-        }
         });
         this.overviewMapCtrl = new GeoAdmin.OverviewMap();
+
+        var navigationControl;
+
+        if (isEventSupported('ontouchstart')) {
+            navigationControl = new OpenLayers.Control.TouchNavigation({
+                dragPanOptions: {
+                    interval: 100,
+                    enableKinetic: true
+                }
+            });
+        } else {
+            navigationControl = new OpenLayers.Control.Navigation();
+        }
 
         options = OpenLayers.Util.extend(options, {
             projection: new OpenLayers.Projection("EPSG:21781"),
             units: "m",
             controls: [
-                new OpenLayers.Control.Navigation(),
+                navigationControl,
                 new OpenLayers.Control.PanZoomBar(),
                 this.attributionCtrl,
                 new OpenLayers.Control.ScaleLine({maxWidth: 120}),
@@ -433,4 +448,27 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         return null;
     }
 });
+
+var isEventSupported = (function() {
+    var TAGNAMES = {
+        'select':'input','change':'input',
+        'submit':'form','reset':'form',
+        'error':'img','load':'img','abort':'img'
+    };
+
+    function isEventSupported(eventName) {
+        var el = document.createElement(TAGNAMES[eventName] || 'div');
+        eventName = 'on' + eventName;
+        var isSupported = (eventName in el);
+        if (!isSupported) {
+            el.setAttribute(eventName, 'return;');
+            isSupported = typeof el[eventName] == 'function';
+        }
+        el = null;
+        return isSupported;
+    }
+
+    return isEventSupported;
+})();
+
 
