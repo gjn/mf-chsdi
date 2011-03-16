@@ -109,6 +109,10 @@ class WmtsController(BaseController):
         tileX = int(J)
         tileY = tileSizeDict[str(scale)][1] - 1 - int(I)
 
+        # Check if tile could exists
+        if tileX >  ( tileSizeDict[str(scale)][0] - 1) or tileX < 0 or tileY > (tileSizeDict[str(scale)][1] - 1) or tileY < 0:
+            abort(204) # No content
+
         # Get the correct server
         serviceNumber = service.replace('wmts','')
 
