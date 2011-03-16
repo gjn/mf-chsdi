@@ -664,7 +664,6 @@ Usage Example
 
                var capabilities = format.read(doc);
 
-
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
                    matrixSet: "21781", //"Bgdi_lv03",
@@ -696,8 +695,6 @@ Usage Example
            }
        });
 
-
-       //map.addControl(new OpenLayers.Control.MousePosition({element: $('coords')}));
        map.setCenter(new OpenLayers.LonLat(600000, 200000), 13);
    }
    
@@ -706,5 +703,6 @@ Usage Example
    </script>
 
    <body onload="init();">
-     <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+       <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
+       <script type="text/javascript" src="../../../loader.js"></script>
    </body>
