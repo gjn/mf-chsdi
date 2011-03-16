@@ -1,9 +1,3 @@
-## Tiles stats for  toto
-Layer extent [420000.0, 30000.0, 900000.0, 350000.0]
-Extent to generate: same as layer extent [420000.0, 30000.0, 900000.0, 350000.0]
-
-
-
 <!-- ###### zoom 0 ######
      resolution 4000.0000 [m], scaledenom 14285750.5715 (tile matrix)
      tile: bottomleft (0, 0, 0), topright  (0, 0, 0)
