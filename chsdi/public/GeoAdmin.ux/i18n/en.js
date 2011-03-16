@@ -201,14 +201,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     // Datenherr
     'Data:': '(c) Data: ',
     'ch.swisstopo': 'swisstopo',
-    'ch.bafu': 'foen',
-    'ch.bfs': 'fso',
-	'ch.kt.bafu': 'ct. [foen]',
+    'ch.bafu': 'FOEN',
+    'ch.bfs': 'FSO',
+	'ch.kt.bafu': 'ct. [FOEN]',
 	'ch.swisstopo.kt': 'swisstopo, ct.',
     'ch.blw': 'FOAG',
-    'ch.are': 'are',
-    'ch.babs': 'ufpp',
-    'ch.astra': 'fedro',
+    'ch.are': 'ARE',
+    'ch.babs': 'UFPP',
+    'ch.astra': 'FEDRO',
 
     //url
     'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html',

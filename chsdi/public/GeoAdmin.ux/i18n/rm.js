@@ -194,14 +194,14 @@ OpenLayers.Lang.rm = {
     // Datenherr
     'Data:': '(c) Datas: ',
     'ch.swisstopo': 'swisstopo',
-    'ch.bafu': 'bafu',
-    'ch.bfs': 'bfs',
-	'ch.kt.bafu': 'Kt. [bafu]',
+    'ch.bafu': 'BAFU',
+    'ch.bfs': 'BFS',
+	'ch.kt.bafu': 'Kt. [BAFU]',
 	'ch.swisstopo.kt': 'swisstopo, Kt.',
     'ch.blw': 'BLW',
-    'ch.are': 'are',
-    'ch.babs': 'babs',
-    'ch.astra': 'astra',
+    'ch.are': 'ARE',
+    'ch.babs': 'BABS',
+    'ch.astra': 'ASTRA',
 
     //url
     'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
