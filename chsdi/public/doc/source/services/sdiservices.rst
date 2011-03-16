@@ -502,54 +502,87 @@ Usage Example
       }
 
       function init() {
-         OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
-         var lon = 600000;
-         var lat = 200000;
-         var zoom = 18;
-         var layers = [];
+       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
-         map = new OpenLayers.Map('mymap1', {
-            projection: new OpenLayers.Projection("EPSG:21781"),
-            units: "m",
-            maxExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
-            restrictedExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
-            allOverlays: false,
-            resolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-            controls: [ new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar() ]
-         });
+       var format = new OpenLayers.Format.WMTSCapabilities({
 
-         var layer = new OpenLayers.Layer.WMTS({
-            requestEncoding: "REST",
-            name: "ch.swisstopo.pixelkarte-farbe",
-            url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
-            layer: "ch.swisstopo.pixelkarte-farbe",
-            matrixSet: "21781",
-            format: "image/jpeg",
-            style: "default",
-            dimensions: ['DATE'],
-            params: {DATE: '100617'},
-            isBaseLayer: true,
-            buffer: 0,
-            transitionEffect: 'resize',
-            formatSuffixMap: {
-               "image/png": "png",
-               "image/png8": "png",
-               "image/png24": "png",
-               "image/png32": "png",
-               "png": "png",
-               "image/jpeg": "jpeg",
-               "image/jpg": "jpg",
-               "jpeg": "jpeg",
-               "jpg": "jpg"
-            }
-         });
+       });
 
-         layers.push(layer);
 
-         map.addLayers(layers);
+       map = new OpenLayers.Map({
+           div: "mymap1",
+           projection: "EPSG:21781",
+           units: "m",
+           controls: [
+               new OpenLayers.Control.Navigation(),
+               new OpenLayers.Control.PanZoomBar(),
+               new OpenLayers.Control.ScaleLine({maxWidth: 120})
+           ],
+           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
+           resolutions: [650,500,250,100,50,20,10,5,2.5]
+       });
 
-         map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
-      }
+       var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+       });
+
+
+       map.addLayers([voidLayer]);
+
+       OpenLayers.Request.GET({
+           url: "../../../wmts",
+           params: {
+               SERVICE: "WMTS",
+               VERSION: "1.0.0",
+               REQUEST: "GetCapabilities"
+           },
+           success: function(request) {
+               var doc = request.responseXML;
+               if (!doc || !doc.documentElement) {
+                   doc = request.responseText;
+               }
+
+               var capabilities = format.read(doc);
+
+
+               var layer = format.createLayer(capabilities, {
+                   layer: "ch.swisstopo.pixelkarte-farbe",
+                   matrixSet: "21781", //"Bgdi_lv03",
+                   format: "image/jpeg",
+                   opacity: 1.0,
+                   isBaseLayer: false,
+                   requestEncoding: "REST",
+                   style: "default" ,  // must be provided
+                   dimensions: ['TIME'],
+                   params: {'time': '2009'},
+                   formatSuffixMap: {
+                       "image/png": "png",
+                       "image/png8": "png",
+                       "image/png24": "png",
+                       "image/png32": "png",
+                       "png": "png",
+                       "image/jpeg": "jpeg",
+                       "image/jpg": "jpeg",
+                       "jpeg": "jpeg",
+                       "jpg": "jpeg"   // this one
+                   }
+
+               });
+               console.log(layer);
+               map.addLayer(layer);
+           },
+           failure: function() {
+               alert("Trouble getting capabilities doc");
+               OpenLayers.Console.error.apply(OpenLayers.Console, arguments);
+           }
+       });
+
+
+       //map.addControl(new OpenLayers.Control.MousePosition({element: $('coords')}));
+       map.setCenter(new OpenLayers.LonLat(600000, 200000), 13);
+   }
+
    </script>
    <body onload="init();">
       <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
@@ -569,72 +602,109 @@ Usage Example
 .. raw:: html
 
    <script type="text/javascript">
-      var map;
+   var map;
+   var format;
 
-      var geolocate = function() {
-         if (navigator.geolocation) {
-            /* geolocation is available */
-            navigator.geolocation.getCurrentPosition(function(position) {
+   var geolocate = function() {
+       if (navigator.geolocation) {
+           /* geolocation is available */
+           navigator.geolocation.getCurrentPosition(function(position) {
                positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
                positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
                map.setCenter(positionCH, 22);
-            });
-         } else {
-            alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
-         }
-      }
+           });
+       } else {
+           alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
+       }
+   }
 
-      function init() {
-         OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
-         var lon = 600000;
-         var lat = 200000;
-         var zoom = 18;
-         var layers = [];
+   function init() {
 
-         map = new OpenLayers.Map('mymap1', {
-            projection: new OpenLayers.Projection("EPSG:21781"),
-            units: "m",
-            maxExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
-            restrictedExtent:  new OpenLayers.Bounds.fromArray([420000,30000,900000,350000]),
-            allOverlays: false,
-            resolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-            controls: [ new OpenLayers.Control.Navigation(), new OpenLayers.Control.PanZoomBar() ]
-         });
 
-         var layer = new OpenLayers.Layer.WMTS({
-            requestEncoding: "REST",
-            name: "ch.swisstopo.pixelkarte-farbe",
-            url: ['http://wmts5.geo.admin.ch/wmts/','http://wmts6.geo.admin.ch/wmts/','http://wmts7.geo.admin.ch/wmts/','http://wmts8.geo.admin.ch/wmts/','http://wmts9.geo.admin.ch/wmts/'],
-            layer: "ch.swisstopo.pixelkarte-farbe",
-            matrixSet: "21781",
-            format: "image/jpeg",
-            style: "default",
-            dimensions: ['DATE'],
-            params: {DATE: '100617'},
-            isBaseLayer: true,
-            buffer: 0,
-            transitionEffect: 'resize',
-            formatSuffixMap: {
-               "image/png": "png",
-               "image/png8": "png",
-               "image/png24": "png",
-               "image/png32": "png",
-               "png": "png",
-               "image/jpeg": "jpeg",
-               "image/jpg": "jpg",
-               "jpeg": "jpeg",
-               "jpg": "jpg"
-            }
-         });
+       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
-         layers.push(layer);
+       var format = new OpenLayers.Format.WMTSCapabilities({
 
-         map.addLayers(layers);
+       });
 
-         map.setCenter(new OpenLayers.LonLat(lon, lat), zoom);
-      }
+
+       map = new OpenLayers.Map({
+           div: "mymap1",
+           projection: "EPSG:21781",
+           units: "m",
+           controls: [
+               new OpenLayers.Control.Navigation(),
+               new OpenLayers.Control.PanZoomBar(),
+               new OpenLayers.Control.ScaleLine({maxWidth: 120})
+           ],
+           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
+           resolutions: [650,500,250,100,50,20,10,5,2.5]
+       });
+
+       var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+       });
+
+
+       map.addLayers([voidLayer]);
+
+       OpenLayers.Request.GET({
+           url: "../../../wmts",
+           params: {
+               SERVICE: "WMTS",
+               VERSION: "1.0.0",
+               REQUEST: "GetCapabilities"
+           },
+           success: function(request) {
+               var doc = request.responseXML;
+               if (!doc || !doc.documentElement) {
+                   doc = request.responseText;
+               }
+
+               var capabilities = format.read(doc);
+
+
+               var layer = format.createLayer(capabilities, {
+                   layer: "ch.swisstopo.pixelkarte-farbe",
+                   matrixSet: "21781", //"Bgdi_lv03",
+                   format: "image/jpeg",
+                   opacity: 1.0,
+                   isBaseLayer: false,
+                   requestEncoding: "REST",
+                   style: "default" ,  // must be provided
+                   dimensions: ['TIME'],
+                   params: {'time': '2009'},
+                   formatSuffixMap: {
+                       "image/png": "png",
+                       "image/png8": "png",
+                       "image/png24": "png",
+                       "image/png32": "png",
+                       "png": "png",
+                       "image/jpeg": "jpeg",
+                       "image/jpg": "jpeg",
+                       "jpeg": "jpeg",
+                       "jpg": "jpeg"   // this one
+                   }
+
+               });
+               map.addLayer(layer);
+           },
+           failure: function() {
+               alert("Trouble getting capabilities doc");
+               OpenLayers.Console.error.apply(OpenLayers.Console, arguments);
+           }
+       });
+
+
+       //map.addControl(new OpenLayers.Control.MousePosition({element: $('coords')}));
+       map.setCenter(new OpenLayers.LonLat(600000, 200000), 13);
+   }
+   
+
+
    </script>
 
    <body onload="init();">
-     <script type="text/javascript" src="../../../loader.js"></script>
+     <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
    </body>
