@@ -1,5 +1,4 @@
 .. raw:: html
-
    <script language=javascript type='text/javascript'>
 
    function hidediv(div, showDiv, hideDiv) {
@@ -20,6 +19,8 @@
       document.getElementById(hideDiv).style.display = 'block';
    }
    </script>
+   <script type="text/javascript" src="../../../loader.js"> </script> 
+   
 
 SwissSearch: geocoding
 ----------------------
@@ -531,7 +532,7 @@ Usage Example
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../../wmts",
+           url: "../../data/wmts-getcapabilities.xml",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",
@@ -548,7 +549,7 @@ Usage Example
 
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
-                   matrixSet: "21781", //"Bgdi_lv03",
+                   matrixSet: "21781", // Only this one
                    format: "image/jpeg",
                    opacity: 1.0,
                    isBaseLayer: false,
@@ -556,20 +557,9 @@ Usage Example
                    style: "default" ,  // must be provided
                    dimensions: ['TIME'],
                    params: {'time': '2009'},
-                   formatSuffixMap: {
-                       "image/png": "png",
-                       "image/png8": "png",
-                       "image/png24": "png",
-                       "image/png32": "png",
-                       "png": "png",
-                       "image/jpeg": "jpeg",
-                       "image/jpg": "jpeg",
-                       "jpeg": "jpeg",
-                       "jpg": "jpeg"   // this one
-                   }
+                   formatSuffix: 'jpeg'
 
                });
-               console.log(layer);
                map.addLayer(layer);
            },
            failure: function() {
@@ -616,7 +606,7 @@ Usage Example
        } else {
            alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
        }
-   }
+   };
 
    function init() {
 
@@ -650,7 +640,7 @@ Usage Example
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../../wmts",
+           url: "../../data/wmts-getcapabilities.xml",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",
@@ -662,6 +652,7 @@ Usage Example
                    doc = request.responseText;
                }
 
+               if (!doc || doc.length <1) { alert("Trouble parsing the getCapabilities document"); return false;}
                var capabilities = format.read(doc);
 
                var layer = format.createLayer(capabilities, {
@@ -674,18 +665,7 @@ Usage Example
                    style: "default" ,  // must be provided
                    dimensions: ['TIME'],
                    params: {'time': '2009'},
-                   formatSuffixMap: {
-                       "image/png": "png",
-                       "image/png8": "png",
-                       "image/png24": "png",
-                       "image/png32": "png",
-                       "png": "png",
-                       "image/jpeg": "jpeg",
-                       "image/jpg": "jpeg",
-                       "jpeg": "jpeg",
-                       "jpg": "jpeg"   // this one
-                   }
-
+                   formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
            },
@@ -695,14 +675,12 @@ Usage Example
            }
        });
 
-       map.setCenter(new OpenLayers.LonLat(600000, 200000), 13);
+       map.setCenter(new OpenLayers.LonLat(650000, 180000), 2);
    }
    
-
 
    </script>
 
    <body onload="init();">
-       <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
-       <script type="text/javascript" src="../../../loader.js"></script>
+       <!-- <script type="text/javascript" src="../../../loader.js"></script>    -->
    </body>
