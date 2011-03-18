@@ -1,5 +1,6 @@
 .. raw:: html
-   <script language=javascript type='text/javascript'>
+
+   <script type="text/javascript">
 
    function hidediv(div, showDiv, hideDiv) {
       document.getElementById(div).style.visibility = 'hidden';
@@ -19,8 +20,7 @@
       document.getElementById(hideDiv).style.display = 'block';
    }
    </script>
-   <script type="text/javascript" src="../../../loader.js"> </script> 
-   
+
 
 SwissSearch: geocoding
 ----------------------
@@ -474,6 +474,7 @@ Usage Example
 .. raw:: html
 
    <body>
+      <script type="text/javascript" src="../../../loader.js"> </script>
       <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
       <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>  
    </body>
@@ -525,7 +526,15 @@ Usage Example
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               "http://wms.geo.admin.ch/", {
+                    'format':'jpeg',
+                    'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'
+                    },
+                    {'buffer':1,  
+                    isBaseLayer:true,
+                    singleTile: true,
+                    opacity:0.0,
+                    displayInLayerSwitcher: false
        });
 
 
@@ -575,7 +584,8 @@ Usage Example
 
    </script>
    <body onload="init();">
-      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">Click here to center the map at your current location</a>
+      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">
+                      Click here to center the map at your current location</a>
       <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
