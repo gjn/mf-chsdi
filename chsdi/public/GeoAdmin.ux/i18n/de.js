@@ -265,23 +265,27 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'mf.print.scale': 'Massstab',
     'mf.print.print.title': 'PDF',
     'mf.print.layout': 'Orientierung',
+    'mf.print.tooltip': 'Drucken',
 
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
+    'Permalink.tooltip': 'Permalink',
+    
 
     // Context Popup
     'Elevation': 'Höhe',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Zusatzfunktionen',
+    'AdvancedWindow.tooltip': 'Zusatzfunktionen',
 
     // Measure
     'Measure.title': 'Distanzmessung & Flächenmessung',
     'Measure.MeasureLength': 'Distanz',
     'Measure.MeasureArea': 'Fläche',
     'Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
-    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
-
+    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche',
+        
 });

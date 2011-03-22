@@ -264,17 +264,22 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'mf.print.scale': 'Scale',
     'mf.print.print.title': 'PDF',
     'mf.print.layout': 'Orientation',
+    'mf.print.tooltip': 'Print',
+
 
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
+    'Permalink.tooltip': 'Permalink',
 
     // Context Popup
     'Elevation': 'Elevation',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Advanced functions',
+    'AdvancedWindow.tooltip': 'Advanced functions',
+
 
     // Measure
     'Measure.title': 'Distance and surface measurement',

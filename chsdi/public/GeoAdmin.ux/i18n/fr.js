@@ -268,17 +268,21 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'mf.print.scale': 'Échelle',
     'mf.print.print.title': 'PDF',
     'mf.print.layout': 'Orientation',
+    'mf.print.tooltip': 'Imprimer',
+ 
 
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
+    'Permalink.tooltip': 'Permalink',
 
     // Context Popup
     'Elevation': 'Altitude',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Fonctions complémentaires',
+    'AdvancedWindow.tooltip': 'Fonctions complémentaires',
 
     // Measure
     'Measure.title': 'Mesure de distance & surface',

@@ -258,17 +258,20 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'mf.print.scale': 'Scala',
     'mf.print.print.title': 'PDF',                               
     'mf.print.layout': 'Orientamento',
+    'mf.print.tooltip': 'Stampa',
 
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
+    'Permalink.tooltip': 'Permalink',
 
     // Context Popup
     'Elevation': 'Elevazione',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Advanced functions',
+    'AdvancedWindow.tooltip': 'Advanced functions',
 
     // Measure
     'Measure.title': 'Distanzmessung & Flächenmessung',

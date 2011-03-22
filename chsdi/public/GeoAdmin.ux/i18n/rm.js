@@ -257,17 +257,20 @@ OpenLayers.Lang.rm = {
     'mf.print.scale': 'Scala',
     'mf.print.print.title': 'PDF',  
     'mf.print.layout': 'Layout',
+    'mf.print.tooltip': 'Stampar',
 
     //Permalink
     'Permalink.title': 'Permalink',
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
+    'Permalink.tooltip': 'Permalink',
 
     // Context Popup
     'Elevation': 'Autezza',
 
     // Advanced Windows
     'AdvancedWindow.title': 'Advanced functions',
+    'AdvancedWindow.tooltip': 'Advanced functions',
 
     // Measure
     'Measure.title': 'Distanzmessung & Flächenmessung',
