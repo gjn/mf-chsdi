@@ -260,3 +260,13 @@ class GeologischerAtlasPK(Base, Queryable):
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)
+
+class SwissmapOnlineWanderwege(Base, Queryable):
+ 	# view in a schema
+ 	__tablename__ = 'wanderwege_swissmap'
+ 	__table_args__ = ({'schema': 'karto', 'autoload': True})
+ 	__template__ = 'tooltips/swissmap_online_wanderwege.mako'
+ 	id = Column('nr', Integer, primary_key=True)
+ 	the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo-karto.wanderwege',SwissmapOnlineWanderwege)
