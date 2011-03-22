@@ -169,6 +169,20 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     overrides['lang' + OpenLayers.Lang.getCode()] = true;
                     Ext.apply(pages[0].customParams, overrides);
                 }
+            },
+            // Overrides GeoExt
+            download: function(url) {
+                if (this.fireEvent("beforedownload", this, url) !== false) {
+                    if (Ext.isOpera || Ext.isIE ) {
+                        // Make sure that Opera don't replace the content tab with
+                        // the pdf
+                        window.open(url);
+                    } else {
+                        // This avoids popup blockers for all other browsers
+                        window.location = url;
+                    }
+                }
+                this.fireEvent("print", this, url);
             }
         });
 
