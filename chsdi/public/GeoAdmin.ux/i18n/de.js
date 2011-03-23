@@ -286,6 +286,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureLength': 'Distanz',
     'Measure.MeasureArea': 'Fläche',
     'Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
-    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche',
+    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
         
 });
