@@ -696,6 +696,13 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.tamedia.schweizerfamilie-feuerstellen": {
+                name: OpenLayers.i18n("ch.tamedia.schweizerfamilie-feuerstellen"),
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
 			/*"ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
