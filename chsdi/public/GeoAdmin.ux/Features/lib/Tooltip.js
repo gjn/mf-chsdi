@@ -91,10 +91,13 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
             this.lastClick = bounds.getCenterLonLat();
 
+            var bigBounds = bounds.clone();
+            bigBounds = bigBounds.scale(3);
+
             this.params = {
                 lang: OpenLayers.Lang.getCode(),
                 layers: this.queryable.join(","),
-                bbox: bounds.toBBOX()
+                bbox: bigBounds.toBBOX()
             };
 
             Ext.ux.JSONP.request(this.url, {
