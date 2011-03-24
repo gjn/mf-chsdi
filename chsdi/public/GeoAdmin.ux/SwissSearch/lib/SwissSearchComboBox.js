@@ -5,6 +5,8 @@
  * @include OpenLayers/Lang.js
  *
  * @include proj4js/lib/defs/EPSG21781.js
+ * This is a workaround since Proj4JS doesn't support it (http://trac.osgeo.org/proj4js/ticket/55):
+ * @include Map/lib/EPSG2056.js
  */
 /** api: (define)
  *  module = GeoAdmin
@@ -16,7 +18,7 @@
  *  Sample code to swisssearch combo (see also :ref:`swiss-search`):
  *
  *  .. code-block:: javascript
- 
+
  *     var map4 = new GeoAdmin.Map("mymap4", {doZoomToMaxExtent: true});
  *     map4.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
  *     var swisssearch = new GeoAdmin.SwissSearchComboBox({
@@ -36,7 +38,7 @@
  *  :return:  ``GeoAdmin.SwissSearchComboBox``
  *
  *  Create a swiss search combo box
- */ 
+ */
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /** api: config[map]
@@ -93,9 +95,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             fields: ['label', 'service', 'bbox', 'objectorig']
         });
         this.tpl = new Ext.XTemplate(
-            '<tpl for="."><div class="x-combo-list-item {service}">',
-            '{label}',
-            '</div></tpl>').compile();
+                '<tpl for="."><div class="x-combo-list-item {service}">',
+                '{label}',
+                '</div></tpl>').compile();
 
         GeoAdmin.SwissSearchComboBox.superclass.initComponent.call(this);
 
@@ -104,8 +106,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     // private
-    onSelect: function(record, index){
-        if(this.fireEvent('beforeselect', this, record, index) !== false){
+    onSelect: function(record, index) {
+        if (this.fireEvent('beforeselect', this, record, index) !== false) {
             this.setValue(record.get('label').replace(/<[\/]?[^>]*>/g, ''));
             this.collapse();
             this.fireEvent('select', this, record, index);
@@ -125,11 +127,17 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             if (this.map.maxExtent.containsLonLat(position)) {
                 valid = true;
             } else {
-                // try to convert the position from EPSG:4326 to EPSG:21781
-                position = new OpenLayers.LonLat(left < right ? left : right, right > left ? right : left);
-                position.transform(new OpenLayers.Projection("EPSG:4326"), this.map.getProjectionObject());
+                // try to convert the position from EPSG:2056 to EPSG:21781
+                position.transform(new OpenLayers.Projection("EPSG:2056"), this.map.getProjectionObject());
                 if (this.map.maxExtent.containsLonLat(position)) {
                     valid = true;
+                } else {
+                    // try to convert the position from EPSG:4326 to EPSG:21781
+                    position = new OpenLayers.LonLat(left < right ? left : right, right > left ? right : left);
+                    position.transform(new OpenLayers.Projection("EPSG:4326"), this.map.getProjectionObject());
+                    if (this.map.maxExtent.containsLonLat(position)) {
+                        valid = true;
+                    }
                 }
             }
             if (valid) {

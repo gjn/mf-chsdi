@@ -20,6 +20,7 @@
  * @include Features/lib/Features.js
  *
  * @include proj4js/lib/defs/EPSG21781.js
+ * @include Map/lib/EPSG2056.js
  */
 
 /** api: (define)
