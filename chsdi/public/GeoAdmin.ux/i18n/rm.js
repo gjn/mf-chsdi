@@ -241,16 +241,16 @@ OpenLayers.Lang.rm = {
     'You can add only 5 layers in the layer tree.': 'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
 
     // Feedback
-    'Your email (optional)': 'Ihre Email (freiwillig)',
-    'Your feedback about current map extent': 'Ihr Bericht zu aktuellen Kartenausschnitt',
-    'Cancel': 'Abbrechen',
-    'Send feedback': 'Problem melden',
-    'Report': 'Problem Bericht',
+    'Your email (optional)': 'Vus emagl (facultativ):',
+    'Your feedback about current map extent': 'Rapport charta actual:',
+    'Cancel': 'Annular',
+    'Send feedback': 'Rapportar problem',
+    'Report': 'Rapportar un problem cun charta',
     'Sending feedback....': 'Bericht senden....',
-    'Thanks a lot for your feedback !': "Danke vielmals für Ihre Bericht !",
+    'Thanks a lot for your feedback !': "Grazia fitg per vus raport!",
     'Please fill the feedback': 'Bitte, füllen Sie den Bericht',
-    'The following URL will be transferred:': 'Diese URL is geschickt:',
-    'Success': 'Erfolgreich',
+    'The following URL will be transferred:': 'Trametter Link: ',
+    'Success': 'Raport trametteva cun success',
     'Error': 'Problem',
 
     //Print

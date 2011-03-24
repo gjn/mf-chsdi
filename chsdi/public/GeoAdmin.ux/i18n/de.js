@@ -249,16 +249,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'You can add only 5 layers in the layer tree.': 'Sie können nur 5 Layers in Layer Baum addieren.',
 
     // Feedback
-    'Your email (optional)': 'Ihre Email (freiwillig)',
-    'Your feedback about current map extent': 'Ihr Bericht zu aktuellen Kartenausschnitt',
+    'Your email (optional)': 'Ihre Email Adresse (freiwillig):',
+    'Your feedback about current map extent': 'Ihr Bericht zu aktuellen Kartenausschnitt:',
     'Cancel': 'Abbrechen',
-    'Send feedback': 'Problem melden',
-    'Report': 'Problem Bericht',
+    'Send feedback': 'Absenden',
+    'Report': 'Melden Sie ein Problem mit der Karte',
     'Sending feedback....': 'Bericht senden....',
-    'Thanks a lot for your feedback !': "Danke vielmals für Ihre Bericht !",
+    'Thanks a lot for your feedback !': "Danke vielmals für Ihre Meldung !",
     'Please fill the feedback': 'Bitte, füllen Sie den Bericht',
-    'The following URL will be transferred:': 'Diese URL is geschickt:',
-    'Success': 'Erfolgreich',
+    'The following URL will be transferred:': 'Der folgende Link wird übermittelt: ',
+    'Success': 'Bericht erfolgreich versendet',
     'Error': 'Problem',
     
     //Print

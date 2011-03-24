@@ -252,17 +252,17 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'You can add only 5 layers in the layer tree.': 'Vous ne pouvez ajouter que 5 couches dans l\'arbre des couches.',
 
     // Feedback
-    'Your email (optional)': 'Votre email (optionnel)',
-    'Your feedback about current map extent': 'Votre description du problème concernant la carte',
+    'Your email (optional)': 'Votre email (optionnel):',
+    'Your feedback about current map extent': 'Votre description du problème concernant la carte:',
     'Cancel': 'Annuler',
     'Send feedback': 'Annoncer le problème',
-    'Report': 'Annonce de problème',
+    'Report': 'Signaler un problème avec la carte',
     'Sending feedback....': 'Envoi du rapport....',
     'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
     'Please fill the feedback': 'Merci de remplir la description',
-    'The following URL will be transferred:': 'Cet URL est transféré:',
-    'Success': 'Succès',
-    'Error': 'Problème',
+    'The following URL will be transferred:': 'Cet URL est transféré: ',
+    'Success': 'Envoi effectué avec succès',
+    'Error': 'Problème lors de l\'envoi',
     
     //Print
     'mf.print.pdfReady': 'Le PDF vous attend',

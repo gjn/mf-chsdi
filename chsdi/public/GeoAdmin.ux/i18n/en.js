@@ -248,16 +248,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'You can add only 5 layers in the layer tree.': 'You can add only 5 layers in the layer tree.',
 
     // Feedback
-    'Your email (optional)': 'Your email (optional)',
-    'Your feedback about current map extent': 'Your report about current map extent',
+    'Your email (optional)': 'Your Email (not mandatory):',
+    'Your feedback about current map extent': 'Your report about current map extent:',
     'Cancel': 'Cancel',
-    'Send feedback': 'Send report',
-    'Report': 'Report',
+    'Send feedback': 'Send problem report',
+    'Report': 'Report a problem with the map',
     'Sending feedback....': 'Sending report....',
     'Thanks a lot for your feedback !': "Thanks a lot for your report !",
     'Please fill the feedback': 'Please fill the report',
-    'The following URL will be transferred:': 'The following URL will be transferred:',
-    'Success': 'Success',
+    'The following URL will be transferred:': 'The following URL will be transferred: ',
+    'Success': 'Report sent successfully',
     'Error': 'Error',
     
     //Print

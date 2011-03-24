@@ -242,17 +242,17 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'You can add only 5 layers in the layer tree.': 'Potete solamente aggiungere 5 strati di piani nell’albero dei piani.',
 
     // Feedback
-    'Your email (optional)': 'Votre email (optionnel)',
-    'Your feedback about current map extent': 'Votre description du problème concernant la carte',
-    'Cancel': 'Annuler',
-    'Send feedback': 'Annoncer le problème',
-    'Report': 'Annonce de problème',
-    'Sending feedback....': 'Envoi du rapport....',
-    'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
-    'Please fill the feedback': 'Merci de remplir la description',
-    'The following URL will be transferred:': 'Diese URL is geschickt:',
-    'Success': 'Erfolgreich',
-    'Error': 'Problem',
+    'Your email (optional)': 'La sua email (opzionale):',
+    'Your feedback about current map extent': 'La sua descrizione del problema concernente la cartina:',
+    'Cancel': 'Annullare',
+    'Send feedback': 'Inviare il rapporto',
+    'Report': 'Segnala un problema con la cartina',
+    'Sending feedback....': 'Invio del rapporto...',
+    'Thanks a lot for your feedback !': "Grazie mille per il suo rapporto !",
+    'Please fill the feedback': 'Prego riempia il formulario',
+    'The following URL will be transferred:': 'Il seguente URL verrá inviato: ',
+    'Success': 'Il rapporto è stato inviato',
+    'Error': 'Si è verificato un errore',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',
