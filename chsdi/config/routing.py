@@ -22,8 +22,8 @@ def make_map(config):
     map.resource('wmt', 'wmts')
     map.resource('publisher', 'publishers')
     map.resource('cmslayer', 'cmslayer')
+    #map.resource('feedback', 'feedback')
 
-    
     map.connect('/loader.js', controller='entry', action='loader')
     map.connect('/swisssearch', controller='swisssearch', action='index')
     map.connect('/swisssearch/geocoding', controller='swisssearch', action='index')
