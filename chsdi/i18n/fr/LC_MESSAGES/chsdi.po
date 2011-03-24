@@ -291,7 +291,7 @@ msgid "messstellentyp"
 msgstr "Type" 
 
 msgid "linkzurbeschreibung"
-msgstr "Description detaillée" 
+msgstr "Description détaillée" 
 
 msgid "oeffentlich"
 msgstr "Public" 

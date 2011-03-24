@@ -189,8 +189,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
 
     // Layer for astra
-    'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
-	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
+    'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',
+	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Circulation routière (principal)',
 
     // Datenherr
     'Data:': '(c) Dati: ',
