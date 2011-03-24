@@ -250,6 +250,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Sending feedback....': 'Envoi du rapport....',
     'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
     'Please fill the feedback': 'Merci de remplir la description',
+    'The following URL will be transferred:': 'Diese URL is geschickt:',
+    'Success': 'Erfolgreich',
+    'Error': 'Problem',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',

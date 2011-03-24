@@ -256,6 +256,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Sending feedback....': 'Sending report....',
     'Thanks a lot for your feedback !': "Thanks a lot for your report !",
     'Please fill the feedback': 'Please fill the report',
+    'The following URL will be transferred:': 'The following URL will be transferred:',
+    'Success': 'Success',
+    'Error': 'Error',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',

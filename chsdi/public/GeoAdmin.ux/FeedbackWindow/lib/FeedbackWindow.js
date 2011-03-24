@@ -5,6 +5,9 @@ Ext.namespace("GeoAdmin");
 GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
 
     initComponent : function() {
+        this.label = new Ext.form.Label({
+            html: ""
+        });
         this.panel = new Ext.FormPanel({
             labelAlign: 'top',
             frame:true,
@@ -22,7 +25,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     xtype:'textfield',
                                     fieldLabel: OpenLayers.i18n('Your email (optional)'),
                                     name: 'email',
-                                    anchor:'100%'
+                                    anchor:'100%',
+                                    vtype: 'email'
                                 },
                                 {
                                     xtype:'textarea',
@@ -32,10 +36,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     anchor:'100%',
                                     allowBlank: false
                                 },
-                                {
-                                    xtype:'label',
-                                    html:OpenLayers.i18n('The following URL will be transferred: <a href="') + this.getPermalink() + '" target="new">' + this.getPermalink() + '</a>'
-                                }
+                                this.label
                             ]
                         }
                     ]
@@ -68,10 +69,23 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
         Ext.applyIf(this, defConfig);
 
         GeoAdmin.FeedbackWindow.superclass.initComponent.call(this);
+
+        Ext.state.Manager.getProvider().on("statechange", this.onProviderStatechange, this);
+
     },
+
+    closeAction: 'hide',
+
+    listeners: {
+        beforeshow: function(window) {
+            window.onProviderStatechange();
+        }
+    },
+
     cancelAction: function() {
         this.hide();
     },
+
     sendAction: function() {
         this.panel.getForm().submit({
             url: this.url,
@@ -84,16 +98,18 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
             waitMsg: OpenLayers.i18n("Sending feedback....")
         });
     },
+
     onSuccess:function(form, action) {
-        Ext.Msg.show({
-            title:'Success',
+        Ext.MessageBox.show({
+            title:OpenLayers.i18n('Success'),
             msg: OpenLayers.i18n('Thanks a lot for your feedback !'),
             modal:true,
-            icon:Ext.Msg.INFO,
-            buttons:Ext.Msg.OK
+            icon:Ext.MessageBox.INFO,
+            buttons:Ext.MessageBox.OK
         });
         this.hide();
     },
+
     onFailure:function(form, action) {
         if (!this.panel.getForm().isValid()) {
             this.showError(OpenLayers.i18n('Please fill the feedback'));
@@ -108,18 +124,21 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
     },
 
     showError:function(msg, title) {
-        title = title || 'Error';
-        Ext.Msg.show({
+        title = title || OpenLayers.i18n('Error');
+        Ext.MessageBox.show({
             title:title,
             msg:msg,
             modal:true,
-            icon:Ext.Msg.ERROR,
-            buttons:Ext.Msg.OK
+            icon:Ext.MessageBox.ERROR,
+            buttons:Ext.MessageBox.OK
         });
     },
 
     getPermalink: function() {
-        return "blabla=tutu";
-    }
+        return Ext.state.Manager.getProvider().getLink();
+    },
 
+    onProviderStatechange: function(provider) {
+        this.label.setText(OpenLayers.i18n('The following URL will be transferred:') + '<a href="' + this.getPermalink() + '" target="new">' + this.getPermalink() + '</a>',false);
+    }
 });
