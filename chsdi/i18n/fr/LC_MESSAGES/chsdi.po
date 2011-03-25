@@ -203,6 +203,9 @@ msgstr "N°"
 msgid "plz"
 msgstr "NPA"
 
+msgid "ct"
+msgstr "Ct."
+
 msgid "ort"
 msgstr "Localité "
 

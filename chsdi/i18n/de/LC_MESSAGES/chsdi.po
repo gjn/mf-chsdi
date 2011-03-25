@@ -203,6 +203,9 @@ msgstr "Nr."
 msgid "plz"
 msgstr "PLZ"
 
+msgid "ct"
+msgstr "Kt."
+
 msgid "ort"
 msgstr "Ort"
 

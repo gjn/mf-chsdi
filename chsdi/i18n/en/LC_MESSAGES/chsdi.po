@@ -203,6 +203,9 @@ msgstr "Nr."
 msgid "plz"
 msgstr "Zip"
 
+msgid "ct"
+msgstr "Ct."
+
 msgid "ort"
 msgstr "Location"
 
