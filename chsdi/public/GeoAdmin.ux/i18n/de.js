@@ -249,8 +249,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'You can add only 5 layers in the layer tree.': 'Sie können nur 5 Layers in Layer Baum addieren.',
 
     // Feedback
-    'Your email (optional)': 'Ihre Email Adresse (freiwillig):',
-    'Your feedback about current map extent': 'Ihr Bericht zu aktuellen Kartenausschnitt:',
+    'Your email (optional)': 'Ihre Email Adresse (freiwillig)',
+    'Your feedback about current map extent': 'Ihr Bericht zu aktuellen Kartenausschnitt',
     'Cancel': 'Abbrechen',
     'Send feedback': 'Absenden',
     'Report': 'Melden Sie ein Problem mit der Karte',

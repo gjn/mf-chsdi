@@ -26,7 +26,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     fieldLabel: OpenLayers.i18n('Your email (optional)'),
                                     name: 'email',
                                     anchor:'100%',
-                                    vtype: 'email'
+                                    vtype: 'email',
+                                    tabIndex: 1
                                 },
                                 {
                                     xtype:'textarea',
@@ -34,7 +35,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     name: 'feedback',
                                     height: 60,
                                     anchor:'100%',
-                                    allowBlank: false
+                                    allowBlank: false,
+                                    tabIndex: 2
                                 },
                                 this.label
                             ]
@@ -46,13 +48,17 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
             buttons: [
                 {
                     text: OpenLayers.i18n('Cancel'),
+                    cls: 'feedbackWindowButton',
                     scope: this,
-                    handler: this.cancelAction
+                    handler: this.cancelAction,
+                    tabIndex: 4
                 },
                 {
                     text: OpenLayers.i18n('Send feedback'),
+                    cls: 'feedbackWindowButton',
                     scope: this,
-                    handler: this.sendAction
+                    handler: this.sendAction,
+                    tabIndex: 3
                 }
             ]
         });

@@ -241,8 +241,8 @@ OpenLayers.Lang.rm = {
     'You can add only 5 layers in the layer tree.': 'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
 
     // Feedback
-    'Your email (optional)': 'Vus emagl (facultativ):',
-    'Your feedback about current map extent': 'Rapport charta actual:',
+    'Your email (optional)': 'Vus emagl (facultativ)',
+    'Your feedback about current map extent': 'Rapport charta actual',
     'Cancel': 'Annular',
     'Send feedback': 'Rapportar problem',
     'Report': 'Rapportar un problem cun charta',

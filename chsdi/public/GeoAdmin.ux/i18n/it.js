@@ -242,8 +242,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'You can add only 5 layers in the layer tree.': 'Potete solamente aggiungere 5 strati di piani nell’albero dei piani.',
 
     // Feedback
-    'Your email (optional)': 'La sua email (opzionale):',
-    'Your feedback about current map extent': 'La sua descrizione del problema concernente la cartina:',
+    'Your email (optional)': 'La sua email (opzionale)',
+    'Your feedback about current map extent': 'La sua descrizione del problema concernente la cartina',
     'Cancel': 'Annullare',
     'Send feedback': 'Inviare il rapporto',
     'Report': 'Segnala un problema con la cartina',
