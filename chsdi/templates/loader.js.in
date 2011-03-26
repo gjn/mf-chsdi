@@ -6,8 +6,23 @@
         var idx = url.indexOf("//") + 2;
         return url.slice(0, idx) + url.slice(idx).replace(/\/\//g, "/");
     }
-
-    var scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
+    function getParamValue(param,url)
+    { 
+	var u = url == undefined ? document.location.href : url;
+	var reg = new RegExp('(\\?|&|^)'+param+'=(.*?)(&|$)');
+	matches = u.match(reg);
+	if (matches) {
+           return matches[2] != undefined ? decodeURIComponent(matches[2]).replace(/\+/g,' ') : '';
+        } else {
+           return null;
+        }
+    }
+    var scriptSrc = null;    
+    if (getParamValue("mode") && getParamValue("mode") == 'debug') {
+       scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-debug.js')}");
+    } else {
+       scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
+    }
     document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
 
     var OpenLayersImgPath = cleanup("${vars:host}/${api-version}$${url('/GeoAdmin.ux/Map/img/')}");

@@ -226,17 +226,37 @@ Where is the source code ?
 
 The source code of the GeoAdmin API project can be found here: https://svn.bgdi.admin.ch/mf-chsdi/trunk/chsdi/
 
+You can acess this repository with the readonly account (username/password): mapfish-reader/heleeshu
+
 The code of the API is accessible here: http://api.geo.admin.ch/main/wsgi/api/
 
 The code of the GeoAdmin widgets is accessible here: http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/
 
 The code of the base libraries is accessible here: http://api.geo.admin.ch/main/wsgi/lib/
 
+
 Can I use http://localhost to test my developments ?
 ----------------------------------------------------
 
 Yes, localhost can be used to test the developments. In all cases, you have to follow the terms of use: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
 
+How can I use the debug mode of the GeoAdmin API ?
+--------------------------------------------------
+
+Instead of calling the GeoAdmin API with:
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+
+Call it with:
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=debug"></script>
+
+In this case, the api code will be uncompressed and this simplifies the debugging process.
+   
 Migration from GeoAdmin API 1.0 to GeoAdmin API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
