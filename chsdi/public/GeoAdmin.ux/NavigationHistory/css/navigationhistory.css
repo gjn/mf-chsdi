@@ -3,6 +3,11 @@
     background-image: url("../img/navigationhistory.png") !important;
 }
 
+.navigationhistory_previous:hover,
+.navigationhistory_next:hover {
+    background-image: url("../img/navigationhistory_over.png") !important;
+}
+
 .navigationhistory_previous {
     background-position: 0 0 !important;
 }
