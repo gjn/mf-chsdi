@@ -93,7 +93,7 @@ msgid "layer_url_text"
 msgstr "Lien vers la description détaillée des données"
 
 msgid "layer_url_download_text"
-msgstr "Lien vers les données de référence"
+msgstr "Lien vers la distribution des données"
 
 msgid "layer_url_portal_text"
 msgstr "Lien vers le portail"
