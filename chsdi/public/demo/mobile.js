@@ -4,6 +4,31 @@ var pixelmap;
 var sm = new OpenLayers.Projection("EPSG:21781");
 var vector = new OpenLayers.Layer.Vector('vector');
 
+function checkIsInLayer(bounds) {
+               
+        Ext.util.JSONP.request({
+                url: 'http://api.geo.admin.ch/feature/search',
+                callbackKey: 'cb',
+                params: {
+                    bbox: bounds.toBBOX(),
+                    layers: 'ch.bafu.schutzgebiete-wildruhezonen',
+                    cb: 'Ext.ux.JSONP.callback',
+                    format: 'raw',
+                    no_geom: true
+                },
+                callback: function(data) {
+                    if(data.features.length > 0) {
+                         Ext.Msg.alert('Protected Area', 'You are in a protected area.', Ext.emptyFn);
+                         app.viewport.addCls('protected-area');
+                    } else {
+                        app.viewport.addCls('protected-area');
+                        app.viewport.removeClass('protected-area');
+                    }
+                }
+            });
+   
+ };
+ 
 var init = function () {
 
     var geolocate = new OpenLayers.Control.Geolocate({
@@ -15,6 +40,8 @@ var init = function () {
             timeout: 7000
         }
     });
+    
+ 
 
     geolocate.events.register("locationupdated", this, function(e) {
         vector.removeAllFeatures();
@@ -31,7 +58,7 @@ var init = function () {
             }
         )]);
         map.zoomToExtent(vector.getDataExtent());
-        
+        checkIsInLayer(vector.getDataExtent());
     });
 
     geolocate.activate();
