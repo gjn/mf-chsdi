@@ -1,171 +1,106 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<title>jQuery Mobile: Demos and Documentation</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
-	<style type="text/css">
-.ui-content {
-    padding: 0px;
-}
-    </style>
-    
-    <link rel="stylesheet" href="jquery.autocomplete.css" type="text/css" />
-
-
-	<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
-	<script type="text/javascript" src="jquery.autocomplete.js"></script>
-<script type="text/javascript"
-            src="http://c2c-rd-geospatial.demo-camptocamp.com/lib/openlayers/OpenLayers.mobile.min.js"></script>
-    <script type="text/javascript"
-            src="http://c2c-rd-geospatial.demo-camptocamp.com/lib/openlayers/lib/OpenLayers/Control/TouchNavigation.js"></script>
-    <script type="text/javascript"
-            src="http://c2c-rd-geospatial.demo-camptocamp.com/lib/openlayers/lib/OpenLayers/Handler/Click.js"></script>
-    <script type="text/javascript">
-        var map;
-        function init() {
-        	
-        	  // Set the height and width
-        	  var header = $.mobile.activePage.children("div[data-role='header']");
-    				var content = $.mobile.activePage.children("div[data-role='content']");
-    				var footer = $.mobile.activePage.children("div[data-role='footer']");
-    				var mapDiv = document.getElementById("map");
-    				mapHeight = $.mobile.activePage.innerHeight()
-        - header.outerHeight()
-        - content.outerHeight()
-        - footer.outerHeight();
-    				mapDiv.style.height =  mapHeight + "px";
-
-    				mapWidth = $.mobile.activePage.width()
-        - $.mobile.activePage.css('padding-left')
-        - $.mobile.activePage.css('padding-right');
-    				mapDiv.style.width =  mapWidth + "px";
-    				
-    				
-
-            map = new OpenLayers.Map({
-                div: "map",
-                maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
-                projection: new OpenLayers.Projection("EPSG:21781"),
-                units: "m",
-                resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
-                controls: [
-                    new OpenLayers.Control.TouchNavigation({
-                        dragPanOptions: {
-                            kineticDragging: true,
-                            autoActivate: true,
-                            interval: 0 // non-zero kills performance on some mobile phones
-                        }
-                    })
-                ]
-            });
-            var layer = new OpenLayers.Layer.TileCache("ch.swisstopo.pixelkarte-farbe",
-                    ['http://tile5.geo.admin.ch/geoadmin/',
-                        'http://tile6.geo.admin.ch/geoadmin/',
-                        'http://tile7.geo.admin.ch/geoadmin/',
-                        'http://tile8.geo.admin.ch/geoadmin/',
-                        'http://tile9.geo.admin.ch/geoadmin/'],
-                    "ch.swisstopo.pixelkarte-farbe",
-            {
-                projection: new OpenLayers.Projection('EPSG:21781'),
-                transitionEffect: 'resize',
-                units: 'm',
-                format: "image/jpeg",
-                serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-                    1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-                tileLoadingDelay: 125, // enable delayed tile loading for better performance,
-                buffer: 0
+    <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>GeoAdmin with Sencha Touch</title>
+        <script src="../lib/openlayers/lib/OpenLayers.js?mobile"></script>
+        <link rel="stylesheet" href="style.mobile.css" type="text/css">
+        <link rel="stylesheet" href="http://dev.sencha.com/deploy/touch/resources/css/sencha-touch.css">
+        <script src="http://dev.sencha.com/deploy/touch/sencha-touch.js"></script>
+        <script src="../lib/proj4js/proj4js/lib/proj4js-compressed.js"></script>
+        <script src="../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
+        <script src="geoadmin.js"></script>
+        <style>
+            .searchList {
+                min-height: 150px;
             }
-                    );
-            map.addLayer(layer);
-            map.setCenter(new OpenLayers.LonLat(600000, 200000), 5);
-        }
-    </script>
-    <script type="text/javascript">
-  $(document).ready(function() {
-	$("#city").autocomplete("http://api.geo.admin.ch/swisssearch/geocoding?", {
-		dataType: 'jsonp',
-		jsonp: 'cb',
-		parse: function(data) {
-			var rows = new Array();
-			data = data.results;
-			for(var i=0; i<data.length; i++){
-				rows[i] = { data:data[i], value:data[i].name, result:data[i].name };
-			}
-			return rows;
-		},
-		formatItem: function(row, i, n) {
-			return row.label;
-		},
+            .close-btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+            img.minus {
+                -webkit-mask-image: url(img/minus1.png);
+            }
+            img.layers {
+                -webkit-mask-image: url(img/list.png);
+            }
+            .gx-layer-item {
+                margin-left: 10px;
+            }
+            #map {
+                width: 100%;
+                height: 100%;
+            }
+            .olControlAttribution {
+                font-size: 10px;
+                bottom: 5px;
+                right: 5px;
+            }
+            #title, #tags, #shortdesc {
+                display: none;
+            }
+        </style>
+        <script>
 
-		extraParams: {
-			// geonames doesn't support q and limit, which are the autocomplete plugin defaults, so let's blank them out.
-			q: '',
-			limit: '',
-			query: function () { return $("#city").val() }
-		}
-	}); 
-	$('#city').result(function(event, data, formatted) {
-		var extent = OpenLayers.Bounds.fromArray(data.bbox);
-        var zoom = {
-        'LK500': 4,
-        'LK200': 5,
-        'LK100': 6,
-        'LK50' : 7,
-        'LK25' : 8
-    }[data.objectorig];
-
-
-
-        if (zoom === undefined) {
-            map.zoomToExtent(extent);
-        } else {
-            map.setCenter(extent.getCenterLonLat(), zoom);
-        }
-});
-
-
-     
-  });
-</script>
-
-
-</head> 
-<body  onload='init();'>
-	
-	<div data-role="page" id="mapPage">
-
-	<div data-role="header">
-		<h1>Map</h1><a href="#layerPage">Select layers</a>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<div id="map"></div>
-        <input id="city" name="city" style="position:absolute; width:250px; top:50px; left: 5px; z-index: 1000;">
-		
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Copyrights: Swisstopo</h4>
-	</div><!-- /header -->
-</div><!-- /page -->
-
-<!-- Start of second page -->
-<div data-role="page" id="layerPage">
-
-	<div data-role="header">
-		<h1>Layer Selector</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<p><a href="#mapPage">Back to map page</a></p>	
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Layer footer</h4>
-	</div><!-- /header -->
-</div><!-- /page --> 
-
-</body>
+        var app = new Ext.Application({
+            name: "ol",
+            launch: function() {
+                this.viewport = new Ext.Panel({
+                    fullscreen: true,
+                    dockedItems: [{
+                        dock: "top",
+                        xtype: "toolbar",
+                        ui: "light",
+                        layout: {
+                            pack: "center"
+                        },
+                        items: [{
+                            xtype: "spacer"
+                        }, {
+                            iconMask: true,
+                            iconCls: "add",
+                            handler: function() {
+                                map.zoomIn();
+                            }
+                        }, {
+                            iconMask: true,
+                            iconCls: "minus",
+                            handler: function() {
+                                map.zoomOut();
+                            }
+                        }]
+                    }],
+                    items: [
+                        {
+                            xtype: "component",
+                            scroll: false,
+                            monitorResize: true,
+                            id: "map",
+                            listeners: {
+                                render: init,
+                                resize: function() {
+                                    if (window.map) {
+                                        map.updateSize();
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                });
+            }
+        });
+        </script>
+    </head>
+    <body>
+        <h1 id="title">GeoAdmin</h1>
+        <div id="tags">
+            mobile, sencha touch, geoadmin
+        </div>
+        <p id="shortdesc">
+            Example of GeoAdmin Usage.
+        </p>
+    </body>
 </html>
