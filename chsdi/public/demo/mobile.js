@@ -22,7 +22,7 @@ function checkIsInLayer(bounds) {
                          app.viewport.addCls('protected-area');
                     } else {
                         app.viewport.addCls('protected-area');
-                        app.viewport.removeClass('protected-area');
+                        app.viewport.removeCls('protected-area');
                     }
                 }
             });

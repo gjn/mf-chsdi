@@ -1,78 +1,114 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>GeoAdmin with Sencha Touch</title>
-        <script src="../build/mobile.js"></script>
-        <link rel="stylesheet" href="../build/mobile.css" type="text/css">
-        <script src="mobile.js"></script>
+<head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>GeoAdmin with Sencha Touch</title>
+    <script src="../build/mobile.js"></script>
+    <link rel="stylesheet" href="../build/mobile.css" type="text/css">
+    <script src="mobile.js"></script>
 
-        <link rel="stylesheet" href="style.mobile.css" type="text/css">
-        <style>
-            .searchList {
-                min-height: 150px;
-            }
-            .close-btn {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-            }
-            img.minus {
-                -webkit-mask-image: url(img/minus1.png);
-            }
-            img.layers {
-                -webkit-mask-image: url(img/list.png);
-            }
-            .gx-layer-item {
-                margin-left: 10px;
-            }
-            #map {
-                width: 100%;
-                height: 100%;
-            }
-            .olControlAttribution {
-                font-size: 10px;
-                bottom: 5px;
-                right: 5px;
-            }
-            #title, #tags, #shortdesc {
-                display: none;
-            }
-            .protected-area {
-            }
-        </style>
-        <script>
+    <link rel="stylesheet" href="style.mobile.css" type="text/css">
+    <style>
+        .searchList {
+            min-height: 150px;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        img.minus {
+            -webkit-mask-image: url(img/minus1.png);
+        }
+
+        img.layers {
+            -webkit-mask-image: url(img/list.png);
+        }
+
+        img.swiss {
+            background-image: url(img/swiss.png);
+        }
+
+        .gx-layer-item {
+            margin-left: 10px;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .olControlAttribution {
+            font-size: 10px;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        #title, #tags, #shortdesc {
+            display: none;
+        }
+
+        .protected-area {
+        }
+    </style>
+    <script>
 
         var app = new Ext.Application({
             name: "ol",
             launch: function() {
                 this.viewport = new Ext.Panel({
                     fullscreen: true,
-                    dockedItems: [{
-                        dock: "top",
-                        xtype: "toolbar",
-                        ui: "light",
-                        layout: {
-                            pack: "center"
-                        },
-                        items: [{
-                            xtype: "spacer"
-                        }, {
-                            iconMask: true,
-                            iconCls: "add",
-                            handler: function() {
-                                map.zoomIn();
-                            }
-                        }, {
-                            iconMask: true,
-                            iconCls: "minus",
-                            handler: function() {
-                                map.zoomOut();
-                            }
-                        }]
-                    }],
+                    dockedItems: [
+                        {
+                            dock: "top",
+                            xtype: "toolbar",
+                            ui: "light",
+                            title: "GeoAdmin Mobile (Demo!)",
+                            layout: {
+                                pack: "center"
+                            },
+                            items: [
+                                {
+                                    xtype: "component",
+                                    html: '<img src="img/swiss.png" height="38" width="42" />'
+                                },
+                                {
+                                    iconMask: true,
+                                    iconCls: "layers"
+                                },
+                                {
+                                    xtype: "spacer"
+                                },
+                                {
+                                    iconMask: true,
+                                    iconCls: "add",
+                                    handler: function() {
+                                        map.zoomIn();
+                                    }
+                                },
+                                {
+                                    iconMask: true,
+                                    iconCls: "minus",
+                                    handler: function() {
+                                        map.zoomOut();
+                                    }
+                                },
+                                {
+                                    iconMask: true,
+                                    title: 'About',
+                                    iconCls: 'info',
+                                    handler: function() {
+                                        Ext.Msg.alert('About', 'The is a demo application. More info <a href="mailto:webgis@swisstopo.ch">webgis@swisstopo.ch</a>.', Ext.emptyFn);
+
+                                    }
+                                }
+                            ]
+                        }
+                    ],
                     items: [
                         {
                             xtype: "component",
@@ -92,15 +128,16 @@
                 });
             }
         });
-        </script>
-    </head>
-    <body>
-        <h1 id="title">Mobile GeoAdmin: Are you in a protected area ?</h1>
-        <div id="tags">
-            mobile, sencha touch, geoadmin, protected areas
-        </div>
-        <p id="shortdesc">
-            Very small mockup for mobile GeoAdmin.
-        </p>
-    </body>
+    </script>
+</head>
+<body>
+<h1 id="title">Mobile GeoAdmin: Are you in a protected area ?</h1>
+
+<div id="tags">
+    mobile, sencha touch, geoadmin, protected areas
+</div>
+<p id="shortdesc">
+    Very small mockup for mobile GeoAdmin.
+</p>
+</body>
 </html>
