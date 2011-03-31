@@ -4,7 +4,7 @@ var pixelmap;
 var wmts;
 var sm =  new OpenLayers.Projection("EPSG:21781");
 var vector = new OpenLayers.Layer.Vector('vector');
-var initial_zoom_level = 1;
+var initial_zoom_level = 0;
 var LAYER_NAME = 'ch.bafu.schutzgebiete-wildruhezonen';
 
 
@@ -32,11 +32,15 @@ function checkIsInLayer(bounds) {
                 },
                 callback: function(data) {
                     if(data.features.length > 0) {
-                         Ext.Msg.alert('Protected Area', 'You are in a protected area.', Ext.emptyFn);
-                         app.viewport.addCls('protected-area');
+                         if (!map.inProtectedArea) {
+                            Ext.Msg.alert('Protected Area', 'You are in a protected area.', Ext.emptyFn);
+                         }
+                         map.inProtectedArea = true;
                     } else {
-                        app.viewport.addCls('protected-area');
-                        app.viewport.removeCls('protected-area');
+                         if (map.inProtectedArea) {
+                              Ext.Msg.alert('Protected Area', 'You are leaving a protected area.', Ext.emptyFn);
+                         }
+                         map.inProtectedArea = false;
                     }
                 }
             });
@@ -49,9 +53,9 @@ var init = function () {
         id: 'locate-control',
         watch: true,
         geolocationOptions: {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-            timeout: 7000
+            enableHighAccuracy: false,
+            maximumAge: 2000,
+            //timeout: 7000
         }
     });
     
@@ -72,10 +76,8 @@ var init = function () {
             }
         )]);
         map.setCenter(vector.getDataExtent().getCenterLonLat());
-        if (map.zoom == initial_zool_level) {
-             map.zoomTo(14);
-        }
-
+        if (map.zoom == initial_zoom_level)
+            map.zoomTo(9);
         checkIsInLayer(vector.getDataExtent());
     });
 
@@ -126,6 +128,7 @@ var init = function () {
 
     // create map
     map = new OpenLayers.Map({
+        inProtectedArea: true,
         div: "map",
         theme: null,
         projection: sm,
