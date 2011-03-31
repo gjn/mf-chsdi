@@ -19,8 +19,8 @@ for (var m in matrixDefs) {
 };
 
 function checkIsInLayer(bounds) {
-               
-        Ext.util.JSONP.request({
+        
+         Ext.util.JSONP.request({
                 url: 'http://api.geo.admin.ch/feature/search',
                 callbackKey: 'cb',
                 params: {
@@ -32,15 +32,13 @@ function checkIsInLayer(bounds) {
                 },
                 callback: function(data) {
                     if(data.features.length > 0) {
-                         if (!map.inProtectedArea) {
-                            Ext.Msg.alert('Protected Area', 'You are in a protected area.', Ext.emptyFn);
-                         }
-                         map.inProtectedArea = true;
+                              var warning = Ext.getCmp('warning');
+                              warning.title = "In a protected area";
+                              warning.ui = 'dark';
                     } else {
-                         if (map.inProtectedArea) {
-                              Ext.Msg.alert('Protected Area', 'You are leaving a protected area.', Ext.emptyFn);
-                         }
-                         map.inProtectedArea = false;
+                              var warning = Ext.getCmp('warning');
+                              warning.title = "Not in a protected area";
+                              warning.ui = 'light';
                     }
                 }
             });
@@ -54,7 +52,7 @@ var init = function () {
         watch: true,
         geolocationOptions: {
             enableHighAccuracy: false,
-            maximumAge: 2000,
+            maximumAge: 100000
             //timeout: 7000
         }
     });
