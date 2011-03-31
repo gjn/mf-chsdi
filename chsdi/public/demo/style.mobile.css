@@ -23,3 +23,6 @@ div.olControlZoomPanel .olControlZoomOutItemInactive {
     top: 72px;
     background-position: 0 -72px;
 }
+.olImageLoadError {
+   opacity: 0;
+}

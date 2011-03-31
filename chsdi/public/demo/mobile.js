@@ -1,8 +1,22 @@
 // initialize map when page ready
 var map;
 var pixelmap;
-var sm = new OpenLayers.Projection("EPSG:21781");
+var wmts;
+var sm =  new OpenLayers.Projection("EPSG:21781");
 var vector = new OpenLayers.Layer.Vector('vector');
+var initial_zoom_level = 1;
+var LAYER_NAME = 'ch.bafu.schutzgebiete-wildruhezonen';
+
+
+var matrixIds = [];
+for (var m in matrixDefs) {
+    var def = matrixDefs[m];
+    var matrix = {};
+    matrix.identifier = m;
+    matrix.scaleDenominator = def.scaleDenominator;
+    matrix.topLeftCorner =  new OpenLayers.LonLat(def.topLeftCorner[0], def.topLeftCorner[1]);
+    matrixIds.push(matrix);          
+};
 
 function checkIsInLayer(bounds) {
                
@@ -11,7 +25,7 @@ function checkIsInLayer(bounds) {
                 callbackKey: 'cb',
                 params: {
                     bbox: bounds.toBBOX(),
-                    layers: 'ch.bafu.schutzgebiete-wildruhezonen',
+                    layers: LAYER_NAME,
                     cb: 'Ext.ux.JSONP.callback',
                     format: 'raw',
                     no_geom: true
@@ -57,7 +71,11 @@ var init = function () {
                 pointRadius: 10
             }
         )]);
-        map.zoomToExtent(vector.getDataExtent());
+        map.setCenter(vector.getDataExtent().getCenterLonLat());
+        if (map.zoom == initial_zool_level) {
+             map.zoomTo(14);
+        }
+
         checkIsInLayer(vector.getDataExtent());
     });
 
@@ -73,15 +91,38 @@ var init = function () {
         buffer: 0,
         opacity: 1.0
     };
+    var wmts_options = {
+        url: "http://api.geo.admin.ch/wmts",
+        matrixSet: "21781",
+        matrixIds: matrixIds,
+        style: "default",
+        opacity: 1.0,
+        isBaseLayer: true,
+        formatSuffix: 'jpeg',
+        requestEncoding: "REST",
+        dimensions: ['TIME'],
+        params: {'time': '20110314'}
+    };
 
-    var url = [
-        'http://tile5.geo.admin.ch/geoadmin/',
-        'http://tile6.geo.admin.ch/geoadmin/',
-        'http://tile7.geo.admin.ch/geoadmin/',
-        'http://tile8.geo.admin.ch/geoadmin/',
-        'http://tile9.geo.admin.ch/geoadmin/'
-    ];
-    pixelmap = new OpenLayers.Layer.TileCache("ch.swisstopo.pixelkarte-farbe", url, "ch.swisstopo.pixelkarte-farbe", layer_options);
+    var protectedArea = new OpenLayers.Layer.WMTS(Ext.applyIf(
+        {name: 'Wildruhe',
+        layer: LAYER_NAME,
+        isBaseLayer: false,
+        formatSuffix: 'png',
+        attribution: 'BAFU'}, 
+        wmts_options));
+
+
+    var wmts = new OpenLayers.Layer.WMTS( Ext.applyIf({
+        name: "Pixelkarte (WMTS - controller)",
+        layer: "ch.swisstopo.pixelkarte-farbe",
+        format: "image/jpeg",
+        style: "default",
+        opacity: 1.0,
+        isBaseLayer: true,
+        formatSuffix: 'jpeg',
+        attribution: 'swisstopo'
+    }, wmts_options)); 
 
     // create map
     map = new OpenLayers.Map({
@@ -93,6 +134,7 @@ var init = function () {
         resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
         controls: [
             new OpenLayers.Control.Attribution(),
+            new OpenLayers.Control.ScaleLine({maxWidth: 120}),
             new OpenLayers.Control.TouchNavigation({
                 dragPanOptions: {
                     interval: 100,
@@ -102,11 +144,12 @@ var init = function () {
             geolocate
         ],
         layers: [
-            pixelmap,
+            wmts,
+            protectedArea,
             vector
         ],
         center: new OpenLayers.LonLat(600000, 200000),
-        zoom: 1
+        zoom: initial_zoom_level
     });
     map.zoomToMaxExtent();
 };
