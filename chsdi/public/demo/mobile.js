@@ -20,29 +20,59 @@ for (var m in matrixDefs) {
 
 function checkIsInLayer(bounds) {
 
-    Ext.util.JSONP.request({
-        url: 'http://api.geo.admin.ch/feature/search',
-        callbackKey: 'cb',
-        params: {
-            bbox: bounds.toBBOX(),
-            layers: LAYER_NAME,
-            cb: 'Ext.ux.JSONP.callback',
-            format: 'raw',
-            no_geom: true
-        },
-        callback: function(data) {
-            var warning;
-            if (data.features.length > 0) {
-                warning = Ext.getCmp('warning');
-                warning.title = "In a protected area";
-                warning.ui = 'dark';
-            } else {
-                warning = Ext.getCmp('warning');
-                warning.title = "Not in a protected area";
-                warning.ui = 'light';
+    // Support protection (default) or city
+    var mode = OpenLayers.Util.getParameters(window.location.href).mode;
+    mode = (mode) ? mode : "protection";
+
+    if (mode === "protection") {
+        Ext.util.JSONP.request({
+            url: 'http://api.geo.admin.ch/feature/search',
+            callbackKey: 'cb',
+            params: {
+                bbox: bounds.toBBOX(),
+                layers: LAYER_NAME,
+                cb: 'Ext.ux.JSONP.callback',
+                format: 'raw',
+                no_geom: true
+            },
+            callback: function(data) {
+                var warning;
+                if (data.features.length > 0) {
+                    warning = Ext.getCmp('warning');
+                    warning.setTitle("In a protected area");
+                    warning.ui = 'dark';
+                } else {
+                    warning = Ext.getCmp('warning');
+                    warning.setTitle("Not in a protected area");
+                    warning.ui = 'light';
+                }
             }
-        }
-    });
+        });
+    }
+    if (mode === "city") {
+        Ext.util.JSONP.request({
+            url: 'http://api.geo.admin.ch/swisssearch/reversegeocoding',
+            callbackKey: 'cb',
+            params: {
+                easting: bounds.getCenterLonLat().lon,
+                northing: bounds.getCenterLonLat().lat,
+                cb: 'Ext.ux.JSONP.callback'
+            },
+            callback: function(data) {
+                var warning;
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    var warning;
+                    if (data[i].service === 'cities') {
+                       warning = Ext.getCmp('warning');
+                       warning.setTitle("You are in: " + data[i].label); 
+                       warning.ui = 'light';
+                       break;
+                    }
+                }
+            }
+        });
+    }
 
 }
 
@@ -155,3 +185,5 @@ var init = function () {
     });
     map.zoomToMaxExtent();
 };
+
+
