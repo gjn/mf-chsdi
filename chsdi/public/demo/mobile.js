@@ -62,12 +62,11 @@ function checkIsInLayer(bounds) {
                 var warning;
                 console.log(data);
                 for (var i = 0; i < data.length; i++) {
-                    var warning;
                     if (data[i].service === 'cities') {
-                       warning = Ext.getCmp('warning');
-                       warning.setTitle("You are in: " + data[i].label); 
-                       warning.ui = 'light';
-                       break;
+                        warning = Ext.getCmp('warning');
+                        warning.setTitle("You are in: " + data[i].label);
+                        warning.ui = 'light';
+                        break;
                     }
                 }
             }
