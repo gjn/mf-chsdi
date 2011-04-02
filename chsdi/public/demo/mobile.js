@@ -60,7 +60,6 @@ function checkIsInLayer(bounds) {
             },
             callback: function(data) {
                 var warning;
-                console.log(data);
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].service === 'cities') {
                         warning = Ext.getCmp('warning');
