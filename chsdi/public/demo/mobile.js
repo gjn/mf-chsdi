@@ -70,7 +70,7 @@ var init = function () {
                 strokeColor: '#f00',
                 strokeWidth: 2,
                 fillOpacity: 0,
-                pointRadius: 10
+                pointRadius: e.position.coords.accuracy
             }
                     )]);
         map.setCenter(vector.getDataExtent().getCenterLonLat());
