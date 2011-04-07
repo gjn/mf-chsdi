@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Demo Meteoswiss and KML</title>
+    <meta charset="utf-8"/>
+<head><script type="text/javascript">
+//Create a global api variable to simplify debugging
+var api;
+
+//init function is started when page onload event is triggered
+function init() {
+    OpenLayers.ProxyHost = "/ogcproxy?url=";
+
+   //Create an instance of the GeoAdmin API
+   api = new GeoAdmin.API();
+
+   //Create a GeoExt map panel placed in the mymap div
+   api.createMapPanel({
+      renderTo: "mymap",
+      height: 500
+   });
+
+   //The complementary layer is the pixelmap. The Swissimage is place below the pixelmap.
+   api.map.complementaryLayer.setOpacity(0);
+
+   //Add KML layer in the map
+   var kmlLayer = api.createKmlLayer('../doc/data/swissmetnet.kml',true);
+
+   //Recenter the map and define a zoom level
+   api.map.setCenter(new OpenLayers.LonLat(660000,190000),0);
+}
+window.onload = init;
+</script></head>
+<body>
+  <h1>Binding KML</h1>
+  <div id="mymap" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
+  <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+</body> 
+</html>
