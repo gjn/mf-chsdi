@@ -18,7 +18,9 @@
         }
     }
     var scriptSrc = null;    
-    if (getParamValue("mode") && getParamValue("mode") == 'debug') {
+    var theseScripts = document.getElementsByTagName("script");
+    var thisScriptTag = theseScripts[ theseScripts.length - 1 ];
+    if (getParamValue("mode",thisScriptTag.src) && getParamValue("mode",thisScriptTag.src) == 'debug') {
        scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-debug.js')}");
     } else {
        scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
