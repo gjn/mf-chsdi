@@ -260,8 +260,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         // recenter to feature
         if (state.recenter) {
-            var f = new GeoAdmin.Features({map: this});
-            f.show(state.recenter.layername, state.recenter.id);
+            for (layer in GeoAdmin.layers.layers) {
+                if (layer == state.recenter.layername) {
+                    var f = new GeoAdmin.Features({map: this});
+                    f.show(state.recenter.layername, state.recenter.id);   
+                }
+            }
+
         }
     },
     /** api: method[destroy]
