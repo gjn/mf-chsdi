@@ -155,7 +155,7 @@ are from `Canton Neuchatel  <http://www.ne.ch/sitn>`_, with geoadmin's moore lan
            api14.map.addLayer(wms);
 
            api14.map.addLayerByName('ch.bafu.bundesinventare-moorlandschaften', {opacity: 0.6});
-           api14.map.zoomToxExtent(new OpenLayers.Bounds.fromString(536000,203000,538000,204000));
+           api14.map.zoomToExtent(new OpenLayers.Bounds.fromString('536000,203000,538000,204000'));
           
        }
    </script>
