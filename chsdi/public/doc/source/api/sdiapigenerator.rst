@@ -281,7 +281,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         var panel = document.getElementById("mypanel");
         if (Ext.isIE) {
             if (panel.childNodes.length < 1) {
-                var txt = document.createTextNode(" Sorry, but Internet Explorer has difficulty to support correctly iframe.... please use a modern browser like Firefox. No preview available.");
+                var txt = document.createTextNode(" Sorry, but Internet Explorer has difficulty to support correctly iframe.... You can use Firefox. No preview available.");
                 panel.appendChild(txt);
             }
         } else {
@@ -362,7 +362,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         zoom = 0;
 
         if (Ext.isIE) {
-            document.getElementById("code").innerHTML = "Sorry, but Internet Explorer doesn't support the source code editor.... please use a modern browser like Firefox. ";
+            document.getElementById("code").innerHTML = "Sorry, but Internet Explorer doesn't support the source code editor.... You can use Firefox. ";
             document.getElementById("runCode").style.display='none';
             document.getElementById("publisher1").style.display='none';
         } else {
