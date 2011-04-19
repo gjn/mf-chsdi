@@ -25,7 +25,7 @@ class GG25(Base, Queryable):
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/gg25.mako'
     id = Column(Integer, primary_key=True)
-    the_geom = Column(Geometry)
+    the_geom = Column('the_geom_gen50', Geometry)
 
 register('ch.swisstopo.gg25-gemeinde-flaeche.fill', GG25)
 
