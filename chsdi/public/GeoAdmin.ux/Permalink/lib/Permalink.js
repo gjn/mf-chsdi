@@ -60,7 +60,7 @@ GeoAdmin.Permalink = Ext.extend(Ext.Action, {
             iconCls: 'permalink',
             text: OpenLayers.i18n('Permalink'),
             handler: function() {
-                permalinkWindow.show()
+                permalinkWindow.show();
             }
         }, config);
 

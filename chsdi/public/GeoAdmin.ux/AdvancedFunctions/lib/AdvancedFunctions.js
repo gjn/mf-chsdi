@@ -26,7 +26,7 @@ GeoAdmin.AdvancedFunctions = Ext.extend(Ext.Action, {
             cls: 'x-btn-no-over',
             iconAlign: 'right',
             handler: function() {
-                advancedWindow.show()
+                advancedWindow.show();
             }
         }, config);
 

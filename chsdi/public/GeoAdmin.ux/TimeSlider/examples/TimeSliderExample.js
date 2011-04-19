@@ -13,6 +13,5 @@ Ext.onReady(function() {
             [2000, 'ch.swisstopo.pixelkarte-grau'],
             [2010, 'ch.swisstopo.pixelkarte-farbe']        
         ]
-    })
-
+    });
 });

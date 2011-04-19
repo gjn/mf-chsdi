@@ -190,7 +190,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         // the print interface.
         this.printProvider.on({
             "loadcapabilities": function() {
-                this.capabilitiesLoaded = true
+                this.capabilitiesLoaded = true;
             },
             scope: this
         });
