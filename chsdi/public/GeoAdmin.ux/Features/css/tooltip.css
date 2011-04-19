@@ -30,3 +30,8 @@
 .feature-popup .gx-popup-anc {
     display: none;
 }
+
+.ext-ie .gx-popup .x-window-body {
+  height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
+  max-height: 280px !important;
+}
