@@ -809,6 +809,14 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.blw",
                 queryable: false
+            },
+            "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
+                name: OpenLayers.i18n("ch.ensi.zonenplan-notfallschutz-kernanlagen"),
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.ensi",
+                opacity: 0.6,
+                queryable: true
             }
         };
         return this.layers;

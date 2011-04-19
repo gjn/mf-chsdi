@@ -344,6 +344,15 @@ msgstr "Historischer Verlauf mit Substanz"
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"
 
+msgid "kkw"
+msgstr "KKW"
+
+msgid "sektor"
+msgstr "Sektor"
+
+msgid "zone"
+msgstr "Zone"
+
 
 # are2 translations
 

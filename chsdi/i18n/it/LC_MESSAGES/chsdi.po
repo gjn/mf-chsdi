@@ -344,6 +344,15 @@ msgstr "sostanza"
 msgid "wenig_sub"
 msgstr "tracciato storico"
 
+msgid "kkw"
+msgstr "Centrale nucleare"
+
+msgid "sektor"
+msgstr "Settore"
+
+msgid "zone"
+msgstr "Zona"
+
 # are2 translations
 
 msgid "belastung_personen"

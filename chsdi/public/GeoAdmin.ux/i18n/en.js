@@ -81,7 +81,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Höhe': 'Elevation',
     'Bodenbedeckung': 'Land cover',
     'Luft und Satellitenbilder': 'Orthoimagery',
-    'Raum und Bevölkerung': 'Raum und Bevölkerung',
+    'Raum und Bevölkerung': 'Area and population',
     'Gesundheit une Sicherheit': 'Human health and safety',
     'Bevölkerungsdichte': 'Population distribution - demography',
     'Raumplanung': 'Geregelte Gebiete und Berichterstattungseinheiten',
@@ -198,6 +198,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
+    //Layer for ensi
+    'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Zonenpläne für den Notfallschutz',
+
     // Datenherr
     'Data:': '(c) Data: ',
     'ch.swisstopo': 'swisstopo',
@@ -209,6 +212,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.are': 'ARE',
     'ch.babs': 'UFPP',
     'ch.astra': 'FEDRO',
+    'ch.ensi': 'ENSI',
 
     //url
     'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html',

@@ -696,8 +696,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                      }*/
                 ]
             },
-
-            /*{
+            {
              text: OpenLayers.i18n('Raum und Bevölkerung'),
              cls: 'nodeLT1',
              singleClickExpand: true,
@@ -707,8 +706,19 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
              text: ' ' + OpenLayers.i18n('Gesundheit une Sicherheit'),
              cls: 'nodeLT2',
              singleClickExpand: true,
-             id: "LT2_11"
-             },
+             id: "LT2_11",
+             children: [
+                            {
+                                text: this.addtreeLayerLink("ch.ensi.zonenplan-notfallschutz-kernanlagen", "node_ch.ensi.zonenplan-notfallschutz-kernanlagen") + ' ' + this.layers["ch.ensi.zonenplan-notfallschutz-kernanlagen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.ensi.zonenplan-notfallschutz-kernanlagen"
+                            }
+                     ]
+             }]
+            },     
+             /*
              {
              text: ' ' + OpenLayers.i18n('Bevölkerungsdichte'),
              cls: 'nodeLT2',

@@ -198,6 +198,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
+    //Layer for ensi
+    'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Zonenpläne für den Notfallschutz',
+
 
     // Datenherr
     'Data:': '(c) Daten: ',
@@ -210,6 +213,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.are': 'ARE',
     'ch.babs': 'BABS',
     'ch.astra': 'ASTRA',
+    'ch.ensi': 'ENSI',
 
     //url
     'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',

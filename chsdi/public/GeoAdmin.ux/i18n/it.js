@@ -192,6 +192,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Circulation routière (principal)',
 
+    //Layer for ensi
+    'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Plans des zones d’urgence',
+
     // Datenherr
     'Data:': '(c) Dati: ',
     'ch.swisstopo': 'swisstopo',
@@ -203,6 +206,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.are': 'ARE',
     'ch.babs': 'FOCP',
     'ch.astra': 'USTRA',
+    'ch.ensi': 'IFSN',
 
     //url
     'ch.swisstopo.url': 'http://www.swisstopo.admin.ch/internet/swisstopo/it/home.html',

@@ -11,3 +11,14 @@ class FEUERSTELLEN(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.tamedia.schweizerfamilie-feuerstellen', FEUERSTELLEN)
+
+class NOTFALLSCHUTZ(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'zonenplan_kernanlagen'
+    __table_args__ = ({'schema': 'ensi', 'autoload': True})
+    __template__ = 'tooltips/zonenplan_kernanlagen.mako'
+    id = Column('nr', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.ensi.zonenplan-notfallschutz-kernanlagen', NOTFALLSCHUTZ)
+

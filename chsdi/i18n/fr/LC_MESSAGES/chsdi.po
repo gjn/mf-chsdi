@@ -344,6 +344,14 @@ msgstr "Substance"
 msgid "wenig_sub"
 msgstr "Tracé historique"
 
+msgid "kkw"
+msgstr "Centrale nucléaire"
+
+msgid "sektor"
+msgstr "Secteur"
+
+msgid "zone"
+msgstr "Zone"
 
 # are2 translations
 
