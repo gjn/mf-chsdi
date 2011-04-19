@@ -709,11 +709,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
              id: "LT2_11",
              children: [
                             {
-                                text: this.addtreeLayerLink("ch.ensi.zonenplan-notfallschutz-kernanlagen", "node_ch.ensi.zonenplan-notfallschutz-kernanlagen") + ' ' + this.layers["ch.ensi.zonenplan-notfallschutz-kernanlagen"].name,
+                                text: this.addtreeLayerLink("ch.ensi.zonenplan-notfallschutz-kernanlagen", "ch.ensi.zonenplan-notfallschutz-kernanlagen1") + ' ' + this.layers["ch.ensi.zonenplan-notfallschutz-kernanlagen"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
-                                id: "node_ch.ensi.zonenplan-notfallschutz-kernanlagen"
+                                id: "ch.ensi.zonenplan-notfallschutz-kernanlagen1"
                             }
                      ]
              }]
