@@ -175,7 +175,6 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             layer: this.layer,
             location: this.lastClick,
             unpinnable: false,
-            bodyStyle: "max-height: 280px;",
             listeners : {
                 close: function(popup) {
                     popup.layer.removeAllFeatures();
