@@ -84,7 +84,8 @@ Which layers are available ?
         myLayerArray.sort();
         var i = 1;
         for (layerKey in myLayerArray) {
-           if (myLayerArray[layerKey].toString().indexOf('ch') == 0) {
+           var layerStr = myLayerArray[layerKey].toString();
+           if (layerStr.indexOf('ch') == 0 && layerStr != 'ch.are.bauzonen-2007' && layerStr != 'ch.are.belastung-gueterverkehr-bahn-2008' && layerStr != 'ch.are.belastung-gueterverkehr-strasse-2008' && layerStr != 'ch.are.belastung-personenverkehr-bahn-2008' && layerStr != 'ch.are.belastung-personenverkehr-strasse-2008' && layerStr != 'ch.are.beschaeftigtendichte-bz08' && layerStr != 'ch.are.bevoelkerungsdichte-vz00' && layerStr != 'ch.are.gueteklassen_oev' && layerStr != 'ch.are.landschaftstypen' && layerStr != 'ch.are.reisezeit_miv-2005' && layerStr != 'ch.are.reisezeit_oev-2005' && layerStr != 'ch.tamedia.schweizerfamilie-feuerstellen') {
               myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' + myLayerArray[layerKey] + '" target="new"> ' + myLayerArray[layerKey] + '</a></th></tr>';
               i = i+1;
            }
