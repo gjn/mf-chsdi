@@ -40,7 +40,7 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
      *  ``Boolean``
      * Should we add a legend button in the title header?
      */
-    addLegend: true,
+    addLegend: false,
 
     /** api: config[legendSize]
      *  ``Array(Integer)``
@@ -215,7 +215,6 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
     },
 
     addtreeLayerLink: function(id, nodeId) {
-
         var layerlink = OpenLayers.i18n(id) + '<div class="layerNodeTools">' +
                 '<div class="treelayerpipe"></div><div class="nodeTP3">' +
                 '<div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'' + id + '\');"></div></div>' +

@@ -1,3 +1,26 @@
+/* From main.css (mf-are2) */
+
+.x-panel-header,
+.x-tab-strip-top .x-tab-right, .x-tab-strip-top .x-tab-left, .x-tab-strip-top .x-tab-strip-inner,
+.x-tab-strip span.x-tab-strip-text {
+    background-image: none;
+    background-color: #333;
+}
+
+.x-panel-header,
+.x-tab-strip span.x-tab-strip-text {
+    color: white;
+    text-align: center;
+}
+
+.x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text,
+.x-tab-strip-top .x-tab-strip-active .x-tab-right,
+.x-tab-strip-top .x-tab-strip-active .x-tab-left {
+    background-color: red;
+}
+
+
+
 #legendAction {
     cursor: pointer;
     color: #FFFFFF;
