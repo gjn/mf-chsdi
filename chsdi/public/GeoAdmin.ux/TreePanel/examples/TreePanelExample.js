@@ -1,3 +1,6 @@
+
+GeoAdmin.OpenLayersImgPath = "../../Map/img/";
+
 var map;
 var mapPanel, treePanel;
 
@@ -8,6 +11,8 @@ Ext.onReady(function() {
 
     var layers = [];
 
+
+    // PLEASE NOTE SEQUENCE OF LAYERS SHOULD MATCH TREE MODEL!
     layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-gemeinde-flaeche.fill', {visibility: false}));
     layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-bezirk-flaeche.fill', {visibility: false}));
     layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-kanton-flaeche.fill', {visibility: false}));
@@ -111,7 +116,7 @@ Ext.onReady(function() {
         title: "&nbsp;",
         width: 400,
         region: 'east',
-        layerStore: mapPanel.store
+        layerStore: mapPanel.layers
     });
 
     new Ext.Viewport({
