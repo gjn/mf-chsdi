@@ -46,7 +46,7 @@ The TreePanel widget is the classical layers tree.
 .. code-block:: html
 
    <script type="text/javascript">
-function init() {
+   function init() {
          var map14 = new GeoAdmin.Map();
          var mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 500, height:340});
                      mappane14.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen'));
