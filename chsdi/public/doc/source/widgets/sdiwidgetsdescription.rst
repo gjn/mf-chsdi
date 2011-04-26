@@ -61,6 +61,13 @@ This widget presents the layer visible in the map and offer various functions li
 
 See example: :ref:`layer-tree1`
 
+TreePanel
+*********
+
+This is the classical layer tree widget, which allows the user to naviagte through the tree and to select/unselect layers.
+
+See example: :ref:`treepanel`
+
 Map
 ***
 
@@ -109,3 +116,4 @@ Tooltip
 This widget allows the user to click in the map and get a tooltip of the selected features.
 
 See example: :ref:`tooltip`
+
