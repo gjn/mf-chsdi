@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../lib/APILegend.js"></script>
+      <script type="text/javascript" src="../lib/TileMergeLegend.js"></script>
+      <script type="text/javascript" src="../lib/LegendWindow.js"></script>
+      <script type="text/javascript">
+        GeoAdmin.webServicesUrl = 'http://api.geo.admin.ch';
+
+        function createMapPanel() {
+            return new GeoExt.MapPanel({renderTo: 'map', map: new GeoAdmin.Map()});
+        }
+
+        function test_constructor(t) {
+            t.plan(4);
+            var mapPanel = createMapPanel();
+            var layer1 = new OpenLayers.Layer.WMS(null, "http://foo/wms?", {layers: ['ch.bafu.schutzgebiete-ramsar', 'ch.bafu.bundesinventare-vogelreservate']}); 
+            var layer2 = GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-moorlandschaften');
+            mapPanel.map.addLayers([layer1, layer2]);
+            var c = new GeoAdmin.LegendWindow({renderTo: 'legend'});
+            c.render();
+            t.ok(c.get(0) instanceof GeoExt.LegendPanel, "LegendWindow contains a legend panel");
+            t.eq(c.get(0).items.items.length, 2, "2 layers so 2 items in the legend");
+            t.ok(c.get(0).get(0) instanceof GeoAdmin.APILegend, "First item is an api legend");
+            t.ok(c.get(0).get(1) instanceof GeoAdmin.TileMergeLegend, "Second item is a tile merge legend");
+            c.destroy();
+            mapPanel.destroy();
+        }
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div style="width: 100px; height: 600px" id="legend"></div>
+  </body>
+</html>

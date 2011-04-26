@@ -45,6 +45,7 @@
  * @include Features/lib/Tooltip.js
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
+ * @include TreePanel/lib/TreePanel.js
  * @include NavigationHistory/lib/NavigationHistory.js
  * @include MousePosition/lib/MousePositionBox.js
  * @include Print/lib/Print.js

@@ -1,0 +1,21 @@
+.legendLayers img {
+    margin-bottom: 10px;
+}
+
+.legendLayers label {
+    background-color: #DDD;
+    font-weight: bold;
+    width: 100%;
+}
+
+.x-tool-legendTool {
+   background-image:url(../images/legend.gif);
+   margin-top:-3px;
+   height: 19px;
+}
+
+.x-tool-legendBox {
+   background-image: none;
+   margin-top:1px;
+   width: 42px;
+}

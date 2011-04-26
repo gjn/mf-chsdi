@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/i18n/en.js"></script>
+      <script type="text/javascript" src="../lib/TreePanel.js"></script>
+      <script type="text/javascript">
+        function createMapPanel() {
+            return new GeoExt.MapPanel({renderTo: 'map', map: new GeoAdmin.Map()});
+        }
+
+        function test_ctor(t) {
+            t.plan(3);
+
+            var c = new GeoAdmin.TreePanel({showLegend: false});
+            t.ok(c instanceof GeoAdmin.TreePanel,
+                 "ctor gives an instance of TreePanel");
+            t.eq(c.showLegend, false, "showLegend is correctly set");
+            c.destroy();
+
+            c = new GeoAdmin.TreePanel({legendSize: [500, 500]});
+            t.eq(c.legendSize, [500, 500], "legendSize is correctly set");
+            c.destroy();
+        }
+
+        function test_model(t) {
+            t.plan(3);
+            var mapPanel = createMapPanel();
+            mapPanel.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen'));
+            var model = [{layerType: "tilecache", layer: 'ch.bafu.bundesinventare-auen'}];
+            var c = new GeoAdmin.TreePanel({model: model, renderTo: 'tree'});
+            c.render();
+            var node = c.getRootNode().childNodes[0];
+            t.ok(node instanceof GeoExt.tree.LayerNode, "node is a GeoExt layer node");
+            t.eq(node.text, OpenLayers.i18n("ch.bafu.bundesinventare-auen"), "Text correctly set");
+            t.eq(node.attributes._layer, "ch.bafu.bundesinventare-auen", "Original layer name stored");
+            c.destroy();
+            mapPanel.destroy();
+        }
+
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div style="width: 100px; height: 600px" id="tree"></div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../lib/APIlegend.js"></script>
+      <script type="text/javascript">
+        GeoAdmin.webServicesUrl = 'http://api.geo.admin.ch';
+        var layerName = "ch.bafu.bundesinventare-auen";
+        var expectedUrl = GeoAdmin.webServicesUrl + "/legend/" + layerName + "_" + OpenLayers.Lang.getCode() + ".png";
+
+        function createMapPanel() {
+            return new GeoExt.MapPanel({renderTo: 'map', map: new GeoAdmin.Map()});
+        }
+
+        function test_layerName(t) {
+            t.plan(2);
+            var c = new GeoAdmin.APILegend({renderTo: 'legend', layerName: layerName});
+            t.ok(c instanceof GeoAdmin.APILegend,
+                 "ctor gives an instance of APILegend");
+            c.render();
+            t.eq(c.get(1).url, expectedUrl, "Legend url set correctly");
+            c.destroy();
+        }
+
+        function test_layerRecord(t) {
+            t.plan(1);
+            var mapPanel = createMapPanel();
+            var layer = GeoAdmin.layers.buildLayerByName(layerName);
+            mapPanel.map.addLayer(layer);
+            var c = new GeoAdmin.APILegend({renderTo: 'legend', layerRecord: mapPanel.layers.getByLayer(layer)});
+            c.render();
+            t.eq(c.get(1).url, expectedUrl, "Legend url set correctly");
+            c.destroy();
+            mapPanel.destroy();
+        }
+      </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div style="width: 100px; height: 600px" id="legend"></div>
+  </body>
+</html>
