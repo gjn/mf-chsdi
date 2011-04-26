@@ -33,11 +33,11 @@ Ext.onReady(function() {
 
     var model = [
         {
-            text: "Umwelt",
+            text: OpenLayers.i18n("Umwelt, Biologie und Geologie"),
             expanded: true,
             children: [
                 {
-                    text: "Bundesinventare",
+                    text: OpenLayers.i18n("Schutzgebiete"),
                     expanded: true,
                     children: [
                         {
@@ -77,11 +77,11 @@ Ext.onReady(function() {
             ]
         },
         {
-            text: "Administrative Einteilung",
+            text: OpenLayers.i18n("Basisdaten"),
             expanded: true,
             children: [
                 {
-                    text: "Grenzen",
+                    text: OpenLayers.i18n("Administrative Einheiten"),
                     expanded: true,
                     showMetadata: true,
                     children: [
