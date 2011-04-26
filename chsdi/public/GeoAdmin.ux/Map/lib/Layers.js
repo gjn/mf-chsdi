@@ -14,6 +14,14 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     buildLayerByName: function(name, options) {
 
+         var tilecache_url = [
+                'http://tile5.geo.admin.ch/geoadmin/',
+                'http://tile6.geo.admin.ch/geoadmin/',
+                'http://tile7.geo.admin.ch/geoadmin/',
+                'http://tile8.geo.admin.ch/geoadmin/',
+                'http://tile9.geo.admin.ch/geoadmin/'
+            ];
+
         if (this.layers === null) {
             this.init();
         }
@@ -23,7 +31,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             return null;
         }
 
-        if (config.wms) {
+        if (config.layertype == "wms") {
             return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
                 layers: config.layers,
                 format: config.format
@@ -38,7 +46,58 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type,
                 ratio: 1.1
             });
-        } else if (name === "voidLayer") {
+        }
+
+        else if (config.layertype == "aggregate") {
+            var sub_layers = [];
+            var layer_to_aggregate;
+
+            for (var i = 0; i < config.layers.length; ++i){
+                if (config.layers[i].sub_layertype == "wms"){
+                    // WMS ---
+                    layer_to_aggregate = new OpenLayers.Layer.WMS(config.name, config.layers[i].url || "http://wms.geo.admin.ch/", {
+                                   layers: config.layers[i].sub_layers,
+                                   format: config.format
+                               }, {
+                                   layername: name,
+                                   singleTile: true,
+                                   ratio: 1.1,
+                                   minScale: config.layers[i].sub_minScale,
+                                   maxScale: config.layers[i].sub_maxScale
+                               });
+                } else {
+                    // TILECACHE ---
+                    layer_to_aggregate = new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, {
+                        projection: new OpenLayers.Projection('EPSG:21781'),
+                        units: 'm',
+                        serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
+                                            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+                        format: config.format,
+                        transitionEffect: "resize",
+                        buffer: 0,
+                        minScale: config.layers[i].sub_minScale,
+                        maxScale: config.layers[i].sub_maxScale
+                    });
+                }
+                sub_layers[i] = layer_to_aggregate;
+            }
+
+            return new OpenLayers.Layer.Aggregate(config.name, sub_layers,
+                   {
+                layername: name,
+                displayInLayerSwitcher: !config.isBgLayer,
+                attribution: config.datenherr,
+                opacity: config.opacity ? config.opacity : 1.0,
+                singleTile: true,
+                geoadmin_queryable: config.queryable,
+                geoadmin_isBgLayer: !!(config.isBgLayer),
+                layerType: config.type,
+                ratio: 1.1
+            });
+    
+        }
+
+        else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
@@ -60,16 +119,12 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type
             }, options);
 
-            var url = [
-                'http://tile5.geo.admin.ch/geoadmin/',
-                'http://tile6.geo.admin.ch/geoadmin/',
-                'http://tile7.geo.admin.ch/geoadmin/',
-                'http://tile8.geo.admin.ch/geoadmin/',
-                'http://tile9.geo.admin.ch/geoadmin/'
-            ];
-            return new OpenLayers.Layer.TileCache(config.name, url, name, layer_options);
+            return new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, layer_options);
         }
     },
+
+
+    
 
     initialize: function() {},
 
@@ -115,10 +170,19 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
-                type: "point",
+                layertype: "aggregate",
+                layers: [{
+                    sub_name: "ch.bfs.gebaeude_wohnungs_register",
+                    sub_maxScale: 1000000
+                }, {
+                    sub_layers: "ch.bfs.gebaeude_wohnungs_register",
+                    sub_layertype: "wms",
+                    sub_minScale: 1000000
+                }],
                 format: "image/png",
-                datenherr: "ch.bfs",
-                queryable: true
+                datenherr: "ch.swisstopo",
+                queryable: true,
+                type: "mixed"
             },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
@@ -395,7 +459,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.hydrologie-hydromessstationen": {
                 name: OpenLayers.i18n("ch.bafu.hydrologie-hydromessstationen"),
-                wms: true,
+                layertype: "wms",
                 layers: ["ch.bafu.hydrologie-hydromessstationen"],
                 type: "point",
                 format: "image/pnga",
@@ -706,7 +770,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 			/*"ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -715,7 +779,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-pk50.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -724,7 +788,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -733,7 +797,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-pk200.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -742,7 +806,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-pk500.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -751,7 +815,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.images-swissimage.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
                 layers: ["ch.swisstopo.images-swissimage.metadata"],
-                wms: true,
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -781,7 +845,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal-typ"],
-                wms: true,
+                layertype: "wms",
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -790,7 +854,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
                 layers: ["ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-status_netz","ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet-typ"],
-                wms: true,
+                layertype: "wms",
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
