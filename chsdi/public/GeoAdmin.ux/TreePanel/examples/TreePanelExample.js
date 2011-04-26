@@ -1,6 +1,8 @@
 
 GeoAdmin.OpenLayersImgPath = "../../Map/img/";
 
+OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
+
 var map;
 var mapPanel, treePanel;
 
