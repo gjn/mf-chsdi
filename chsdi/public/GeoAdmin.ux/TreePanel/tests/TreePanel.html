@@ -31,16 +31,27 @@
         }
 
         function test_model(t) {
-            t.plan(3);
+            t.plan(2);
             var mapPanel = createMapPanel();
             mapPanel.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen'));
-            var model = [{layerType: "tilecache", layer: 'ch.bafu.bundesinventare-auen'}];
-            var c = new GeoAdmin.TreePanel({model: model, renderTo: 'tree'});
+            var model = [{
+                    text: OpenLayers.i18n("Umwelt, Biologie und Geologie"),
+                    expanded: true,
+                    children: [
+                        {
+                            text: OpenLayers.i18n("Schutzgebiete"),
+                            expanded: true,
+                            children: [
+                               {layerType: "tilecache", layer: 'ch.bafu.bundesinventare-auen'}]
+                        }
+                    ]
+            }];
+            var c = new GeoAdmin.TreePanel({model: model, layerStore: mapPanel.layers, renderTo: 'tree'});
             c.render();
-            var node = c.getRootNode().childNodes[0];
+            var node = c.getRootNode().childNodes[0].childNodes[0].childNodes[0];
+            console.log(node);
             t.ok(node instanceof GeoExt.tree.LayerNode, "node is a GeoExt layer node");
-            t.eq(node.text, OpenLayers.i18n("ch.bafu.bundesinventare-auen"), "Text correctly set");
-            t.eq(node.attributes._layer, "ch.bafu.bundesinventare-auen", "Original layer name stored");
+            t.eq(node.id, "ch.bafu.bundesinventare-auen", "Text correctly set");
             c.destroy();
             mapPanel.destroy();
         }
