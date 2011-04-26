@@ -28,11 +28,10 @@ Ext.namespace("GeoAdmin");
  *
  *  :return: ``GeoAdmin.TreePanel``
  *
- * Create a tree panel using a model. The following layerType values are supported:
- * - tilecache : an OpenLayers.Layer.TileCache layer
- * - tilemerge : a WMS-C layer, one OpenLayers.Layer.WMS object is used for
- *       multiple items in the tree.
- * Specify showMetadata true to get metadata links on all subnodes.
+ *  Create a tree panel using a model. The following layerType values are supported:
+ *  - tilecache : an OpenLayers.Layer.TileCache layer
+ *  - tilemerge : a WMS-C layer, one OpenLayers.Layer.WMS object is used for multiple items in the tree.
+ *  Specify showMetadata true to get metadata links on all subnodes.
  */
 GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
 
