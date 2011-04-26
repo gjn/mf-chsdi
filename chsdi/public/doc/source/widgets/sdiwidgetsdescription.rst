@@ -117,3 +117,16 @@ This widget allows the user to click in the map and get a tooltip of the selecte
 
 See example: :ref:`tooltip`
 
+LegendWindow
+************
+
+This widget display the legend of all activelayers in a new windows.
+
+See example: 
+
+AdvancedFunctions
+*****************
+
+This widget windows is a container to regroup some more advanced functionalties you do not want to display in a toolbar.
+
+See example: 
