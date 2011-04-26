@@ -21,7 +21,7 @@
    }
    </script>
 
-.. _bod-search-window:
+.. _treepanel:
 
 
 TreePanel
