@@ -284,6 +284,13 @@ OpenLayers.Lang.rm = {
     'Measure.MeasureLength': 'Distanza',
     'Measure.MeasureArea': 'Superficie',
     'Measure.MeasureLength.ToolTip': 'Misurare une distanza',
-    'Measure.MeasureArea.ToolTip': 'Misurare une superficie'
+    'Measure.MeasureArea.ToolTip': 'Misurare une superficie',
+
+    // Legend Ux
+    "Legend.Tooltip":  "Montrer la légende de toutes les couches",
+    "Legend.Title": "Légende",
+    "Legend.NoLayer": "Sélectionner une couche de données",
+    "Legend.onClick": "Données affichées",
+    'metadataTooltip': "Montrer les métadonnées"
 
 };

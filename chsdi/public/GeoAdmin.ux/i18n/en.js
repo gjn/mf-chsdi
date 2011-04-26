@@ -293,5 +293,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Measure.MeasureLength': 'Distanz',
     'Measure.MeasureArea': 'Fläche',
     'Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
-    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche'
+    'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche',
+
+    // Legend Ux
+    "Legend.Tooltip": "Legendefenster zeigen",
+    "Legend.Title": "Legende",
+    "Legend.NoLayer": "Datenebene auswählen",
+    "Legend.onClick": "Dargestellte Daten",
+    'metadataTooltip': "Show metadata"
 });
