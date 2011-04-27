@@ -1,0 +1,184 @@
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>GeoAdmin TreePanel and Permalink Demo</title>
+
+    <script type="text/javascript" src="http://mf-chsdi0t.lt.admin.ch/ltmom/wsgi/loader.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+    <script type="text/javascript">
+
+
+        var map;
+        var mapPanel, treePanel;
+
+
+        function init() {
+            map = new GeoAdmin.Map();
+
+            mapPanel = new GeoAdmin.MapPanel({
+                renderTo: "mymap7",
+                map: map,
+                stateId: "map",
+                tbar: ["->", new GeoAdmin.Permalink()],
+                height: 340
+
+            });
+
+            var layers = [];
+
+
+            // PLEASE NOTE SEQUENCE OF LAYERS SHOULD MATCH TREE MODEL!
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-gemeinde-flaeche.fill', {
+                visibility: false
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-bezirk-flaeche.fill', {
+                visibility: false
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-kanton-flaeche.fill', {
+                visibility: false
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-land-flaeche.fill', {
+                visibility: false
+            }));
+
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.schutzgebiete-ramsar', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-vogelreservate', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-moorlandschaften', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-jagdbanngebiete', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-hochmoore', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-flachmoore', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen', {
+                visibility: false,
+                opacity: 0.6
+            }));
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-amphibien', {
+                visibility: false,
+                opacity: 0.6
+            }));
+
+            map.addLayers(layers);
+
+            var model = [
+                {
+                    text: OpenLayers.i18n("Umwelt, Biologie und Geologie"),
+                    expanded: true,
+                    children: [
+                        {
+                            text: OpenLayers.i18n("Schutzgebiete"),
+                            expanded: true,
+                            children: [
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-amphibien'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-auen'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-flachmoore'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-hochmoore'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-jagdbanngebiete'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-moorlandschaften'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.bundesinventare-vogelreservate'
+                                },
+                                {
+                                    layerType: "tilecache",
+                                    layer: 'ch.bafu.schutzgebiete-ramsar'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    text: OpenLayers.i18n("Basisdaten"),
+                    expanded: true,
+                    children: [
+                        {
+                            text: OpenLayers.i18n("Administrative Einheiten"),
+                            expanded: true,
+                            showMetadata: true,
+                            children: [
+                                {
+                                    layerType: 'tilecache',
+                                    layer: 'ch.swisstopo.gg25-land-flaeche.fill'
+                                },
+                                {
+                                    layerType: 'tilecache',
+                                    layer: 'ch.swisstopo.gg25-kanton-flaeche.fill'
+                                },
+                                {
+                                    layerType: 'tilecache',
+                                    layer: 'ch.swisstopo.gg25-bezirk-flaeche.fill'
+                                },
+                                {
+                                    layerType: 'tilecache',
+                                    layer: 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ];
+
+
+            treePanel = new GeoAdmin.TreePanel({
+                model: model,
+                title: "Treepanel",
+                layerStore: mapPanel.layers,
+                renderTo: 'mytreepanel7',
+                height: 340
+            });
+
+
+        }
+        ;
+
+
+    </script>
+</head>
+<body onload="init();">
+<h1>GeoAdmin TreePanel and Permalink Demo</h1>
+This demo shows the interraction between the TreePanel and the Permalink in both direction.
+<div style="width:60%">
+<div id="mytreepanel7" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
+<div id="mymap7"
+     style="float: right; width:600px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+    </div>
+</body>
+
+</html>
