@@ -28,7 +28,8 @@ if (Ext) {
     Ext.apply(Ext, {
         isIE6: isIE && ieVer <= 6,
         isIE7:  isIE && ieVer == 7,
-        isIE8: isIE && ieVer >= 8
+        isIE8: isIE && ieVer >= 8,
+        isIE9:  isIE && ieVer == 9
     });
 }
 

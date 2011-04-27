@@ -183,7 +183,23 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     }
                 }
                 this.fireEvent("print", this, url);
+            },
+            // Overrides GeoExt
+            getAbsoluteUrl: function(url) {
+                var a;
+                if(Ext.isIE && !Ext.isIE9) {
+                    a = document.createElement("<a href='" + url + "'/>");
+                    a.style.display = "none";
+                    document.body.appendChild(a);
+                    a.href = a.href;
+                    document.body.removeChild(a);
+                } else {
+                    a = document.createElement("a");
+                    a.href = url;
+                }
+                return a.href;
             }
+
         });
 
         // Makes sure the print capabilities are fully loaded before rendering
