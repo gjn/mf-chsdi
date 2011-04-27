@@ -26,7 +26,6 @@ if (Ext) {
     var ieVer = navigator.userAgent.match(/msie (\d+)/i);
 
     Ext.apply(Ext, {
-        isIE : true,
         isIE6: isIE && ieVer <= 6,
         isIE7:  isIE && ieVer == 7,
         isIE8: isIE && ieVer >= 8
