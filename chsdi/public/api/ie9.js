@@ -24,6 +24,7 @@ if (Ext) {
 
     var isIE = window.ActiveXObject ? true : false;
     var ieVer = navigator.userAgent.match(/msie (\d+)/i);
+    ieVer = ieVer ? parseInt(ieVer[1], 10) : 0;
 
     Ext.apply(Ext, {
         isIE6: isIE && ieVer <= 6,
