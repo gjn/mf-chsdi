@@ -4,7 +4,24 @@
 <head>
     <title>Demo Meteoswiss and KML</title>
     <meta charset="utf-8"/>
-<head><script type="text/javascript">
+<head>
+ <link rel="stylesheet" href="style.css" type="text/css">
+
+<style>
+  .gx-popup {
+     width: auto !important;
+   }
+  .gx-popup .x-window-body {
+     height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
+     max-height: 280px !important;
+     overflow:hidden;overflow-y:auto;
+     width:600px;
+ }
+
+</style>
+
+
+<script type="text/javascript">
 //Create a global api variable to simplify debugging
 var api;
 
@@ -35,6 +52,6 @@ window.onload = init;
 <body>
   <h1>Binding KML</h1>
   <div id="mymap" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
-  <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+  <script type="text/javascript" src="../loader.js"></script>
 </body> 
 </html>
