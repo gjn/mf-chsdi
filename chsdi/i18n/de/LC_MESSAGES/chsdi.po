@@ -140,6 +140,9 @@ msgstr "Identifikator"
 msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"
 
+msgid "bfsnr"
+msgstr "BFS-Nummer"
+
 msgid "construct"
 msgstr "Kunstbaute"
 

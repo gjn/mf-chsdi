@@ -4,7 +4,7 @@ Base = declarative_base(bind=meta.engines['kogis'])
 
 class Gebaeuderegister(Base, Queryable):
     # view in a schema
-    __tablename__ = 'adr_tiles'
+    __tablename__ = 'adr'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'tooltips/gebaeuderegister.mako'
 
@@ -17,6 +17,8 @@ class Gebaeuderegister(Base, Queryable):
     deinr = Column('deinr', Text)
     plz4 = Column('plz4', Integer)
     plzname = Column('plzname', Text)
+    gdename = Column('gdename', Text)
+    gdenr = Column('gdenr', Integer)
     the_geom = Column(Geometry)
 
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)

@@ -173,11 +173,11 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "aggregate",
                 layers: [{
                     sub_name: "ch.bfs.gebaeude_wohnungs_register",
-                    sub_maxScale: 1000000
+                    sub_maxScale: 25000
                 }, {
                     sub_layers: "ch.bfs.gebaeude_wohnungs_register",
                     sub_layertype: "wms",
-                    sub_minScale: 1000000
+                    sub_minScale: 25000
                 }],
                 format: "image/png",
                 datenherr: "ch.swisstopo",

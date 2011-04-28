@@ -140,6 +140,9 @@ msgstr "Identificator"
 msgid "gmde"
 msgstr "BFS-City nummer (State 2006)"
 
+msgid "bfsnr"
+msgstr "BFS-Nummer"
+
 msgid "construct"
 msgstr "Construction"
 

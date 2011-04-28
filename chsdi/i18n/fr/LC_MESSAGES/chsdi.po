@@ -140,6 +140,9 @@ msgstr "Identifiant"
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"
 
+msgid "bfsnr"
+msgstr "Numéro OFS"
+
 msgid "construct"
 msgstr "Ouvrage d'art"
 
