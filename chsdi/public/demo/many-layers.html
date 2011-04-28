@@ -1,0 +1,108 @@
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>GeoAdmin LayerTree and Vector (KML, GPX) Layers</title>
+
+    <script type="text/javascript" src="../../../loader.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+    <script type="text/javascript">
+
+
+        var map, api;
+        var mapPanel, layerTree;
+
+
+        function init() {
+
+            api = new GeoAdmin.API();
+
+            api.createMapPanel({
+                renderTo: "mymap7",
+                stateId: "map",
+                tbar: ["->", new GeoAdmin.Permalink()],
+                height: 340
+
+            });
+
+
+            var layers = [];
+
+
+            layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-jagdbanngebiete', {
+                visibility: false,
+                opacity: 0.6
+            }));
+
+
+            var gpx = new OpenLayers.Layer.Vector("GPX Data", {
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "../doc/data/tracks.gpx",
+                    format: new OpenLayers.Format.GPX(
+
+                    {
+                        extractWaypoints: true,
+                        extractTracks: true,
+                        extractRoutes: true,
+                        extractAttributes: true
+                    }
+
+                            )
+                }),
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                style: {
+                    strokeColor: "#00aaff",
+                    pointRadius: 5,
+                    strokeWidth: 4,
+                    strokeOpacity: 0.75
+                },
+                projection: new OpenLayers.Projection("EPSG:4326")
+            });
+            layers.push(gpx);
+
+          
+
+            var kml = new OpenLayers.Layer.Vector("BLN Inventar", {
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "../doc/data/bln-style.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractStyles: true,
+                        extractAttributes: true,
+                        maxDepth: 2
+                    })
+                }),
+                strategies      :   [new OpenLayers.Strategy.Fixed()],
+                projection :  new OpenLayers.Projection("EPSG:4326")
+            });
+            layers.push(kml);
+
+
+            api.map.addLayers(layers);
+
+            var kmlLayer = api.createKmlLayer('../doc/data/swissmetnet.kml', true);
+
+
+            layerTree = new GeoAdmin.LayerTree({
+                map: api.map,
+                renderTo: "mytreepanel7",
+                width: 300
+            });
+
+        }
+
+
+    </script>
+</head>
+<body onload="init();">
+<h1>GeoAdmin LayerTree and Vector (KML, GPX) Layers</h1>
+This demo shows how the various vector layers (GPX and KML) are automatically added to the LayerTree.
+<div style="width:1024px">
+    <div id="mytreepanel7" style="float: left;margin:10px !important;width:300px;height: 340px;"></div>
+    <div id="mymap7"
+         style="float: right; width:600px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+</div>
+</body>
+
+</html>
