@@ -5,16 +5,19 @@
     <title>Demo Meteoswiss and KML</title>
     <meta charset="utf-8"/>
 <head>
- <link rel="stylesheet" href="style.css" type="text/css">
 
+ <script type="text/javascript" src="../loader.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
 <style>
   .gx-popup {
-     width: auto !important;
+      width: auto !important;
+      max-width: 600px;
    }
   .gx-popup .x-window-body {
      height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
      max-height: 280px !important;
-     overflow:hidden;overflow-y:auto;
+     overflow:hidden;
+     overflow-y:auto;
      width:600px;
  }
 
@@ -22,36 +25,30 @@
 
 
 <script type="text/javascript">
-//Create a global api variable to simplify debugging
+
 var api;
 
-//init function is started when page onload event is triggered
 function init() {
     OpenLayers.ProxyHost = "/ogcproxy?url=";
 
-   //Create an instance of the GeoAdmin API
-   api = new GeoAdmin.API();
+    api = new GeoAdmin.API();
 
-   //Create a GeoExt map panel placed in the mymap div
-   api.createMapPanel({
+    api.createMapPanel({
       renderTo: "mymap",
       height: 500
    });
 
-   //The complementary layer is the pixelmap. The Swissimage is place below the pixelmap.
    api.map.complementaryLayer.setOpacity(0);
 
-   //Add KML layer in the map
    var kmlLayer = api.createKmlLayer('../doc/data/swissmetnet.kml',true);
 
-   //Recenter the map and define a zoom level
    api.map.setCenter(new OpenLayers.LonLat(660000,190000),0);
 }
 window.onload = init;
 </script></head>
 <body>
-  <h1>Binding KML</h1>
+  <h1>Demo Meteoswiss and KML</h1>
   <div id="mymap" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
-  <script type="text/javascript" src="../loader.js"></script>
+
 </body> 
 </html>
