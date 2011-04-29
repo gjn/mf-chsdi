@@ -539,7 +539,7 @@ GeoAdmin.API = OpenLayers.Class({
 
     _onFeatureSelect: function(event) {
         var feature = event.feature;
-        var fpopup = this.showPopup({feature:feature,width:350,title: feature.attributes.name, html: feature.attributes.description || feature.attributes.html});
+        var fpopup = this.showPopup({feature:feature,width:350,title: feature.attributes.name, html: feature.attributes.description || feature.attributes.html, panIn: false});
         feature.fpopup = fpopup;
     },
 
