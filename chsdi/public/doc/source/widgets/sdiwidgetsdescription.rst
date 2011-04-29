@@ -14,6 +14,7 @@ API Widgets Examples
     sdiwidgetsexamples3
     sdiwidgetsaggregate
     sdiwidgettreepanel
+    sdiwidgetlegendwindow
 
 API Widgets Description
 -----------------------
@@ -38,7 +39,7 @@ BOD Search Window
 
 BOD (for Betriebsobjektdatenbank) Search Window is a tool to present the metadata information about a layer.
 
-See example: :ref:`bod-search-window`
+See example:  :ref:`bod-search-window`
 
 Catalog Tree
 ************
@@ -52,7 +53,7 @@ Context Popup
 
 This widget allows the user to right click in the map and get a popup with various information.
 
-See example: :ref:`context-popup`
+See example:  :ref:`context-popup`
 
 Layer Tree
 **********
@@ -94,14 +95,14 @@ Permalink
 
 The permalink widget allows the creation and usage of permalinks containing the state of the application. It's based on the ExtJS state manager.
 
-See examples: :ref:`permalink`
+See example:  :ref:`permalink`
 
 Print
 *****
 
 The print widget allows the generation of PDF files containing the map information. This UX communicates with a MapFish print server. The MapFish print server of api.geo.admin.ch can be used but if you need a custom configuration, you'll have to setup your own server.
 
-See examples: :ref:`print`
+See examples:  :ref:`print`
 
 Swiss Search
 ************
@@ -122,7 +123,7 @@ LegendWindow
 
 This widget display the legend of all activelayers in a new windows.
 
-See example: 
+See example:  :ref:`legendwindow`
 
 AdvancedFunctions
 *****************

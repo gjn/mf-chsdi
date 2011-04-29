@@ -8,3 +8,5 @@ API Widgets Examples
     sdiwidgetsexamples2
     sdiwidgetsexamples3
     sdiwidgetsaggregate
+    sdiwidgettreepanel
+    sdiwidgetlegendwindow
