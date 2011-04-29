@@ -48,7 +48,7 @@ informations in a popup window is.
       <div id="myclear" style="clear: both;"></div>
 
    </body>
-   <script type="text/javascript" src="../../../loader.js"></script>
+
 .. raw:: html
 
     <a id="showRef14" href="javascript:showdiv('codeBlock14','showRef14','hideRef14')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
@@ -100,10 +100,9 @@ informations in a popup window is.
 
            api.map.complementaryLayer.setOpacity(0);
            var kmlLayer = api.createKmlLayer('../../data/swissmetnet.kml',true);
-           api.map.setCenter(new OpenLayers.LonLat(660000,190000),0);
        }
        </script>
           <body onload="init();">
-
+          <script type="text/javascript" src="../../../loader.js"></script>
        </body>
    
