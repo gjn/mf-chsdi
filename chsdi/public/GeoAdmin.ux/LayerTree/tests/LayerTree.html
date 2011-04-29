@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+        <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+        <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+        <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+        <script type="text/javascript" src="../../Map/lib/Layers.js"></script>
+        <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+        <script type="text/javascript" src="../../Map/lib/VoidLayer.js"></script>
+        <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+        <script type="text/javascript" src="../lib/ComponentMixin.js"></script>
+        <script type="text/javascript" src="../lib/ActionsMixin.js"></script>
+        <script type="text/javascript" src="../lib/LayerNode.js"></script>
+        <script type="text/javascript" src="../lib/LayerTree.js"></script>
+    
+        <script>
+
+
+        function test_add_remove_layer(t) {
+            t.plan(4);
+
+            var LAYERNAME =  "ch.swisstopo.hiks-dufour";
+
+            var map = new GeoAdmin.Map("map");
+            var tree = new GeoAdmin.LayerTree(
+                {renderTo: "tree", map: map}
+            );
+
+            t.eq(tree.root.childNodes.length, 0,
+                 "No custom in LayerTree before adding the layer");
+
+            var layer = map.addLayerByName(LAYERNAME);
+
+            t.eq(tree.root.childNodes.length, 1,
+                 "One layer successfully added to the LayerTree");
+
+            t.eq(tree.root.childNodes[0].layer.layername, LAYERNAME,
+                 "layer " + LAYERNAME + "found in the LayerTree");
+
+            map.removeLayer(layer);
+
+            t.eq(tree.root.childNodes.length, 0,
+                 "No more custom layer. Layer "+ LAYERNAME + " successfully removed from LayerTree");
+
+            tree.destroy();
+        }
+        </script>
+    </head>
+    <body>
+        <div id="map" style="width: 100px; height: 100px;"></div>
+        <div id="tree" style="width: 100px; height: 100px;"></div>
+    </body>
+</html>
