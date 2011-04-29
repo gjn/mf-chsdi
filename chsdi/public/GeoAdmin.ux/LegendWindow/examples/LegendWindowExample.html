@@ -3,11 +3,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel=stylesheet type=text/css href=../../../build/api.css>
-    <link rel=stylesheet type=text/css href=../css/treepanel.css>
+    <style>
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
 </head>
 <body>
+<div id="map"></div>
 <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
-<script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+<script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
 <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
 <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
 <script type="text/javascript" src="../../GeoAdmin.js"></script>
@@ -16,7 +22,7 @@
 <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
 <script type="text/javascript" src="../../Map/lib/VoidLayer.js"></script>
 <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
-<script type="text/javascript" src="../lib/ApiLegend.js"></script>
+<script type="text/javascript" src="../lib/APILegend.js"></script>
 <script type="text/javascript" src="../lib/TileMergeLegend.js"></script>
 <script type="text/javascript" src="../lib/LegendWindow.js"></script>
 <script type="text/javascript" src="LegendWindowExample.js"></script>

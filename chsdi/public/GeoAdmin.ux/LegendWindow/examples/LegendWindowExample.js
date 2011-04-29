@@ -19,8 +19,7 @@ Ext.onReady(function() {
     map.addLayers(layers);
 
     mapPanel = new GeoExt.MapPanel({
-        region: 'center',
-        tbar: [
+         tbar: [
             {
                 text: 'Show legend', 
                 handler: function() {
@@ -29,12 +28,8 @@ Ext.onReady(function() {
             }
         ],
         width: 600,
-        map: map
+        height: 400,
+        map: map,
+        renderTo: "map"
     });
-
-    new Ext.Viewport({
-        layout: "border",
-        items: [mapPanel]
-    });
-
 });
