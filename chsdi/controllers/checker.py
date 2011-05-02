@@ -71,7 +71,7 @@ class CheckerController(BaseController):
             for key, value in request.environ.items():
                 result += '%s: %r <br />'%(key, value)
                 result += '</body></html>'
-                return result
+            return result
         else:
             response.status='403'
             return request.environ['REMOTE_ADDR']
