@@ -33,7 +33,7 @@ The TreePanel widget is the classical layers tree.
   <body>
 
        <div id="mytreepanel4" style="float: left; margin:10px !important;width:285px;height: 340px;"></div>
-        <div id="mymap4" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+        <div id="mymap4" style="float: left; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
        <div id="myclear" style="clear: both;"></div>
    </body>
 
@@ -74,7 +74,7 @@ The TreePanel widget is the classical layers tree.
     }
    </script>
    <body onload="init();">
-     <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     <div id="mymap4" style="width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -86,9 +86,10 @@ The TreePanel widget is the classical layers tree.
 .. raw:: html
 
    <script type="text/javascript">
+   var mappane14, map14;
    function init() {
-         var map14 = new GeoAdmin.Map();
-         var mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 500, height:340});
+         map14 = new GeoAdmin.Map();
+         mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 400, height:340});
                      mappane14.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen'));
 
 
@@ -109,7 +110,8 @@ The TreePanel widget is the classical layers tree.
         model: model,
         title: "Treepanel",
         layerStore: mappane14.layers,
-        renderTo: 'mytreepanel4'
+        renderTo: 'mytreepanel4',
+        height: 340
     });
     }
    </script>
