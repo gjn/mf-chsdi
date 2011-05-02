@@ -195,12 +195,18 @@ div.nodeTP3selected >  a.x-tree-node-anchor span {
     color: #ff0000;
 }
 
+/* overload everything */
+.ext-ie UL.x-tree-node-ct {
+    line-height: 0;
+    font-size: 0px;
+}
+
 .ext-chrome .geoadmin-treepanel .layernodetools {
   margin-top: -1px;
 }
 
 .ext-ie .layerNodeTools {
-  margin-top: -20px;
+  margin-top: 0px;
 }
 
 .ext-safari .layerNodeTools {
