@@ -57,6 +57,7 @@ Here is a non exhaustive list (don't hesitate to inform us about your own web si
 - `GeoCat partner map <http://www.geocat.ch/internet/geocat/fr/home/about/members.html>`_
 - `Wildruehzonen Schweiz <http://www.wildruhezonen.ch/wr400.php?na=400>`_
 - `Agnes station <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/topics/survey/permnet/agnes/paye.html>`_
+- `SwissMountains.ch <http://swissmountains.ch/typo2/index.php?id=paleria>`_
 
 .. _available_layers:
 
