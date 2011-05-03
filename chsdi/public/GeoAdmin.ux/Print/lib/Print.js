@@ -173,10 +173,36 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             // Overrides GeoExt
             download: function(url) {
                 if (this.fireEvent("beforedownload", this, url) !== false) {
-                    if (Ext.isOpera || Ext.isIE) {
+                    if (Ext.isOpera) {
                         // Make sure that Opera don't replace the content tab with
                         // the pdf
                         window.open(url);
+                    } else if (Ext.isIE) {
+                        var onClick = 'Ext.getCmp(\'printPopup\').destroy();';
+                        onClick += 'window.location=\'' + url + '\';';
+                        var content = OpenLayers.Lang.translate('mf.print.pdfReady') + '<br /><br />' +
+                                '<table onclick="' + onClick + '" border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap" align="center">' +
+                                '<tbody><tr><td class="x-btn-left"><i>&#160;</i></td>' +
+                                '<td class="x-btn-center"><em unselectable="on" class="x-btn x-btn-text">' + Ext.MessageBox.buttonText.ok + '</em></td>' +
+                                '<td class="x-btn-right"><i>&#160;</i></td></tr>' +
+                                '</tbody></table>';
+                        var popup = new Ext.Window({
+                            bodyStyle: 'padding: 7px;',
+                            width: 200,
+                            id: "printPopup",
+                            autoHeight: true,
+                            constrain: true,
+                            closable: false,
+                            title: OpenLayers.Lang.translate('mf.information'),
+                            html: content,
+                            listeners: {
+                                destroy: function() {
+                                    // TODO
+                                },
+                                scope: this
+                            }
+                        });
+                        popup.show();
                     } else {
                         // This avoids popup blockers for all other browsers
                         window.location = url;
