@@ -183,7 +183,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         var content = OpenLayers.Lang.translate('mf.print.pdfReady') + '<br /><br />' +
                                 '<table onclick="' + onClick + '" border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap" align="center">' +
                                 '<tbody><tr><td class="x-btn-ml"><i>&#160;</i></td>' +
-                                '<td class="x-btn-mc"><em unselectable="on" class=""><button class="x-btn-text" type="button">' + Ext.MessageBox.buttonText.ok + '</button></em></td>' +
+                                '<td class="x-btn-mc"><em unselectable="on" class="">' + Ext.MessageBox.buttonText.ok + '</em></td>' +
                                 '<td class="x-btn-mr"><i>&#160;</i></td></tr>' +
                                 '</tbody></table>';
                         var popup = new Ext.Window({
