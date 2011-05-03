@@ -173,7 +173,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             // Overrides GeoExt
             download: function(url) {
                 if (this.fireEvent("beforedownload", this, url) !== false) {
-                    if (Ext.isOpera) {
+                    if (Ext.isOpera || Ext.isIE) {
                         // Make sure that Opera don't replace the content tab with
                         // the pdf
                         window.open(url);
