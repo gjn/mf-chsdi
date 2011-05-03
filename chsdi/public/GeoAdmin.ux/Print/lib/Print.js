@@ -20,7 +20,7 @@
  * :class:`GeoExt.ux.SimplePrint`) and windowOptions (config for
  * :class:`Ext.Window`, only useful if printPanelConfig.renderTo is not provided).
  */
- 
+
 /** api: example
  *  Sample code to create a print (see also :ref:`print`):
  *
@@ -31,7 +31,7 @@
  *         region: 'center',
  *         map: map
  *     });
- * 
+ *
  *     new Ext.Panel({
  *         renderTo: "map",
  *         layout: "border",
@@ -82,7 +82,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
     /** api: property[printBaseUrl]
      * :class:`String` Print base URL
      */
-     
+
     /** api: property[printPanelOptions]
      * ``Object`` Options for the print panel
      */
@@ -164,7 +164,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
                     var overrides = {
-                        dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g,'&')
+                        dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
                     overrides['lang' + OpenLayers.Lang.getCode()] = true;
                     Ext.apply(pages[0].customParams, overrides);
@@ -173,7 +173,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             // Overrides GeoExt
             download: function(url) {
                 if (this.fireEvent("beforedownload", this, url) !== false) {
-                    if (Ext.isOpera || Ext.isIE ) {
+                    if (Ext.isOpera) {
                         // Make sure that Opera don't replace the content tab with
                         // the pdf
                         window.open(url);
@@ -187,7 +187,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             // Overrides GeoExt
             getAbsoluteUrl: function(url) {
                 var a;
-                if(Ext.isIE && !Ext.isIE9) {
+                if (Ext.isIE && !Ext.isIE9) {
                     a = document.createElement("<a href='" + url + "'/>");
                     a.style.display = "none";
                     document.body.appendChild(a);
@@ -198,6 +198,106 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     a.href = url;
                 }
                 return a.href;
+            },
+            // Overrides GeoExt
+            print: function(map, pages, options) {
+                if (map instanceof GeoExt.MapPanel) {
+                    map = map.map;
+                }
+                pages = pages instanceof Array ? pages : [pages];
+                options = options || {};
+                if (this.fireEvent("beforeprint", this, map, pages, options) === false) {
+                    return;
+                }
+
+                var jsonData = Ext.apply({
+                    units: map.getUnits(),
+                    srs: map.baseLayer.projection.getCode(),
+                    layout: this.layout.get("name"),
+                    dpi: this.dpi.get("value")
+                }, this.customParams);
+
+                var pagesLayer = pages[0].feature.layer;
+                var encodedLayers = [];
+
+                // ensure that the baseLayer is the first one in the encoded list
+                var layers = map.layers.concat();
+                layers.remove(map.baseLayer);
+                layers.unshift(map.baseLayer);
+
+                Ext.each(layers, function(layer) {
+                    if (layer !== pagesLayer && layer.getVisibility() === true) {
+                        var enc = this.encodeLayer(layer);
+                        enc && encodedLayers.push(enc);
+                    }
+                }, this);
+                jsonData.layers = encodedLayers;
+
+                var encodedPages = [];
+                Ext.each(pages, function(page) {
+                    encodedPages.push(Ext.apply({
+                        center: [page.center.lon, page.center.lat],
+                        scale: page.scale.get("value"),
+                        rotation: page.rotation
+                    }, page.customParams));
+                }, this);
+                jsonData.pages = encodedPages;
+
+                if (options.overview) {
+                    var encodedOverviewLayers = [];
+                    Ext.each(options.overview.layers, function(layer) {
+                        var enc = this.encodeLayer(layer);
+                        enc && encodedOverviewLayers.push(enc);
+                    }, this);
+                    jsonData.overviewLayers = encodedOverviewLayers;
+                }
+
+                if (options.legend) {
+                    var legend = options.legend;
+                    var rendered = legend.rendered;
+                    if (!rendered) {
+                        legend = legend.cloneConfig({
+                            renderTo: document.body,
+                            hidden: true
+                        });
+                    }
+                    var encodedLegends = [];
+                    legend.items && legend.items.each(function(cmp) {
+                        if (!cmp.hidden) {
+                            var encFn = this.encoders.legends[cmp.getXType()];
+                            encodedLegends = encodedLegends.concat(
+                                    encFn.call(this, cmp));
+                        }
+                    }, this);
+                    if (!rendered) {
+                        legend.destroy();
+                    }
+                    jsonData.legends = encodedLegends;
+                }
+
+                if (this.method === "GET") {
+                    var url = Ext.urlAppend(this.capabilities.printURL,
+                            "spec=" + encodeURIComponent(Ext.encode(jsonData)));
+                    this.download(url);
+                } else {
+                    Ext.Ajax.request({
+                        url: this.capabilities.createURL,
+                        timeout: this.timeout,
+                        jsonData: jsonData,
+                        success: function(response) {
+                            // In IE, using a Content-disposition: attachment header
+                            // may make it hard or impossible to download the pdf due
+                            // to security settings. So we'll display the pdf inline.
+                            var url = Ext.decode(response.responseText).getURL;
+                            this.download(url);
+                        },
+                        failure: function(response) {
+                            this.fireEvent("printexception", this, response);
+                        },
+                        params: this.initialConfig.baseParams,
+                        scope: this
+                    });
+                }
             }
 
         });
