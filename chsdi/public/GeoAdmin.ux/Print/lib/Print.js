@@ -182,9 +182,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         onClick += 'window.location=\'' + url + '\';';
                         var content = OpenLayers.Lang.translate('mf.print.pdfReady') + '<br /><br />' +
                                 '<table onclick="' + onClick + '" border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap" align="center">' +
-                                '<tbody><tr><td class="x-btn-left"><i>&#160;</i></td>' +
-                                '<td class="x-btn-center"><em unselectable="on" class="x-btn x-btn-text">' + Ext.MessageBox.buttonText.ok + '</em></td>' +
-                                '<td class="x-btn-right"><i>&#160;</i></td></tr>' +
+                                '<tbody><tr><td class="x-btn-ml"><i>&#160;</i></td>' +
+                                '<td class="x-btn-mc"><em unselectable="on" class=""><button class="x-btn-text" type="button">' + Ext.MessageBox.buttonText.ok + '</button></em></td>' +
+                                '<td class="x-btn-mr"><i>&#160;</i></td></tr>' +
                                 '</tbody></table>';
                         var popup = new Ext.Window({
                             bodyStyle: 'padding: 7px;',
@@ -193,7 +193,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             autoHeight: true,
                             constrain: true,
                             closable: false,
-                            title: OpenLayers.Lang.translate('mf.information'),
+                            title: OpenLayers.Lang.translate('mf.print.print.title'),
                             html: content,
                             listeners: {
                                 destroy: function() {
