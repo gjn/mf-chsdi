@@ -107,6 +107,20 @@ var init = function () {
         checkIsInLayer(vector.getDataExtent());
     });
 
+    geolocate.events.register("locationfailed", this, function(e) {
+        var warning;
+        warning = Ext.getCmp('warning');
+        warning.setTitle("GeoLocation Error");
+        warning.ui = 'dark';
+    });
+
+    geolocate.events.register("locationuncapable", this, function(e) {
+        var warning;
+        warning = Ext.getCmp('warning');
+        warning.setTitle("GeoLocation Error");
+        warning.ui = 'dark';
+    });
+
     geolocate.activate();
 
     var layer_options = {
@@ -174,7 +188,6 @@ var init = function () {
         ],
         layers: [
             wmts,
-            protectedArea,
             vector
         ],
         center: new OpenLayers.LonLat(600000, 200000),
