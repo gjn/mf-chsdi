@@ -85,7 +85,13 @@ var init = function () {
         }
     });
 
-
+    var style = {
+        fillOpacity: 0.1,
+        fillColor: '#000',
+        strokeColor: '#f00',
+        strokeOpacity: 0.6
+    };
+    
     geolocate.events.register("locationupdated", this, function(e) {
         vector.removeAllFeatures();
         vector.addFeatures([
@@ -93,13 +99,24 @@ var init = function () {
                     e.point,
             {},
             {
-                graphicName: 'circle',
+                graphicName: 'cross',
                 strokeColor: '#f00',
                 strokeWidth: 2,
                 fillOpacity: 0,
-                pointRadius: e.position.coords.accuracy
-            }
-                    )]);
+                pointRadius: 10 //e.position.coords.accuracy
+            }),
+            new OpenLayers.Feature.Vector(
+                OpenLayers.Geometry.Polygon.createRegularPolygon(
+                    new OpenLayers.Geometry.Point(e.point.x, e.point.y),
+                    e.position.coords.accuracy / 2,
+                    50,
+                    0
+                ),
+                {},
+                style
+            )
+
+        ]);
         map.setCenter(vector.getDataExtent().getCenterLonLat());
         if (map.zoom === initial_zoom_level) {
             map.zoomTo(9);
@@ -110,7 +127,7 @@ var init = function () {
     geolocate.events.register("locationfailed", this, function(e) {
         var warning;
         warning = Ext.getCmp('warning');
-        warning.setTitle("GeoLocation Error");
+        warning.setTitle("GeoLocation failed");
         warning.ui = 'dark';
     });
 

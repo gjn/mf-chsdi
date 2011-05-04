@@ -142,6 +142,25 @@
                         },
                         {
                             iconMask: true,
+                            iconCls: "locate",
+                            id: 'locate',
+                            handler: function() {
+                                var warning = Ext.getCmp('warning');
+                                var geolocate = map.getControlsBy("id", "locate-control")[0];
+                                if (geolocate.active) {
+                                    geolocate.deactivate();
+                                    vector.removeAllFeatures();
+                                    warning.setTitle("Not tracking");
+
+                                } else {
+                                    geolocate.activate();
+                                    warning.setTitle("Geolocation ongoing...");
+                                    
+                                }
+                            }
+                        },
+                        {
+                            iconMask: true,
                             title: 'About',
                             iconCls: 'info',
                             handler: settinghandler
