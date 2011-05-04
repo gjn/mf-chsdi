@@ -93,7 +93,7 @@ var init = function () {
                     e.point,
             {},
             {
-                graphicName: 'cross',
+                graphicName: 'circle',
                 strokeColor: '#f00',
                 strokeWidth: 2,
                 fillOpacity: 0,
