@@ -44,12 +44,23 @@
         }
         h1.beta {color: #ff0000; font-weight: bold; cursor: pointer;font-size:small;}
         h1.title {color: #ffffff; font-weight: bold; cursor: pointer;font-size:small;}
+        
         .logo {margin-top: 5px;}
         .olControlAttribution {
             font-size: 10px;
             bottom: 5px;
             right: 5px;
         }
+
+        .centered {
+	       width: 50%;
+	       height: 50%;
+            position: absolute;
+            left: 25%;
+            top: 50%;
+            
+         }
+
 
         #title, #tags, #shortdesc {
             display: none;
@@ -59,87 +70,123 @@
         }
     </style>
     <script>
-
-        if (!Ext.is.Android && !Ext.is.iOS) {
+        var hasBeenWarned = false;
+        if (!Ext.is.Android && !Ext.is.iOS && !hasBeenWarned) {
             alert("The BETA version of GeoAdmin mobile version has been tested on Android and iOS only.");
+            hasBeenWarned = true;
         }
+
+        var settinghandler = function(button, event) {
+            app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'right'});
+        };
+
+        var maphandler = function(button, event) {
+            app.viewport.setActiveItem(mapPanel, {type: 'slide', direction: 'left'});
+        };
+
+        var aboutPanel = new Ext.Panel({
+            dockedItems: [
+                {
+                    xtype: 'toolbar',
+                    ui: 'light',
+                    title: 'Settings',
+                    items: [
+                        {
+                            text: 'Map',
+                            ui: 'back',
+                            handler:    maphandler
+
+                        }
+                    ]
+                }
+            ],
+            //style: 'background-color:#6699cc',
+            html: '<span class="centered">The is a BETA application. Please send your feedback to ' +
+                     '<a href="mailto:webgis@swisstopo.ch">webgis@swisstopo.ch</a>.</span>'
+        });
+
+        var mapPanel = new Ext.Panel({
+            dockedItems: [
+                {
+                    dock: "top",
+                    xtype: "toolbar",
+                    id: 'toolbar',
+                    ui: "light",
+                    layout: {
+                        pack: "center"
+                    },
+                    items: [
+                        {
+                            xtype: "component",
+                            html: '<h1 class="beta" onclick="javascript:window.location.reload();">BETA</h1>' +
+                                    '<h1 class="title" onclick="javascript:window.location.reload();">geo.admin.ch</h1>'
+                        },
+                        {
+                            xtype: "spacer"
+                        },
+                        {
+                            iconMask: true,
+                            iconCls: "add",
+                            id: 'zoomin',
+                            handler: function() {
+                                map.zoomIn();
+                            }
+                        },
+                        {
+                            iconMask: true,
+                            iconCls: "minus",
+                            id: 'zoomout',
+                            handler: function() {
+                                map.zoomOut();
+                            }
+                        },
+                        {
+                            iconMask: true,
+                            title: 'About',
+                            iconCls: 'info',
+                            handler: settinghandler
+                        }
+                    ]
+                },
+                {
+                    dock: "bottom",
+                    id: "warning",
+                    xtype: "toolbar",
+                    title: "Geolocalisation ongoing...",
+                    ui: "green",
+                    layout: {
+                        pack: "center"
+                    }
+                }
+            ],
+            items: [
+                {
+                    xtype: "component",
+                    scroll: false,
+                    monitorResize: true,
+                    id: "map",
+                    listeners: {
+                        render: init,
+                        resize: function() {
+                            if (window.map) {
+                                map.updateSize();
+                            }
+                        }
+                    }
+                }
+            ]
+        });
 
         var app = new Ext.Application({
             name: "ol",
             launch: function() {
                 this.viewport = new Ext.Panel({
                     fullscreen: true,
-                    dockedItems: [
-                        {
-                            dock: "top",
-                            xtype: "toolbar",
-                            id: 'toolbar',
-                            ui: "light",
-                            layout: {
-                                pack: "center"
-                            },
-                            items: [
-                                {
-                                    xtype: "component",
-                                    //html: '<img class="logo" src="img/swiss.png" height="19" width="21" /><h1 class="title">geo.admin.ch</h1>',
-                                    html: '<h1 class="beta" onclick="javascript:window.location.reload();">BETA</h1><h1 class="title" onclick="javascript:window.location.reload();">geo.admin.ch</h1>'
-                                },
-                                {
-                                    xtype: "spacer"
-                                },
-                                {
-                                    iconMask: true,
-                                    iconCls: "add",
-                                    id: 'zoomin',
-                                    handler: function() {
-                                        map.zoomIn();
-                                    }
-                                },
-                                {
-                                    iconMask: true,
-                                    iconCls: "minus",
-                                    id: 'zoomout',
-                                    handler: function() {
-                                        map.zoomOut();
-                                    }
-                                },
-                                {
-                                    iconMask: true,
-                                    title: 'About',
-                                    iconCls: 'info',
-                                    handler: function() {
-                                        Ext.Msg.alert('About', 'The is a demo application. More info <a href="mailto:webgis@swisstopo.ch">webgis@swisstopo.ch</a>.', Ext.emptyFn);
+                    layout: 'card',
 
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                          dock: "bottom",
-                          id: "warning",
-                          xtype: "toolbar",
-                          title: "Geolocalisation ongoing...",
-                            ui: "green",
-                            layout: {
-                                pack: "center"
-                            }
-                        }
-                    ],
                     items: [
-                        {
-                            xtype: "component",
-                            scroll: false,
-                            monitorResize: true,
-                            id: "map",
-                            listeners: {
-                                render: init,
-                                resize: function() {
-                                    if (window.map) {
-                                        map.updateSize();
-                                    }
-                                }
-                            }
-                        }
+                        mapPanel,
+                        aboutPanel
                     ]
                 });
             }
