@@ -77,11 +77,11 @@
         }
 
         var settinghandler = function(button, event) {
-            app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'right'});
+            app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'left'});
         };
 
         var maphandler = function(button, event) {
-            app.viewport.setActiveItem(mapPanel, {type: 'slide', direction: 'left'});
+            app.viewport.setActiveItem(mapPanel, {type: 'slide', direction: 'right'});
         };
 
         var aboutPanel = new Ext.Panel({
