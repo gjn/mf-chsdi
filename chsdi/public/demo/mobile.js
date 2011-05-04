@@ -22,7 +22,7 @@ function checkIsInLayer(bounds) {
 
     // Support protection (default) or city
     var mode = OpenLayers.Util.getParameters(window.location.href).mode;
-    mode = (mode) ? mode : "protection";
+    mode = (mode) ? mode : "city";
 
     if (mode === "protection") {
         Ext.util.JSONP.request({
@@ -63,7 +63,7 @@ function checkIsInLayer(bounds) {
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].service === 'cities') {
                         warning = Ext.getCmp('warning');
-                        warning.setTitle("You are in: " + data[i].label);
+                        warning.setTitle(data[i].label);
                         warning.ui = 'light';
                         break;
                     }
