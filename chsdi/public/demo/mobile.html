@@ -59,6 +59,10 @@
     </style>
     <script>
 
+        if (!Ext.is.Android && !Ext.is.iOS) {
+            alert("The BETA version of GeoAdmin mobile version has been tested on Android and iOS only.");
+        }
+
         var app = new Ext.Application({
             name: "ol",
             launch: function() {
