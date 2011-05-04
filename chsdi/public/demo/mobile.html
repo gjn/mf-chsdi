@@ -150,7 +150,7 @@
                                 if (geolocate.active) {
                                     geolocate.deactivate();
                                     vector.removeAllFeatures();
-                                    warning.setTitle("Not tracking");
+                                    warning.setTitle("Geolocation deactivated");
 
                                 } else {
                                     geolocate.activate();
@@ -171,7 +171,7 @@
                     dock: "bottom",
                     id: "warning",
                     xtype: "toolbar",
-                    title: "Geolocalisation ongoing...",
+                    title: "Geolocation ongoing...",
                     ui: "green",
                     layout: {
                         pack: "center"

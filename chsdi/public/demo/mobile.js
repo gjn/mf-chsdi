@@ -127,14 +127,14 @@ var init = function () {
     geolocate.events.register("locationfailed", this, function(e) {
         var warning;
         warning = Ext.getCmp('warning');
-        warning.setTitle("GeoLocation failed");
+        warning.setTitle("Geolocation failed");
         warning.ui = 'dark';
     });
 
     geolocate.events.register("locationuncapable", this, function(e) {
         var warning;
         warning = Ext.getCmp('warning');
-        warning.setTitle("GeoLocation Error");
+        warning.setTitle("Geolocation Error");
         warning.ui = 'dark';
     });
 
