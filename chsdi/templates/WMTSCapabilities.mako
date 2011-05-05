@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This is an example of a GetCapabilities response that declares 
-	RESTful support for requesting tiles and FeatureInfo documents -->
 <Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">
 	<ows:ServiceIdentification>
 		<ows:Title>Federal Geodata Infrastructure of Switzerland</ows:Title>
@@ -90,7 +88,6 @@
 				<Value>${str(layer.timestamp).split(',')[0]}</Value>
 			</Dimension>
 			<TileMatrixSetLink>
-				<!-- this is really not a smart name -->
 				<TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
 			</TileMatrixSetLink>
 			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/wmts/1.0.0/${layer.id|x,trim}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
