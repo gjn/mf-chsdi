@@ -40,7 +40,7 @@ RewriteRule ^${vars:apache-entry-point}(cmslayer|wmts|bodsearch|feature|publishe
 
 # WMTS new-style (does not handle GetTile any more)
 # RewriteCond %{HTTP_HOST}   ^wmts[01234]?   
-RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities.xml(.*)$ /${vars:instanceid}/wsgi/wmts/$1 [PT]
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities.xml(.*)$ /${vars:instanceid}/wsgi/wmts$1 [PT]
 RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # print
