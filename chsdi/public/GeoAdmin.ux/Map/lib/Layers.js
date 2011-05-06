@@ -1,6 +1,7 @@
 /*
  * @include OpenLayers/Layer/TileCache.js
  * @include OpenLayers/Layer/WMS.js
+ *  * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
  *
@@ -21,6 +22,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 'http://tile8.geo.admin.ch/geoadmin/',
                 'http://tile9.geo.admin.ch/geoadmin/'
             ];
+
+        var wmts_url = [
+                'http://wmts0.geo.admin.ch/',
+                'http://wmts1.geo.admin.ch/',
+                'http://wmts2.geo.admin.ch/',
+                'http://wmts3.geo.admin.ch/',
+                'http://wmts4.geo.admin.ch/'
+        ];
+               
 
         if (this.layers === null) {
             this.init();
@@ -96,8 +106,40 @@ GeoAdmin._Layers = OpenLayers.Class({
             });
     
         }
+        else if (config.layertype == "wmts") {
+         var layer_options = OpenLayers.Util.extend({
+                layer:  name,
+                version: "1.0.0",
+                requestEncoding: "REST",
+                url: wmts_url,
+                style: "default",
+                matrixSet: "21781",
+                zoomOffset: 14,
+                formatSuffix: config.format.split('/')[1].toLowerCase(),
+                dimensions: ['TIME'],
+                params: {
+                    'time': config.timestamp
+                },
+                projection: new OpenLayers.Projection('EPSG:21781'),
+                units: 'm',
+                format: config.format,
+                attribution: config.datenherr,
+                transitionEffect: "resize",
+                buffer: 0,
+                opacity: config.opacity ? config.opacity : 1.0,
+                displayInLayerSwitcher: !config.isBgLayer,
+                geoadmin_queryable: config.queryable,
+                geoadmin_isBgLayer: !!(config.isBgLayer),
+                layerType: config.type
+            }, options);
 
-        else if (name === "voidLayer") {
+            return new OpenLayers.Layer.WMTS(layer_options);
+
+
+        }
+
+
+       else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
