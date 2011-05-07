@@ -6,12 +6,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>BETA GeoAdmin Mobile</title>
     <link rel="shortcut icon" type="image/ico" href="/main/wsgi/app/images/favicon.ico" />
-
+    <!-- OL custom slim build for mobile applications -->
     <script src="../build/mobile.js"></script>
-    <link rel="stylesheet" href="../build/mobile.css" type="text/css">
+    <!-- matricies definitions for WMTS tiles, soon not needed anymore -->
     <script src="matrixDefs.js"></script>
+    <!-- Code of this application -->
     <script src="mobile.js"></script>
-
+    <!-- OL standard CSS compressed-->
+    <link rel="stylesheet" href="../build/mobile.css" type="text/css">
+    <!-- Sencha Touch custom theme (build) for this application. Use compass, SCSS to build it -->
+     <link rel="stylesheet" href="mobile-cdbund.css" type="text/css">
+    <!-- Some OL related style -->
     <link rel="stylesheet" href="style.mobile.css" type="text/css">
     <style>
         .searchList {
@@ -45,7 +50,7 @@
             height: 100%;
         }
         .beta {color: #ff0000;}
-        h1.title {color: #ffffff; font-weight: bold; cursor: pointer;font-size:small;}
+        h1.title {color: #000000; font-weight: bold; cursor: pointer;font-size:small;}
         
         .logo {margin-top: 5px;}
         .olControlAttribution {
@@ -113,7 +118,6 @@
                     dock: "top",
                     xtype: "toolbar",
                     id: 'toolbar',
-                    ui: "light",
                     layout: {
                         pack: "center"
                     },
@@ -129,6 +133,7 @@
                         {
                             iconMask: true,
                             iconCls: "add",
+                            ui: 'cdbund',
                             id: 'zoomin',
                             handler: function() {
                                 map.zoomIn();
@@ -137,6 +142,7 @@
                         {
                             iconMask: true,
                             iconCls: "minus",
+                            ui: 'cdbund',
                             id: 'zoomout',
                             handler: function() {
                                 map.zoomOut();
@@ -145,6 +151,7 @@
                         {
                             iconMask: true,
                             iconCls: "locate",
+                            ui: 'cdbund',
                             id: 'locate',
                             handler: function() {
                                 var warning = Ext.getCmp('warning');
@@ -165,6 +172,7 @@
                             iconMask: true,
                             title: 'About',
                             iconCls: 'info',
+                            ui: 'cdbund',
                             handler: settinghandler
                         }
                     ]
@@ -174,7 +182,7 @@
                     id: "warning",
                     xtype: "toolbar",
                     title: "Geolocation ongoing...",
-                    ui: "green",
+                    ui: "cdbund",
                     layout: {
                         pack: "center"
                     }
