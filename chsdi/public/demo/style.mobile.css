@@ -26,3 +26,20 @@ div.olControlZoomPanel .olControlZoomOutItemInactive {
 .olImageLoadError {
    opacity: 0;
 }
+
+
+.olControlScaleLineBottom {
+    display: none;
+}
+
+.olControlScaleLineTop {
+    border-style: none solid solid !important;
+    border-width: medium 3px 3px !important;
+    font-weight: 900;
+}
+
+
+.olControlScaleLineBottom {
+    display: none;
+}
+
