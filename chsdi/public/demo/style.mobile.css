@@ -36,6 +36,7 @@ div.olControlZoomPanel .olControlZoomOutItemInactive {
     border-style: none solid solid !important;
     border-width: medium 3px 3px !important;
     font-weight: 900;
+    font-size: 12px;
 }
 
 
