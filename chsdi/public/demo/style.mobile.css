@@ -44,3 +44,11 @@ div.olControlZoomPanel .olControlZoomOutItemInactive {
     display: none;
 }
 
+.olControlAttribution {
+   bottom: 10px;
+   right: 10px;
+   font-weight: 900;
+   font-size: 12px; 
+}
+
+
