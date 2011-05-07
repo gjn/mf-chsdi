@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Demo WMTS</title>
+    <meta charset="utf-8"/>
+    <script src="http://api.geo.admin.ch/loader.js"></script>
+    <script src="matrixDefs.js"></script>
+
+    <style type="text/css">
+        .olTileImage {
+            border: 1px solid lime;
+        }
+        div.olMapViewport {
+            background-color: black;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var map;
+        function init() {
+
+            map = new GeoAdmin.Map("map", {doZoomToMaxExtent: true});
+
+            var matrixIds = [];
+
+            for (var m in matrixDefs) {
+                if (parseInt(m) >13) {
+
+                    var def = matrixDefs[m];
+                    var matrix = {};
+                    matrix.identifier = m;
+                    matrix.scaleDenominator = def.scaleDenominator;
+                    matrix.topLeftCorner = new OpenLayers.LonLat(def.topLeftCorner[0], def.topLeftCorner[1]);
+                    matrixIds.push(matrix);
+                }
+            };
+            
+            var wmts = new OpenLayers.Layer.WMTS({
+                layer: "ch.swisstopo.swissimage",
+                name: "Swissimage - WMTS",
+                url: ["http://wmts0.geo.admin.ch/",
+                      "http://wmts1.geo.admin.ch/",
+                      "http://wmts2.geo.admin.ch/",
+                      "http://wmts3.geo.admin.ch/",
+                      "http://wmts4.geo.admin.ch/" ],
+                tileOrigin: new OpenLayers.LonLat(420000.0, 350000.0),  //fix origin. Otherwqise, same as maxExtent
+                zoomOffset: 14,
+                matrixSet: "21781",
+                format: "image/jpeg",
+                opacity: 1.0,
+                isBaseLayer: false,
+                requestEncoding: "REST",
+                style: "default" ,  // must be provided
+                dimensions: ['TIME'],
+                params: {'time': '20110228'},
+                formatSuffix: 'jpeg'  // because we are not using .jpg
+            });
+
+            map.addLayers([ wmts]);
+
+            var layertree = new GeoAdmin.LayerTree({
+                map: map,
+                renderTo: "layertree",
+                width: 300
+            });
+
+            map.addControl(new OpenLayers.Control.MousePosition({element: $('coords')}));
+
+
+        }
+    </script>
+</head>
+<body onload="init();">
+<h1>Demo new style WMTS (direct bucket)</h1>
+
+<div style="width:1200px">
+    <div id="layertree" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
+    <div id="map"
+         style="float: right; width:850px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+</div>
+<div id="coords"></div>
+</body>
+
+</html>
