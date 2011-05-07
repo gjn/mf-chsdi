@@ -180,7 +180,7 @@ var init = function () {
         opacity: 1.0,
         isBaseLayer: true,
         formatSuffix: 'jpeg',
-        attribution: 'swisstopo'
+        attribution: '(c) swisstopo'
     }, wmts_options));
 
     // create map
