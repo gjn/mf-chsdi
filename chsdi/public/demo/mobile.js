@@ -119,8 +119,13 @@ var init = function () {
             )
 
         ]);
-        map.zoomToExtent(vector.getDataExtent());
-
+        var precisionExtent = vector.getDataExtent();
+        var zoom = map.getZoomForExtent(precisionExtent) ;
+        if (zoom <= 8) {
+            map.zoomToExtent(precisionExtent);
+        } else {
+            map.setCenter(precisionExtent.getCenterLonLat(), 8)
+        }
         checkIsInLayer(vector.getDataExtent());
     });
 
