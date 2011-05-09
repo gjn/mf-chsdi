@@ -73,9 +73,11 @@
     <script>
         var hasBeenWarned = false;
         if (!Ext.is.Android && !Ext.is.iOS && !hasBeenWarned && !WebKitDetect.isWebKit()) {
-            alert("The BETA version of GeoAdmin mobile version has been tested on the standard Android and iOS browsers.");
+            var carryOn = confirm("The BETA version of GeoAdmin mobile version has been tested on the standard Android "+
+                    "and iOS browsers.\n Do you really want to carry on ?");
             hasBeenWarned = true;
         }
+        if (!carryOn) {window.location = "sorry.html"};
 
         var settinghandler = function(button, event) {
             app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'left'});
