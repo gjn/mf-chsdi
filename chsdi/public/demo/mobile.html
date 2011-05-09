@@ -63,13 +63,11 @@
             right: 5px;
         }
 
-        .centered {
-	       width: 50%;
-	       height: 50%;
-            position: absolute;
-            left: 25%;
-            top: 50%;
-            
+         .centered {
+	       max-width:240px;
+	       margin-left: auto ;
+           margin-right: auto ;
+           margin-top: 20px;
          }
 
 
@@ -114,9 +112,11 @@
                     ]
                 }
             ],
-            //style: 'background-color:#6699cc',
-            html: '<span class="centered">The is a BETA application. Please send your feedback to ' +
-                     '<a href="mailto:webgis@swisstopo.ch">webgis@swisstopo.ch</a>.</span>'
+            html:  '<div class="centered"><h2>Feedback</h2>Dies ist eine <span class="beta">BETA</span> Webseite, Rückmeldungen an:<br />' +
+                  '<a href="mailto:info@geo.admin.ch?subject=Feedback BETA Mobile">info@geo.admin.ch</a>' +
+                  '<h2>Release 1.0</h2>Date: Q3 2011<br /><a href="http://www.geo.admin.ch/internet/geoportal/de/tools/tool_rss.parsys.94239.DownloadFile.tmp/mockupmobilemapgeoadminch.pdf" target="_blank">Screenshots</a>' +
+                  '<h2>Info</h2><a href="www.geo.admin.ch">www.geo.admin.ch</a><br />' +
+                  '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103" /></div>'
         });
 
         var mapPanel = new Ext.Panel({
