@@ -49,7 +49,6 @@
             var c = new GeoAdmin.TreePanel({model: model, layerStore: mapPanel.layers, renderTo: 'tree'});
             c.render();
             var node = c.getRootNode().childNodes[0].childNodes[0].childNodes[0];
-            console.log(node);
             t.ok(node instanceof GeoExt.tree.LayerNode, "node is a GeoExt layer node");
             t.eq(node.id, "ch.bafu.bundesinventare-auen", "Text correctly set");
             c.destroy();
