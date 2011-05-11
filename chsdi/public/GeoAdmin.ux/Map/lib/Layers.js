@@ -98,11 +98,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
                 opacity: config.opacity ? config.opacity : 1.0,
-                singleTile: true,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
-                layerType: config.type,
-                ratio: 1.1
+                layerType: config.type
             });
     
         }
@@ -212,19 +210,10 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
-                layertype: "aggregate",
-                layers: [{
-                    sub_name: "ch.bfs.gebaeude_wohnungs_register",
-                    sub_maxScale: 25000
-                }, {
-                    sub_layers: "ch.bfs.gebaeude_wohnungs_register",
-                    sub_layertype: "wms",
-                    sub_minScale: 25000
-                }],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true,
-                type: "mixed"
+                type: "point"
             },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
