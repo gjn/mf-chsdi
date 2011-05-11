@@ -88,7 +88,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         },
         checkchange: function(node, state) {
             if (state) {
-                if (this.layerStore.getCount() == 8) {
+                var layerCount = 0;
+                for (var i = 0; i < this.layerStore.map.layers.length; i++) {
+                    if (this.layerStore.map.layers[i].displayInLayerSwitcher) {
+                       layerCount++;
+                    }
+                }
+                if (layerCount == 5) {
                     this.suspendEvents();
                     node.getUI().toggleCheck(false);
                     this.updateCustomizedCheckbox(node, false);
