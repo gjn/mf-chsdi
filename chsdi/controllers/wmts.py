@@ -37,7 +37,11 @@ class WmtsController(BaseController):
         response.headers['Cache-Control'] = 'no-cache'
         response.charset = 'utf8'
 
-        c.onlineressource = "http://" + (request.environ.get("HTTP_HOST") or "api.geo.admin.ch" )
+        onlineressource = "http://api.geo.admin.ch/wmts"
+        http_host = request.environ.get("HTTP_HOST")
+        if http_host and http_host.startswith("wmts"):
+            onlineressource = "http://" + http_host
+        c.onlineressource = onlineressource
 
         c.layers = Session.query(self.GetCap).all()
         c.themes = Session.query(self.GetCapThemes).all()

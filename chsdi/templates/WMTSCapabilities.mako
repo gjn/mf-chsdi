@@ -40,10 +40,10 @@
 		<ows:Operation name="GetCapabilities">
 			<ows:DCP>
 				<ows:HTTP>
-					<ows:Get xlink:href="http://www.opengis.uab.es/cgi-bin/world/MiraMon5_0.cgi?">
+					<ows:Get xlink:href="${c.onlineressource}/1.0.0/WMTSCapabilities.xml">
 						<ows:Constraint name="GetEncoding">
 							<ows:AllowedValues>
-								<ows:Value>KVP</ows:Value>
+								<ows:Value>REST</ows:Value>
 							</ows:AllowedValues>
 						</ows:Constraint>
 					</ows:Get>
@@ -53,10 +53,10 @@
 		<ows:Operation name="GetTile">
 			<ows:DCP>
 				<ows:HTTP>
-					<ows:Get xlink:href="${c.onlineressource}/wmts/">
+					<ows:Get xlink:href="${c.onlineressource}/">
 						<ows:Constraint name="GetEncoding">
 							<ows:AllowedValues>
-								<ows:Value>KVP</ows:Value>
+								<ows:Value>REST</ows:Value>
 							</ows:AllowedValues>
 						</ows:Constraint>
 					</ows:Get>
@@ -79,7 +79,7 @@
 			<Style>
 				<ows:Title>${layer.kurzbezeichnung|x,trim}</ows:Title>
 				<ows:Identifier>${layer.id|x,trim}</ows:Identifier>
-			 <LegendURL format="image/png" xlink:href="${c.onlineressource}/legend/${layer.id|x,trim}_${c.lang|x,trim}.png" />
+			 <LegendURL format="image/png" xlink:href="http://api.geo.admin.ch/legend/${layer.id|x,trim}_${c.lang|x,trim}.png" />
 			</Style>
 			<Format>image/${str(layer.arr_all_formats).split(',')[0]}</Format>
 			<Dimension>
@@ -90,8 +90,8 @@
 			<TileMatrixSetLink>
 				<TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
 			</TileMatrixSetLink>
-			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/wmts/1.0.0/${layer.id|x,trim}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
-      ## <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="${c.onlineressource}/wmts/1.0.0/{Time}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
+			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/1.0.0/${layer.id|x,trim}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+      ## <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="${c.onlineressource}/1.0.0/{Time}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
 		</Layer>
   % endfor
   ## End main loop
