@@ -16,9 +16,15 @@ AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
 
-# Mobile rewrite
-RewriteCond %{HTTP_HOST}   ^mobile.map.geo.admin.ch
-RewriteRule ^/(.*)$ /${vars:instanceid}/wsgi/demo/$1 [P]
+# Mobile rewrite TODO to be deleted after sept.. 2011
+ServerAlias mobile.map.geo.admin.ch
+
+RewriteCond %{HTTP_HOST}   ^mobile
+RewriteCond $1 !\.(gif|jpe?g|png|css|js|ico)$ [NC]
+RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/mobile.html$1 [L]
+
+RewriteCond %{HTTP_HOST}   ^mobile
+RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/$1 [L]
 
 RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
