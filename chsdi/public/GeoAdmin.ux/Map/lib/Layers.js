@@ -131,6 +131,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type
             }, options);
 
+            console.log(layer_options);
+
             return new OpenLayers.Layer.WMTS(layer_options);
 
 
