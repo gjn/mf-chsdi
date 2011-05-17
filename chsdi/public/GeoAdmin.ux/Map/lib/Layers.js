@@ -107,7 +107,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         else if (config.layertype == "wmts") {
          var layer_options = OpenLayers.Util.extend({
                 layer:  name,
-                layername: config.name,
+                layername: name,
                 version: "1.0.0",
                 requestEncoding: "REST",
                 url: wmts_url,
