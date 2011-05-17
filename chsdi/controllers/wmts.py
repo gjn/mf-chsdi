@@ -35,12 +35,14 @@ class WmtsController(BaseController):
         response.headers['Pragma'] = 'public'
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
-        response.charset = 'utf8'
+        response.charset = 'utf8'  
 
-        onlineressource = "http://api.geo.admin.ch/wmts"
+
         http_host = request.environ.get("HTTP_HOST")
         if http_host and http_host.startswith("wmts"):
-            onlineressource = "http://" + http_host
+            onlineressource = "http://akiai4jxkwjqv5tgsaoq-wmts.s3.amazonaws.com"
+        else:
+            onlineressource = "http://api.geo.admin.ch/wmts"
         c.onlineressource = onlineressource
 
         c.layers = Session.query(self.GetCap).all()
