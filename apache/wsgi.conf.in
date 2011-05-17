@@ -29,7 +29,7 @@ RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/$1 [L]
 RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
-RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo|capabilities)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
 
 # legend urls
 RewriteRule ^/${vars:instanceid}/wsgi/legend/(.*)$   ${buildout:directory}/chsdi/public/legend/$1
@@ -42,11 +42,23 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|de
     Header merge Cache-Control "public"
 </LocationMatch>
 
+# WMTS legacy services FIXME to be deleted after 1st June + 6 month
+# api.geo.admin.ch/wmts and wmts[56789].geo.admin.ch/wmts
+RewriteCond %{QUERY_STRING} lang=(de|fr)
+RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities.xml ${buildout:directory}/chsdi/public/capabilities/WMTSGetCapabilities.%1.xml  [L]
+# default to german
+RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities.xml ${buildout:directory}/chsdi/public/capabilities/WMTSGetCapabilities.de.xml  [L]
+
 # loader:
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
 
 # web services:
 RewriteRule ^${vars:apache-entry-point}(cmslayer|wmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+
+# Legacy WMST Capabilities auf static files
+# RewriteCond %{HTTP_HOST}   ^wmts[01234]?
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabiliti?es\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA]
+RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
