@@ -653,6 +653,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.wasser-entnahme": {
                 name: OpenLayers.i18n("ch.bafu.wasser-entnahme"),
+                layertype: 'wmts',
+                timestamp: '20040101',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
