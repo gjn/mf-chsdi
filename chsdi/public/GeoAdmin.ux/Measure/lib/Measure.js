@@ -22,7 +22,6 @@ GeoAdmin.Measure = Ext.extend(Ext.Panel, {
         var updateStyle = function(btn, evt) {
             if (true) {
                 btn.el.parent().addClass('pressed');
-                console.log('adding the class');
             } else {
                 btn.el.parent().removeClass('pressed');
             }
