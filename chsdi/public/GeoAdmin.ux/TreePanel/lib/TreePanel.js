@@ -171,11 +171,15 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
                 item.cls = 'nodeTP3';
                 item.text = this.addtreeLayerLink(item.layer, "TileCache_128");
 
-
-                // we cannot use a string layer, since layer names are sometimes not unique
+                // We cannot use a string layer, since layer names are sometimes
+                // not unique. Yet, we assume layer names are unique for
+                // TileCache et WMTS layers.
                 var index = this.layerStore.findBy(function(r) {
                     var layer = r.getLayer();
-                    return (layer instanceof OpenLayers.Layer.TileCache && layer.layername === item.layer);
+                    return (layer instanceof OpenLayers.Layer.TileCache ||
+                            layer instanceof OpenLayers.Layer.WMTS) &&
+                           (layer.layername === item.layer ||
+                            layer.layer == item.layer);
                 });
                 if (index > -1) {
                     item.layer = this.layerStore.getAt(index).getLayer();
@@ -184,7 +188,6 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
                 delete item.layerType;
 
             }
-
             if (item.showMetadata === true) {
                 item.loader = this.getMetadataLoader();
                 delete item.showMetadata;
