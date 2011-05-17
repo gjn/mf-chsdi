@@ -360,7 +360,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     addLayerByName: function(layername, options) {
         var layer = GeoAdmin.layers.buildLayerByName(layername, options);
-        console.log(layer);
         if (layer) {
             // check if the layer is already loaded
             for (var i = 0, len = this.layers.length; i < len; i++) {

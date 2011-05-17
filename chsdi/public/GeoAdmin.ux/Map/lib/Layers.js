@@ -107,6 +107,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         else if (config.layertype == "wmts") {
          var layer_options = OpenLayers.Util.extend({
                 layer:  name,
+                layername: config.name,
                 version: "1.0.0",
                 requestEncoding: "REST",
                 url: wmts_url,
@@ -160,9 +161,6 @@ GeoAdmin._Layers = OpenLayers.Class({
             return new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, layer_options);
         }
     },
-
-
-    
 
     initialize: function() {},
 
