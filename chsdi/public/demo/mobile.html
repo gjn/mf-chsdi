@@ -1,228 +1,240 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>BETA GeoAdmin Mobile</title>
-    <script src="WebKitDetect.js"></script>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BETA GeoAdmin Mobile</title>
+<script src="WebKitDetect.js"></script>
 
-    <!-- OL custom slim build for mobile applications -->
-    <script src="build/mobile.js"></script>
-    <!-- matricies definitions for WMTS tiles, soon not needed anymore -->
-    <script src="matrixDefs.js"></script>
-    <!-- Code of this application -->
-    <script src="mobile.js"></script>
-    <!-- OL standard CSS compressed-->
-    <link rel="stylesheet" href="build/mobile.css" type="text/css">
-    <!-- Sencha Touch custom theme (build) for this application. Use compass, SCSS to build it -->
-     <link rel="stylesheet" href="mobile-cdbund.css" type="text/css">
-    <!-- Some OL related style -->
-    <link rel="stylesheet" href="style.mobile.css" type="text/css">
+<!-- OL custom slim build for mobile applications -->
+<script src="build/mobile.js"></script>
+<!-- matricies definitions for WMTS tiles, soon not needed anymore -->
+<script src="matrixDefs.js"></script>
+<!-- Code of this application -->
+<script src="mobile.js"></script>
+<!-- OL standard CSS compressed-->
+<link rel="stylesheet" href="build/mobile.css" type="text/css">
+<!-- Sencha Touch custom theme (build) for this application. Use compass, SCSS to build it -->
+<link rel="stylesheet" href="mobile-cdbund.css" type="text/css">
+<!-- Some OL related style -->
+<link rel="stylesheet" href="style.mobile.css" type="text/css">
 
-    <style>
-        .searchList {
-            min-height: 150px;
+<style>
+    .searchList {
+        min-height: 150px;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    img.minus {
+        -webkit-mask-image: url(img/minus1.png);
+    }
+
+    img.layers {
+        -webkit-mask-image: url(img/list.png);
+    }
+
+    img.swiss {
+        background-image: url(img/swiss.png);
+    }
+
+    .gx-layer-item {
+        margin-left: 10px;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .beta {
+        color: #ff0000;
+    }
+
+    h1.title {
+        color: #000000;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: small;
+    }
+
+    .logo {
+        margin-top: 5px;
+    }
+
+    .centered {
+        max-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    #title, #tags, #shortdesc {
+        display: none;
+    }
+
+    .protected-area {
+    }
+</style>
+<script>
+    var hasBeenWarned = false;
+    if (!hasBeenWarned && !WebKitDetect.isWebKit()) {
+        var carryOn = confirm("The BETA version of GeoAdmin mobile version has been tested on the standard Android " +
+                "and iOS browsers.\n Do you really want to carry on ?");
+        hasBeenWarned = true;
+        if (!carryOn) {
+            window.location = "sorry.html"
         }
-
-        .close-btn {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-        }
-
-        img.minus {
-            -webkit-mask-image: url(img/minus1.png);
-        }
-
-        img.layers {
-            -webkit-mask-image: url(img/list.png);
-        }
-
-        img.swiss {
-            background-image: url(img/swiss.png);
-        }
-
-        .gx-layer-item {
-            margin-left: 10px;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-        }
-        .beta {color: #ff0000;}
-        h1.title {color: #000000; font-weight: bold; cursor: pointer;font-size:small;}
-        
-        .logo {margin-top: 5px;}
-
-         .centered {
-	       max-width:240px;
-	       margin-left: auto ;
-           margin-right: auto ;
-           margin-top: 20px;
-         }
+    }
 
 
-        #title, #tags, #shortdesc {
-            display: none;
-        }
+    var settinghandler = function(button, event) {
+        app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'left'});
+    };
 
-        .protected-area {
-        }
-    </style>
-    <script>
-        var hasBeenWarned = false;
-        if (!hasBeenWarned && !WebKitDetect.isWebKit()) {
-            var carryOn = confirm("The BETA version of GeoAdmin mobile version has been tested on the standard Android "+
-                    "and iOS browsers.\n Do you really want to carry on ?");
-            hasBeenWarned = true;
-            if (!carryOn) {window.location = "sorry.html"}
-        }
+    var maphandler = function(button, event) {
+        app.viewport.setActiveItem(mapPanel, {type: 'slide', direction: 'right'});
+    };
 
+    var aboutPanel = new Ext.Panel({
+        dockedItems: [
+            {
+                xtype: 'toolbar',
+                ui: 'light',
+                title: 'Settings',
+                items: [
+                    {
+                        text: 'Map',
+                        ui: 'back',
+                        handler:    maphandler
 
-        var settinghandler = function(button, event) {
-            app.viewport.setActiveItem(aboutPanel, {type: 'slide', direction: 'left'});
-        };
-
-        var maphandler = function(button, event) {
-            app.viewport.setActiveItem(mapPanel, {type: 'slide', direction: 'right'});
-        };
-
-        var aboutPanel = new Ext.Panel({
-            dockedItems: [
-                {
-                    xtype: 'toolbar',
-                    ui: 'light',
-                    title: 'Settings',
-                    items: [
-                        {
-                            text: 'Map',
-                            ui: 'back',
-                            handler:    maphandler
-
-                        }
-                    ]
-                }
-            ],
-            html:  '<div class="centered"><h2>Feedback</h2>This is a <span class="beta">BETA</span> Website, Send feedback to:<br />' +
-                  '<a href="mailto:info@geo.admin.ch?subject=Feedback BETA Mobile">info@geo.admin.ch</a>' +
-                  '<h2>Release 1.0</h2>Planned date: Q3 2011<br /><a href="http://www.geo.admin.ch/internet/geoportal/de/tools/tool_rss.parsys.94239.DownloadFile.tmp/mockupmobilemapgeoadminch.pdf" target="_blank">Screenshots</a>' +
-                  '<h2>Info</h2><a href="www.geo.admin.ch">www.geo.admin.ch</a><br />' +
-                  '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103" /></div>'
-        });
-
-        var mapPanel = new Ext.Panel({
-            dockedItems: [
-                {
-                    dock: "top",
-                    xtype: "toolbar",
-                    id: 'toolbar',
-                    ui: "light",
-                    layout: {
-                        pack: "center"
-                    },
-                    items: [
-                        {
-                            xtype: "component",
-                            html: '<h1 class="title" onclick="javascript:window.location.reload();"><span class="beta">BETA</span> map</h1>' +
-                                    '<h1 class="title" onclick="javascript:window.location.reload();">geo.admin.ch</h1>'
-                        },
-                        {
-                            xtype: "spacer"
-                        },
-                        {
-                            iconMask: true,
-                            iconCls: "add",
-                            ui: 'cdbund',
-                            id: 'zoomin',
-                            handler: function() {
-                                map.zoomIn();
-                            }
-                        },
-                        {
-                            iconMask: true,
-                            iconCls: "minus",
-                            ui: 'cdbund',
-                            id: 'zoomout',
-                            handler: function() {
-                                map.zoomOut();
-                            }
-                        },
-                        {
-                            iconMask: true,
-                            iconCls: "locate",
-                            ui: 'cdbund',
-                            id: 'locate',
-                            handler: function() {
-                                var warning = Ext.getCmp('warning');
-                                var geolocate = map.getControlsBy("id", "locate-control")[0];
-                                if (geolocate.active) {
-                                    geolocate.deactivate();
-                                    vector.removeAllFeatures();
-                                    warning.setTitle("Geolocation deactivated");
-
-                                } else {
-                                    geolocate.activate();
-                                    warning.setTitle("Geolocation ongoing...");
-                                    
-                                }
-                            }
-                        },
-                        {
-                            iconMask: true,
-                            title: 'About',
-                            iconCls: 'info',
-                            ui: 'cdbund',
-                            handler: settinghandler
-                        }
-                    ]
-                },
-                {
-                    dock: "bottom",
-                    id: "warning",
-                    xtype: "toolbar",
-                    title: "Geolocation ongoing...",
-                    ui: "green",
-                    layout: {
-                        pack: "center"
                     }
-                }
-            ],
-            items: [
-                {
-                    xtype: "component",
-                    scroll: false,
-                    monitorResize: true,
-                    id: "map",
-                    listeners: {
-                        render: init,
-                        resize: function() {
-                            if (window.map) {
-                                map.updateSize();
-                            }
-                        }
-                    }
-                }
-            ]
-        });
-
-        var app = new Ext.Application({
-            name: "ol",
-            launch: function() {
-                this.viewport = new Ext.Panel({
-                    fullscreen: true,
-                    layout: 'card',
-
-                    items: [
-                        mapPanel,
-                        aboutPanel
-                    ]
-                });
+                ]
             }
-        });
+        ],
+        html:  '<div class="centered"><h2>Feedback</h2>This is a <span class="beta">BETA</span> Website, Send feedback to:<br />' +
+                '<a href="mailto:info@geo.admin.ch?subject=Feedback BETA Mobile">info@geo.admin.ch</a>' +
+                '<h2>Release 1.0</h2>Planned date: Q3 2011<br /><a href="http://www.geo.admin.ch/internet/geoportal/de/tools/tool_rss.parsys.94239.DownloadFile.tmp/mockupmobilemapgeoadminch.pdf" target="_blank">Screenshots</a>' +
+                '<h2>Info</h2><a href="www.geo.admin.ch">www.geo.admin.ch</a><br />' +
+                '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103" /></div>'
+    });
 
-    </script>
+    var mapPanel = new Ext.Panel({
+        dockedItems: [
+            {
+                dock: "top",
+                xtype: "toolbar",
+                id: 'toolbar',
+                ui: "light",
+                layout: {
+                    pack: "center"
+                },
+                items: [
+                    {
+                        xtype: "component",
+                        html: '<h1 class="title" onclick="javascript:window.location.reload();"><span class="beta">BETA</span> map</h1>' +
+                                '<h1 class="title" onclick="javascript:window.location.reload();">geo.admin.ch</h1>'
+                    },
+                    {
+                        xtype: "spacer"
+                    },
+                    {
+                        iconMask: true,
+                        iconCls: "add",
+                        ui: 'cdbund',
+                        id: 'zoomin',
+                        handler: function() {
+                            map.zoomIn();
+                        }
+                    },
+                    {
+                        iconMask: true,
+                        iconCls: "minus",
+                        ui: 'cdbund',
+                        id: 'zoomout',
+                        handler: function() {
+                            map.zoomOut();
+                        }
+                    },
+                    {
+                        iconMask: true,
+                        iconCls: "locate",
+                        ui: 'cdbund',
+                        id: 'locate',
+                        handler: function() {
+                            var warning = Ext.getCmp('warning');
+                            var geolocate = map.getControlsBy("id", "locate-control")[0];
+                            if (geolocate.active) {
+                                geolocate.deactivate();
+                                vector.removeAllFeatures();
+                                warning.setTitle("Geolocation deactivated");
+
+                            } else {
+                                geolocate.activate();
+                                warning.setTitle("Geolocation ongoing...");
+
+                            }
+                        }
+                    },
+                    {
+                        iconMask: true,
+                        title: 'About',
+                        iconCls: 'info',
+                        ui: 'cdbund',
+                        handler: settinghandler
+                    }
+                ]
+            },
+            {
+                dock: "bottom",
+                id: "warning",
+                xtype: "toolbar",
+                title: "Geolocation ongoing...",
+                ui: "green",
+                layout: {
+                    pack: "center"
+                }
+            }
+        ],
+        items: [
+            {
+                xtype: "component",
+                scroll: false,
+                monitorResize: true,
+                id: "map",
+                listeners: {
+                    render: init,
+                    resize: function() {
+                        if (window.map) {
+                            map.updateSize();
+                        }
+                    }
+                }
+            }
+        ]
+    });
+
+    var app = new Ext.Application({
+        name: "ol",
+        launch: function() {
+            this.viewport = new Ext.Panel({
+                fullscreen: true,
+                layout: 'card',
+
+                items: [
+                    mapPanel,
+                    aboutPanel
+                ]
+            });
+        }
+    });
+
+</script>
 </head>
 <body>
 <h1 id="title">BETA Mobile GeoAdmin</h1>
