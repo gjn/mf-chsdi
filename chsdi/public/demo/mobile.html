@@ -73,11 +73,11 @@
     </style>
     <script>
         var hasBeenWarned = false;
-        if (!Ext.is.Android && !Ext.is.iOS && !hasBeenWarned && !WebKitDetect.isWebKit()) {
+        if (!hasBeenWarned && !WebKitDetect.isWebKit() && !Ext.is.Android && !Ext.is.iOs) {
             var carryOn = confirm("The BETA version of GeoAdmin mobile version has been tested on the standard Android "+
                     "and iOS browsers.\n Do you really want to carry on ?");
             hasBeenWarned = true;
-            if (!carryOn) {window.location = "sorry.html"};
+            if (!carryOn) {window.location = "sorry.html"}
         }
 
 
