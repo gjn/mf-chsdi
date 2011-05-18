@@ -124,6 +124,7 @@ A Map Panel is required in order to add a toolbar with the print function.
             tbar: ["->"
             ]
         });
+        mapPanel2.map.addLayerByName('ch.bafu.wasser-entnahme');
         mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
                 text: OpenLayers.i18n('print map (popup)'),
@@ -251,6 +252,7 @@ Map Panel
             tbar: ["->"
             ]
         });
+        mapPanel2.map.addLayerByName('ch.bafu.wasser-entnahme');
         mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
                 text: OpenLayers.i18n('print map (popup)'),
