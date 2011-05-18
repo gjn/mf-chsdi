@@ -44,7 +44,7 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|de
 
 # WMTS legacy services FIXME to be deleted after 1st June + 6 month
 # api.geo.admin.ch/wmts and wmts[56789].geo.admin.ch/wmts
-RewriteRule ^${vars:apache-entry-point}wmts$ /${vars:apache-entry-point}/wmts/WMTSCapabilities.xml [R=permanent,QSA]
+RewriteRule ^${vars:apache-entry-point}wmts$ ${vars:apache-entry-point}wmts/WMTSCapabilities.xml [R=permanent,QSA]
 RewriteCond %{QUERY_STRING} lang=(de|fr)
 RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities.xml ${buildout:directory}/chsdi/public/capabilities/WMTSGetCapabilities.%1.xml  [L]
 # default to german
