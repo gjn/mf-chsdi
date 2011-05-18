@@ -85,7 +85,9 @@
 			<Dimension>
 				<ows:Identifier>Time</ows:Identifier>
 				<Default>${str(layer.timestamp).split(',')[0]}</Default>
-				<Value>${str(layer.timestamp).split(',')[0]}</Value>
+				% for timestamp in layer.timestamp.split(','):
+				<Value>${timestamp}</Value>
+				% endfor
 			</Dimension>
 			<TileMatrixSetLink>
 				<TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
