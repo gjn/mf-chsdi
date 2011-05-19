@@ -20,7 +20,7 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml
 ServerAlias mobile.map.geo.admin.ch
 
 RewriteCond %{HTTP_HOST}   ^mobile
-RewriteCond $1 !\.(gif|jpe?g|png|css|js|ico)$ [NC]
+RewriteCond $1 !\.(gif|jpe?g|png|css|js|ico|html)$ [NC]
 RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/mobile.html$1 [L]
 
 RewriteCond %{HTTP_HOST}   ^mobile
