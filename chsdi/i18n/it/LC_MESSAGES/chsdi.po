@@ -74,6 +74,21 @@ msgstr "Metadati"
 msgid "Detailbeschreibung"
 msgstr "Descrizione dettagliata"
 
+msgid "Detaildaten"
+msgstr "Détails"
+
+msgid "holzzuwachs"
+msgstr "Accroissement [m3/ha/an]"
+
+msgid "holznuztung"
+msgstr "Utilisation [m3/ha/an]"
+
+msgid "holzvorrat"
+msgstr "Réserve [m3/ha]"
+
+msgid "betrieb"
+msgstr "Entreprise"
+
 msgid "Datenbezug"
 msgstr "Procacciamento dei dati"
 
@@ -191,8 +206,8 @@ msgstr "Débit résiduel N°"
 msgid "kanton"
 msgstr "Canton"
 
-msgid "fliessgewaesser"
-msgstr "Aquatique"
+msgid "ent_gew"
+msgstr "Cours d'eau"
 
 msgid "egid"
 msgstr "EGID"

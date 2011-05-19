@@ -74,6 +74,21 @@ msgstr "Metadaten"
 msgid "Detailbeschreibung"
 msgstr "Detailbeschreibung"
 
+msgid "Detaildaten"
+msgstr "Detaildaten"
+
+msgid "betrieb"
+msgstr "Betrieb"
+
+msgid "holzzuwachs"
+msgstr "Zuwachs [m3/ha/J]"
+
+msgid "holznuztung"
+msgstr "Nutzung [m3/ha/J]"
+
+msgid "holzvorrat"
+msgstr "Vorrat [m3/ha]"
+
 msgid "Datenbezug"
 msgstr "Datenbezug"
 
@@ -191,7 +206,7 @@ msgstr "Restwasserkarte Nr."
 msgid "kanton"
 msgstr "Kanton"
 
-msgid "fliessgewaesser"
+msgid "ent_gew"
 msgstr "Fliessgewässer"
 
 msgid "egid"
