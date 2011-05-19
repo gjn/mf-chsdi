@@ -191,6 +191,42 @@ class SB(Base, Queryable):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
+class SWISSPRTR(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'swissprtr'
+    __table_args__ = ({'schema': 'prtr', 'autoload': True})
+    __template__ = 'tooltips/swissprtr.mako'
+
+    id = Column('prtrnr', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+class HOLZVORRAT(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'holzvorrat'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/holzvorrat.mako'
+
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+class HOLZZUWACHS(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'holzzuwachs'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/holzzuwachs.mako'
+
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+class HOLZNUTZUNG(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'holznutzung'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/holznutzung.mako'
+
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
@@ -212,3 +248,7 @@ register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', PAERKE_NATIONALER_
 register('ch.bafu.schutzgebiete-ramsar', RA)
 register('ch.bafu.schutzgebiete-wildruhezonen', WILDRUHEZONEN)
 register('ch.bafu.fauna-steinbockkolonien', SB)
+register('ch.bafu.swissprtr', SWISSPRTR)
+register('ch.bafu.holzvorrat', HOLZVORRAT)
+register('ch.bafu.holzzuwachs', HOLZZUWACHS)
+register('ch.bafu.holznutzung', HOLZNUTZUNG)
