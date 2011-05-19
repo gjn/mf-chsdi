@@ -134,6 +134,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.bafu.ren-trockenstandorte': 'REN  Zones de prairies sèches',
     'ch.bafu.ren-wald_ueber_1000_meter': 'REN  Zones forestières>1000m',
     'ch.bafu.ren-wald_unter_1000_meter': 'REN  Zones forestières<1000m',
+    'ch.bafu.ren-wald': 'REN Zones forêts',
     'ch.bafu.hydrologie-hydromessstationen': 'Stations hydrométriques',
     'ch.bafu.bundesinventare-auen': 'Zones alluviales',
     'ch.bafu.bundesinventare-bln': 'Inventaire IFP',

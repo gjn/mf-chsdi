@@ -140,6 +140,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.bafu.ren-trockenstandorte': 'REN  Trockenstandort',
     'ch.bafu.ren-wald_ueber_1000_meter': 'REN  Wald>1000m',
     'ch.bafu.ren-wald_unter_1000_meter': 'REN  Wald<1000m',
+    'ch.bafu.ren-wald': 'REN  Wald',
     'ch.bafu.hydrologie-hydromessstationen': 'Hydrologische Messstationen',
     'ch.bafu.bundesinventare-auen': 'Auengebiete',
     'ch.bafu.bundesinventare-bln': 'BLN Inventar',
