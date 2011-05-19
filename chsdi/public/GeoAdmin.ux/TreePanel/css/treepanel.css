@@ -152,7 +152,7 @@ div.x-tree-node-leaf a.x-tree-node-anchor span {
 
 /* used */
 .checkboxOff {
-  background-position: -17px 0;
+  background-position: -17px 1px;
 }
 .nodeBackgroundSelected .checkboxOff {
   background-position: -17px 19px;
