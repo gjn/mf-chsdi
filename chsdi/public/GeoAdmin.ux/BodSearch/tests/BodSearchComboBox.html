@@ -28,23 +28,21 @@
         }
 
         function test_query(t) {
-            t.plan(2);
+            t.plan(3);
 
-            // set up
-
-            var c = new GeoAdmin.BodSearchComboBox({lang: "de", url: "foo"});
-
-            // test
+            var c = new GeoAdmin.BodSearchComboBox({lang: "de", url: "foo", project: "foo"});
 
             var query = "dufour", log = {};
             c.store.proxy.on({beforeload: function(p, params) {
                 log.lang = params.lang;
                 log.query = params.query;
+                log.project = params.project;
                 return false; // stop the request
             }});
             c.doQuery(query);
             t.eq(log.lang, "de", "lang param is correct");
             t.eq(log.query, query , "query param is correct");
+            t.eq(log.project, "foo" , "project param is correct");
         }
       </script>
   </head>

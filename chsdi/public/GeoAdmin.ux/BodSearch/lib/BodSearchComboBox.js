@@ -53,6 +53,9 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      */
     lang: null,
 
+    //Project Id. Not to be documented.
+    project: null,
+
     url: null,
     hideTrigger: true,
     minChars: 4,
@@ -99,6 +102,9 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         this.store.baseParams = {
           lang: this.lang
         };
+        if (this.project) {
+            this.store.baseParams.project = this.project;
+        }
 
         this.on('select', this.recordSelected, this);
     },
