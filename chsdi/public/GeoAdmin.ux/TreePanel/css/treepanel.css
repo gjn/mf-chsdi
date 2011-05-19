@@ -20,7 +20,6 @@
 }
 
 
-
 #legendAction {
     cursor: pointer;
     color: #FFFFFF;
@@ -145,6 +144,12 @@ div.x-tree-node-leaf a.x-tree-node-anchor span {
     margin-left: -30px;
 }
 
+.geoadmin-treepanel .x-tree-node a  {
+    color: #000000;
+    text-decoration: none !important;
+}
+
+
 /* used */
 .checkboxOff {
   background-position: -17px 0;
@@ -201,8 +206,8 @@ div.nodeTP3selected >  a.x-tree-node-anchor span {
     font-size: 0px;
 }
 
-.ext-chrome .geoadmin-treepanel .layernodetools {
-  margin-top: -1px;
+.ext-chrome .geoadmin-treepanel .layerNodeTools {
+  margin-top: -1px !important;
 }
 
 .ext-ie .layerNodeTools {
