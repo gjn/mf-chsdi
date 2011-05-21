@@ -39,13 +39,20 @@ class WmtsController(BaseController):
 
 
         http_host = request.environ.get("HTTP_HOST")
-        if http_host and http_host.startswith("wmts"):
-            onlineressource = "http://akiai4jxkwjqv5tgsaoq-wmts.s3.amazonaws.com"
+        request_uri = request.environ.get("REQUEST_URI", "")
+        if request_uri.find("1.0.0"): # new bucket WMTS
+            onlineressource = "http://wmts.geo.admin.ch"
         else:
             onlineressource = "http://api.geo.admin.ch/wmts"
+        # for ssWMTS
+        c.is_swisstopowmts = request.params.get('mode', '') == 'swisstopowmts' 
+        if c.is_swisstopowmts:
+            c.layers = Session.query(self.GetCap).filter_by(sswmts=True).all()
+            onlineressource = "http://wmts.swistopo.admin.ch"
+        else:
+            c.layers = Session.query(self.GetCap).all()
+        
         c.onlineressource = onlineressource
-
-        c.layers = Session.query(self.GetCap).all()
         c.themes = Session.query(self.GetCapThemes).all()
         c.lang = self.lang
 

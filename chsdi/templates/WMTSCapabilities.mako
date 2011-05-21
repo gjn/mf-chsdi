@@ -1,42 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">
-	<ows:ServiceIdentification>
-		<ows:Title>Federal Geodata Infrastructure of Switzerland</ows:Title>
-		<ows:Abstract>Some Geodata are subject to license and fees</ows:Abstract>
-		<!-- Revision: $Rev$ -->
-		<ows:Keywords>
-			<ows:Keyword>FGDI</ows:Keyword>
-			<ows:Keyword>Pixelkarte</ows:Keyword>
-			<ows:Keyword>Switzerland</ows:Keyword>
-		</ows:Keywords>
-		<ows:ServiceType>OGC WMTS</ows:ServiceType>
-		<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
-		<ows:Fees>yes</ows:Fees>
-		<ows:AccessConstraints>license</ows:AccessConstraints>
-	</ows:ServiceIdentification>
-	<ows:ServiceProvider>
-		<ows:ProviderName>swisstopo</ows:ProviderName>
-		<ows:ProviderSite xlink:href="http://www.swisstopo.admin.ch"/>
-		<ows:ServiceContact>
-			<ows:IndividualName>David Oesch</ows:IndividualName>
-			<ows:PositionName></ows:PositionName>
-			<ows:ContactInfo>
-				<ows:Phone>
-					<ows:Voice>+41 (0)31 / 963 21 11</ows:Voice>
-					<ows:Facsimile>+41 (0)31 / 963 24 59</ows:Facsimile>
-				</ows:Phone>
-				<ows:Address>
-					<ows:DeliveryPoint>swisstopo</ows:DeliveryPoint>
-					<ows:City>Bern</ows:City>
-					<ows:AdministrativeArea>BE</ows:AdministrativeArea>
-					<ows:PostalCode>3084</ows:PostalCode>
-					<ows:Country>Switzerland</ows:Country>
-					<ows:ElectronicMailAddress/>
-				</ows:Address>
-			</ows:ContactInfo>
-		</ows:ServiceContact>
-	</ows:ServiceProvider>
-	<ows:OperationsMetadata>
+	<!-- Revision: $Rev$ -->
+	% if c.is_swisstopowmts:
+	    <%include file="swisstopoHeader.mako"/>
+	% else:
+	    <%include file="standardHeader.mako"/>
+	% endif
+
+   <ows:OperationsMetadata>
 		<ows:Operation name="GetCapabilities">
 			<ows:DCP>
 				<ows:HTTP>

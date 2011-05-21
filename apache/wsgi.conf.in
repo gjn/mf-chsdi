@@ -54,12 +54,7 @@ RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities.xml ${buildout:dire
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(cmslayer|wmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
-
-# Legacy WMST Capabilities auf static files
-# RewriteCond %{HTTP_HOST}   ^wmts[01234]?
-RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabiliti?es\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA]
-RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
+RewriteRule ^${vars:apache-entry-point}(cmslayer|wmts|sswmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
@@ -70,8 +65,11 @@ ServerAlias wmts3.geo.admin.ch
 ServerAlias wmts4.geo.admin.ch
 ServerAlias wmts.swisstopo.admin.ch
 
+# WMTS and ssWMTS
+RewriteCond %{HTTP_HOST}   ^wmts.swisstopo.admin.ch$
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts?mode=swisstopowmts [PT,NC,QSA,L]
 # RewriteCond %{HTTP_HOST}   ^wmts[01234]?
-RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabiliti?es\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA]
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA,L]
 RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # print
