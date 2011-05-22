@@ -13,6 +13,8 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,
 
+    // FIXME, make the usage of name, layer and layername a bit more consistant.
+    // Here, the argument "name" is really the bodid
     buildLayerByName: function(name, options) {
 
          var tilecache_url = [
@@ -106,8 +108,9 @@ GeoAdmin._Layers = OpenLayers.Class({
         }
         else if (config.layertype == "wmts") {
          var layer_options = OpenLayers.Util.extend({
-                layer:  name,
-                layername: name,
+                layer:  name,      // bodid, used in the WMTS request
+                layername: name,   // bodid, for i18n in TreePanel
+                name: config.name, // translated name, for LayerTree
                 version: "1.0.0",
                 requestEncoding: "REST",
                 url: wmts_url,
