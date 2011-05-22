@@ -279,7 +279,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Error': 'Problem',
     
     //Print
-    'mf.print.pdfReady': 'PDF ist bereits',
+    'mf.print.pdfReady': 'PDF ist bereit',
     'mf.print.generatingPDF': "PDF herstellen",
     'mf.print.print': 'Drucken',
     'mf.print.scale': 'Massstab',
