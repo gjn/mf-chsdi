@@ -22,8 +22,8 @@
         function test_constructor(t) {
             t.plan(4);
             var mapPanel = createMapPanel();
-            var layer1 = new OpenLayers.Layer.WMS(null, "http://foo/wms?", {layers: ['ch.bafu.schutzgebiete-ramsar', 'ch.bafu.bundesinventare-vogelreservate']}); 
-            var layer2 = GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-moorlandschaften');
+            var layer1 = new OpenLayers.Layer.WMS(null, "http://foo/wms?", {layers: ['ch.swisstopo.vec25-uebrigerverkehr', 'ch.swisstopo-karto.wanderwege']}); 
+            var layer2 = GeoAdmin.layers.buildLayerByName('ch.swisstopo.vec25-strassennetz');
             mapPanel.map.addLayers([layer1, layer2]);
             var c = new GeoAdmin.LegendWindow({renderTo: 'legend'});
             c.render();
