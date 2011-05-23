@@ -33,7 +33,7 @@
         function test_model(t) {
             t.plan(2);
             var mapPanel = createMapPanel();
-            mapPanel.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-auen'));
+            mapPanel.map.addLayer(GeoAdmin.layers.buildLayerByName('ch.ensi.zonenplan-notfallschutz-kernanlagen'));
             var model = [{
                     text: OpenLayers.i18n("Umwelt, Biologie und Geologie"),
                     expanded: true,
@@ -42,7 +42,7 @@
                             text: OpenLayers.i18n("Schutzgebiete"),
                             expanded: true,
                             children: [
-                               {layertype: "wmts", layer: 'ch.bafu.bundesinventare-auen'}]
+                               {layertype: "tilecache", layer: 'ch.ensi.zonenplan-notfallschutz-kernanlagen'}]
                         }
                     ]
             }];
@@ -50,7 +50,7 @@
             c.render();
             var node = c.getRootNode().childNodes[0].childNodes[0].childNodes[0];
             t.ok(node instanceof GeoExt.tree.LayerNode, "node is a GeoExt layer node");
-            t.eq(node.id, "ch.bafu.bundesinventare-auen", "Text correctly set");
+            t.eq(node.id, "ch.ensi.zonenplan-notfallschutz-kernanlagen", "Text correctly set");
             c.destroy();
             mapPanel.destroy();
         }
