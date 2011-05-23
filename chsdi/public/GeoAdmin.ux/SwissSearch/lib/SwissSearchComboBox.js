@@ -107,6 +107,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     // private
     onSelect: function(record, index) {
+        this.map.vector.removeAllFeatures();
         if (this.fireEvent('beforeselect', this, record, index) !== false) {
             this.setValue(record.get('label').replace(/<[\/]?[^>]*>/g, ''));
             this.collapse();
@@ -148,14 +149,67 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         return true;
     },
 
+    pulsate: function(feature, map) {
+        var point = feature.geometry.getCentroid(),
+                bounds = feature.geometry.getBounds(),
+                radius = Math.abs((bounds.right - bounds.left) / 2),
+                count = 0,
+                grow = 'up';
+
+        var resize = function() {
+            if (count > 16) {
+                clearInterval(window.resizeInterval);
+            }
+            var interval = radius * 0.03;
+            var ratio = interval / radius;
+            switch (count) {
+                case 4:
+                case 12:
+                    grow = 'down'; break;
+                case 8:
+                    grow = 'up'; break;
+            }
+            if (grow !== 'up') {
+                ratio = - Math.abs(ratio);
+            }
+            feature.geometry.resize(1 + ratio, point);
+            map.vector.drawFeature(feature);
+            count++;
+        };
+        window.resizeInterval = window.setInterval(resize, 50, point, radius);
+    },
+
     recordSelected: function(combo, record, index) {
-        var extent = OpenLayers.Bounds.fromArray(record.get('bbox'));
-        var zoom = this.objectorig_zoom[record.get('objectorig')];
+        var extent = OpenLayers.Bounds.fromArray(record.data.bbox);
+        var zoom = undefined;
+
+        if (record.data.service == 'address') {
+            zoom = 10;
+        } else {
+            zoom = this.objectorig_zoom[record.data.objectorig];
+        }
 
         if (zoom === undefined) {
             this.map.zoomToExtent(extent);
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
+            if (record.data.service == 'address') {
+                var circle = new OpenLayers.Feature.Vector(
+                        OpenLayers.Geometry.Polygon.createRegularPolygon(
+                                new OpenLayers.Geometry.Point(extent.getCenterLonLat().lon, extent.getCenterLonLat().lat),
+                                25,
+                                40,
+                                0
+                                ),
+                {},
+                {
+                    fillColor: '#F00',
+                    fillOpacity: 0.75,
+                    strokeWidth: 0
+                });
+                this.map.vector.addFeatures([circle]);
+                this.pulsate(circle, this.map);
+            }
         }
     }
 });
