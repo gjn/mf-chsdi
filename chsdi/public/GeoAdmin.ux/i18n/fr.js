@@ -135,7 +135,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.bfs.arealstatistik-waldmischungsgrad': 'Mixité des forêts 1990/1992',
     'ch.bfs.arealstatistik-hintergrund': 'Utilisation simplifiée du sol',
     'ch.bfs.gebaeude_wohnungs_register': 'Registre des bâtiments et des logements',
-    'ch.bafu.bundesinventare-amphibien': 'Amphibiens',
+    'ch.bafu.bundesinventare-amphibien': 'Batraciens',
     'ch.bafu.fauna-steinbockkolonien': 'Colonies de bouquetins',
     'ch.bafu.ren-extensive_landwirtschaftsgebiete': 'REN  Zones agricoles extensives',
     'ch.bafu.ren-feuchtgebiete': 'REN  Zones humides',
