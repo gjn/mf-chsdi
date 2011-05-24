@@ -105,7 +105,7 @@ GeoAdmin._Layers = OpenLayers.Class({
     
         }
         else if (config.layertype == "wmts") {
-         var layer_options = OpenLayers.Util.extend({
+         var layer_options_wmts = OpenLayers.Util.extend({
                 name: config.name,
                 layer:  name,
                 layername: name,
@@ -133,7 +133,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type
             }, options);
 
-            return new OpenLayers.Layer.WMTS(layer_options);
+            return new OpenLayers.Layer.WMTS(layer_options_wmts);
         }
 
 
@@ -233,6 +233,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.hiks-siegfried": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-siegfried"),
+                layertype: 'wmts',
+                timestamp: '18700101',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -240,6 +242,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-primaerflaechen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-primaerflaechen"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -247,6 +251,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-anlagen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-anlagen"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -254,6 +260,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-gwn-gewassernetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-gwn-gewassernetz"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -261,6 +269,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-gebaeude": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-gebaeude"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -268,6 +278,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-eisenbahnnetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-eisenbahnnetz"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -275,6 +287,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-wander": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-wander"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -282,6 +296,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.gg25-gemeinde-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-gemeinde-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20090601',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -289,6 +305,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.gg25-bezirk-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-bezirk-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20090601',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -296,6 +314,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.gg25-kanton-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-kanton-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20090601',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -303,6 +323,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.gg25-land-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-land-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20090601',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -310,6 +332,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.fixpunkte-agnes": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-agnes"),
+                layertype: 'wmts',
+                timestamp: '20110509',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo.kt",
@@ -317,6 +341,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.fixpunkte-lage": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage"),
+                layertype: 'wmts',
+                timestamp: '20110509',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo.kt",
@@ -324,6 +350,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.fixpunkte-hoehe": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe"),
+                layertype: 'wmts',
+                timestamp: '20110509',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo.kt",
@@ -349,6 +377,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec200-transportation-oeffentliche-verkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-oeffentliche-verkehr"),
+                layertype: 'wmts',
+                timestamp: '20100101',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -356,6 +386,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec200-transportation-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-strassennetz"),
+                layertype: 'wmts',
+                timestamp: '20100101',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -363,6 +395,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
+                layertype: 'wmts',
+                timestamp: '19791231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -370,6 +404,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geophysik-inklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
+                layertype: 'wmts',
+                timestamp: '19791231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -377,6 +413,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geophysik-deklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-deklination"),
+                layertype: 'wmts',
+                timestamp: '19791231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -384,6 +422,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geophysik-geothermie": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-geothermie"),
+                layertype: 'wmts',
+                timestamp: '19821231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -391,6 +431,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"),
+                layertype: 'wmts',
+                timestamp: '19821231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -398,6 +440,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geodaesie-isostatische_anomalien": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-isostatische_anomalien"),
+                layertype: 'wmts',
+                timestamp: '19791231',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -405,6 +449,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geodaesie-bouguer_anomalien": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-bouguer_anomalien"),
+                layertype: 'wmts',
+                timestamp: '19791231',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -412,6 +458,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-eiszeit-lgm-raster": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-eiszeit-lgm-raster"),
+                layertype: 'wmts',
+                timestamp: '20081231',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -419,6 +467,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geologischer_atlas": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geologischer_atlas"),
+                layertype: 'wmts',
+                timestamp: '20101221',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -426,6 +476,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-geologische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geologische_karte"),
+                layertype: 'wmts',
+                timestamp: '20051231',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -433,6 +485,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"),
+                layertype: 'wmts',
+                timestamp: '20070101',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -440,6 +494,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"),
+                layertype: 'wmts',
+                timestamp: '20070914',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -447,6 +503,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.geologie-tektonische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-tektonische_karte"),
+                layertype: 'wmts',
+                timestamp: '20051231',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -515,7 +573,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: false
             },
-
             "ch.bafu.ren-wald": {
                 name: OpenLayers.i18n("ch.bafu.ren-wald"),
                 layertype: 'wmts',
@@ -529,8 +586,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.bafu.hydrologie-hydromessstationen"),
                 layertype: 'wmts',
                 timestamp: '20081201',
-                layertype: "wms",
-                layers: ["ch.bafu.hydrologie-hydromessstationen"],
                 type: "point",
                 format: "image/pnga",
                 datenherr: "ch.bafu",
@@ -538,6 +593,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.arealstatistik-waldmischungsgrad": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-waldmischungsgrad"),
+                layertype: 'wmts',
+                timestamp: '19970901',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -1003,6 +1060,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-strassennetz"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1010,6 +1069,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.vec25-uebrigerverkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-uebrigerverkehr"),
+                layertype: 'wmts',
+                timestamp: '20090401',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1017,6 +1078,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
              "ch.swisstopo-karto.wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
+                layertype: 'wmts',
+                timestamp: '20110124',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1024,6 +1087,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.tamedia.schweizerfamilie-feuerstellen": {
                 name: OpenLayers.i18n("ch.tamedia.schweizerfamilie-feuerstellen"),
+                layertype: 'wmts',
+                timestamp: '20110124',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1130,6 +1195,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
 			 "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
+                layertype: 'wmts',
+                timestamp: '20100501',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -1137,6 +1204,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
+                layertype: 'wmts',
+                timestamp: '20100501',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -1144,6 +1213,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
                 name: OpenLayers.i18n("ch.ensi.zonenplan-notfallschutz-kernanlagen"),
+                layertype: 'wmts',
+                timestamp: '20110412',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.ensi",
