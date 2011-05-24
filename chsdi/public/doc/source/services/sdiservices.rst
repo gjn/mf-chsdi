@@ -380,33 +380,42 @@ A JSON containing the height information.
 WMTS
 ----
 
-A RESTFul implementation of the WMTS OGC standard.
+A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
+For detailed information, see See `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
 
 URL
 ^^^
 
 - http://wmts.geo.admin.ch/wmts/
-- http://wmts5.geo.admin.ch/wmts/
-- http://wmts6.geo.admin.ch/wmts/
-- http://wmts7.geo.admin.ch/wmts/
-- http://wmts8.geo.admin.ch/wmts/
-- http://wmts9.geo.admin.ch/wmts/
+- http://wmts0.geo.admin.ch/wmts/
+- http://wmts1.geo.admin.ch/wmts/
+- http://wmts2.geo.admin.ch/wmts/
+- http://wmts3.geo.admin.ch/wmts/
+- http://wmts4.geo.admin.ch/wmts/
 
-Input parameters
-^^^^^^^^^^^^^^^^
+GetCapabilities
+^^^^^^^^^^^^^^^
+The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
-See WMTS OGC standard: http://www.opengeospatial.org/standards/wmts
+http://wmts.swisstopo.admin.ch/1.0.0/WMTSCapabilities.xml
 
+http://wmts.swisstopo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
 
-See the WMTS `GetCapabilities <http://mf-chsdi0i.bgdi.admin.ch/wmts>`_ document.
+Parameters
+^^^^^^^^^^
 
-    ``http://<ServerName>/<Protocole>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
+Only the RESTFul interface ist implemented. No KVP and SOAP.
+
+A request is in the form:
+
+    ``http://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
+
+with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
-ServerName             wmts[5-9].geo.admin.ch
-Protocole              wmts                            constant
+ServerName             wmts[0-4].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://mf-chsdi0i.bgdi.admin.ch/wmts>`_ document.
 StyleName              default                         mostly constant
@@ -415,7 +424,7 @@ TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
 TileSetId              22                              Zoom level (see below)
 TileRow                236
 TileCol                284
-FormatExtension        png                             Mostly png, exept for some raster layer (pixelkarte and swissimage)
+FormatExtension        png                             Mostly png, except for some raster layer (pixelkarte and swissimage)
 ===================    =============================   ==========================================================================
 
 
@@ -426,6 +435,8 @@ The *<TileMatrixSet>* **21781** is as follow defined::
   MinY               30000
   MaxY              350000
   TileWidth            256
+
+With the tileOrigin in the top left corner of the bounding box.
 
 ==============   ========= ============ ======== ======== ========== =========
 Resolution [m]   Zoomlevel Tile width m Tiles X  Tiles Y    Tiles    Geoadmin
@@ -466,7 +477,7 @@ Result
 
 A tile.
 
-Example: http://wmts9.geo.admin.ch/wmts/1.0.0/ch.swisstopo.pixelkarte-farbe/default/100617/21781/22/236/284.jpeg
+http://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
 
 Usage Example
 ^^^^^^^^^^^^^
