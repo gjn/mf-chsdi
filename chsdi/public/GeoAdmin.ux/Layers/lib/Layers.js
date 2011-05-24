@@ -1,12 +1,12 @@
 /*
  * @include OpenLayers/Layer/TileCache.js
  * @include OpenLayers/Layer/WMS.js
- *  * @include OpenLayers/Layer/WMTS.js
+ * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
  *
- * @include Map/lib/VoidLayer.js
- * @include Map/lib/AggregateLayer.js
+ * @include Layers/lib/VoidLayer.js
+ * @include Layers/lib/AggregateLayer.js
  */
 
 GeoAdmin._Layers = OpenLayers.Class({
@@ -169,6 +169,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             // base layers
             "ch.swisstopo.swissimage": {
                 name: OpenLayers.i18n("ch.swisstopo.swissimage"),
+                layertype: 'wmts',
+                timestamp: '20110228',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -177,6 +179,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
+                layertype: 'wmts',
+                timestamp: '20110401',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -185,6 +189,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
+                layertype: 'wmts',
+                timestamp: '20110401',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -199,6 +205,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             // overlays
             "ch.babs.kulturgueter": {
                 name: OpenLayers.i18n("ch.babs.kulturgueter"),
+                layertype: 'wmts',
+                timestamp: '20091127',
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.babs",
@@ -206,6 +214,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
+                layertype: 'wmts',
+                timestamp: '20110509',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true,
@@ -213,6 +223,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
+                layertype: 'wmts',
+                timestamp: '18450101',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -318,6 +330,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.arealstatistik-1985": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-1985"),
+                layertype: 'wmts',
+                timestamp: '19790101',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -325,6 +339,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.arealstatistik-1997": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-1997"),
+                layertype: 'wmts',
+                timestamp: '19920101',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -437,7 +453,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20070701',
                 type: "mixed",
                 format: "image/png",
@@ -446,7 +462,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-extensive_landwirtschaftsgebiete": {
                 name: OpenLayers.i18n("ch.bafu.ren-extensive_landwirtschaftsgebiete"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20110214',
                 type: "polygon",
                 format: "image/png",
@@ -455,7 +471,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-feuchtgebiete": {
                 name: OpenLayers.i18n("ch.bafu.ren-feuchtgebiete"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20110214',
                 type: "polygon",
                 format: "image/png",
@@ -464,7 +480,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-fliessgewaesser_seen": {
                 name: OpenLayers.i18n("ch.bafu.ren-fliessgewaesser_seen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20110214',
                 type: "polygon",
                 format: "image/png",
@@ -473,7 +489,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-trockenstandorte": {
                 name: OpenLayers.i18n("ch.bafu.ren-trockenstandorte"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20110214',
                 type: "polygon",
                 format: "image/png",
@@ -482,7 +498,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-wald_ueber_1000_meter": {
                 name: OpenLayers.i18n("ch.bafu.ren-wald_ueber_1000_meter"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20040101',
                 type: "polygon",
                 format: "image/png",
@@ -491,7 +507,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.ren-wald_unter_1000_meter": {
                 name: OpenLayers.i18n("ch.bafu.ren-wald_unter_1000_meter"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20040101',
                 type: "polygon",
                 format: "image/png",
@@ -510,7 +526,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.hydrologie-hydromessstationen": {
                 name: OpenLayers.i18n("ch.bafu.hydrologie-hydromessstationen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20081201',
                 layertype: "wms",
                 layers: ["ch.bafu.hydrologie-hydromessstationen"],
@@ -528,6 +544,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bfs.arealstatistik-hintergrund": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-hintergrund"),
+                layertype: 'wmts',
+                timestamp: '20070116',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -535,7 +553,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-auen": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-auen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20070701',
                 type: "polygon",
                 format: "image/png",
@@ -544,7 +562,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-bln": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-bln"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20010809',
                 type: "polygon",
                 format: "image/png",
@@ -553,7 +571,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-flachmoore": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-flachmoore"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100623',
                 type: "polygon",
                 format: "image/png",
@@ -562,7 +580,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-hochmoore": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-hochmoore"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20080721',
                 type: "polygon",
                 format: "image/png",
@@ -571,7 +589,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-jagdbanngebiete"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100801',
                 type: "polygon",
                 format: "image/png",
@@ -580,7 +598,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-moorlandschaften": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-moorlandschaften"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20070701',
                 type: "polygon",
                 format: "image/png",
@@ -589,8 +607,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.bundesinventare-vogelreservate": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-vogelreservate"),
-                //layertype: 'wmts',
-                timestamp: '20040101',
+                layertype: 'wmts',
+                timestamp: '20090617',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -598,7 +616,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.fauna-steinbockkolonien": {
                 name: OpenLayers.i18n("ch.bafu.fauna-steinbockkolonien"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20020114',
                 type: "polygon",
                 format: "image/png",
@@ -607,7 +625,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20110103',
                 type: "polygon",
                 format: "image/png",
@@ -616,7 +634,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.schutzgebiete-ramsar": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-ramsar"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20050202',
                 type: "polygon",
                 format: "image/png",
@@ -625,7 +643,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.schutzgebiete-schweizerischer_nationalpark": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-schweizerischer_nationalpark"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20010117',
                 type: "polygon",
                 format: "image/png",
@@ -634,7 +652,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.schutzgebiete-wildruhezonen": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20101201',
                 type: "polygon",
                 format: "image/png",
@@ -643,7 +661,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -652,7 +670,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-kantone_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_rutschungen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -661,7 +679,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-kantone_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_sturzprozesse"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -670,7 +688,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-kantone_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_lawinen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -679,7 +697,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-gemeinden_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_hochwasser"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -688,7 +706,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-gemeinden_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_rutschungen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -697,7 +715,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-gemeinden_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_sturzprozesse"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -706,7 +724,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.showme-gemeinden_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_lawinen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20100101',
                 type: "polygon",
                 format: "image/png",
@@ -715,7 +733,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.wasser-entnahme": {
                 name: OpenLayers.i18n("ch.bafu.wasser-entnahme"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20040101',
                 type: "point",
                 format: "image/png",
@@ -724,7 +742,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.wasser-leitungen": {
                 name: OpenLayers.i18n("ch.bafu.wasser-leitungen"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20040101',
                 type: "line",
                 format: "image/png",
@@ -733,7 +751,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.bafu.wasser-rueckgabe": {
                 name: OpenLayers.i18n("ch.bafu.wasser-rueckgabe"),
-                //layertype: 'wmts',
+                layertype: 'wmts',
                 timestamp: '20040101',
                 type: "point",
                 format: "image/png",
@@ -858,6 +876,8 @@ GeoAdmin._Layers = OpenLayers.Class({
 
             "ch.are.belastung-personenverkehr-strasse-2008": {
                 name: OpenLayers.i18n("ch.are.belastung-personenverkehr-strasse-2008"),
+                layertype: 'wmts',
+                timestamp: '20080101',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -865,6 +885,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.belastung-personenverkehr-bahn-2008": {
                 name: OpenLayers.i18n("ch.are.belastung-personenverkehr-bahn-2008"),
+                layertype: 'wmts',
+                timestamp: '20080101',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -872,6 +894,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.belastung-gueterverkehr-strasse-2008": {
                 name: OpenLayers.i18n("ch.are.belastung-gueterverkehr-strasse-2008"),
+                layertype: 'wmts',
+                timestamp: '20080101',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -879,6 +903,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.belastung-gueterverkehr-bahn-2008": {
                 name: OpenLayers.i18n("ch.are.belastung-gueterverkehr-bahn-2008"),
+                layertype: 'wmts',
+                timestamp: '20080101',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -886,6 +912,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.alpenkonvention": {
                 name: OpenLayers.i18n("ch.are.alpenkonvention"),
+                layertype: 'wmts',
+                timestamp: '20090101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -893,6 +921,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.bevoelkerungsdichte-vz00": {
                 name: OpenLayers.i18n("ch.are.bevoelkerungsdichte-vz00"),
+                layertype: 'wmts',
+                timestamp: '20001205',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -900,6 +930,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.beschaeftigtendichte-bz08": {
                 name: OpenLayers.i18n("ch.are.beschaeftigtendichte-bz08"),
+                layertype: 'wmts',
+                timestamp: '20080930',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -907,6 +939,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.agglomerationen_isolierte_staedte-2000": {
                 name: OpenLayers.i18n("ch.are.agglomerationen_isolierte_staedte-2000"),
+                layertype: 'wmts',
+                timestamp: '20090101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -914,6 +948,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.landschaftstypen": {
                 name: OpenLayers.i18n("ch.are.landschaftstypen"),
+                layertype: 'wmts',
+                timestamp: '20100831',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -921,6 +957,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.gueteklassen_oev": {
                 name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
+                layertype: 'wmts',
+                timestamp: '20091213',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -928,6 +966,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.reisezeit_miv-2005": {
                 name: OpenLayers.i18n("ch.are.reisezeit_miv-2005"),
+                layertype: 'wmts',
+                timestamp: '20050101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -935,6 +975,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.reisezeit_oev-2005": {
                 name: OpenLayers.i18n("ch.are.reisezeit_oev-2005"),
+                layertype: 'wmts',
+                timestamp: '20050101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -942,6 +984,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.bauzonen-2007": {
                 name: OpenLayers.i18n("ch.are.bauzonen-2007"),
+                layertype: 'wmts',
+                timestamp: '20070101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -949,6 +993,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.are.gemeindetyp-1990-9klassen": {
                 name: OpenLayers.i18n("ch.are.gemeindetyp-1990-9klassen"),
+                layertype: 'wmts',
+                timestamp: '20090101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -1038,6 +1084,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },*/
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
+                layertype: 'wmts',
+                timestamp: '20070712',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -1045,6 +1093,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.astra.ivs-reg_loc": {
                 name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
+                layertype: 'wmts',
+                timestamp: '20070712',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -1052,6 +1102,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
+                layertype: 'wmts',
+                timestamp: '19980816',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.astra",

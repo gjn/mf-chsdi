@@ -2,7 +2,7 @@
 
 /*
  * @include GeoExt/data/LayerStore.js
- * @include Map/lib/Layers.js
+ * @include Layers/lib/Layers.js
  * @include BodSearch/lib/BodSearchWindow.js
  */
 

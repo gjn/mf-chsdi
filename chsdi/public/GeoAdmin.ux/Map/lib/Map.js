@@ -14,7 +14,7 @@
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
  *
- * @include Map/lib/Layers.js
+ * @include Layers/lib/Layers.js
  * @include Map/lib/OverviewMap.js
  *
  * @include Features/lib/Features.js
