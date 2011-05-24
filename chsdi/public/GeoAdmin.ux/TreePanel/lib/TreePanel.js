@@ -164,7 +164,7 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
     applyModel: function(items, allItems) {
         for (var i = 0, len = items.length; i < len; i++) {
             var item = items[i];
-            if (item.layertype === "tilecache" || item.layertype == "wmts" ) {
+            if (item.layerType === "tilecache" || item.layerType == "wmts" ) {
                 item.nodeType = "gx_layer";  // checkbox
                 item._layer = item.layer;
                 item.id = item.layer;
