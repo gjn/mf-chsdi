@@ -202,7 +202,7 @@ var init = function () {
             new OpenLayers.Control.ScaleLine({maxWidth: 120}),
             new OpenLayers.Control.TouchNavigation({
                 dragPanOptions: {
-                    interval: 100,
+                    interval: 25,
                     enableKinetic: true
                 }
             }),
