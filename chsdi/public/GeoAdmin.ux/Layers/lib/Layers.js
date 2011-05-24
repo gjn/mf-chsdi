@@ -15,22 +15,22 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     buildLayerByName: function(name, options) {
 
-         var tilecache_url = [
-                'http://tile5.geo.admin.ch/geoadmin/',
-                'http://tile6.geo.admin.ch/geoadmin/',
-                'http://tile7.geo.admin.ch/geoadmin/',
-                'http://tile8.geo.admin.ch/geoadmin/',
-                'http://tile9.geo.admin.ch/geoadmin/'
-            ];
+        var tilecache_url = [
+            'http://tile5.geo.admin.ch/geoadmin/',
+            'http://tile6.geo.admin.ch/geoadmin/',
+            'http://tile7.geo.admin.ch/geoadmin/',
+            'http://tile8.geo.admin.ch/geoadmin/',
+            'http://tile9.geo.admin.ch/geoadmin/'
+        ];
 
         var wmts_url = [
-                'http://wmts0.geo.admin.ch/',
-                'http://wmts1.geo.admin.ch/',
-                'http://wmts2.geo.admin.ch/',
-                'http://wmts3.geo.admin.ch/',
-                'http://wmts4.geo.admin.ch/'
+            'http://wmts0.geo.admin.ch/',
+            'http://wmts1.geo.admin.ch/',
+            'http://wmts2.geo.admin.ch/',
+            'http://wmts3.geo.admin.ch/',
+            'http://wmts4.geo.admin.ch/'
         ];
-               
+
 
         if (this.layers === null) {
             this.init();
@@ -62,26 +62,26 @@ GeoAdmin._Layers = OpenLayers.Class({
             var sub_layers = [];
             var layer_to_aggregate;
 
-            for (var i = 0; i < config.layers.length; ++i){
-                if (config.layers[i].sub_layertype == "wms"){
+            for (var i = 0; i < config.layers.length; ++i) {
+                if (config.layers[i].sub_layertype == "wms") {
                     // WMS ---
                     layer_to_aggregate = new OpenLayers.Layer.WMS(config.name, config.layers[i].url || "http://wms.geo.admin.ch/", {
-                                   layers: config.layers[i].sub_layers,
-                                   format: config.format
-                               }, {
-                                   layername: name,
-                                   singleTile: true,
-                                   ratio: 1.1,
-                                   minScale: config.layers[i].sub_minScale,
-                                   maxScale: config.layers[i].sub_maxScale
-                               });
+                        layers: config.layers[i].sub_layers,
+                        format: config.format
+                    }, {
+                        layername: name,
+                        singleTile: true,
+                        ratio: 1.1,
+                        minScale: config.layers[i].sub_minScale,
+                        maxScale: config.layers[i].sub_maxScale
+                    });
                 } else {
                     // TILECACHE ---
                     layer_to_aggregate = new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, {
                         projection: new OpenLayers.Projection('EPSG:21781'),
                         units: 'm',
                         serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-                                            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+                            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
                         format: config.format,
                         transitionEffect: "resize",
                         buffer: 0,
@@ -93,7 +93,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             }
 
             return new OpenLayers.Layer.Aggregate(config.name, sub_layers,
-                   {
+            {
                 layername: name,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
@@ -102,10 +102,10 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type
             });
-    
+
         }
         else if (config.layertype == "wmts") {
-         var layer_options_wmts = OpenLayers.Util.extend({
+            var layer_options_wmts = OpenLayers.Util.extend({
                 name: config.name,
                 layer:  name,
                 layername: name,
@@ -130,14 +130,22 @@ GeoAdmin._Layers = OpenLayers.Class({
                 displayInLayerSwitcher: !config.isBgLayer,
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
-                layerType: config.type
+                layerType: config.type,
+                getMatrix: function() {
+                    // Support the fact that one zoom level is not used (zoom 24, resolution 1.5m)
+                    if (this.map.getZoom() > 9) {
+                      return {identifier: this.map.getZoom() + this.zoomOffset + 1};
+                    } else {
+                      return {identifier: this.map.getZoom() + this.zoomOffset};
+                    }
+                }
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
         }
 
 
-       else if (name === "voidLayer") {
+        else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
@@ -147,7 +155,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 projection: new OpenLayers.Projection('EPSG:21781'),
                 units: 'm',
                 serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-                                    1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
+                    1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
                 format: config.format,
                 attribution: config.datenherr,
                 transitionEffect: "resize",
@@ -163,7 +171,8 @@ GeoAdmin._Layers = OpenLayers.Class({
         }
     },
 
-    initialize: function() {},
+    initialize: function() {
+    },
 
     init: function() {
         this.layers = {
@@ -1076,7 +1085,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-             "ch.swisstopo-karto.wanderwege": {
+            "ch.swisstopo-karto.wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
                 layertype: 'wmts',
                 timestamp: '20110124',
@@ -1094,60 +1103,60 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-			/*"ch.swisstopo.pixelkarte-pk25.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-pk50.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-pk100.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-pk200.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-pk500.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
-                layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.images-swissimage.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
-                layers: ["ch.swisstopo.images-swissimage.metadata"],
-                layertype: "wms",
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },*/
+            /*"ch.swisstopo.pixelkarte-pk25.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
+             layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-pk50.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
+             layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-pk100.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
+             layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-pk200.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
+             layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-pk500.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
+             layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.images-swissimage.metadata": {
+             name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
+             layers: ["ch.swisstopo.images-swissimage.metadata"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },*/
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',
@@ -1193,7 +1202,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-			 "ch.blw.steil_terrassenlagen_rebbau": {
+            "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 layertype: 'wmts',
                 timestamp: '20100501',
