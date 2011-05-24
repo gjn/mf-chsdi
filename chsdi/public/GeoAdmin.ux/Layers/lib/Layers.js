@@ -106,6 +106,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         }
         else if (config.layertype == "wmts") {
          var layer_options = OpenLayers.Util.extend({
+                name: config.name,
                 layer:  name,
                 layername: name,
                 version: "1.0.0",
