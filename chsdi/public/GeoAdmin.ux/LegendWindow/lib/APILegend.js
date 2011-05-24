@@ -53,7 +53,9 @@ GeoAdmin.APILegend = Ext.extend(GeoExt.LayerLegend, {
     getLegendUrl: function(layer) {
         var str = [];
         var layerName;
-        if (layer && layer instanceof OpenLayers.Layer.TileCache) {
+        if (layer && (layer instanceof OpenLayers.Layer.TileCache ||
+                layer instanceof OpenLayers.Layer.WMTS)
+                ) {
             layerName = layer.layername;
         } else {
             layerName = this.layerName;
@@ -90,7 +92,8 @@ GeoAdmin.APILegend = Ext.extend(GeoExt.LayerLegend, {
  *  Private override
  */
 GeoAdmin.APILegend.supports = function(layerRecord) {
-    return layerRecord.get("layer") instanceof OpenLayers.Layer.TileCache;
+    var layer = layerRecord.get("layer");
+    return  (layer  instanceof OpenLayers.Layer.WMTS || layer instanceof OpenLayers.Layer.TileCache )
 };
 
 /** api: legendtype = ga_apilegend */
