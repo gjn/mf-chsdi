@@ -87,7 +87,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                            k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
                     map_state.layers.push({
-                        layername: k
+                        layername: k,
+                        visibility: true
                     });
                     map_state.recenter = {
                         layername: k,
