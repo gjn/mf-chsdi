@@ -207,7 +207,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         for (var i = 0, len = this.layers.length; i < len; i++) {
             var layer = this.layers[i];
-            if (!layer.geoadmin_isBgLayer && layer.layername) {
+            // Sub layers of aggregated layers have not be part of the permalink
+            if (!layer.geoadmin_isBgLayer && layer.layername && layer.aggregate === undefined) {
                 state.layers.push({
                     layername: layer.layername,
                     visibility: layer.getVisibility(),
