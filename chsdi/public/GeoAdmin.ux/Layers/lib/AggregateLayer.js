@@ -359,6 +359,7 @@ OpenLayers.Layer.Aggregate =
                 }
                 layer.displayInLayerSwitcher = false;
                 layer.visibility = this.visibility;
+                layer.opacity = this.opacity;
                 // FIXME: a layer may belong to multiple aggregates ?
                 layer.aggregate = this;
                 this.layers.push(layer);

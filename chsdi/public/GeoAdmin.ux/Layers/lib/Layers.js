@@ -61,10 +61,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                     }
                 }
             };
-            var myWMS = new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
-                layers: config.layers,
-                format: config.format
-            }, {
+            var layer_options_wms = OpenLayers.Util.extend({
                 layername: name,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
@@ -76,16 +73,18 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: config.maxScale,
                 minScale: config.minScale,
                 ratio: 1.1
-            });
-            return(myWMS);
+            }, options);
+            return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
+                layers: config.layers,
+                format: config.format},
+                    layer_options_wms);
         } else if (config.layertype === "aggregate") {
             var sub_layers = [];
             var i;
             for (i = 0; i < config.subLayersName.length; i++) {
                 sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {});
             }
-            return new OpenLayers.Layer.Aggregate(config.name, sub_layers,
-            {
+            var layer_options_aggregate = OpenLayers.Util.extend({
                 layername: name,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
@@ -93,7 +92,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type
-            });
+            }, options);
+            return new OpenLayers.Layer.Aggregate(config.name, sub_layers, layer_options_aggregate);
 
         } else if (config.layertype === "wmts") {
             var layer_options_wmts = OpenLayers.Util.extend({
