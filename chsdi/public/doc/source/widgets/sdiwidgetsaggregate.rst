@@ -25,7 +25,7 @@ Aggregate layer
 ---------------
 
 An aggregate layer is a layer composed of several OpenLayers.Layer.
-This example presents a combination of WMS and TileCache layers.
+This example presents a combination of WMS and WMTS layers.
 
 .. raw:: html
 
@@ -44,57 +44,12 @@ This example presents a combination of WMS and TileCache layers.
 .. code-block:: html
 
    <script type="text/javascript">
-      function init() {
+    function init() {
 
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
 
-
-    var wmsLayer = new OpenLayers.Layer.WMS("WMS", "http://wms.geo.admin.ch/", {
-        layers: "ch.bafu.hydrologie-hydromessstationen",
-        format: "image/pnga"
-    }, {
-        displayInLayerSwitcher: false,
-        singleTile: true,
-        maxResolution: 100
-    });
-
-    var layer_options = {
-        projection: new OpenLayers.Projection('EPSG:21781'),
-        units: 'm',
-        serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-        format: "image/png",
-        attribution: '',
-        transitionEffect: "resize",
-        buffer: 0,
-        displayInLayerSwitcher: false,
-        layerType: 'raster',
-        minResolution: 101,
-        isBaseLayer: false
-    };
-
-    var url = [
-        'http://tile5.geo.admin.ch/geoadmin/',
-        'http://tile6.geo.admin.ch/geoadmin/',
-        'http://tile7.geo.admin.ch/geoadmin/',
-        'http://tile8.geo.admin.ch/geoadmin/',
-        'http://tile9.geo.admin.ch/geoadmin/'
-    ];
-    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.hiks-dufour', layer_options);
-
-    var aggregateLayer = new OpenLayers.Layer.Aggregate('Aggregate TC / WMS',
-            [tilecacheLayer,wmsLayer],
-    {
-        attribution: 'aggregateAttribution',
-        displayInLayerSwitcher: true,
-        geoadmin_queryable: true,
-        geoadmin_isBgLayer: false,
-        layerType: 'mixed'
-    });
-    map6.addLayerByName("ch.swisstopo.hiks-siegfried");
-    map6.addLayer(aggregateLayer);
+    map6.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
     map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
-
 
     var layertree = new GeoAdmin.LayerTree({
         map: map6,
@@ -113,61 +68,14 @@ This example presents a combination of WMS and TileCache layers.
 
     </div>
 
-
-
-
 .. raw:: html
 
    <script type="text/javascript">
-
-   function init() {
+    function init() {
 
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
 
-    var wmsLayer = new OpenLayers.Layer.WMS("WMS", "http://wms.geo.admin.ch/", {
-        layers: "ch.bafu.hydrologie-hydromessstationen",
-        format: "image/pnga"
-    }, {
-        displayInLayerSwitcher: false,
-        singleTile: true,
-        maxResolution: 100
-    });
-
-    var layer_options = {
-        projection: new OpenLayers.Projection('EPSG:21781'),
-        units: 'm',
-        serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-        format: "image/png",
-        attribution: '',
-        transitionEffect: "resize",
-        buffer: 0,
-        displayInLayerSwitcher: false,
-        layerType: 'raster',
-        minResolution: 101,
-        isBaseLayer: false
-    };
-
-    var url = [
-        'http://tile5.geo.admin.ch/geoadmin/',
-        'http://tile6.geo.admin.ch/geoadmin/',
-        'http://tile7.geo.admin.ch/geoadmin/',
-        'http://tile8.geo.admin.ch/geoadmin/',
-        'http://tile9.geo.admin.ch/geoadmin/'
-    ];
-    var tilecacheLayer = new OpenLayers.Layer.TileCache('TileCache', url, 'ch.swisstopo.hiks-dufour', layer_options);
-
-    var aggregateLayer = new OpenLayers.Layer.Aggregate('Aggregate TC / WMS',
-            [wmsLayer, tilecacheLayer],
-    {
-        attribution: 'aggregateAttribution',
-        displayInLayerSwitcher: true,
-        geoadmin_queryable: true,
-        geoadmin_isBgLayer: false,
-        layerType: 'mixed'
-    });
-    map6.addLayerByName("ch.swisstopo.hiks-siegfried");
-    map6.addLayer(aggregateLayer);
+    map6.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
     map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
 
     var layertree = new GeoAdmin.LayerTree({
@@ -175,7 +83,6 @@ This example presents a combination of WMS and TileCache layers.
         renderTo: "mylayertree6",
         width: 300
     });
-
    }
    </script>
 

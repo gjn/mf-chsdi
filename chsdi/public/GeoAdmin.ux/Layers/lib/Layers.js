@@ -45,42 +45,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
+                maxScale: config.maxScale,
+                minScale: config.minScale,
                 ratio: 1.1
             });
         } else if (config.layertype == "aggregate") {
             var sub_layers = [];
-            var layer_to_aggregate;
 
-            for (var i = 0; i < config.layers.length; ++i) {
-                if (config.layers[i].sub_layertype == "wms") {
-                    // WMS ---
-                    layer_to_aggregate = new OpenLayers.Layer.WMS(config.name, config.layers[i].url || "http://wms.geo.admin.ch/", {
-                        layers: config.layers[i].sub_layers,
-                        format: config.format
-                    }, {
-                        layername: name,
-                        singleTile: true,
-                        ratio: 1.1,
-                        minScale: config.layers[i].sub_minScale,
-                        maxScale: config.layers[i].sub_maxScale
-                    });
-                } else {
-                    // TILECACHE ---
-                    layer_to_aggregate = new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, {
-                        projection: new OpenLayers.Projection('EPSG:21781'),
-                        units: 'm',
-                        serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-                            1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-                        format: config.format,
-                        transitionEffect: "resize",
-                        buffer: 0,
-                        minScale: config.layers[i].sub_minScale,
-                        maxScale: config.layers[i].sub_maxScale
-                    });
-                }
-                sub_layers[i] = layer_to_aggregate;
+            for (var i = 0; i < config.subLayersName.length; ++i) {
+                sub_layers[i] = this.buildLayerByName(config.subLayersName[i],{});    
             }
-
             return new OpenLayers.Layer.Aggregate(config.name, sub_layers,
             {
                 layername: name,
@@ -95,8 +69,8 @@ GeoAdmin._Layers = OpenLayers.Class({
         } else if (config.layertype == "wmts") {
             var layer_options_wmts = OpenLayers.Util.extend({
                 name: config.name,
-                layer:  name,
-                layername: name,
+                layer: config.layer || name,
+                layername: config.layername || name,
                 version: "1.0.0",
                 requestEncoding: "REST",
                 url: wmts_url,
@@ -119,6 +93,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
+                maxScale: config.maxScale,
+                minScale: config.minScale,
                 getMatrix: function() {
                     // Support the fact that one zoom level is not used (zoom 24, resolution 1.5m)
                     if (this.map.getZoom() > 9) {
@@ -190,13 +166,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.babs",
                 queryable: true
             },
-            "ch.bfs.gebaeude_wohnungs_register": {
+             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
+                layertype: 'aggregate',
+                subLayersName: ['ch.bfs.gebaeude_wohnungs_register_wmts','ch.bfs.gebaeude_wohnungs_register_wms'],
+                queryable: true,
+                type: "point"
+            },
+            "ch.bfs.gebaeude_wohnungs_register_wmts": {
+                name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register_wmts"),
                 layertype: 'wmts',
+                layer: 'ch.bfs.gebaeude_wohnungs_register',
+                layeranme: 'ch.bfs.gebaeude_wohnungs_register',
                 timestamp: '20110509',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true,
+                queryable: false,
+                maxScale: 25001,
+                type: "point"
+            },
+            "ch.bfs.gebaeude_wohnungs_register_wms": {
+                name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register_wms"),
+                layertype: 'wms',
+                layers: 'ch.bfs.gebaeude_wohnungs_register',
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false,
+                minScale: 25001,
                 type: "point"
             },
             "ch.swisstopo.hiks-dufour": {
