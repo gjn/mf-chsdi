@@ -29,7 +29,7 @@ Ext.namespace("GeoAdmin");
  *  :return: ``GeoAdmin.TreePanel``
  *
  *  Create a tree panel using a model. The following layerType values are supported:
- *  - tilecache : an OpenLayers.Layer.TileCache layer
+ *  - wmts : an OpenLayers.Layer.WMTS layer
  *  - tilemerge : a WMS-C layer, one OpenLayers.Layer.WMS object is used for multiple items in the tree.
  *  Specify showMetadata true to get metadata links on all subnodes.
  */
@@ -164,20 +164,19 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
     applyModel: function(items, allItems) {
         for (var i = 0, len = items.length; i < len; i++) {
             var item = items[i];
-            if (item.layerType === "tilecache" || item.layerType == "wmts" ) {
+            if (item.layerType == "wmts" ) {
                 item.nodeType = "gx_layer";  // checkbox
                 item._layer = item.layer;
                 item.id = item.layer;
                 item.cls = 'nodeTP3';
-                item.text = this.addtreeLayerLink(item.layer, "TileCache_128");
+                item.text = this.addtreeLayerLink(item.layer, "WMTS_128");
 
                 // We cannot use a string layer, since layer names are sometimes
                 // not unique. Yet, we assume layer names are unique for
-                // TileCache et WMTS layers.
+                // WMTS layers.
                 var index = this.layerStore.findBy(function(r) {
                     var layer = r.getLayer();
-                    return (layer instanceof OpenLayers.Layer.TileCache ||
-                            layer instanceof OpenLayers.Layer.WMTS) &&
+                    return (layer instanceof OpenLayers.Layer.WMTS) &&
                            (layer.layername === item.layer ||
                             layer.layer == item.layer);
                 });

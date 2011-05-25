@@ -42,12 +42,13 @@
                             text: OpenLayers.i18n("Schutzgebiete"),
                             expanded: true,
                             children: [
-                               {layertype: "tilecache", layer: 'ch.ensi.zonenplan-notfallschutz-kernanlagen'}]
+                               {layerType: "wmts", layer: 'ch.ensi.zonenplan-notfallschutz-kernanlagen'}]
                         }
                     ]
             }];
             var c = new GeoAdmin.TreePanel({model: model, layerStore: mapPanel.layers, renderTo: 'tree'});
             c.render();
+            console.log(c.getRootNode().childNodes[0].childNodes[0].childNodes[0]);
             var node = c.getRootNode().childNodes[0].childNodes[0].childNodes[0];
             t.ok(node instanceof GeoExt.tree.LayerNode, "node is a GeoExt layer node");
             t.eq(node.id, "ch.ensi.zonenplan-notfallschutz-kernanlagen", "Text correctly set");

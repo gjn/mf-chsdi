@@ -38,7 +38,7 @@ GeoAdmin.APILegend = Ext.extend(GeoExt.LayerLegend, {
     /** api: config[layerName]
      *  ``String``
      * Optional layerName to use for the legend image url. This should be used
-     * in the case of tile merge. For TileCache layers the layerName is
+     * in the case of tile merge. For WMTS layers the layerName is
      * automatically retrieved from the layer object, so there is no need to
      * set layerName manually.
      */
@@ -53,8 +53,7 @@ GeoAdmin.APILegend = Ext.extend(GeoExt.LayerLegend, {
     getLegendUrl: function(layer) {
         var str = [];
         var layerName;
-        if (layer && (layer instanceof OpenLayers.Layer.TileCache ||
-                layer instanceof OpenLayers.Layer.WMTS)
+        if (layer && (layer instanceof OpenLayers.Layer.WMTS)
                 ) {
             layerName = layer.layername;
         } else {
@@ -93,7 +92,7 @@ GeoAdmin.APILegend = Ext.extend(GeoExt.LayerLegend, {
  */
 GeoAdmin.APILegend.supports = function(layerRecord) {
     var layer = layerRecord.get("layer");
-    return  (layer  instanceof OpenLayers.Layer.WMTS || layer instanceof OpenLayers.Layer.TileCache )
+    return  (layer  instanceof OpenLayers.Layer.WMTS)
 };
 
 /** api: legendtype = ga_apilegend */

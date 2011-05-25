@@ -41,35 +41,35 @@ Ext.onReady(function() {
                     expanded: true,
                     children: [
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-amphibien'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-auen'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-flachmoore'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-hochmoore'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-jagdbanngebiete'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-moorlandschaften'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.bundesinventare-vogelreservate'
                         },
                         {
-                            layerType: "tilecache",
+                            layerType: "wmts",
                             layer: 'ch.bafu.schutzgebiete-ramsar'
                         }
                     ]
@@ -86,19 +86,19 @@ Ext.onReady(function() {
                     showMetadata: true,
                     children: [
                         {
-                            layerType: 'tilecache',
+                            layerType: 'wmts',
                             layer: 'ch.swisstopo.gg25-land-flaeche.fill'
                         },
                         {
-                            layerType: 'tilecache',
+                            layerType: 'wmts',
                             layer: 'ch.swisstopo.gg25-kanton-flaeche.fill'
                         },
                         {
-                            layerType: 'tilecache',
+                            layerType: 'wmts',
                             layer: 'ch.swisstopo.gg25-bezirk-flaeche.fill'
                         },
                         {
-                            layerType: 'tilecache',
+                            layerType: 'wmts',
                             layer: 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
                         }
                     ]

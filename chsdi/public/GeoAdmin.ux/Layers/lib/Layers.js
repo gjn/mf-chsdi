@@ -15,14 +15,6 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     buildLayerByName: function(name, options) {
 
-        var tilecache_url = [
-            'http://tile5.geo.admin.ch/geoadmin/',
-            'http://tile6.geo.admin.ch/geoadmin/',
-            'http://tile7.geo.admin.ch/geoadmin/',
-            'http://tile8.geo.admin.ch/geoadmin/',
-            'http://tile9.geo.admin.ch/geoadmin/'
-        ];
-
         var wmts_url = [
             'http://wmts0.geo.admin.ch/',
             'http://wmts1.geo.admin.ch/',
@@ -150,25 +142,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
-        } else {
-            var layer_options = OpenLayers.Util.extend({
-                projection: new OpenLayers.Projection('EPSG:21781'),
-                units: 'm',
-                serverResolutions: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,
-                    1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5],
-                format: config.format,
-                attribution: config.datenherr,
-                transitionEffect: "resize",
-                buffer: 0,
-                opacity: config.opacity ? config.opacity : 1.0,
-                displayInLayerSwitcher: !config.isBgLayer,
-                geoadmin_queryable: config.queryable,
-                geoadmin_isBgLayer: !!(config.isBgLayer),
-                layerType: config.type
-            }, options);
-
-            return new OpenLayers.Layer.TileCache(config.name, tilecache_url, name, layer_options);
-        }
+        } 
     },
 
     initialize: function() {

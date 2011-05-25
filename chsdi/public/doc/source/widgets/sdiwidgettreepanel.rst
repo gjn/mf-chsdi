@@ -60,7 +60,7 @@ The TreePanel widget is the classical layers tree.
                             text: OpenLayers.i18n("Schutzgebiete"),
                             expanded: true,
                             children: [
-                               {layerType: "tilecache", layer: 'ch.bafu.bundesinventare-auen'}]
+                               {layerType: "wmts", layer: 'ch.bafu.bundesinventare-auen'}]
                         }
                     ]
             }];
@@ -101,7 +101,7 @@ The TreePanel widget is the classical layers tree.
                             text: OpenLayers.i18n("Schutzgebiete"),
                             expanded: true,
                             children: [
-                               {layerType: "tilecache", layer: 'ch.bafu.bundesinventare-auen'}]
+                               {layerType: "wmts", layer: 'ch.bafu.bundesinventare-auen'}]
                         }
                     ]
             }];
