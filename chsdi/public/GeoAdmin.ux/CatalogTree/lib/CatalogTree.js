@@ -106,7 +106,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 }
             } else {
                 this.updateCustomizedCheckbox(node, false);
-                this.removeLayer(node.id);
+                this.destroyLayer(node.id);
             }
         },
         beforeclick:  function(node, event) {
@@ -250,14 +250,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         this.layerStore.loadData([layer], /* append */ true);
     },
 
-    /** private: method[removeLayer]
+    /** private: method[destroyLayer]
      *  :param nodeId: ``String`` the node id.
      */
-    removeLayer: function(nodeId) {
+    destroyLayer: function(nodeId) {
         var layerId = this.getLayerIdFromNodeId(nodeId);
         var map = this.layerStore.map;
         var layer = map.getLayerByLayerName(layerId);
-        map.removeLayer(layer);
+        layer.destroy();
     },
 
     setCheckNodes: function(map) {
