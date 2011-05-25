@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Content-Language" content="de" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Aggregate Layers mit dem Geb&auml;ude- und Wohnungsregister</title>
+
+<script type="text/javascript">
+            function init() {
+
+                var toolbar = new Ext.Toolbar({});
+
+               var api = new GeoAdmin.API();
+               var map = api.createMap({div: "mymap", width: 500});
+
+               //Layer
+               map.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
+               map.addLayerByName("ch.swisstopo.fixpunkte-hoehe");
+
+              //Create a GeoExt map panel placed in the mymap div
+              mapPanel = api.createMapPanel({
+                   renderTo: "mymap",
+                   height: 700
+                   //Add the toolbar in the map panel
+                   ,tbar: toolbar
+                });
+
+
+                //Add a tool to select the background layer.
+                var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});
+                toolbar.add(baseLayerTool);
+                toolbar.doLayout();
+                toolbar.add(' ');
+                toolbar.doLayout();
+
+                //Permalink
+                permalink = new GeoAdmin.Permalink();
+                toolbar.add(permalink);
+                toolbar.doLayout();
+                toolbar.add(' ');
+                toolbar.doLayout();
+
+                //Print
+                toolbar.add([
+                    new GeoAdmin.Print({
+                        text: OpenLayers.i18n('print map'),
+                        printPanelOptions: {
+                        mapPanel: mapPanel
+                    }
+                })]);
+                toolbar.doLayout();
+
+
+               //Layer Tree
+               api.createLayerTree({
+                   renderTo: "mylayertree",
+                   width: 285
+               });
+
+               //Catalog Tree
+                var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree", map: map});
+
+
+               //Tooltip
+                var tooltip = new GeoAdmin.Tooltip({});
+                map.addControl(tooltip);
+                tooltip.activate();
+
+               //Search
+                api.createBodSearchCombo({
+                         width: 500,
+                         renderTo: 'mysearch'
+                      });
+
+
+            }
+
+
+
+</script>
+</head>
+<body onload="init();">
+    <div id="myprint" style="margin-left:10px !important;width: 200px;"></div>    
+    <div id="mylayertree" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
+    <div id="mycatalogtree" style="float: left; margin:10px !important;width:280px;"></div>    
+    <div id="mymap" style="float: left; width:800px;height:540px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+    <script type="text/javascript" src="../loader.js"></script>
+</body>
+
+</html>
