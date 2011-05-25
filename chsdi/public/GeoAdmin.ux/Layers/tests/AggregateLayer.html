@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../lib/AggregateLayer.js"></script>
+    <script type="text/javascript">
+
+        function test_constructor(t){
+            t.plan(1);
+            var aggregateLayer = new OpenLayers.Layer.Aggregate("myAggregate", [new OpenLayers.Layer(), new OpenLayers.Layer()]);
+            t.eq(aggregateLayer.layers.length, 2, "2 sub layers are part of the aggregated layer");
+        }
+    </script>
+  </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+  </body>
+</html>

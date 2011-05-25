@@ -102,20 +102,6 @@
 
             map.destroy();
         }
-        
-        // aggregateLayer only works with less than 4 layers
-        function test_less4Layers2BeAggregated(t){
-            GeoAdmin.layers.init();
-            var i = 0;
-            for (var layer in GeoAdmin.layers.layers) {
-                if (GeoAdmin.layers.layers[layer].layertype == "aggregate"){
-                  i++;
-                  t.ok(GeoAdmin.layers.layers[layer].layers.length < 4, GeoAdmin.layers.layers[layer].name + ": there are less than 4 layers aggregated");
-                }
-            }
-            t.plan(i);
-        }
-
     </script>
 </head>
 <body>
