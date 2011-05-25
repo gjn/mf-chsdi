@@ -97,8 +97,12 @@
 			<ows:Abstract>${theme.inspire_abstract|x,trim}</ows:Abstract>
 			<ows:Identifier>${theme.id|x,trim}</ows:Identifier>
 		## Refs
-		% for x in str(theme.fk_dataset_id).split(','):
-			<LayerRef>${x}</LayerRef>
+		<% used_layers = theme.sswmts.split(',') %>
+		<% layers      = theme.fk_dataset_id.split(',')  %>
+		% for i in range(len(layers)):
+		    % if used_layers[i] == 't' and c.is_swisstopowmts:
+			<LayerRef>${layers[i]}</LayerRef>
+			  %endif
 		% endfor
       </Theme>
       ## No overflow
