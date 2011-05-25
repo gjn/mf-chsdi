@@ -32,8 +32,36 @@ GeoAdmin._Layers = OpenLayers.Class({
             return null;
         }
 
-        if (config.layertype == "wms") {
-            return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
+        if (config.layertype === "wms") {
+            // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
+            OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
+                var shifted = true;
+                var buffer = this.buffer || 1;
+                if (this.grid[0]) {
+                    var tlLayer = this.grid[0][0].position;
+                    var offsetX = parseInt(this.map.layerContainerDiv.style.left);
+                    var offsetY = parseInt(this.map.layerContainerDiv.style.top);
+                    var tlViewPort = tlLayer.add(offsetX, offsetY);
+                    if (tlViewPort.x > -this.tileSize.w * (buffer - 1)) {
+                        this.shiftColumn(true);
+                    } else if (tlViewPort.x < -this.tileSize.w * buffer) {
+                        this.shiftColumn(false);
+                    } else if (tlViewPort.y > -this.tileSize.h * (buffer - 1)) {
+                        this.shiftRow(true);
+                    } else if (tlViewPort.y < -this.tileSize.h * buffer) {
+                        this.shiftRow(false);
+                    } else {
+                        shifted = false;
+                    }
+                    if (shifted) {
+                        // we may have other row or columns to shift, schedule it
+                        // with a setTimeout, to give the user a chance to sneak
+                        // in moveTo's
+                        this.timerId = window.setTimeout(this._moveGriddedTiles, 0);
+                    }
+                }
+            };
+            var myWMS = new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
                 layers: config.layers,
                 format: config.format
             }, {
@@ -49,11 +77,12 @@ GeoAdmin._Layers = OpenLayers.Class({
                 minScale: config.minScale,
                 ratio: 1.1
             });
-        } else if (config.layertype == "aggregate") {
+            return(myWMS);
+        } else if (config.layertype === "aggregate") {
             var sub_layers = [];
-
-            for (var i = 0; i < config.subLayersName.length; ++i) {
-                sub_layers[i] = this.buildLayerByName(config.subLayersName[i],{});    
+            var i;
+            for (i = 0; i < config.subLayersName.length; i++) {
+                sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {});
             }
             return new OpenLayers.Layer.Aggregate(config.name, sub_layers,
             {
@@ -66,7 +95,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type
             });
 
-        } else if (config.layertype == "wmts") {
+        } else if (config.layertype === "wmts") {
             var layer_options_wmts = OpenLayers.Util.extend({
                 name: config.name,
                 layer: config.layer || name,
@@ -98,21 +127,21 @@ GeoAdmin._Layers = OpenLayers.Class({
                 getMatrix: function() {
                     // Support the fact that one zoom level is not used (zoom 24, resolution 1.5m)
                     if (this.map.getZoom() > 9) {
-                      return {identifier: this.map.getZoom() + this.zoomOffset + 1};
+                        return {identifier: this.map.getZoom() + this.zoomOffset + 1};
                     } else {
-                      return {identifier: this.map.getZoom() + this.zoomOffset};
+                        return {identifier: this.map.getZoom() + this.zoomOffset};
                     }
                 }
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
-            
+
         } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
-        } 
+        }
     },
 
     initialize: function() {
@@ -166,7 +195,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.babs",
                 queryable: true
             },
-             "ch.bfs.gebaeude_wohnungs_register": {
+            "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
                 layertype: 'aggregate',
                 subLayersName: ['ch.bfs.gebaeude_wohnungs_register_wmts','ch.bfs.gebaeude_wohnungs_register_wms'],

@@ -253,8 +253,19 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
                 Ext.each(layers, function(layer) {
                     if (layer !== pagesLayer && layer.getVisibility() === true) {
-                        var enc = this.encodeLayer(layer);
-                        enc && encodedLayers.push(enc);
+                        // Only one page in GeoAdmin
+                        var scale = pages[0].scale.get("value");
+                        var enc;
+                        // Support aggregateLayer
+                        if (layer.maxScale && layer.minScale && scale) {
+                            if (scale >= Math.round(layer.maxScale, 2) && scale <= Math.round(layer.minScale, 2)) {
+                                enc = this.encodeLayer(layer);
+                                enc && encodedLayers.push(enc);
+                            }
+                        } else {
+                            enc = this.encodeLayer(layer);
+                            enc && encodedLayers.push(enc);
+                        }
                     }
                 }, this);
                 jsonData.layers = encodedLayers;
