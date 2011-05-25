@@ -176,9 +176,8 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
                 // WMTS layers.
                 var index = this.layerStore.findBy(function(r) {
                     var layer = r.getLayer();
-                    return (layer instanceof OpenLayers.Layer.WMTS) &&
-                           (layer.layername === item.layer ||
-                            layer.layer == item.layer);
+                    return layer instanceof OpenLayers.Layer.WMTS &&
+                           layer.layer === item.layer;
                 });
                 if (index > -1) {
                     item.layer = this.layerStore.getAt(index).getLayer();
