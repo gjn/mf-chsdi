@@ -397,9 +397,9 @@ GetCapabilities
 ^^^^^^^^^^^^^^^
 The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
-http://wmts.swisstopo.admin.ch/1.0.0/WMTSCapabilities.xml
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
 
-http://wmts.swisstopo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
 
 Parameters
 ^^^^^^^^^^
@@ -417,7 +417,7 @@ Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
 ServerName             wmts[0-4].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
-Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://mf-chsdi0i.bgdi.admin.ch/wmts>`_ document.
+Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
 StyleName              default                         mostly constant
 Time                   2010, 2010-01                   Date of tile generation in (ISO-8601). Some dataset will be updated quite often.
 TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
@@ -436,7 +436,7 @@ The *<TileMatrixSet>* **21781** is as follow defined::
   MaxY              350000
   TileWidth            256
 
-With the tileOrigin in the top left corner of the bounding box.
+With the *<tileOrigin>* in the top left corner of the bounding box.
 
 ==============   ========= ============ ======== ======== ========== =========
 Resolution [m]   Zoomlevel Tile width m Tiles X  Tiles Y    Tiles    Geoadmin
@@ -470,7 +470,7 @@ Resolution [m]   Zoomlevel Tile width m Tiles X  Tiles Y    Tiles    Geoadmin
        0.5           26             128     3750     2500  9'375'000    x
 ==============   ========= ============ ======== ======== ========== =========
 
-
+**Note The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.**
 
 Result
 ^^^^^^
