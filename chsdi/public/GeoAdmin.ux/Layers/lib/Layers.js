@@ -23,7 +23,6 @@ GeoAdmin._Layers = OpenLayers.Class({
             'http://wmts4.geo.admin.ch/'
         ];
 
-
         if (this.layers === null) {
             this.init();
         }
@@ -48,9 +47,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type,
                 ratio: 1.1
             });
-        }
-
-        else if (config.layertype == "aggregate") {
+        } else if (config.layertype == "aggregate") {
             var sub_layers = [];
             var layer_to_aggregate;
 
@@ -95,8 +92,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type
             });
 
-        }
-        else if (config.layertype == "wmts") {
+        } else if (config.layertype == "wmts") {
             var layer_options_wmts = OpenLayers.Util.extend({
                 name: config.name,
                 layer:  name,
@@ -134,10 +130,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
-        }
-
-
-        else if (name === "voidLayer") {
+            
+        } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
