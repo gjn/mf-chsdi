@@ -677,6 +677,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-waldmischungsgrad1"
                             },
                             {
+                                text: this.addtreeLayerLink("ch.swisstopo.vec200-landcover-wald", "node_ch.swisstopo.vec200-landcover-wald1") + ' ' + this.layers["ch.swisstopo.vec200-landcover-wald"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec200-landcover-wald1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.vec25-primaerflaechen", "node_ch.swisstopo.vec25-primaerflaechen1") + ' ' + this.layers["ch.swisstopo.vec25-primaerflaechen"].name,
                                 leaf: true,
                                 checked: false,
@@ -714,6 +721,48 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
              singleClickExpand: true,
              id: "LT2_11",
              children: [
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.laerm-bahnlaerm_nacht", "node_ch.bafu.laerm-bahnlaerm_nacht1") + ' ' + this.layers["ch.bafu.laerm-bahnlaerm_nacht"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.laerm-bahnlaerm_nacht1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.laerm-bahnlaerm_tag", "node_ch.bafu.laerm-bahnlaerm_ta1") + ' ' + this.layers["ch.bafu.laerm-bahnlaerm_ta"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.laerm-bahnlaerm_ta1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.laerm-strassenlaerm_nacht", "node_ch.bafu.laerm-strassenlaerm_nacht1") + ' ' + this.layers["cch.bafu.laerm-strassenlaerm_nacht"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.laerm-strassenlaerm_nacht1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.laerm-strassenlaerm_tag", "node_ch.bafu.laerm-strassenlaerm_tag1") + ' ' + this.layers["ch.bafu.laerm-strassenlaerm_tag"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.laerm-strassenlaerm_tag1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.nabelstationen", "node_ch.bafu.nabelstationen1") + ' ' + this.layers["ch.bafu.nabelstationen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.nabelstationen1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.swissprtr", "node_ch.bafu.swissprtr1") + ' ' + this.layers["ch.bafu.swissprtr"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.swissprtr1"
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.ensi.zonenplan-notfallschutz-kernanlagen", "ch.ensi.zonenplan-notfallschutz-kernanlagen1") + ' ' + this.layers["ch.ensi.zonenplan-notfallschutz-kernanlagen"].name,
                                 leaf: true,
@@ -1142,6 +1191,22 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         singleClickExpand: true,
                         id: "LT2_21",
                         children: [
+                        /*      FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.gefahren-gefaehrdungszonen", "node_ch.bafu.gefahren-gefaehrdungszonen1") + ' ' + this.layers["ch.bafu.gefahren-gefaehrdungszonen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.gefahren-gefaehrdungszonen1"
+                            },
+                        */
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.permafrost", "node_ch.bafu.permafrost1") + ' ' + this.layers["ch.bafu.permafrost"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.permafrost1"
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.bafu.showme-gemeinden_hochwasser", "node_ch.bafu.showme-gemeinden_hochwasser1") + ' ' + this.layers["ch.bafu.showme-gemeinden_hochwasser"].name,
                                 leaf: true,
@@ -1295,18 +1360,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bafu.ren-trockenstandorte1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.ren-wald_unter_1000_meter", "node_ch.bafu.ren-wald_unter_1000_meter1") + ' ' + this.layers["ch.bafu.ren-wald_unter_1000_meter"].name,
+                                text: this.addtreeLayerLink("ch.bafu.ren-wald", "node_ch.bafu.ren-wald1") + ' ' + this.layers["ch.bafu.ren-wald"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
-                                id: "node_ch.bafu.ren-wald_unter_1000_meter1"
-                            },
-                            {
-                                text: this.addtreeLayerLink("ch.bafu.ren-wald_ueber_1000_meter", "node_ch.bafu.ren-wald_ueber_1000_meter1") + ' ' + this.layers["ch.bafu.ren-wald_ueber_1000_meter"].name,
-                                leaf: true,
-                                checked: false,
-                                cls: 'nodeLT3',
-                                id: "node_ch.bafu.ren-wald_ueber_1000_meter1"
+                                id: "node_ch.bafu.ren-wald1"
                             },
                             {
                                 text: this.addtreeLayerLink("ch.bafu.bundesinventare-vogelreservate", "node_ch.bafu.bundesinventare-vogelreservate2") + ' ' + this.layers["ch.bafu.bundesinventare-vogelreservate"].name,
@@ -1394,7 +1452,30 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.arealstatistik-hintergrund2"
-                            }
+                        /* FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.holznutzung", "node_ch.bafu.holznutzung1") + ' ' + this.layers["ch.bafu.holznutzung"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.holznutzung1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.holzvorrat", "node_ch.bafu.holzvorrat1") + ' ' + this.layers["ch.bafu.holzvorrat"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.holzvorrat1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.holzzuwachs", "node_ch.bafu.holzzuwachs1") + ' ' + this.layers["ch.bafu.holzzuwachs"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.holzzuwachs1"
+                        */
+                            }          
                         ]
                     },
                     /*{

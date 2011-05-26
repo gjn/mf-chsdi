@@ -557,24 +557,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: false
             },
-            "ch.bafu.ren-wald_ueber_1000_meter": {
-                name: OpenLayers.i18n("ch.bafu.ren-wald_ueber_1000_meter"),
-                layertype: 'wmts',
-                timestamp: '20040101',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.bafu",
-                queryable: false
-            },
-            "ch.bafu.ren-wald_unter_1000_meter": {
-                name: OpenLayers.i18n("ch.bafu.ren-wald_unter_1000_meter"),
-                layertype: 'wmts',
-                timestamp: '20040101',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.bafu",
-                queryable: false
-            },
             "ch.bafu.ren-wald": {
                 name: OpenLayers.i18n("ch.bafu.ren-wald"),
                 layertype: 'wmts',
