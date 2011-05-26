@@ -729,14 +729,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bafu.laerm-bahnlaerm_nacht1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.laerm-bahnlaerm_tag", "node_ch.bafu.laerm-bahnlaerm_ta1") + ' ' + this.layers["ch.bafu.laerm-bahnlaerm_ta"].name,
+                                text: this.addtreeLayerLink("ch.bafu.laerm-bahnlaerm_tag", "node_ch.bafu.laerm-bahnlaerm_tag1") + ' ' + this.layers["ch.bafu.laerm-bahnlaerm_tag"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
-                                id: "node_ch.bafu.laerm-bahnlaerm_ta1"
+                                id: "node_ch.bafu.laerm-bahnlaerm_tag1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.bafu.laerm-strassenlaerm_nacht", "node_ch.bafu.laerm-strassenlaerm_nacht1") + ' ' + this.layers["cch.bafu.laerm-strassenlaerm_nacht"].name,
+                                text: this.addtreeLayerLink("ch.bafu.laerm-strassenlaerm_nacht", "node_ch.bafu.laerm-strassenlaerm_nacht1") + ' ' + this.layers["ch.bafu.laerm-strassenlaerm_nacht"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
