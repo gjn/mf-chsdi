@@ -164,7 +164,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.bafu.nabelstationen': 'Qualité de l´air: Stations NABEL',
     'ch.bafu.holzvorrat': 'Réserve de bois (LFI)',
     'ch.bafu.holznutzung': 'Récolte de bois et mortalité (LFI)',
-    'ch.bafu.holzzuwachs': 'Accroissement dans la fôret (LFI)',
+    'ch.bafu.holzzuwachs': 'Accroissement dans la forêt (LFI)',
     'ch.swisstopo.vec200-landcover-wald': 'Surfaces boisées',
     'ch.bafu.laerm-bahnlaerm_tag': 'Bruit ferroviaire (Lr_jour)',
     'ch.bafu.laerm-bahnlaerm_nacht': 'Bruit ferroviaire (Lr_nuit)',
