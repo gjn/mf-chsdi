@@ -8,11 +8,13 @@
     <title>Aggregate Layers mit dem Geb&auml;ude- und Wohnungsregister</title>
 
 <script type="text/javascript">
+            var api;
+            var map;
             function init() {
 
                var toolbar = new Ext.Toolbar({});
-               var api = new GeoAdmin.API();
-               var map = api.createMap({div: "mymap", width: 500});
+               api = new GeoAdmin.API();
+               map = api.createMap({div: "mymap", width: 500});
 
                //Layer
                map.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
