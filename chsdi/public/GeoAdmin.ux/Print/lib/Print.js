@@ -321,6 +321,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         url: this.capabilities.createURL,
                         timeout: this.timeout,
                         jsonData: jsonData,
+                        headers: {"Content-Type": "application/json; charset=" + document.charset || document.characterSet || "utf-8"},
                         success: function(response) {
                             // In IE, using a Content-disposition: attachment header
                             // may make it hard or impossible to download the pdf due

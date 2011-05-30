@@ -218,7 +218,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Plans des zones d’urgence',
 
     // Datenherr
-    'Data:': '(c) Data: ',
+    'Data:': '(c) Données: ',
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'OFEV',
     'ch.bfs': 'OFS',
