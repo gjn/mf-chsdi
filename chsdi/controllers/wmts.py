@@ -4,7 +4,7 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model.bod import LayerLegend, GetCapFr, GetCapDe, GetCapThemesFr, GetCapThemesDe
+from chsdi.model.bod import LayerLegend, GetCapFr, GetCapDe, GetCapThemesFr, GetCapThemesDe,ServiceMetadataFr,ServiceMetadataDe
 from chsdi.model.meta import Session
 
 import mimetypes
@@ -24,9 +24,12 @@ class WmtsController(BaseController):
         if self.lang == 'fr' or self.lang == 'it':
             self.GetCap = GetCapFr
             self.GetCapThemes = GetCapThemesFr
+            self.ServiceMetadata = ServiceMetadataFr
         else:
             self.GetCap = GetCapDe
             self.GetCapThemes = GetCapThemesDe
+            self.ServiceMetadata = ServiceMetadataDe
+
 
     def index(self, format='html'):
         """GET /wmts: GetCapabilities document"""
@@ -49,8 +52,11 @@ class WmtsController(BaseController):
         if c.is_swisstopowmts:
             c.layers = Session.query(self.GetCap).filter_by(sswmts=True).all()
             onlineressource = "http://wmts.swistopo.admin.ch"
+            c.service_metadata = Session.query(self.ServiceMetadata).filter(self.ServiceMetadata.pk_map_name.like('%wmts-swisstopo%')).first()
         else:
             c.layers = Session.query(self.GetCap).all()
+            c.service_metadata = Session.query(self.ServiceMetadata).filter(self.ServiceMetadata.pk_map_name.like('%wmts-bgdi%')).first()
+
         
         c.onlineressource = onlineressource
         c.themes = Session.query(self.GetCapThemes).all()

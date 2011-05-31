@@ -1,34 +1,34 @@
 <ows:ServiceIdentification>
-		<ows:Title>swisstopo ssWMTS</ows:Title>
-		<ows:Abstract>Geodata for swisstopo ssWMTS</ows:Abstract>
+		<ows:Title>${c.service_metadata.title|x,trim}</ows:Title>
+		<ows:Abstract>${c.service_metadata.abstract|x,trim}</ows:Abstract>
 		<ows:Keywords>
-			<ows:Keyword>swisstopo</ows:Keyword>
-			<ows:Keyword>Pixelkarte</ows:Keyword>
-			<ows:Keyword>Switzerland</ows:Keyword>
+		    <% keywords = c.service_metadata.keywords.split(',')  %>
+		    % if keywords:
+		    %   for i in range(len(keywords)):
+		    %     if keywords[i]:
+	    	        <ows:Keyword>${keywords[i]}</ows:Keyword>
+    	    %     endif
+    	    %   endfor
+		    % endif
 		</ows:Keywords>
 		<ows:ServiceType>OGC WMTS</ows:ServiceType>
 		<ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
-		<ows:Fees>yes</ows:Fees>
-		<ows:AccessConstraints>license</ows:AccessConstraints>
+		<ows:Fees>${c.service_metadata.fee}</ows:Fees>
+		<ows:AccessConstraints>${c.service_metadata.accessconstraint}</ows:AccessConstraints>
 </ows:ServiceIdentification>
 <ows:ServiceProvider>
-		<ows:ProviderName>swisstopo</ows:ProviderName>
+		<ows:ProviderName>Bundesamt fuer Landestopografie swisstopo</ows:ProviderName>
 		<ows:ProviderSite xlink:href="http://www.swisstopo.admin.ch"/>
 		<ows:ServiceContact>
-			<ows:IndividualName></ows:IndividualName>
-			<ows:PositionName></ows:PositionName>
+			<ows:IndividualName>Raphael Bovier</ows:IndividualName>
 			<ows:ContactInfo>
-				<ows:Phone>
-					<ows:Voice>+41 (0)31 / 963 21 11</ows:Voice>
-					<ows:Facsimile>+41 (0)31 / 963 24 59</ows:Facsimile>
-				</ows:Phone>
 				<ows:Address>
 					<ows:DeliveryPoint>swisstopo</ows:DeliveryPoint>
 					<ows:City>Bern</ows:City>
 					<ows:AdministrativeArea>BE</ows:AdministrativeArea>
 					<ows:PostalCode>3084</ows:PostalCode>
 					<ows:Country>Switzerland</ows:Country>
-					<ows:ElectronicMailAddress/>
+					<ows:ElectronicMailAddress>geodata@swisstopo.ch</ows:ElectronicMailAddress>
 				</ows:Address>
 			</ows:ContactInfo>
 		</ows:ServiceContact>

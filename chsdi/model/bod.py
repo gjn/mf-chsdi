@@ -99,12 +99,23 @@ class GetCapThemesFr(Base):
     __tablename__ = 'view_bod_wmts_getcapabilities_themes_fr'
     __table_args__ = ({'autoload': True, })
     id = Column('inspire_id', Text, primary_key=True)
-    
 
 class GetCapThemesDe(Base):
     __tablename__ = 'view_bod_wmts_getcapabilities_themes_de'
-    __table_args__ = ({'autoload': True})
+    __table_args__ = ({'autoload': True, })
     id = Column('inspire_id', Text, primary_key=True)
+    
+
+class ServiceMetadataDe(Base):
+    __tablename__ = 'view_wms_service_metadata_de'
+    __table_args__ = ({'autoload': True})
+    id = Column('wms_id', Text, primary_key=True)
+
+class ServiceMetadataFr(Base):
+    __tablename__ = 'view_wms_service_metadata_fr'
+    __table_args__ = ({'autoload': True})
+    id = Column('wms_id', Text, primary_key=True)
+
 
 class CmsLayer(object):
     def toDict(self):
