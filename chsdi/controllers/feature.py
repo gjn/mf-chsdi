@@ -52,7 +52,7 @@ def validator_layers():
 def validator_scale():
     """ Validator for the "scale" parameter. For use with
     the validate_params action decorator."""
-    scale = request.params.get('')
+    scale = request.params.get('scale')
     if scale is not None:
         try:
             scale = int(scale)
