@@ -677,13 +677,6 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-waldmischungsgrad1"
                             },
                             {
-                                text: this.addtreeLayerLink("ch.swisstopo.vec200-landcover-wald", "node_ch.swisstopo.vec200-landcover-wald1") + ' ' + this.layers["ch.swisstopo.vec200-landcover-wald"].name,
-                                leaf: true,
-                                checked: false,
-                                cls: 'nodeLT3',
-                                id: "node_ch.swisstopo.vec200-landcover-wald1"
-                            },
-                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.vec25-primaerflaechen", "node_ch.swisstopo.vec25-primaerflaechen1") + ' ' + this.layers["ch.swisstopo.vec25-primaerflaechen"].name,
                                 leaf: true,
                                 checked: false,
