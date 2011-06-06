@@ -158,6 +158,7 @@ var init = function () {
         zoomOffset: 14,
         style: "default",
         opacity: 1.0,
+        buffer: 0,
         isBaseLayer: true,
         formatSuffix: 'jpeg',
         requestEncoding: "REST",
