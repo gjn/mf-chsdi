@@ -43,6 +43,12 @@ More information about these libraries can be found here:
 In order to optimize the size of the library, not all code has been integrated in the API. If you use a function that is not part of the API, you'll need to link the approriate source code yourself.
 We recommend using `JSBuild <http://dev.mapfish.org/sandbox/camptocamp/mapfish_workshop_fossgis2010/printing_src/_build/html/building_javascript.html>`_ when you deploy awebsite in production.
 
+Where can I find the documentation of the TileForge ?
+-----------------------------------------------------
+
+Developer guide: :doc:`../../tileforge_devguide`
+User guide: :doc:`../../tileforge_userguide` 
+
 Is there a forum or a mailing list ?
 ------------------------------------
 
