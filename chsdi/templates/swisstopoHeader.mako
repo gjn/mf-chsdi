@@ -24,7 +24,7 @@
 			<ows:IndividualName>${c.service_metadata.contactperson}</ows:IndividualName>
 			<ows:ContactInfo>
 				<ows:Address>
-					<ows:DeliveryPoint>swisstopo</ows:DeliveryPoint>
+					<ows:DeliveryPoint>${c.service_metadata.address}</ows:DeliveryPoint>
 					<ows:City>${c.service_metadata.city}</ows:City>
 					<ows:PostalCode>${c.service_metadata.postcode}</ows:PostalCode>
 					<ows:Country>${c.service_metadata.country}</ows:Country>
