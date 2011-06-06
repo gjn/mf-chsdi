@@ -626,11 +626,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_7",
                         children: [
                             {
-                                text: this.addtreeLayerLink("ch.swisstopo.vec25-gwn-gewassernetz", "node_ch.swisstopo.vec25-gwn-gewassernetz1") + ' ' + this.layers["ch.swisstopo.vec25-gwn-gewassernetz"].name,
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-gewaessernetz", "node_ch.swisstopo.vec25-gewaessernetz1") + ' ' + this.layers["ch.swisstopo.vec25-gewaessernetz"].name,
                                 leaf: true,
                                 checked: false,
                                 cls: 'nodeLT3',
-                                id: "node_ch.swisstopo.vec25-gwn-gewassernetz1"
+                                id: "node_ch.swisstopo.vec25-gewaessernetz1"
                             }
                         ]
                     },

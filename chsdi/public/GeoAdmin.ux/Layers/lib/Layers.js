@@ -260,8 +260,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            "ch.swisstopo.vec25-gwn-gewassernetz": {
-                name: OpenLayers.i18n("ch.swisstopo.vec25-gwn-gewassernetz"),
+            "ch.swisstopo.vec25-gewaessernetz": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-gewaessernetz"),
                 layertype: 'wmts',
                 timestamp: '20090401',
                 type: "mixed",
@@ -571,7 +571,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 timestamp: '20081201',
                 type: "point",
-                format: "image/pnga",
+                format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
             },
