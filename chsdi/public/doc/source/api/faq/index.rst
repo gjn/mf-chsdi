@@ -46,8 +46,8 @@ We recommend using `JSBuild <http://dev.mapfish.org/sandbox/camptocamp/mapfish_w
 Where can I find the documentation of the TileForge ?
 -----------------------------------------------------
 
-Developer guide: :doc:`../../tileforge_devguide`
-User guide: :doc:`../../tileforge_userguide` 
+ * Developer guide: :doc:`../../tileforge_devguide/index`
+ * User guide: :doc:`../../tileforge_userguide/index` 
 
 Is there a forum or a mailing list ?
 ------------------------------------
