@@ -115,7 +115,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 units: 'm',
                 format: config.format,
                 attribution: config.datenherr,
-                transitionEffect: "resize",
+                //transitionEffect: "resize",
                 buffer: 0,
                 opacity: config.opacity ? config.opacity : 1.0,
                 displayInLayerSwitcher: !config.isBgLayer,
