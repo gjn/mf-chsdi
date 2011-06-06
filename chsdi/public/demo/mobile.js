@@ -8,15 +8,6 @@ var initial_zoom_level = 0;
 var LAYER_NAME = 'ch.bafu.schutzgebiete-wildruhezonen';
 
 
-var matrixIds = [];
-for (var m in matrixDefs) {
-    var def = matrixDefs[m];
-    var matrix = {};
-    matrix.identifier = m;
-    matrix.scaleDenominator = def.scaleDenominator;
-    matrix.topLeftCorner = new OpenLayers.LonLat(def.topLeftCorner[0], def.topLeftCorner[1]);
-    matrixIds.push(matrix);
-}
 
 function checkIsInLayer(bounds) {
 
@@ -156,16 +147,22 @@ var init = function () {
         opacity: 1.0
     };
     var wmts_options = {
-        url: "http://api.geo.admin.ch/wmts",
+        url: [
+            'http://wmts0.geo.admin.ch/',
+            'http://wmts1.geo.admin.ch/',
+            'http://wmts2.geo.admin.ch/',
+            'http://wmts3.geo.admin.ch/',
+            'http://wmts4.geo.admin.ch/'
+        ],
         matrixSet: "21781",
-        matrixIds: matrixIds,
+        zoomOffset: 14,
         style: "default",
         opacity: 1.0,
         isBaseLayer: true,
         formatSuffix: 'jpeg',
         requestEncoding: "REST",
         dimensions: ['TIME'],
-        params: {'time': '20110314'}
+        params: {'time': '20110401'}
     };
 
     var protectedArea = new OpenLayers.Layer.WMTS(Ext.applyIf(
