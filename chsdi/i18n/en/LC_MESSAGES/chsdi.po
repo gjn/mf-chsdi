@@ -89,6 +89,9 @@ msgstr "Nutzung [m3/ha/J]"
 msgid "holzvorrat"
 msgstr "Vorrat [m3/ha]"
 
+msgid "holz_region"
+msgstr "Region"
+
 msgid "Datenbezug"
 msgstr "Order data"
 

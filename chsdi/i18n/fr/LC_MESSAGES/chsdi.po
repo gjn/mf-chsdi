@@ -81,10 +81,13 @@ msgid "holzzuwachs"
 msgstr "Accroissement [m3/ha/an]"
 
 msgid "holznuztung"
-msgstr "Utilisation [m3/ha/an]"
+msgstr "Exploitations [m3/ha/an]"
 
 msgid "holzvorrat"
-msgstr "Réserve [m3/ha]"
+msgstr "Volume [m3/ha]"
+
+msgid "holz_region"
+msgstr "Région"
 
 msgid "betrieb"
 msgstr "Entreprise"
