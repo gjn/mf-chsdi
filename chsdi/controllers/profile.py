@@ -49,7 +49,10 @@ class ProfileController(BaseController):
 
     def _compute_points(self):
         """Compute the alt=fct(dist) array and store it in c.points"""
-        geom = geojson.loads(request.params['geom'], object_hook=geojson.GeoJSON.to_instance)
+        linestring = request.params.get('geom')
+        if linestring is None:
+            abort(400)
+        geom = geojson.loads(linestring, object_hook=geojson.GeoJSON.to_instance)
 
         if request.params.has_key('layers'):
             layers = request.params['layers'].split(',')
