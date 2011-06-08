@@ -4,6 +4,10 @@
  * @requires OpenLayers/Layer.js
  */
 
+if (!window.GeoAdmin) {
+        window.GeoAdmin = {};
+}
+
 GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {
 
     aerial: null,

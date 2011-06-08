@@ -9,6 +9,11 @@
  * @include Layers/lib/AggregateLayer.js
  */
 
+
+if (!window.GeoAdmin) {
+        window.GeoAdmin = {};
+}
+
 GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,

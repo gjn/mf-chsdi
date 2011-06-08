@@ -15,6 +15,10 @@
  * Inherits from:
  * - {<OpenLayers.Layer>}
  */
+
+if (!window.GeoAdmin) {
+        window.GeoAdmin = {};
+}
 OpenLayers.Layer.Aggregate =
         OpenLayers.Class(OpenLayers.Layer, {
 
