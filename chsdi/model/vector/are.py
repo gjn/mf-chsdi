@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from chsdi.model import *
 
-Base = declarative_base(bind=meta.engines['are_mapfish'])
+Base = declarative_base(bind=meta.engines['are'])
 
 # not in mf-are2 redmine.bgdi.admin.ch #2246
 ######################################################################################

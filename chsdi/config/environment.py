@@ -50,7 +50,7 @@ def load_environment(global_conf, app_conf):
     init_model('bafu', engine_from_config(config, 'sqlalchemy.bafu.'))
     init_model('kogis', engine_from_config(config, 'sqlalchemy.kogis.'))
     init_model('vbs', engine_from_config(config, 'sqlalchemy.vbs.'))
-    init_model('are_mapfish', engine_from_config(config, 'sqlalchemy.are_mapfish.'))
+    init_model('are', engine_from_config(config, 'sqlalchemy.are.'))
     init_model('uvek', engine_from_config(config, 'sqlalchemy.uvek.'))
     init_model('ivs2b', engine_from_config(config, 'sqlalchemy.ivs2b.'))
     init_model('dritte', engine_from_config(config, 'sqlalchemy.dritte.'))
