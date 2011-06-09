@@ -577,7 +577,7 @@ Usage Example
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['TIME'],
-                   params: {'time': '2009'},
+                   params: {'time': '20110401'},
                    formatSuffix: 'jpeg'
 
                });
