@@ -36,6 +36,7 @@ sqlalchemy.ivs2b.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbh
 sqlalchemy.dritte.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/dritte
 
 dtm_path = /var/www/mf-chsdi/private/data/profile/
+data_path = /var/local/cartoweb/
 
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to

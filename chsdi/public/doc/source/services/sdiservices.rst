@@ -304,7 +304,7 @@ Input parameters
 The following parameters are required:
 
 - geom: GeoJSON representation of the polyline (type = LineString)
-- elevation_models (optional): comma separated list of elevation models.  For now, only one elevation model available. Default: DTM25
+- elevation_models (optional): comma separated list of elevation models. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - cb (optional): the name of the callback funtion
 - douglaspeuckerepsilon (optional): epsilon value (float) in meters used for the usage of the Douglas Peucker algorithm (http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm)
@@ -337,7 +337,7 @@ Input parameters
 The following parameters are required:
 
 - geom: GeoJSON representation of the polyline (type = LineString)
-- elevation_models (optional): comma separated list of elevation models. For now, only one elevation model available. Default: DTM25
+- elevation_models (optional): comma separated list of elevation models. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - douglaspeuckerepsilon (optional): epsilon value (float) in meters used for the usage of the Douglas Peucker algorithm (http://en.wikipedia.org/wiki/Ramer-Douglas-Peucker_algorithm)
 
@@ -365,7 +365,7 @@ The following parameters are required:
 
 - easting: the Y position in CH1903 coordinate system
 - northing: the X position in CH1903 coordinate system
-- elevation_model (optional): elevation model. For now, only one elevation model available. Default: DTM25
+- elevation_model (optional): elevation model. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
 - cb (optional): the name of the callback funtion
 
 Example: http://api.geo.admin.ch/height?easting=600000&northing=200000

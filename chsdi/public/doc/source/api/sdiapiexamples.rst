@@ -20,3 +20,4 @@ API Examples
     routing
     wms
     meteoswiss
+    profile

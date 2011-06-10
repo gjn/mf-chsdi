@@ -37,7 +37,7 @@ class HeightController(BaseController):
         elif request.params.has_key('elevation_model'):
             layers = request.params['elevation_model'].split(',')
         else:
-            layers = self._get_raster_files().keys()
+            layers = ['DTM25']
         rasters = []
         for layer in layers:
             rasters.append(self._get_raster(layer))
@@ -59,7 +59,8 @@ class HeightController(BaseController):
     def _get_raster_files(self):
         """Returns the raster filename in function of its layer name"""
         return {
-            'DTM25': config['dtm_path'] + 'mm0001.shp'
+            'DTM25': config['dtm_path'] + 'mm0001.shp',
+            'DTM2': config['data_path'] + 'bund/swisstopo/swissalti3d/2m/index.shp'
         }
 
     def _get_raster(self, layer):

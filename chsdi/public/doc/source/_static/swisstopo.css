@@ -157,3 +157,8 @@ table.docutils th {
     background-color: #ddd;
     border-color: #000;
 }
+
+table.jqplot-table-legend, table.jqplot-cursor-legend {
+   top: 20px !important;
+   right: 20px !important;
+}
