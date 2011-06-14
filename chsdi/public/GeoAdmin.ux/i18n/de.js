@@ -5,6 +5,19 @@
  */
 
 OpenLayers.Util.extend(OpenLayers.Lang.de, { 
+
+    //Globals
+	'map': 'Karte',
+	'Send': 'Senden',
+	'Close': 'Schliessen',
+	'INFO': 'Information',
+	'Failure': 'Fehler',
+	'layer selection': 'Themenauswahl',
+	'No specific handler added to show the map <br> Use "goToMapHandler" parameter': 'Kein spezifischer Handler für die Anzeige der Karte vorhanden <br> Benutzen Sie den "goToMapHandler" Parameter',
+	'No specific handler added to show the layer search': 'Kein spezifischer Handler für die Anzeige der Themensuche vorhanden',
+	'No specific handler added to show the layer selection': 'Kein spezifischer Handler für die Anzeige der Themenauswahl vorhanden',
+
+
     'Copyright &amp; Data protection': 'Copyright & Datenschutzerkl&auml;rung',
     'Overview Map': 'Übersichtskarte',
     'Coordinates (m): ' : 'Koordinaten (m): ',
@@ -38,6 +51,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     'Locate by coordinates': 'Definiere Standort durch Koordinaten',
     'Locate' : 'Suchen',
+    'Geolocation': 'Standortbestimmung',
+    'Positioning failed.': 'Positionsbestimmung fehlgeschlagen.',
 
     'Swiss Coordinate': 'CH03',
     'WGS 84': 'WGS 84',
@@ -51,7 +66,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Activate dynamic location': 'Activate dynamic location',
     'Deactivate dynamic location': 'Deactivate dynamic location',
 
-    // recenter services:
+    // Recenter services, SwissSearch
     'Swissnames': '',
     'Cantons': 'Kanton',
     'Cities': 'Gemeinden',
@@ -254,6 +269,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     // background layer switcher
     'ch.swisstopo.pixelkarte-farbe': 'Karte farbig',
     'ch.swisstopo.pixelkarte-grau': 'Karte SW',
+    'ch.swisstopo.images-swissimage': 'swissimage',
     'voidLayer': 'kein Hintergrund',
 
     // Attribution / copyright
@@ -265,18 +281,33 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'We recommend to upgrade to a newer release.': 'Wir empfehlen ein neuer Version zu benutzen.',
     'You can add only 5 layers in the layer tree.': 'Sie können nur 5 Layers in Layer Baum addieren.',
 
-    // Feedback
+    // Feedback/FeedbackPanel
     'Your email (optional)': 'Ihre E-Mail Adresse (freiwillig)',
+    'Your email:': 'Ihre Emailadresse:',
     'Your feedback about current map extent': 'Ihr Bericht zum aktuellen Kartenausschnitt',
     'Cancel': 'Abbrechen',
     'Send feedback': 'Absenden',
     'Report': 'Melden Sie ein Problem mit der Karte',
+    'No email provided': 'Keine Email angegeben',
+	'Invalid email provided': 'Ungültige Email angegeben',
+	'No feedback provided': 'Kein Feedback angegeben',
+	'Please check your input': 'Bitte Eingaben überprüfen',
     'Sending feedback....': 'Bericht senden....',
     'Thanks a lot for your feedback !': "Danke vielmals für Ihre Meldung !",
     'Please fill the feedback': 'Bitte, füllen Sie den Bericht',
     'The following URL will be transferred:': 'Der folgende Link wird übermittelt: ',
+    'Your feedback was successfully commited. Thank you for providing your feedback.': 'Bericht erfolgreich versendet',
+    'Problems submitting: ': 'Problem',
     'Success': 'Bericht erfolgreich versendet',
     'Error': 'Problem',
+
+     //LayerListPanel
+	 'layer search': 'Themensuche',
+
+    //SwissSearch
+	'last used': 'zuletzt genutzt',
+	'Map was moved to': 'Die Karte wurde verschoben nach',
+    
     
     //Print
     'mf.print.pdfReady': 'PDF ist bereit',
@@ -313,6 +344,18 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     "Legend.Title": "Legende",
     "Legend.NoLayer": "Datenebene auswählen",
     "Legend.onClick": "Dargestellte Daten",
-    'metadataTooltip': "Show metadata" 
+    'metadataTooltip': "Show metadata",
+
+   	//SettingsPanel
+	'language': 'Sprache',
+	'english': 'Englisch',
+	'italian': 'Italienisch',
+	'german': 'Deutsch',
+	'raetoromanic': 'Rätoromanisch',
+	'french': 'Französisch',
+	'handedness': 'Händigkeit',
+	'rightHanded': 'Rechtshänder',
+	'leftHanded': 'Linkshänder',
+	'responsibilitiesAndContact': "Zuständigkeiten und Kontakt" 
         
 });
