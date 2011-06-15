@@ -44,20 +44,19 @@
                     enableToggle: false,
                     handler: function() {
                         var layerManagerWindow = new GeoExt.ux.LayerManagerWindow({
-                            map: mapPanel1.map
-                            //,downloadService: 'http://localhost:5000/filemanager/download'
                         });
                         layerManagerWindow.show();
                     }
                 }
             ]);
+            mapPanel1.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
         }
         window.onload = init;
     </script>
 </head>
 <body>
-<h1>Demo LayerManager: import and export of GPX and KML files</h1>
+<h1>Demo LayerManager: import and export of various vector format</h1>
 
 <div id="mymap1" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
 
