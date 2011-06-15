@@ -224,7 +224,7 @@ The following parameters are required:
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - cb (optional): the name of the callback funtion
 - baseUrl (optional): application base url
-- format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format
+- format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format. 
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
 
 Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
