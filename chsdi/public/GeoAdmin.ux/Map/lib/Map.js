@@ -69,6 +69,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (GeoAdmin.OpenLayersImgPath != null) {
             OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
         }
+        OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
 
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
             title: OpenLayers.i18n('Zoom to the max extent')
