@@ -38,6 +38,7 @@ class Queryable(object):
     __maxscale__ = maxint
 
     html = None
+    layer_id = None
     attributes = {}
     
     @classmethod
@@ -64,6 +65,7 @@ class Queryable(object):
         c.layer_bezeichnung = bodlayer.bezeichnung
         c.layer_datenherr = bodlayer.datenherr
         c.layer_id = layer_id
+        self.layer_id= layer_id
         self.html = render(self.__template__)
 
     def compute_attribute(self):
@@ -84,7 +86,10 @@ class Queryable(object):
 
     @property
     def __geo_interface__(self):
-        self.attributes['html'] = self.html
+        if self.html is not None:
+            self.attributes['html'] = self.html
+        if self.layer_id is not None:
+            self.attributes['layer_id'] = self.layer_id
         return Feature(id=self.id, geometry=self.geometry,
                        bbox=self.geometry.bounds,
                        properties=self.attributes)

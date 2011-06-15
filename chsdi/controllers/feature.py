@@ -135,12 +135,12 @@ class FeatureController(BaseController):
 
                     for feature in query.all():
                         properties = {}
+                        feature.compute_template(layer_name, bodlayer)
                         if rawjson:
                             feature.compute_attribute()
                             properties =  feature.attributes
-                        else:
-                            feature.compute_template(layer_name, bodlayer)
-                            properties['html'] = feature.html
+                        properties['html'] = feature.html
+                        properties['layer_id'] = feature.layer_id
                         if no_geom:
                             features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
