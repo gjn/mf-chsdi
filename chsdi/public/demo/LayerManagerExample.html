@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Layer Manager Example</title>
+
+    <script type="text/javascript" src="../loader.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/swfobject.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/downloadify.min.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/utils/flash.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/FormatStore.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/Export.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/Import.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportWindow.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportPanel.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerImportPanel.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerWindow.js"></script>
+
+
+    <script type="text/javascript">
+
+        var mapPanel1;
+
+        function init() {
+            OpenLayers.ProxyHost = "/ogcproxy?url=";
+
+            mapPanel1 = new GeoAdmin.MapPanel({
+                renderTo: "mymap1",
+                width: 500,
+                height: 340,
+                map: new GeoAdmin.Map(),
+                stateId: "map",
+                tbar: ["->"]
+            });
+
+            mapPanel1.getTopToolbar().add([
+                {
+                    text: 'Layer Manager',
+                    enableToggle: false,
+                    handler: function() {
+                        var layerManagerWindow = new GeoExt.ux.LayerManagerWindow({
+                            map: mapPanel1.map
+                            //,downloadService: 'http://localhost:5000/filemanager/download'
+                        });
+                        layerManagerWindow.show();
+                    }
+                }
+            ]);
+
+        }
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>Demo LayerManager: import and export of GPX and KML files</h1>
+
+<div id="mymap1" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
+
+</body>
+</html>
+
+</body>
+</html>
