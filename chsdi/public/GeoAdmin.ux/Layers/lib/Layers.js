@@ -1068,7 +1068,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-karto.wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
                 layertype: 'wmts',
-                timestamp: '20110124',
+                timestamp: '20110525',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
