@@ -4,10 +4,13 @@ import os
 import re
 import tempfile
 import subprocess
+import socket
 
 import xml.dom.minidom
 
 import simplejson as simplejson
+
+from nose.exc import SkipTest 
 
 from chsdi.tests import *
 
@@ -21,6 +24,8 @@ class TestWmtsController(TestController):
         assert 'TileMatrixSet' in resp
 
     def test_validate_getcapabilities(self):
+        if socket.gethostname() == 'bgdimf01t':
+            raise SkipTest("Cannot run this test on 'bgdimf0t'. Sorry.") 
         schema_url="http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd"
         os.environ['XML_CATALOG_FILES'] = os.path.join(os.path.dirname(__file__),"xml/catalog")
 
