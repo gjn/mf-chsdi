@@ -49,14 +49,25 @@ manually add the resolutions, as in the following example.
 .. code-block:: html
 
    <script type="text/javascript">
-   function init() {
-         map15 = new GeoAdmin.Map('ch.swisstopo.swissimage',{resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25]});
+      function init() {
+         map15 = new GeoAdmin.Map('ch.swisstopo.swissimage',{
+                resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25]
+         });
          map15.switchComplementaryLayer()
-         mappane15 = new GeoAdmin.MapPanel({renderTo: "mymap5", map:map15, width: 600, height:340});
-    }
+         mappane15 = new GeoAdmin.MapPanel({
+             renderTo: "mymap5",
+             map: map15,
+             width: 600,
+             height:340,
+             stateId: "map",
+             tbar: ["->", new GeoAdmin.Permalink()]
+         });
+         map15.events.on({"zoomend": function(){Ext.get('resolution').dom.innerHTML = map15.resolution }});
+       }
    </script>
    <body onload="init();">
      <div id="mymap5" style="width:600px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+     Current pixel resolution (in meters): <span id="resolution">
      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -70,7 +81,9 @@ manually add the resolutions, as in the following example.
    <script type="text/javascript">
    var mappane15, map15;
    function init() {
-         map15 = new GeoAdmin.Map('ch.swisstopo.swissimage',{resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25]});
+         map15 = new GeoAdmin.Map('ch.swisstopo.swissimage',{
+                resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25]
+         });
          map15.switchComplementaryLayer()
          mappane15 = new GeoAdmin.MapPanel({
              renderTo: "mymap5",
@@ -80,9 +93,7 @@ manually add the resolutions, as in the following example.
              stateId: "map",
              tbar: ["->", new GeoAdmin.Permalink()]
          });
-
          map15.events.on({"zoomend": function(){Ext.get('resolution').dom.innerHTML = map15.resolution }});
-
     }
    </script>
 
