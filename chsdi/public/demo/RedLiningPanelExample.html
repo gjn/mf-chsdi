@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>RedLiningPanel Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script type="text/javascript" src="../loader.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Control/ModifyFeature.js"></script>
+
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/swfobject.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/downloadify.min.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/utils/flash.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/FormatStore.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/Export.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/data/Import.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportWindow.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportPanel.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerImportPanel.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerWindow.js"></script>
+
+
+    <link rel="stylesheet" type="text/css"
+          href="../lib/geoext.ux.dev/Redlining/ux/FeatureEditing/resources/css/feature-editing.css"/>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/Redlining/ux/FeatureEditing/ux/FeatureEditing.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        var redLiningPanel, mapPanel;
+
+        function init() {
+
+            Ext.QuickTips.init();
+
+            mapPanel = new GeoAdmin.MapPanel({
+                region: "center",
+                map: new GeoAdmin.Map()
+
+            });
+
+            redLiningPanel = new GeoExt.ux.form.RedLiningPanel({
+                title: OpenLayers.i18n("RedLining Panel"),
+                region: "east",
+                width: 300,
+                map: mapPanel.map,
+                popupOptions: {anchored: false, unpinnable: false, draggable: true}
+            });
+
+            new Ext.Panel({
+                renderTo: "content",
+                layout: "border",
+                width: 800,
+                height: 450,
+                items: [mapPanel, redLiningPanel]
+            });
+        }
+
+        window.onload = init;
+    </script>
+
+</head>
+<body>
+<h1>RedLiningPanel example</h1>
+
+
+<div id="content"></div>
+</body>
+</html>
