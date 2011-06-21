@@ -162,6 +162,15 @@ class Vec25Gebaeude(Base, Queryable):
 
 register('ch.swisstopo.vec25-gebaeude', Vec25Gebaeude)
 
+class Vec25Gewaessernetz(Base, Queryable):
+ 	__tablename__ = 'v25_gwn_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_gewaessernetz.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-gewaessernetz', Vec25Gewaessernetz)
+
 class Vec25Primaerflaechen(Base, Queryable):
  	__tablename__ = 'v25_pri25_a'
  	__table_args__ = ({'autoload': True})

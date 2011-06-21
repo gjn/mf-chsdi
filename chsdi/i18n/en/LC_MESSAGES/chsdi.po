@@ -248,6 +248,9 @@ msgstr "URL"
 msgid "nummer"
 msgstr "Number"
 
+msgid "gewissnr"
+msgstr "GEWISS number"
+
 msgid "protokoll"
 msgstr "Protocoll"
 

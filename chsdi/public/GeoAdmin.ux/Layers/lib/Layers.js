@@ -269,10 +269,10 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.vec25-gewaessernetz"),
                 layertype: 'wmts',
                 timestamp: '20090401',
-                type: "mixed",
+                type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-gebaeude": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-gebaeude"),
