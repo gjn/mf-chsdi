@@ -21,3 +21,4 @@ API Examples
     wms
     meteoswiss
     profile
+    swissimagelevel27

@@ -9,5 +9,4 @@ API Widgets Examples
     sdiwidgetsexamples3
     sdiwidgetsaggregate
     sdiwidgettreepanel
-    sdiwidgetlegendwindow
-    swissimagelevel27
+    sdiwidgetlegendwindow  
