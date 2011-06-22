@@ -677,6 +677,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.bfs.arealstatistik-waldmischungsgrad1"
                             },
                             {
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-heckenbaeume", "node_ch.swisstopo.vec25-heckenbaeume1") + ' ' + this.layers["ch.swisstopo.vec25-heckenbaeume"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec25-heckenbaeume1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.swisstopo.vec25-primaerflaechen", "node_ch.swisstopo.vec25-primaerflaechen1") + ' ' + this.layers["ch.swisstopo.vec25-primaerflaechen"].name,
                                 leaf: true,
                                 checked: false,
@@ -1445,8 +1452,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.arealstatistik-hintergrund2"
-                        /* FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
                             },
+                        /* FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
                             {
                                 text: this.addtreeLayerLink("ch.bafu.holznutzung", "node_ch.bafu.holznutzung1") + ' ' + this.layers["ch.bafu.holznutzung"].name,
                                 leaf: true,
@@ -1467,8 +1474,15 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.holzzuwachs1"
+                            },
                         */
-                            }          
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo.vec25-einzelobjekte", "node_ch.swisstopo.vec25-einzelobjekte1") + ' ' + this.layers["ch.swisstopo.vec25-einzelobjekte"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo.vec25-einzelobjekte1"
+                            },
                         ]
                     },
                     /*{

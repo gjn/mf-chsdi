@@ -301,6 +301,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.vec25-einzelobjekte": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-einzelobjekte"),
+                layertype: 'wmts',
+                timestamp: '19980101',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.vec25-heckenbaeume": {
+                name: OpenLayers.i18n("ch.swisstopo.vec25-heckenbaeume"),
+                layertype: 'wmts',
+                timestamp: '19980101',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.swisstopo.gg25-gemeinde-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.gg25-gemeinde-flaeche.fill"),
                 layertype: 'wmts',

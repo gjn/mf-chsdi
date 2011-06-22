@@ -188,6 +188,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.swisstopo.vec25-wander':'Chemins de randonnée VECTOR25',
     'ch.swisstopo.vec25-strassennetz': 'Réseau routier VECTOR25',
     'ch.swisstopo.vec25-uebrigerverkehr': 'Autres transports VECTOR25',
+    'ch.swisstopo.vec25-einzelobjekte': 'Objets isolés VECTOR25',
+    'ch.swisstopo.vec25-heckenbaeume': 'Haies, arbres isolés VECTOR25',
     'ch.swisstopo.geologie-geophysik-totalintensitaet': 'Intensité champ magnétique',
     'ch.swisstopo.geologie-geophysik-inklination': 'Inclinaison',
     'ch.swisstopo.geologie-geophysik-deklination': 'Déclinaison',

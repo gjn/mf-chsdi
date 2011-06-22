@@ -180,6 +180,24 @@ class Vec25Primaerflaechen(Base, Queryable):
 
 register('ch.swisstopo.vec25-primaerflaechen', Vec25Primaerflaechen)
 
+class Vec25Einzelobjekte(Base, Queryable):
+ 	__tablename__ = 'v25_eob_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_einzelobjekte.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-einzelobjekte', Vec25Einzelobjekte)
+
+class Vec25Heckenbaeume(Base, Queryable):
+ 	__tablename__ = 'v25_heb_25_l'
+ 	__table_args__ = ({'autoload': True})
+ 	__template__ = 'tooltips/vec25_heckenbaeume.mako'
+ 	id = Column('objectid', Integer, primary_key=True)
+ 	the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec25-heckenbaeume', Vec25Heckenbaeume)
+
 class DufourErst(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'
