@@ -50,6 +50,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'Y') {
                     // invert y coordinate.
                     map_state['x'] = parseFloat(params.Y);
+                } else if (k === 'scale') {
+                    map_state[k] = parseInt(params[k]);
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
                 } else if (k === 'bgOpacity') {

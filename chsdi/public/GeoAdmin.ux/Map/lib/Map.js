@@ -199,6 +199,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             x: center.lon,
             y: center.lat,
             zoom: this.getZoom(),
+            scale: this.getScale(),
             complementaryLayer: {
                 layername: this.complementaryLayer.layername,
                 opacity: this.complementaryLayer.opacity
@@ -270,7 +271,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             }
 
         }
-    },
+        // zoom
+        if (state.zoom) {
+            this.zoomTo(state.zoom);
+        }
+        // scale
+        if (state.scale) {
+            this.zoomTo(this._getZoomFromScale(state.scale), true);
+        }
+     },
     /** api: method[destroy]
      *
      *  Destroy the map
