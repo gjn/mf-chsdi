@@ -38,22 +38,25 @@ register('ch.swisstopo.fixpunkte-agnes', AGNES)
 
 class FIXPUNKTELAGE(Base, Queryable):
     # view in a schema
-    __tablename__ = 'punkt_tiles_lage'
+    __tablename__ = 'punkt_lage'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
 
     id = Column('nummer', Text, primary_key=True)
     the_geom = Column(Geometry)
 
+    __maxscale__ = 150000
+
 class FIXPUNKTEHOEHE(Base, Queryable):
     # view in a schema
-    __tablename__ = 'punkt_tiles_hoehe'
+    __tablename__ = 'punkt_hoehe'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
+    __maxscale__ = 150000
 
 register('ch.swisstopo.fixpunkte-lage', FIXPUNKTELAGE)
 register('ch.swisstopo.fixpunkte-hoehe', FIXPUNKTEHOEHE)
