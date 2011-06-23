@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <title>WMSBrowser using a TreePanel and a Ext.ux.StatusBar (example)</title>
+
+    <script type="text/javascript" src="../loader.js"></script>
+
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../../../ext/examples/ux/statusbar/css/statusbar.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/WMSBrowser.css"/>
+
+    <!-- check which files are missing -->
+    <script type="text/javascript" src="../lib/geoext/lib/GeoExt.js"></script>
+
+    <!-- Missing files from API -->
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1_1.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1_1_0.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1_1_1.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1_3.js"></script>
+    <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1_3_0.js"></script>
+
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/data/Store.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/data/WMSBrowserWMSCapabilitiesStore.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/plugins/WMSBrowserAlerts.js"></script>
+
+
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/widgets/WMSBrowser.js"></script>
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/widgets/WMSBrowserStatusBar.js"></script>
+
+    <script type="text/javascript" src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/widgets/grid/WMSBrowserGridPanel.js"></script>
+
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/widgets/tree/WMSBrowserRootNode.js"></script>
+    <script type="text/javascript"
+            src="../lib/geoext.ux.dev/WMSBrowser/lib/GeoExt.ux/widgets/tree/WMSBrowserTreePanel.js"></script>
+
+
+    <script type="text/javascript">
+
+        var mapPanel1;
+        var browserOptions = {};
+        var map;
+
+        function init() {
+            OpenLayers.ProxyHost = "/ogcproxy?url=";
+
+            serverStore = new Ext.data.SimpleStore({
+                fields: ['url'],
+                data : [
+                    ['../doc/data/wms_geo_admin_ch_getcapabilities_1.3.0.xml'],
+                    ['../doc/data/wms_geo_admin_ch_getcapabilities_1.1.1.xml'] ,
+                    ['http://wms.geo.admin.ch/']
+                ]
+            });
+            var actions = [];
+
+            var action = new Ext.Action({
+                text: 'WMSBrowser',
+                handler: function() {
+                    browserWindow.show()
+                },
+                tooltip: OpenLayers.i18n('Add currently selected layers')
+            });
+            actions.push(action);
+
+            map = new GeoAdmin.Map();
+
+            mapPanel1 = new GeoAdmin.MapPanel({
+                renderTo: "mymap1",
+                width: 500,
+                height: 340,
+                map: map,
+                stateId: "map",
+                tbar: ["->"]
+            });
+
+
+            if (!browserWindow) {
+                var myBrowserOptions = Ext.apply(browserOptions, {
+                    border: false,
+                    zoomOnLayerAdded: false,
+                    closeOnLayerAdded: false,
+                    allowInvalidUrl: true,
+                    alertPopupTimeout: 2000,
+                    // === proxyHost === uncomment to use the local proxy
+                    //proxyHost: "/wsgi/main/ogcproxy?url=",
+                    serverStore: serverStore,
+                    mapPanelPreviewOptions: {height: 170, collapsed: false},
+                    layerStore: mapPanel1.layers
+                });
+
+                WMSBrowser = new GeoExt.ux.WMSBrowser(myBrowserOptions);
+
+                var browserWindow = new Ext.Window({
+                    resizable: true,
+                    modal: false,
+                    closeAction: 'hide',
+                    width: 550,
+                    height: 450,
+                    title: OpenLayers.i18n("WMSBrowser"),
+                    layout: 'fit',
+                    items: [WMSBrowser]
+                });
+            }
+            ;
+
+
+            mapPanel1.getTopToolbar().add(actions);
+            mapPanel1.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+
+        }
+        window.onload = init;
+    </script>
+</head>
+</head>
+<body>
+<h1>WMSBrowser using a TreePanel and a Ext.ux.StatusBar (example)</h1>
+
+<div id="mymap1" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
+
+
+</body>
+</html>
