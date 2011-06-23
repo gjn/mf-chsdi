@@ -15,6 +15,7 @@ API Widgets Examples
     sdiwidgetsaggregate
     sdiwidgettreepanel
     sdiwidgetlegendwindow
+    sdiwidgetwmsbrowser
     
 API Widgets Description
 -----------------------
@@ -124,6 +125,14 @@ LegendWindow
 This widget display the legend of all activelayers in a new windows.
 
 See example:  :ref:`legendwindow`
+
+WmsBrowser
+**********
+
+This widget allows you to add any layer from any WMS Service.
+
+See example:  :ref:`wmsbrowser`
+
 
 AdvancedFunctions
 *****************

@@ -9,4 +9,5 @@ API Widgets Examples
     sdiwidgetsexamples3
     sdiwidgetsaggregate
     sdiwidgettreepanel
-    sdiwidgetlegendwindow  
+    sdiwidgetlegendwindow
+    sdiwidgetwmsbrowser

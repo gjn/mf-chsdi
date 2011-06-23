@@ -52,6 +52,7 @@
  * @include Permalink/lib/Permalink.js
  * @include ContextPopup/lib/ContextPopup.js
  * @include Map/lib/MapPanel.js
+ * @include WmsBrowser/lib/WmsBrowser.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
