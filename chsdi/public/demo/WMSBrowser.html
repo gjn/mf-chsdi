@@ -14,7 +14,7 @@
 
     <!-- check which files are missing -->
     <script type="text/javascript" src="../lib/geoext/lib/GeoExt.js"></script>
-
+    <!--    <script type="text/javascript" src="../lib/geoext/lib/GeoExt/widgets/tree/WMSCapabilitiesLoader.js"></script>    -->
     <!-- Missing files from API -->
     <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities.js"></script>
     <script type="text/javascript" src="../lib/openlayers/lib/OpenLayers/Format/WMSCapabilities/v1.js"></script>
@@ -106,8 +106,13 @@
                     layout: 'fit',
                     items: [WMSBrowser]
                 });
-            }
-            ;
+            };
+
+            var layerTree = new GeoAdmin.LayerTree({
+                map: map,
+                renderTo: "mytreepanel7",
+                width: 300
+            });
 
 
             mapPanel1.getTopToolbar().add(actions);
@@ -121,8 +126,10 @@
 <body>
 <h1>WMSBrowser using a TreePanel and a Ext.ux.StatusBar (example)</h1>
 
-<div id="mymap1" style="width:700px;height:500px;padding: 0 0 0 0;"></div>
-
+<div style="width:900px">
+    <div id="mytreepanel7" style="float: left;margin:10px !important;width:300px;height: 340px;"></div>
+    <div id="mymap1" style="float: right;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+</div>
 
 </body>
 </html>
