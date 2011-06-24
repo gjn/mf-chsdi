@@ -19,23 +19,32 @@ Ext.namespace('GeoAdmin');
 GeoAdmin.LayerManagerWindow = Ext.extend(Ext.Window, {
 
     constructor: function(config) {
-
-        var importPanel = new Ext.Panel({
-            title: OpenLayers.i18n('LayerManagerWindow'),
-            height: 70,
-            items: [
-                new GeoExt.ux.LayerManagerImportPanel({
+        var layerManagerPanel = new GeoExt.ux.LayerManagerImportPanel({
                     map: config.map,
                     defaultFormat: 'KML'
-                })]});
+        });
+
+        layerManagerPanel.on('dataimported', function() {
+            alert(OpenLayers.i18n('File successfuly imported. Number of features added:') + layerManagerPanel.layer.features.length);
+            var parent = this.findParentByType('ga_layermanagerwindow');
+            if (parent) { parent.hide()}
+        });
+
+
+        var importPanel = new Ext.Panel({
+            //title: OpenLayers.i18n('LayerManagerWindow'),
+            height: 80,
+            items: [ layerManagerPanel
+                ]});
 
         var config = Ext.apply({
             resizable: true,
             modal: false,
             closeAction: 'hide',
-            width: 550,
-            height: 450,
+            width: 400,
+            height: 140,
             title: OpenLayers.i18n("LayerManagerWindow"),
+            cls: 'layermanagerwindow',
             layout: 'fit',
             items: [importPanel]
         }, config);
@@ -47,3 +56,6 @@ GeoAdmin.LayerManagerWindow = Ext.extend(Ext.Window, {
         this.getActionEl().addClass(this.disabledClass);
     }
 });
+/** api: xtype = ga_layermanager */
+Ext.reg("ga_layermanagerwindow", GeoAdmin.LayerManagerWindow);
+

@@ -58,5 +58,5 @@ GeoAdmin.LayerManager = Ext.extend(Ext.Action, {
     }
 });
 
-/** api: xtype = ga_wmsbrowser */
+/** api: xtype = ga_layermanager */
 Ext.reg("ga_layermanager", GeoAdmin.LayerManager);

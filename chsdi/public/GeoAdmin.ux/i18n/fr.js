@@ -357,6 +357,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     // LayerManager
     "LayerManager": "KML",
     "LayerManangerwindow": "Importer un fichier KML",
+    "File successfuly imported. Number of features added:": "Fichier importé avec succés. Nombre d'objets ajoutés : ",
     //"Import KML": "",
     "Import": "Ajouter",
     "Select a file to import": "Choisir le fichier à importer",
