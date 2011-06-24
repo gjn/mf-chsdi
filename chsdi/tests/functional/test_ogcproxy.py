@@ -25,7 +25,7 @@ class TestOgcproxyController(TestController):
                                  )
 
     def test_wmsgetcaps(self):
-        getcaps_url = "http://demo.mapfish.org/mapfishsample/trunk/wms?SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities"
+        getcaps_url = "http://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.1.0&REQUEST=GetCapabilities"
         response = self.app.get(url(controller='ogcproxy',
                                     action='index',
                                     url=getcaps_url
@@ -34,7 +34,7 @@ class TestOgcproxyController(TestController):
         assert 'WMT_MS_Capabilities' in response
 
     def test_wmsdescribelayer(self):
-        gdescribelayer_url = "http://demo.mapfish.org/mapfishsample/trunk/wms?SERVICE=WMS&VERSION=1.1.0&REQUEST=DescribeLayer&LAYERS=summits&WIDTH=10&HEIGHT=10"
+        gdescribelayer_url = "http://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.1.0&REQUEST=DescribeLayer&LAYERS=ch.swisstopo.geologie-geologische_karte&WIDTH=10&HEIGHT=10"
         response = self.app.get(url(controller='ogcproxy',
                                     action='index',
                                     url=gdescribelayer_url
