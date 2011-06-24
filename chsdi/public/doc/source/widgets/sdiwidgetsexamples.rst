@@ -13,3 +13,4 @@ API Widgets Examples
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
     sdiwidgetredlining
+    sdiwidgetadvancedtools
