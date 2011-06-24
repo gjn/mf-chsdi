@@ -61,7 +61,7 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
        });
 
        layertree = new GeoAdmin.LayerTree({
-           map: map14,
+           map: mappane14.map,
            renderTo: "mytreepanel4",
            height: 340,
            width: 280
@@ -100,7 +100,7 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
        });
 
        layertree = new GeoAdmin.LayerTree({
-           map: map14,
+           map: mappane14.map,
            renderTo: "mytreepanel4",
            height: 340,
            width: 280
