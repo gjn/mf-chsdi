@@ -52,6 +52,8 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
    var mappane14, map14, redlining, layertree;
 
    function init() {
+       OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
+
        OpenLayers.ProxyHost = "/ogcproxy?url=";
 
        map14 = new GeoAdmin.Map();
@@ -73,12 +75,12 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
        var layermanager = new GeoAdmin.LayerManager({map: mappane14.map});
        var redlining =   new GeoAdmin.Redlining({map: mappane14.map});
        var printPopup = new GeoAdmin.Print({
-             text: OpenLayers.i18n('Print'),
+             text: OpenLayers.i18n('mf.print.print'),
              printPanelOptions: {
                  mapPanel: mappane14
              },
              windowOptions: {
-                 title: OpenLayers.i18n('print map')
+                 title: OpenLayers.i18n('mf.print.print.title')
              }
          });
        var permalink =  new GeoAdmin.Permalink();
@@ -86,7 +88,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            printPopup,
            {
                xtype: 'tbbutton',
-               text: 'AdvancedTools',
+               text:  OpenLayers.i18n('AdvancedWindow.title'),
                menu: [permalink, wmsBrowser, layermanager, redlining]
            }
         ]);
@@ -94,6 +96,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
        mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
    }
+
    </script>
    <body onload="init();">
       <div id="mytreepanel4" style="float: left; margin:10px !important;width:285px;height: 340px;"></div>
@@ -112,7 +115,8 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
    var mappane14, map14, redlining, layertree;
 
    function init() {
-
+       OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
+       
        OpenLayers.ProxyHost = "/ogcproxy?url=";
        
        map14 = new GeoAdmin.Map();
@@ -134,12 +138,12 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
        var layermanager = new GeoAdmin.LayerManager({map: mappane14.map});
        var redlining =   new GeoAdmin.Redlining({map: mappane14.map});
        var printPopup = new GeoAdmin.Print({
-             text: OpenLayers.i18n('Print'),
+             text: OpenLayers.i18n('mf.print.print'),
              printPanelOptions: {
                  mapPanel: mappane14
              },
              windowOptions: {
-                 title: OpenLayers.i18n('print map')
+                 title: OpenLayers.i18n('mf.print.print.title')
              }
          });
        var permalink =  new GeoAdmin.Permalink();
@@ -147,7 +151,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            printPopup,
            {
                xtype: 'tbbutton',
-               text: 'AdvancedTools',
+               text:  OpenLayers.i18n('AdvancedWindow.title'),
                menu: [permalink, wmsBrowser, layermanager, redlining]
            }
         ]);
