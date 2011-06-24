@@ -21,7 +21,7 @@
    }
    </script>
 
-.. _treepanel:
+.. _swissimage_level_27:
 
 
 Swissimage at 0.25m resolution
