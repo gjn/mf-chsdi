@@ -26,8 +26,10 @@
 
 AdvancedTools
 -------------
-This examples shows some advanced widget like  :ref:`wmsbrowser`,  :ref:`layermanager` and  :ref:`redlining` in combination
- with the  :ref:`print` and the :ref:`permalink` widget.
+This examples shows some advanced widget like  :ref:`wmsbrowser`,  :ref:`layermanager` and  :ref:`redlining` in combination with the  :ref:`print` and the :ref:`permalink` widget.
+
+You can try to add a public WMS like http://sitn.ne.ch/ogc-sitn-open/wms (Canton Neuchâtel) or
+http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
 
 .. raw:: html
 
