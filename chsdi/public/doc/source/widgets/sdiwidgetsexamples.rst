@@ -11,3 +11,4 @@ API Widgets Examples
     sdiwidgettreepanel
     sdiwidgetlegendwindow
     sdiwidgetwmsbrowser
+    sdiwidgetlayermanager

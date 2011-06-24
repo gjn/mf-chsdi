@@ -16,6 +16,7 @@ API Widgets Examples
     sdiwidgettreepanel
     sdiwidgetlegendwindow
     sdiwidgetwmsbrowser
+    sdiwidgetlayermanager
     
 API Widgets Description
 -----------------------
@@ -132,6 +133,13 @@ WmsBrowser
 This widget allows you to add any layer from any WMS Service.
 
 See example:  :ref:`wmsbrowser`
+
+LayerManager
+************
+
+This widget allows you to import vector files from various format (currently KML, GeoJSON, GeoRSS and GML).
+
+See example:  :ref:`layermanager`
 
 
 AdvancedFunctions

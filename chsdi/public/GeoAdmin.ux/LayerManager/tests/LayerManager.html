@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
+
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/proj4js.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
+
+    <script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/swfobject.js"></script>
+<script type="text/javascript"
+        src="../../../lib/geoext.ux.dev/LayerManager/ux/downloadify/js/downloadify.min.js"></script>
+<script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/utils/flash.js"></script>
+<script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/data/FormatStore.js"></script>
+<script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/data/Export.js"></script>
+<script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/data/Import.js"></script>
+<script type="text/javascript"
+        src="../../../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportWindow.js"></script>
+<script type="text/javascript"
+        src="../../../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerExportPanel.js"></script>
+<script type="text/javascript"
+        src="../../../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerImportPanel.js"></script>
+<script type="text/javascript" src="../../../lib/geoext.ux.dev/LayerManager/ux/widgets/LayerManagerWindow.js"></script>
+
+<script type="text/javascript" src="../lib/LayerManagerWindow.js"></script>
+<script type="text/javascript" src="../lib/LayerManager.js"></script>
+
+
+    <script type="text/javascript">
+        function test_ctor(t) {
+            t.plan(2);
+
+            // set up
+
+            var map, mapPanel, layerManager;
+            map = new GeoAdmin.Map()
+            mapPanel = new GeoAdmin.MapPanel({map: map, tbar: ["->"]});
+
+            layerManager = new GeoAdmin.LayerManager(mapPanel, {});
+            mapPanel.getTopToolbar().add(layerManager);
+            // test
+
+            t.ok(layerManager instanceof GeoAdmin.LayerManager,
+                    "ctor returns a GeoAdmin.LayerManager");
+            t.ok(layerManager instanceof Ext.Action,
+                    "ctor returns a Ext.Action");
+
+            // tear down
+
+            mapPanel.destroy();
+
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+<div id="tbar"></div>
+</body>
+</html>
