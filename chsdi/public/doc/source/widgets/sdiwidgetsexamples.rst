@@ -12,3 +12,4 @@ API Widgets Examples
     sdiwidgetlegendwindow
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
+    sdiwidgetredlining

@@ -54,6 +54,7 @@
  * @include Map/lib/MapPanel.js
  * @include WmsBrowser/lib/WmsBrowser.js
  * @include LayerManager/lib/LayerManager.js
+ * @include Redlining/lib/Redlining.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js

@@ -17,6 +17,7 @@ API Widgets Examples
     sdiwidgetlegendwindow
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
+    sdiwidgetredlining
     
 API Widgets Description
 -----------------------
@@ -141,6 +142,12 @@ This widget allows you to import vector files from various format (currently KML
 
 See example:  :ref:`layermanager`
 
+Redlining
+************
+
+This widget allows you to draw point, line and polygon feature on the map.
+
+See example:  :ref:`redlining`
 
 AdvancedFunctions
 *****************
