@@ -50,6 +50,8 @@ This examples shows some advanced widget like  :ref:`wmsbrowser`,  :ref:`layerma
    var mappane14, map14, redlining, layertree;
 
    function init() {
+       OpenLayers.ProxyHost = "/ogcproxy?url=";
+
        map14 = new GeoAdmin.Map();
        mappane14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
@@ -108,6 +110,9 @@ This examples shows some advanced widget like  :ref:`wmsbrowser`,  :ref:`layerma
    var mappane14, map14, redlining, layertree;
 
    function init() {
+
+       OpenLayers.ProxyHost = "/ogcproxy?url=";
+       
        map14 = new GeoAdmin.Map();
        mappane14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",

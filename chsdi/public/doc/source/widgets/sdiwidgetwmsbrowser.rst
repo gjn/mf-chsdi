@@ -51,6 +51,9 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
    var mappane14, map14, wmsBrowser, layertree;
 
    function init() {
+
+       OpenLayers.ProxyHost = "/ogcproxy?url=";
+       
        map14 = new GeoAdmin.Map();
        mappane14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
@@ -90,6 +93,9 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
    var mappane14, map14, wmsBrowser, layertree;
 
    function init() {
+
+       OpenLayers.ProxyHost = "/ogcproxy?url=";
+
        map14 = new GeoAdmin.Map();
        mappane14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
