@@ -59,6 +59,9 @@ msgstr "Masquer le gestionnaire de couches"
 msgid "Legend"
 msgstr "Légende"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "Information"
 msgstr "Informations"
 
@@ -212,6 +215,9 @@ msgstr "Canton"
 msgid "ent_gew"
 msgstr "Cours d'eau"
 
+msgid "fliessgewaesser"
+msgstr "Cours d'eau"
+
 msgid "egid"
 msgstr "EGID"
 
@@ -223,6 +229,9 @@ msgstr "N°"
 
 msgid "plz"
 msgstr "NPA"
+
+msgid "langtext"
+msgstr "Localité"
 
 msgid "ct"
 msgstr "Ct."
@@ -376,6 +385,15 @@ msgstr "Secteur"
 
 msgid "zone"
 msgstr "Zone"
+
+msgid "abfrage"
+msgstr "Requête de données"
+
+msgid "werte"
+msgstr "Valeurs disponibles"
+
+msgid "nabeltyp"
+msgstr "Emplacement"
 
 # are2 translations
 

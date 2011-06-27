@@ -56,6 +56,9 @@ msgstr "map.geo.admin.ch wird geladen."
 msgid "hide column"
 msgstr "Ausblenden der Themen"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "Legend"
 msgstr "Legende"
 
@@ -212,6 +215,9 @@ msgstr "Kanton"
 msgid "ent_gew"
 msgstr "Fliessgewässer"
 
+msgid "fliessgewaesser"
+msgstr "Fliessgewässer"
+
 msgid "egid"
 msgstr "EGID"
 
@@ -223,6 +229,9 @@ msgstr "Nr."
 
 msgid "plz"
 msgstr "PLZ"
+
+msgid "langtext"
+msgstr "Ortschaft"
 
 msgid "ct"
 msgstr "Kt."
@@ -377,6 +386,14 @@ msgstr "Sektor"
 msgid "zone"
 msgstr "Zone"
 
+msgid "abfrage"
+msgstr "Datenbfrage"
+
+msgid "werte"
+msgstr "Verfügbare Werte"
+
+msgid "nabeltyp"
+msgstr "Lage"
 
 # are2 translations
 

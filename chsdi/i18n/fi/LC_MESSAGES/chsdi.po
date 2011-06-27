@@ -59,6 +59,9 @@ msgstr "Zuppentar ils temas"
 msgid "Legend"
 msgstr "Legenda"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "Information"
 msgstr "Infurmaziuns"
 
@@ -212,6 +215,9 @@ msgstr "Kanton"
 msgid "ent_gew"
 msgstr "Fliessgewässer"
 
+msgid "ent_gew"
+msgstr "Fliessgewässer"
+
 msgid "egid"
 msgstr "EGID"
 
@@ -223,6 +229,9 @@ msgstr "Nr."
 
 msgid "plz"
 msgstr "PLZ"
+
+msgid "langtext"
+msgstr "Ortschaft"
 
 msgid "ct"
 msgstr "Kt."
@@ -377,6 +386,14 @@ msgstr "Sektor"
 msgid "zone"
 msgstr "Zone"
 
+msgid "abfrage"
+msgstr "Datenbfrage"
+
+msgid "werte"
+msgstr "Verfügbare Werte"
+
+msgid "nabeltyp"
+msgstr "Lage"
 
 # are2 translations
 

@@ -47,6 +47,9 @@ msgstr "http://map.geo.admin.ch/?lang=en"
 msgid "home title"
 msgstr "Homepage"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "blind warning"
 msgstr "This page is a geographic application and is not optimized for blind persons."
 
@@ -212,6 +215,9 @@ msgstr "Canton"
 msgid "ent_gew"
 msgstr "River"
 
+msgid "fliessgewaesser"
+msgstr "Fliessgewässer"
+
 msgid "egid"
 msgstr "EGID"
 
@@ -223,6 +229,9 @@ msgstr "Nr."
 
 msgid "plz"
 msgstr "Zip"
+
+msgid "langtext"
+msgstr "Ortschaft"
 
 msgid "ct"
 msgstr "Ct."
@@ -376,6 +385,15 @@ msgstr "Sector"
 
 msgid "zone"
 msgstr "Zone"
+
+msgid "abfrage"
+msgstr "Datenbfrage"
+
+msgid "werte"
+msgstr "Verfügbare Werte"
+
+msgid "nabeltyp"
+msgstr "Lage"
 
 # are2 translations
 

@@ -62,6 +62,9 @@ msgstr "Leggenda"
 msgid "Information"
 msgstr "Informazioni"
 
+msgid "pdf"
+msgstr "PDF"
+
 msgid "geobasisdatensatz"
 msgstr "ID geodati di base"
 
@@ -212,6 +215,9 @@ msgstr "Canton"
 msgid "ent_gew"
 msgstr "Cours d'eau"
 
+msgid "fliessgewaesser"
+msgstr "Cours d'eau"
+
 msgid "egid"
 msgstr "EGID"
 
@@ -223,6 +229,9 @@ msgstr "N°"
 
 msgid "plz"
 msgstr "NPA"
+
+msgid "langtext"
+msgstr "Localité"
 
 msgid "ct"
 msgstr "Ct."
@@ -376,6 +385,15 @@ msgstr "Settore"
 
 msgid "zone"
 msgstr "Zona"
+
+msgid "abfrage"
+msgstr "Requête de données"
+
+msgid "werte"
+msgstr "Valeurs disponibles"
+
+msgid "nabeltyp"
+msgstr "Emplacement"
 
 # are2 translations
 
