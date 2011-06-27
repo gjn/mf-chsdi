@@ -19,6 +19,7 @@ API Widgets Examples
     sdiwidgetlayermanager
     sdiwidgetredlining
     sdiwidgetadvancedtools
+    sdiwidgetmeasure
     
 API Widgets Description
 -----------------------
@@ -149,6 +150,13 @@ Redlining
 This widget allows you to draw point, line and polygon feature on the map.
 
 See example:  :ref:`redlining`
+
+Measure
+*******
+
+This widget allows you to measure distances and surfaces on the map.
+
+See example:  :ref:`measure`
 
 AdvancedFunctions
 *****************

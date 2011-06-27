@@ -14,3 +14,4 @@ API Widgets Examples
     sdiwidgetlayermanager
     sdiwidgetredlining
     sdiwidgetadvancedtools
+    sdiwidgetmeasure

@@ -71,6 +71,8 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            height: 340,
            width: 280
        });
+
+       var measureTools = GeoAdmin.Measure(mappane14.map);
        var wmsBrowser = new GeoAdmin.WmsBrowser(mappane14, {});
        var layermanager = new GeoAdmin.LayerManager({map: mappane14.map});
        var redlining =   new GeoAdmin.Redlining({map: mappane14.map});
@@ -89,7 +91,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            {
                xtype: 'tbbutton',
                text:  OpenLayers.i18n('AdvancedWindow.title'),
-               menu: [permalink, wmsBrowser, layermanager, redlining]
+               menu: [permalink, wmsBrowser, layermanager, redlining, measureTools]
            }
         ]);
 
@@ -134,6 +136,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            height: 340,
            width: 280
        });
+       var measureTools = new GeoAdmin.Measure({map:mappane14.map});
        var wmsBrowser = new GeoAdmin.WmsBrowser(mappane14, {});
        var layermanager = new GeoAdmin.LayerManager({map: mappane14.map});
        var redlining =   new GeoAdmin.Redlining({map: mappane14.map});
@@ -152,7 +155,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
            {
                xtype: 'tbbutton',
                text:  OpenLayers.i18n('AdvancedWindow.title'),
-               menu: [permalink, wmsBrowser, layermanager, redlining]
+               menu: [permalink, wmsBrowser, layermanager, redlining,measureTools]
            }
         ]);
        
