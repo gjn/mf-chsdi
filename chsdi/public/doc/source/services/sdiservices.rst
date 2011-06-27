@@ -40,8 +40,10 @@ The following parameters are required:
 - lang: optional lang: de (default) or fr
 - query: the query string to find
 - cb (optional): the name of the callback funtion
+- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
+- no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
 
-The service returns a maximum of 50 results.
+The service returns a maximum of 20 results.
 
 Example: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=lausanne
 
@@ -50,12 +52,13 @@ Result
 
 A JSON content is sent back with the following content:
 
-- service: the name of the service. It can be postalcodes, cantons, cities or swissnames
-- label: html content presented in the Swissearch widget
-- rank: rank of the result, form 1 to 4. 1 for postalcodes, 2 for cantons, 3 for cities and 4 for swissnames
+- service: the name of the service. It can be postalcodes, cantons, cities, swissnames or address
+- label: html content presented in the Swissearch widget (apply only when html format is requested)
+- rank: rank of the result, form 1 to 4. 1 for postalcodes, 2 for cantons, 3 for cities, 4 for swissnames and 5 for address
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - id: id of the feature in the database
 - objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
+- all properties (apply only when raw format is requested)
 
 SwissSearch: reversegeocoding
 -----------------------------

@@ -197,7 +197,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 var circle = new OpenLayers.Feature.Vector(
                         OpenLayers.Geometry.Polygon.createRegularPolygon(
                                 new OpenLayers.Geometry.Point(extent.getCenterLonLat().lon, extent.getCenterLonLat().lat),
-                                25,
+                                12,
                                 40,
                                 0
                                 ),

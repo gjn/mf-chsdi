@@ -14,17 +14,18 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['search'])
 
-class SwissSearch(Base):
+class SwissSearch(Base, Queryable):
     __tablename__ = 'swiss_search'
     __table_args__ = ({'autoload': True})
-
-    geom = Column('the_geom', Geometry)
+    
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column('the_geom', Geometry)
     geom_point = Column('the_geom_point', Geometry)
     geom_poly = Column('the_geom_poly', Geometry)
 
     @property
     def bbox(self):
-        bbox = loads(self.geom.geom_wkb.decode('hex')).bounds
+        bbox = loads(self.the_geom.geom_wkb.decode('hex')).bounds
         return tuple([int(c) for c in bbox])
 
     @classmethod
@@ -36,7 +37,7 @@ class SwissSearch(Base):
 
     @property
     def json(self):
-        o = {'service': '', 'rank': -1, 'id': self.gid, 'label': '',
+        o = {'service': '', 'rank': -1, 'id': self.id, 'label': '',
              'bbox': self.bbox, 'objectorig': self.objectorig}
         if self.origin == 'zipcode':
             o.update({'service': 'postalcodes',
@@ -54,4 +55,14 @@ class SwissSearch(Base):
             o.update({'service': 'cantons',
                       'rank': 2,
                       'label': "%s <b>%s</b>"%(_('ct'), self.name)})
+        elif self.origin == 'address':
+            if self.deinr is None:
+               address_nr = ''
+            else:
+               address_nr = self.deinr
+            o.update({'service': 'address',
+                      'rank': 5,
+                      'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.gemname)})
         return o
+
+

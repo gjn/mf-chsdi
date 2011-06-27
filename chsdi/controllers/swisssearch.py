@@ -1,8 +1,12 @@
 import logging
+import simplejson
 from operator import itemgetter
 
 from sqlalchemy import or_
 from sqlalchemy.sql import func
+
+from geojson.feature import FeatureCollection
+from geojson.feature import Feature
 
 from pylons import request
 from pylons.controllers.util import abort
@@ -12,6 +16,7 @@ from mapfish.decorators import MapFishEncoder, _jsonify
 from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
+from paste.deploy.converters import asbool
 
 log = logging.getLogger(__name__)
 
@@ -24,11 +29,39 @@ class SwisssearchController(BaseController):
         if q is None:
             abort(400, "missing 'query' parameter")
 
-        q = func.remove_accents(q + '%')
-        query = Session.query(SwissSearch).filter(SwissSearch.search_name.like(q))
-        query = query.order_by(SwissSearch.search_name).limit(50)
+        no_geom = request.params.get('no_geom')
+        if no_geom is not None:
+            no_geom = asbool(no_geom)
+        else:
+            no_geom = False
 
-        return {'results': sorted([f.json for f in query], key=itemgetter('rank'))}
+        rawjson = request.params.get('format') == 'raw' or False
+
+        terms = q.split()
+        terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
+        tsvector = 'tsvector_search_name'
+        ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
+
+        query = Session.query(SwissSearch).filter(ftsFilter)
+        query = query.order_by(SwissSearch.id).limit(20)
+
+        if rawjson:
+            features = []
+            for feature in query.all():
+               properties = {}
+               feature.compute_attribute()
+               properties = feature.attributes
+               #Remove unneeded properties
+               del properties['search_name']
+               del properties['tsvector_search_name']
+               del properties['the_geom_real']
+               features.append(Feature(id=feature.id, bbox=feature.bbox,
+                                       geometry=feature.geometry if not no_geom else None, 
+                                       properties=properties))
+
+            return FeatureCollection(features)
+        else:
+            return {'results': sorted([f.json for f in query], key=itemgetter('rank'))}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):
