@@ -5,6 +5,8 @@
  * @include Measure/lib/MeasurePanel.js
  */
 
+Ext.namespace('GeoAdmin');
+
 GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
 
     constructor: function(config) {

@@ -13,6 +13,7 @@
  * @include OpenLayers/Rule.js
  */
 
+Ext.namespace('GeoAdmin');
 
 GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
 
