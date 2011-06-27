@@ -88,6 +88,9 @@ The LayerManager widget allows you to add vector files to the map. It currently 
    var mappane14, map14, layermanager, layertree;
 
    function init() {
+
+      OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
+      
        map14 = new GeoAdmin.Map();
        mappane14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
