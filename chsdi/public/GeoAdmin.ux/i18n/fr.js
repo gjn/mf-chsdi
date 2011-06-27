@@ -211,6 +211,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en pente et terrasses',
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
+    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
 
      // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',

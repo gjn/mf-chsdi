@@ -223,6 +223,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Steil- und Terrassenlagen im Rebbau',
     'ch.blw.hang_steillagen': 'Hang- und Steillagen',
+    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'PLZOrtschaften',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
