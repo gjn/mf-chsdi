@@ -80,6 +80,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': 'Ihre Bildschirmauflösung ist kleiner als 1024x768 pixels. map.geo.admin.ch ist nicht für kleine Bildschirmauflösung optimiert.',
     'Full map': 'Grössere Karte',
     'Geo search...': 'Suche Ort, PLZ, Koordinaten ...',
+    'searchQuicktip': 'Hier können Sie nach Ort, PLZ, Administrativen Einheiten und Koordinaten suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br>',
     'show column': 'Themen öffnen',
     'hide column': 'Ausblenden der Themen',
     'Map URL': 'Untenstehenden Link in e-mail einbinden',

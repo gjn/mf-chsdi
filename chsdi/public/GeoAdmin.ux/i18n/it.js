@@ -59,6 +59,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': 'La vostra risoluzione dello schermo è inferiore a 1024x768pixel. map.geo.admin.ch non è  ottimizzata per risoluzioni inferiori.',
     'Full map': 'Mappa più grande',
     'Geo search...': 'Ricerca località, NPA, coordinate ...',
+    'searchQuicktip': 'Qui potete cercare luoghi, CAP, unità amministrative e coordinate.<br>Esempio di ricerca:<br><b>CAP:</b> per "3012 a Berna" scrivete 3012<br><b>coordinate (Svizzera):</b> per "600000/200000 " scrivete 600000 200000<br><b>coordinate (LatLon):</b> per "46.7N 6.0E " scrivete 46.7 6.0',
     'show column': 'Aprire la barra dei temi',
     'hide column': 'Chiudere la barra dei temi',
     'Map URL': 'Allegare il link in una e-mail',

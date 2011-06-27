@@ -59,6 +59,19 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     queryDelay: 50,
     displayField: 'label',
     forceSelection: true,
+    selectOnFocus: true,
+    listeners:{
+        render: function() {
+            this.el.set(
+                {qtip:OpenLayers.i18n('searchQuicktip'),
+                qwidth:400}
+            );
+            this.validate();
+            this.el.set(
+                {qtip:OpenLayers.i18n('searchQuicktip')}
+             );
+        }
+    },
 
     coordRegExp: /([\d\.']+)[\s,]+([\d\.']+)/,
 
@@ -218,3 +231,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 Ext.reg("ga_swisssearchcombo", GeoAdmin.SwissSearchComboBox);
 
 Ext.reg("ga_swisssearch", GeoAdmin.SwissSearchComboBox);
+
+Ext.apply(Ext.QuickTips.getQuickTip(), {
+    showDelay: 50,      // Show 50ms after entering target
+    dismissDelay: 10000,
+    trackMouse: true
+});
