@@ -587,7 +587,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.gg25-gemeinde-flaeche.fill1"
-                            }
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo-vd.ortschaftenverzeichnis_plz", "node_ch.swisstopo-vd.ortschaftenverzeichnis_plz1") + ' ' + this.layers["ch.swisstopo-vd.ortschaftenverzeichnis_plz"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo-vd.ortschaftenverzeichnis_plz1"
+                            }   
                         ]
                     },
                     {
@@ -602,6 +609,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bfs.gebaeude_wohnungs_register1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo-vd.ortschaftenverzeichnis_plz", "node_ch.swisstopo-vd.ortschaftenverzeichnis_plz2") + ' ' + this.layers["ch.swisstopo-vd.ortschaftenverzeichnis_plz"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo-vd.ortschaftenverzeichnis_plz2"
                             }
                         ]
                     }/*,
