@@ -235,6 +235,8 @@ Navigation History
    <script type="text/javascript">
       function init() {
 
+         OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "de");
+         
          var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.hiks-dufour");
          map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
