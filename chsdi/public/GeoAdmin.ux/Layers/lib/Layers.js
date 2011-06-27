@@ -767,7 +767,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -776,7 +776,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_rutschungen"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -785,7 +785,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -794,7 +794,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_lawinen"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -803,7 +803,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_hochwasser"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -812,7 +812,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_rutschungen"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -821,7 +821,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -830,7 +830,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_lawinen"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20110101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -900,7 +900,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: true
             },
             "ch.bafu.holzvorrat": {
                 name: OpenLayers.i18n("ch.bafu.holzvorrat"),
@@ -1266,6 +1266,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.ensi",
                 opacity: 0.6,
+                queryable: true
+            },
+            "ch.swisstopo-vd.ortschaftenverzeichnis_plz": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
+                layertype: 'wmts',
+                timestamp: '20110502',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
                 queryable: true
             }
         };
