@@ -362,7 +362,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     // LayerManager
     "LayerManager": "KML & GPX",
-    "LayerManangerwindow": "Importer un fichier KML",
+    "LayerManagerWindow": "Importer un fichier KML ou GPX",
     "File successfuly imported. Number of features added:": "Fichier importé avec succés. Nombre d'objets ajoutés : ",
     //"Import KML": "",
     "Import": "Ajouter",
