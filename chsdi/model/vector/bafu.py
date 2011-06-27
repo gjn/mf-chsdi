@@ -227,6 +227,16 @@ class HOLZNUTZUNG(Base, Queryable):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
+class NABEL(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'nabel'
+    __table_args__ = ({'schema': 'luft', 'autoload': True})
+    __template__ = 'tooltips/nabel.mako'
+
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
@@ -252,3 +262,4 @@ register('ch.bafu.swissprtr', SWISSPRTR)
 register('ch.bafu.holzvorrat', HOLZVORRAT)
 register('ch.bafu.holzzuwachs', HOLZZUWACHS)
 register('ch.bafu.holznutzung', HOLZNUTZUNG)
+register('ch.bafu.nabelstationen', NABEL)

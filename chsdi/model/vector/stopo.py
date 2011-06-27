@@ -297,3 +297,13 @@ class SwissmapOnlineWanderwege(Base, Queryable):
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo-karto.wanderwege',SwissmapOnlineWanderwege)
+
+class PLZOrtschaften(Base, Queryable):
+       # view in a schema
+       __tablename__ = 'gabmo_plz'
+       __table_args__ = ({'schema': 'vd', 'autoload': True})
+       __template__ = 'tooltips/gabmo_plz.mako'
+       id = Column('gid', Integer, primary_key=True)
+       the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo-vd.ortschaftenverzeichnis_plz',PLZOrtschaften)
