@@ -222,6 +222,7 @@ BOD Search
 
    <script type="text/javascript">
       function init() {
+         OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "de");
          var map1 = new GeoAdmin.Map("mymap1", {doZoomToMaxExtent: true});
 
          var map2 = new GeoAdmin.Map("mymap2", {doZoomToMaxExtent: true});
