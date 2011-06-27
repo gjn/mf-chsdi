@@ -785,23 +785,51 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "ch.ensi.zonenplan-notfallschutz-kernanlagen1"
                             }
                      ]
-             }]
-            },     
-             /*
+             },
+                  /*
              {
              text: ' ' + OpenLayers.i18n('Bevölkerungsdichte'),
              cls: 'nodeLT2',
              singleClickExpand: true,
              id: "LT2_12"
-             },
+             },*/
              {
              text: ' ' + OpenLayers.i18n('Raumplanung'),
              cls: 'nodeLT2',
              singleClickExpand: true,
-             id: "LT2_13"
-             }
+             id: "LT2_13",
+             children: [
+                             {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-fleisch", "node_ch.blw.ursprungsbezeichnungen-fleisch1") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-fleisch"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-fleisch1"
+                             },
+                             {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-kaese", "node_ch.blw.ursprungsbezeichnungen-kaese1") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-kaese"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-kaese1"
+                             },
+                             {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-pflanzen", "node_ch.blw.ursprungsbezeichnungen-pflanzen1") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-pflanzen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-pflanzen1"
+                             },
+                             {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-spirituosen", "node_ch.blw.ursprungsbezeichnungen-spirituosen1") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-spirituosen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-spirituosen1"
+                             }
              ]
-             },*/
+             }]
+            },
             {
                 text: OpenLayers.i18n('Infrastruktur und Kommunikation'),
                 cls: 'nodeLT1',
@@ -1497,6 +1525,34 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo.vec25-einzelobjekte1"
                             },
+                            {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-fleisch", "node_ch.blw.ursprungsbezeichnungen-fleisch2") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-fleisch"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-fleisch2"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-kaese", "node_ch.blw.ursprungsbezeichnungen-kaese2") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-kaese"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-kaese2"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-pflanzen", "node_ch.blw.ursprungsbezeichnungen-pflanzen2") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-pflanzen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-pflanzen2"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.blw.ursprungsbezeichnungen-spirituosen", "node_ch.blw.ursprungsbezeichnungen-spirituosen2") + ' ' + this.layers["ch.blw.ursprungsbezeichnungen-spirituosen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.ursprungsbezeichnungen-spirituosen2"
+                            }
                         ]
                     },
                     /*{

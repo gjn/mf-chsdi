@@ -224,6 +224,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Steil- und Terrassenlagen im Rebbau',
     'ch.blw.hang_steillagen': 'Hang- und Steillagen',
+    'ch.blw.ursprungsbezeichnungen-fleisch': 'GGA Fleischware',
+    'ch.blw.ursprungsbezeichnungen-kaese': 'GUB Käse',
+    'ch.blw.ursprungsbezeichnungen-pflanzen': 'GUB Pflanzliche Produkte',
+    'ch.blw.ursprungsbezeichnungen-spirituosen': 'GUB Spirituosen',
     'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'PLZOrtschaften',
 
     // Layer for astra

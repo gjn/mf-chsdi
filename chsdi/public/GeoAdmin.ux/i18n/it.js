@@ -79,7 +79,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Raum und Bevölkerung': 'Territori e popolazione',
     'Gesundheit une Sicherheit': 'Salute umana e sicurezza',
     'Bevölkerungsdichte': 'Distribuzione della popolazione - demografia',
-    'Raumplanung': 'Zone sottoposte a gestione/limitazioni/regolamentazione e unità con obbligo di comunicare dati',
+    'Raumplanung': 'Zone regolamentate e unità con obbligo di rapporto',
     'Infrastruktur und Kommunikation': 'Infrastrutture e comunicazione',
     'Verkehrsnetze': 'Reti di trasporto',
     'Gebäude': 'Edifici',
@@ -203,6 +203,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en pente et terrasses',
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
+    'ch.blw.ursprungsbezeichnungen-fleisch': 'IGP Prodotto a base di carne',
+    'ch.blw.ursprungsbezeichnungen-kaese': 'DOP Formaggio',
+    'ch.blw.ursprungsbezeichnungen-pflanzen': 'DOP Prodotti vegetali',
+    'ch.blw.ursprungsbezeichnungen-spirituosen': 'DOP distillati',
     'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
 
     // Layer for astra

@@ -85,7 +85,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Raum und Bevölkerung': 'Area and population',
     'Gesundheit une Sicherheit': 'Human health and safety',
     'Bevölkerungsdichte': 'Population distribution - demography',
-    'Raumplanung': 'Geregelte Gebiete und Berichterstattungseinheiten',
+    'Raumplanung': 'Area restriction zones and reporting units',
     'Infrastruktur und Kommunikation': 'Infrastructure and communication',
     'Verkehrsnetze': 'Transport networks',
     'Gebäude': 'Buildings',
@@ -209,6 +209,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Steil- und Terrassenlagen im Rebbau',
     'ch.blw.hang_steillagen': 'Hang- und Steillagen',
+    'ch.blw.ursprungsbezeichnungen-fleisch': 'GGA Fleischware',
+    'ch.blw.ursprungsbezeichnungen-kaese': 'GUB Käse',
+    'ch.blw.ursprungsbezeichnungen-pflanzen': 'GUB Pflanzliche Produkte',
+    'ch.blw.ursprungsbezeichnungen-spirituosen': 'GUB Spirituosen',
     'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'PLZOrtschaften',
 
     // Layer for astra

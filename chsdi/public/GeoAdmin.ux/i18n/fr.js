@@ -212,6 +212,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en pente et terrasses',
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
+    'ch.blw.ursprungsbezeichnungen-fleisch': 'IGP produits à base de viande',
+    'ch.blw.ursprungsbezeichnungen-kaese': 'AOP fromage',
+    'ch.blw.ursprungsbezeichnungen-pflanzen': 'AOP produits végétaux',
+    'ch.blw.ursprungsbezeichnungen-spirituosen': 'AOP spiritueux',
     'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
 
      // Layer for astra

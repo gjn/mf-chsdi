@@ -1258,6 +1258,42 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.blw",
                 queryable: false
             },
+            "ch.blw.ursprungsbezeichnungen-fleisch": {
+                name: OpenLayers.i18n("ch.blw.ursprungsbezeichnungen-fleisch"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                queryable: false
+            },
+            "ch.blw.ursprungsbezeichnungen-kaese": {
+                name: OpenLayers.i18n("ch.blw.ursprungsbezeichnungen-kaese"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                queryable: false
+            },
+            "ch.blw.ursprungsbezeichnungen-pflanzen": {
+                name: OpenLayers.i18n("ch.blw.ursprungsbezeichnungen-pflanzen"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                queryable: false
+            },
+            "ch.blw.ursprungsbezeichnungen-spirituosen": {
+                name: OpenLayers.i18n("ch.blw.ursprungsbezeichnungen-spirituosen"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                queryable: false
+            },
             "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
                 name: OpenLayers.i18n("ch.ensi.zonenplan-notfallschutz-kernanlagen"),
                 layertype: 'wmts',
