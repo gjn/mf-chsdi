@@ -75,15 +75,15 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         var measureArea = new Ext.Button(
                 new GeoExt.ux.MeasureArea(Ext.apply({
                     iconCls: 'gx-map-measurearea',
-                    tooltip: OpenLayers.i18n("GeoAdmin.Measure.MeasureArea.ToolTip"),
-                    text: OpenLayers.i18n("GeoAdmin.Measure.MeasureArea")
+                    tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
+                    text: OpenLayers.i18n("Measure.MeasureArea")
                 }, buttonConfig)));
 
         var measureLength = new Ext.Button(
                 new GeoExt.ux.MeasureLength(Ext.apply({
                     iconCls: 'gx-map-measurelength',
-                    tooltip: OpenLayers.i18n("GeoAdmin.Measure.MeasureLength.ToolTip"),
-                    text: OpenLayers.i18n("GeoAdmin.Measure.MeasureLength")
+                    tooltip: OpenLayers.i18n("Measure.MeasureLength.ToolTip"),
+                    text: OpenLayers.i18n("Measure.MeasureLength")
                 }, buttonConfig)));
 
         var measureToolbar = new Ext.Toolbar({
