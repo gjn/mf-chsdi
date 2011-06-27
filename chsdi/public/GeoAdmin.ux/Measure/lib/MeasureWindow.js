@@ -23,7 +23,7 @@ GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
             closeAction: 'hide',
             width: 300,
             height: 70,
-            title: OpenLayers.i18n("MeasureWindow"),
+            title: OpenLayers.i18n("Measure.title"),
             layout: 'fit',
             items: [measurePanel]
         }, config);
