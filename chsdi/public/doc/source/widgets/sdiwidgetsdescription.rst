@@ -15,6 +15,7 @@ API Widgets Examples
     sdiwidgetsaggregate
     sdiwidgettreepanel
     sdiwidgetlegendwindow
+.. The following lines are commented out
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
     sdiwidgetredlining
@@ -130,37 +131,38 @@ This widget display the legend of all activelayers in a new windows.
 
 See example:  :ref:`legendwindow`
 
-WmsBrowser
-**********
-
-This widget allows you to add any layer from any WMS Service.
-
-See example:  :ref:`wmsbrowser`
-
-LayerManager
-************
-
-This widget allows you to import vector files from various format (currently KML, GeoJSON, GeoRSS and GML).
-
-See example:  :ref:`layermanager`
-
-Redlining
-************
-
-This widget allows you to draw point, line and polygon feature on the map.
-
-See example:  :ref:`redlining`
-
-Measure
-*******
-
-This widget allows you to measure distances and surfaces on the map.
-
-See example:  :ref:`measure`
-
-AdvancedFunctions
-*****************
-
-This widget windows is a container to regroup some more advanced functionalties you do not want to display in a toolbar.
-
-See example: 
+..  Commented out until the end
+    WmsBrowser
+    **********
+    
+    This widget allows you to add any layer from any WMS Service.
+    
+    See example:  :ref:`wmsbrowser`
+    
+    LayerManager
+    ************
+    
+    This widget allows you to import vector files from various format (currently KML, GeoJSON, GeoRSS and GML).
+    
+    See example:  :ref:`layermanager`
+    
+    Redlining
+    ************
+    
+    This widget allows you to draw point, line and polygon feature on the map.
+    
+    See example:  :ref:`redlining`
+    
+    Measure
+    *******
+    
+    This widget allows you to measure distances and surfaces on the map.
+    
+    See example:  :ref:`measure`
+    
+    AdvancedFunctions
+    *****************
+    
+    This widget windows is a container to regroup some more advanced functionalties you do not want to display in a toolbar.
+    
+    See example: 

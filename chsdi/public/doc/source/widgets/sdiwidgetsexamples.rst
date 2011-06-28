@@ -10,6 +10,7 @@ API Widgets Examples
     sdiwidgetsaggregate
     sdiwidgettreepanel
     sdiwidgetlegendwindow
+.. The following lines are commented out
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
     sdiwidgetredlining
