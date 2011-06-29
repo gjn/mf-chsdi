@@ -1,5 +1,4 @@
 /*global OpenLayers:true*/
-/*global OpenLayers:true*/
 
 /**
  * @requires OpenLayers/Lang/fr.js
