@@ -200,6 +200,7 @@ OpenLayers.Lang.rm = {
     'ch.astra.ivs-nat': 'IVS National',
     'ch.astra.ivs-reg_loc' : 'IVS Regional & Lokal',
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
+    'ch.blw.erosion' : 'Erosionsrisiko',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Steil- und Terrassenlagen im Rebbau',
     'ch.blw.hang_steillagen': 'Hang- und Steillagen',
     'ch.blw.ursprungsbezeichnungen-fleisch': 'GGA Fleischware',

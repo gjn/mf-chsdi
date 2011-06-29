@@ -511,7 +511,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 cls: 'nodeLT3',
                                 id: "node_ch.are.agglomerationen_isolierte_staedte-20001"
                             },
-                            /*{
+                            /*
+                            {
                              text: this.addtreeLayerLink("ch.swisstopo.pixelkarte-pk25.metadata", "ch.swisstopo.pixelkarte-pk25.metadata1") + ' ' + this.layers["ch.swisstopo.pixelkarte-pk25.metadata"].name,
                              leaf: true,
                              checked: false,
@@ -545,7 +546,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                              checked: false,
                              cls: 'nodeLT3',
                              id: "ch.swisstopo.pixelkarte-pk500.metadata1"
-                             },*/
+                             },
+                             */
                             {
                                 text: this.addtreeLayerLink("ch.are.alpenkonvention", "node_ch.are.alpenkonvention1") + ' ' + this.layers["ch.are.alpenkonvention"].name,
                                 leaf: true,
@@ -705,7 +707,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-primaerflaechen1"
                             }
                         ]
-                    }/*,
+                    },
+                    /*
                     {
                      text: ' ' + OpenLayers.i18n('Luft und Satellitenbilder'),
                      cls: 'nodeLT2',
@@ -720,7 +723,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                      id: "ch.swisstopo.images-swissimage.metadata1"
                      }
                      ]
-                     }*/
+                     }
+                     */
                 ]
             },
             {
@@ -1168,6 +1172,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         singleClickExpand: true,
                         id: "LT2_19",
                         children: [
+                            {
+                                text: this.addtreeLayerLink("ch.blw.erosion", "node_ch.blw.erosion1") + ' ' + this.layers["ch.blw.erosion"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.blw.erosion1"
+                            },
                             {
                                 text: this.addtreeLayerLink("ch.blw.hang_steillagen", "node_ch.blw.hang_steillagen1") + ' ' + this.layers["ch.blw.hang_steillagen"].name,
                                 leaf: true,

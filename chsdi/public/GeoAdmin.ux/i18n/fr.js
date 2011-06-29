@@ -209,6 +209,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.astra.ivs-nat': 'IVS national',
     'ch.astra.ivs-reg_loc' : 'IVS régional & local',
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',
+    'ch.blw.erosion' : 'Risques d´érosion',
     'ch.blw.steil_terrassenlagen_rebbau' : 'Terrains viticoles en pente et terrasses',
     'ch.blw.hang_steillagen': 'Terrains en pente et en forte pente',
     'ch.blw.ursprungsbezeichnungen-fleisch': 'IGP produits à base de viande',
