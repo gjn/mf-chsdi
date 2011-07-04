@@ -43,6 +43,10 @@ class SwisssearchController(BaseController):
         ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
 
         query = Session.query(SwissSearch).filter(ftsFilter)
+        # FIXME Address search is only for admin.ch
+        referer = request.headers.get('referer', '')
+        if referer.find( 'admin.ch') < 0:
+            query = query.filter(SwissSearch.origin != 'address')
         query = query.order_by(SwissSearch.id).limit(20)
 
         if rawjson:
