@@ -171,7 +171,7 @@ class ProfileController(BaseController):
     def _get_raster_files(self):
         """Returns the raster filename in function of its layer name"""
         return {
-            'DTM25': config['dtm_path'] + 'mm0001.shp',
+            'DTM25': config['data_path'] + 'bund/swisstopo/dhm25_25_matrix/mm0001.shp',
             'DTM2': config['data_path'] + 'bund/swisstopo/swissalti3d/2m/index.shp'
         }
 
