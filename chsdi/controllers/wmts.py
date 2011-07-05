@@ -10,6 +10,7 @@ from chsdi.model.meta import Session
 import mimetypes
 import urllib2
 import urllib
+import datetime
 
 log = logging.getLogger(__name__)
 
@@ -157,15 +158,18 @@ class WmtsController(BaseController):
 
         # Load the tile and send it back
         req = urllib2.Request(tileCacheUrlString)
-        req.add_header('Referer', request.headers['Referer'])
+        req.add_header('Referer', request.headers.get('Referer', ''))
         try:
             r = urllib2.urlopen(req)
         except urllib2.HTTPError, e:
             abort(e.code)
         response.headers['Content-Type'] = mimetypes.types_map['.'+format]
-        response.headers['Cache-Control'] = r.headers['Cache-Control']
-        response.headers['Expires'] = r.headers['Expires']
+        response.headers['Cache-Control'] = r.headers.get('Cache-Control','max-age=86400')
+        default_expires = (datetime.datetime.today()+datetime.timedelta(hours=22)).strftime("%a, %d %b %Y %H:%M:%S GMT" ) 
+        response.headers['Expires'] = r.headers.get('Expires', default_expires)
+        response.status_int = r.code
         del response.headers['Pragma']
+        
         return r.read()
 
     def zeroPad(self,number,length):
