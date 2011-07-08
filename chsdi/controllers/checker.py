@@ -4,20 +4,24 @@ from pylons import response
 from chsdi.lib.base import *
 import chsdi.lib.helpers as h
 
+import urllib
 import urllib2
 import pylons
 from  urllib2 import URLError
+import random
 
 class CheckerController(BaseController):
 
     def index(self):
 
         serviceUrl='localhost'
-    # Check that the IP can access this function
+        x,y = random.uniform(600000,700000), random.uniform(150000,250000)
+        width, height = 5000, 5000
+        bbox = "%s,%s,%s,%s " % (x,y,x+width, y+height)
+        # Check that the IP can access this function
         if (self._allowIP()):
         # Test geoadmin_api.js
             check = self._checkUrl('loader.js','http://'+serviceUrl+'/loader.js','(function() {', request.host)
-
             if  (check != 'OK'):
                 response.status='500'
                 return check
@@ -25,7 +29,6 @@ class CheckerController(BaseController):
             # Test BOD search
             check = self._checkUrl('BOD Search','http://'+serviceUrl+'/bodsearch/search?lang=de&query=moor',
                                    '{"results": [{"content": ', request.host)
-
             if  (check != 'OK'):
                 response.status='500'
                 return check
@@ -35,25 +38,86 @@ class CheckerController(BaseController):
             check = self._checkUrl('Print',
                                    'http://'+serviceUrl+'/print/info.json?locale=fr_CH&url=%2Fprint%2Finfo.json',
                                    '{"scales":[{"name"', request.host)
-
             if  (check != 'OK'):
                 response.status='500'
                 return check
 
-            # Test geographic search
-            check = self._checkUrl('Geographic search',
+            # Test geocoding
+            check = self._checkUrl('Geocoding service',
                                    'http://'+serviceUrl+'/swisssearch/geocoding?lang=fr&query=lausanne',
                                    '{"results": [{"service":', request.host)
-
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+            
+            # Test reverse geocoding
+            check = self._checkUrl('Reverse geocoding  service',
+                          'http://'+serviceUrl+'/swisssearch/reversegeocoding?easting=%f&northing=%f' % (x,y),
+                          'bbox', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+            
+            # Test BOD details 
+            check = self._checkUrl('BOD search details service',
+                                   'http://'+serviceUrl+'/bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill',
+                                   'ch.swisstopo.gg25-kanton-flaeche.fill', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+            
+            # Test BOD search 
+            check = self._checkUrl('BOD search  service',
+                                   'http://'+serviceUrl+'/bodsearch/layers?lang=de',
+                                   'description', request.host)
             if  (check != 'OK'):
                 response.status='500'
                 return check
 
             # Test WMTS GetCapabilities
             check = self._checkUrl('WMTS GetCapabilities',
-                                   'http://'+serviceUrl+'/wmts?service=WMTS&version=1.0.0&request=WMTS',
+                                   'http://'+serviceUrl+'/1.0.0/WMTSCapabilities.xml',
                                    '<TileMatrixSet>21781</TileMatrixSet>', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
 
+            # Test feature search 
+            check = self._checkUrl('Feature search  service',
+                                   'http://'+serviceUrl+'/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox='+bbox,
+                                   'FeatureCollection', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+
+            # Test feature bbox 
+            check = self._checkUrl('Feature bbox  service',
+                                   'http://'+serviceUrl+'/feature/bbox?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922',
+                                   'bbox', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+
+            # Test feature geometry
+            check = self._checkUrl('Feature geometry service',
+                                   'http://'+serviceUrl+'/feature/geometry?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922',
+                                   'MultiPolygon', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+
+            # Test profile service 
+            check = self._checkUrl('Profile service',
+                                   'http://'+serviceUrl+'/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}',
+                                   'alts', request.host)
+            if  (check != 'OK'):
+                response.status='500'
+                return check
+
+            # Test height service 
+            check = self._checkUrl('Height service',
+                                   'http://'+serviceUrl+'/height?easting=%f&northing=%f' %(x,y),
+                                   'height', request.host)
             if  (check != 'OK'):
                 response.status='500'
                 return check
