@@ -25,7 +25,9 @@
 SwissSearch: geocoding
 ----------------------
 
-Swisssearch geocoding allows the user to search for swiss locations, like postcode, cantons, cities and swissnames.
+Swisssearch geocoding allows the user to search for swiss locations, like postcode, cantons, cities, toponymic datase (`SwissNames <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html>`_) and addresses.
+
+**Note: The swiss cantons only allow websites of the federal governement to use the addresses search service**.
 
 URL
 ^^^
@@ -45,7 +47,13 @@ The following parameters are required:
 
 The service returns a maximum of 20 results.
 
-Example: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=lausanne
+Examples:
+
+- Toponymy: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex
+- Postcode: http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw
+- Addresses: http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw
+
+Note: In French, search for "leopold robert", not only for "robert"
 
 Result
 ^^^^^^
