@@ -8,6 +8,9 @@
 # Location block by passing process-group and application-group
 # options to the WSGIScriptAlias directive.
 #
+ServerAlias demo.geo.admin.ch
+ServerAlias height.geo.admin.ch
+ServerAlias profile.geo.admin.ch
 
 RewriteEngine On
 ExpiresActive On
@@ -26,6 +29,15 @@ RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/mobile.html$1 [L]
 RewriteCond %{HTTP_HOST}   ^mobile
 RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/$1 [L]
 
+# profile and height service
+RewriteCond %{HTTP_HOST}   ^height.geo.admin.ch$
+RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/height [PT,QSA]
+
+RewriteCond %{HTTP_HOST}   ^profile.geo.admin.ch$
+RewriteCond %{QUERY_STRING} format=(json|csv)
+RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/profile.json [PT,QSA]
+
+# Main entry point
 RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
