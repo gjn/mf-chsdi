@@ -54,10 +54,17 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                zoom: 0
            });
            
-           api13.createKmlLayer(
-                   "../../data/bln-style.kml",
-                   true
-                   );
+           var kml = api13.createKmlLayer(
+                        "../../data/bln-style.kml",
+                        true
+                     );
+           // Uncomment the next 5 lines if you want a mouseOver tooltip
+           // var mouseOverKmlControl = new OpenLayers.Control.SelectFeature(kml, {
+           //                                        hover: true
+           //                          });
+           // api13.map.addControl(mouseOverKmlControl);
+           // mouseOverKmlControl.activate();
+
            api13.map.zoomToMaxExtent();
           
        }
@@ -136,10 +143,17 @@ are from `Canton Neuchatel  <http://www.ne.ch/sitn>`_, with geoadmin's moore lan
                zoom: 0
            });
            
-           api13.createKmlLayer(
-                   "../../data/bln-style.kml",
-                   true
-                   );
+           var kml = api13.createKmlLayer(
+                       "../../data/bln-style.kml",
+                       true
+                       );
+
+           var mouseOverKmlControl = new OpenLayers.Control.SelectFeature(kml, {
+                           hover: true
+                          });
+           api13.map.addControl(mouseOverKmlControl);
+           mouseOverKmlControl.activate();
+
            api13.map.zoomToMaxExtent();
 
            api14 = new GeoAdmin.API();
