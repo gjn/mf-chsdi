@@ -99,7 +99,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
             success:this.onSuccess,
             failure:this.onFailure,
             params: {
-                permalink: this.getPermalink()
+                permalink: this.getPermalink(),
+                ua: navigator.userAgent
             },
             waitMsg: OpenLayers.i18n("Sending feedback....")
         });
