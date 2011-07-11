@@ -11,6 +11,7 @@
 ServerAlias demo.geo.admin.ch
 ServerAlias height.geo.admin.ch
 ServerAlias profile.geo.admin.ch
+ServerAlias feature.geo.admin.ch
 
 RewriteEngine On
 ExpiresActive On
@@ -32,6 +33,9 @@ RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/$1 [L]
 # profile and height service
 RewriteCond %{HTTP_HOST}   ^height.geo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/height [PT,QSA]
+
+RewriteCond %{HTTP_HOST}   ^feature.geo.admin.ch$
+RewriteRule ^${vars:apache-entry-point}(.*)$ /${vars:instanceid}/wsgi/feature/$1 [PT]
 
 RewriteCond %{HTTP_HOST}   ^profile.geo.admin.ch$
 RewriteCond %{QUERY_STRING} format=(json|csv)
