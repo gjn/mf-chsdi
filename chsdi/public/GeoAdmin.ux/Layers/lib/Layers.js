@@ -1334,7 +1334,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.erosion": {
                 name: OpenLayers.i18n("ch.blw.erosion"),
                 layertype: 'wmts',
-                timestamp: '20100101',
+                timestamp: '20100102',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
