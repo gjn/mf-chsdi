@@ -179,6 +179,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.bafu.laerm-bahnlaerm_nacht': 'Bruit ferroviaire (Lr_nuit)',
     'ch.bafu.laerm-strassenlaerm_tag': 'Bruit routier (Lr_jour)',
     'ch.bafu.laerm-strassenlaerm_nacht': 'Bruit routier (Lr_nuit)',
+    'ch.bafu.wildruhezonen-jagdbanngebiete' : 'Zones de tranquillité - Districts francs',
+    'ch.bafu.wege-wildruhezonen-jagdbanngebiete': 'Zones de tranquillité - routes',
     'ch.babs.kulturgueter': 'Inventaire des biens culturels',
     'ch.swisstopo.vec25-primaerflaechen': 'Surfaces primaires VECTOR25',
     'ch.swisstopo.vec25-anlagen': 'Surfaces aménagées VECTOR25',

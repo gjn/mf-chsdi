@@ -347,6 +347,48 @@ msgstr "Période de fermeture de la chasse"
 msgid "einschraenkungen"
 msgstr "Restrictions"
 
+msgid "wj_bearbeitungsjahr"
+msgstr "Année du traitement"
+
+msgid "wj_beschlussjahr"
+msgstr "Année"
+
+msgid "beschlussjahr"
+msgstr "Année"
+
+msgid "bestimmung"
+msgstr "Dispositions"
+
+msgid "grundlage"
+msgstr "Base"
+
+msgid "jb_obj"
+msgstr "No objet district franc"
+
+msgid "jb_name"
+msgstr "Nom district franc"
+
+msgid "wrz_fl"
+msgstr "Surface"
+
+msgid "wrz_name"
+msgstr "Nom zone de tranquillité"
+
+msgid "wrz_obj"
+msgstr "No objet zone de tranquillité"
+
+msgid "wrz_status"
+msgstr "Catégorie"
+
+msgid "zeitraum"
+msgstr "Période"
+
+msgid "zusatzinfo"
+msgstr "Information suppl."
+
+msgid "length_km"
+msgstr "Longueur [km]"
+
 msgid "richtungsgetrennt"
 msgstr "Directions séparées"
 

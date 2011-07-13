@@ -347,6 +347,45 @@ msgstr "Schonzeit"
 msgid "einschraenkungen"
 msgstr "Einschränkungen" 
 
+msgid "wj_bearbeitungsjahr"
+msgstr "Bearbeitungsjahr"
+
+msgid "beschlussjahr"
+msgstr "Jahr"
+
+msgid "bestimmung"
+msgstr "Bestimmungen"
+
+msgid "grundlage"
+msgstr "Grundlage"
+
+msgid "jb_obj"
+msgstr "Jagdbanngebiet Objektnr."
+
+msgid "jb_name"
+msgstr "Name Jagdbanngebiet"
+
+msgid "wrz_fl"
+msgstr "Fläche"
+
+msgid "wrz_name"
+msgstr "Wildruhezonen-Name"
+
+msgid "wrz_obj"
+msgstr "Wildruhezonen-Objektnr."
+
+msgid "wrz_status"
+msgstr "Kategorie"
+
+msgid "zeitraum"
+msgstr "Gültigkeit"
+
+msgid "zusatzinfo"
+msgstr "Zusatzinformation"
+
+msgid "length_km"
+msgstr "Länge [km]"
+
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
 

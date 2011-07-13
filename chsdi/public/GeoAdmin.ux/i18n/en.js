@@ -178,6 +178,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'ch.bafu.laerm-bahnlaerm_nacht': 'Eisenbahnlärm (Lr_Nacht)',
     'ch.bafu.laerm-strassenlaerm_tag': 'Strassenlärm (Lr_Tag)',
     'ch.bafu.laerm-strassenlaerm_nacht': 'Strassenlärm (Lr_Nacht)', 
+    'ch.bafu.wildruhezonen-jagdbanngebiete' : 'Wildruhezonen - Jagdbanngebiete',
+    'ch.bafu.wege-wildruhezonen-jagdbanngebiete': 'Wildruhezonen - Wege und Routen',
     'ch.swisstopo.vec25-primaerflaechen': 'Primärflächen VECTOR25',
     'ch.swisstopo.vec25-anlagen': 'Anlagen VECTOR25',
     'ch.swisstopo.vec25-gewaessernetz':'Gewässernetz VECTOR25',

@@ -764,6 +764,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.kt.bafu",
                 queryable: true
             },
+            "ch.bafu.wildruhezonen-jagdbanngebiete": {
+                name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
+                layertype: 'wmts',
+                timestamp: '20110310',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.kt.bafu",
+                queryable: true
+            },
+            "ch.bafu.wege-wildruhezonen-jagdbanngebiete": {
+                name: OpenLayers.i18n("ch.bafu.wege-wildruhezonen-jagdbanngebiete"),
+                layertype: 'wmts',
+                timestamp: '20110310',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.kt.bafu",
+                queryable: true
+            },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
                 layertype: 'wmts',

@@ -181,6 +181,24 @@ class WILDRUHEZONEN(Base, Queryable):
 
     id = Column('wrz_obj', Integer, primary_key=True)
     the_geom = Column(Geometry)
+    
+class WILDRUHEZONENJAGDBANNGEBIETE(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wildruhezonen_jagdbanngebiete'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __template__ = 'tooltips/wildruhezonen_jagdbanngebiete.mako'
+
+    id = Column('wrz_jb_obj', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+    
+class WEGEWILDRUHEZONENJAGDBANNGEBIETE(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wege_wildruhezonen_jagdbanngebiete'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __template__ = 'tooltips/wege_wildruhezonen_jagdbanngebiete.mako'
+
+    id = Column('weg_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
 
 class SB(Base, Queryable):
     # view in a schema
@@ -257,6 +275,8 @@ register('ch.bafu.bundesinventare-flachmoore', FM_REG)
 register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', PAERKE_NATIONALER_BEDEUTUNG)
 register('ch.bafu.schutzgebiete-ramsar', RA)
 register('ch.bafu.schutzgebiete-wildruhezonen', WILDRUHEZONEN)
+register('ch.bafu.wildruhezonen-jagdbanngebiete', WILDRUHEZONENJAGDBANNGEBIETE)
+register('ch.bafu.wege-wildruhezonen-jagdbanngebiete', WEGEWILDRUHEZONENJAGDBANNGEBIETE)
 register('ch.bafu.fauna-steinbockkolonien', SB)
 register('ch.bafu.swissprtr', SWISSPRTR)
 register('ch.bafu.holzvorrat', HOLZVORRAT)
