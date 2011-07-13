@@ -254,6 +254,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo.vec25-anlagen": {
@@ -429,6 +430,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bfs.arealstatistik-1997": {
@@ -438,6 +440,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo.vec200-transportation-oeffentliche-verkehr": {
@@ -582,6 +585,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.ren-extensive_landwirtschaftsgebiete": {
@@ -591,6 +595,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.ren-feuchtgebiete": {
@@ -600,6 +605,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.ren-fliessgewaesser_seen": {
@@ -609,6 +615,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.ren-trockenstandorte": {
@@ -618,6 +625,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.ren-wald": {
@@ -627,6 +635,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.hydrologie-hydromessstationen": {
@@ -645,6 +654,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bfs.arealstatistik-hintergrund": {
@@ -654,6 +664,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.bundesinventare-auen": {
@@ -663,6 +674,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-bln": {
@@ -672,6 +684,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-flachmoore": {
@@ -681,6 +694,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-hochmoore": {
@@ -690,6 +704,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-jagdbanngebiete": {
@@ -699,6 +714,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-moorlandschaften": {
@@ -708,6 +724,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-vogelreservate": {
@@ -717,6 +734,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.fauna-steinbockkolonien": {
@@ -726,6 +744,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
@@ -735,6 +754,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.schutzgebiete-ramsar": {
@@ -744,6 +764,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.schutzgebiete-schweizerischer_nationalpark": {
@@ -753,6 +774,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.schutzgebiete-wildruhezonen": {
@@ -762,6 +784,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
@@ -789,6 +812,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-kantone_rutschungen": {
@@ -798,6 +822,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-kantone_sturzprozesse": {
@@ -807,6 +832,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-kantone_lawinen": {
@@ -816,6 +842,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-gemeinden_hochwasser": {
@@ -825,6 +852,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-gemeinden_rutschungen": {
@@ -834,6 +862,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-gemeinden_sturzprozesse": {
@@ -843,6 +872,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.showme-gemeinden_lawinen": {
@@ -852,6 +882,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.wasser-entnahme": {
@@ -891,6 +922,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.gefahren-gefaehrdungszonen": {
@@ -900,6 +932,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.swissprtr": {
@@ -927,6 +960,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.holznutzung": {
@@ -936,6 +970,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.holzzuwachs": {
@@ -945,6 +980,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo.vec200-landcover-wald": {
@@ -954,6 +990,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.laerm-bahnlaerm_tag": {
@@ -963,6 +1000,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.laerm-bahnlaerm_nacht": {
@@ -972,6 +1010,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.laerm-strassenlaerm_tag": {
@@ -981,6 +1020,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.laerm-strassenlaerm_nacht": {
@@ -990,6 +1030,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             // *********************************
@@ -1040,6 +1081,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.bevoelkerungsdichte-vz00": {
@@ -1049,6 +1091,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.beschaeftigtendichte-bz08": {
@@ -1058,6 +1101,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bfs",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.agglomerationen_isolierte_staedte-2000": {
@@ -1067,6 +1111,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.landschaftstypen": {
@@ -1076,6 +1121,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.gueteklassen_oev": {
@@ -1085,6 +1131,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.reisezeit_miv-2005": {
@@ -1094,6 +1141,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.reisezeit_oev-2005": {
@@ -1103,6 +1151,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.bauzonen-2007": {
@@ -1112,6 +1161,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.are.gemeindetyp-1990-9klassen": {
@@ -1121,6 +1171,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.swisstopo.vec25-strassennetz": {
@@ -1249,6 +1300,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.astra",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal": {
@@ -1276,6 +1328,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.blw.erosion": {
@@ -1285,6 +1338,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.blw.hang_steillagen": {
@@ -1294,6 +1348,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.blw.ursprungsbezeichnungen-fleisch": {
@@ -1303,6 +1358,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.blw.ursprungsbezeichnungen-kaese": {
@@ -1312,6 +1368,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.blw.ursprungsbezeichnungen-pflanzen": {
@@ -1321,6 +1378,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.blw.ursprungsbezeichnungen-spirituosen": {
@@ -1330,6 +1388,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
@@ -1349,6 +1408,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             }
         };
