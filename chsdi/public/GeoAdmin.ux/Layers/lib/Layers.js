@@ -1196,7 +1196,16 @@ GeoAdmin._Layers = OpenLayers.Class({
              datenherr: "ch.swisstopo",
              queryable: true
              },
-             */
+            */
+            "ch.astra.ausnahmetransportrouten": {
+                name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
+                layertype: 'wmts',
+                timestamp: '20110509',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: true
+            },
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',

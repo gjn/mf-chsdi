@@ -31,7 +31,11 @@
     <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.astra.ivs-gelaendekarte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.astra.ivs-gelaendekarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>    
+    <a href="${c.host}/legend/ch.astra.ivs-gelaendekarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.astra.ausnahmetransportrouten":
+    <span style="font-weight:bold;">${_('Legend')}</span><br><br>
+    <a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br><br>
+    <center><a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank">${_('mehrinformationen')}</a></center><br>
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>

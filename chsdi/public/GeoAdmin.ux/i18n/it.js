@@ -198,6 +198,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomérations et villes isolées',
     'ch.are.alpenkonvention': 'Convention des Alpes',
     'ch.are.gemeindetyp-1990-9klassen': 'Typologie des communes ARE',
+    'ch.astra.ausnahmetransportrouten':  'Itinéraires pour convois exceptionnels',
     'ch.astra.ivs-nat': 'IVS national',
     'ch.astra.ivs-reg_loc' : 'IVS régional & local',
     'ch.astra.ivs-gelaendekarte': 'IVS carte de terrain',

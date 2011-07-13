@@ -843,6 +843,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         id: "LT2_14",
                         children: [
                             {
+                                text: this.addtreeLayerLink("ch.astra.ausnahmetransportrouten", "node_ch.astra.ausnahmetransportrouten1") + ' ' + this.layers["ch.astra.ausnahmetransportrouten"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.astra.ausnahmetransportrouten1"
+                            },
+                            {
                                 text: this.addtreeLayerLink("ch.astra.ivs-nat", "node_ch.astra.ivs-nat1") + ' ' + this.layers["ch.astra.ivs-nat"].name,
                                 leaf: true,
                                 checked: false,

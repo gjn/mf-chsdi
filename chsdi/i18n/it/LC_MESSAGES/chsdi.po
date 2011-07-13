@@ -308,6 +308,9 @@ msgstr "Année de publication"
 msgid  "linkzurlegende"
 msgstr "Liens vers la légende"
 
+msgid  "mehrinformationen"
+msgstr "Légende plus détaillée"
+
 msgid  "alexandria"
 msgstr "Catalogo Alexandria"
 
@@ -343,6 +346,18 @@ msgstr "Période de fermeture de la chasse"
 
 msgid "einschraenkungen"
 msgstr "Restrictions" 
+
+msgid "richtungsgetrennt"
+msgstr "Directions séparées"
+
+msgid "anzahlspuren"
+msgstr "Nombre de voies"
+
+msgid "strassentyp"
+msgstr "Genre d'itinéraire"
+
+msgid "routentypid"
+msgstr "Genre d'itinéraires pour convois exceptionnels" 
 
 msgid "ivs_objekt"
 msgstr "Oggetto IVS"

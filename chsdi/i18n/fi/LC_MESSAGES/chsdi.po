@@ -308,6 +308,9 @@ msgstr "Ausgabejahr"
 msgid  "linkzurlegende"
 msgstr "Link zur Legende"
 
+msgid  "mehrinformationen"
+msgstr "Ausführlichere Legende"
+
 msgid  "alexandria"
 msgstr "Katalog Alexandria"
 
@@ -343,6 +346,18 @@ msgstr "Schonzeit"
 
 msgid "einschraenkungen"
 msgstr "Einschränkungen" 
+
+msgid "richtungsgetrennt"
+msgstr "Richtungsgetrennt"
+
+msgid "anzahlspuren"
+msgstr "Anzahl Spuren"
+
+msgid "strassentyp"
+msgstr "Strassentyp"
+
+msgid "routentypid"
+msgstr "Routentyp ID für Ausnahmetransporte"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"

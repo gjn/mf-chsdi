@@ -197,6 +197,7 @@ OpenLayers.Lang.rm = {
     'ch.are.agglomerationen_isolierte_staedte-2000': 'Agglomerationen und isolierte Städte',
     'ch.are.alpenkonvention': 'Alpenkonvention',
     'ch.are.gemeindetyp-1990-9klassen': 'Gemeindetypologie ARE',
+    'ch.astra.ausnahmetransportrouten': 'Ausnahmetransportrouten',
     'ch.astra.ivs-nat': 'IVS National',
     'ch.astra.ivs-reg_loc' : 'IVS Regional & Lokal',
     'ch.astra.ivs-gelaendekarte': 'IVS Geländekarte',
