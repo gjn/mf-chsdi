@@ -368,6 +368,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'handedness': 'Händigkeit',
 	'rightHanded': 'Rechtshänder',
 	'leftHanded': 'Linkshänder',
-	'responsibilitiesAndContact': "Zuständigkeiten und Kontakt" 
+	'responsibilitiesAndContact': "Zuständigkeiten und Kontakt",
+    'imprint 1': '',
+    'imprint 2': '',
+    'imprint 3': '',
+    'imprint 4': '',
+    'imprint logo': ''
+
         
 });

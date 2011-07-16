@@ -112,6 +112,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Energiequellen': 'Sources d\'énergie',
 
     // Layer name
+    'ch.swisstopo.images-swissimage': 'Image aérienne',
 	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte nationale 1:25000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk50.metadata' : 'Carte nationale 1:50000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk100.metadata' : 'Carte nationale 1:100000 (Tab. des feuilles)',
@@ -329,7 +330,45 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     "Legend.onClick": "Données affichées",
     'metadataTooltip': "Montrer les métadonnées",
 
-     //WmsBrowser
+    //SettingsPanel
+    'language': 'Langue',
+    'english':  'English',
+    'italian':  'Italiano',
+    'german':   'Deutsch',
+    'raetoromanic': 'Rumantsch',
+    'french':   'Français',
+    'handedness': 'Impartialité',
+    'rightHanded': 'droitier',
+    'leftHanded': 'gaucher',
+    'responsibilitiesAndContact': "Impressum",
+    'imprint 1': '<b>Coordination</b> <br> Organe de coordination de la géoinformation au niveau fédéral <a href="http://www.geo.admin.ch/internet/geoportal/fr/home/geoadmin/organisation.html"> (GCS)</a>',
+    'imprint 2': '<b>Exploitation</b> <br> geo.admin.ch c/o Office fédéral de topographie swisstopo  <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
+    'imprint 3': '<b>Institution maîtresse</b> <br> La Confédération, représentée par les Offices concernés.',
+    'imprint 4': '<b>Mentions légales</b> <br> Pour geo.admin.ch les dispositions générales en conformité avec <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a> s\'appliquent.',
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg">',
+
+     // FeedbackPanel
+    'Thanks a lot for your feedback !':   'Merci beaucoup pour votre retour',
+    'Enter your feedback here ...':   'Votre réaction ',
+    'Your email:':   'Votre email',
+    'The following URL will be transferred:':   'L\'Url suivante va être transférée :',
+    'Send feedback':   'Envoyer',
+    'Your feedback was successfully commited. Thank you for providing your feedback.':   'Votre retour a été transmis avec succès. Merci beaucoup',
+    'Close':   'Fermer',
+    'Failure':   'Erreur',
+    'Problems submitting: ':   'Erreur lors de la transmission',
+    'No email provided':   'Pas d\'adresse email',
+    'Invalid email provided':   'Adresse email non valide',
+    'No feedback provided':   'Pas de retour',
+    'Please check your input':   'Vérifiez vos entrées',
+
+     // Map, LayerList, LayerPanel
+     'Positioning failed.':   '',
+     'layer selection':   'Votre sélection',
+     'map': 'Carte',
+     'Search data...':   'Recherche de couches...',
+     
+    //WmsBrowser
     'WmsBrowser': "WMS",
     'WmsBrowserWindow': "Ajouter un service WMS",
     'inputURLText': "Sélectionner ou entrer une adresse de serveur (URL)",

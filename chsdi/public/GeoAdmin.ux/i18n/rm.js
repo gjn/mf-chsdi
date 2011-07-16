@@ -316,6 +316,22 @@ OpenLayers.Lang.rm = {
     "Legend.Title": "Légende",
     "Legend.NoLayer": "Sélectionner une couche de données",
     "Legend.onClick": "Données affichées",
-    'metadataTooltip': "Montrer les métadonnées"
+    'metadataTooltip': "Montrer les métadonnées",
 
+    //SettingsPanel
+    'language': 'Lingua',
+    'english':  'English',
+    'italian':  'Italiano',
+    'german':   'Deutsch',
+    'raetoromanic': 'Rumantsch',
+    'french':   'Français',
+    'handedness': 'sanester/dretger',
+    'rightHanded': 'dretger',
+    'leftHanded': 'sanester',
+    'responsibilitiesAndContact': "Impressum",
+    'imprint 1': '<b>Coordinaziun</b> <br> Organ federal da coordinaziun per la geoinfurmaziun  <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCS)</a>',
+    'imprint 2': '<b>Manaschi</b> <br> geo.admin.ch c/o Uffizi federal da topografia swisstopo   <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
+    'imprint 3': '<b>Overall data controller</b> <br> The Confederation, represented by the relevant Federal Office ',
+    'imprint 4': '<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>'
 };

@@ -317,6 +317,24 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     "Legend.Title": "Légende",
     "Legend.NoLayer": "Sélectionner une couche de données",
     "Legend.onClick": "Données affichées",
-    'metadataTooltip': "Montrer les métadonnées"
+    'metadataTooltip': "Montrer les métadonnées",
+    
+    //SettingsPanel
+    'language': 'Lingua',
+    'english':  'English',
+    'italian':  'Italiano',
+    'german':   'Deutsch',
+    'raetoromanic': 'Rumantsch',
+    'french':   'Français',
+    'handedness': 'Manualità',
+    'rightHanded': 'mano destra',
+    'leftHanded': 'mancino',
+    'responsibilitiesAndContact': "Colophon",
+    'imprint 1': '',
+    'imprint 2': '',
+    'imprint 3': '',
+    'imprint 4': '',
+    'imprint logo': ''
+
 
 });
