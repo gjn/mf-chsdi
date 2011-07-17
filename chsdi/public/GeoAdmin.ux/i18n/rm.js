@@ -256,6 +256,7 @@ OpenLayers.Lang.rm = {
     'Feature tooltip': 'Infurmaziuns davart ils objects',
 
     // background layer switcher
+    'ch.swisstopo.images-swissimage': 'Fotografia or da l\'aria',
     'ch.swisstopo.pixelkarte-farbe': 'Charta en colur',
     'ch.swisstopo.pixelkarte-grau': 'Charta en alv e nair',
     'voidLayer': 'Nagina charta',

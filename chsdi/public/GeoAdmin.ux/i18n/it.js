@@ -257,6 +257,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Feature tooltip': 'Informazioni sull’oggetto',
 
     // background layer switcher
+    'ch.swisstopo.images-swissimage': 'Veduta aerea',
     'ch.swisstopo.pixelkarte-farbe': 'Carta a colori',
     'ch.swisstopo.pixelkarte-grau': 'Carta bianca e nera',
     'voidLayer': 'Nessuna carta',

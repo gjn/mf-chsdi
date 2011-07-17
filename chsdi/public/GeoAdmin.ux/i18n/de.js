@@ -281,7 +281,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     // background layer switcher
     'ch.swisstopo.pixelkarte-farbe': 'Karte farbig',
     'ch.swisstopo.pixelkarte-grau': 'Karte SW',
-    'ch.swisstopo.images-swissimage': 'swissimage',
+    'ch.swisstopo.images-swissimage': 'Luftbild',
     'voidLayer': 'kein Hintergrund',
 
     // Attribution / copyright
