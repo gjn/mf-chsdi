@@ -9,6 +9,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'Overview Map': 'Cartina generale',
     'Coordinates (m): ' : 'Coordinate (m): ',
 
+    'map': 'Mappa',
     'Layer Tree': 'Temi',
     'Map Queries': 'Ricerca',
     'print': 'Stampa',

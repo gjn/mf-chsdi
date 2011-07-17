@@ -8,6 +8,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Copyright &amp; Data protection': 'Copyright &amp; Data protection',
     'Overview Map': 'Overview map',
     'Coordinates (m): ' : 'Coordinates (m): ',
+    'map': 'Map',
 
     'Layer Tree': 'Topics',
     'Map Queries': 'Search',

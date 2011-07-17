@@ -8,6 +8,7 @@ OpenLayers.Lang.rm = {
     'Overview Map': 'Charta da survista',
     'Coordinates (m): ' : 'Coordinatas (m): ',
 
+    'map': 'Charta',
     'Layer Tree': 'Temas',
     'Map Queries': 'Tschertgar',
     'print': 'Stampar',

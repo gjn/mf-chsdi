@@ -9,8 +9,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Overview Map': 'Carte de référence',
     'Coordinates' : 'Coordonnées',
     'Coordinates (m): ' : 'Coordonnées (m): ',
-
-    'Map' : 'Carte',
+    'map' : 'Carte',
     'Layer Tree' : 'Arbre des couches',
     'print' : 'Impression',
     'Map Queries': 'Interrogation',
