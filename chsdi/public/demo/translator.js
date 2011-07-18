@@ -85,7 +85,7 @@ Ext.onReady(function () {
             }, {
                 header: 'Vallader',
                 width: 100
-            }, ]
+            } ]
         }),
         viewConfig: {
             forceFit: true,
