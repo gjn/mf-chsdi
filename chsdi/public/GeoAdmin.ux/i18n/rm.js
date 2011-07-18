@@ -273,16 +273,24 @@ OpenLayers.Lang.rm = {
 
     // Feedback
     'Your email (optional)': 'Vus emagl (facultativ)',
+    'Your email': 'Vus emagl',
     'Your feedback about current map extent': 'Rapport charta actual',
     'Cancel': 'Annular',
-    'Send feedback': 'Rapportar problem',
+    'Send feedback': 'Rapportar il problem',
     'Report': 'Rapportar un problem cun charta',
-    'Sending feedback....': 'Bericht senden....',
+    'Sending feedback....': 'Rapportar il problem....',
     'Thanks a lot for your feedback !': "Grazia fitg per vus raport!",
     'Please fill the feedback': 'Bitte, füllen Sie den Bericht',
     'The following URL will be transferred:': 'Trametter Link: ',
     'Success': 'Raport trametteva cun success',
     'Error': 'Problem',
+
+     // Map, LayerList, LayerPanel
+     'Positioning failed.':   '',
+     'layer selection':   'Vus selecziun',
+     'layer search': 'Tschertgar datas',
+     'map': 'Charta',
+     'Search data...':   'Tschertgar datas...',
 
     //Print
     'mf.print.pdfReady': 'Il document da PDF po vegnir chargià giu.',

@@ -280,6 +280,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 
     // Feedback
     'Your email (optional)': 'Your Email (not mandatory)',
+    'Your email': 'Your Email',
     'Your feedback about current map extent': 'Your report about current map extent',
     'Cancel': 'Cancel',
     'Send feedback': 'Send problem report',
@@ -290,6 +291,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'The following URL will be transferred:': 'The following URL will be transferred: ',
     'Success': 'Report sent successfully',
     'Error': 'Error',
+
+     // Map, LayerList, LayerPanel
+     'Positioning failed.':   '',
+     'layer selection':   'Layer selection',
+     'layer search': 'Layer search',
+     'map': 'Map',
+     'Search data...':   'Layer search...',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',
@@ -340,9 +348,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'rightHanded': 'righ-handed',
     'leftHanded': 'left-handed',
     'responsibilitiesAndContact': "Colophon",
-    'imprint 1': '',
-    'imprint 2': '',
-    'imprint 3': '',
-    'imprint 4': '',
-    'imprint logo': ''
+    'imprint 1': '<b>Coordination</b> <br> Coordinating agency for Federal geographical information <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCG)</a>',
+    'imprint 2': '<b>Operation</b> <br> geo.admin.ch c/o Federal Office of Topography swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
+    'imprint 3': '<b>Overall data controller</b> <br> The Confederation, represented by the relevant Federal Office ',
+    'imprint 4': '<b>Terms and conditions</b> <br> geo.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>'
 });

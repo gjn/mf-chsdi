@@ -295,7 +295,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     // Feedback/FeedbackPanel
     'Your email (optional)': 'Ihre E-Mail Adresse (freiwillig)',
-    'Your email:': 'Ihre Emailadresse:',
+    'Your email': 'Ihre Emailadresse:',
     'Your feedback about current map extent': 'Ihr Bericht zum aktuellen Kartenausschnitt',
     'Cancel': 'Abbrechen',
     'Send feedback': 'Absenden',
@@ -313,8 +313,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Success': 'Bericht erfolgreich versendet',
     'Error': 'Problem',
 
-     //LayerListPanel
-	 'layer search': 'Themensuche',
+      // Map, LayerList, LayerPanel
+     'Positioning failed.':   '',
+     'layer selection':   'Themenauswahl',
+     'layer search': 'Themensuche',
+     'map': 'Karte',
+     'Search data...':   'Themensuche...',
 
     //SwissSearch
 	'last used': 'zuletzt genutzt',
@@ -369,11 +373,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'rightHanded': 'Rechtshänder',
 	'leftHanded': 'Linkshänder',
 	'responsibilitiesAndContact': "Zuständigkeiten und Kontakt",
-    'imprint 1': '',
-    'imprint 2': '',
-    'imprint 3': '',
-    'imprint 4': '',
-    'imprint logo': ''
+    'imprint 1': '<b>Koordination</b> <br> Koordinationsorgan für Geoinformation des Bundes <a href="http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/organisation.html"> (GKG)</a>',
+    'imprint 2': '<b>Betrieb</b> <br> geo.admin.ch c/o Bundesamt für Landestopografie swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
+    'imprint 3': '<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt ',
+    'imprint 4': '<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>'
 
         
 });

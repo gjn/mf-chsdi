@@ -274,6 +274,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
     // Feedback
     'Your email (optional)': 'La sua email (opzionale)',
+     'Your email': 'La sua email',
     'Your feedback about current map extent': 'La sua descrizione del problema concernente la cartina',
     'Cancel': 'Annullare',
     'Send feedback': 'Inviare il rapporto',
@@ -284,6 +285,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'The following URL will be transferred:': 'Il seguente URL verrá inviato: ',
     'Success': 'Il rapporto è stato inviato',
     'Error': 'Si è verificato un errore',
+
+      // Map, LayerList, LayerPanel
+     'Positioning failed.':   '',
+     'layer selection':   'Loro selezione',
+     'layer search': 'Cerca piani',
+     'map': 'Mappa',
+     'Search data...':   'Cerca piani...',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',
@@ -332,11 +340,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'rightHanded': 'mano destra',
     'leftHanded': 'mancino',
     'responsibilitiesAndContact': "Colophon",
-    'imprint 1': '',
-    'imprint 2': '',
-    'imprint 3': '',
-    'imprint 4': '',
-    'imprint logo': ''
+    'imprint 1': '<b>Coordinamento</b> <br> Organo federale di coordinamento della geoinformazione<a href="http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/organisation.html"> (GCG)</a>',
+    'imprint 2': '<b>Funzionamento</b> <br> geo.admin.ch c/o Ufficio federale di topografia swisstopo  <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
+    'imprint 3': '<b>Proprietario di dati</b> <br> Confederazione, rappresentata dall\'ufficio concernente ',
+    'imprint 4': '<b>Aspetti giuridici</b> <br> Per geo.admin.ch valgono le condizioni generali secondo <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>'
 
 
 });

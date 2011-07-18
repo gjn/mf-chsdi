@@ -282,6 +282,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     // Feedback
     'Your email (optional)': 'Votre email (optionnel)',
+    'Your email': 'Votre email',
     'Your feedback about current map extent': 'Votre description du problème concernant la carte',
     'Cancel': 'Annuler',
     'Send feedback': 'Annoncer le problème',
@@ -365,6 +366,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
      // Map, LayerList, LayerPanel
      'Positioning failed.':   '',
      'layer selection':   'Votre sélection',
+     'layer search': 'Recherche de couche',
      'map': 'Carte',
      'Search data...':   'Recherche de couches...',
      
