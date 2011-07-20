@@ -363,6 +363,8 @@ OpenLayers.Layer.Aggregate =
                 }
                 layer.displayInLayerSwitcher = false;
                 layer.visibility = this.visibility;
+                // Assumption: a sub layer is never a base layer
+                layer.isBaseLayer = false;
                 layer.opacity = this.opacity;
                 // FIXME: a layer may belong to multiple aggregates ?
                 layer.aggregate = this;
