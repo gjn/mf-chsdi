@@ -318,7 +318,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
      'layer selection':   'Themenauswahl',
      'layer search': 'Themensuche',
      'map': 'Karte',
-     'Search data...':   'Themensuche...',
 
     //SwissSearch
 	'last used': 'zuletzt genutzt',

@@ -291,7 +291,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
      'layer selection':   'Loro selezione',
      'layer search': 'Cerca piani',
      'map': 'Mappa',
-     'Search data...':   'Cerca piani...',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',

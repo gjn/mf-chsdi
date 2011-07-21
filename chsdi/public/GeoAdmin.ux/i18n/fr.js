@@ -55,6 +55,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Deactivate dynamic location': 'Deactivate dynamic location',
 
     // recenter services:
+    'Cantons': 'Cantons',
     'Cities': 'Communes',
     'Zoom to the max extent': 'Voir toute la Suisse',
     'permalink action': 'Lien',
@@ -368,7 +369,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
      'layer selection':   'Votre sélection',
      'layer search': 'Recherche de couche',
      'map': 'Carte',
-     'Search data...':   'Recherche de couches...',
      
     //WmsBrowser
     'WmsBrowser': "WMS",

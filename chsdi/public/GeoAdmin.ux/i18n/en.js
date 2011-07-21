@@ -297,7 +297,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
      'layer selection':   'Layer selection',
      'layer search': 'Layer search',
      'map': 'Map',
-     'Search data...':   'Layer search...',
     
     //Print
     'mf.print.pdfReady': 'PDF is ready',

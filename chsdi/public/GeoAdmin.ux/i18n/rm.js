@@ -290,7 +290,6 @@ OpenLayers.Lang.rm = {
      'layer selection':   'Vus selecziun',
      'layer search': 'Tschertgar datas',
      'map': 'Charta',
-     'Search data...':   'Tschertgar datas...',
 
     //Print
     'mf.print.pdfReady': 'Il document da PDF po vegnir chargià giu.',
