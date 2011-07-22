@@ -9,6 +9,7 @@
  * @include OpenLayers/Format/WMSCapabilities/v1_1_1.js
  * @include OpenLayers/Format/WMSCapabilities/v1_3.js
  * @include OpenLayers/Format/WMSCapabilities/v1_3_0.js
+ * @include OpenLayers/Control/ArgParser.js
  * @include GeoExt/widgets/tree/WMSCapabilitiesLoader.js
  * @include GeoExt/data/WMSCapabilitiesStore.js
  * @include GeoExt.ux/data/Store.js
