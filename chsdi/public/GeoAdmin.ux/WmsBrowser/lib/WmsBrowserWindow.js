@@ -99,6 +99,44 @@ GeoAdmin.WmsBrowserWindow = Ext.extend(Ext.Window, {
         }, config);
 
         GeoAdmin.WmsBrowserWindow.superclass.constructor.call(this, config);
+
+        // Overide function in order to have single tile
+        GeoExt.ux.tree.WMSBrowserRootNode.prototype.getNewLayerFromCheckedNodes = function() {
+            var newLayer;
+
+            this.cascade(function() {
+                var layer = this.attributes.layer;
+
+                // skip nodes without layers or not checked
+                if (!layer || !this.getUI().isChecked()) {
+                    return;
+                }
+
+                if (!newLayer) {
+                    newLayer = layer.clone();
+
+                    // this is hardcoded
+                    newLayer.mergeNewParams({
+                        format: "image/png",
+                        transparent: "true"
+                    });
+
+                    newLayer.mergeNewParams(
+                        {'LAYERS': [newLayer.params.LAYERS]}
+                    );
+                } else {
+                    newLayer.params.LAYERS.push(
+                        layer.params.LAYERS
+                    );
+                    newLayer.mergeNewParams(
+                        {'LAYERS': newLayer.params.LAYERS}
+                    );
+                }
+                newLayer.singleTile = true;
+            });
+
+            return newLayer;
+        }
     },
 
     onDisable : function() {
