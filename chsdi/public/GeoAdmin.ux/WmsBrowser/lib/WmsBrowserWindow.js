@@ -2,6 +2,7 @@
 
 
 /**
+ * @include OpenLayers/Control/ArgParser.js
  * @include OpenLayers/Format/WMSCapabilities.js
  * @include OpenLayers/Format/WMSCapabilities/v1.js
  * @include OpenLayers/Format/WMSCapabilities/v1_1.js
@@ -35,7 +36,10 @@ GeoAdmin.WmsBrowserWindow = Ext.extend(Ext.Window, {
             fields: ['url'],
             data : config.wmsServers || [
                 ['http://wms.geo.admin.ch/'],
-                ['../../../doc/data/wms_geo_admin_ch_getcapabilities_1.3.0.xml'],
+                ['http://sitn.ne.ch/ogc-sitn/wms'],
+                ['http://mapserver1.gr.ch/wms/naturschutz'],
+                ['http://www.sogis1.so.ch/cgi-bin/sogis/sogis_geologie.wms']
+
             ]
         });
 
