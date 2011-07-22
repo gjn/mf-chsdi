@@ -11,6 +11,9 @@
  * @include OpenLayers/Handler/Polygon.js
  * @include OpenLayers/Control/Measure.js
  * @include OpenLayers/Rule.js
+ * @include GeoExt.ux/MeasureArea.js
+ * @include GeoExt.ux/MeasureLength.js
+ * @include GeoExt.ux/Measure.js
  */
 
 Ext.namespace('GeoAdmin');
