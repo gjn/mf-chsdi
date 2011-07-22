@@ -4,18 +4,18 @@
  * @requires OpenLayers/Lang/de.js
  */
 
-OpenLayers.Util.extend(OpenLayers.Lang.de, { 
+OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     //Globals
-	'map': 'Karte',
-	'Send': 'Senden',
-	'Close': 'Schliessen',
-	'INFO': 'Information',
-	'Failure': 'Fehler',
-	'layer selection': 'Themenauswahl',
-	'No specific handler added to show the map <br> Use "goToMapHandler" parameter': 'Kein spezifischer Handler für die Anzeige der Karte vorhanden <br> Benutzen Sie den "goToMapHandler" Parameter',
-	'No specific handler added to show the layer search': 'Kein spezifischer Handler für die Anzeige der Themensuche vorhanden',
-	'No specific handler added to show the layer selection': 'Kein spezifischer Handler für die Anzeige der Themenauswahl vorhanden',
+    'map': 'Karte',
+    'Send': 'Senden',
+    'Close': 'Schliessen',
+    'INFO': 'Information',
+    'Failure': 'Fehler',
+    'layer selection': 'Themenauswahl',
+    'No specific handler added to show the map <br> Use "goToMapHandler" parameter': 'Kein spezifischer Handler für die Anzeige der Karte vorhanden <br> Benutzen Sie den "goToMapHandler" Parameter',
+    'No specific handler added to show the layer search': 'Kein spezifischer Handler für die Anzeige der Themensuche vorhanden',
+    'No specific handler added to show the layer selection': 'Kein spezifischer Handler für die Anzeige der Themenauswahl vorhanden',
 
 
     'Copyright &amp; Data protection': 'Copyright & Datenschutzerkl&auml;rung',
@@ -125,12 +125,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Energiequellen': 'Energiequellen',
 
     // Layer name
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Landeskarte 1:25000 (Blattübersicht)',
+    'ch.swisstopo.pixelkarte-pk25.metadata' : 'Landeskarte 1:25000 (Blattübersicht)',
     'ch.swisstopo.pixelkarte-pk50.metadata' : 'Landeskarte 1:50000 (Blattübersicht)',
     'ch.swisstopo.pixelkarte-pk100.metadata' : 'Landeskarte 1:100000 (Blattübersicht)',
     'ch.swisstopo.pixelkarte-pk200.metadata' : 'Landeskarte 1:200000 (Blattübersicht)',
     'ch.swisstopo.pixelkarte-pk500.metadata' : 'Landeskarte 1:500000 (Blattübersicht)',
-	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
+    'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Blattübersicht)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Lagefixpunkte',
     'ch.swisstopo.fixpunkte-hoehe': 'Höhenfixpunkte',
@@ -165,9 +165,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.bundesinventare-jagdbanngebiete': 'Jagdbanngebiete',
     'ch.bafu.bundesinventare-moorlandschaften': 'Moorlandschaften',
     'ch.bafu.bundesinventare-vogelreservate': 'Wasser- und Zugvogelreservate',
-	  'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Pärke',
+    'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Pärke',
     'ch.bafu.schutzgebiete-ramsar': 'Ramsar',
-	  'ch.bafu.schutzgebiete-wildruhezonen': 'Wildruhezonen',
+    'ch.bafu.schutzgebiete-wildruhezonen': 'Wildruhezonen',
     'ch.bafu.schutzgebiete-schweizerischer_nationalpark': 'Nationalpark',
     'ch.bafu.showme-kantone_hochwasser': 'ShowMe Kantone: Hochwasser',
     'ch.bafu.showme-kantone_rutschungen': 'ShowMe Kantone: Rutschungen',
@@ -236,7 +236,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',
-	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
+    'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Verkehrszählstellen übergeordnet',
 
     //Layer for ensi
     'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Zonenpläne für den Notfallschutz',
@@ -247,8 +247,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'BAFU',
     'ch.bfs': 'BFS',
-	'ch.kt.bafu': 'Kt. [BAFU]',
-	'ch.swisstopo.kt': 'swisstopo, Kt.',
+    'ch.kt.bafu': 'Kt. [BAFU]',
+    'ch.swisstopo.kt': 'swisstopo, Kt.',
     'ch.blw': 'BLW',
     'ch.are': 'ARE',
     'ch.babs': 'BABS',
@@ -301,9 +301,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Send feedback': 'Absenden',
     'Report': 'Melden Sie ein Problem mit der Karte',
     'No email provided': 'Keine Email angegeben',
-	'Invalid email provided': 'Ungültige Email angegeben',
-	'No feedback provided': 'Kein Feedback angegeben',
-	'Please check your input': 'Bitte Eingaben überprüfen',
+    'Invalid email provided': 'Ungültige Email angegeben',
+    'No feedback provided': 'Kein Feedback angegeben',
+    'Please check your input': 'Bitte Eingaben überprüfen',
     'Sending feedback....': 'Bericht senden....',
     'Thanks a lot for your feedback !': "Danke vielmals für Ihre Meldung !",
     'Please fill the feedback': 'Bitte, füllen Sie den Bericht',
@@ -313,17 +313,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Success': 'Bericht erfolgreich versendet',
     'Error': 'Problem',
 
-      // Map, LayerList, LayerPanel
-     'Positioning failed.':   '',
-     'layer selection':   'Themenauswahl',
-     'layer search': 'Themensuche',
-     'map': 'Karte',
+    // Map, LayerList, LayerPanel
+    'layer search': 'Themensuche',
 
     //SwissSearch
-	'last used': 'zuletzt genutzt',
-	'Map was moved to': 'Die Karte wurde verschoben nach',
-    
-    
+    'last used': 'zuletzt genutzt',
+    'Map was moved to': 'Die Karte wurde verschoben nach',
+
+
     //Print
     'mf.print.pdfReady': 'PDF ist bereit',
     'mf.print.generatingPDF': "PDF herstellen",
@@ -338,7 +335,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Permalink.openlink': 'Open',
     'Permalink.close': 'Close',
     'Permalink.tooltip': 'Permalink',
-    
+
 
     // Context Popup
     'Elevation': 'Höhe',
@@ -354,29 +351,136 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureLength.ToolTip': 'Messen Sie eine Distanz',
     'Measure.MeasureArea.ToolTip': 'Messen Sie eine Fläche',
 
-     // Legend Ux
+    // Legend Ux
     "Legend.Tooltip": "Legendefenster zeigen",
     "Legend.Title": "Legende",
     "Legend.NoLayer": "Datenebene auswählen",
     "Legend.onClick": "Dargestellte Daten",
     'metadataTooltip': "Show metadata",
 
-   	//SettingsPanel
-	'language': 'Sprache',
-	'english': 'Englisch',
-	'italian': 'Italienisch',
-	'german': 'Deutsch',
-	'raetoromanic': 'Rätoromanisch',
-	'french': 'Französisch',
-	'handedness': 'Händigkeit',
-	'rightHanded': 'Rechtshänder',
-	'leftHanded': 'Linkshänder',
-	'responsibilitiesAndContact': "Zuständigkeiten und Kontakt",
+    //SettingsPanel
+    'language': 'Sprache',
+    'english': 'Englisch',
+    'italian': 'Italienisch',
+    'german': 'Deutsch',
+    'raetoromanic': 'Rätoromanisch',
+    'french': 'Französisch',
+    'handedness': 'Händigkeit',
+    'rightHanded': 'Rechtshänder',
+    'leftHanded': 'Linkshänder',
+    'responsibilitiesAndContact': "Zuständigkeiten und Kontakt",
     'imprint 1': '<b>Koordination</b> <br> Koordinationsorgan für Geoinformation des Bundes <a href="http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/organisation.html"> (GKG)</a>',
     'imprint 2': '<b>Betrieb</b> <br> geo.admin.ch c/o Bundesamt für Landestopografie swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
     'imprint 3': '<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt ',
     'imprint 4': '<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
-    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>'
+    'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
 
-        
+    // FeedbackPanel
+    'Enter your feedback here ...':   'Votre réaction ',
+    'Your email:':   'Votre email',
+
+    //WmsBrowser
+    'WmsBrowser': "WMS",
+    'WmsBrowserWindow': "Ajouter un service WMS",
+    'inputURLText': "Sélectionner ou entrer une adresse de serveur (URL)",
+    'connectText': "Connexion",
+    'pleaseInputURLText': "Veuillez sélectionner ou entrer une adresse de serveur (URL) dans la boîte déroulante d'abord.",
+    'srsCompatibleText': "SRS compatible",
+    'extentCompatibleText': "Extent compatible",
+    'titleText': "Titre",
+    'nameText': "Nom",
+    'queryableText': "Interrogeable",
+    'descriptionText': "Description",
+    'yesText': "Oui",
+    'noText': "Non",
+    'addLayerText': "Ajouter",
+    'addSelectedLayersText': "Ajouter les couches présentement sélectionnées en tant qu'une seule couche.",
+    'mapPanelPreviewTitleText': "Aperçu de la carte",
+    'layerCantBeAddedText': "Cette couche ne peut être ajoutée",
+    'srsNotSupportedText': "Cette couche ne peut être ajoutée à la présente carte parce qu'elle ne supporte pas sa projection.",
+    'srsNotSupportedShortText': "elle ne supporte pas la projection de la carte",
+    'extentNotSupportedShortText': "elle est en dehors de l'extent de la carte",
+    'pleaseSelectALayerText': "Veuillez sélectionner une ou plusieurs couches dans la grille d'abord.",
+    'pleaseCheckALayerInTreeText': "Veuillez cocher une ou plusieurs couches dans l'arbre d'abord.",
+    'closeWindowText': "Fermer cette fenêtre",
+    'closeText': "Fermer",
+    'inputURLInvalidText': "L'adresse (url) entrée n'est pas valide.",
+    'layerNameText': "Nom de la couche",
+    'layersSuccessfullyLoadedText': "Couches chargées avec succès.",
+    'layerAddedText': "Couche(s) ajoutée(s) avec succès à la carte",
+    'urlInvalidText': "L'addresse de serveur (url) n'est pas valide ou n'est pas un serveur WMS valide.",
+    'pleaseInputLayerNameText': "Veuillez saisir un nom de couche dans la boîte de texte ci-dessous.",
+    'warningText': "Avertissement",
+    'errorText': "Erreur",
+
+    // LayerManager
+    "LayerManager": "KML & GPX",
+    "LayerManagerWindow": "Importer un fichier KML ou GPX",
+    "File successfuly imported. Number of features added:": "Fichier importé avec succés. Nombre d'objets ajoutés : ",
+
+    //"Import KML": "",
+    "Import": "Ajouter",
+    "Select a file to import": "Choisir le fichier à importer",
+    "Format": "Format",
+    "Export Window": "",
+    "Export": "",
+    "Layer Manager": "Gestionnaire des couches",
+
+    // Redlining
+    "Redlining": "Dessin",
+    "RedliningWindow": "Dessiner",
+    'Attributes': 'Attributs',
+    'Delete feature': 'Supprimer objet',
+    'Delete Feature': 'Supprimer Objet',
+    'Do you really want to delete this feature ?': 'Voulez-vous vraiment supprimer cet objet ?',
+    'Delete': 'Supprimer',
+    'Export KML': 'Exporter KML',
+    //'Export': 'Exporter',
+    //'Import KML': 'Importer KML',
+    //'Import': 'Importer',
+    'Edit Feature': 'Éditer Objet',
+    'LineString': 'Ligne',
+    'MultiLineString': 'MultiLigne',
+    'Point': 'Point',
+    'MultiPoint': 'MultiPoint',
+    'Polygon': 'Polygone',
+    'MultiPolygon': 'MultiPolygone',
+    'Label': 'Étiquette',
+    'Create point': 'Créer point',
+    'Create line': 'Créer ligne',
+    'Create polygon': 'Créer polygone',
+    'Create label': 'Créer étiquette',
+    'Delete all features': 'Supprimer tous les objets',
+    'DeleteAll': 'Tous supprimer',
+    'Delete All Features': 'Supprimer Tous Les Objets',
+    'Do you really want to delete all features ?': 'Voulez-vous vraiment supprimer tous les objets ?',
+    'RedLining Panel': 'Outil de dessin',
+    'Style': 'Style',
+    'color': 'couleur',
+    'select a color...': 'couleur...',
+
+    /* colors for styler */
+    'blue': 'bleu',
+    'red': 'rouge',
+    'green': 'vert',
+    'yellow': 'jaune',
+    'orange': 'orange',
+    'purple': 'violet',
+    'white': 'blanc',
+    'black': 'noir',
+    'gray': 'gris',
+    'pink': 'rose',
+    'brown': 'brun',
+    'cyan': 'cyan',
+    'lime': 'lime',
+    'indigo': 'indigo',
+    'magenta': 'magenta',
+    'maroon': 'maron',
+    'olive': 'olive',
+    'plum': 'prune',
+    'salmon': 'saumon',
+    'gold': 'or',
+    'silver': 'argent'
+
+
 });

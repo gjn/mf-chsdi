@@ -9,7 +9,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Overview Map': 'Carte de référence',
     'Coordinates' : 'Coordonnées',
     'Coordinates (m): ' : 'Coordonnées (m): ',
-    'map' : 'Carte',
     'Layer Tree' : 'Arbre des couches',
     'print' : 'Impression',
     'Map Queries': 'Interrogation',
@@ -113,12 +112,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     // Layer name
     'ch.swisstopo.images-swissimage': 'Image aérienne',
-	'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte nationale 1:25000 (Tab. des feuilles)',
+    'ch.swisstopo.pixelkarte-pk25.metadata' : 'Carte nationale 1:25000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk50.metadata' : 'Carte nationale 1:50000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk100.metadata' : 'Carte nationale 1:100000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk200.metadata' : 'Carte nationale 1:200000 (Tab. des feuilles)',
     'ch.swisstopo.pixelkarte-pk500.metadata' : 'Carte nationale 1:500000 (Tab. des feuilles)',
-	'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tab. des feuilles)',
+    'ch.swisstopo.images-swissimage.metadata' : 'SWISSIMAGE (Tab. des feuilles)',
     'ch.swisstopo.fixpunkte-agnes': 'AGNES',
     'ch.swisstopo.fixpunkte-lage': 'Points fixes en planimétrie',
     'ch.swisstopo.fixpunkte-hoehe': 'Points fixes en altimétrie',
@@ -155,7 +154,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.bafu.bundesinventare-vogelreservate': 'Réserves d\'oiseaux d\'eau et migrateurs',
     'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung': 'Parcs',
     'ch.bafu.schutzgebiete-ramsar': 'Ramsar',
-	'ch.bafu.schutzgebiete-wildruhezonen': 'Zones de tranquillité',
+    'ch.bafu.schutzgebiete-wildruhezonen': 'Zones de tranquillité',
     'ch.bafu.schutzgebiete-schweizerischer_nationalpark': 'Parc national',
     'ch.bafu.showme-kantone_hochwasser': 'ShowMe cantons: crues',
     'ch.bafu.showme-kantone_rutschungen': 'ShowMe cantons: glissements',
@@ -222,9 +221,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.blw.ursprungsbezeichnungen-spirituosen': 'AOP spiritueux',
     'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
 
-     // Layer for astra
+    // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',
-	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Circulation routière (principal)',
+    'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet': 'Circulation routière (principal)',
 
     //Layer for ensi
     'ch.ensi.zonenplan-notfallschutz-kernanlagen': 'Plans des zones d’urgence',
@@ -234,11 +233,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.swisstopo': 'swisstopo',
     'ch.bafu': 'OFEV',
     'ch.bfs': 'OFS',
-	'ch.kt.bafu': 'ct. [OFEV]',
-	'ch.swisstopo.kt': 'swisstopo, ct.',
+    'ch.kt.bafu': 'ct. [OFEV]',
+    'ch.swisstopo.kt': 'swisstopo, ct.',
     'ch.blw': 'OFAG',
     'ch.are': 'ARE',
-    'ch.babs': 'OFPP',     
+    'ch.babs': 'OFPP',
     'ch.astra': 'OFROU',
     'ch.ensi': 'IFSN',
 
@@ -266,14 +265,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Feature tooltip': 'Information sur l\'objet',
 
     // background layer switcher
-    'ch.swisstopo.images-swissimage': 'Photo aérienne',
     'ch.swisstopo.pixelkarte-farbe': 'Cartes couleurs',
     'ch.swisstopo.pixelkarte-grau': 'Cartes noir & blanc',
     'voidLayer': 'Fond blanc',
 
     // Attribution / copyright
     'loadingText'       : "En cours de chargement...",
-
 
     'Search data...': 'Recherche données...',
     'Warning Internet Explorer 6': 'Mise en garde Internet Explorer 6',
@@ -286,15 +283,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Your email': 'Votre email',
     'Your feedback about current map extent': 'Votre description du problème concernant la carte',
     'Cancel': 'Annuler',
-    'Send feedback': 'Annoncer le problème',
     'Report': 'Signaler un problème avec la carte',
     'Sending feedback....': 'Envoi du rapport....',
-    'Thanks a lot for your feedback !': "Merci beaucoup pour votre annonce !",
     'Please fill the feedback': 'Merci de remplir la description',
-    'The following URL will be transferred:': 'Cet URL est transféré: ',
     'Success': 'Envoi effectué avec succès',
     'Error': 'Problème lors de l\'envoi',
-    
+
     //Print
     'mf.print.pdfReady': 'Le PDF vous attend',
     'mf.print.generatingPDF': "Création du PDF",
@@ -303,7 +297,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'mf.print.print.title': 'PDF',
     'mf.print.layout': 'Orientation',
     'mf.print.tooltip': 'Imprimer',
- 
+
 
     //Permalink
     'Permalink.title': 'Permalink',
@@ -349,14 +343,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'imprint 4': '<b>Mentions légales</b> <br> Pour geo.admin.ch les dispositions générales en conformité avec <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a> s\'appliquent.',
     'imprint logo': '<img src="http://www.hermes.admin.ch/welcome/logo.jpg">',
 
-     // FeedbackPanel
+    // FeedbackPanel
     'Thanks a lot for your feedback !':   'Merci beaucoup pour votre retour',
     'Enter your feedback here ...':   'Votre réaction ',
     'Your email:':   'Votre email',
     'The following URL will be transferred:':   'L\'Url suivante va être transférée :',
     'Send feedback':   'Envoyer',
     'Your feedback was successfully commited. Thank you for providing your feedback.':   'Votre retour a été transmis avec succès. Merci beaucoup',
-    'Close':   'Fermer',
     'Failure':   'Erreur',
     'Problems submitting: ':   'Erreur lors de la transmission',
     'No email provided':   'Pas d\'adresse email',
@@ -364,12 +357,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'No feedback provided':   'Pas de retour',
     'Please check your input':   'Vérifiez vos entrées',
 
-     // Map, LayerList, LayerPanel
-     'Positioning failed.':   '',
-     'layer selection':   'Votre sélection',
-     'layer search': 'Recherche de couche',
-     'map': 'Carte',
-     
+    // Map, LayerList, LayerPanel
+    'Positioning failed.':   '',
+    'layer selection':   'Votre sélection',
+    'layer search': 'Recherche de couche',
+    'map': 'Carte',
+
     //WmsBrowser
     'WmsBrowser': "WMS",
     'WmsBrowserWindow': "Ajouter un service WMS",
@@ -408,6 +401,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     "LayerManager": "KML & GPX",
     "LayerManagerWindow": "Importer un fichier KML ou GPX",
     "File successfuly imported. Number of features added:": "Fichier importé avec succés. Nombre d'objets ajoutés : ",
+
     //"Import KML": "",
     "Import": "Ajouter",
     "Select a file to import": "Choisir le fichier à importer",
@@ -450,7 +444,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'color': 'couleur',
     'select a color...': 'couleur...',
 
-     /* colors for styler */
+    /* colors for styler */
     'blue': 'bleu',
     'red': 'rouge',
     'green': 'vert',
@@ -472,8 +466,4 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'salmon': 'saumon',
     'gold': 'or',
     'silver': 'argent'
-
-
-
-
 });
