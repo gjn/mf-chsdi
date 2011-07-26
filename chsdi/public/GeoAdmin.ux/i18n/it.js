@@ -210,7 +210,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'ch.blw.ursprungsbezeichnungen-kaese': 'DOP Formaggio',
     'ch.blw.ursprungsbezeichnungen-pflanzen': 'DOP Prodotti vegetali',
     'ch.blw.ursprungsbezeichnungen-spirituosen': 'DOP distillati',
-    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
+    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPA et localités',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',

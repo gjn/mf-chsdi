@@ -211,7 +211,7 @@ OpenLayers.Lang.rm = {
     'ch.blw.ursprungsbezeichnungen-kaese': 'GUB Käse',
     'ch.blw.ursprungsbezeichnungen-pflanzen': 'GUB Pflanzliche Produkte',
     'ch.blw.ursprungsbezeichnungen-spirituosen': 'GUB Spirituosen',
-    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'PLZOrtschaften',
+    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'PLZ und Ortschaften',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Verkehrszählstellen lokal',

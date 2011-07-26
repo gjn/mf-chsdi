@@ -219,7 +219,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.blw.ursprungsbezeichnungen-kaese': 'AOP fromage',
     'ch.blw.ursprungsbezeichnungen-pflanzen': 'AOP produits végétaux',
     'ch.blw.ursprungsbezeichnungen-spirituosen': 'AOP spiritueux',
-    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPALocalité',
+    'ch.swisstopo-vd.ortschaftenverzeichnis_plz': 'NPA et localités',
 
     // Layer for astra
     'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal': 'Circulation routière (régional)',
