@@ -1,13 +1,11 @@
 """Pylons environment configuration"""
 import os
-from functools import partial
 
 from mako.lookup import TemplateLookup
 import pylons
 from pylons.configuration import PylonsConfig
 from pylons.error import handle_mako_error
 from sqlalchemy import engine_from_config
-from sqlalchemy.pool import NullPool
 
 import chsdi.lib.app_globals as app_globals
 import chsdi.lib.helpers
@@ -45,19 +43,16 @@ def load_environment(global_conf, app_conf):
 
     # Setup the SQLAlchemy database engine
     # FIXME: convert_unicode=True ?
-    
-    engine_null_pool = partial(engine_from_config, poolclass=NullPool)
-
-    init_model('bod', engine_null_pool(config, 'sqlalchemy.bod.'))
-    init_model('stopo', engine_null_pool(config, 'sqlalchemy.stopo.'))
-    init_model('edi', engine_null_pool(config, 'sqlalchemy.edi.'))
-    init_model('search', engine_null_pool(config, 'sqlalchemy.search.'))
-    init_model('bafu', engine_null_pool(config, 'sqlalchemy.bafu.'))
-    init_model('kogis', engine_null_pool(config, 'sqlalchemy.kogis.'))
-    init_model('vbs', engine_null_pool(config, 'sqlalchemy.vbs.'))
-    init_model('are', engine_null_pool(config, 'sqlalchemy.are.'))
-    init_model('uvek', engine_null_pool(config, 'sqlalchemy.uvek.'))
-    init_model('ivs2b', engine_null_pool(config, 'sqlalchemy.ivs2b.'))
-    init_model('dritte', engine_null_pool(config, 'sqlalchemy.dritte.'))
+    init_model('bod', engine_from_config(config, 'sqlalchemy.bod.', pool_recycle = 55))
+    init_model('stopo', engine_from_config(config, 'sqlalchemy.stopo.', pool_recycle = 55))
+    init_model('edi', engine_from_config(config, 'sqlalchemy.edi.', pool_recycle = 55))
+    init_model('search', engine_from_config(config, 'sqlalchemy.search.', pool_recycle = 55))
+    init_model('bafu', engine_from_config(config, 'sqlalchemy.bafu.', pool_recycle = 55))
+    init_model('kogis', engine_from_config(config, 'sqlalchemy.kogis.', pool_recycle = 55))
+    init_model('vbs', engine_from_config(config, 'sqlalchemy.vbs.', pool_recycle = 55))
+    init_model('are', engine_from_config(config, 'sqlalchemy.are.', pool_recycle = 55))
+    init_model('uvek', engine_from_config(config, 'sqlalchemy.uvek.', pool_recycle = 55))
+    init_model('ivs2b', engine_from_config(config, 'sqlalchemy.ivs2b.', pool_recycle = 55))
+    init_model('dritte', engine_from_config(config, 'sqlalchemy.dritte.', pool_recycle = 55))
 
     return config
