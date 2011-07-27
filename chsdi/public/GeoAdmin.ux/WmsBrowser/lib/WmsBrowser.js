@@ -28,6 +28,7 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
             zoomOnLayerAdded: false,
             layerOptions: {
                 singleTile: true,
+                ratio: 1,
                 buffer: 0
             }
         });
