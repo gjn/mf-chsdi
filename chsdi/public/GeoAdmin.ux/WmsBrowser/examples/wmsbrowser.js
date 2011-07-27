@@ -21,6 +21,6 @@ Ext.onReady(function() {
         stateId: "map",
         tbar: ["->"]
     });
-    wmsBrowser = new GeoAdmin.WmsBrowser(mapPanel, {});
+    wmsBrowser = new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers});
     mapPanel.getTopToolbar().add(wmsBrowser);
 });

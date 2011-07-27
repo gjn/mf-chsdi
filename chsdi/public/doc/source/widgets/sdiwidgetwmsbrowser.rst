@@ -70,7 +70,7 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
            width: 280
        });
 
-       wmsBrowser = new GeoAdmin.WmsBrowser(mappane14, {});
+       wmsBrowser = new GeoAdmin.WmsBrowser( {layerStore: mappanel4.layers});
        mappane14.getTopToolbar().add(wmsBrowser);
        mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
@@ -112,7 +112,7 @@ You'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. See 
            width: 280
        });
 
-       wmsBrowser = new GeoAdmin.WmsBrowser(mappane14, {});
+       wmsBrowser = new GeoAdmin.WmsBrowser({layerStore: mappane14.layers});
        mappane14.getTopToolbar().add(wmsBrowser);
        mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 

@@ -1,57 +1,54 @@
 /**
- * @include WmsBrowser/lib/WmsBrowserWindow.js
+ * @include WmsBrowser/lib/WmsBrowserPanel.js
  */
 
-Ext.namespace('GeoAdmin');
+Ext.namespace("GeoAdmin");
 
-
-/** api: (define)
- *  module = GeoAdmin
- *  class = WmsBrowser
- *  base_link = `Ext.Action <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Action>`_
- */
-
-/** api: example
- *  Sample code to create a permalink (see also :ref:`permalink`):
- *
- *  .. code-block:: javascript
- *
- *     var mapPanel = new GeoAdmin.MapPanel({
- *         renderTo: "map",
- *         map: new GeoAdmin.Map(),
- *         tbar: ["->"]
- *     });
- *   mapPanel.getTopToolbar().add(new GeoAdmin.WmsBrowser(mapPanel, {}));
- *
- */
-
-/** api: constructor
- *  .. class:: WmsBrowser(mappanel, config)
- *
- *  :param mappanel: ``Object`` mappanel
- *  :param config: ``Object`` config
- *
- *  :return:  ``GeoAdmin.WmsBrowser``
- *
- *  Create a WmsBrowser
- */
 
 GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
 
     /**
      */
-    constructor : function(mappanel, config) {
-
-        var wmsbrowserWindow = new GeoAdmin.WmsBrowserWindow(mappanel, {
+    constructor : function(config) {
+        
+       var serverStore = new Ext.data.SimpleStore({
+        fields: ['url'],
+        data: [['http://wms.geo.admin.ch/'], ['wms.geo.admin.ch.xml'], ['ne.ch.wms.xml'],['http://mapserver1.gr.ch/wms/wildschutzgebiete'] ]
+        });
+        
+        
+         var WmsBrowserPanel = new GeoAdmin.WmsBrowserPanel({
+            border: false,
+            gridPanelOptions: {
+                'height': 250
+            },
+            allowInvalidUrl: true,
+            layerStore: config.layerStore,
+            serverStore: serverStore,
+            zoomOnLayerAdded: false,
+            layerOptions: {
+                singleTile: true,
+                buffer: 0
+            }
+        });
+         
+        var WmsBrowserWindow = new Ext.Window({
+            title: OpenLayers.i18n("WmsBrowser"),
+            height: 350,
+            width: 600,
+            layout: 'fit',
+            items: WmsBrowserPanel,
+            closeAction: 'hide',
             renderTo: Ext.getBody()
         });
 
+
         config = Ext.apply({
             allowDepress: false,
-            iconCls: 'wmsbrowser',
+            iconCls: 'wms-browser',
             text: OpenLayers.i18n('WmsBrowser'),
             handler: function() {
-                wmsbrowserWindow.show();
+                WmsBrowserWindow.show();
             }
         }, config);
 
@@ -61,3 +58,4 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
 
 /** api: xtype = ga_wmsbrowser */
 Ext.reg("ga_wmsbrowser", GeoAdmin.WmsBrowser);
+
