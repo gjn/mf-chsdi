@@ -13,7 +13,7 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
         
        var serverStore = new Ext.data.SimpleStore({
         fields: ['url'],
-        data: [['http://wms.geo.admin.ch/'], ['http://sitn.ne.ch/ogc-sitn/wms?'], ['http://mapserver1.gr.ch/wms/wildschutzgebiete'] ]
+        data: [['http://wms.geo.admin.ch/'], ['http://ogc.heig-vd.ch/mapserver/wms?'], ['http://sitn.ne.ch/ogc-sitn/wms?'], ['http://mapserver1.gr.ch/wms/wildschutzgebiete'] ]
         });
         
         

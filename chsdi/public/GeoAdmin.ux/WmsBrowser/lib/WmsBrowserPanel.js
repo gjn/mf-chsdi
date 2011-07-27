@@ -408,7 +408,8 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         var urlField = Ext.getCmp('wms_url');
         for (var i = 0; i < records.length; i++) {
             var record = records[i];
-            if (record.get('srs')[srs] === true || OpenLayers.Util.indexOf(record.get('srs'), srs) >= 0) {
+            if (record.get('srs')[srs.toUpperCase()] === true || OpenLayers.Util.indexOf(record.get('srs'), srs.toUpperCase()) >= 0 ||
+                record.get('srs')[srs.toLowerCase()] === true || OpenLayers.Util.indexOf(record.get('srs'), srs.toLowerCase()) >= 0) {
                 record.set("srsCompatible", true);
             } else {
                 record.set("srsCompatible", false);
