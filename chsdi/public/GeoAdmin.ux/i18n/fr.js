@@ -336,7 +336,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'handedness': 'Droitier/gaucher',
     'rightHanded': 'Droitier',
     'leftHanded': 'Gaucher',
-    'Desktop version': 'Lien vers version non mobile',
+    'Desktop version': 'Lien vers version PC',
     'responsibilitiesAndContact': "Impressum",
     'imprint 1': '<b>Coordination</b> <br> Organe de coordination de la géoinformation au niveau fédéral <a href="http://www.geo.admin.ch/internet/geoportal/fr/home/geoadmin/organisation.html"> (GCS)</a>',
     'imprint 2': '<b>Exploitation</b> <br> geo.admin.ch c/o Office fédéral de topographie swisstopo  <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',

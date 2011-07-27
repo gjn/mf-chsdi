@@ -336,7 +336,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
     'handedness': 'Manualità',
     'rightHanded': 'Mano destra',
     'leftHanded': 'Mancino',
-    'Desktop version': 'Lien vers version non mobile',
+    'Desktop version': 'Link to desktop version',
     'responsibilitiesAndContact': "Colophon",
     'imprint 1': '<b>Coordinamento</b> <br> Organo federale di coordinamento della geoinformazione<a href="http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/organisation.html"> (GCG)</a>',
     'imprint 2': '<b>Funzionamento</b> <br> geo.admin.ch c/o Ufficio federale di topografia swisstopo  <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',

@@ -336,7 +336,7 @@ OpenLayers.Lang.rm = {
     'handedness': 'Sanester/Dretger',
     'rightHanded': 'Dretger',
     'leftHanded': 'Sanester',
-    'Desktop version': 'Lien vers version non mobile',
+    'Desktop version': 'Link to desktop version',
     'responsibilitiesAndContact': "Impressum",
     'imprint 1': '<b>Coordinaziun</b> <br> Organ federal da coordinaziun per la geoinfurmaziun  <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCS)</a>',
     'imprint 2': '<b>Manaschi</b> <br> geo.admin.ch c/o Uffizi federal da topografia swisstopo   <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
