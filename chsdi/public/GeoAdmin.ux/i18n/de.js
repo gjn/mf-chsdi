@@ -368,6 +368,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'handedness': 'Händigkeit',
     'rightHanded': 'Rechtshänder',
     'leftHanded': 'Linkshänder',
+    'Desktop version': 'Lien vers version non mobile',
     'responsibilitiesAndContact': "Zuständigkeiten und Kontakt",
     'imprint 1': '<b>Koordination</b> <br> Koordinationsorgan für Geoinformation des Bundes <a href="http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/organisation.html"> (GKG)</a>',
     'imprint 2': '<b>Betrieb</b> <br> geo.admin.ch c/o Bundesamt für Landestopografie swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
