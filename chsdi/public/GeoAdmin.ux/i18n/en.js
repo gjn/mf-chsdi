@@ -65,7 +65,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': 'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optimized for small screen resolution',
     'Full map': 'Enlarged map',
     'Geo search...': 'Search location, zip, coordinate ...',
-    'searchQuicktip': 'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0',
+    'searchQuicktip': 'Here you can search for places, Zip Codes, administrative units, coordinates and address.<br>Examples for queries:<br><b>Zip Codes:</b> for "3007 in Bern" type 3007<br><b>Coordinates (Swiss):</b> for "600000/200000" type 600000 200000<br><b>Coordinates (LatLon):</b> for "46.7N 6.0E " type 46.7 6.0<br><b>Address:</b> for "Bundesplatz 3 Bern" type Bundesplatz 3',
     'show column': 'Open Topics',
     'hide column': 'Close Topics',
     'Map URL': 'Embed link below in e-mail',

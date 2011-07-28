@@ -59,7 +59,7 @@ OpenLayers.Lang.rm = {
     'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.': "La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n'è betg optimà per dissoluziuns dal monitur pitschnas.",
     'Full map': 'Charta pli gronda',
     'Geo search...': 'Tschertgar lieu, NP, coordinatas...',
-    'searchQuicktip': 'Hier können Sie nach Ort, PLZ, Administrativen Einheiten und Koordinaten suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br>',
+    'searchQuicktip': 'Qua pudais Vus tschertgar tenor lieu, numer postal (NP), unitads administrativas, coordinatas e Adressas.<br>Exempels da tschertga:<br><b>NP:</b> per "3007 a Berna" tippais Vus 3007<br><b>Coordinatas da la Svizra:</b> per "600000/200000" tippais Vus 600000 200000<br><b>Coordinatas (Lat/Long):</b> per "46.7N 6.0E" tippais Vus 46.7 6.0<br><b>Adressas:</b> per "Bundesplatz 3 Berna" tippais Vus Bundesplatz 3',
     'show column': 'Avrir ils temas',
     'hide column': 'Zuppentar ils temas',
     'Map URL': 'Integrar il link qua sutvart en il e-mail',
