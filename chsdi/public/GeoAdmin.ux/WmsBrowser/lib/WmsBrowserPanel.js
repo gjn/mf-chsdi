@@ -10,7 +10,6 @@
  * @include OpenLayers/Format/WMSCapabilities/v1_1_1.js
  * @include OpenLayers/Format/WMSCapabilities/v1_3.js
  * @include OpenLayers/Format/WMSCapabilities/v1_3_0.js
- * @include GeoExt.ux/data/Store.js
  * @include GeoExt/data/LayerReader.js
  * @include GeoExt/data/LayerRecord.js
  * @include GeoExt/data/WMSCapabilitiesReader.js
@@ -19,7 +18,7 @@
 
 
 Ext.namespace("Ext.data.Store")
-    Ext.data.Store.prototype.getValueArray = function(value) {
+Ext.data.Store.prototype.getValueArray = function(value) {
     var aszValues = [];
     var nValues = this.getCount();
     for (var i = 0; i < nValues; i++) {
@@ -83,7 +82,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             buttonAlign: 'center',
             items: [],
             buttons: []
-            };
+        };
         var oURLField;
         if (this.serverStore) {
             oURLField = {
@@ -117,7 +116,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 validator: this.urlValidator,
                 invalidText: OpenLayers.i18n('The url address entered is not valid.'),
                 'emptyText': OpenLayers.i18n('Input the server address (URL)')
-                };
+            };
         }
         oTopPanel.items.push({
             style: 'padding:0px;margin:0px;',
@@ -130,19 +129,21 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 style: 'padding:0px;margin:0px;',
                 columnWidth: 0.15,
                 border: false,
-                items: [{
-                    width: 'auto',
-                    autoWidth: 'true',
-                    style: 'padding:0px;margin:0px;',
-                    xtype: 'button',
-                    text: OpenLayers.i18n('Connect'),
-                    scope: this,
-                    handler: function(b, e) {
-                        this.triggerGetCapabilities();
+                items: [
+                    {
+                        width: 'auto',
+                        autoWidth: 'true',
+                        style: 'padding:0px;margin:0px;',
+                        xtype: 'button',
+                        text: OpenLayers.i18n('Connect'),
+                        scope: this,
+                        handler: function(b, e) {
+                            this.triggerGetCapabilities();
+                        }
                     }
-                }]
-                }]
-            });
+                ]
+            }]
+        });
         oItems.push(oTopPanel);
         oCenterPanel = {
             style: 'padding:2px;margin:2px;',
@@ -162,7 +163,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             defaultType: 'textfield',
             buttonAlign: 'center',
             items: []
-            };
+        };
         this.capStore = new GeoExt.data.WMSCapabilitiesStore({
             'url': "",
             layerOptions: this.layerOptions
@@ -212,32 +213,38 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         return store;
     },
     createGridPanel: function(store) {
-        var columns = [{
-            header: OpenLayers.i18n('Add'),
-            dataIndex: "srsCompatible",
-            hidden: false,
-            renderer: this.boolRenderer,
-            width: 30
-        }, {
-            header: OpenLayers.i18n('Title'),
-            dataIndex: "title",
-            id: "title",
-            sortable: true
-        }, {
-            header: OpenLayers.i18n('Name'),
-            dataIndex: "name",
-            sortable: true
-        }, {
-            header: OpenLayers.i18n('Queryable'),
-            dataIndex: "queryable",
-            sortable: true,
-            hidden: true,
-            renderer: this.boolRenderer
-        }, {
-            header: OpenLayers.i18n('Description'),
-            dataIndex: "abstract",
-            hidden: true
-        }];
+        var columns = [
+            {
+                header: OpenLayers.i18n('Add'),
+                dataIndex: "srsCompatible",
+                hidden: false,
+                renderer: this.boolRenderer,
+                width: 30
+            },
+            {
+                header: OpenLayers.i18n('Title'),
+                dataIndex: "title",
+                id: "title",
+                sortable: true
+            },
+            {
+                header: OpenLayers.i18n('Name'),
+                dataIndex: "name",
+                sortable: true
+            },
+            {
+                header: OpenLayers.i18n('Queryable'),
+                dataIndex: "queryable",
+                sortable: true,
+                hidden: true,
+                renderer: this.boolRenderer
+            },
+            {
+                header: OpenLayers.i18n('Description'),
+                dataIndex: "abstract",
+                hidden: true
+            }
+        ];
         var options = {
             id: 'wms_capabilities_grid_panel',
             columnWidth: 0.5,
@@ -273,66 +280,78 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 width: '150px',
                 border: false,
                 readOnly: true
-            }: {
+            } : {
                 width: '100%',
                 border: false,
                 readOnly: true
             },
             defaultType: 'textfield',
             autoHeight: true,
-            bodyStyle: Ext.isIE ? 'padding:0 0 0px 0px;': 'padding:5px 0px;',
+            bodyStyle: Ext.isIE ? 'padding:0 0 0px 0px;' : 'padding:5px 0px;',
             border: false,
             style: {
                 "margin-left": "10px",
-                "margin-right": Ext.isIE6 ? (Ext.isStrict ? "-10px": "-13px") : "0"
+                "margin-right": Ext.isIE6 ? (Ext.isStrict ? "-10px" : "-13px") : "0"
             },
-            items: [{
-                fieldLabel: OpenLayers.i18n('Title'),
-                name: 'title'
-            }, {
-                fieldLabel: OpenLayers.i18n('Name'),
-                name: 'name'
-            }, {
-                xtype: 'radiogroup',
-                columns: 'auto',
-                fieldLabel: OpenLayers.i18n('Queryable'),
-                name: 'queryable',
-                defaults: {
-                    readOnly: true
+            items: [
+                {
+                    fieldLabel: OpenLayers.i18n('Title'),
+                    name: 'title'
                 },
-                items: [{
-                    name: 'queryableBox',
-                    inputValue: "true",
-                    boxLabel: OpenLayers.i18n("Yes")
-                    }, {
-                    name: 'queryableBox',
-                    inputValue: "",
-                    boxLabel: OpenLayers.i18n("No")
-                    }]
-                }, {
-                xtype: 'radiogroup',
-                columns: 'auto',
-                fieldLabel: OpenLayers.i18n('Can add ?'),
-                name: 'srsCompatible',
-                defaults: {
-                    readOnly: true
+                {
+                    fieldLabel: OpenLayers.i18n('Name'),
+                    name: 'name'
                 },
-                items: [{
-                    name: 'srsCompatibleBox',
-                    inputValue: "true",
-                    boxLabel: OpenLayers.i18n("Yes")
-                    }, {
-                    name: 'srsCompatibleBox',
-                    inputValue: "false",
-                    boxLabel: OpenLayers.i18n("No")
-                    }]
-                }, {
-                xtype: 'textarea',
-                fieldLabel: OpenLayers.i18n('Description'),
-                name: 'abstract',
-                height: nDescHeight
-            }]
-            };
+                {
+                    xtype: 'radiogroup',
+                    columns: 'auto',
+                    fieldLabel: OpenLayers.i18n('Queryable'),
+                    name: 'queryable',
+                    defaults: {
+                        readOnly: true
+                    },
+                    items: [
+                        {
+                            name: 'queryableBox',
+                            inputValue: "true",
+                            boxLabel: OpenLayers.i18n("Yes")
+                        },
+                        {
+                            name: 'queryableBox',
+                            inputValue: "",
+                            boxLabel: OpenLayers.i18n("No")
+                        }
+                    ]
+                },
+                {
+                    xtype: 'radiogroup',
+                    columns: 'auto',
+                    fieldLabel: OpenLayers.i18n('Can add ?'),
+                    name: 'srsCompatible',
+                    defaults: {
+                        readOnly: true
+                    },
+                    items: [
+                        {
+                            name: 'srsCompatibleBox',
+                            inputValue: "true",
+                            boxLabel: OpenLayers.i18n("Yes")
+                        },
+                        {
+                            name: 'srsCompatibleBox',
+                            inputValue: "false",
+                            boxLabel: OpenLayers.i18n("No")
+                        }
+                    ]
+                },
+                {
+                    xtype: 'textarea',
+                    fieldLabel: OpenLayers.i18n('Description'),
+                    name: 'abstract',
+                    height: nDescHeight
+                }
+            ]
+        };
         return options;
     },
     mapPreview: function(grid, index) {
@@ -343,12 +362,14 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             width: 512,
             height: 256,
             layout: "fit",
-            items: [{
-                xtype: "gx_mappanel",
-                layers: [layer],
-                extent: record.get("llbbox")
-                }]
-            });
+            items: [
+                {
+                    xtype: "gx_mappanel",
+                    layers: [layer],
+                    extent: record.get("llbbox")
+                }
+            ]
+        });
         win.show();
     },
     initMyToolbar: function() {
@@ -358,7 +379,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             handler: this.addLayer,
             scope: this,
             tooltip: OpenLayers.i18n('Add currently selected layer')
-            };
+        };
         if (this.useIcons === true) {
             actionOptions.iconCls = "gx-wmsbrowser-addlayer";
         } else {
@@ -368,7 +389,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         items.push(action);
         Ext.apply(this, {
             bbar: new Ext.Toolbar(items)
-            });
+        });
     },
     addLayer: function() {
         var grid = Ext.getCmp('wms_capabilities_grid_panel');
@@ -430,7 +451,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         }
     },
     boolRenderer: function(bool) {
-        return (bool) ? '<span style="color:green;">' + OpenLayers.i18n("Yes") + '</span>': '<span style="color:red;">' + OpenLayers.i18n("No") + '</span>';
+        return (bool) ? '<span style="color:green;">' + OpenLayers.i18n("Yes") + '</span>' : '<span style="color:red;">' + OpenLayers.i18n("No") + '</span>';
     },
     onAfterRender: function() {
         if (this.ownerCt.getXType() == Ext.Window.xtype) {
@@ -442,7 +463,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             handler: this.closeWindow,
             scope: this,
             tooltip: OpenLayers.i18n('Close this window')
-            };
+        };
         if (this.useIcons === true) {
             actionOptions.iconCls = "gx-wmsbrowser-close";
         } else {

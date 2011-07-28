@@ -10,14 +10,19 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
     /**
      */
     constructor : function(config) {
-        
-       var serverStore = new Ext.data.SimpleStore({
-        fields: ['url'],
-        data: [['http://wms.geo.admin.ch/'], ['http://ogc.heig-vd.ch/mapserver/wms?'], ['http://sitn.ne.ch/ogc-sitn/wms?'], ['http://mapserver1.gr.ch/wms/wildschutzgebiete'] ]
+
+        var serverStore = new Ext.data.SimpleStore({
+            fields: ['url'],
+            data: [
+                ['http://wms.geo.admin.ch/'],
+                ['http://ogc.heig-vd.ch/mapserver/wms?'],
+                ['http://sitn.ne.ch/ogc-sitn/wms?'],
+                ['http://mapserver1.gr.ch/wms/wildschutzgebiete']
+            ]
         });
-        
-        
-         var WmsBrowserPanel = new GeoAdmin.WmsBrowserPanel({
+
+
+        var WmsBrowserPanel = new GeoAdmin.WmsBrowserPanel({
             border: false,
             gridPanelOptions: {
                 'height': 250
@@ -32,7 +37,7 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 buffer: 0
             }
         });
-         
+
         var WmsBrowserWindow = new Ext.Window({
             title: OpenLayers.i18n("WmsBrowser"),
             height: 350,
