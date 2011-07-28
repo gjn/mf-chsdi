@@ -275,7 +275,12 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     iconCls: "layer-info",
                     tooltip: OpenLayers.i18n("about that layer"),
                     handler: function() {
-                        GeoAdmin.BodSearchWindow.show(node.layer.layername);
+                        if (typeof(node.layer.layername) == "undefined") {
+                           Ext.Msg.alert(OpenLayers.i18n("Information"),OpenLayers.i18n("Meta information are not available for this layer"));
+                        } else {
+                           GeoAdmin.BodSearchWindow.show(node.layer.layername);
+                        }
+
                     }
                 })
             ]
