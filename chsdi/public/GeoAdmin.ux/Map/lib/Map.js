@@ -11,6 +11,9 @@
  * @include OpenLayers/Control/Panel.js
  * @include OpenLayers/Control/ZoomToMaxExtent.js
  * @include OpenLayers/Layer/Vector.js
+ * @include OpenLayers/Protocol/HTTP.js
+ * @include OpenLayers/Strategy/Fixed.js
+ * @include OpenLayers/Format/KML.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
  *
@@ -217,11 +220,17 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     visibility: layer.getVisibility(),
                     opacity: layer.opacity == null ? 1.0 : layer.opacity
                 });
-            }
-            // Manage WMS layers (because of WMS Browser)
-            if (!layer.geoadmin_isBgLayer && layer.CLASS_NAME == "OpenLayers.Layer.WMS" && layer.aggregate === undefined) {
+                // Manage WMS layers (because of WMS Browser)
+            } else if (!layer.geoadmin_isBgLayer && layer.CLASS_NAME == "OpenLayers.Layer.WMS" && layer.aggregate === undefined) {
                 state.layers.push({
                     layername: "WMS||" + layer.name + "||" + layer.url + "||" + layer.params.LAYERS,
+                    visibility: layer.getVisibility(),
+                    opacity: layer.opacity == null ? 1.0 : layer.opacity
+                });
+                // Manage KML layer
+            } else if (!layer.geoadmin_isBgLayer && (layer.protocol && layer.protocol.format && layer.protocol.format.CLASS_NAME == "OpenLayers.Format.KML") && layer.aggregate === undefined) {
+                state.layers.push({
+                    layername: "KML||" + layer.protocol.url,
                     visibility: layer.getVisibility(),
                     opacity: layer.opacity == null ? 1.0 : layer.opacity
                 });
@@ -254,7 +263,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 var layer = state.layers[i];
                 if (layer.layername.indexOf("WMS") > -1) {
                     var WMSInformation = layer.layername.split("||");
-                    this.addWmsLayer(WMSInformation[1],WMSInformation[2],WMSInformation[3],layer.visibility, layer.opacity);
+                    this.addWmsLayer(WMSInformation[1], WMSInformation[2], WMSInformation[3], layer.visibility, layer.opacity);
+                } else if (layer.layername.indexOf("KML") > -1) {
+                    var KMLInformation = layer.layername.split("||");
+                    this.addKmlLayer(KMLInformation[1], layer.visibility, layer.opacity);
                 } else {
                     this.addLayerByName(layer.layername, {
                         visibility: layer.visibility,
@@ -407,12 +419,44 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             layers: layers,
             format: "image/png",
             transparent: "true"
-        },{
+        }, {
             singleTile: true,
             ratio: 1,
             visibility: visibility,
             opacity: opacity,
             attribution: "WMS third party data"
+        });
+        this.addLayer(layer);
+        this.sortLayer();
+
+        return layer;
+    },
+
+    addKmlLayer: function(url, visibility, opacity) {
+        var layer = new OpenLayers.Layer.Vector('KML', {
+            strategies: [new OpenLayers.Strategy.Fixed()],
+            visibility: visibility,
+            opacity: opacity,
+            displayInLayerSwitcher: true,
+            styleMap: new OpenLayers.StyleMap({
+                "default": new OpenLayers.Style({
+                    pointRadius: "10",
+                    fillColor: "#FF0000",
+                    strokeColor: "#FF0000",
+                    strokeWidth: 2
+                })
+            }),
+            protocol: new OpenLayers.Protocol.HTTP({
+                url: url,
+                format: new OpenLayers.Format.KML({
+                    extractStyles: true,
+                    extractAttributes: true,
+                    maxDepth: 2,
+                    externalProjection: new OpenLayers.Projection("EPSG:4326"),
+                    internalProjection: this.getProjectionObject()
+                })
+            })
+
         });
         this.addLayer(layer);
         this.sortLayer();
