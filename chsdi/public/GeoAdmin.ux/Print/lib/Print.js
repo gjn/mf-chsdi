@@ -163,6 +163,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             url: this.config.printBaseUrl,
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
+		    provider.baseParams.layout = provider.layout.get("name");
                     var overrides = {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
