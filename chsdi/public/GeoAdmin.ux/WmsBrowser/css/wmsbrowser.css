@@ -1,0 +1,10 @@
+.wmsbrowser .x-toolbar .x-btn-tl { background-position: 0 0; }
+.wmsbrowser .x-toolbar .x-btn-tr { background-position: -3px 0; }
+.wmsbrowser .x-toolbar .x-btn-tc { background-position: 0 -6px; }
+.wmsbrowser .x-toolbar .x-btn-ml { background-position: 0 -24px; }
+.wmsbrowser .x-toolbar .x-btn-mr { background-position: -3px -24px; }
+.wmsbrowser .x-toolbar .x-btn-mc { background-position: 0 -1096px; }
+.wmsbrowser .x-toolbar .x-btn-bl { background-position: 0 -3px; }
+.wmsbrowser .x-toolbar .x-btn-br { background-position: -3px -3px; }
+.wmsbrowser .x-toolbar .x-btn-bc { background-position: 0 -15px; }
+.wmsbrowser .x-toolbar .xtb-sep {visibility: hidden}

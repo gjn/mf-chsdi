@@ -82,17 +82,17 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.attributionCtrl = OpenLayers.Util.extend(new OpenLayers.Control.Attribution(), {
             updateAttribution: function () {
                 var attributions = [];
-                var links =[];
+                var links = [];
                 if (this.map && this.map.layers) {
                     for (var i = 0, len = this.map.layers.length; i < len; i++) {
                         var layer = this.map.layers[i];
                         if (layer.attribution && layer.getVisibility()) {
                             // add attribution only if attribution text is unique
                             if (OpenLayers.Util.indexOf(
-                                    attributions, layer.attribution) === -1) {
-                                        var link='<a href="'+OpenLayers.i18n(layer.attribution+'.url')+'" target="_blank">'+OpenLayers.i18n(layer.attribution)+'</a>';
-                                        links.push(link);
-                                        attributions.push(layer.attribution);
+                                attributions, layer.attribution) === -1) {
+                                var link = '<a href="' + OpenLayers.i18n(layer.attribution + '.url') + '" target="_blank">' + OpenLayers.i18n(layer.attribution) + '</a>';
+                                links.push(link);
+                                attributions.push(layer.attribution);
                             }
                         }
                     }
@@ -162,9 +162,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
 
         this.EVENT_TYPES =
-                GeoAdmin.Map.prototype.EVENT_TYPES.concat(
-                        OpenLayers.Map.prototype.EVENT_TYPES
-                        );
+            GeoAdmin.Map.prototype.EVENT_TYPES.concat(
+                OpenLayers.Map.prototype.EVENT_TYPES
+            );
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -209,10 +209,19 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         for (var i = 0, len = this.layers.length; i < len; i++) {
             var layer = this.layers[i];
+            // Manage standard layers
             // Sub layers of aggregated layers have not be part of the permalink
             if (!layer.geoadmin_isBgLayer && layer.layername && layer.aggregate === undefined) {
                 state.layers.push({
                     layername: layer.layername,
+                    visibility: layer.getVisibility(),
+                    opacity: layer.opacity == null ? 1.0 : layer.opacity
+                });
+            }
+            // Manage WMS layers (because of WMS Browser)
+            if (!layer.geoadmin_isBgLayer && layer.CLASS_NAME == "OpenLayers.Layer.WMS" && layer.aggregate === undefined) {
+                state.layers.push({
+                    layername: "WMS||" + layer.name + "||" + layer.url + "||" + layer.params.LAYERS,
                     visibility: layer.getVisibility(),
                     opacity: layer.opacity == null ? 1.0 : layer.opacity
                 });
@@ -243,10 +252,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (state.layers) {
             for (var i = 0, len = state.layers.length; i < len; i++) {
                 var layer = state.layers[i];
-                this.addLayerByName(layer.layername, {
-                    visibility: layer.visibility,
-                    opacity: layer.opacity
-                });
+                if (layer.layername.indexOf("WMS") > -1) {
+                    var WMSInformation = layer.layername.split("||");
+                    this.addWmsLayer(WMSInformation[1],WMSInformation[2],WMSInformation[3],layer.visibility, layer.opacity);
+                } else {
+                    this.addLayerByName(layer.layername, {
+                        visibility: layer.visibility,
+                        opacity: layer.opacity
+                    });
+                }
             }
         }
 
@@ -266,7 +280,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             for (layer in GeoAdmin.layers.layers) {
                 if (layer == state.recenter.layername) {
                     var f = new GeoAdmin.Features({map: this});
-                    f.show(state.recenter.layername, state.recenter.id);   
+                    f.show(state.recenter.layername, state.recenter.id);
                 }
             }
 
@@ -279,7 +293,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (state.scale) {
             this.zoomTo(this._getZoomFromScale(state.scale), true);
         }
-     },
+    },
     /** api: method[destroy]
      *
      *  Destroy the map
@@ -307,7 +321,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     setLayerZIndex: function(layer, zIdx) {
         var baseZIndex = layer.layername && GeoAdmin.layers.layers[layer.layername].isBgLayer
-                ? 100 : 150;
+            ? 100 : 150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },
 
@@ -386,6 +400,24 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         } else {
             return null;
         }
+    },
+
+    addWmsLayer: function(name, url, layers, visibility, opacity) {
+        var layer = new OpenLayers.Layer.WMS(name, url, {
+            layers: layers,
+            format: "image/png",
+            transparent: "true"
+        },{
+            singleTile: true,
+            ratio: 1,
+            visibility: visibility,
+            opacity: opacity,
+            attribution: "WMS third party data"
+        });
+        this.addLayer(layer);
+        this.sortLayer();
+
+        return layer;
     },
 
     sortLayer: function() {

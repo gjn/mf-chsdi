@@ -30,6 +30,7 @@ Ext.data.Store.prototype.getValueArray = function(value) {
 Ext.namespace("GeoAdmin")
 GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
     layout: 'absolute',
+    cls: 'wmsbrowser',
     minWidth: 300,
     minHeight: 200,
     plain: true,
@@ -126,7 +127,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             collapsible: false,
             collapsed: false,
             items: [oURLField, {
-                style: 'padding:0px;margin:0px;',
+                style: 'padding:0 0 0 5;margin:0px;',
                 columnWidth: 0.15,
                 border: false,
                 items: [
@@ -230,6 +231,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             {
                 header: OpenLayers.i18n('Name'),
                 dataIndex: "name",
+                hidden: true,
                 sortable: true
             },
             {
@@ -387,6 +389,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         }
         var action = new Ext.Action(actionOptions);
         items.push(action);
+        items.push('-');
         Ext.apply(this, {
             bbar: new Ext.Toolbar(items)
         });
