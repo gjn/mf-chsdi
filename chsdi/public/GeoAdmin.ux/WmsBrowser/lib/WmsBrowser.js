@@ -16,8 +16,6 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
             data: [
                 ['http://wms.geo.admin.ch/'],
                 ['http://ogc.heig-vd.ch/mapserver/wms?'],
-                ['http://sitn.ne.ch/ogc-sitn/wms?'],
-                ['http://sitn.ne.ch/ogc-sitj-ortho/wms?'],
                 ['http://mapserver1.gr.ch/wms/admineinteilung?'],
                 ['http://mapserver1.gr.ch/wms/belastetestandorte?'],
                 ['http://mapserver1.gr.ch/wms/beweidbareflaechen?'],

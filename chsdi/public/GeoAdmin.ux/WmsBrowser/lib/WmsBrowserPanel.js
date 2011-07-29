@@ -141,10 +141,11 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                         text: OpenLayers.i18n('Connect'),
                         scope: this,
                         handler: function(b, e) {
-                            var myMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Please wait...')});
-                            myMask.show();
+                            if (!GeoAdmin.myMask) {
+                               GeoAdmin.myMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading WMS capabilities...')});
+                            }
+                            GeoAdmin.myMask.show();
                             this.triggerGetCapabilities();
-                            myMask.hide();
                         }
                     }
                 ]
@@ -211,13 +212,6 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             oItem.destroy();
         }
     },
-    createWMSCapabilitiesStore: function(url) {
-        var store = new GeoExt.data.WMSCapabilitiesStore({
-            'url': url
-        });
-        store.on('load', this.onWMSCapabilitiesStoreLoad, this);
-        return store;
-    },
     createGridPanel: function(store) {
         var columns = [
             {
@@ -277,7 +271,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         return new Ext.grid.GridPanel(options);
     },
     createFormPanel: function() {
-        var nDescHeight = parseInt(this.gridPanelOptions['height']) - 115;
+        var nDescHeight = parseInt(this.gridPanelOptions['height']) - 25;
         var options = {
             style: 'padding:0px;margin:0px;',
             columnWidth: 0.5,
@@ -301,56 +295,6 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 "margin-right": Ext.isIE6 ? (Ext.isStrict ? "-10px" : "-13px") : "0"
             },
             items: [
-                {
-                    fieldLabel: OpenLayers.i18n('Title'),
-                    name: 'title'
-                },
-                {
-                    fieldLabel: OpenLayers.i18n('Name'),
-                    name: 'name'
-                },
-                {
-                    xtype: 'radiogroup',
-                    columns: 'auto',
-                    fieldLabel: OpenLayers.i18n('Queryable'),
-                    name: 'queryable',
-                    defaults: {
-                        readOnly: true
-                    },
-                    items: [
-                        {
-                            name: 'queryableBox',
-                            inputValue: "true",
-                            boxLabel: OpenLayers.i18n("Yes")
-                        },
-                        {
-                            name: 'queryableBox',
-                            inputValue: "",
-                            boxLabel: OpenLayers.i18n("No")
-                        }
-                    ]
-                },
-                {
-                    xtype: 'radiogroup',
-                    columns: 'auto',
-                    fieldLabel: OpenLayers.i18n('Can add ?'),
-                    name: 'srsCompatible',
-                    defaults: {
-                        readOnly: true
-                    },
-                    items: [
-                        {
-                            name: 'srsCompatibleBox',
-                            inputValue: "true",
-                            boxLabel: OpenLayers.i18n("Yes")
-                        },
-                        {
-                            name: 'srsCompatibleBox',
-                            inputValue: "false",
-                            boxLabel: OpenLayers.i18n("No")
-                        }
-                    ]
-                },
                 {
                     xtype: 'textarea',
                     fieldLabel: OpenLayers.i18n('Description'),
@@ -457,6 +401,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 }
             }
         }
+        GeoAdmin.myMask.hide();
     },
     boolRenderer: function(bool) {
         return (bool) ? '<span style="color:green;">' + OpenLayers.i18n("Yes") + '</span>' : '<span style="color:red;">' + OpenLayers.i18n("No") + '</span>';
