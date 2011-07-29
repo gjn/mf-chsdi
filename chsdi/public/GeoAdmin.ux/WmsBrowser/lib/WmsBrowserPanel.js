@@ -141,10 +141,10 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                         text: OpenLayers.i18n('Connect'),
                         scope: this,
                         handler: function(b, e) {
-                            if (!GeoAdmin.myMask) {
-                               GeoAdmin.myMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading WMS capabilities...')});
+                            if (!GeoAdmin.loadingMask) {
+                               GeoAdmin.loadingMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading...')});
                             }
-                            GeoAdmin.myMask.show();
+                            GeoAdmin.loadingMask.show();
                             this.triggerGetCapabilities();
                         }
                     }
@@ -189,9 +189,11 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         if (!urlField.isValid()) {
             if (!url) {
                 alert(OpenLayers.i18n('Please, enter an url in the textbox first'));
+                GeoAdmin.loadingMask.hide();
                 return;
             } else if (!this.allowInvalidUrl) {
                 alert(OpenLayers.i18n('The url address entered is not valid.'));
+                GeoAdmin.loadingMask.hide();
                 return;
             }
         }
@@ -271,7 +273,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         return new Ext.grid.GridPanel(options);
     },
     createFormPanel: function() {
-        var nDescHeight = parseInt(this.gridPanelOptions['height']) - 25;
+        var nDescHeight = parseInt(this.gridPanelOptions['height']) - 2;
         var options = {
             style: 'padding:0px;margin:0px;',
             columnWidth: 0.5,
@@ -401,7 +403,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 }
             }
         }
-        GeoAdmin.myMask.hide();
+        GeoAdmin.loadingMask.hide();
     },
     boolRenderer: function(bool) {
         return (bool) ? '<span style="color:green;">' + OpenLayers.i18n("Yes") + '</span>' : '<span style="color:red;">' + OpenLayers.i18n("No") + '</span>';
