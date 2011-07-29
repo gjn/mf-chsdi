@@ -255,12 +255,12 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     layer: node.layer,
                     aggressive: true,
                     plugins: new GeoAdmin.LayerTree.SliderLabel(
-                            node.layer.layername + '-opacity-lbl'
+                            node.layer.layername ? node.layer.layername : node.layer.name + '-opacity-lbl'
                             ),
                     width: 100
                 }),
                 new GeoAdmin.LayerTree.TextItem({
-                    id: node.layer.layername + "-opacity-lbl",
+                    id: node.layer.layername ? node.layer.layername : node.layer.name + "-opacity-lbl",
                     opacity: node.layer.opacity
                 }),
                 "->",
