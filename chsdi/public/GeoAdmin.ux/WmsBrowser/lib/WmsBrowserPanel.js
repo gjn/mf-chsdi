@@ -141,7 +141,10 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                         text: OpenLayers.i18n('Connect'),
                         scope: this,
                         handler: function(b, e) {
+                            var myMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Please wait...')});
+                            myMask.show();
                             this.triggerGetCapabilities();
+                            myMask.hide();
                         }
                     }
                 ]
