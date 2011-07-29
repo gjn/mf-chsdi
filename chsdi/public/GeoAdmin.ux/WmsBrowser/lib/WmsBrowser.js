@@ -49,9 +49,7 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 ['http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms?'],
                 ['http://www.sogis1.so.ch/cgi-bin/sogis/sogis_dtm_dom.wms?'],
                 ['http://cartoserver.vd.ch/ogcccgeo/wms?'],
-                ['http://www.gis.zh.ch/scripts/kkgeowms.asp?'],
-                ['http://www.gis.zh.ch/scripts/wmsFNSSVO.asp'],
-                ['http://www.gis.zh.ch/scripts/wmsFNSSVO2.asp']
+                ['http://www.gis.zh.ch/scripts/kkgeowms.asp?']
             ]
         });
 
