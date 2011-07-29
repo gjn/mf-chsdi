@@ -17,7 +17,8 @@
  */
 
 
-Ext.namespace("Ext.data.Store")
+Ext.namespace("Ext.data.Store");
+
 Ext.data.Store.prototype.getValueArray = function(value) {
     var aszValues = [];
     var nValues = this.getCount();
@@ -27,7 +28,8 @@ Ext.data.Store.prototype.getValueArray = function(value) {
     return aszValues;
 };
 
-Ext.namespace("GeoAdmin")
+Ext.namespace("GeoAdmin");
+
 GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
     layout: 'absolute',
     cls: 'wmsbrowser',
