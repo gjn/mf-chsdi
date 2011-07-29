@@ -310,17 +310,30 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
     mapPreview: function(grid, index) {
         var record = grid.getStore().getAt(index);
         var layer = record.get("layer").clone();
+
+        //Prepare a preview with swiss coordinate system
+        var myMap = new OpenLayers.Map(null, {
+           projection: new OpenLayers.Projection("EPSG:21781"),
+           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
+           allOverlays: true,
+           units: 'm'
+        });
+        myMap.addLayer(layer);
+        var mapPanel = new GeoExt.MapPanel({
+           map: myMap
+        });
+
+        mapPanel.map.zoomToExtent(
+           OpenLayers.Bounds.fromArray(record.get("llbbox")).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"))
+        );
+
         var win = new Ext.Window({
             title: OpenLayers.i18n('Preview') + ": " + record.get("title"),
             width: 512,
             height: 256,
             layout: "fit",
             items: [
-                {
-                    xtype: "gx_mappanel",
-                    layers: [layer],
-                    extent: record.get("llbbox")
-                }
+                mapPanel
             ]
         });
         win.show();
