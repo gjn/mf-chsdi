@@ -488,5 +488,27 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'plum': 'prune',
     'salmon': 'saumon',
     'gold': 'or',
-    'silver': 'argent'
+    'silver': 'argent',
+
+    // WMS Browser
+    'The url address entered is not valid.': 'The url address entered is not valid.',
+    'Select or input a server address (URL)': 'Select or input a server address (URL)',
+    'Connect': 'Charger',
+    'Loading...': 'Bougez pas, cela charge...',
+    'Please, enter an url in the textbox first': 'Please, enter an url in the textbox first',
+    'The url address entered is not valid.': 'The url address entered is not valid.',
+    'Add': 'Ajouter',
+    'Title': 'Titre',
+    'Name': 'Nom',
+    'Queryable': 'Interrogeable',
+    'Description': 'Description',
+    'Preview': 'Présualisation',
+    'Add currently selected layer': 'Add currently selected layer',
+    'Add Layer': 'Ajouter couche',
+    'Yes': 'Oui',
+    'No': 'Non',
+    'Close this window': 'Fermer cette fenêe',
+    'Close': 'Fermer'
+
+
 });
