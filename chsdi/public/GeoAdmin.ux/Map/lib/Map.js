@@ -184,7 +184,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             this.zoomToMaxExtent();
         }
     },
-
+    getHostname: function(str) {
+        var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+        return str.match(re)[1].toString();
+    },
     /** api: method[attribution]
      * :return: ``String`` - List with data owner of layers displayed in the map.
      *
@@ -417,6 +420,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     addWmsLayer: function(name, url, layers, visibility, opacity) {
+        //Attribution management with hyperlink
+        var urlDomain = this.getHostname(url);
+        OpenLayers.Lang[OpenLayers.Lang.getCode()][urlDomain + ".url"] = 'http://' + urlDomain;
+
         var layer = new OpenLayers.Layer.WMS(name, url, {
             layers: layers,
             format: "image/png",
@@ -426,7 +433,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             ratio: 1,
             visibility: visibility,
             opacity: opacity,
-            attribution: "WMS third party data"
+            attribution: urlDomain
         });
         this.addLayer(layer);
         this.sortLayer();
@@ -435,9 +442,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     addKmlLayer: function(url, visibility, opacity) {
+        //Attribution management with hyperlink
+        var urlDomain = this.getHostname(url);
+        OpenLayers.Lang[OpenLayers.Lang.getCode()][urlDomain + ".url"] = 'http://' + urlDomain;
+
         var layer = new OpenLayers.Layer.Vector('KML', {
             strategies: [new OpenLayers.Strategy.Fixed()],
             visibility: visibility,
+            attribution: urlDomain,
             opacity: opacity,
             displayInLayerSwitcher: true,
             styleMap: new OpenLayers.StyleMap({

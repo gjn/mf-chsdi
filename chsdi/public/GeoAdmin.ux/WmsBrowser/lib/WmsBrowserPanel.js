@@ -142,7 +142,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                         scope: this,
                         handler: function(b, e) {
                             if (!GeoAdmin.loadingMask) {
-                               GeoAdmin.loadingMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading...')});
+                                GeoAdmin.loadingMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading...')});
                             }
                             GeoAdmin.loadingMask.show();
                             this.triggerGetCapabilities();
@@ -198,12 +198,18 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             }
         }
         this.currentUrl = url;
+        var urlDomain = this.getHostname(url);
         var params = OpenLayers.Util.getParameterString(this.capabilitiesParams);
         url = OpenLayers.Util.urlAppend(url, params);
         if (OpenLayers.ProxyHost && OpenLayers.String.startsWith(url, "http")) {
             url = OpenLayers.ProxyHost + encodeURIComponent(url);
         }
         this.capStore.proxy.setUrl(url);
+
+        //Attribution
+        this.capStore.layerOptions.attribution = urlDomain;
+        OpenLayers.Lang[OpenLayers.Lang.getCode()][this.capStore.layerOptions.attribution + ".url"] = 'http://' + urlDomain;
+        
         this.capStore.proxy.setApi(Ext.data.Api.actions.read, url);
         this.capStore.load();
     },
@@ -213,6 +219,10 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
             object.remove(oItem, true);
             oItem.destroy();
         }
+    },
+    getHostname: function(str) {
+        var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+        return str.match(re)[1].toString();
     },
     createGridPanel: function(store) {
         var columns = [
@@ -313,19 +323,19 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
 
         //Prepare a preview with swiss coordinate system
         var myMap = new OpenLayers.Map(null, {
-           projection: new OpenLayers.Projection("EPSG:21781"),
-           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
-           allOverlays: true,
-           units: 'm'
+            projection: new OpenLayers.Projection("EPSG:21781"),
+            maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
+            allOverlays: true,
+            units: 'm'
         });
         myMap.addLayer(layer);
         var mapPanel = new GeoExt.MapPanel({
-           map: myMap
+            map: myMap
         });
 
         mapPanel.map.zoomToExtent(
-           OpenLayers.Bounds.fromArray(record.get("llbbox")).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"))
-        );
+                OpenLayers.Bounds.fromArray(record.get("llbbox")).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"))
+                );
 
         var win = new Ext.Window({
             title: OpenLayers.i18n('Preview') + ": " + record.get("title"),
@@ -397,7 +407,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         for (var i = 0; i < records.length; i++) {
             var record = records[i];
             if (record.get('srs')[srs.toUpperCase()] === true || OpenLayers.Util.indexOf(record.get('srs'), srs.toUpperCase()) >= 0 ||
-                record.get('srs')[srs.toLowerCase()] === true || OpenLayers.Util.indexOf(record.get('srs'), srs.toLowerCase()) >= 0) {
+                    record.get('srs')[srs.toLowerCase()] === true || OpenLayers.Util.indexOf(record.get('srs'), srs.toLowerCase()) >= 0) {
                 record.set("srsCompatible", true);
             } else {
                 record.set("srsCompatible", false);
