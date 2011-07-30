@@ -29,7 +29,7 @@
             // set up
 
             var map, mapPanel, wmsBrowser;
-            map = new GeoAdmin.Map()
+            map = new GeoAdmin.Map();
             mapPanel = new GeoAdmin.MapPanel({map: map, tbar: ["->"]});
 
             wmsBrowser = new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers});
