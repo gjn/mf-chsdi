@@ -10,6 +10,8 @@
  * @include OpenLayers/Control/ScaleLine.js
  * @include OpenLayers/Control/Panel.js
  * @include OpenLayers/Control/ZoomToMaxExtent.js
+ * @include OpenLayers/Control/SelectFeature.js
+ * @include OpenLayers/Popup/FramedCloud.js
  * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/Protocol/HTTP.js
  * @include OpenLayers/Strategy/Fixed.js
@@ -92,7 +94,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                         if (layer.attribution && layer.getVisibility()) {
                             // add attribution only if attribution text is unique
                             if (OpenLayers.Util.indexOf(
-                                attributions, layer.attribution) === -1) {
+                                    attributions, layer.attribution) === -1) {
                                 var link = '<a href="' + OpenLayers.i18n(layer.attribution + '.url') + '" target="_blank">' + OpenLayers.i18n(layer.attribution) + '</a>';
                                 links.push(link);
                                 attributions.push(layer.attribution);
@@ -165,9 +167,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
 
         this.EVENT_TYPES =
-            GeoAdmin.Map.prototype.EVENT_TYPES.concat(
-                OpenLayers.Map.prototype.EVENT_TYPES
-            );
+                GeoAdmin.Map.prototype.EVENT_TYPES.concat(
+                        OpenLayers.Map.prototype.EVENT_TYPES
+                        );
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -333,7 +335,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     setLayerZIndex: function(layer, zIdx) {
         var baseZIndex = layer.layername && GeoAdmin.layers.layers[layer.layername].isBgLayer
-            ? 100 : 150;
+                ? 100 : 150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },
 
@@ -460,6 +462,47 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
         this.addLayer(layer);
         this.sortLayer();
+
+        var select = new OpenLayers.Control.SelectFeature(layer);
+
+        layer.events.on({
+            "featureselected": onFeatureSelect,
+            "featureunselected": onFeatureUnselect,
+            scope: this
+        });
+
+        function onPopupClose(evt) {
+            select.unselectAll();
+        }
+
+        function onFeatureSelect(event) {
+            var feature = event.feature;
+            // Since KML is user-generated, do naive protection against
+            // Javascript.
+            var content = "<h2>" + feature.attributes.name + "</h2>" + feature.attributes.description;
+            if (content.search("<script") != -1) {
+                content = "Content contained Javascript! Escaped content below.<br>" + content.replace(/</g, "&lt;");
+            }
+            var popup = new OpenLayers.Popup.FramedCloud("chicken",
+                    feature.geometry.getBounds().getCenterLonLat(),
+                    new OpenLayers.Size(75, 75),
+                    content,
+                    null, true, onPopupClose);
+            feature.popup = popup;
+            this.addPopup(popup);
+        }
+
+        function onFeatureUnselect(event) {
+            var feature = event.feature;
+            if (feature.popup) {
+                this.removePopup(feature.popup);
+                feature.popup.destroy();
+                delete feature.popup;
+            }
+        }
+
+        this.addControl(select);
+        select.activate();
 
         return layer;
     },
