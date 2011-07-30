@@ -73,26 +73,6 @@ Ext.onReady(function () {
                 {
                     header: 'Rumantsch grischun',
                     dataIndex: 'rm'
-                },
-                {
-                    header: 'Sursilvan',
-                    width: 100
-                },
-                {
-                    header: 'Sutsilvan',
-                    width: 100
-                },
-                {
-                    header: 'Surmiran',
-                    width: 100
-                },
-                {
-                    header: 'Puter',
-                    width: 100
-                },
-                {
-                    header: 'Vallader',
-                    width: 100
                 }
             ]
         }),
