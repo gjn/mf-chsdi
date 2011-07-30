@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/proj4js.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
+    <script type="text/javascript" src="../../GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt/data/LayerReader.js"></script>
+    <script type="text/javascript" src="../lib/KmlSelectorPanel.js"></script>
+    <script type="text/javascript" src="../lib/KmlSelectorWindow.js"></script>
+    <script type="text/javascript" src="../lib/KmlSelector.js"></script>
+
+
+    <script type="text/javascript">
+        function test_ctor(t) {
+            t.plan(2);
+
+            // set up
+
+            var map, mapPanel, wmsBrowser;
+            map = new GeoAdmin.Map();
+
+            var KmlSelector = new GeoAdmin.KmlSelector({map:map});
+
+            t.ok(KmlSelector instanceof GeoAdmin.KmlSelector,
+                    "ctor returns a GeoAdmin.KmlSelector");
+            t.ok(KmlSelector instanceof Ext.Action,
+                    "ctor returns a Ext.Action");
+
+
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+<div id="tbar"></div>
+</body>
+</html>
