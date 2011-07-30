@@ -123,8 +123,12 @@ bgOpacity                      Opacity of national map covering the             
                                underlaying image (0 to 1)
 bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           http://map.geo.admin.ch?bgLayer=voidLayer
                                `ch.swisstopo.pixelkarte-farbe` or `voidLayer`
-layers                         Layer to display, see :ref:`available_layers`                 http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour
-                               for a complete list
+layers                         Layer to display, see :ref:`available_layers`
+                               for a complete list                                           http://map.geo.admin.ch/ltmoc/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml
+                               KML layers are supported with a || separated list with:
+                               KML||kml url
+                               WMS layers are supported with a || separated list with:
+                               WMS||layer title||wms url||layer name
 layers_opacity                 Layers opaciy, should match number of layers (0-1.0)          http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_opacity=0.5
 layers_visibility              Toggle the visibility of layers present in the tree           http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_visibility=False
 selectedNode                   Selected node in INSPIRE Catalog tree                         http://map.geo.admin.ch?selectedNode=LT2_3
