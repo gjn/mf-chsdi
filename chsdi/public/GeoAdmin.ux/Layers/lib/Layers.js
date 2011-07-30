@@ -14,6 +14,23 @@ if (!window.GeoAdmin) {
     window.GeoAdmin = {};
 }
 
+// Overides needed due to the addition of KML layers. The second couldn't be removed.
+OpenLayers.Layer.prototype.setZIndex = function (zIndex) {
+    if (this.div) {
+        this.div.style.zIndex = zIndex;
+    }
+};
+
+
+OpenLayers.Layer.prototype.getZIndex = function () {
+    if (this.div) {
+        return this.div.style.zIndex
+    } else {
+        return -1;
+    }
+};
+
+
 GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,
@@ -1211,7 +1228,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true
             },
             /*
-            "ch.swisstopo.pixelkarte-pk25.metadata": {
+             "ch.swisstopo.pixelkarte-pk25.metadata": {
              name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
              layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
              layertype: "wms",
@@ -1265,7 +1282,7 @@ GeoAdmin._Layers = OpenLayers.Class({
              datenherr: "ch.swisstopo",
              queryable: true
              },
-            */
+             */
             "ch.astra.ausnahmetransportrouten": {
                 name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
                 layertype: 'wmts',

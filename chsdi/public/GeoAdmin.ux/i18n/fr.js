@@ -365,7 +365,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'map': 'Carte',
 
     //WmsBrowser
-    'WmsBrowser': "WMS",
+    'WmsBrowser': "Import WMS",
     'WmsBrowserWindow': "Ajouter un service WMS",
     'inputURLText': "Sélectionner ou entrer une adresse de serveur (URL)",
     'connectText': "Connexion",
@@ -408,6 +408,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
     //"Import KML": "",
     "Import": "Ajouter",
+    "KML": 'Import KML',
     "Select a file to import": "Choisir le fichier à importer",
     "Format": "Format",
     "Export Window": "",

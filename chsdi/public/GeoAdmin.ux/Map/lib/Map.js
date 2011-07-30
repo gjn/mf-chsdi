@@ -11,7 +11,6 @@
  * @include OpenLayers/Control/Panel.js
  * @include OpenLayers/Control/ZoomToMaxExtent.js
  * @include OpenLayers/Control/SelectFeature.js
- * @include OpenLayers/Popup/FramedCloud.js
  * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/Protocol/HTTP.js
  * @include OpenLayers/Strategy/Fixed.js
@@ -26,6 +25,7 @@
  *
  * @include proj4js/lib/defs/EPSG21781.js
  * @include Map/lib/EPSG2056.js
+ * @include GeoExt/widgets/Popup.js
  */
 
 /** api: (define)
@@ -446,7 +446,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         var urlDomain = this.getHostname(url);
         OpenLayers.Lang[OpenLayers.Lang.getCode()][urlDomain + ".url"] = 'http://' + urlDomain;
 
-        var layer = new OpenLayers.Layer.Vector('KML', {
+        var layer = new OpenLayers.Layer.Vector(this.layers.length + 1, {
             strategies: [new OpenLayers.Strategy.Fixed()],
             visibility: visibility,
             attribution: urlDomain,
@@ -472,20 +472,31 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             })
 
         });
+
+        layer.events.register("loadend", layer, function() {
+            layer.setName(layer.protocol.format.documentName);
+        });
         this.addLayer(layer);
         this.sortLayer();
 
-        var select = new OpenLayers.Control.SelectFeature(layer);
+        if (!this.selectControl) {
+            this.selectControl = new OpenLayers.Control.SelectFeature(layer);
+            this.addControl(this.selectControl);
+        } else {
+            var myLayers = [layer];
+            if (this.selectControl.layer) {
+                myLayers.push(this.selectControl.layer);
+            } else {
+                myLayers.push(this.selectControl.layers);
+            }
+            this.selectControl.setLayer(myLayers);
+        }
 
         layer.events.on({
             "featureselected": onFeatureSelect,
             "featureunselected": onFeatureUnselect,
             scope: this
         });
-
-        function onPopupClose(evt) {
-            select.unselectAll();
-        }
 
         function onFeatureSelect(event) {
             var feature = event.feature;
@@ -495,26 +506,31 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (content.search("<script") != -1) {
                 content = "Content contained Javascript! Escaped content below.<br>" + content.replace(/</g, "&lt;");
             }
-            var popup = new OpenLayers.Popup.FramedCloud("chicken",
-                    feature.geometry.getBounds().getCenterLonLat(),
-                    new OpenLayers.Size(75, 75),
-                    content,
-                    null, true, onPopupClose);
-            feature.popup = popup;
-            this.addPopup(popup);
+            if (this.KMLpopup) {
+                this.KMLpopup.destroy();
+            }
+            this.KMLpopup = new GeoExt.Popup({
+                cls: 'feature-popup',
+                title: OpenLayers.i18n("KML Information"),
+                location: feature.geometry.getBounds().getCenterLonLat(),
+                width:500,
+                map: this,
+                autoScroll: true,
+                html: content,
+                maximizable: false,
+                collapsible: false
+            });
+            this.KMLpopup.show();
         }
 
         function onFeatureUnselect(event) {
             var feature = event.feature;
-            if (feature.popup) {
-                this.removePopup(feature.popup);
-                feature.popup.destroy();
-                delete feature.popup;
+            if (this.KMLpopup) {
+                this.KMLpopup.destroy();
             }
         }
 
-        this.addControl(select);
-        select.activate();
+        this.selectControl.activate();
 
         return layer;
     },

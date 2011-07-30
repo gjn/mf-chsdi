@@ -365,7 +365,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Please check your input':   'Vérifiez vos entrées',
 
     //WmsBrowser
-    'WmsBrowser': "WMS",
+    'WmsBrowser': "WMS Import",
     'WmsBrowserWindow': "Ajouter un service WMS",
     'inputURLText': "Sélectionner ou entrer une adresse de serveur (URL)",
     'connectText': "Connexion",
@@ -405,6 +405,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 
     //"Import KML": "",
     "Import": "Ajouter",
+    "KML": 'KML Import',
     "Select a file to import": "Choisir le fichier à importer",
     "Format": "Format",
     "Export Window": "",

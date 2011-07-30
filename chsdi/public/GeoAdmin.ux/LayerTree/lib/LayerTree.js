@@ -245,6 +245,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     createNodeComponent: function(node, ct) {
+        var uniqueId = node.id + '-opacity-lbl';
         return new Ext.Toolbar({
             cls: "geoadmin-toolbar",
             ctCls: "line-height-zero",
@@ -255,12 +256,12 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     layer: node.layer,
                     aggressive: true,
                     plugins: new GeoAdmin.LayerTree.SliderLabel(
-                            node.layer.layername ? node.layer.layername : node.layer.name + '-opacity-lbl'
+                            uniqueId
                             ),
                     width: 100
                 }),
                 new GeoAdmin.LayerTree.TextItem({
-                    id: node.layer.layername ? node.layer.layername : node.layer.name + "-opacity-lbl",
+                    id: uniqueId,
                     opacity: node.layer.opacity
                 }),
                 "->",
