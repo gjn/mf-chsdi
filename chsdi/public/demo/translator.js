@@ -1,6 +1,3 @@
-
-
-
 Ext.onReady(function () {
     var available_langs = ['de', 'fr', 'en', 'it', 'rm'];
 
@@ -25,12 +22,12 @@ Ext.onReady(function () {
                     }
                     data.push(tr);
                 }
-            };
+            }
         }
         return data;
-    };
+    }
 
- 
+
     var store = new Ext.data.ArrayStore({
         // store configs
         data: getData(),
@@ -49,43 +46,55 @@ Ext.onReady(function () {
                 width: 200,
                 sortable: true
             },
-            columns: [{
-                id: 'msgid',
-                header: 'Msgids',
-                width: 200,
-                sortable: true,
-                dataIndex: 'msgid'
-            }, {
-                header: 'English',
-                dataIndex: 'en'
-            }, {
-                header: 'Deutsch',
-                dataIndex: 'de'
-            }, {
-                header: 'Français',
-                dataIndex: 'fr'
-            }, {
-                header: 'Italiano',
-                dataIndex: 'it'
-            }, {
-                header: 'Rumantsch grischun',
-                dataIndex: 'rm'
-            }, {
-                header: 'Sursilvan',
-                width: 100
-            }, {
-                header: 'Sutsilvan',
-                width: 100
-            }, {
-                header: 'Surmiran',
-                width: 100
-            }, {
-                header: 'Puter',
-                width: 100
-            }, {
-                header: 'Vallader',
-                width: 100
-            } ]
+            columns: [
+                {
+                    id: 'msgid',
+                    header: 'Msgids',
+                    width: 200,
+                    sortable: true,
+                    dataIndex: 'msgid'
+                },
+                {
+                    header: 'English',
+                    dataIndex: 'en'
+                },
+                {
+                    header: 'Deutsch',
+                    dataIndex: 'de'
+                },
+                {
+                    header: 'Français',
+                    dataIndex: 'fr'
+                },
+                {
+                    header: 'Italiano',
+                    dataIndex: 'it'
+                },
+                {
+                    header: 'Rumantsch grischun',
+                    dataIndex: 'rm'
+                },
+                {
+                    header: 'Sursilvan',
+                    width: 100
+                },
+                {
+                    header: 'Sutsilvan',
+                    width: 100
+                },
+                {
+                    header: 'Surmiran',
+                    width: 100
+                },
+                {
+                    header: 'Puter',
+                    width: 100
+                },
+                {
+                    header: 'Vallader',
+                    width: 100
+                }
+            ]
         }),
         viewConfig: {
             forceFit: true,
@@ -95,8 +104,7 @@ Ext.onReady(function () {
                     var c = record.get(lang);
                     if (c == '') {
                         return 'red-row';
-                    };
-
+                    }
                 }
                 return 'green-row';
             }

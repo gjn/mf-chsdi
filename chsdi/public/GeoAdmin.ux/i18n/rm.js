@@ -465,7 +465,6 @@ OpenLayers.Lang.rm = {
     'Connect': 'Connect',
     'Loading...': 'Loading...',
     'Please, enter an url in the textbox first': 'Please, enter an url in the textbox first',
-    'The url address entered is not valid.': 'The url address entered is not valid.',
     'Add': 'Add',
     'Title': 'Title',
     'Name': 'Name',
@@ -476,7 +475,6 @@ OpenLayers.Lang.rm = {
     'Add Layer': 'Add Layer',
     'Yes': 'Yes',
     'No': 'No',
-    'Close this window': 'Close this window',
-    'Close': 'Close'
+    'Close this window': 'Close this window'
 
 };

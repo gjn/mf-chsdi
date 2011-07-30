@@ -398,28 +398,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'warningText': "Avertissement",
     'errorText': "Erreur",
     // WmsBrowserPanel.js
-    'Add currently selected layer':   '',
     'Close':   '',
-    'Name':   '',
-    'Title':   '',
-    'Input the server address (URL)':   '',
-    'Please, enter an url in the textbox first':   '',
-    'Add Layer':   '',
-    'No':   '',
-    'Queryable':   '',
-    'Add':   '',
     // WmsBrowser.js
     'WMSBrowser':   '',
-    // WmsBrowserPanel.js
-    'Connect':   '',
-    'Can add ?':   '',
-    'Description':   '',
-    'Yes':   '',
-    'Preview':   '',
-    'Close this window':   '',
-    'Select or input a server address (URL)':   '',
-    'The url address entered is not valid.':   '',
-
     // LayerManager
     "LayerManager": "KML & GPX",
     "LayerManagerWindow": "Importer un fichier KML ou GPX",
@@ -462,7 +443,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Delete All Features': 'Supprimer Tous Les Objets',
     'Do you really want to delete all features ?': 'Voulez-vous vraiment supprimer tous les objets ?',
     'RedLining Panel': 'Outil de dessin',
-    'Close': 'Fermer',
     'Style': 'Style',
     'color': 'couleur',
     'select a color...': 'couleur...',
@@ -491,24 +471,19 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'silver': 'argent',
 
     // WMS Browser
-    'The url address entered is not valid.': 'The url address entered is not valid.',
     'Select or input a server address (URL)': 'Select or input a server address (URL)',
     'Connect': 'Charger',
     'Loading...': 'Bougez pas, cela charge...',
     'Please, enter an url in the textbox first': 'Please, enter an url in the textbox first',
-    'The url address entered is not valid.': 'The url address entered is not valid.',
     'Add': 'Ajouter',
     'Title': 'Titre',
     'Name': 'Nom',
     'Queryable': 'Interrogeable',
     'Description': 'Description',
-    'Preview': 'Présualisation',
+    'Preview': 'Prévisualisation',
     'Add currently selected layer': 'Add currently selected layer',
     'Add Layer': 'Ajouter couche',
     'Yes': 'Oui',
     'No': 'Non',
-    'Close this window': 'Fermer cette fenêe',
-    'Close': 'Fermer'
-
-
+    'Close this window': 'Fermer cette fenêtre'
 });
