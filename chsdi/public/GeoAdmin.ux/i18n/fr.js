@@ -414,6 +414,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     "Export Window": "",
     "Export": "",
     "Layer Manager": "Gestionnaire des couches",
+    "KMLTooltip": "Please validate you kml first with kmlvalidator.com<br>File size should not exceed 2MB for performance reason<br>Upload your kml to a online location like dropbox.com, ge.tt and copy the direct link to the file",    
 
     // Redlining
     "Redlining": "Dessin",
@@ -482,7 +483,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'Queryable': 'Interrogeable',
     'Description': 'Description',
     'Preview': 'Prévisualisation',
-    'Add currently selected layer': 'Add currently selected layer',
+    'Add currently selected layer': 'Please validate you WMS with http://geopole.org/checks<br>SwissProjection EPSG 21781 support required',
     'Add Layer': 'Ajouter couche',
     'Yes': 'Oui',
     'No': 'Non',

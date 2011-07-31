@@ -100,7 +100,7 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
             buttons: [
                 {
                     text: OpenLayers.i18n('Load KML'),
-                    tooltip: OpenLayers.i18n('Only KML (no KMZ) are supported. KML bigger than 1 MB have performance issues.'),
+                    tooltip: OpenLayers.i18n('KMLTooltip'),
                     scope: this,
                     handler: function(b, e) {
                         var urlField = Ext.getCmp('kmlurl');
