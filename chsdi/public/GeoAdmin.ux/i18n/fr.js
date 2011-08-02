@@ -169,7 +169,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
     'ch.bafu.wasser-rueckgabe': 'Restitution',
     'ch.bafu.permafrost': 'Carte indicative du Pergélisol',
     'ch.bafu.gefahren-gefaehrdungszonen': 'Zones de risque sismique',
-    'ch.bafu.swissprtr': 'Réjets de polluants (SwissPRTR)',
+    'ch.bafu.swissprtr': 'Rejets de polluants (SwissPRTR)',
     'ch.bafu.nabelstationen': 'Qualité de l´air: Stations NABEL',
     'ch.bafu.holzvorrat': 'Volume de bois (IFN)',
     'ch.bafu.holznutzung': 'Exploitations de bois (IFN)',
