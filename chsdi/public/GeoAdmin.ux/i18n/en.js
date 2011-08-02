@@ -90,7 +90,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
     'Verkehrsnetze': 'Transport networks',
     'Gebäude': 'Buildings',
     'Öffentliche Einrichtungen und Dienste': 'Utility and governmental services',
-    'Umwelt, Biologie und Geologie': 'Environment, Biology and Geology',
+    'Umwelt, Biologie und Geologie': 'Environment, biology and geology',
     'Schutzgebiete': 'Protected sites',
     'Geologie': 'Geology',
     'Boden': 'Soils',
