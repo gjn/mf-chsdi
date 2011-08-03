@@ -15,6 +15,7 @@ setup(
     install_requires = [
         "mapfish", "httplib2",
         "psycopg2",
+        "PyYAML",
         "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
