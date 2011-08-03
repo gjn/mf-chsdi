@@ -3,6 +3,7 @@
 
 /**
  * @include KmlSelector/lib/KmlSelectorWindow.js
+ * @requires OpenLayers/Control/SelectFeature.js
  */
 
 Ext.namespace('GeoAdmin');
@@ -22,6 +23,24 @@ Ext.namespace('GeoAdmin');
  *  Create a kml selector tool
  */
 
+// Override unselectAll
+
+OpenLayers.Control.SelectFeature.prototype.unselectAll = function(options) {
+    // we'll want an option to supress notification here
+    var layers = this.layers || [this.layer];
+    var layer, feature;
+    for (var l = 0; l < layers.length; ++l) {
+        layer = layers[l];
+        if (layer.selectedFeatures) {
+            for (var i = layer.selectedFeatures.length - 1; i >= 0; --i) {
+                feature = layer.selectedFeatures[i];
+                if (!options || options.except != feature) {
+                    this.unselect(feature);
+                }
+            }
+        }
+    }
+};
 
 GeoAdmin.KmlSelector = Ext.extend(Ext.Action, {
 
