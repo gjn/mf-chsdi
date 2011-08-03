@@ -1,10 +1,6 @@
 /*global OpenLayers:true*/
 
-/**
- * @requires OpenLayers/Lang/rm.js
- */
-
-OpenLayers.Util.extend(OpenLayers.Lang.rm, {
+OpenLayers.Lang.rm= {
 
 	//Globals
 	'Activate dynamic location':'Activate dynamic location', //TODO
@@ -416,4 +412,4 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'zoomin':'Zoom vers anen',
 	'zoomout':'Zoom vers anora',
 	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals'
-});
+};
