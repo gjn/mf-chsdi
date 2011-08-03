@@ -513,7 +513,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 cls: 'feature-popup',
                 title: OpenLayers.i18n("KML Information"),
                 location: feature.geometry.getBounds().getCenterLonLat(),
-                width:500,
+                width:600,
                 map: this,
                 autoScroll: true,
                 html: content,
