@@ -60,11 +60,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Energiequellen':'Energy resources',
 	'Enter your feedback here ...':'Enter your feedback here ...', //TODO
 	'Error':'Error',
+	'Export':'Export', //TODO
 	'Export KML':'Export KML',
+	'Export Window':'Export Window', //TODO
 	'Failure':'Error',
 	'Feature tooltip':'Object information',
 	'File successfuly imported. Number of features added:':'File successfully imported. Number of added objects:',
 	'Flurstücke / Grundstücke':'Cadastral parcels',
+	'Format':'Format',
 	'Full extent':'Full map extent',
 	'Full map':'Enlarged map',
 	'Gebäude':'Buildings',
@@ -78,21 +81,31 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Gewässernetz':'Hydrography',
 	'Höhe':'Elevation',
 	'INFO':'Information',
+	'Import':'Add',
 	'Import KML':'KML/GML Import',
 	'Infrastruktur und Kommunikation':'Infrastructure and communication',
 	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
 	'Input the server address (URL)':'Input the server address (URL)', //TODO
 	'Invalid email provided':'Email invalid',
+	'KML':'KML', //TODO
 	'KML URL':'KML URL', //TODO
 	'KML data sucessfully imported in layer:':'KML data sucessfully imported in layer:',
+	'KMLTooltip':'Please validate you kml first with kmlvalidator.com<br>File size should not exceed 2MB for performance reason<br>Upload your kml to a online location like dropbox.com, Google Doc or ge.tt and copy the direct link to the file',
 	'Kanton':'Canton',
 	'Label':'Label',
 	'Land- und Wassertwirtschaft':'Agricultural and aquaculture facilities',
 	'Landnutzung':'Land use',
+	'Layer Manager':'Layer Manager',
 	'Layer Selection':'Selection',
 	'Layer Tree':'Topics',
 	'Layer visibility':'Layer visibility',
+	'LayerManager':'KML & GPX',
+	'LayerManagerWindow':'Import a KML or GPX file',
 	'Lebensräume une Biotope':'Habitats and biotopes',
+	'Legend.NoLayer':'Select layer',
+	'Legend.Title':'Legend',
+	'Legend.Tooltip':'Show legend',
+	'Legend.onClick':'Selected layers',
 	'LineString':'Line',
 	'Link with bowl crosshair':'Link with bowl crosshair',
 	'Load KML':'Load KML', //TODO
@@ -149,6 +162,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Raum und Bevölkerung':'Area and population',
 	'Raumplanung':'Area restriction zones and reporting units',
 	'RedLining Panel':'Drawing tool',
+	'Redlining':'Drawing',
+	'RedliningWindow':'Draw',
 	'Referenzsysteme':'Coordinate reference systems',
 	'Report':'Report a problem with the map',
 	'Save context':'Save context',
@@ -156,6 +171,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Schweiz':'Switzerland',
 	'Search':'Search',
 	'Search data...':'Search data [in German] ...',
+	'Select a file to import':'Select the file for the import',
 	'Select or input a server address (URL)':'Select or input a server address (URL)',
 	'Send':'Send',
 	'Send feedback':'Send problem report',
