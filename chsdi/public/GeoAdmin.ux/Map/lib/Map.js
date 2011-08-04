@@ -185,8 +185,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
     },
     getHostname: function(str) {
-        var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
-        return str.match(re)[1].toString();
+        return str.match(/:\/\/(.[^/]+)/)[1].toString();
     },
     /** api: method[attribution]
      * :return: ``String`` - List with data owner of layers displayed in the map.
