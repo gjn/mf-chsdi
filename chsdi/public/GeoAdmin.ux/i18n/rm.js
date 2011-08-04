@@ -70,13 +70,16 @@ OpenLayers.Lang.rm= {
 	'Geografische Namen':'Designaziuns geograficas',
 	'Geolocation':'Standortbestimmung',
 	'Geologie':'Geologia',
-	'Gesundheit une Sicherheit':'Segirezza e sanadad',
+	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
 	'Gewässernetz':'Rait da las auas',
 	'Höhe':'Autezza',
 	'INFO':'INFO', //TODO
 	'Import KML':'Import KML', //TODO
 	'Infrastruktur und Kommunikation':'Infrastructura e communicaziun',
+	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
+	'Input the server address (URL)':'Input the server address (URL)', //TODO
 	'Invalid email provided':'Invalid email provided', //TODO
+	'KML URL':'KML URL', //TODO
 	'KML data sucessfully imported in layer:':'KML data sucessfully imported in layer:', //TODO
 	'Kanton':'Chantuns',
 	'Label':'Label', //TODO
@@ -88,6 +91,7 @@ OpenLayers.Lang.rm= {
 	'Lebensräume une Biotope':'Spazis da viver e biotops',
 	'LineString':'LineString', //TODO
 	'Link with bowl crosshair':'Link cun cruschera',
+	'Load KML':'Load KML', //TODO
 	'Loading...':'Loading...', //TODO
 	'Locate':'Tschertgar',
 	'Locate by coordinates':'Definir il lieu tras coordinatas',
@@ -159,6 +163,7 @@ OpenLayers.Lang.rm= {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazia fitg per vus raport!',
 	'The following URL will be transferred:':'Trametter Link:',
+	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
 	'Title':'Title', //TODO
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambient, biologia e geologia',
@@ -170,12 +175,12 @@ OpenLayers.Lang.rm= {
 	'We recommend to upgrade to a newer release.':'Nus recumandain da duvrar ina versiun pli nova.',
 	'WmsBrowser':'WMS',
 	'WmsBrowserWindow':'WmsBrowserWindow', //TODO
-	'Yes':'Yes', //TODO
+	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
 	'Your email':'Vus emagl',
 	'Your email (optional)':'Vus emagl (facultativ)',
-	'Your email:':'Your email:', //TODO
+	'Your email:':'Vus emagl:',
 	'Your feedback about current map extent':'Rapport charta actual',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
@@ -330,7 +335,7 @@ OpenLayers.Lang.rm= {
 	'extentCompatibleText':'extentCompatibleText', //TODO
 	'extentNotSupportedShortText':'extentNotSupportedShortText', //TODO
 	'french':'Français',
-	'german':'Deutsch',
+	'german':'german', //TODO
 	'gold':'gold', //TODO
 	'gray':'gray', //TODO
 	'green':'green', //TODO
@@ -394,7 +399,7 @@ OpenLayers.Lang.rm= {
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'dretger',
 	'salmon':'salmon', //TODO
-	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten und Koordinaten suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):<es\Microsoft SQL Server\100\ToolsI',
+	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten und Koordinaten suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br>',
 	'select a color...':'select a color...', //TODO
 	'show column':'Avrir ils temas',
 	'show layer options':'Mussar las opziuns da la stresa',

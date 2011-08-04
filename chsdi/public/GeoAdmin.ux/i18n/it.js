@@ -74,13 +74,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Geografische Namen':'Nomi geografici',
 	'Geolocation':'Geolocalizzazione',
 	'Geologie':'Geologia',
-	'Gesundheit une Sicherheit':'Salute umana e sicurezza',
+	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
 	'Gewässernetz':'Idrografia',
 	'Höhe':'Elevazione',
 	'INFO':'Informazioni',
 	'Import KML':'Importare KML/GML',
 	'Infrastruktur und Kommunikation':'Infrastrutture e comunicazione',
+	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
+	'Input the server address (URL)':'Input the server address (URL)', //TODO
 	'Invalid email provided':'Indirizzo email non valido',
+	'KML URL':'KML URL', //TODO
 	'KML data sucessfully imported in layer:':'Dati KML importati correttamente nel layer:',
 	'Kanton':'Cantone',
 	'Label':'Label', //TODO
@@ -92,6 +95,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Lebensräume une Biotope':'Habitat e biotopi',
 	'LineString':'LineString', //TODO
 	'Link with bowl crosshair':'Link con mirino',
+	'Load KML':'Load KML', //TODO
 	'Loading...':'Loading...', //TODO
 	'Locate':'Ricerca',
 	'Locate by coordinates':'Centrare la località in base alle coordinate.',
@@ -147,7 +151,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'RedLining Panel':'RedLining Panel', //TODO
 	'Referenzsysteme':'Sistemi di coordinate',
 	'Report':'Segnala un problema con la cartina',
-	'Save context':'Context speichern',
+	'Save context':'Save context', //TODO
 	'Schutzgebiete':'Siti protetti',
 	'Schweiz':'Svizzera',
 	'Search':'Ricerca',
@@ -163,6 +167,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazie mille per il suo rapporto !',
 	'The following URL will be transferred:':'Il seguente URL verrá inviato:',
+	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
 	'Title':'Title', //TODO
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambiente, biologia e geologia',
@@ -174,12 +179,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'We recommend to upgrade to a newer release.':'Vi preghiamo di utilizzare una versione più recente.',
 	'WmsBrowser':'WMS',
 	'WmsBrowserWindow':'Aggiungere un servizio WMS',
-	'Yes':'Yes', //TODO
+	'Yes':'Si',
 	'You are using Internet Explorer 6.':'State utilizzando Explorer 6',
 	'You can add only 5 layers in the layer tree.':'Potete solamente aggiungere 5 strati di piani nellalbero dei piani.',
 	'Your email':'La sua email',
 	'Your email (optional)':'La sua email (opzionale)',
-	'Your email:':'Your email:', //TODO
+	'Your email:':'La sua email:',
 	'Your feedback about current map extent':'La sua descrizione del problema concernente la cartina',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La vostra risoluzione dello schermo è inferiore a 1024x768pixel. map.geo.admin.ch non è  ottimizzata per risoluzioni inferiori.',
@@ -334,7 +339,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'extentCompatibleText':'extentCompatibleText', //TODO
 	'extentNotSupportedShortText':'extentNotSupportedShortText', //TODO
 	'french':'Français',
-	'german':'Deutsch',
+	'german':'german', //TODO
 	'gold':'gold', //TODO
 	'gray':'gray', //TODO
 	'green':'green', //TODO
@@ -398,7 +403,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'responsibilitiesAndContact':'Colophon',
 	'rightHanded':'mano destra',
 	'salmon':'salmon', //TODO
-	'searchQuicktip':'Qui potete cercare luoghi, CAP, unità amministrative e coordinate.<br>Esempio di ricerca:<br><b>CAP:</b> per "3012 a Berna" scrivete 3012<br><b>coordinate (Svizzera):</b> per "600000/200000 " scrivete 600000 200000<br><b>coordinate (LatLon):</b> per "46.7es\Microsoft SQL Server\10',
+	'searchQuicktip':'Qui potete cercare luoghi, CAP, unità amministrative e coordinate.<br>Esempio di ricerca:<br><b>CAP:</b> per "3012 a Berna" scrivete 3012<br><b>coordinate (Svizzera):</b> per "600000/200000 " scrivete 600000 200000<br><b>coordinate (LatLon):</b> per "46.7N 6.0E " scrivete 46.7 6.0',
 	'select a color...':'select a color...', //TODO
 	'show column':'Aprire la barra dei temi',
 	'show layer options':'Mostrare le opzioni dei piani',

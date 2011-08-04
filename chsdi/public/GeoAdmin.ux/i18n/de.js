@@ -8,10 +8,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
 	//Globals
 	'Activate dynamic location':'Activate dynamic location',
-	'Add':'Add', //TODO
+	'Add':'Hinzufügen',
 	'Add KML/GML (Beta)...':'KML/GML importieren (Beta)...',
-	'Add Layer':'Add Layer', //TODO
-	'Add currently selected layer':'Add currently selected layer', //TODO
+	'Add Layer':'Layer hinzufügen',
+	'Add currently selected layer':'Bitte validieren Sie Ihren WMS-Dienst mit http://geopole.org <br />Die Schweizerische Kartenprojektion EPSG  21781 muss unterstützt sein',
 	'Administrative Einheiten':'Verwaltungseinheiten',
 	'Adressen':'Adressen',
 	'AdvancedWindow.title':'Zusatzfunktionen',
@@ -33,8 +33,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Catalog':'Katalog [INSPIRE]',
 	'Cities':'Gemeinden',
 	'Close':'Schliessen',
-	'Close this window':'Close this window', //TODO
-	'Connect':'Connect', //TODO
+	'Close this window':'Dieses Fenster schliessen',
+	'Connect':'Verbindung',
 	'Coordinates (m):':'Koordinaten (m):',
 	'Copyright &amp; Data protection':'Copyright & Datenschutzerkl&auml;rung',
 	'Create label':'Beschriftung erfassen',
@@ -49,8 +49,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Delete all features':'Alle Objekte löschen',
 	'Delete feature':'Objekt löschen',
 	'DeleteAll':'Alles löschen',
-	'Description':'Description', //TODO
-	'Desktop version':'Desktop version', //TODO
+	'Description':'Beschreibung',
+	'Desktop version':'Desktop-Version',
 	'Distance measurement (double-click to terminate)':'Entfernungmessgeräte (Doppelklick zu beenden)',
 	'Do you really want to delete all features ?':'Wollen Sie wirklich alle Objekte löschen?',
 	'Do you really want to delete this feature ?':'Wollen Sie wirklich das Objekt löschen?',
@@ -74,13 +74,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Geografische Namen':'Geografische Bezeichnungen',
 	'Geolocation':'Standortbestimmung',
 	'Geologie':'Geologie',
-	'Gesundheit une Sicherheit':'Gesundheit und Sicherheit',
+	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
 	'Gewässernetz':'Gewässernetz',
 	'Höhe':'Höhe',
 	'INFO':'Information',
 	'Import KML':'KML/GML Importieren',
 	'Infrastruktur und Kommunikation':'Infrastruktur und Kommunikation',
+	'Input the KML address (URL)':'Geben Sie den Link (URL) zur KML-Datei an',
+	'Input the server address (URL)':'Geben Sie den Link (URL) zum WMS-Dienst an',
 	'Invalid email provided':'Ungültige Email angegeben',
+	'KML URL':'KML URL',
 	'KML data sucessfully imported in layer:':'KML Daten erfolgreich importiert in:',
 	'Kanton':'Kantone',
 	'Label':'Beschriftung',
@@ -92,7 +95,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Lebensräume une Biotope':'Lebensräume und Biotope',
 	'LineString':'Linie',
 	'Link with bowl crosshair':'Link mit Fadenkreuz',
-	'Loading...':'Loading...', //TODO
+	'Load KML':'Lade .kml-Datei',
+	'Loading...':'Lade...',
 	'Locate':'Suchen',
 	'Locate by coordinates':'Definiere Standort durch Koordinaten',
 	'Luft und Satellitenbilder':'Orthofotografie',
@@ -110,11 +114,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'MultiLineString':'Multilinie',
 	'MultiPoint':'Multipunkt',
 	'MultiPolygon':'Multipolygon',
-	'Name':'Name', //TODO
-	'Nationales Maps':'Nationales Maps', //TODO
+	'Name':'Name',
+	'Nationales Maps':'Schweizerisches Kartenwerk',
 	'Natürliche Risikozonen':'Gebiete mit naturbedingten Risiken',
 	'Next view':'Vorwärts',
-	'No':'No', //TODO
+	'No':'Nein',
 	'No email provided':'Keine Email angegeben',
 	'No feedback provided':'Kein Feedback angegeben',
 	'No specific handler added to show the layer search':'Kein spezifischer Handler für die Anzeige der Themensuche vorhanden',
@@ -132,16 +136,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Permalink.tooltip':'Permalink',
 	'Please check your input':'Bitte Eingaben überprüfen',
 	'Please fill the feedback':'Bitte füllen Sie das Berichtsfeld aus',
-	'Please, enter an url in the textbox first':'Please, enter an url in the textbox first', //TODO
+	'Please, enter an url in the textbox first':'Bitte URL eingeben',
 	'Point':'Punkt',
 	'Polygon':'Polygon',
 	'Position':'Position',
 	'Positioning failed.':'Positionierung fehlgeschlagen',
-	'Preview':'Preview', //TODO
+	'Preview':'Vorschau',
 	'Previous view':'Rückwärts',
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Produktions- und Industrieanlagen',
-	'Queryable':'Queryable', //TODO
+	'Queryable':'Abfragbar',
 	'Raum und Bevölkerung':'Raum und Bevölkerung',
 	'Raumplanung':'Geregelte Gebiete und Berichterstattungseinheiten',
 	'RedLining Panel':'Zeichnungswerkzeug',
@@ -152,7 +156,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Schweiz':'Schweiz',
 	'Search':'Suche',
 	'Search data...':'Daten suchen...',
-	'Select or input a server address (URL)':'Select or input a server address (URL)', //TODO
+	'Select or input a server address (URL)':'Serveradresse (URL) eingeben oder auswählen',
 	'Send':'Senden',
 	'Send feedback':'Absenden',
 	'Sending feedback....':'Bericht senden....',
@@ -163,7 +167,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Danke vielmals für Ihre Meldung !',
 	'The following URL will be transferred:':'Der folgende Link wird übermittelt:',
-	'Title':'Title', //TODO
+	'The url address entered is not valid.':'Die eingegebene URL ist nicht gültig',
+	'Title':'Titel',
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Umwelt, Biologie und Geologie',
 	'Umweltüberwachung':'Umweltüberwachung',
@@ -172,16 +177,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Warning Internet Explorer 6':'Warnung Internet Explorer 6',
 	'Warning screen resolution':'Warnung Bildschirmauflösung',
 	'We recommend to upgrade to a newer release.':'Wir empfehlen ein neuer Version zu benutzen.',
-	'WmsBrowser':'WMS',
+	'WmsBrowser':'WMS Import',
 	'WmsBrowserWindow':'WMS Dienst hinzufügen',
-	'Yes':'Yes', //TODO
+	'Yes':'Ja',
 	'You are using Internet Explorer 6.':'Sie benutzen Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Sie können nur 5 Layers in Layer Baum addieren.',
-	'Your email':'Ihre E-Mail Adresse:',
+	'Your email':'Ihre E-Mail Adresse',
 	'Your email (optional)':'Ihre E-Mail Adresse (freiwillig)',
-	'Your email:':'Your email:', //TODO
+	'Your email:':'Ihre E-Mail Adresse:',
 	'Your feedback about current map extent':'Ihr Bericht zum aktuellen Kartenausschnitt',
-	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
+	'Your feedback was successfully commited. Thank you for providing your feedback.':'Ihre Rückmeldung wurde erfolgreich verschickt. Vielen Dank für Ihre Mitteilung.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Ihre Bildschirmauflösung ist kleiner als 1024x768 pixels. map.geo.admin.ch ist nicht für kleine Bildschirmauflösung optimiert.',
 	'Zoom to the max extent':'Ganze Schweiz',
 	'about that layer':'Informationen zu diesem Datensatz',
@@ -189,7 +194,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'addSelectedLayersText':'Fügen Sie die ausgewählten Ebenen als eine Eben hinzu',
 	'black':'Schwarz',
 	'blue':'Blau',
-	'brown':'brown', //TODO
+	'brown':'Braun',
 	'ch.are':'ARE',
 	'ch.are.agglomerationen_isolierte_staedte-2000':'Agglomerationen und isolierte Städte',
 	'ch.are.alpenkonvention':'Alpenkonvention',
@@ -301,7 +306,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (Blattübersicht)',
 	'ch.swisstopo.kt':'swisstopo, Kt.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html',
-	'ch.swisstopo.pixelkarte-farbe':'Karte farbig',
+	'ch.swisfstopo.pixelkarte-farbe':'Karte farbig',
 	'ch.swisstopo.pixelkarte-grau':'Karte SW',
 	'ch.swisstopo.pixelkarte-pk100.metadata':'Landeskarte 1:100 000 (Blattübersicht)',
 	'ch.swisstopo.pixelkarte-pk200.metadata':'Landeskarte 1:200 000 (Blattübersicht)',
@@ -327,16 +332,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'closeWindowText':'Fenster schliessen',
 	'color':'Farbe',
 	'connectText':'Verbindung',
-	'cyan':'cyan', //TODO
+	'cyan':'Cyan',
 	'descriptionText':'Beschreibung',
 	'english':'English',
 	'errorText':'Fehler',
 	'extentCompatibleText':'Ausschnitt kompatibel',
 	'extentNotSupportedShortText':'Ist ausserhalb des Ausschnitts der Karte',
 	'french':'Français',
-	'german':'Deutsch',
-	'gold':'gold', //TODO
-	'gray':'gray', //TODO
+	'german':'german', //TODO
+	'gold':'Gold',
+	'gray':'Grau',
 	'green':'Grün',
 	'handedness':'Händigkeit',
 	'hide column':'Ausblenden der Themen',
@@ -346,25 +351,25 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'imprint 3':'<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt',
 	'imprint 4':'<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
-	'indigo':'indigo', //TODO
-	'inputURLInvalidText':'Eingegeben Adresse (URL) ist ungültig',
-	'inputURLText':'Auswahl oder hinzufügen eines Servers (URL)',
+	'indigo':'Indigo',
+	'inputURLInvalidText':'Eingegeber Link (URL) ist ungültig',
+	'inputURLText':'Auswahl oder Hinzufügen eines Servers (URL)',
 	'italian':'Italiano',
 	'language':'Sprache',
 	'last used':'zuletzt genutzt',
-	'layer search':'layer search', //TODO
+	'layer search':'Layersuche',
 	'layer selection':'Ihre Auswahl',
 	'layerAddedText':'Ebene erfolgreich hinzugefügt',
 	'layerCantBeAddedText':'Dieser Layer kann nicht hinzugefügt werden',
 	'layerNameText':'Name der Ebene',
 	'layersSuccessfullyLoadedText':'Ebene erfolgreich geladen',
 	'leftHanded':'Linkshänder',
-	'lime':'lime', //TODO
+	'lime':'Hellgrün',
 	'loadingText':'Lade Daten ...',
-	'magenta':'magenta', //TODO
+	'magenta':'Mangenta',
 	'map':'Karte',
 	'mapPanelPreviewTitleText':'Kartenansicht',
-	'maroon':'maroon', //TODO
+	'maroon':'Kastanienbraun',
 	'metadataTooltip':'Show metadata',
 	'mf.print.generatingPDF':'PDF herstellen',
 	'mf.print.layout':'Orientierung',
@@ -378,31 +383,31 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'nameText':'Name',
 	'next':'Vorwärts',
 	'noText':'Nein',
-	'olive':'olive', //TODO
-	'orange':'orange', //TODO
+	'olive':'Olive',
+	'orange':'Orange',
 	'permalink action':'Karte einbinden',
-	'pink':'pink', //TODO
+	'pink':'Rosa',
 	'pleaseCheckALayerInTreeText':'Wählen Sie zuerst eine oder mehrere Ebenen aus der Liste aus',
 	'pleaseInputLayerNameText':'Bitte geben Sie einen Ebenen Namen in das Textfeld ein',
 	'pleaseInputURLText':'Bitte wählen Sie einen Server aus der Liste aus oder fügen Sie einen hinzu (URL)',
 	'pleaseSelectALayerText':'Wählen Sie zuerst eine oder mehrere Ebenen aus der Liste aus',
-	'plum':'plum', //TODO
+	'plum':'Pflaum',
 	'previous':'Rückwärts',
 	'print':'Drucken',
 	'print action':'Drucken',
-	'purple':'purple', //TODO
+	'purple':'Violett',
 	'queryableText':'Suchbar',
 	'raetoromanic':'Rumantsch',
 	'red':'Rot',
 	'remove layer':'entfernen des Datensatzes',
 	'responsibilitiesAndContact':'Zuständigkeiten und Kontakt',
 	'rightHanded':'Rechtshänder',
-	'salmon':'salmon', //TODO
-	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten es\Microsoft SQL Server\100\ToolsI',
+	'salmon':'Lachsrosa',
+	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br><b>Adressen: </b> Für "Rue de l\'Évêché in Genf" tippen Sie évêch<br>',
 	'select a color...':'Farbe auswählen',
 	'show column':'Themen öffnen',
 	'show layer options':'Layeroptionen anzeigen',
-	'silver':'silver', //TODO
+	'silver':'Silber',
 	'srsCompatibleText':'SRS kompatibel',
 	'srsNotSupportedShortText':'Unterstützt die Kartenprojektion nicht',
 	'srsNotSupportedText':'Dieser Layer kann nicht hinzugefügt werden, da er seine Kartenprojektion nicht unterstützt',
