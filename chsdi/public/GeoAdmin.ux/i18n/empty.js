@@ -1,9 +1,3 @@
-/*global OpenLayers:true*/
-
-/**
- * @requires OpenLayers/Lang/de.js
- */
-
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'map':"",
     'Send':"",
@@ -429,6 +423,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Add Layer':"",
     'Yes':"",
     'No':"",
-    'Close this window':""
-
+    'Close this window':"",
+    'KML URL':"",
+    'Input the KML address (URL)':"",
+    'The url address entered is not valid.':"",
+    'Load KML':"",
+    'Input the server address (URL)':""
 });
