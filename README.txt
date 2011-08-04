@@ -39,3 +39,10 @@ Getting Started
   buildout/bin/python setup.py compile_catalog
 
 Source: http://wiki.pylonshq.com/display/pylonsdocs/Internationalization+and+Localization
+
+JavaScript translations
+-----------------------
+
+The JavaScript translated strings are stored in the BOD database. In order to produce the JavaScript files lang.js in the i18n directory, start this command:
+
+   ./buildout/bin/buildout -c buildout_myconfig.cfg install jstranslate
