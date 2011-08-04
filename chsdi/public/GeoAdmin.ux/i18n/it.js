@@ -403,7 +403,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'responsibilitiesAndContact':'Colophon',
 	'rightHanded':'mano destra',
 	'salmon':'salmon', //TODO
-	'searchQuicktip':'Qui potete cercare luoghi, CAP, unità amministrative e coordinate.<br>Esempio di ricerca:<br><b>CAP:</b> per "3012 a Berna" scrivete 3012<br><b>coordinate (Svizzera):</b> per "600000/200000 " scrivete 600000 200000<br><b>coordinate (LatLon):</b> per "46.7N 6.0E " scrivete 46.7 6.0',
+	'searchQuicktip':'Qui potete cercare luoghi, CAP, unità amministrative e coordinate.<br>Esempio di ricerca:<br><b>CAP:</b> per "3012 a Berna" scrivete 3012<br><b>coordinate (Svizzera):</b> per "600000/200000" scrivete 600000 200000<br><b>coordinate (LatLon):</b> per "46.7N 6.0E " scrivete 46.7 6.0',
 	'select a color...':'select a color...', //TODO
 	'show column':'Aprire la barra dei temi',
 	'show layer options':'Mostrare le opzioni dei piani',

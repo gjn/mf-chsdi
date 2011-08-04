@@ -399,7 +399,7 @@ OpenLayers.Lang.rm= {
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'dretger',
 	'salmon':'salmon', //TODO
-	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten und Koordinaten suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b> Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br>',
+	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b>Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br><b>Adressen: </b> Für "Rue de l\'Évêché in Genf" tippen Sie évêch<br>',
 	'select a color...':'select a color...', //TODO
 	'show column':'Avrir ils temas',
 	'show layer options':'Mussar las opziuns da la stresa',

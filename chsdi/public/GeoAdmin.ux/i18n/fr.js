@@ -403,7 +403,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'droitier',
 	'salmon':'saumon',
-	'searchQuicktip':'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0',
+	'searchQuicktip':'Ici vous pouvez rechercher des lieux (-dits), NPA, unités administrative, coordonnées et adresses.<br>Exemples de recherche : <br> <b>NPA: </b> Pour "3007 à Bern" tapez 3007<br><b>coordonnés (Suisse): </b> Pour "600000/200000 " tapez 600000 200000<br><b>coordonnées (LatLon): </b> Pour "46.7N 6.0E " tapez 46.7 6.0<br><b>Adresses: </b> Pour "Rue de l\'Évêché à Genève" tapez evech',
 	'select a color...':'Choisir une couleur',
 	'show column':'Afficher le gestionaire des couches',
 	'show layer options':'Afficher les options de la couche',
