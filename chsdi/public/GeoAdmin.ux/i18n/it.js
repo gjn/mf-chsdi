@@ -78,8 +78,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Gewässernetz':'Idrografia',
 	'Höhe':'Elevazione',
 	'INFO':'Informazioni',
-	'Import KML':'Importare KML/GML
-',
+	'Import KML':'Importare KML/GML',
 	'Infrastruktur und Kommunikation':'Infrastrutture e comunicazione',
 	'Invalid email provided':'Indirizzo email non valido',
 	'KML data sucessfully imported in layer:':'Dati KML importati correttamente nel layer:',
