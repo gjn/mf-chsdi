@@ -60,11 +60,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Energiequellen':'Risorse energetiche',
 	'Enter your feedback here ...':'Enter your feedback here ...', //TODO
 	'Error':'Si è verificato un errore',
+	'Export':'Export', //TODO
 	'Export KML':'Esporta KML',
+	'Export Window':'Export Window', //TODO
 	'Failure':'Errore',
 	'Feature tooltip':'Informazioni sulloggetto',
 	'File successfuly imported. Number of features added:':'File successfuly imported. Number of features added:', //TODO
 	'Flurstücke / Grundstücke':'Parcelle catastali',
+	'Format':'Format',
 	'Full extent':'Cartina generale',
 	'Full map':'Mappa più grande',
 	'Gebäude':'Edifici',
@@ -78,21 +81,31 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Gewässernetz':'Idrografia',
 	'Höhe':'Elevazione',
 	'INFO':'Informazioni',
+	'Import':'Import',
 	'Import KML':'Importare KML/GML',
 	'Infrastruktur und Kommunikation':'Infrastrutture e comunicazione',
 	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
 	'Input the server address (URL)':'Input the server address (URL)', //TODO
 	'Invalid email provided':'Indirizzo email non valido',
+	'KML':'KML', //TODO
 	'KML URL':'KML URL', //TODO
 	'KML data sucessfully imported in layer:':'Dati KML importati correttamente nel layer:',
+	'KMLTooltip':'KMLTooltip', //TODO
 	'Kanton':'Cantone',
 	'Label':'Label', //TODO
 	'Land- und Wassertwirtschaft':'Impianti agricoli e di acquacoltura',
 	'Landnutzung':'Utilizzo del territorio',
+	'Layer Manager':'Layer Manager', //TODO
 	'Layer Selection':'Selezione',
 	'Layer Tree':'Temi',
 	'Layer visibility':'Visibilità del layer',
+	'LayerManager':'KML & GPX',
+	'LayerManagerWindow':'LayerManagerWindow', //TODO
 	'Lebensräume une Biotope':'Habitat e biotopi',
+	'Legend.NoLayer':'Scegliere il livello',
+	'Legend.Title':'Legenda',
+	'Legend.Tooltip':'Mostrare la legenda per tutti i livelli',
+	'Legend.onClick':'Livelli selezionati',
 	'LineString':'LineString', //TODO
 	'Link with bowl crosshair':'Link con mirino',
 	'Load KML':'Load KML', //TODO
@@ -149,6 +162,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Raum und Bevölkerung':'Territori e popolazione',
 	'Raumplanung':'Zone regolamentate e unità con obbligo di rapporto',
 	'RedLining Panel':'RedLining Panel', //TODO
+	'Redlining':'Redlining', //TODO
+	'RedliningWindow':'RedliningWindow', //TODO
 	'Referenzsysteme':'Sistemi di coordinate',
 	'Report':'Segnala un problema con la cartina',
 	'Save context':'Save context', //TODO
@@ -156,6 +171,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Schweiz':'Svizzera',
 	'Search':'Ricerca',
 	'Search data...':'Ricerca di dati [in francese] ...',
+	'Select a file to import':'Select a file to import', //TODO
 	'Select or input a server address (URL)':'Select or input a server address (URL)', //TODO
 	'Send':'Inviare',
 	'Send feedback':'Inviare il rapporto',

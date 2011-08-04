@@ -56,11 +56,14 @@ OpenLayers.Lang.rm= {
 	'Energiequellen':'Funtaunas d\'energia',
 	'Enter your feedback here ...':'Enter your feedback here ...', //TODO
 	'Error':'Problem',
+	'Export':'Export', //TODO
 	'Export KML':'Export KML', //TODO
+	'Export Window':'Export Window', //TODO
 	'Failure':'Failure', //TODO
 	'Feature tooltip':'Infurmaziuns davart ils objects',
 	'File successfuly imported. Number of features added:':'File successfuly imported. Number of features added:', //TODO
 	'Flurstücke / Grundstücke':'Parcellas/bains immobigliars (parcellas da cataster)',
+	'Format':'Format',
 	'Full extent':'Charta da survista',
 	'Full map':'Charta pli gronda',
 	'Gebäude':'Edifizis',
@@ -74,21 +77,31 @@ OpenLayers.Lang.rm= {
 	'Gewässernetz':'Rait da las auas',
 	'Höhe':'Autezza',
 	'INFO':'INFO', //TODO
+	'Import':'Import', //TODO
 	'Import KML':'Import KML', //TODO
 	'Infrastruktur und Kommunikation':'Infrastructura e communicaziun',
 	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
 	'Input the server address (URL)':'Input the server address (URL)', //TODO
 	'Invalid email provided':'Invalid email provided', //TODO
+	'KML':'KML', //TODO
 	'KML URL':'KML URL', //TODO
 	'KML data sucessfully imported in layer:':'KML data sucessfully imported in layer:', //TODO
+	'KMLTooltip':'KMLTooltip', //TODO
 	'Kanton':'Chantuns',
 	'Label':'Label', //TODO
 	'Land- und Wassertwirtschaft':'Stabiliments agriculs e d\'aquacultura',
 	'Landnutzung':'Utilisaziun dal terren',
+	'Layer Manager':'Layer Manager', //TODO
 	'Layer Selection':'Selecziun',
 	'Layer Tree':'Temas',
 	'Layer visibility':'Visibilitad da datas',
+	'LayerManager':'KML & GPX',
+	'LayerManagerWindow':'LayerManagerWindow', //TODO
 	'Lebensräume une Biotope':'Spazis da viver e biotops',
+	'Legend.NoLayer':'Legend.NoLayer', //TODO
+	'Legend.Title':'Legend.Title', //TODO
+	'Legend.Tooltip':'Legend.Tooltip', //TODO
+	'Legend.onClick':'Legend.onClick', //TODO
 	'LineString':'LineString', //TODO
 	'Link with bowl crosshair':'Link cun cruschera',
 	'Load KML':'Load KML', //TODO
@@ -145,6 +158,8 @@ OpenLayers.Lang.rm= {
 	'Raum und Bevölkerung':'Territori e populaziun',
 	'Raumplanung':'Secturs reglads ed unitads da rapport',
 	'RedLining Panel':'RedLining Panel', //TODO
+	'Redlining':'Redlining', //TODO
+	'RedliningWindow':'RedliningWindow', //TODO
 	'Referenzsysteme':'Sistems da referenza da coordinatas',
 	'Report':'Rapportar un problem cun charta',
 	'Save context':'Context speichern',
@@ -152,6 +167,7 @@ OpenLayers.Lang.rm= {
 	'Schweiz':'Svizra',
 	'Search':'Tschertga',
 	'Search data...':'Tschertgar datas [en tudestg] ...',
+	'Select a file to import':'Select a file to import', //TODO
 	'Select or input a server address (URL)':'Select or input a server address (URL)', //TODO
 	'Send':'Send', //TODO
 	'Send feedback':'Rapportar il problem',
