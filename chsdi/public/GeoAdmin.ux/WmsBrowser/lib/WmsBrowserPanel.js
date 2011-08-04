@@ -221,7 +221,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         }
     },
     getHostname: function(str) {
-        return str.match(/:\/\/(.[^/]+)/)[1].toString();
+        return decodeURIComponent(str).match(/:\/\/(.[^/]+)/)[1].toString();
     },
     createGridPanel: function(store) {
         var columns = [
