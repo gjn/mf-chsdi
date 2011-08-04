@@ -238,17 +238,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.schutzgebiete-ramsar':'Ramsar',
 	'ch.bafu.schutzgebiete-schweizerischer_nationalpark':'Parco nazionale',
 	'ch.bafu.schutzgebiete-wildruhezonen':'Zone di tranquillitá',
-	'ch.bafu.showme-gemeinden_hochwasser':'ShowMe comuni: inondazioni
-',
+	'ch.bafu.showme-gemeinden_hochwasser':'ShowMe comuni: inondazioni',
 	'ch.bafu.showme-gemeinden_lawinen':'ShowMe comuni: valanghe',
 	'ch.bafu.showme-gemeinden_rutschungen':'ShowMe comuni: slittamenti',
-	'ch.bafu.showme-gemeinden_sturzprozesse':'ShowMe comuni: caduta di pietre
-',
+	'ch.bafu.showme-gemeinden_sturzprozesse':'ShowMe comuni: caduta di pietre',
 	'ch.bafu.showme-kantone_hochwasser':'ShowMe cantoni: inondazioni',
 	'ch.bafu.showme-kantone_lawinen':'ShowMe cantoni: valanghe',
 	'ch.bafu.showme-kantone_rutschungen':'ShowMe cantoni: slittamenti',
-	'ch.bafu.showme-kantone_sturzprozesse':'ShowMe cantoni: caduta di pietre
-',
+	'ch.bafu.showme-kantone_sturzprozesse':'ShowMe cantoni: caduta di pietre',
 	'ch.bafu.swissprtr':'Emissioni di inquinanti (SwissPRTR)',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=it',
 	'ch.bafu.wasser-entnahme':'Prelevamento',
@@ -268,8 +265,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.blw.hang_steillagen':'Terreni in pendio e in forte pendenza',
 	'ch.blw.steil_terrassenlagen_rebbau':'Terreni viticoli in pendio e in terrazze',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=it',
-	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP Prodotti a base di carne
-',
+	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP Prodotti a base di carne',
 	'ch.blw.ursprungsbezeichnungen-kaese':'DOP formaggio',
 	'ch.blw.ursprungsbezeichnungen-pflanzen':'DOP prodotti vegetali',
 	'ch.blw.ursprungsbezeichnungen-spirituosen':'DOP distillati',
