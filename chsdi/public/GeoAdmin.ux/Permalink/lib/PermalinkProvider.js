@@ -148,7 +148,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         }
 
         // merge params in the URL into the state params
-        OpenLayers.Util.applyDefaults(params, OpenLayers.Util.getParameters(base));
+        //OpenLayers.Util.applyDefaults(params, OpenLayers.Util.getParameters(base));
         
         var paramsStr = OpenLayers.Util.getParameterString(params);
         

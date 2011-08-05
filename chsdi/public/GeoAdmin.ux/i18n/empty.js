@@ -428,5 +428,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Input the KML address (URL)':"",
     'The url address entered is not valid.':"",
     'Load KML':"",
-    'Input the server address (URL)':""
+    'Input the server address (URL)':"",
+    'Third party data warning': "",
+    'The permalink you use contains reference to third party data. Would you load these data ?': ""
 });
