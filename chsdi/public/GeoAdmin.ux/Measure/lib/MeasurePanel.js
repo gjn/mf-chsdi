@@ -22,6 +22,40 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
 
     constructor: function(config) {
 
+        GeoExt.ux.Measure.prototype.display = function(event) {
+            this.cleanup();
+            this.tip = new Ext.Tip({
+                title: OpenLayers.i18n("Measure"),
+                html: this.makeString(event),
+                closable: true,
+                draggable: false,
+                listeners: {
+                    hide: function() {
+                        this.control.cancel();
+                        if (this.autoDeactivate === true) {
+                            this.control.deactivate();
+                        }
+                        this.cleanup();
+                    },
+                    scope: this
+                }
+            });
+            function findPos(obj) {
+                 var curleft = curtop = 0;
+                if (obj.offsetParent) {
+                    do {
+                        curleft += obj.offsetLeft;
+                        curtop += obj.offsetTop;
+                    } while (obj = obj.offsetParent);
+                    return [curleft,curtop];
+                }
+            }
+            var centroid = event.geometry.getBounds().getCenterLonLat();
+            var px = this.control.handler.map.getPixelFromLonLat(centroid);
+            var mapPx = findPos(this.control.handler.map.div);
+            this.tip.showAt([mapPx[0] + px.x,mapPx[1] + px.y]);
+        };
+
         var updateStyle = function(btn, evt) {
             if (true) {
                 btn.el.parent().addClass('pressed');
@@ -76,18 +110,18 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         };
 
         var measureArea = new Ext.Button(
-                new GeoExt.ux.MeasureArea(Ext.apply({
-                    iconCls: 'gx-map-measurearea',
-                    tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
-                    text: OpenLayers.i18n("Measure.MeasureArea")
-                }, buttonConfig)));
+            new GeoExt.ux.MeasureArea(Ext.apply({
+                iconCls: 'gx-map-measurearea',
+                tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
+                text: OpenLayers.i18n("Measure.MeasureArea")
+            }, buttonConfig)));
 
         var measureLength = new Ext.Button(
-                new GeoExt.ux.MeasureLength(Ext.apply({
-                    iconCls: 'gx-map-measurelength',
-                    tooltip: OpenLayers.i18n("Measure.MeasureLength.ToolTip"),
-                    text: OpenLayers.i18n("Measure.MeasureLength")
-                }, buttonConfig)));
+            new GeoExt.ux.MeasureLength(Ext.apply({
+                iconCls: 'gx-map-measurelength',
+                tooltip: OpenLayers.i18n("Measure.MeasureLength.ToolTip"),
+                text: OpenLayers.i18n("Measure.MeasureLength")
+            }, buttonConfig)));
 
         var measureToolbar = new Ext.Toolbar({
             width: 600,
