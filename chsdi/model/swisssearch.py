@@ -62,7 +62,8 @@ class SwissSearch(Base, Queryable):
                address_nr = self.deinr
             o.update({'service': 'address',
                       'rank': 5,
-                      'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.gemname)})
+                      'egid': self.egid,
+                      'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.ort_27)})
         return o
 
 
