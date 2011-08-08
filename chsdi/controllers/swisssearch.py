@@ -26,8 +26,10 @@ class SwisssearchController(BaseController):
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def index(self):
         q = request.params.get('query')
+        egid = request.params.get('egid')
         if q is None:
-            abort(400, "missing 'query' parameter")
+            if egid is None:
+                abort(400, "missing 'query' or 'egid' parameter")
 
         no_geom = request.params.get('no_geom')
         if no_geom is not None:
@@ -35,18 +37,28 @@ class SwisssearchController(BaseController):
         else:
             no_geom = False
 
+        citynr = request.params.get('citynr')
+
         rawjson = request.params.get('format') == 'raw' or False
 
-        terms = q.split()
-        terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
-        tsvector = 'tsvector_search_name'
-        ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
+        if egid is not None:
+            query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
+        else:
+            terms = q.split()
+            terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
+            tsvector = 'tsvector_search_name'
+            ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
 
-        query = Session.query(SwissSearch).filter(ftsFilter)
+            query = Session.query(SwissSearch).filter(ftsFilter)
+
         # FIXME Address search is only for admin.ch
         referer = request.headers.get('referer', '')
         if referer.find( 'admin.ch') < 0:
             query = query.filter(SwissSearch.origin != 'address')
+
+        if citynr is not None:
+            query = query.filter(SwissSearch.gdenr == '' + citynr)
+
         query = query.order_by(SwissSearch.id).limit(20)
 
         if rawjson:

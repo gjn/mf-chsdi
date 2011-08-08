@@ -40,7 +40,9 @@ Input parameters
 The following parameters are required:
 
 - lang: optional lang: de (default) or fr
-- query: the query string to find
+- query: the query string to find (mandatory if egid is not transmitted)
+- egid: the egid used to find an address (mandatory if query is not transmitted)
+- citynr (optional): the city number (BFS id)
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
@@ -52,6 +54,8 @@ Examples:
 - Toponymy: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex
 - Postcode: http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw
 - Addresses: http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw
+- Addresses with EGID: http://api.geo.admin.ch/swisssearch/geocoding?egid=867194
+- Addresses with city number: http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug
 
 Note: In French, search for "leopold robert", not only for "robert"
 
@@ -62,6 +66,7 @@ A JSON content is sent back with the following content:
 
 - service: the name of the service. It can be postalcodes, cantons, cities, swissnames or address
 - label: html content presented in the Swissearch widget (apply only when html format is requested)
+- egid: EGID number for an address
 - rank: rank of the result, form 1 to 4. 1 for postalcodes, 2 for cantons, 3 for cities, 4 for swissnames and 5 for address
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - id: id of the feature in the database
