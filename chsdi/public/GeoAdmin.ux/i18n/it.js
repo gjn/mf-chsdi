@@ -116,7 +116,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Map Queries':'Ricerca',
 	'Map URL':'Allegare il link in una e-mail',
 	'Map was moved to':'Carta spostata verso',
-	'Measure':'Applicazione di misurazio-ne',
+	'Measure':'Misurazione',
 	'Measure.MeasureArea':'Superficie',
 	'Measure.MeasureArea.ToolTip':'Misurare une superficie',
 	'Measure.MeasureLength':'Distanza',
@@ -183,7 +183,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazie mille per il suo rapporto !',
 	'The following URL will be transferred:':'Il seguente URL verrá inviato:',
+	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would you load these data ?', //TODO
 	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
+	'Third party data warning':'Third party data warning', //TODO
 	'Title':'Title', //TODO
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambiente, biologia e geologia',
@@ -355,7 +357,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'extentCompatibleText':'extentCompatibleText', //TODO
 	'extentNotSupportedShortText':'extentNotSupportedShortText', //TODO
 	'french':'Français',
-	'german':'german', //TODO
+	'german':'Deutsch',
 	'gold':'gold', //TODO
 	'gray':'gray', //TODO
 	'green':'green', //TODO

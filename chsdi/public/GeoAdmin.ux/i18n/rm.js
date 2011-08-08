@@ -112,7 +112,7 @@ OpenLayers.Lang.rm= {
 	'Map Queries':'Tschertgar',
 	'Map URL':'Integrar il link qua sutvart en il e-mail',
 	'Map was moved to':'Map was moved to', //TODO
-	'Measure':'Apparats da mesiraziun',
+	'Measure':'Mesiraziun',
 	'Measure.MeasureArea':'Measure.MeasureArea', //TODO
 	'Measure.MeasureArea.ToolTip':'Measure.MeasureArea.ToolTip', //TODO
 	'Measure.MeasureLength':'Measure.MeasureLength', //TODO
@@ -179,7 +179,9 @@ OpenLayers.Lang.rm= {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazia fitg per vus raport!',
 	'The following URL will be transferred:':'Trametter Link:',
+	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would you load these data ?', //TODO
 	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
+	'Third party data warning':'Third party data warning', //TODO
 	'Title':'Title', //TODO
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambient, biologia e geologia',
@@ -351,7 +353,7 @@ OpenLayers.Lang.rm= {
 	'extentCompatibleText':'extentCompatibleText', //TODO
 	'extentNotSupportedShortText':'extentNotSupportedShortText', //TODO
 	'french':'Français',
-	'german':'german', //TODO
+	'german':'Deutsch',
 	'gold':'gold', //TODO
 	'gray':'gray', //TODO
 	'green':'green', //TODO
