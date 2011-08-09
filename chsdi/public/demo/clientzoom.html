@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Opacity issue</title>
+</head>
+<body onload="init();">
+<div id="map" style="width:100%; height: 100%;"></div>
+<script type="text/javascript" src="../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript">
+    var map = null;
+    var aerial = null;
+    var pk = null;
+    function init() {
+        OpenLayers.DOTS_PER_INCH = 254;
+        var wmts_url = [
+            'http://wmts0.geo.admin.ch/',
+            'http://wmts1.geo.admin.ch/',
+            'http://wmts2.geo.admin.ch/',
+            'http://wmts3.geo.admin.ch/',
+            'http://wmts4.geo.admin.ch/'
+        ];
+        var aerial = new OpenLayers.Layer.WMTS({
+            name: 'ch.swisstopo.swissimage',
+            layer: 'ch.swisstopo.swissimage',
+            layername: 'ch.swisstopo.swissimage',
+            version: "1.0.0",
+            requestEncoding: "REST",
+            url: wmts_url,
+            style: "default",
+            matrixSet: "21781",
+            zoomOffset: 14,
+            formatSuffix: 'jpeg',
+            dimensions: ['TIME'],
+            params: {
+                'time': '20110228'
+            },
+            projection: new OpenLayers.Projection('EPSG:21781'),
+            units: 'm',
+            format: "image/jpeg",
+            buffer: 0,
+            opacity: 1.0
+        });
+        var pk = new OpenLayers.Layer.WMTS({
+            name: 'ch.swisstopo.pixelkarte-farbe',
+            layer: 'ch.swisstopo.pixelkarte-farbe',
+            layername: 'ch.swisstopo.pixelkarte-farbe',
+            version: "1.0.0",
+            requestEncoding: "REST",
+            url: wmts_url,
+            style: "default",
+            matrixSet: "21781",
+            zoomOffset: 14,
+            formatSuffix: 'jpeg',
+            dimensions: ['TIME'],
+            params: {
+                'time': '20110401'
+            },
+            projection: new OpenLayers.Projection('EPSG:21781'),
+            units: 'm',
+            format: "image/jpeg",
+            buffer: 0,
+            opacity: 0.6
+        });
+        map = new OpenLayers.Map({
+            projection: new OpenLayers.Projection("EPSG:21781"),
+            units: "m",
+            theme: false,
+            allOverlays: true,
+            maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
+            resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
+            layers: [aerial, pk],
+            div: 'map',
+            controls: [
+                new OpenLayers.Control.Navigation()
+            ]
+        });
+        map.zoomToMaxExtent();
+    }
+</script>
+
+
+</body>
+</html>
