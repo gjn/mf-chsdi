@@ -1272,7 +1272,7 @@ GeoAdmin._Layers = OpenLayers.Class({
              format: "image/png",
              datenherr: "ch.swisstopo",
              queryable: true
-             },
+             },*/
              "ch.swisstopo.images-swissimage.metadata": {
              name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
              layers: ["ch.swisstopo.images-swissimage.metadata"],
@@ -1282,7 +1282,6 @@ GeoAdmin._Layers = OpenLayers.Class({
              datenherr: "ch.swisstopo",
              queryable: true
              },
-             */
             "ch.astra.ausnahmetransportrouten": {
                 name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
                 layertype: 'wmts',

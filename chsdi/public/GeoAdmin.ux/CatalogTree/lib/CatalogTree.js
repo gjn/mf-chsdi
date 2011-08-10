@@ -705,7 +705,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 id: "node_ch.swisstopo.vec25-primaerflaechen1"
                             }
                         ]
-                    }/*,
+                    },
                     {
                      text: ' ' + OpenLayers.i18n('Luft und Satellitenbilder'),
                      cls: 'nodeLT2',
@@ -720,7 +720,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                      id: "ch.swisstopo.images-swissimage.metadata1"
                      }
                      ]
-                     }*/
+                     }
                 ]
             },
             {
