@@ -83,6 +83,7 @@ API
 
    api/sdiapitutorial
    api/sdiapidoc
+   api/sdimapidoc
    api/sdiapiexamples
    api/sdiapigenerator
    widgets/sdiwidgetsdescription

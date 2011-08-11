@@ -19,4 +19,4 @@ A complete overview of all classes, constructors, config parameters and methods 
     :maxdepth: 1
     :glob:
 
-    apidocs/*
+    apidocs/*   
