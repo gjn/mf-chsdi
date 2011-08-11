@@ -82,12 +82,6 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 }
             }
         }
-        if (this.layer) {
-            this.layer.removeAllFeatures();
-        }
-        if (this.popup) {
-            this.popup.destroy();           
-        }
     },
 
     request: function(bounds, options) {
