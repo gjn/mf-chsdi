@@ -17,8 +17,8 @@ class BaseController(WSGIController):
     def __before__(self):
         default_lang = 'de'
         for lang in request.languages:
-            if lang in ['de','fr','rm','it','en']:
-                default_lang = lang
+            if lang[:2] in ['de','fr','rm','it','en']:
+                default_lang = lang[:2]
                 break
         self.lang = request.params.get('lang', default_lang)
         if self.lang == 'rm':
