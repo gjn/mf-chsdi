@@ -16,9 +16,6 @@ full_stack = true
 static_files = false
 api_version = ${api-version}
 
-# default language
-lang = de
-
 beaker.session.type = memory
 beaker.cache.type = memory
 
