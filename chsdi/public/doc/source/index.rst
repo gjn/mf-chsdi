@@ -83,7 +83,6 @@ API
 
    api/sdiapitutorial
    api/sdiapidoc
-   api/sdimapidoc
    api/sdiapiexamples
    api/sdiapigenerator
    widgets/sdiwidgetsdescription
@@ -96,6 +95,15 @@ Services
    :maxdepth: 1
 
    services/sdiservices
+
+Mobile API
+**********
+
+.. toctree::
+   :maxdepth: 1
+
+   api/sdimapidoc
+   api/sdimapiexamples
 
 Terms of use
 ************

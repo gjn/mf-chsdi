@@ -1,4 +1,4 @@
-API Mobile Doc
+Mobile API Doc
 ==============
 
 The mobile API alows you to developp mobile application with cartographic content of the FSDI. It has been developped with Sencha Touch and OpenLayers. 
