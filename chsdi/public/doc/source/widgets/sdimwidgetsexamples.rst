@@ -1,7 +1,7 @@
-Mobile API Examples
-===================
+Mobile API Widgets
+==================
 
-The following examples presents the usage of the Mobile API. They are working on WebKit compatible browser like Safari or Chrome. Default browsers or Android and iOS are therefore supported.
+The following examples presents the usage of the Mobile Widgets. They are working on WebKit compatible browser like Safari or Chrome. Default browsers of Android and iOS are therefore supported.
 
 
  `Feedback Panel <../../../lib/mchsdi/GeoAdminMobile.ux/FeedbackPanel/examples/FeedbackPanel.html>`_

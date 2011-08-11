@@ -103,7 +103,7 @@ Mobile API
    :maxdepth: 1
 
    api/sdimapidoc
-   api/sdimapiexamples
+   widgets/sdimwidgetsexamples
 
 Terms of use
 ************
