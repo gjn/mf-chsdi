@@ -16,6 +16,7 @@ setup(
         "mapfish", "httplib2",
         "psycopg2",
         "PyYAML",
+        "lxml<=2.2.8",
         "Babel<=0.9.99"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
