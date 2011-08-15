@@ -17,62 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-msgid "app title"
-msgstr "map.geo.admin.ch"
+msgid "Datenbezug"
+msgstr "Order data"
 
-msgid "help title"
-msgstr "Help"
-
-msgid "help url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/en/commons/help/viewer_help.html"
-
-msgid "contact title"
-msgstr "Contact"
-
-msgid "contact url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/en/tools/contact.html"
-
-msgid "disclaimer title"
-msgstr "Copyright & Data protection"
-
-msgid "disclaimer url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright"
-
-msgid "federal administration"
-msgstr "The Federal Authorities of the Swiss Confederation"
-
-msgid "home url"
-msgstr "http://map.geo.admin.ch/?lang=en"
-
-msgid "home title"
-msgstr "Homepage"
-
-msgid "pdf"
-msgstr "PDF"
-
-msgid "blind warning"
-msgstr "This page is a geographic application and is not optimized for blind persons."
-
-msgid "page is loading. please wait..."
-msgstr "map.geo.admin.ch is loading..."
-
-msgid "hide column"
-msgstr "Hide layer manager"
-
-msgid "Legend"
-msgstr "Legend"
-
-msgid "Information"
-msgstr "Information"
-
-msgid "geobasisdatensatz"
-msgstr "Basic geodata ID"
-
-msgid "Gueltiger Massstabsbereich"
-msgstr "Valid scale range"
-
-msgid "Metadaten"
-msgstr "Metadata"
+msgid "Datenstand"
+msgstr "Data status"
 
 msgid "Detailbeschreibung"
 msgstr "Detail description"
@@ -80,98 +29,119 @@ msgstr "Detail description"
 msgid "Detaildaten"
 msgstr "Detaildaten"
 
-msgid "betrieb"
-msgstr "Betrieb"
+msgid "Gueltiger Massstabsbereich"
+msgstr "Valid scale range"
 
-msgid "holzzuwachs"
-msgstr "Zuwachs [m3/ha/J]"
+msgid "Information"
+msgstr "Information"
 
-msgid "holznuztung"
-msgstr "Nutzung [m3/ha/J]"
-
-msgid "holzvorrat"
-msgstr "Vorrat [m3/ha]"
-
-msgid "holz_region"
-msgstr "Region"
-
-msgid "Datenbezug"
-msgstr "Order data"
-
-msgid "Thematisches Geoportal"
-msgstr "Thematic geoportal"
-
-msgid "WMS Dienst"
-msgstr "WMS service"
-
-msgid "Datenstand"
-msgstr "Data status"
-
-msgid "layer_geocat_text"
-msgstr "Link to geocat.ch"
-
-msgid "layer_url_text"
-msgstr "Link to description"
-
-msgid "layer_url_download_text"
-msgstr "Link for download"
-
-msgid "layer_url_portal_text"
-msgstr "Link to portal"
-
-msgid "wms_resource_text"
-msgstr "Link to WMS"
+msgid "Legend"
+msgstr "Legend"
 
 msgid "Link to object"
 msgstr "Link to object"
 
-msgid "name"
-msgstr "Name"
+msgid "Metadaten"
+msgstr "Metadata"
 
-msgid "objektname"
-msgstr "Object name"
+msgid "Produkt"
+msgstr "Product"
 
-msgid "laenge_m"
-msgstr "Length [m]"
+msgid "Thematisches Geoportal"
+msgstr "Thematic geoportal"
 
-msgid "laenge_strecke_m"
-msgstr "Length of stretch [m]"
+msgid "Toposhop"
+msgstr "Toposhop"
 
-msgid "flaeche_ha"
-msgstr "Area [ha]"
+msgid "WMS Dienst"
+msgstr "WMS service"
 
-msgid "gesamtflaeche_ha"
-msgstr "Total area [ha]"
+msgid "abfrage"
+msgstr "Datenbfrage"
 
-msgid "flaeche_m2"
-msgstr "Area [m2]"
+msgid "aktuelle_daten"
+msgstr "Current and previous data"
 
-msgid "flaeche_km2"
-msgstr "Area [km2]"
+msgid "alexandria"
+msgstr "Catalogue Alexandria"
 
-msgid "perimeter_m"
-msgstr "Perimeter [m]"
+msgid "anzahlspuren"
+msgstr "Anzahl Spuren"
 
-msgid "objektnr"
-msgstr "Object Nr."
+msgid "app title"
+msgstr "map.geo.admin.ch"
 
-msgid "identificator"
-msgstr "Identificator"
+msgid "atlassheetnumber"
+msgstr "Nummer Geologischer Atlas"
 
-msgid "gmde"
-msgstr "BFS-City nummer (State 2006)"
+msgid "ausgabejahr"
+msgstr "Ausgabejahr"
+
+msgid "bearbeitungsjahr"
+msgstr "Bearbeitungsjahr"
+
+msgid "belastung_personen"
+msgstr "Belastung [Pers./Jahr]"
+
+msgid "belastung_tonnen"
+msgstr "Belastung [t/Jahr]"
+
+msgid "bereich"
+msgstr "Domain"
+
+msgid "beschaeftigte_ha"
+msgstr "Beschäftigte pro ha"
+
+msgid "beschlussjahr"
+msgstr "Jahr"
+
+msgid "beschreibung"
+msgstr "Description"
+
+msgid "bestimmung"
+msgstr "Bestimmungen"
+
+msgid "betrieb"
+msgstr "Betrieb"
 
 msgid "bfsnr"
 msgstr "BFS-Nummer"
 
+msgid "blind warning"
+msgstr "This page is a geographic application and is not optimized for blind persons."
+
 msgid "construct"
 msgstr "Construction"
 
-msgid "typ"
-msgstr "Type"
+msgid "contact title"
+msgstr "Contact"
 
-msgid "toll"
-msgstr "Toll"
+msgid "contact url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/tools/contact.html"
+
+msgid "ct"
+msgstr "Ct."
+
+msgid "disclaimer title"
+msgstr "Copyright & Data protection"
+
+msgid "disclaimer url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright"
+
+msgid "egid"
+msgstr "EGID"
+
+msgid "einschraenkungen"
+msgstr "Einschränkungen"
+
+msgid "einwohner_ha"
+msgstr "Einwohner pro ha"
+
+msgid "ent_gew"
+msgstr "River"
+
+msgid "federal administration"
+msgstr "The Federal Authorities of the Swiss Confederation"
 
 msgid "fj85"
 msgstr "Aerial photo, aera statistic 1979/85"
@@ -179,23 +149,101 @@ msgstr "Aerial photo, aera statistic 1979/85"
 msgid "fj97"
 msgstr "Aerial photo, aera statistic 1992/97"
 
+msgid "flaeche_ha"
+msgstr "Area [ha]"
+
+msgid "flaeche_km2"
+msgstr "Area [km2]"
+
+msgid "flaeche_m2"
+msgstr "Area [m2]"
+
+msgid "fliessgewaesser"
+msgstr "Fliessgewässer"
+
+msgid "gemeinde"
+msgstr "City"
+
+msgid "geobasisdatensatz"
+msgstr "Basic geodata ID"
+
+msgid "gesamtflaeche_ha"
+msgstr "Total area [ha]"
+
+msgid "gewissnr"
+msgstr "GEWISS number"
+
+msgid "gmde"
+msgstr "BFS-City nummer (State 2006)"
+
+msgid "grundlage"
+msgstr "Grundlage"
+
+msgid "help title"
+msgstr "Help"
+
+msgid "help url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/commons/help/viewer_help.html"
+
+msgid "hide column"
+msgstr "Close Topics"
+
+msgid "holz_region"
+msgstr "Region"
+
+msgid "holznuztung"
+msgstr "Nutzung [m3/ha/J]"
+
+msgid "holzvorrat"
+msgstr "Vorrat [m3/ha]"
+
+msgid "holzzuwachs"
+msgstr "Zuwachs [m3/ha/J]"
+
+msgid "home title"
+msgstr "Homepage"
+
+msgid "home url"
+msgstr "http://map.geo.admin.ch/?lang=en"
+
 msgid "id_arealstatistik_85"
 msgstr "ID area statistic 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "ID area statistic 1992/97"
 
-msgid "bereich"
-msgstr "Domain"
+msgid "identificator"
+msgstr "Identificator"
 
-msgid "stationsnr"
-msgstr "Station number"
+msgid "intern"
+msgstr "Intern"
 
-msgid "aktuelle_daten"
-msgstr "Current and previous data"
+msgid "ivs_bedeutung"
+msgstr "Bedeutung (NHG)"
 
-msgid "stationsname"
-msgstr "Station name"
+msgid "ivs_gis"
+msgstr "(Objekt in IVS-GIS)"
+
+msgid "ivs_objekt"
+msgstr "IVS-Objekt"
+
+msgid "jb_name"
+msgstr "Name Jagdbanngebiet"
+
+msgid "jb_obj"
+msgstr "Jagdbanngebiet Objektnr."
+
+msgid "kanton"
+msgstr "Canton"
+
+msgid "kantoncode"
+msgstr "Canton Code"
+
+msgid "kartenblattname"
+msgstr "Kartenblattname"
+
+msgid "kartenblattnummer"
+msgstr "Kartenblattnummer"
 
 msgid "kartiereinheit"
 msgstr "Quartier unit"
@@ -203,62 +251,95 @@ msgstr "Quartier unit"
 msgid "kategorie"
 msgstr "Category"
 
-msgid "kantoncode"
-msgstr "Canton Code"
+msgid "kkw"
+msgstr "Atomic power plant"
 
-msgid "rwknr"
-msgstr "Water map Nr."
+msgid "klasse"
+msgstr "Klasse"
 
-msgid "kanton"
-msgstr "Canton"
+msgid "laenge_m"
+msgstr "Length [m]"
 
-msgid "ent_gew"
-msgstr "River"
-
-msgid "fliessgewaesser"
-msgstr "Fliessgewässer"
-
-msgid "egid"
-msgstr "EGID"
-
-msgid "strasse"
-msgstr "Street"
-
-msgid "nr"
-msgstr "Nr."
-
-msgid "plz"
-msgstr "Zip"
+msgid "laenge_strecke_m"
+msgstr "Length of stretch [m]"
 
 msgid "langtext"
 msgstr "Ortschaft"
 
-msgid "ct"
-msgstr "Ct."
+msgid "layer_geocat_text"
+msgstr "Link to geocat.ch"
 
-msgid "ort"
-msgstr "Location"
+msgid "layer_url_download_text"
+msgstr "Link for download"
 
-msgid "gemeinde"
-msgstr "City"
+msgid "layer_url_portal_text"
+msgstr "Link to portal"
 
-msgid "x"
-msgstr "X-Coordinate"
+msgid "layer_url_text"
+msgstr "Link to description"
 
-msgid "y"
-msgstr "Y-Coordinate"
+msgid "length_km"
+msgstr "Länge [km]"
 
-msgid "beschreibung"
-msgstr "Description"
+msgid "linkzurbeschreibung"
+msgstr "Detaillierte Beschreibung"
 
-msgid "url"
-msgstr "URL"
+msgid "linkzurlegende"
+msgstr "Link zur Legende"
+
+msgid "lokal"
+msgstr "lokal"
+
+msgid "mehrinformationen"
+msgstr "Ausführlichere Legende"
+
+msgid "messstellentyp"
+msgstr "Messstellentyp"
+
+msgid "nabeltyp"
+msgstr "Lage"
+
+msgid "name"
+msgstr "Name"
+
+msgid "national"
+msgstr "national"
+
+msgid "nr"
+msgstr "Nr."
 
 msgid "nummer"
 msgstr "Number"
 
-msgid "gewissnr"
-msgstr "GEWISS number"
+msgid "nutzung"
+msgstr "Hauptnutzung"
+
+msgid "objektname"
+msgstr "Object name"
+
+msgid "objektnr"
+msgstr "Object Nr."
+
+msgid "oeffentlich"
+msgstr "Öffentlich"
+
+msgid "ort"
+msgstr "Location"
+
+msgid "page is loading. please wait..."
+msgstr "map.geo.admin.ch is loading. please wait..."
+
+msgid "pdf"
+msgstr "PDF"
+
+msgid "perimeter_m"
+msgstr "Perimeter [m]"
+
+msgid "physischvirtuell"
+msgstr "Physisch-virtuell"
+
+msgid "plz"
+msgstr "Zip"
 
 msgid "protokoll"
 msgstr "Protocoll"
@@ -266,104 +347,104 @@ msgstr "Protocoll"
 msgid "punktname"
 msgstr "Point name"
 
-msgid "status"
-msgstr "State"
+msgid "regional"
+msgstr "regional"
 
-msgid "zugang"
-msgstr "Access"
+msgid "regname"
+msgstr "Grossraum"
 
-msgid "rss url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/current.enhRSS.html"
-
-msgid "rss title"
-msgstr "RSS"
-
-msgid "twitter url"
-msgstr "http://www.twitter.com/swiss_geoportal"
-
-msgid "twitter title"
-msgstr "Twitter"
+msgid "reisezeit_min"
+msgstr "Reisezeit [Min]"
 
 msgid "report problem"
 msgstr "Report problem"
 
-msgid  "tilenumber"
-msgstr "Sheet number"
+msgid "richtungsgetrennt"
+msgstr "Richtungsgetrennt"
 
-msgid  "sheetname"
-msgstr "Sheet name"
+msgid "routentypid"
+msgstr "Routentyp ID für Ausnahmetransporte"
 
-msgid  "atlassheetnumber"
-msgstr "Nummer Geologischer Atlas"
+msgid "rss title"
+msgstr "RSS"
 
-msgid  "kartenblattname"
-msgstr "Kartenblattname"
+msgid "rss url"
+msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/current.enhRSS.html"
 
-msgid  "kartenblattnummer"
-msgstr "Kartenblattnummer"
-
-msgid  "ausgabejahr"
-msgstr "Ausgabejahr"
-
-msgid  "linkzurlegende"
-msgstr "Link zur Legende"
-
-msgid  "mehrinformationen"
-msgstr "Ausführlichere Legende"
-
-msgid  "alexandria"
-msgstr "Catalogue Alexandria"
-
-msgid  "Toposhop"
-msgstr  "Toposhop"
-
-msgid "Produkt"
-msgstr "Product"
-
-msgid "zaehlstelle"
-msgstr "Zählstelle" 
-
-msgid "physischvirtuell"
-msgstr "Physisch-virtuell"
-
-msgid "messstellentyp"
-msgstr "Messstellentyp" 
-
-msgid "linkzurbeschreibung"
-msgstr "Detaillierte Beschreibung" 
-
-msgid "oeffentlich"
-msgstr "Öffentlich" 
-
-msgid "intern"
-msgstr "Intern" 
-
-msgid "bearbeitungsjahr"
-msgstr "Bearbeitungsjahr" 
+msgid "rwknr"
+msgstr "Water map Nr."
 
 msgid "schonzeit"
-msgstr "Schonzeit" 
+msgstr "Schonzeit"
 
-msgid "einschraenkungen"
-msgstr "Einschränkungen"
+msgid "sektor"
+msgstr "Sector"
+
+msgid "sheetname"
+msgstr "Sheet name"
+
+msgid "stand"
+msgstr "Stand"
+
+msgid "stationsname"
+msgstr "Station name"
+
+msgid "stationsnr"
+msgstr "Station number"
+
+msgid "status"
+msgstr "State"
+
+msgid "strasse"
+msgstr "Street"
+
+msgid "strassentyp"
+msgstr "Strassentyp"
+
+msgid "strecke"
+msgstr "Strecke"
+
+msgid "sub"
+msgstr "Historischer Verlauf mit Substanz"
+
+msgid "substanzgrad"
+msgstr "Substanzgrad"
+
+msgid "tilenumber"
+msgstr "Sheet number"
+
+msgid "toll"
+msgstr "Toll"
+
+msgid "twitter title"
+msgstr "Twitter"
+
+msgid "twitter url"
+msgstr "http://www.twitter.com/swiss_geoportal"
+
+msgid "typ"
+msgstr "Type"
+
+msgid "typnummer"
+msgstr "Typnummer"
+
+msgid "url"
+msgstr "URL"
+
+msgid "viel_sub"
+msgstr "Historischer Verlauf mit viel Substanz"
+
+msgid "wenig_sub"
+msgstr "Historischer Verlauf"
+
+msgid "werte"
+msgstr "Verfügbare Werte"
 
 msgid "wj_bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
 
-msgid "beschlussjahr"
-msgstr "Jahr"
-
-msgid "bestimmung"
-msgstr "Bestimmungen"
-
-msgid "grundlage"
-msgstr "Grundlage"
-
-msgid "jb_obj"
-msgstr "Jagdbanngebiet Objektnr."
-
-msgid "jb_name"
-msgstr "Name Jagdbanngebiet"
+msgid "wms_resource_text"
+msgstr "Link to WMS"
 
 msgid "wrz_fl"
 msgstr "Fläche"
@@ -377,106 +458,24 @@ msgstr "Wildruhezonen-Objektnr."
 msgid "wrz_status"
 msgstr "Kategorie"
 
+msgid "x"
+msgstr "X-Coordinate"
+
+msgid "y"
+msgstr "Y-Coordinate"
+
+msgid "zaehlstelle"
+msgstr "Zählstelle"
+
 msgid "zeitraum"
 msgstr "Gültigkeit"
-
-msgid "zusatzinfo"
-msgstr "Zusatzinformation"
-
-msgid "length_km"
-msgstr "Länge [km]"
-
-msgid "richtungsgetrennt"
-msgstr "Richtungsgetrennt"
-
-msgid "anzahlspuren"
-msgstr "Anzahl Spuren"
-
-msgid "strassentyp"
-msgstr "Strassentyp"
-
-msgid "routentypid"
-msgstr "Routentyp ID für Ausnahmetransporte"
-
-msgid "ivs_objekt"
-msgstr "IVS-Objekt"
-
-msgid "ivs_gis"
-msgstr "(Objekt in IVS-GIS)"
-
-msgid "strecke"
-msgstr "Strecke"
-
-msgid "ivs_bedeutung"
-msgstr "Bedeutung (NHG)"
-
-msgid "national"
-msgstr "national"
-
-msgid "regional"
-msgstr "regional"
-
-msgid "lokal"
-msgstr "lokal"
-
-msgid "substanzgrad"
-msgstr "Substanzgrad"
-
-msgid "viel_sub"
-msgstr "Historischer Verlauf mit viel Substanz"
-
-msgid "sub"
-msgstr "Historischer Verlauf mit Substanz"
-
-msgid "wenig_sub"
-msgstr "Historischer Verlauf"
-
-msgid "kkw"
-msgstr "Atomic power plant"
-
-msgid "sektor"
-msgstr "Sector"
 
 msgid "zone"
 msgstr "Zone"
 
-msgid "abfrage"
-msgstr "Datenbfrage"
+msgid "zugang"
+msgstr "Access"
 
-msgid "werte"
-msgstr "Verfügbare Werte"
+msgid "zusatzinfo"
+msgstr "Zusatzinformation"
 
-msgid "nabeltyp"
-msgstr "Lage"
-
-# are2 translations
-
-msgid "belastung_personen"
-msgstr "Belastung [Pers./Jahr]"
-
-msgid "belastung_tonnen"
-msgstr "Belastung [t/Jahr]"
-
-msgid "stand"
-msgstr "Stand"
-
-msgid "typnummer"
-msgstr "Typnummer"
-
-msgid "regname"
-msgstr "Grossraum"
-
-msgid "klasse"
-msgstr "Klasse"
-
-msgid "einwohner_ha"
-msgstr "Einwohner pro ha"
-
-msgid "beschaeftigte_ha"
-msgstr "Beschäftigte pro ha"
-
-msgid "nutzung"
-msgstr "Hauptnutzung"
-
-msgid "reisezeit_min"
-msgstr "Reisezeit [Min]"
