@@ -43,6 +43,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
          api.createMap({
             div: "mymap1"
          });
+         startCounter();
       }
    </script>
    <body onload="init();">
@@ -95,6 +96,58 @@ Services
    :maxdepth: 1
 
    services/sdiservices
+
+.. raw:: html
+
+   <script type="text/javascript">
+      function startCounter() {
+         setInterval("countTiles()",1000);
+      }
+      function FormatNumberBy3(num, decpoint, sep) {
+         // check for missing parameters and use defaults if so
+         if (arguments.length == 2) {
+            sep = ",";
+         }
+         if (arguments.length == 1) {
+            sep = ",";
+            decpoint = ".";
+         }
+         // need a string for operations
+         num = num.toString();
+         // separate the whole number and the fraction if possible
+         a = num.split(decpoint);
+         x = a[0]; // decimal
+         y = a[1]; // fraction
+         z = "";
+
+         if (typeof(x) != "undefined") {
+            // reverse the digits. regexp works from left to right.
+            for (i=x.length-1;i>=0;i--)
+               z += x.charAt(i);
+            // add seperators. but undo the trailing one, if there
+            z = z.replace(/(\d{3})/g, "$1" + sep);
+            if (z.slice(-sep.length) == sep)
+               z = z.slice(0, -sep.length);
+            x = "";
+            // reverse again to get back the number
+            for (i=z.length-1;i>=0;i--)
+               x += z.charAt(i);
+            // add the fraction back in, if it was there
+            if (typeof(y) != "undefined" && y.length > 0)
+               x += decpoint + y;
+         }
+      return x;
+      }
+      function countTiles() {
+          var startDate = new Date(2010,08,20,12,0,0,0);
+          var now = new Date();
+          var difference =  now.getTime() - startDate.getTime();
+          numberTilesSecond = 28
+          var counter = (difference/1000)*numberTilesSecond;
+          document.getElementById("myCounter").innerHTML = "The GeoAdmin API has delivered " + FormatNumberBy3(Math.round(counter),'.','\'') + " tiles since its launch";
+      }
+   </script>
+   <div id="myCounter" style="padding: 0 0 0 0;margin:10px !important;"></div>
 
 Mobile API
 **********
