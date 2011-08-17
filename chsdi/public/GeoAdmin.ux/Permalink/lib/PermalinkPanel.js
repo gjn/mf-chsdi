@@ -1,13 +1,13 @@
 /**
  * @include Permalink/lib/PermalinkField.js
  */
- 
+
 /** api: (define)
  *  module = GeoAdmin
  *  class = PermalinkPanel
  *  base_link = `Ext.form.FormPanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.FormPanel>`_
  */
- 
+
 /** api: example
  *  Sample code to use a permalink panel:
  *
@@ -53,13 +53,13 @@
  *            html: ["<p>If you collapse this panel,",
  *                   "the permalink panel should not be",
  *                   "resized</p>"].join(" ")
- *        }, 
+ *        },
  *            mapPanel
  *        ]
  *    });
- *    
+ *
  */
- 
+
 /** api: constructor
  *  .. class:: PermalinkPanel(config)
  *
@@ -81,20 +81,30 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
 
     initComponent: function() {
         this.title = OpenLayers.i18n("Map URL");
+
+        // Create a shareThis button
+        var s = document.createElement("span");
+        if (stLight) {            
+            s.className = "st_sharethis";
+            s.innerHTML = OpenLayers.i18n("Share");
+        }
+
         this.items = new GeoAdmin.PermalinkField({width: 440});
-        this.tbar = ["->", {
-            iconCls: "close-button", 
+        this.tbar = ["->", s, {
+            iconCls: "close-button",
             toggleGroup: this.closeButtonToggleGroup,
-            handler: function() { this.hide(); },
+            handler: function() {
+                this.hide();
+            },
             scope: this
         }];
         GeoAdmin.PermalinkPanel.superclass.initComponent.apply(
-            this, arguments);
+                this, arguments);
     },
 
     afterRender: function() {
         GeoAdmin.PermalinkPanel.superclass.afterRender.apply(
-            this, arguments);
+                this, arguments);
         // we want to swallow events not to have the map move
         // when mouse actions occur on this panel
         this.body.swallowEvent([
