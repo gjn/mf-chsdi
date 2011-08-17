@@ -163,7 +163,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             url: this.config.printBaseUrl,
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
-		    provider.baseParams.layout = provider.layout.get("name");
+                    provider.baseParams.layout = provider.layout.get("name");
                     var overrides = {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
@@ -358,6 +358,71 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 matrixSet: layer.matrixSet,
                 zoomOffset: layer.zoomOffset,
                 resolutions: [650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5]
+            });
+        };
+
+        // Workaround to prevent the OpenLayers.Handler.Path issue which generates wrong geometry (line with one point)
+        this.printProvider.encoders.layers.Vector = function(layer) {
+            if (!layer.features.length) {
+                return;
+            }
+
+            var encFeatures = [];
+            var encStyles = {};
+            var features = layer.features;
+            var featureFormat = new OpenLayers.Format.GeoJSON();
+            var styleFormat = new OpenLayers.Format.JSON();
+            var nextId = 1;
+            var styleDict = {};
+            var feature, style, dictKey, dictItem, styleName;
+            for (var i = 0, len = features.length; i < len; ++i) {
+                feature = features[i];
+                console.log(feature.geometry.getLength());
+                if (feature.geometry.CLASS_NAME == 'OpenLayers.Geometry.LineString' && feature.geometry.getLength() <= 0) {
+                    continue;
+                }
+                if (feature.geometry.CLASS_NAME == 'OpenLayers.Geometry.Polygon' && feature.geometry.getArea() <= 0) {
+                    continue;
+                }
+                style = feature.style || layer.style ||
+                        layer.styleMap.createSymbolizer(feature,
+                                feature.renderIntent);
+                dictKey = styleFormat.write(style);
+                dictItem = styleDict[dictKey];
+                if (dictItem) {
+                    //this style is already known
+                    styleName = dictItem;
+                } else {
+                    //new style
+                    styleDict[dictKey] = styleName = nextId++;
+                    if (style.externalGraphic) {
+                        encStyles[styleName] = Ext.applyIf({
+                            externalGraphic: this.getAbsoluteUrl(
+                                    style.externalGraphic)}, style);
+                    } else {
+                        encStyles[styleName] = style;
+                    }
+                }
+                var featureGeoJson = featureFormat.extract.feature.call(
+                        featureFormat, feature);
+
+                featureGeoJson.properties = OpenLayers.Util.extend({
+                    _gx_style: styleName
+                }, featureGeoJson.properties);
+
+                encFeatures.push(featureGeoJson);
+            }
+            var enc = this.encoders.layers.Layer.call(this, layer);
+            return Ext.apply(enc, {
+                type: 'Vector',
+                styles: encStyles,
+                styleProperty: '_gx_style',
+                geoJson: {
+                    type: "FeatureCollection",
+                    features: encFeatures
+                },
+                name: layer.name,
+                opacity: (layer.opacity != null) ? layer.opacity : 1.0
             });
         };
 
