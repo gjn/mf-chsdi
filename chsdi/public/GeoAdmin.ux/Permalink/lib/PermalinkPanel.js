@@ -82,11 +82,17 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     initComponent: function() {
         this.title = OpenLayers.i18n("Map URL");
 
-        // Create a shareThis button
-        var s = document.createElement("span");
-        if (typeof stLight != 'undefined') {            
-            s.className = "st_sharethis";
-            s.innerHTML = OpenLayers.i18n("Share");
+        // Due to sharethis limitation, it's required to use an existing span in map.geo.admin.ch
+        var s = document.getElementById("sharethis_permalink");
+        if (typeof s === 'undefined') {
+            s = document.createElement("span");
+            if (typeof stLight != 'undefined') {
+                s.className = "st_sharethis";
+                s.innerHTML = OpenLayers.i18n("Share");
+            }
+        } else {
+            s.style.display = 'block';
+            s.style.visibility = 'visible';
         }
 
         this.items = new GeoAdmin.PermalinkField({width: 440});
