@@ -1,8 +1,10 @@
-GeoAdmin.OpenLayersImgPath = "../img/";
+GeoAdmin.OpenLayersImgPath = "../../images/";
 
 var mapPanel;
 
 function init() {
+    GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+    
     mapPanel = new GeoAdmin.MapPanel({renderTo: Ext.getBody(),
         region: "center",
         width: 800,
