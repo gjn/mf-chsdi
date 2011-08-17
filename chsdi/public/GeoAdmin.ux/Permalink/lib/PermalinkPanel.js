@@ -84,7 +84,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
 
         // Create a shareThis button
         var s = document.createElement("span");
-        if (stLight) {            
+        if (typeof stLight != 'undefined') {            
             s.className = "st_sharethis";
             s.innerHTML = OpenLayers.i18n("Share");
         }

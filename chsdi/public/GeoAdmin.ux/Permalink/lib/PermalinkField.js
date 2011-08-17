@@ -22,7 +22,7 @@ GeoAdmin.PermalinkField = Ext.extend(Ext.form.TextField, {
     onProviderStatechange: function(provider) {
         this.setValue(provider.getLink());
 
-        if (stWidget) {
+        if (typeof stWidget != 'undefined') {
             for (var i = 0; i < stWidget.shareables.length; i++) {
                 var share = stWidget.shareables[0];
                 share.url = provider.getLink();
