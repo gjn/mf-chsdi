@@ -84,7 +84,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
 
         // Due to sharethis limitation, it's required to use an existing span in map.geo.admin.ch
         var s = document.getElementById("sharethis_permalink");
-        if (typeof s === 'undefined') {
+        if (s === null) {
             s = document.createElement("span");
             if (typeof stLight != 'undefined') {
                 s.className = "st_sharethis";
