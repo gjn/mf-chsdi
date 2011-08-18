@@ -1189,7 +1189,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.are",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.vec25-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-strassennetz"),

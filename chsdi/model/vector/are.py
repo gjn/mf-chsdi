@@ -166,7 +166,7 @@ class Gemeindetyp(Base, Queryable):
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
     __template__ = 'tooltips/gemeindetyp.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
+    id = Column('gde_no', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.are.gemeindetyp-1990-9klassen', Gemeindetyp)
