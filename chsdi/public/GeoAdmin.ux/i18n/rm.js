@@ -3,20 +3,20 @@
 OpenLayers.Lang.rm= {
 
 	//Globals
-	'Activate dynamic location':'Activate dynamic location', //TODO
+	'Activate dynamic location':'Activate dynamic location',
 	'Add':'Add', //TODO
-	'Add KML/GML (Beta)...':'Add KML/GML (Beta)...', //TODO
+	'Add KML/GML (Beta)...':'Importar KML/GML (beta)...',
 	'Add Layer':'Add Layer', //TODO
 	'Add currently selected layer':'Add currently selected layer', //TODO
 	'Administrative Einheiten':'Unitads administrativas',
 	'Adressen':'Adressas',
-	'AdvancedWindow.title':'AdvancedWindow.title', //TODO
-	'AdvancedWindow.tooltip':'AdvancedWindow.tooltip', //TODO
+	'AdvancedWindow.title':'Funcziuns supplementaras',
+	'AdvancedWindow.tooltip':'Funcziuns supplementaras',
 	'Aerial':'Fotografia or da l\'aria',
 	'Area measurement (double-click to terminate)':'Apparat per mesirar la surfatscha (cliccar 2 giadas per terminar)',
 	'Artenvielfalt':'Repartiziun da las spezias',
 	'Atmosphärische Bedingungen':'Cundiziuns atmosfericas',
-	'Attributes':'Attributes', //TODO
+	'Attributes':'Attributs',
 	'Background':'Fund da la charta',
 	'Basisdaten':'Datas da basa',
 	'Bevölkerungsdichte':'Repartiziun da la populaziun - demografia',
@@ -24,44 +24,44 @@ OpenLayers.Lang.rm= {
 	'Biogeografische Regionen':'Regiuns biogeografics',
 	'Boden':'Terren',
 	'Bodenbedeckung':'Cuvrida dal terren',
-	'Cancel':'Annular',
+	'Cancel':'Annullar',
 	'Cantons':'Chantuns',
 	'Catalog':'Catalog [INSPIRE]',
 	'Cities':'Vischnancas',
-	'Close':'Schliessen',
+	'Close':'Serrar',
 	'Close this window':'Close this window', //TODO
 	'Connect':'Connect', //TODO
 	'Coordinates (m):':'Coordinatas (m):',
 	'Copyright &amp; Data protection':'Copyright & decleraziun da protecziun da datas',
-	'Create label':'Beschriftung erfassen',
-	'Create line':'Linie erfassen',
-	'Create point':'Punkt erfassen',
-	'Create polygon':'Polygon erfassen',
+	'Create label':'Crear in\'etichetta',
+	'Create line':'Registrar la lingia',
+	'Create point':'Registrar il punct',
+	'Create polygon':'Registrar il poligon',
 	'Data:':'(c) Datas:',
-	'Deactivate dynamic location':'Deactivate dynamic location', //TODO
-	'Delete':'Löschen',
+	'Deactivate dynamic location':'Deactivate dynamic location',
+	'Delete':'Stizzar',
 	'Delete All Features':'Alle Objekte löschen',
 	'Delete Feature':'Objekt löschen',
-	'Delete all features':'Alle Objekte löschen',
-	'Delete feature':'Objekt löschen',
-	'DeleteAll':'Alles löschen',
+	'Delete all features':'Stizzar tut ils objects',
+	'Delete feature':'Stizzar objects',
+	'DeleteAll':'Stizzar tut',
 	'Description':'Description', //TODO
 	'Desktop version':'Desktop version', //TODO
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
-	'Do you really want to delete all features ?':'Wollen Sie wirklich alle Objekte löschen?',
-	'Do you really want to delete this feature ?':'Wollen Sie wirklich das Objekt löschen?',
-	'Edit Feature':'Objekt editieren',
+	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',
+	'Do you really want to delete this feature ?':'Vulais Vus propi stizzar quest object?',
+	'Edit Feature':'Editar l\'object',
 	'Elevation':'Autezza',
 	'Energie und Wirtschaft':'Energia ed economia',
 	'Energiequellen':'Funtaunas d\'energia',
-	'Enter your feedback here ...':'Enter your feedback here ...', //TODO
+	'Enter your feedback here ...':'Rapport charta actual',
 	'Error':'Problem',
 	'Export':'Export', //TODO
-	'Export KML':'Export KML', //TODO
+	'Export KML':'Export KML',
 	'Export Window':'Export Window', //TODO
-	'Failure':'Failure', //TODO
+	'Failure':'Sbagl',
 	'Feature tooltip':'Infurmaziuns davart ils objects',
-	'File successfuly imported. Number of features added:':'File successfuly imported. Number of features added:', //TODO
+	'File successfuly imported. Number of features added:':'La datoteca è vegnida importada cun success. Dumber dals objects agiuntads:',
 	'Flurstücke / Grundstücke':'Parcellas/bains immobigliars (parcellas da cataster)',
 	'Format':'Format',
 	'Full extent':'Charta da survista',
@@ -71,38 +71,38 @@ OpenLayers.Lang.rm= {
 	'Geo search...':'Tschertgar lieu, NP, coordinatas...',
 	'Geografische Gittersysteme':'Sistems da giatter geografic',
 	'Geografische Namen':'Designaziuns geograficas',
-	'Geolocation':'Standortbestimmung',
+	'Geolocation':'Determinaziun da la posiziun',
 	'Geologie':'Geologia',
-	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
+	'Gesundheit une Sicherheit':'Segirezza e sanadad',
 	'Gewässernetz':'Rait da las auas',
 	'Höhe':'Autezza',
-	'INFO':'INFO', //TODO
-	'Import':'Import', //TODO
-	'Import KML':'Import KML', //TODO
+	'INFO':'Infurmaziun',
+	'Import':'Agiuntar',
+	'Import KML':'Importar KML/GML',
 	'Infrastruktur und Kommunikation':'Infrastructura e communicaziun',
 	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
 	'Input the server address (URL)':'Input the server address (URL)', //TODO
-	'Invalid email provided':'Invalid email provided', //TODO
+	'Invalid email provided':'Inditgà in e-mail betg valaivel',
 	'KML':'KML', //TODO
 	'KML URL':'KML URL', //TODO
-	'KML data sucessfully imported in layer:':'KML data sucessfully imported in layer:', //TODO
+	'KML data sucessfully imported in layer:':'Importà cun success datas da KML en:',
 	'KMLTooltip':'KMLTooltip', //TODO
 	'Kanton':'Chantuns',
-	'Label':'Label', //TODO
+	'Label':'Etichetta',
 	'Land- und Wassertwirtschaft':'Stabiliments agriculs e d\'aquacultura',
 	'Landnutzung':'Utilisaziun dal terren',
-	'Layer Manager':'Layer Manager', //TODO
+	'Layer Manager':'Administraziun dals plauns',
 	'Layer Selection':'Selecziun',
 	'Layer Tree':'Temas',
 	'Layer visibility':'Visibilitad da datas',
 	'LayerManager':'KML & GPX',
-	'LayerManagerWindow':'LayerManagerWindow', //TODO
+	'LayerManagerWindow':'Importar ina datoteca da KML u da GPX',
 	'Lebensräume une Biotope':'Spazis da viver e biotops',
-	'Legend.NoLayer':'Legend.NoLayer', //TODO
-	'Legend.Title':'Legend.Title', //TODO
-	'Legend.Tooltip':'Legend.Tooltip', //TODO
-	'Legend.onClick':'Legend.onClick', //TODO
-	'LineString':'LineString', //TODO
+	'Legend.NoLayer':'Tscherner il nivel da datas',
+	'Legend.Title':'Legenda',
+	'Legend.Tooltip':'Mussar la fanestra da las legendas',
+	'Legend.onClick':'Datas mussadas',
+	'LineString':'Lingia',
 	'Link with bowl crosshair':'Link cun cruschera',
 	'Load KML':'Load KML', //TODO
 	'Loading...':'Loading...', //TODO
@@ -111,30 +111,30 @@ OpenLayers.Lang.rm= {
 	'Luft und Satellitenbilder':'Ortofotografia',
 	'Map Queries':'Tschertgar',
 	'Map URL':'Integrar il link qua sutvart en il e-mail',
-	'Map was moved to':'Map was moved to', //TODO
-	'Measure':'Mesiraziun',
-	'Measure.MeasureArea':'Measure.MeasureArea', //TODO
-	'Measure.MeasureArea.ToolTip':'Measure.MeasureArea.ToolTip', //TODO
-	'Measure.MeasureLength':'Measure.MeasureLength', //TODO
-	'Measure.MeasureLength.ToolTip':'Measure.MeasureLength.ToolTip', //TODO
-	'Measure.title':'Measure.title', //TODO
+	'Map was moved to':'La charta è vegnida spustada a',
+	'Measure':'Apparats da mesiraziun',
+	'Measure.MeasureArea':'Surfatscha',
+	'Measure.MeasureArea.ToolTip':'Mesirai ina surfatscha',
+	'Measure.MeasureLength':'Distanza',
+	'Measure.MeasureLength.ToolTip':'Mesirai ina distanza',
+	'Measure.title':'Mesiraziun da distanzas & mesiraziun da surfatschas',
 	'Meteorologie':'Indicaturs geografic-meteorologics',
 	'Mineralische Bodenschätze':'Resursas mineralas',
-	'MultiLineString':'MultiLineString', //TODO
-	'MultiPoint':'MultiPoint', //TODO
-	'MultiPolygon':'Multipolygon',
+	'MultiLineString':'Multilingia',
+	'MultiPoint':'Multipunct',
+	'MultiPolygon':'Multipoligon',
 	'Name':'Name', //TODO
 	'Nationales Maps':'Nationales Maps', //TODO
 	'Natürliche Risikozonen':'Territoris cun ristgs natirals',
 	'Next view':'Enavant',
 	'No':'No', //TODO
-	'No email provided':'No email provided', //TODO
-	'No feedback provided':'No feedback provided', //TODO
-	'No specific handler added to show the layer search':'No specific handler added to show the layer search', //TODO
-	'No specific handler added to show the layer selection':'No specific handler added to show the layer selection', //TODO
-	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'No specific handler added to show the map <br> Use "goToMapHandler" parameter', //TODO
+	'No email provided':'Betg inditgà il e-mail',
+	'No feedback provided':'Betg dà ina reacziun',
+	'No specific handler added to show the layer search':'I n\'è avant maun nagin "handler" specific per mussar la tschertga da temas',
+	'No specific handler added to show the layer selection':'I n\'è avant maun nagin "handler" specific per mussar la selecziun da temas',
+	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'I n\'è avant maun nagin "handler" specific per mussar la charta <br> Duvrai il parameter "goToMapHandler"',
 	'None':'Nagina',
-	'Number of imported features:':'Number of imported features:', //TODO
+	'Number of imported features:':'Dumber dals objects importads:',
 	'Oberflächendarstellung':'Represchentaziun da la surfatscha',
 	'Opacity:':'Opacitad:',
 	'Overview Map':'Charta da survista',
@@ -143,41 +143,41 @@ OpenLayers.Lang.rm= {
 	'Permalink.openlink':'Open',
 	'Permalink.title':'Permalink',
 	'Permalink.tooltip':'Permalink',
-	'Please check your input':'Please check your input', //TODO
-	'Please fill the feedback':'Please fill the feedback', //TODO
+	'Please check your input':'Controllar per plaschair las endataziuns',
+	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
 	'Please, enter an url in the textbox first':'Please, enter an url in the textbox first', //TODO
-	'Point':'Point', //TODO
-	'Polygon':'Polygon',
+	'Point':'Punct',
+	'Polygon':'Poligon',
 	'Position':'Posiziun',
-	'Positioning failed.':'Positioning failed.', //TODO
+	'Positioning failed.':'Il posiziunament n\'ha betg funcziunà',
 	'Preview':'Preview', //TODO
 	'Previous view':'Enavos',
-	'Problems submitting:':'Problems submitting:', //TODO
+	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Stabiliments da producziun e d\'industria',
 	'Queryable':'Queryable', //TODO
 	'Raum und Bevölkerung':'Territori e populaziun',
 	'Raumplanung':'Secturs reglads ed unitads da rapport',
-	'RedLining Panel':'RedLining Panel', //TODO
-	'Redlining':'Redlining', //TODO
-	'RedliningWindow':'RedliningWindow', //TODO
+	'RedLining Panel':'Utensils da dissegnar',
+	'Redlining':'Dissegnar',
+	'RedliningWindow':'Dissegnar',
 	'Referenzsysteme':'Sistems da referenza da coordinatas',
-	'Report':'Rapportar un problem cun charta',
-	'Save context':'Context speichern',
+	'Report':'Rapportar in problem cun la charta',
+	'Save context':'Arcunar il context',
 	'Schutzgebiete':'Territoris da protecziun',
 	'Schweiz':'Svizra',
 	'Search':'Tschertga',
 	'Search data...':'Tschertgar datas [en tudestg] ...',
-	'Select a file to import':'Select a file to import', //TODO
+	'Select a file to import':'Tscherni ina datoteca per l\'import',
 	'Select or input a server address (URL)':'Select or input a server address (URL)', //TODO
-	'Send':'Send', //TODO
+	'Send':'Trametter',
 	'Send feedback':'Rapportar il problem',
 	'Sending feedback....':'Rapportar il problem....',
 	'Statistische Einheiten':'Unitads statisticas',
-	'Style':'Style', //TODO
-	'Success':'Raport trametteva cun success',
+	'Style':'Stil',
+	'Success':'Rapport tramess cun success',
 	'Swiss Coordinate':'CH03',
 	'Swissnames':'Swissnames',
-	'Thanks a lot for your feedback !':'Grazia fitg per vus raport!',
+	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
 	'The following URL will be transferred:':'Trametter Link:',
 	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would you load these data ?', //TODO
 	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
@@ -192,172 +192,172 @@ OpenLayers.Lang.rm= {
 	'Warning screen resolution':'Avertiment: dissoluziun dal monitur',
 	'We recommend to upgrade to a newer release.':'Nus recumandain da duvrar ina versiun pli nova.',
 	'WmsBrowser':'WMS',
-	'WmsBrowserWindow':'WmsBrowserWindow', //TODO
+	'WmsBrowserWindow':'Agiuntar in servetsch da WMS',
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
-	'Your email':'Vus emagl',
-	'Your email (optional)':'Vus emagl (facultativ)',
+	'Your email':'Voss e-mail',
+	'Your email (optional)':'Voss e-mail (facultativ)',
 	'Your email:':'Vus emagl:',
-	'Your feedback about current map extent':'Rapport charta actual',
+	'Your feedback about current map extent':'Rapport davart l\'extract actual da la charta',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
 	'Zoom to the max extent':'Vesair tut la Svizra',
 	'about that layer':'Infurmaziuns davart questa unitad da datas',
-	'addLayerText':'addLayerText', //TODO
-	'addSelectedLayersText':'addSelectedLayersText', //TODO
-	'black':'black', //TODO
-	'blue':'blue', //TODO
+	'addLayerText':'Agiuntar',
+	'addSelectedLayersText':'Agiuntai il nivel selecziunà sco in nivel',
+	'black':'nair',
+	'blue':'blau',
 	'brown':'brown', //TODO
 	'ch.are':'ARE',
-	'ch.are.agglomerationen_isolierte_staedte-2000':'Agglomerationen und isolierte Städte',
-	'ch.are.alpenkonvention':'Alpenkonvention',
-	'ch.are.gemeindetyp-1990-9klassen':'Gemeindetypologie ARE',
+	'ch.are.agglomerationen_isolierte_staedte-2000':'Aglomeraziuns e citads isoladas',
+	'ch.are.alpenkonvention':'Convenziun da las Alps',
+	'ch.are.gemeindetyp-1990-9klassen':'Tipologia da las vischnancas ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=de',
 	'ch.astra':'ASTRA',
-	'ch.astra.ausnahmetransportrouten':'Ausnahmetransportrouten',
-	'ch.astra.ivs-gelaendekarte':'IVS Geländekarte',
-	'ch.astra.ivs-nat':'IVS National',
-	'ch.astra.ivs-reg_loc':'IVS Regional & Lokal',
-	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Verkehrszählstellen lokal',
-	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Verkehrszählstellen übergeordnet',
+	'ch.astra.ausnahmetransportrouten':'Rutas per transports excepziunals',
+	'ch.astra.ivs-gelaendekarte':'IVS charta topografica',
+	'ch.astra.ivs-nat':'IVS naziunal',
+	'ch.astra.ivs-reg_loc':'IVS regiunal & local',
+	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Posts da quintar il traffic locals',
+	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Posts da quintar il traffic surordinads',
 	'ch.astra.url':'http://www.astra.admin.ch/index.html?lang=de',
 	'ch.babs':'BABS',
-	'ch.babs.kulturgueter':'Kulturgüterschutz Inventar',
+	'ch.babs.kulturgueter':'Inventari dals bains culturals',
 	'ch.babs.url':'http://www.bevoelkerungsschutz.admin.ch/internet/bs/de/home/das_babs.html',
 	'ch.bafu':'BAFU',
-	'ch.bafu.bundesinventare-amphibien':'Amphibien',
-	'ch.bafu.bundesinventare-auen':'Auengebiete',
-	'ch.bafu.bundesinventare-bln':'BLN Inventar',
-	'ch.bafu.bundesinventare-flachmoore':'Flachmoore',
-	'ch.bafu.bundesinventare-hochmoore':'Hochmoore',
-	'ch.bafu.bundesinventare-jagdbanngebiete':'Jagdbanngebiete',
-	'ch.bafu.bundesinventare-moorlandschaften':'Moorlandschaften',
-	'ch.bafu.bundesinventare-vogelreservate':'Wasser- und Zugvogelreservate',
-	'ch.bafu.fauna-steinbockkolonien':'Steinbockkolonien',
-	'ch.bafu.gefahren-gefaehrdungszonen':'Gefährdungszonen für Erdbeben',
-	'ch.bafu.holznutzung':'Holznutzung und Mortalität (LFI)',
-	'ch.bafu.holzvorrat':'Holzvorrat (LFI)',
-	'ch.bafu.holzzuwachs':'Holzzuwachs (LFI)',
-	'ch.bafu.hydrologie-hydromessstationen':'Hydrologische Messstationen',
-	'ch.bafu.laerm-bahnlaerm_nacht':'Eisenbahnlärm (Lr_Nacht)',
-	'ch.bafu.laerm-bahnlaerm_tag':'Eisenbahnlärm (Lr_Tag)',
-	'ch.bafu.laerm-strassenlaerm_nacht':'Strassenlärm (Lr_Nacht)',
-	'ch.bafu.laerm-strassenlaerm_tag':'Strassenlärm (Lr_Tag)',
-	'ch.bafu.nabelstationen':'Luftbelastung: Stationen NABEL',
-	'ch.bafu.permafrost':'Permafrosthinweiskarte',
-	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Extensives Landwirtschaftsgebiet',
-	'ch.bafu.ren-feuchtgebiete':'REN  Feuchtgebiet',
-	'ch.bafu.ren-fliessgewaesser_seen':'REN  Fliessgewässer / Seen',
-	'ch.bafu.ren-trockenstandorte':'REN  Trockenstandort',
-	'ch.bafu.ren-wald':'REN  Wald',
-	'ch.bafu.ren-wald_ueber_1000_meter':'REN  Wald>1000m',
-	'ch.bafu.ren-wald_unter_1000_meter':'REN  Wald<1000m',
-	'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung':'Pärke',
+	'ch.bafu.bundesinventare-amphibien':'Amfibis',
+	'ch.bafu.bundesinventare-auen':'Ognas',
+	'ch.bafu.bundesinventare-bln':'Inventari IFC',
+	'ch.bafu.bundesinventare-flachmoore':'Palids planivas',
+	'ch.bafu.bundesinventare-hochmoore':'Palids autas',
+	'ch.bafu.bundesinventare-jagdbanngebiete':'Territoris scumandads per la chatscha',
+	'ch.bafu.bundesinventare-moorlandschaften':'Cuntradas da palì',
+	'ch.bafu.bundesinventare-vogelreservate':'Reservats d\'utschels da l\'aua e migrants',
+	'ch.bafu.fauna-steinbockkolonien':'Colonias da capricorns',
+	'ch.bafu.gefahren-gefaehrdungszonen':'Zonas da periclitaziun da terratrembels',
+	'ch.bafu.holznutzung':'Explotaziun dal guaud e mortalitad (IFN)',
+	'ch.bafu.holzvorrat':'Reserva da laina (IFN)',
+	'ch.bafu.holzzuwachs':'Creschientscha annuala da laina (IFN)',
+	'ch.bafu.hydrologie-hydromessstationen':'Staziuns idrometricas',
+	'ch.bafu.laerm-bahnlaerm_nacht':'Canera da viafier (Lr_notg)',
+	'ch.bafu.laerm-bahnlaerm_tag':'Canera da viafier (Lr_di)',
+	'ch.bafu.laerm-strassenlaerm_nacht':'Canera da via (Lr_notg)',
+	'ch.bafu.laerm-strassenlaerm_tag':'Canera da via (Lr_di)',
+	'ch.bafu.nabelstationen':'Contaminaziun da l\'aria: Staziuns NABEL',
+	'ch.bafu.permafrost':'Charta indicativa da la schelira permanenta',
+	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Territori agricul extensiv',
+	'ch.bafu.ren-feuchtgebiete':'REN  Zona umida',
+	'ch.bafu.ren-fliessgewaesser_seen':'REN  Auas currentas / lais',
+	'ch.bafu.ren-trockenstandorte':'REN  Lieu sitg',
+	'ch.bafu.ren-wald':'REN  Guaud',
+	'ch.bafu.ren-wald_ueber_1000_meter':'REN  Guaud>1000m',
+	'ch.bafu.ren-wald_unter_1000_meter':'REN  Guaud<1000m',
+	'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung':'Parcs',
 	'ch.bafu.schutzgebiete-ramsar':'Ramsar',
-	'ch.bafu.schutzgebiete-schweizerischer_nationalpark':'Nationalpark',
-	'ch.bafu.schutzgebiete-wildruhezonen':'Wildruhezonen',
-	'ch.bafu.showme-gemeinden_hochwasser':'ShowMe Gemeinden: Hochwasser',
-	'ch.bafu.showme-gemeinden_lawinen':'ShowMe Gemeinden: Lawinen',
-	'ch.bafu.showme-gemeinden_rutschungen':'ShowMe Gemeinden: Rutschungen',
-	'ch.bafu.showme-gemeinden_sturzprozesse':'ShowMe Gemeinden: Sturzprozesse',
-	'ch.bafu.showme-kantone_hochwasser':'ShowMe Kantone: Hochwasser',
-	'ch.bafu.showme-kantone_lawinen':'ShowMe Kantone: Lawinen',
-	'ch.bafu.showme-kantone_rutschungen':'ShowMe Kantone: Rutschungen',
-	'ch.bafu.showme-kantone_sturzprozesse':'ShowMe Kantone: Sturzprozesse',
-	'ch.bafu.swissprtr':'Schadstoff-Freisetzungen (SwissPRTR)',
+	'ch.bafu.schutzgebiete-schweizerischer_nationalpark':'Parc naziunal',
+	'ch.bafu.schutzgebiete-wildruhezonen':'Zonas da paus per la selvaschina',
+	'ch.bafu.showme-gemeinden_hochwasser':'ShowMe vischnancas: aua gronda',
+	'ch.bafu.showme-gemeinden_lawinen':'ShowMe vischnancas: lavinas',
+	'ch.bafu.showme-gemeinden_rutschungen':'ShowMe vischnancas: bovas',
+	'ch.bafu.showme-gemeinden_sturzprozesse':'ShowMe vischnancas: process da crudada',
+	'ch.bafu.showme-kantone_hochwasser':'ShowMe chantuns: aua gronda',
+	'ch.bafu.showme-kantone_lawinen':'ShowMe chantuns: lavinas',
+	'ch.bafu.showme-kantone_rutschungen':'ShowMe chantuns: bovas',
+	'ch.bafu.showme-kantone_sturzprozesse':'ShowMe chantuns: process da crudada',
+	'ch.bafu.swissprtr':'Emissiun da substanza nuschaivla (SwissPRTR)',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=de',
-	'ch.bafu.wasser-entnahme':'Wasserentnahme',
-	'ch.bafu.wasser-leitungen':'Zuleitung',
-	'ch.bafu.wasser-rueckgabe':'Wasserrückgabe',
-	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'Wildruhezonen - Wege und Routen',
-	'ch.bafu.wildruhezonen-jagdbanngebiete':'Wildruhezonen - Jagdbanngebiete',
+	'ch.bafu.wasser-entnahme':'Retratga d\'aua',
+	'ch.bafu.wasser-leitungen':'Conduct d\'affluenza',
+	'ch.bafu.wasser-rueckgabe':'Restituziun d\'aua',
+	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina  vias e rutas',
+	'ch.bafu.wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina  territoris scumandads per la chatscha',
 	'ch.bfs':'BFS',
-	'ch.bfs.arealstatistik-1985':'Arealstatistik 1979/1985',
-	'ch.bfs.arealstatistik-1997':'Arealstatistik 1992/1997',
-	'ch.bfs.arealstatistik-hintergrund':'Vereinfachte Bodennutzung',
-	'ch.bfs.arealstatistik-waldmischungsgrad':'Waldmischungsgrad 1990/1992',
-	'ch.bfs.gebaeude_wohnungs_register':'Gebäude- und Wohnungsregister',
+	'ch.bfs.arealstatistik-1985':'Statistica da la surfatscha 1979/1985',
+	'ch.bfs.arealstatistik-1997':'Statistica da la surfatscha 1992/1997',
+	'ch.bfs.arealstatistik-hintergrund':'Utilisaziun dal terren simplifitgada',
+	'ch.bfs.arealstatistik-waldmischungsgrad':'Maschaidadad dal guaud 1990/1992',
+	'ch.bfs.gebaeude_wohnungs_register':'Register dals edifizis e da las abitaziuns',
 	'ch.bfs.url':'http://www.bfs.admin.ch/bfs/portal/de/index.html',
 	'ch.blw':'BLW',
-	'ch.blw.erosion':'Erosionsrisiko',
-	'ch.blw.hang_steillagen':'Hang- und Steillagen',
-	'ch.blw.steil_terrassenlagen_rebbau':'Steil- und Terrassenlagen im Rebbau',
+	'ch.blw.erosion':'Ristga d\'erosiun',
+	'ch.blw.hang_steillagen':'Costas e spundas',
+	'ch.blw.steil_terrassenlagen_rebbau':'Territoris spundivs e terrassas en la viticultura',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=de',
-	'ch.blw.ursprungsbezeichnungen-fleisch':'GGA Fleischware',
-	'ch.blw.ursprungsbezeichnungen-kaese':'GUB Käse',
-	'ch.blw.ursprungsbezeichnungen-pflanzen':'GUB Pflanzliche Produkte',
-	'ch.blw.ursprungsbezeichnungen-spirituosen':'GUB Spirituosen',
+	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP products da charn',
+	'ch.blw.ursprungsbezeichnungen-kaese':'DOP chaschiel',
+	'ch.blw.ursprungsbezeichnungen-pflanzen':'DOP products da plantas',
+	'ch.blw.ursprungsbezeichnungen-spirituosen':'DOP spirituosas',
 	'ch.ensi':'ENSI',
-	'ch.ensi.zonenplan-notfallschutz-kernanlagen':'Zonenpläne für den Notfallschutz',
+	'ch.ensi.zonenplan-notfallschutz-kernanlagen':'Plans da zonas per la protecziun d\'urgenza',
 	'ch.kt.bafu':'Kt. [BAFU]',
 	'ch.kt.bafu.url':'http://www.bafu.admin.ch/index.html?lang=de',
 	'ch.swisstopo':'swisstopo',
-	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'PLZ und Ortschaften',
+	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'NPVischnancas',
 	'ch.swisstopo.fixpunkte-agnes':'AGNES',
-	'ch.swisstopo.fixpunkte-hoehe':'Höhenfixpunkte',
-	'ch.swisstopo.fixpunkte-lage':'Lagefixpunkte',
-	'ch.swisstopo.geologie-eiszeit-lgm-raster':'Letzteiszeitliches Maximum',
-	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Bouguer-Anomalien',
-	'ch.swisstopo.geologie-geodaesie-isostatische_anomalien':'Isostatische Anomalie',
-	'ch.swisstopo.geologie-geologische_karte':'Geologie 1:500 000',
-	'ch.swisstopo.geologie-geologischer_atlas':'Geologischer Atlas 1:25 000',
-	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz':'Aeromagnetik',
-	'ch.swisstopo.geologie-geophysik-deklination':'Deklination',
-	'ch.swisstopo.geologie-geophysik-geothermie':'Geothermie',
-	'ch.swisstopo.geologie-geophysik-inklination':'Inklination',
-	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Magnetfeldstärke',
-	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Grundwasservorkommen',
-	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Grundwasservulnerabilität',
-	'ch.swisstopo.geologie-tektonische_karte':'Tektonik 1:500 000',
-	'ch.swisstopo.gg25-bezirk-flaeche.fill':'Bezirksgrenzen',
-	'ch.swisstopo.gg25-gemeinde-flaeche.fill':'Gemeindegrenzen',
-	'ch.swisstopo.gg25-kanton-flaeche.fill':'Kantonsgrenzen',
-	'ch.swisstopo.gg25-land-flaeche.fill':'Landesgrenzen',
-	'ch.swisstopo.hiks-dufour':'Dufourkarte',
-	'ch.swisstopo.hiks-siegfried':'Siegfriedkarte',
+	'ch.swisstopo.fixpunkte-hoehe':'Puncts fixs altimetrics',
+	'ch.swisstopo.fixpunkte-lage':'Puncts fixs planimetrics',
+	'ch.swisstopo.geologie-eiszeit-lgm-raster':'Maximum da l\'ultim temp da glatsch',
+	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Anomalias da Bouguer',
+	'ch.swisstopo.geologie-geodaesie-isostatische_anomalien':'Anomalia isostatica',
+	'ch.swisstopo.geologie-geologische_karte':'Geologia 1:500000',
+	'ch.swisstopo.geologie-geologischer_atlas':'Atlas geologic 1:25000',
+	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz':'Eromagnetica',
+	'ch.swisstopo.geologie-geophysik-deklination':'Declinaziun',
+	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',
+	'ch.swisstopo.geologie-geophysik-inklination':'Inclinaziun',
+	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Intensitad dal champ magnetic',
+	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Resursas d\'aua sutterrana',
+	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabladad da l\'aua sutterrana',
+	'ch.swisstopo.geologie-tektonische_karte':'Tectonica 1:500000',
+	'ch.swisstopo.gg25-bezirk-flaeche.fill':'Cunfins districtuals',
+	'ch.swisstopo.gg25-gemeinde-flaeche.fill':'Cunfins communals',
+	'ch.swisstopo.gg25-kanton-flaeche.fill':'Cunfins chantunals',
+	'ch.swisstopo.gg25-land-flaeche.fill':'Cunfins naziunals',
+	'ch.swisstopo.hiks-dufour':'Charta Dufour',
+	'ch.swisstopo.hiks-siegfried':'Charta Siegfried',
 	'ch.swisstopo.images-swissimage':'Fotografia or da l\'aria',
-	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (Blattübersicht)',
+	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (tab. dals fegls)',
 	'ch.swisstopo.kt':'swisstopo, Kt.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Charta en colur',
 	'ch.swisstopo.pixelkarte-grau':'Charta en alv e nair',
-	'ch.swisstopo.pixelkarte-pk100.metadata':'Landeskarte 1:100 000 (Blattübersicht)',
-	'ch.swisstopo.pixelkarte-pk200.metadata':'Landeskarte 1:200 000 (Blattübersicht)',
-	'ch.swisstopo.pixelkarte-pk25.metadata':'Landeskarte 1:25 000 (Blattübersicht)',
-	'ch.swisstopo.pixelkarte-pk50.metadata':'Landeskarte 1:50 000 (Blattübersicht)',
-	'ch.swisstopo.pixelkarte-pk500.metadata':'Landeskarte 1:500 000 (Blattübersicht)',
+	'ch.swisstopo.pixelkarte-pk100.metadata':'Charta naziunala 1:100000 (tab. dals fegls)',
+	'ch.swisstopo.pixelkarte-pk200.metadata':'Charta naziunala 1:200000 (tab. dals fegls)',
+	'ch.swisstopo.pixelkarte-pk25.metadata':'Charta naziunala 1:25000 (tab. dals fegls)',
+	'ch.swisstopo.pixelkarte-pk50.metadata':'Charta naziunala 1:50000 (tab. dals fegls)',
+	'ch.swisstopo.pixelkarte-pk500.metadata':'Charta naziunala 1:500000 (tab. dals fegls)',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
-	'ch.swisstopo.vec200-building':'Gebäude VECTOR200',
-	'ch.swisstopo.vec200-landcover-wald':'Waldflächen',
-	'ch.swisstopo.vec200-transportation-oeffentliche-verkehr':'Öffentlicher Verkehr VECTOR200',
-	'ch.swisstopo.vec200-transportation-strassennetz':'Strassennetz VECTOR200',
-	'ch.swisstopo.vec25-anlagen':'Anlagen VECTOR25',
-	'ch.swisstopo.vec25-einzelobjekte':'Einzelobjekte VECTOR25',
-	'ch.swisstopo.vec25-eisenbahnnetz':'Eisenbahnnetz VECTOR25',
-	'ch.swisstopo.vec25-gebaeude':'Gebäude VECTOR25',
-	'ch.swisstopo.vec25-gewaessernetz':'Gewässernetz VECTOR25',
-	'ch.swisstopo.vec25-heckenbaeume':'Hecken und Bäume VECTOR25',
-	'ch.swisstopo.vec25-primaerflaechen':'Primärflächen VECTOR25',
-	'ch.swisstopo.vec25-strassennetz':'Strassennetz VECTOR25',
-	'ch.swisstopo.vec25-uebrigerverkehr':'Übriger Verkehr VECTOR25',
-	'ch.swisstopo.vec25-wander':'Wanderwege VECTOR25',
-	'closeText':'Schliessen',
-	'closeWindowText':'Fenster schliessen',
-	'color':'Farbe',
-	'connectText':'Verbindung',
+	'ch.swisstopo.vec200-building':'Edifizis VECTOR200',
+	'ch.swisstopo.vec200-landcover-wald':'Surfatschas da guaud',
+	'ch.swisstopo.vec200-transportation-oeffentliche-verkehr':'Traffic public VECTOR200',
+	'ch.swisstopo.vec200-transportation-strassennetz':'Rait da vias VECTOR200',
+	'ch.swisstopo.vec25-anlagen':'Stabiliments VECTOR25',
+	'ch.swisstopo.vec25-einzelobjekte':'Objects singuls VECTOR25',
+	'ch.swisstopo.vec25-eisenbahnnetz':'Rait da viafiers VECTOR25',
+	'ch.swisstopo.vec25-gebaeude':'Edifizis VECTOR25',
+	'ch.swisstopo.vec25-gewaessernetz':'Rait d\'auas VECTOR25',
+	'ch.swisstopo.vec25-heckenbaeume':'Saivs vivas e bostgs VECTOR25',
+	'ch.swisstopo.vec25-primaerflaechen':'Surfatschas primaras VECTOR25',
+	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
+	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
+	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
+	'closeText':'Serrar',
+	'closeWindowText':'Serrar la fanestra',
+	'color':'Colur',
+	'connectText':'Colliaziun',
 	'cyan':'cyan', //TODO
-	'descriptionText':'Beschreibung',
+	'descriptionText':'Descripziun',
 	'english':'English',
-	'errorText':'errorText', //TODO
-	'extentCompatibleText':'extentCompatibleText', //TODO
-	'extentNotSupportedShortText':'extentNotSupportedShortText', //TODO
+	'errorText':'Sbagl',
+	'extentCompatibleText':'Extract cumpatibel',
+	'extentNotSupportedShortText':'È ordaifer l\'extract da la charta',
 	'french':'Français',
 	'german':'Deutsch',
 	'gold':'gold', //TODO
 	'gray':'gray', //TODO
-	'green':'green', //TODO
-	'handedness':'sanester/dretger',
+	'green':'verd',
+	'handedness':'sanestrer/dretger',
 	'hide column':'Zuppentar ils temas',
 	'hide layer options':'Zuppentar las opziuns da la stresa',
 	'imprint 1':'<b>Coordinaziun</b> <br> Organ federal da coordinaziun per la geoinfurmaziun  <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCS)</a>',
@@ -366,25 +366,25 @@ OpenLayers.Lang.rm= {
 	'imprint 4':'<bold>Infurmaziuns giuridicas<bold> <br> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
 	'indigo':'indigo', //TODO
-	'inputURLInvalidText':'inputURLInvalidText', //TODO
-	'inputURLText':'inputURLText', //TODO
+	'inputURLInvalidText':'L\'adressa endatada (URL) è nunvalaivla',
+	'inputURLText':'Tscherner u agiuntar in server (URL)',
 	'italian':'Italiano',
 	'language':'Lingua',
-	'last used':'last used', //TODO
+	'last used':'duvrà sco ultim',
 	'layer search':'layer search', //TODO
-	'layer selection':'Vus selecziun',
-	'layerAddedText':'layerAddedText', //TODO
-	'layerCantBeAddedText':'layerCantBeAddedText', //TODO
-	'layerNameText':'layerNameText', //TODO
-	'layersSuccessfullyLoadedText':'layersSuccessfullyLoadedText', //TODO
-	'leftHanded':'sanester',
+	'layer selection':'Vossa selecziun',
+	'layerAddedText':'Agiuntà cun success il nivel',
+	'layerCantBeAddedText':'Questa "layer" na po betg vegnir agiuntà.',
+	'layerNameText':'Num dal nivel',
+	'layersSuccessfullyLoadedText':'Chargià cun success il nivel',
+	'leftHanded':'sanestrer',
 	'lime':'lime', //TODO
 	'loadingText':'Chargiar datas ...',
 	'magenta':'magenta', //TODO
 	'map':'Charta',
-	'mapPanelPreviewTitleText':'mapPanelPreviewTitleText', //TODO
+	'mapPanelPreviewTitleText':'Vista da charta',
 	'maroon':'maroon', //TODO
-	'metadataTooltip':'metadataTooltip', //TODO
+	'metadataTooltip':'Mussar las metadatas',
 	'mf.print.generatingPDF':'Il PDF vegn generà ...',
 	'mf.print.layout':'Layout',
 	'mf.print.pdfReady':'Il document da PDF po vegnir chargià giu.',
@@ -394,43 +394,43 @@ OpenLayers.Lang.rm= {
 	'mf.print.tooltip':'Stampar',
 	'move layer down':'Midar la successiun da las stresas',
 	'move layer up':'Midar la successiun da las stresas',
-	'nameText':'nameText', //TODO
+	'nameText':'Num',
 	'next':'Enavant',
 	'noText':'Na',
 	'olive':'olive', //TODO
 	'orange':'orange', //TODO
 	'permalink action':'Integrar la charta',
 	'pink':'pink', //TODO
-	'pleaseCheckALayerInTreeText':'pleaseCheckALayerInTreeText', //TODO
-	'pleaseInputLayerNameText':'pleaseInputLayerNameText', //TODO
-	'pleaseInputURLText':'pleaseInputURLText', //TODO
-	'pleaseSelectALayerText':'pleaseSelectALayerText', //TODO
+	'pleaseCheckALayerInTreeText':'Tscherni l\'emprim in u plirs nivels da la glista',
+	'pleaseInputLayerNameText':'Inditgai per plaschair in num da plaun en il champ da text',
+	'pleaseInputURLText':'Tscherni per plaschair in server da la glista u agiuntai in (URL)',
+	'pleaseSelectALayerText':'Tscherni l\'emprim in u plirs nivels da la glista',
 	'plum':'plum', //TODO
 	'previous':'Enavos',
 	'print':'Stampar',
 	'print action':'Stampar',
 	'purple':'purple', //TODO
-	'queryableText':'queryableText', //TODO
+	'queryableText':'Tschertgabel',
 	'raetoromanic':'Rumantsch',
-	'red':'red', //TODO
+	'red':'cotschen',
 	'remove layer':'Allontanar l\'unitad da datas',
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'dretger',
 	'salmon':'salmon', //TODO
-	'searchQuicktip':'Hier können Sie nach Ort, PLZ, Administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 30007<br><b>Schweizerkoordinaten:</b>Für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> Für "46.7N 6.0E " tippen Sie 46.7 6.0<br><b>Adressen: </b> Für "Rue de l\'Évêché in Genf" tippen Sie évêch<br>',
-	'select a color...':'select a color...', //TODO
+	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>PLZ:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br>',
+	'select a color...':'Tscherner la colur',
 	'show column':'Avrir ils temas',
 	'show layer options':'Mussar las opziuns da la stresa',
 	'silver':'silver', //TODO
-	'srsCompatibleText':'srsCompatibleText', //TODO
-	'srsNotSupportedShortText':'srsNotSupportedShortText', //TODO
-	'srsNotSupportedText':'srsNotSupportedText', //TODO
-	'titleText':'titleText', //TODO
-	'urlInvalidText':'urlInvalidText', //TODO
+	'srsCompatibleText':'SRS cumpatibel',
+	'srsNotSupportedShortText':'Na sustegna betg la projecziun cartografica',
+	'srsNotSupportedText':'Quest "layer" na po betg vegnir agiuntà perquai ch\'el na sustegna betg sia projecziun cartografica.',
+	'titleText':'Titel',
+	'urlInvalidText':'L\'adressa endatada (URL) è nunvalaivla u il server WMS n\'è betg valaivel',
 	'voidLayer':'Nagina charta',
-	'warningText':'warningText', //TODO
-	'white':'white', //TODO
-	'yellow':'yellow', //TODO
+	'warningText':'Avertiment',
+	'white':'alv',
+	'yellow':'mellen',
 	'yesText':'Gea',
 	'zoomin':'Zoom vers anen',
 	'zoomout':'Zoom vers anora',

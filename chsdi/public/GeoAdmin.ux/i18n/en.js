@@ -8,7 +8,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 
 	//Globals
 	'Activate dynamic location':'Activate dynamic location', //TODO
-	'Add':'Add', //TODO
+	'Add':'Add',
 	'Add KML/GML (Beta)...':'Add KML/GML (Beta)...',
 	'Add Layer':'Add Layer',
 	'Add currently selected layer':'Please validate you WMS with http://geopole.org/checks<br>SwissProjection EPSG 21781 support required',
@@ -42,7 +42,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Create point':'Create point',
 	'Create polygon':'Create polygon',
 	'Data:':'(c) Data:',
-	'Deactivate dynamic location':'Deactivate dynamic location', //TODO
+	'Deactivate dynamic location':'Deactivate dynamic location',
 	'Delete':'Delete',
 	'Delete All Features':'Delete all features',
 	'Delete Feature':'Delete feature',
@@ -58,7 +58,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Elevation':'Elevation',
 	'Energie und Wirtschaft':'Energy and economy',
 	'Energiequellen':'Energy resources',
-	'Enter your feedback here ...':'Enter your feedback here ...', //TODO
+	'Enter your feedback here ...':'Your report about current map extent',
 	'Error':'Error',
 	'Export':'Export', //TODO
 	'Export KML':'Export KML',
@@ -77,7 +77,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Geografische Namen':'Geographical names',
 	'Geolocation':'Geolocation',
 	'Geologie':'Geology',
-	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
+	'Gesundheit une Sicherheit':'Human health and safety',
 	'Gewässernetz':'Hydrography',
 	'Höhe':'Elevation',
 	'INFO':'Information',
@@ -128,15 +128,15 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'MultiPoint':'Multipoint',
 	'MultiPolygon':'Multipolygon',
 	'Name':'Name',
-	'Nationales Maps':'Nationales Maps', //TODO
+	'Nationales Maps':'Nationales Maps',
 	'Natürliche Risikozonen':'Natural risk zones',
 	'Next view':'Next',
 	'No':'No',
 	'No email provided':'No email provided',
 	'No feedback provided':'No feedback provided',
-	'No specific handler added to show the layer search':'No specific handler added to show the layer search', //TODO
-	'No specific handler added to show the layer selection':'No specific handler added to show the layer selection', //TODO
-	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'No specific handler added to show the map <br> Use "goToMapHandler" parameter', //TODO
+	'No specific handler added to show the layer search':'No specific handler added to show the layer search',
+	'No specific handler added to show the layer selection':'No specific handler added to show the layer selection',
+	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'No specific handler added to show the map <br> Use "goToMapHandler" parameter',
 	'None':'None',
 	'Number of imported features:':'Number of imported features:',
 	'Oberflächendarstellung':'Surface representation',
@@ -184,7 +184,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Thanks a lot for your feedback !':'Thanks a lot for your report !',
 	'The following URL will be transferred:':'The following URL will be transferred:',
 	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would your really load these data ?',
-	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
+	'The url address entered is not valid.':'The url address entered is not valid.',
 	'Third party data warning':'Third party data warning',
 	'Title':'Title',
 	'URL':'URL',
@@ -204,7 +204,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Your email (optional)':'Your Email (not mandatory)',
 	'Your email:':'Your Email:',
 	'Your feedback about current map extent':'Your report about current map extent',
-	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
+	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optimized for small screen resolution',
 	'Zoom to the max extent':'Full switzerland',
 	'about that layer':'Information about this layer',
@@ -374,14 +374,14 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'inputURLText':'Select or add a server (URL)',
 	'italian':'Italiano',
 	'language':'Language',
-	'last used':'last used', //TODO
+	'last used':'last used',
 	'layer search':'layer search', //TODO
 	'layer selection':'Your selection',
 	'layerAddedText':'Ebene erfolgreich hinzugefügt',
 	'layerCantBeAddedText':'This layer can not be added',
 	'layerNameText':'Layer name',
 	'layersSuccessfullyLoadedText':'Layer loaded successfully',
-	'leftHanded':'left-handed',
+	'leftHanded':'Left-handed',
 	'lime':'lime',
 	'loadingText':'Data loading ...',
 	'magenta':'magenta',
@@ -419,7 +419,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'red':'red',
 	'remove layer':'Remove layer',
 	'responsibilitiesAndContact':'Colophon',
-	'rightHanded':'righ-handed',
+	'rightHanded':'Right-handed',
 	'salmon':'salmon',
 	'searchQuicktip':'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0',
 	'select a color...':'Select a color',

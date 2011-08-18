@@ -58,7 +58,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Elevation':'Höhe',
 	'Energie und Wirtschaft':'Energie und Wirtschaft',
 	'Energiequellen':'Energiequellen',
-	'Enter your feedback here ...':'Enter your feedback here ...',
+	'Enter your feedback here ...':'Ihr Bericht zum aktuellen Kartenausschnitt',
 	'Error':'Problem',
 	'Export':'Export', //TODO
 	'Export KML':'Export KML',
@@ -77,7 +77,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Geografische Namen':'Geografische Bezeichnungen',
 	'Geolocation':'Standortbestimmung',
 	'Geologie':'Geologie',
-	'Gesundheit une Sicherheit':'Gesundheit une Sicherheit', //TODO
+	'Gesundheit une Sicherheit':'Gesundheit und Sicherheit',
 	'Gewässernetz':'Gewässernetz',
 	'Höhe':'Höhe',
 	'INFO':'Information',
@@ -116,7 +116,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Map Queries':'Suchen',
 	'Map URL':'Untenstehenden Link in e-mail einbinden',
 	'Map was moved to':'Die Karte wurde verschoben nach',
-	'Measure':'Messung',
+	'Measure':'Messen',
 	'Measure.MeasureArea':'Fläche',
 	'Measure.MeasureArea.ToolTip':'Messen Sie eine Fläche',
 	'Measure.MeasureLength':'Distanz',
