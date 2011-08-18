@@ -1188,7 +1188,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
-                opacity: 0.75,
+                opacity: 0.4,
                 queryable: true
             },
             "ch.swisstopo.vec25-strassennetz": {
