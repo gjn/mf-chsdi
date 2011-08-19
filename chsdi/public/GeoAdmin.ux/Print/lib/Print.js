@@ -377,7 +377,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             var feature, style, dictKey, dictItem, styleName;
             for (var i = 0, len = features.length; i < len; ++i) {
                 feature = features[i];
-                console.log(feature.geometry.getLength());
+                // Manage wrong geometries
                 if (feature.geometry.CLASS_NAME == 'OpenLayers.Geometry.LineString' && feature.geometry.getLength() <= 0) {
                     continue;
                 }
