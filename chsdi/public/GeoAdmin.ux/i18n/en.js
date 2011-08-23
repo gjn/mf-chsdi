@@ -7,7 +7,7 @@
 OpenLayers.Util.extend(OpenLayers.Lang.en, {
 
 	//Globals
-	'Activate dynamic location':'Activate dynamic location', //TODO
+	'Activate dynamic location':'Activate dynamic location',
 	'Add':'Add',
 	'Add KML/GML (Beta)...':'Add KML/GML (Beta)...',
 	'Add Layer':'Add Layer',
@@ -50,7 +50,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Delete feature':'Delete feature',
 	'DeleteAll':'Delete all',
 	'Description':'Description',
-	'Desktop version':'Desktop version',
+	'Desktop version':'Link to desktop version',
 	'Distance measurement (double-click to terminate)':'Distance measurement (double-click to terminate)',
 	'Do you really want to delete all features ?':'Do you really want to delete all features?',
 	'Do you really want to delete this feature ?':'Do you really want to delete the feature?',
@@ -84,11 +84,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Import':'Add',
 	'Import KML':'KML/GML Import',
 	'Infrastruktur und Kommunikation':'Infrastructure and communication',
-	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
-	'Input the server address (URL)':'Input the server address (URL)', //TODO
+	'Input the KML address (URL)':'Provide the URL (address) of your KML file',
+	'Input the server address (URL)':'Provide the URL (address) of your WMS server',
 	'Invalid email provided':'Email invalid',
-	'KML':'KML', //TODO
-	'KML URL':'KML URL', //TODO
+	'KML':'KML import',
+	'KML URL':'KML URL',
 	'KML data sucessfully imported in layer:':'KML data sucessfully imported in layer:',
 	'KMLTooltip':'Please validate you kml first with kmlvalidator.com<br>File size should not exceed 2MB for performance reason<br>Upload your kml to a online location like dropbox.com, Google Doc or ge.tt and copy the direct link to the file',
 	'Kanton':'Canton',
@@ -108,7 +108,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Legend.onClick':'Selected layers',
 	'LineString':'Line',
 	'Link with bowl crosshair':'Link with bowl crosshair',
-	'Load KML':'Load KML', //TODO
+	'Load KML':'Load KML file',
 	'Loading...':'Loading...',
 	'Locate':'Locate',
 	'Locate by coordinates':'Locate by coordinates',
@@ -185,7 +185,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'The following URL will be transferred:':'The following URL will be transferred:',
 	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would your really load these data ?',
 	'The url address entered is not valid.':'The url address entered is not valid.',
-	'Third party data warning':'Third party data warning',
+	'Third party data warning':'Warning: Third party data shown',
 	'Title':'Title',
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Environment, Biology and Geology',
@@ -195,7 +195,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Warning Internet Explorer 6':'Warning Internet Explorer 6',
 	'Warning screen resolution':'Screen resolution warning',
 	'We recommend to upgrade to a newer release.':'We recommend to update to a newer release.',
-	'WmsBrowser':'WMS Import',
+	'WmsBrowser':'WMS import',
 	'WmsBrowserWindow':'Add a WMS service',
 	'Yes':'Yes',
 	'You are using Internet Explorer 6.':'Are you crazy ? You are using Internet Explorer 6.',
@@ -207,7 +207,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optimized for small screen resolution',
 	'Zoom to the max extent':'Full switzerland',
-	'about that layer':'Information about this layer',
+	'about that layer':'about that layer', //TODO
 	'addLayerText':'Add',
 	'addSelectedLayersText':'Add selected layers as one layer',
 	'black':'black',
@@ -321,7 +321,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.hiks-dufour':'Dufour Map',
 	'ch.swisstopo.hiks-siegfried':'Siegfried Map',
 	'ch.swisstopo.images-swissimage':'Aerial imagery',
-	'ch.swisstopo.images-swissimage.metadata':'ch.swisstopo.images-swissimage.metadata', //TODO
+	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (Map Index)',
 	'ch.swisstopo.kt':'swisstopo, ct.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Color map',
@@ -346,18 +346,21 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.vec25-strassennetz':'Road network  VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Other traffic  VECTOR25',
 	'ch.swisstopo.vec25-wander':'Hiking trails  VECTOR25',
+	'ch.vbs':'DDPS',
+	'ch.vbs.territorialregionen':'Territorialregionen',
+	'ch.vbs.url':'http://www.vbs.admin.ch/internet/vbs/en/home.html',
 	'closeText':'Close',
 	'closeWindowText':'Close Window',
 	'color':'Color',
-	'connectText':'Connection',
+	'connectText':'Connect',
 	'cyan':'cyan',
 	'descriptionText':'Description',
 	'english':'English',
 	'errorText':'Error',
-	'extentCompatibleText':'extentCompatibleText', //TODO
+	'extentCompatibleText':'Extent compatible',
 	'extentNotSupportedShortText':'Its outside of current map extent',
 	'french':'Français',
-	'german':'German',
+	'german':'Deutsch',
 	'gold':'gold',
 	'gray':'gray',
 	'green':'green',
@@ -375,7 +378,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'italian':'Italiano',
 	'language':'Language',
 	'last used':'last used',
-	'layer search':'layer search', //TODO
+	'layer search':'Layer search',
 	'layer selection':'Your selection',
 	'layerAddedText':'Ebene erfolgreich hinzugefügt',
 	'layerCantBeAddedText':'This layer can not be added',
@@ -418,7 +421,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'raetoromanic':'Rumantsch',
 	'red':'red',
 	'remove layer':'Remove layer',
-	'responsibilitiesAndContact':'Colophon',
+	'responsibilitiesAndContact':'Responsibilities and contacts',
 	'rightHanded':'Right-handed',
 	'salmon':'salmon',
 	'searchQuicktip':'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0',

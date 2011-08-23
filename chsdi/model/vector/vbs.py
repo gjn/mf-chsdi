@@ -21,3 +21,15 @@ class Kulturgueter(Base, Queryable):
 
 register('ch.babs.kulturgueter', Kulturgueter)
 
+class TERRITORIALREGIONEN(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'territorialregionen'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/territorialregionen.mako'
+    id = Column('terreg_nr', Integer, primary_key=True)
+    the_geom = Column('the_geom_gen100', Geometry)
+
+register('ch.vbs.territorialregionen', TERRITORIALREGIONEN)
+
+
+

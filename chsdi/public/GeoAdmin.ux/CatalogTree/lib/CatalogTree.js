@@ -826,6 +826,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.blw.ursprungsbezeichnungen-spirituosen1"
+                            },
+                                                        {
+                                text: this.addtreeLayerLink("ch.vbs.territorialregionen", "node_ch.vbs.territorialregionen1") + ' ' + this.layers["ch.vbs.territorialregionen"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.vbs.territorialregionen1"
                             }
                         ]
                     }

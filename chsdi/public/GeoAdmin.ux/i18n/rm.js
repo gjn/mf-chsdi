@@ -3,11 +3,11 @@
 OpenLayers.Lang.rm= {
 
 	//Globals
-	'Activate dynamic location':'Activate dynamic location',
-	'Add':'Add', //TODO
+	'Activate dynamic location':'Aktiviere dynamische Lokalisierung',
+	'Add':'Agiuntar',
 	'Add KML/GML (Beta)...':'Importar KML/GML (beta)...',
-	'Add Layer':'Add Layer', //TODO
-	'Add currently selected layer':'Add currently selected layer', //TODO
+	'Add Layer':'Agiuntar Layer',
+	'Add currently selected layer':'Bitte validieren Sie Ihren WMS-Dienst mit http://geopole.org <br />Die Schweizerische Kartenprojektion EPSG  21781 muss unterstützt sein',
 	'Administrative Einheiten':'Unitads administrativas',
 	'Adressen':'Adressas',
 	'AdvancedWindow.title':'Funcziuns supplementaras',
@@ -29,8 +29,8 @@ OpenLayers.Lang.rm= {
 	'Catalog':'Catalog [INSPIRE]',
 	'Cities':'Vischnancas',
 	'Close':'Serrar',
-	'Close this window':'Close this window', //TODO
-	'Connect':'Connect', //TODO
+	'Close this window':'Serrar questa fanestra',
+	'Connect':'Connectar',
 	'Coordinates (m):':'Coordinatas (m):',
 	'Copyright &amp; Data protection':'Copyright & decleraziun da protecziun da datas',
 	'Create label':'Crear in\'etichetta',
@@ -45,8 +45,8 @@ OpenLayers.Lang.rm= {
 	'Delete all features':'Stizzar tut ils objects',
 	'Delete feature':'Stizzar objects',
 	'DeleteAll':'Stizzar tut',
-	'Description':'Description', //TODO
-	'Desktop version':'Desktop version', //TODO
+	'Description':'Descripziun',
+	'Desktop version':'Link tar versiun desktop',
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
 	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',
 	'Do you really want to delete this feature ?':'Vulais Vus propi stizzar quest object?',
@@ -80,13 +80,13 @@ OpenLayers.Lang.rm= {
 	'Import':'Agiuntar',
 	'Import KML':'Importar KML/GML',
 	'Infrastruktur und Kommunikation':'Infrastructura e communicaziun',
-	'Input the KML address (URL)':'Input the KML address (URL)', //TODO
-	'Input the server address (URL)':'Input the server address (URL)', //TODO
+	'Input the KML address (URL)':'Agiuntar il link KML',
+	'Input the server address (URL)':'Agiuntar in server WMS (URL)',
 	'Invalid email provided':'Inditgà in e-mail betg valaivel',
-	'KML':'KML', //TODO
-	'KML URL':'KML URL', //TODO
+	'KML':'Importar KML',
+	'KML URL':'KML URL',
 	'KML data sucessfully imported in layer:':'Importà cun success datas da KML en:',
-	'KMLTooltip':'KMLTooltip', //TODO
+	'KMLTooltip':'Bitte validieren Sie Ihre .kml-Datei zuerst mit kmlvalidator.com.<br/>Die Dateigröse sollte 2MB nicht überschreiten.<br/>Laden Sie die .kml-Datei auf eine übers Internet zugängliche Adresse wie dropbox.com, Google Doc oder ge.tt und kopieren Sie den Link.',
 	'Kanton':'Chantuns',
 	'Label':'Etichetta',
 	'Land- und Wassertwirtschaft':'Stabiliments agriculs e d\'aquacultura',
@@ -104,15 +104,15 @@ OpenLayers.Lang.rm= {
 	'Legend.onClick':'Datas mussadas',
 	'LineString':'Lingia',
 	'Link with bowl crosshair':'Link cun cruschera',
-	'Load KML':'Load KML', //TODO
-	'Loading...':'Loading...', //TODO
+	'Load KML':'Chargiar KML',
+	'Loading...':'Chargiar...',
 	'Locate':'Tschertgar',
 	'Locate by coordinates':'Definir il lieu tras coordinatas',
 	'Luft und Satellitenbilder':'Ortofotografia',
 	'Map Queries':'Tschertgar',
 	'Map URL':'Integrar il link qua sutvart en il e-mail',
 	'Map was moved to':'La charta è vegnida spustada a',
-	'Measure':'Apparats da mesiraziun',
+	'Measure':'Mesirar',
 	'Measure.MeasureArea':'Surfatscha',
 	'Measure.MeasureArea.ToolTip':'Mesirai ina surfatscha',
 	'Measure.MeasureLength':'Distanza',
@@ -123,11 +123,11 @@ OpenLayers.Lang.rm= {
 	'MultiLineString':'Multilingia',
 	'MultiPoint':'Multipunct',
 	'MultiPolygon':'Multipoligon',
-	'Name':'Name', //TODO
-	'Nationales Maps':'Nationales Maps', //TODO
+	'Name':'Num',
+	'Nationales Maps':'Atlas naziunal',
 	'Natürliche Risikozonen':'Territoris cun ristgs natirals',
 	'Next view':'Enavant',
-	'No':'No', //TODO
+	'No':'Na',
 	'No email provided':'Betg inditgà il e-mail',
 	'No feedback provided':'Betg dà ina reacziun',
 	'No specific handler added to show the layer search':'I n\'è avant maun nagin "handler" specific per mussar la tschertga da temas',
@@ -145,16 +145,16 @@ OpenLayers.Lang.rm= {
 	'Permalink.tooltip':'Permalink',
 	'Please check your input':'Controllar per plaschair las endataziuns',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
-	'Please, enter an url in the textbox first':'Please, enter an url in the textbox first', //TODO
+	'Please, enter an url in the textbox first':'Agiuntar in URL',
 	'Point':'Punct',
 	'Polygon':'Poligon',
 	'Position':'Posiziun',
 	'Positioning failed.':'Il posiziunament n\'ha betg funcziunà',
-	'Preview':'Preview', //TODO
+	'Preview':'Prevista',
 	'Previous view':'Enavos',
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Stabiliments da producziun e d\'industria',
-	'Queryable':'Queryable', //TODO
+	'Queryable':'Consultar',
 	'Raum und Bevölkerung':'Territori e populaziun',
 	'Raumplanung':'Secturs reglads ed unitads da rapport',
 	'RedLining Panel':'Utensils da dissegnar',
@@ -168,7 +168,7 @@ OpenLayers.Lang.rm= {
 	'Search':'Tschertga',
 	'Search data...':'Tschertgar datas [en tudestg] ...',
 	'Select a file to import':'Tscherni ina datoteca per l\'import',
-	'Select or input a server address (URL)':'Select or input a server address (URL)', //TODO
+	'Select or input a server address (URL)':'Tscherner u agiuntar in server (URL)',
 	'Send':'Trametter',
 	'Send feedback':'Rapportar il problem',
 	'Sending feedback....':'Rapportar il problem....',
@@ -179,10 +179,10 @@ OpenLayers.Lang.rm= {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
 	'The following URL will be transferred:':'Trametter Link:',
-	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would you load these data ?', //TODO
-	'The url address entered is not valid.':'The url address entered is not valid.', //TODO
-	'Third party data warning':'Third party data warning', //TODO
-	'Title':'Title', //TODO
+	'The permalink you use contains reference to third party data. Would you load these data ?':'Dieser Permalink zeigt auf Daten eines Drittanbieters. Wollen Sie diese Daten dennoch laden?',
+	'The url address entered is not valid.':'URL na valid',
+	'Third party data warning':'Warnung- Diese Daten kommen von einem Drittanbieter',
+	'Title':'Titel',
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambient, biologia e geologia',
 	'Umweltüberwachung':'Monitoring da l\'ambient',
@@ -191,7 +191,7 @@ OpenLayers.Lang.rm= {
 	'Warning Internet Explorer 6':'Avertiment: Internet Explorer 6.0',
 	'Warning screen resolution':'Avertiment: dissoluziun dal monitur',
 	'We recommend to upgrade to a newer release.':'Nus recumandain da duvrar ina versiun pli nova.',
-	'WmsBrowser':'WMS',
+	'WmsBrowser':'WMS Import',
 	'WmsBrowserWindow':'Agiuntar in servetsch da WMS',
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
@@ -200,15 +200,15 @@ OpenLayers.Lang.rm= {
 	'Your email (optional)':'Voss e-mail (facultativ)',
 	'Your email:':'Vus emagl:',
 	'Your feedback about current map extent':'Rapport davart l\'extract actual da la charta',
-	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.', //TODO
+	'Your feedback was successfully commited. Thank you for providing your feedback.':'Rapport tramess cun success',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
 	'Zoom to the max extent':'Vesair tut la Svizra',
-	'about that layer':'Infurmaziuns davart questa unitad da datas',
+	'about that layer':'about that layer', //TODO
 	'addLayerText':'Agiuntar',
 	'addSelectedLayersText':'Agiuntai il nivel selecziunà sco in nivel',
 	'black':'nair',
 	'blue':'blau',
-	'brown':'brown', //TODO
+	'brown':'brin',
 	'ch.are':'ARE',
 	'ch.are.agglomerationen_isolierte_staedte-2000':'Aglomeraziuns e citads isoladas',
 	'ch.are.alpenkonvention':'Convenziun da las Alps',
@@ -342,11 +342,14 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
+	'ch.vbs':'VBS',
+	'ch.vbs.territorialregionen':'Territorialregionen',
+	'ch.vbs.url':'http://www.vbs.admin.ch/internet/vbs/de/home.html',
 	'closeText':'Serrar',
 	'closeWindowText':'Serrar la fanestra',
 	'color':'Colur',
-	'connectText':'Colliaziun',
-	'cyan':'cyan', //TODO
+	'connectText':'Connectar',
+	'cyan':'cian',
 	'descriptionText':'Descripziun',
 	'english':'English',
 	'errorText':'Sbagl',
@@ -354,36 +357,36 @@ OpenLayers.Lang.rm= {
 	'extentNotSupportedShortText':'È ordaifer l\'extract da la charta',
 	'french':'Français',
 	'german':'Deutsch',
-	'gold':'gold', //TODO
-	'gray':'gray', //TODO
+	'gold':'aur',
+	'gray':'grisch',
 	'green':'verd',
 	'handedness':'sanestrer/dretger',
 	'hide column':'Zuppentar ils temas',
 	'hide layer options':'Zuppentar las opziuns da la stresa',
 	'imprint 1':'<b>Coordinaziun</b> <br> Organ federal da coordinaziun per la geoinfurmaziun  <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCS)</a>',
 	'imprint 2':'<b>Manaschi</b> <br> geo.admin.ch c/o Uffizi federal da topografia swisstopo   <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
-	'imprint 3':'<bold>Possessura da las datas<bold> <br> La confederaziun, represchentada da l\'uffizi federal correspundent',
-	'imprint 4':'<bold>Infurmaziuns giuridicas<bold> <br> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
+	'imprint 3':'<b>Possessura da las datas</b> <br /> La confederaziun, represchentada da l\'uffizi federal correspundent',
+	'imprint 4':'<b>Infurmaziuns giuridicas</b> <br /> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
-	'indigo':'indigo', //TODO
+	'indigo':'indigo',
 	'inputURLInvalidText':'L\'adressa endatada (URL) è nunvalaivla',
 	'inputURLText':'Tscherner u agiuntar in server (URL)',
 	'italian':'Italiano',
 	'language':'Lingua',
 	'last used':'duvrà sco ultim',
-	'layer search':'layer search', //TODO
+	'layer search':'Tschertgar layer',
 	'layer selection':'Vossa selecziun',
 	'layerAddedText':'Agiuntà cun success il nivel',
 	'layerCantBeAddedText':'Questa "layer" na po betg vegnir agiuntà.',
 	'layerNameText':'Num dal nivel',
 	'layersSuccessfullyLoadedText':'Chargià cun success il nivel',
 	'leftHanded':'sanestrer',
-	'lime':'lime', //TODO
+	'lime':'verd cler',
 	'loadingText':'Chargiar datas ...',
-	'magenta':'magenta', //TODO
+	'magenta':'mangenta',
 	'map':'Charta',
 	'mapPanelPreviewTitleText':'Vista da charta',
-	'maroon':'maroon', //TODO
+	'maroon':'marun',
 	'metadataTooltip':'Mussar las metadatas',
 	'mf.print.generatingPDF':'Il PDF vegn generà ...',
 	'mf.print.layout':'Layout',
@@ -397,31 +400,31 @@ OpenLayers.Lang.rm= {
 	'nameText':'Num',
 	'next':'Enavant',
 	'noText':'Na',
-	'olive':'olive', //TODO
-	'orange':'orange', //TODO
+	'olive':'Olive',
+	'orange':'oransch',
 	'permalink action':'Integrar la charta',
-	'pink':'pink', //TODO
+	'pink':'rosa',
 	'pleaseCheckALayerInTreeText':'Tscherni l\'emprim in u plirs nivels da la glista',
 	'pleaseInputLayerNameText':'Inditgai per plaschair in num da plaun en il champ da text',
 	'pleaseInputURLText':'Tscherni per plaschair in server da la glista u agiuntai in (URL)',
 	'pleaseSelectALayerText':'Tscherni l\'emprim in u plirs nivels da la glista',
-	'plum':'plum', //TODO
+	'plum':'Paloga',
 	'previous':'Enavos',
 	'print':'Stampar',
 	'print action':'Stampar',
-	'purple':'purple', //TODO
+	'purple':'violet',
 	'queryableText':'Tschertgabel',
 	'raetoromanic':'Rumantsch',
 	'red':'cotschen',
 	'remove layer':'Allontanar l\'unitad da datas',
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'dretger',
-	'salmon':'salmon', //TODO
+	'salmon':'colur da salmun',
 	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>PLZ:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br>',
 	'select a color...':'Tscherner la colur',
 	'show column':'Avrir ils temas',
 	'show layer options':'Mussar las opziuns da la stresa',
-	'silver':'silver', //TODO
+	'silver':'argient',
 	'srsCompatibleText':'SRS cumpatibel',
 	'srsNotSupportedShortText':'Na sustegna betg la projecziun cartografica',
 	'srsNotSupportedText':'Quest "layer" na po betg vegnir agiuntà perquai ch\'el na sustegna betg sia projecziun cartografica.',

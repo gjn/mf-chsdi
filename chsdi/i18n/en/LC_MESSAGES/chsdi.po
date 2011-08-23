@@ -302,6 +302,9 @@ msgstr "Lage"
 msgid "name"
 msgstr "Name"
 
+msgid "name_terreg"
+msgstr "Name der Territorialregion"
+
 msgid "national"
 msgstr "national"
 
@@ -310,6 +313,9 @@ msgstr "Nr."
 
 msgid "nummer"
 msgstr "Number"
+
+msgid "nummer_terreg"
+msgstr "Nummer der Territorialregion"
 
 msgid "nutzung"
 msgstr "Hauptnutzung"

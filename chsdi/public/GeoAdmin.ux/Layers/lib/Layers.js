@@ -1426,6 +1426,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
                 queryable: true
+             },
+            "ch.vbs.territorialregionen": {
+                name: OpenLayers.i18n("ch.vbs.territorialregionen"),
+                layertype: 'wmts',
+                timestamp: '20110501',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.6,
+                queryable: true
             }
         };
         return this.layers;
