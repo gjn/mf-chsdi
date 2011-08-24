@@ -87,7 +87,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Input the KML address (URL)':'Saisir l\'adresse du KML (URL)',
 	'Input the server address (URL)':'Saisir l\'adresse du serveur WMS (URL)',
 	'Invalid email provided':'Adresse email non valide',
-	'KML':'Import KML',
+	'KML':'KML import',
 	'KML URL':'KML URL',
 	'KML data sucessfully imported in layer:':'Données KML importées avec succès dans:',
 	'KMLTooltip':'Merci de valider votre KML avec kmlvalidator.com<br>La taille du fichier ne doit pas excéder 2MB, ceci pour des raisons de performance<br>Uploader votre KML de manière à ce qu\'il soit accessible en ligne (URL). Des services comme dropbox.com, Google Doc ou ge.tt peuvent être utilisés.',

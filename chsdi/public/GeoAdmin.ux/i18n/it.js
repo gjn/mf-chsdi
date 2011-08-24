@@ -195,7 +195,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Warning Internet Explorer 6':'Attenzione Explorer 6',
 	'Warning screen resolution':'Attenzione Risoluzione dello schermo',
 	'We recommend to upgrade to a newer release.':'Vi preghiamo di utilizzare una versione più recente.',
-	'WmsBrowser':'WMS Import',
+	'WmsBrowser':'Importare WMS',
 	'WmsBrowserWindow':'Aggiungere un servizio WMS',
 	'Yes':'Si',
 	'You are using Internet Explorer 6.':'State utilizzando Explorer 6',
