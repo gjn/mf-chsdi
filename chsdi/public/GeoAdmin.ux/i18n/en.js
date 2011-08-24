@@ -378,7 +378,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'italian':'Italiano',
 	'language':'Language',
 	'last used':'last used',
-	'layer search':'Layer search',
+	'layer search':'Search data',
 	'layer selection':'Your selection',
 	'layerAddedText':'Ebene erfolgreich hinzugefügt',
 	'layerCantBeAddedText':'This layer can not be added',

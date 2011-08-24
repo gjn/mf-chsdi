@@ -378,7 +378,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'italian':'Italiano',
 	'language':'Lingua',
 	'last used':'Ultimo utilizzo',
-	'layer search':'Ricerca di livelli',
+	'layer search':'Ricerca di dati',
 	'layer selection':'Loro selezione',
 	'layerAddedText':'Livello(i) aggiunto(i) con successo alla carta',
 	'layerCantBeAddedText':'Questo livello non può essere aggiunto',

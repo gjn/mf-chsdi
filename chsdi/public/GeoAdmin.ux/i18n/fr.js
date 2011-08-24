@@ -378,7 +378,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'italian':'Italiano',
 	'language':'Langue',
 	'last used':'dernier utilisé',
-	'layer search':'Recherche de couche',
+	'layer search':'Recherche donnée',
 	'layer selection':'Votre sélection',
 	'layerAddedText':'Couche(s) ajoutée(s) avec succès à la carte',
 	'layerCantBeAddedText':'Cette couche ne peut être ajoutée',

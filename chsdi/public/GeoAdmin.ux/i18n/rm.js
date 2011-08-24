@@ -374,7 +374,7 @@ OpenLayers.Lang.rm= {
 	'italian':'Italiano',
 	'language':'Lingua',
 	'last used':'duvrà sco ultim',
-	'layer search':'Tschertgar layer',
+	'layer search':'Tschertgar datas',
 	'layer selection':'Vossa selecziun',
 	'layerAddedText':'Agiuntà cun success il nivel',
 	'layerCantBeAddedText':'Questa "layer" na po betg vegnir agiuntà.',
