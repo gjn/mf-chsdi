@@ -321,7 +321,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.hiks-dufour':'Carta Dufour',
 	'ch.swisstopo.hiks-siegfried':'Carta Siegfrien',
 	'ch.swisstopo.images-swissimage':'Veduta aerea',
-	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (tav. dei fogli)',
+	'ch.swisstopo.images-swissimage.metadata':'Divisione in tiles SWISSIMAGE',
 	'ch.swisstopo.kt':'swisstopo, ct.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/it/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Carta a colori',

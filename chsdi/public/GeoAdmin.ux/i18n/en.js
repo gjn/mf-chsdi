@@ -321,7 +321,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.hiks-dufour':'Dufour Map',
 	'ch.swisstopo.hiks-siegfried':'Siegfried Map',
 	'ch.swisstopo.images-swissimage':'Aerial imagery',
-	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (Map Index)',
+	'ch.swisstopo.images-swissimage.metadata':'Tiling SWISSIMAGE',
 	'ch.swisstopo.kt':'swisstopo, ct.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Color map',

@@ -317,7 +317,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.hiks-dufour':'Charta Dufour',
 	'ch.swisstopo.hiks-siegfried':'Charta Siegfried',
 	'ch.swisstopo.images-swissimage':'Fotografia or da l\'aria',
-	'ch.swisstopo.images-swissimage.metadata':'SWISSIMAGE (tab. dals fegls)',
+	'ch.swisstopo.images-swissimage.metadata':'Divisiun tiles SWISSIMAGE',
 	'ch.swisstopo.kt':'swisstopo, Kt.',
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Charta en colur',
