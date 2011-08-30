@@ -54,7 +54,7 @@ GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
         var control = new OpenLayers.Control.MousePosition({
             div: this.getEl().dom,
             numDigits: 0,
-            prefix: OpenLayers.i18n("Coordinates (m): ")
+            prefix: OpenLayers.i18n("Coordinates (m):")
         });
         this.map.addControl(control);
         GeoAdmin.MousePositionBox.superclass.afterRender.apply(this, arguments);
