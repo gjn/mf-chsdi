@@ -20,9 +20,6 @@ AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
 
-# Mobile rewrite TODO to be deleted after sept.. 2011
-ServerAlias mobile.map.geo.admin.ch
-
 RewriteCond %{HTTP_HOST}   ^mobile
 RewriteCond $1 !\.(gif|jpe?g|png|css|js|ico|html)$ [NC]
 RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/mobile.html$1 [L]
