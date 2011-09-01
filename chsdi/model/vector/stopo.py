@@ -270,7 +270,7 @@ register('ch.swisstopo.pixelkarte-pk500.metadata',GridstandPk500)
 
 class GridstandSwissimage(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
+ 	__tablename__ = 'view_gridstand_datenhaltung_swissimage'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/images_metadata.mako'
  	id = Column('tilenumber', Text, primary_key=True)
