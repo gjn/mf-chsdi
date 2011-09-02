@@ -134,7 +134,10 @@ class ProfileController(BaseController):
                             alt = co[1]
                             break
                         if co[0] > dist:
-                            a = (co[1] - prevco[1]) / (co[0] - prevco[0])
+                            try: 
+                                a = (co[1] - prevco[1]) / (co[0] - prevco[0])
+                            except:
+                                abort(400)
                             alt = a * (dist - prevco[0]) + prevco[1]
                             break 
                         prevco = co                
