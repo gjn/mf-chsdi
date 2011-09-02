@@ -6,7 +6,7 @@ from pylons import request, response, config, tmpl_context as c
 import geojson
 import simplejson
 import math
-from shapely.geometry import LineString
+from shapely.geometry import LineString, asShape
 
 # cache of GeoRaster instances in function of the layer name
 _rasters = {}
@@ -52,7 +52,21 @@ class ProfileController(BaseController):
         linestring = request.params.get('geom')
         if linestring is None:
             abort(400)
-        geom = geojson.loads(linestring, object_hook=geojson.GeoJSON.to_instance)
+        try:
+            geom = geojson.loads(linestring, object_hook=geojson.GeoJSON.to_instance)
+        except: 
+            abort(400)
+        
+        try:
+            linestring = asShape(geom)
+        except:
+            abort(400)
+
+        if linestring.length == 0.0:
+            abort(400)
+
+        if not linestring.is_valid:
+            abort(400)
 
         if request.params.has_key('layers'):
             layers = request.params['layers'].split(',')
