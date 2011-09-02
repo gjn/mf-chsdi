@@ -18,7 +18,7 @@ class Tile(object):
 
 class BTTile(Tile):
     def getVal(self, x, y):
-        file = open(self.filename, 'rb');
+        file = open(self.filename, 'rb')
         if not hasattr(self, 'cols'):
             file.seek(10)
             (self.cols, self.rows, self.dataSize, self.floatingPoint)=unpack('<LLhh', file.read(12))
@@ -37,7 +37,7 @@ class BTTile(Tile):
               format="<l"
           val=unpack(format, file.read(self.dataSize))[0]
 
-        file.close();
+        file.close()
         return val
 
 class GeoRaster:
