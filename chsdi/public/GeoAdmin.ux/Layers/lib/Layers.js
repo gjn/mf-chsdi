@@ -1218,6 +1218,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+             "ch.swisstopo-karto.hangneigung": {
+                name: OpenLayers.i18n("ch.swisstopo-karto.hangneigung"),
+                layertype: 'wmts',
+                timestamp: '20081107',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
+             "ch.swisstopo-karto.skitouren": {
+                name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
+                layertype: 'wmts',
+                timestamp: '20101101',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.tamedia.schweizerfamilie-feuerstellen": {
                 name: OpenLayers.i18n("ch.tamedia.schweizerfamilie-feuerstellen"),
                 layertype: 'wmts',
