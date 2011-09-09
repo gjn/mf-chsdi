@@ -47,6 +47,7 @@ class SwisssearchController(BaseController):
             terms = q.split()
             terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'tsvector_search_name'
+            terms =  terms.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
 
             query = Session.query(SwissSearch).filter(ftsFilter)
