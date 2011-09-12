@@ -1,0 +1,475 @@
+# German translations for chsdi.
+# Copyright (C) 2010 ORGANIZATION
+# This file is distributed under the same license as the chsdi project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+
+msgid "app title"
+msgstr ""
+
+msgid "help title"
+msgstr ""
+
+msgid "help url"
+msgstr ""
+
+msgid "contact title"
+msgstr ""
+
+msgid "contact url"
+msgstr ""
+
+msgid "disclaimer title"
+msgstr ""
+
+msgid "disclaimer url"
+msgstr ""
+
+msgid "federal administration"
+msgstr ""
+
+msgid "home url"
+msgstr ""
+
+msgid "home title"
+msgstr ""
+
+msgid "blind warning"
+msgstr ""
+
+msgid "page is loading. please wait..."
+msgstr ""
+
+msgid "hide column"
+msgstr ""
+
+msgid "pdf"
+msgstr ""
+
+msgid "Legend"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "geobasisdatensatz"
+msgstr ""
+
+msgid "Gueltiger Massstabsbereich"
+msgstr ""
+
+msgid "Metadaten"
+msgstr ""
+
+msgid "Detailbeschreibung"
+msgstr ""
+
+msgid "Detaildaten"
+msgstr ""
+
+msgid "betrieb"
+msgstr ""
+
+msgid "holzzuwachs"
+msgstr ""
+
+msgid "holznuztung"
+msgstr ""
+
+msgid "holzvorrat"
+msgstr ""
+
+msgid "holz_region"
+msgstr ""
+
+msgid "Datenbezug"
+msgstr ""
+
+msgid "Thematisches Geoportal"
+msgstr ""
+
+msgid "WMS Dienst"
+msgstr ""
+
+msgid "Datenstand"
+msgstr ""
+
+msgid "layer_geocat_text"
+msgstr ""
+
+msgid "layer_url_text"
+msgstr ""
+
+msgid "layer_url_download_text"
+msgstr ""
+
+msgid "layer_url_portal_text"
+msgstr ""
+
+msgid "wms_resource_text"
+msgstr ""
+
+msgid "Link to object"
+msgstr ""
+
+msgid "name"
+msgstr ""
+
+msgid "objektname"
+msgstr ""
+
+msgid "laenge_m"
+msgstr ""
+
+msgid "laenge_strecke_m"
+msgstr ""
+
+msgid "flaeche_ha"
+msgstr ""
+
+msgid "gesamtflaeche_ha"
+msgstr ""
+
+msgid "flaeche_m2"
+msgstr ""
+
+msgid "flaeche_km2"
+msgstr "" 
+
+msgid "perimeter_m"
+msgstr ""
+
+msgid "objektnr"
+msgstr ""
+
+msgid "identificator"
+msgstr ""
+
+msgid "gmde"
+msgstr ""
+
+msgid "bfsnr"
+msgstr ""
+
+msgid "construct"
+msgstr ""
+
+msgid "typ"
+msgstr ""
+
+msgid "toll"
+msgstr ""
+
+msgid "fj85"
+msgstr ""
+
+msgid "fj97"
+msgstr ""
+
+msgid "id_arealstatistik_85"
+msgstr ""
+
+msgid "id_arealstatistik_97"
+msgstr ""
+
+msgid "bereich"
+msgstr ""
+
+msgid "stationsnr"
+msgstr ""
+
+msgid "aktuelle_daten"
+msgstr ""
+
+msgid "stationsname"
+msgstr ""
+
+msgid "kartiereinheit"
+msgstr ""
+
+msgid "kategorie"
+msgstr ""
+
+msgid "kantoncode"
+msgstr ""
+
+msgid "rwknr"
+msgstr ""
+
+msgid "kanton"
+msgstr ""
+
+msgid "ent_gew"
+msgstr ""
+
+msgid "fliessgewaesser"
+msgstr ""
+
+msgid "egid"
+msgstr ""
+
+msgid "strasse"
+msgstr ""
+
+msgid "nr"
+msgstr ""
+
+msgid "name_terreg"
+msgstr ""
+
+msgid "nummer_terreg"
+msgstr ""
+
+msgid "plz"
+msgstr ""
+
+msgid "langtext"
+msgstr ""
+
+msgid "ct"
+msgstr ""
+
+msgid "ort"
+msgstr ""
+
+msgid "gemeinde"
+msgstr ""
+
+msgid "x"
+msgstr ""
+
+msgid "y"
+msgstr ""
+
+msgid "beschreibung"
+msgstr ""
+
+msgid "url"
+msgstr ""
+ 
+msgid "nummer"
+msgstr ""
+
+msgid "gewissnr"
+msgstr ""
+
+msgid "protokoll"
+msgstr ""
+
+msgid "punktname"
+msgstr ""
+
+msgid "status"
+msgstr ""
+
+msgid "zugang"
+msgstr ""
+
+msgid "rss url"
+msgstr ""
+
+msgid "rss title"
+msgstr ""
+
+msgid "twitter url"
+msgstr ""
+
+msgid "twitter title"
+msgstr ""
+
+msgid "report problem"
+msgstr ""
+
+msgid  "tilenumber"
+msgstr ""
+
+msgid  "sheetname"
+msgstr ""
+
+msgid  "atlassheetnumber"
+msgstr ""
+
+msgid  "kartenblattname"
+msgstr ""
+
+msgid  "kartenblattnummer"
+msgstr ""
+
+msgid  "ausgabejahr"
+msgstr ""
+
+msgid  "linkzurlegende"
+msgstr ""
+
+msgid  "mehrinformationen"
+msgstr ""
+
+msgid  "alexandria"
+msgstr ""
+
+msgid  "Toposhop"
+msgstr  ""
+
+msgid "Produkt"
+msgstr ""
+
+msgid "zaehlstelle"
+msgstr "" 
+
+msgid "physischvirtuell"
+msgstr ""
+
+msgid "messstellentyp"
+msgstr "" 
+
+msgid "linkzurbeschreibung"
+msgstr "Beschreibung" 
+
+msgid "oeffentlich"
+msgstr "" 
+
+msgid "intern"
+msgstr "" 
+
+msgid "bearbeitungsjahr"
+msgstr "" 
+
+msgid "schonzeit"
+msgstr "" 
+
+msgid "einschraenkungen"
+msgstr ""
+
+msgid "wj_bearbeitungsjahr"
+msgstr ""
+
+msgid "beschlussjahr"
+msgstr ""
+
+msgid "bestimmung"
+msgstr ""
+
+msgid "grundlage"
+msgstr ""
+
+msgid "jb_obj"
+msgstr ""
+
+msgid "jb_name"
+msgstr ""
+
+msgid "wrz_fl"
+msgstr ""
+
+msgid "wrz_name"
+msgstr ""
+
+msgid "wrz_obj"
+msgstr ""
+
+msgid "wrz_status"
+msgstr ""
+
+msgid "zeitraum"
+msgstr ""
+
+msgid "zusatzinfo"
+msgstr ""
+
+msgid "length_km"
+msgstr ""
+
+msgid "richtungsgetrennt"
+msgstr ""
+
+msgid "anzahlspuren"
+msgstr ""
+
+msgid "strassentyp"
+msgstr ""
+
+msgid "routentypid"
+msgstr ""
+
+msgid "ivs_objekt"
+msgstr ""
+
+msgid "ivs_gis"
+msgstr ""
+
+msgid "strecke"
+msgstr ""
+
+msgid "ivs_bedeutung"
+msgstr ""
+
+msgid "national"
+msgstr ""
+
+msgid "regional"
+msgstr ""
+
+msgid "lokal"
+msgstr ""
+
+msgid "substanzgrad"
+msgstr ""
+
+msgid "viel_sub"
+msgstr ""
+
+msgid "sub"
+msgstr ""
+
+msgid "wenig_sub"
+msgstr ""
+
+msgid "kkw"
+msgstr ""
+
+msgid "sektor"
+msgstr ""
+
+msgid "zone"
+msgstr ""
+
+msgid "abfrage"
+msgstr ""
+
+msgid "werte"
+msgstr ""
+
+msgid "nabeltyp"
+msgstr ""
+
+# are2 translations
+
+msgid "belastung_personen"
+msgstr ""
+
+msgid "belastung_tonnen"
+msgstr ""
+
+msgid "stand"
+msgstr ""
+
+msgid "typnummer"
+msgstr ""
+
+msgid "regname"
+msgstr ""
+
+msgid "klasse"
+msgstr ""
+
+msgid "einwohner_ha"
+msgstr ""
+
+msgid "beschaeftigte_ha"
+msgstr ""
+
+msgid "nutzung"
+msgstr ""
+
+msgid "reisezeit_min"
+msgstr ""
