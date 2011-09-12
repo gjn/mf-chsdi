@@ -285,7 +285,7 @@ msgid "linkzurbeschreibung"
 msgstr "Description detaillee"
 
 msgid "linkzurlegende"
-msgstr "Liens vers la légende"
+msgstr "Lien vers la légende"
 
 msgid "lokal"
 msgstr "importanza locale"
