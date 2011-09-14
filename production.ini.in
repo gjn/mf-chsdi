@@ -62,7 +62,7 @@ qualname = routes.middleware
 # "level = DEBUG" logs the route matched and routing variables.
 
 [logger_chsdi]
-level = WARNING
+level = DEBUG  
 handlers =
 qualname = chsdi
 

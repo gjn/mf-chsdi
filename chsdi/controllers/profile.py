@@ -1,4 +1,4 @@
-
+import logging
 from chsdi.lib.base import *
 from chsdi.lib.helpers import round
 from chsdi.lib.raster.georaster import GeoRaster
@@ -6,11 +6,12 @@ from pylons import request, response, config, tmpl_context as c
 import geojson
 import simplejson
 import math
-from shapely.geometry import LineString, asShape
+from shapely.geometry import LineString, asShape, Polygon
 
 # cache of GeoRaster instances in function of the layer name
 _rasters = {}
 
+log = logging.getLogger(__name__)
 
 class ProfileController(BaseController):
 
@@ -51,22 +52,29 @@ class ProfileController(BaseController):
         """Compute the alt=fct(dist) array and store it in c.points"""
         linestring = request.params.get('geom')
         if linestring is None:
+            log.error("No geometry in request")
             abort(400)
         try:
             geom = geojson.loads(linestring, object_hook=geojson.GeoJSON.to_instance)
         except: 
+            log.error("Error loading geometry in JSON string")
             abort(400)
         
         try:
             linestring = asShape(geom)
         except:
+            log.error("Error converting JSON to Shape")
             abort(400)
 
         if linestring.length == 0.0:
+            log.error("Linestring has a length of 0")
             abort(400)
 
         if not linestring.is_valid:
+            log.error("LineString is not valid")
             abort(400)
+        bbox = Polygon(((420000,30000), (420000,350000), (900000, 350000), (900000, 30000), (420000,30000)))
+        log.debug("LineString has type '%s', has %d point(s) and is within BBOX: %s" % (linestring.type, len(linestring.coords), bbox.contains(linestring)))
 
         if request.params.has_key('layers'):
             layers = request.params['layers'].split(',')
@@ -82,8 +90,10 @@ class ProfileController(BaseController):
 
         if request.params.has_key('nbPoints'):
             nb_points = int(request.params['nbPoints'])
+            log.debug("Requested points: %d", nb_points)
         elif request.params.has_key('nb_points'):
             nb_points = int(request.params['nb_points'])
+            log.debug("Requested points: %d", nb_points)
         else:
             nb_points = 200
 
@@ -91,6 +101,7 @@ class ProfileController(BaseController):
         dpcoords = None
         if request.params.has_key('douglaspeuckerepsilon'):
             epsilon = float(request.params['douglaspeuckerepsilon'])
+            log.debug("Using Douglas-Peucker simplification")
 
             # Computing simplification
             dpcoords = {}
