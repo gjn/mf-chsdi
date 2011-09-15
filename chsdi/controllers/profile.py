@@ -100,9 +100,12 @@ class ProfileController(BaseController):
         # Simplify input line with a tolerance of 2 m
         if nb_points < len(linestring.coords):
             linestring = linestring.simplify(12.5)
+	    log.debug("Timer Simplify: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
             #log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
 
         coords = self._create_points(linestring.coords, nb_points)
+        log.debug("Timer Compute points: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+
         dpcoords = None
         if request.params.has_key('douglaspeuckerepsilon'):
             epsilon = float(request.params['douglaspeuckerepsilon'])
@@ -126,7 +129,7 @@ class ProfileController(BaseController):
                 ls = LineString(dpcoords[layers[i]])
                 ls = ls.simplify(epsilon, preserve_topology=False)
                 dpcoords[layers[i]] = ls.coords
-
+        log.debug("Timer Douglas: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
         dist = 0
         prev_coord = None
         for coord in coords:
@@ -163,8 +166,7 @@ class ProfileController(BaseController):
                 rounded_dist = self._filter_dist(dist)
                 c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(coord[0]), 'northing': self._filter_coordinate(coord[1])})
             prev_coord = coord
-        end = time.clock()
-        log.debug("Computation time for a LineString of %d point(s): %f" % (len(linestring.coords), end-start))
+        log.debug("Timer JSON: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
 
 
     def _dist(self, coord1, coord2):
