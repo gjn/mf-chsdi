@@ -76,7 +76,7 @@ class ProfileController(BaseController):
             log.error("LineString is not valid")
             abort(400)
         bbox = Polygon(((420000,30000), (420000,350000), (900000, 350000), (900000, 30000), (420000,30000)))
-        log.debug("LineString has type '%s', has %d point(s) and is within BBOX: %s" % (linestring.type, len(linestring.coords), bbox.contains(linestring)))
+        #log.debug("LineString has type '%s', has %d point(s) and is within BBOX: %s" % (linestring.type, len(linestring.coords), bbox.contains(linestring)))
 
         if request.params.has_key('layers'):
             layers = request.params['layers'].split(',')
@@ -92,23 +92,20 @@ class ProfileController(BaseController):
 
         if request.params.has_key('nbPoints'):
             nb_points = int(request.params['nbPoints'])
-            log.debug("Requested points: %d", nb_points)
         elif request.params.has_key('nb_points'):
             nb_points = int(request.params['nb_points'])
-            log.debug("Requested points: %d", nb_points)
         else:
             nb_points = 200
 
         # Simplify input line with a tolerance of 2 m
         if nb_points < len(linestring.coords):
             linestring = linestring.simplify(12.5)
-            log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
+            #log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
 
         coords = self._create_points(linestring.coords, nb_points)
         dpcoords = None
         if request.params.has_key('douglaspeuckerepsilon'):
             epsilon = float(request.params['douglaspeuckerepsilon'])
-            log.debug("Using Douglas-Peucker simplification")
 
             # Computing simplification
             dpcoords = {}
