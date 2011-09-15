@@ -98,8 +98,8 @@ class ProfileController(BaseController):
             nb_points = 200
 
         # Simplify input line with a tolerance of 2 m
-        if (nb_points < len(linestring.coords)):
-            linestring = linestring.simplify(2.0)
+        if nb_points < len(linestring.coords):
+            linestring = linestring.simplify(12.5)
             log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
 
         coords = self._create_points(linestring.coords, nb_points)
