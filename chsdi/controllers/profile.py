@@ -7,7 +7,7 @@ import geojson
 import simplejson
 import math
 import time
-from shapely.geometry import LineString, asShape, Polygon
+from shapely.geometry import LineString,Point, asShape,asLineString, Polygon
 
 # cache of GeoRaster instances in function of the layer name
 _rasters = {}
@@ -108,6 +108,9 @@ class ProfileController(BaseController):
 
         dpcoords = None
         if request.params.has_key('douglaspeuckerepsilon'):
+            if len(layers) > 1:
+               log.error("Douglas Peucker can be used only with one DTM")
+               abort(400)
             epsilon = float(request.params['douglaspeuckerepsilon'])
 
             # Computing simplification
@@ -132,7 +135,7 @@ class ProfileController(BaseController):
         log.debug("Timer Douglas: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
         dist = 0
         prev_coord = None
-        for coord in coords:
+        """for coord in coords:
             if prev_coord is not None:
                 dist += self._dist(prev_coord, coord)
 
@@ -165,7 +168,27 @@ class ProfileController(BaseController):
             if len(alts)>0:
                 rounded_dist = self._filter_dist(dist)
                 c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(coord[0]), 'northing': self._filter_coordinate(coord[1])})
-            prev_coord = coord
+            prev_coord = coord"""
+        computedLinestring = asLineString(coords)
+        # Not simplified case
+        if dpcoords is None:
+           for coord in coords:
+              alt = None
+              alts = {}
+              for i in range(0, len(layers)):
+                 alt = self._filter_alt(rasters[i].getVal(coord[0], coord[1]))
+                 if alt is not None:
+                    alts[layers[i]] = self._filter_alt(alt)
+              rounded_dist = self._filter_dist(computedLinestring.project(Point(coord[0], coord[1])))
+              c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(coord[0]), 'northing': self._filter_coordinate(coord[1])})
+        else:
+           for co in dpcoords[layers[0]]:
+              alts = {}
+              interpolatedPoint = computedLinestring.interpolate(co[0])
+              rounded_dist = self._filter_dist(co[0])
+              alts[layers[0]] = self._filter_alt(co[1])
+              c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(interpolatedPoint.coords[0][0]), 'northing': self._filter_coordinate(interpolatedPoint.coords[0][1])})
+
         log.debug("Timer JSON: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
 
 
