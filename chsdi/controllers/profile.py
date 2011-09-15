@@ -6,6 +6,7 @@ from pylons import request, response, config, tmpl_context as c
 import geojson
 import simplejson
 import math
+import time
 from shapely.geometry import LineString, asShape, Polygon
 
 # cache of GeoRaster instances in function of the layer name
@@ -50,6 +51,7 @@ class ProfileController(BaseController):
 
     def _compute_points(self):
         """Compute the alt=fct(dist) array and store it in c.points"""
+        start = time.clock()
         linestring = request.params.get('geom')
         if linestring is None:
             log.error("No geometry in request")
@@ -164,6 +166,9 @@ class ProfileController(BaseController):
                 rounded_dist = self._filter_dist(dist)
                 c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(coord[0]), 'northing': self._filter_coordinate(coord[1])})
             prev_coord = coord
+        end = time.clock()
+        log.debug("Computation time for a LineString of %d point(s): %f" % (len(linestring.coords), end-start))
+
 
     def _dist(self, coord1, coord2):
         """Compute the distance between 2 points"""
