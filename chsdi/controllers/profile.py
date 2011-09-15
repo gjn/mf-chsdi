@@ -97,7 +97,12 @@ class ProfileController(BaseController):
         else:
             nb_points = 200
 
-        coords = self._create_points(geom.coordinates, nb_points)
+        # Simplify input line with a tolerance of 2 m
+        if (nb_points < len(linestring.coords)):
+            linestring = linestring.simplify(2.0)
+            log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
+
+        coords = self._create_points(linestring.coords, nb_points)
         dpcoords = None
         if request.params.has_key('douglaspeuckerepsilon'):
             epsilon = float(request.params['douglaspeuckerepsilon'])
