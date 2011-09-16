@@ -521,126 +521,12 @@ Usage Example
 .. code-block:: html
 
    <script type="text/javascript">
-      var map;
-
-      var geolocate = function() {
-         if (navigator.geolocation) {
-            /* geolocation is available */
-            navigator.geolocation.getCurrentPosition(function(position) {
-               positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
-               positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
-               map.setCenter(positionCH, 22);
-            });
-         } else {
-            alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
-         }
-      }
-
-      function init() {
-       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
-
-       var format = new OpenLayers.Format.WMTSCapabilities({
-
-       });
-
-
-       map = new OpenLayers.Map({
-           div: "mymap1",
-           projection: "EPSG:21781",
-           units: "m",
-           controls: [
-               new OpenLayers.Control.Navigation(),
-               new OpenLayers.Control.PanZoomBar(),
-               new OpenLayers.Control.ScaleLine({maxWidth: 120})
-           ],
-           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
-           //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
-           resolutions: [650,500,250,100,50,20,10,5,2.5]
-       });
-
-       var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {
-                    'format':'jpeg',
-                    'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'
-                    },
-                    {'buffer':1,  
-                    isBaseLayer:true,
-                    singleTile: true,
-                    opacity:0.0,
-                    displayInLayerSwitcher: false
-       });
-
-
-       map.addLayers([voidLayer]);
-
-       OpenLayers.Request.GET({
-           url: "../../data/wmts-getcapabilities.xml",
-           params: {
-               SERVICE: "WMTS",
-               VERSION: "1.0.0",
-               REQUEST: "GetCapabilities"
-           },
-           success: function(request) {
-               var doc = request.responseXML;
-               if (!doc || !doc.documentElement) {
-                   doc = request.responseText;
-               }
-
-               var capabilities = format.read(doc);
-
-
-               var layer = format.createLayer(capabilities, {
-                   layer: "ch.swisstopo.pixelkarte-farbe",
-                   matrixSet: "21781", // Only this one
-                   format: "image/jpeg",
-                   opacity: 1.0,
-                   isBaseLayer: false,
-                   requestEncoding: "REST",
-                   style: "default" ,  // must be provided
-                   dimensions: ['TIME'],
-                   params: {'time': '20110401'},
-                   formatSuffix: 'jpeg'
-
-               });
-               map.addLayer(layer);
-           },
-           failure: function() {
-               alert("Trouble getting capabilities doc");
-               OpenLayers.Console.error.apply(OpenLayers.Console, arguments);
-           }
-       });
-
-
-       //map.addControl(new OpenLayers.Control.MousePosition({element: $('coords')}));
-       map.setCenter(new OpenLayers.LonLat(600000, 200000), 13);
-   }
-
-   </script>
-   <body onload="init();">
-      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">
-                      Click here to center the map at your current location</a>
-      <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-   </body>
-
-.. raw:: html
-
-    </div>
-
-
-
-
-
-
-.. raw:: html
-
-   <script type="text/javascript">
    var map;
    var format;
 
    var geolocate = function() {
        if (navigator.geolocation) {
-           /* geolocation is available */
+           /* geolocation is available  */
            navigator.geolocation.getCurrentPosition(function(position) {
                positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
                positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
@@ -683,7 +569,7 @@ Usage Example
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../data/wmts-getcapabilities.xml",
+           url: "../../../ogcproxy?url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",
@@ -700,14 +586,122 @@ Usage Example
 
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
-                   matrixSet: "21781", //"Bgdi_lv03",
+                   matrixSet: "21781",
                    format: "image/jpeg",
                    opacity: 1.0,
                    isBaseLayer: false,
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['TIME'],
-                   params: {'time': '2009'},
+                   params: {'time': '20110401'},
+                   formatSuffix: 'jpeg'
+               });
+               map.addLayer(layer);
+           },
+           failure: function() {
+               alert("Trouble getting capabilities doc");
+               OpenLayers.Console.error.apply(OpenLayers.Console, arguments);
+           }
+       });
+
+       map.setCenter(new OpenLayers.LonLat(650000, 180000), 2);
+   }
+
+
+
+   </script>
+   <body onload="init();">
+      <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">
+                      Click here to center the map at your current location</a>
+      <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
+
+
+
+
+
+.. raw:: html
+
+   <script type="text/javascript">
+   var map;
+   var format;
+
+   var geolocate = function() {
+       if (navigator.geolocation) {
+           /* geolocation is available  */
+           navigator.geolocation.getCurrentPosition(function(position) {
+               positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
+               positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
+               map.setCenter(positionCH, 22);
+           });
+       } else {
+           alert("Your browser doesn't support geolocation. Upgrade to a modern browser ;-)");
+       }
+   };
+
+   function init() {
+
+
+       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
+
+       var format = new OpenLayers.Format.WMTSCapabilities({
+
+       });
+
+
+       map = new OpenLayers.Map({
+           div: "mymap1",
+           projection: "EPSG:21781",
+           units: "m",
+           controls: [
+               new OpenLayers.Control.Navigation(),
+               new OpenLayers.Control.PanZoomBar(),
+               new OpenLayers.Control.ScaleLine({maxWidth: 120})
+           ],
+           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
+           resolutions: [650,500,250,100,50,20,10,5,2.5]
+       });
+
+       var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+       });
+
+
+       map.addLayers([voidLayer]);
+
+       OpenLayers.Request.GET({
+           url: "../../../ogcproxy?url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
+           params: {
+               SERVICE: "WMTS",
+               VERSION: "1.0.0",
+               REQUEST: "GetCapabilities"
+           },
+           success: function(request) {
+               var doc = request.responseXML;
+               if (!doc || !doc.documentElement) {
+                   doc = request.responseText;
+               }
+
+               if (!doc || doc.length <1) { alert("Trouble parsing the getCapabilities document"); return false;}
+               var capabilities = format.read(doc);
+
+               var layer = format.createLayer(capabilities, {
+                   layer: "ch.swisstopo.pixelkarte-farbe",
+                   matrixSet: "21781",
+                   format: "image/jpeg",
+                   opacity: 1.0,
+                   isBaseLayer: false,
+                   requestEncoding: "REST",
+                   style: "default" ,  // must be provided
+                   dimensions: ['TIME'],
+                   params: {'time': '20110401'},
                    formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
