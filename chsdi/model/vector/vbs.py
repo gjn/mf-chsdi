@@ -26,8 +26,10 @@ class TERRITORIALREGIONEN(Base, Queryable):
     __tablename__ = 'territorialregionen'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/territorialregionen.mako'
+
     id = Column('terreg_nr', Integer, primary_key=True)
     the_geom = Column('the_geom_gen100', Geometry)
+    not_used = Column('the_geom', Geometry)
 
 register('ch.vbs.territorialregionen', TERRITORIALREGIONEN)
 

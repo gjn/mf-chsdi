@@ -7,6 +7,7 @@ class Bezirke25(Base, Queryable):
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/bezirke25.mako'
     id = Column('gid', Integer, primary_key=True)
+    fid = Column('id', Integer)
     the_geom = Column(Geometry)
 
 register('ch.swisstopo.gg25-bezirk-flaeche.fill', Bezirke25)
@@ -26,6 +27,7 @@ class GG25(Base, Queryable):
     __template__ = 'tooltips/gg25.mako'
     id = Column(Integer, primary_key=True)
     the_geom = Column('the_geom_gen50', Geometry)
+    not_used = Column('the_geom', Geometry)
 
 register('ch.swisstopo.gg25-gemeinde-flaeche.fill', GG25)
 

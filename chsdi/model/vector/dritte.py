@@ -17,8 +17,10 @@ class NOTFALLSCHUTZ(Base, Queryable):
     __tablename__ = 'zonenplan_kernanlagen'
     __table_args__ = ({'schema': 'ensi', 'autoload': True})
     __template__ = 'tooltips/zonenplan_kernanlagen.mako'
+
     id = Column('nr', Integer, primary_key=True)
     the_geom = Column('the_geom_gen50', Geometry)
+    not_used = Column('the_geom', Geometry)
 
 register('ch.ensi.zonenplan-notfallschutz-kernanlagen', NOTFALLSCHUTZ)
 
