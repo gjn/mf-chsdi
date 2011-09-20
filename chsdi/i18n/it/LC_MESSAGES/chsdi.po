@@ -59,6 +59,12 @@ msgstr "Servizio WMS"
 msgid "abfrage"
 msgstr "Requête de données"
 
+msgid "abgintens"
+msgstr "Intensité estimée"
+
+msgid "abgmagn"
+msgstr "Magnitude estimée"
+
 msgid "aktuelle_daten"
 msgstr "Données actuelles et historiques"
 
@@ -107,6 +113,30 @@ msgstr "Entreprise"
 msgid "bfsnr"
 msgstr "Numéro OFS"
 
+msgid "bioregname"
+msgstr "Nom de la région"
+
+msgid "bioregnummer"
+msgstr "Numéro de la région"
+
+msgid "bioresname"
+msgstr "Nom de l’objet"
+
+msgid "bioresnummer"
+msgstr "Numéro de l’objet"
+
+msgid "biorestotflaeche"
+msgstr "Surface totale de l’objet, ha"
+
+msgid "biorresflaeche"
+msgstr "Surface du polygone actuel, ha"
+
+msgid "biounterregname"
+msgstr "Numéro de la subdivision"
+
+msgid "biounterregnummer"
+msgstr "Numéro de la subdivision"
+
 msgid "blind warning"
 msgstr "Questa pagina Web è una  applicazione geografica, purtroppo non è ottimizata per le persone videolese."
 
@@ -121,6 +151,12 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/it/tools/contact.html"
 
 msgid "ct"
 msgstr "Ct."
+
+msgid "datumactu"
+msgstr "Date de la dernière mise à jour"
+
+msgid "datumzeit"
+msgstr "Date et heure"
 
 msgid "disclaimer title"
 msgstr "Copyright e  dicariazione della protezione dei diritti d\u2019autore"
@@ -139,6 +175,9 @@ msgstr "Population par ha"
 
 msgid "ent_gew"
 msgstr "Cours d'eau"
+
+msgid "epizentralzone"
+msgstr "Zone épicentrale"
 
 msgid "federal administration"
 msgstr "Amministrazione federale admin.ch"
@@ -161,14 +200,23 @@ msgstr "Surface [m2]"
 msgid "fliessgewaesser"
 msgstr "Cours d'eau"
 
+msgid "frame"
+msgstr "Cadre de référence"
+
 msgid "gemeinde"
 msgstr "Commune"
 
 msgid "geobasisdatensatz"
 msgstr "ID geodati di base"
 
+msgid "geometalink"
+msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
+
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
+
+msgid "gewaessername"
+msgstr "Nom du plan d’eau"
 
 msgid "gewissnr"
 msgstr "Numéro GEWISS"
@@ -257,6 +305,9 @@ msgstr "Centrale nucleare"
 msgid "klasse"
 msgstr "Classe"
 
+msgid "krebsart"
+msgstr "Nom latin de l’espèce d’écrevisse"
+
 msgid "laenge_m"
 msgstr "Longueur [m]"
 
@@ -265,6 +316,9 @@ msgstr "Longueur du tronçon [m]"
 
 msgid "langtext"
 msgstr "Localité"
+
+msgid "laubholzanteil"
+msgstr "Proportion de feuillus [%]"
 
 msgid "layer_geocat_text"
 msgstr "Link per geocat.ch"
@@ -290,6 +344,12 @@ msgstr "Lien vers la légende"
 msgid "lokal"
 msgstr "importanza locale"
 
+msgid "losactivite"
+msgstr "Activité"
+
+msgid "losentreprise"
+msgstr "Entreprise"
+
 msgid "mehrinformationen"
 msgstr "Légende plus détaillée"
 
@@ -298,6 +358,18 @@ msgstr "Type"
 
 msgid "nabeltyp"
 msgstr "Emplacement"
+
+msgid "nachweisjahr"
+msgstr "Année du prélèvement"
+
+msgid "nachweisnummer"
+msgstr "No du lieu de prélèvement"
+
+msgid "nachweisort"
+msgstr "Lieu de prélèvement"
+
+msgid "nadelholzanteil"
+msgstr "Proportion de résineux [%]"
 
 msgid "name"
 msgstr "Nom"
@@ -353,6 +425,9 @@ msgstr "Protocole"
 msgid "punktname"
 msgstr "Nom du point"
 
+msgid "quality"
+msgstr "Standard de qualité"
+
 msgid "regional"
 msgstr "importanza regionale"
 
@@ -389,6 +464,12 @@ msgstr "Settore"
 msgid "sheetname"
 msgstr "Denominazione di foglio"
 
+msgid "spectralinfolink"
+msgstr "Lien vers les informations disponibles"
+
+msgid "spectralzone"
+msgstr "Zone de microzonage sismique spectral"
+
 msgid "stand"
 msgstr "Etat"
 
@@ -422,6 +503,9 @@ msgstr "Numero di foglio"
 msgid "toll"
 msgstr "Péage"
 
+msgid "totholz"
+msgstr "Volume total de bois mort [m3/ha]"
+
 msgid "twitter title"
 msgstr "Twitter"
 
@@ -439,6 +523,9 @@ msgstr "URL"
 
 msgid "viel_sub"
 msgstr "molta sostanza"
+
+msgid "waldanteil"
+msgstr "Taux de boisement [%]"
 
 msgid "wenig_sub"
 msgstr "tracciato storico"
@@ -463,6 +550,15 @@ msgstr "No objet zone de tranquillité"
 
 msgid "wrz_status"
 msgstr "Catégorie"
+
+msgid "wsname"
+msgstr "Nom du secteur"
+
+msgid "wsnummer"
+msgstr "Numéro du secteur"
+
+msgid "wstyp"
+msgstr "Type du secteur"
 
 msgid "x"
 msgstr "X-Coordonnée"
