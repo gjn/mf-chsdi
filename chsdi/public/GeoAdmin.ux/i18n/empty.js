@@ -433,5 +433,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Load KML':"",
     'Input the server address (URL)':"",
     'Third party data warning': "",
-    'The permalink you use contains reference to third party data. Would you load these data ?': ""
+    'The permalink you use contains reference to third party data. Would you load these data ?': "",
+    'ch.swisstopo-vd.geometa-standav': "",
+    'ch.swisstopo-vd.geometa-los': "",
+    'ch.bafu.unesco-weltnaturerbe': ""
 });
