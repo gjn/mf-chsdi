@@ -442,6 +442,102 @@ msgstr ""
 msgid "nabeltyp"
 msgstr ""
 
+msgid "gewaessername"
+msgstr ""
+
+msgid "krebsart"
+msgstr ""
+
+msgid "nachweisjahr"
+msgstr ""
+
+msgid "nachweisnummer"
+msgstr ""
+
+msgid "nachweisort"
+msgstr ""
+
+msgid "datumactu"
+msgstr ""
+
+msgid "bioregname"
+msgstr ""
+
+msgid "biounterregname"
+msgstr ""
+
+msgid "bioregnummer"
+msgstr ""
+
+msgid "biounterregnummer"
+msgstr ""
+
+msgid "biorresflaeche"
+msgstr ""
+
+msgid "biorestotflaeche"
+msgstr ""
+
+msgid "bioresname"
+msgstr ""
+
+msgid "bioresnummer"
+msgstr ""
+
+msgid "wsname"
+msgstr ""
+
+msgid "wsnummer"
+msgstr ""
+
+msgid "wstyp"
+msgstr ""
+
+msgid "laubholzanteil"
+msgstr ""
+
+msgid "nadelholzanteil"
+msgstr ""
+
+msgid "waldanteil"
+msgstr ""
+
+msgid "totholz"
+msgstr ""
+
+msgid "abgintens"
+msgstr ""
+
+msgid "abgmagn"
+msgstr ""
+
+msgid "datumzeit"
+msgstr ""
+
+msgid "epizentralzone"
+msgstr ""
+
+msgid "spectralinfolink"
+msgstr ""
+
+msgid "spectralzone"
+msgstr ""
+
+msgid "quality"
+msgstr ""
+
+msgid "frame"
+msgstr ""
+
+msgid "losentreprise"
+msgstr ""
+
+msgid "losactivite"
+msgstr ""
+
+msgid "geometalink"
+msgstr ""
+
 # are2 translations
 
 msgid "belastung_personen"
