@@ -11,5 +11,5 @@
            <td>${c.feature.taetigkeit_i or '-'}</td>
       % endif
     </tr>
- ##   <tr><td width="150">${_('geometalink')}</td>    <td><a href = "http://web-geoadmin.bgdi.admin.ch/ch.swisstopo-vd.geometa-standav/lots_${c.feature.gid or '-'}.html" target = "blank">Link</a></td></tr>
+ ##   <tr><td width="150">${_('geometalink')}</td>    <td><a href = "http://web-geoadmin.bgdi.admin.ch/ch.swisstopo-vd.geometa-standav/lots_${c.feature.id or '-'}.html" target = "blank">Link</a></td></tr>
 </%def>
