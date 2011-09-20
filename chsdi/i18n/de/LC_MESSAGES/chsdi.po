@@ -59,6 +59,12 @@ msgstr "WMS Dienst"
 msgid "abfrage"
 msgstr "Datenbfrage"
 
+msgid "abgintens"
+msgstr "Abgeschätzte Intensität"
+
+msgid "abgmagn"
+msgstr "Abgeschätzte Magnitude"
+
 msgid "aktuelle_daten"
 msgstr "Aktuelle und historische Daten"
 
@@ -107,6 +113,30 @@ msgstr "Betrieb"
 msgid "bfsnr"
 msgstr "BFS-Nummer"
 
+msgid "bioregname"
+msgstr "Name Region"
+
+msgid "bioregnummer"
+msgstr "Nummer Region"
+
+msgid "bioresname"
+msgstr "Name des Objektes"
+
+msgid "bioresnummer"
+msgstr "Objektnummer"
+
+msgid "biorestotflaeche"
+msgstr "Gesamtfläche des Objektes, ha"
+
+msgid "biorresflaeche"
+msgstr "Fläche des aktuellen Polygons, ha"
+
+msgid "biounterregname"
+msgstr "Name Unterregion"
+
+msgid "biounterregnummer"
+msgstr "Nummer Unterregion"
+
 msgid "blind warning"
 msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
 
@@ -121,6 +151,12 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/tools/contact.html"
 
 msgid "ct"
 msgstr "Kt."
+
+msgid "datumactu"
+msgstr "Datum der letzten Aktualisierung"
+
+msgid "datumzeit"
+msgstr "Datum und Zeit"
 
 msgid "disclaimer title"
 msgstr "Copyright & Datenschutzerklärung"
@@ -139,6 +175,9 @@ msgstr "Einwohner pro ha"
 
 msgid "ent_gew"
 msgstr "Fliessgewässer"
+
+msgid "epizentralzone"
+msgstr "Epizentrale Zone"
 
 msgid "federal administration"
 msgstr "Bundesverwaltung admin.ch"
@@ -161,14 +200,23 @@ msgstr "Fläche [m2]"
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
+msgid "frame"
+msgstr "Bezugsramen"
+
 msgid "gemeinde"
 msgstr "Gemeinde"
 
 msgid "geobasisdatensatz"
 msgstr "ID Geobasisdatensatz"
 
+msgid "geometalink"
+msgstr "Nachführungsgeometer, Grundbuch und andere Metadata"
+
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
+
+msgid "gewaessername"
+msgstr "Gewässername"
 
 msgid "gewissnr"
 msgstr "GEWISS-Nummer"
@@ -257,6 +305,9 @@ msgstr "KKW"
 msgid "klasse"
 msgstr "Klasse"
 
+msgid "krebsart"
+msgstr "Krebsart lateinisch"
+
 msgid "laenge_m"
 msgstr "Länge [m]"
 
@@ -265,6 +316,9 @@ msgstr "Länge der Strecke [m]"
 
 msgid "langtext"
 msgstr "Ortschaft"
+
+msgid "laubholzanteil"
+msgstr "Laubholzanteil [%]"
 
 msgid "layer_geocat_text"
 msgstr "Link zu geocat.ch"
@@ -290,6 +344,12 @@ msgstr "Link zur Legende"
 msgid "lokal"
 msgstr "lokal"
 
+msgid "losactivite"
+msgstr "Tätigkeit"
+
+msgid "losentreprise"
+msgstr "Operatsname"
+
 msgid "mehrinformationen"
 msgstr "Ausführlichere Legende"
 
@@ -298,6 +358,18 @@ msgstr "Messstellentyp"
 
 msgid "nabeltyp"
 msgstr "Lage"
+
+msgid "nachweisjahr"
+msgstr "Nachweisjahr"
+
+msgid "nachweisnummer"
+msgstr "Nachweisnummer"
+
+msgid "nachweisort"
+msgstr "Nachweisort"
+
+msgid "nadelholzanteil"
+msgstr "Nadelholzanteil [%]"
 
 msgid "name"
 msgstr "Name"
@@ -353,6 +425,9 @@ msgstr "Protokoll"
 msgid "punktname"
 msgstr "Punktname"
 
+msgid "quality"
+msgstr "Qualitätstandard"
+
 msgid "regional"
 msgstr "regional"
 
@@ -389,6 +464,12 @@ msgstr "Sektor"
 msgid "sheetname"
 msgstr "Blattbezeichnung"
 
+msgid "spectralinfolink"
+msgstr "Link zu den vorhandenen Informationen"
+
+msgid "spectralzone"
+msgstr "Zone der seismischen spektralen Mikrozonierung"
+
 msgid "stand"
 msgstr "Stand"
 
@@ -422,6 +503,9 @@ msgstr "Blattnummer"
 msgid "toll"
 msgstr "Strassenbenutzungsgebühr"
 
+msgid "totholz"
+msgstr "Totholzvolumen [m3/ha]"
+
 msgid "twitter title"
 msgstr "Twitter"
 
@@ -439,6 +523,9 @@ msgstr "URL"
 
 msgid "viel_sub"
 msgstr "Historischer Verlauf mit viel Substanz"
+
+msgid "waldanteil"
+msgstr "Waldanteil [%]"
 
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"
@@ -463,6 +550,15 @@ msgstr "Wildruhezonen-Objektnr."
 
 msgid "wrz_status"
 msgstr "Kategorie"
+
+msgid "wsname"
+msgstr "Name der Kartierfläche"
+
+msgid "wsnummer"
+msgstr "Nummer der Kartierfläche"
+
+msgid "wstyp"
+msgstr "Typ der Kartierfläche"
 
 msgid "x"
 msgstr "X-Koordinate"
