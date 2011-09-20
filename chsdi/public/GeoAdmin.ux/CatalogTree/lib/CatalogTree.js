@@ -594,6 +594,20 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.swisstopo-vd.ortschaftenverzeichnis_plz1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo-vd.geometa-los", "node_ch.swisstopo-vd.geometa-los1") + ' ' + this.layers["ch.swisstopo-vd.geometa-los"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo-vd.geometa-los1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.swisstopo-vd.geometa-standav", "node_ch.swisstopo-vd.geometa-standav1") + ' ' + this.layers["ch.swisstopo-vd.geometa-standav"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.swisstopo-vd.geometa-standav1"
                             }
                         ]
                     },
@@ -1085,6 +1099,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.schutzgebiete-wildruhezonen1"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.unesco-weltnaturerbe", "node_ch.bafu.unesco-weltnaturerbe1") + ' ' + this.layers["ch.bafu.unesco-weltnaturerbe"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.unesco-weltnaturerbe1"
                             }
                         ]
                     },
@@ -1446,6 +1467,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                                 checked: false,
                                 cls: 'nodeLT3',
                                 id: "node_ch.bafu.bundesinventare-vogelreservate2"
+                            },
+                            {
+                                text: this.addtreeLayerLink("ch.bafu.unesco-weltnaturerbe", "node_ch.bafu.unesco-weltnaturerbe2") + ' ' + this.layers["ch.bafu.unesco-weltnaturerbe"].name,
+                                leaf: true,
+                                checked: false,
+                                cls: 'nodeLT3',
+                                id: "node_ch.bafu.unesco-weltnaturerbe2"
                             }
                         ]
                     },

@@ -1454,7 +1454,250 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 opacity: 0.6,
                 queryable: true
-            }
+            },
+            "ch.swisstopo-vd.geometa-standav": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-standav"),
+                layers: ["ch.swisstopo-vd.geometa-standav"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo-vd.geometa-los": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-los"),
+                layers: ["ch.swisstopo-vd.geometa-los"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.bafu.schutzgebiete-smaragd": {
+                name: OpenLayers.i18n("ch.bafu.schutzgebiete-smaragd"),
+                layertype: 'wmts',
+                timestamp: '20090917',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
+                name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden"),
+                layertype: 'wmts',
+                timestamp: '20100201',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.unesco-weltnaturerbe": {
+                name: OpenLayers.i18n("ch.bafu.unesco-weltnaturerbe"),
+                layertype: 'wmts',
+                timestamp: '20080724',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.fischerei-krebspest": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-krebspest"),
+                layertype: 'wmts',
+                timestamp: '20110107',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.fischerei-proliferative_nierenkrankheit": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-proliferative_nierenkrankheit"),
+                layertype: 'wmts',
+                timestamp: '20110825',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.flora-schwingrasen": {
+                name: OpenLayers.i18n("ch.bafu.flora-schwingrasen"),
+                layertype: 'wmts',
+                timestamp: '19920822',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.fauna-wildtierkorridor_national": {
+                name: OpenLayers.i18n("bafu.fauna-wildtierkorridor_national"),
+                layertype: 'wmts',
+                timestamp: '20080721',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.fauna-vernetzungsachsen_national": {
+                name: OpenLayers.i18n("ch.bafu.fauna-vernetzungsachsen_national"),
+                layertype: 'wmts',
+                timestamp: '20080721',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.biogeographische_regionen": {
+                name: OpenLayers.i18n("ch.bafu.biogeographische_regionen"),
+                layertype: 'wmts',
+                timestamp: '20040302',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.schutzgebiete-biosphaerenreservate": {
+                name: OpenLayers.i18n("ch.bafu.schutzgebiete-biosphaerenreservate"),
+                layertype: 'wmts',
+                timestamp: '20020403',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.flora-weltensutter_atlas": {
+                name: OpenLayers.i18n("ch.bafu.flora-weltensutter_atlas"),
+                layertype: 'wmts',
+                timestamp: '20080612',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.flora-verbreitungskarten": {
+                name: OpenLayers.i18n("ch.bafu.flora-verbreitungskarten"),
+                layertype: 'wmts',
+                timestamp: '20080612',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.waldschadenflaechen-lothar": {
+                name: OpenLayers.i18n("ch.bafu.waldschadenflaechen-lothar"),
+                layertype: 'wmts',
+                timestamp: '20001001',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.waldschadenflaechen-vivian": {
+                name: OpenLayers.i18n("ch.bafu.waldschadenflaechen-vivian"),
+                layertype: 'wmts',
+                timestamp: '19920115',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.landesforstinventar-baumarten": {
+                name: OpenLayers.i18n("ch.bafu.landesforstinventar-baumarten"),
+                layertype: 'wmts',
+                timestamp: '20100310',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.landesforstinventar-waldanteil": {
+                name: OpenLayers.i18n("ch.bafu.landesforstinventar-waldanteil"),
+                layertype: 'wmts',
+                timestamp: '20100310',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.landesforstinventar-totholz": {
+                name: OpenLayers.i18n("ch.bafu.landesforstinventar-totholz"),
+                layertype: 'wmts',
+                timestamp: '20100310',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.gefahren-historische_erdbeben": {
+                name: OpenLayers.i18n("ch.bafu.gefahren-historische_erdbeben"),
+                layertype: 'wmts',
+                timestamp: '20110428',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.gefahren-baugrundklassen": {
+                name: OpenLayers.i18n("ch.bafu.gefahren-baugrundklassen"),
+                layertype: 'wmts',
+                timestamp: '20110330',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.gefahren-mikrozonierung": {
+                name: OpenLayers.i18n("ch.bafu.gefahren-mikrozonierung"),
+                layertype: 'wmts',
+                timestamp: '20100330',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.gefahren-spektral": {
+                name: OpenLayers.i18n("ch.bafu.gefahren-spektral"),
+                layertype: 'wmts',
+                timestamp: '20110607',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+             },
+            "ch.bafu.aquaprotect_050": {
+                name: OpenLayers.i18n("ch.bafu.aquaprotect_050"),
+                layertype: 'wmts',
+                timestamp: '20081218',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.aquaprotect_100": {
+                name: OpenLayers.i18n("ch.bafu.aquaprotect_100"),
+                layertype: 'wmts',
+                timestamp: '20081218',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.aquaprotect_250": {
+                name: OpenLayers.i18n("ch.bafu.aquaprotect_250"),
+                layertype: 'wmts',
+                timestamp: '20081218',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             },
+            "ch.bafu.aquaprotect_500": {
+                name: OpenLayers.i18n("ch.bafu.aquaprotect_500"),
+                layertype: 'wmts',
+                timestamp: '20081218',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+             }
         };
         return this.layers;
     }
