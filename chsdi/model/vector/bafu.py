@@ -256,6 +256,89 @@ class NABEL(Base, Queryable):
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
+class krebspest(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'krebspest'
+    __table_args__ = ({'schema': 'fischerei', 'autoload': True})
+    __template__ = 'tooltips/krebspest.mako'
+    id = Column('_count', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.fischerei-krebspest', krebspest)
+
+class biogeoreg(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'biogeoreg'
+    __table_args__ = ({'schema': 'diverse', 'autoload': True})
+    __template__ = 'tooltips/biogeoreg.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.biogeographische_regionen', biogeoreg)
+
+class biosphaerenreservate(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'biores'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __template__ = 'tooltips/biosphaerenreservate.mako'
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.schutzgebiete-biosphaerenreservate', biosphaerenreservate)
+
+class weltensutter(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'ws'
+    __table_args__ = ({'schema': 'flora', 'autoload': True})
+    __template__ = 'tooltips/weltensutter.mako'
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.flora-weltensutter_atlas', weltensutter)
+
+class baumarten(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'baumartenmischung'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/baumarten.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.landesforstinventar-baumarten', baumarten)
+
+class waldanteil(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'waldanteil'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/waldanteil.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.landesforstinventar-waldanteil', waldanteil)
+
+class totholz(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'totholzvolumen'
+    __table_args__ = ({'schema': 'wald', 'autoload': True})
+    __template__ = 'tooltips/totholz.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.landesforstinventar-totholz', totholz)
+
+class histerdbeben(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'historische_erdbeben_new'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': True})
+    __template__ = 'tooltips/histerdbeben.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Integer)
+    the_geom = Column(Geometry)
+register('ch.bafu.gefahren-historische_erdbeben', histerdbeben)
+
+class spektral(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'baugrundkl_spectral'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': True})
+    __template__ = 'tooltips/spektral.mako'
+    id = Column('_count', Integer, primary_key=True)
+    fid = Column('id', Integer)
+    the_geom = Column(Geometry)
+register('ch.bafu.gefahren-spektral', spektral)
+
 
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
