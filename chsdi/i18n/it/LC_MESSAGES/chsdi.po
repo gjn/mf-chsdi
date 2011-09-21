@@ -203,14 +203,32 @@ msgstr "Cours d'eau"
 msgid "frame"
 msgstr "Cadre de référence"
 
+msgid "gembfs"
+msgstr "No OFS"
+
+msgid "gemdarstellung"
+msgstr "Service de visualisation"
+
 msgid "gemeinde"
 msgstr "Commune"
+
+msgid "gemflaeche"
+msgstr "Surface (ha)"
+
+msgid "gemgemeinde"
+msgstr "Commune"
+
+msgid "gemkanton"
+msgstr "Canton"
 
 msgid "geobasisdatensatz"
 msgstr "ID geodati di base"
 
 msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
+
+msgid "geompdf_liste"
+msgstr "Métadonnées (INTERLIS)"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
@@ -224,8 +242,26 @@ msgstr "Numéro GEWISS"
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"
 
+msgid "grundadresse"
+msgstr "Adresse"
+
+msgid "grundfuehrung"
+msgstr "Tenue du regiscre foncier"
+
+msgid "grundgemeinde"
+msgstr "Commune"
+
+msgid "grundkreis"
+msgstr "Arrondissement"
+
 msgid "grundlage"
 msgstr "Base"
+
+msgid "grundtel"
+msgstr "Téléphone"
+
+msgid "grundurl"
+msgstr "Courriel/URL"
 
 msgid "help title"
 msgstr "Aiuto"
@@ -347,8 +383,23 @@ msgstr "importanza locale"
 msgid "losactivite"
 msgstr "Activité"
 
+msgid "losarea"
+msgstr "Surface (ha)"
+
+msgid "losbezungsramen"
+msgstr "Cadre de référence"
+
 msgid "losentreprise"
 msgstr "Entreprise"
+
+msgid "losidentifikator"
+msgstr "Identifiant"
+
+msgid "losnummer"
+msgstr "Numéro lot"
+
+msgid "losquality"
+msgstr "Standard de qualité"
 
 msgid "mehrinformationen"
 msgstr "Légende plus détaillée"
@@ -379,6 +430,15 @@ msgstr "Nom de la région territoriale"
 
 msgid "national"
 msgstr "importanza nazionale"
+
+msgid "nfadresse"
+msgstr "Adresse"
+
+msgid "nffirmenname"
+msgstr "Bureau"
+
+msgid "nfname"
+msgstr "Nom"
 
 msgid "nr"
 msgstr "N°"

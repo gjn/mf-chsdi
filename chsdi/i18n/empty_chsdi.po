@@ -538,6 +538,66 @@ msgstr ""
 msgid "geometalink"
 msgstr ""
 
+msgid "losbezungsramen"
+msgstr ""
+
+msgid "losidentifikator"
+msgstr ""
+
+msgid "losquality"
+msgstr ""
+
+msgid "losarea"
+msgstr ""
+
+msgid "losnummer"
+msgstr ""
+
+msgid "gembfs"
+msgstr ""
+
+msgid "gemkanton"
+msgstr ""
+
+msgid "gemgemeinde"
+msgstr ""
+
+msgid "gemdarstellung"
+msgstr ""
+
+msgid "gemflaeche"
+msgstr ""
+
+msgid "grundgemeinde"
+msgstr ""
+
+msgid "grundfuehrung"
+msgstr ""
+
+msgid "grundkreis"
+msgstr ""
+
+msgid "grundadresse"
+msgstr ""
+
+msgid "grundtel"
+msgstr ""
+
+msgid "grundurl"
+msgstr ""
+
+msgid "nfname"
+msgstr ""
+
+msgid "nffirmenname"
+msgstr ""
+
+msgid "nfadresse"
+msgstr ""
+
+msgid "geompdf_liste"
+msgstr ""
+
 # are2 translations
 
 msgid "belastung_personen"

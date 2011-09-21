@@ -203,14 +203,32 @@ msgstr "Fliessgewässer"
 msgid "frame"
 msgstr "Bezugsramen"
 
+msgid "gembfs"
+msgstr "BFS Nr"
+
+msgid "gemdarstellung"
+msgstr "Darstellungsdienst"
+
 msgid "gemeinde"
 msgstr "Gemeinde"
+
+msgid "gemflaeche"
+msgstr "Fläche (ha)"
+
+msgid "gemgemeinde"
+msgstr "Gemeinde"
+
+msgid "gemkanton"
+msgstr "Kanton"
 
 msgid "geobasisdatensatz"
 msgstr "ID Geobasisdatensatz"
 
 msgid "geometalink"
 msgstr "Nachführungsgeometer, Grundbuch und andere Metadata"
+
+msgid "geompdf_liste"
+msgstr "Metadata (INTERLIS)"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
@@ -224,8 +242,26 @@ msgstr "GEWISS-Nummer"
 msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"
 
+msgid "grundadresse"
+msgstr "Adresse"
+
+msgid "grundfuehrung"
+msgstr "Grundbuchführung"
+
+msgid "grundgemeinde"
+msgstr "Gemeinde"
+
+msgid "grundkreis"
+msgstr "Grundbuchkreis"
+
 msgid "grundlage"
 msgstr "Grundlage"
+
+msgid "grundtel"
+msgstr "Telefon"
+
+msgid "grundurl"
+msgstr "E-Mail/URL"
 
 msgid "help title"
 msgstr "Hilfe"
@@ -347,8 +383,23 @@ msgstr "lokal"
 msgid "losactivite"
 msgstr "Tätigkeit"
 
+msgid "losarea"
+msgstr "Fläche (ha)"
+
+msgid "losbezungsramen"
+msgstr "Bezugsrahmen"
+
 msgid "losentreprise"
 msgstr "Operatsname"
+
+msgid "losidentifikator"
+msgstr "Identifikator"
+
+msgid "losnummer"
+msgstr "Losnummer"
+
+msgid "losquality"
+msgstr "Qualitätstandard"
 
 msgid "mehrinformationen"
 msgstr "Ausführlichere Legende"
@@ -379,6 +430,15 @@ msgstr "Name der Territorialregion"
 
 msgid "national"
 msgstr "national"
+
+msgid "nfadresse"
+msgstr "Adresse"
+
+msgid "nffirmenname"
+msgstr "Firmenname"
+
+msgid "nfname"
+msgstr "Name"
 
 msgid "nr"
 msgstr "Nr."
