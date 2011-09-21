@@ -47,7 +47,7 @@
     % if hasattr(c.feature, 'gemflaeche'):
     <tr><td width="150">${_('gemflaeche')}</td>    <td>${c.feature.gemflaeche or '-'}</td></tr>
     % endif
-    % if hasattr(c.feature, 'geompdf_liste'):
+    % if hasattr(c.feature, 'geompdf_liste') and c.feature.geompdf_liste.isalnum():
         <tr><td width="150">${_('geompdf_liste')}</td>
     <%
         myarr=c.feature.geompdf_liste.split(';')
