@@ -68,14 +68,15 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     },
 
     getTools: function() {
-        return [this.permalinkAction, this.advancedMenu,  this.printAction ]
+        return [this.permalinkAction, this.advancedMenu, this.printAction ]
     },
 
     addToToolbar: function(tbar) {
         if (tbar instanceof Ext.Toolbar) {
             var tools = this.getTools();
             for (var i = 0; i < tools.length; i++) {
-                tbar.add(tools[i]);
+                if (tools[i])
+                     tbar.add(tools[i]);
             }
             return tbar;
         }
@@ -83,7 +84,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     createPrintAction: function(options) {
         return new GeoAdmin.Print({
             printPanelOptions: {
-                mapPanel: mapPanel,
+                mapPanel: this.mapPanel,
                 renderTo: "print-panel",
                 title: OpenLayers.i18n("mf.print.print.title"),
                 tbar: ["->", {
@@ -98,7 +99,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             },
             toggleGroup: 'tools',
             cls: 'x-btn-no-over',
-            printBaseUrl: GeoAdmin.printBaseUrl || 'print/pdf/',
+            printBaseUrl: GeoAdmin.printBaseUrl || 'wsgi/print/pdf/',
             iconAlign: 'right',
             iconCls: 'print',
             enableToggle: true
