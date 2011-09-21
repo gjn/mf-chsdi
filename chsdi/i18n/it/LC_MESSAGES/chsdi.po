@@ -39,7 +39,7 @@ msgid "Legend"
 msgstr "Leggenda"
 
 msgid "Link to object"
-msgstr "Link verso l\u2019oggetto"
+msgstr "Link verso l'oggetto"
 
 msgid "Metadaten"
 msgstr "Metadati"
