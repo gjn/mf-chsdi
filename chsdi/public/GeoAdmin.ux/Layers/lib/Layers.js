@@ -175,7 +175,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissimage": {
                 name: OpenLayers.i18n("ch.swisstopo.swissimage"),
                 layertype: 'wmts',
-                timestamp: '20110228',
+                timestamp: '20110914',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
