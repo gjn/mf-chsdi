@@ -123,6 +123,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.vec200-building':"",
     'ch.swisstopo.vec200-transportation-strassennetz':"",
     'ch.swisstopo.vec200-transportation-oeffentliche-verkehr':"",
+    'ch.swisstopo.swissimage':"",
     'ch.bfs.arealstatistik-1985':"",
     'ch.bfs.arealstatistik-1997':"",
     'ch.bfs.arealstatistik-waldmischungsgrad':"",

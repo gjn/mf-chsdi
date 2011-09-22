@@ -82,19 +82,23 @@ Which layers are available ?
    <script type="text/javascript">
 
     function init() {
-        GeoAdmin.layers.init();
         var myInnerHtml = "<br><table border=\"0\">";
         var myLayerArray = [];
-        for (var layer in GeoAdmin.layers.layers) {
-           myLayerArray.push(layer);
+
+        var availableLayers = GeoAdmin.layers.init();
+        var layerArray = [];
+        for (var layer in availableLayers) {
+            if (layer != 'voidLayer' && availableLayers[layer].name.toString().indexOf('ch.') != 0) {
+                layerArray.push([layer, availableLayers[layer].name]);
+            }
         }
-        myLayerArray.sort();
+        layerArray.sort();
         var i = 1;
-        for (layerKey in myLayerArray) {
-           var layerStr = myLayerArray[layerKey].toString();
-           if (layerStr.indexOf('ch') == 0 && layerStr != 'ch.are.bauzonen-2007' && layerStr != 'ch.are.belastung-gueterverkehr-bahn-2008' && layerStr != 'ch.are.belastung-gueterverkehr-strasse-2008' && layerStr != 'ch.are.belastung-personenverkehr-bahn-2008' && layerStr != 'ch.are.belastung-personenverkehr-strasse-2008' && layerStr != 'ch.are.beschaeftigtendichte-bz08' && layerStr != 'ch.are.bevoelkerungsdichte-vz00' && layerStr != 'ch.are.gueteklassen_oev' && layerStr != 'ch.are.landschaftstypen' && layerStr != 'ch.are.reisezeit_miv-2005' && layerStr != 'ch.are.reisezeit_oev-2005' && layerStr != 'ch.tamedia.schweizerfamilie-feuerstellen') {
-              myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' + myLayerArray[layerKey] + '" target="new"> ' + myLayerArray[layerKey] + '</a></th></tr>';
-              i = i+1;
+        for (layerKey in layerArray) {
+           var layer =  layerArray[layerKey];
+           if (typeof(layer) != 'function') {
+               myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' + layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
+               i = i+1;
            }
         }
         document.getElementById("mylayerference").innerHTML=myInnerHtml;
