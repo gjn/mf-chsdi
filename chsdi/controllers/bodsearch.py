@@ -28,7 +28,7 @@ class BodsearchController(BaseController):
         if q is None:
             abort(400, "missing 'query' parameter")
         p = request.params.get('project') or 'mf-geoadmin2'
-        query = Session.query(self.BodLayer).order_by(self.BodLayer.bezeichnung).order_by(self.BodLayer.kurzbezeichnung).order_by(self.BodLayer.geobasisdatensatz_name)
+        query = Session.query(self.BodLayer).order_by(self.BodLayer.kurzbezeichnung).order_by(self.BodLayer.bezeichnung).order_by(self.BodLayer.geobasisdatensatz_name)
 
         query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p + '(,|\s|$)'))
 
