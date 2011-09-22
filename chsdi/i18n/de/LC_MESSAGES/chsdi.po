@@ -399,7 +399,7 @@ msgid "losnummer"
 msgstr "Losnummer"
 
 msgid "losquality"
-msgstr "Qualitätstandard"
+msgstr "Qualitätsstandard"
 
 msgid "mehrinformationen"
 msgstr "Ausführlichere Legende"
@@ -486,7 +486,7 @@ msgid "punktname"
 msgstr "Punktname"
 
 msgid "quality"
-msgstr "Qualitätstandard"
+msgstr "Qualitätsstandard"
 
 msgid "regional"
 msgstr "regional"
