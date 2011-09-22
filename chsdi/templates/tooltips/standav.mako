@@ -1,4 +1,14 @@
-<%inherit file="base.mako"/>
+# -*- coding: utf-8 -*-
+
+<div class="tooltip_header">
+  <span style="font-weight:bold;">${c.layer_bezeichnung}</span> (${c.layer_datenherr})
+</div>
+
+<div class="tooltip_footer">
+<span style="font-weight:bold;">${_('Information')}</span>
+<br>
+  <table border="0" cellspacing="0" cellpadding="1" width="400px" style="font-size: 100%;" padding="1 1 1 1">
+    ${self.table_body()}
 
 <%def name="table_body()">
     % if hasattr(c.feature, 'quality'):
@@ -71,3 +81,5 @@
     <tr><td width="150">${_('nfadresse')}</td>    <td>${c.feature.nfadresse or '-'}</td></tr>
     % endif
 </%def>
+</table>
+</div>
