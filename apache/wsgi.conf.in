@@ -20,13 +20,6 @@ AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
 
-RewriteCond %{HTTP_HOST}   ^mobile
-RewriteCond $1 !\.(gif|jpe?g|png|css|js|ico|html)$ [NC]
-RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/mobile.html$1 [L]
-
-RewriteCond %{HTTP_HOST}   ^mobile
-RewriteRule ^/(.*)$   ${buildout:directory}/chsdi/public/demo/$1 [L]
-
 # profile and height service
 RewriteCond %{HTTP_HOST}   ^height.geo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/height [PT,QSA]
