@@ -94,7 +94,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                         if (layer.attribution && layer.getVisibility()) {
                             // add attribution only if attribution text is unique
                             if (OpenLayers.Util.indexOf(
-                                    attributions, layer.attribution) === -1) {
+                                attributions, layer.attribution) === -1) {
                                 var link = '<a href="' + OpenLayers.i18n(layer.attribution + '.url') + '" target="_blank">' + OpenLayers.i18n(layer.attribution) + '</a>';
                                 links.push(link);
                                 attributions.push(layer.attribution);
@@ -167,9 +167,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         });
 
         this.EVENT_TYPES =
-                GeoAdmin.Map.prototype.EVENT_TYPES.concat(
-                        OpenLayers.Map.prototype.EVENT_TYPES
-                        );
+            GeoAdmin.Map.prototype.EVENT_TYPES.concat(
+                OpenLayers.Map.prototype.EVENT_TYPES
+            );
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -262,16 +262,57 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
 
         // layers
+        var kmlShowWarning = false;
+
         if (state.layers) {
             for (var i = 0, len = state.layers.length; i < len; i++) {
                 var layer = state.layers[i];
                 if (layer.layername.indexOf("WMS") > -1) {
-                    var WMSInformation = layer.layername.split("||");
-                    this.addWmsLayer(WMSInformation[1], WMSInformation[2], WMSInformation[3], layer.visibility, layer.opacity);
+                    kmlShowWarning = true;
                 } else if (layer.layername.indexOf("KML") > -1) {
-                    var KMLInformation = layer.layername.split("||");
-                    this.addKmlLayer(KMLInformation[1], layer.visibility, layer.opacity);
-                } else {
+                    kmlShowWarning = true;
+                }
+            }
+            // MessageBox is asynchronous so we need to manage everything in the callback
+            if (kmlShowWarning) {
+                Ext.MessageBox.show({
+                    title: OpenLayers.i18n("Third party data warning"),
+                    msg: OpenLayers.i18n("The permalink you use contains reference to third party data. Would you load these data ?"),
+                    buttons: Ext.MessageBox.YESNO,
+                    fn: function(btn) {
+                        for (var i = 0, len = state.layers.length; i < len; i++) {
+                            var layer = state.layers[i];
+                            if (btn == 'yes') {
+                                if (layer.layername.indexOf("WMS") > -1) {
+                                    var WMSInformation = layer.layername.split("||");
+                                    this.addWmsLayer(WMSInformation[1], WMSInformation[2], WMSInformation[3], layer.visibility, layer.opacity);
+                                } else if (layer.layername.indexOf("KML") > -1) {
+                                    var KMLInformation = layer.layername.split("||");
+                                    this.addKmlLayer(KMLInformation[1], layer.visibility, layer.opacity);
+                                } else {
+                                    this.addLayerByName(layer.layername, {
+                                        visibility: layer.visibility,
+                                        opacity: layer.opacity
+                                    });
+                                }
+                            } else {
+                                if (layer.layername.indexOf("WMS") > -1) {
+                                } else if (layer.layername.indexOf("KML") > -1) {
+                                } else {
+                                    this.addLayerByName(layer.layername, {
+                                        visibility: layer.visibility,
+                                        opacity: layer.opacity
+                                    });
+                                }
+                            }
+                        }
+                    },
+                    scope: this,
+                    icon: Ext.MessageBox.QUESTION
+                })
+            } else {
+                for (var i = 0, len = state.layers.length; i < len; i++) {
+                    var layer = state.layers[i];
                     this.addLayerByName(layer.layername, {
                         visibility: layer.visibility,
                         opacity: layer.opacity
@@ -337,7 +378,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     setLayerZIndex: function(layer, zIdx) {
         var baseZIndex = layer.layername && GeoAdmin.layers.layers[layer.layername].isBgLayer
-                ? 100 : 150;
+            ? 100 : 150;
         layer.setZIndex(baseZIndex + zIdx * 5);
     },
 
