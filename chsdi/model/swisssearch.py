@@ -8,7 +8,7 @@ from geoalchemy import Geometry
 from shapely.wkb import loads
 from shapely.geometry.point import Point
 
-from mapfish.sqlalchemygeom import within_distance
+from geoalchemy import functions
 
 from chsdi.model import *
 
@@ -33,7 +33,7 @@ class SwissSearch(Base, Queryable):
         geom = Point(lon, lat)
         wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
         geom_column = cls.__table__.columns.get(column)
-        return within_distance(geom_column, wkb_geometry, tolerance)
+        return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
     @property
     def json(self):

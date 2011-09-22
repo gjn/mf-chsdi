@@ -6,7 +6,7 @@ from sqlalchemy.types import Integer, Text, String
 
 from geoalchemy import Geometry, WKBSpatialElement
 
-from mapfish.sqlalchemygeom import within_distance
+from  geoalchemy import functions
 
 from geojson.feature import Feature
 
@@ -49,7 +49,7 @@ class Queryable(object):
                             (bbox[0], bbox[1])))
             wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
             geom_column = cls.__table__.columns['the_geom']
-            return within_distance(geom_column, wkb_geometry, tolerance)
+            return functions.within_distance(geom_column, wkb_geometry, tolerance)
         return None
 
     @classmethod
