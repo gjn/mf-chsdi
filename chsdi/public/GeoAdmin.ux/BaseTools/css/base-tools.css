@@ -6,7 +6,7 @@
 }
 
 .x-btn-over button {
-    color: #ff0000;
+    color: #ff0000 !important;
 }
 
 .x-toolbar .collapse, .x-toolbar .link, .x-toolbar .print {
@@ -59,3 +59,25 @@
 .x-btn-no-over .x-btn-bl, .x-btn-no-over .x-btn-bc, .x-btn-no-over .x-btn-br {
     background-image: none;
 }
+
+/* Advanced menu */
+.x-menu-floating {
+   border-color: #000000;
+}
+
+.x-menu-list a:link, .x-menu-list a:active, .x-menu-list a:visited {
+    color: #000000;
+}
+
+.x-menu-list {
+    background-color: #FFFFFF;
+}
+
+.x-menu-floating {
+   top: 151px !important;
+   border-top-width: 0px;
+}
+.ext-ie .x-menu-floating {
+   top: 152px !important;
+}
+
