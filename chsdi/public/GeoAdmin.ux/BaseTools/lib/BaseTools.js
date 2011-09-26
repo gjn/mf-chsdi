@@ -23,6 +23,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
 
     constructor : function(config) {
         this.mapPanel = config.mapPanel;
+        Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms']});
 
         var permalink = new GeoAdmin.PermalinkPanel({'hidden': true});
         this.permalinkAction = new Ext.Button({
@@ -40,18 +41,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
         }, this.permalinkAction);
 
 
-        this.advancedMenu = new Ext.Button({
-            cls: 'x-btn-no-over',
-            iconAlign: 'right',
-            iconCls: 'tools',
-            enableToggle: true,
-            toggleGroup: 'tools',
-            menu: [
-                new GeoAdmin.KmlSelector({map: this.mapPanel.map}),
-                new GeoAdmin.Measure({map: this.mapPanel.map}),
-                new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers})
-            ]
-        });
+        this.advancedMenu = this.createAdvancedMenu(config);
 
         this.printAction = this.createPrintAction({mapPanel: this.mapPanel});
 
@@ -76,10 +66,43 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             var tools = this.getTools();
             for (var i = 0; i < tools.length; i++) {
                 if (tools[i])
-                     tbar.add(tools[i]);
+                    tbar.add(tools[i]);
             }
             return tbar;
         }
+    },
+    createAdvancedMenu: function(options) {
+        var menu = [];
+
+        for (var i in options.menuItems) {
+            var item = options.menuItems[i];
+            if (item instanceof Ext.Component || item instanceof Ext.Action) {
+                menu.push(item);
+            } else {
+                switch (item) {
+                    case 'kml':
+                        menu.push(new GeoAdmin.KmlSelector({map: this.mapPanel.map}));
+                        break;
+                    case 'measure':
+                        menu.push(new GeoAdmin.Measure({map: this.mapPanel.map}));
+                        break;
+                    case 'wms':
+                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers}));
+                        break;
+                }
+            }
+        }
+        ;
+
+        return  new Ext.Button({
+            cls: 'x-btn-no-over',
+            iconAlign: 'right',
+            iconCls: 'tools',
+            allowDepress: false,
+            enableToggle: true,
+            toggleGroup: 'tools',
+            menu: menu
+        });
     },
     createPrintAction: function(options) {
         return new GeoAdmin.Print({
