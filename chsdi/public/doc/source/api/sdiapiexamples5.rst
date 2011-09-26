@@ -28,6 +28,8 @@ Display a `KML <http://code.google.com/intl/fr/apis/kml/documentation/kmlreferen
 file is not hosted on the same host, you'll have to use a proxy and to set ``OpenLayers.ProxyHost`` accordingly. 
 See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#ProxyHost>`_ for more details.
 
+The KML file has to be compliant with OGC KML standard. Please validate your file first with the official `KML Validator <http://kmlvalidator.com>`_ http://kmlvalidator.com (does work only with IE).
+
 .. raw:: html
 
    <body>
