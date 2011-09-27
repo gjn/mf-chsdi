@@ -104,7 +104,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Lebensräume une Biotope':'Lebensräume und Biotope',
 	'Legend':'Legende',
 	'Legend.NoLayer':'Datenebene auswählen',
-	'Legend.Title':'Legende',
+	'Legend.Title':'Dargestellte Daten',
 	'Legend.Tooltip':'Legendefenster zeigen',
 	'Legend.onClick':'Dargestellte Daten',
 	'LineString':'Linie',
