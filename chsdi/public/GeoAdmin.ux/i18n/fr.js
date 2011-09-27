@@ -102,6 +102,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'LayerManager':'KML & GPX',
 	'LayerManagerWindow':'Importer un fichier KML ou GPX',
 	'Lebensräume une Biotope':'Habitats et biotopes',
+	'Legend':'Légende',
 	'Legend.NoLayer':'Sélectionner une couche de données',
 	'Legend.Title':'Légende',
 	'Legend.Tooltip':'Montrer la légende de toutes les couches',

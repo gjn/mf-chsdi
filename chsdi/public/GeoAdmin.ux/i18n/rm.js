@@ -98,6 +98,7 @@ OpenLayers.Lang.rm= {
 	'LayerManager':'KML & GPX',
 	'LayerManagerWindow':'Importar ina datoteca da KML u da GPX',
 	'Lebensräume une Biotope':'Spazis da viver e biotops',
+	'Legend':'Leggenda',
 	'Legend.NoLayer':'Tscherner il nivel da datas',
 	'Legend.Title':'Legenda',
 	'Legend.Tooltip':'Mussar la fanestra da las legendas',

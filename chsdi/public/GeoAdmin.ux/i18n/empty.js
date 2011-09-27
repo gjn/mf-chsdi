@@ -298,6 +298,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureArea':"",
     'Measure.MeasureLength.ToolTip':"",
     'Measure.MeasureArea.ToolTip':"",
+    'Legend': "",
     'Legend.Tooltip':"",
     'Legend.Title':"",
     'Legend.NoLayer':"",
