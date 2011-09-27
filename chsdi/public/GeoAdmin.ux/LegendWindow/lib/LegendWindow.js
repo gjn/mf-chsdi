@@ -94,11 +94,18 @@ GeoAdmin.LegendWindow = Ext.extend(Ext.Window, {
                 id: 'print',
                 handler: function(evt, toolEl, panel, tc) {
                     var url = 'print.html';
-                    var css = location.protocol + '//' + location.hostname + ((location.pathname == '/') ? '/main/wsgi/' : location.pathname ) + '/app/lib/GeoAdmin.ux/LegendWindow/css/legendwindow-print.css';
+                    var css = 'body {font-family: arial, sans, helvetica; width: 100%;}'
+                            +'h1 {font-size: 1.5em;}'
+                            +'label{font-weight: bold;background-color: #ddd;width: 100%;}'
+                            +'.x-panel-body {float: left}'
+                            +'.x-hide-display {display: none}'
+                            +'img {display: block;}'
+                            +'div.x-panel-body div {padding-top: 20px;}';
+
                     var popup = window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
                             'directories=no, status=no, menubar=no, scrollbars=yes,' +
                             'copyhistory=no, resizable=no');
-                    popup.document.write('<html><head><link href="' + css + '" type="text/css" rel="stylesheet">');
+                    popup.document.write('<html><head><style>' + css + '</style>');
                     popup.document.write('<title>' + OpenLayers.i18n('Legend.Title') + '</title></head><body onload="window.print();">');
                     popup.document.write('<h1>' + OpenLayers.i18n('Legend.Title') + '</h1><br />');
                     popup.document.write(Ext.getDom('legendLayers').innerHTML + '</body></html>');
