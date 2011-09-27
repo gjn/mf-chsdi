@@ -17,6 +17,7 @@ Base = declarative_base(bind=meta.engines['search'])
 class SwissSearch(Base, Queryable):
     __tablename__ = 'swiss_search'
     __table_args__ = ({'autoload': True})
+    __mapper_args__ = {'exclude_properties': ['bgdi_modified', 'bgdi_created', 'bgdi_modified_by', 'bgdi_created_by']}
     
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column('the_geom', Geometry)
@@ -35,35 +36,47 @@ class SwissSearch(Base, Queryable):
         geom_column = cls.__table__.columns.get(column)
         return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
-    @property
-    def json(self):
-        o = {'service': '', 'rank': -1, 'id': self.id, 'label': '',
-             'bbox': self.bbox, 'objectorig': self.objectorig}
-        if self.origin == 'zipcode':
-            o.update({'service': 'postalcodes',
-                      'rank': 1,
-                      'label': "%s <b>%s - %s (%s)</b>"%(_('plz'), self.plz, self.ort_27, self.kanton)})
-        elif self.origin == 'sn25':
-            o.update({'service': 'swissnames',
-                      'rank': 4,
-                      'label': "<b>%s</b> (%s) - %s"%(self.name, self.kanton, self.gemname)})
-        elif self.origin == 'gg25':
-            o.update({'service': 'cities',
-                      'rank': 3,
-                      'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
-        elif self.origin == 'kantone':
-            o.update({'service': 'cantons',
-                      'rank': 2,
-                      'label': "%s <b>%s</b>"%(_('ct'), self.name)})
-        elif self.origin == 'address':
-            if self.deinr is None:
-               address_nr = ''
-            else:
-               address_nr = self.deinr
-            o.update({'service': 'address',
-                      'rank': 5,
-                      'egid': self.egid,
-                      'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.ort_27)})
-        return o
+    #@property
+    def json(self, rawjson=False):
+            o = {'service': '', 'rank': -1, 'id': self.id, 'label': '',
+                    'bbox': self.bbox, 'objectorig': self.objectorig, 'name': self.name}
+            if self.origin == 'zipcode':
+                o.update({'service': 'postalcodes',
+                          'rank': 1,
+                          'name': self.name,
+                          'nr': self.plz,
+                          'label': "%s <b>%s - %s (%s)</b>"%(_('plz'), self.plz, self.ort_27, self.kanton)})
+            elif self.origin == 'sn25':
+                o.update({'service': 'swissnames',
+                          'rank': 4,
+                          'label': "<b>%s</b> (%s) - %s"%(self.name, self.kanton, self.gemname)})
+            elif self.origin == 'gg25':
+                o.update({'service': 'cities',
+                          'rank': 3,
+                          'name': self.gemname,
+                          'nr': self.id,
+                          'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
+            elif self.origin == 'kantone':
+                o.update({'service': 'cantons',
+                          'rank': 2,
+                          'name': self.name,
+                          'code': self.kanton,
+                          'nr': self.id,
+                          'label': "%s <b>%s</b>"%(_('ct'), self.name)})
+            elif self.origin == 'address':
+                if self.deinr is None:
+                   address_nr = ''
+                else:
+                   address_nr = self.deinr
+                o.update({'service': 'address',
+                          'rank': 5,
+                          'egid': self.egid,
+                          'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.ort_27)})
+            
+            if rawjson:
+                    del o['label']
+                    del o['bbox']
+                    del o['rank']
+            return o
 
 

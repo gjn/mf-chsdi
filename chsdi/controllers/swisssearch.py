@@ -22,6 +22,14 @@ log = logging.getLogger(__name__)
 
 class SwisssearchController(BaseController):
 
+    def __before__(self):
+        self.rawjson = request.params.get('format') == 'raw' or False
+        no_geom = request.params.get('no_geom')
+        if no_geom is not None:
+            self.no_geom = asbool(no_geom)
+        else:
+            self.no_geom = False
+
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def index(self):
@@ -31,15 +39,8 @@ class SwisssearchController(BaseController):
             if egid is None:
                 abort(400, "missing 'query' or 'egid' parameter")
 
-        no_geom = request.params.get('no_geom')
-        if no_geom is not None:
-            no_geom = asbool(no_geom)
-        else:
-            no_geom = False
 
         citynr = request.params.get('citynr')
-
-        rawjson = request.params.get('format') == 'raw' or False
 
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
@@ -62,7 +63,7 @@ class SwisssearchController(BaseController):
 
         query = query.order_by(SwissSearch.id).limit(20)
 
-        if rawjson:
+        if self.rawjson:
             features = []
             for feature in query.all():
                properties = {}
@@ -73,7 +74,7 @@ class SwisssearchController(BaseController):
                del properties['tsvector_search_name']
                del properties['the_geom_real']
                features.append(Feature(id=feature.id, bbox=feature.bbox,
-                                       geometry=feature.geometry if not no_geom else None, 
+                                       geometry=feature.geometry if not self.no_geom else None, 
                                        properties=properties))
 
             return FeatureCollection(features)
@@ -115,4 +116,4 @@ class SwisssearchController(BaseController):
         query = Session.query(SwissSearch)
         query = query.filter(or_(gfilter_poly, gfilter_point))
 
-        return [f.json for f in query.all()]
+        return [f.json(rawjson=self.rawjson) for f in query.all()]
