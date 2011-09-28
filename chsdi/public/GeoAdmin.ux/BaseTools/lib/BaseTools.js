@@ -28,6 +28,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
         var permalink = new GeoAdmin.PermalinkPanel({'hidden': true});
         this.permalinkAction = new Ext.Button({
             text: OpenLayers.i18n('permalink action'),
+            tooltip: OpenLayers.i18n('Permalink.tooltip'),
             cls: 'x-btn-no-over permalink',
             iconAlign: 'right',
             enableToggle: true,
@@ -95,6 +96,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
         ;
 
         return  new Ext.Button({
+            tooltip: OpenLayers.i18n('AdvancedMenu.tooltip'),
             cls: 'x-btn-no-over',
             iconAlign: 'right',
             iconCls: 'tools',
@@ -121,6 +123,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                 }]
             },
             toggleGroup: 'tools',
+            tooltip: OpenLayers.i18n('mf.print.tooltip'),
             cls: 'x-btn-no-over',
             printBaseUrl: GeoAdmin.printBaseUrl || 'wsgi/print/pdf/',
             iconAlign: 'right',
