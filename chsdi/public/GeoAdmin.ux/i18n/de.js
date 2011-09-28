@@ -14,6 +14,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Add currently selected layer':'Bitte validieren Sie Ihren WMS-Dienst mit http://geopole.org <br />Die Schweizerische Kartenprojektion EPSG  21781 muss unterstützt sein',
 	'Administrative Einheiten':'Verwaltungseinheiten',
 	'Adressen':'Adressen',
+	'AdvancedMenu.title':'Zusatzfunktionen',
+	'AdvancedMenu.tooltip':'Zusatzfunktionen',
 	'AdvancedWindow.title':'Zusatzfunktionen',
 	'AdvancedWindow.tooltip':'Zusatzfunktionen',
 	'Aerial':'Luftbild',

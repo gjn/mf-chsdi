@@ -14,6 +14,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Add currently selected layer':'Please validate you WMS with http://geopole.org/checks<br>SwissProjection EPSG 21781 support required',
 	'Administrative Einheiten':'Administrative units',
 	'Adressen':'Addresses',
+	'AdvancedMenu.title':'Advanced functions',
+	'AdvancedMenu.tooltip':'Advanced functions',
 	'AdvancedWindow.title':'Advanced functions',
 	'AdvancedWindow.tooltip':'Advanced functions',
 	'Aerial':'Aerial imagery',

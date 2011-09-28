@@ -10,6 +10,8 @@ OpenLayers.Lang.rm= {
 	'Add currently selected layer':'Bitte validieren Sie Ihren WMS-Dienst mit http://geopole.org <br />Die Schweizerische Kartenprojektion EPSG  21781 muss unterstützt sein',
 	'Administrative Einheiten':'Unitads administrativas',
 	'Adressen':'Adressas',
+	'AdvancedMenu.title':'Funcziuns supplementaras',
+	'AdvancedMenu.tooltip':'Funcziuns supplementaras',
 	'AdvancedWindow.title':'Funcziuns supplementaras',
 	'AdvancedWindow.tooltip':'Funcziuns supplementaras',
 	'Aerial':'Fotografia or da l\'aria',
