@@ -293,6 +293,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Elevation':"",
     'AdvancedWindow.title':"",
     'AdvancedWindow.tooltip':"",
+    'AdvancedMenu.title':"",
+    'AdvancedMenu.tooltip':"",
     'Measure.title':"",
     'Measure.MeasureLength':"",
     'Measure.MeasureArea':"",
