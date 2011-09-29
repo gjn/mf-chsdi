@@ -1451,7 +1451,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: '20110501',
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.vbs",
                 opacity: 0.6,
                 queryable: true
             },
