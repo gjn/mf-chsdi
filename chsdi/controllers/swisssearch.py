@@ -79,7 +79,7 @@ class SwisssearchController(BaseController):
 
             return FeatureCollection(features)
         else:
-            return {'results': sorted([f.json for f in query], key=itemgetter('rank'))}
+            return {'results': sorted([f.json() for f in query], key=itemgetter('rank'))}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):
