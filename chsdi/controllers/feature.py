@@ -2,6 +2,7 @@ import logging
 import simplejson
 
 from pylons import request, response, tmpl_context as c
+from pylons.controllers.util import abort
 
 from geojson.feature import FeatureCollection
 from geojson.feature import Feature
@@ -73,6 +74,20 @@ def get_features(layer, ids):
 
 class FeatureController(BaseController):
 
+    def __before__(self):
+        super(FeatureController, self).__before__()
+        if self.lang == 'fr':
+            self.bodsearch = BodLayerFr
+        else:
+            self.bodsearch = BodLayerDe
+
+        no_geom = request.params.get('no_geom')
+        if no_geom is not None:
+            self.no_geom = asbool(no_geom)
+        else:
+            self.no_geom = False
+        self.rawjson = request.params.get('format') == 'raw' or False
+
 
     @validate_params(validator_layers)
     def index(self):
@@ -84,17 +99,11 @@ class FeatureController(BaseController):
         urlContent = request.url.split("?")
         id = urlContent[0].split("/")[len(urlContent[0].split("/"))-1]
 
-        no_geom = request.params.get('no_geom')
-        if no_geom is not None:
-            no_geom = asbool(no_geom)
-        else:
-            no_geom = False
-
         for model in models_from_name(layer):
             feature = Session.query(model).get(id)
             if feature:
                 feature.compute_attribute()
-                if (no_geom):
+                if (self.no_geom):
                     features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
                                             properties=feature.attributes))
@@ -114,34 +123,24 @@ class FeatureController(BaseController):
 
     @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
-        if self.lang == 'fr':
-            bodsearch = BodLayerFr
-        else:
-            bodsearch = BodLayerDe
-        no_geom = request.params.get('no_geom')
-        if no_geom is not None:
-            no_geom = asbool(no_geom)
-        else:
-            no_geom = False
         c.baseUrl =  request.params.get('baseUrl')  or ''
-        rawjson = request.params.get('format') == 'raw' or False
         features = []
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
                 if geom_filter is not None:
                     query = Session.query(model).filter(geom_filter)
-                    bodlayer = Session.query(bodsearch).get(layer_name)
+                    bodlayer = Session.query(self.bodsearch).get(layer_name)
 
                     for feature in query.all():
                         properties = {}
                         feature.compute_template(layer_name, bodlayer)
-                        if rawjson:
+                        if self.rawjson:
                             feature.compute_attribute()
                             properties =  feature.attributes
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
-                        if no_geom:
+                        if self.no_geom:
                             features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
                                             properties=properties))
@@ -170,12 +169,14 @@ class FeatureController(BaseController):
     # list will be taken
         layer = c.layers[0]
         bboxes =  [feature.geometry.bounds for feature in get_features(layer, c.ids)]
-        right = max([bbox[0] for bbox in bboxes])
-        left = min([bbox[1] for bbox in bboxes])
-        bottom = min([bbox[2] for bbox in bboxes])
-        top = max([bbox[3] for bbox in bboxes])
-
-        return {'bbox': (right, left, bottom, top)}
+        if  bboxes:
+            right = max([bbox[0] for bbox in bboxes])
+            left = min([bbox[1] for bbox in bboxes])
+            bottom = min([bbox[2] for bbox in bboxes])
+            top = max([bbox[3] for bbox in bboxes])
+            return {'bbox': (right, left, bottom, top)}
+        else:
+            return {'bbox': []}
 
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
