@@ -176,7 +176,7 @@ class FeatureController(BaseController):
             top = max([bbox[3] for bbox in bboxes])
             return {'bbox': (right, left, bottom, top)}
         else:
-            return {'bbox': []}
+            return {'bbox': None}
 
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
