@@ -235,7 +235,6 @@ class HOLZZUWACHS(Base, Queryable):
     __template__ = 'tooltips/holzzuwachs.mako'
 
     id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
     the_geom = Column(Geometry)
 
 class HOLZNUTZUNG(Base, Queryable):
