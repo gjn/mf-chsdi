@@ -398,7 +398,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
-                maxScale: 150001,
+                maxScale: 200001,
                 type: "point"
             },
             "ch.swisstopo.fixpunkte-lage_wms": {
@@ -408,7 +408,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
-                minScale: 150001,
+                minScale: 200001,
                 type: "point"
             },
             "ch.swisstopo.fixpunkte-hoehe": {
@@ -427,7 +427,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
-                maxScale: 150001,
+                maxScale: 200001,
                 type: "point"
             },
             "ch.swisstopo.fixpunkte-hoehe_wms": {
@@ -437,7 +437,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
-                minScale: 150001,
+                minScale: 200001,
                 type: "point"
             },
             "ch.bfs.arealstatistik-1985": {

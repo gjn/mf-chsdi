@@ -9,7 +9,7 @@ class Gebaeuderegister(Base, Queryable):
     __template__ = 'tooltips/gebaeuderegister.mako'
 
    # __minscale__ = 5001
-    __maxscale__ = 25000
+   # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
 
     id = Column('id', Integer   , primary_key=True)
     egid = Column('egid', Integer)
@@ -45,7 +45,7 @@ class FIXPUNKTELAGE(Base, Queryable):
     id = Column('nummer', Text, primary_key=True)
     the_geom = Column(Geometry)
 
-    __maxscale__ = 150000
+    # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 150000
 
 class FIXPUNKTEHOEHE(Base, Queryable):
     # view in a schema
@@ -56,7 +56,7 @@ class FIXPUNKTEHOEHE(Base, Queryable):
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
-    __maxscale__ = 150000
+    # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc __maxscale__ = 150000
 
 register('ch.swisstopo.fixpunkte-lage', FIXPUNKTELAGE)
 register('ch.swisstopo.fixpunkte-hoehe', FIXPUNKTEHOEHE)
