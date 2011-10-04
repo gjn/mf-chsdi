@@ -12,6 +12,145 @@
         <script type="text/javascript" src="../lib/CatalogTree.js"></script>
     
         <script>
+        function test_constructor(t) {
+
+            t.plan(5);
+
+            var map = new GeoAdmin.Map('map');
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map});
+
+            t.ok(tree instanceof GeoAdmin.CatalogTree,
+                 'ctor returns a GeoAdmin.CatalogTree instance');
+            t.eq(tree.cls, 'geoadmin-catalog-tree',
+                 'cls defaults to geoadmin-catalog-tree');
+            t.ok(tree.layerStore instanceof GeoExt.data.LayerStore,
+                 'layer store created in the instance');
+            t.ok(tree.root instanceof Ext.tree.AsyncTreeNode,
+                 'root node is an async tree node');
+            t.ok(tree.root.childNodes.length > 0, 'root node has children');
+
+            map.destroy();
+            tree.destroy();
+        }
+
+        function test_checkchange(t) {
+
+            t.plan(4);
+
+            var map = new GeoAdmin.Map('map');
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map});
+
+            var node;
+
+            // avoid displaying an alert when the maximum number
+            // of layers is reached
+            var _alert = window.alert;
+            window.alert = function() {};
+
+            // check that initial state is as expected
+            t.eq(map.layers.length, 3, 'three layers at initial state');
+
+            node = {id: 'node_ch.swisstopo.fixpunkte-agnes1'};
+            tree.fireEvent('checkchange', node, true);
+            t.eq(map.layers.length, 4, 'checkchange adds a layer to map');
+
+            node = {id: 'node_ch.swisstopo.fixpunkte-agnes1'};
+            tree.fireEvent('checkchange', node, false);
+            t.eq(map.layers.length, 3, 'checkchange removes a layer to map');
+
+            map.addLayers([
+                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                new OpenLayers.Layer('', {displayInLayerSwitcher: true})
+            ]);
+            var layerCount = map.layers.length;
+            node = {
+                id: 'node_ch.swisstopo.fixpunkte-agnes1',
+                getUI: function() {
+                    return {
+                        toggleCheck: function() {}
+                    }
+                }
+            };
+            tree.fireEvent('checkchange', node, true);
+            t.eq(map.layers.length, layerCount,
+                 'checkchange does not add layer when limit is reached');
+
+            map.destroy();
+            tree.destroy();
+            window.alert = _alert;
+        }
+
+        function test_afterRender(t) {
+
+            t.plan(2);
+
+            var map = new GeoAdmin.Map('map');
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map});
+
+            // check initial state
+            t.eq(tree.selectedNode, null, 'selectedNode is null');
+
+            tree.selectedNodeId = 'node_ch.swisstopo.fixpunkte-agnes1';
+            tree.afterRender();
+            t.ok(tree.selectedNode !== null,
+                 'selectedNode set after render');
+
+            map.destroy();
+            tree.destroy();
+        }
+
+        function test_afterselection(t) {
+
+            t.plan(1);
+
+            var map = new GeoAdmin.Map('map');
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map});
+
+            var log = false;
+            tree.on({
+                afterselection: function() {
+                    log = true;
+                }
+            });
+
+            tree.selectedNodeId = 'node_ch.swisstopo.fixpunkte-agnes1';
+            tree.setSelectedNode();
+            t.eq(log, true, 'selecting node triggers afterselection');
+
+            map.destroy();
+            tree.destroy();
+        }
+
+        function test_addtreeLayerLink(t) {
+
+            t.plan(1);
+
+            var map = new GeoAdmin.Map('map');
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map, id: 'foo'});
+
+            var layerId = 'ch.swisstopo.fixpunkte-agnes';
+            var nodeId = 'node_ch.swisstopo.fixpunkte-agnes';
+            var link = tree.addtreeLayerLink(layerId, nodeId);
+            t.eq(link, '<div class="treelayericon-queryable"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'ch.swisstopo.fixpunkte-agnes\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="node_ch.swisstopo.fixpunkte-agnes_cb" onclick="Ext.getCmp(\'foo\').getNodeById(\'node_ch.swisstopo.fixpunkte-agnes\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>',
+                 'link is as expected');
+
+            map.destroy();
+            tree.destroy();
+        }
+
         function test_state(t) {
             t.plan(2);
 
@@ -38,8 +177,313 @@
                 var link = pp.getLink("http://example.com");
                 t.eq(link, "http://example.com?catalog_selected=LT2_9",
                      "permalink is correct");
+
+                map.destroy();
+                tree.destroy();
             });
 
+        }
+
+        var rootNode = {
+            children: [{
+                id: 'id0',
+                cls: 'nodeLT1',
+                text: '',
+                singleClickExpand: true,
+                children: [{
+                    id: 'id00',
+                    cls: 'nodeLT2',
+                    text: '',
+                    singleClickExpand: true,
+                    children: [{
+                        cls: 'nodeLT3',
+                        text: '',
+                        leaf: true,
+                        checked: false,
+                        id: 'node_id000_'
+                    }, {
+                        cls: 'nodeLT3',
+                        text: '',
+                        leaf: true,
+                        checked: false,
+                        id: 'node_id001_'
+                    }]
+                }, {
+                    id: 'id01',
+                    cls: 'nodeLT2',
+                    text: '',
+                    singleClickExpand: true
+                }]
+            }, {
+                id: 'id1',
+                cls: 'nodeLT1',
+                text: '',
+                singleClickExpand: true
+            }]
+        };
+
+        function test_setSelectedNode(t) {
+            t.plan(6);
+
+            var map = new GeoAdmin.Map('map');
+
+            var cat = new GeoAdmin.CatalogTree({
+                renderTo: "tree",
+                root: rootNode,
+                map: map
+            });
+
+            // check initial state
+            t.eq(cat.selectedNode, null,
+                 "selected node is null");
+
+            cat.selectedNodeId = "node_id000_";
+            cat.setSelectedNode();
+            t.eq(cat.selectedNode.id, "node_id000_",
+                 "selected node id is node_id000_");
+            t.eq(cat.selectedNode.isExpanded(), true,
+                 "selected node is expanded");
+            t.eq(cat.selectedNode.parentNode.isExpanded(), true,
+                 "selected node parent is expanded");
+            t.eq(cat.selectedNode.parentNode.parentNode.isExpanded(), true,
+                 "selected node parent parent is expanded");
+            t.eq(cat.getNodeById("node_id001_").isExpanded(), false,
+                 "selected node sibling is collapsed");
+
+            cat.destroy();
+        }
+
+        function test_setCheckNodes(t) {
+            t.plan(2);
+
+            var map = new GeoAdmin.Map('map');
+
+            var cat = new GeoAdmin.CatalogTree({
+                renderTo: "tree",
+                root: rootNode,
+                map: map
+            });
+
+            cat.updateCustomizedCheckbox = function() {};
+
+            var map = {
+                getLayersBy: function(attr, boid) {
+                    return boid == "id000" ? ["fake"] : [];
+                }
+            };
+
+            cat.setCheckNodes(map);
+            var node000 = cat.root.childNodes[0].childNodes[0].childNodes[0];
+            var node001 = cat.root.childNodes[0].childNodes[0].childNodes[1];
+            t.eq(node000.getUI().isChecked(), true,
+                 "node id000 is checked");
+            t.eq(node001.getUI().isChecked(), false,
+                 "node id001 is not checked");
+
+            cat.destroy();
+        }
+
+        function test_selectNode_LT1(t) {
+            t.plan(12);
+
+            var map = new GeoAdmin.Map('map');
+
+            var cat = new GeoAdmin.CatalogTree({
+                renderTo: "tree",
+                root: rootNode,
+                map: map
+            });
+
+            // make sure the nodes are all there
+            cat.expandAll();
+
+            var node0 = cat.root.childNodes[0];
+            node0.getUI().removeClass("nodeBackgroundSelected");
+            node0.getUI().addClass("nodeLT1");
+            node0.getUI().removeClass("nodeLT1selected");
+            var node00 = cat.root.childNodes[0].childNodes[0];
+            node00.getUI().addClass("nodeBackgroundSelected");
+            node00.getUI().removeClass("nodeLT2");
+            node00.getUI().addClass("nodeLT2selected");
+            var node000 = cat.root.childNodes[0].childNodes[0].childNodes[0];
+            node000.getUI().addClass("nodeBackgroundSelected");
+            node000.getUI().removeClass("nodeLT3");
+            node000.getUI().addClass("nodeLT3selected");
+            var node1 = cat.root.childNodes[1];
+            node1.getUI().addClass("nodeBackgroundSelected");
+            node1.getUI().removeClass("nodeLT1");
+            node1.getUI().addClass("nodeLT1selected");
+
+            cat.selectNode(node0);
+
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeBackgroundSelected"), true,
+                 "node0 has nodeBackgroundSelected class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1"), false,
+                 "node0 does not have nodeLT1 class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1selected"), true,
+                 "node0 has nodeLT1selected class");
+
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node00 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2"), true,
+                 "node00 has nodeLT2 class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2selected"), false,
+                 "node00 does not have nodeLT2selected class");
+
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node000 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3"), true,
+                 "node000 has nodeLT3 class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3selected"), false,
+                 "node000 does not have nodeLT3selected class");
+
+            t.eq(Ext.fly(node1.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node1 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node1.getUI().elNode).hasClass("nodeLT1"), true,
+                 "node1 has nodeLT1 class");
+            t.eq(Ext.fly(node1.getUI().elNode).hasClass("nodeLT1selected"), false,
+                 "node1 does not have nodeLT1selected class");
+
+            cat.destroy();
+        }
+
+        function test_selectNode_LT2(t) {
+            t.plan(12);
+
+            var map = new GeoAdmin.Map('map');
+
+            var cat = new GeoAdmin.CatalogTree({
+                renderTo: "tree",
+                root: rootNode,
+                map: map
+            });
+
+            // make sure the nodes are all there
+            cat.expandAll();
+
+            var node0 = cat.root.childNodes[0];
+            node0.getUI().addClass("nodeBackgroundSelected");
+            node0.getUI().addClass("nodeLT1");
+            node0.getUI().removeClass("nodeLT1selected");
+            var node00 = cat.root.childNodes[0].childNodes[0];
+            node00.getUI().removeClass("nodeBackgroundSelected");
+            node00.getUI().addClass("nodeLT2");
+            node00.getUI().removeClass("nodeLT2selected");
+            var node01 = cat.root.childNodes[0].childNodes[1];
+            node01.getUI().addClass("nodeBackgroundSelected");
+            node01.getUI().removeClass("nodeLT2");
+            node01.getUI().addClass("nodeLT2selected");
+            var node000 = cat.root.childNodes[0].childNodes[0].childNodes[0];
+            node000.getUI().addClass("nodeBackgroundSelected");
+            node000.getUI().removeClass("nodeLT3");
+            node000.getUI().addClass("nodeLT3selected");
+
+            cat.selectNode(node00);
+
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node0 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1"), false,
+                 "node0 does not have nodeLT1 class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1selected"), true,
+                 "node0 has nodeLT1selected class");
+
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 true,
+                 "node00 has nodeBackgroundSelected class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2"), false,
+                 "node00 does not have nodeLT2 class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2selected"), true,
+                 "node00 has nodeLT2selected class");
+
+            t.eq(Ext.fly(node01.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node01 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node01.getUI().elNode).hasClass("nodeLT2"), true,
+                 "node01 has nodeLT2 class");
+            t.eq(Ext.fly(node01.getUI().elNode).hasClass("nodeLT2selected"), false,
+                 "node01 does not have nodeLT2selected class");
+
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node000 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3"), true,
+                 "node000 has nodeLT3 class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3selected"), false,
+                 "node000 does not have nodeLT3selected class");
+
+            cat.destroy();
+        }
+
+        function test_selectNode_LT3(t) {
+            t.plan(12);
+
+            var map = new GeoAdmin.Map('map');
+
+            var cat = new GeoAdmin.CatalogTree({
+                renderTo: "tree",
+                root: rootNode,
+                map: map
+            });
+
+            // make sure the nodes are all there
+            cat.expandAll();
+
+            var node0 = cat.root.childNodes[0];
+            node0.getUI().addClass("nodeBackgroundSelected");
+            node0.getUI().addClass("nodeLT1");
+            node0.getUI().removeClass("nodeLT1selected");
+            var node00 = cat.root.childNodes[0].childNodes[0];
+            node00.getUI().addClass("nodeBackgroundSelected");
+            node00.getUI().addClass("nodeLT2");
+            node00.getUI().removeClass("nodeLT2selected");
+            var node000 = cat.root.childNodes[0].childNodes[0].childNodes[0];
+            node000.getUI().removeClass("nodeBackgroundSelected");
+            node000.getUI().addClass("nodeLT3");
+            node000.getUI().removeClass("nodeLT3selected");
+            var node001 = cat.root.childNodes[0].childNodes[0].childNodes[1];
+            node001.getUI().addClass("nodeBackgroundSelected");
+            node001.getUI().removeClass("nodeLT3");
+            node001.getUI().addClass("nodeLT3selected");
+
+            cat.selectNode(node000);
+
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node0 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1"), false,
+                 "node0 does not have nodeLT1 class");
+            t.eq(Ext.fly(node0.getUI().elNode).hasClass("nodeLT1selected"), true,
+                 "node0 has nodeLT1selected class");
+
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node00 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2"), false,
+                 "node00 does not have nodeLT2 class");
+            t.eq(Ext.fly(node00.getUI().elNode).hasClass("nodeLT2selected"), true,
+                 "node00 has nodeLT2selected class");
+
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 true,
+                 "node000 has nodeBackgroundSelected class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3"), false,
+                 "node000 does not have nodeLT3 class");
+            t.eq(Ext.fly(node000.getUI().elNode).hasClass("nodeLT3selected"), true,
+                 "node000 has nodeLT3selected class");
+
+            t.eq(Ext.fly(node001.getUI().elNode).hasClass("nodeBackgroundSelected"),
+                 false,
+                 "node001 does not have nodeBackgroundSelected class");
+            t.eq(Ext.fly(node001.getUI().elNode).hasClass("nodeLT3"), true,
+                 "node001 has nodeLT3 class");
+            t.eq(Ext.fly(node001.getUI().elNode).hasClass("nodeLT3selected"), false,
+                 "node001 does not have nodeLT3selected class");
+
+            cat.destroy();
         }
         </script>
     </head>

@@ -77,12 +77,12 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     listeners: {
         dblclick: function(node, e) {
-            this.nodeSelectionManagement(node);
+            this.selectNode(node);
             this.selectedNodeId = node.id;
             this.fireEvent("afterselection");
         },
         click: function(node, e) {
-            this.nodeSelectionManagement(node);
+            this.selectNode(node);
             this.selectedNodeId = node.id;
             this.fireEvent("afterselection");
         },
@@ -163,18 +163,6 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         Ext.get(node.id + '_cb').dom.className = state ? 'checkboxOn' : 'checkboxOff';
     },
 
-    nodeSelectionManagement: function(node) {
-        if (node.attributes.cls == 'nodeLT1' || node.attributes.cls == 'nodeLT1selected') {
-            this.selectLT1node(node);
-        }
-        if (node.attributes.cls == 'nodeLT2' || node.attributes.cls == 'nodeLT2selected') {
-            this.selectLT2node(node);
-        }
-        if (node.attributes.cls == 'nodeLT3' || node.attributes.cls == 'nodeLT3selected') {
-            this.selectLT3node(node);
-        }
-    },
-
     addtreeLayerLink: function(id, nodeId) {
         if (this.layers[id].queryable) {
             var iconTypeClass = "treelayericon-queryable";
@@ -198,39 +186,21 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     setSelectedNode: function() {
-        var node = null;
-        // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
-        // FIXME: is this workaround still required?
-        var i, j, k, childNode, childChildNode, childChildChildNode;
-        for (i = 0; i < this.root.childNodes.length; i++) {
-            childNode = this.root.childNodes[i];
-            if (childNode.id == this.selectedNodeId) {
-                node = childNode;
+        this.root.cascade(function(n) {
+            var expanded = n.isExpanded();
+            if (!expanded) {
+                n.expand();
             }
-            childNode.expand();
-            for (j = 0; j < childNode.childNodes.length; j++) {
-                childChildNode = childNode.childNodes[j];
-                if (childChildNode.id == this.selectedNodeId) {
-                    node = childChildNode;
-                }
-                childChildNode.expand();
-                for (k = 0; k < childChildNode.childNodes.length; k++) {
-                    childChildChildNode = childChildNode.childNodes[k];
-                    if (childChildChildNode.id == this.selectedNodeId) {
-                        node = childChildChildNode;
-                    }
-                }
-                childChildNode.collapse();
+            if (n.id == this.selectedNodeId) {
+                this.selectNode(n);
+                n.ensureVisible();
+                this.selectedNode = n;
+                this.fireEvent('afterselection');
+                return false;
+            } else if (!expanded) {
+                n.collapse();
             }
-            childNode.collapse();
-        }
-        if (node) {
-            this.nodeSelectionManagement(node);
-            node.expand();
-            node.ensureVisible();
-            this.selectedNode = node;
-            this.fireEvent("afterselection");
-        }
+        }, this);
     },
 
     /** private: method[getLayerIdFromNodeId]
@@ -261,34 +231,25 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     setCheckNodes: function(map) {
-        // Found node since getNodeById has bugs (http://extjs.com/forum/showthread.php?t=27178&highlight=children)
-        // FIXME: is this workaround still required?
-        var i, j, k, childNode, childChildNode, childChildChildNode;
-        for (i = 0; i < this.root.childNodes.length; i++) {
-            childNode = this.root.childNodes[i];
-            childNode.expand();
-            for (j = 0; j < childNode.childNodes.length; j++) {
-                childChildNode = childNode.childNodes[j];
-                childChildNode.expand();
-                for (k = 0; k < childChildNode.childNodes.length; k++) {
-                    childChildChildNode = childChildNode.childNodes[k];
-                    var layer = map.getLayersBy('layername', this.getLayerIdFromNodeId(childChildChildNode.id));
-                    if (layer[0]) {
-                        this.suspendEvents();
-                        childChildChildNode.getUI().toggleCheck(true);
-                        this.updateCustomizedCheckbox(childChildChildNode, true);
-                        this.resumeEvents();
-                    } else {
-                        this.suspendEvents();
-                        childChildChildNode.getUI().toggleCheck(false);
-                        this.updateCustomizedCheckbox(childChildChildNode, false);
-                        this.resumeEvents();
-                    }
-                }
-                childChildNode.collapse();
+        this.root.cascade(function(n) {
+            var expanded = n.isExpanded();
+            if (!expanded) {
+                n.expand();
             }
-            childNode.collapse();
-        }
+            if (n.isLeaf()) {
+                var layers = map.getLayersBy(
+                    'layername',
+                    this.getLayerIdFromNodeId(n.id));
+                var check = layers.length > 0;
+                this.suspendEvents();
+                n.getUI().toggleCheck(check);
+                this.updateCustomizedCheckbox(n, check);
+                this.resumeEvents();
+            }
+            if (!expanded) {
+                n.collapse();
+            }
+        }, this);
     },
 
     registerMapEvent: function(map) {
@@ -309,113 +270,30 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         });
     },
 
-
-    selectLT1node: function (node) {
-        node.ui.addClass('nodeBackgroundSelected');
-
-        if (node.attributes.cls == 'nodeLT1') {
-            node.ui.removeClass('nodeLT1');
-            node.ui.addClass('nodeLT1selected');
-        } else {
-            node.ui.addClass('nodeLT1');
-            node.ui.removeClass('nodeLT1selected');
-            node.ui.removeClass('nodeBackgroundSelected');
-        }
-        var i, j, k, childNode, childChildNode, childChildChildNode;
-        for (i = 0; i < this.root.childNodes.length; i++) {
-            childNode = this.root.childNodes[i];
-            if (childNode.attributes.cls == 'nodeLT1' || childNode.attributes.cls == 'nodeLT1selected') {
-                for (j = 0; j < childNode.childNodes.length; j++) {
-                    childChildNode = childNode.childNodes[j];
-                    childChildNode.collapse();
-                    childChildNode.ui.addClass('nodeLT2');
-                    childChildNode.ui.removeClass('nodeLT2selected');
-                    childChildNode.ui.removeClass('nodeBackgroundSelected');
-                    for (k = 0; k < childChildNode.childNodes.length; k++) {
-                        childChildChildNode = childChildNode.childNodes[k];
-                        childChildChildNode.collapse();
-                        childChildChildNode.ui.addClass('nodeLT3');
-                        childChildChildNode.ui.removeClass('nodeLT3selected');
-                        childChildChildNode.ui.removeClass('nodeBackgroundSelected');
-                    }
-                }
-                if (node.attributes.id != childNode.attributes.id) {
-                    childNode.collapse();
-                    childNode.ui.addClass('nodeLT1');
-                    childNode.ui.removeClass('nodeLT1selected');
-                    childNode.ui.removeClass('nodeBackgroundSelected');
-                }
+    selectNode: function(node) {
+        var cls = node.attributes.cls, ui = node.getUI();
+        ui.addClass('nodeBackgroundSelected');
+        ui.removeClass(cls);
+        ui.addClass(cls + 'selected');
+        node.parentNode.cascade(function(n) {
+            if (n != node && n != node.parentNode) {
+                cls = n.attributes.cls;
+                ui = n.getUI();
+                n.collapse();
+                ui.removeClass('nodeBackgroundSelected');
+                ui.addClass(cls);
+                ui.removeClass(cls + 'selected');
             }
-        }
-    },
-
-    selectLT2node: function (node) {
-        node.ui.addClass('nodeBackgroundSelected');
-
-        if (node.attributes.cls == 'nodeLT2') {
-            node.ui.removeClass('nodeLT2');
-            node.ui.addClass('nodeLT2selected');
-        } else {
-            node.ui.addClass('nodeLT2');
-            node.ui.removeClass('nodeLT2selected');
-            node.ui.removeClass('nodeBackgroundSelected');
-        }
-
-        var i, j, k, childNode, childChildNode, childChildChildNode;
-        for (i = 0; i < node.parentNode.childNodes.length; i++) {
-            childNode = node.parentNode.childNodes[i];
-            if (childNode.attributes.cls == 'nodeLT2' || childNode.attributes.cls == 'nodeLT2selected') {
-                for (j = 0; j < childNode.childNodes.length; j++) {
-                    childChildNode = childNode.childNodes[j];
-                    childChildNode.collapse();
-                    childChildNode.ui.addClass('nodeLT3');
-                    childChildNode.ui.removeClass('nodeLT3selected');
-                    childChildNode.ui.removeClass('nodeBackgroundSelected');
-                }
-                if (node.attributes.id != childNode.attributes.id) {
-                    childNode.collapse();
-                    childNode.ui.addClass('nodeLT2');
-                    childNode.ui.removeClass('nodeLT2selected');
-                    childNode.ui.removeClass('nodeBackgroundSelected');
-
-                }
+        }, this);
+        node.bubble(function(n) {
+            if (n != node && n != this.root) {
+                cls = n.attributes.cls;
+                ui = n.getUI();
+                ui.removeClass('nodeBackgroundSelected');
+                ui.removeClass(cls);
+                ui.addClass(cls + 'selected');
             }
-        }
-        node.parentNode.ui.addClass('nodeLT1selected');
-        node.parentNode.ui.removeClass('nodeLT1');
-        node.parentNode.ui.removeClass('nodeBackgroundSelected');
-    },
-
-    selectLT3node: function (node) {
-        node.ui.addClass('nodeBackgroundSelected');
-
-        if (node.attributes.cls == 'nodeLT3') {
-            node.ui.removeClass('nodeLT3');
-            node.ui.addClass('nodeLT3selected');
-        } else {
-            node.ui.addClass('nodeLT3');
-            node.ui.removeClass('nodeLT3selected');
-            node.ui.removeClass('nodeBackgroundSelected');
-        }
-
-        var i, j, k, childNode, childChildNode, childChildChildNode;
-        for (i = 0; i < node.parentNode.childNodes.length; i++) {
-            childNode = node.parentNode.childNodes[i];
-            if (childNode.attributes.cls == 'nodeLT3' || childNode.attributes.cls == 'nodeLT3selected') {
-                if (node.attributes.id != childNode.attributes.id) {
-                    childNode.collapse();
-                    childNode.ui.addClass('nodeLT3');
-                    childNode.ui.removeClass('nodeLT3selected');
-                    childNode.ui.removeClass('nodeBackgroundSelected');
-                }
-            }
-        }
-        node.parentNode.ui.addClass('nodeLT2selected');
-        node.parentNode.ui.removeClass('nodeLT2');
-        node.parentNode.ui.removeClass('nodeBackgroundSelected');
-        node.parentNode.parentNode.ui.addClass('nodeLT1selected');
-        node.parentNode.parentNode.ui.removeClass('nodeLT1');
-        node.parentNode.parentNode.ui.removeClass('nodeBackgroundSelected');
+        }, this);
     },
 
     initComponent: function() {
@@ -434,7 +312,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
         this.registerMapEvent(this.layerStore.map);
 
-        this.root.children = [
+        this.root.children = this.root.children || [
             {
                 text: OpenLayers.i18n('Basisdaten'),
                 cls: 'nodeLT1',
