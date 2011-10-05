@@ -21,11 +21,7 @@ globalParallelFetches: 25
 perHostParallelFetches: 25
 
 layouts:
-
-  #===========================================================================
-  # A4 landscape:
-  #===========================================================================
-  A4 Landscape:
+  1 A4 Landscape:
     mainPage:
       rotation: false
       pageSize: A4
@@ -83,6 +79,21 @@ layouts:
         - !map
           width: 762
           height: 486
+
+#---------------------------------------
+# Title
+#---------------------------------------
+        - !columns
+          absoluteY: 575
+          absoluteX: 500
+          width: 150
+          items:
+            - !text
+              fontSize: 14
+              align: right
+              condition: mapTitle
+              text: |
+                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -311,7 +322,7 @@ layouts:
   #===========================================================================
   # A4 portrait:
   #===========================================================================
-  A4 Portrait:
+  2 A4 Portrait:
     mainPage:
       pageSize: A4
       rotation: false
@@ -366,6 +377,21 @@ layouts:
         - !map
           width: 510
           height: 720
+          
+#---------------------------------------
+# Title
+#---------------------------------------
+        - !columns
+          absoluteY: 820
+          absoluteX: 253
+          width: 150
+          items:
+            - !text
+              fontSize: 14
+              align: right
+              condition: mapTitle
+              text: |
+                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -649,6 +675,21 @@ layouts:
           height: 700
 
 #---------------------------------------
+# Title
+#---------------------------------------
+        - !columns
+          absoluteY: 825
+          absoluteX: 772
+          width: 150
+          items:
+            - !text
+              fontSize: 14
+              align: right
+              condition: mapTitle
+              text: |
+                $${mapTitle}
+
+#---------------------------------------
 # Scales
 #---------------------------------------
         - !columns
@@ -661,31 +702,31 @@ layouts:
               fontSize: 9
               align: right
               text: |
-                Massstab 1: ${format %,d scale}
+                Massstab 1: $${format %,d scale}
             - !text
               condition: langfr
               fontSize: 9
               align: right
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle 1: $${format %,d scale}
             - !text
               condition: langen
               fontSize: 9
               align: right
               text: |
-                Scale 1: ${format %,d scale}
+                Scale 1: $${format %,d scale}
             - !text
               condition: langrm
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
             - !text
               condition: langit
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
 
 #---------------------------------------
 # C part
@@ -739,31 +780,31 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langen
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langrm
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langit
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
 
 #---------------------------------------
 # G part
@@ -929,6 +970,21 @@ layouts:
           height: 1050
 
 #---------------------------------------
+# Title
+#---------------------------------------
+        - !columns
+          absoluteY: 1175
+          absoluteX: 420
+          width: 150
+          items:
+            - !text
+              fontSize: 14
+              align: right
+              condition: mapTitle
+              text: |
+                $${mapTitle}
+
+#---------------------------------------
 # Scales
 #---------------------------------------
         - !columns
@@ -941,31 +997,31 @@ layouts:
               fontSize: 9
               align: right
               text: |
-                Massstab 1: ${format %,d scale}
+                Massstab 1: $${format %,d scale}
             - !text
               condition: langfr
               fontSize: 9
               align: right
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle 1: $${format %,d scale}
             - !text
               condition: langen
               fontSize: 9
               align: right
               text: |
-                Scale 1: ${format %,d scale}
+                Scale 1: $${format %,d scale}
             - !text
               condition: langrm
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
             - !text
               condition: langit
               fontSize: 9
               align: right
               text: |
-                Scala 1: ${format %,d scale}
+                Scala 1: $${format %,d scale}
 
 #---------------------------------------
 # C part
@@ -1019,31 +1075,31 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langen
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langrm
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
             - !text
               condition: langit
               fontSize: 7
               align: left
               text: |
-                ${dataOwner}
+                $${dataOwner}
 
 #---------------------------------------
 # G part

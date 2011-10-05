@@ -125,7 +125,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * api: property[configureTitle]
      * :boolean: indicates if a title is shown in the print form
      */
-    configureTitle: false,
+    configureTitle: true,
 
 
     /** private: method[constructor]
