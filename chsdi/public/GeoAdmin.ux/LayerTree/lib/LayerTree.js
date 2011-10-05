@@ -51,6 +51,12 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
      */
     map: null,
 
+    /** api: config[showZoomToExtentAction]
+     *  ``Boolean``
+     *  Tells whether to show the 'zoomtoextent' action. Defaults to false.
+     */
+    showZoomToExtentAction: false,
+
     // default settings
     rootVisible: false,
     autoScroll: true,
@@ -78,6 +84,68 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         // create a layer store for the GeoExt layer container
         var layerStore = new GeoExt.data.LayerStore({map: this.map});
 
+        var actions = [
+            {
+                action: "close",
+                qtip: OpenLayers.i18n("hide layer options")
+            },
+            {
+                action: "open",
+                qtip: OpenLayers.i18n("show layer options")
+            },
+            {
+                action: "pipe-up",
+                qtip: "",
+                update: function(el) {
+                    // "this" references the tree node
+                    this.hideIfFirst(el);
+                }
+            },
+            {
+                action: "up",
+                qtip: OpenLayers.i18n("move layer up"),
+                update: function(el) {
+                    // "this" references the tree node
+                    this.hideIfFirst(el);
+                }
+            },
+            {
+                action: "pipe-down",
+                qtip: "",
+                update: function(el) {
+                    // "this" references the tree node
+                    this.hideIfLast(el);
+                }
+            },
+            {
+                action: "down",
+                qtip: OpenLayers.i18n("move layer down"),
+                update: function(el) {
+                    // "this" references the tree node
+                    this.hideIfLast(el);
+                }
+            },
+            {
+                action: "pipe",
+                qtip: ""
+            },
+            {
+                action: "delete",
+                qtip: OpenLayers.i18n("remove layer")
+            },
+            {
+                action: "pipe",
+                qtip: ""
+            }
+        ];
+
+        if (this.showZoomToExtentAction) {
+            actions.splice(2, 0, {
+                action: "zoomtoextent",
+                qtip: OpenLayers.i18n("zoom to extent")
+            });
+        }
+
         // the tree content
         this.root = {
             nodeType: "gx_layercontainer",
@@ -90,60 +158,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     nodeType: "geoadmin_layer",
                     uiProvider: "ui",
                     checked: null,
-                    actions: [
-                        {
-                            action: "close",
-                            qtip: OpenLayers.i18n("hide layer options")
-                        },
-                        {
-                            action: "open",
-                            qtip: OpenLayers.i18n("show layer options")
-                        },
-                        {
-                            action: "pipe-up",
-                            qtip: "",
-                            update: function(el) {
-                                // "this" references the tree node
-                                this.hideIfFirst(el);
-                            }
-                        },
-                        {
-                            action: "up",
-                            qtip: OpenLayers.i18n("move layer up"),
-                            update: function(el) {
-                                // "this" references the tree node
-                                this.hideIfFirst(el);
-                            }
-                        },
-                        {
-                            action: "pipe-down",
-                            qtip: "",
-                            update: function(el) {
-                                // "this" references the tree node
-                                this.hideIfLast(el);
-                            }
-                        },
-                        {
-                            action: "down",
-                            qtip: OpenLayers.i18n("move layer down"),
-                            update: function(el) {
-                                // "this" references the tree node
-                                this.hideIfLast(el);
-                            }
-                        },
-                        {
-                            action: "pipe",
-                            qtip: ""
-                        },
-                        {
-                            action: "delete",
-                            qtip: OpenLayers.i18n("remove layer")
-                        },
-                        {
-                            action: "pipe",
-                            qtip: ""
-                        }
-                    ],
+                    actions: actions,
                     component: this.createNodeComponent
                 }
             }
@@ -156,6 +171,25 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         };
 
         GeoAdmin.LayerTree.superclass.initComponent.apply(this, arguments);
+
+        this.getRootNode().on({
+            "insert": function(tree, root, node) {
+                this.checkInRange(node);
+            },
+            "append": function(tree, root, node) {
+                this.checkInRange(node);
+            },
+            scope: this
+        });
+        layerStore.map.events.on({
+            "zoomend": function() {
+                this.root.cascade(this.checkInRange);
+            },
+            "moveend": function() {
+                this.root.cascade(this.checkInRange);
+            },
+            scope: this
+        });
     },
 
     /**
@@ -163,6 +197,9 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
     onNodeActionClick: function(node, action, evt) {
         var layer = node.layer;
         switch (action) {
+            case "zoomtoextent":
+                layer.extent && layer.map.zoomToExtent(layer.extent);
+                break;
             case "down":
                 // Determine the step intervall in order to support aggregated layers
                 var counter = 0;
@@ -286,6 +323,30 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 })
             ]
         });
+    },
+
+    /**
+     * Method: checkInRange
+     * Checks if node's layer's max/min scales match current map scale. Also
+     * checks if the layer and map extents match.
+     *
+     * Parameters:
+     * node {GeoExt.tree.LayerNode}
+     */
+    checkInRange: function(node) {
+        if (!node.layer) {
+            return;
+        }
+        var layer = node.layer;
+        if (node.getUI().rendered) {
+            if (!layer.inRange) {
+                node.getUI().addClass("gx-tree-layer-outofrange");
+            } else {
+                node.getUI().removeClass("gx-tree-layer-outofrange");
+            }
+        } else if (!layer.inRange) {
+            node.attributes.cls = "gx-tree-layer-outofrange";
+        }
     }
 });
 

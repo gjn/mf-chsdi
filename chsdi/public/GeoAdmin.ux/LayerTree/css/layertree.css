@@ -65,6 +65,15 @@
   margin-top: 22px;
 }
 
+.geoadmin-layertree .gx-tree-layer-actions .zoomtoextent{
+  background-image: url(../images/magnifier--arrow.png);
+}
+.geoadmin-layertree .x-tree-node .gx-tree-layer-outofrange {
+  -moz-opacity: 0.5;
+  opacity: .50;
+  filter: alpha(opacity=50);
+}
+
 .geoadmin-layertree .gx-tree-layer-actions .tbar {
   background-image: url(../../images/info_button_black.png);
 }
