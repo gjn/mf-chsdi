@@ -5,6 +5,7 @@
  * @include OpenLayers/Control/TransformFeature.js
  * @include GeoExt.ux/SimplePrint.js
  * @include GeoExt/data/PrintProvider.js
+ * @include GeoExt/plugins/PrintPageField.js
  */
 
 
@@ -119,6 +120,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * :class:`OpenLayers.Layer.Vector` printLayer showing the print feature and extent
      */
     printLayer: null,
+
+    /**
+     * api: property[configureTitle]
+     * :boolean: indicates if a title is shown in the print form
+     */
+    configureTitle: false,
 
 
     /** private: method[constructor]
@@ -426,16 +433,16 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             });
         };
 
-	var translate_name = function(record) {
-	    record.set('label', OpenLayers.i18n(record.get('name')));
-	};
-	
+        var translate_name = function(record) {
+            record.set('label', OpenLayers.i18n(record.get('name')));
+        };
+
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
         this.printProvider.on({
             "loadcapabilities": function(printProvider, capabilities) {
-		printProvider.scales.each(translate_name);
-		printProvider.layouts.each(translate_name);
+                printProvider.scales.each(translate_name);
+                printProvider.layouts.each(translate_name);
                 this.capabilitiesLoaded = true;
             },
             scope: this
@@ -491,16 +498,27 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue"),
             layer: this.printLayer,
-	    comboOptions: {
-		typeAhead: true,
-		selectOnFocus: true,
-		displayField: "label",
-		valueField: "name"
-	    }
+            comboOptions: {
+                typeAhead: true,
+                selectOnFocus: true,
+                displayField: "label",
+                valueField: "name"
+            }
         }, this.config.printPanelOptions);
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
+        if (this.configureTitle) {
+            this.printPanel.insert(0, {
+                xtype: "textfield",
+                name: "mapTitle",
+                fieldLabel: OpenLayers.i18n("Title"),
+                value: "",
+                plugins: new GeoExt.plugins.PrintPageField({
+                    printPage: this.printPanel.printPage
+                })
+            });
+        }
         this.printPanel.hideExtent();
 
         // If a renderTo config is provided, the print panel is rendered
@@ -508,7 +526,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         this.showWindow = !printOptions.renderTo;
         if (this.showWindow) {
             this.windowOptions = Ext.apply({
-                height: 160,
+                height: 240,
                 width: 225,
                 bodyStyle: 'padding: 5px; background-color: #FFFFFF;',
                 title: OpenLayers.i18n('print'),
@@ -536,6 +554,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         if (!this.printPanel) {
             this.initPanel();
         }
+
         if (this.showWindow) {
             if (!this.popup) {
                 this.popup = new Ext.Window(this.windowOptions);
@@ -564,6 +583,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.printLayer.setVisibility(false);
             }
         }
+        this.printPanel.doLayout();
     }
 });
 
