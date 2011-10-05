@@ -406,6 +406,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'mf.print.print.title':'PDF',
 	'mf.print.scale':'Échelle',
 	'mf.print.tooltip':'Imprimer',
+	'A4 landscape': 'A4 paysage',
+	'A4 portrait': 'A4 portrait',
 	'move layer down':'Modifier l\'ordre des couches',
 	'move layer up':'Modifier l\'ordre des couches',
 	'nameText':'Nom',
