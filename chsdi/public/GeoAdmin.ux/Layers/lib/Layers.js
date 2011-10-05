@@ -85,6 +85,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             };
             var layer_options_wms = OpenLayers.Util.extend({
                 layername: name,
+                hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
                 opacity: config.opacity ? config.opacity : 1.0,
@@ -108,6 +109,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             }
             var layer_options_aggregate = OpenLayers.Util.extend({
                 layername: name,
+                hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
                 opacity: config.opacity ? config.opacity : 1.0,
@@ -122,6 +124,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: config.name,
                 layer: config.layer || name,
                 layername: config.layername || name,
+                hasLegend: config.hasLegend,
                 version: "1.0.0",
                 requestEncoding: "REST",
                 url: wmts_url,
@@ -161,6 +164,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         } else if (name === "voidLayer") {
             return new GeoAdmin.VoidLayer(config.name, {
                 layername: name,
+                hasLegend: false,
                 geoadmin_isBgLayer: !!(config.isBgLayer)
             });
         }
@@ -253,6 +257,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                hasLegend: false,
                 queryable: true
             },
             "ch.swisstopo.hiks-siegfried": {
@@ -262,6 +267,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                hasLegend: false,
                 queryable: true
             },
             "ch.swisstopo.vec25-primaerflaechen": {
