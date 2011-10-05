@@ -426,10 +426,16 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             });
         };
 
+	var translate_name = function(record) {
+	    record.set('label', OpenLayers.i18n(record.get('name')));
+	};
+	
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
         this.printProvider.on({
-            "loadcapabilities": function() {
+            "loadcapabilities": function(printProvider, capabilities) {
+		printProvider.scales.each(translate_name);
+		printProvider.layouts.each(translate_name);
                 this.capabilitiesLoaded = true;
             },
             scope: this
@@ -484,7 +490,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             defaultTitleText: OpenLayers.i18n("titlefieldvalue"),
             commentFieldLabel: OpenLayers.i18n("commentfieldlabel"),
             defaultCommentText: OpenLayers.i18n("commentfieldvalue"),
-            layer: this.printLayer
+            layer: this.printLayer,
+	    comboOptions: {
+		typeAhead: true,
+		selectOnFocus: true,
+		displayField: "label",
+		valueField: "name"
+	    }
         }, this.config.printPanelOptions);
         delete this.config.printPanelConfig;
 
