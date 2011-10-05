@@ -170,11 +170,26 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             url: this.config.printBaseUrl,
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
+                    var lang = OpenLayers.Lang.getCode();
+                    provider.customParams.legends = [];
+                    for (var i = 0, len = map.layers.length; i < len; i++) {
+                        var layer = map.layers[i];
+                        if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
+                            provider.customParams.legends.push({
+                                classes: [{
+                                    name: '',
+                                    icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png",
+                                }],
+                                name: layer.name
+                            });
+                        }
+                    }
+
                     provider.baseParams.layout = provider.layout.get("name");
                     var overrides = {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
-                    overrides['lang' + OpenLayers.Lang.getCode()] = true;
+                    overrides['lang' + lang] = true;
                     Ext.apply(pages[0].customParams, overrides);
                 }
             },
@@ -436,7 +451,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         var translate_name = function(record) {
             record.set('label', OpenLayers.i18n(record.get('name')));
         };
-
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
         this.printProvider.on({
