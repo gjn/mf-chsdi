@@ -178,7 +178,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             provider.customParams.legends.push({
                                 classes: [{
                                     name: '',
-                                    icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png",
+                                    icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png"
                                 }],
                                 name: layer.name
                             });
