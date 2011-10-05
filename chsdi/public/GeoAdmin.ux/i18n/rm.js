@@ -3,6 +3,10 @@
 OpenLayers.Lang.rm= {
 
 	//Globals
+	'1 A4 landscape':'A4 Querformat',
+	'2 A4 portrait':'A4 Hochformat',
+	'3 A3 landscape':'A3 Querformat',
+	'4 A3 portrait':'A3 Hochformat',
 	'Activate dynamic location':'Aktiviere dynamische Lokalisierung',
 	'Add':'Agiuntar',
 	'Add KML/GML (Beta)...':'Importar KML/GML (beta)...',

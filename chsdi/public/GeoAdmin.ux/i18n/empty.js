@@ -440,5 +440,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'The permalink you use contains reference to third party data. Would you load these data ?': "",
     'ch.swisstopo-vd.geometa-standav': "",
     'ch.swisstopo-vd.geometa-los': "",
-    'ch.bafu.unesco-weltnaturerbe': ""
+    'ch.bafu.unesco-weltnaturerbe': "",
+    '1 A4 landscape': "",
+    '2 A4 portrait': "",
+    '3 A3 landscape': "",
+    '4 A3 portrait': ""
 });

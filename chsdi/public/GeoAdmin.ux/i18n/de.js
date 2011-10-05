@@ -7,6 +7,10 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
 
 	//Globals
+	'1 A4 landscape':'A4 Querformat',
+	'2 A4 portrait':'A4 Hochformat',
+	'3 A3 landscape':'A3 Querformat',
+	'4 A3 portrait':'A3 Hochformat',
 	'Activate dynamic location':'Aktiviere dynamische Lokalisierung',
 	'Add':'Hinzufügen',
 	'Add KML/GML (Beta)...':'KML/GML importieren (Beta)...',

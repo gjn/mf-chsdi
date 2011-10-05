@@ -7,6 +7,10 @@
 OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
 	//Globals
+	'1 A4 landscape':'A4 Paysage',
+	'2 A4 portrait':'A4 Portrait',
+	'3 A3 landscape':'A3 Paysage',
+	'4 A3 portrait':'A3 Portrait',
 	'Activate dynamic location':'Attivare dynamic location',
 	'Add':'Aggiungere',
 	'Add KML/GML (Beta)...':'Aggiungere KML/GML (beta)...',

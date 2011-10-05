@@ -7,6 +7,10 @@
 OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 
 	//Globals
+	'1 A4 landscape':'A4 Paysage',
+	'2 A4 portrait':'A4 Portrait',
+	'3 A3 landscape':'A3 Paysage',
+	'4 A3 portrait':'A3 Portrait',
 	'Activate dynamic location':'Activer localisation dynamique',
 	'Add':'Ajouter',
 	'Add KML/GML (Beta)...':'Ajouter KML/GML (Beta)...',
@@ -406,8 +410,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'mf.print.print.title':'PDF',
 	'mf.print.scale':'Échelle',
 	'mf.print.tooltip':'Imprimer',
-	'A4 landscape': 'A4 paysage',
-	'A4 portrait': 'A4 portrait',
 	'move layer down':'Modifier l\'ordre des couches',
 	'move layer up':'Modifier l\'ordre des couches',
 	'nameText':'Nom',
