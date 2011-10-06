@@ -400,6 +400,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'loadingText':'En cours de chargement...',
 	'magenta':'magenta',
 	'map':'Carte',
+	'mapFooter':'www.geo.admin.ch est un portail d\'accès aux informations géolocalisées, données et services qui sont mis à disposition par l\'administration fédérale.',
 	'mapPanelPreviewTitleText':'Aperçu de la carte',
 	'maroon':'marron',
 	'metadataTooltip':'Montrer les métadonnées',

@@ -7,10 +7,10 @@
 OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
 	//Globals
-	'1 A4 landscape':'A4 Paysage',
-	'2 A4 portrait':'A4 Portrait',
-	'3 A3 landscape':'A3 Paysage',
-	'4 A3 portrait':'A3 Portrait',
+	'1 A4 landscape':'A4 Paesaaggio',
+	'2 A4 portrait':'A4 Ritratto',
+	'3 A3 landscape':'A3 Paesaggio',
+	'4 A3 portrait':'A3 Ritratto',
 	'Activate dynamic location':'Attivare dynamic location',
 	'Add':'Aggiungere',
 	'Add KML/GML (Beta)...':'Aggiungere KML/GML (beta)...',
@@ -400,6 +400,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'loadingText':'Caricamento in atto ...',
 	'magenta':'Magenta',
 	'map':'Carta',
+	'mapFooter':'www.geo.admin.ch è una piattaforma pubblica accessibile per la ricerca di geo-informazioni, i dati e servizi.',
 	'mapPanelPreviewTitleText':'Visualizzare mappa',
 	'maroon':'Marrone',
 	'metadataTooltip':'Mostrare i metadati',

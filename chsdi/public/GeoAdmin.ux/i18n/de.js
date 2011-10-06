@@ -400,6 +400,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'loadingText':'Lade Daten ...',
 	'magenta':'Mangenta',
 	'map':'Karte',
+	'mapFooter':'www.geo.admin.ch ist ein Portal zur Einsicht von geolokalisierten Informationen, Daten und Diensten, die von öffentlichen Einrichtungen zur Verfügung gestellt werden.',
 	'mapPanelPreviewTitleText':'Kartenansicht',
 	'maroon':'Kastanienbraun',
 	'metadataTooltip':'Show metadata',

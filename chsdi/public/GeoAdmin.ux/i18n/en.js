@@ -8,9 +8,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 
 	//Globals
 	'1 A4 landscape':'A4 Landscape',
-	'2 A4 portrait':'A4 Portrait',
+	'2 A4 portrait':'A4 Vertical',
 	'3 A3 landscape':'A3 Landscape',
-	'4 A3 portrait':'A3 Portrait',
+	'4 A3 portrait':'A3 Vertical',
 	'Activate dynamic location':'Activate dynamic location',
 	'Add':'Add',
 	'Add KML/GML (Beta)...':'Add KML/GML (Beta)...',
@@ -400,6 +400,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'loadingText':'Data loading ...',
 	'magenta':'magenta',
 	'map':'Map',
+	'mapFooter':'www.geo.admin.ch is a portal provided by the Federal Authorities of the Swiss Confederation to gain insight on publicly accessible geographical information, data and services.',
 	'mapPanelPreviewTitleText':'View Map',
 	'maroon':'maroon',
 	'metadataTooltip':'Show metadata',

@@ -3,9 +3,9 @@
 OpenLayers.Lang.rm= {
 
 	//Globals
-	'1 A4 landscape':'A4 Querformat',
+	'1 A4 landscape':'A4 Orizontal',
 	'2 A4 portrait':'A4 Hochformat',
-	'3 A3 landscape':'A3 Querformat',
+	'3 A3 landscape':'A3 Orizontal',
 	'4 A3 portrait':'A3 Hochformat',
 	'Activate dynamic location':'Aktiviere dynamische Lokalisierung',
 	'Add':'Agiuntar',
@@ -396,6 +396,7 @@ OpenLayers.Lang.rm= {
 	'loadingText':'Chargiar datas ...',
 	'magenta':'mangenta',
 	'map':'Charta',
+	'mapFooter':'www.geo.admin.ch è in portal d\'access ad infurmaziuns geolocalisadas, a datas ed a servetschs che vegnan mess a disposiziun da l\'administraziun federala.',
 	'mapPanelPreviewTitleText':'Vista da charta',
 	'maroon':'marun',
 	'metadataTooltip':'Mussar las metadatas',
