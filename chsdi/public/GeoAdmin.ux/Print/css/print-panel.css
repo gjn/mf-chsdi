@@ -16,7 +16,10 @@
 .print-panel .x-panel-btns, .print-panel .x-panel-btns td.x-toolbar-cell {
     padding: 0;
 }
-
+.print-panel .x-form-print-legend {
+    text-align: right;
+    padding-top: 0;
+}
 .print-panel .x-panel-body {
     border: none;
 }

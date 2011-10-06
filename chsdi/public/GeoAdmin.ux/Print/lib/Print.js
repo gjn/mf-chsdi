@@ -587,6 +587,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         this.legendCheckbox = this.printPanel.insert(1, {
             xtype: "checkbox",
+	    labelStyle : "float: left",
+	    ctCls: "x-form-print-legend",
             checked: false,
             hidden: !this.configureLegend,
             name: "printLegend",
