@@ -37,40 +37,22 @@ layouts:
             widths: [35, 65]
             items:
               - !image
+                condition: customLogo
+                align: left
+                maxWidth: 251
+                maxHeight: 34
+                url: "$${mapLogo}"
+              - !image
+                condition: "!customLogo"
                 align: left
                 maxWidth: 251
                 maxHeight: 34
                 url: "${buildout:directory}/print/print_logo.png"
               - !text
-                condition: langde
                 fontSize: 14
                 fontColor: #333333
                 text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfr
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langen
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfi
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langit
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
+                  $${mapTitle}
 
 #---------------------------------------
 # Map & overviewmap
@@ -79,21 +61,6 @@ layouts:
         - !map
           width: 762
           height: 486
-
-#---------------------------------------
-# Title
-#---------------------------------------
-        - !columns
-          absoluteY: 575
-          absoluteX: 500
-          width: 150
-          items:
-            - !text
-              fontSize: 14
-              align: right
-              condition: mapTitle
-              text: |
-                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -221,35 +188,10 @@ layouts:
           width: 550
           items:
             - !text
-              condition: langde
               fontSize: 7
               align: left
               text: |
-                www.geo.admin.ch ist ein Portal zur Einsicht von geolokalisierten Informationen, Daten und Diensten, die von öffentlichen Einrichtungen zur Verfügung gestellt werden
-            - !text
-              condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch est un portail d'accès aux informations géolocalisées, données et services qui sont mis à disposition par l'administration fédérale
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch is a portal provided by the Federal Authorities of the Swiss Confederation to gain insight on publicly accessible geographical information, data and services
-            - !text
-              condition: langfi
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è in portal d'access ad infurmaziuns geolocalisadas, a datas ed a servetschs che vegnan mess a disposiziun da l'administraziun federala
-            - !text
-              condition: langit
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è una piattaforma pubblica accessibile per la ricerca di geo-informazioni, i dati e servizi.
+                $${mapFooter}
 
 #---------------------------------------
 # H part: disclaimer
@@ -336,40 +278,22 @@ layouts:
             widths: [50, 50]
             items:
               - !image
+                condition: customLogo
                 align: left
-                maxWidth: 251 
+                maxWidth: 251
                 maxHeight: 34
-                url: "${buildout:directory}/print/print_logo.png"        
+                url: "$${mapLogo}"
+              - !image
+                condition: "!customLogo"
+                align: left
+                maxWidth: 251
+                maxHeight: 34
+                url: "${buildout:directory}/print/print_logo.png"
               - !text
-                condition: langde
                 fontSize: 14
                 fontColor: #333333
                 text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfr
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langen
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfi
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langit
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
+                  $${mapTitle}
       items:
 #---------------------------------------
 # Map & overviewmap
@@ -519,35 +443,10 @@ layouts:
           width: 510
           items:
             - !text
-              condition: langde
-              fontSize: 6
-              align: left
-              text: |
-                www.geo.admin.ch ist ein Portal zur Einsicht von geolokalisierten Informationen, Daten und Diensten, die von öffentlichen Einrichtungen zur Verfügung gestellt werden
-            - !text
-              condition: langfr
               fontSize: 7
               align: left
               text: |
-                www.geo.admin.ch est un portail d'accès aux informations géolocalisées, données et services qui sont mis à disposition par l'administration fédérale
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch is a portal provided by the Federal Authorities of the Swiss Confederation to gain insight on publicly accessible geographical information, data and services
-            - !text
-              condition: langfi
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è in portal d'access ad infurmaziuns geolocalisadas, a datas ed a servetschs che vegnan mess a disposiziun da l'administraziun federala
-            - !text
-              condition: langit
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è una piattaforma pubblica accessibile per la ricerca di geo-informazioni, i dati e servizi.
+                $${mapFooter}
 
 #---------------------------------------
 # H part: disclaimer
@@ -631,40 +530,23 @@ layouts:
             widths: [35, 65]
             items:
               - !image
+                condition: customLogo
+                align: left
+                maxWidth: 251
+                maxHeight: 34
+                url: "$${mapLogo}"
+              - !image
+                condition: "!customLogo"
                 align: left
                 maxWidth: 251
                 maxHeight: 34
                 url: "${buildout:directory}/print/print_logo.png"
               - !text
-                condition: langde
                 fontSize: 14
                 fontColor: #333333
                 text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfr
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langen
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langrm
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langit
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
+                  $${mapTitle}
+
 
 #---------------------------------------
 # Map & overviewmap
@@ -815,35 +697,10 @@ layouts:
           width: 1077
           items:
             - !text
-              condition: langde
               fontSize: 7
               align: left
               text: |
-                www.geo.admin.ch ist ein Portal zur Einsicht von geolokalisierten Informationen, Daten und Diensten, die von öffentlichen Einrichtungen zur Verfügung gestellt werden
-            - !text
-              condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch est un portail d'accès aux informations géolocalisées, données et services qui sont mis à disposition par l'administration fédérale
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch is a portal provided by the Federal Authorities of the Swiss Confederation to gain insight on publicly accessible geographical information, data and services
-            - !text
-              condition: langrm
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è in portal d'access ad infurmaziuns geolocalisadas, a datas ed a servetschs che vegnan mess a disposiziun da l'administraziun federala
-            - !text
-              condition: langit
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è una piattaforma pubblica accessibile per la ricerca di geo-informazioni, i dati e servizi.
+                $${mapFooter}
 
 #---------------------------------------
 # H part: disclaimer
@@ -927,40 +784,22 @@ layouts:
             widths: [50, 50]
             items:
               - !image
+                condition: customLogo
+                align: left
+                maxWidth: 251
+                maxHeight: 34
+                url: "$${mapLogo}"
+              - !image
+                condition: "!customLogo"
                 align: left
                 maxWidth: 251
                 maxHeight: 34
                 url: "${buildout:directory}/print/print_logo.png"
               - !text
-                condition: langde
                 fontSize: 14
                 fontColor: #333333
                 text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langfr
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langen
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langrm
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
-              - !text
-                condition: langit
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  www.geo.admin.ch
+                  $${mapTitle}
       items:
 #---------------------------------------
 # Map & overviewmap
@@ -1100,7 +939,6 @@ layouts:
               align: left
               text: |
                 $${dataOwner}
-
 #---------------------------------------
 # G part
 #---------------------------------------
@@ -1110,35 +948,10 @@ layouts:
           width: 760
           items:
             - !text
-              condition: langde
-              fontSize: 6
-              align: left
-              text: |
-                www.geo.admin.ch ist ein Portal zur Einsicht von geolokalisierten Informationen, Daten und Diensten, die von öffentlichen Einrichtungen zur Verfügung gestellt werden
-            - !text
-              condition: langfr
               fontSize: 7
               align: left
               text: |
-                www.geo.admin.ch est un portail d'accès aux informations géolocalisées, données et services qui sont mis à disposition par l'administration fédérale
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch is a portal provided by the Federal Authorities of the Swiss Confederation to gain insight on publicly accessible geographical information, data and services
-            - !text
-              condition: langrm
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è in portal d'access ad infurmaziuns geolocalisadas, a datas ed a servetschs che vegnan mess a disposiziun da l'administraziun federala
-            - !text
-              condition: langit
-              fontSize: 7
-              align: left
-              text: |
-                www.geo.admin.ch è una piattaforma pubblica accessibile per la ricerca di geo-informazioni, i dati e servizi.
+                $${mapFooter}
 
 #---------------------------------------
 # H part: disclaimer

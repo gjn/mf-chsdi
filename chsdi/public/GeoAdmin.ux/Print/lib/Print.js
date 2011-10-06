@@ -125,13 +125,32 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * api: property[configureTitle]
      * :boolean: indicates if a title is shown in the print form
      */
-    configureTitle: true,
+    configureTitle: false,
+
+    /**
+     * api: property[configureFooter]
+     * :boolean: indicates if a footer is shown in the print form
+     */
+    configureFooter: false,
 
     /**
      * api: property[configureLegend]
      * :boolean: indicates if the layer legends must be printed.
      */
     configureLegend: true,
+
+    /**
+     * api: property[mapFooter]
+     * :String: defines a custom footer
+     */
+    mapFooter: null,
+
+    /**
+     * api: property[mapLogo]
+     * :String: defines a custom logo (this needs to be an URL)
+     */
+    mapLogo: null,
+
 
     /** private: method[constructor]
      *  Private constructor override.
@@ -197,6 +216,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
                     overrides['lang' + lang] = true;
+                    overrides['customLogo'] = this.mapLogo ? true : false;
                     Ext.apply(pages[0].customParams, overrides);
                 },
                 scope: this
@@ -531,15 +551,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
 
-        this.legendCheckbox = this.printPanel.insert(0, {
-            xtype: "checkbox",
-            //xtype: "textfield",
-            checked: false,
-            hidden: !this.configureLegend,
-            name: "printLegend",
-            fieldLabel: OpenLayers.i18n("Legend")
-        });
-
         this.printPanel.insert(0, {
             xtype: "textfield",
             hidden: !this.configureTitle,
@@ -550,7 +561,39 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 printPage: this.printPanel.printPage
             })
         });
-        
+
+        this.printPanel.insert(1, {
+            xtype: "textfield",
+            hidden: !this.configureFooter,
+            name: "mapFooter",
+            fieldLabel: OpenLayers.i18n("Footer"),
+            value: this.mapFooter ? this.mapFooter : OpenLayers.i18n("mapFooter"),
+            plugins: new GeoExt.plugins.PrintPageField({
+                printPage: this.printPanel.printPage
+            })
+        });
+        this.customLogo = this.mapLogo ? true : false;
+
+        this.printPanel.insert(1, {
+            xtype: "textfield",
+            hidden: true,
+            name: "mapLogo",
+            fieldLabel: OpenLayers.i18n("MapLogo"),
+            value: this.mapLogo,
+            plugins: new GeoExt.plugins.PrintPageField({
+                printPage: this.printPanel.printPage
+            })
+        });
+
+        this.legendCheckbox = this.printPanel.insert(0, {
+            xtype: "checkbox",
+            //xtype: "textfield",
+            checked: false,
+            hidden: !this.configureLegend,
+            name: "printLegend",
+            fieldLabel: OpenLayers.i18n("Legend")
+        });
+
         this.printPanel.hideExtent();
 
         // If a renderTo config is provided, the print panel is rendered
