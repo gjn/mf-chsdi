@@ -99,6 +99,14 @@
             // check initial state
             t.eq(tree.selectedNode, null, 'selectedNode is null');
 
+            // we set afterRender to an empty function because 
+            // calling afterRender while the component has
+            // already rendered causes the following error in IE:
+            // exception: : object: 'Ext.get(...).dom' is null or
+            // not an object
+            var _ar = GeoAdmin.CatalogTree.superclass.afterRender;
+            GeoAdmin.CatalogTree.superclass.afterRender = function() {};
+
             tree.selectedNodeId = 'node_ch.swisstopo.fixpunkte-agnes1';
             tree.afterRender();
             t.ok(tree.selectedNode !== null,
@@ -106,6 +114,7 @@
 
             map.destroy();
             tree.destroy();
+            GeoAdmin.CatalogTree.superclass.afterRender = _ar;
         }
 
         function test_afterselection(t) {
