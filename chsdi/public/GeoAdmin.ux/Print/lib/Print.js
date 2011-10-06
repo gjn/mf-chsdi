@@ -591,7 +591,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 	    ctCls: "x-form-print-legend",
             checked: false,
             hidden: !this.configureLegend,
-            name: "printLegend",
             fieldLabel: OpenLayers.i18n("Legend")
         });
 
