@@ -127,6 +127,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     configureTitle: true,
 
+    /**
+     * api: property[configureLegend]
+     * :boolean: indicates if the layer legends must be printed.
+     */
+    configureLegend: true,
 
     /** private: method[constructor]
      *  Private constructor override.
@@ -172,16 +177,18 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 "beforeprint": function(provider, map, pages, options) {
                     var lang = OpenLayers.Lang.getCode();
                     provider.customParams.legends = [];
-                    for (var i = 0, len = map.layers.length; i < len; i++) {
-                        var layer = map.layers[i];
-                        if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
-                            provider.customParams.legends.push({
-                                classes: [{
-                                    name: '',
-                                    icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png"
-                                }],
-                                name: layer.name
-                            });
+                    if (this.legendCheckbox.checked) {
+                        for (var i = 0, len = map.layers.length; i < len; i++) {
+                            var layer = map.layers[i];
+                            if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
+                                provider.customParams.legends.push({
+                                    classes: [{
+                                        name: '',
+                                        icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png"
+                                    }],
+                                    name: layer.name
+                                });
+                            }
                         }
                     }
 
@@ -191,7 +198,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     };
                     overrides['lang' + lang] = true;
                     Ext.apply(pages[0].customParams, overrides);
-                }
+                },
+                scope: this
             },
             // Overrides GeoExt
             download: function(url) {
@@ -522,17 +530,27 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         delete this.config.printPanelConfig;
 
         this.printPanel = new GeoExt.ux.SimplePrint(printOptions);
-        if (this.configureTitle) {
-            this.printPanel.insert(0, {
-                xtype: "textfield",
-                name: "mapTitle",
-                fieldLabel: OpenLayers.i18n("Title"),
-                value: "",
-                plugins: new GeoExt.plugins.PrintPageField({
-                    printPage: this.printPanel.printPage
-                })
-            });
-        }
+
+        this.legendCheckbox = this.printPanel.insert(0, {
+            xtype: "checkbox",
+            //xtype: "textfield",
+            checked: false,
+            hidden: !this.configureLegend,
+            name: "printLegend",
+            fieldLabel: OpenLayers.i18n("Legend")
+        });
+
+        this.printPanel.insert(0, {
+            xtype: "textfield",
+            hidden: !this.configureTitle,
+            name: "mapTitle",
+            fieldLabel: OpenLayers.i18n("Title"),
+            value: OpenLayers.i18n("www.geo.admin.ch"),
+            plugins: new GeoExt.plugins.PrintPageField({
+                printPage: this.printPanel.printPage
+            })
+        });
+        
         this.printPanel.hideExtent();
 
         // If a renderTo config is provided, the print panel is rendered
