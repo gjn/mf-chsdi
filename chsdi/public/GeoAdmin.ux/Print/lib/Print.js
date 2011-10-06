@@ -216,7 +216,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
                     overrides['lang' + lang] = true;
-                    overrides['customLogo'] = this.mapLogo ? true : false;
+                    overrides['customLogo'] = this.config.mapLogo ? true : false;
                     Ext.apply(pages[0].customParams, overrides);
                 },
                 scope: this
@@ -553,7 +553,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         this.printPanel.insert(0, {
             xtype: "textfield",
-            hidden: !this.configureTitle,
+            hidden: !this.config.configureTitle,
             name: "mapTitle",
             fieldLabel: OpenLayers.i18n("Title"),
             value: OpenLayers.i18n("www.geo.admin.ch"),
@@ -564,22 +564,22 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         this.printPanel.insert(1, {
             xtype: "textfield",
-            hidden: !this.configureFooter,
+            hidden: !this.config.configureFooter,
             name: "mapFooter",
             fieldLabel: OpenLayers.i18n("Footer"),
-            value: this.mapFooter ? this.mapFooter : OpenLayers.i18n("mapFooter"),
+            value: this.config.mapFooter ? this.config.mapFooter : OpenLayers.i18n("mapFooter"),
             plugins: new GeoExt.plugins.PrintPageField({
                 printPage: this.printPanel.printPage
             })
         });
-        this.customLogo = this.mapLogo ? true : false;
+        this.customLogo = this.config.mapLogo ? true : false;
 
         this.printPanel.insert(1, {
             xtype: "textfield",
             hidden: true,
             name: "mapLogo",
             fieldLabel: OpenLayers.i18n("MapLogo"),
-            value: this.mapLogo,
+            value: this.config.mapLogo,
             plugins: new GeoExt.plugins.PrintPageField({
                 printPage: this.printPanel.printPage
             })
@@ -590,7 +590,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 	    labelStyle : "float: left",
 	    ctCls: "x-form-print-legend",
             checked: false,
-            hidden: !this.configureLegend,
+            hidden: !this.config.configureLegend,
             fieldLabel: OpenLayers.i18n("Legend")
         });
 
