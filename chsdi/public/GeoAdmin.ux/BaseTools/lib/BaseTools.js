@@ -4,7 +4,8 @@
  * @include Measure/lib/Measure.js
  * @include KmlSelector/lib/KmlSelector.js
  * @include OpenLayers/Lang.js
- * @require Permalink/lib/Permalink.js
+ * @requires Permalink/lib/Permalink.js
+ * @requires Print/lib/Print.js
  */
 
 Ext.ns("GeoAdmin");
@@ -44,7 +45,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
 
         this.advancedMenu = this.createAdvancedMenu(config);
 
-        this.printAction = this.createPrintAction({mapPanel: this.mapPanel});
+        this.printAction = this.createPrintAction(config.print);
 
         var print = new Ext.Panel({
             cls: 'print-panel',
@@ -93,7 +94,6 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                 }
             }
         }
-        ;
 
         return  new Ext.Button({
             tooltip: OpenLayers.i18n('AdvancedMenu.tooltip'),
@@ -107,7 +107,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
         });
     },
     createPrintAction: function(options) {
-        return new GeoAdmin.Print({
+        Ext.apply(options,{
             printPanelOptions: {
                 mapPanel: this.mapPanel,
                 renderTo: "print-panel",
@@ -130,6 +130,8 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             iconCls: 'print',
             enableToggle: true
         });
+        console.log(options);
+        return new GeoAdmin.Print(options);
     }
 });
 
