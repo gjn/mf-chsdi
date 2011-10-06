@@ -50,7 +50,8 @@
 .geoadmin-catalog-tree .treelayericon-queryable {
   background-image: url(../../images/layer_queryable.png);
 }
-.geoadmin-catalog-tree .nodeLT1, .nodeLT1selected {
+.geoadmin-catalog-tree .nodeLT1,
+.geoadmin-catalog-tree .nodeLT1selected {
     border-bottom:1px solid #ccc;
     font-weight: bold;
     text-indent: 1em;
@@ -64,7 +65,8 @@
     color: red !important;
     clear: left;
 }
-.geoadmin-catalog-tree .nodeLT2, .nodeLT2selected {
+.geoadmin-catalog-tree .nodeLT2, 
+.geoadmin-catalog-tree .nodeLT2selected {
     border-bottom:1px solid #ccc;
     text-indent: 2em;
     padding: 1px 0 1px 0;
@@ -82,7 +84,8 @@
   cursor: default;
 }
 
-.geoadmin-catalog-tree .nodeLT3, .nodeLT3selected {
+.geoadmin-catalog-tree .nodeLT3,
+.geoadmin-catalog-tree .nodeLT3selected {
     border-bottom:1px solid #ccc;
     text-indent: 1.5em;
     padding: 1px 0 1px 0;
@@ -111,7 +114,8 @@
 .geoadmin-catalog-tree .x-tree-node-loading a span {
     font-style:normal;
 }
-.geoadmin-catalog-tree .nodeLT3 .treelayerlink, .nodeLT3selected .treelayerlink {
+.geoadmin-catalog-tree .nodeLT3 .treelayerlink,
+.geoadmin-catalog-tree .nodeLT3selected .treelayerlink {
   float: left;
   padding: 0 !important;
   width: 17px;
@@ -124,7 +128,8 @@
 .geoadmin-catalog-tree .nodeLT3selected .treelayerlink {
   background-image: url(../../images/info_button_white.png);
 }
-.geoadmin-catalog-tree .checkboxOff, .checkboxOn {
+.geoadmin-catalog-tree .checkboxOff,
+.geoadmin-catalog-tree .checkboxOn {
   float: left;
   margin-top: 2px;
   margin-left: 2px;
@@ -134,7 +139,8 @@
   cursor: pointer;
   background-image: url(../images/lt_selection-sprite.png);
 }
-.geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOff, .nodeBackgroundSelected .checkboxOn {
+.geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOff,
+.geoadmin-catalog-tree .nodeBackgroundSelected .checkboxOn {
   margin-top: 1px;
 }
 .geoadmin-catalog-tree .checkboxOff {
