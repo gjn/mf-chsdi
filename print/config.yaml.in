@@ -261,6 +261,32 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
+
+    lastPage:
+      pageSize: A4
+      landscape: true
+      items:
+#---------------------------------------
+# Legend
+#---------------------------------------
+        - !columns
+          absoluteX: 45
+          absoluteY: 500
+          width: 250
+          items:
+            - !legends
+              inline: false
+              defaultScale: 0.3
+              maxHeight: 400
+              maxWidth: 250
+              maxIconHeight: 0
+              maxIconWidth: 0
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9
+
   #===========================================================================
   # A4 portrait:
   #===========================================================================
