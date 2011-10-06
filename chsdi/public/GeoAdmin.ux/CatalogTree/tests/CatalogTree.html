@@ -158,6 +158,7 @@
                 encodeType: false,
                 url: "http://example.com?catalog_selected=LT2_7"
             });
+            var _sp = Ext.state.Manager.getProvider();
             Ext.state.Manager.setProvider(pp);
 
             var map = new GeoAdmin.Map("map");
@@ -180,6 +181,7 @@
 
                 map.destroy();
                 tree.destroy();
+                Ext.state.Manager.setProvider(_sp);
             });
 
         }
