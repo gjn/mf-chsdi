@@ -131,10 +131,6 @@ background-color: #ffffff;
   /*  */
   background-position: 0px -19px;
 }
-.nodeBackgroundSelected .checkboxOff, .nodeBackgroundSelected .checkboxOn {
-  margin-top: 1px;
-}
-
 
 input.x-tree-node-cb {
     visibility: hidden;
@@ -153,9 +149,6 @@ div.x-tree-node-leaf a.x-tree-node-anchor span {
 /* used */
 .checkboxOff {
   background-position: -17px 1px;
-}
-.nodeBackgroundSelected .checkboxOff {
-  background-position: -17px 19px;
 }
 
 .nodeTP3 .treelayerlink, .nodeTP3selected .treelayerlink {
