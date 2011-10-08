@@ -12,7 +12,7 @@
 RewriteEngine On
 ExpiresActive On
 
-RewriteRule ^${vars:apache-entry-point}mapproxy(.*)$ /${vars:instanceid}/wsgi/$1 [PT]
+RewriteRule ^${vars:apache-entry-point}mapproxy(.*)$ /${vars:instanceid}/mapproxy/$1 [PT]
 
 
 WSGIDaemonProcess mf-chsdi:${vars:instanceid}-mapproxy display-name=%{GROUP} user=${vars:modwsgi_user}
