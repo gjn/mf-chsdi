@@ -130,7 +130,6 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             iconCls: 'print',
             enableToggle: true
         });
-        console.log(options);
         return new GeoAdmin.Print(options);
     }
 });
