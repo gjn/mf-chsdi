@@ -1,0 +1,138 @@
+services:
+  # comment out unneeded services
+  demo:
+  kml:
+  tms:
+  wms:
+    srs: ['EPSG:4326', 'EPSG:21781', 'EPGS:4258']
+    image_formats: ['image/jpeg', 'image/png']
+    md:
+      # metadata used in capabilities documents
+      title: Swisstopo MapProxy WMS
+      abstract: Öffentliche Daten der Bundes Geodaten-Infrastruktur (BGDI).
+      online_resource: http://wms.geo.admin.ch/
+      contact:
+        person: webgis@swisstopo.ch
+        organization: Bundesamt für Landestopografie swisstopo
+        address: Seftigenstrasse 264
+        city: Wabern
+        postcode: 3084
+        country: Schweiz
+        phone: +41 (0)31 / 963 21 11
+        fax: +41 (0)31 / 963 24
+        email: webgis@swisstopo.ch
+      access_constraints: 'None'
+      fees: 'None'
+
+layers:
+    - name: ch.swisstopo.swissimage
+      title: Luftbilder
+      sources: [swissimage]
+    - name: ch.swisstopo.pixelkarte-farbe
+      title: Landeskarte
+      sources: [pixelkarte-farbe]
+    - name: ch.swisstopo.pixelkarte-farbe-test
+      title: Landeskarte
+      sources: [pixelkarte-farbe-test]
+    - name: ch.swisstopo.gg25-bezirk-flaeche.fill
+      title: Bezirksgrenzen
+      sources: [gg25-bezirk-flaeche.fill]
+
+caches:
+  swissimage:
+    grids: [swisstopo]
+    sources: [swissimage-tiles]
+    format: image/jpeg
+    image:
+      resampling_method: bilinear
+    disable_storage: true
+  pixelkarte-farbe-test:
+    grids: [swisstopo-sparse]
+    sources: [pixelkarte-farbe-tiles]
+    format: image/jpeg
+    disable_storage: true
+  pixelkarte-farbe:
+    grids: [swisstopo]
+    sources: [pixelkarte-farbe-tiles]
+    format: image/jpeg
+    disable_storage: true
+  gg25-bezirk-flaeche.fill:
+    grids: [swisstopo]
+    sources: [gg25-bezirk-flaeche.fill-tiles, gg25-bezirk-flaeche.fill-fi-wms]
+    disable_storage: true
+
+sources:
+  swissimage-tiles:
+    type: tile
+    grid: swisstopo
+    http:
+      headers:
+        Referer: http://tile-f.bgdi.admin.ch/
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20110914/21781/%(z)d/%(y)d/%(x)d.jpeg
+    origin: nw
+
+  pixelkarte-farbe-tiles:
+    type: tile
+    grid: swisstopo
+    http:
+      headers:
+        Referer: http://tile-f.bgdi.admin.ch/
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/%(z)d/%(y)d/%(x)d.jpeg
+    origin: nw
+
+  gg25-bezirk-flaeche.fill-tiles:
+    type: tile
+    grid: swisstopo
+    http:
+      headers:
+        Referer: http://tile-f.bgdi.admin.ch/
+    url: http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.gg25-bezirk-flaeche.fill/default/20090601/21781/%(z)d/%(y)d/%(x)d.png
+    origin: nw
+    transparent: true
+
+  gg25-bezirk-flaeche.fill-fi-wms:
+    type: wms
+    wms_opts:
+      featureinfo: true
+      featureinfo_format: text/plain
+      map: false
+    req:
+      url: http://wms.geo.admin.ch/?lang=de
+      layers: ch.swisstopo.gg25-bezirk-flaeche.fill
+
+  # TMS Example
+  # sw-tiles:
+  #   type: tile
+  #   grid: swtopo
+  #   http:
+  #     headers:
+  #       Referer: http://www.geo.admin.ch/
+  #   url: http://tile5.bgdi.admin.ch/geoadmin/ch.swisstopo.pixelkarte-farbe/%(tc_path)s.jpeg
+
+
+grids:
+  swisstopo:
+    res: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5]
+    bbox: [420000,30000,900000,350000]
+    bbox_srs: EPSG:21781
+    srs: EPSG:21781
+  swisstopo-sparse:
+    res: [4000,2000,1000,500,250,100,50,20,10,5,2.5,1.5,1,0.5]
+    bbox: [420000,30000,900000,350000]
+    bbox_srs: EPSG:21781
+    srs: EPSG:21781
+  ign:
+    res: [0.035997544090479137,0.033747697584824196,0.031497851079169255,0.029248004573514307,0.026998158067859355,0.024748311562204410,0.022498465056549469,0.020248618550894520,0.017998772045239569,0.015748925539584627,0.013499079033929677,0.011249232528274734,0.008999386022619784,0.006749539516964839,0.005849600914702860,0.004499693011309892,0.002249846505654946,0.000899938602261979,0.000449969301130989,0.000179987720452396,0.000089993860226198,0.000044996930113099,0.000022498465056549,0.000017998772045240,0.000008999386022620,0.000004499693011310]
+    bbox: [0.0,0.0,11.479044,48.232047]
+    bbox_srs: EPSG:4258
+    srs: EPSG:4258
+  
+globals:
+  cache:
+    # use parallel requests to the WMTS sources
+    concurrent_tile_creators: 4
+
+  image:
+      resampling_method: bicubic
+      # resampling_method: bilinear
+      # resampling_method: bicubic
