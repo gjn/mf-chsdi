@@ -9,8 +9,8 @@ services:
     md:
       # metadata used in capabilities documents
       title: Swisstopo MapProxy WMS
-      abstract: Öffentliche Daten der Bundes Geodaten-Infrastruktur (BGDI).
-      online_resource: http://wms.geo.admin.ch/
+      abstract: swisstopo geodata for IGN.
+      online_resource: http://wms.swisstopo4inspire.admin.ch/
       contact:
         person: webgis@swisstopo.ch
         organization: Bundesamt für Landestopografie swisstopo
@@ -21,7 +21,7 @@ services:
         phone: +41 (0)31 / 963 21 11
         fax: +41 (0)31 / 963 24
         email: webgis@swisstopo.ch
-      access_constraints: 'None'
+      access_constraints: 'License'
       fees: 'None'
 
 layers:
@@ -31,12 +31,6 @@ layers:
     - name: ch.swisstopo.pixelkarte-farbe
       title: Landeskarte
       sources: [pixelkarte-farbe]
-    - name: ch.swisstopo.pixelkarte-farbe-test
-      title: Landeskarte
-      sources: [pixelkarte-farbe-test]
-    - name: ch.swisstopo.gg25-bezirk-flaeche.fill
-      title: Bezirksgrenzen
-      sources: [gg25-bezirk-flaeche.fill]
 
 caches:
   swissimage:
@@ -46,19 +40,10 @@ caches:
     image:
       resampling_method: bilinear
     disable_storage: true
-  pixelkarte-farbe-test:
-    grids: [swisstopo-sparse]
-    sources: [pixelkarte-farbe-tiles]
-    format: image/jpeg
-    disable_storage: true
   pixelkarte-farbe:
     grids: [swisstopo]
     sources: [pixelkarte-farbe-tiles]
     format: image/jpeg
-    disable_storage: true
-  gg25-bezirk-flaeche.fill:
-    grids: [swisstopo]
-    sources: [gg25-bezirk-flaeche.fill-tiles, gg25-bezirk-flaeche.fill-fi-wms]
     disable_storage: true
 
 sources:
@@ -79,26 +64,6 @@ sources:
         Referer: http://tile-f.bgdi.admin.ch/
     url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/%(z)d/%(y)d/%(x)d.jpeg
     origin: nw
-
-  gg25-bezirk-flaeche.fill-tiles:
-    type: tile
-    grid: swisstopo
-    http:
-      headers:
-        Referer: http://tile-f.bgdi.admin.ch/
-    url: http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.gg25-bezirk-flaeche.fill/default/20090601/21781/%(z)d/%(y)d/%(x)d.png
-    origin: nw
-    transparent: true
-
-  gg25-bezirk-flaeche.fill-fi-wms:
-    type: wms
-    wms_opts:
-      featureinfo: true
-      featureinfo_format: text/plain
-      map: false
-    req:
-      url: http://wms.geo.admin.ch/?lang=de
-      layers: ch.swisstopo.gg25-bezirk-flaeche.fill
 
   # TMS Example
   # sw-tiles:
