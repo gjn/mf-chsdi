@@ -151,15 +151,12 @@ div.x-tree-node-leaf a.x-tree-node-anchor span {
   background-position: -17px 1px;
 }
 
-.nodeTP3 .treelayerlink, .nodeTP3selected .treelayerlink {
+.treelayerlink {
   float: left;
   padding: 0 !important;
   width: 17px;
   height: 19px !important;
   cursor: pointer;
-}
-
-.nodeTP3 .treelayerlink {
   background-image: url(../images/info_button_black.png);
 }
 .nodeTP3selected .treelayerlink {
