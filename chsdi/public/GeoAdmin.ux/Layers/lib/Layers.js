@@ -45,9 +45,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             'http://wmts4.geo.admin.ch/'
         ];
 
-        if (this.layers === null) {
-            this.init();
-        }
+        this.init();
+
         var config = this.layers[name];
         if (!config) {
             // layer not found
@@ -174,6 +173,9 @@ GeoAdmin._Layers = OpenLayers.Class({
     },
 
     init: function() {
+        if (this.layers !== null) {
+            return this.layers;
+        }
         this.layers = {
             // base layers
             "ch.swisstopo.swissimage": {
