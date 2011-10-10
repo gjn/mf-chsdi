@@ -52,7 +52,7 @@ sources:
     grid: swisstopo
     http:
       headers:
-        Referer: http://tile-f.bgdi.admin.ch/
+        Referer: http://www.geoportail.fr/
     url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20110914/21781/%(z)d/%(y)d/%(x)d.jpeg
     origin: nw
 
@@ -61,7 +61,7 @@ sources:
     grid: swisstopo
     http:
       headers:
-        Referer: http://tile-f.bgdi.admin.ch/
+        Referer: http://www.geoportail.fr/
     url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/%(z)d/%(y)d/%(x)d.jpeg
     origin: nw
 
