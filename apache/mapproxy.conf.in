@@ -26,6 +26,21 @@ WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/part
 <Location /${vars:instanceid}/mapproxy>
     WSGIProcessGroup mf-chsdi:${vars:instanceid}-mapproxy
     WSGIApplicationGroup %{GLOBAL}
+
+    Order Deny,Allow
+    Deny from all
+    Allow from env=GOODIP
+    # Setting for test server
+    Allow from  10.131.50. 10.131.51.     # swisstopo net
+    Allow from 193.5.216.100 193.5.216.70 # BIT proxy
+    Allow from 160.92.125.32              # IGN proxy
+    Allow from 10.49.118.84 10.48.109.212 10.227.26.191 10.48.166.233 # AWS where mf-chsdi is deployed
+    
+    ExpiresActive on
+    ExpiresDefault "now plus 7 days"
+    Header set Cache-Control "public"
+    Header unset Etag
+
 </Location>
 
 
