@@ -44,6 +44,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     border: false,
     rootVisible: false,
 
+    /** api: config[singleUnfold]
+     *  ``Boolean`` true if only 1 node per branch may be expanded. Defaults to
+     *  true.
+     *  Be careful, is similar to singleExpand (Ext.tree.Treepanel) property,
+     *  but slightly different.
+     */
+    singleUnfold: true,
+
     // Big hack to avoid problem of this.getSelectionModel().getSelectedNode(); which provides the previous selected node...
     // FIXME check this hack is still necessary
     selectedNode: null,
@@ -269,29 +277,31 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
     },
 
     selectNode: function(node) {
-        var cls = node.attributes.cls, ui = node.getUI();
-        ui.addClass('nodeBackgroundSelected');
-        ui.removeClass(cls);
-        ui.addClass(cls + 'selected');
-        node.parentNode.cascade(function(n) {
-            if (n != node && n != node.parentNode) {
-                cls = n.attributes.cls;
-                ui = n.getUI();
-                n.collapse();
-                ui.removeClass('nodeBackgroundSelected');
-                ui.addClass(cls);
-                ui.removeClass(cls + 'selected');
-            }
-        }, this);
-        node.bubble(function(n) {
-            if (n != node && n != this.root) {
-                cls = n.attributes.cls;
-                ui = n.getUI();
-                ui.removeClass('nodeBackgroundSelected');
-                ui.removeClass(cls);
-                ui.addClass(cls + 'selected');
-            }
-        }, this);
+        if (this.singleUnfold) {
+            var cls = node.attributes.cls, ui = node.getUI();
+            ui.addClass('nodeBackgroundSelected');
+            ui.removeClass(cls);
+            ui.addClass(cls + 'selected');
+            node.parentNode.cascade(function(n) {
+                if (n != node && n != node.parentNode) {
+                    cls = n.attributes.cls;
+                    ui = n.getUI();
+                    n.collapse();
+                    ui.removeClass('nodeBackgroundSelected');
+                    ui.addClass(cls);
+                    ui.removeClass(cls + 'selected');
+                }
+            }, this);
+            node.bubble(function(n) {
+                if (n != node && n != this.root) {
+                    cls = n.attributes.cls;
+                    ui = n.getUI();
+                    ui.removeClass('nodeBackgroundSelected');
+                    ui.removeClass(cls);
+                    ui.addClass(cls + 'selected');
+                }
+            }, this);
+        }
     },
 
     getNodeText: function(layerId, nodeId) {
