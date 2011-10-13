@@ -1,0 +1,43 @@
+.x-results-view-item {
+    cursor: default;
+    border:1px solid #ededed;
+    border-top-color:#fff;
+    padding: 3px;
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    position: relative;
+}
+.x-view-over {
+    border:1px solid #dddddd;
+    background: #efefef url(../images/row-over.gif) repeat-x left top;
+}
+.x-results-view-item a.x-more-details {
+    color: blue;
+    cursor: pointer;
+}
+.x-view-selected{
+    background: #E5E5E5 url(../images/row-sel.gif) repeat-x left top;
+    border:1px solid #dadada;
+}
+
+.geocatsearch-results .abstract {
+    padding-right: 25px;
+}
+.geocatsearch-results .metadata {
+    background-image: url(../images/metadata.png);
+    float: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+}
+.geocatsearch-results .addmetadata {
+    background-image: url(../images/add.png);
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+}
