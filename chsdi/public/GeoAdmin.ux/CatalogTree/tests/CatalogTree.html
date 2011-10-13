@@ -4,7 +4,8 @@
         <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
         <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
         <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
-        <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+        <script type="text/javascript" src="../../GeoAdmin.js"></script>
+        <script type="text/javascript" src="../../Permalink/lib/PermalinkProvider.js"></script>
         <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
         <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
         <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
@@ -54,11 +55,11 @@
             // check that initial state is as expected
             t.eq(map.layers.length, 3, 'three layers at initial state');
 
-            node = {id: 'node_ch.swisstopo.fixpunkte-agnes1'};
+            node = {id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1'};
             tree.fireEvent('checkchange', node, true);
             t.eq(map.layers.length, 4, 'checkchange adds a layer to map');
 
-            node = {id: 'node_ch.swisstopo.fixpunkte-agnes1'};
+            node = {id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1'};
             tree.fireEvent('checkchange', node, false);
             t.eq(map.layers.length, 3, 'checkchange removes a layer to map');
 
@@ -71,7 +72,7 @@
             ]);
             var layerCount = map.layers.length;
             node = {
-                id: 'node_ch.swisstopo.fixpunkte-agnes1',
+                id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1',
                 getUI: function() {
                     return {
                         toggleCheck: function() {}
@@ -107,7 +108,8 @@
             var _ar = GeoAdmin.CatalogTree.superclass.afterRender;
             GeoAdmin.CatalogTree.superclass.afterRender = function() {};
 
-            tree.selectedNodeId = 'node_ch.swisstopo.fixpunkte-agnes1';
+            tree.selectedNodeId = tree.id +
+                                  '_node_ch.swisstopo.fixpunkte-agnes1';
             tree.afterRender();
             t.ok(tree.selectedNode !== null,
                  'selectedNode set after render');
@@ -133,7 +135,8 @@
                 }
             });
 
-            tree.selectedNodeId = 'node_ch.swisstopo.fixpunkte-agnes1';
+            tree.selectedNodeId = tree.id +
+                                  '_node_ch.swisstopo.fixpunkte-agnes1';
             tree.setSelectedNode();
             t.eq(log, true, 'selecting node triggers afterselection');
 
@@ -151,9 +154,9 @@
                 {renderTo: "tree", map: map, id: 'foo'});
 
             var layerId = 'ch.swisstopo.fixpunkte-agnes';
-            var nodeId = 'node_ch.swisstopo.fixpunkte-agnes';
+            var nodeId = tree.id + '_node_ch.swisstopo.fixpunkte-agnes';
             var link = tree.addtreeLayerLink(layerId, nodeId);
-            t.eq(link, '<div class="treelayericon-queryable"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'ch.swisstopo.fixpunkte-agnes\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="node_ch.swisstopo.fixpunkte-agnes_cb" onclick="Ext.getCmp(\'foo\').getNodeById(\'node_ch.swisstopo.fixpunkte-agnes\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>',
+            t.eq(link, '<div class="treelayericon-queryable"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'ch.swisstopo.fixpunkte-agnes\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes_cb" onclick="Ext.getCmp(\'foo\').getNodeById(\'' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>',
                  'link is as expected');
 
             map.destroy();
@@ -176,11 +179,11 @@
                 {renderTo: "tree", map: map}
             );
 
-            t.eq(tree.getSelectedNode(), "LT2_7",
+            t.eq(tree.getSelectedNode(), tree.id + "_LT2_7",
                  "selected node is as expected on init");
 
             // change selection
-            tree.selectedNodeId = "LT2_9";
+            tree.selectedNodeId = tree.id + "_LT2_9";
             tree.setSelectedNode();
 
             t.delay_call(1, function() {
@@ -194,7 +197,6 @@
             });
 
         }
-
 
         function createRootNode() {
             return {
@@ -214,6 +216,53 @@
                     text: ''
                 }]
             };
+        }
+
+        function test_state_geoadmin_permalinkprovider(t) {
+            t.plan(3);
+
+            var pp = new GeoAdmin.PermalinkProvider({
+                encodeType: false,
+                url: "http://example.com?selectedNode=node_id0011"
+            });
+            var _sp = Ext.state.Manager.getProvider();
+            Ext.state.Manager.setProvider(pp);
+
+            var map = new GeoAdmin.Map("map");
+
+            var gnt = GeoAdmin.CatalogTree.prototype.getNodeText;
+            GeoAdmin.CatalogTree.prototype.getNodeText = function() {
+                return '';
+            };
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map, root: createRootNode()}
+            );
+
+            // mocking getNodeText causes a js error in
+            // updateCustomizedCheckbox so we mock it too
+            tree.updateCustomizedCheckbox = function() {};
+
+            t.eq(tree.getSelectedNode(), tree.id + "_node_id0011",
+                 "selected node is as expected on init");
+
+            // change selection
+            tree.selectedNodeId = tree.id + "_node_id0001";
+            tree.setSelectedNode();
+            t.eq(tree.getSelectedNode(), tree.id + '_node_id0001',
+                 'selected node is as expected after setSelectNode');
+
+            t.delay_call(1, function() {
+                var link = pp.getLink("http://example.com");
+                t.eq(link, "http://example.com?selectedNode=node_id0001",
+                     "permalink is correct");
+
+                map.destroy();
+                tree.destroy();
+                GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+                Ext.state.Manager.setProvider(_sp);
+            });
+
         }
 
         function test_setSelectedNode(t) {
@@ -236,17 +285,17 @@
             t.eq(cat.selectedNode, null,
                  "selected node is null");
 
-            cat.selectedNodeId = "node_id0001";
+            cat.selectedNodeId = cat.id + "_node_id0001";
             cat.setSelectedNode();
-            t.eq(cat.selectedNode.id, "node_id0001",
-                 "selected node id is node_id0001");
+            t.eq(cat.selectedNode.id, cat.id + "_node_id0001",
+                 "selected node id is " + cat.id + "_node_id0001");
             t.eq(cat.selectedNode.isExpanded(), true,
                  "selected node is expanded");
             t.eq(cat.selectedNode.parentNode.isExpanded(), true,
                  "selected node parent is expanded");
             t.eq(cat.selectedNode.parentNode.parentNode.isExpanded(), true,
                  "selected node parent parent is expanded");
-            t.eq(cat.getNodeById("node_id0011").isExpanded(), false,
+            t.eq(cat.getNodeById(cat.id + "_node_id0011").isExpanded(), false,
                  "selected node sibling is collapsed");
 
             cat.destroy();
@@ -566,65 +615,69 @@
             node = rootNode.children[0];
             t.eq(node.text, '__foo_1_1__', '[1] text as expected');
             t.eq(node.cls, 'nodeLT1', '[1] cls as expected');
-            t.eq(node.id, 'LT1_1', '[1] id as expected');
+            t.eq(node.id, cat.id + '_LT1_1', '[1] id as expected');
             t.eq(node.singleClickExpand, true,
                  '[1] singleClickExpand as expected');
             t.eq(node.children.length, 2, '[1] node has 2 children');
 
             node = rootNode.children[1];
-            link = cat.addtreeLayerLink('ch.swisstopo.fixpunkte-lage',
-                                        'node_ch.swisstopo.fixpunkte-lage2');
+            link = cat.addtreeLayerLink(
+                'ch.swisstopo.fixpunkte-lage',
+                cat.id + '_node_ch.swisstopo.fixpunkte-lage2');
             t.eq(node.text.indexOf(link), 0, '[2] text as expected');
             t.eq(node.leaf, true, '[2] leaf as expected');
             t.eq(node.checked, false, '[2] checked as expected');
             t.eq(node.cls, 'nodeLT1', '[2] cls as expected');
-            t.eq(node.id, 'node_ch.swisstopo.fixpunkte-lage2',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-lage2',
                  '[2] id as expected');
 
             node = rootNode.children[0].children[0];
             t.eq(node.text, '__foo_2_1__', '[3] text as expected');
             t.eq(node.cls, 'nodeLT2', '[3] cls as expected');
-            t.eq(node.id, 'LT2_1', '[3] id as expected');
+            t.eq(node.id, cat.id + '_LT2_1', '[3] id as expected');
             t.eq(node.singleClickExpand, true,
-                 '[1] singleClickExpand as expected');
+                 '[3] singleClickExpand as expected');
             t.eq(node.children.length, 1, '[3] node has 1 child');
 
             node = rootNode.children[0].children[1];
-            link = cat.addtreeLayerLink('ch.swisstopo.fixpunkte-hoehe',
-                                        'node_ch.swisstopo.fixpunkte-hoehe1');
+            link = cat.addtreeLayerLink(
+                'ch.swisstopo.fixpunkte-hoehe',
+                cat.id + '_node_ch.swisstopo.fixpunkte-hoehe1');
             t.eq(node.text.indexOf(link), 0, '[4] text as expected');
             t.eq(node.leaf, true, '[4] leaf as expected');
             t.eq(node.checked, true, '[4] checked as expected');
             t.eq(node.cls, 'nodeLT2', '[4] cls as expected');
-            t.eq(node.id, 'node_ch.swisstopo.fixpunkte-hoehe1',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-hoehe1',
                  '[4] id as expected');
 
             node = rootNode.children[0].children[0].children[0];
             t.eq(node.text, '__foo_3_1__', '[5] text as expected');
             t.eq(node.cls, 'nodeLT3', '[5] cls as expected');
-            t.eq(node.id, 'LT3_1', '[5] id as expected');
+            t.eq(node.id, cat.id + '_LT3_1', '[5] id as expected');
             t.eq(node.singleClickExpand, true,
                  '[5] singleClickExpand as expected');
             t.eq(node.children.length, 2, '[5] node has 2 children');
 
             node = rootNode.children[0].children[0].children[0].children[0];
-            link = cat.addtreeLayerLink('ch.swisstopo.fixpunkte-agnes',
-                                        'node_ch.swisstopo.fixpunkte-agnes1');
+            link = cat.addtreeLayerLink(
+                'ch.swisstopo.fixpunkte-agnes',
+                cat.id + '_node_ch.swisstopo.fixpunkte-agnes1');
             t.eq(node.text.indexOf(link), 0, '[6] text as expected');
             t.eq(node.leaf, true, '[6] leaf as expected');
             t.eq(node.checked, false, '[6] checked as expected');
             t.eq(node.cls, 'nodeLT4', '[6] cls as expected');
-            t.eq(node.id, 'node_ch.swisstopo.fixpunkte-agnes1',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-agnes1',
                  '[6] id as expected');
 
             node = rootNode.children[0].children[0].children[0].children[1];
-            link = cat.addtreeLayerLink('ch.swisstopo.fixpunkte-lage',
-                                        'node_ch.swisstopo.fixpunkte-lage1');
+            link = cat.addtreeLayerLink(
+                'ch.swisstopo.fixpunkte-lage',
+                cat.id + '_node_ch.swisstopo.fixpunkte-lage1');
             t.eq(node.text.indexOf(link), 0, '[7] text as expected');
             t.eq(node.leaf, true, '[7] leaf as expected');
             t.eq(node.checked, true, '[7] checked as expected');
             t.eq(node.cls, 'nodeLT4', '[7] cls as expected');
-            t.eq(node.id, 'node_ch.swisstopo.fixpunkte-lage1',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-lage1',
                  '[7] id as expected');
 
             map.destroy();

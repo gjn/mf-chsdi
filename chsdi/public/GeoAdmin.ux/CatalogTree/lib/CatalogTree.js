@@ -152,7 +152,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      *  Apply the state to the catalog tree.
      */
     applyState: function(state) {
-        this.selectedNodeId = state.selected;
+        this.selectedNodeId = this.id + '_' + state.selected;
     },
 
     /** private: method[getState]
@@ -161,7 +161,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      *  Returns the state of the catalog tree.
      */
     getState: function() {
-        return {selected: this.getSelectedNode()};
+        var selectedNodeId = this.getSelectedNode(),
+            selectedValue = selectedNodeId.replace(this.id + '_', '');
+        return {selected: selectedValue};
     },
 
     updateCustomizedCheckbox: function(node, state) {
@@ -214,7 +216,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      *  :returns: ``String`` The layer identifier.
      */
     getLayerIdFromNodeId: function(nodeId) {
-        return nodeId.replace('node_', '').slice(0, -1);
+        return nodeId.replace(this.id + '_node_', '').slice(0, -1);
     },
 
     /** private: method[addLayer]
@@ -314,7 +316,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         if (node.children) {
             if (level > 0) {
                 ids['LT' + level] = ids['LT' + level] || 0;
-                node.id = 'LT' + level + '_' + (++ids['LT' + level]);
+                node.id = this.id + '_LT' + level +
+                           '_' + (++ids['LT' + level]);
                 node.cls = 'nodeLT' + level;
                 node.singleClickExpand = true;
                 node.text = Array(level).join('') +
@@ -325,7 +328,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             }
         } else {
             ids[node.layerId] = ids[node.layerId] || 0;
-            var nodeId = 'node_' + node.layerId + (++ids[node.layerId]);
+            var nodeId = this.id + '_node_' +
+                         node.layerId + (++ids[node.layerId]);
             node.id = nodeId;
             node.cls = 'nodeLT' + level;
             node.text = this.getNodeText(node.layerId, nodeId);
