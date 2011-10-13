@@ -107,6 +107,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
         });
     },
     createPrintAction: function(options) {
+        var options = options || {};
         Ext.apply(options,{
             printPanelOptions: {
                 mapPanel: this.mapPanel,
