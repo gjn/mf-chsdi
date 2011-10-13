@@ -313,19 +313,26 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     adaptNodeConfig: function(node, level, ids) {
         level = level || 0; ids = ids || {};
-        if (node.children) {
+        if (node.children && node.children.length > 0) {
             if (level > 0) {
                 ids['LT' + level] = ids['LT' + level] || 0;
                 node.id = this.id + '_LT' + level +
                            '_' + (++ids['LT' + level]);
                 node.cls = 'nodeLT' + level;
                 node.singleClickExpand = true;
+                node._text = node.text; // store the original text,
+                                        // used in the tests
                 node.text = Array(level).join('') +
                             OpenLayers.i18n(node.text);
             }
             for(var i=0, l=node.children.length; i<l; i++) {
                 this.adaptNodeConfig(node.children[i], level + 1, ids);
             }
+        } else if (node.layerId == undefined) {
+            // node has no children and doesn't reference a layer,
+            // we still increment ids['LT' + level] not to mess up
+            // with node ids and break existing permalinks
+            ids['LT' + level]++;
         } else {
             ids[node.layerId] = ids[node.layerId] || 0;
             var nodeId = this.id + '_node_' +
@@ -402,9 +409,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     }
                 ]
             },
-            /* {
-             text: 'Geografische Gittersysteme',
-             },*/
+            {
+                text: 'Geografische Gittersysteme'
+            },
             {
                 text: 'Geografische Namen',
                 children: [
@@ -476,10 +483,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
                     }
                 ]
-            }/*,
-             {
-             text: 'Flurstücke / Grundstücke',
-             }*/
+            },
+            {
+                text: 'Flurstücke / Grundstücke'
+            }
         ]
     },
     {
@@ -493,11 +500,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     }
                 ]
             },
-            /*{
-             text: 'Höhe',
-             children: [
-             ]
-             },*/
+            {
+                text: 'Höhe'
+            },
             {
                 text: 'Bodenbedeckung',
                 children: [
@@ -560,10 +565,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     }
                 ]
             },
-            /*
-             {
-             text: 'Bevölkerungsdichte',
-             },*/
+            {
+                text: 'Bevölkerungsdichte'
+            },
             {
                 text: 'Raumplanung',
                 children: [
@@ -820,15 +824,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     }
                 ]
             },
-            /*{
-             text: 'Atmosphärische Bedingungen',
-             },
-             {
-             text: 'Meteorologie',
-             },
-             {
-             text: 'Biogeografische Regionen',
-             },*/
+            {
+                text: 'Atmosphärische Bedingungen'
+            },
+            {
+                text: 'Meteorologie'
+            },
+            {
+                text: 'Biogeografische Regionen'
+            },
             {
                 text: 'Lebensräume une Biotope',
                 children: [
@@ -880,10 +884,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.fauna-steinbockkolonien"
                     }
                 ]
-            }/*,
-             {
-             text: 'Mineralische Bodenschätze',
-             }*/
+            },
+            {
+                text: 'Mineralische Bodenschätze'
+            }
         ]
     },
     {
@@ -940,12 +944,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     }
                 ]
             },
-            /*{
-             text: 'Produktions- und Industrieanlagen',
-             },
-             {
-             text: 'Land- und Wassertwirtschaft',
-             }, */
+            {
+                text: 'Produktions- und Industrieanlagen'
+            },
+            {
+                text: 'Land- und Wassertwirtschaft'
+            },
             {
                 text: 'Energiequellen',
                 children: [

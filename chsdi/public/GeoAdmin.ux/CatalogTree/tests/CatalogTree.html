@@ -198,6 +198,120 @@
 
         }
 
+        function test_node_id_backward_compat(t) {
+            t.plan(17);
+
+            var map = new GeoAdmin.Map("map");
+
+            var tree = new GeoAdmin.CatalogTree(
+                {renderTo: "tree", map: map}
+            );
+
+            var n;
+
+            // 'Geografische Gittersysteme'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_2') == null,
+                 'LT2_2 does not exist');
+
+            // 'Geografische Namen'
+            n = tree.getNodeById(tree.id + '_LT2_3');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Geografische Namen',
+                     'LT2_3 is Geografische Namen');
+            }
+
+            // 'Flurstücke / Grundstücke'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_6') == null,
+                 'LT2_6 does not exist');
+
+            // 'Gewässernetz'
+            n = tree.getNodeById(tree.id + '_LT2_7');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Gewässernetz',
+                     'LT2_7 is Gewässernetz');
+            }
+
+            // 'Höhe'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_8') == null,
+                 'LT2_8 does not exist');
+
+            // 'Bodenbedeckung'
+            n = tree.getNodeById(tree.id + '_LT2_9');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Bodenbedeckung',
+                     'LT2_9 is Bodenbedeckung');
+            }
+
+            // 'Bevölkerungsdichte'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_12') == null,
+                 'LT2_12 does not exist');
+
+            // 'Raumplanung'
+            n = tree.getNodeById(tree.id + '_LT2_13');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Raumplanung',
+                     'LT2_13 is Raumplanung');
+            }
+
+            // 'Atmosphärische Bedingungen'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_22') == null,
+                 'LT2_22 does not exist');
+
+            // 'Meteorologie'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_23') == null,
+                 'LT2_23 does not exist');
+
+            // 'Biogeografische Regionen'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_24') == null,
+                 'LT2_24 does not exist');
+
+            // 'Lebensräume une Biotope'
+            n = tree.getNodeById(tree.id + '_LT2_25');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Lebensräume une Biotope',
+                     'LT2_25 is Lebensräume une Biotope');
+            }
+
+            // 'Mineralische Bodenschätze'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_27') == null,
+                 'LT2_27 does not exist');
+
+            // 'Statistische Einheiten'
+            n = tree.getNodeById(tree.id + '_LT2_28');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Statistische Einheiten',
+                     'LT2_28 is Statistische Einheiten');
+            }
+
+            // 'Produktions- und Industrieanlagen'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_30') == null,
+                 'LT2_30 does not exist');
+
+            // 'and- und Wassertwirtschaft'
+            // node does not currently exist
+            t.ok(tree.getNodeById(tree.id + '_LT2_31') == null,
+                 'LT2_31 does not exist');
+
+            // 'Energiequellen'
+            n = tree.getNodeById(tree.id + '_LT2_32');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Energiequellen',
+                     'LT2_32 is Energiequellen');
+            }
+
+            map.destroy();
+            tree.destroy();
+       }
+
         function createRootNode() {
             return {
                 children: [{
@@ -210,10 +324,12 @@
                             layerId: 'id001'
                         }]
                     }, {
-                        text: ''
+                        text: '',
+                        children: [{}]
                     }]
                 }, {
-                    text: ''
+                    text: '',
+                    children: [{}]
                 }]
             };
         }
@@ -425,7 +541,7 @@
 
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode,
+                root: createRootNode(),
                 map: map
             });
 
