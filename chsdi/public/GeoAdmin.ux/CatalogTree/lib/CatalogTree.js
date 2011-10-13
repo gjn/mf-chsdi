@@ -410,7 +410,8 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Geografische Gittersysteme'
+                text: 'Geografische Gittersysteme',
+                hidden: true
             },
             {
                 text: 'Geografische Namen',
@@ -485,7 +486,8 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Flurstücke / Grundstücke'
+                text: 'Flurstücke / Grundstücke',
+                hidden: true
             }
         ]
     },
@@ -501,7 +503,8 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Höhe'
+                text: 'Höhe',
+                hidden: true
             },
             {
                 text: 'Bodenbedeckung',
@@ -566,7 +569,8 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Bevölkerungsdichte'
+                text: 'Bevölkerungsdichte',
+                hidden: true
             },
             {
                 text: 'Raumplanung',
@@ -825,13 +829,16 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Atmosphärische Bedingungen'
+                text: 'Atmosphärische Bedingungen',
+                hidden: true
             },
             {
-                text: 'Meteorologie'
+                text: 'Meteorologie',
+                hidden: true
             },
             {
-                text: 'Biogeografische Regionen'
+                text: 'Biogeografische Regionen',
+                hidden: true
             },
             {
                 text: 'Lebensräume une Biotope',
@@ -886,7 +893,8 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Mineralische Bodenschätze'
+                text: 'Mineralische Bodenschätze',
+                hidden: true
             }
         ]
     },
@@ -945,10 +953,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Produktions- und Industrieanlagen'
+                text: 'Produktions- und Industrieanlagen',
+                hidden: true
             },
             {
-                text: 'Land- und Wassertwirtschaft'
+                text: 'Land- und Wassertwirtschaft',
+                hidden: true
             },
             {
                 text: 'Energiequellen',
