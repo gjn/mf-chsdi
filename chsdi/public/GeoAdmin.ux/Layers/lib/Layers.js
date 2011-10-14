@@ -126,11 +126,11 @@ GeoAdmin._Layers = OpenLayers.Class({
                 hasLegend: config.hasLegend,
                 version: "1.0.0",
                 requestEncoding: "REST",
-                url: wmts_url,
+                url: config.url || wmts_url,
                 style: "default",
                 matrixSet: "21781",
                 zoomOffset: 14,
-                formatSuffix: config.format.split('/')[1].toLowerCase(),
+                formatSuffix: config.format && config.format.split('/')[1].toLowerCase(),
                 dimensions: ['TIME'],
                 params: {
                     'time': config.timestamp
