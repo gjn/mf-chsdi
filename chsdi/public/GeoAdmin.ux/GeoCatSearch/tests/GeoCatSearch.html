@@ -8,12 +8,30 @@
       <script type="text/javascript" src="../lib/GeoCatSearch.js"></script>
       <script type="text/javascript">
         function test_ctor(t) {
-            t.plan(1);
+            t.plan(2);
 
             // test
             var c = new GeoAdmin.GeoCatSearch();
             t.ok(c instanceof GeoAdmin.GeoCatSearch,
                  "ctor creates an instance of GeoCatSearch");
+            t.eq(c.items.getCount(), 2, "ctor creates two items");
+        }
+
+        function test_query(t) {
+            t.plan(2);
+
+            // set up
+            var c = new GeoAdmin.GeoCatSearch({ url:"foo"});
+
+            // test
+            var query = "bar", log = {};
+            c.store.proxy.on({beforeload: function(p, params) {
+                log.q = params.q;
+                return false; // stop the request
+            }});
+            c.searchGeoCat(query);
+            t.eq(log.q, query, "query param is correct");
+            t.eq(Ext.WindowMgr.getActive().id, c.searchResultsWindow.id, "Search result window is shown");
         }
       </script>
   </head>
