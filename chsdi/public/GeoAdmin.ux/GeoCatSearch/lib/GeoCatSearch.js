@@ -62,7 +62,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
                 lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['uuid', 'name', 'abstract', 'url', 'layertype']
+            fields: ['uuid', 'name', 'layers', 'abstract', 'url', 'layertype']
         });
         var view = new Ext.DataView({
             store: this.store,
@@ -88,6 +88,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
         });
 
         var searchField = new Ext.form.TextField({
+            flex: 1,
             listeners: {
                 specialkey: function(field, e){
                     if (e.getKey() == e.ENTER) {
@@ -98,7 +99,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
             }
         });
         var button = new Ext.Button({
-            text: OpenLayers.i18n('search'),
+            text: OpenLayers.i18n('geocatsearch.search'),
             handler: function() {
                 this.searchGeoCat(searchField.getValue());
             },
@@ -131,7 +132,6 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
                 q: keyword
             },
             callback: function(r, options, success) {
-                console.log(r);
             }
         });
     },
@@ -164,11 +164,11 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
      */
     showMetadataPopup: function(uuid) {
         new Ext.Window({
-            title: OpenLayers.i18n('Metadata'),
+            title: OpenLayers.i18n('geocatsearch.metadata'),
             layout: 'fit',
             maximizable: false,
             modal: true,
-            width: 1050,
+            width: 1055,
             height: 500,
             items: {
                 xtype: 'box',
