@@ -146,6 +146,10 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 delete params.layers_visibility;
             }
         }
+        var current_lang = OpenLayers.Lang.getCode();
+        if (current_lang) {
+            params.lang = current_lang;
+        }
 
         // merge params in the URL into the state params
         //OpenLayers.Util.applyDefaults(params, OpenLayers.Util.getParameters(base));
