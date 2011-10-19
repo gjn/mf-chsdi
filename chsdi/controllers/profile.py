@@ -76,7 +76,8 @@ class ProfileController(BaseController):
             log.error("LineString is not valid")
             abort(400)
         bbox = Polygon(((420000,30000), (420000,350000), (900000, 350000), (900000, 30000), (420000,30000)))
-        #log.debug("LineString has type '%s', has %d point(s) and is within BBOX: %s" % (linestring.type, len(linestring.coords), bbox.contains(linestring)))
+        log.debug("Importing/testing linestring. Linestring of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+        start = time.clock()
 
         if request.params.has_key('layers'):
             layers = request.params['layers'].split(',')
@@ -97,77 +98,69 @@ class ProfileController(BaseController):
         else:
             nb_points = 200
 
+        ma_offset = 3
+        if request.params.has_key('offset'):
+            ma_offset = int(request.params['offset'])
+
         # Simplify input line with a tolerance of 2 m
         if nb_points < len(linestring.coords):
             linestring = linestring.simplify(12.5)
 	    log.debug("Timer Simplify: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
-            #log.debug("Simplified LineString has %d point(s)" % (len(linestring.coords)))
+            start = time.clock()
 
         coords = self._create_points(linestring.coords, nb_points)
         log.debug("Timer Compute points: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+        start = time.clock()
 
-        dpcoords = None
-        if request.params.has_key('douglaspeuckerepsilon'):
-            epsilon = float(request.params['douglaspeuckerepsilon'])
-
-            # Computing simplification
-            dpcoords = {}
+        zvalues = {}
+        for i in range(0, len(layers)):
+            zvalues[layers[i]] = []
+        for j in range(0, len(coords)):
             for i in range(0, len(layers)):                    
-                dpcoords[layers[i]] = []
-            prev_coord = None
-            xpos = 0
-            for coord in coords:
-                if prev_coord is not None:
-                    xpos += self._dist(prev_coord, coord)
-                for i in range(0, len(layers)):                    
-                    ypos = rasters[i].getVal(coord[0], coord[1])
-                    if ypos is not None:
-                        dpcoords[layers[i]].append((xpos, ypos))                
-                prev_coord = coord
+                z = rasters[i].getVal(coords[j][0], coords[j][1])
+                zvalues[layers[i]].append(z)
 
-            for i in range(0, len(layers)):                    
-                ls = LineString(dpcoords[layers[i]])
-                ls = ls.simplify(epsilon, preserve_topology=False)
-                dpcoords[layers[i]] = ls.coords
-        log.debug("Timer Douglas: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+        factor = lambda x: float(1) / (abs(x) + 1)
+        zvalues2 = {}
+        for i in range(0, len(layers)):
+            zvalues2[layers[i]] = []
+            for j in range(0, len(zvalues[layers[i]])):
+                s = 0
+                d = 0
+                if zvalues[layers[i]][j] is None:
+                    zvalues2[layers[i]].append(None)
+                    continue
+                for k in range(-ma_offset, ma_offset+1):
+                    p = j + k
+                    if p < 0 or p >= len(zvalues[layers[i]]):
+                        continue
+                    if zvalues[layers[i]][p] is None:
+                        continue
+                    s += zvalues[layers[i]][p] * factor(k)
+                    d += factor(k)
+                zvalues2[layers[i]].append(s / d)                    
+        log.debug("Timer Moving Average %d point(s): %f" % (len(coords), time.clock()-start))
+        start = time.clock()
+
         dist = 0
         prev_coord = None
-        for coord in coords:
+        for j in range(0, len(coords)):
             if prev_coord is not None:
-                dist += self._dist(prev_coord, coord)
+                dist += self._dist(prev_coord, coords[j])
 
             alts = {}
             for i in range(0, len(layers)):
-                alt = None
-                if dpcoords is None:
-
-                    # No simplification
-                    alt = self._filter_alt(rasters[i].getVal(coord[0], coord[1]))
-                else:               
-
-                    # Using simplification result to find height (by interpolation)
-                    prevco = None
-                    for co in dpcoords[layers[i]]:
-                        if co[0] == dist:
-                            alt = co[1]
-                            break
-                        if co[0] > dist:
-                            try: 
-                                a = (co[1] - prevco[1]) / (co[0] - prevco[0])
-                            except:
-                                abort(400)
-                            alt = a * (dist - prevco[0]) + prevco[1]
-                            break 
-                        prevco = co                
-                if alt is not None:
-                    alts[layers[i]] = self._filter_alt(alt)
+                if zvalues2[layers[i]][j] is not None:
+                    alts[layers[i]] = self._filter_alt(zvalues2[layers[i]][j])
 
             if len(alts)>0:
                 rounded_dist = self._filter_dist(dist)
-                c.points.append({'dist': rounded_dist, 'alts': alts, 'easting': self._filter_coordinate(coord[0]), 'northing': self._filter_coordinate(coord[1])})
-            prev_coord = coord
-        log.debug("Timer JSON: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
-
+                c.points.append({'dist': rounded_dist, 'alts': alts, 
+                                 'easting': self._filter_coordinate(coords[j][0]),
+                                 'northing': self._filter_coordinate(coords[j][1])})
+            prev_coord = coords[j]
+        log.debug("Timer Finilizing %d point(s): %f" % (len(coords), time.clock()-start))
+        start = time.clock()
 
     def _dist(self, coord1, coord2):
         """Compute the distance between 2 points"""
