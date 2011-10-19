@@ -2,6 +2,7 @@
 
 /*
  * @include OpenLayers/Lang.js
+ * @include GeoCatSearch/lib/showGeoCatMetadataPopup.js
  */
 /** api: (define)
  *  module = GeoAdmin
@@ -14,7 +15,7 @@
  *
  *  .. code-block:: javascript
 
- *     var geocatsearch = new GeoAdmin.GeoCatSearch({
+ *     var geocatsearch = new GeoAdmin.GeoCatSearchField({
  *         width: 500,
  *         renderTo: "mysearch4"
  *        });
@@ -23,15 +24,15 @@
  */
 
 /** api: constructor
- *  .. class:: GeoCatSearch(config)
+ *  .. class:: GeoCatSearchField(config)
  *
  *  :param config: ``Object`` config
  *
- *  :return:  ``GeoAdmin.GeoCatSearch``
+ *  :return:  ``GeoAdmin.GeoCatSearchField``
  *
- *  Create a geocat search combo box
+ *  Create a geocat search field, and the conresponding results window.
  */
-GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
+GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
 
 
     /** private: property[store]
@@ -108,7 +109,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
 
         this.items = [searchField, button];
 
-        GeoAdmin.GeoCatSearch.superclass.initComponent.call(this);
+        GeoAdmin.GeoCatSearchField.superclass.initComponent.call(this);
 
         this.addEvents(
             /**
@@ -148,7 +149,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
         var t = e.getTarget('.metadata');
         var r = dataview.getRecord(node);
         if(t) {
-            this.showMetadataPopup(r.get('uuid'));
+            GeoAdmin.showGeoCatMetadataPopup(r.get('uuid'));
         }
 
         t = e.getTarget('.addmetadata');
@@ -157,34 +158,7 @@ GeoAdmin.GeoCatSearch = Ext.extend(Ext.Container, {
         }
     },
 
-    /** private: method[showMetadataPopup]
-     *  :param uuid: ``String`` The metadata uuid 
-     *
-     *  Opens a window to show the metadata. 
-     */
-    showMetadataPopup: function(uuid) {
-        new Ext.Window({
-            title: OpenLayers.i18n('geocatsearch.metadata'),
-            layout: 'fit',
-            maximizable: false,
-            modal: true,
-            width: 1055,
-            height: 500,
-            items: {
-                xtype: 'box',
-                autoEl: {
-                    tag: 'iframe',
-                    src: "http://www.geocat.ch/geonetwork/srv/fra/metadata.show?uuid=" + uuid + "&printview",
-                    align: 'left',
-                    scrolling: 'auto',
-                    marginheight: 0,
-                    marginwidth: 0,
-                    frameborder: 0
-                }
-            }
-        }).show();
-    }
 });
 
 /** api: xtype = ga_geocatsearch */
-Ext.reg("ga_geocatsearch", GeoAdmin.GeoCatSearch);
+Ext.reg("ga_geocatsearchfield", GeoAdmin.GeoCatSearchField);

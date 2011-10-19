@@ -5,7 +5,7 @@ Ext.onReady(function() {
     // required for accessing layer information
     GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
 
-    gsearch = new GeoAdmin.GeoCatSearch({
+    gsearch = new GeoAdmin.GeoCatSearchField({
         renderTo: "GeoCatSearch",
         width: 300,
         url: 'foo.json',
