@@ -156,7 +156,7 @@
             var layerId = 'ch.swisstopo.fixpunkte-agnes';
             var nodeId = tree.id + '_node_ch.swisstopo.fixpunkte-agnes';
             var link = tree.addtreeLayerLink(layerId, nodeId);
-            t.eq(link, '<div class="treelayericon-queryable"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'ch.swisstopo.fixpunkte-agnes\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes_cb" onclick="Ext.getCmp(\'foo\').getNodeById(\'' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>',
+            t.eq(link, '<div class="treelayericon-queryable"></div><div class="layerNodeTools">  <div class="treelayerpipe"></div>  <div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'ch.swisstopo.fixpunkte-agnes\');"></div>  <div class="treelayerpipe"></div>  <div class="checkboxOff" id="' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes_cb" onclick="Ext.getCmp(\'foo\').getNodeById(\'' + tree.id + '_node_ch.swisstopo.fixpunkte-agnes\').getUI().toggleCheck();"></div>  <div class="treelayerpipe"></div></div>',
                  'link is as expected');
 
             map.destroy();
