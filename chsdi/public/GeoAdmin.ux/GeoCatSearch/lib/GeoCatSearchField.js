@@ -63,13 +63,15 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
                 lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['uuid', 'name', 'layers', 'abstract', 'url', 'layertype']
+            fields: ['id', 'name', 'layers', 'abstract', 'url', 'layertype']
         });
         var view = new Ext.DataView({
             store: this.store,
             itemSelector:'div.x-results-view-item',
             overClass:'x-view-over',
             autoScroll: true,
+            loadingText: OpenLayers.i18n('geocatsearch.loading'),
+            emptyText: OpenLayers.i18n('geocatsearch.noresult'),
             tpl: new Ext.XTemplate(
                 '<tpl for="."><div class="x-results-view-item">',
                 '<p><b>{name}</b></p>',
@@ -149,7 +151,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
         var t = e.getTarget('.metadata');
         var r = dataview.getRecord(node);
         if(t) {
-            GeoAdmin.showGeoCatMetadataPopup(r.get('uuid'));
+            GeoAdmin.showGeoCatMetadataPopup(r.get('id'));
         }
 
         t = e.getTarget('.addmetadata');

@@ -70,6 +70,13 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      */
     stateEvents: ["afterselection"],
 
+    /** api: config[infoWindowClass]
+     * ``String``
+     * The info window class to be used when user clicks on 'i'.
+     * Defaults to 'GeoAdmin.BodSearchWindow'.
+     */
+    infoWindowClass: 'GeoAdmin.BodSearchWindow',
+
     layers: null,
 
     layerStore: null,
@@ -177,7 +184,14 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         } else {
             iconTypeClass = "treelayericon";
         }
-        var layerlink = '<div class="' + iconTypeClass + '"></div><div class="layerNodeTools"><div class="treelayerpipe"></div><div class="treelayerlink" onclick="GeoAdmin.BodSearchWindow.show(\'' + id + '\');"></div><div class="treelayerpipe"></div><div class="checkboxOff" id="' + nodeId + '_cb" onclick="Ext.getCmp(\'' + this.id + '\').getNodeById(\'' + nodeId + '\').getUI().toggleCheck();"></div><div class="treelayerpipe"></div></div>';
+        var layerlink = '<div class="' + iconTypeClass + '"></div>';
+        layerlink += '<div class="layerNodeTools">';
+        layerlink += '  <div class="treelayerpipe"></div>';
+        layerlink += '  <div class="treelayerlink" onclick="' + this.infoWindowClass + '.show(\'' + id + '\');"></div>';
+        layerlink += '  <div class="treelayerpipe"></div>';
+        layerlink += '  <div class="checkboxOff" id="' + nodeId + '_cb" onclick="Ext.getCmp(\'' + this.id + '\').getNodeById(\'' + nodeId + '\').getUI().toggleCheck();"></div>';
+        layerlink += '  <div class="treelayerpipe"></div>';
+        layerlink += '</div>';
         return layerlink;
     },
 

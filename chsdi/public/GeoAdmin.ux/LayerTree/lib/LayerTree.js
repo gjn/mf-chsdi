@@ -57,6 +57,13 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
      */
     showZoomToExtentAction: false,
 
+    /** api: config[infoWindowClass]
+     * ``String``
+     * The info window class to be used when user clicks on 'i'.
+     * Defaults to 'GeoAdmin.BodSearchWindow'
+     */
+    infoWindowClass: 'GeoAdmin.BodSearchWindow',
+
     // default settings
     rootVisible: false,
     autoScroll: true,
@@ -159,7 +166,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                     uiProvider: "ui",
                     checked: null,
                     actions: actions,
-                    component: this.createNodeComponent
+                    component: this.createNodeComponent.createDelegate(this)
                 }
             }
         };
@@ -316,10 +323,13 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                         if (typeof(node.layer.layername) == "undefined") {
                            alert(OpenLayers.i18n("Meta information are not available for this layer"));
                         } else {
-                           GeoAdmin.BodSearchWindow.show(node.layer.layername);
+                            // get a reference to the singleton (Function) 
+                            // using its name (String)
+                            var fn = Ext.namespace(this.infoWindowClass);
+                            fn.show(node.layer.layername);
                         }
-
-                    }
+                    },
+                    scope: this
                 })
             ]
         });
