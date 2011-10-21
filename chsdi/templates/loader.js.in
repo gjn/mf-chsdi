@@ -20,10 +20,20 @@
     var scriptSrc = null;    
     var theseScripts = document.getElementsByTagName("script");
     var thisScriptTag = theseScripts[ theseScripts.length - 1 ];
-    if (getParamValue("mode",thisScriptTag.src) && getParamValue("mode",thisScriptTag.src) == 'debug') {
-       scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-debug.js')}");
-    } else {
-       scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
+    scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
+    var mode = getParamValue("mode",thisScriptTag.src);
+    switch(mode)  {
+        case 'debug':
+            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-debug.js')}");
+            break;
+        case 'full':
+            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-full.js')}");
+            break;
+        case 'full-debug':
+            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-full-debug.js')}");
+            break;
+        default:
+            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
     }
     document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
 

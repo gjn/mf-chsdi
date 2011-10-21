@@ -237,6 +237,26 @@ Call it with:
    <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=debug"></script>
 
 In this case, the api code will be uncompressed and this simplifies the debugging process.
+
+Why do some cool functionalities from OpenLayers miss from api.js ?
+--------------------------------------------------------------------------
+
+In order to keep the *api.js* file small, only the subset of OpenLayers needed
+by GeoAdmin is included. Most missing features are exotic `OpenLayers.Format` and
+`OpenLayers.Layer` groups.
+
+If you really need the full OpenLayers library, you may use instead: 
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=full"></script>
+
+and, the same not compressed:
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=full-debug"></script>
+
    
 Migration from GeoAdmin API 1.0 to GeoAdmin API 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
