@@ -339,8 +339,21 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                 node.text = Array(level).join('') +
                             OpenLayers.i18n(node.text);
             }
-            for(var i=0, l=node.children.length; i<l; i++) {
+            // for some reason the nodes in the catalog tree may not correspond to
+            // any layer in GeoAdmin.layer.layers. Let's avoid errors if it's
+            // the case.
+            var nodesToRemove = [],
+                i, l, child;
+            for(i=0, l=node.children.length; i<l; i++) {
+                child = node.children[i];
+                if (child.layerId && !this.layers[child.layerId]) {
+                    nodesToRemove.push(i);
+                    continue;
+                }
                 this.adaptNodeConfig(node.children[i], level + 1, ids);
+            }
+            for (l=nodesToRemove.length, i=l; i>0; i--) {
+                node.children.splice(nodesToRemove[i - 1],1);
             }
         } else if (node.layerId == undefined) {
             // node has no children and doesn't reference a layer,

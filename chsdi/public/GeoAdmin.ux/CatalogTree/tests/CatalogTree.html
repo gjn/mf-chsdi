@@ -312,7 +312,12 @@
             tree.destroy();
        }
 
-        function createRootNode() {
+        function setUp() {
+            // temporarily create a new layers hash object
+            GeoAdmin.layers.layers = {
+                'id000': {},
+                'id001': {}
+            }
             return {
                 children: [{
                     text: '',
@@ -333,6 +338,10 @@
                 }]
             };
         }
+        function tearDown() {
+            GeoAdmin.layers.layers = null;
+            GeoAdmin.layers.init();
+        }
 
         function test_state_geoadmin_permalinkprovider(t) {
             t.plan(3);
@@ -351,8 +360,9 @@
                 return '';
             };
 
+            var root = setUp();
             var tree = new GeoAdmin.CatalogTree(
-                {renderTo: "tree", map: map, root: createRootNode()}
+                {renderTo: "tree", map: map, root: root}
             );
 
             // mocking getNodeText causes a js error in
@@ -379,6 +389,7 @@
                 Ext.state.Manager.setProvider(_sp);
             });
 
+            tearDown();
         }
 
         function test_setSelectedNode(t) {
@@ -391,9 +402,10 @@
                 return '';
             };
 
+            var root = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode(),
+                root: root,
                 map: map
             });
 
@@ -416,6 +428,7 @@
 
             cat.destroy();
             GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+            tearDown();
         }
 
         function test_setCheckNodes(t) {
@@ -428,9 +441,10 @@
                 return '';
             };
 
+            var root = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode(),
+                root: root,
                 map: map
             });
 
@@ -452,6 +466,7 @@
 
             cat.destroy();
             GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+            tearDown();
         }
 
         function test_selectNode_LT1(t) {
@@ -464,9 +479,10 @@
                 return '';
             };
 
+            var root = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode(),
+                root: root,
                 map: map
             });
 
@@ -527,6 +543,7 @@
 
             cat.destroy();
             GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+            tearDown();
         }
 
         function test_selectNode_LT2(t) {
@@ -539,9 +556,10 @@
                 return '';
             };
 
+            var root = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode(),
+                root: root,
                 map: map
             });
 
@@ -603,6 +621,7 @@
 
             cat.destroy();
             GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+            tearDown();
         }
 
         function test_selectNode_LT3(t) {
@@ -615,9 +634,10 @@
                 return '';
             };
 
+            var root = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: createRootNode,
+                root: root,
                 map: map
             });
 
@@ -679,6 +699,7 @@
 
             cat.destroy();
             GeoAdmin.CatalogTree.prototype.getNodeText = gnt;
+            tearDown();
         }
 
         function test_adaptNodeConfig(t) {
