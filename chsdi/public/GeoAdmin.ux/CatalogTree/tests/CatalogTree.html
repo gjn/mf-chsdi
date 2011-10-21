@@ -234,9 +234,11 @@
             }
 
             // 'Höhe'
-            // node does not currently exist
-            t.ok(tree.getNodeById(tree.id + '_LT2_8') == null,
-                 'LT2_8 does not exist');
+            n = tree.getNodeById(tree.id + '_LT2_8');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Höhe',
+                     'LT2_8 is Höhe');
+            }
 
             // 'Bodenbedeckung'
             n = tree.getNodeById(tree.id + '_LT2_9');
