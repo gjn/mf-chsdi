@@ -1235,6 +1235,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+             "ch.swisstopo.swissalti3d-reliefschattierung": {
+                name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
+                layertype: 'wmts',
+                timestamp: '20000101',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
              "ch.swisstopo-karto.skitouren": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
                 layertype: 'wmts',

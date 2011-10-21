@@ -341,6 +341,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.pixelkarte-pk25.metadata':'Landeskarte 1:25 000 (Blattübersicht)',
 	'ch.swisstopo.pixelkarte-pk50.metadata':'Landeskarte 1:50 000 (Blattübersicht)',
 	'ch.swisstopo.pixelkarte-pk500.metadata':'Landeskarte 1:500 000 (Blattübersicht)',
+	'ch.swisstopo.swissalti3d-reliefschattierung':'swissALTI3D Reliefschattierung',
 	'ch.swisstopo.swissimage':'Luftbild',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
 	'ch.swisstopo.vec200-building':'Gebäude VECTOR200',

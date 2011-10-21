@@ -341,6 +341,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.pixelkarte-pk25.metadata':'National Map 1:25 000 (Map Index)',
 	'ch.swisstopo.pixelkarte-pk50.metadata':'National Map 1:50 000 (Map Index)',
 	'ch.swisstopo.pixelkarte-pk500.metadata':'National Map 1:500 000 (Map Index)',
+	'ch.swisstopo.swissalti3d-reliefschattierung':'swissALTI3D Hillshade',
 	'ch.swisstopo.swissimage':'Aerial imagery',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html',
 	'ch.swisstopo.vec200-building':'Buildings VECTOR200',

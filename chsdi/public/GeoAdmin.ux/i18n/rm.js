@@ -337,6 +337,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.pixelkarte-pk25.metadata':'Charta naziunala 1:25000 (tab. dals fegls)',
 	'ch.swisstopo.pixelkarte-pk50.metadata':'Charta naziunala 1:50000 (tab. dals fegls)',
 	'ch.swisstopo.pixelkarte-pk500.metadata':'Charta naziunala 1:500000 (tab. dals fegls)',
+	'ch.swisstopo.swissalti3d-reliefschattierung':'swissALTI3D charta da reliev',
 	'ch.swisstopo.swissimage':'Fotografia or da l\'aria',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
 	'ch.swisstopo.vec200-building':'Edifizis VECTOR200',

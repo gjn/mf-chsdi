@@ -176,6 +176,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.laerm-strassenlaerm_nacht':"",
     'ch.bafu.wildruhezonen-jagdbanngebiete' :"",
     'ch.bafu.wege-wildruhezonen-jagdbanngebiete':"",
+    'ch.swisstopo.swissalti3d-reliefschattierung':"",
     'ch.swisstopo.vec25-primaerflaechen':"",
     'ch.swisstopo.vec25-anlagen':"",
     'ch.swisstopo.vec25-gewaessernetz':"",

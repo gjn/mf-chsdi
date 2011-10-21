@@ -341,6 +341,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.pixelkarte-pk25.metadata':'Carta nazionale 1:25000 (tav. dei fogli)',
 	'ch.swisstopo.pixelkarte-pk50.metadata':'Carta nazionale 1:50000 (tav. dei fogli)',
 	'ch.swisstopo.pixelkarte-pk500.metadata':'Carta nazionale 1:500000 (tav. dei fogli)',
+	'ch.swisstopo.swissalti3d-reliefschattierung':'swissALTI3D Hillshade',
 	'ch.swisstopo.swissimage':'Veduta aerea',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/it/home.html',
 	'ch.swisstopo.vec200-building':'Edifici VECTOR200',

@@ -518,7 +518,11 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             },
             {
                 text: 'Höhe',
-                hidden: true
+                  children: [
+                    {
+                        layerId: "ch.swisstopo.swissalti3d-reliefschattierung"
+                    }
+                ]
             },
             {
                 text: 'Bodenbedeckung',
