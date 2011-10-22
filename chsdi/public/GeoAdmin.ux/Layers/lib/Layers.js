@@ -129,7 +129,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 url: config.url || wmts_url,
                 style: "default",
                 matrixSet: "21781",
-                zoomOffset: 14,
                 formatSuffix: config.format && config.format.split('/')[1].toLowerCase(),
                 dimensions: ['TIME'],
                 params: {
@@ -147,15 +146,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
                 maxScale: config.maxScale,
-                minScale: config.minScale,
-                getMatrix: function() {
-                    // Support the fact that one zoom level is not used (zoom 24, resolution 1.5m)
-                    if (this.map.getZoom() > 9) {
-                        return {identifier: this.map.getZoom() + this.zoomOffset + 1};
-                    } else {
-                        return {identifier: this.map.getZoom() + this.zoomOffset};
-                    }
-                }
+                serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
+                minScale: config.minScale
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
@@ -186,7 +178,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: false,
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25]
             },
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),

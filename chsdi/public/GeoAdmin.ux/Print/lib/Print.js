@@ -406,8 +406,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 params: layer.params,
                 maxExtent: (layer.tileFullExtent != null) ? layer.tileFullExtent.toArray() : layer.maxExtent.toArray(),
                 matrixSet: layer.matrixSet,
-                zoomOffset: layer.zoomOffset,
-                resolutions: [650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5]
+                zoomOffset: 0,
+                resolutions: layer.serverResolutions
             });
         };
 

@@ -162,7 +162,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         OpenLayers.Util.applyDefaults(options, {
             maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
-            resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5],
+            resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25],
             layers: [this.aerial, this.vector]
         });
 
@@ -264,6 +264,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // layers
         var kmlShowWarning = false;
 
+
         if (state.layers) {
             for (var i = 0, len = state.layers.length; i < len; i++) {
                 var layer = state.layers[i];
@@ -273,6 +274,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     kmlShowWarning = true;
                 }
             }
+
             // MessageBox is asynchronous so we need to manage everything in the callback
             if (kmlShowWarning) {
                 Ext.MessageBox.show({
