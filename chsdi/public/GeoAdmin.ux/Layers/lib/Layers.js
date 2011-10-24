@@ -230,7 +230,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layeranme: 'ch.bfs.gebaeude_wohnungs_register',
                 timestamp: '20110509',
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.bfs",
                 queryable: false,
                 maxScale: 25001,
                 type: "point"
@@ -240,7 +240,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wms',
                 layers: 'ch.bfs.gebaeude_wohnungs_register',
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.bfs",
                 queryable: false,
                 minScale: 25001,
                 type: "point"
