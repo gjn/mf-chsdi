@@ -7,7 +7,7 @@
  */
 GeoAdmin.showGeoCatMetadataPopup = function(uuid) {
     new Ext.Window({
-        title: OpenLayers.i18n('geocatsearch.metadata'),
+        title: OpenLayers.i18n('Metadata'),
         layout: 'fit',
         maximizable: false,
         modal: true,

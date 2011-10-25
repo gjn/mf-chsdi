@@ -446,5 +446,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     '2 A4 portrait': "",
     '3 A3 landscape': "",
     '4 A3 portrait': "",
-    'mapFooter': ""
+    'mapFooter': "",
+    'No result': "",
+    'Metadata': ""
 });

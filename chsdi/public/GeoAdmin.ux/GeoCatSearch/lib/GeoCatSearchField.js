@@ -70,8 +70,8 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
             itemSelector:'div.x-results-view-item',
             overClass:'x-view-over',
             autoScroll: true,
-            loadingText: OpenLayers.i18n('geocatsearch.loading'),
-            emptyText: OpenLayers.i18n('geocatsearch.noresult'),
+            loadingText: OpenLayers.i18n('Loading...'),
+            emptyText: OpenLayers.i18n('No result'),
             tpl: new Ext.XTemplate(
                 '<tpl for="."><div class="x-results-view-item">',
                 '<p><b>{name}</b></p>',
@@ -102,7 +102,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
             }
         });
         var button = new Ext.Button({
-            text: OpenLayers.i18n('geocatsearch.search'),
+            text: OpenLayers.i18n('Search'),
             handler: function() {
                 this.searchGeoCat(searchField.getValue());
             },
