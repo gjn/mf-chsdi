@@ -27,7 +27,7 @@ OpenLayers.Layer.prototype.setZIndex = function (zIndex) {
 
 OpenLayers.Layer.prototype.getZIndex = function () {
     if (this.div) {
-        return this.div.style.zIndex
+        return this.div.style.zIndex;
     } else {
         return -1;
     }
