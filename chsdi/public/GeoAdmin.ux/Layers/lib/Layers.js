@@ -4,15 +4,18 @@
  * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Lang.js
  * @include OpenLayers/Projection.js
+ * @include OpenLayers/Format/WMSCapabilities/v1_1_1.js
+ * @include OpenLayers/Format/WMSCapabilities/v1_3_0.js
+ * @include OpenLayers/Format/WMTSCapabilities/v1_0_0.js
  *
  * @include Layers/lib/VoidLayer.js
  * @include Layers/lib/AggregateLayer.js
  */
 
 
-if (!window.GeoAdmin) {
-    window.GeoAdmin = {};
-}
+    if (!window.GeoAdmin) {
+        window.GeoAdmin = {};
+    }
 
 // Overides needed due to the addition of KML layers. The second couldn't be removed.
 OpenLayers.Layer.prototype.setZIndex = function (zIndex) {
@@ -35,15 +38,26 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     layers: null,
 
-    buildLayerByName: function(name, options) {
+    /** private: method[buildLayerByName]
+     *  :param name: ``String`` The layer identifier.
+     *  :param options: ``Object`` Options for the creation of the layer.
+     *  :param callback: ``Function`` Called when the layer is ready.
+     *
+     *  :return: ``OpenLayers.Layer`` The layer object. Will be undefined
+     *  if a GetCapabilities request is needed for that layer.
+     *
+     *  Build a layer object for the layer identified by ``name``. If the
+     *  config of that layer has ``capabilitiesNeeded`` set a GetCapabilities
+     *  request will be issued and the ``callback`` function will be called
+     *  when the layer is created. The ``callback`` function receives the
+     *  layer object as the first argument.
+     */
+    buildLayerByName: function(name, options, callback) {
 
-        var wmts_url = [
-            'http://wmts0.geo.admin.ch/',
-            'http://wmts1.geo.admin.ch/',
-            'http://wmts2.geo.admin.ch/',
-            'http://wmts3.geo.admin.ch/',
-            'http://wmts4.geo.admin.ch/'
-        ];
+        // callback is called when the layer is ready, which
+        // will occur after the execution of buildLayerByName
+        // if the "capabilitiedNeeded" is set in the layer
+        // config
 
         this.init();
 
@@ -52,6 +66,253 @@ GeoAdmin._Layers = OpenLayers.Class({
             // layer not found
             return null;
         }
+
+        var layer;
+
+        if (config.capabilitiesNeeded) {
+            // we need capabilities for that layer
+            var onLayerInfo = OpenLayers.Function.bind(function() {
+                if (callback) {
+                    layer = this.createLayer(name, config, options);
+                    callback(layer);
+                }
+            }, this);
+            this.getLayerInfo(config, onLayerInfo);
+        } else {
+            layer = this.createLayer(name, config, options);
+            if (callback) {
+                window.setTimeout(function() {
+                    callback(layer);
+                }, 0);
+            }
+            return layer;
+        }
+    },
+
+    /** private: method[getLayerInfo]
+     *  :param layer: ``Object`` or ``String`` The layer config
+     *  object or id of the layer for which information should
+     *  be obtained.
+     *
+     *  :param callback: ``Function`` Callback function called when
+     *  the layer info have been retrieved. The callback receives
+     *  the layer config.
+     *
+     *  This function makes a GetCapabilities request to the layer's
+     *  OGC server, and, as a result, sets information about the
+     *  layer in the layer layer object. In particular a
+     *  ``capabilities`` property is set in the layer layer,
+     *  which contains the entire set of capabilities associated
+     *  to that layer.
+     */
+    getLayerInfo: function(layer, callback) {
+        if (typeof layer === 'string') {
+            layer = this.layers[layer];
+        }
+        if (layer.capabilities) {
+            if (callback) {
+                callback(layer);
+            }
+        } else {
+            OpenLayers.Request.GET({
+                url: this.getCapabilitiesURL(layer),
+                success: function(request) {
+                    var data = request.responseXML;
+                    if (!data || !data.documentElement) {
+                        data = request.responseText;
+                    }
+                    var parser = this.getCapabilitiesParser(layer);
+                    var caps = parser.read(data);
+                    this.extendConfigFromCapabilities(layer, caps);
+                    if (callback) {
+                        callback(layer);
+                    }
+                },
+                scope: this
+            });
+        }
+    },
+
+    /** private: method[getCapabilitiesURL]
+     *  :param config: ``Object`` The layer config object.
+     *
+     *  :return: ``String`` The URL.
+     *
+     *  This function derives the GetCapabilities URL from a layer's
+     *  config. Only WMS layers are supported at this point. An
+     *  exception will be thrown if the layer's type isn't "wms".
+     */
+    getCapabilitiesURL: function(config) {
+        var url;
+        if (config.layertype === 'wms') {
+            url = OpenLayers.Util.urlAppend(
+                config.url, 'SERVICE=WMS&REQUEST=GetCapabilities');
+        } else if (config.layertype === 'wmts') {
+            url = config.url + '/1.0.0/WMTSCapabilities.xml';
+        } else {
+            throw new Error('GeoAdmin._Layers.getCapabilitiesURL ' +
+                            'only works for WMS and WMTS layers');
+        }
+        return url;
+    },
+
+    /** private: method[getCapabilitiesParser]
+     *  :param config: ``Object`` The layer config object.
+     *
+     *  :return: ``OpenLayers.Format.WMSCapabilities`` The parser.
+     *
+     *  This function creates a capabilities parser from a layer's
+     *  config object.
+     */
+    getCapabilitiesParser: function(config) {
+        var formatClass = OpenLayers.Format[
+            config.layertype.toUpperCase() + 'Capabilities'];
+        return formatClass !== undefined ?
+            new formatClass() : undefined;
+    },
+
+    /** private: method[extendConfigFromCapabilities]
+     *  :param config: ``Object`` The layer config object to extend.
+     *  :param capabilities: ``Object`` The capabilities object.
+     *
+     *  :return: ``Object`` The layer config object.
+     *
+     *  This functions extends a layer's config with attributes read
+     *  from a capabilities object. Works for WMS and WMTS layers.
+     */
+    extendConfigFromCapabilities: function(config, capabilities) {
+        var i, l, layer, identifier,
+        capability = capabilities.contents || capabilities.capability;
+        for (var i = 0, l = capability.layers.length; i < l; i++) {
+            layer = capability.layers[i];
+            identifier = layer.identifier || layer.name;
+            if (identifier === config.layers || identifier === config.layer) {
+                if (config.minScale === undefined) {
+                    config.minScale = layer.minScale;
+                }
+                if (config.maxScale === undefined) {
+                    config.maxScale = layer.maxScale;
+                }
+                if (config.extent === undefined) {
+                    config.extent = this.getExtent(layer);
+                }
+                if (config.format === undefined) {
+                    config.format = this.getImageFormat(layer);
+                }
+                if (config.timestamp === undefined) {
+                    config.timestamp = this.getTimestamp(layer);
+                }
+                if (config.legendURL === undefined) {
+                    config.legendURL = this.getLegendURL(layer);
+                }
+                if (config.matrixSet === undefined) {
+                    config.matrixSet = this.getMatrixSet(layer);
+                    if (config.matrixSet !== undefined) {
+                        var matrixSetDef = capability.tileMatrixSets[config.matrixSet];
+                        config.matrixIds = matrixSetDef ? matrixSetDef.matrixIds : undefined;
+                    }
+                }
+
+                config.capabilities = layer;
+                break;
+            }
+        }
+        return config;
+    },
+
+    /** private: method[getExtent]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``OpenLayers.Bounds`` The extent.
+     *
+     *  Read the layer extent from the layer's capabilities object.
+     */
+    getExtent: function(layer) {
+        if (layer.bbox && layer.bbox['EPSG:21781']) {
+            return OpenLayers.Bounds.fromArray(layer.bbox['EPSG:21781'].bbox);
+        }
+    },
+
+    /** private: method[getImageFormat]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``String`` The best mime type for requesting tiles.
+     */
+    getImageFormat: function(layer) {
+        var formats = layer.formats;
+        if (layer.opaque &&
+            OpenLayers.Util.indexOf(formats, "image/jpeg") > -1) {
+            return "image/jpeg";
+        }
+        if (OpenLayers.Util.indexOf(formats, "image/png") > -1) {
+            return "image/png";
+        }
+        if (OpenLayers.Util.indexOf(formats, "image/png; mode=24bit") > -1) {
+            return "image/png; mode=24bit";
+        }
+        if (OpenLayers.Util.indexOf(formats, "image/gif") > -1) {
+            return "image/gif";
+        }
+        return formats[0];
+    },
+
+    /** private: method[getTimestamp]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``String`` The timestamp value.
+     *
+     *  Read the timestamp value from a WMTS layer's capabilities. The
+     *  default value for the "time" dimension is returned.
+     */
+    getTimestamp: function(layer) {
+        if (layer.dimensions) {
+            for (var i = 0, l = layer.dimensions.length; i < l; i++) {
+                if (layer.dimensions[i].identifier.toLowerCase() === 'time') {
+                    return layer.dimensions[i]['default'];
+                }
+            }
+        }
+    },
+
+    /** private: method[getLegendURL]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``String`` The legend URL.
+     *
+     *  Read the legend URM from the layer's capabilities.
+     */
+    getLegendURL: function(layer) {
+        var legend = layer.styles && layer.styles.length > 0 &&
+            layer.styles[0].legend;
+        if (legend) {
+            return legend.href;
+        }
+    },
+
+    /** private: method[getMatrixSet]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``String`` The matrix set identifier
+     *
+     *  Read the matrix set from the layer's capabilities.
+     */
+    getMatrixSet: function(layer) {
+        if (layer.tileMatrixSetLinks && layer.tileMatrixSetLinks.length === 1) {
+            return layer.tileMatrixSetLinks[0].tileMatrixSet;
+        }
+    },
+
+    /** private: method[createLayer]
+     *  :param name: ``String``
+     *  :param config: ``Object``
+     *  :param options: ``Object``
+     *  :return: ``OpenLayers.Map``
+     *
+     *  Create a layer.
+     */
+    createLayer: function(name, config, options) {
+        var wmts_url = [
+            'http://wmts0.geo.admin.ch/',
+            'http://wmts1.geo.admin.ch/',
+            'http://wmts2.geo.admin.ch/',
+            'http://wmts3.geo.admin.ch/',
+            'http://wmts4.geo.admin.ch/'
+        ];
 
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
@@ -98,8 +359,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             }, options);
             return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
                 layers: config.layers,
-                format: config.format},
-                    layer_options_wms);
+                format: config.format
+            }, layer_options_wms);
         } else if (config.layertype === "aggregate") {
             var sub_layers = [];
             var i;
@@ -128,7 +389,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 requestEncoding: "REST",
                 url: config.url || wmts_url,
                 style: "default",
-                matrixSet: "21781",
+                matrixSet: config.matrixSet || "21781",
+                matrixIds: config.matrixIds,
                 formatSuffix: config.format && config.format.split('/')[1].toLowerCase(),
                 dimensions: ['TIME'],
                 params: {
@@ -1219,7 +1481,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-             "ch.swisstopo-karto.hangneigung": {
+            "ch.swisstopo-karto.hangneigung": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.hangneigung"),
                 layertype: 'wmts',
                 timestamp: '20081107',
@@ -1228,7 +1490,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-             "ch.swisstopo.swissalti3d-reliefschattierung": {
+            "ch.swisstopo.swissalti3d-reliefschattierung": {
                 name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
                 layertype: 'wmts',
                 timestamp: '20000101',
@@ -1237,7 +1499,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-             "ch.swisstopo-karto.skitouren": {
+            "ch.swisstopo-karto.skitouren": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
                 layertype: 'wmts',
                 timestamp: '20101101',
@@ -1255,61 +1517,62 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            /*
-             "ch.swisstopo.pixelkarte-pk25.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
-             layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },
-             "ch.swisstopo.pixelkarte-pk50.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
-             layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },
-             "ch.swisstopo.pixelkarte-pk100.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
-             layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },
-             "ch.swisstopo.pixelkarte-pk200.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
-             layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },
-             "ch.swisstopo.pixelkarte-pk500.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
-             layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },*/
-             "ch.swisstopo.images-swissimage.metadata": {
-             name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
-             layers: ["ch.swisstopo.images-swissimage.metadata"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.swisstopo",
-             queryable: true
-             },
+/*
+            "ch.swisstopo.pixelkarte-pk25.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk50.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk50.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk50.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk100.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk200.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk200.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk200.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-pk500.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk500.metadata"),
+                layers: ["ch.swisstopo.pixelkarte-pk500.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+*/
+            "ch.swisstopo.images-swissimage.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
+                layers: ["ch.swisstopo.images-swissimage.metadata"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.astra.ausnahmetransportrouten": {
                 name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
                 layertype: 'wmts',
@@ -1454,7 +1717,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
                 queryable: true
-             },
+            },
             "ch.vbs.territorialregionen": {
                 name: OpenLayers.i18n("ch.vbs.territorialregionen"),
                 layertype: 'wmts',
@@ -1491,7 +1754,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden"),
                 layertype: 'wmts',
@@ -1500,7 +1763,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.unesco-weltnaturerbe": {
                 name: OpenLayers.i18n("ch.bafu.unesco-weltnaturerbe"),
                 layertype: 'wmts',
@@ -1509,7 +1772,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.fischerei-krebspest": {
                 name: OpenLayers.i18n("ch.bafu.fischerei-krebspest"),
                 layertype: 'wmts',
@@ -1518,7 +1781,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.fischerei-proliferative_nierenkrankheit": {
                 name: OpenLayers.i18n("ch.bafu.fischerei-proliferative_nierenkrankheit"),
                 layertype: 'wmts',
@@ -1527,7 +1790,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.flora-schwingrasen": {
                 name: OpenLayers.i18n("ch.bafu.flora-schwingrasen"),
                 layertype: 'wmts',
@@ -1536,7 +1799,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.fauna-wildtierkorridor_national": {
                 name: OpenLayers.i18n("bafu.fauna-wildtierkorridor_national"),
                 layertype: 'wmts',
@@ -1545,7 +1808,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.fauna-vernetzungsachsen_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-vernetzungsachsen_national"),
                 layertype: 'wmts',
@@ -1554,7 +1817,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.biogeographische_regionen": {
                 name: OpenLayers.i18n("ch.bafu.biogeographische_regionen"),
                 layertype: 'wmts',
@@ -1563,7 +1826,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.schutzgebiete-biosphaerenreservate": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-biosphaerenreservate"),
                 layertype: 'wmts',
@@ -1572,7 +1835,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.flora-weltensutter_atlas": {
                 name: OpenLayers.i18n("ch.bafu.flora-weltensutter_atlas"),
                 layertype: 'wmts',
@@ -1581,7 +1844,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.flora-verbreitungskarten": {
                 name: OpenLayers.i18n("ch.bafu.flora-verbreitungskarten"),
                 layertype: 'wmts',
@@ -1590,7 +1853,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.waldschadenflaechen-lothar": {
                 name: OpenLayers.i18n("ch.bafu.waldschadenflaechen-lothar"),
                 layertype: 'wmts',
@@ -1599,7 +1862,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.waldschadenflaechen-vivian": {
                 name: OpenLayers.i18n("ch.bafu.waldschadenflaechen-vivian"),
                 layertype: 'wmts',
@@ -1608,7 +1871,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.landesforstinventar-baumarten": {
                 name: OpenLayers.i18n("ch.bafu.landesforstinventar-baumarten"),
                 layertype: 'wmts',
@@ -1617,7 +1880,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.landesforstinventar-waldanteil": {
                 name: OpenLayers.i18n("ch.bafu.landesforstinventar-waldanteil"),
                 layertype: 'wmts',
@@ -1626,7 +1889,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.landesforstinventar-totholz": {
                 name: OpenLayers.i18n("ch.bafu.landesforstinventar-totholz"),
                 layertype: 'wmts',
@@ -1635,7 +1898,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.gefahren-historische_erdbeben": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-historische_erdbeben"),
                 layertype: 'wmts',
@@ -1644,7 +1907,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.gefahren-baugrundklassen": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-baugrundklassen"),
                 layertype: 'wmts',
@@ -1653,7 +1916,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.gefahren-mikrozonierung": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-mikrozonierung"),
                 layertype: 'wmts',
@@ -1662,7 +1925,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.gefahren-spektral": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-spektral"),
                 layertype: 'wmts',
@@ -1671,7 +1934,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true
-             },
+            },
             "ch.bafu.aquaprotect_050": {
                 name: OpenLayers.i18n("ch.bafu.aquaprotect_050"),
                 layertype: 'wmts',
@@ -1680,7 +1943,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.aquaprotect_100": {
                 name: OpenLayers.i18n("ch.bafu.aquaprotect_100"),
                 layertype: 'wmts',
@@ -1689,7 +1952,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.aquaprotect_250": {
                 name: OpenLayers.i18n("ch.bafu.aquaprotect_250"),
                 layertype: 'wmts',
@@ -1698,7 +1961,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             },
+            },
             "ch.bafu.aquaprotect_500": {
                 name: OpenLayers.i18n("ch.bafu.aquaprotect_500"),
                 layertype: 'wmts',
@@ -1707,7 +1970,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
-             }
+            }
         };
         return this.layers;
     }

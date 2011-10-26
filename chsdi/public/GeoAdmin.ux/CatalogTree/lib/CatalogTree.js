@@ -237,9 +237,15 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      *  :param nodeId: ``String`` the node id.
      */
     addLayer: function(nodeId) {
+        var callback = OpenLayers.Function.bind(function(layer) {
+            this.layerStore.loadData([layer])
+        }, this);
         var layerId = this.getLayerIdFromNodeId(nodeId);
-        var layer = GeoAdmin.layers.buildLayerByName(layerId);
-        this.layerStore.loadData([layer], /* append */ true);
+        var layer = GeoAdmin.layers.buildLayerByName(layerId, {},
+            OpenLayers.Function.bind(function(layer) {
+                this.layerStore.loadData([layer], /* append */ true);
+            }, this)
+        );
     },
 
     /** private: method[destroyLayer]
@@ -249,7 +255,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         var layerId = this.getLayerIdFromNodeId(nodeId);
         var map = this.layerStore.map;
         var layer = map.getLayerByLayerName(layerId);
-        layer.destroy();
+        if (layer) {
+            layer.destroy();
+        }
     },
 
     setCheckNodes: function(map) {
