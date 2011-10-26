@@ -182,7 +182,7 @@ GeoAdmin._Layers = OpenLayers.Class({
      */
     extendConfigFromCapabilities: function(config, capabilities) {
         var i, l, layer, identifier,
-        capability = capabilities.contents || capabilities.capability;
+            capability = capabilities.contents || capabilities.capability;
         for (var i = 0, l = capability.layers.length; i < l; i++) {
             layer = capability.layers[i];
             identifier = layer.identifier || layer.name;
@@ -212,12 +212,28 @@ GeoAdmin._Layers = OpenLayers.Class({
                         config.matrixIds = matrixSetDef ? matrixSetDef.matrixIds : undefined;
                     }
                 }
-
+                if (config.dimensions === undefined) {
+                    config.dimensions = this.getDimensions(layer);
+                }
+                
                 config.capabilities = layer;
                 break;
             }
         }
         return config;
+    },
+
+    /** private: method[getDimensions]
+     *  :param layer: ``Object`` The layer's capabilities object.
+     *  :return: ``Array`` The dimensions names (upper case) or
+     *           undefined if no dimensions are present.
+     */
+    getDimensions: function(layer) {
+        var dimensions = [];
+        for (var i = 0, len = layer.dimensions.length; i < len; i++) {
+            dimensions.push(layer.dimensions[i].identifier.toUpperCase());
+        }
+        return dimensions;
     },
 
     /** private: method[getExtent]
@@ -279,7 +295,7 @@ GeoAdmin._Layers = OpenLayers.Class({
      */
     getLegendURL: function(layer) {
         var legend = layer.styles && layer.styles.length > 0 &&
-            layer.styles[0].legend;
+                     layer.styles[0].legend;
         if (legend) {
             return legend.href;
         }
@@ -392,7 +408,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 matrixSet: config.matrixSet || "21781",
                 matrixIds: config.matrixIds,
                 formatSuffix: config.format && config.format.split('/')[1].toLowerCase(),
-                dimensions: ['TIME'],
+                dimensions: config.dimensions !== undefined ? config.dimensions : ['TIME'],
                 params: {
                     'time': config.timestamp
                 },
