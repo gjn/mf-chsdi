@@ -63,7 +63,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
                 lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['id', 'name', 'layers', 'abstract', 'url', 'layertype']
+            fields: ['id', 'name', 'layers', 'layer', 'abstract', 'url', 'layertype']
         });
         var view = new Ext.DataView({
             store: this.store,
