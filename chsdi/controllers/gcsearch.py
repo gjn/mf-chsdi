@@ -97,7 +97,7 @@ class GcsearchController(BaseController):
                          data_provider=data_provider,
                          data_provider_link=data_provider_link,
                          abstract=abstract,
-                         resolution_distance=resolution_distance,
+                         resolution_ditance=resolution_distance,
                          equivalent_scales=equivalent_scales,
                          web_links=web_links,
                          thematic_geoportals=thematic_geoportals,
