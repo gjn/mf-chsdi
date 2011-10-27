@@ -165,6 +165,8 @@ class GcsearchController(BaseController):
                 path = 'gmd:identificationInfo/gmd:MD_DataIdentification/' \
                        'gmd:abstract/'
                 abstract = self._read_localised_string(record.xml, path)
+        if abstract:
+            abstract.replace('\n', '<br>')
         return abstract
 
     def _read_layer_resolution_distance(self, record):
