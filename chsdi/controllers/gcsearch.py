@@ -78,6 +78,15 @@ class GcsearchController(BaseController):
                     self._read_layer_resolution_distance(record)
             equivalent_scales = \
                     self._read_layer_equivalent_scales(record)
+            web_links = self._read_layer_online(record, 'Webaddresse (URL)')
+            thematic_geoportals = \
+                    self._read_layer_online(record, 'specialised geoportal')
+            downloads = \
+                    self._read_layer_online(record, 'Webaddresse zum Download')
+            date = self._read_layer_date(record)
+            legal_constraints = self._read_legal_constraints(record)
+            copyright, copyright_link = \
+                    self._read_layer_copyright(record)
 
             # create a dict with the properties and append
             # it to the results list
@@ -89,7 +98,14 @@ class GcsearchController(BaseController):
                          data_provider_link=data_provider_link,
                          abstract=abstract,
                          resolution_ditance=resolution_distance,
-                         equivalent_scales=equivalent_scales)
+                         equivalent_scales=equivalent_scales,
+                         web_links=web_links,
+                         thematic_geoportals=thematic_geoportals,
+                         downloads=downloads,
+                         date=date,
+                         legal_constraints=legal_constraints,
+                         copyright=copyright,
+                         copyright_link=copyright_link)
             results['results'].append(layer);
 
         return results
@@ -134,60 +150,10 @@ class GcsearchController(BaseController):
         return layer_extent
 
     def _read_layer_data_provider(self, record):
-        data_provider_name = None
-        data_provider_link = None
+        return self._read_point_of_contact(record, ('pointOfContact', 'owner'))
 
-        if (hasattr(record, 'identification') and
-                hasattr(record.identification, 'contact') and
-                len(record.identification.contact) > 0):
-            data_provider = None
-            if record.language == supported_langs[self._lang]:
-                for contact in record.identification.contact:
-                    # we want the point of contact, or the owner if
-                    # there's no point of contact
-                    if contact.role == 'pointOfContact':
-                        data_provider = contact
-                        break
-                    if contact.role == 'owner':
-                        data_provider = contact
-                if data_provider:
-                    data_provider_name = data_provider.organization or \
-                                         data_provider.name
-            else:
-                data_provider_idx = None
-                path = 'gmd:contact/gmd:CI_ResponsibleParty'
-                record_elt = etree.ElementTree.fromstring(record.xml)
-                for idx, contact in enumerate(record_elt.findall(
-                                owslib_util.nspath_eval(path, namespaces))):
-                    role_path = 'gmd:role/gmd:CI_RoleCode'
-                    role = _testCodeListValue(
-                                contact.find(
-                                    owslib_util.nspath_eval(role_path,
-                                                            namespaces)))
-                    if role == 'pointOfContact':
-                        data_provider = contact
-                        data_provider_idx = idx
-                        break
-                    if role == 'owner':
-                        data_provider = contact
-                        data_provider_idx = idx
-                if data_provider:
-                    organ_name = self._read_localised_string(
-                                    data_provider, 'gmd:organisationName/')
-                    if organ_name:
-                        data_provider_name = organ_name
-                    else:
-                        indiv_name = self._read_localised_string(
-                                        data_provider, 'gmd:individualName/')
-                        data_provider_name = indiv_name
-                    # get the corresponding CI_ResponsibleParty object
-                    data_provider = record.identification.contact[
-                                                    data_provider_idx]
-            if (hasattr(data_provider, 'onlineresource') and
-                hasattr(data_provider.onlineresource, 'url')):
-                data_provider_link = data_provider.onlineresource.url
-
-        return (data_provider_name, data_provider_link)
+    def _read_layer_copyright(self, record):
+        return self._read_point_of_contact(record, ('owner'))
 
     def _read_layer_abstract(self, record):
         abstract = None
@@ -210,15 +176,96 @@ class GcsearchController(BaseController):
         return resolution_distance
 
     def _read_layer_equivalent_scales(self, record):
-        equivalent_scales = None
+        equivalent_scales = []
         if (hasattr(record, 'identification') and
-            hasattr(record.identification, 'denominators') and
-            len(record.identification.denominators) > 0):
-            equivalent_scales = record.identification.denominators[0]
-            if len(record.identification.denominators) > 1:
-                equivalent_scales = equivalent_scales + ', ' + \
-                                    record.identification.denominators[1]
+                hasattr(record.identification, 'denominators')):
+            equivalent_scales = record.identification.denominators[0:2]
         return equivalent_scales
+
+    def _read_layer_online(self, record, protocol):
+        urls = []
+        if (hasattr(record, 'distribution') and
+                hasattr(record.distribution, 'online')):
+            online = record.distribution.online
+            urls = [o.url for o in online if o.protocol == protocol]
+        return urls
+
+    def _read_layer_date(self, record):
+        # FIXME: the most recent date should be returned!
+        date = None
+        if (hasattr(record, 'identification') and
+                hasattr(record.identification, 'date') and
+                len(record.identification.date) > 0):
+            date = record.identification.date[0].date
+        return date
+
+    def _read_legal_constraints(self, record):
+        legal_constraints = []
+        if hasattr(record, 'identification'):
+            if hasattr(record.identification, 'useconstraints'):
+                legal_constraints.extend(
+                        record.identification.useconstraints)
+            if hasattr(record.identification, 'otherconstraints'):
+                legal_constraints.extend(
+                        record.identification.otherconstraints)
+        return legal_constraints
+
+    def _read_point_of_contact(self, record, roles):
+        contact_name = None
+        contact_link = None
+
+        if (hasattr(record, 'identification') and
+                hasattr(record.identification, 'contact') and
+                len(record.identification.contact) > 0):
+            contact = None
+            if record.language == supported_langs[self._lang]:
+                for c in record.identification.contact:
+                    if not c.role in roles:
+                        continue
+                    if (contact is None or
+                            roles.index(c.role) < roles.index(contact.role)):
+                        contact = c
+                    if roles.index(c.role) == 0:
+                        break
+                if contact:
+                    contact_name = contact.organization or \
+                                         contact.name
+            else:
+                contact_idx = None
+                path = 'gmd:contact/gmd:CI_ResponsibleParty'
+                record_elt = etree.ElementTree.fromstring(record.xml)
+                for i, c in enumerate(record_elt.findall(
+                                owslib_util.nspath_eval(path, namespaces))):
+                    role_path = 'gmd:role/gmd:CI_RoleCode'
+                    role = _testCodeListValue(
+                                c.find(
+                                    owslib_util.nspath_eval(role_path,
+                                                            namespaces)))
+                    if not role in roles:
+                        continue
+                    if (contact is None or
+                            roles.index(c.role) < roles.index(contact.role)):
+                        contact = c
+                        contact_idx = i
+                    if roles.index(role) == 0:
+                        break
+                if contact:
+                    organ_name = self._read_localised_string(
+                                    contact, 'gmd:organisationName/')
+                    if organ_name:
+                        contact_name = organ_name
+                    else:
+                        indiv_name = self._read_localised_string(
+                                        contact, 'gmd:individualName/')
+                        contact_name = indiv_name
+                    # get the corresponding CI_ResponsibleParty object
+                    contact = record.identification.contact[
+                                                    contact_idx]
+            if (hasattr(contact, 'onlineresource') and
+                hasattr(contact.onlineresource, 'url')):
+                contact_link = contact.onlineresource.url
+
+        return (contact_name, contact_link)
 
     def _read_localised_string(self, node, path):
         ''' Read the localised string for the given path. '''

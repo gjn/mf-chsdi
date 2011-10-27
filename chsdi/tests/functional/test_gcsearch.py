@@ -56,6 +56,10 @@ class TestGcsearchController(TestController):
         assert_prop('data_provider_link')
         assert_prop('abstract')
         assert_prop('resolution_distance', 'equivalent_scales')
+        assert_prop('date')
+        assert_prop('legal_constraints')
+        assert_prop('copyright')
+        assert_prop('copyright_link')
 
     def test_response_record_property_existence_lang_fr(self):
         response = self.app.get(url(controller='gcsearch', action='search',
@@ -81,3 +85,7 @@ class TestGcsearchController(TestController):
         assert_prop('data_provider_link')
         assert_prop('abstract')
         assert_prop('resolution_distance', 'equivalent_scales')
+        assert_prop('date')
+        assert_prop('legal_constraints')
+        assert_prop('copyright')
+        assert_prop('copyright_link')
