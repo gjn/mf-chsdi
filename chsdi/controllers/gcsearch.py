@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import logging
-from mapfish.decorators import _jsonify
 
 from xml import etree
+
+from urlparse import urlparse
 
 from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
@@ -10,6 +11,8 @@ from pylons.controllers.util import abort
 from owslib import util as owslib_util
 from owslib.csw import CatalogueServiceWeb, namespaces
 from owslib.iso import _testCodeListValue
+
+from mapfish.decorators import _jsonify
 
 from chsdi.lib.base import BaseController
 
@@ -63,10 +66,36 @@ class GcsearchController(BaseController):
             # verify that the record is associated with a supported
             # language, and skip it if it's not
             if not record.language in supported_langs.values():
-                log.info('record language not supported, skip record')
+                log.debug('record language not supported, skip record')
                 continue
 
-            # read record properties
+            # read layer type, layer name, and layer url first. If the record
+            # does not represent a supported OGC resource, or if it doesn't
+            # have a valid name and url, we skip it
+            online_resource = self._read_layer_ogc_online_resource(record)
+            
+            # FIXME: remove the following when GeoCat is fixed!
+            if online_resource:
+                layer_type = online_resource[0]
+                if layer_type == 'wmts':
+                    url = 'http://wmts.geo.admin.ch'
+                else:
+                    url = 'http://wms.geo.admin.ch'
+                online_resource = (layer_type, online_resource[1],
+                                   online_resource[2], url)
+
+            if online_resource is None or None in online_resource:
+                log.debug('record does not represent a supported OGC ' \
+                          'resource, skip record')
+                continue
+            layer_type, layer_param, layer_name, layer_url = online_resource
+            parsed_url = urlparse(layer_url)
+            if parsed_url.scheme is None or \
+                    not parsed_url.scheme.startswith('http'):
+                log.debug('layer url scheme is not HTTP, skip record')
+                continue
+
+            # read other properties
             id = record.identifier
             name = self._read_layer_name(record)
             alternate_title = self._read_layer_alternate_title(record)
@@ -92,6 +121,8 @@ class GcsearchController(BaseController):
             # it to the results list
             layer = dict(id=id,
                          name=name,
+                         layertype=layer_type,
+                         url=layer_url,
                          alternate_title=alternate_title,
                          extent=extent,
                          data_provider=data_provider,
@@ -106,6 +137,7 @@ class GcsearchController(BaseController):
                          legal_constraints=legal_constraints,
                          copyright=copyright,
                          copyright_link=copyright_link)
+            layer[layer_param] = layer_name
             results['results'].append(layer);
 
         return results
@@ -191,6 +223,24 @@ class GcsearchController(BaseController):
             online = record.distribution.online
             urls = [o.url for o in online if o.protocol == protocol]
         return urls
+
+    def _read_layer_ogc_online_resource(self, record):
+        ogc_online_resource = None
+        if (hasattr(record, 'distribution') and
+                hasattr(record.distribution, 'online')):
+            online = record.distribution.online
+            for o in online:
+                if not o.protocol:
+                    continue
+                if o.protocol.startswith('OGC:WMTS'):
+                    ogc_online_resource = \
+                            ('wmts', 'layer', o.name, o.url)
+                    break
+                if o.protocol.startswith('OGC:WMS'):
+                    ogc_online_resource = \
+                            ('wms', 'layers', o.name, o.url)
+                    break
+        return ogc_online_resource
 
     def _read_layer_date(self, record):
         # FIXME: the most recent date should be returned!
