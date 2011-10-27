@@ -42,9 +42,11 @@ class TestGcsearchController(TestController):
 
         result = results['results'][0]
 
-        def assert_prop(prop):
-            assert prop in result
-            assert result[prop] is not None
+        def assert_prop(*args):
+            assertion = None
+            for prop in args:
+                a = prop in result and result[prop] is not None
+                assertion = a if assertion is None else assertion or a
 
         assert_prop('id')
         assert_prop('name')
@@ -53,6 +55,7 @@ class TestGcsearchController(TestController):
         assert_prop('data_provider')
         assert_prop('data_provider_link')
         assert_prop('abstract')
+        assert_prop('resolution_distance', 'equivalent_scales')
 
     def test_response_record_property_existence_lang_fr(self):
         response = self.app.get(url(controller='gcsearch', action='search',
@@ -64,9 +67,11 @@ class TestGcsearchController(TestController):
 
         result = results['results'][0]
 
-        def assert_prop(prop):
-            assert prop in result
-            assert result[prop] is not None
+        def assert_prop(*args):
+            assertion = None
+            for prop in args:
+                a = prop in result and result[prop] is not None
+                assertion = a if assertion is None else assertion or a
 
         assert_prop('id')
         assert_prop('name')
@@ -74,3 +79,5 @@ class TestGcsearchController(TestController):
         assert_prop('extent')
         assert_prop('data_provider')
         assert_prop('data_provider_link')
+        assert_prop('abstract')
+        assert_prop('resolution_distance', 'equivalent_scales')

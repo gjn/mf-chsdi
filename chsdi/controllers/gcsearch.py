@@ -74,6 +74,10 @@ class GcsearchController(BaseController):
             data_provider, data_provider_link = \
                     self._read_layer_data_provider(record)
             abstract = self._read_layer_abstract(record)
+            resolution_distance = \
+                    self._read_layer_resolution_distance(record)
+            equivalent_scales = \
+                    self._read_layer_equivalent_scales(record)
 
             # create a dict with the properties and append
             # it to the results list
@@ -83,7 +87,9 @@ class GcsearchController(BaseController):
                          extent=extent,
                          data_provider=data_provider,
                          data_provider_link=data_provider_link,
-                         abstract=abstract)
+                         abstract=abstract,
+                         resolution_ditance=resolution_distance,
+                         equivalent_scales=equivalent_scales)
             results['results'].append(layer);
 
         return results
@@ -185,11 +191,34 @@ class GcsearchController(BaseController):
 
     def _read_layer_abstract(self, record):
         abstract = None
-        if (record.language == supported_langs[self._lang] and
-            hasattr(record, 'identification') and
+        if (hasattr(record, 'identification') and
             hasattr(record.identification, 'abstract')):
-            abstract = record.identification.abstract
+            if record.language == supported_langs[self._lang]:
+                abstract = record.identification.abstract
+            else:
+                path = 'gmd:identificationInfo/gmd:MD_DataIdentification/' \
+                       'gmd:abstract/'
+                abstract = self._read_localised_string(record.xml, path)
         return abstract
+
+    def _read_layer_resolution_distance(self, record):
+        resolution_distance = None
+        if (hasattr(record, 'identification') and
+            hasattr(record.identification, 'distance') and
+            len(record.identification.distance) > 0):
+            resolution_distance = record.identification.distance[0]
+        return resolution_distance
+
+    def _read_layer_equivalent_scales(self, record):
+        equivalent_scales = None
+        if (hasattr(record, 'identification') and
+            hasattr(record.identification, 'denominators') and
+            len(record.identification.denominators) > 0):
+            equivalent_scales = record.identification.denominators[0]
+            if len(record.identification.denominators) > 1:
+                equivalent_scales = equivalent_scales + ', ' + \
+                                    record.identification.denominators[1]
+        return equivalent_scales
 
     def _read_localised_string(self, node, path):
         ''' Read the localised string for the given path. '''
