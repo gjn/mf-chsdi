@@ -1,7 +1,7 @@
 
 from chsdi.tests import *
 
-keyword = 'water'
+keyword = 'e-geo.ch geoportal'
 
 class TestGcsearchController(TestController):
 
@@ -34,7 +34,7 @@ class TestGcsearchController(TestController):
 
     def test_response_record_property_existence(self):
         response = self.app.get(url(controller='gcsearch', action='search',
-                                    keyword=keyword, lang='de'))
+                                    keyword=keyword, limit=1, lang='de'))
         from simplejson import loads
         results = loads(response.body)
 
@@ -63,7 +63,7 @@ class TestGcsearchController(TestController):
 
     def test_response_record_property_existence_lang_fr(self):
         response = self.app.get(url(controller='gcsearch', action='search',
-                                    keyword=keyword, lang='fr'))
+                                    keyword=keyword, limit=1, lang='fr'))
         from simplejson import loads
         results = loads(response.body)
 

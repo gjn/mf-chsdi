@@ -15,8 +15,8 @@ from chsdi.lib.base import BaseController
 
 log = logging.getLogger(__name__)
 
-#geocat_url = 'http://www.geocat.ch/geonetwork/srv/eng/csw'
-geocat_url = 'http://tc-geocat0i.bgdi.admin.ch/geonetwork/srv/fra/csw'
+geocat_url = 'http://www.geocat.ch/geonetwork/srv/eng/csw'
+#geocat_url = 'http://tc-geocat0i.bgdi.admin.ch/geonetwork/srv/fra/csw'
 
 supported_langs  = dict(fr='fra', en='eng', de='deu')
 
@@ -39,7 +39,7 @@ class GcsearchController(BaseController):
         except ValueError:
             abort(400, 'limit param cannot be parsed to an integer')
 
-        csw = CatalogueServiceWeb(geocat_url)
+        csw = CatalogueServiceWeb(geocat_url, timeout=60)
         cql = "keyword LIKE '%" + keyword + "%'"
 
         query = request.params.get('query')
