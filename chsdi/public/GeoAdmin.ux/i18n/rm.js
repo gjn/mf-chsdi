@@ -138,7 +138,7 @@ OpenLayers.Lang.rm= {
 	'No':'Na',
 	'No email provided':'Betg inditgà il e-mail',
 	'No feedback provided':'Betg dà ina reacziun',
-	'No result':'Begt resultat',
+	'No result':'Betg resultat',
 	'No specific handler added to show the layer search':'I n\'è avant maun nagin "handler" specific per mussar la tschertga da temas',
 	'No specific handler added to show the layer selection':'I n\'è avant maun nagin "handler" specific per mussar la selecziun da temas',
 	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'I n\'è avant maun nagin "handler" specific per mussar la charta <br> Duvrai il parameter "goToMapHandler"',
