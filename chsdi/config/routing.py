@@ -27,6 +27,7 @@ def make_map(config):
     map.connect('/loader.js', controller='entry', action='loader')
     map.connect('/swisssearch', controller='swisssearch', action='index')
     map.connect('/swisssearch/geocoding', controller='swisssearch', action='index')
+    map.connect('/geocatsearch', controller='gcsearch', action='search')
     map.connect("/feature/search",controller="feature", action="search")
     map.connect("/feature/bbox",controller="feature", action="bbox")
     map.connect("/feature/geometry",controller="feature", action="geometry")
