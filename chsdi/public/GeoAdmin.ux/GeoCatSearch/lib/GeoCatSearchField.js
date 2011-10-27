@@ -60,7 +60,8 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
                 autoAbort: true
             }),
             baseParams: {
-                lang: OpenLayers.Lang.getCode()
+                lang: OpenLayers.Lang.getCode(),
+                keyword: 'e-geo.ch geoportal'
             },
             root: 'results',
             fields: ['id', 'name', 'layers', 'layer', 'abstract', 'url', 'layertype']
@@ -124,15 +125,15 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
     },
 
     /** private: method[searchGeoCat]
-     *  :param keyword: ``String`` The text the user is searching for. 
+     *  :param text: ``String`` The text the user is searching for.
      *
      *  Calls the GeoCat searching service.
      */
-    searchGeoCat: function(keyword) {
+    searchGeoCat: function(text) {
         this.searchResultsWindow.show();
         this.store.load({
             params: {
-                q: keyword
+                query: text
             },
             callback: function(r, options, success) {
             }

@@ -26,7 +26,7 @@
             // test
             var query = "bar", log = {};
             c.store.proxy.on({beforeload: function(p, params) {
-                log.q = params.q;
+                log.q = params.query;
                 return false; // stop the request
             }});
             c.searchGeoCat(query);
