@@ -51,7 +51,7 @@ class GcsearchController(BaseController):
 
         csw.getrecords(cql=cql, maxrecords=limit,
                        outputschema='http://www.isotc211.org/2005/gmd')
-
+         
         if not csw.results.has_key('matches'):
             abort(502, 'invalid response from GeoCat')
 
@@ -73,16 +73,6 @@ class GcsearchController(BaseController):
             # does not represent a supported OGC resource, or if it doesn't
             # have a valid name and url, we skip it
             online_resource = self._read_layer_ogc_online_resource(record)
-            
-            # FIXME: remove the following when GeoCat is fixed!
-            if online_resource:
-                layer_type = online_resource[0]
-                if layer_type == 'wmts':
-                    url = 'http://wmts.geo.admin.ch'
-                else:
-                    url = 'http://wms.geo.admin.ch'
-                online_resource = (layer_type, online_resource[1],
-                                   online_resource[2], url)
 
             if online_resource is None or None in online_resource:
                 log.debug('record does not represent a supported OGC ' \
