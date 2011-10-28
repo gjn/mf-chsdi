@@ -45,6 +45,10 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
      */
     searchResultsWindow: null,
 
+    /** api: config[keyword]
+     *  ``String`` The keyword(s) to send to the GeoCat search service
+     */
+
     initComponent: function() {
         this.layout = 'hbox';
 
@@ -61,7 +65,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
             }),
             baseParams: {
                 lang: OpenLayers.Lang.getCode(),
-                keyword: 'e-geo.ch geoportal'
+                keyword: this.keyword
             },
             root: 'results',
             fields: ['id', 'name', 'layers', 'layer', 'abstract', 'url', 'layertype']
