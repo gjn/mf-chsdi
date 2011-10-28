@@ -22,6 +22,50 @@
    </script>
 
 
+GcSearch: metadata access
+-------------------------
+
+GcSearch (Geocat Search) allows the user to access the layers stored in GeoCat.
+
+URL
+^^^
+
+http://api.geo.admin.ch/main/wsgi/gcsearch/search
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- lang: optional lang: de or fr
+- query: the query string to find (mandatory if egid is not transmitted)
+- cb: (optional) the name of the callback funtion (JSON or JSONP)
+- keyword: the word to look for in the abstract of the layer
+
+Examples: http://api.geo.admin.ch/main/wsgi/gcsearch/search?query=wasser&lang=de&keyword=wasser
+
+Result
+^^^^^^
+
+A JSON content is sent back with the following content
+
+- resolution_distance: the resolution of the map
+- extent: the extent of the layer
+- downloads: where to download the layer
+- web_links: the web link where you can find extra inforamtion about the layer
+- alternate_title: the layer can possess an alternative title
+- date: date of the publication in Geocat
+- data_provider: the provider of the layer
+- legal_constraints: define under which legal constraints the layer is accessible
+- id: the geocat identification number of the layer
+- name: the title of the layer in geocat
+- copyright: the name of the copyright
+- thematic_geoportals: define on which geoportal the layer appears
+- equivalent_scales: the scale of the layer
+- data_provider_link: the URL of the dataprovider
+- copyright_link: the URL related to the copyright
+- abstract: a short description of the layer
+
 SwissSearch: geocoding
 ----------------------
 
