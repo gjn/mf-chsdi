@@ -57,35 +57,41 @@
 
             node = {id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1'};
             tree.fireEvent('checkchange', node, true);
-            t.eq(map.layers.length, 4, 'checkchange adds a layer to map');
+            t.delay_call(0.2, function() {
+                t.eq(map.layers.length, 4, 'checkchange adds a layer to map');
 
-            node = {id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1'};
-            tree.fireEvent('checkchange', node, false);
-            t.eq(map.layers.length, 3, 'checkchange removes a layer to map');
+                node = {id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1'};
+                tree.fireEvent('checkchange', node, false);
+                t.delay_call(0.2, function() {
+                    t.eq(map.layers.length, 3, 'checkchange removes a layer to map');
 
-            map.addLayers([
-                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
-                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
-                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
-                new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
-                new OpenLayers.Layer('', {displayInLayerSwitcher: true})
-            ]);
-            var layerCount = map.layers.length;
-            node = {
-                id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1',
-                getUI: function() {
-                    return {
-                        toggleCheck: function() {}
-                    }
-                }
-            };
-            tree.fireEvent('checkchange', node, true);
-            t.eq(map.layers.length, layerCount,
-                 'checkchange does not add layer when limit is reached');
-
-            map.destroy();
-            tree.destroy();
-            window.alert = _alert;
+                    map.addLayers([
+                        new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                        new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                        new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                        new OpenLayers.Layer('', {displayInLayerSwitcher: true}),
+                        new OpenLayers.Layer('', {displayInLayerSwitcher: true})
+                    ]);
+                    var layerCount = map.layers.length;
+                    node = {
+                        id: tree.id + '_node_ch.swisstopo.fixpunkte-agnes1',
+                        getUI: function() {
+                            return {
+                                toggleCheck: function() {}
+                            }
+                        }
+                    };
+                    tree.fireEvent('checkchange', node, true);
+                    t.delay_call(0.2, function() {
+                    
+                        t.eq(map.layers.length, layerCount,
+                             'checkchange does not add layer when limit is reached');
+                        map.destroy();
+                        tree.destroy();
+                        window.alert = _alert;
+                    });
+                });
+            });
         }
 
         function test_afterRender(t) {
