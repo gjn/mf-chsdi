@@ -230,8 +230,10 @@ GeoAdmin._Layers = OpenLayers.Class({
      */
     getDimensions: function(layer) {
         var dimensions = [];
-        for (var i = 0, len = layer.dimensions.length; i < len; i++) {
-            dimensions.push(layer.dimensions[i].identifier.toUpperCase());
+        if (layer.dimensions) {
+            for (var i = 0, len = layer.dimensions.length; i < len; i++) {
+                dimensions.push(layer.dimensions[i].identifier.toUpperCase());
+            }
         }
         return dimensions;
     },
