@@ -205,7 +205,8 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
         var layer = node.layer;
         switch (action) {
             case "zoomtoextent":
-                layer.extent && layer.map.zoomToExtent(layer.extent);
+                var layerConfig = GeoAdmin.layers.layers[layer.layername];
+                layerConfig.extent && layer.map.zoomToExtent(layerConfig.extent);
                 break;
             case "down":
                 // Determine the step intervall in order to support aggregated layers
