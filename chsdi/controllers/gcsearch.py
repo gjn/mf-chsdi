@@ -43,11 +43,11 @@ class GcsearchController(BaseController):
             abort(400, 'limit param cannot be parsed to an integer')
 
         csw = CatalogueServiceWeb(geocat_url, timeout=60)
-        cql = "keyword LIKE '%" + keyword + "%'"
+        cql = "keyword = '" + keyword + "'"
 
         query = request.params.get('query')
         if query is not None:
-            cql = cql + " AND AnyText LIKE '%" + query + "%'"
+            cql = cql + " AND AnyText = '" + query + "'"
 
         csw.getrecords(cql=cql, maxrecords=limit,
                        outputschema='http://www.isotc211.org/2005/gmd')
