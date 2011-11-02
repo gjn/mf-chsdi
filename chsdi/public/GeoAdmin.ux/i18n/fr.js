@@ -102,7 +102,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Land- und Wassertwirtschaft':'Installations agricoles et aquacoles',
 	'Landnutzung':'Usage des sols',
 	'Layer Manager':'Gestionnaire des couches',
-	'Layer Selection':'Sélection de couches',
+	'Layer Selection':'Sélection des couches',
 	'Layer Tree':'Arbre des couches',
 	'Layer visibility':'Visibilité de la couche',
 	'LayerManager':'KML & GPX',
