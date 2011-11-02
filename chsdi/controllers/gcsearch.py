@@ -261,49 +261,74 @@ class GcsearchController(BaseController):
                 hasattr(record.identification, 'contact') and
                 len(record.identification.contact) > 0):
             contact = None
-            if record.language == supported_langs[self._lang]:
-                for c in record.identification.contact:
-                    if not c.role in roles:
-                        continue
-                    if (contact is None or
-                            roles.index(c.role) < roles.index(contact.role)):
-                        contact = c
-                    if roles.index(c.role) == 0:
-                        break
-                if contact:
-                    contact_name = contact.organization or \
-                                         contact.name
+            for c in record.identification.contact:
+                if not c.role in roles:
+                    continue
+                if (contact is None or
+                        roles.index(c.role) < roles.index(contact.role)):
+                    contact = c
+                if roles.index(c.role) == 0:
+                    break
+
             if contact is None:
-                contact_idx = None
-                path = 'gmd:contact/gmd:CI_ResponsibleParty'
+                # we couldn't find a contact whose role in
+                # the roles tuple, so no need to go further
+                return (None, None)
+
+            # ok, we have an appropriate contact, so we now do
+            # our best to get a name for it
+
+            if record.language == supported_langs[self._lang]:
+                contact_name = contact.organization
+            
+            # if we don't have an organisation name then check if
+            # there's one in the localised character string
+
+            if contact_name is None:
+                contact_elt = None
+
                 record_elt = etree.ElementTree.fromstring(record.xml)
-                for i, c in enumerate(record_elt.findall(
-                                owslib_util.nspath_eval(path, namespaces))):
-                    role_path = 'gmd:role/gmd:CI_RoleCode'
+
+                path = 'gmd:identificationInfo/gmd:MD_DataIdentification'
+                ident_elt = record_elt.find(owslib_util.nspath_eval(path, namespaces))
+
+                # we know we have an identification, so ident_elt should
+                # never be None here
+                assert ident_elt is not None
+
+                path = 'gmd:pointOfContact/gmd:CI_ResponsibleParty'
+                for c in ident_elt.findall(
+                                owslib_util.nspath_eval(path, namespaces)):
+                    path = 'gmd:role/gmd:CI_RoleCode'
                     role = _testCodeListValue(
                                 c.find(
-                                    owslib_util.nspath_eval(role_path,
+                                    owslib_util.nspath_eval(path,
                                                             namespaces)))
                     if not role in roles:
                         continue
-                    if (contact is None or
-                            roles.index(c.role) < roles.index(contact.role)):
-                        contact = c
-                        contact_idx = i
+                    if (contact_elt is None or
+                            roles.index(role) < roles.index(contact_elt._role)):
+                        contact_elt = c
+                        contact_elt._role = role
                     if roles.index(role) == 0:
                         break
-                if contact:
-                    organ_name = self._read_localised_string(
-                                    contact, 'gmd:organisationName/')
-                    if organ_name:
-                        contact_name = organ_name
-                    else:
-                        indiv_name = self._read_localised_string(
-                                        contact, 'gmd:individualName/')
-                        contact_name = indiv_name
-                    # get the corresponding CI_ResponsibleParty object
-                    contact = record.identification.contact[
-                                                    contact_idx]
+
+                # we have found an appropriate contact, so contact_elt
+                # should never be None here
+                assert contact_elt is not None
+
+                contact_name = self._read_localised_string(
+                                        contact_elt, 'gmd:organisationName/')
+
+                if contact_name is None:
+                    # no organization name if the localised string, so fall
+                    # back to individual name
+                    if record.language == supported_langs[self._lang]:
+                        contact_name = contact.name
+                    if contact_name is None:
+                        contact_name = self._read_localised_string(
+                                            contact_elt, 'gmd:individualName/')
+
             if (hasattr(contact, 'onlineresource') and
                 hasattr(contact.onlineresource, 'url')):
                 contact_link = contact.onlineresource.url
