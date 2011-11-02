@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 
 from chsdi.tests import *
 
 keyword = 'e-geo.ch geoportal'
+keyword = 'géoportal e-geo.ch'
 
 class TestGcsearchController(TestController):
 
@@ -31,6 +33,22 @@ class TestGcsearchController(TestController):
                                     query='__no_way_this_can_exist__',
                                     cb='callback'))
         assert response.body == 'callback({"results": []});'
+
+    def test_response_language(self):
+        from simplejson import loads
+
+        response = self.app.get(url(controller='gcsearch', action='search',
+                                    keyword='géoportal e-geo.ch', lang='fr',
+                                    query='eau'))
+        results = loads(response.body)
+        count_fr = len(results['results'])
+
+        response = self.app.get(url(controller='gcsearch', action='search',
+                                    keyword='e-geo.ch Geoportal', lang='de',
+                                    query='wasser'))
+        results = loads(response.body)
+        count_de = len(results['results'])
+        assert count_fr == count_de
 
     def test_response_record_property_existence(self):
         response = self.app.get(url(controller='gcsearch', action='search',
