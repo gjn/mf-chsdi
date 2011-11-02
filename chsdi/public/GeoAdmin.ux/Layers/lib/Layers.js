@@ -1753,6 +1753,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo-vd.geometa-los": {
@@ -1762,6 +1763,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.schutzgebiete-smaragd": {
@@ -1771,6 +1773,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
@@ -1780,6 +1783,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.unesco-weltnaturerbe": {
@@ -1789,6 +1793,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.fischerei-krebspest": {
@@ -1843,6 +1848,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.schutzgebiete-biosphaerenreservate": {
@@ -1861,6 +1867,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.flora-verbreitungskarten": {
@@ -1870,6 +1877,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.waldschadenflaechen-lothar": {
@@ -1897,6 +1905,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.landesforstinventar-waldanteil": {
@@ -1906,6 +1915,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.landesforstinventar-totholz": {
@@ -1915,6 +1925,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.gefahren-historische_erdbeben": {
@@ -1933,6 +1944,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.gefahren-mikrozonierung": {
@@ -1942,6 +1954,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.gefahren-spektral": {
@@ -1960,6 +1973,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.aquaprotect_100": {
@@ -1969,6 +1983,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.aquaprotect_250": {
@@ -1978,6 +1993,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.bafu.aquaprotect_500": {
@@ -1987,6 +2003,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
+                opacity: 0.75,
                 queryable: false
             }
         };
