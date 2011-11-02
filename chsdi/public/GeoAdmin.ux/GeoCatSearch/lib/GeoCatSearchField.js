@@ -156,7 +156,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
         var t = e.getTarget('.metadata');
         var r = dataview.getRecord(node);
         if(t) {
-            GeoAdmin.showGeoCatMetadataPopup(r.get('id'));
+            GeoAdmin.showGeoCatMetadataPopup(r.get('id'), OpenLayers.Lang.getCode());
         }
 
         t = e.getTarget('.addmetadata');

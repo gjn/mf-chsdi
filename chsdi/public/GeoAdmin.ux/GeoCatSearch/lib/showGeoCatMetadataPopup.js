@@ -5,7 +5,13 @@
  *
  *  Opens a window to show the metadata. 
  */
-GeoAdmin.showGeoCatMetadataPopup = function(uuid) {
+GeoAdmin.showGeoCatMetadataPopup = function(uuid,lang) {
+    if (!lang) {
+        lang = 'de';
+    }
+    var langs = { fr: 'fra', en: 'eng', de: 'deu' };
+    var l = (langs[lang]) ? langs[lang] : 'deu';
+
     new Ext.Window({
         title: OpenLayers.i18n('Metadata'),
         layout: 'fit',
@@ -17,7 +23,7 @@ GeoAdmin.showGeoCatMetadataPopup = function(uuid) {
             xtype: 'box',
             autoEl: {
                 tag: 'iframe',
-                src: "http://www.geocat.ch/geonetwork/srv/fra/metadata.show?uuid=" + uuid + "&printview",
+                src: "http://www.geocat.ch/geonetwork/srv/" + l + "/metadata.show?uuid=" + uuid + "&printview",
                 align: 'left',
                 scrolling: 'auto',
                 marginheight: 0,
