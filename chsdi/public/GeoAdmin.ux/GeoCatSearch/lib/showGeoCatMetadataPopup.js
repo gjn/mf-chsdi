@@ -12,11 +12,15 @@ GeoAdmin.showGeoCatMetadataPopup = function(uuid,lang) {
     var langs = { fr: 'fra', en: 'eng', de: 'deu' };
     var l = (langs[lang]) ? langs[lang] : 'deu';
 
+    var w = Ext.WindowMgr.get('geocatMetadataWindow');
+    w && w.close();
+
     new Ext.Window({
         title: OpenLayers.i18n('Metadata'),
         layout: 'fit',
+        // ensures that we only have one metadata window at a time
+        id: 'geocatMetadataWindow',
         maximizable: false,
-        modal: true,
         width: 1055,
         height: 500,
         items: {

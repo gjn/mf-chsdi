@@ -92,7 +92,13 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
             items: view,
             width: 350,
             height: 300,
-            closeAction: 'hide'
+            closeAction: 'hide',
+            listeners: {
+                hide: function() {
+                    var w = Ext.WindowMgr.get('geocatMetadataWindow');
+                    w && w.close();
+                }
+            }
         });
 
         var searchField = new Ext.form.TextField({
@@ -162,6 +168,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
         t = e.getTarget('.addmetadata');
         if(t) {
             this.fireEvent('addmetadata', r.data);
+            this.searchResultsWindow.close();
         }
     }
 });
