@@ -85,11 +85,13 @@
                 {renderTo: "tree", map: map}
             );
 
-            var layer = new OpenLayers.Layer('layer', {
-                extent: new OpenLayers.Bounds(-180, -90, -150, -75)
-            });
+            var layer = new OpenLayers.Layer('layer', {});
             map.addLayer(layer);
             map.zoomToExtent(new OpenLayers.Bounds(0, 0, 30, 15));
+            layer.layername = 'foo';
+            GeoAdmin.layers.layers['foo'] = {
+                extent: new OpenLayers.Bounds(-180, -90, -150, -75)
+            };
             var node = { layer: layer };
             tree.onNodeActionClick(node, "zoomtoextent", null);
             t.eq(map.getExtent().toBBOX(), (new OpenLayers.Bounds(-180, -90, -135, -67.5)).toBBOX(), "OK, reset map extent to layer's extent");
