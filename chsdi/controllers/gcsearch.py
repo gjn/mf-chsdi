@@ -138,18 +138,19 @@ class GcsearchController(BaseController):
             hasattr(record.identification, 'title')):
             if record.language == supported_langs[self._lang]:
                 layer_name = record.identification.title
-            else:
+            if layer_name is None:
                 path = 'gmd:identificationInfo/gmd:MD_DataIdentification/' \
                        'gmd:citation/gmd:CI_Citation/gmd:title/'
                 layer_name = self._read_localised_string(record.xml, path)
         return layer_name
 
     def _read_layer_alternate_title(self, record):
+        layer_alternate_title = None
         if (hasattr(record, 'identification') and
             hasattr(record.identification, 'alternatetitle')):
             if record.language == supported_langs[self._lang]:
                 layer_alternate_title = record.identification.alternatetitle
-            else:
+            if layer_alternate_title is None:
                 path = 'gmd:identificationInfo/gmd:MD_DataIdentification/' \
                        'gmd:citation/gmd:CI_Citation/gmd:alternateTitle/'
                 layer_alternate_title = self._read_localised_string(
@@ -183,7 +184,7 @@ class GcsearchController(BaseController):
             hasattr(record.identification, 'abstract')):
             if record.language == supported_langs[self._lang]:
                 abstract = record.identification.abstract
-            else:
+            if abstract is None:
                 path = 'gmd:identificationInfo/gmd:MD_DataIdentification/' \
                        'gmd:abstract/'
                 abstract = self._read_localised_string(record.xml, path)
@@ -272,7 +273,7 @@ class GcsearchController(BaseController):
                 if contact:
                     contact_name = contact.organization or \
                                          contact.name
-            else:
+            if contact is None:
                 contact_idx = None
                 path = 'gmd:contact/gmd:CI_ResponsibleParty'
                 record_elt = etree.ElementTree.fromstring(record.xml)
