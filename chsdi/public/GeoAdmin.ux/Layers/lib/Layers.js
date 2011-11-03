@@ -1684,6 +1684,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.bfe.statistik-wasserkraftanlagen": {
+             name: OpenLayers.i18n("ch.bfe.statistik-wasserkraftanlagen"),
+             layers: ["ch.bfe.statistik-wasserkraftanlagen"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.bfe",
+             queryable: true
+             },
+             "ch.bfe.stauanlagen-bundesaufsicht": {
+             name: OpenLayers.i18n("ch.bfe.stauanlagen-bundesaufsicht"),
+             layers: ["ch.bfe.stauanlagen-bundesaufsicht"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.bfe",
+             queryable: true
+             },
+             "ch.bfe.abgeltung-wasserkraftnutzung": {
+             name: OpenLayers.i18n("ch.bfe.abgeltung-wasserkraftnutzung"),
+             layers: ["ch.bfe.abgeltung-wasserkraftnutzung"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.bfe",
+             queryable: true
+             },
             "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 layertype: 'wmts',

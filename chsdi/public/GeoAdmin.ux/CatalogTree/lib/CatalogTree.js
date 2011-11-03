@@ -1004,7 +1004,17 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-geothermie"
+                    },
+                    {
+                        layerId: "ch.bfe.statistik-wasserkraftanlagen"
+                    },
+                    {
+                        layerId: "ch.bfe.stauanlagen-bundesaufsicht"
+                    },
+                    {
+                        layerId: "ch.bfe.abgeltung-wasserkraftnutzung"
                     }
+
                 ]
             }
         ]
