@@ -168,7 +168,7 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
         t = e.getTarget('.addmetadata');
         if(t) {
             this.fireEvent('addmetadata', r.data);
-            this.searchResultsWindow.close();
+            this.searchResultsWindow.hide();
         }
     }
 });
