@@ -443,22 +443,22 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      *  Add a layer overlay to the map.
      */
     addLayerByName: function(layername, options) {
-        var layer = GeoAdmin.layers.buildLayerByName(layername, options);
-        if (layer) {
-            // check if the layer is already loaded
-            for (var i = 0, len = this.layers.length; i < len; i++) {
-                if (this.layers[i].layername === layer.layername) {
-                    this.layers[i].addOptions(options);
-                    return null;
+        var self = this;
+        function cb(layer) {
+            if (layer) {
+                // check if the layer is already loaded
+                for (var i=0, len = self.layers.length; i<len; i++) {
+                    if (self.layers[i].layername === layer.layername) {
+                        self.layers[i].addOptions(options);
+                        return null;
+                    }
                 }
+                self.addLayer(layer);
+                self.sortLayer();
             }
-            this.addLayer(layer);
-            this.sortLayer();
-
-            return layer;
-        } else {
-            return null;
         }
+        var layer = GeoAdmin.layers.buildLayerByName(layername, options, cb);
+        return layer || null;
     },
 
     addWmsLayer: function(name, url, layers, visibility, opacity) {

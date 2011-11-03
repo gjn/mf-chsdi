@@ -64,6 +64,9 @@ GeoAdmin._Layers = OpenLayers.Class({
         var config = this.layers[name];
         if (!config) {
             // layer not found
+            if (callback) {
+                callback(null);
+            }
             return null;
         }
 
@@ -81,9 +84,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         } else {
             layer = this.createLayer(name, config, options);
             if (callback) {
-                window.setTimeout(function() {
-                    callback(layer);
-                }, 0);
+                callback(layer);
             }
             return layer;
         }
