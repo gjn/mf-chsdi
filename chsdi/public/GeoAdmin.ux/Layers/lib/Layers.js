@@ -274,7 +274,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             // OpenLayers should be fixed, and this should be
             // revisited when OpenLayers is fixed.
 
-            if (!layer.projection || layer.projection === 'EPSG:4326') {
+            if (layer.projection &&
+                layer.projection.match('EPSG:+21781')) {
+                extent = layer.bounds;
+            } else if (!layer.projection ||
+                       layer.projection.match('EPSG:+4326')) {
                 extent = layer.bounds.transform(
                     new OpenLayers.Projection('EPSG:4326'),
                     new OpenLayers.Projection('EPSG:21781')
