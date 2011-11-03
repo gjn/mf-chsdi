@@ -140,6 +140,10 @@ GeoAdmin.GeoCatSearchField = Ext.extend(Ext.Container, {
      *  Calls the GeoCat searching service.
      */
     searchGeoCat: function(text) {
+        if (text.length < 3) {
+            Ext.MessageBox.alert('', OpenLayers.i18n('Please type at least 3 characters'));
+            return;
+        }
         this.searchResultsWindow.show();
         this.store.load({
             params: {
