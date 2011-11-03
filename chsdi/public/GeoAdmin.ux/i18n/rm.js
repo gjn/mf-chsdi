@@ -1,6 +1,7 @@
 /*global OpenLayers:true*/
 
-OpenLayers.Util.extend(OpenLayers.Lang.rm, {
+OpenLayers.Lang.rm= {
+
 	//Globals
 	'1 A4 landscape':'A4 Orizontal',
 	'2 A4 portrait':'A4 Hochformat',
@@ -154,6 +155,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'Please check your input':'Controllar per plaschair las endataziuns',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
 	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
+	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
 	'Please, enter an url in the textbox first':'Agiuntar in URL',
 	'Point':'Punct',
 	'Polygon':'Poligon',
@@ -285,7 +287,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renunzia forza idraulica',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistica implant idraulic',
-	'ch.bfe.stauanlagen-bundesaufsicht':'Statistica implant idraulic',
+	'ch.bfe.stauanlagen-bundesaufsicht':'Implant da fermada',
 	'ch.bfs':'BFS',
 	'ch.bfs.arealstatistik-1985':'Statistica da la surfatscha 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Statistica da la surfatscha 1992/1997',
@@ -439,7 +441,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'responsibilitiesAndContact':'Impressum',
 	'rightHanded':'dretger',
 	'salmon':'colur da salmun',
-	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>PLZ:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br><b>Adressas: </b> Per "Bundesplatz 3 Berna" tippais Vus Bundesplatz 3',
+	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>PLZ:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br>',
 	'select a color...':'Tscherner la colur',
 	'show column':'Avrir ils temas',
 	'show layer options':'Mussar las opziuns da la stresa',
@@ -457,4 +459,4 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'zoomin':'Zoom vers anen',
 	'zoomout':'Zoom vers anora',
 	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals'
- });
+};
