@@ -153,6 +153,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.rm, {
 	'Permalink.tooltip':'Permalink',
 	'Please check your input':'Controllar per plaschair las endataziuns',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
+	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
 	'Please, enter an url in the textbox first':'Agiuntar in URL',
 	'Point':'Punct',
 	'Polygon':'Poligon',

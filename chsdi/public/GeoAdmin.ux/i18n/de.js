@@ -158,6 +158,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Permalink.tooltip':'Permalink',
 	'Please check your input':'Bitte Eingaben überprüfen',
 	'Please fill the feedback':'Bitte füllen Sie das Berichtsfeld aus',
+	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
 	'Please, enter an url in the textbox first':'Bitte URL eingeben',
 	'Point':'Punkt',
 	'Polygon':'Polygon',

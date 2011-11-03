@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Please type at least 3 characters':"",
     'map':"",
     'Send':"",
     'Close':"",
