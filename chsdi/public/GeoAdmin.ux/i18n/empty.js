@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Complete_metadata':"",
     'Please type at least 3 characters':"",
     'map':"",
     'Send':"",
