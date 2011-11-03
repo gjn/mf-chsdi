@@ -245,9 +245,42 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Read the layer extent from the layer's capabilities object.
      */
     getExtent: function(layer) {
-        if (layer.bbox && layer.bbox['EPSG:21781']) {
-            return OpenLayers.Bounds.fromArray(layer.bbox['EPSG:21781'].bbox);
+        var extent;
+        if (layer.bbox) {
+            // WMS
+
+            if (layer.bbox['EPSG:21781']) {
+                extent = OpenLayers.Bounds.fromArray(
+                        layer.bbox['EPSG:21781'].bbox);
+            } else if (layer.bbox['EPSG:4326']) {
+                extent = OpenLayers.Bounds.fromArray(
+                        layer.bbox['EPSG:4326'].bbox);
+                extent.transform(
+                    new OpenLayers.Projection('EPSG:4326'),
+                    new OpenLayers.Projection('EPSG:21781')
+                );
+            }
+        } else if (layer.bounds) {
+            // WMTS
+
+            // Note: if bounds are set in the layer capabilities
+            // object it means that only one BoundingBox node was
+            // found in the capabilities object for that layer.
+            // We only deal with that case here. And if no
+            // projection in set in the layer object we assume
+            // these bounds are expressed in EPSG:4326. OpenLayers
+            // (OWSCommon/v1.js) does not provide enough info here.
+            // OpenLayers should be fixed, and this should be
+            // revisited when OpenLayers is fixed.
+
+            if (!layer.projection || layer.projection === 'EPSG:4326') {
+                extent = layer.bounds.transform(
+                    new OpenLayers.Projection('EPSG:4326'),
+                    new OpenLayers.Projection('EPSG:21781')
+                );
+            }
         }
+        return extent;
     },
 
     /** private: method[getImageFormat]

@@ -1,5 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/proj4js-compressed.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
     <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
     <script type="text/javascript" src="../../GeoAdmin.js"></script>
     <script type="text/javascript" src="../lib/Layers.js"></script>
@@ -82,7 +84,7 @@
     }
 
     function test_extendConfigFromCapabilities_wmts(t) {
-        t.plan(2);
+        t.plan(3);
 
         var xml = document.getElementById("wmts-getcaps").firstChild.nodeValue;
         var doc = new OpenLayers.Format.XML().read(xml);
@@ -100,7 +102,9 @@
         t.eq(config.timestamp, '20090101',
              'ch.are.agglomerationen_isolierte_staedte-2000 config timestamp as expected');
 
-
+        t.eq(config.extent.toString(),
+             '419995.74880736344,30006.663199481554,916216.8805490293,350004.29247885564',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config extent as expected');
     }
     </script>
 </head>
