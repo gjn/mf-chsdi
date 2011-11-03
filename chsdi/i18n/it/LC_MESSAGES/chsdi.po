@@ -69,7 +69,7 @@ msgid "aktuelle_daten"
 msgstr "Données actuelles et historiques"
 
 msgid "alexandria"
-msgstr "Catalogo Alexandria"
+msgstr "Indicazioni bibliografiche"
 
 msgid "anzahlspuren"
 msgstr "Nombre de voies"
@@ -565,6 +565,63 @@ msgstr "Péage"
 
 msgid "totholz"
 msgstr "Volume total de bois mort [m3/ha]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
+msgstr "Surface [ha]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
+msgstr "Fin de l'obligation de protection"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr "Nom"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
+msgstr "Numéro d'objet"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
+msgstr "Circonférence [m]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
+msgstr "Début de l'obligation de protection"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
+msgstr "Mise en service"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
+msgstr "Canton"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
+msgstr "Mise hors service"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgstr "Statut opérationnel"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
+msgstr "Type d'aménagement hydroélectrique"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
+msgstr "Site"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
+msgstr "Nom"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
+msgstr "Numéro SAHE"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr "Longueur du couronnement"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
+msgstr "Niveau du couronnement"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
+msgstr "Hauteur du barrage"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
+msgstr "Nom"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgstr "Type de barrage"
 
 msgid "twitter title"
 msgstr "Twitter"

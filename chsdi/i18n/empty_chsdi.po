@@ -629,3 +629,70 @@ msgstr ""
 
 msgid "reisezeit_min"
 msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
+msgstr ""
+
+
+
+
+
+
+
+
+
+

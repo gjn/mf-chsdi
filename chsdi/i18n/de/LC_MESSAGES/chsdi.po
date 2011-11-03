@@ -69,7 +69,7 @@ msgid "aktuelle_daten"
 msgstr "Aktuelle und historische Daten"
 
 msgid "alexandria"
-msgstr "Katalog Alexandria"
+msgstr "Bibliografische Angaben"
 
 msgid "anzahlspuren"
 msgstr "Anzahl Spuren"
@@ -565,6 +565,63 @@ msgstr "Strassenbenutzungsgebühr"
 
 msgid "totholz"
 msgstr "Totholzvolumen [m3/ha]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
+msgstr "Fläche [ha]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
+msgstr "Ende Schutzverpflichtung"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr "Name"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
+msgstr "Objektnummer"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
+msgstr "Umfang [m]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
+msgstr "Beginn Schutzverpflichtung"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
+msgstr "Inbetriebnahme"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
+msgstr "Standortkanton"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
+msgstr "Stillegung"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgstr "Operativer Status"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
+msgstr "Wasserkraftanlagetyp"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
+msgstr "Standort"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
+msgstr "Name"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
+msgstr "WASTA-Nummer"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr "Kronenlänge"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
+msgstr "Kronenkote"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
+msgstr "Sprerrenhöhe"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
+msgstr "Name"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgstr "Sperrentyp"
 
 msgid "twitter title"
 msgstr "Twitter"
