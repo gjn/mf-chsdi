@@ -230,7 +230,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
                 dataIndex: "srsCompatible",
                 hidden: false,
                 renderer: this.boolRenderer,
-                width: 30
+                width: 80
             },
             {
                 header: OpenLayers.i18n('Title'),
