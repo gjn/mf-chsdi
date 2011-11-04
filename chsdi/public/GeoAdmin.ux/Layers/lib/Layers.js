@@ -442,7 +442,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layername: config.layername || name,
                 hasLegend: config.hasLegend,
                 version: "1.0.0",
-                requestEncoding: "REST",
+                requestEncoding: config.requestEncoding || "REST",
                 url: config.url || wmts_url,
                 style: "default",
                 matrixSet: config.matrixSet || "21781",
