@@ -415,7 +415,8 @@ GeoAdmin._Layers = OpenLayers.Class({
             }, options);
             return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
                 layers: config.layers,
-                format: config.format
+                format: config.format,
+                transparent: config.transparent || true
             }, layer_options_wms);
         } else if (config.layertype === "aggregate") {
             var sub_layers = [];
