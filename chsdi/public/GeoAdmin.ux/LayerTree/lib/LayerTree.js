@@ -146,13 +146,6 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
             }
         ];
 
-        if (this.showZoomToExtentAction) {
-            actions.splice(2, 0, {
-                action: "zoomtoextent",
-                qtip: OpenLayers.i18n("zoom to extent")
-            });
-        }
-
         // the tree content
         this.root = {
             nodeType: "gx_layercontainer",
@@ -204,10 +197,6 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
     onNodeActionClick: function(node, action, evt) {
         var layer = node.layer;
         switch (action) {
-            case "zoomtoextent":
-                var layerConfig = GeoAdmin.layers.layers[layer.layername];
-                layerConfig.extent && layer.map.zoomToExtent(layerConfig.extent);
-                break;
             case "down":
                 // Determine the step intervall in order to support aggregated layers
                 var counter = 0;
@@ -291,48 +280,62 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
 
     createNodeComponent: function(node, ct) {
         var uniqueId = node.id + '-opacity-lbl';
+
+        var buttons = [
+            OpenLayers.i18n("Opacity:"),
+            new GeoExt.LayerOpacitySlider({
+                layer: node.layer,
+                aggressive: true,
+                plugins: new GeoAdmin.LayerTree.SliderLabel(
+                        uniqueId
+                        ),
+                width: 100
+            }),
+            new GeoAdmin.LayerTree.TextItem({
+                id: uniqueId,
+                opacity: node.layer.opacity
+            }),
+            "->",
+            new Ext.Action({
+                iconCls: node.layer.visibility ? "visibility-on" : "visibility-off",
+                tooltip: OpenLayers.i18n("Layer visibility"),
+                handler: function() {
+                    GeoAdmin.LayerTree.toggleVisibility(node.layer, this);
+                }
+            }),
+            new Ext.Action({
+                iconCls: "layer-info",
+                tooltip: OpenLayers.i18n("about that layer"),
+                handler: function() {
+                    if (typeof(node.layer.layername) == "undefined") {
+                       alert(OpenLayers.i18n("Meta information are not available for this layer"));
+                    } else {
+                        // get a reference to the singleton (Function) 
+                        // using its name (String)
+                        var fn = Ext.namespace(this.infoWindowClass);
+                        fn.show(node.layer.layername);
+                    }
+                },
+                scope: this
+            })
+        ];
+
+        if (this.showZoomToExtentAction) {
+            buttons.splice(4, 0, new Ext.Action({
+                iconCls: 'zoomtoextent',
+                tooltip: OpenLayers.i18n("zoom to extent"),
+                handler: function() {
+                    var layerConfig = GeoAdmin.layers.layers[node.layer.layername];
+                    layerConfig.extent && node.layer.map.zoomToExtent(layerConfig.extent);
+                }
+            }));
+        }
+
         return new Ext.Toolbar({
             cls: "geoadmin-toolbar",
             ctCls: "line-height-zero",
             hidden: false,
-            buttons: [
-                OpenLayers.i18n("Opacity:"),
-                new GeoExt.LayerOpacitySlider({
-                    layer: node.layer,
-                    aggressive: true,
-                    plugins: new GeoAdmin.LayerTree.SliderLabel(
-                            uniqueId
-                            ),
-                    width: 100
-                }),
-                new GeoAdmin.LayerTree.TextItem({
-                    id: uniqueId,
-                    opacity: node.layer.opacity
-                }),
-                "->",
-                new Ext.Action({
-                    iconCls: node.layer.visibility ? "visibility-on" : "visibility-off",
-                    tooltip: OpenLayers.i18n("Layer visibility"),
-                    handler: function() {
-                        GeoAdmin.LayerTree.toggleVisibility(node.layer, this);
-                    }
-                }),
-                new Ext.Action({
-                    iconCls: "layer-info",
-                    tooltip: OpenLayers.i18n("about that layer"),
-                    handler: function() {
-                        if (typeof(node.layer.layername) == "undefined") {
-                           alert(OpenLayers.i18n("Meta information are not available for this layer"));
-                        } else {
-                            // get a reference to the singleton (Function) 
-                            // using its name (String)
-                            var fn = Ext.namespace(this.infoWindowClass);
-                            fn.show(node.layer.layername);
-                        }
-                    },
-                    scope: this
-                })
-            ]
+            buttons: buttons
         });
     },
 

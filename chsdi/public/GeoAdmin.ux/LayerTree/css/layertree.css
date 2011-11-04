@@ -65,7 +65,7 @@
   margin-top: 22px;
 }
 
-.geoadmin-layertree .gx-tree-layer-actions .zoomtoextent{
+.geoadmin-layertree .zoomtoextent{
   background-image: url(../images/magnifier--arrow.png);
 }
 .geoadmin-layertree .x-tree-node .gx-tree-layer-outofrange {

@@ -68,35 +68,6 @@
 
             tree.destroy();
         }
-
-        function test_onNodeActionClick_zoomtoextent(t) {
-            t.plan(1);
-            var map = new GeoAdmin.Map("map", {
-                maxExtent: new OpenLayers.Bounds(-180, -90, 180, 90),
-                restrictedExtent : new OpenLayers.Bounds(-180, -90, 180, 90),
-                resolutions: [1.40625,0.703125,0.3515625,0.17578125,0.087890625,0.0439453125]
-            });
-            var layer = new OpenLayers.Layer('layer', {
-                isBaseLayer: true
-            });
-            map.addLayer(layer);
-            map.zoomToMaxExtent();
-            var tree = new GeoAdmin.LayerTree(
-                {renderTo: "tree", map: map}
-            );
-
-            var layer = new OpenLayers.Layer('layer', {});
-            map.addLayer(layer);
-            map.zoomToExtent(new OpenLayers.Bounds(0, 0, 30, 15));
-            layer.layername = 'foo';
-            GeoAdmin.layers.layers['foo'] = {
-                extent: new OpenLayers.Bounds(-180, -90, -150, -75)
-            };
-            var node = { layer: layer };
-            tree.onNodeActionClick(node, "zoomtoextent", null);
-            t.eq(map.getExtent().toBBOX(), (new OpenLayers.Bounds(-180, -90, -135, -67.5)).toBBOX(), "OK, reset map extent to layer's extent");
-            map.removeLayer(layer);
-        }
         </script>
     </head>
     <body>
