@@ -1,8 +1,4 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
-    'Auflösung':"",
-    'Datum':"",
-    'Complete_metadata':"",
-    'Please type at least 3 characters':"",
     'map':"",
     'Send':"",
     'Close':"",
