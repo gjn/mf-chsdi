@@ -626,7 +626,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.blw.ursprungsbezeichnungen-spirituosen"
                     },
-                                                {
+                    {
+                        layerId: "ch.babs.kulturgueter"
+                    },
+                    {
                         layerId: "ch.vbs.territorialregionen"
                     }
                 ]
@@ -725,9 +728,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-jagdbanngebiete"
-                    },
-                    {
-                        layerId: "ch.babs.kulturgueter"
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-moorlandschaften"
