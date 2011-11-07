@@ -42,7 +42,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Close':'Close',
 	'Close this window':'Close this window',
 	'Connect':'Connect',
-	'Coordinates (m):':'Coordinates (m):',
+	'Coordinates (m):':'Coordinates (m): ',
 	'Copyright &amp; Data protection':'Copyright &amp; Data protection',
 	'Create label':'Create label',
 	'Create line':'Create line',
@@ -59,12 +59,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Description':'Description',
 	'Desktop version':'Link to desktop version',
 	'Distance measurement (double-click to terminate)':'Distance measurement (double-click to terminate)',
-	'Distance: ':'Distance: ', //TODO
+	'Distance: ':'Distance: ',
 	'Do you really want to delete all features ?':'Do you really want to delete all features?',
 	'Do you really want to delete this feature ?':'Do you really want to delete the feature?',
 	'Edit Feature':'Edit object',
 	'Elevation':'Elevation',
-	'Elevation offset: ':'Elevation offset: ', //TODO
+	'Elevation offset: ':'Elevation: ',
 	'Energie und Wirtschaft':'Energy and economy',
 	'Energiequellen':'Energy resources',
 	'Enter your feedback here ...':'Your report about current map extent',
@@ -127,7 +127,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Map URL':'Embed link below in e-mail',
 	'Map was moved to':'Map was moved to',
 	'Measure':'Measure',
-	'Measure Panel':'Measure Panel', //TODO
+	'Measure Panel':'Mesure',
 	'Measure.MeasureArea':'Area',
 	'Measure.MeasureArea.ToolTip':'Measure area',
 	'Measure.MeasureAzimuth':'Azimuth',

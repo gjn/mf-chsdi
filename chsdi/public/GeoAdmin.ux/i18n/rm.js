@@ -38,7 +38,7 @@ OpenLayers.Lang.rm= {
 	'Close':'Serrar',
 	'Close this window':'Serrar questa fanestra',
 	'Connect':'Connectar',
-	'Coordinates (m):':'Coordinatas (m):',
+	'Coordinates (m):':'Coordinatas (m): ',
 	'Copyright &amp; Data protection':'Copyright & decleraziun da protecziun da datas',
 	'Create label':'Crear in\'etichetta',
 	'Create line':'Registrar la lingia',
@@ -55,12 +55,12 @@ OpenLayers.Lang.rm= {
 	'Description':'Descripziun',
 	'Desktop version':'Link tar versiun desktop',
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
-	'Distance: ':'Distance: ', //TODO
+	'Distance: ':'Distanza : ',
 	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',
 	'Do you really want to delete this feature ?':'Vulais Vus propi stizzar quest object?',
 	'Edit Feature':'Editar l\'object',
 	'Elevation':'Autezza',
-	'Elevation offset: ':'Elevation offset: ', //TODO
+	'Elevation offset: ':'Autezza : ',
 	'Energie und Wirtschaft':'Energia ed economia',
 	'Energiequellen':'Funtaunas d\'energia',
 	'Enter your feedback here ...':'Rapport charta actual',
@@ -123,11 +123,11 @@ OpenLayers.Lang.rm= {
 	'Map URL':'Integrar il link qua sutvart en il e-mail',
 	'Map was moved to':'La charta è vegnida spustada a',
 	'Measure':'Mesirar',
-	'Measure Panel':'Measure Panel', //TODO
+	'Measure Panel':'Mesirar',
 	'Measure.MeasureArea':'Surfatscha',
 	'Measure.MeasureArea.ToolTip':'Mesirai ina surfatscha',
 	'Measure.MeasureAzimuth':'Azimut',
-	'Measure.MeasureAzimuth.ToolTip':'Measure.MeasureAzimuth.ToolTip', //TODO
+	'Measure.MeasureAzimuth.ToolTip':'Mesirai in Azimut',
 	'Measure.MeasureLength':'Distanza',
 	'Measure.MeasureLength.ToolTip':'Mesirai ina distanza',
 	'Measure.title':'Mesiraziun da distanzas & mesiraziun da surfatschas',
