@@ -27,6 +27,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Artenvielfalt':'Verteilung der Arten',
 	'Atmosphärische Bedingungen':'Atmosphärische Bedingungen',
 	'Attributes':'Attribute',
+	'Azimut: ':   '':'Azimut: ':   '', //TODO
 	'Background':'Hintergrund',
 	'Basisdaten':'Basisdaten',
 	'Bevölkerungsdichte':'Verteilung der Bevölkerung - Demografie',
@@ -58,10 +59,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Description':'Beschreibung',
 	'Desktop version':'Link zur Desktop Version',
 	'Distance measurement (double-click to terminate)':'Entfernungmessgeräte (Doppelklick zu beenden)',
+	'Distance: ':   '':'Distance: ':   '', //TODO
 	'Do you really want to delete all features ?':'Wollen Sie wirklich alle Objekte löschen?',
 	'Do you really want to delete this feature ?':'Wollen Sie wirklich das Objekt löschen?',
 	'Edit Feature':'Objekt editieren',
 	'Elevation':'Höhe',
+	'Elevation offset: ':   '':'Elevation offset: ':   '', //TODO
 	'Energie und Wirtschaft':'Energie und Wirtschaft',
 	'Energiequellen':'Energiequellen',
 	'Enter your feedback here ...':'Ihr Bericht zum aktuellen Kartenausschnitt',
@@ -124,8 +127,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Map URL':'Untenstehenden Link in e-mail einbinden',
 	'Map was moved to':'Die Karte wurde verschoben nach',
 	'Measure':'Messen',
+	'Measure Panel':   '':'Measure Panel':   '', //TODO
 	'Measure.MeasureArea':'Fläche',
 	'Measure.MeasureArea.ToolTip':'Messen Sie eine Fläche',
+	'Measure.MeasureAzimuth':   '':'Measure.MeasureAzimuth':   '', //TODO
+	'Measure.MeasureAzimuth.ToolTip':   '':'Measure.MeasureAzimuth.ToolTip':   '', //TODO
 	'Measure.MeasureLength':'Distanz',
 	'Measure.MeasureLength.ToolTip':'Messen Sie eine Distanz',
 	'Measure.title':'Distanzmessung & Flächenmessung',

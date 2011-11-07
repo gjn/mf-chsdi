@@ -23,7 +23,7 @@ OpenLayers.Lang.rm= {
 	'Artenvielfalt':'Repartiziun da las spezias',
 	'Atmosphärische Bedingungen':'Cundiziuns atmosfericas',
 	'Attributes':'Attributs',
-	'Azimut: ':'Azimut: ', //TODO
+	'Azimut: ':   '':'Azimut: ':   '', //TODO
 	'Background':'Fund da la charta',
 	'Basisdaten':'Datas da basa',
 	'Bevölkerungsdichte':'Repartiziun da la populaziun - demografia',
@@ -55,12 +55,12 @@ OpenLayers.Lang.rm= {
 	'Description':'Descripziun',
 	'Desktop version':'Link tar versiun desktop',
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
-	'Distance: ':'Distance: ', //TODO
+	'Distance: ':   '':'Distance: ':   '', //TODO
 	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',
 	'Do you really want to delete this feature ?':'Vulais Vus propi stizzar quest object?',
 	'Edit Feature':'Editar l\'object',
 	'Elevation':'Autezza',
-	'Elevation offset: ':'Elevation offset: ', //TODO
+	'Elevation offset: ':   '':'Elevation offset: ':   '', //TODO
 	'Energie und Wirtschaft':'Energia ed economia',
 	'Energiequellen':'Funtaunas d\'energia',
 	'Enter your feedback here ...':'Rapport charta actual',
@@ -123,11 +123,11 @@ OpenLayers.Lang.rm= {
 	'Map URL':'Integrar il link qua sutvart en il e-mail',
 	'Map was moved to':'La charta è vegnida spustada a',
 	'Measure':'Mesirar',
-	'Measure Panel':'Measure Panel', //TODO
+	'Measure Panel':   '':'Measure Panel':   '', //TODO
 	'Measure.MeasureArea':'Surfatscha',
 	'Measure.MeasureArea.ToolTip':'Mesirai ina surfatscha',
-	'Measure.MeasureAzimuth':'Azimut',
-	'Measure.MeasureAzimuth.ToolTip':'Measure.MeasureAzimuth.ToolTip', //TODO
+	'Measure.MeasureAzimuth':   '':'Measure.MeasureAzimuth':   '', //TODO
+	'Measure.MeasureAzimuth.ToolTip':   '':'Measure.MeasureAzimuth.ToolTip':   '', //TODO
 	'Measure.MeasureLength':'Distanza',
 	'Measure.MeasureLength.ToolTip':'Mesirai ina distanza',
 	'Measure.title':'Mesiraziun da distanzas & mesiraziun da surfatschas',
