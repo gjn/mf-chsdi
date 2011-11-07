@@ -176,7 +176,7 @@ class GcsearchController(BaseController):
         return self._read_point_of_contact(record, ('pointOfContact', 'owner'))
 
     def _read_layer_copyright(self, record):
-        return self._read_point_of_contact(record, ('owner'))
+        return self._read_point_of_contact(record, ('owner', 'pointOfContact'))
 
     def _read_layer_abstract(self, record):
         abstract = None
