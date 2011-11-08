@@ -84,7 +84,7 @@
     }
 
     function test_extendConfigFromCapabilities_wmts(t) {
-        t.plan(3);
+        t.plan(4);
 
         var xml = document.getElementById("wmts-getcaps").firstChild.nodeValue;
         var doc = new OpenLayers.Format.XML().read(xml);
@@ -101,11 +101,48 @@
              'ch.are.agglomerationen_isolierte_staedte-2000 config legendURL as expected');
         t.eq(config.timestamp, '20090101',
              'ch.are.agglomerationen_isolierte_staedte-2000 config timestamp as expected');
-
         t.eq(config.extent.toString(),
              '419995.74880736344,30006.663199481554,916216.8805490293,350004.29247885564',
              'ch.are.agglomerationen_isolierte_staedte-2000 config extent as expected');
+        t.eq(config.requestEncoding, 'REST',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config requestEncoding as expected');
+
     }
+
+    function test_getRequestEncoding(t) {
+        t.plan(1);
+
+        var xml =
+            '<?xml version="1.0" encoding="UTF-8"?>' +
+            '<Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">' +
+                '<ows:OperationsMetadata>' +
+                    '<ows:Operation name="GetTile">' +
+                        '<ows:DCP>' +
+                            '<ows:HTTP>' +
+                                '<ows:Get xlink:href="http://wmts.geodienste.ch/avwms/wmts?">' +
+                                    '<ows:Constraint name="GetEncoding">' +
+                                        '<ows:AllowedValues>' +
+                                            '<ows:Value>REST</ows:Value>' +
+                                            '<ows:Value>KVP</ows:Value>' +
+                                        '</ows:AllowedValues>' +
+                                    '</ows:Constraint>' +
+                                '</ows:Get>' +
+                            '</ows:HTTP>' +
+                        '</ows:DCP>' +
+                    '</ows:Operation>' +
+                '</ows:OperationsMetadata>' +
+                '<Contents>' +
+                '</Contents>' +
+            '</Capabilities>';
+
+        var doc = new OpenLayers.Format.XML().read(xml);
+        var caps = new OpenLayers.Format.WMTSCapabilities().read(doc);
+        var layers = new GeoAdmin._Layers();
+
+        t.eq(layers.getRequestEncoding(caps), 'KVP',
+             'getRequestEncoding returns KVP when both KVP and REST are supported');
+    }
+
     </script>
 </head>
 <body>

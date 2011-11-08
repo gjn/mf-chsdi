@@ -216,6 +216,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 if (config.dimensions === undefined) {
                     config.dimensions = this.getDimensions(layer);
                 }
+                if (config.requestEncoding === undefined) {
+                    config.requestEncoding = this.getRequestEncoding(capabilities);
+                }
                 
                 config.capabilities = layer;
                 break;
@@ -351,6 +354,36 @@ GeoAdmin._Layers = OpenLayers.Class({
         if (layer.tileMatrixSetLinks && layer.tileMatrixSetLinks.length === 1) {
             return layer.tileMatrixSetLinks[0].tileMatrixSet;
         }
+    },
+
+    /** private: method[getRequestEncoding]
+     *  :param caps: ``Object`` The WMS Capabilities object.
+     *  :return: ``String`` A supported request encoding method for WMTS
+     *  GetTile. Only method KVP and REST are considered. If both KVP and
+     *  REST are supported, "KVP" is returned.
+     */
+    getRequestEncoding: function(caps) {
+        var requestEncoding,
+            allowedValues =
+            caps.operationsMetadata &&
+            caps.operationsMetadata.GetTile &&
+            caps.operationsMetadata.GetTile.dcp &&
+            caps.operationsMetadata.GetTile.dcp.http &&
+            caps.operationsMetadata.GetTile.dcp.http &&
+            caps.operationsMetadata.GetTile.dcp.http.get &&
+            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints &&
+            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding &&
+            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding.allowedValues;
+        if (allowedValues) {
+            var possibleValues = ['KVP', 'REST'];
+            for (var i=0, len=possibleValues.length; i<len; i++) {
+                if (possibleValues[i] in allowedValues) {
+                    requestEncoding = possibleValues[i];
+                    break;
+                }
+            }
+        }
+        return requestEncoding;
     },
 
     /** private: method[createLayer]
