@@ -30,6 +30,7 @@ class WmtsController(BaseController):
             self.GetCap = GetCapDe
             self.GetCapThemes = GetCapThemesDe
             self.ServiceMetadata = ServiceMetadataDe
+            self.lang = 'de'
 
 
     def index(self, format='html'):

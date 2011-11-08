@@ -50,7 +50,13 @@
 			<Style>
 				<ows:Title>${layer.kurzbezeichnung|x,trim}</ows:Title>
 				<ows:Identifier>${layer.id|x,trim}</ows:Identifier>
-			 <LegendURL format="image/png" xlink:href="http://api.geo.admin.ch/legend/${layer.id|x,trim}_${c.lang|x,trim}.png" />
+                                ## TODO relative path
+				<% legendName = "/var/www/vhosts/mf-chsdi/private/chsdi/chsdi/public/legend/" + layer.id + "_" + c.lang + ".png" %>
+				<%! import os.path %> 
+				<% hasLegend = os.path.isfile(legendName) %>
+				% if hasLegend:
+				<LegendURL format="image/png" xlink:href="http://api.geo.admin.ch/legend/${layer.id|x,trim}_${c.lang|x,trim}.png" />
+			  	% endif
 			</Style>
 			<Format>image/${str(layer.arr_all_formats).split(',')[0]}</Format>
 			<Dimension>
