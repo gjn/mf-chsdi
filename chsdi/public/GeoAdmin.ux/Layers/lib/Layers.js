@@ -1494,6 +1494,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            /*  until tileworker works again ltret
             "ch.are.gueteklassen_oev": {
                 name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
                 layertype: 'wmts',
@@ -1504,6 +1505,18 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            */
+             "ch.are.gueteklassen_oev": {
+                name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
+                layers: ["ch.are.gueteklassen_oev"],
+                layertype: 'wms',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.are",
+                opacity: 0.5,
+                queryable: true
+             },
+
             "ch.are.reisezeit_miv-2005": {
                 name: OpenLayers.i18n("ch.are.reisezeit_miv-2005"),
                 layertype: 'wmts',
