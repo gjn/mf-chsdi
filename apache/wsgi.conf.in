@@ -52,7 +52,7 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|de
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|wmts|sswmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|wmts|sswmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|geocatsearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
