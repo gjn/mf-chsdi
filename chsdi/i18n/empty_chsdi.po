@@ -118,6 +118,9 @@ msgstr ""
 msgid "objektname"
 msgstr ""
 
+msgid "teilobjektnr"
+msgstr ""
+
 msgid "laenge_m"
 msgstr ""
 

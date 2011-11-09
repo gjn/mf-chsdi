@@ -557,6 +557,9 @@ msgstr "Historischer Verlauf mit Substanz"
 msgid "substanzgrad"
 msgstr "Substanzgrad"
 
+msgid "teilobjektnr"
+msgstr "Teilobjektnr."
+
 msgid "tilenumber"
 msgstr "Blattnummer"
 

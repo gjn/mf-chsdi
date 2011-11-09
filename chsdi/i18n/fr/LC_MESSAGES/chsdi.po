@@ -557,6 +557,9 @@ msgstr "Substance"
 msgid "substanzgrad"
 msgstr "Substance"
 
+msgid "teilobjektnr"
+msgstr "Numéro du sous-objet"
+
 msgid "tilenumber"
 msgstr "Numéro de feuille"
 

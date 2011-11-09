@@ -557,6 +557,9 @@ msgstr "Historischer Verlauf mit Substanz"
 msgid "substanzgrad"
 msgstr "Substanzgrad"
 
+msgid "teilobjektnr"
+msgstr "Area of the partial object"
+
 msgid "tilenumber"
 msgstr "Sheet number"
 

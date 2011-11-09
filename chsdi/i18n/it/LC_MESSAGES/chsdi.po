@@ -557,6 +557,9 @@ msgstr "sostanza"
 msgid "substanzgrad"
 msgstr "sostanza"
 
+msgid "teilobjektnr"
+msgstr "Numero del sotto-oggetto"
+
 msgid "tilenumber"
 msgstr "Numero di foglio"
 
