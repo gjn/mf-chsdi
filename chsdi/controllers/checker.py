@@ -45,7 +45,7 @@ class CheckerController(BaseController):
             # Test geocoding
             check = self._checkUrl('Geocoding service',
                                    'http://'+serviceUrl+'/swisssearch/geocoding?lang=fr&query=lausanne',
-                                   '{"results": [{"service":', request.host)
+                                   '{"results": [', request.host)
             if  (check != 'OK'):
                 response.status='500'
                 return check
