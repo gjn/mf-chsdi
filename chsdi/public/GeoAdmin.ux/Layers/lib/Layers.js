@@ -149,7 +149,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             url = OpenLayers.Util.urlAppend(
                 config.url, 'SERVICE=WMS&REQUEST=GetCapabilities');
         } else if (config.layertype === 'wmts') {
-            url = config.url + '/1.0.0/WMTSCapabilities.xml';
+            url = config.url + '/1.0.0/WMTSCapabilities.xml?lang=' + OpenLayers.Lang.getCode() || 'de';
         } else {
             throw new Error('GeoAdmin._Layers.getCapabilitiesURL ' +
                             'only works for WMS and WMTS layers');
