@@ -5,15 +5,15 @@
       <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
       <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
       <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
-      <script type="text/javascript" src="../lib/GeoCatSearch.js"></script>
+      <script type="text/javascript" src="../lib/GeoCatSearchField.js"></script>
       <script type="text/javascript">
         function test_ctor(t) {
             t.plan(2);
 
             // test
-            var c = new GeoAdmin.GeoCatSearch();
-            t.ok(c instanceof GeoAdmin.GeoCatSearch,
-                 "ctor creates an instance of GeoCatSearch");
+            var c = new GeoAdmin.GeoCatSearchField();
+            t.ok(c instanceof GeoAdmin.GeoCatSearchField,
+                 "ctor creates an instance of GeoCatSearchField");
             t.eq(c.items.getCount(), 2, "ctor creates two items");
         }
 
@@ -21,7 +21,7 @@
             t.plan(2);
 
             // set up
-            var c = new GeoAdmin.GeoCatSearch({ url:"foo"});
+            var c = new GeoAdmin.GeoCatSearchField({ url:"foo"});
 
             // test
             var query = "bar", log = {};
