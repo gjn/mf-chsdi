@@ -338,6 +338,15 @@ class spektral(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.gefahren-spektral', spektral)
 
+class trockenwiesenundweiden(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'tww'
+    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __template__ = 'tooltips/trockenwiesenundweiden.mako'
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
+
 
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)

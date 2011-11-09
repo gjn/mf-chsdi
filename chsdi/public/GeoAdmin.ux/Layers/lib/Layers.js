@@ -1896,7 +1896,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.bafu.unesco-weltnaturerbe": {
                 name: OpenLayers.i18n("ch.bafu.unesco-weltnaturerbe"),
