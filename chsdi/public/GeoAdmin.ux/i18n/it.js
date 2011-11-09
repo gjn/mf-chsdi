@@ -223,7 +223,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Il vostro commento è stato inviato con successo. Grazie per avercelo trasmesso.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La vostra risoluzione dello schermo è inferiore a 1024x768pixel. map.geo.admin.ch non è  ottimizzata per risoluzioni inferiori.',
 	'Zoom to the max extent':'Tutta la Svizzera',
-	'about that layer':'about that layer', //TODO
+	'about that layer':'Informazioni su questo layer',
 	'addLayerText':'Aggiungere',
 	'addSelectedLayersText':'Aggiungere i livelli attualmente selezionati come un livello unico',
 	'black':'Nero',

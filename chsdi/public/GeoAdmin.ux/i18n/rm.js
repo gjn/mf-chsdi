@@ -219,7 +219,7 @@ OpenLayers.Lang.rm= {
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Rapport tramess cun success',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
 	'Zoom to the max extent':'Vesair tut la Svizra',
-	'about that layer':'about that layer', //TODO
+	'about that layer':'Davart da data teschernida',
 	'addLayerText':'Agiuntar',
 	'addSelectedLayersText':'Agiuntai il nivel selecziunà sco in nivel',
 	'black':'nair',

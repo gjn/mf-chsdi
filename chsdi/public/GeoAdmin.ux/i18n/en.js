@@ -223,7 +223,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Your feedback was successfully commited. Thank you for providing your feedback.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optimized for small screen resolution',
 	'Zoom to the max extent':'Full switzerland',
-	'about that layer':'about that layer', //TODO
+	'about that layer':'About that layer',
 	'addLayerText':'Add',
 	'addSelectedLayersText':'Add selected layers as one layer',
 	'black':'black',
