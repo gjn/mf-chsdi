@@ -281,7 +281,7 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.showme-kantone_lawinen':'ShowMe chantuns: lavinas',
 	'ch.bafu.showme-kantone_rutschungen':'ShowMe chantuns: bovas',
 	'ch.bafu.showme-kantone_sturzprozesse':'ShowMe chantuns: process da crudada',
-	'ch.bafu.swissprtr':'Emissiun da substanza nuschaivla (SwissPRTR)',
+	'ch.bafu.swissprtr':'Emiss. da subs. nuschaivla (SwissPRTR)',
 	'ch.bafu.unesco-weltnaturerbe':'UNESCO patrimoni mundial natural',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=de',
 	'ch.bafu.wasser-entnahme':'Retratga d\'aua',
