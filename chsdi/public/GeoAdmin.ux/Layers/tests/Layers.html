@@ -20,7 +20,7 @@
 
         config = {layertype: 'wmts', url: 'http://wmts'};
         url = layers.getCapabilitiesURL(config);
-        t.eq(url, 'http://wmts/1.0.0/WMTSCapabilities.xml',
+        t.eq(url, 'http://wmts/1.0.0/WMTSCapabilities.xml?lang=en',
              'capabilities URL is as expected');
     }
 
