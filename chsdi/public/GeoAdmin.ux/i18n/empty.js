@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'zoom to extent': "",
     'map':"",
     'Send':"",
     'Close':"",

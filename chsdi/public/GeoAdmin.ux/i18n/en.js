@@ -465,6 +465,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'white':'white',
 	'yellow':'yellow',
 	'yesText':'Yes',
+	'zoom to extent':'Auf den grössen Bereich zoomen',
 	'zoomin':'Zoom in',
 	'zoomout':'Zoom out',
 	'Öffentliche Einrichtungen und Dienste':'Utility and governmental services'

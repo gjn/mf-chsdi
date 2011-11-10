@@ -465,6 +465,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'white':'Weiss',
 	'yellow':'Gelb',
 	'yesText':'Ja',
+	'zoom to extent':'Auf den grössen Bereich zoomen',
 	'zoomin':'Hineinzoomen',
 	'zoomout':'Herauszoomen',
 	'Öffentliche Einrichtungen und Dienste':'Versorgungswirtschaft und staatliche Dienste'

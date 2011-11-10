@@ -461,6 +461,7 @@ OpenLayers.Lang.rm= {
 	'white':'alv',
 	'yellow':'mellen',
 	'yesText':'Gea',
+	'zoom to extent':'Auf den grössen Bereich zoomen',
 	'zoomin':'Zoom vers anen',
 	'zoomout':'Zoom vers anora',
 	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals'
