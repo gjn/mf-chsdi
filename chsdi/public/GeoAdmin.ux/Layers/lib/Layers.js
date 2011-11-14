@@ -351,8 +351,20 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Read the matrix set from the layer's capabilities.
      */
     getMatrixSet: function(layer) {
-        if (layer.tileMatrixSetLinks && layer.tileMatrixSetLinks.length === 1) {
-            return layer.tileMatrixSetLinks[0].tileMatrixSet;
+        if (layer.tileMatrixSetLinks) {
+            if (layer.tileMatrixSetLinks.length === 1) {
+                return layer.tileMatrixSetLinks[0].tileMatrixSet;
+            } else {
+                // more than one tileMatrixSet, return "well known" names
+                var preferedMatrixSet = ["CH1903"];
+                var tileMatrixSetLinks = Ext.pluck(layer.tileMatrixSetLinks, "tileMatrixSet");
+                for (var i = 0, len = preferedMatrixSet.length; i < len; i++) {
+                    var idx = OpenLayers.Util.indexOf(tileMatrixSetLinks, preferedMatrixSet[i]);
+                    if (idx !== -1) {
+                        return preferedMatrixSet[i];
+                    }
+                }
+            }
         }
     },
 
