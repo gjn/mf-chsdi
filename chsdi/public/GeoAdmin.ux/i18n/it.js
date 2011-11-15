@@ -297,6 +297,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abbandono dell\'idroelettricitá',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistica idroelettricitá',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Impioanti di sbarramento',
+	'ch.bfe.url':'ch.bfe.url', //TODO
 	'ch.bfs':'UST',
 	'ch.bfs.arealstatistik-1985':'Statistica di superficie 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Statistica di superficie 1992/1997',

@@ -227,6 +227,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo':"",
     'ch.bafu':"",
     'ch.bfe':"",
+    'ch.bfe.url':"",
     'ch.bfs':"",
     'ch.kt.bafu':"",
     'ch.swisstopo.kt':"",

@@ -297,6 +297,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abandonment of hydropower',
 	'ch.bfe.statistik-wasserkraftanlagen':'Hydropower statistic',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Dam',
+	'ch.bfe.url':'ch.bfe.url', //TODO
 	'ch.bfs':'FSO',
 	'ch.bfs.arealstatistik-1985':'Area statistics 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Area statistics 1992/1997',

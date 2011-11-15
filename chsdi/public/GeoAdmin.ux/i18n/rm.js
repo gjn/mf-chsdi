@@ -293,6 +293,7 @@ OpenLayers.Lang.rm= {
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renunzia forza idraulica',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistica implant idraulic',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Implant electric ',
+	'ch.bfe.url':'ch.bfe.url', //TODO
 	'ch.bfs':'BFS',
 	'ch.bfs.arealstatistik-1985':'Statistica da la surfatscha 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Statistica da la surfatscha 1992/1997',
