@@ -53,9 +53,10 @@ class SwisssearchController(BaseController):
 
             query = Session.query(SwissSearch).filter(ftsFilter)
 
-        # FIXME Address search is only for admin.ch
+        # FIXME Address search is only for admin.ch and awk.ch
+        # For "awk.ch", see email from lttsb from 18.nov. 2011
         referer = request.headers.get('referer', '')
-        if referer.find( 'admin.ch') < 0:
+        if referer.find( 'admin.ch') < 0 and referer.find('awk.ch'):
             query = query.filter(SwissSearch.origin != 'address')
 
         if citynr is not None:
