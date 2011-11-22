@@ -65,6 +65,9 @@ msgstr "Abgeschätzte Intensität"
 msgid "abgmagn"
 msgstr "Abgeschätzte Magnitude"
 
+msgid "abk_meter_ueber_meer"
+msgstr "m.ü.M."
+
 msgid "aktuelle_daten"
 msgstr "Aktuelle und historische Daten"
 
@@ -99,7 +102,7 @@ msgid "beschaeftigte_ha"
 msgstr "Beschäftigte pro ha"
 
 msgid "beschlussjahr"
-msgstr "Jahr"
+msgstr "Beschlussjahr"
 
 msgid "beschreibung"
 msgstr "Beschreibung"
@@ -315,7 +318,7 @@ msgid "jb_name"
 msgstr "Name Jagdbanngebiet"
 
 msgid "jb_obj"
-msgstr "Jagdbanngebiet Objektnr."
+msgstr "Nr. Jagdbanngebiet"
 
 msgid "kanton"
 msgstr "Kanton"
@@ -663,13 +666,13 @@ msgid "wrz_fl"
 msgstr "Fläche"
 
 msgid "wrz_name"
-msgstr "Wildruhezonen-Name"
+msgstr "Name Wildruhezone"
 
 msgid "wrz_obj"
-msgstr "Wildruhezonen-Objektnr."
+msgstr "Nr. Wildruhezone"
 
 msgid "wrz_status"
-msgstr "Kategorie"
+msgstr "Schutzstatus"
 
 msgid "wsname"
 msgstr "Name der Kartierfläche"
@@ -690,7 +693,7 @@ msgid "zaehlstelle"
 msgstr "Zählstelle"
 
 msgid "zeitraum"
-msgstr "Gültigkeit"
+msgstr "Schutzzeit"
 
 msgid "zone"
 msgstr "Zone"

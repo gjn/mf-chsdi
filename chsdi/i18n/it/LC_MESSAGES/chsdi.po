@@ -65,6 +65,9 @@ msgstr "Intensité estimée"
 msgid "abgmagn"
 msgstr "Magnitude estimée"
 
+msgid "abk_meter_ueber_meer"
+msgstr "m.s.l.m."
+
 msgid "aktuelle_daten"
 msgstr "Données actuelles et historiques"
 
@@ -84,7 +87,7 @@ msgid "ausgabejahr"
 msgstr "Année de publication"
 
 msgid "bearbeitungsjahr"
-msgstr "Année de réalisation"
+msgstr "Année de mise à jour"
 
 msgid "belastung_personen"
 msgstr "Charge [Pers./an]"
@@ -99,7 +102,7 @@ msgid "beschaeftigte_ha"
 msgstr "Emplois par ha"
 
 msgid "beschlussjahr"
-msgstr "Année"
+msgstr "Année de la décision"
 
 msgid "beschreibung"
 msgstr "Description"
@@ -255,7 +258,7 @@ msgid "grundkreis"
 msgstr "Arrondissement"
 
 msgid "grundlage"
-msgstr "Base"
+msgstr "Base de décision"
 
 msgid "grundtel"
 msgstr "Téléphone"
@@ -315,7 +318,7 @@ msgid "jb_name"
 msgstr "Nom district franc"
 
 msgid "jb_obj"
-msgstr "No objet district franc"
+msgstr "No district franc"
 
 msgid "kanton"
 msgstr "Canton"
@@ -666,10 +669,10 @@ msgid "wrz_name"
 msgstr "Nom zone de tranquillité"
 
 msgid "wrz_obj"
-msgstr "No objet zone de tranquillité"
+msgstr "No zone de tranquillité"
 
 msgid "wrz_status"
-msgstr "Catégorie"
+msgstr "Statut de protection"
 
 msgid "wsname"
 msgstr "Nom du secteur"
@@ -690,7 +693,7 @@ msgid "zaehlstelle"
 msgstr "Poste de comptage"
 
 msgid "zeitraum"
-msgstr "Période"
+msgstr "Période de protection"
 
 msgid "zone"
 msgstr "Zona"

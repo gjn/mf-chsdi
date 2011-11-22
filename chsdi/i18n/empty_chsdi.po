@@ -690,7 +690,8 @@ msgstr ""
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr ""
 
-
+msgid "abk_meter_ueber_meer"
+msgstr ""
 
 
 
