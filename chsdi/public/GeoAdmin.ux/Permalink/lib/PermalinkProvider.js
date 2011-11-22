@@ -54,11 +54,17 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     map_state[k] = parseInt(params[k]);
                 } else if (k === 'zoom') {
                     map_state[k] = parseFloat(params[k]);
-                } else if (k === 'bgOpacity') {
+                } else if (k === 'bgOpacity' && params.bgLayer != 'ch.swisstopo.swissimage') {
                     map_state.complementaryLayer.opacity = parseFloat(params.bgOpacity);
                 } else if (k === 'bgLayer') {
                     if (params.bgLayer === 'pixelmaps-gray') {
                         params.bgLayer =  'ch.swisstopo.pixelkarte-grau';
+                    }
+                    // special case for permalink from mobile
+                    if (params.bgLayer == 'ch.swisstopo.swissimage') {
+                        params.bgLayer = 'ch.swisstopo.pixelkarte-farbe';
+                        map_state.complementaryLayer.opacity = 0.0;
+                        params.bgOpacity = 0.0;
                     }
                     map_state.complementaryLayer.layername = params.bgLayer;
                 } else if (k === 'layers') {
