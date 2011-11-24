@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Share' "",
+    'Share:': "",
     'zoom to extent': "",
     'map':"",
     'Send':"",

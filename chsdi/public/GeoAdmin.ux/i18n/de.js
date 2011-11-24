@@ -192,6 +192,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Send':'Senden',
 	'Send feedback':'Absenden',
 	'Sending feedback....':'Bericht senden....',
+	'Share':'Teilnehmen',
+	'Share:':'Teilnehmen:',
 	'Statistische Einheiten':'Statistische Einheiten',
 	'Style':'Stil',
 	'Success':'Bericht erfolgreich versendet',

@@ -192,6 +192,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Send':'Send',
 	'Send feedback':'Send problem report',
 	'Sending feedback....':'Sending report....',
+	'Share':'Share',
+	'Share:':'Share:',
 	'Statistische Einheiten':'Statistical units',
 	'Style':'style',
 	'Success':'Report sent successfully',

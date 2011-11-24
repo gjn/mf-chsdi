@@ -188,6 +188,8 @@ OpenLayers.Lang.rm= {
 	'Send':'Trametter',
 	'Send feedback':'Rapportar il problem',
 	'Sending feedback....':'Rapportar il problem....',
+	'Share':'Participar',
+	'Share:':'Participar:',
 	'Statistische Einheiten':'Unitads statisticas',
 	'Style':'Stil',
 	'Success':'Rapport tramess cun success',

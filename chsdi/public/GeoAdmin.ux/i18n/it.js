@@ -192,6 +192,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Send':'Inviare',
 	'Send feedback':'Inviare il rapporto',
 	'Sending feedback....':'Invio del rapporto...',
+	'Share':'Condividere',
+	'Share:':'Condividere:',
 	'Statistische Einheiten':'Unità statistiche',
 	'Style':'Stile',
 	'Success':'Il rapporto è stato inviato',
