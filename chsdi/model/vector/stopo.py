@@ -222,7 +222,7 @@ register('ch.swisstopo.hiks-siegfried',SiegfriedErst)
 
 class GridstandPk25(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_pk25'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk25_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
@@ -233,7 +233,7 @@ register('ch.swisstopo.pixelkarte-farbe-pk25.noscale',GridstandPk25)
 
 class GridstandPk50(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_pk50'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk50_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
@@ -244,7 +244,7 @@ register('ch.swisstopo.pixelkarte-farbe-pk50.noscale',GridstandPk50)
 
 class GridstandPk100(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_pk100'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk100_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
@@ -255,7 +255,7 @@ register('ch.swisstopo.pixelkarte-farbe-pk100.noscale',GridstandPk100)
 
 class GridstandPk200(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_pk200'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk200_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
@@ -266,7 +266,7 @@ register('ch.swisstopo.pixelkarte-farbe-pk200.noscale',GridstandPk200)
 
 class GridstandPk500(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'view_gridstand_datenhaltung_pk500'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk500_tilecache'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk500_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
