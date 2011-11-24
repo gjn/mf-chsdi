@@ -548,7 +548,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
                 layertype: 'wmts',
-                timestamp: '20110401',
+                timestamp: '20111027',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -558,7 +558,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
                 layertype: 'wmts',
-                timestamp: '20110401',
+                timestamp: '20111027',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -1619,7 +1619,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-/*
             "ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk25.metadata"],
@@ -1665,13 +1664,57 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-*/
             "ch.swisstopo.images-swissimage.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.images-swissimage.metadata"),
                 layers: ["ch.swisstopo.images-swissimage.metadata"],
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk25.noscale"),
+                layertype: 'wmts',
+                timestamp: '20111027',
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-farbe-pk50.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk50.noscale"),
+                layertype: 'wmts',
+                timestamp: '20111027',
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
+                layertype: 'wmts',
+                timestamp: '20111027',
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-farbe-pk200.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk200.noscale"),
+                layertype: 'wmts',
+                timestamp: '20111027',
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.pixelkarte-farbe-pk500.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk500.noscale"),
+                layertype: 'wmts',
+                timestamp: '20111027',
+                type: "raster",
+                format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true
             },

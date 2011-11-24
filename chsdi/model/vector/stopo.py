@@ -222,53 +222,58 @@ register('ch.swisstopo.hiks-siegfried',SiegfriedErst)
 
 class GridstandPk25(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'gridstand_datenhaltung_pk25'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk25'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk25_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.pixelkarte-pk25.metadata',GridstandPk25)
+register('ch.swisstopo.pixelkarte-farbe-pk25.noscale',GridstandPk25)
 
 class GridstandPk50(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'gridstand_datenhaltung_pk50'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk50'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk50_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.pixelkarte-pk50.metadata',GridstandPk50)
+register('ch.swisstopo.pixelkarte-farbe-pk50.noscale',GridstandPk50)
 
 class GridstandPk100(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'gridstand_datenhaltung_pk100'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk100'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk100_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.pixelkarte-pk100.metadata',GridstandPk100)
+register('ch.swisstopo.pixelkarte-farbe-pk100.noscale',GridstandPk100)
 
 class GridstandPk200(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'gridstand_datenhaltung_pk200'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk200'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk200_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.pixelkarte-pk200.metadata',GridstandPk200)
+register('ch.swisstopo.pixelkarte-farbe-pk200.noscale',GridstandPk200)
 
 class GridstandPk500(Base, Queryable):
  	# view in a schema
- 	__tablename__ = 'gridstand_datenhaltung_pk500'
+ 	__tablename__ = 'view_gridstand_datenhaltung_pk500'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/pk500_metadata.mako'
  	id = Column('kbnum', Text, primary_key=True)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.pixelkarte-pk500.metadata',GridstandPk500)
+register('ch.swisstopo.pixelkarte-farbe-pk500.noscale',GridstandPk500)
 
 class GridstandSwissimage(Base, Queryable):
  	# view in a schema

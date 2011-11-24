@@ -451,12 +451,42 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Geografische Namen',
                 children: [
-                    {
+                     {
                         layerId: "ch.swisstopo.hiks-dufour"
-                    },
-                    {
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-pk25.metadata"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-pk50.metadata"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-pk100.metadata"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-pk200.metadata"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-pk500.metadata"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk25.noscale"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
+                     },
+                     {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
+                     },
+                     {
                         layerId: "ch.swisstopo.hiks-siegfried"
-                    }
+                     }
                 ]
             },
             {
@@ -465,21 +495,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
                     },
-                    /*{
-                     layerId: "ch.swisstopo.pixelkarte-pk25.metadata"
-                     },
-                     {
-                     layerId: "ch.swisstopo.pixelkarte-pk50.metadata"
-                     },
-                     {
-                     layerId: "ch.swisstopo.pixelkarte-pk100.metadata"
-                     },
-                     {
-                     layerId: "ch.swisstopo.pixelkarte-pk200.metadata"
-                     },
-                     {
-                     layerId: "ch.swisstopo.pixelkarte-pk500.metadata"
-                     },*/
                     {
                         layerId: "ch.are.alpenkonvention"
                     },
