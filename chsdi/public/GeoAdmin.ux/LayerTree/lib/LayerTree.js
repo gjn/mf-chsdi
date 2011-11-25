@@ -259,6 +259,7 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 }
                 break;
             case "delete":
+                layer.map.vector.getFeaturesByAttribute('layer_id', layer.layername)
                 layer.destroy();
                 break;
             case "close":
