@@ -21,7 +21,6 @@
  * @include OpenLayers/Control/DrawFeature.js
  * @include OpenLayers/Control/ArgParser.js
  * @include OpenLayers/Layer/WMTS.js
- * @include OpenLayers/Layer/GML.js
  * @include OpenLayers/Format/WMTSCapabilities.js
  * @include OpenLayers/Request.js
  * @include OpenLayers/Request/XMLHttpRequest.js
