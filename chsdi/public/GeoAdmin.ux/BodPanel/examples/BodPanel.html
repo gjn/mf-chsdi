@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title id='title'>BodPanel</title>
+
+    <!-- ** CSS ** -->
+    <!-- base library -->
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/css/LockingGridView.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/gridfilters/css/GridFilters.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/gridfilters/css/RangeMenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/grid/multiple-sorting.css"/>
+
+
+    <!-- overrides to base library -->
+
+
+    <!-- ** Javascript ** -->
+    <!-- base library -->
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ux-all.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/Reorderer.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarDroppable.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarReorderer.js"></script>
+    <script type="text/javascript" src="../../GeoAdmin.js"></script>
+
+
+    <!-- page specific -->
+    <script type="text/javascript" src="../lib/BodDetailPanel.js"></script>
+    <script type="text/javascript" src="../lib/BodGrid.js"></script>
+    <script type="text/javascript" src="../lib/BodPanel.js"></script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+    Ext.onReady(function() {
+        new GeoAdmin.BodPanel({ width:1200});
+    });
+</script>
+<div id="bodPanel_div"></div>
+
+</body>
+</html>
