@@ -151,3 +151,18 @@ class CmsLayerEn(Base, CmsLayer):
     __tablename__ = 'view_bod_export_cms_en'
     __table_args__ = ({'autoload': True})
     id = Column('pk', String, primary_key=True)
+
+
+class BodGrid(object):
+    def toDict(self):
+        d = {}
+        for c in self.__table__.columns:
+            if hasattr(self, c.name):
+                value = getattr(self, c.name)
+                d[c.name] = value
+        return d
+
+class BodGridDe(Base, BodGrid):
+    __tablename__ = 'view_bod_to_cms_de'
+    __table_args__ = ({'autoload': True})
+    id = Column('bodgrid_id', String, primary_key=True)
