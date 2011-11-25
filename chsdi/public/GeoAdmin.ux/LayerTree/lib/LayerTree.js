@@ -259,7 +259,10 @@ GeoAdmin.LayerTree = Ext.extend(Ext.tree.TreePanel, {
                 }
                 break;
             case "delete":
-                layer.map.vector.getFeaturesByAttribute('layer_id', layer.layername);
+                var vector = layer.map.vector;
+                if (vector instanceof OpenLayers.Layer.Vector) {
+                    vector.destroyFeatures(layer.map.vector.getFeaturesByAttribute('layer_id', layer.layername));
+                }
                 layer.destroy();
                 break;
             case "close":
