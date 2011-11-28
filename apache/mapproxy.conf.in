@@ -34,6 +34,8 @@ WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/part
     Allow from  10.131.50. 10.131.51.     # swisstopo net
     Allow from 193.5.216.100 193.5.216.70 # BIT proxy
     Allow from 160.92.125.32              # IGN proxy
+    Allow from 192.134.132.15                        #proxy SIEL ign
+    Allow from 192.134.133.9                          #proxy ign
     Allow from 10.49.118.84 10.48.109.212 10.227.26.191 10.48.166.233 # AWS where mf-chsdi is deployed
     
     ExpiresActive on
