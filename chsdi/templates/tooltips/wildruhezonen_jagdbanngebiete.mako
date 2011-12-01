@@ -7,7 +7,7 @@
 	<tr><td width="150" valign="top">${_('grundlage')}</td><td>${c.feature.grundlage or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('jb_name')}</td><td>${c.feature.jb_name or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('jb_obj')}</td><td>${c.feature.jb_obj or '-'}</td></tr>
-	<tr><td width="150" valign="top">${_('wrz_fl')}</td><td>${c.feature.wrz_fl or '-'}</td></tr>
+	<tr><td width="150" valign="top">${_('kanton')}</td><td>${c.feature.kanton or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('wrz_name')}</td><td>${c.feature.wrz_name or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('wrz_obj')}</td><td>${c.feature.wrz_obj or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('wrz_status')}</td><td>${c.feature.wrz_status or '-'}</td></tr>
