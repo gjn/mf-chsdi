@@ -1,4 +1,11 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Subject': "",
+    'To': "",
+    'From': "",
+    'Please fill the communication field': "",
+    'Your email was sent successfully!': "",
+    'Sending your email...': "",
+    'Email': "",
     'Share' "",
     'Share:': "",
     'zoom to extent': "",
