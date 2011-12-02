@@ -8,7 +8,7 @@ Ext.onReady(function() {
         region: 'center',
         map: map
     });
-
+    map.addLayerByName('ch.bafu.bundesinventare-bln');
     new Ext.Panel({
         renderTo: "map",
         layout: "border",
@@ -23,13 +23,20 @@ Ext.onReady(function() {
                 printPanelOptions: {
                     mapPanel: mapPanel
                 },
+                configureTitle: true,
+                configureFooter: true,
+                configureLegend: true,
                 windowOptions: {
-                    title: OpenLayers.i18n('print map')
+                    title: OpenLayers.i18n('print map'),
+                    height: 400
                 }
             }),
             new GeoAdmin.Print({
                 printBaseUrl: '/print',
                 text: OpenLayers.i18n('print map (panel)'),
+                configureTitle: true,
+                configureFooter: true,
+                configureLegend: true,
                 printPanelOptions: {
                     renderTo: 'print',
                     mapPanel: mapPanel
