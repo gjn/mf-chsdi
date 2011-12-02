@@ -157,6 +157,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'None':'None',
 	'Number of imported features:':'Number of imported features:',
 	'Oberflächendarstellung':'Surface representation',
+	'Object information': 'Object information',
 	'Opacity:':'Opacity:',
 	'Overview Map':'Overview map',
 	'Pan':'Pan',

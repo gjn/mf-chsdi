@@ -157,6 +157,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'None':'Aucun',
 	'Number of imported features:':'Nombre d\'objets importés:',
 	'Oberflächendarstellung':'Couverture du sol',
+	'Object information': 'Information sur l\'objet',
 	'Opacity:':'Opacité  :',
 	'Overview Map':'Carte de référence',
 	'Pan':'Déplacer la carte',

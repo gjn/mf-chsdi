@@ -153,6 +153,7 @@ OpenLayers.Lang.rm= {
 	'None':'Nagina',
 	'Number of imported features:':'Dumber dals objects importads:',
 	'Oberflächendarstellung':'Represchentaziun da la surfatscha',
+	'Object information': 'Infurmaziuns davart ils objects',
 	'Opacity:':'Opacitad:',
 	'Overview Map':'Charta da survista',
 	'Pan':'Spustar la charta',
