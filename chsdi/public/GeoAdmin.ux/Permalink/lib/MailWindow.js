@@ -4,6 +4,16 @@
  
 Ext.namespace('GeoAdmin');
 
+/** api: constructor
+ *  .. class:: MailWindow(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.MailWindow``
+ *
+ *  Create a mail window
+ */
+
 GeoAdmin.MailWindow = Ext.extend(Ext.Window, {
      constructor: function(config) {
          this.panel = new GeoAdmin.MailPanel;
@@ -86,4 +96,5 @@ GeoAdmin.MailWindow = Ext.extend(Ext.Window, {
     }
 });
 
+/** api: xtype = ga_mailwindow */
 Ext.reg("ga_mailwindow", GeoAdmin.MailWindow);

@@ -1,5 +1,20 @@
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = MailPanel
+ *  base_link = `Ext.form.FormPanel <http://dev.sencha.com/deploy/dev/docs/?class=Ext.form.FormPanel>`_
+ */
 
 Ext.namespace('GeoAdmin');
+
+/** api: constructor
+ *  .. class:: MailPanel(config)
+ *
+ *  :param config: ``Object`` config
+ *
+ *  :return:  ``GeoAdmin.PermalinkPanel``
+ *
+ *  Create a mail panel
+ */
 
 GeoAdmin.MailPanel = Ext.extend(Ext.form.FormPanel, {
 	
@@ -37,4 +52,5 @@ GeoAdmin.MailPanel = Ext.extend(Ext.form.FormPanel, {
 	
 });
 
+/** api: xtype = ga_mailpanel */
 Ext.reg("ga_mailpanel", GeoAdmin.MailPanel);
