@@ -1,5 +1,6 @@
 /**
  * @include Permalink/lib/PermalinkField.js
+ * @include Permalink/lib/MailWindow.js
  */
 
 /** api: (define)
@@ -78,44 +79,137 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     baseCls: "permalink-panel",
     labelAlign: "top",
     closeButtonToggleGroup: "export",
-
-    initComponent: function() {
+    initComponent: function () {
         this.title = OpenLayers.i18n("Map URL");
-
-        // Due to sharethis limitation, it's required to use an existing span in map.geo.admin.ch
-        var s = document.getElementById("sharethis_permalink");
-        if (s === null) {
-            s = document.createElement("span");
-            if (typeof stLight != 'undefined') {
-                s.className = "st_sharethis";
-                s.innerHTML = OpenLayers.i18n("Share");
+        // Share button
+        buttonShare = new Ext.Button({
+            id: "shareId",
+            cls: "share-button",
+            tooltip: OpenLayers.i18n("Share"),
+            scope: this,
+            handler: function () {
+                this.switchDisplay("shareId");
             }
-        } else {
-            s.style.display = 'block';
-            s.style.visibility = 'visible';
-        }
-
-        this.items = new GeoAdmin.PermalinkField({width: 440});
-        this.tbar = ["->", s, {
+        });
+        // Text label
+        div = document.createElement("div");
+        div.id = "textLabel";
+        div.className = "textLabel";
+        div.innerHTML = OpenLayers.i18n("Share:");
+        div.style.display = "none";
+        // Text label initial
+        div_ini = document.createElement("div");
+        div_ini.id = "textLabelIni";
+        div_ini.className = "textLabelIni";
+        div_ini.innerHTML = OpenLayers.i18n("Share");
+        div_ini.style.display = "block";
+        // Twitter button
+        buttonTwitter = new Ext.Button({
+            id : "twitterId",
+            cls: "twitter-button",
+            tooltip: "Twitter",
+            scope: this,
+            handler: function () {
+                this.httpShare('twitter');
+            }
+        });
+        // Facebook button
+        buttonFacebook = new Ext.Button({
+            id: "facebookId",
+            cls: "facebook-button",
+            tooltip: "Facebook",
+            scope: this,
+            handler: function () {
+                this.httpShare('facebook');
+            }
+        });
+        buttonGooglePlus = new Ext.Button({
+            id: "googleplusId",
+            cls: "googleplus-button",
+            tooltip: "Google Bookmarks",
+            scope: this,
+            handler: function () {
+                this.httpShare('googleplus');
+            }
+        });
+        buttonMail = new Ext.Button({
+            id: "mailId",
+            cls: "mail-button",
+            tooltip: OpenLayers.i18n("Email"),
+            scope: this,
+            handler: function () {
+                windowMail = new GeoAdmin.MailWindow();
+                windowMail.show();
+            }
+        });
+        // Close share button
+        buttonClose = new Ext.Button({
+            id: "closeShareId",
+            cls: "close-share-button",
+            tooltip: OpenLayers.i18n('Close'),
+            scope: this,
+            handler: function () {
+                this.switchDisplay("closeShareId");
+            }
+        });
+        // Permalink Field
+        permalinkField = new GeoAdmin.PermalinkField({width: 440});
+        this.items = permalinkField;
+        this.tbar = ["->", div_ini, buttonShare, div, buttonTwitter, buttonFacebook, buttonGooglePlus, buttonMail, buttonClose, {
             iconCls: "close-button",
             toggleGroup: this.closeButtonToggleGroup,
-            handler: function() {
+            scope: this,
+            handler: function () {
                 this.hide();
-            },
-            scope: this
+            }
         }];
-        GeoAdmin.PermalinkPanel.superclass.initComponent.apply(
-                this, arguments);
+        GeoAdmin.PermalinkPanel.superclass.initComponent.apply(this, arguments);
     },
-
+    /** private method[httpShare]
+		* Open a new tab with the permalink according to the button pushed
+		*/
+    httpShare: function (j) {
+        permalink = Ext.state.Manager.getProvider().getLink();
+        if (j === "facebook") {
+            url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(permalink) + "&t=" + encodeURIComponent(document.title);
+            window.open(url, '_blank');
+        } else if (j === "twitter") {
+            url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(permalink) + "&text=" + encodeURIComponent(document.title);
+            window.open(url, '_blank');
+        } else if (j === "googleplus") {
+            url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
+            window.open(url, '_blank');
+        }
+    },
+    /** private method[switchDisplay]
+    * Display displays/hides the share buttons
+    */ 
+    switchDisplay: function (k) {
+        if (k === "shareId") {
+            document.getElementById("textLabel").style.display = "block";
+            document.getElementById("twitterId").style.display = "block";
+            document.getElementById("facebookId").style.display = "block";
+            document.getElementById("googleplusId").style.display = "block";
+            document.getElementById("mailId").style.display = "block";
+            document.getElementById("closeShareId").style.display = "block";
+            document.getElementById("textLabelIni").style.display = "none";
+            document.getElementById("shareId").style.display = "none";
+        } else {
+            document.getElementById("textLabel").style.display = "none";
+            document.getElementById("twitterId").style.display = "none";
+            document.getElementById("facebookId").style.display = "none";
+            document.getElementById("googleplusId").style.display = "none";
+            document.getElementById("mailId").style.display = "none";
+            document.getElementById("closeShareId").style.display = "none";
+            document.getElementById("textLabelIni").style.display = "block";
+            document.getElementById("shareId").style.display = "block";
+        }
+    },
     afterRender: function() {
-        GeoAdmin.PermalinkPanel.superclass.afterRender.apply(
-                this, arguments);
+        GeoAdmin.PermalinkPanel.superclass.afterRender.apply(this, arguments);
         // we want to swallow events not to have the map move
         // when mouse actions occur on this panel
-        this.body.swallowEvent([
-            "mousedown", "mousemove", "mouseup", "click", "dblclick"
-        ]);
+        this.body.swallowEvent(["mousedown", "mousemove", "mouseup", "click", "dblclick"]);
     }
 });
 
