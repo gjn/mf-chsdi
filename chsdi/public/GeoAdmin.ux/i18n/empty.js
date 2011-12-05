@@ -120,6 +120,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.pixelkarte-pk100.metadata' :"",
     'ch.swisstopo.pixelkarte-pk200.metadata' :"",
     'ch.swisstopo.pixelkarte-pk500.metadata' :"",
+    'ch.swisstopo.pixelkarte-pk1000.metadata' :"",
     'ch.swisstopo.pixelkarte-farbe-pk25.noscale' :"",
     'ch.swisstopo.pixelkarte-farbe-pk50.noscale' :"",
     'ch.swisstopo.pixelkarte-farbe-pk100.noscale' :"",
