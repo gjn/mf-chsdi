@@ -15,11 +15,13 @@ hosts:
 #
 # allowed scales
 #
-scales: [2500000, 1000000, 500000, 200000, 100000, 50000, 25000, 20000, 10000, 5000]
+scales: [2500000, 1000000, 500000, 200000, 100000, 50000, 25000, 20000, 10000, 5000, 2500]
 
 globalParallelFetches: 25
 perHostParallelFetches: 25
-
+#--------------------------------------
+# A4 landscape:
+#--------------------------------------
 layouts:
   1 A4 landscape:
     mainPage:
@@ -287,9 +289,9 @@ layouts:
               backgroundColor: white
               layerFontSize: 9
 
-  #===========================================================================
-  # A4 portrait:
-  #===========================================================================
+#---------------------------------------
+# A4 portrait:
+#---------------------------------------
   2 A4 portrait:
     mainPage:
       pageSize: A4
@@ -327,21 +329,6 @@ layouts:
         - !map
           width: 510
           height: 720
-          
-#---------------------------------------
-# Title
-#---------------------------------------
-        - !columns
-          absoluteY: 820
-          absoluteX: 253
-          width: 150
-          items:
-            - !text
-              fontSize: 14
-              align: right
-              condition: mapTitle
-              text: |
-                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -540,6 +527,33 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
+    lastPage:
+      pageSize: A4
+      landscape: true
+      items:
+#---------------------------------------
+# Legend
+#---------------------------------------
+        - !columns
+          absoluteX: 45
+          absoluteY: 500
+          width: 250
+          items:
+            - !legends
+              inline: false
+              defaultScale: 0.3
+              maxHeight: 400
+              maxWidth: 250
+              maxIconHeight: 0
+              maxIconWidth: 0
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9
+#---------------------------------------
+# A3 landscape:
+#---------------------------------------
   3 A3 landscape:
     mainPage:
       rotation: false
@@ -581,21 +595,6 @@ layouts:
         - !map
           width: 1110
           height: 700
-
-#---------------------------------------
-# Title
-#---------------------------------------
-        - !columns
-          absoluteY: 825
-          absoluteX: 772
-          width: 150
-          items:
-            - !text
-              fontSize: 14
-              align: right
-              condition: mapTitle
-              text: |
-                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -796,6 +795,33 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
+    lastPage:
+      pageSize: A3
+      landscape: true
+      items:
+#---------------------------------------
+# Legend
+#---------------------------------------
+        - !columns
+          absoluteX: 90
+          absoluteY: 750
+          width: 250
+          items:
+            - !legends
+              inline: false
+              defaultScale: 0.3
+              maxHeight: 400
+              maxWidth: 250
+              maxIconHeight: 0
+              maxIconWidth: 0
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9
+#---------------------------------------
+# A3 portait:
+#---------------------------------------
   4 A3 portrait:
     mainPage:
       pageSize: A3
@@ -833,21 +859,6 @@ layouts:
         - !map
           width: 760
           height: 1050
-
-#---------------------------------------
-# Title
-#---------------------------------------
-        - !columns
-          absoluteY: 1175
-          absoluteX: 420
-          width: 150
-          items:
-            - !text
-              fontSize: 14
-              align: right
-              condition: mapTitle
-              text: |
-                $${mapTitle}
 
 #---------------------------------------
 # Scales
@@ -1045,5 +1056,29 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
+    lastPage:
+      pageSize: A3
+      landscape: true
+      items:
+#---------------------------------------
+# Legend
+#---------------------------------------
+        - !columns
+          absoluteX: 90
+          absoluteY: 750
+          width: 250
+          items:
+            - !legends
+              inline: false
+              defaultScale: 0.3
+              maxHeight: 400
+              maxWidth: 250
+              maxIconHeight: 0
+              maxIconWidth: 0
+              columnMargin: 10
+              classIndentation: 3
+              classSpace: 5
+              backgroundColor: white
+              layerFontSize: 9
 
 
