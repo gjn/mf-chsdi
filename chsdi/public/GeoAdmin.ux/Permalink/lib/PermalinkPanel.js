@@ -79,33 +79,32 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     baseCls: "permalink-panel",
     labelAlign: "top",
     closeButtonToggleGroup: "export",
+    shareText: null,
+    buttonShare: null,
+    buttonTwitter: null,
+    buttonFacebook: null,
+    buttonGooglePlus: null,
+    buttonMail: null,
+    buttonClose: null,
+
     initComponent: function () {
         this.title = OpenLayers.i18n("Map URL");
+        this.shareText = new Ext.menu.TextItem({
+            cls: "shareText",
+            text: OpenLayers.i18n("Share")
+        });
         // Share button
-        buttonShare = new Ext.Button({
-            id: "shareId",
+        this.buttonShare = new Ext.Button({
             cls: "share-button",
             tooltip: OpenLayers.i18n("Share"),
             scope: this,
             handler: function () {
-                this.switchDisplay("shareId");
+                this.switchDisplay(true);
             }
         });
-        // Text label
-        div = document.createElement("div");
-        div.id = "textLabel";
-        div.className = "textLabel";
-        div.innerHTML = OpenLayers.i18n("Share:");
-        div.style.display = "none";
-        // Text label initial
-        div_ini = document.createElement("div");
-        div_ini.id = "textLabelIni";
-        div_ini.className = "textLabelIni";
-        div_ini.innerHTML = OpenLayers.i18n("Share");
-        div_ini.style.display = "block";
+        this.buttonShare.addClass("showBlock");
         // Twitter button
-        buttonTwitter = new Ext.Button({
-            id : "twitterId",
+        this.buttonTwitter = new Ext.Button({
             cls: "twitter-button",
             tooltip: "Twitter",
             scope: this,
@@ -113,9 +112,9 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 this.httpShare('twitter');
             }
         });
+        this.buttonTwitter.addClass("hideBlock");
         // Facebook button
-        buttonFacebook = new Ext.Button({
-            id: "facebookId",
+        this.buttonFacebook = new Ext.Button({
             cls: "facebook-button",
             tooltip: "Facebook",
             scope: this,
@@ -123,8 +122,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 this.httpShare('facebook');
             }
         });
-        buttonGooglePlus = new Ext.Button({
-            id: "googleplusId",
+        this.buttonFacebook.addClass("hideBlock");
+        this.buttonGooglePlus = new Ext.Button({
             cls: "googleplus-button",
             tooltip: "Google Bookmarks",
             scope: this,
@@ -132,8 +131,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 this.httpShare('googleplus');
             }
         });
-        buttonMail = new Ext.Button({
-            id: "mailId",
+        this.buttonGooglePlus.addClass("hideBlock");
+        this.buttonMail = new Ext.Button({
             cls: "mail-button",
             tooltip: OpenLayers.i18n("Email"),
             scope: this,
@@ -142,20 +141,21 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 windowMail.show();
             }
         });
+        this.buttonMail.addClass("hideBlock");
         // Close share button
-        buttonClose = new Ext.Button({
-            id: "closeShareId",
+        this.buttonClose = new Ext.Button({
             cls: "close-share-button",
             tooltip: OpenLayers.i18n('Close'),
             scope: this,
             handler: function () {
-                this.switchDisplay("closeShareId");
+                this.switchDisplay(false);
             }
         });
+        this.buttonClose.addClass("hideBlock");
         // Permalink Field
-        permalinkField = new GeoAdmin.PermalinkField({width: 440});
+        var permalinkField = new GeoAdmin.PermalinkField({width: 440});
         this.items = permalinkField;
-        this.tbar = ["->", div_ini, buttonShare, div, buttonTwitter, buttonFacebook, buttonGooglePlus, buttonMail, buttonClose, {
+        this.tbar = ["->", this.shareText, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
             iconCls: "close-button",
             toggleGroup: this.closeButtonToggleGroup,
             scope: this,
@@ -166,43 +166,53 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         GeoAdmin.PermalinkPanel.superclass.initComponent.apply(this, arguments);
     },
     /** private method[httpShare]
-		* Open a new tab with the permalink according to the button pushed
-		*/
+     * Open a new tab with the permalink according to the button pushed
+     */
     httpShare: function (j) {
-        permalink = Ext.state.Manager.getProvider().getLink();
+        var permalink = Ext.state.Manager.getProvider().getLink();
         if (j === "facebook") {
-            url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(permalink) + "&t=" + encodeURIComponent(document.title);
+            var url = "http://www.facebook.com/sharer.php?u=" + encodeURIComponent(permalink) + "&t=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         } else if (j === "twitter") {
-            url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(permalink) + "&text=" + encodeURIComponent(document.title);
+            var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(permalink) + "&text=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         } else if (j === "googleplus") {
-            url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
+            var url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         }
     },
     /** private method[switchDisplay]
-    * Display displays/hides the share buttons
-    */ 
+     * Display displays/hides the share buttons
+     */
     switchDisplay: function (k) {
-        if (k === "shareId") {
-            document.getElementById("textLabel").style.display = "block";
-            document.getElementById("twitterId").style.display = "block";
-            document.getElementById("facebookId").style.display = "block";
-            document.getElementById("googleplusId").style.display = "block";
-            document.getElementById("mailId").style.display = "block";
-            document.getElementById("closeShareId").style.display = "block";
-            document.getElementById("textLabelIni").style.display = "none";
-            document.getElementById("shareId").style.display = "none";
+        if (k) {
+            this.shareText.update(OpenLayers.i18n("Share") + " :");
+            this.buttonShare.addClass("hideBlock");
+            this.buttonShare.removeClass("showBlock");
+            this.buttonTwitter.addClass("showBlock");
+            this.buttonTwitter.removeClass("hideBlock");
+            this.buttonFacebook.addClass("showBlock");
+            this.buttonFacebook.removeClass("hideBlock");
+            this.buttonGooglePlus.addClass("showBlock");
+            this.buttonGooglePlus.removeClass("hideBlock");
+            this.buttonMail.addClass("showBlock");
+            this.buttonMail.removeClass("hideBlock");
+            this.buttonClose.addClass("showBlock");
+            this.buttonClose.removeClass("hideBlock");
         } else {
-            document.getElementById("textLabel").style.display = "none";
-            document.getElementById("twitterId").style.display = "none";
-            document.getElementById("facebookId").style.display = "none";
-            document.getElementById("googleplusId").style.display = "none";
-            document.getElementById("mailId").style.display = "none";
-            document.getElementById("closeShareId").style.display = "none";
-            document.getElementById("textLabelIni").style.display = "block";
-            document.getElementById("shareId").style.display = "block";
+            this.shareText.update(OpenLayers.i18n("Share"));
+            this.buttonShare.addClass("showBlock");
+            this.buttonShare.removeClass("hideBlock")
+            this.buttonTwitter.addClass("hideBlock");
+            this.buttonTwitter.removeClass("showBlock");
+            this.buttonFacebook.addClass("hideBlock");
+            this.buttonFacebook.removeClass("showBlock");
+            this.buttonGooglePlus.addClass("hideBlock");
+            this.buttonGooglePlus.removeClass("showBlock");
+            this.buttonMail.addClass("hideBlock");
+            this.buttonMail.removeClass("showBlock");
+            this.buttonClose.addClass("hideBlock");
+            this.buttonClose.removeClass("showBlock");
         }
     },
     afterRender: function() {

@@ -3,7 +3,6 @@
 var mainPanel, mapPanel, permalinkPanel1, permalinkPanel2;
 
 Ext.onReady(function() {
-    stLight.options({publisher:'b7834581-dab8-4a2b-bf6f-1f877b458782'});
 
     permalinkPanel1 = new GeoAdmin.PermalinkPanel({hidden: true});
     permalinkPanel2 = new GeoAdmin.PermalinkPanel({hidden: true});

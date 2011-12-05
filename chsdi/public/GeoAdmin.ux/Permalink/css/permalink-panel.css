@@ -55,46 +55,29 @@
 .permalink-panel .close-share-button  {
     background: url("../../images/fermer.gif") no-repeat scroll center transparent !important;
 }
-.permalink-panel .facebook-button, .permalink-panel .twitter-button, .permalink-panel .googleplus-button, .permalink-panel .share-button,
-.permalink-panel .close-share-button, .permalink-panel .mail-button {
-    height: 16px;
-    float: right;
-    position: relative;
-    top: 2px;
-}
+
 .permalink-panel .share-button {
     padding-right: 10px;
 }
-.permalink-panel .textLabelIni {
-    font-size: 1.03em;
-    font-weight: bold;
-    padding-right: 1px;
+
+.shareText {
+    font-weight: bold !important;
     position: relative;
-    top: 1px;
+    top: 3px;
 }
-.permalink-panel .textLabel {
-    font-size: 1.03em;
-    font-weight: bold;
-    padding-right: 7px;
-    position: relative;
-    top: 2px;
+
+.ext-ie .shareText {
+    top: 0px;
 }
-#twitterId .x-btn-text, #facebookId .x-btn-text, #googleplusId .x-btn-text, #mailId .x-btn-text, #closeShareId .x-btn-text {
-    height: 10px !important;
-}
-.permalink-panel .textLabel, .permalink-panel .facebook-button, .permalink-panel .twitter-button, .permalink-panel .googleplus-button,
-.permalink-panel .close-share-button, .permalink-panel .mail-button {
-    display: none;
-}
+
 .facebook-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
     width: 16px;
-    position: relative;
-    top: 2px;
-    left: -2px;
 }
-.facebook-button .x-btn-text, .googleplus-button .x-btn-text, .mail-button .x-btn-text {
-    border-left: 0.1em solid #000000;
-}
-.permalink-panel .share-button {
+
+.showBlock {
     display: block;
+}
+
+.hideBlock {
+    display: none
 }
