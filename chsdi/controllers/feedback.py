@@ -26,12 +26,32 @@ class FeedbackController(BaseController):
         self.create()
 
     def create(self):
-        email = request.params.get('email','Anonymous')
+        ua = request.params.get('ua','no user-agent found')
         permalink = request.params.get('permalink', 'no permalink provided')
-        feedback = request.params.get('feedback','no feedback provided')
-        self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback: .\n" + feedback + ". \nPermalink: "+ permalink)
-        return dumps({"success": True})
+        if permalink != 'no permalink provided':
+                feedback = request.params.get('feedback','no feedback provided')
+                email = request.params.get('email','Anonymous')
+                if email == '':
+                        email = 'Anonymous'
+                self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback:\n" + feedback + ". \nPermalink: "+ permalink + "\n\nUser-Agent: " + ua)
 
+                return dumps({"success": True})
+        else:
+                sender = request.params.get('sender', 'Anonymous')
+                if sender == '':
+                        sender = 'Anonymous'
+                recipient = request.params.get('recipient', 'webgis@swisstopo.ch')
+                if recipient == '':
+                        recipient = 'webgis@swisstopo.ch'
+                subject_txt = request.params.get('subject_txt', 'Permalink from map.geo.admin')
+                if subject_txt == '':
+                        subject_txt = 'Permalink from map.geo.admin'
+                text_msg = request.params.get('text_msg', 'No message provided')
+                if text_msg == '':
+                        text_msg = 'No message provided'
+                self.mail(recipient,subject_txt,sender + " just sent a you a message:\n" + text_msg + "\n\nUser-Agent: " + ua)
+
+                return dumps({"success": True})
     def mail(self, to, subject, text):
         # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
         msg = MIMEMultipart()
