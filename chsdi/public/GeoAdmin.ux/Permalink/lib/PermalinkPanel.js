@@ -91,8 +91,18 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         this.title = OpenLayers.i18n("Map URL");
         this.shareText = new Ext.menu.TextItem({
             cls: "shareText",
-            text: OpenLayers.i18n("Share")
+            text: OpenLayers.i18n("Share"),
+            scope: this,
+            handler: function () {
+                this.switchDisplay(true);
+            }
         });
+        this.shareText.addClass("showBlock");
+        this.shareTextOpen = new Ext.menu.TextItem({
+            cls: "shareTextOpen",
+            text: OpenLayers.i18n("Share:")
+        });
+        this.shareTextOpen.addClass("hideBlock");
         // Share button
         this.buttonShare = new Ext.Button({
             cls: "share-button",
@@ -155,7 +165,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         // Permalink Field
         var permalinkField = new GeoAdmin.PermalinkField({width: 440});
         this.items = permalinkField;
-        this.tbar = ["->", this.shareText, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
+        this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
             iconCls: "close-button",
             toggleGroup: this.closeButtonToggleGroup,
             scope: this,
@@ -186,9 +196,12 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
      */
     switchDisplay: function (k) {
         if (k) {
-            this.shareText.update(OpenLayers.i18n("Share") + " :");
+            this.shareText.addClass("hideBlock");
+            this.shareText.removeClass("showBlock");
             this.buttonShare.addClass("hideBlock");
             this.buttonShare.removeClass("showBlock");
+            this.shareTextOpen.addClass("showBlock");
+            this.shareTextOpen.removeClass("hideBlock");
             this.buttonTwitter.addClass("showBlock");
             this.buttonTwitter.removeClass("hideBlock");
             this.buttonFacebook.addClass("showBlock");
@@ -200,9 +213,12 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.buttonClose.addClass("showBlock");
             this.buttonClose.removeClass("hideBlock");
         } else {
-            this.shareText.update(OpenLayers.i18n("Share"));
+            this.shareText.addClass("showBlock");
+            this.shareText.removeClass("hideBlock");
             this.buttonShare.addClass("showBlock");
-            this.buttonShare.removeClass("hideBlock")
+            this.buttonShare.removeClass("hideBlock");
+            this.shareTextOpen.addClass("hideBlock");
+            this.shareTextOpen.removeClass("showBlock");
             this.buttonTwitter.addClass("hideBlock");
             this.buttonTwitter.removeClass("showBlock");
             this.buttonFacebook.addClass("hideBlock");

@@ -60,14 +60,16 @@
     padding-right: 10px;
 }
 
-.shareText {
-    font-weight: bold !important;
-    position: relative;
-    top: 3px;
+.shareText , shareTextOpen {
+    margin-top: 3px;
 }
 
-.ext-ie .shareText {
-    top: 0px;
+.shareText {
+    font-weight: bold !important;
+}
+
+.ext-ie .shareText, .ext-ie .shareTextOpen  {
+    margin-top: 0px;
 }
 
 .facebook-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
@@ -80,4 +82,12 @@
 
 .hideBlock {
     display: none
+}
+.permalink-panel .x-menu-item-active {
+    background: #FFFFFF;
+    color: #FF0000;
+    border-color: #FFFFFF !important;
+}
+.x-menu-item-active .shareTextOpen {
+    color: #000000;
 }
