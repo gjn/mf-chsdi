@@ -21,12 +21,15 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     layout: 'column',
 
     cls: 'geoadmin-basetool',
+    /* Parameter used to define whether one wants the email function in the share buttons */
+    mail: false,
 
     constructor : function(config) {
+    	Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
         Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms']});
 
-        var permalink = new GeoAdmin.PermalinkPanel({'hidden': true});
+        var permalink = new GeoAdmin.PermalinkPanel({'hidden': true, 'mail': this.mail});
         this.permalinkAction = new Ext.Button({
             text: OpenLayers.i18n('permalink action'),
             tooltip: OpenLayers.i18n('Permalink.tooltip'),
