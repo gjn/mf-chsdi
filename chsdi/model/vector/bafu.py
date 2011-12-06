@@ -184,7 +184,7 @@ class WILDRUHEZONEN(Base, Queryable):
     
 class WILDRUHEZONENJAGDBANNGEBIETE(Base, Queryable):
     # view in a schema
-    __tablename__ = 'update_wildruhezonen_jagdbanngebiete'
+    __tablename__ = 'wildruhezonen_jagdbanngebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': True})
     __template__ = 'tooltips/wildruhezonen_jagdbanngebiete.mako'
 
@@ -193,7 +193,7 @@ class WILDRUHEZONENJAGDBANNGEBIETE(Base, Queryable):
     
 class WEGEWILDRUHEZONENJAGDBANNGEBIETE(Base, Queryable):
     # view in a schema
-    __tablename__ = 'update_wege_wildruhezonen_jagdbanngebiete'
+    __tablename__ = 'wege_wildruhezonen_jagdbanngebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': True})
     __template__ = 'tooltips/wege_wildruhezonen_jagdbanngebiete.mako'
 
