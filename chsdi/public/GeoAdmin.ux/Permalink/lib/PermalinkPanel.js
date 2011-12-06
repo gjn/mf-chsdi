@@ -86,8 +86,10 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     buttonGooglePlus: null,
     buttonMail: null,
     buttonClose: null,
+    mail: false,
 
-    initComponent: function () {
+    initComponent: function (config) {
+    	Ext.apply(this, config);
         this.title = OpenLayers.i18n("Map URL");
         this.shareText = new Ext.menu.TextItem({
             cls: "shareText",
@@ -142,16 +144,18 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             }
         });
         this.buttonGooglePlus.addClass("hideBlock");
-        this.buttonMail = new Ext.Button({
-            cls: "mail-button",
-            tooltip: OpenLayers.i18n("Email"),
-            scope: this,
-            handler: function () {
-                windowMail = new GeoAdmin.MailWindow();
-                windowMail.show();
-            }
-        });
-        this.buttonMail.addClass("hideBlock");
+        if (this.mail) {
+            this.buttonMail = new Ext.Button({
+                cls: "mail-button",
+                tooltip: OpenLayers.i18n("Email"),
+                scope: this,
+                handler: function () {
+                    windowMail = new GeoAdmin.MailWindow();
+                    windowMail.show();
+                }
+            });
+            this.buttonMail.addClass("hideBlock");
+        };
         // Close share button
         this.buttonClose = new Ext.Button({
             cls: "close-share-button",
@@ -165,14 +169,25 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         // Permalink Field
         var permalinkField = new GeoAdmin.PermalinkField({width: 440});
         this.items = permalinkField;
-        this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
-            iconCls: "close-button",
-            toggleGroup: this.closeButtonToggleGroup,
-            scope: this,
-            handler: function () {
-                this.hide();
-            }
-        }];
+        if (this.mail) {
+            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
+                iconCls: "close-button",
+                toggleGroup: this.closeButtonToggleGroup,
+                scope: this,
+                handler: function () {
+                    this.hide();
+                }
+            }];
+        } else {
+            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonClose, {
+                iconCls: "close-button",
+                toggleGroup: this.closeButtonToggleGroup,
+                scope: this,
+                handler: function () {
+                    this.hide();
+                }
+            }];
+        };
         GeoAdmin.PermalinkPanel.superclass.initComponent.apply(this, arguments);
     },
     /** private method[httpShare]
@@ -208,8 +223,10 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.buttonFacebook.removeClass("hideBlock");
             this.buttonGooglePlus.addClass("showBlock");
             this.buttonGooglePlus.removeClass("hideBlock");
-            this.buttonMail.addClass("showBlock");
-            this.buttonMail.removeClass("hideBlock");
+            if (this.mail) {
+                this.buttonMail.addClass("showBlock");
+                this.buttonMail.removeClass("hideBlock");
+            };
             this.buttonClose.addClass("showBlock");
             this.buttonClose.removeClass("hideBlock");
         } else {
@@ -225,8 +242,10 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.buttonFacebook.removeClass("showBlock");
             this.buttonGooglePlus.addClass("hideBlock");
             this.buttonGooglePlus.removeClass("showBlock");
-            this.buttonMail.addClass("hideBlock");
-            this.buttonMail.removeClass("showBlock");
+            if (this.mail) {
+                this.buttonMail.addClass("hideBlock");
+                this.buttonMail.removeClass("showBlock");
+            };
             this.buttonClose.addClass("hideBlock");
             this.buttonClose.removeClass("showBlock");
         }
