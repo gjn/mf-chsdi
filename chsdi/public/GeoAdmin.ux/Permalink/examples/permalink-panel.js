@@ -4,7 +4,7 @@ var mainPanel, mapPanel, permalinkPanel1, permalinkPanel2;
 
 Ext.onReady(function() {
 
-    permalinkPanel1 = new GeoAdmin.PermalinkPanel({hidden: true});
+    permalinkPanel1 = new GeoAdmin.PermalinkPanel({hidden: true, mail: true});
     permalinkPanel2 = new GeoAdmin.PermalinkPanel({hidden: true});
 
     mapPanel = new GeoAdmin.MapPanel({
