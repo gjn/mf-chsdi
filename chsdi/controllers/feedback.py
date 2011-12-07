@@ -27,13 +27,14 @@ class FeedbackController(BaseController):
 
     def create(self):
         ua = request.params.get('ua','no user-agent found')
-        permalink = request.params.get('permalink', 'no permalink provided')
-        if permalink != 'no permalink provided':
+        typeOfRequest = request.params.get('typeOfRequest')
+        if typeOfRequest == 'feedback':
+                permalink = request.params.get('permalink', 'no permalink provided')
                 feedback = request.params.get('feedback','no feedback provided')
                 email = request.params.get('email','Anonymous')
                 if email == '':
                         email = 'Anonymous'
-                self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback:\n" + feedback + ". \nPermalink: "+ permalink + "\n\nUser-Agent: " + ua)
+                self.mail('webgis@swisstopo.ch',"Customer feedback",email + " just sent a feedback:\n" + feedback + ". \nPermalink: "+ permalink + "\n\nUser-Agent: " + ua, typeOfRequest)
 
                 return dumps({"success": True})
         else:
@@ -49,10 +50,10 @@ class FeedbackController(BaseController):
                 text_msg = request.params.get('text_msg', 'No message provided')
                 if text_msg == '':
                         text_msg = 'No message provided'
-                self.mail(recipient,subject_txt,sender + " just sent a you a message:\n" + text_msg + "\n\nUser-Agent: " + ua)
+                self.mail(recipient,subject_txt,sender + " just sent a you a message:\n" + text_msg + "\n\nUser-Agent: " + ua, typeOfRequest)
 
                 return dumps({"success": True})
-    def mail(self, to, subject, text):
+    def mail(self, to, subject, text, typeOfRequest):
         # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
         msg = MIMEMultipart()
 
@@ -65,5 +66,8 @@ class FeedbackController(BaseController):
         mailServer.ehlo()
         mailServer.starttls()
         mailServer.ehlo()
-        mailServer.sendmail('webgis@swisstopo.ch', to, msg.as_string())
+        if typeOfRequest == 'feedback':
+            mailServer.sendmail('webgis@swisstopo.ch', to, msg.as_string())
+        else:
+            mailServer.sendmail('no-reply@geo.admin.ch', to, msg.as_string())
         mailServer.close()
