@@ -4,6 +4,12 @@
  
 Ext.namespace('GeoAdmin');
 
+/** api: (define)
+ *  module = GeoAdmin
+ *  class = MailWindow
+ *  base_link = `Ext.Window <http://dev.sencha.com/deploy/dev/docs/?class=Ext.Window>`_
+ */
+
 /** api: constructor
  *  .. class:: MailWindow(config)
  *

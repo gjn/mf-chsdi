@@ -11,7 +11,7 @@ Ext.namespace('GeoAdmin');
  *
  *  :param config: ``Object`` config
  *
- *  :return:  ``GeoAdmin.PermalinkPanel``
+ *  :return:  ``GeoAdmin.MailPanel``
  *
  *  Create a mail panel
  */
