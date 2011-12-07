@@ -28,6 +28,7 @@ layouts:
       rotation: false
       pageSize: A4
       landscape: true
+
 #---------------------------------------
 # header
 #---------------------------------------
@@ -36,6 +37,23 @@ layouts:
         height: 42
         items:
           - !columns
+            condition: "!customLogo"
+            widths: [35, 65]
+            items:
+              - !image
+                condition: "!customLogo"
+                align: left
+                maxWidth: 251
+                maxHeight: 34
+                url: "${buildout:directory}/print/print_logo.png"
+              - !text
+                condition: "!customLogo"
+                fontSize: 14
+                fontColor: #333333
+                text: |
+                  $${mapTitle}
+          - !columns
+            condition: customLogo
             widths: [35, 65]
             items:
               - !image
@@ -44,17 +62,13 @@ layouts:
                 maxWidth: 251
                 maxHeight: 34
                 url: "$${mapLogo}"
-              - !image
-                condition: "!customLogo"
-                align: left
-                maxWidth: 251
-                maxHeight: 34
-                url: "${buildout:directory}/print/print_logo.png"
               - !text
+                condition: customLogo
                 fontSize: 14
                 fontColor: #333333
                 text: |
                   $${mapTitle}
+
 
 #---------------------------------------
 # Map & overviewmap
