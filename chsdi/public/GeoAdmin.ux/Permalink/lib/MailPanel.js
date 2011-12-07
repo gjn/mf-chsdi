@@ -22,18 +22,20 @@ GeoAdmin.MailPanel = Ext.extend(Ext.form.FormPanel, {
         config = Ext.applyIf({
 	    itemId: 'mailPanel',
             baseCls: 'mail-panel',
-            labelWidth: 55,
+            labelWidth: 225,
             defaultType: 'textfield',
             items: [{
                 fieldLabel: OpenLayers.i18n('To'),
                 name: 'recipient',
                 anchor: '100%',
-                vtype: 'email'
+                vtype: 'email',
+                allowBlank: false
                 }, {
                 fieldLabel: OpenLayers.i18n('From'),
                 name: 'sender',
                 anchor: '100%',
-                vtype: 'email'
+                vtype: 'email',
+                allowBlank: false
                 }, {
                 fieldLabel: OpenLayers.i18n('Subject'),
                 name: 'subject_txt',

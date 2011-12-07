@@ -54,7 +54,8 @@ GeoAdmin.MailWindow = Ext.extend(Ext.Window, {
             success:this.onSuccess,
             failure:this.onFailure,
             params: {
-                ua: navigator.userAgent
+                ua: navigator.userAgent,
+                typeOfRequest: 'emailShare'
             },
             waitMsg: OpenLayers.i18n('Sending your email...')
         });
@@ -73,7 +74,7 @@ GeoAdmin.MailWindow = Ext.extend(Ext.Window, {
 
     onFailure: function(form, action) {
         if (!this.panel.getForm().isValid()) {
-            this.showError(OpenLayers.i18n('Please fill the communication field'));
+            this.showError(OpenLayers.i18n('Please fill the mendatory fields!'));
         } else {
             if (action.result) {
                 this.showError(action.result.error);

@@ -5,16 +5,16 @@ Ext.namespace("GeoAdmin");
 GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
 
     initComponent : function() {
+  
         this.label = new Ext.form.Label({
             html: ""
         });
         this.panel = new Ext.FormPanel({
             labelAlign: 'top',
             frame:true,
-            bodyStyle:'padding:5px 5px 0',
-            width: 600,
+            bodyStyle:'padding:5px 5px 0', 
             items: [
-                {
+                {	
                     layout:'column',
                     items:[
                         {
@@ -33,7 +33,6 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
                                     xtype:'textarea',
                                     fieldLabel: OpenLayers.i18n('Your feedback about current map extent'),
                                     name: 'feedback',
-                                    height: 60,
                                     anchor:'100%',
                                     allowBlank: false,
                                     tabIndex: 2
@@ -79,7 +78,7 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
         Ext.state.Manager.getProvider().on("statechange", this.onProviderStatechange, this);
 
     },
-
+    
     closeAction: 'hide',
 
     listeners: {
@@ -100,7 +99,8 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
             failure:this.onFailure,
             params: {
                 permalink: this.getPermalink(),
-                ua: navigator.userAgent
+                ua: navigator.userAgent,
+                typeOfRequest: 'feedback'
             },
             waitMsg: OpenLayers.i18n("Sending feedback....")
         });
