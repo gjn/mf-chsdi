@@ -548,7 +548,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
                 layertype: 'wmts',
-                timestamp: '20111027',
+                timestamp: '20111206',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -558,7 +558,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
                 layertype: 'wmts',
-                timestamp: '20111027',
+                timestamp: '20111206',
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -1159,6 +1159,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+	    /*
             "ch.bafu.schutzgebiete-wildruhezonen": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
                 layertype: 'wmts',
@@ -1169,6 +1170,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            */
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
                 layertype: 'wmts',
@@ -1694,7 +1696,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
                 layertype: 'wmts',
-                timestamp: '20111027',
+                timestamp: '20111206',
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
