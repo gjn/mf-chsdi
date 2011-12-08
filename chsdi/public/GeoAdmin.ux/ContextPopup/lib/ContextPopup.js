@@ -68,7 +68,8 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                     callbackKey: "cb",
                     params: {
                         easting: lonlat.lon,
-                        northing: lonlat.lat
+                        northing: lonlat.lat,
+                        elevation_model: 'DTM2'
                     },
                     scope: this,
                     callback: function(response) {
