@@ -758,10 +758,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-vogelreservate"
-                    },
+                    },/*
                     {
                         layerId: "ch.bafu.schutzgebiete-wildruhezonen"
-                    },
+                    },*/
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
                     }
