@@ -1185,7 +1185,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
-                queryable: true
+                queryable: false
             },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
@@ -1721,7 +1721,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ausnahmetransportrouten": {
                 name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
                 layertype: 'wmts',
-                timestamp: '20110509',
+                timestamp: '20111010',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",

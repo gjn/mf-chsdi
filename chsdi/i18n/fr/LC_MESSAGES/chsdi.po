@@ -315,10 +315,10 @@ msgid "ivs_objekt"
 msgstr "Object IVS"
 
 msgid "jb_name"
-msgstr "Nom district franc"
+msgstr "District franc"
 
 msgid "jb_obj"
-msgstr "No district franc"
+msgstr "No"
 
 msgid "kanton"
 msgstr "Canton"
@@ -405,7 +405,7 @@ msgid "losquality"
 msgstr "Standard de qualité"
 
 msgid "mehrinformationen"
-msgstr "Légende plus détaillée"
+msgstr "Dimensions du gabarit d'espace libre"
 
 msgid "messstellentyp"
 msgstr "Type"
@@ -666,10 +666,10 @@ msgid "wrz_fl"
 msgstr "Surface"
 
 msgid "wrz_name"
-msgstr "Nom zone de tranquillité"
+msgstr "Zone de tranquillité"
 
 msgid "wrz_obj"
-msgstr "No zone de tranquillité"
+msgstr "No"
 
 msgid "wrz_status"
 msgstr "Statut de protection"

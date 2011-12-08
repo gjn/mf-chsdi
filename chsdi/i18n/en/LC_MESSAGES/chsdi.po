@@ -315,10 +315,10 @@ msgid "ivs_objekt"
 msgstr "IVS-Objekt"
 
 msgid "jb_name"
-msgstr "Name Jagdbanngebiet"
+msgstr "Jagdbanngebiet"
 
 msgid "jb_obj"
-msgstr "Nr. Jagdbanngebiet"
+msgstr "Nr."
 
 msgid "kanton"
 msgstr "Canton"
@@ -405,7 +405,7 @@ msgid "losquality"
 msgstr "Qualitätsstandard"
 
 msgid "mehrinformationen"
-msgstr "Ausführlichere Legende"
+msgstr "Abmessung des Lichtraumprofils"
 
 msgid "messstellentyp"
 msgstr "Messstellentyp"
@@ -666,10 +666,10 @@ msgid "wrz_fl"
 msgstr "Fläche"
 
 msgid "wrz_name"
-msgstr "Name Wildruhezone"
+msgstr "Wildruhezone"
 
 msgid "wrz_obj"
-msgstr "Nr. Wildruhezone"
+msgstr "Nr."
 
 msgid "wrz_status"
 msgstr "Schutzstatus"
