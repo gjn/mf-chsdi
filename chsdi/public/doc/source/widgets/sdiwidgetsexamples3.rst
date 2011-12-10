@@ -127,7 +127,10 @@ A Map Panel is required in order to add a toolbar with the print function.
         mapPanel2.map.addLayerByName('ch.bafu.wasser-entnahme');
         mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
+                configureTitle: true,
+                configureFooter: true,
                 configureLegend: true,
+                mapLogo: "http://www.dummy.com/myimage.png",
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
                     mapPanel: mapPanel2
@@ -137,7 +140,10 @@ A Map Panel is required in order to add a toolbar with the print function.
                 }
             }),
             new GeoAdmin.Print({
+                configureTitle: true,
+                configureFooter: true,
                 configureLegend: true,
+                mapLogo: "http://www.dummy.com/myimage.png",
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint',
@@ -257,7 +263,10 @@ Map Panel
         mapPanel2.map.addLayerByName('ch.bafu.wasser-entnahme');
         mapPanel2.getTopToolbar().add([
             new GeoAdmin.Print({
+                configureTitle: true,
+                configureFooter: true,
                 configureLegend: true,
+                mapLogo: 'http://rlv.zcache.com/swiss_logo_soccer_fussball_presents_poster-r5439ba6b14874f279dba5239a60a86ca_w2g_400.jpg',
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
                     mapPanel: mapPanel2
@@ -267,7 +276,10 @@ Map Panel
                 }
             }),
             new GeoAdmin.Print({
+                configureTitle: true,
+                configureFooter: true,
                 configureLegend: true,
+                mapLogo: 'http://rlv.zcache.com/swiss_logo_soccer_fussball_presents_poster-r5439ba6b14874f279dba5239a60a86ca_w2g_400.jpg',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint',

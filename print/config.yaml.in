@@ -45,7 +45,7 @@ layouts:
                 maxHeight: 34
                 url: "$${mapLogo}"
               - !image
-                condition: "!customLogo"
+                condition: !customLogo
                 align: left
                 maxWidth: 251
                 maxHeight: 34
