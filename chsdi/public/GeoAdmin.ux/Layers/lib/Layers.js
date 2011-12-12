@@ -1159,7 +1159,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-	    /*
             "ch.bafu.schutzgebiete-wildruhezonen": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
                 layertype: 'wmts',
@@ -1170,7 +1169,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
-            */
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
                 layertype: 'wmts',
