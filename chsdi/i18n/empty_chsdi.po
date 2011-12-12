@@ -226,6 +226,9 @@ msgstr ""
 msgid "plz"
 msgstr ""
 
+msgid "zusziff"
+msgstr ""
+
 msgid "langtext"
 msgstr ""
 

@@ -704,3 +704,6 @@ msgstr "Access"
 msgid "zusatzinfo"
 msgstr "Zusatzinformation"
 
+msgid "zusziff"
+msgstr "Zip6"
+

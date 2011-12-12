@@ -704,3 +704,6 @@ msgstr "Accessible"
 msgid "zusatzinfo"
 msgstr "Information suppl."
 
+msgid "zusziff"
+msgstr "NPA6"
+
