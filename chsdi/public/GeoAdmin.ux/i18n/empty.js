@@ -6,7 +6,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Your email was sent successfully!': "",
     'Sending your email...': "",
     'Email': "",
-    'Share' "",
     'Share:': "",
     'zoom to extent': "",
     'map':"",
