@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Share': "",
+    'Please fill the mendatory fields!': "",
     'Subject': "",
     'To': "",
     'From': "",

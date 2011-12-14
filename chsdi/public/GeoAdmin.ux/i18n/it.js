@@ -167,6 +167,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Please check your input':'Prego controllare le informazioni',
 	'Please fill the communication field':'Riempire pf i campi di comunicazione',
 	'Please fill the feedback':'Prego riempia il formulario',
+	'Please fill the mendatory fields!':'Riempite pf i campi obbligatori!',
 	'Please type at least 3 characters':'Veuillez taper au minimum 3 caractères.',
 	'Please, enter an url in the textbox first':'Prego inserire prima un URL',
 	'Point':'Punto',
@@ -196,8 +197,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Send feedback':'Inviare il rapporto',
 	'Sending feedback....':'Invio del rapporto...',
 	'Sending your email...':'Sending your email...', //TODO
-	'Share':'Condividere',
-	'Share:':'Condividere:',
+	'Share':'Share',
+	'Share:':'Share:',
 	'Statistische Einheiten':'Unità statistiche',
 	'Style':'Stile',
 	'Subject':'Soggetto',

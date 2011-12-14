@@ -167,6 +167,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Please check your input':'Please check your input',
 	'Please fill the communication field':'Please fill the communication field',
 	'Please fill the feedback':'Please fill the report field',
+	'Please fill the mendatory fields!':'Please fill all mandatory fields!',
 	'Please type at least 3 characters':'Please type at least 3 characters.',
 	'Please, enter an url in the textbox first':'Please, enter an url in the textbox first',
 	'Point':'Point',

@@ -163,6 +163,7 @@ OpenLayers.Lang.rm= {
 	'Please check your input':'Controllar per plaschair las endataziuns',
 	'Please fill the communication field':'Bitte das Kommunikationsfeld ausfüllen',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
+	'Please fill the mendatory fields!':'Controllar per plaschair las endataziuns obligatoric!',
 	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
 	'Please, enter an url in the textbox first':'Agiuntar in URL',
 	'Point':'Punct',
@@ -192,8 +193,8 @@ OpenLayers.Lang.rm= {
 	'Send feedback':'Rapportar il problem',
 	'Sending feedback....':'Rapportar il problem....',
 	'Sending your email...':'Sending your email...', //TODO
-	'Share':'Participar',
-	'Share:':'Participar:',
+	'Share':'Share',
+	'Share:':'Share:',
 	'Statistische Einheiten':'Unitads statisticas',
 	'Style':'Stil',
 	'Subject':'Object',

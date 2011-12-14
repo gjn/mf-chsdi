@@ -167,6 +167,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Please check your input':'Vérifiez vos entrées',
 	'Please fill the communication field':'Remplissez le champs de communication svp',
 	'Please fill the feedback':'Merci de remplir la description',
+	'Please fill the mendatory fields!':'Remplissez les champs obligatoires svp!',
 	'Please type at least 3 characters':'Veuillez taper au minimum 3 caractères.',
 	'Please, enter an url in the textbox first':'Merci de saisir une URL',
 	'Point':'Point',
