@@ -60,7 +60,7 @@
     padding-right: 10px;
 }
 
-.shareText , shareTextOpen {
+.shareText , .shareTextOpen {
     margin-top: 3px;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .facebook-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
-    width: 16px;
+    width: 16px !important;
 }
 
 .showBlock {
