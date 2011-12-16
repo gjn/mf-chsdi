@@ -128,7 +128,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         this.measuring = false;
         for (var i = 0; i <= 1; i++) {
             OpenLayers.Request.GET({
-                url: 'http://mf-chsdi0t.bgdi.admin.ch/main/wsgi/height', //this.elevationServiceUrl,
+                url: GeoAdmin.webServicesUrl + "/height",
                 params: {
                     lon: geometry.components[i].x,
                     lat: geometry.components[i].y
