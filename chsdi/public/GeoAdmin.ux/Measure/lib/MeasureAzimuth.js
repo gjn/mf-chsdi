@@ -291,6 +291,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                      hide: function() {
                          this.control.cancel();
                          if (this.autoDeactivate === true) {
+                              this.control.handler.destroyPersistedFeature();
                               this.control.deactivate();
                          }
                         this.cleanup();
@@ -313,7 +314,6 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                 this.elevation && this.elevation.activate();
                 var azimuthEl = Ext.fly('azimuth');
                 if (azimuthEl) azimuthEl.update('', false);
-                this.control.handler.destroyPersistedFeature();
                 if (popup) {
                     popup.hide();
                     popup = undefined;
