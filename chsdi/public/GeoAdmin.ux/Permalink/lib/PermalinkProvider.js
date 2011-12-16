@@ -1,6 +1,8 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /**
+ * @requires OpenLayers/Projection.js
+ * @requires proj4js/lib/defs/EPSG21781.js
  * @requires GeoExt/state/PermalinkProvider.js
  * @requires GeoExt/widgets/MapPanel.js
  */
@@ -50,6 +52,10 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'Y') {
                     // invert y coordinate.
                     map_state['x'] = parseFloat(params.Y);
+                } else if (k === 'lat') {
+                    map_state['y'] = parseFloat(params[k]);
+                } else if (k === 'lon') {
+                	  map_state['x'] = parseFloat(params[k]);
                 } else if (k === 'scale') {
                     map_state[k] = parseInt(params[k]);
                 } else if (k === 'zoom') {
@@ -104,6 +110,12 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     };
                 }
             }
+        }
+        if ('lat' in params && 'lon' in params) {
+        	position = new OpenLayers.LonLat(map_state['x'], map_state['y']);
+        	position.transform("EPSG:4326", "EPSG:21781");
+        	map_state['x'] = position.lon;
+        	map_state['y'] = position.lat;
         }
         var state = {};
         state['map'] = map_state;
