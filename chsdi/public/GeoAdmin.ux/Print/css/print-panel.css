@@ -19,6 +19,7 @@
 .print-panel .x-form-print-legend {
     text-align: right;
     padding-top: 0;
+    float: right;
 }
 .print-panel .x-panel-body {
     border: none;
@@ -74,6 +75,17 @@
 /*    margin-top: 10px;*/
 }   
 .print-panel .close-button {
-    background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
+  background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
 }
-
+.print-panel .visibility_on, .print-panel .visibility_off {
+  background: url("../../images/lt_visibility.png") no-repeat;
+}
+.print-panel .visibility_on {
+  background-position: 0 0;
+}
+.print-panel .visibility_off {
+  background-position: -15px 0;
+}
+#visibilityAct .x-btn-tl,#visibilityAct .x-btn-tr,#visibilityAct .x-btn-tc,#visibilityAct .x-btn-ml,#visibilityAct .x-btn-mr,#visibilityAct .x-btn-mc,#visibilityAct .x-btn-bl,#visibilityAct .x-btn-br,#visibilityAct .x-btn-bc {
+  background-image: none !important;
+}

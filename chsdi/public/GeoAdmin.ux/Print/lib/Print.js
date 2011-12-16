@@ -196,7 +196,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 "beforeprint": function(provider, map, pages, options) {
                     var lang = OpenLayers.Lang.getCode();
                     provider.customParams.legends = [];
-                    if (this.legendCheckbox.checked) {
+                    if (this.legendCheckbox.pressed == true) {
                         for (var i = 0, len = map.layers.length; i < len; i++) {
                             var layer = map.layers[i];
                             if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
@@ -585,14 +585,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             })
         });
 
-        this.legendCheckbox = this.printPanel.insert(1, {
-            xtype: "checkbox",
-	    labelStyle : "float: left",
-	    ctCls: "x-form-print-legend",
-            checked: false,
-            hidden: !this.config.configureLegend,
-            fieldLabel: OpenLayers.i18n("Legend")
-        });
+        this.legendCheckbox = new GeoAdmin.LegendButton;
+        this.printPanel.add(this.legendCheckbox);
+        //this.printPanel.insert(1, this.legendCheckbox);
 
         this.printPanel.hideExtent();
 
@@ -662,5 +657,34 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
     }
 });
 
+GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
+	initComponent: function() {
+			this.pressed = false;
+			Ext.apply(this, {
+			id: 'visibilityAct',
+			boxMaxHeight: 15,
+			boxMaxWidth: 15,
+			labelStyle : "float: left",
+			cls: "legend-button",
+			ctCls: "x-form-print-legend",
+			fieldLabel: OpenLayers.i18n("Legend"),
+			iconCls: this.visibility ? "visibility_on" : "visibility_off",
+			scope: this,
+			handler: function() {
+        if (this.pressed == false) {
+          this.setIconClass("visibility_on");
+          this.pressed = true; 
+        } else {
+          this.setIconClass("visibility_off");
+          this.pressed = false; 
+        }
+      }
+			});
+			GeoAdmin.LegendButton.superclass.initComponent.apply(this, arguments);
+	}
+});
+
 /** api: xtype = ga_print */
 Ext.reg("ga_print", GeoAdmin.Print);
+
+
