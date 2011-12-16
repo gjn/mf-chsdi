@@ -9,21 +9,21 @@
     background-image: url("../images/measure_area.gif") !important;
     height: 70px !important;
     width: 50px !important;
-   background-position: 0 0 !important;     
+    background-position: 0 0 !important;
+}
+.x-toolbar .gx-map-measureazimuth {
+    background: url("../images/measure_azimuth.gif") no-repeat 10px 13px !important;
+    height: 70px !important;
+    width: 50px !important;
+
 }
 
-.x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea {
+.x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea, .x-btn-text .gx-map-measureazimuth {
     padding-top: 50px;
 
 }
 
 
-.x-btn-pressed  .gx-map-measurearea {
-    /* border: 5px solid #006699;  */
-    background-color: #dddddd;
-}
-
-.x-btn-pressed  .gx-map-measurelength {
-    /* border: 5px solid #006699;  */
+.x-btn-pressed  .gx-map-measurearea, .x-btn-pressed  .gx-map-measurelength, .x-btn-pressed  .gx-map-measureazimuth  {
     background-color: #dddddd;
 }

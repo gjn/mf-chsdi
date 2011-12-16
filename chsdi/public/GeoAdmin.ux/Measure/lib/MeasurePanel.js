@@ -13,7 +13,8 @@
  * @include OpenLayers/Rule.js
  * @include GeoExt.ux/MeasureArea.js
  * @include GeoExt.ux/MeasureLength.js
- * @include GeoExt.ux/Measure.js
+ * @requires GeoExt.ux/Measure.js
+ * @include Measure/lib/MeasureAzimuth.js
  */
 
 Ext.namespace('GeoAdmin');
@@ -123,10 +124,17 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 text: OpenLayers.i18n("Measure.MeasureLength")
             }, buttonConfig)));
 
+        var measureAzimuth = new Ext.Button(
+            new GeoAdmin.MeasureAzimuth(Ext.apply({
+                iconCls: 'gx-map-measureazimuth',
+                tooltip: OpenLayers.i18n("Measure.MeasureAzimuth.ToolTip"),
+                text: OpenLayers.i18n("Measure.MeasureAzimuth")
+            }, buttonConfig)));  
+
         var measureToolbar = new Ext.Toolbar({
             width: 600,
             height: 100,
-            items: [    measureLength,  measureArea]
+            items: [measureLength, measureArea, measureAzimuth]
         });
 
 
@@ -139,9 +147,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             items: [ measureToolbar ]
         });
 
-
         config = Ext.apply({
-            //title: OpenLayers.i18n("GeoAdmin.Measure.title"),
             layout: 'hbox',
             cls: 'measure',
             height: 150,
