@@ -2,6 +2,7 @@
 
 /**
  * @include OpenLayers/Lang.js
+ * @requires OpenLayers/Format/WKT.js
  * @include OpenLayers/Control/TransformFeature.js
  * @include GeoExt.ux/SimplePrint.js
  * @include GeoExt/data/PrintProvider.js
