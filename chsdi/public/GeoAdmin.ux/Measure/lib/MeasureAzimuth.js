@@ -128,7 +128,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         this.measuring = false;
         for (var i = 0; i <= 1; i++) {
             OpenLayers.Request.GET({
-                url: GeoAdmin.webServicesUrl + "/height",
+                url: this.elevationServiceUrl,
                 params: {
                     lon: geometry.components[i].x,
                     lat: geometry.components[i].y
@@ -249,7 +249,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             "default": style
         });
         var control = new GeoAdmin.SegmentMeasure({
-            elevationServiceUrl: 'http://api.geo.admin.ch/height', //geoadmin.elevationServiceUrl,
+            elevationServiceUrl: GeoAdmin.webServicesUrl + "/height",
             handlerOptions: {
                 layerOptions: {
                     styleMap: styleMap
