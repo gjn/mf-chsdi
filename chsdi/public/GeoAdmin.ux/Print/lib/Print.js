@@ -659,10 +659,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 });
 
 GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
+	pressed: false,
 	initComponent: function() {
-			this.pressed = false;
 			Ext.apply(this, {
-			id: 'visibilityAct',
 			boxMaxHeight: 15,
 			boxMaxWidth: 15,
 			labelStyle : "float: left",

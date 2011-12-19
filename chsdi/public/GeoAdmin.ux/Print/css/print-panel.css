@@ -86,6 +86,6 @@
 .print-panel .visibility_off {
   background-position: -15px 0;
 }
-#visibilityAct .x-btn-tl,#visibilityAct .x-btn-tr,#visibilityAct .x-btn-tc,#visibilityAct .x-btn-ml,#visibilityAct .x-btn-mr,#visibilityAct .x-btn-mc,#visibilityAct .x-btn-bl,#visibilityAct .x-btn-br,#visibilityAct .x-btn-bc {
+.legend-button .x-btn-tl, .legend-button .x-btn-tr, .legend-button .x-btn-tc, .legend-button .x-btn-ml, .legend-button .x-btn-mr, .legend-button .x-btn-mc, .legend-button .x-btn-bl, .legend-button .x-btn-br, .legend-button .x-btn-bc {
   background-image: none !important;
 }
