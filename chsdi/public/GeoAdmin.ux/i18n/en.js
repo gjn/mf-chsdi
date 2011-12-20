@@ -245,7 +245,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.are.gemeindetyp-1990-9klassen':'Typology of municipalities ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=en',
 	'ch.astra':'FEDRO',
-	'ch.astra.ausnahmetransportrouten':'Routes for exceptional loads',
+	'ch.astra.ausnahmetransportrouten':'Cant. routes for exceptional loads',
 	'ch.astra.ivs-gelaendekarte':'Inventory historical routes terrain map',
 	'ch.astra.ivs-nat':'Inventory historical routes national',
 	'ch.astra.ivs-reg_loc':'Inventory historical routes national & regional',

@@ -245,7 +245,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.are.gemeindetyp-1990-9klassen':'Typologie des communes ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=fr',
 	'ch.astra':'OFROU',
-	'ch.astra.ausnahmetransportrouten':'Itinéraires pour convois exceptionnels',
+	'ch.astra.ausnahmetransportrouten':'Itinéraires cant. pour convois excep.',
 	'ch.astra.ivs-gelaendekarte':'IVS carte de terrain',
 	'ch.astra.ivs-nat':'IVS national',
 	'ch.astra.ivs-reg_loc':'IVS régional & local',

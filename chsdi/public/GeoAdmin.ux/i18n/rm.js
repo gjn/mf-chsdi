@@ -241,7 +241,7 @@ OpenLayers.Lang.rm= {
 	'ch.are.gemeindetyp-1990-9klassen':'Tipologia da las vischnancas ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=de',
 	'ch.astra':'ASTRA',
-	'ch.astra.ausnahmetransportrouten':'Rutas per transports excepziunals',
+	'ch.astra.ausnahmetransportrouten':'Rutas cant. per transports excepziunals',
 	'ch.astra.ivs-gelaendekarte':'IVS charta topografica',
 	'ch.astra.ivs-nat':'IVS naziunal',
 	'ch.astra.ivs-reg_loc':'IVS regiunal & local',

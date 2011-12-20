@@ -245,7 +245,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.are.gemeindetyp-1990-9klassen':'Tipoogia dei comuni ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=it',
 	'ch.astra':'USTRA',
-	'ch.astra.ausnahmetransportrouten':'Strade per trasporti eccezionali',
+	'ch.astra.ausnahmetransportrouten':'Strade cant. per trasporti eccezionali',
 	'ch.astra.ivs-gelaendekarte':'IVS cara del territorio',
 	'ch.astra.ivs-nat':'IVS nazionale',
 	'ch.astra.ivs-reg_loc':'IVS regionale e locale',

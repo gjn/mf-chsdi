@@ -245,7 +245,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.are.gemeindetyp-1990-9klassen':'Gemeindetypologie ARE',
 	'ch.are.url':'http://www.are.admin.ch/index.html?lang=de',
 	'ch.astra':'ASTRA',
-	'ch.astra.ausnahmetransportrouten':'Ausnahmetransportrouten',
+	'ch.astra.ausnahmetransportrouten':'Kant. Ausnahmetransportrouten',
 	'ch.astra.ivs-gelaendekarte':'IVS Geländekarte',
 	'ch.astra.ivs-nat':'IVS National',
 	'ch.astra.ivs-reg_loc':'IVS Regional & Lokal',
