@@ -5,6 +5,7 @@ import re
 import simplejson as simplejson
 
 from chsdi.tests import *
+from chsdi.controllers.feature import MAX_FEATURES
 
 class TestFeatureController(TestController):
 
@@ -60,6 +61,18 @@ class TestFeatureController(TestController):
         # test that we get a FeatureCollection with MultiPolygons
         assert "FeatureCollection" in resp
         assert "MultiPolygon" in resp
+    
+    def test_search_max_features(self):
+        params = {
+            'bbox': '600000,100000,610000,110000',
+            'layers': 'ch.bfs.gebaeude_wohnungs_register'
+            }
+        resp = self.app.get(url(controller='feature', action='search'),
+                            params=params
+                            )
+        # test that we get only at most MAX_FEATURES features 
+        results = simplejson.loads(resp.response.body)
+        assert len(results['features']) <= MAX_FEATURES
 
     def test_search_with_cb(self):
         params = {

@@ -19,6 +19,8 @@ from paste.deploy.converters import asbool
 
 log = logging.getLogger(__name__)
 
+MAX_FEATURES = 50
+
 def validator_bbox():
     """ Validator for the "bbox" parameter. For use with
     the validate_params action decorator."""
@@ -67,9 +69,12 @@ def get_features(layer, ids):
     for model in models_from_name(layer):
     #FIXME: features.append(Session.query(model).filter(model.id.in_(ids)).all())
         for fid in ids:
-            feature = Session.query(model).get(fid)
-            if feature:
-                features.append(feature)
+            if len(features) < MAX_FEATURES:
+                feature = Session.query(model).get(fid)
+                if feature:
+                    features.append(feature)
+            else:
+                break
     return features
 
 class FeatureController(BaseController):
@@ -100,16 +105,18 @@ class FeatureController(BaseController):
         id = urlContent[0].split("/")[len(urlContent[0].split("/"))-1]
 
         for model in models_from_name(layer):
-            feature = Session.query(model).get(id)
-            if feature:
-                feature.compute_attribute()
-                if (self.no_geom):
-                    features.append(Feature(id=feature.id,
+            if len(features) < MAX_FEATURES:
+                feature = Session.query(model).get(id)
+                if feature:
+                    feature.compute_attribute()
+                    if (self.no_geom):
+                        features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
                                             properties=feature.attributes))
-                else:
-                    features.append(feature)
-
+                    else:
+                        features.append(feature)
+            else:
+                break
 
         output = simplejson.dumps(FeatureCollection(features), cls=MapFishEncoder)
         cb_name = request.params.get('cb')
@@ -132,7 +139,7 @@ class FeatureController(BaseController):
                     query = Session.query(model).filter(geom_filter)
                     bodlayer = Session.query(self.bodsearch).get(layer_name)
 
-                    for feature in query.all():
+                    for feature in query.limit(MAX_FEATURES).all():
                         properties = {}
                         feature.compute_template(layer_name, bodlayer)
                         if self.rawjson:
