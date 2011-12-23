@@ -1310,7 +1310,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-gefaehrdungszonen": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-gefaehrdungszonen"),
                 layertype: 'wmts',
-                timestamp: '20030101',
+                timestamp: '20030102',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
