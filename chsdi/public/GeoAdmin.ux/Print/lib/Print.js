@@ -138,7 +138,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * api: property[configureLegend]
      * :boolean: indicates if the layer legends must be printed.
      */
-    configureLegend: true,
+    configureLegend: false,
 
     /**
      * api: property[mapFooter]
@@ -586,7 +586,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             })
         });
 
-        this.legendCheckbox = new GeoAdmin.LegendButton;
+        this.legendCheckbox = new GeoAdmin.LegendButton({hidden: !this.config.configureLegend});
         this.printPanel.add(this.legendCheckbox);
         //this.printPanel.insert(1, this.legendCheckbox);
 
@@ -659,29 +659,30 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 });
 
 GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
-	pressed: false,
-	initComponent: function() {
-			Ext.apply(this, {
-			boxMaxHeight: 15,
-			boxMaxWidth: 15,
-			labelStyle : "float: left",
-			cls: "legend-button",
-			ctCls: "x-form-print-legend",
-			fieldLabel: OpenLayers.i18n("Legend"),
-			iconCls: this.visibility ? "visibility_on" : "visibility_off",
-			scope: this,
-			handler: function() {
-        if (this.pressed == false) {
-          this.setIconClass("visibility_on");
-          this.pressed = true; 
-        } else {
-          this.setIconClass("visibility_off");
-          this.pressed = false; 
-        }
-      }
-			});
-			GeoAdmin.LegendButton.superclass.initComponent.apply(this, arguments);
-	}
+    pressed: false,
+    hidden: false,
+    initComponent: function() {
+        Ext.apply(this, {
+            boxMaxHeight: 15,
+            boxMaxWidth: 15,
+            labelStyle : "float: left",
+            cls: "legend-button",
+            ctCls: "x-form-print-legend",
+            fieldLabel: OpenLayers.i18n("Legend"),
+            iconCls: this.visibility ? "visibility_on" : "visibility_off",
+            scope: this,
+            handler: function() {
+                if (this.pressed == false) {
+                    this.setIconClass("visibility_on");
+                    this.pressed = true; 
+                } else {
+                    this.setIconClass("visibility_off");
+                    this.pressed = false; 
+                }
+           }
+       });
+       GeoAdmin.LegendButton.superclass.initComponent.apply(this, arguments);
+    }
 });
 
 /** api: xtype = ga_print */
