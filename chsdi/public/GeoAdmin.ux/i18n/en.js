@@ -77,6 +77,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Feature tooltip':'Object information',
 	'File successfuly imported. Number of features added:':'File successfully imported. Number of added objects:',
 	'Flurstücke / Grundstücke':'Cadastral parcels',
+	'For a detailed revision of the national map: ':'For a detailed revision of the national map: ', //TODO
 	'Format':'Format',
 	'From':'Your email (mandatory)',
 	'Full extent':'Full map extent',
@@ -215,6 +216,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Environment, Biology and Geology',
 	'Umweltüberwachung':'Environmental monitoring facilities',
+	'Use the ':'Use the ',
 	'Verkehrsnetze':'Transport networks',
 	'WGS 84':'WGS 84',
 	'Warning Internet Explorer 6':'Warning Internet Explorer 6',
@@ -465,6 +467,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'red':'red',
 	'remove layer':'Remove layer',
 	'responsibilitiesAndContact':'Responsibilities and contacts',
+	'revision service of swisstopo':'revision service of swisstopo',
 	'rightHanded':'Right-handed',
 	'salmon':'salmon',
 	'searchQuicktip':'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0<br><b>Addresses: </b> For "Bundesplatz 3 Bern" type Bundesplatz 3',

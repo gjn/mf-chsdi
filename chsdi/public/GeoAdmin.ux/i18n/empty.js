@@ -1,4 +1,7 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'For a detailed revision of the national map: ': "",
+    'Use the ': "",
+    'revision service of swisstopo': "",
     'Share': "",
     'Please fill the mendatory fields!': "",
     'Subject': "",
