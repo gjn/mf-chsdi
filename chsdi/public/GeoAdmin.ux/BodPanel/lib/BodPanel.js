@@ -1,11 +1,8 @@
 /**
- * @include BodPanel/lib/BodGrid_Grid.js
- * @requires Permalink/lib/PermalinkProvider.js
+ * @include BodPanel/lib/BodGrid.js
+ * @include BodPanel/lib/BodDetailPanel.js
  */
-
 Ext.namespace('GeoAdmin');
-
-//var aBodGrid = new GeoAdmin.BodGrid();
 
 
 GeoAdmin.BodPanel = Ext.extend(Ext.Panel, {
@@ -15,7 +12,7 @@ GeoAdmin.BodPanel = Ext.extend(Ext.Panel, {
 
 
     constructor : function(config) {
-        var myGrid = new GeoAdmin.BodGrid();
+        this.myGrid = new GeoAdmin.BodGrid();
 
         config = Ext.apply({
             frame: true,
@@ -23,10 +20,10 @@ GeoAdmin.BodPanel = Ext.extend(Ext.Panel, {
             width: 800,
             height: 500,
             layout: 'border',
-            renderTo: 'bodPanel_div',
+            /*renderTo: 'bodPanel_div',*/
             items: [
-                myGrid,
-                new GeoAdmin.BodDetailPanel({grid: myGrid})
+                this.myGrid,
+                new GeoAdmin.BodDetailPanel({grid: this.myGrid})
             ]
         }, config);
 
