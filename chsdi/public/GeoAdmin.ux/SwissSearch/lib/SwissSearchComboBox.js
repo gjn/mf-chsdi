@@ -63,13 +63,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     listeners:{
         render: function() {
             this.el.set(
-                {qtip:OpenLayers.i18n('searchQuicktip'),
-                qwidth:400}
+                {'ext:qtip':OpenLayers.i18n('searchQuicktip'),
+                'ext:qwidth':400}
             );
-            this.validate();
-            this.el.set(
-                {qtip:OpenLayers.i18n('searchQuicktip')}
-             );
         }
     },
 
