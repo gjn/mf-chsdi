@@ -492,7 +492,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             strategies: [new OpenLayers.Strategy.Fixed()],
             visibility: visibility,
             attribution: urlDomain,
-            opacity: opacity,
             displayInLayerSwitcher: true,
             styleMap: new OpenLayers.StyleMap({
                 "default": new OpenLayers.Style({
@@ -518,6 +517,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         layer.events.register("loadend", layer, function() {
             layer.setName(layer.protocol.format.documentName);
         });
+        layer.setOpacity(opacity)
         this.addLayer(layer);
         this.sortLayer();
 
