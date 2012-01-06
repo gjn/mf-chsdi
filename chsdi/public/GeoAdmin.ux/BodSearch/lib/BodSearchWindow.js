@@ -33,7 +33,6 @@ GeoAdmin.BodSearchWindow = {
             autoScroll: true,
             border: false,
             width: 525,
-            bodyStyle: "max-height: 500px",
             items: {html: ''},
             toolTemplate: new Ext.XTemplate(
                     '<tpl if="id==\'infoBox\'">',
@@ -97,6 +96,10 @@ GeoAdmin.BodSearchWindow = {
                 });
                 this.doLayout();
                 this.show();
+                this.setPosition(450,150);
+                if (this.getHeight() > 500) {
+                    this.setHeight(500);
+                };
             }
         });
     }
