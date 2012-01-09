@@ -25,9 +25,8 @@
             t.plan(2);
 
             // set up
-
             var map, mapPanel, measure;
-            map = new GeoAdmin.Map()
+            map = new GeoAdmin.Map();
             mapPanel = new GeoAdmin.MapPanel({map: map, tbar: ["->"]});
 
             measure = new GeoAdmin.Measure({map: mapPanel.map});
