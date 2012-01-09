@@ -347,6 +347,15 @@ class trockenwiesenundweiden(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
 
+class baugrundklassen(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'baugrundklassen'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': True})
+    __template__ = 'tooltips/baugrundklassen.mako'
+    id = Column('_count', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
+
 
 register('ch.bafu.bundesinventare-amphibien', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
