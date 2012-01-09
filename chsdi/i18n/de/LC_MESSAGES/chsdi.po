@@ -527,6 +527,9 @@ msgstr "Sektor"
 msgid "sheetname"
 msgstr "Blattbezeichnung"
 
+msgid "sia_261_norm"
+msgstr "Baugrundklasse nach SIA 261"
+
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"
 

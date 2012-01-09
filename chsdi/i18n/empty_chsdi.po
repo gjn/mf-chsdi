@@ -696,6 +696,9 @@ msgstr ""
 msgid "abk_meter_ueber_meer"
 msgstr ""
 
+msgid "sia_261_norm"
+msgstr ""
+
 
 
 
