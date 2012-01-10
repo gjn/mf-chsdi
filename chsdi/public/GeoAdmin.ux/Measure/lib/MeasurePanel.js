@@ -134,7 +134,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         var measureToolbar = new Ext.Toolbar({
             width: 600,
             height: 100,
-            items: [measureLength, measureArea, measureAzimuth]
+            items: [measureLength, measureArea/*, measureAzimuth*/]
         });
 
 

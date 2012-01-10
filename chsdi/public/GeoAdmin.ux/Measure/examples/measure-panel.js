@@ -1,12 +1,12 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/
 
-var mainPanel, mapPanel, permalinkPanel1, permalinkPanel2;
+var mainPanel, mapPanel;
 
 Ext.onReady(function() {
     OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
 
     var map = new GeoAdmin.Map();
-    measurePanel1 = new GeoAdmin.MeasurePanel({map: map, hidden: true});
+    var measurePanel1 = new GeoAdmin.MeasurePanel({map: map, hidden: true});
 
     mapPanel = new GeoAdmin.MapPanel({
         region: "center",
