@@ -166,11 +166,32 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             }
         });
         this.buttonClose.addClass("hideBlock");
+        // Finally add the pipes
+        this.sharePipe1 = new Ext.Spacer({
+        	cls: 'sharepipe'
+        });
+        this.sharePipe1.addClass("hideBlock");
+        this.sharePipe2 = new Ext.Spacer({
+        	cls: 'sharepipe'
+        });
+        this.sharePipe2.addClass("hideBlock");
+        this.sharePipe3 = new Ext.Spacer({
+        	cls: 'sharepipe'
+        });
+        this.sharePipe3.addClass("hideBlock");
+        this.sharePipe4 = new Ext.Spacer({
+        	cls: 'sharepipe'
+        });
+        this.sharePipe4.addClass("hideBlock");
+        this.sharePipe5 = new Ext.Spacer({
+        	cls: 'sharepipe'
+        });
+        this.sharePipe5.addClass("hideBlock");
         // Permalink Field
         var permalinkField = new GeoAdmin.PermalinkField({width: 440});
         this.items = permalinkField;
         if (this.mail) {
-            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonMail, this.buttonClose, {
+            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.sharePipe1, this.buttonFacebook, this.sharePipe2, this.buttonGooglePlus, this.sharePipe3, this.buttonMail, this.sharePipe4, this.buttonClose, this.sharePipe5, {
                 iconCls: "close-button",
                 toggleGroup: this.closeButtonToggleGroup,
                 scope: this,
@@ -229,6 +250,16 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             };
             this.buttonClose.addClass("showBlock");
             this.buttonClose.removeClass("hideBlock");
+            this.sharePipe1.addClass("showBlock");
+            this.sharePipe1.removeClass("hideBlock");
+            this.sharePipe2.addClass("showBlock");
+            this.sharePipe2.removeClass("hideBlock");
+            this.sharePipe3.addClass("showBlock");
+            this.sharePipe3.removeClass("hideBlock");
+            this.sharePipe4.addClass("showBlock");
+            this.sharePipe4.removeClass("hideBlock");
+            this.sharePipe5.addClass("showBlock");
+            this.sharePipe5.removeClass("hideBlock");
         } else {
             this.shareText.addClass("showBlock");
             this.shareText.removeClass("hideBlock");
@@ -248,6 +279,16 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             };
             this.buttonClose.addClass("hideBlock");
             this.buttonClose.removeClass("showBlock");
+            this.sharePipe1.addClass("hideBlock");
+            this.sharePipe1.removeClass("showBlock");
+            this.sharePipe2.addClass("hideBlock");
+            this.sharePipe2.removeClass("showBlock");
+            this.sharePipe3.addClass("hideBlock");
+            this.sharePipe3.removeClass("showBlock");
+            this.sharePipe4.addClass("hideBlock");
+            this.sharePipe4.removeClass("showBlock");
+            this.sharePipe5.addClass("hideBlock");
+            this.sharePipe5.removeClass("showBlock");
         }
     },
     afterRender: function() {

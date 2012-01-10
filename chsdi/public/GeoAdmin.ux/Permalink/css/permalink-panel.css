@@ -91,3 +91,9 @@
 .x-menu-item-active .shareTextOpen {
     color: #000000;
 }
+.permalink-panel .sharepipe {
+  width: 1px;
+  height: 12px !important;
+  margin-top: 2px;
+  background-color: black;
+}
