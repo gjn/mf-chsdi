@@ -11,7 +11,7 @@ class Gebaeuderegister(Base, Queryable):
    # __minscale__ = 5001
    # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
 
-    id = Column('id', Integer   , primary_key=True)
+    id = Column('egid_edid', Text, primary_key=True)
     egid = Column('egid', Integer)
     strname1 = Column('strname1', Text)
     deinr = Column('deinr', Text)
