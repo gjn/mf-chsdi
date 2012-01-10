@@ -70,15 +70,15 @@ class BodLayer(object):
             return False
 
 class BodLayerDe(Base, BodLayer):
-    __tablename__ = 'bod_layer_suche_de'
+    __tablename__ = 'view_bod_layer_suche_de'
     __table_args__ = ({'autoload': True})
-    # TODO, exclude some properties
-    # __mapper_args__ = {'exclude_properties': ['bgdi_modified', 'bgdi_created', 'bgdi_modified_by', 'bgdi_created_by'] }
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
     
 
 class BodLayerFr(Base, BodLayer):
-    __tablename__ = 'bod_layer_suche_fr'
+    __tablename__ = 'view_bod_layer_suche_fr'
     __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
 
 
 class GetCapFr(Base):
