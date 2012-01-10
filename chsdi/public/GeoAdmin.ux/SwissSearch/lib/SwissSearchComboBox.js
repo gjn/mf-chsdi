@@ -152,7 +152,14 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 }
             }
             if (valid) {
-                this.map.setCenter(position, this.defaultZoom);
+                var zoomReverse = 8;
+                this.map.setCenter(position, zoomReverse);
+                if (this.map.vector.features !== []) {
+                    this.map.vector.removeFeatures(this.map.vector.features[0]);
+                }
+                var circle = this.createRedCircle(this.map.getCenter());
+                this.map.vector.addFeatures([circle]);
+                this.pulsate(circle, this.map);
                 return false;
             }
         }
@@ -164,10 +171,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     pulsate: function(feature, map) {
         var point = feature.geometry.getCentroid(),
-                bounds = feature.geometry.getBounds(),
-                radius = Math.abs((bounds.right - bounds.left) / 2),
-                count = 0,
-                grow = 'up';
+        bounds = feature.geometry.getBounds(),
+        radius = Math.abs((bounds.right - bounds.left) / 2),
+        count = 0,
+        grow = 'up';
 
         var resize = function() {
             if (count > 16) {
@@ -195,9 +202,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     recordSelected: function(combo, record, index) {
         var extent = OpenLayers.Bounds.fromArray(record.data.bbox);
         var zoom = undefined;
-
         if (record.data.service == 'address') {
             zoom = 10;
+        } else if (record.data.service === 'swissnames') {
+        	  zoom = 8;
         } else {
             zoom = this.objectorig_zoom[record.data.objectorig];
         }
@@ -206,24 +214,29 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             this.map.zoomToExtent(extent);
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
-            if (record.data.service == 'address') {
-                var circle = new OpenLayers.Feature.Vector(
-                        OpenLayers.Geometry.Polygon.createRegularPolygon(
-                                new OpenLayers.Geometry.Point(extent.getCenterLonLat().lon, extent.getCenterLonLat().lat),
-                                12,
-                                40,
-                                0
-                                ),
-                {},
-                {
-                    fillColor: '#F00',
-                    fillOpacity: 0.75,
-                    strokeWidth: 0
-                });
+            if (record.data.service == 'address' || record.data.service === 'swissnames') {
+                var circle = this.createRedCircle(extent.getCenterLonLat());
                 this.map.vector.addFeatures([circle]);
                 this.pulsate(circle, this.map);
             }
         }
+    },
+
+    createRedCircle: function(PointCoordinates) {
+        var circle = new OpenLayers.Feature.Vector(
+            OpenLayers.Geometry.Polygon.createRegularPolygon(
+                new OpenLayers.Geometry.Point(PointCoordinates.lon, PointCoordinates.lat),
+                12,
+                40,
+                0
+                ),
+            {},
+            {
+                fillColor: '#F00',
+                fillOpacity: 0.75,
+                strokeWidth: 0
+            });
+        return circle;
     }
 });
 
