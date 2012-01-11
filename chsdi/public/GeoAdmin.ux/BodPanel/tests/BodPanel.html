@@ -22,8 +22,8 @@
 
             // test
             var bodGrid = new GeoAdmin.BodGrid();
-            t.ok(bodGrid instanceof GeoAdmin.BodGrid, "bodGrid gives an instance of BodGrid");
-            t.ok(bodGrid instanceof Ext.grid.GridPanel, "bodGrid gives an instance of Ext.grid.GridPanel");
+            t.ok(bodGrid instanceof GeoAdmin.BodGrid, "bodGrid is an instance of BodGrid");
+            t.ok(bodGrid instanceof Ext.grid.GridPanel, "bodGrid is an instance of Ext.grid.GridPanel");
             t.ok(bodGrid.store instanceof Ext.data.JsonStore, "bodGrid has a jsonstore");
             t.ok(bodGrid.store.proxy instanceof Ext.data.ScriptTagProxy, "bodGrid creates a store with a script tag proxy");
             /*
@@ -32,9 +32,8 @@
              */
 
             var bodDetailPanel = new GeoAdmin.BodDetailPanel();
-            t.ok(bodDetailPanel instanceof GeoAdmin.BodDetailPanel, "bodDetailPanel gives an instance of BodDetailPanel");
-            t.ok(bodDetailPanel instanceof Ext.Panel, "bodDetailPanel gives an instance of Ext.Panel");
-
+            t.ok(bodDetailPanel instanceof GeoAdmin.BodDetailPanel, "bodDetailPanel is an instance of BodDetailPanel");
+            t.ok(bodDetailPanel instanceof Ext.Panel, "bodDetailPanel is an instance of Ext.Panel");
         }
 
       </script>

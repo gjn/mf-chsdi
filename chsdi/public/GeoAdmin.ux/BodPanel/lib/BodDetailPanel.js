@@ -1,8 +1,3 @@
-/**
- * @include BodPanel/lib/BodGrid_Grid.js
- * @requires Permalink/lib/PermalinkProvider.js
- */
-
 Ext.namespace('GeoAdmin');
 
 GeoAdmin.BodDetailPanel = Ext.extend(Ext.Panel, {
@@ -51,7 +46,8 @@ GeoAdmin.BodDetailPanel = Ext.extend(Ext.Panel, {
                 padding: '7px'
             },
             tmpl: new Ext.Template(this.templateMarkup),
-            html: 'Please select a layer to see additional details.'
+            html: 'Please select a layer to see additional details.',
+            scroll: new Ext.layout.boxOverflow.VerticalScroller()
 
         }, config);
 
