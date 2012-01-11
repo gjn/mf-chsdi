@@ -267,6 +267,7 @@ layouts:
     lastPage:
       pageSize: A4
       landscape: true
+      condition: "enhableLegends"
       items:
 #---------------------------------------
 # Legend
@@ -530,6 +531,7 @@ layouts:
     lastPage:
       pageSize: A4
       landscape: true
+      condition: "enhableLegends"
       items:
 #---------------------------------------
 # Legend
@@ -798,6 +800,7 @@ layouts:
     lastPage:
       pageSize: A3
       landscape: true
+      condition: "enhableLegends"
       items:
 #---------------------------------------
 # Legend
@@ -1059,6 +1062,7 @@ layouts:
     lastPage:
       pageSize: A3
       landscape: true
+      condition: "enhableLegends"
       items:
 #---------------------------------------
 # Legend
