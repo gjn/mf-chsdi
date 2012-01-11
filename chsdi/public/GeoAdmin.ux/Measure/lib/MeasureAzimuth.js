@@ -111,7 +111,8 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         function onElevationResponse(index, response) {
             var json = new OpenLayers.Format.JSON();
             var data = json.read(response.responseText);
-
+            this.xComponent = geometry.components[0].x;
+            this.yComponent = geometry.components[0].y;
             this.elevations[index] = data.height;
             if (this.elevations[0] && this.elevations[1]) {
                 var stat = this.getBestLength(geometry),
@@ -248,7 +249,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
         var styleMap = new OpenLayers.StyleMap({
             "default": style
         });
-        var control = new GeoAdmin.SegmentMeasure({
+        this.control = new GeoAdmin.SegmentMeasure({
             elevationServiceUrl: GeoAdmin.webServicesUrl + "/height",
             handlerOptions: {
                 layerOptions: {
@@ -256,7 +257,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                 }
             }
         });
-
+        
         function measurepartial(e) {
             var units = e.units;
             var distance = OpenLayers.i18n('Distance: ') + e.distance.toFixed(3) + " " + units;
@@ -271,17 +272,14 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
 
             return out;
         }
-
-        var popup = undefined;
-
-
+        
         function measure(e) {
+        	
             var out = measurepartial(e);
-            if (popup) {
-                popup.hide();
-                popup = undefined;
-            }
-            popup = new Ext.Tip({
+            if (this.popup) {
+                this.popup.destroy();
+            };
+            this.popup = new Ext.Tip({
                 title: OpenLayers.i18n('Measure.MeasureAzimuth'),
                 closable: true,
                 draggable: false,
@@ -289,22 +287,19 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                 width: 150,
                 listeners: {
                      hide: function() {
-                         this.control.cancel();
+                         this.control.handler.destroyPersistedFeature();
                          if (this.autoDeactivate === true) {
-                              this.control.handler.destroyPersistedFeature();
-                              this.control.deactivate();
-                         }
-                        this.cleanup();
+                             this.control.deactivate();
+                         };
                     },
                     scope: this
                 }
             });
-            Ext.getBody().on("mousemove", function(e) {
-                popup.showAt(e.getXY());
-            }, this, {single: true});
+            var pixelCoordinates = map.getPixelFromLonLat(new OpenLayers.LonLat(this.control.xComponent,this.control.yComponent));
+            this.popup.showAt([pixelCoordinates.x+50,pixelCoordinates.y+50]);
         };
-
-        control.events.on({
+        
+        this.control.events.on({
             "activate": function() {
                 this.mousePosition && this.mousePosition.deactivate();
                 this.elevation && this.elevation.deactivate();
@@ -314,15 +309,11 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                 this.elevation && this.elevation.activate();
                 var azimuthEl = Ext.fly('azimuth');
                 if (azimuthEl) azimuthEl.update('', false);
-                if (popup) {
-                    popup.hide();
-                    popup = undefined;
-                }
             },
             "measure": measure,
             "measurepartial": measurepartial,
             scope: this
         });
-        return control;
+        return this.control;
     }
 });
