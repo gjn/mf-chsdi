@@ -46,7 +46,17 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
+    /** api: config[stateId]
+     * ``String`` The state id. Default value is "swisssearch"
+     *
+     */
+    stateId: "swisssearch",
 
+    /** private: property[stateEvents]
+     *  ``Array(String)`` Array of state events.
+     */
+    stateEvents: ["beforequery", "select", "change"],
+    stateful: true,
     /** config
      */
     url: null,
@@ -126,7 +136,15 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     onBeforeQuery: function(queryEvent) {
         // FIXME: check if this.map is valid
-        var match = queryEvent.query.match(this.coordRegExp);
+        var testRecenter = this.testRecenter(queryEvent.query);
+
+        queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
+
+        return testRecenter;
+    },
+    
+    testRecenter: function(query) {
+        var match = query.match(this.coordRegExp);
 
         if (match) {
             var left = parseFloat(match[1].replace("'", ""));
@@ -160,15 +178,14 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 var circle = this.createRedCircle(this.map.getCenter());
                 this.map.vector.addFeatures([circle]);
                 this.pulsate(circle, this.map);
+                this.setValue(query);
+                this.fireEvent("change", this, "", "");
                 return false;
             }
         }
 
-        queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
-
         return true;
     },
-
     pulsate: function(feature, map) {
         var point = feature.geometry.getCentroid(),
         bounds = feature.geometry.getBounds(),
@@ -205,7 +222,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         if (record.data.service == 'address') {
             zoom = 10;
         } else if (record.data.service === 'swissnames') {
-        	  zoom = 8;
+            zoom = 8;
         } else {
             zoom = this.objectorig_zoom[record.data.objectorig];
         }
@@ -237,7 +254,74 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 strokeWidth: 0
             });
         return circle;
-    }
+    },
+    /** private: method[applyState]
+     *  :param state: ``Object`` The state to apply.
+     *
+     *  Apply the state to the combobox.
+     */
+    applyState: function(state) {
+       this.setValue(state.swisssearch);
+       this.fireEvent("change", this, "", "");
+       if (state.use_swisssearch && this.testRecenter(this.value)) {
+           this.store.load({params: {query: this.value},callback: this.permalinkCallback ,scope: this}); 
+       }
+    },
+
+    permalinkCallback: function(r, options, success) {
+       if (success) {
+          if (r.length == 0) {
+             this.clearValue();
+          }
+          if (r.length == 1) {
+             this.recordSelected(null, r[0], null);    
+	  } 
+          if (r.length > 1) {
+             var grid = new Ext.grid.GridPanel({
+                store: this.store,
+                hideHeaders: true,
+                colModel: new Ext.grid.ColumnModel({
+                   columns: [
+                      {id: 'label', header: OpenLayers.i18n('Name'), sortable: true, dataIndex: 'label'}
+                   ]
+                }),
+                sm: new Ext.grid.RowSelectionModel({
+                   singleSelect:true,
+                   listeners: {
+                      rowselect: function(smObj, rowIndex, r) {
+                         this.map.vector.removeAllFeatures();
+                         this.recordSelected(null, r, null);
+                         this.setValue(r.data.label.replace(/<[\/]?[^>]*>/g, ''));
+                         this.fireEvent("change", this, "", "");
+                         this.selectWindow.hide();
+                      },
+                      scope: this
+                   }
+                }),
+                viewConfig: {forceFit: true}
+             });
+             this.selectWindow = new Ext.Window({
+                width: 400,
+                height: 300,
+                autoScroll: true,
+                modal: true,
+                layout: 'fit',
+                title: OpenLayers.i18n("Select one location for: " + this.value),
+                items: [grid]
+             });
+             this.selectWindow.show();
+          }
+       }
+    },
+
+    /** private: method[getState]
+     *  :return: ``Object`` The state.
+     *
+     *  Returns the state of the swisssearch combo.
+     */
+    getState: function() {
+      //return {swisssearch: this.value};
+    } 
 });
 
 /** api: xtype = ga_swisssearchcombo */

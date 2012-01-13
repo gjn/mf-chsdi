@@ -43,7 +43,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
             complementaryLayer: {}
         };
         var catalog_state = {};
-        
+        var swisssearch_state = {};
+
         for (var k in params) {
             if(params.hasOwnProperty(k)) {
                 if (k === 'X') {
@@ -55,7 +56,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k === 'lat') {
                     map_state['y'] = parseFloat(params[k]);
                 } else if (k === 'lon') {
-                	  map_state['x'] = parseFloat(params[k]);
+                    map_state['x'] = parseFloat(params[k]);
                 } else if (k === 'scale') {
                     map_state[k] = parseInt(params[k]);
                 } else if (k === 'zoom') {
@@ -97,6 +98,9 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     };
                 } else if (k == 'selectedNode') {
                     catalog_state.selected = params.selectedNode;
+                } else if (k == 'swisssearch') {
+                    swisssearch_state.use_swisssearch = true;
+                    swisssearch_state.swisssearch = params.swisssearch;
                 } else if (k !== 'lang' && k !== 'noHeader' &&
                            k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices') {
                     // probably a layer to recenter on
@@ -120,7 +124,11 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         var state = {};
         state['map'] = map_state;
         state['catalog'] = catalog_state;
-        
+        // Don't start a swisssearch if a position is already defined
+        if (map_state['x'] && map_state['y']) {
+           swisssearch_state.use_swisssearch = false;
+        }
+        state['swisssearch'] = swisssearch_state;
         return state;
     },
 
@@ -133,9 +141,11 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
     getLink: function(base) {
         base = base || document.location.href;
         var params = {};
-
         if (this.state.catalog && this.state.catalog.selected) {
             params.selectedNode = this.state.catalog.selected;
+        }
+        if (this.state.swisssearch && this.state.swisssearch.swisssearch) {
+           params.swisssearch = this.state.swisssearch.swisssearch;
         }
         if (this.state.map) {
             // invert x and y coordinates.
