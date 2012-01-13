@@ -47,7 +47,7 @@ GeoAdmin.BodDetailPanel = Ext.extend(Ext.Panel, {
             },
             tmpl: new Ext.Template(this.templateMarkup),
             html: 'Please select a layer to see additional details.',
-            scroll: new Ext.layout.boxOverflow.VerticalScroller()
+            autoScroll: true
 
         }, config);
 
