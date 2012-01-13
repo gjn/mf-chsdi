@@ -182,7 +182,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                    this.setValue(query);
                    this.fireEvent("change", this, "", "");
                 } else {
-                   alert(OpenLayers.i18n("Use Y,X with zoom instead of swisssearch in the permalink when you want to recenter the map"));
+                   alert(OpenLayers.i18n("Use Y,X with zoom instead of swisssearch in the permalink when you want to recenter the map, something like:")+" ?Y="+position.lon+"&X="+position.lat);
 		}
                 return false;
             }
