@@ -274,6 +274,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
              this.clearValue();
           }
           if (r.length == 1) {
+             this.setValue(r[0].data.label.replace(/<[\/]?[^>]*>/g, ''));
+             this.fireEvent("change", this, "", "");
              this.recordSelected(null, r[0], null);    
 	  } 
           if (r.length > 1) {
