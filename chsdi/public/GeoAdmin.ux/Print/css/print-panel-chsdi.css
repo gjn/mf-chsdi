@@ -1,0 +1,17 @@
+.x-form-print-legend {
+    text-align: right;
+    padding-top: 0;
+    float: right;
+}
+.visibility_on, .visibility_off {
+  background: url("../../images/lt_visibility.png") no-repeat;
+}
+.legend-button  .visibility_on {
+  background-position: 0 0 !important;
+}
+.legend-button  .visibility_off {
+  background-position: -15px 0 !important;
+}
+.legend-button .x-btn-tl, .legend-button .x-btn-tr, .legend-button .x-btn-tc, .legend-button .x-btn-ml, .legend-button .x-btn-mr, .legend-button .x-btn-mc, .legend-button .x-btn-bl, .legend-button .x-btn-br, .legend-button .x-btn-bc {
+  background-image: none !important;
+}
