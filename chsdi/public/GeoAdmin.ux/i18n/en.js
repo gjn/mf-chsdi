@@ -77,7 +77,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Feature tooltip':'Object information',
 	'File successfuly imported. Number of features added:':'File successfully imported. Number of added objects:',
 	'Flurstücke / Grundstücke':'Cadastral parcels',
-	'For a detailed revision of the national map: ':'For a detailed revision of the national map: ', //TODO
+	'For a detailed revision of the national map: ':'Reporting a detailed revision regarding the national map: ',
 	'Format':'Format',
 	'From':'Your email (mandatory)',
 	'Full extent':'Full map extent',
@@ -472,6 +472,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'salmon':'salmon',
 	'searchQuicktip':'Here you can search for places, Zip Codes, administrative units and coordinates.<br>Examples for queries:<br><b>Zip Codes:</b> For "3007 in Bern" type 3007<br><b>Coordinates (Swiss): </b> For "600000/200000" type 600000 200000<br><b>Coordinates (LatLon): </b> For "46.7N 6.0E " type 46.7 6.0<br><b>Addresses: </b> For "Bundesplatz 3 Bern" type Bundesplatz 3',
 	'select a color...':'Select a color',
+	'select one location for':'There are several places with this name:',
 	'show column':'Open Topics',
 	'show layer options':'Show layer options',
 	'silver':'silver',

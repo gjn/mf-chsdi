@@ -140,6 +140,7 @@ selectedNode                   Selected node in INSPIRE Catalog tree            
                                to highlight feature(s) with id                               http://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
 crosshair                      crosshair=<type>, possible type: cross, circle, bowl and
                                point                                                         http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
+swisssearch                    swisssearch=<query string>                                    http://map.geo.admin.ch?swisssearch=berges%2037%20payerne 
 ===================            ==========================================================    =========================================================
 
 How can I define the language ?
