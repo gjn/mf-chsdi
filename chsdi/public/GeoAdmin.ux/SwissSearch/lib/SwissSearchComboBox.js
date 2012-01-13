@@ -143,7 +143,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         return testRecenter;
     },
     
-    testRecenter: function(query) {
+    testRecenter: function(query, onlyTest) {
         var match = query.match(this.coordRegExp);
 
         if (match) {
@@ -172,14 +172,18 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             if (valid) {
                 var zoomReverse = 8;
                 this.map.setCenter(position, zoomReverse);
-                if (this.map.vector.features !== []) {
-                    this.map.vector.removeFeatures(this.map.vector.features[0]);
+                if (this.map.vector.features.length > 0) {
+                    this.map.vector.removeFeatures(this.map.vector.features);
                 }
-                var circle = this.createRedCircle(this.map.getCenter());
-                this.map.vector.addFeatures([circle]);
-                this.pulsate(circle, this.map);
-                this.setValue(query);
-                this.fireEvent("change", this, "", "");
+                if (!onlyTest) {
+                   var circle = this.createRedCircle(this.map.getCenter());
+                   this.map.vector.addFeatures([circle]);
+                   this.pulsate(circle, this.map);
+                   this.setValue(query);
+                   this.fireEvent("change", this, "", "");
+                } else {
+                   alert(OpenLayers.i18n("Use Y,X with zoom instead of swisssearch in the permalink when you want to recenter the map"));
+		}
                 return false;
             }
         }
@@ -263,7 +267,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     applyState: function(state) {
        this.setValue(state.swisssearch);
        this.fireEvent("change", this, "", "");
-       if (state.use_swisssearch && this.testRecenter(this.value)) {
+       if (state.use_swisssearch && this.testRecenter(state.swisssearch, true)) {
            this.store.load({params: {query: this.value},callback: this.permalinkCallback ,scope: this}); 
        }
     },
