@@ -308,7 +308,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 autoScroll: true,
                 modal: true,
                 layout: 'fit',
-                title: OpenLayers.i18n("select one location for" + " " + this.value),
+                title: OpenLayers.i18n("select one location for") +  " " + this.value,
                 items: [grid]
              });
              this.selectWindow.show();
