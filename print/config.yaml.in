@@ -530,7 +530,7 @@ layouts:
                 maxSize: 150
     lastPage:
       pageSize: A4
-      landscape: true
+      landscape: false
       condition: "enhableLegends"
       items:
 #---------------------------------------
@@ -538,7 +538,7 @@ layouts:
 #---------------------------------------
         - !columns
           absoluteX: 45
-          absoluteY: 500
+          absoluteY: 795
           width: 250
           items:
             - !legends
@@ -807,7 +807,7 @@ layouts:
 #---------------------------------------
         - !columns
           absoluteX: 90
-          absoluteY: 750
+          absoluteY: 800
           width: 250
           items:
             - !legends
@@ -1061,7 +1061,7 @@ layouts:
                 maxSize: 150
     lastPage:
       pageSize: A3
-      landscape: true
+      landscape: false
       condition: "enhableLegends"
       items:
 #---------------------------------------
@@ -1069,7 +1069,7 @@ layouts:
 #---------------------------------------
         - !columns
           absoluteX: 90
-          absoluteY: 750
+          absoluteY: 1150
           width: 250
           items:
             - !legends

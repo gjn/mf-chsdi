@@ -110,45 +110,43 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     config: null,
 
-    /**
-     * private: property[printProvider]
+    /** private: property[printProvider]
      * :class:`GeoExt.data.PrintProvider` Interface for the print module
      */
     printProvider: null,
 
-    /**
-     * private: property[printLayer]
+    /** private: property[printLayer]
      * :class:`OpenLayers.Layer.Vector` printLayer showing the print feature and extent
      */
     printLayer: null,
 
-    /**
-     * api: property[configureTitle]
-     * :boolean: indicates if a title is shown in the print form
+    /** api: property[configureTitle]
+     * :class:`boolean` indicates if a title is shown in the print form
      */
     configureTitle: false,
 
-    /**
-     * api: property[configureFooter]
-     * :boolean: indicates if a footer is shown in the print form
+    /** api: property[configureFooter]
+     * :class:`boolean` indicates if a footer is shown in the print form
      */
     configureFooter: false,
 
-    /**
-     * api: property[configureLegend]
-     * :boolean: indicates if the layer legends must be printed.
+    /** api: property[configureLegend]
+     * :class:`boolean` indicates if the layer legends must be printed.
      */
     configureLegend: false,
 
-    /**
-     * api: property[mapFooter]
-     * :String: defines a custom footer
+    /** api: property[mapTitle]
+     * :class:`String` defines a custom title
+     */
+    mapTitle: null,
+
+    /** api: property[mapFooter]
+     * :class:`String` defines a custom footer
      */
     mapFooter: null,
 
-    /**
-     * api: property[mapLogo]
-     * :String: defines a custom logo (this needs to be an URL)
+    /** api: property[mapLogo]
+     * :class:`String` defines a custom logo (this needs to be an URL)
      */
     mapLogo: null,
 
@@ -558,7 +556,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             hidden: !this.config.configureTitle,
             name: "mapTitle",
             fieldLabel: OpenLayers.i18n("Title"),
-            value: OpenLayers.i18n("www.geo.admin.ch"),
+            value: this.config.mapTitle ? this.config.mapTitle : OpenLayers.i18n("www.geo.admin.ch"),
             plugins: new GeoExt.plugins.PrintPageField({
                 printPage: this.printPanel.printPage
             })

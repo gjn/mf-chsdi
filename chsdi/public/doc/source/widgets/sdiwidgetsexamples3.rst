@@ -96,7 +96,8 @@ A Map Panel is required in order to add a toolbar with the permalink function.
 Print
 -----
 
-A Map Panel is required in order to add a toolbar with the print function.
+A Map Panel is required in order to add a toolbar with the print function. In this example, the "Popup" print contains all possible configuration. The "Panel" print is the default configuration. 
+A custom title, footer and logo (we recommend to use a 516x70 px logo) can be defined. It can be chosen to show the legend on a second page or not.
 
 .. raw:: html
 
@@ -131,19 +132,18 @@ A Map Panel is required in order to add a toolbar with the print function.
                 configureFooter: true,
                 configureLegend: true,
                 mapLogo: "http://www.dummy.com/myimage.png",
+                mapTitle: "My custom title",
+                mapFooter: "This is a custom footer.",
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
                     mapPanel: mapPanel2
                 },
                 windowOptions: {
+                    height: 300,
                     title: OpenLayers.i18n('print map')
                 }
             }),
             new GeoAdmin.Print({
-                configureTitle: true,
-                configureFooter: true,
-                configureLegend: true,
-                mapLogo: "http://www.dummy.com/myimage.png",
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint',
@@ -267,19 +267,18 @@ Map Panel
                 configureFooter: true,
                 configureLegend: true,
                 mapLogo: 'http://rlv.zcache.com/swiss_logo_soccer_fussball_presents_poster-r5439ba6b14874f279dba5239a60a86ca_w2g_400.jpg',
+                mapTitle: "My custom title",
+                mapFooter: "This is a custom footer.",
                 text: OpenLayers.i18n('print map (popup)'),
                 printPanelOptions: {
                     mapPanel: mapPanel2
                 },
                 windowOptions: {
+                    height: 300,
                     title: OpenLayers.i18n('print map')
                 }
             }),
             new GeoAdmin.Print({
-                configureTitle: true,
-                configureFooter: true,
-                configureLegend: true,
-                mapLogo: 'http://rlv.zcache.com/swiss_logo_soccer_fussball_presents_poster-r5439ba6b14874f279dba5239a60a86ca_w2g_400.jpg',
                 text: OpenLayers.i18n('print map (panel)'),
                 printPanelOptions: {
                     renderTo: 'myprint',
