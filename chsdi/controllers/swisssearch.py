@@ -46,12 +46,20 @@ class SwisssearchController(BaseController):
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
         else:
             terms = q.split()
-            terms = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
+            terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'tsvector_search_name'
-            terms =  terms.replace("'", "''").replace('"', '\"')
-            ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms)s'))" %{'tsvector': tsvector, 'terms': terms}
+            terms1 =  terms1.replace("'", "''").replace('"', '\"')
+            ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
 
             query = Session.query(SwissSearch).filter(ftsFilter)
+            # Try to optimize search if initial search doesn't return something. It results in an additional query
+            if query.count() == 0:
+               terms2 = ' '.join([('' if term.isdigit() and len(term) > 2 and term.lower != 'ch' else term+':*')  for term in terms])
+               terms2 = terms2.split()
+               terms2 = ' & '.join([term for term in terms2])
+               terms2 =  terms2.replace("'", "''").replace('"', '\"')
+               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
+               query = Session.query(SwissSearch).filter(ftsFilter)
 
         # FIXME Address search is only for admin.ch and awk.ch
         # For "awk.ch", see email from lttsb from 18.nov. 2011
