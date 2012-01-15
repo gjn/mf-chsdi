@@ -54,7 +54,7 @@ class SwisssearchController(BaseController):
             query = Session.query(SwissSearch).filter(ftsFilter)
             # Try to optimize search if initial search doesn't return something. It results in an additional query
             if query.count() == 0:
-               terms2 = ' '.join([('' if term.isdigit() and len(term) > 2 and term.lower != 'ch' else term+':*')  for term in terms])
+               terms2 = ' '.join([('' if term.isdigit() and len(term) > 2 else term+':*')  for term in terms])
                terms2 = terms2.split()
                terms2 = ' & '.join([term for term in terms2])
                terms2 =  terms2.replace("'", "''").replace('"', '\"')
