@@ -3,6 +3,7 @@
  * @include WmsBrowser/lib/WmsBrowser.js
  * @include Measure/lib/Measure.js
  * @include KmlSelector/lib/KmlSelector.js
+ * @include Redlining/lib/Redlining.js
  * @include OpenLayers/Lang.js
  * @requires Permalink/lib/Permalink.js
  * @requires Print/lib/Print.js
@@ -27,7 +28,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     constructor : function(config) {
     	Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
-        Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms']});
+        Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms', 'redlining']});
 
         var permalink = new GeoAdmin.PermalinkPanel({'hidden': true, 'mail': this.mail});
         this.permalinkAction = new Ext.Button({
@@ -94,6 +95,9 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                     case 'wms':
                         menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers}));
                         break;
+                    case 'redlining':
+                        menu.push(redliningPanel = new GeoAdmin.Redlining());
+                       break;
                 }
             }
         }
@@ -106,7 +110,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             allowDepress: false,
             enableToggle: true,
             toggleGroup: 'tools',
-            menu: menu
+            menu: new Ext.menu.Menu({cls: 'advanced-menu', items: menu})
         });
     },
     createPrintAction: function(options) {

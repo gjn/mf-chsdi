@@ -7,6 +7,10 @@
 
 
 /*************************/
+
+.advanced-menu {
+    font-size: 12px;
+}
 .x-btn button {
     color: black;
     font-size: 12px;
