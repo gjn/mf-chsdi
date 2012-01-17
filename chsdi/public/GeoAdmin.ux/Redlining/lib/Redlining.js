@@ -44,7 +44,6 @@ GeoAdmin.Redlining = Ext.extend(Ext.Action, {
         var redliningWindow = new GeoAdmin.RedliningWindow(Ext.apply({
             renderTo: Ext.getBody()
         }, config));
-
         config = Ext.apply({
             allowDepress: false,
             iconCls: 'redlining',
@@ -58,5 +57,5 @@ GeoAdmin.Redlining = Ext.extend(Ext.Action, {
     }
 });
 
-/** api: xtype = ga_wmsbrowser */
+/** api: xtype = ga_redlining */
 Ext.reg("ga_redlining", GeoAdmin.Redlining);

@@ -1,3 +1,17 @@
+.redlining-panel-ct {
+    background-color: #ffffff;
+}
+
+.redlining-panel .x-toolbar {
+    border-style: none !important;  
+}
+
+.redlining-panel .x-btn-text {
+    height: 70px !important;
+    width: 50px !important;
+    background-position: 15px 20px;
+}
+
 .gx-featureediting-draw-point {
   background-image: url("../images/bullet_red_add.png") !important;
 }
