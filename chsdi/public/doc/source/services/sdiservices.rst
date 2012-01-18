@@ -636,7 +636,7 @@ Usage Example
                    isBaseLayer: false,
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
-                   dimensions: ['TIME'],
+                   dimensions: ['Time'],
                    params: {'time': '20110401'},
                    formatSuffix: 'jpeg'
                });
@@ -735,7 +735,7 @@ Usage Example
 
                if (!doc || doc.length <1) { alert("Trouble parsing the getCapabilities document"); return false;}
                var capabilities = format.read(doc);
-
+               console.log(capabilities);
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
                    matrixSet: "21781",
@@ -744,7 +744,7 @@ Usage Example
                    isBaseLayer: false,
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
-                   dimensions: ['TIME'],
+                   dimensions: ['Time'],
                    params: {'time': '20110401'},
                    formatSuffix: 'jpeg'
                });
