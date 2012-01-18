@@ -176,9 +176,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                     this.map.vector.removeFeatures(this.map.vector.features);
                 }
                 if (!onlyTest) {
-                   var circle = this.createRedCircle(this.map.getCenter());
-                   this.map.vector.addFeatures([circle]);
-                   this.pulsate(circle, this.map);
+                   var cross = this.createRedCross(this.map.getCenter());
+                   this.map.vector.addFeatures([cross]);
                    this.setValue(query);
                    this.fireEvent("change", this, "", "");
                 } else {
@@ -189,35 +188,6 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         }
 
         return true;
-    },
-    pulsate: function(feature, map) {
-        var point = feature.geometry.getCentroid(),
-        bounds = feature.geometry.getBounds(),
-        radius = Math.abs((bounds.right - bounds.left) / 2),
-        count = 0,
-        grow = 'up';
-
-        var resize = function() {
-            if (count > 16) {
-                clearInterval(window.resizeInterval);
-            }
-            var interval = radius * 0.03;
-            var ratio = interval / radius;
-            switch (count) {
-                case 4:
-                case 12:
-                    grow = 'down'; break;
-                case 8:
-                    grow = 'up'; break;
-            }
-            if (grow !== 'up') {
-                ratio = - Math.abs(ratio);
-            }
-            feature.geometry.resize(1 + ratio, point);
-            map.vector.drawFeature(feature);
-            count++;
-        };
-        window.resizeInterval = window.setInterval(resize, 50, point, radius);
     },
 
     recordSelected: function(combo, record, index) {
@@ -236,29 +206,28 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
             if (record.data.service == 'address' || record.data.service === 'swissnames') {
-                var circle = this.createRedCircle(extent.getCenterLonLat());
-                this.map.vector.addFeatures([circle]);
-                this.pulsate(circle, this.map);
+                var cross = this.createRedCross(extent.getCenterLonLat());
+                this.map.vector.addFeatures([cross]);
             }
         }
     },
 
-    createRedCircle: function(PointCoordinates) {
-        var circle = new OpenLayers.Feature.Vector(
-            OpenLayers.Geometry.Polygon.createRegularPolygon(
-                new OpenLayers.Geometry.Point(PointCoordinates.lon, PointCoordinates.lat),
-                12,
-                40,
-                0
-                ),
-            {},
-            {
-                fillColor: '#F00',
-                fillOpacity: 0.75,
-                strokeWidth: 0
-            });
-        return circle;
+    createRedCross: function(PointCoordinates) {
+        var size = 20 * this.map.getResolution() / this.map.getResolutionForZoom(8);
+        var offset = size /2;
+        var wkt = "MULTILINESTRING(" +
+            "(" + (PointCoordinates.lon - offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon - offset - size) + " " + PointCoordinates.lat + ")," + 
+            "(" + (PointCoordinates.lon + offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon + offset + size) + " " + PointCoordinates.lat + ")," + 
+            "(" + PointCoordinates.lon  + " " + (PointCoordinates.lat - offset - size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat - offset) + ")," + 
+            "(" + PointCoordinates.lon  + " " + (PointCoordinates.lat + offset + size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat + offset) + ")" + 
+            
+        ")";
+        var geom = OpenLayers.Geometry.fromWKT(wkt);
+        var cross = new OpenLayers.Feature.Vector( geom, {}, {strokeColor: '#F00', strokeWidth: 2.0});
+  
+        return cross;
     },
+
     /** private: method[applyState]
      *  :param state: ``Object`` The state to apply.
      *
