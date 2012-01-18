@@ -7,7 +7,7 @@
 }
 
 .olImageLoadError {
-    visibility: hidden;
+    visibility: hidden !important;
 }
 
 .olControlScaleLineBottom {
