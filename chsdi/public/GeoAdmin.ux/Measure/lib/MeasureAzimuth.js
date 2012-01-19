@@ -162,7 +162,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         var y = pt2.y - pt1.y;
         var rad = Math.acos(y / Math.sqrt(x * x + y * y));
         var factor = x > 0 ? 1 : -1;
-        return Math.round(factor * rad * 180 / Math.PI);
+        return Math.round(360 + (factor * rad * 180 / Math.PI)) % 360
     }
 });
 
