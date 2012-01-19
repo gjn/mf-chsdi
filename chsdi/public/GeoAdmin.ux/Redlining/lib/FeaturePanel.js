@@ -51,7 +51,8 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
                     fieldLabel: OpenLayers.i18n('color'),
                     editable: false,
                     typeAhead: true,
-                    selectOnFocus: true
+                    selectOnFocus: true,
+                    value: OpenLayers.i18n('red')
                 }
             }), {});
         styler.setCurrentFeature(this.features[0]);
