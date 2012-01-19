@@ -35,7 +35,7 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     if (feature.isLabel) {
         oGroupItems.push({
             name: 'name',
-            fieldLabel: OpenLayers.i18n('name'),
+            fieldLabel: OpenLayers.i18n('Label'),
             id: 'name',
             value: feature.attributes['name']
         });
