@@ -51,8 +51,17 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                     return [curleft,curtop];
                 }
             }
-            var centroid = event.geometry.getBounds().getCenterLonLat();
-            var px = this.control.handler.map.getPixelFromLonLat(centroid);
+            // Opening popup on the last point of the geometry
+            var last = null;
+            var cmpnt = event.geometry.components.pop(); 
+            if (cmpnt instanceof OpenLayers.Geometry.LinearRing) {
+                var cmpnts = cmpnt.components;
+                if (cmpnts.length > 1) last = cmpnts[cmpnts.length -2];
+            } else {
+                last = cmpnt;
+            }
+            var lastLonLat = new OpenLayers.LonLat(last.x, last.y);
+            var px = this.control.handler.map.getPixelFromLonLat(lastLonLat);
             var mapPx = findPos(this.control.handler.map.div);
             this.tip.showAt([mapPx[0] + px.x,mapPx[1] + px.y]);
         };
@@ -107,7 +116,6 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             iconAlign: 'top',
             enableToggle: true,
             styleMap: styleMap
-
         };
 
         var measureArea = new Ext.Button(
