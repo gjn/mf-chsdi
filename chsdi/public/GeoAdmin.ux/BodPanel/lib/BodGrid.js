@@ -229,7 +229,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
         });
 
         var bodGridColModel = new Ext.ux.grid.LockingColumnModel([
-            new Ext.grid.RowNumberer(),
+            //new Ext.grid.RowNumberer(),
             {
                 dataIndex: 'tech_layer_name',
                 id: 'tech_layer_name',
