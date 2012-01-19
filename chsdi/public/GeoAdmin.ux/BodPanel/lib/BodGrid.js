@@ -27,7 +27,6 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
 
         bodStore.load();
 
-
         var cursorRe = /^(?:col|e|w)-resize$/;
         Ext.ux.grid.AutoSizeColumns = Ext.extend(Object, {
             cellPadding: 8,
@@ -230,6 +229,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
         });
 
         var bodGridColModel = new Ext.ux.grid.LockingColumnModel([
+            new Ext.grid.RowNumberer(),
             {
                 dataIndex: 'tech_layer_name',
                 id: 'tech_layer_name',
@@ -438,10 +438,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 width: 150
             }
         ]);
-        var bufferview = new Ext.ux.grid.BufferView({
-            scrolldelay: false
-        });
-        //var lockingView = new Ext.ux.grid.LockingGridView(bufferview);
+        //var bufferview = new Ext.ux.grid.BufferView({
+        //    scrolldelay: false
+        //});
+        var lockingView = new Ext.ux.grid.LockingGridView();
 
         var bodLoadMask = new Ext.LoadMask(Ext.getBody(), {msg:"Loading data..."});
         bodLoadMask.show();
@@ -622,8 +622,8 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             plugins: [filters, 'autosizecolumns'],
             stripeRows: true,
             sm: new Ext.grid.RowSelectionModel({singleSelect: true}),
-            //view: lockingView,
-            view: bufferview,
+            view: lockingView,
+            //view: bufferview,
             height: 200,
             split: true,
             region: 'north',
