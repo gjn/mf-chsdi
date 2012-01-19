@@ -96,7 +96,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                         menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers}));
                         break;
                     case 'redlining':
-                        menu.push(redliningPanel = new GeoAdmin.Redlining());
+                        menu.push(new GeoAdmin.Redlining());
                        break;
                 }
             }

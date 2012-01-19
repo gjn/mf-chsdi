@@ -53,8 +53,9 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
                     typeAhead: true,
                     selectOnFocus: true
                 }
-        }), {});
+            }), {});
         styler.setCurrentFeature(this.features[0]);
+
 
         oGroupItems.push(styler.createLayout().comboBox);
     }
@@ -71,7 +72,7 @@ GeoExt.ux.form.FeaturePanel.prototype.getActions = function() {
         this.closeAction = new Ext.Action({
             handler: function() {
                 this.controler.triggerAutoSave();
-                if(this.controler.popup) {
+                if (this.controler.popup) {
                     this.controler.popup.close();
                 }
                 this.controler.reactivateDrawControl();

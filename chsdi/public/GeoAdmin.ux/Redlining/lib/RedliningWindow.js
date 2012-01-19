@@ -21,7 +21,6 @@ GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
     constructor: function(config) {
 
         var redliningPanel = new GeoExt.ux.form.RedLiningPanel({
-            //title: OpenLayers.i18n("RedLining Panel"),
             map: config.map,
             'import': false,
             'export': false,
@@ -32,8 +31,8 @@ GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
             baseCls: "redlining-panel",
             popupOptions: {anchored: false, unpinnable: false, draggable: true},
             selectControlOptions: {
-               toggle: false,
-               clickout: false
+                toggle: false,
+                clickout: false
             },
             layerOptions: { displayInLayerSwitcher: false}
         });
@@ -42,19 +41,19 @@ GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
             modal: false,
             closeAction: 'hide',
             width: 350,
-            height: 90,
+            height: 50,
             title: OpenLayers.i18n("RedliningWindow"),
             layout: 'fit',
             items: [redliningPanel],
             listeners: {
                 'hide': function() {
-                           var actions = redliningPanel.controler.actions;
-                           for (var i = 0; i < actions.length; i++) {
-                               if (actions[i].control) {
-                                   actions[i].control.deactivate();
-                               }
-                           }
-               }
+                    var actions = redliningPanel.controler.actions;
+                    for (var i = 0; i < actions.length; i++) {
+                        if (actions[i].control) {
+                            actions[i].control.deactivate();
+                        }
+                    }
+                }
             }
         }, config);
 
