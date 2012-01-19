@@ -223,7 +223,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             
         ")";
         var geom = OpenLayers.Geometry.fromWKT(wkt);
-        var cross = new OpenLayers.Feature.Vector( geom, {}, {strokeColor: '#F00', strokeWidth: 2.0});
+        var cross = new OpenLayers.Feature.Vector( geom, {}, {strokeColor: 'red', strokeWidth: 2.0, strokeOpacity: 1, strokeDashstyle: 'solid', strokeLinecap: 'round'});
   
         return cross;
     },
