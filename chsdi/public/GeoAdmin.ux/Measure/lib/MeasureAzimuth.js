@@ -295,7 +295,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                     scope: this
                 }
             });
-            var pixelCoordinates = map.getPixelFromLonLat(new OpenLayers.LonLat(this.control.xComponent,this.control.yComponent));
+            var pixelCoordinates = this.control.map.getPixelFromLonLat(new OpenLayers.LonLat(this.control.xComponent,this.control.yComponent));
             this.popup.showAt([pixelCoordinates.x+50,pixelCoordinates.y+50]);
         };
         
