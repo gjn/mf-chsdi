@@ -267,7 +267,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             if (elevations) {
                 out.push(OpenLayers.i18n('Elevation offset: ') + Math.round(elevations[1] - elevations[0], 2) + " m");
             }
-            var azimuthEl = Ext.fly('azimuth');
+            var azimuthEl = Ext.fly('measure');
             if (azimuthEl) azimuthEl.update(out.join(', '), false);
 
             return out;
