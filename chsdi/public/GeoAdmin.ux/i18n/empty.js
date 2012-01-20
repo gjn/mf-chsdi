@@ -331,6 +331,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureAzimuth':   '',
     'Azimut: ':   '',
     'Distance: ':   '',
+    'Climb: ', '',
+    'Descent: ': '',
     'Measure Panel':   '',
     'Legend': "",
     'Legend.Tooltip':"",

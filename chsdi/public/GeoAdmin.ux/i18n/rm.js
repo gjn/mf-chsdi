@@ -35,6 +35,7 @@ OpenLayers.Lang.rm= {
 	'Cantons':'Chantuns',
 	'Catalog':'Catalog [INSPIRE]',
 	'Cities':'Vischnancas',
+	'Climb: ':'Muntada : ',
 	'Close':'Serrar',
 	'Close this window':'Serrar questa fanestra',
 	'Connect':'Connectar',
@@ -52,6 +53,7 @@ OpenLayers.Lang.rm= {
 	'Delete all features':'Stizzar tut ils objects',
 	'Delete feature':'Stizzar objects',
 	'DeleteAll':'Stizzar tut',
+	'Descent: ':'Descensiun : ',
 	'Description':'Descripziun',
 	'Desktop version':'Link tar versiun desktop',
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
@@ -444,6 +446,7 @@ OpenLayers.Lang.rm= {
 	'move layer up':'Midar la successiun da las stresas',
 	'nameText':'Num',
 	'next':'Enavant',
+	'no title':'no title', //TODO
 	'noText':'Na',
 	'olive':'Olive',
 	'orange':'oransch',
