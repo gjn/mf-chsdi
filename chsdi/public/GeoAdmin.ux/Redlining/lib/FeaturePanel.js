@@ -32,6 +32,22 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
         defaultType: this.defaultType
     };
 
+    var myFeatureEditingDefaultStyleStoreOptions = function() {
+    return {
+        fields: ['name', 'style'],
+        data: [
+            [OpenLayers.i18n('blue'), {fillColor: 'blue', strokeColor: 'blue', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('red'), {fillColor: 'red', strokeColor: 'red', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('green'), {fillColor: 'green', strokeColor: 'green', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('yellow'), {fillColor: 'yellow', strokeColor: 'yellow', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('orange'), {fillColor: '#FFA500', strokeColor: '#FFA500', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black', fillOpacity: 0.7, strokeOpacity: 1}],
+            [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray', fillOpacity: 0.7, strokeOpacity: 1}]
+        ]
+    }
+};
+
     if (feature.isLabel) {
         oGroupItems.push({
             name: 'name',
@@ -40,8 +56,7 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
             value: feature.attributes['name']
         });
     } else {
-        var styleStore = new Ext.data.SimpleStore(
-            GeoExt.ux.data.getFeatureEditingDefaultStyleStoreOptions());
+        var styleStore = new Ext.data.SimpleStore(myFeatureEditingDefaultStyleStoreOptions());
         styleStore.sort('name');
         var styler = new GeoExt.ux.LayerStyleManager(
             new GeoExt.ux.StyleSelectorComboBox({
