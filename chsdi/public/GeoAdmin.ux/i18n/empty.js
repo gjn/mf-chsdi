@@ -481,5 +481,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'No result': "",
     'Metadata': "",
     'Please type at least 3 characters': "",
-    'select one location for': ""
+    'select one location for': "",
+    'no title': ""
 });
