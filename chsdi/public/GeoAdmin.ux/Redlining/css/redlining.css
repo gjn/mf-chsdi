@@ -6,9 +6,10 @@
     border-style: none !important;  
 }
 
-.x-btn-icon .x-btn-small .x-btn-text {
-    height: 16px !important;
-    width: 16px !important;
+ .redlining-panel .x-btn-text {
+    height: 50px !important;
+    width: 50px !important;
+    background-position: 15px 20px;
 }
 
 .gx-featureediting-draw-point {
