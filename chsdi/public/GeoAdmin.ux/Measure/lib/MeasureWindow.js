@@ -29,6 +29,12 @@ GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
         }, config);
 
         GeoAdmin.MeasureWindow.superclass.constructor.call(this, config);
-    }
-
+    },
+    show: function() {
+        GeoAdmin.MeasureWindow.superclass.show.apply(this, arguments);
+        var mapBox = Ext.fly(this.map.div).getBox(true);
+        var left = -(this.width/2) + mapBox.x + mapBox.width/2;
+        var top = -(this.height/2) + mapBox.y + mapBox.height/2;
+        this.setPosition(left, top);
+   }
 });
