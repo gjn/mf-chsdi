@@ -25,7 +25,7 @@ perHostParallelFetches: 25
 layouts:
   1 A4 landscape:
     mainPage:
-      rotation: false
+      rotation: true
       pageSize: A4
       landscape: true
 #---------------------------------------
@@ -296,7 +296,7 @@ layouts:
   2 A4 portrait:
     mainPage:
       pageSize: A4
-      rotation: false
+      rotation: true
 #---------------------------------------
 # header
 #---------------------------------------
@@ -558,7 +558,7 @@ layouts:
 #---------------------------------------
   3 A3 landscape:
     mainPage:
-      rotation: false
+      rotation: true
       pageSize: A3
       landscape: true
 #---------------------------------------
@@ -828,7 +828,7 @@ layouts:
   4 A3 portrait:
     mainPage:
       pageSize: A3
-      rotation: false
+      rotation: true
 #---------------------------------------
 # header
 #---------------------------------------
