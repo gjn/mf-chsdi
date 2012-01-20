@@ -36,7 +36,8 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
         oGroupItems.push({
             name: 'name',
             fieldLabel: OpenLayers.i18n('Label'),
-            id: 'name'
+            id: 'name',
+            value: feature.attributes['name']
         });
     } else {
         var styleStore = new Ext.data.SimpleStore(
