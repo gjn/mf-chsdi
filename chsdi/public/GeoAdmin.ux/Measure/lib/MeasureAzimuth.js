@@ -114,6 +114,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
             this.xComponent = geometry.components[0].x;
             this.yComponent = geometry.components[0].y;
             this.elevations[index] = data.height;
+            this.components = geometry.components;
             if (this.elevations[0] && this.elevations[1]) {
                 var stat = this.getBestLength(geometry),
                     azimut = this.getAzimut(geometry);
@@ -264,8 +265,13 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             var azimut = OpenLayers.i18n('Azimut: ') + e.azimut + '&deg;';
             var elevations = e.elevations;
             var out = [distance, azimut];
-            if (elevations) {
-                out.push(OpenLayers.i18n('Elevation offset: ') + Math.round(elevations[1] - elevations[0], 2) + " m");
+            if (elevations && !isNaN(elevations[0]) && !isNaN(elevations[1])) {
+                var elevationDifference = Math.round(elevations[1] - elevations[0], 2);
+                if (elevationDifference >=0) {
+                    out.push(OpenLayers.i18n('Climb : ') + Math.abs(elevationDifference) + " m");
+                } else {
+                    out.push(OpenLayers.i18n('Descent: ') + Math.abs(elevationDifference) + " m");
+                }
             }
             var azimuthEl = Ext.fly('measure');
             if (azimuthEl) azimuthEl.update(out.join(', '), false);
@@ -295,8 +301,12 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                     scope: this
                 }
             });
-            var pixelCoordinates = this.control.map.getPixelFromLonLat(new OpenLayers.LonLat(this.control.xComponent,this.control.yComponent));
-            this.popup.showAt([pixelCoordinates.x+50,pixelCoordinates.y+50]);
+            var bound = new OpenLayers.Bounds();
+            bound.extend(this.control.components[0]); 
+            bound.extend(this.control.components[1]);
+            var center = bound.getCenterLonLat();
+            var pixelCoordinates = this.control.map.getPixelFromLonLat(center);
+            this.popup.showAt([pixelCoordinates.x,pixelCoordinates.y]);
         };
         
         this.control.events.on({
