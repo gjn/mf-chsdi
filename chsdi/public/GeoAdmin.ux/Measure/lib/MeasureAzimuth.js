@@ -268,7 +268,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             if (elevations && !isNaN(elevations[0]) && !isNaN(elevations[1])) {
                 var elevationDifference = Math.round(elevations[1] - elevations[0], 2);
                 if (elevationDifference >=0) {
-                    out.push(OpenLayers.i18n('Climb : ') + Math.abs(elevationDifference) + " m");
+                    out.push(OpenLayers.i18n('Climb: ') + Math.abs(elevationDifference) + " m");
                 } else {
                     out.push(OpenLayers.i18n('Descent: ') + Math.abs(elevationDifference) + " m");
                 }

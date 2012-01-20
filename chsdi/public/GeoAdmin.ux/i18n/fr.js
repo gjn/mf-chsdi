@@ -39,7 +39,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Cantons':'Cantons',
 	'Catalog':'Catalogue [INSPIRE]',
 	'Cities':'Communes',
-	'Climb: ':'Montéee :  ',
+	'Climb: ':'Montée :  ',
 	'Close':'Fermer',
 	'Close this window':'Fermer cette fenêtre',
 	'Connect':'Connect',
