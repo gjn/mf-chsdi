@@ -36,14 +36,14 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     return {
         fields: ['name', 'style'],
         data: [
-            [OpenLayers.i18n('blue'), {fillColor: 'blue', strokeColor: 'blue', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('red'), {fillColor: 'red', strokeColor: 'red', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('green'), {fillColor: 'green', strokeColor: 'green', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('yellow'), {fillColor: 'yellow', strokeColor: 'yellow', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('orange'), {fillColor: '#FFA500', strokeColor: '#FFA500', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black', fillOpacity: 0.7, strokeOpacity: 1}],
-            [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray', fillOpacity: 0.7, strokeOpacity: 1}]
+            [OpenLayers.i18n('blue'), {fillColor: 'blue', strokeColor: 'blue'}],
+            [OpenLayers.i18n('red'), {fillColor: 'red', strokeColor: 'red'}],
+            [OpenLayers.i18n('green'), {fillColor: 'green', strokeColor: 'green'}],
+            [OpenLayers.i18n('yellow'), {fillColor: 'yellow', strokeColor: 'yellow'}],
+            [OpenLayers.i18n('orange'), {fillColor: '#FFA500', strokeColor: '#FFA500'}],
+            [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white'}],
+            [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black'}],
+            [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray'}]
         ]
     }
 };
