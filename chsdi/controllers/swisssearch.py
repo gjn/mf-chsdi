@@ -17,6 +17,7 @@ from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
 from paste.deploy.converters import asbool
+from pylons.i18n import set_lang
 
 log = logging.getLogger(__name__)
 
@@ -29,6 +30,12 @@ class SwisssearchController(BaseController):
             self.no_geom = asbool(no_geom)
         else:
             self.no_geom = False
+        self.lang = str(request.params.get("lang", "de"))
+        if self.lang == 'rm':
+            set_lang('fi', fallback=True)
+        else:
+            set_lang(self.lang, fallback=True)
+ 
 
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
