@@ -56,6 +56,8 @@ GeoAdmin.Segment = OpenLayers.Class(OpenLayers.Handler.Path, {
                 this.circle = null;
             }
         }
+        var azimuthEl = Ext.fly('measure');
+        if (azimuthEl) azimuthEl.update('', false);
     },
     modifyFeature: function() {
         OpenLayers.Handler.Path.prototype.modifyFeature.apply(this, arguments);
