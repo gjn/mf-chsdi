@@ -321,7 +321,7 @@ msgid "jb_obj"
 msgstr "Nr."
 
 msgid "kanton"
-msgstr "Kanton"
+msgstr "Chantun"
 
 msgid "kantoncode"
 msgstr "Kantonaler Code"
@@ -336,7 +336,7 @@ msgid "kartiereinheit"
 msgstr "Kartiereinheiten"
 
 msgid "kategorie"
-msgstr "Kategorie"
+msgstr "Categoria"
 
 msgid "kkw"
 msgstr "KKW"
@@ -426,7 +426,7 @@ msgid "nadelholzanteil"
 msgstr "Nadelholzanteil [%]"
 
 msgid "name"
-msgstr "Name"
+msgstr "Num"
 
 msgid "name_terreg"
 msgstr "Name der Territorialregion"

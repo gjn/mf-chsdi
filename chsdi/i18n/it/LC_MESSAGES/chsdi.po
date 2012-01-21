@@ -321,7 +321,7 @@ msgid "jb_obj"
 msgstr "No"
 
 msgid "kanton"
-msgstr "Canton"
+msgstr "Cantone"
 
 msgid "kantoncode"
 msgstr "Code cantonal"
@@ -336,7 +336,7 @@ msgid "kartiereinheit"
 msgstr "Unité de cartographie"
 
 msgid "kategorie"
-msgstr "Catégorie"
+msgstr "Categoria"
 
 msgid "kkw"
 msgstr "Centrale nucleare"
@@ -426,7 +426,7 @@ msgid "nadelholzanteil"
 msgstr "Proportion de résineux [%]"
 
 msgid "name"
-msgstr "Nom"
+msgstr "Nome"
 
 msgid "name_terreg"
 msgstr "Nom de la région territoriale"
