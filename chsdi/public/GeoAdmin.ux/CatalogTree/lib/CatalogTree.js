@@ -556,6 +556,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Höhe',
                   children: [
                     {
+                        layerId: "ch.bazl.luftfahrtkarten-icao"
+                    },
+                    {
                         layerId: "ch.swisstopo.swissalti3d-reliefschattierung"
                     }
                 ]
@@ -630,6 +633,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Raumplanung',
                 children: [
                     {
+                        layerId: "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
+                    },
+                    {
                         layerId: "ch.blw.ursprungsbezeichnungen-fleisch"
                     },
                     {
@@ -668,6 +674,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.astra.ivs-gelaendekarte"
+                    },
+                    {
+                        layerId: "ch.bazl.luftfahrtkarten-icao"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"

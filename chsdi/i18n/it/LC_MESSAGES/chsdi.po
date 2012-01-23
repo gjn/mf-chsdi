@@ -80,11 +80,17 @@ msgstr "Nombre de voies"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "arch__hist__qualitaeten"
+msgstr "Qualità storico-arch."
+
 msgid "atlassheetnumber"
 msgstr "Numéro du atlas géologique"
 
 msgid "ausgabejahr"
 msgstr "Année de publication"
+
+msgid "band_1_2"
+msgstr "Volume 1 | 2"
 
 msgid "bearbeitungsjahr"
 msgstr "Année de mise à jour"
@@ -181,6 +187,9 @@ msgstr "Cours d'eau"
 
 msgid "epizentralzone"
 msgstr "Zone épicentrale"
+
+msgid "fassung"
+msgstr "Stesura"
 
 msgid "federal administration"
 msgstr "Amministrazione federale admin.ch"
@@ -353,6 +362,9 @@ msgstr "Longueur [m]"
 msgid "laenge_strecke_m"
 msgstr "Longueur du tronçon [m]"
 
+msgid "lagequalitaeten"
+msgstr "Qualità situazionali"
+
 msgid "langtext"
 msgstr "Localité"
 
@@ -464,14 +476,23 @@ msgstr "Numéro de l'objet"
 msgid "oeffentlich"
 msgstr "Öffentlich"
 
+msgid "optionaler_name"
+msgstr "Nom optionel"
+
 msgid "ort"
 msgstr "Localité"
+
+msgid "ortsbildname"
+msgstr "Insediamento"
 
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch viene caricata"
 
 msgid "pdf"
 msgstr "PDF"
+
+msgid "pdf_dokument_1_2"
+msgstr "PDF 1 | 2"
 
 msgid "perimeter_m"
 msgstr "Perimètre [m]"
@@ -485,11 +506,17 @@ msgstr "NPA"
 msgid "protokoll"
 msgstr "Protocole"
 
+msgid "publikationsjahr_1_2"
+msgstr "Anno di pubblicazione 1 | 2"
+
 msgid "punktname"
 msgstr "Nom du point"
 
 msgid "quality"
 msgstr "Standard de qualité"
+
+msgid "raeumliche_qualitaeten"
+msgstr "Qualità spaziali"
 
 msgid "regional"
 msgstr "importanza regionale"
@@ -646,6 +673,9 @@ msgstr "N° du type"
 
 msgid "url"
 msgstr "URL"
+
+msgid "validierungsdatum"
+msgstr "Date de validation"
 
 msgid "viel_sub"
 msgstr "molta sostanza"

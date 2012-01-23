@@ -36,6 +36,9 @@
     <span style="font-weight:bold;">${_('Legend')}</span><br><br>
     <a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br><br>
     <center><a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank">${_('mehrinformationen')}</a></center><br>
+% elif c.layer.bod_layer_id == "ch.bazl.luftfahrtkarten-icao":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.bazl.luftfahrtkarten-icao_de_fr_en.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>

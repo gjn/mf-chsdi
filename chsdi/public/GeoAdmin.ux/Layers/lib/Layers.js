@@ -2159,6 +2159,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 opacity: 0.75,
                 queryable: false
+            },
+            "ch.bak.bundesinventar-schuetzenswerte-ortsbilder": {
+                name: OpenLayers.i18n("ch.bak.bundesinventar-schuetzenswerte-ortsbilder"),
+                layertype: 'wmts',
+                timestamp: '20110915',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bak",
+                queryable: true
+            },
+            "ch.bazl.luftfahrtkarten-icao": {
+                name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
+                layertype: 'wmts',
+                timestamp: '20110310',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: false
             }
         };
         return this.layers;

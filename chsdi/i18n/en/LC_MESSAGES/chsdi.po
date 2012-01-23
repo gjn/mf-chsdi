@@ -80,11 +80,17 @@ msgstr "Anzahl Spuren"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "arch__hist__qualitaeten"
+msgstr "Hist. -arch. qualities"
+
 msgid "atlassheetnumber"
 msgstr "Nummer Geologischer Atlas"
 
 msgid "ausgabejahr"
 msgstr "Ausgabejahr"
+
+msgid "band_1_2"
+msgstr "Volume 1 | 2"
 
 msgid "bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
@@ -181,6 +187,9 @@ msgstr "River"
 
 msgid "epizentralzone"
 msgstr "Epizentrale Zone"
+
+msgid "fassung"
+msgstr "Version"
 
 msgid "federal administration"
 msgstr "The Federal Authorities of the Swiss Confederation"
@@ -353,6 +362,9 @@ msgstr "Length [m]"
 msgid "laenge_strecke_m"
 msgstr "Length of stretch [m]"
 
+msgid "lagequalitaeten"
+msgstr "Situation qualities"
+
 msgid "langtext"
 msgstr "Ortschaft"
 
@@ -464,14 +476,23 @@ msgstr "Object Nr."
 msgid "oeffentlich"
 msgstr "Öffentlich"
 
+msgid "optionaler_name"
+msgstr "Optionaler Name"
+
 msgid "ort"
 msgstr "Location"
+
+msgid "ortsbildname"
+msgstr "Site"
 
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch is loading. please wait..."
 
 msgid "pdf"
 msgstr "PDF"
+
+msgid "pdf_dokument_1_2"
+msgstr "PDF 1 | 2"
 
 msgid "perimeter_m"
 msgstr "Perimeter [m]"
@@ -485,11 +506,17 @@ msgstr "Zip"
 msgid "protokoll"
 msgstr "Protocoll"
 
+msgid "publikationsjahr_1_2"
+msgstr "Year of publication 1 | 2"
+
 msgid "punktname"
 msgstr "Point name"
 
 msgid "quality"
 msgstr "Qualitätsstandard"
+
+msgid "raeumliche_qualitaeten"
+msgstr "Spatial qualities"
 
 msgid "regional"
 msgstr "regional"
@@ -646,6 +673,9 @@ msgstr "Typnummer"
 
 msgid "url"
 msgstr "URL"
+
+msgid "validierungsdatum"
+msgstr "Validierungsdatum"
 
 msgid "viel_sub"
 msgstr "Historischer Verlauf mit viel Substanz"

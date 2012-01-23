@@ -699,10 +699,32 @@ msgstr ""
 msgid "sia_261_norm"
 msgstr ""
 
+msgid "ortsbildname"
+msgstr ""
 
+msgid "lagequalitaeten"
+msgstr ""
 
+msgid "raeumliche_qualitaeten"
+msgstr ""
 
+msgid "arch__hist__qualitaeten"
+msgstr ""
 
+msgid "fassung"
+msgstr ""
 
+msgid "band_1_2"
+msgstr ""
 
+msgid "publikationsjahr_1_2"
+msgstr ""
 
+msgid "pdf_dokument_1_2"
+msgstr ""
+
+msgid "optionaler_name"
+msgstr ""
+
+msgid "validierungsdatum"
+msgstr ""
