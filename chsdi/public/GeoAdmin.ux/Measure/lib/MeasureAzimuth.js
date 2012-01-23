@@ -321,6 +321,10 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                 this.elevation && this.elevation.activate();
                 var azimuthEl = Ext.fly('azimuth');
                 if (azimuthEl) azimuthEl.update('', false);
+                if (this.popup) { 	 
+	                  this.popup.hide();
+	                  this.popup = undefined; 	 
+	              }
             },
             "measure": measure,
             "measurepartial": measurepartial,
