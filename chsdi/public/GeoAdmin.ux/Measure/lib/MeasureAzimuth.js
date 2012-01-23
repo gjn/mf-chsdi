@@ -319,7 +319,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             "deactivate": function() {
                 this.mousePosition && this.mousePosition.activate();
                 this.elevation && this.elevation.activate();
-                var azimuthEl = Ext.fly('azimuth');
+                var azimuthEl = Ext.fly('measure');
                 if (azimuthEl) azimuthEl.update('', false);
                 if (this.popup) { 	 
 	                  this.popup.hide();
