@@ -10,9 +10,9 @@ from chsdi.model import *
 Base = declarative_base(bind=meta.engines['bod'])
 
 class LayerLegend(Base):
-    __tablename__ = 'bod_layer_legende'
+    __tablename__ = 'view_bod_layer_legende'
     __table_args__ = ({'autoload': True})
-
+    id = Column('bod_layer_id', Text, primary_key=True)
 
 class BodLayer(object):
 
