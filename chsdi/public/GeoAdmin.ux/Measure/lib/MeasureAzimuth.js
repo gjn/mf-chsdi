@@ -113,8 +113,6 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         function onElevationResponse(index, response) {
             var json = new OpenLayers.Format.JSON();
             var data = json.read(response.responseText);
-            this.xComponent = geometry.components[0].x;
-            this.yComponent = geometry.components[0].y;
             this.elevations[index] = data.height;
             this.components = geometry.components;
             if (this.elevations[0] && this.elevations[1]) {
