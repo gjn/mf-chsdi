@@ -360,7 +360,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Magnetic field strength',
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Rocks origin',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classification of rocks',
-	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', //TODO
+	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Main lithological groups',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Groundwater resources',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Groundwater vulnerability',
 	'ch.swisstopo.geologie-tektonische_karte':'Tectonic 1:500 000',
