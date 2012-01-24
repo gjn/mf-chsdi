@@ -460,7 +460,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'move layer up':'Move layer up',
 	'nameText':'Name',
 	'next':'Next',
-	'no title':'no title', //TODO
+	'no title':'Text',
 	'noText':'Nein',
 	'olive':'olive',
 	'orange':'orange',

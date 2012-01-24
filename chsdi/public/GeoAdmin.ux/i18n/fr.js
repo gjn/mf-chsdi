@@ -460,7 +460,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'move layer up':'Modifier l\'ordre des couches',
 	'nameText':'Nom',
 	'next':'Retour au cadrage suivant',
-	'no title':'no title', //TODO
+	'no title':'Texte',
 	'noText':'Non',
 	'olive':'olive',
 	'orange':'orange',

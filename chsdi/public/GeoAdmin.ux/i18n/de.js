@@ -460,7 +460,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'move layer up':'Layer-Reihenfolge ändern',
 	'nameText':'Name',
 	'next':'Vorwärts',
-	'no title':'no title', //TODO
+	'no title':'Text',
 	'noText':'Nein',
 	'olive':'Olive',
 	'orange':'Orange',

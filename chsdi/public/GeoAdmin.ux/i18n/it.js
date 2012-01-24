@@ -460,7 +460,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'move layer up':'Modificare l\'ordine dei piani',
 	'nameText':'Nome del livello',
 	'next':'Avanti',
-	'no title':'no title', //TODO
+	'no title':'Testo',
 	'noText':'No',
 	'olive':'Oliva',
 	'orange':'Arancione',
