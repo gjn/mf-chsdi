@@ -735,7 +735,6 @@ Usage Example
 
                if (!doc || doc.length <1) { alert("Trouble parsing the getCapabilities document"); return false;}
                var capabilities = format.read(doc);
-               console.log(capabilities);
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
                    matrixSet: "21781",
