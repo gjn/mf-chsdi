@@ -816,6 +816,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geologie-geophysik-totalintensitaet"
                     },
                     {
+                        layerId: "ch.swisstopo.geologie-geotechnik-gk500-genese"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
+                    },
+                    {
                         layerId: "ch.swisstopo.geologie-tektonische_karte"
                     }
                 ]

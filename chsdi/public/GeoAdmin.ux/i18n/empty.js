@@ -1,4 +1,7 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'ch.swisstopo.geologie-geotechnik-gk500-genese': "",
+    'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung': "",
+    'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen': "",
     'For a detailed revision of the national map: ': "",
     'Use the ': "",
     'revision service of swisstopo': "",

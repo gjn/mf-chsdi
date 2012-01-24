@@ -843,6 +843,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+             "ch.swisstopo.geologie-geotechnik-gk500-genese": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
+                layertype: 'wmts',
+                timestamp: '20000101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"),
+                layertype: 'wmts',
+                timestamp: '20000101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
+            "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"),
+                layertype: 'wmts',
+                timestamp: '20000101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
                 layertype: 'wmts',
