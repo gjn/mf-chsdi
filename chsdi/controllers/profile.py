@@ -76,7 +76,7 @@ class ProfileController(BaseController):
             log.error("LineString is not valid")
             abort(400)
         bbox = Polygon(((420000,30000), (420000,350000), (900000, 350000), (900000, 30000), (420000,30000)))
-        log.debug("Importing/testing linestring. Linestring of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+        #log.debug("Importing/testing linestring. Linestring of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
         start = time.clock()
 
         if request.params.has_key('layers'):
@@ -105,11 +105,11 @@ class ProfileController(BaseController):
         # Simplify input line with a tolerance of 2 m
         if nb_points < len(linestring.coords):
             linestring = linestring.simplify(12.5)
-	    log.debug("Timer Simplify: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+	    #log.debug("Timer Simplify: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
             start = time.clock()
 
         coords = self._create_points(linestring.coords, nb_points)
-        log.debug("Timer Compute points: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
+        #log.debug("Timer Compute points: LineString of %d point(s): %f" % (len(linestring.coords), time.clock()-start))
         start = time.clock()
 
         zvalues = {}
@@ -139,7 +139,7 @@ class ProfileController(BaseController):
                     s += zvalues[layers[i]][p] * factor(k)
                     d += factor(k)
                 zvalues2[layers[i]].append(s / d)                    
-        log.debug("Timer Moving Average %d point(s): %f" % (len(coords), time.clock()-start))
+        #log.debug("Timer Moving Average %d point(s): %f" % (len(coords), time.clock()-start))
         start = time.clock()
 
         dist = 0
@@ -159,7 +159,7 @@ class ProfileController(BaseController):
                                  'easting': self._filter_coordinate(coords[j][0]),
                                  'northing': self._filter_coordinate(coords[j][1])})
             prev_coord = coords[j]
-        log.debug("Timer Finilizing %d point(s): %f" % (len(coords), time.clock()-start))
+        #log.debug("Timer Finalizing %d point(s): %f" % (len(coords), time.clock()-start))
         start = time.clock()
 
     def _dist(self, coord1, coord2):
