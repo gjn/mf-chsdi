@@ -850,6 +850,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung": {
@@ -859,6 +860,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
@@ -868,6 +870,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: false
             },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
