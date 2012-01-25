@@ -173,6 +173,9 @@ msgstr "Copyright e  dicariazione della protezione dei diritti d\u2019autore"
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"
 
+msgid "district"
+msgstr "distretto"
+
 msgid "egid"
 msgstr "EGID"
 

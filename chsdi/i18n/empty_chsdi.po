@@ -235,6 +235,9 @@ msgstr ""
 msgid "ct"
 msgstr ""
 
+msgid "district"
+msgstr ""
+
 msgid "ort"
 msgstr ""
 
