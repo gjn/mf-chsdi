@@ -48,21 +48,26 @@ class SwissSearch(Base, Queryable):
                           'label': "%s <b>%s - %s (%s)</b>"%(_('plz'), self.plz, self.ort_27, self.kanton)})
             elif self.origin == 'sn25':
                 o.update({'service': 'swissnames',
-                          'rank': 4,
+                          'rank': 5,
                           'label': "<b>%s</b> (%s) - %s"%(self.name, self.kanton, self.gemname)})
             elif self.origin == 'gg25':
                 o.update({'service': 'cities',
-                          'rank': 3,
+                          'rank': 4,
                           'name': self.gemname,
                           'nr': self.id,
                           'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
             elif self.origin == 'kantone':
                 o.update({'service': 'cantons',
-                          'rank': 2,
+                          'rank': 3,
                           'name': self.name,
                           'code': self.kanton,
                           'nr': self.id,
                           'label': "%s <b>%s</b>"%(_('ct'), self.name)})
+            elif self.origin == 'district':
+                o.update({'service': 'districts',
+                          'rank': 2,
+                          'name': self.name,
+                          'label': "%s <b>%s</b>"%( _('district'), self.name)})
             elif self.origin == 'address':
                 if self.deinr is None:
                    address_nr = ''

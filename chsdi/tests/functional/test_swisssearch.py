@@ -3,6 +3,7 @@
 import simplejson as simplejson
 
 from chsdi.tests import *
+MAX_FEATURES_GEOCODING = 100
 
 class TestSwisssearchController(TestController):
 
@@ -58,9 +59,20 @@ class TestSwisssearchController(TestController):
         assert resp.response.body.startswith("callback(")
         assert resp.response.body.endswith(");")
 
+    def test_geocoding_services(self):
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                params={"query": "sierre", "services": "address,swissnames,districts,cantons,postalcodes"}
+                            )
+        results = simplejson.loads(resp.response.body)['results']
+        cities_results = 0
+        for r in results:
+            if r['service'] == 'cities':
+                cities_results += 1
+        assert cities_results == 0
+
     def test_reversegeocoding(self):
         resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
-                            params={"easting": 600000 , "northing": 200000}
+                params={"easting": 600000 , "northing": 200000}
                             )
 
         # test that content_type is "application/json"
@@ -74,6 +86,30 @@ class TestSwisssearchController(TestController):
         assert isinstance(results, list)
         assert len(results) > 0
         assert isinstance(results[0], dict)
+
+    def test_reversegeocoding_tolerance(self):
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
+                params={"easting": 600000 , "northing": 200000, "tolerance": 10000}
+                            )
+        results = simplejson.loads(resp.response.body)
+        assert len(results) < MAX_FEATURES_GEOCODING 
+
+    def test_reversegeocoding_services(self):
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
+                params={"easting": 600000 , "northing": 200000, "tolerance": 10000, "services": "cities"}
+                            )
+        results = simplejson.loads(resp.response.body)
+        cities_results = 0
+        for r in results:
+            if r['service'] == 'cities':
+                cities_results += 1
+        assert len(results) == cities_results
+
+    def test_reversegeocoding_inexisting_services(self):
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
+                params={"easting": 600000 , "northing": 200000, "tolerance": 10000, "services": "this-one-is-does-not-exist"},
+                status = 400
+                )
 
     def test_reversegeocoding_with_cb(self):
         resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),

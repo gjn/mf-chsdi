@@ -47,6 +47,7 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
+- services (optional): Default, all toponymes database are searched. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons.
 
 The service returns a maximum of 20 results.
 
@@ -94,6 +95,9 @@ The following parameters are required:
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
 - cb (optional): the name of the callback funtion
+- services (optional): Default, all toponymes database are searched. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons.
+
+The service returns a maximum of 50 results.
 
 Example: http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965
 

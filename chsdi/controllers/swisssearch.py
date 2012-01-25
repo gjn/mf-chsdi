@@ -21,6 +21,9 @@ from pylons.i18n import set_lang
 
 log = logging.getLogger(__name__)
 
+MAX_FEATURES_GEOCODING = 20
+MAX_FEATURES_REVERSEGEOCODING = 50
+
 class SwisssearchController(BaseController):
 
     def __before__(self):
@@ -35,6 +38,17 @@ class SwisssearchController(BaseController):
             set_lang('fi', fallback=True)
         else:
             set_lang(self.lang, fallback=True)
+
+        self.services = None
+        available_services = 'cities,swissnames,districts,address,cantons,postalcodes'
+        services = request.params.get('services', available_services).split(',')
+        self.services = [s for s in services if s in available_services.split(',')]
+        origin_to_service_map = {'zipcode': 'postalcodes', 'sn25': 'swissnames', 'gg25': 'cities', 'kantone': 'cantons', 'district': 'districts', 'address': 'address'}
+        self.origins = [ origin for origin, service in origin_to_service_map.iteritems() if service in self.services ]
+
+        if len(self.services) < 1:
+            abort(400, "parameter 'services' is invalid. Available services are: '%s'" % "','".join(available_services.split(',')))
+
  
 
     @cacheable
@@ -68,16 +82,23 @@ class SwisssearchController(BaseController):
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
                query = Session.query(SwissSearch).filter(ftsFilter)
 
+
         # FIXME Address search is only for admin.ch and awk.ch
         # For "awk.ch", see email from lttsb from 18.nov. 2011
         referer = request.headers.get('referer', '')
         if referer.find( 'admin.ch') < 0 and referer.find('awk.ch'):
-            query = query.filter(SwissSearch.origin != 'address')
+            self.origins = [o for o in self.origins if o != 'address']
+
+        if self.origins:
+            query = query.filter(SwissSearch.origin.in_(self.origins))
 
         if citynr is not None:
             query = query.filter(SwissSearch.gdenr == '' + citynr)
 
-        query = query.order_by(SwissSearch.id).limit(20)
+        query = query.order_by(SwissSearch.id).limit(MAX_FEATURES_GEOCODING)
+
+
+
 
         if self.rawjson:
             features = []
@@ -123,6 +144,8 @@ class SwisssearchController(BaseController):
         except:
             abort(400, "parameter 'tolerance' is not a number")
 
+
+
         # search for everything except sn25 data (who did not have 'the_geom_poly' geom)
         gfilter_poly = SwissSearch.within_filter(lon, lat, tolerance=tolerance, column='the_geom_poly')
 
@@ -131,5 +154,10 @@ class SwisssearchController(BaseController):
 
         query = Session.query(SwissSearch)
         query = query.filter(or_(gfilter_poly, gfilter_point))
+
+        if self.origins:
+            query = query.filter(SwissSearch.origin.in_(self.origins))
+
+        query = query.limit(MAX_FEATURES_REVERSEGEOCODING)
 
         return [f.json(rawjson=self.rawjson) for f in query.all()]
