@@ -172,11 +172,11 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         measureLength.scope.control.events.on({
             "measurepartial": function(event) {
                 var lengthEl = Ext.fly('measure');
-                lengthEl.update(OpenLayers.i18n('Distance: ') + roundNumber(event.measure,2) + ' ' + event.units);
+                lengthEl.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
             },
             "measure": function(event) {
                 var lengthEl = Ext.fly('measure');
-                lengthEl.update(OpenLayers.i18n('Distance: ') + roundNumber(event.measure,2) + ' ' + event.units);
+                lengthEl.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
             },
             "deactivate": function(event) {
                 var lengthEl = Ext.fly('measure');
@@ -187,11 +187,11 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         measureArea.scope.control.events.on({
             "measurepartial": function(event) {
                 var areaEl = Ext.fly('measure');
-                areaEl.update(OpenLayers.i18n('Area: ') + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                areaEl.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
             },
             "measure": function(event) {
                 var areaEl = Ext.fly('measure');
-                areaEl.update(OpenLayers.i18n('Area: ') + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                areaEl.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
             },
             "deactivate": function(event) {
                 var lengthEl = Ext.fly('measure');
