@@ -65,7 +65,32 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             var mapPx = findPos(this.control.handler.map.div);
             this.tip.showAt([mapPx[0] + px.x,mapPx[1] + px.y]);
         };
+        GeoExt.ux.Measure.prototype.createControl = function(handlerClass, styleMap, controlOptions) {
+            controlOptions = Ext.apply({
+                partialDelay: 0,
+                measuring: false,
+                persist: true,
+                eventListeners: {
+                    "measure": this.display,
+                    "deactivate": this.cleanup,
+                    scope: this
+                },
+                handlerOptions: {
+                    layerOptions: {
+                        styleMap: styleMap
+                    }
+                },
+                callbacks: {
+            	    modify: function(point, feature) {
+            	        if (!this.tip) {
+            	            this.measurePartial(point, feature.geometry);
+            	        }
+            	    }
+            	  }
+            }, controlOptions);
 
+            return new OpenLayers.Control.Measure(handlerClass, controlOptions);
+        };
         var updateStyle = function(btn, evt) {
             if (true) {
                 btn.el.parent().addClass('pressed');
@@ -144,7 +169,35 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             height: 100,
             items: [measureLength, measureArea, measureAzimuth]
         });
-
+        measureLength.scope.control.events.on({
+            "measurepartial": function(event) {
+                var lengthEl = Ext.fly('measure');
+                lengthEl.update(OpenLayers.i18n('Distance: ') + roundNumber(event.measure,2) + ' ' + event.units);
+            },
+            "measure": function(event) {
+                var lengthEl = Ext.fly('measure');
+                lengthEl.update(OpenLayers.i18n('Distance: ') + roundNumber(event.measure,2) + ' ' + event.units);
+            },
+            "deactivate": function(event) {
+                var lengthEl = Ext.fly('measure');
+                lengthEl.update("");
+            }
+        });           
+            	
+        measureArea.scope.control.events.on({
+            "measurepartial": function(event) {
+                var areaEl = Ext.fly('measure');
+                areaEl.update(OpenLayers.i18n('Area: ') + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+            },
+            "measure": function(event) {
+                var areaEl = Ext.fly('measure');
+                areaEl.update(OpenLayers.i18n('Area: ') + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+            },
+            "deactivate": function(event) {
+                var lengthEl = Ext.fly('measure');
+                lengthEl.update("");
+            }
+        });
 
         var measurePanel = new Ext.Panel({
             layout: 'hbox',
@@ -164,7 +217,10 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 measurePanel
             ]
         }, config);
-
+        function roundNumber(num, dec) {
+            var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+            return result;
+        ;}
         GeoAdmin.MeasurePanel.superclass.constructor.call(this, config);
     }
 });
