@@ -11,8 +11,11 @@ from  urllib2 import URLError
 import random
 
 class CheckerController(BaseController):
-
     def index(self):
+        response.status = '200'
+        return 'OK'
+
+    def sanity(self):
 
         serviceUrl='localhost'
         x,y = random.uniform(600000,700000), random.uniform(150000,250000)

@@ -40,7 +40,7 @@ def make_map(config):
     map.connect("/wmts8/{path_info:.*}",controller="wmts", action="manager")
     map.connect("/wmts9/{path_info:.*}",controller="wmts", action="manager")
     map.connect('/checker', controller='checker', action='index')
-
+    map.connect('/sanity', controller='checker', action='sanity')
 
     # Uncomment this line if you need the OGC proxy in your application
     map.connect('/ogcproxy', controller='ogcproxy', action='index')
