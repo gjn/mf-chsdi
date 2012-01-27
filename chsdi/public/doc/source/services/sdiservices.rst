@@ -47,17 +47,18 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
-- services (optional): Default, all toponymes database are searched. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons.
+- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
 
 The service returns a maximum of 20 results.
 
 Examples:
 
-- Toponymy: http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex
-- Postcode: http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw
-- Addresses: http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw
-- Addresses with EGID: http://api.geo.admin.ch/swisssearch/geocoding?egid=867194
-- Addresses with city number: http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug
+- Toponymy: `http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex <../../../swisssearch/geocoding?lang=fr&query=maisonnex>`_
+- Postcode: `http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw <../../../swisssearch/geocoding?query=1290&format=raw>`_
+- Addresses: `http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw ../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
+- Addresses with EGID: `http://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
+- Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
+- Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
 
 Note: In French, search for "leopold robert", not only for "robert"
 
@@ -95,11 +96,14 @@ The following parameters are required:
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
 - cb (optional): the name of the callback funtion
-- services (optional): Default, all toponymes database are searched. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons.
+- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
 
 The service returns a maximum of 50 results.
 
-Example: http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965
+Examples:
+
+- Search everything ath the point location (well, within 10 m): `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
+- Search for communes and postcode within 2 km of point: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=10000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
 
 Result
 ^^^^^^
