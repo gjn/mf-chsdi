@@ -63,7 +63,7 @@ Examples:
 
 - Toponymy: `http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex <../../../swisssearch/geocoding?lang=fr&query=maisonnex>`_
 - Postcode: `http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw <../../../swisssearch/geocoding?query=1290&format=raw>`_
-- Addresses: `http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw ../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
+- Addresses: `http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw <../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
 - Addresses with EGID: `http://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
 - Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
 - Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
