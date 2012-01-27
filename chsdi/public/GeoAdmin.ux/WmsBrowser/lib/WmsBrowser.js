@@ -49,7 +49,14 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 ['http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms?'],
                 ['http://www.sogis1.so.ch/cgi-bin/sogis/sogis_dtm_dom.wms?'],
                 ['http://cartoserver.vd.ch/ogcccgeo/wms?'],
-                ['http://www.gis.zh.ch/scripts/kkgeowms.asp?']
+                ['http://www.gis.zh.ch/scripts/kkgeowms.asp?'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_flaechenwidmung_v_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_luftbilder_r_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_hoehen_und_gelaende_r_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_relief_r_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_historischekarten_r_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_naturschutz_v_wms.map'],
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_topographie_r_wms.map']
             ]
         });
 
