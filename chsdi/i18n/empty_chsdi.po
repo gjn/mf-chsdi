@@ -731,3 +731,6 @@ msgstr ""
 
 msgid "validierungsdatum"
 msgstr ""
+
+msgid "ch.bak.isos.warning"
+msgstr ""

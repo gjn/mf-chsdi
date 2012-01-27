@@ -149,6 +149,9 @@ msgstr "Numéro de la subdivision"
 msgid "blind warning"
 msgstr "Cette page est une application cartographique et n'est donc pas optimisée pour les aveugles."
 
+msgid "ch.bak.isos.warning"
+msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à l’office compétent (isos@bak.admin.ch) si vous envisagez d’utiliser un relevé ISOS dans un cadre légal."
+
 msgid "construct"
 msgstr "Ouvrage d'art"
 

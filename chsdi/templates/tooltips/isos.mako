@@ -23,4 +23,5 @@
             &nbsp;-
         % endif
     </td></tr>
+    <tr><td colspan=2>${_('ch.bak.isos.warning')}</td></td></tr>
 </%def>

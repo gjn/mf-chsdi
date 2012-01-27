@@ -149,6 +149,9 @@ msgstr "Nummer Unterregion"
 msgid "blind warning"
 msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
 
+msgid "ch.bak.isos.warning"
+msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch)."
+
 msgid "construct"
 msgstr "Kunstbaute"
 

@@ -149,6 +149,9 @@ msgstr "Nummer Unterregion"
 msgid "blind warning"
 msgstr "Questa pagina d'internet è in'applicaziun cartografica e n'è pervia da quai betg optimada per persunas tschorvas."
 
+msgid "ch.bak.isos.warning"
+msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch)."
+
 msgid "construct"
 msgstr "Kunstbaute"
 
