@@ -51,6 +51,14 @@ The following parameters are required:
 
 The service returns a maximum of 20 results.
 
+Services in use:
+
+- **cities**: communes
+- **swissnames**: all toponymes as printed on the national maps
+- **districts**: the swiss districts (not all cantons have districts)
+- **postalcodes**: ZIP code from swiss Post
+- **adress**: from the register for buildings and dwellings (BFS)
+
 Examples:
 
 - Toponymy: `http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex <../../../swisssearch/geocoding?lang=fr&query=maisonnex>`_
