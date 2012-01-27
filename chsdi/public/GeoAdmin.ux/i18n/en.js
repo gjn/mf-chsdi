@@ -216,7 +216,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Title':'Title',
 	'To':'Recipient\'s email (mandatory)',
 	'URL':'URL',
-	'Umwelt, Biologie und Geologie':'Environment, Biology and Geology',
+	'Umwelt, Biologie und Geologie':'Environment, biology and geology',
 	'Umweltüberwachung':'Environmental monitoring facilities',
 	'Use the ':'Use the ',
 	'Verkehrsnetze':'Transport networks',
