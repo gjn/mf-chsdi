@@ -284,7 +284,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             var out = measurepartial(e);
             if (this.popup) {
                 this.popup.destroy();
-            };
+            }
             this.popup = new Ext.Tip({
                 title: OpenLayers.i18n('Measure.MeasureAzimuth'),
                 closable: true,
@@ -296,7 +296,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                          this.control.handler.destroyPersistedFeature();
                          if (this.autoDeactivate === true) {
                              this.control.deactivate();
-                         };
+                         }
                     },
                     scope: this
                 }
@@ -307,7 +307,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
             var center = bound.getCenterLonLat();
             var pixelCoordinates = this.control.map.getPixelFromLonLat(center);
             this.popup.showAt([pixelCoordinates.x,pixelCoordinates.y]);
-        };
+        }
         
         this.control.events.on({
             "activate": function() {

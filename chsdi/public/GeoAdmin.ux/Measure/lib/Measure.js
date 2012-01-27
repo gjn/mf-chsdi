@@ -24,12 +24,12 @@ Ext.namespace('GeoAdmin');
 
 
 GeoAdmin.Measure = Ext.extend(Ext.Action, {
-
+    measureWindow: null,
     /**
      */
     constructor : function(config) {
 
-        var measureWindow = new GeoAdmin.MeasureWindow(Ext.apply({
+        this.measureWindow = new GeoAdmin.MeasureWindow(Ext.apply({
             renderTo: Ext.getBody()
         }, config));
 
@@ -38,8 +38,9 @@ GeoAdmin.Measure = Ext.extend(Ext.Action, {
             iconCls: 'measure',
             text: OpenLayers.i18n('Measure'),
             handler: function() {
-                measureWindow.show();
-            }
+                this.measureWindow.show();
+            },
+            scope: this
         }, config);
 
         GeoAdmin.Measure.superclass.constructor.call(this, config);

@@ -11,6 +11,14 @@
     width: 50px !important;
     background-position: 0 0 !important;
 }
+
+.x-toolbar .gx-map-measureprofile {
+    background-image: url("../images/measure_area.gif") !important;
+    height: 70px !important;
+    width: 50px !important;
+    background-position: 0 0 !important;
+}
+
 .x-toolbar .gx-map-measureazimuth {
     background-image: url("../images/measure_azimuth.gif") !important;
     height: 70px !important;
@@ -22,7 +30,6 @@
     padding-top: 50px;
 
 }
-
 
 .x-btn-pressed  .gx-map-measurearea, .x-btn-pressed  .gx-map-measurelength, .x-btn-pressed  .gx-map-measureazimuth  {
     background-color: #dddddd;

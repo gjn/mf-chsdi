@@ -220,7 +220,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         function roundNumber(num, dec) {
             var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
             return result;
-        ;}
+        }
         GeoAdmin.MeasurePanel.superclass.constructor.call(this, config);
     }
 });
