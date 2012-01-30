@@ -32,6 +32,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 draggable: false,
                 listeners: {
                     hide: function() {
+                        this.control.measuring = true;
                         this.control.cancel();
                         if (this.autoDeactivate === true) {
                             this.control.deactivate();
@@ -68,7 +69,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         GeoExt.ux.Measure.prototype.createControl = function(handlerClass, styleMap, controlOptions) {
             controlOptions = Ext.apply({
                 partialDelay: 0,
-                measuring: false,
+                measuring: true,
                 persist: true,
                 eventListeners: {
                     "measure": this.display,
@@ -82,9 +83,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 },
                 callbacks: {
             	    modify: function(point, feature) {
-            	        if (!this.tip) {
-            	            this.measurePartial(point, feature.geometry);
-            	        }
+            	        this.measurePartial(point, feature.geometry);
             	    }
             	  }
             }, controlOptions);
@@ -98,7 +97,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 btn.el.parent().removeClass('pressed');
             }
         };
-
+        this.measureLive = undefined;
 
         var sketchSymbolizers = {
             "Point": {
@@ -171,31 +170,49 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
         });
         measureLength.scope.control.events.on({
             "measurepartial": function(event) {
-                var lengthEl = Ext.fly('measure');
-                lengthEl.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
+                if (measureLength.scope.control.measuring == false && measureLength.scope.tip) {
+                    if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString()) { 
+                        measureLength.scope.control.measuring = true;
+                        measureLength.scope.tip.destroy();
+                        this.measureLive.update("");
+                    }
+                }
+                if (!this.measureLive) { this.measureLive = Ext.get('measure'); } 
+                if (this.measureLive &&  measureLength.scope.control.measuring == true) {
+                    this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units); 
+                }
             },
             "measure": function(event) {
-                var lengthEl = Ext.fly('measure');
-                lengthEl.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
+                this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
+                measureLength.scope.control.measuring = false;
+                this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.clone().toString();
             },
             "deactivate": function(event) {
-                var lengthEl = Ext.fly('measure');
-                lengthEl.update("");
+                this.measureLive.update("");
             }
         });           
             	
         measureArea.scope.control.events.on({
             "measurepartial": function(event) {
-                var areaEl = Ext.fly('measure');
-                areaEl.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                if (measureArea.scope.control.measuring == false && measureArea.scope.tip) {
+                    if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.toString()) {
+                        measureArea.scope.control.measuring = true;
+                        measureArea.scope.tip.destroy();
+                        this.measureLive.update("");
+                    }
+                }
+                if (!this.measureLive) { this.measureLive = Ext.get('measure'); }
+                if (this.measureLive && measureArea.scope.control.measuring == true) { 
+                    this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>'); 
+                }
             },
             "measure": function(event) {
-                var areaEl = Ext.fly('measure');
-                areaEl.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                measureArea.scope.control.measuring = false;
+                this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.clone().toString();
             },
             "deactivate": function(event) {
-                var lengthEl = Ext.fly('measure');
-                lengthEl.update("");
+                this.measureLive.update("");
             }
         });
 
