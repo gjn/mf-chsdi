@@ -273,6 +273,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                     out.push(OpenLayers.i18n('Descent: ') + Math.abs(elevationDifference) + " m");
                 }
             }
+            if (this.popup && this.finalSketch !== this.control.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString()) { this.popup.destroy(); }
             var azimuthEl = Ext.fly('measure');
             if (azimuthEl) azimuthEl.update(out.join(', '), false);
 
@@ -301,6 +302,7 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                     scope: this
                 }
             });
+            this.finalSketch = this.control.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString();
             var bound = new OpenLayers.Bounds();
             bound.extend(this.control.components[0]); 
             bound.extend(this.control.components[1]);
