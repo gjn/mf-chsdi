@@ -210,7 +210,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Merci beaucoup pour votre retour',
 	'The following URL will be transferred:':'L\'Url suivante va être transférée :',
-	'The permalink you use contains reference to third party data. Would you load these data ?':'Le permalien que vous utilisez contient des références à des données tierces ne provenant pas de map.geo.admin.ch. Voulez-vous également visualiser ces données sachant que map.geo.admin.ch ne prend aucune responsabilité quant à ces données ?',
+	'The permalink you use contains reference to third party data. Would you load these data ?':'Le permalien que vous utilisez contient peut-être des références à des données tierces ne provenant pas de map.geo.admin.ch. Voulez-vous également visualiser ces données sachant que map.geo.admin.ch ne prend aucune responsabilité quant à ces données ?',
 	'The url address entered is not valid.':'L\'adresse URL saisie n\'est pas valide.',
 	'Third party data warning':'Mise en garde données tierces',
 	'Title':'Titre',

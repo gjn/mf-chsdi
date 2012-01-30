@@ -210,7 +210,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Grazie mille per il suo rapporto !',
 	'The following URL will be transferred:':'Il seguente URL verrá inviato:',
-	'The permalink you use contains reference to third party data. Would you load these data ?':'Il permalink usato fa riferimento a dati di terze parti. Volete veramente caricare questi dati?',
+	'The permalink you use contains reference to third party data. Would you load these data ?':'Il permalink usato fa riferimento possibilmente a dati di terze parti. Volete veramente caricare questi dati?',
 	'The url address entered is not valid.':'L\'indirizzo URL inserito non è valido',
 	'Third party data warning':'Attenzione: questi dati provengono da terze parti.',
 	'Title':'Titolo',

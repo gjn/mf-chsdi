@@ -210,7 +210,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Swissnames':'Swissnames',
 	'Thanks a lot for your feedback !':'Thanks a lot for your report !',
 	'The following URL will be transferred:':'The following URL will be transferred:',
-	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains reference to third party data. Would your really load these data ?',
+	'The permalink you use contains reference to third party data. Would you load these data ?':'The permalink you use contains possibly reference to third party data. Would your really load these data ?',
 	'The url address entered is not valid.':'The url address entered is not valid.',
 	'Third party data warning':'Warning: Third party data shown',
 	'Title':'Title',
