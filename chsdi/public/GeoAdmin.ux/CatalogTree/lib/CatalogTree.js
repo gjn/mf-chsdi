@@ -441,6 +441,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.fixpunkte-hoehe"
+                    },
+                    {
+                        layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]
             },
@@ -514,6 +517,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.gg25-gemeinde-flaeche.fill"
                     },
                     {
+                        layerId: "ch.swisstopo.vec200-adminboundaries-protectedarea"
+                    },
+                    {
                         layerId: "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
                     },
                     {
@@ -537,7 +543,11 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             },
             {
                 text: 'Flurstücke / Grundstücke',
-                hidden: true
+                children: [
+                    {
+                        layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
+                    }
+                ]
             }
         ]
     },
@@ -651,6 +661,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.babs.kulturgueter"
                     },
                     {
+                        layerId: "ch.blw.landwirtschaftliche-zonengrenzen"
+                    },
+                    {
                         layerId: "ch.vbs.territorialregionen"
                     }
                 ]
@@ -712,6 +725,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
+                    },
+                    {
+                        layerId: "ch.swisstopo.vec200-building"
                     },
                     {
                         layerId: "ch.swisstopo.vec25-gebaeude"
@@ -1021,6 +1037,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.ursprungsbezeichnungen-spirituosen"
+                    },
+                    {
+                        layerId: "ch.blw.landwirtschaftliche-zonengrenzen"
                     }
                 ]
             },

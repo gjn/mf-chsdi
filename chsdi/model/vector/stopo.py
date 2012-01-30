@@ -110,6 +110,15 @@ register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Road)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Ramp)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Customsoffice)
 
+class Vec200Protectedarea(Base, Queryable):
+    __tablename__ = 'vec200_protectedarea'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_protectedarea.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec200-adminboundaries-protectedarea', Vec200Protectedarea)
+
 class Vec25Wanderwege(Base, Queryable):
  	__tablename__ = 'v25_wanderweg'
  	__table_args__ = ({'autoload': True})
@@ -430,3 +439,12 @@ class geometaNfgeom2(Base, Queryable):
        the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-standav',geometaNfgeom2)
+
+class spannungsarmeGebiete(Base, Queryable):
+       __tablename__ = 'spannungsarme_gebiete'
+       __table_args__ = ({'schema': 'vd', 'autoload': True})
+       __template__ = 'tooltips/spannungsarme_gebiete.mako'
+       id = Column('identifier', Text, primary_key=True)
+       the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo-vd.spannungsarme-gebiete',spannungsarmeGebiete)

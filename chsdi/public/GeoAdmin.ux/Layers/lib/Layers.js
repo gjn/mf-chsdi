@@ -843,6 +843,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.vec200-adminboundaries-protectedarea": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-adminboundaries-protectedarea"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.swisstopo.vec200-building": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-building"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: false
+            },
              "ch.swisstopo.geologie-geotechnik-gk500-genese": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
                 layertype: 'wmts',
@@ -1900,6 +1920,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.blw.landwirtschaftliche-zonengrenzen": {
+                name: OpenLayers.i18n("ch.blw.landwirtschaftliche-zonengrenzen"),
+                layertype: 'wmts',
+                timestamp: '20111010',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
                 name: OpenLayers.i18n("ch.ensi.zonenplan-notfallschutz-kernanlagen"),
                 layertype: 'wmts',
@@ -1914,6 +1944,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
                 layertype: 'wmts',
                 timestamp: '20111101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.swisstopo-vd.spannungsarme-gebiete": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.spannungsarme-gebiete"),
+                layertype: 'wmts',
+                timestamp: '20111216',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
