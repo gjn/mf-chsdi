@@ -229,8 +229,8 @@
 
             // 'Flurstücke / Grundstücke'
             // node does not currently exist
-            t.ok(tree.getNodeById(tree.id + '_LT2_6') == null,
-                 'LT2_6 does not exist');
+            t.ok(tree.getNodeById(tree.id + '_LT2_6') != null,
+                 'LT2_6 does exist');
 
             // 'Gewässernetz'
             n = tree.getNodeById(tree.id + '_LT2_7');
