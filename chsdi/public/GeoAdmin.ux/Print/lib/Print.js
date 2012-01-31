@@ -497,11 +497,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Creates the print tool interface.
      */
     initPanel: function() {
+        var scope = this;
         this.printLayer = new OpenLayers.Layer.Vector(null, {
             displayInLayerSwitcher: false,
             styleMap: new OpenLayers.StyleMap({
                 "default": new OpenLayers.Style({
-                    pointRadius: "10",
                     fillColor: "#FF0000",
                     fillOpacity: 0.5,
                     strokeColor: "#FF0000",
@@ -509,15 +509,45 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     strokeWidth: 1
                 }),
                 "temporary": new OpenLayers.Style({
-                    pointRadius: "8",
-                    fillColor: "#FF0000",
-                    fillOpacity: 0,
+                    cursor: "${role}",
+                    pointRadius: 6,
+                    fillColor: "#FFFFFF",
+                    fillOpacity: 1.0,
                     strokeColor: "#FF0000",
                     strokeOpacity: 1.0,
                     strokeWidth: 2
+                }),
+                "rotate": new OpenLayers.Style({
+                    display: "${getDisplay}",
+                    rotation: "${getRotation}",
+                    cursor: "pointer",
+                    externalGraphic: OpenLayers.Util.getImagesLocation() + "arrow_rotate_clockwise.png",
+                    graphicXOffset: 8,
+                    graphicYOffset: 8,
+                    graphicWidth: 20,
+                    graphicHeight: 20,
+                    fillColor: "#AAAAAA",
+                    fillOpacity: 1.0,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWidth: 2
+                }, {
+                    context: {
+                        getDisplay: function(f) {
+                            return f.attributes.role === "se-rotate" ? "" : "none";
+                        },
+                        getRotation: function(f) {
+                            if (scope && scope.printPanel && scope.printPanel.printExtent && scope.printPanel.printExtent.control.rotation) {
+                                return -scope.printPanel.printExtent.control.rotation;
+                            } else {
+                                return 0;
+                            }
+                        }
+                    }
                 })
             })
         });
+
         var printOptions = Ext.apply({
             printProvider: this.printProvider,
             hideRotation: true,
@@ -545,6 +575,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 selectOnFocus: true,
                 displayField: "label",
                 valueField: "name"
+            },
+            printExtentOptions: {
+                transformFeatureOptions: {
+                    rotationHandleSymbolizer: "rotate"
+                }
             }
         }, this.config.printPanelOptions);
         delete this.config.printPanelConfig;
