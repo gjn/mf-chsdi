@@ -4,10 +4,11 @@ Base = declarative_base(bind=meta.engines['stopo'])
 
 class Bezirke25(Base, Queryable):
     __tablename__ = 'bezirke25'
-    __table_args__ = ({'autoload': True})
+    __table_args__ = ({'autoload': False})
     __template__ = 'tooltips/bezirke25.mako'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
+    id = Column('id', Integer, primary_key=True)
+    name = Column('name', Text)
+    flaeche = Column('flaeche', Integer)
     the_geom = Column(Geometry)
 
 register('ch.swisstopo.gg25-bezirk-flaeche.fill', Bezirke25)
@@ -214,7 +215,8 @@ class DufourErst(Base, Queryable):
  	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/dufour_erst.mako'
- 	id = Column('gid', Integer, primary_key=True)
+ 	id = Column('tilenumber', Text, primary_key=True)
+ 	tilenumber = column_property(id)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.hiks-dufour',DufourErst)
@@ -224,7 +226,8 @@ class SiegfriedErst(Base, Queryable):
  	__tablename__ = 'view_gridstand_datenhaltung_siegfried_erst'
  	__table_args__ = ({'schema': 'datenstand', 'autoload': True})
  	__template__ = 'tooltips/siegfried_erst.mako'
- 	id = Column('gid', Integer, primary_key=True)
+ 	id = Column('tilenumber', Text, primary_key=True)
+ 	tilenumber = column_property(id)
  	the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.hiks-siegfried',SiegfriedErst)
@@ -317,9 +320,12 @@ register('ch.swisstopo-karto.wanderwege',SwissmapOnlineWanderwege)
 class PLZOrtschaften(Base, Queryable):
        # view in a schema
        __tablename__ = 'gabmo_plz'
-       __table_args__ = ({'schema': 'vd', 'autoload': True})
+       __table_args__ = ({'schema': 'vd', 'autoload': False})
        __template__ = 'tooltips/gabmo_plz.mako'
-       id = Column('gid', Integer, primary_key=True)
+       id = Column('os_uuid', Text, primary_key=True)
+       plz = Column('plz', Integer)
+       zusziff = Column('zusziff', Text)
+       langtext = Column('langtext', Text)
        the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo-vd.ortschaftenverzeichnis_plz',PLZOrtschaften)

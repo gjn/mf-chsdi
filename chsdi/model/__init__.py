@@ -3,6 +3,7 @@ from sys import maxint
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from sqlalchemy.types import Integer, Text, String
+from sqlalchemy.orm import column_property
 
 from geoalchemy import Geometry, WKBSpatialElement
 

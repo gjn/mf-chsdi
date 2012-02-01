@@ -5,28 +5,37 @@ Base = declarative_base(bind=meta.engines['bafu'])
 class AM_G(Base, Queryable):
     # view in a schema
     __tablename__ = 'am_g'
-    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/am_g.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('am_g_obj', Integer, primary_key=True)
+    am_g_obj = column_property(id)
+    am_g_name = Column('am_g_name', Text)
     the_geom = Column(Geometry)
 
 class AM_L(Base, Queryable):
     # view in a schema
     __tablename__ = 'am_l'
-    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/am_l.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('am_l_obj', Text, primary_key=True)
+    am_l_obj = column_property(id)
+    am_l_name = Column('am_l_name', Text)
+    am_l_fl = Column('am_l_fl', Text)
+    am_l_berei = Column('am_l_berei', Text)
+    am_l_gf = Column('am_l_gf', Text)
     the_geom = Column(Geometry)
 
 class LHG(Base, Queryable):
     # view in a schema
     __tablename__ = 'lhg'
-    __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __template__ = 'tooltips/lhg.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('edv_nr4', Text, primary_key=True)
+    edv_nr4 = column_property(id)
+    lhg_name = Column('lhg_name', Text)
     the_geom = Column(Geometry)
 
 class AU(Base, Queryable):
@@ -35,7 +44,7 @@ class AU(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/au.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('au_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class BLN(Base, Queryable):
@@ -44,7 +53,7 @@ class BLN(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/bln.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('bln_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class HM(Base, Queryable):
@@ -53,7 +62,7 @@ class HM(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/hm.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('hm_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class JB(Base, Queryable):
@@ -71,7 +80,7 @@ class ML(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/ml.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('ml_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class WV(Base, Queryable):
@@ -89,7 +98,8 @@ class WEWB(Base, Queryable):
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
     __template__ = 'tooltips/wewb.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('rwknr', Integer, primary_key=True)
+    rwknr = column_property(id)
     the_geom = Column(Geometry)
 
 class WEWW(Base, Queryable):
@@ -98,7 +108,8 @@ class WEWW(Base, Queryable):
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
     __template__ = 'tooltips/weww.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('rwknr', Integer, primary_key=True)
+    rwknr = column_property(id)
     the_geom = Column(Geometry)
 
 class WEANB(Base, Queryable):
@@ -107,7 +118,8 @@ class WEANB(Base, Queryable):
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
     __template__ = 'tooltips/weanb.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('rwknr', Integer, primary_key=True)
+    rwknr = column_property(id)
     the_geom = Column(Geometry)
 
 class WEANW(Base, Queryable):
@@ -116,7 +128,8 @@ class WEANW(Base, Queryable):
     __table_args__ = ({'schema': 'wasser', 'autoload': True})
     __template__ = 'tooltips/weanw.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('rwknr', Integer, primary_key=True)
+    rwknr = column_property(id)
     the_geom = Column(Geometry)
 
 class WL(Base, Queryable):
@@ -140,19 +153,25 @@ class WR(Base, Queryable):
 class FM(Base, Queryable):
     # view in a schema
     __tablename__ = 'fm'
-    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/fm.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('fm_id', Integer, primary_key=True)
+    fm_name = Column('fm_name', Text)
+    fm_obj = Column('fm_obj', Text)
+    fm_gf = Column('fm_gf', Text)
     the_geom = Column(Geometry)
 
 class FM_REG(Base, Queryable):
     # view in a schema
     __tablename__ = 'fm_reg'
-    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/fm_reg.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('fm_id', Integer, primary_key=True)
+    fm_name = Column('fm_name', Text)
+    fm_obj = Column('fm_obj', Text)
+    fm_gf = Column('fm_gf', Text)
     the_geom = Column(Geometry)
 
 class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
@@ -167,10 +186,15 @@ class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
 class RA(Base, Queryable):
     # view in a schema
     __tablename__ = 'ra'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __template__ = 'tooltips/ra.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('ra_id', Integer, primary_key=True)
+    ra_id = column_property(id)
+    ra_name = Column('ra_name', Text)
+    ra_obj = Column('ra_obj', Integer)
+    ra_fl = Column('ra_fl', Text)
+    ra_gf = Column('ra_gf', Text)
     the_geom = Column(Geometry)
 	
 class WILDRUHEZONEN(Base, Queryable):
@@ -206,7 +230,7 @@ class SB(Base, Queryable):
     __table_args__ = ({'schema': 'fauna', 'autoload': True})
     __template__ = 'tooltips/sb.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('sb_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class SWISSPRTR(Base, Queryable):
@@ -249,11 +273,19 @@ class HOLZNUTZUNG(Base, Queryable):
 class NABEL(Base, Queryable):
     # view in a schema
     __tablename__ = 'nabel'
-    __table_args__ = ({'schema': 'luft', 'autoload': True})
+    __table_args__ = ({'schema': 'luft', 'autoload': False})
     __template__ = 'tooltips/nabel.mako'
 
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('id_stat', Text, primary_key=True)
+    id_stat = column_property(id)
+    name = Column('name', Text)
+    typ_de = Column('typ_de', Text)
+    typ_fr = Column('typ_fr', Text)
+    desc_de = Column('desc_de', Text)
+    desc_fr = Column('desc_fr', Text)
+
     the_geom = Column(Geometry)
+
 
 class krebspest(Base, Queryable):
     # view in a schema
@@ -276,9 +308,15 @@ register('ch.bafu.biogeographische_regionen', biogeoreg)
 class biosphaerenreservate(Base, Queryable):
     # view in a schema
     __tablename__ = 'biores'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __template__ = 'tooltips/biosphaerenreservate.mako'
-    id = Column('gid', Integer, primary_key=True)
+
+    id = Column('biores_id', Integer, primary_key=True)
+    biores_ver = Column('biores_ver', Text)
+    biores_fl = Column('biores_fl', Text)
+    biores_gf = Column('biores_gf', Text)
+    biores_nam = Column('biores_nam', Text)
+    biores_obj = Column('biores_obj', Text)
     the_geom = Column(Geometry)
 register('ch.bafu.schutzgebiete-biosphaerenreservate', biosphaerenreservate)
 

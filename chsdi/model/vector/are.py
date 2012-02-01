@@ -74,7 +74,7 @@ class Landschaftstypen(Base, Queryable):
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
     __template__ = 'tooltips/landschaftstypen.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
+    id = Column('object', Text, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.are.landschaftstypen', Landschaftstypen)
@@ -98,7 +98,7 @@ class AggloIsoStaedte(Base, Queryable):
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
     __template__ = 'tooltips/aggloisostaedte.mako'
 
-    id = Column('row_id', Integer, primary_key=True)
+    id = Column('agglo00_no', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.are.agglomerationen_isolierte_staedte-2000', AggloIsoStaedte)
