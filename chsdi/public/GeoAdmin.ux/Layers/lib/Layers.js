@@ -1823,6 +1823,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            /*
+            "ch.bfe.energieforschung": {
+             name: OpenLayers.i18n("ch.bfe.energieforschung"),
+             layers: ["ch.bfe.energieforschung"],
+             layertype: "wms",
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.bfe",
+             queryable: true
+             },
+             */
             "ch.bfe.statistik-wasserkraftanlagen": {
              name: OpenLayers.i18n("ch.bfe.statistik-wasserkraftanlagen"),
              layers: ["ch.bfe.statistik-wasserkraftanlagen"],
@@ -1933,7 +1944,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.ensi.zonenplan-notfallschutz-kernanlagen": {
                 name: OpenLayers.i18n("ch.ensi.zonenplan-notfallschutz-kernanlagen"),
                 layertype: 'wmts',
-                timestamp: '20110412',
+                timestamp: '20120101',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.ensi",
