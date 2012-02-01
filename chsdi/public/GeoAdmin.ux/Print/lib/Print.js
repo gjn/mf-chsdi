@@ -195,6 +195,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 "beforeprint": function(provider, map, pages, options) {
                     var lang = OpenLayers.Lang.getCode();
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
+                    provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
                         for (var i = 0, len = map.layers.length; i < len; i++) {
