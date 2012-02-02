@@ -657,6 +657,24 @@ msgstr ""
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr ""
 
+msgid "tt_ch.bfe.energieforschung_beschreibung"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projekt_nr"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projektstatus"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_kontaktperson"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projekttitel"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_schlussbericht"
+msgstr ""
+
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
 msgstr ""
 

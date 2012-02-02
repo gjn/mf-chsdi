@@ -626,6 +626,24 @@ msgstr "Circonférence [m]"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Début de l'obligation de protection"
 
+msgid "tt_ch.bfe.energieforschung_beschreibung"
+msgstr "Descripzione"
+
+msgid "tt_ch.bfe.energieforschung_kontaktperson"
+msgstr "Contatto UFE"
+
+msgid "tt_ch.bfe.energieforschung_projekt_nr"
+msgstr "Progetto no"
+
+msgid "tt_ch.bfe.energieforschung_projektstatus"
+msgstr "Stato del progetto"
+
+msgid "tt_ch.bfe.energieforschung_projekttitel"
+msgstr "Titolo eld progetto"
+
+msgid "tt_ch.bfe.energieforschung_schlussbericht"
+msgstr "Rapporto final"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Mise en service"
 

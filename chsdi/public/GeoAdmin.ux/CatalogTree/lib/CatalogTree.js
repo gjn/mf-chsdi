@@ -738,6 +738,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Öffentliche Einrichtungen und Dienste',
                 children: [
                     {
+                        layerId: "ch.bfe.energieforschung"
+                    },
+                    {
                         layerId: "ch.astra.ausnahmetransportrouten"
                     }
                 ]
@@ -1054,6 +1057,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Energiequellen',
                 children: [
+                    {
+                        layerId: "ch.bfe.energieforschung"
+                    },
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-geothermie"
                     },

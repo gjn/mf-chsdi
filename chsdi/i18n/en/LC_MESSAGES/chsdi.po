@@ -626,6 +626,24 @@ msgstr "Umfang [m]"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Beginn Schutzverpflichtung"
 
+msgid "tt_ch.bfe.energieforschung_beschreibung"
+msgstr "Description"
+
+msgid "tt_ch.bfe.energieforschung_kontaktperson"
+msgstr "Contact SFOE"
+
+msgid "tt_ch.bfe.energieforschung_projekt_nr"
+msgstr "Project no."
+
+msgid "tt_ch.bfe.energieforschung_projektstatus"
+msgstr "Project state"
+
+msgid "tt_ch.bfe.energieforschung_projekttitel"
+msgstr "Project titel"
+
+msgid "tt_ch.bfe.energieforschung_schlussbericht"
+msgstr "Final report"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Beginning of operation"
 

@@ -30,6 +30,15 @@ class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Queryable):
 
 register('ch.bfe.abgeltung-wasserkraftnutzung', ABGELTUNGWASSERKRAFTNUTZUNG)
 
+class ENERGIEFORSCHUNG(Base, Queryable):
+    __tablename__ = 'energieforschung'
+    __table_args__ = ({'schema': 'bfe', 'autoload': True})
+    __template__ = 'tooltips/energieforschung.mako'
+    id = Column('tid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bfe.energieforschung', ENERGIEFORSCHUNG)
+
 class STATISTIKWASSERKRAFTANLAGEN(Base, Queryable):
     __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})

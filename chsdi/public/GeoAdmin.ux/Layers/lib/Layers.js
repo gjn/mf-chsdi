@@ -1823,7 +1823,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            /*
             "ch.bfe.energieforschung": {
              name: OpenLayers.i18n("ch.bfe.energieforschung"),
              layers: ["ch.bfe.energieforschung"],
@@ -1833,7 +1832,6 @@ GeoAdmin._Layers = OpenLayers.Class({
              datenherr: "ch.bfe",
              queryable: true
              },
-             */
             "ch.bfe.statistik-wasserkraftanlagen": {
              name: OpenLayers.i18n("ch.bfe.statistik-wasserkraftanlagen"),
              layers: ["ch.bfe.statistik-wasserkraftanlagen"],
