@@ -148,6 +148,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.vec200-transportation-strassennetz':"",
     'ch.swisstopo.vec200-transportation-oeffentliche-verkehr':"",
     'ch.swisstopo.swissimage':"",
+    'ch.bfe.energieforschung':"",
     'ch.bfe.stauanlagen-bundesaufsicht':"",
     'ch.bfe.abgeltung-wasserkraftnutzung':"",
     'ch.bfe.statistik-wasserkraftanlagen':"",
