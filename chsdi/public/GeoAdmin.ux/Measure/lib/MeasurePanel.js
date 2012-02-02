@@ -174,7 +174,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                     if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString()) { 
                         measureLength.scope.control.measuring = true;
                         measureLength.scope.tip.destroy();
-                        this.measureLive.update("");
+                        if (this.measureLive) { this.measureLive.update("") };
                     }
                 }
                 if (!this.measureLive) { this.measureLive = Ext.get('measure'); } 
@@ -183,12 +183,12 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 }
             },
             "measure": function(event) {
-                this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units);
+                if(this.measureLive) { this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units) };
                 measureLength.scope.control.measuring = false;
                 this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.clone().toString();
             },
             "deactivate": function(event) {
-                this.measureLive.update("");
+                if (this.measureLive) { this.measureLive.update("") };
             }
         });           
             	
@@ -198,7 +198,7 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                     if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.toString()) {
                         measureArea.scope.control.measuring = true;
                         measureArea.scope.tip.destroy();
-                        this.measureLive.update("");
+                        if (this.measureLive) { this.measureLive.update("") };
                     }
                 }
                 if (!this.measureLive) { this.measureLive = Ext.get('measure'); }
@@ -207,12 +207,12 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 }
             },
             "measure": function(event) {
-                this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>');
+                if (this.measureLive) { this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>') };
                 measureArea.scope.control.measuring = false;
                 this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.clone().toString();
             },
             "deactivate": function(event) {
-                this.measureLive.update("");
+                if (this.measureLive) { this.measureLive.update("") };                
             }
         });
 
