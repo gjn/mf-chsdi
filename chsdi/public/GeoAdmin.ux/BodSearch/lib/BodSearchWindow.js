@@ -100,6 +100,7 @@ GeoAdmin.BodSearchWindow = {
                 if (this.getHeight() > 500) {
                     this.setHeight(500);
                 };
+                this.doLayout();
             }
         });
     }
