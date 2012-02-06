@@ -1,0 +1,25 @@
+#!/bin/bash
+
+LIBDIRS=chsdi/public/lib
+
+if [ -d ${LIBDIRS}/openlayers ]
+then
+    cd ${LIBDIRS}/openlayers
+    git pull origin
+else
+    cd ${LIBDIRS}
+    git clone https://github.com/openlayers/openlayers.git
+fi
+cd -
+chmod -R g+rw ${LIBDIRS}/openlayers
+
+if [ -d ${LIBDIRS}/geoext ]
+then
+    cd ${LIBDIRS}/geoext
+    git pull origin
+else
+    cd ${LIBDIRS}
+    git clone https://github.com/geoext/geoext.git
+fi
+cd -
+chmod -R g+rw ${LIBDIRS}/geoext
