@@ -30,6 +30,7 @@ def make_map(config):
     map.connect('/swisssearch/geocoding', controller='swisssearch', action='index')
     map.connect('/geocatsearch', controller='gcsearch', action='search')
     map.connect("/feature/search",controller="feature", action="search")
+    map.connect('/owschecker', controller='owschecker', action='index')
     map.connect("/feature/bbox",controller="feature", action="bbox")
     map.connect("/feature/geometry",controller="feature", action="geometry")
     map.connect("/feature/{path_info:.*}",controller="feature", action="index")
