@@ -115,7 +115,7 @@ SetEnvIf Referer "^http://map.mountainbikeland.ch"       GOODREF
 SetEnvIf Referer "^http://map.kanuland.ch"               GOODREF
 SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
 SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
-SetEnvIf Referer ".geo.admin.ch"                         GOODREF
+SetEnvIf Referer ".admin.ch"                             GOODREF
 SetEnvIf Referer "^http://localhost"                     GOODREF
 
 SetEnvIf X-Forwarded-For "10.226.126.116"                GOODIP
