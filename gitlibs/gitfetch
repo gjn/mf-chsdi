@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LIBDIRS=../chsdi/public/lib
+LIBDIRS=chsdi/public/lib
 
 
 
