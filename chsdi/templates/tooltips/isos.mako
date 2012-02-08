@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body()">
+    <% c.stable_id = True %>
     <tr><td width="150">${_('kanton')}</td>          <td>${c.feature.kanton or '-'}</td></tr>
     <tr><td width="150">${_('ortsbildname')}</td>         <td>${c.feature.ortsbildname or '-'}</td></tr>
     <tr><td width="150">${_('kategorie')}</td>          <td>${c.feature.vergleichsrastereinheit or '-'}</td></tr>

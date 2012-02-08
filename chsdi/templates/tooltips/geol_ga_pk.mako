@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body()">
+    <% c.stable_id = True %>
     <tr><td width="150" valign="top">${_('kartenblattname')}</td><td>${c.feature.titel or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('kartenblattnummer')}</td>${c.feature.grat25 or '-'}<td></td></tr>
     <tr><td width="150">${_('atlassheetnumber')}</td><td>${c.feature.id}</td></tr>

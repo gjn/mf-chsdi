@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body()">
+    <% c.stable_id = True %>
     <tr><td width="150">${_('name')}</td>    <td>${c.feature.name or '-'}</td></tr>
     <tr><td width="150">${_('nabeltyp')}</td>
       % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':

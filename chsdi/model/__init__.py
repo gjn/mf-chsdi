@@ -41,6 +41,7 @@ class Queryable(object):
     html = None
     layer_id = None
     attributes = {}
+    stable_id = False
     
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
@@ -66,6 +67,7 @@ class Queryable(object):
         c.layer_bezeichnung = bodlayer.bezeichnung
         c.layer_datenherr = bodlayer.datenherr
         c.layer_id = layer_id
+        c.stable_id = c.feature.stable_id
         self.layer_id= layer_id
         self.html = render(self.__template__)
 

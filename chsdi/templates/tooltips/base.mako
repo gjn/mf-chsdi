@@ -9,6 +9,8 @@
 <br>
   <table border="0" cellspacing="0" cellpadding="1" width="400px" style="font-size: 100%;" padding="1 1 1 1">
     ${self.table_body()}
+    % if c.stable_id is True:
     <tr><td width="150"></td><td><a href="${c.baseUrl}?${c.layer_id}=${c.feature.id}&lang=${c.lang}" target="new">${_('Link to object')}</a></td></tr>
+    % endif
   </table>
 </div>
