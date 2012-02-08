@@ -112,19 +112,19 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
     measureDone: function(geometry) {
         function onElevationResponse(index, response) {
             var json = new OpenLayers.Format.JSON();
-            var data = json.read(response.responseText);
-            this.elevations[index] = data.height;
+            if (response && response.status == 200) {
+                var data = json.read(response.responseText);
+                this.elevations[index] = data.height;
+            }
             this.components = geometry.components;
-            if (this.elevations[0] && this.elevations[1]) {
-                var stat = this.getBestLength(geometry),
-                    azimut = this.getAzimut(geometry);
-                this.events.triggerEvent('measure', {
+            var stat = this.getBestLength(geometry),
+                   azimut = this.getAzimut(geometry);
+            this.events.triggerEvent('measure', {
                     distance: stat[0],
                     units: stat[1],
                     azimut: azimut,
-                    elevations: this.elevations
-                });
-            }
+                    elevations: this.elevations || [None, None]
+            });
         }
 
         this.measuring = false;
