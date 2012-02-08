@@ -37,9 +37,9 @@ class SwissSearch(Base, Queryable):
         return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
     #@property
-    def json(self, rawjson=False):
+    def json(self, rawjson=False, nogeom=False):
             o = {'service': '', 'rank': -1, 'id': self.id, 'label': '',
-                    'bbox': self.bbox, 'objectorig': self.objectorig, 'name': self.name}
+                    'bbox': self.bbox if not nogeom else None, 'objectorig': self.objectorig, 'name': self.name}
             if self.origin == 'zipcode':
                 o.update({'service': 'postalcodes',
                           'rank': 1,
