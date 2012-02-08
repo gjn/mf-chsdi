@@ -87,8 +87,9 @@ class SwisssearchController(BaseController):
         # For "awk.ch", see email from lttsb from 18.nov. 2011
         referer = request.headers.get('referer', '')
         if referer.find( 'admin.ch') < 0 and referer.find('awk.ch'):
-            self.origins = [o for o in self.origins if o != 'address']
-
+            if not self.no_geom:
+               self.origins = [o for o in self.origins if o != 'address']
+        
         if self.origins:
             query = query.filter(SwissSearch.origin.in_(self.origins))
 
@@ -110,13 +111,13 @@ class SwisssearchController(BaseController):
                del properties['search_name']
                del properties['tsvector_search_name']
                del properties['the_geom_real']
-               features.append(Feature(id=feature.id, bbox=feature.bbox,
+               features.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
                                        geometry=feature.geometry if not self.no_geom else None, 
                                        properties=properties))
 
             return FeatureCollection(features)
         else:
-            return {'results': sorted([f.json() for f in query], key=itemgetter('rank'))}
+            return {'results': sorted([f.json(rawjson=False, nogeom=self.no_geom) for f in query], key=itemgetter('rank'))}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):
