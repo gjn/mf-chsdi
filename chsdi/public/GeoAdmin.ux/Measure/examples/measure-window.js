@@ -1,6 +1,7 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/
 
 GeoAdmin.OpenLayersImgPath = "../../Map/img/";
+GeoAdmin.webServicesUrl = '../../..';
 
 Ext.onReady(function() {
     var map = new GeoAdmin.Map();
