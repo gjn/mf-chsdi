@@ -70,6 +70,26 @@ class TestSwisssearchController(TestController):
                 cities_results += 1
         assert cities_results == 0
 
+    # If the referer is not whitelisted, you cannot use the service 'address'
+    def test_geocoding_services_no_referer(self):
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                params={"query": "berges 37 payerne", "services": "address,swissnames,districts,cantons,postalcodes"}
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        assert len(results) == 0
+
+    # If the referer is not whitelisted, you cannot use the service 'address' unless using the parameter 'no_geom'
+    def test_geocoding_services_no_referer_no_geom(self):
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                params={"query": "berges 37 payerne", "no_geom": True, "services": "address,swissnames,districts,cantons,postalcodes"}
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        for r in results:
+            assert r['bbox'] == None
+
+
     def test_reversegeocoding(self):
         resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
                 params={"easting": 600000 , "northing": 200000}
