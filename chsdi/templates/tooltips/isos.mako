@@ -1,5 +1,9 @@
 <%inherit file="base.mako"/>
 
+<%!
+   from chsdi.lib.helpers import quoting
+%>
+
 <%def name="table_body()">
     <% c.stable_id = True %>
     <tr><td width="150">${_('kanton')}</td>          <td>${c.feature.kanton or '-'}</td></tr>
@@ -14,12 +18,12 @@
     <tr><td width="150">${_('pdf_dokument_1_2')}</td>
     <td>
         % if c.feature.pdf_dokument_1:
-            <a href="https://dav0.bgdi.admin.ch/isos/${c.feature.pdf_dokument_1|trim}.pdf" target="_blank">${c.feature.pdf_dokument_1}.pdf</a> |
+            <a href="https://dav0.bgdi.admin.ch/isos/${c.feature.pdf_dokument_1|trim,quoting}.pdf" target="_blank">${c.feature.pdf_dokument_1}.pdf</a> |
         % else:
             - | 
         % endif
         % if c.feature.pdf_dokument_2:
-            &nbsp;<a href="https://dav0.bgdi.admin.ch/isos/${c.feature.pdf_dokument_2|trim}.pdf" target="_blank">${c.feature.pdf_dokument_2}.pdf</a>
+            &nbsp;<a href="https://dav0.bgdi.admin.ch/isos/${c.feature.pdf_dokument_2|trim,quoting}.pdf" target="_blank">${c.feature.pdf_dokument_2}.pdf</a>
         % else:
             &nbsp;-
         % endif

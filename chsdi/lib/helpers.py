@@ -8,6 +8,11 @@ from webhelpers.html import escape, HTML, literal, url_escape
 from webhelpers.html.tags import *
 import math
 
+from urllib import quote
+
+def quoting(text):
+    return quote(text.encode('utf-8'))
+
 def hilight(string, search, prefix="<span class='match'>", postfix="</span>"):
     if string is not None and search != '':
         start = string.lower().find(search.lower())
