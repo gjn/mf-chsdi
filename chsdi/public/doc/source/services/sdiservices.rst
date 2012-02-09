@@ -28,7 +28,10 @@ SwissSearch: geocoding
 
 Swisssearch geocoding allows the user to search for swiss locations, like postcode, cantons, cities, toponymic datase (`SwissNames <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html>`_) and addresses.
 
-**Note: The swiss cantons only allow websites of the federal governement to use the addresses search service**.
+**Note: The swiss cantons only allow websites of the federal governement to use the addresses search service.**
+
+You may however use this service using the 'no_geom' parameter returning no geocoded addresses,
+to check for the existence of an address.
 
 URL
 ^^^
@@ -67,6 +70,7 @@ Examples:
 - Addresses with EGID: `http://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
 - Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
 - Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
+- Search for addresses without the geometry: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
 
 Note: In French, search for "leopold robert", not only for "robert"
 
