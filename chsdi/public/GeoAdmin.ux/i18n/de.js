@@ -107,7 +107,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'KML data sucessfully imported in layer:':'KML Daten erfolgreich importiert in:',
 	'KMLTooltip':'Bitte validieren Sie Ihre .kml-Datei zuerst mit kmlvalidator.com.<br/>Die Dateigröse sollte 2MB nicht überschreiten.<br/>Laden Sie die .kml-Datei auf eine übers Internet zugängliche Adresse wie dropbox.com, Google Doc oder ge.tt und kopieren Sie den Link.',
 	'Kanton':'Kantone',
-	'Label':'Beschriftung',
+	'Label':'Label',
 	'Land- und Wassertwirtschaft':'Landwirtschaftliche Anlagen und Aquakulturanlagen',
 	'Landnutzung':'Bodennutzung',
 	'Layer Manager':'Ebenenverwaltung',
