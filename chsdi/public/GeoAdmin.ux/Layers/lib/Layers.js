@@ -414,7 +414,10 @@ GeoAdmin._Layers = OpenLayers.Class({
             'http://wmts3.geo.admin.ch/',
             'http://wmts4.geo.admin.ch/'
         ];
-
+        var myTransitionEffect = "resize";
+        if (config.transitionEffect === "no") {
+           myTransitionEffect = null;
+        }
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
             OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
@@ -456,7 +459,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type,
                 maxScale: config.maxScale,
                 minScale: config.minScale,
-                ratio: 1.1
+                ratio: 1.1,
+                transitionEffect: myTransitionEffect
             }, options);
             return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
                 layers: config.layers,
@@ -502,7 +506,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 units: 'm',
                 format: config.format,
                 attribution: config.datenherr,
-                transitionEffect: "resize",
+                transitionEffect: myTransitionEffect,
                 buffer: 0,
                 opacity: config.opacity ? config.opacity : 1.0,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -1217,7 +1221,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
                 opacity: 0.75,
-                queryable: true
+                queryable: true,
+                transitionEffect: "no"
             },
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
@@ -1226,7 +1231,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
-                queryable: true
+                queryable: true,
+                transitionEffect: "no"
             },
             "ch.bafu.wege-wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wege-wildruhezonen-jagdbanngebiete"),
@@ -1235,7 +1241,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
-                queryable: false
+                queryable: false,
+                transitionEffect: "no"
             },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
