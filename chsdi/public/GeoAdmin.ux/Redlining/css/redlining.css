@@ -9,7 +9,8 @@
  .redlining-panel .x-btn-text {
     height: 50px !important;
     width: 50px !important;
-    background-position: 15px 20px;
+    background-position: 14px 8px !important;
+    padding-top: 20px !important;
 }
 
 .gx-featureediting-draw-point {

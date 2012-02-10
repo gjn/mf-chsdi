@@ -7,7 +7,7 @@ Ext.namespace("GeoExt.ux.form");
  * @include FeatureEditing/ux/data/FeatureEditingDefaultStyleStore.js
  * @include Styler/ux/LayerStyleManager.js
  * @include Styler/ux/widgets/StyleSelectorComboBox.js
- *
+ * @requires FeatureEditing/ux/widgets/FeatureEditingControler.js
  */
 GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     var oItems, oGroup, feature, field, oGroupItems;
@@ -99,4 +99,150 @@ GeoExt.ux.form.FeaturePanel.prototype.getActions = function() {
     }
 
     return [this.deleteAction, '->', this.closeAction];
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.initDrawControls = function(layer) {
+    var control, handler, geometryTypes, geometryType,
+                options, action, iconCls, actionOptions, tooltip;
+
+        geometryTypes = [];
+        options = {};
+
+        if (OpenLayers.i18n(layer.geometryType)) {
+            geometryTypes.push(OpenLayers.i18n(layer.geometryType));
+        } else {
+            geometryTypes.push(OpenLayers.i18n("Point"));
+            geometryTypes.push(OpenLayers.i18n("LineString"));
+            geometryTypes.push(OpenLayers.i18n("Polygon"));
+            geometryTypes.push(OpenLayers.i18n("Label"));
+        }
+
+        for (var i = 0; i < geometryTypes.length; i++) {
+            geometryType = geometryTypes[i];
+            var text = '';
+            switch (geometryType) {
+                case OpenLayers.i18n("LineString"):
+                case OpenLayers.i18n("MultiLineString"):
+                    handler = OpenLayers.Handler.Path;
+                    iconCls = "gx-featureediting-draw-line";
+                    tooltip = OpenLayers.i18n("Create line");
+                    text = OpenLayers.i18n("Line");
+                    break;
+                case OpenLayers.i18n("Point"):
+                case OpenLayers.i18n("MultiPoint"):
+                    handler = OpenLayers.Handler.Point;
+                    iconCls = "gx-featureediting-draw-point";
+                    tooltip = OpenLayers.i18n("Create point");
+                    text = OpenLayers.i18n("Point");
+                    break;
+                case OpenLayers.i18n("Polygon"):
+                case OpenLayers.i18n("MultiPolygon"):
+                    handler = OpenLayers.Handler.Polygon;
+                    iconCls = "gx-featureediting-draw-polygon";
+                    tooltip = OpenLayers.i18n("Create polygon");
+                    text = OpenLayers.i18n("Polygon");
+                    break;
+                case OpenLayers.i18n("Label"):
+                    handler = OpenLayers.Handler.Point;
+                    iconCls = "gx-featureediting-draw-label";
+                    tooltip = OpenLayers.i18n("Create label");
+                    text = OpenLayers.i18n("Label");
+                    break;
+            }
+
+            control = new OpenLayers.Control.DrawFeature(
+                    layer, handler, options);
+
+            this.drawControls.push(control);
+            
+            if (geometryType == OpenLayers.i18n("Label")) {
+                control.events.on({
+                    "featureadded": this.onLabelAdded,
+                    scope: this
+                });
+            }
+
+            control.events.on({
+                "featureadded": this.onFeatureAdded,
+                scope: this
+            });
+
+            actionOptions = {
+                control: control,
+                map: this.map,
+                // button options
+                toggleGroup: this.toggleGroup,
+                allowDepress: false,
+                pressed: false,
+                tooltip: tooltip,
+                // check item options
+                group: this.toggleGroup,
+                text: text,
+                checked: false
+            };
+
+            // use icons or text for the display
+            if (this.useIcons === true) {
+                actionOptions.iconCls = iconCls;
+            } else {
+                actionOptions.text = geometryType;
+            }
+
+            action = new GeoExt.Action(actionOptions);
+
+            this.actions.push(action);
+        }
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.initFeatureControl = function(layer) {
+    var control, actionOptions;
+
+        control = new OpenLayers.Control.ModifyFeature(
+                layer, this.selectControlOptions);
+
+        this.featureControl = control;
+
+        actionOptions = {
+            control: control,
+            map: this.map,
+            // button options
+            toggleGroup: this.toggleGroup,
+            allowDepress: false,
+            pressed: false,
+            tooltip: OpenLayers.i18n("Edit Feature"),
+            text: OpenLayers.i18n('Edit'),
+            // check item options
+            group: this.toggleGroup,
+            checked: false
+        };
+
+        if (this.useIcons === true) {
+            actionOptions.iconCls = "gx-featureediting-editfeature";
+        } else {
+            actionOptions.text = OpenLayers.i18n("Edit Feature");
+        }
+
+        var action = new GeoExt.Action(actionOptions);
+
+        this.actions.push(action);
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.initDeleteAllAction = function(layer) {
+    var actionOptions = {
+            handler: this.deleteAllFeatures,
+            scope: this,
+            tooltip: OpenLayers.i18n('Delete all features'),
+            text: OpenLayers.i18n('Delete')
+        };
+
+        if (this.useIcons === true) {
+            actionOptions.iconCls = "gx-featureediting-delete";
+        } else {
+            actionOptions.text = OpenLayers.i18n('DeleteAll');
+        }
+
+        var action = new Ext.Action(actionOptions);
+
+        this.deleteAllAction = action;
+        this.actions.push(action);
 };
