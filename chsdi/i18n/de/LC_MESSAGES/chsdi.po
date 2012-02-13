@@ -150,7 +150,10 @@ msgid "blind warning"
 msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
 
 msgid "ch.bak.isos.warning"
-msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch)."
+msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch). © Daten: BAK, Bern"
+
+msgid "city_name"
+msgstr "Name der Ortschaft"
 
 msgid "construct"
 msgstr "Kunstbaute"
@@ -187,6 +190,15 @@ msgstr "Einschränkungen"
 
 msgid "einwohner_ha"
 msgstr "Einwohner pro ha"
+
+msgid "einwohnerzahl"
+msgstr "Einwohnerzahl"
+
+msgid "einwohnerzahl_b"
+msgstr "Einwohnerzahl (Bandbreite, nur für Siedl.)"
+
+msgid "einwohnerzahl_s"
+msgstr "Einwohnerzahl (nur für Siedl.)"
 
 msgid "ent_gew"
 msgstr "Fliessgewässer"
@@ -290,6 +302,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.h
 msgid "hide column"
 msgstr "Ausblenden der Themen"
 
+msgid "hoehe_see"
+msgstr "Höhe über Meer des Seespiegels [m]"
+
 msgid "holz_region"
 msgstr "Region"
 
@@ -307,6 +322,9 @@ msgstr "Startseite"
 
 msgid "home url"
 msgstr "http://map.geo.admin.ch/?lang=de"
+
+msgid "hydrografische_herkunft"
+msgstr "Hydrografische Herkunft"
 
 msgid "id_arealstatistik_85"
 msgstr "Grundkategorie Arealstatistik 1979/85"
@@ -359,6 +377,9 @@ msgstr "KKW"
 msgid "klasse"
 msgstr "Klasse"
 
+msgid "konf_objekt"
+msgstr "Konfiguration der Objekte"
+
 msgid "krebsart"
 msgstr "Krebsart lateinisch"
 
@@ -367,6 +388,9 @@ msgstr "Länge [m]"
 
 msgid "laenge_strecke_m"
 msgstr "Länge der Strecke [m]"
+
+msgid "lage_objekt"
+msgstr "Lage des Objekts in Bezug zum Gelände"
 
 msgid "lagequalitaeten"
 msgstr "Lagequalitäten"
@@ -445,6 +469,9 @@ msgstr "Nadelholzanteil [%]"
 
 msgid "name"
 msgstr "Name"
+
+msgid "name_lang1"
+msgstr "Name in der 1. Sprache"
 
 msgid "name_terreg"
 msgstr "Name der Territorialregion"
@@ -550,6 +577,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/current.enhRSS.html"
 
 msgid "rwknr"
 msgstr "Restwasserkarte Nr."
+
+msgid "schiffbarkeit"
+msgstr "Schiffbarkeit des Gewässers"
 
 msgid "schonzeit"
 msgstr "Schonzeit"
@@ -691,6 +721,15 @@ msgstr "http://www.twitter.com/swiss_geoportal"
 
 msgid "typ"
 msgstr "Typ"
+
+msgid "typ_kraftwerk"
+msgstr "Typ von Kraftwerk"
+
+msgid "typ_produkt"
+msgstr "Typ von hergestelltem Produkt"
+
+msgid "typ_transpo_produkt"
+msgstr "Typ des in der Leitung transportierten Produkts"
 
 msgid "typnummer"
 msgstr "Typnummer"

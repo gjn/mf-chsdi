@@ -752,3 +752,42 @@ msgstr ""
 
 msgid "ch.bak.isos.warning"
 msgstr ""
+
+msgid "schiffbarkeit"
+msgstr ""
+
+msgid "hydrografische_herkunft"
+msgstr ""
+
+msgid "hoehe_see"
+msgstr ""
+
+msgid "name_lang1"
+msgstr ""
+
+msgid "einwohnerzahl_b"
+msgstr ""
+
+msgid "einwohnerzahl_s"
+msgstr ""
+
+msgid "einwohnerzahl"
+msgstr ""
+
+msgid "city_name"
+msgstr ""
+
+msgid "typ_kraftwerk"
+msgstr ""
+
+msgid "typ_produkt"
+msgstr ""
+
+msgid "konf_objekt"
+msgstr ""
+
+msgid "lage_objekt"
+msgstr ""
+
+msgid "typ_transpo_produkt"
+msgstr ""

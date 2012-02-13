@@ -458,6 +458,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.hiks-dufour"
                      },
                      {
+                        layerId: "ch.swisstopo.hiks-siegfried"
+                     },
+                     {
+                        layerId: "ch.swisstopo.vec200-miscellaneous"
+                     },
+                     {
                         layerId: "ch.swisstopo.pixelkarte-pk25.metadata"
                      },
                      {
@@ -486,9 +492,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                      },
                      {
                         layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
-                     },
-                     {
-                        layerId: "ch.swisstopo.hiks-siegfried"
                      }
                 ]
             },
@@ -558,6 +561,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Gewässernetz',
                 children: [
                     {
+                        layerId: "ch.swisstopo.vec200-hydrography"
+                    },
+                    {
                         layerId: "ch.swisstopo.vec25-gewaessernetz"
                     }
                 ]
@@ -587,6 +593,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bfs.arealstatistik-waldmischungsgrad"
+                    },
+                    {
+                        layerId: "ch.swisstopo.vec200-landcover"
                     },
                     {
                         layerId: "ch.swisstopo.vec25-heckenbaeume"
@@ -1059,6 +1068,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
+                    },
+                    {
+                        layerId: "ch.swisstopo.vec200-miscellaneous"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-geothermie"

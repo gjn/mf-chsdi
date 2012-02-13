@@ -867,6 +867,34 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.swisstopo.vec200-hydrography": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-hydrography"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true 
+            },
+            "ch.swisstopo.vec200-landcover": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-landcover"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.swisstopo.vec200-miscellaneous": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
              "ch.swisstopo.geologie-geotechnik-gk500-genese": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
                 layertype: 'wmts',

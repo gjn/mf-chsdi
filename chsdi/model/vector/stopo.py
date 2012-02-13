@@ -120,6 +120,57 @@ class Vec200Protectedarea(Base, Queryable):
 
 register('ch.swisstopo.vec200-adminboundaries-protectedarea', Vec200Protectedarea)
 
+class Vec200Flowingwater(Base, Queryable):
+    __tablename__ = 'vec200_flowingwater'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_flowingwater.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+class Vec200Stagnantwater(Base, Queryable):
+    __tablename__ = 'vec200_stagnantwater'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_stagnantwater.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec200-hydrography', Vec200Flowingwater)
+register('ch.swisstopo.vec200-hydrography', Vec200Stagnantwater)
+
+class Vec200Landcover(Base, Queryable):
+    __tablename__ = 'vec200_landcover'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_landcover.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec200-landcover', Vec200Landcover)
+
+class Vec200Builtupp(Base, Queryable):
+    __tablename__ = 'vec200_builtupp'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_builtupp.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+class Vec200Poi(Base, Queryable):
+    __tablename__ = 'vec200_poi'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_poi.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+class Vec200Supply(Base, Queryable):
+    __tablename__ = 'vec200_supply'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_supply.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec200-miscellaneous', Vec200Builtupp)
+register('ch.swisstopo.vec200-miscellaneous', Vec200Poi)
+register('ch.swisstopo.vec200-miscellaneous', Vec200Supply)
+
 class Vec25Wanderwege(Base, Queryable):
  	__tablename__ = 'v25_wanderweg'
  	__table_args__ = ({'autoload': True})
