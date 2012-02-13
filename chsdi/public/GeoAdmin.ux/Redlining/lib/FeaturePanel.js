@@ -101,6 +101,8 @@ GeoExt.ux.form.FeaturePanel.prototype.getActions = function() {
     return [this.deleteAction, '->', this.closeAction];
 };
 
+GeoExt.ux.FeatureEditingControler.prototype.fadeRatio = 1.0;
+
 GeoExt.ux.FeatureEditingControler.prototype.initDrawControls = function(layer) {
     var control, handler, geometryTypes, geometryType,
                 options, action, iconCls, actionOptions, tooltip;
@@ -180,7 +182,6 @@ GeoExt.ux.FeatureEditingControler.prototype.initDrawControls = function(layer) {
                 text: text,
                 checked: false
             };
-
             // use icons or text for the display
             if (this.useIcons === true) {
                 actionOptions.iconCls = iconCls;
