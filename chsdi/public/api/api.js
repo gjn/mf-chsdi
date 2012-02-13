@@ -53,6 +53,7 @@
  * @include ContextPopup/lib/ContextPopup.js
  * @include Map/lib/MapPanel.js
  * @include Measure/lib/Measure.js
+ * @include Redlining/lib/Redlining.js
  * @include WmsBrowser/lib/WmsBrowser.js
  *
  * @include OpenLayers/Lang.js
