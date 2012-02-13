@@ -143,7 +143,7 @@ Measure
   
 This widget allows you to measure distances, surfaces and azimuth on the map.
    
-See example:  :ref:`measure`
+See example:  :ref:`measuresection`
 
 ..  Commented out until the end
     WmsBrowser
