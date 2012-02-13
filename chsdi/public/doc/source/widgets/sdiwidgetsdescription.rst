@@ -15,12 +15,12 @@ API Widgets Examples
     sdiwidgetsaggregate
     sdiwidgettreepanel
     sdiwidgetlegendwindow
+    sdiwidgetredlining
+    sdiwidgetmeasure
 .. The following lines are commented out
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
-    sdiwidgetredlining
     sdiwidgetadvancedtools
-    sdiwidgetmeasure
     
 API Widgets Description
 -----------------------
@@ -130,6 +130,20 @@ LegendWindow
 This widget display the legend of all activelayers in a new windows.
 
 See example:  :ref:`legendwindow`
+
+Redlining
+************
+  
+This widget allows you to draw point, line and polygon feature on the map.
+ 
+See example:  :ref:`redlining`
+ 
+Measure
+*******
+  
+This widget allows you to measure distances, surfaces and azimuth on the map.
+   
+See example:  :ref:`measure`
 
 ..  Commented out until the end
     WmsBrowser
