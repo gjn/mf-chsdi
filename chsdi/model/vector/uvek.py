@@ -25,7 +25,7 @@ class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Queryable):
     __tablename__ = 'abgeltung_wasserkraftnutzung'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})
     __template__ = 'tooltips/abgeltungwasserkraftnutzung.mako'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('objectnumber', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.bfe.abgeltung-wasserkraftnutzung', ABGELTUNGWASSERKRAFTNUTZUNG)
@@ -43,7 +43,7 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Queryable):
     __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})
     __template__ = 'tooltips/statistikwasserkraftanlagen.mako'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('wastanumber', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
@@ -52,7 +52,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Queryable):
     __tablename__ = 'stauanlagen_bundesaufsicht_dam'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})
     __template__ = 'tooltips/stauanlagenbundesaufsicht.mako'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('tid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)

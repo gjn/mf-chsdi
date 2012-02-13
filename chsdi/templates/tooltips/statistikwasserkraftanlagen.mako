@@ -1,7 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body()">
-    <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber')}</td><td>${c.feature.wastanumber or '-'}</td></tr>
+    <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber')}</td><td>${c.feature.id or '-'}</td></tr>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_name')}</td><td>${c.feature.name or '-'}</td></tr>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_location')}</td><td>${c.feature.location or '-'}</td></tr>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_canton')}</td><td>${c.feature.canton or '-'}</td></tr>
