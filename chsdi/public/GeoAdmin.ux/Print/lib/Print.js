@@ -184,7 +184,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 handler: this.pHandler
             }, this.config);
         }
-
+        // Define a list of "big" legends
+        var gifLegendList = ["ch.swisstopo.geologie-eiszeit-lgm-raster","ch.swisstopo.geologie-geologische_karte","ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
+                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet","ch.swisstopo.geologie-tektonische_karte"];
+        var pdfLegendList = ["ch.astra.ivs-gelaendekarte","ch.astra.ausnahmetransportrouten","ch.bazl.luftfahrtkarten-icao"];
+  
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
                 url: this.config.printBaseUrl
@@ -200,14 +204,33 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     if (this.legendCheckbox.pressed == true) {
                         for (var i = 0, len = map.layers.length; i < len; i++) {
                             var layer = map.layers[i];
+                            var LegendFormat = lang + ".png";
+
+                            for (k = 0, lenp = pdfLegendList.length; k < lenp; k++) {
+                                if (layer.layername === pdfLegendList[k]) { 
+                                    LegendFormat = "big.pdf"; 
+                                    if (!secondPageNeeded) { provider.customParams.enhableLegends = false; }
+                                    window.open(GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + LegendFormat);
+                                }
+                            }
+                            for (j = 0, leng = gifLegendList.length; j < leng; j++) {
+                                if (layer.layername === gifLegendList[j]) { 
+                                    LegendFormat = "big.gif"; 
+                                }
+                            }
+
                             if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
-                                provider.customParams.legends.push({
-                                    classes: [{
-                                        name: '',
-                                        icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + lang + ".png"
-                                    }],
-                                    name: layer.name
-                                });
+                                if (LegendFormat !== "big.pdf") { 
+                                    var secondPageNeeded = true; 
+                                    provider.customParams.enhableLegends = true; 
+                                    provider.customParams.legends.push({
+                                        classes: [{
+                                            name: '',
+                                            icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + LegendFormat
+                                        }],
+                                        name: layer.name
+                                    });
+                                }
                             }
                         }
                     }
@@ -679,12 +702,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.printLayer.setVisibility(false);
             }
         } else {
-            this.printPanel.container.setVisible(this.items[0].pressed);
-            if (this.items[0].pressed) {
+            if (!this.printPanel.container.isVisible()) {
+                this.printPanel.container.setVisible(true);
                 this.printPanel.showExtent();
                 this.printLayer.setVisibility(true);
             }
             else {
+                this.printPanel.container.setVisible(false);
                 this.printPanel.hideExtent();
                 this.printLayer.setVisibility(false);
             }
