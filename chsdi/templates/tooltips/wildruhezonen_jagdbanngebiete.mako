@@ -1,7 +1,6 @@
 <%inherit file="base.mako"/>
-
 <%def name="table_body()">
-  <% c.stable_id = True %>
+<% c.stable_id = True %>
 % if c.feature.wrz_obj and (str(c.feature.wrz_obj) != '0'):
 	<tr id="wrz-tr-tt"><td width="150" valign="top" id="wrz-td1-tt">${_('wrz_name')}</td><td id="wrz-td2-tt">${c.feature.wrz_name or '-'}&nbsp;(${_('wrz_obj')}&nbsp;${c.feature.wrz_obj or '-'})</td></tr>
 % endif

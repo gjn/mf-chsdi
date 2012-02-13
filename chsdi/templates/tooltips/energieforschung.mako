@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body()">
+<% c.stable_id = True %>
 % if c.lang =='fr':
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_fr or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_beschreibung')}</td><td>${c.feature.beschreibung_fr or '-'}</td></tr>
