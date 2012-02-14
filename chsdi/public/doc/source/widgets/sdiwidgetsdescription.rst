@@ -15,9 +15,9 @@ API Widgets Examples
     sdiwidgetsaggregate
     sdiwidgettreepanel
     sdiwidgetlegendwindow
-    sdiwidgetredlining
     sdiwidgetmeasure
 .. The following lines are commented out
+    sdiwidgetredlining
     sdiwidgetwmsbrowser
     sdiwidgetlayermanager
     sdiwidgetadvancedtools
