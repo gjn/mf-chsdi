@@ -5,6 +5,7 @@
  * @include FeatureEditing/ux/widgets/FeatureEditingControler.js
  * @include FeatureEditing/ux/widgets/form/FeatureEditingPanel.js
  * @include FeatureEditing/ux/widgets/form/RedLiningPanel.js
+ * @include FeatureEditing/ux/widgets/form/FeaturePanel.js
  * @include FeatureEditing/ux/data/FeatureEditingDefaultStyleStore.js
  * @include FeatureEditing/ux/widgets/plugins/ImportFeatures.js
  * @include FeatureEditing/ux/widgets/plugins/ExportFeatures.js
