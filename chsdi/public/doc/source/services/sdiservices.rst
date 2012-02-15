@@ -515,7 +515,8 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
 **Notes**
 
  #. The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.
- #. The zoom level 27 (resolution 0.25m) will be available for the swissimage (ch.swisstopo.swissimage).
+ #. The zoom level 27 (resolution 0.25m) is only available for a few layers, e.g. swissimage (ch.swisstopo.swissimage). For the others 
+    layers it is only a client zoom (tiles are stretched).
 
 Result
 ^^^^^^
