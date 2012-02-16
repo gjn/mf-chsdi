@@ -457,7 +457,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
-                maxScale: config.maxScale,
+                maxScale: config.maxScale ? config.maxScale : 250,
                 minScale: config.minScale,
                 ratio: 1.1,
                 transitionEffect: myTransitionEffect
@@ -513,7 +513,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
-                maxScale: config.maxScale,
+                maxScale: config.maxScale ? config.maxScale : 250,
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
                 minScale: config.minScale
             }, options);
