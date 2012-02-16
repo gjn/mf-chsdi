@@ -150,8 +150,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 tooltip: OpenLayers.i18n("Email"),
                 scope: this,
                 handler: function () {
-                    windowMail = new GeoAdmin.MailWindow();
-                    windowMail.show();
+                    location.href = 'mailto:?body=' + encodeURIComponent(Ext.state.Manager.getProvider().getLink());
                 }
             });
             this.buttonMail.addClass("hideBlock");
@@ -283,12 +282,12 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.sharePipe4.removeClass("showBlock");
         }
     },
-    afterRender: function() {
-        GeoAdmin.PermalinkPanel.superclass.afterRender.apply(this, arguments);
-        // we want to swallow events not to have the map move
-        // when mouse actions occur on this panel
-        this.body.swallowEvent(["mousedown", "mousemove", "mouseup", "click", "dblclick"]);
-    }
+   afterRender: function() {
+       GeoAdmin.PermalinkPanel.superclass.afterRender.apply(this, arguments);
+       // we want to swallow events not to have the map move
+       // when mouse actions occur on this panel
+       this.body.swallowEvent(["mousedown", "mousemove", "mouseup", "click", "dblclick"]);
+   }
 });
 
 /** api: xtype = ga_permalinkpanel */
