@@ -185,10 +185,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, this.config);
         }
         // Define a list of "big" legends
-        var gifLegendList = ["ch.swisstopo.geologie-eiszeit-lgm-raster","ch.swisstopo.geologie-geologische_karte","ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
+        var pdfLegendList = ["ch.astra.ivs-gelaendekarte","ch.astra.ausnahmetransportrouten","ch.bazl.luftfahrtkarten-icao","ch.swisstopo.geologie-eiszeit-lgm-raster",
+                             "ch.swisstopo.geologie-geologische_karte","ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
                              "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet","ch.swisstopo.geologie-tektonische_karte"];
-        var pdfLegendList = ["ch.astra.ivs-gelaendekarte","ch.astra.ausnahmetransportrouten","ch.bazl.luftfahrtkarten-icao"];
-  
+        var pdfLayerNames = [];
+        var pdfFormat = [];
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
                 url: this.config.printBaseUrl
@@ -202,23 +203,19 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
+                        var pdfCounter = 0;
                         for (var i = 0, len = map.layers.length; i < len; i++) {
                             var layer = map.layers[i];
                             var LegendFormat = lang + ".png";
-
                             for (k = 0, lenp = pdfLegendList.length; k < lenp; k++) {
-                                if (layer.layername === pdfLegendList[k]) { 
+                                if (layer.layername === pdfLegendList[k]) {
                                     LegendFormat = "big.pdf"; 
                                     if (!secondPageNeeded) { provider.customParams.enhableLegends = false; }
-                                    window.open(GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + LegendFormat);
+                                    pdfLayerNames[pdfCounter] = layer.layername;
+                                    pdfFormat[pdfCounter] = LegendFormat;
+                                    pdfCounter = pdfCounter + 1;
                                 }
                             }
-                            for (j = 0, leng = gifLegendList.length; j < leng; j++) {
-                                if (layer.layername === gifLegendList[j]) { 
-                                    LegendFormat = "big.gif"; 
-                                }
-                            }
-
                             if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
                                 if (LegendFormat !== "big.pdf") { 
                                     var secondPageNeeded = true; 
@@ -411,6 +408,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         scope: this
                     });
                 }
+            }
+        });
+        // Open pdf legends after the print event
+        this.printProvider.on('print', function () {
+            for (var l = 0; l < pdfLayerNames.length; l++) { 
+                window.open(GeoAdmin.webServicesUrl + "/legend/" + pdfLayerNames[l] + "_" + pdfFormat[l]);
             }
         });
 
