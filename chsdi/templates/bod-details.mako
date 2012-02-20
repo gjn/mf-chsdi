@@ -16,19 +16,19 @@
 
 % if c.layer.bod_layer_id == "ch.swisstopo.geologie-eiszeit-lgm-raster":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-eiszeit-lgm-raster_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-eiszeit-lgm-raster_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-geologische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-tektonische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.gif" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.astra.ivs-gelaendekarte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.astra.ivs-gelaendekarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
