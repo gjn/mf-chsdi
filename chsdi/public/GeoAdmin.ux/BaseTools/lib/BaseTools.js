@@ -123,9 +123,8 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                 tbar: ["->", {
                     iconCls: "close-button",
                     handler: function() {
-                        this.printAction.printPanel.container.setVisible(false);
-                        this.printAction.printPanel.hideExtent();
-                        this.printAction.printLayer.setVisibility(false);
+                    	  this.printAction.items[0].pressed = false;
+                        this.printAction.pHandler();
                     },
                     scope: this
                 }]

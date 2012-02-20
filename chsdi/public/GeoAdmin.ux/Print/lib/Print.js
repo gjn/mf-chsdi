@@ -705,7 +705,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 this.printLayer.setVisibility(false);
             }
         } else {
-            if (!this.printPanel.container.isVisible()) {
+            if (!this.printPanel.container.isVisible() && this.items[0].pressed === true) {
                 this.printPanel.container.setVisible(true);
                 this.printPanel.showExtent();
                 this.printLayer.setVisibility(true);
