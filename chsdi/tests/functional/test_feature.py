@@ -129,6 +129,16 @@ class TestFeatureController(TestController):
                             status=400
                             )
 
+    def test_bbox_invalid_ids(self):
+        params = {
+            'layer': 'ch.babs.kulturgueter',
+            'ids': '100000000000000000000000000000000000000'
+            }
+        resp = self.app.get(url(controller='feature', action='bbox'),
+                            params=params
+                            )
+        assert '"bbox": null' in resp
+
     def test_bbox(self):
         params = {
             'bbox': '600000,100000,610000,110000',
