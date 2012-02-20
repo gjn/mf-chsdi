@@ -3,6 +3,7 @@ import simplejson
 
 from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
+from sqlalchemy import exc
 
 from geojson.feature import FeatureCollection
 from geojson.feature import Feature
@@ -70,9 +71,12 @@ def get_features(layer, ids):
     #FIXME: features.append(Session.query(model).filter(model.id.in_(ids)).all())
         for fid in ids:
             if len(features) < MAX_FEATURES:
-                feature = Session.query(model).get(fid)
-                if feature:
-                    features.append(feature)
+                try:
+                    feature = Session.query(model).get(fid)
+                    if feature:
+                        features.append(feature)
+                except exc.SQLAlchemyError:
+                    pass
             else:
                 break
     return features
