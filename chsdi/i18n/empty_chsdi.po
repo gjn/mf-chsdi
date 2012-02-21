@@ -791,3 +791,169 @@ msgstr ""
 
 msgid "typ_transpo_produkt"
 msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Natural"
+msgstr ""
+
+msgid "Man-made"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "Antenne"
+msgstr ""
+
+msgid "Bauernhof"
+msgstr ""
+
+msgid "Berghuette"
+msgstr ""
+
+msgid "Campingplatz"
+msgstr ""
+
+msgid "Denkmal"
+msgstr ""
+
+msgid "Friedhof"
+msgstr ""
+
+msgid "Hoehle"
+msgstr ""
+
+msgid "Kirche"
+msgstr ""
+
+msgid "Kloster"
+msgstr ""
+
+msgid "Kraftwerk"
+msgstr ""
+
+msgid "Museum"
+msgstr ""
+
+msgid "Observatorium"
+msgstr ""
+
+msgid "Pumpwerk"
+msgstr ""
+
+msgid "Rennbahn"
+msgstr ""
+
+msgid "Ruine"
+msgstr ""
+
+msgid "Schloss"
+msgstr ""
+
+msgid "Schule"
+msgstr ""
+
+msgid "Spital"
+msgstr ""
+
+msgid "Stadion"
+msgstr ""
+
+msgid "Thermalbad"
+msgstr ""
+
+msgid "Verarbeitungsanlage"
+msgstr ""
+
+msgid "Vergnuegungspark"
+msgstr ""
+
+msgid "Hydro-electric"
+msgstr ""
+
+msgid "Not applicable"
+msgstr ""
+
+msgid "Nuclear"
+msgstr ""
+
+msgid "Solar"
+msgstr ""
+
+msgid "Thermal"
+msgstr ""
+
+msgid "Wind"
+msgstr ""
+
+msgid "Chemical"
+msgstr ""
+
+msgid "Refuse"
+msgstr ""
+
+msgid "Sewage"
+msgstr ""
+
+msgid "Water"
+msgstr ""
+
+msgid "Double"
+msgstr ""
+
+msgid "Multiple"
+msgstr ""
+
+msgid "Single"
+msgstr ""
+
+msgid "Suspended or elevate"
+msgstr ""
+
+msgid "Underground"
+msgstr ""
+
+msgid "Gas"
+msgstr ""
+
+msgid "Fels"
+msgstr ""
+
+msgid "Geroell"
+msgstr ""
+
+msgid "Gletscher"
+msgstr ""
+
+msgid "Obstanlage"
+msgstr ""
+
+msgid "Reben"
+msgstr ""
+
+msgid "See"
+msgstr ""
+
+msgid "Siedl"
+msgstr ""
+
+msgid "Stadtzentr"
+msgstr ""
+
+msgid "Stausee"
+msgstr ""
+
+msgid "Sumpf"
+msgstr ""
+
+msgid "Wald"
+msgstr ""
+
+msgid "No additional information for this object type"
+msgstr ""
+

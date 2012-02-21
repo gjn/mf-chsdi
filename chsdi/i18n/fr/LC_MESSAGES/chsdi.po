@@ -17,11 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "Antenne"
+msgstr "Antenne"
+
+msgid "Bauernhof"
+msgstr "Ferme"
+
+msgid "Berghuette"
+msgstr "Cabane de montagne"
+
+msgid "Campingplatz"
+msgstr "Camping"
+
+msgid "Chemical"
+msgstr "Chimique"
+
 msgid "Datenbezug"
 msgstr "Distribution des données"
 
 msgid "Datenstand"
 msgstr "État d'actualité"
+
+msgid "Denkmal"
+msgstr "Monument"
 
 msgid "Detailbeschreibung"
 msgstr "Description détaillée"
@@ -29,11 +47,44 @@ msgstr "Description détaillée"
 msgid "Detaildaten"
 msgstr "Détails"
 
+msgid "Double"
+msgstr "Double"
+
+msgid "Fels"
+msgstr "Falaise"
+
+msgid "Friedhof"
+msgstr "Cimetière"
+
+msgid "Gas"
+msgstr "Gaz"
+
+msgid "Geroell"
+msgstr "Eboulis"
+
+msgid "Gletscher"
+msgstr "Glacier"
+
 msgid "Gueltiger Massstabsbereich"
 msgstr "Plage de validité des données"
 
+msgid "Hoehle"
+msgstr "Grotte"
+
+msgid "Hydro-electric"
+msgstr "Hydro-électrique"
+
 msgid "Information"
 msgstr "Informations"
+
+msgid "Kirche"
+msgstr "Eglise ou chapelle"
+
+msgid "Kloster"
+msgstr "Couvent"
+
+msgid "Kraftwerk"
+msgstr "Centrale électrique"
 
 msgid "Legend"
 msgstr "Légende"
@@ -41,20 +92,134 @@ msgstr "Légende"
 msgid "Link to object"
 msgstr "Lien vers objet"
 
+msgid "Man-made"
+msgstr "Artificielle"
+
 msgid "Metadaten"
 msgstr "Métadonnées"
+
+msgid "Multiple"
+msgstr "Multiple"
+
+msgid "Museum"
+msgstr "Musée"
+
+msgid "Natural"
+msgstr "Naturelle"
+
+msgid "No"
+msgstr "Non"
+
+msgid "No additional information for this object type"
+msgstr "Pas d'information complémentaire pour ce type d'objet"
+
+msgid "Not applicable"
+msgstr "Non applicable"
+
+msgid "Nuclear"
+msgstr "Nucléaire"
+
+msgid "Observatorium"
+msgstr "Observatoire"
+
+msgid "Obstanlage"
+msgstr "Vergers"
 
 msgid "Produkt"
 msgstr "Produit"
 
+msgid "Pumpwerk"
+msgstr "Pompe"
+
+msgid "Reben"
+msgstr "Vignes"
+
+msgid "Refuse"
+msgstr "Déchets"
+
+msgid "Rennbahn"
+msgstr "Circuit automobile"
+
+msgid "Ruine"
+msgstr "Ruine historique"
+
+msgid "Schloss"
+msgstr "Château"
+
+msgid "Schule"
+msgstr "Ecole"
+
+msgid "See"
+msgstr "Lac"
+
+msgid "Sewage"
+msgstr "Eaux sales"
+
+msgid "Siedl"
+msgstr "Agglomération"
+
+msgid "Single"
+msgstr "Unique"
+
+msgid "Solar"
+msgstr "Solaire"
+
+msgid "Spital"
+msgstr "Hôpital"
+
+msgid "Stadion"
+msgstr "Stade"
+
+msgid "Stadtzentr"
+msgstr "Centre de grande ville"
+
+msgid "Stausee"
+msgstr "Lac de barrage"
+
+msgid "Sumpf"
+msgstr "Marais"
+
+msgid "Suspended or elevate"
+msgstr "Suspendu"
+
 msgid "Thematisches Geoportal"
 msgstr "Géoportail thématique"
+
+msgid "Thermal"
+msgstr "Thermique"
+
+msgid "Thermalbad"
+msgstr "Station thermale"
 
 msgid "Toposhop"
 msgstr "Toposhop"
 
+msgid "Underground"
+msgstr "Souterrain"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Verarbeitungsanlage"
+msgstr "Usine de traitement"
+
+msgid "Vergnuegungspark"
+msgstr "Parc d’attraction"
+
 msgid "WMS Dienst"
 msgstr "Service WMS"
+
+msgid "Wald"
+msgstr "Forêt"
+
+msgid "Water"
+msgstr "Eau"
+
+msgid "Wind"
+msgstr "Vent"
+
+msgid "Yes"
+msgstr "Oui"
 
 msgid "abfrage"
 msgstr "Requête de données"

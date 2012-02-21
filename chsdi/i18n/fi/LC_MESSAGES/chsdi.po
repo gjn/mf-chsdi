@@ -17,11 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "Antenne"
+msgstr "Antennenanlage"
+
+msgid "Bauernhof"
+msgstr "Bauernhof"
+
+msgid "Berghuette"
+msgstr "Berghütte"
+
+msgid "Campingplatz"
+msgstr "Campingplatz"
+
+msgid "Chemical"
+msgstr "Chemikalie"
+
 msgid "Datenbezug"
 msgstr "Retratga da datas"
 
 msgid "Datenstand"
 msgstr "Stadi da las datas"
+
+msgid "Denkmal"
+msgstr "Denkmal"
 
 msgid "Detailbeschreibung"
 msgstr "Descripziun da detagl"
@@ -29,11 +47,44 @@ msgstr "Descripziun da detagl"
 msgid "Detaildaten"
 msgstr "Detaildaten"
 
+msgid "Double"
+msgstr "Doppelt"
+
+msgid "Fels"
+msgstr "Fels"
+
+msgid "Friedhof"
+msgstr "Friedhof"
+
+msgid "Gas"
+msgstr "Gas"
+
+msgid "Geroell"
+msgstr "Geröll"
+
+msgid "Gletscher"
+msgstr "Gletscher"
+
 msgid "Gueltiger Massstabsbereich"
 msgstr "Sectur da scala valaivel"
 
+msgid "Hoehle"
+msgstr "Höhle"
+
+msgid "Hydro-electric"
+msgstr "Hydro-elektrische"
+
 msgid "Information"
 msgstr "Infurmaziuns"
+
+msgid "Kirche"
+msgstr "Kirche oder Kapelle"
+
+msgid "Kloster"
+msgstr "Kloster"
+
+msgid "Kraftwerk"
+msgstr "Kraftwerk"
 
 msgid "Legend"
 msgstr "Leggenda"
@@ -41,20 +92,134 @@ msgstr "Leggenda"
 msgid "Link to object"
 msgstr "Link tar l'object"
 
+msgid "Man-made"
+msgstr "Künstlich"
+
 msgid "Metadaten"
 msgstr "Metadatas"
+
+msgid "Multiple"
+msgstr "Mehrfach"
+
+msgid "Museum"
+msgstr "Museum"
+
+msgid "Natural"
+msgstr "Natürlich"
+
+msgid "No"
+msgstr "Na"
+
+msgid "No additional information for this object type"
+msgstr "Keine weiteren Informationen für diesen Objekttyp"
+
+msgid "Not applicable"
+msgstr "nicht anwendbar"
+
+msgid "Nuclear"
+msgstr "Nuclear"
+
+msgid "Observatorium"
+msgstr "Observatorium"
+
+msgid "Obstanlage"
+msgstr "Obstanlage"
 
 msgid "Produkt"
 msgstr "Produkt"
 
+msgid "Pumpwerk"
+msgstr "Pumpwerk"
+
+msgid "Reben"
+msgstr "Reben"
+
+msgid "Refuse"
+msgstr "Müll"
+
+msgid "Rennbahn"
+msgstr "Rennbahn"
+
+msgid "Ruine"
+msgstr "Historische Ruine"
+
+msgid "Schloss"
+msgstr "Schloss"
+
+msgid "Schule"
+msgstr "Schule"
+
+msgid "See"
+msgstr "See"
+
+msgid "Sewage"
+msgstr "Abwasser"
+
+msgid "Siedl"
+msgstr "Siedlung"
+
+msgid "Single"
+msgstr "Einzeln"
+
+msgid "Solar"
+msgstr "Solar"
+
+msgid "Spital"
+msgstr "Spital"
+
+msgid "Stadion"
+msgstr "Stadion"
+
+msgid "Stadtzentr"
+msgstr "Zentren grösserer Städte"
+
+msgid "Stausee"
+msgstr "Stausee"
+
+msgid "Sumpf"
+msgstr "Sumpf"
+
+msgid "Suspended or elevate"
+msgstr "Hängende oder erhöhen"
+
 msgid "Thematisches Geoportal"
 msgstr "Geoportal tematic"
+
+msgid "Thermal"
+msgstr "Thermal"
+
+msgid "Thermalbad"
+msgstr "Thermalbad"
 
 msgid "Toposhop"
 msgstr "Toposhop"
 
+msgid "Underground"
+msgstr "Untergrund"
+
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgid "Verarbeitungsanlage"
+msgstr "Verarbeitungsanlage"
+
+msgid "Vergnuegungspark"
+msgstr "Vergnügungspark"
+
 msgid "WMS Dienst"
 msgstr "Servetsch da WMS"
+
+msgid "Wald"
+msgstr "Wald"
+
+msgid "Water"
+msgstr "Wasser"
+
+msgid "Wind"
+msgstr "Wind"
+
+msgid "Yes"
+msgstr "Gea"
 
 msgid "abfrage"
 msgstr "Datenbfrage"
