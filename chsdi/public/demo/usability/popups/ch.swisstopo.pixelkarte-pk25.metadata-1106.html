@@ -1,0 +1,120 @@
+<!doctype html>  
+<html lang="de">  
+<head>  
+<title>Swisstopo Prototype Popup Window</title>  
+
+<meta charset="utf-8">   
+
+<script src="js/jquery-1.7.1.js"></script>
+<script src="js/jquery.ui.core.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.ui.tabs.js"></script>
+
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/tabs.css"> 
+<link rel="stylesheet" href="css/ui.theme.css"> 
+<script>
+	$(function() {
+		$( "#tabs" ).tabs();
+	});
+	</script>
+ 
+</head>  
+
+<body>  
+
+<div class="popup">
+
+<div id="tabs">
+
+<div id="close"></div>
+<div id="close2"></div>
+
+<h1>1106 <span>Moutier</span></h1>
+<h2>Landeskarte 1:25 000</h2>
+	<ul>
+		<li><a href="#tabs-1">Übersicht</a></li>
+		<li><a href="#tabs-2">Details</a></li>
+		<li><a href="#tabs-3">Passende Produkte</a></li>
+	</ul>
+	
+	<div id="tabs-1">
+		<img src="media/moutier.png" width="132px" height="193px">
+		<table>
+			<tr>
+				<td class="first">Blattnummer</td>
+				<td>1106</td>
+			</tr>
+			<tr>
+				<td class="first">Ausgabejahr</td>
+				<td>2007</td>
+			</tr>
+			
+		</table>
+		<a href="#" class="button">Karteninhalt anzeigen</a>
+		<div class="basket">
+			<span>CHF 14.00</span>
+			<a href="#" class="button">In den Warenkorb</a>
+		</div>
+	</div>
+	<div id="tabs-2">
+		<table>
+			<tr>
+				<td class="first">Titel</td>
+				<td>Moutier</td>
+			</tr>
+			<tr>
+				<td class="first">Blattnummer</td>
+				<td>1106</td>
+			</tr>
+			<tr>
+				<td class="first">Ausgabejahr</td>
+				<td>2007</td>
+			</tr>
+			<tr>
+				<td class="first">Nachführungsstand <a href="#" class="info"><img src="media/info.png"></a></td>
+				<td>2005</td>
+			</tr>
+			<tr>
+				<td class="first">Verfügbares Format</td>
+				<td>gefaltet und ungefaltet</td>
+			</tr>
+			<tr>
+				<td class="first">Abmessungen</td>
+				<td>90cm breit, 70 cm hoch</td>
+			</tr>
+			<tr>
+				<td class="first">ISBN</td>
+				<td>978-3-302-01106-6</td>
+			</tr>
+		</table>
+		<div class="basket">
+			<span>CHF 14.00</span>
+			<a href="#" class="button">In den Warenkorb</a>
+		</div>
+	</div>
+	<div id="tabs-3">
+		<ul>
+			<li>Wanderkarte 1:50 000 Zusammensetzung<br /><a href="#">223T Delémont</a></li>
+			<li >Landeskarte 1:50 000 <br /><a href="#">223T Delémont</a></li>
+			<li >Landeskarte 1:100 000 <br /><a href="#">31 Biel / Bienne</a></li>
+			<li >Landeskarte 1:200 000 <br /><a href="#">31 Biel / Bienne</a></li>
+			<li >Geologischer Atlas der Schweiz 1:25 000 <br /><a href="#">96 Moutier (CN1106)</a></li>
+			<li >Geologischer Atlas der Schweiz 1:500 000 <br /><a href="#">&nbsp;</a></li>
+			<li class="last">Tektonische Karte der Schweiz 1:500 000<br /><a href="#">&nbsp;</a></li>
+		</ul>
+		<ul class="linkliste">
+			<li><a href="">Swiss Map Mobile</a></li>
+			<li><a href="">Swiss Map Online</a></li>
+			<li><a href="">Luftbild als Geschenk</a></li>
+			<li><a href="">DIGIRAMA  Panoramen</a></li>
+			<li><a href="">3D-Flüge</a></li>
+			
+		</ul>
+		
+	</div>
+</div>
+</div><!-- End popup -->
+
+</body>  
+</html>  

@@ -1,0 +1,20 @@
+
+.olcontroloverviewmapcontainer { top: 0 !important}
+
+.olControlOverviewMapMinimizeButton .olButton {
+    right: 0;
+    bottom: 80px;
+    position: static !important;
+}
+
+.olControlOverviewMapMaximizeButton .olButton {
+    right: 0;
+    bottom: 80px;
+    position: static !important;
+}
+
+
+.x-toolbar .print {
+    background-image: url('media/print.png');
+}
+

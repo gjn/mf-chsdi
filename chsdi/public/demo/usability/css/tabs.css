@@ -1,0 +1,236 @@
+/*
+ * jQuery UI Tabs 1.8.17
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs {
+	position:relative;
+	top:20px;
+	padding:1em;
+	zoom:1;
+	width:380px;
+	height:310px;
+	background-color:#F2F2F2!important;
+	font-size:1.4em;
+	border:1px solid #555
+}
+
+/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav {
+	margin:0;
+	padding:.2em .2em 0;
+	padding:0
+}
+
+.ui-tabs .ui-tabs-nav li {
+	list-style:none;
+	float:left;
+	position:relative;
+	top:1px;
+	margin:0 .6em 1px 0;
+	border-bottom:0!important;
+	padding:0;
+	white-space:nowrap;
+	background-color:#fff;
+	border:1px solid #069
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	float:left;
+	padding:.5em 1em;
+	text-decoration:none;
+	color:#333
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	margin-bottom:0;
+	padding-bottom:1px
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,.ui-tabs .ui-tabs-nav li.ui-state-disabled a,.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	cursor:text;
+	color:#333;
+	font-weight:700;
+	padding:.5em 1.6em
+}
+
+.ui-tabs .ui-tabs-nav li a,.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+	cursor:pointer
+}
+
+/* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel {
+	display:block;
+	border-width:0;
+	padding:1em 1.4em 1.5em 1.6em;
+	background-color:#fff;
+	color:#333;
+	border:1px solid #069;
+	border-top:none;
+	height:210px;
+	overflow-y:scroll
+}
+
+.ui-widget-header {
+	height:28px;
+	padding:10px 0 0!important;
+	background-color:transparent!important;
+	border-top:none!important;
+	border-right:none!important;
+	border-left:none!important;
+	border-bottom:1px solid #069!important
+}
+
+.ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default {
+	border:1px solid #cdcdcd!important
+}
+
+.ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active {
+	border:1px solid #069!important
+}
+
+.ui-widget-content {
+	background-color:#dedede;
+	padding:10px
+}
+
+.ui-tabs .ui-tabs-hide {
+	display:none!important
+}
+
+.ui-tabs .ui-widget .ui-widget-content .ui-corner-all {
+	border-radius:none
+}
+
+h1 {
+	font-size:1.6em;
+	color:#333;
+	font-weight:400;
+	display:inline;
+	margin:0 20px 0 0
+}
+
+h1 span {
+	font-weight:700
+}
+
+h2 {
+	font-size:1em;
+	font-weight:400;
+	display:inline
+}
+
+#close {
+	position:relative;
+	right:-25px;
+	top:-25px;
+	height:40px;
+	width:40px;
+	border-radius:20px;
+	float:right;
+	border:1px solid #aaa;
+	z-index:-1;
+	background-color:#F2F2F2
+}
+
+#close2 {
+	position:absolute;
+	right:-13px;
+	top:-13px;
+	background: url("../media/closebutton.png") 0 12px no-repeat;
+	height:40px;
+	width:40px;
+	border-radius:20px;
+	float:right;
+	z-index:10!important
+}
+
+/* Tabinhalte */
+#tabs-1 img {
+	float:left;
+	margin:0 20px 0 0
+}
+
+#tabs-1 table {
+	float:left;
+	font-size:1.1em;
+	margin:0 0 10px
+}
+
+#tabs-1 table tr {
+	margin:0 0 15px;
+	height:25px;
+	vertical-align:top
+}
+
+#tabs-1 table td.first {
+	font-weight:700;
+	padding:0 20px 0 0
+}
+
+#tabs-2 table tr {
+	margin:0 0 15px;
+	height:20px;
+	vertical-align:top
+}
+
+#tabs-2 table td.first {
+	font-weight:700;
+	padding:0 20px 0 0
+}
+
+#tabs-2 ul li a.info {
+	margin:5px 0 0 0!important
+}
+
+#tabs-3 ul {
+	padding:0;
+	margin:0
+}
+
+#tabs-3 ul li {
+	list-style:none;
+	height:40px;
+	padding:10px 0 0;
+	border-bottom:1px solid #555
+}
+
+#tabs-3 ul li.last {
+	border-bottom:0 solid #555
+}
+
+#tabs-3 ul li a {
+	text-decoration:none;
+	color:#069
+}
+
+#tabs-3 ul.linkliste {
+	border-top:2px solid #111;
+	padding:15px 0 0
+}
+
+#tabs-3 ul.linkliste li {
+	background: url("../media/pfeil.gif") 0 0 no-repeat;
+	padding:0 0 0 20px;
+	border:0;
+	height:25px
+}
+
+a.button {
+	height:30px;
+	text-decoration:none;
+	background-color:#069;
+	padding:6px;
+	color:#fff!important;
+	border-radius:4px
+}
+
+.basket {
+	position:absolute;
+	bottom:60px;
+	right:40px
+}
