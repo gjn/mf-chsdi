@@ -18,3 +18,9 @@
     background-image: url('../media/print.png');
 }
 
+.olcontroloverviewmapminimizebutton {
+    top: 0;
+}
+
+.olcontroloverviewmapmaximizebutton {
+    top: 99px;

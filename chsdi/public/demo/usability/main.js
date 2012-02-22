@@ -1,6 +1,6 @@
 Ext.ns("GeoAdmin");
 
-GeoAdmin.printBaseUrl = "http://mf-chsdi0t.bgdi.admin.ch/main/wsgi/print/";
+GeoAdmin.printBaseUrl = "/main/wsgi/print/";
 
 
 
