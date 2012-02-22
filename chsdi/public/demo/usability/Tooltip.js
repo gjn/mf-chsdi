@@ -55,7 +55,7 @@ Ext.namespace("GeoAdmin");
             });
         }
         //this.popup.add(items);
-        this.popup.show();
+        //this.popup.show();
     };
 
 
