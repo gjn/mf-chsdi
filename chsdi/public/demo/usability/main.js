@@ -2,7 +2,11 @@ Ext.ns("GeoAdmin");
 
 GeoAdmin.printBaseUrl = "http://mf-chsdi0t.bgdi.admin.ch/main/wsgi/print/";
 
+
+
 window.onload = function() {
+
+
 
     var parameters = OpenLayers.Util.getParameters();
 

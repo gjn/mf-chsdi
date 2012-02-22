@@ -1,32 +1,4 @@
 Ext.namespace('App');
-App.catalogConfig =
-    [
-        {
-            text: 'Freizeitkarten',
-            children: [
-                {
-                    text: 'Cartes nationales',
-                    children: [
-                        {
-                            layerId: "ch.swisstopo.fixpunkte-lage"
-                        }
-                    ]
-                },
-                {
-                    text: 'Landeskarten',
-                    children: [
-                        {layerId: 'ch.swisstopo.pixelkarte-pk25.metadata'},
-                        {layerId: 'ch.swisstopo.pixelkarte-pk50.metadata'},
-                        {layerId: 'ch.swisstopo.pixelkarte-pk100.metadata'},
-                        {layerId: 'ch.swisstopo.pixelkarte-pk200.metadata'},
-                        {layerId: 'ch.swisstopo.pixelkarte-pk300.metadata'},
-                        {layerId: 'ch.swisstopo.pixelkarte-pk500.metadata'}
-                    ]
-                }
-            ]
-        }
-    ];
-
 
 App.catalogConfig = {
     'catalog1':
