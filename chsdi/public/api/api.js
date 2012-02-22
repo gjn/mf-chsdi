@@ -49,6 +49,7 @@
  * @include NavigationHistory/lib/NavigationHistory.js
  * @include MousePosition/lib/MousePositionBox.js
  * @include Print/lib/Print.js
+ * @include BaseTools/lib/BaseTools.js
  * @include Permalink/lib/Permalink.js
  * @include ContextPopup/lib/ContextPopup.js
  * @include Map/lib/MapPanel.js
