@@ -137,6 +137,8 @@ OpenLayers.Lang.rm= {
 	'Measure.MeasureAzimuth.ToolTip':'Mesirai in Azimut',
 	'Measure.MeasureLength':'Distanza',
 	'Measure.MeasureLength.ToolTip':'Mesirai ina distanza',
+	'Measure.MeasureProfil':'Profil',
+	'Measure.MeasureProfile.ToolTip':'Mesirar en profil',
 	'Measure.title':'Mesiraziun da distanzas & mesiraziun da surfatschas',
 	'Metadata':'Metadatas',
 	'Meteorologie':'Indicaturs geografic-meteorologics',

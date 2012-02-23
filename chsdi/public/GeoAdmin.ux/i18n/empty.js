@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Measure.MeasureProfil': "",
+    'Measure.MeasureProfile.ToolTip': "",
     'Edit': "",
     'Line': "",
     'ch.swisstopo.geologie-geotechnik-gk500-genese': "",

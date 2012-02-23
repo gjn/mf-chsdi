@@ -141,6 +141,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Measure.MeasureAzimuth.ToolTip':'Messen Sie das Azimut',
 	'Measure.MeasureLength':'Distanz',
 	'Measure.MeasureLength.ToolTip':'Messen Sie eine Distanz',
+	'Measure.MeasureProfil':'Profile',
+	'Measure.MeasureProfile.ToolTip':'Profile messen',
 	'Measure.title':'Distanz-, Flächen- un Azimuthmessung',
 	'Metadata':'Metadaten',
 	'Meteorologie':'Meteorologisch-geografische Kennwerte',
