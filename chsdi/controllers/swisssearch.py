@@ -85,8 +85,9 @@ class SwisssearchController(BaseController):
 
         # FIXME Address search is only for admin.ch and awk.ch
         # For "awk.ch", see email from lttsb from 18.nov. 2011
+        # cadastre.ch see ticket #3695
         referer = request.headers.get('referer', '')
-        if referer.find( 'admin.ch') < 0 and referer.find('awk.ch'):
+        if referer.find( 'admin.ch') < 0 and referer.find('awk.ch') and referer.find('cadastre.ch'):
             if not self.no_geom:
                self.origins = [o for o in self.origins if o != 'address']
         
