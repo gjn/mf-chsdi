@@ -70,6 +70,7 @@ class Queryable(object):
         c.stable_id = c.feature.stable_id
         self.layer_id= layer_id
         self.html = render(self.__template__)
+        self.html_preview = '<div class=\"tooltip_preview\">Feature Preview</div>'
 
     def compute_attribute(self):
         c.feature = self
@@ -93,6 +94,7 @@ class Queryable(object):
             self.attributes['html'] = self.html
         if self.layer_id is not None:
             self.attributes['layer_id'] = self.layer_id
+        self.attributes['html_preview'] = self.html_preview
         return Feature(id=self.id, geometry=self.geometry,
                        bbox=self.geometry.bounds,
                        properties=self.attributes)
