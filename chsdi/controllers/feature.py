@@ -136,6 +136,7 @@ class FeatureController(BaseController):
     def search(self):
         c.baseUrl =  request.params.get('baseUrl')  or ''
         features = []
+
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
@@ -151,6 +152,8 @@ class FeatureController(BaseController):
                             properties =  feature.attributes
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
+                        properties['html_preview'] = feature.html_preview
+
                         if self.no_geom:
                             features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
@@ -200,5 +203,4 @@ class FeatureController(BaseController):
         for f in get_features(layer, c.ids):
             f.layer_id = layer
             features.append(f)
-
         return FeatureCollection(features)
