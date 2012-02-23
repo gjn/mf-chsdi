@@ -1,4 +1,9 @@
 <%inherit file="base.mako"/>
+
+<%def name="preview()">
+   <tr>${_('feature')}</tr>
+</%def>
+
 <%def name="table_body()">
 <% c.stable_id = True %>
 % if c.feature.wrz_obj and (str(c.feature.wrz_obj) != '0'):

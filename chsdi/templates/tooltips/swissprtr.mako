@@ -1,8 +1,12 @@
 <%inherit file="base.mako"/>
 
+<%def name="preview()">
+    <tr><td width="150">${_('betrieb')}</td>    <td>${c.feature.betrieb or '-'}</td></tr>
+</%def>
+
 <%def name="table_body()">
     <% c.stable_id = True %>
-    <tr><td width="150">${_('betrieb')}</td>    <td>${c.feature.betrieb or '-'}</td></tr>
+    ${self.preview()}
     <tr><td width="150">${_('ort')}</td>    <td>${c.feature.ort or '-'}</td></tr>
     <tr><td width="150">${_('Detaildaten')}</td>
         % if c.lang == 'de' or c.lang =='rm':
@@ -15,5 +19,4 @@
             <td><a href="http://www.prtr.ch/prtrPublicwebsite/CompanyDetails.aspx?IDCompany=${c.feature.id}&Year=${c.feature.jahr or '-'}&lng=en" target="_blank">${_('linkzurbeschreibung')}</a></td>
         % endif
     </tr>
-
 </%def>

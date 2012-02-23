@@ -1,4 +1,9 @@
 <%inherit file="base.mako"/>
+
+<%def name="preview()">
+    <tr>${_('feature')}</tr>
+</%def>
+
 <%def name="table_body()">
 <% c.stable_id = True %>
     <tr><td width="100" valign="top">${_('kkw')}</td><td>${c.feature.name  or '-'}</td></tr>

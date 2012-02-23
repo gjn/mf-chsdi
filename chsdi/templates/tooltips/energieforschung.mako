@@ -1,5 +1,17 @@
 <%inherit file="base.mako"/>
 
+<%def name="preview()">
+% if c.lang =='fr':
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_fr or '-'}</td></tr>
+% elif c.lang == 'it':
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_it or '-'}</td></tr>
+% elif c.lang =='en':
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_en or '-'}</td></tr>
+% else:
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_de or '-'}</td></tr>
+% endif
+</%def>
+
 <%def name="table_body()">
 <% c.stable_id = True %>
 % if c.lang =='fr':

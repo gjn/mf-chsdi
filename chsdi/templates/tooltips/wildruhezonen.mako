@@ -1,7 +1,11 @@
 <%inherit file="base.mako"/>
 
-<%def name="table_body()">
+<%def name="preview()">
 	<tr><td width="150">${_('objektnr')}</td><td>${c.feature.id or '-'}</td></tr>
+</%def>
+
+<%def name="table_body()">
+    ${self.preview()}
     <tr><td width="150" valign="top">${_('name')}</td><td>${c.feature.wrz_name or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('schonzeit')}</td><td>${c.feature.schonzeit or '-'}</td></tr>
 	<tr><td width="150" valign="top">${_('einschraenkungen')}</td><td>${c.feature.beschraenkung or '-'}</td></tr>

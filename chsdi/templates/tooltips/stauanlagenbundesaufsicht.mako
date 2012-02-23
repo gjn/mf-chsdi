@@ -1,4 +1,9 @@
 <%inherit file="base.mako"/>
+
+<%def name="preview()">
+   <tr>${_('feature')}</tr>
+</%def>
+
 <%def name="table_body()">
 <% c.stable_id = True %>
     <tr><td width="150">${_('tt_ch.bfe.stauanlagen-bundesaufsicht_damname')}</td><td>${c.feature.damname or '-'}</td></tr>

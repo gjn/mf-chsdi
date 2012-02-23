@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+<%def name="preview()">
+   <tr>${_('feature')}</tr>
+</%def>
+
 <div class="tooltip_header">
   <span style="font-weight:bold;">${c.layer_bezeichnung}</span> (${c.layer_datenherr})
 </div>
@@ -105,5 +109,3 @@
     <tr><td width="150">${_('nfadresse')}</td>    <td>${c.feature.nfadresse or '-'}</td></tr>
     % endif
 </%def>
-</table>
-</div>

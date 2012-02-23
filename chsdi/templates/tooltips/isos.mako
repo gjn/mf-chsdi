@@ -4,6 +4,10 @@
    from chsdi.lib.helpers import quoting
 %>
 
+<%def name="preview()">
+   <tr>${_('feature')}</tr>
+</%def>
+
 <%def name="table_body()">
     <% c.stable_id = True %>
     <tr><td width="150">${_('kanton')}</td>          <td>${c.feature.kanton or '-'}</td></tr>

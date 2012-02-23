@@ -1,4 +1,9 @@
 <%inherit file="base.mako"/>
+
+<%def name="preview()">
+   <tr>${_('feature')}</tr>
+</%def>
+
 <%def name="table_body()">
 <% c.stable_id = True %>
     <tr><td width="100">${_('richtungsgetrennt')}</td><td>${c.feature.ri_getrenn or ''}</td></tr>
