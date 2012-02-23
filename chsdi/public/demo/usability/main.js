@@ -3,9 +3,7 @@ Ext.ns("GeoAdmin");
 GeoAdmin.printBaseUrl = "/main/wsgi/print/";
 
 
-
 window.onload = function() {
-
 
 
     var parameters = OpenLayers.Util.getParameters();
@@ -29,6 +27,13 @@ window.onload = function() {
     };
 
 
+    var cat1 = new GeoAdmin.CatalogTree({
+        id: 'catalog1',
+        map: mapPanel.map,
+        root: App.catalogConfig.catalog1
+    });
+    //cat1.adaptNodeConfig(App.catalogConfig.catalog1);
+
     new Ext.Viewport({
         layout: "border",
         items: [
@@ -47,22 +52,19 @@ window.onload = function() {
                         id: 'tab1',
                         title: OpenLayers.i18n('CatalogTree 1'),
                         items: [
-                            {
-                                xtype:'ga_catalogtree',
-                                map: mapPanel.map,
-                                root: {children:  App.catalogConfig.catalog1}
-                            }
+                            cat1
                         ]
                     } ,
                     {
                         id: 'tab2',
                         title: OpenLayers.i18n('CatalogTree 2'),
                         items: [
-                            {
-                                xtype: 'ga_catalogtree',
-                                map: mapPanel.map,
-                                root: {children:  App.catalogConfig.catalog2}
-                            }
+                            /*  {
+                             xtype: 'ga_catalogtree',
+                             map: mapPanel.map,
+                             root:  App.catalogConfig.catalog2,
+                             id: 'catalog2'
+                             } */
                         ]
                     }
 
