@@ -30,16 +30,4 @@
     top: 99px;
 }
 
-.olControlPanZoomBar {
-    background-image: url("../media/print.png");
-    right: 40px !important;
-    top: 120px !important;
-    left: auto !important;
-}
-
-.olControlPanel  {
-    right: 4px !important;
-    top: 380px !important;
-    left: auto !important;
-}
 
