@@ -1,4 +1,8 @@
 
+#header {
+    background: none;
+}
+
 .olcontroloverviewmapcontainer { top: 0 !important}
 
 .olControlOverviewMapMinimizeButton .olButton {
