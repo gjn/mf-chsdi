@@ -33,6 +33,10 @@ window.onload = function() {
         root: App.catalogConfig.catalog1
     });
     //cat1.adaptNodeConfig(App.catalogConfig.catalog1);
+    
+    var lt = new GeoAdmin.LayerTree({
+       map: mapPanel.map
+    });
 
     new Ext.Viewport({
         layout: "border",
@@ -52,6 +56,7 @@ window.onload = function() {
                         id: 'tab1',
                         title: OpenLayers.i18n('CatalogTree 1'),
                         items: [
+                            lt,
                             cat1
                         ]
                     } ,
