@@ -59,12 +59,12 @@ window.onload = function() {
                         id: 'tab2',
                         title: OpenLayers.i18n('CatalogTree 2'),
                         items: [
-                            {
+                        /*    {
                              xtype: 'ga_catalogtree',
                              map: mapPanel.map,
                              root:  App.catalogConfig.catalog2,
                              id: 'catalog2'
-                             }
+                             }  */
                         ]
                     }
 
