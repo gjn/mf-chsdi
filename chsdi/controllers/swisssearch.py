@@ -56,7 +56,6 @@ class SwisssearchController(BaseController):
     def index(self):
         q = request.params.get('query')
         egid = request.params.get('egid')
-        ftsOrderBy = "similarity(search_name,'remove_accents(%(query)s)') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
         if q is None:
             if egid is None:
                 abort(400, "missing 'query' or 'egid' parameter")
@@ -67,6 +66,7 @@ class SwisssearchController(BaseController):
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
         else:
+            ftsOrderBy = "similarity(search_name,'remove_accents(%(query)s)') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
             terms = q.split()
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'tsvector_search_name'
