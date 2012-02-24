@@ -38,10 +38,10 @@ class TestSwisssearchController(TestController):
 
     def test_index_with_accents(self):
         resp1 = self.app.get(url(controller='swisssearch', action='index'),
-                             params={"query": "laus"},
+                             params={"query": "rechy"},
                              )
         resp2 = self.app.get(url(controller='swisssearch', action='index'),
-                             params={"query": "làus"},
+                             params={"query": "réchy"},
                              )
 
         # test that accents are ignored
