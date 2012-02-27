@@ -85,7 +85,7 @@ class FeatureController(BaseController):
 
     def __before__(self):
         super(FeatureController, self).__before__()
-        if self.lang == 'fr':
+        if self.lang == 'fr' or self.lang =='it':
             self.bodsearch = BodLayerFr
         else:
             self.bodsearch = BodLayerDe
