@@ -11,14 +11,6 @@
     width: 50px !important;
     background-position: 0 0 !important;
 }
-
-.x-toolbar .gx-map-measureprofile {
-    background-image: url("../images/measure_area.gif") !important;
-    height: 70px !important;
-    width: 50px !important;
-    background-position: 0 0 !important;
-}
-
 .x-toolbar .gx-map-measureazimuth {
     background-image: url("../images/measure_azimuth.gif") !important;
     height: 70px !important;
@@ -26,11 +18,21 @@
     background-position: 0 0 !important;
 }
 
-.x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea, .x-btn-text .gx-map-measureazimuth {
+.x-btn-text .gx-map-measurelength, .x-btn-text .gx-map-measurearea, .x-btn-text .gx-map-measureazimuth, .x-btn-text .gx-map-measureprofile {
     padding-top: 50px;
 
 }
 
-.x-btn-pressed  .gx-map-measurearea, .x-btn-pressed  .gx-map-measurelength, .x-btn-pressed  .gx-map-measureazimuth  {
+.x-btn-pressed  .gx-map-measurearea, .x-btn-pressed  .gx-map-measurelength, .x-btn-pressed  .gx-map-measureazimuth, .x-btn-pressed .gx-map-measureprofile {
     background-color: #dddddd;
+    color: #FF0000;
+}
+
+.x-btn-over .gx-map-measurearea, .x-btn-over  .gx-map-measurelength, .x-btn-over  .gx-map-measureazimuth, .x-btn-over .gx-map-measureprofile,
+.measure-panel .x-btn-over .x-btn-tl, .measure-panel .x-btn-over .x-btn-tc, .measure-panel .x-btn-over .x-btn-tr,
+.measure-panel .x-btn-over .x-btn-ml, .measure-panel .x-btn-over .x-btn-mc, .measure-panel .x-btn-over .x-btn-mr,
+.measure-panel .x-btn-over .x-btn-bl, .measure-panel .x-btn-over .x-btn-bc, .measure-panel .x-btn-over .x-btn-br {
+    background-color: #FFFFFF;
+    background-image: none;
+    border-color: #FF0000 !important;
 }
