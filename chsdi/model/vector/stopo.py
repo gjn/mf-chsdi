@@ -154,7 +154,7 @@ class Vec200Builtupp(Base, Queryable):
     the_geom = Column(Geometry)
 
 class Vec200Poi(Base, Queryable):
-    __tablename__ = 'vec200_poi'
+    __tablename__ = 'v200_poi_tooltip'
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/vec200_poi.mako'
     id = Column('gtdboid', Text, primary_key=True)
