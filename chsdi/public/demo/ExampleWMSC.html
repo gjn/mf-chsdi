@@ -62,7 +62,7 @@
                 units: 'degrees'
             });
 
-            var wmsc_pk = new OpenLayers.Layer.WMS("Pixelmap (WMS-C)", "http://tilecache6.geo.admin.ch/", {
+            var wmsc_pk = new OpenLayers.Layer.WMS("Pixelmap (WMS-C)", "../../tilecache", {
                 layers: "ch.swisstopo.pixelkarte-farbe-pk.etrs89",
                 format: 'image/jpeg'
             }, {
@@ -74,7 +74,7 @@
                 buffer: 0
             });
 
-            var wmsc_img = new OpenLayers.Layer.WMS("swissimage (WMS-C)", "http://tilecache7.geo.admin.ch/", {
+            var wmsc_img = new OpenLayers.Layer.WMS("swissimage (WMS-C)", "../../tilecache", {
                 layers: "ch.swisstopo.swissimage.etrs89",
                 format: 'image/jpeg'
             }, {
@@ -85,8 +85,23 @@
                 isBaseLayer: true,
                 buffer: 0
             });
+            // Only to check the correct position
+            var grenze = new OpenLayers.Layer.WMS('Grenze (WMS)', "http://wms.geo.admin.ch/", {
+                format: 'image/png',
+                transparent: true,
+                srs: 'EPSG:4258',
+                layers: 'ch.swisstopo.swissboundaries3d-kanton-flaeche.fill,ch.swisstopo.swissboundaries3d-land-flaeche.fill'
+            }, {
+                singleTile: true,
+                projection: new OpenLayers.Projection('EPSG:4258'),
+                // emprise en EPSG:4326 :
+                maxExtent: new OpenLayers.Bounds(5.5, 45, 11, 48),
+                //units:'degrees',
+                isBaseLayer: false,
+                visibility: true
+            });
 
-            map.addLayers([wmsc_pk, wmsc_img]);
+            map.addLayers([wmsc_pk, wmsc_img, grenze]);
             map.setCenter(new OpenLayers.LonLat(7.8, 46.5), 8);
 
 
