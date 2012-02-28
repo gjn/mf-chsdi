@@ -1,7 +1,7 @@
 
 [cache]
 type = HTTP
-url = http://tile6.bgdi.admin.ch/geoadmin/
+url = http://tile-f6.bgdi.admin.ch/geoadmin/
 readonly = true
 
 [DEFAULT]
