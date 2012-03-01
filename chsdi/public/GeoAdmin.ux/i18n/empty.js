@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Distance': "",
     'Measure.MeasureProfil': "",
     'Measure.MeasureProfile.ToolTip': "",
     'Edit': "",

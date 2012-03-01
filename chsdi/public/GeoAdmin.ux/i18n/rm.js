@@ -56,6 +56,7 @@ OpenLayers.Lang.rm= {
 	'Descent: ':'Descensiun : ',
 	'Description':'Descripziun',
 	'Desktop version':'Link tar versiun desktop',
+	'Distance':'Distanza',
 	'Distance measurement (double-click to terminate)':'Apparat per mesirar la distanza (cliccar 2 giadas per terminar)',
 	'Distance: ':'Distanza : ',
 	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',

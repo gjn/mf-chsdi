@@ -60,6 +60,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Descent: ':'Discesa : ',
 	'Description':'Descrizione',
 	'Desktop version':'Link per versione desktop',
+	'Distance':'Distanza',
 	'Distance measurement (double-click to terminate)':'Applicazione di misurazione di distanza (doppio clic per terminare)',
 	'Distance: ':'Distanza : ',
 	'Do you really want to delete all features ?':'Volete veramente cancellare tutti gli oggetti?',

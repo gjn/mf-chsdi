@@ -60,6 +60,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Descent: ':'Abstieg: ',
 	'Description':'Beschreibung',
 	'Desktop version':'Link zur Desktop Version',
+	'Distance':'Entfernung',
 	'Distance measurement (double-click to terminate)':'Entfernungmessgeräte (Doppelklick zu beenden)',
 	'Distance: ':'Entfernung: ',
 	'Do you really want to delete all features ?':'Wollen Sie wirklich alle Objekte löschen?',
