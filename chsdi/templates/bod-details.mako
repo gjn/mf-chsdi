@@ -39,6 +39,9 @@
 % elif c.layer.bod_layer_id == "ch.bazl.luftfahrtkarten-icao":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.bazl.luftfahrtkarten-icao_de_fr_en.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.bazl.segelflugkarte":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.bazl.segelflugkarte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>

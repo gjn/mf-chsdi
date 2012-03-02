@@ -575,6 +575,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bazl.luftfahrtkarten-icao"
                     },
                     {
+                        layerId: "ch.bazl.segelflugkarte"
+                    },
+                    {
                         layerId: "ch.swisstopo.swissalti3d-reliefschattierung"
                     }
                 ]
@@ -699,6 +702,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bazl.luftfahrtkarten-icao"
+                    },
+                    {
+                        layerId: "ch.bazl.segelflugkarte"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"

@@ -2286,7 +2286,16 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
-                timestamp: '20110310',
+                timestamp: '20120308',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: false
+            },
+            "ch.bazl.segelflugkarte": {
+                name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
+                layertype: 'wmts',
+                timestamp: '20120308',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
