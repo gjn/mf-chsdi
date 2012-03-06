@@ -23,8 +23,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'AdvancedWindow.title':'Zusatzfunktionen',
 	'AdvancedWindow.tooltip':'Zusatzfunktionen',
 	'Aerial':'Luftbild',
-	'Alert.print.profile':'Die Druckfunktion wird in IE8 und älteren Versionen nicht unterstützt. IE9 oder ein anderer Browser wird dafür benötigt.
-',
+	'Alert.print.profile':'Die Druckfunktion wird in IE8 und älteren Versionen nicht unterstützt. IE9 oder ein anderer Browser wird dafür benötigt.',
 	'Area measurement (double-click to terminate)':'Flächenmessgeräte (Doppelklick zu beenden)',
 	'Artenvielfalt':'Verteilung der Arten',
 	'Atmosphärische Bedingungen':'Atmosphärische Bedingungen',
