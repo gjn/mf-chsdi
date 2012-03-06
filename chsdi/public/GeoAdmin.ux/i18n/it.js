@@ -23,6 +23,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'AdvancedWindow.title':'Funzioni complementari',
 	'AdvancedWindow.tooltip':'Funzioni complementari',
 	'Aerial':'Veduta aerea',
+	'Alert.print.profile':'La funzione di stampa non è supportata da IE8 e precedenti. Usare un altro browser o una versione più recente di IE.
+',
 	'Area measurement (double-click to terminate)':'Applicazione di misurazione di superfici (doppio clic per terminare)',
 	'Artenvielfalt':'Distribuzione delle specie',
 	'Atmosphärische Bedingungen':'Condizioni atmosferiche',

@@ -19,6 +19,8 @@ OpenLayers.Lang.rm= {
 	'AdvancedWindow.title':'Funcziuns supplementaras',
 	'AdvancedWindow.tooltip':'Funcziuns supplementaras',
 	'Aerial':'Fotografia or da l\'aria',
+	'Alert.print.profile':'Voss browser (IE8 & IE7) na sustegna betg stampar. Nus recumandain da duvrar ina versiun pli nova.
+',
 	'Area measurement (double-click to terminate)':'Apparat per mesirar la surfatscha (cliccar 2 giadas per terminar)',
 	'Artenvielfalt':'Repartiziun da las spezias',
 	'Atmosphärische Bedingungen':'Cundiziuns atmosfericas',
