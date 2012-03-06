@@ -23,8 +23,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'AdvancedWindow.title':'Advanced functions',
 	'AdvancedWindow.tooltip':'Advanced functions',
 	'Aerial':'Aerial imagery',
-	'Alert.print.profile':'The print function is not supported by IE8 and earlier verions. Please use another browser or a more recent version of IE.
-',
+	'Alert.print.profile':'The print function is not supported by IE8 and earlier verions. Please use another browser or a more recent version of IE.',
 	'Area measurement (double-click to terminate)':'Area measurement (double-click to terminate)',
 	'Artenvielfalt':'Species distribution',
 	'Atmosphärische Bedingungen':'Atmospheric conditions',
