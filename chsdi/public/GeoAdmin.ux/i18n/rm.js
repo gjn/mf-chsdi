@@ -23,22 +23,29 @@ OpenLayers.Lang.rm= {
 	'Area measurement (double-click to terminate)':'Apparat per mesirar la surfatscha (cliccar 2 giadas per terminar)',
 	'Artenvielfalt':'Repartiziun da las spezias',
 	'Atmosphärische Bedingungen':'Cundiziuns atmosfericas',
+	'Attachments And Reporter':'Attachments And Reporter', //TODO
 	'Attributes':'Attributs',
 	'Azimut: ':'Azimut: ', //TODO
+	'Back':'Back', //TODO
 	'Background':'Fund da la charta',
+	'Base application':'Base application', //TODO
 	'Basisdaten':'Datas da basa',
 	'Bevölkerungsdichte':'Repartiziun da la populaziun - demografia',
 	'Bezirk':'District',
 	'Biogeografische Regionen':'Regiuns biogeografics',
 	'Boden':'Terren',
 	'Bodenbedeckung':'Cuvrida dal terren',
+	'Buildings':'Buildings', //TODO
 	'Cancel':'Annullar',
+	'Cancel reporting':'Cancel reporting', //TODO
 	'Cantons':'Chantuns',
 	'Catalog':'Catalog [INSPIRE]',
 	'Cities':'Vischnancas',
+	'Classification':'Classification', //TODO
 	'Climb: ':'Muntada : ',
 	'Close':'Serrar',
 	'Close this window':'Serrar questa fanestra',
+	'Complete your report':'Complete your report', //TODO
 	'Connect':'Connectar',
 	'Coordinates (m):':'Coordinatas (m): ',
 	'Copyright &amp; Data protection':'Copyright & decleraziun da protecziun da datas',
@@ -55,6 +62,8 @@ OpenLayers.Lang.rm= {
 	'Delete feature':'Stizzar objects',
 	'DeleteAll':'Stizzar tut',
 	'Descent: ':'Descensiun : ',
+	'Describe Your Report':'Describe Your Report', //TODO
+	'Description':'Descripziun',
 	'Description':'Descripziun',
 	'Desktop version':'Link tar versiun desktop',
 	'Distance':'Distanza',
@@ -62,15 +71,18 @@ OpenLayers.Lang.rm= {
 	'Distance: ':'Distanza : ',
 	'Do you really want to delete all features ?':'Vulais Vus propi stizzar tut ils objects?',
 	'Do you really want to delete this feature ?':'Vulais Vus propi stizzar quest object?',
+	'Do you really want to discard your entries?':'Do you really want to discard your entries?', //TODO
 	'Edit':'Editar',
 	'Edit Feature':'Editar l\'object',
 	'Elevation':'Autezza',
 	'Elevation offset: ':'Autezza : ',
 	'Email':'E-mail',
+	'Email Validation':'Email Validation', //TODO
 	'Energie und Wirtschaft':'Energia ed economia',
 	'Energiequellen':'Funtaunas d\'energia',
 	'Enter your feedback here ...':'Rapport charta actual',
 	'Error':'Problem',
+	'Error whilst transmitting your feedback':'Error whilst transmitting your feedback', //TODO
 	'Export':'Export', //TODO
 	'Export KML':'Export KML',
 	'Export Window':'Export Window', //TODO
@@ -83,11 +95,13 @@ OpenLayers.Lang.rm= {
 	'From':'Voss e-mail (obligatoric)',
 	'Full extent':'Charta da survista',
 	'Full map':'Charta pli gronda',
+	'GPS track':'GPS track', //TODO
 	'Gebäude':'Edifizis',
 	'Gemeinde':'Vischnanca',
 	'Geo search...':'Tschertgar lieu, NP, coordinatas...',
 	'Geografische Gittersysteme':'Sistems da giatter geografic',
 	'Geografische Namen':'Designaziuns geograficas',
+	'Geographic names':'Geographic names', //TODO
 	'Geolocation':'Determinaziun da la posiziun',
 	'Geologie':'Geologia',
 	'Gesundheit une Sicherheit':'Segirezza e sanadad',
@@ -125,6 +139,7 @@ OpenLayers.Lang.rm= {
 	'Link with bowl crosshair':'Link cun cruschera',
 	'Load KML':'Chargiar KML',
 	'Loading...':'Chargiar...',
+	'Localize Your Report':'Localize Your Report', //TODO
 	'Locate':'Tschertgar',
 	'Locate by coordinates':'Definir il lieu tras coordinatas',
 	'Luft und Satellitenbilder':'Ortofotografia',
@@ -151,6 +166,7 @@ OpenLayers.Lang.rm= {
 	'Name':'Num',
 	'Nationales Maps':'Atlas naziunal',
 	'Natürliche Risikozonen':'Territoris cun ristgs natirals',
+	'Next':'Enavant',
 	'Next view':'Enavant',
 	'No':'Na',
 	'No email provided':'Betg inditgà il e-mail',
@@ -160,19 +176,28 @@ OpenLayers.Lang.rm= {
 	'No specific handler added to show the layer selection':'I n\'è avant maun nagin "handler" specific per mussar la selecziun da temas',
 	'No specific handler added to show the map <br> Use "goToMapHandler" parameter':'I n\'è avant maun nagin "handler" specific per mussar la charta <br> Duvrai il parameter "goToMapHandler"',
 	'None':'Nagina',
+	'Note that sending your report will transmit ${fileSize} MB of data for which your provider might charge you.':'Note that sending your report will transmit ${fileSize} MB of data for which your provider might charge you.', //TODO
+	'Note that your provider might charge you for the data transmission due to sending your report.':'Note that your provider might charge you for the data transmission due to sending your report.', //TODO
 	'Number of imported features:':'Dumber dals objects importads:',
 	'Oberflächendarstellung':'Represchentaziun da la surfatscha',
 	'Opacity:':'Opacitad:',
+	'Other':'Other', //TODO
 	'Overview Map':'Charta da survista',
 	'Pan':'Spustar la charta',
 	'Permalink.close':'Close',
 	'Permalink.openlink':'Open',
 	'Permalink.title':'Permalink',
 	'Permalink.tooltip':'Permalink',
+	'Photo':'Photo', //TODO
+	'Please check your email address for spelling errors':'Please check your email address for spelling errors', //TODO
 	'Please check your input':'Controllar per plaschair las endataziuns',
+	'Please classify your report:':'Please classify your report:', //TODO
+	'Please enter a description':'Please enter a description', //TODO
 	'Please fill the communication field':'Bitte das Kommunikationsfeld ausfüllen',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
 	'Please fill the mendatory fields!':'Controllar per plaschair las endataziuns obligatoric!',
+	'Please select':'Please select', //TODO
+	'Please select a classification for your report.':'Please select a classification for your report.', //TODO
 	'Please type at least 3 characters':'Geben Sie bitte mindestens 3 Zeichen ein.',
 	'Please, enter an url in the textbox first':'Agiuntar in URL',
 	'Point':'Punct',
@@ -191,14 +216,21 @@ OpenLayers.Lang.rm= {
 	'RedliningWindow':'Dissegnar',
 	'Referenzsysteme':'Sistems da referenza da coordinatas',
 	'Report':'Rapportar in problem cun la charta',
+	'Report Summary':'Report Summary', //TODO
+	'Reporter (your email address)':'Reporter (your email address)', //TODO
+	'Retry':'Retry', //TODO
+	'Roads and paths':'Roads and paths', //TODO
 	'Save context':'Arcunar il context',
 	'Schutzgebiete':'Territoris da protecziun',
 	'Schweiz':'Svizra',
 	'Search':'Tschertga',
 	'Search data...':'Tschertgar datas [en tudestg] ...',
+	'Select GPS track':'Select GPS track', //TODO
 	'Select a file to import':'Tscherni ina datoteca per l\'import',
 	'Select or input a server address (URL)':'Tscherner u agiuntar in server (URL)',
+	'Select photo':'Select photo', //TODO
 	'Send':'Trametter',
+	'Send another report':'Send another report', //TODO
 	'Send feedback':'Rapportar il problem',
 	'Sending feedback....':'Rapportar il problem....',
 	'Sending your email...':'Sending your email...', //TODO
@@ -208,8 +240,11 @@ OpenLayers.Lang.rm= {
 	'Style':'Stil',
 	'Subject':'Object',
 	'Success':'Rapport tramess cun success',
+	'Summary of your report':'Summary of your report', //TODO
 	'Swiss Coordinate':'CH03',
 	'Swissnames':'Swissnames',
+	'Tanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.':'Tanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.', //TODO
+	'Thanks':'Thanks', //TODO
 	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
 	'The following URL will be transferred:':'Trametter Link:',
 	'The permalink you use contains reference to third party data. Would you load these data ?':'Dieser Permalink zeigt möglicherweise auf Daten eines Drittanbieters. Wollen Sie diese Daten dennoch laden?',
@@ -217,6 +252,7 @@ OpenLayers.Lang.rm= {
 	'Third party data warning':'Warnung- Diese Daten kommen von einem Drittanbieter',
 	'Title':'Titel',
 	'To':'E-mail adressat (obligatoric)',
+	'Transmission Failed':'Transmission Failed', //TODO
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambient, biologia e geologia',
 	'Umweltüberwachung':'Monitoring da l\'ambient',
@@ -225,18 +261,24 @@ OpenLayers.Lang.rm= {
 	'WGS 84':'WGS 84',
 	'Warning Internet Explorer 6':'Avertiment: Internet Explorer 6.0',
 	'Warning screen resolution':'Avertiment: dissoluziun dal monitur',
+	'We have been unable to receive your mesage due to transmission errors':'We have been unable to receive your mesage due to transmission errors', //TODO
 	'We recommend to upgrade to a newer release.':'Nus recumandain da duvrar ina versiun pli nova.',
+	'What problem with the map do you want to report?':'What problem with the map do you want to report?', //TODO
 	'WmsBrowser':'Importar WMS',
 	'WmsBrowserWindow':'Agiuntar in servetsch da WMS',
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
+	'Your browser or device does not support file transfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Your browser or device does not support file transfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.', //TODO
+	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Your data will exclusively be used for our internal production and will not be forwarded to others.', //TODO
+	'Your description exceeeds the maximum permitted length.':'Your description exceeeds the maximum permitted length.', //TODO
 	'Your email':'Voss e-mail',
 	'Your email (optional)':'Voss e-mail (facultativ)',
 	'Your email was sent successfully!':'Ihre E-Mail wurde erfolgreich abgeschickt!',
 	'Your email:':'Vus emagl:',
 	'Your feedback about current map extent':'Rapport davart l\'extract actual da la charta',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Rapport tramess cun success',
+	'Your report was successfully posted':'Your report was successfully posted', //TODO
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
 	'Zoom to the max extent':'Vesair tut la Svizra',
 	'about that layer':'Davart da data teschernida',
@@ -471,6 +513,7 @@ OpenLayers.Lang.rm= {
 	'next':'Enavant',
 	'no title':'Text',
 	'noText':'Na',
+	'none':'none',
 	'olive':'Olive',
 	'orange':'oransch',
 	'permalink action':'Integrar la charta',
