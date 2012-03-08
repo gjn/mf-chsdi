@@ -240,7 +240,7 @@ msgid "alexandria"
 msgstr "Indicazioni bibliografiche"
 
 msgid "anzahlspuren"
-msgstr "Nombre de voies"
+msgstr "Numero corsie"
 
 msgid "app title"
 msgstr "map.geo.admin.ch"
@@ -729,10 +729,10 @@ msgid "report problem"
 msgstr "Segnala un problema"
 
 msgid "richtungsgetrennt"
-msgstr "Directions séparées"
+msgstr "A carregiate separate"
 
 msgid "routentypid"
-msgstr "Genre d'itinéraires pour convois exceptionnels"
+msgstr "ID tipo di percorso per trasporti eccesionali"
 
 msgid "rss title"
 msgstr "RSS"
@@ -780,7 +780,7 @@ msgid "strasse"
 msgstr "Rue"
 
 msgid "strassentyp"
-msgstr "Genre d'itinéraire"
+msgstr "Tipo di strada"
 
 msgid "strecke"
 msgstr "tracciato"
