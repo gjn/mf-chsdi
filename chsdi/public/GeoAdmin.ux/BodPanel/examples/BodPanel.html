@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -23,6 +24,8 @@
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/Reorderer.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarDroppable.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarReorderer.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+
     <script type="text/javascript" src="../../GeoAdmin.js"></script>
 
 
@@ -30,13 +33,14 @@
     <script type="text/javascript" src="../lib/BodDetailPanel.js"></script>
     <script type="text/javascript" src="../lib/BodGrid.js"></script>
     <script type="text/javascript" src="../lib/BodPanel.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/i18n/en.js"></script>
 
 </head>
 <body>
 
 <script type="text/javascript">
     Ext.onReady(function() {
-        new GeoAdmin.BodPanel({renderTo:bodPanel_div, width:1200});
+        new GeoAdmin.BodPanel({renderTo:'bodPanel_div', width:1200});
     });
 </script>
 <div id="bodPanel_div"></div>

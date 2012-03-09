@@ -1,3 +1,12 @@
+/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+
+/**
+ * @requires Ext/examples/ux/ux-all.js
+ * @requires Ext/examples/ux/Reorderer.js
+ * @requires Ext/examples/ux/ToolbarReorderer.js
+ * @requires Ext/examples/ux/ToolbarDroppable.js
+ */
+
 Ext.namespace('GeoAdmin');
 
 GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
@@ -22,7 +31,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 autoAbort: true
             }),
             root: 'results',
-            fields: ['tech_layer_name', 'abstract', 'datenstand', 'url_portale', 'geobasisdaten_num', 'wms_url', 'geoadmin_inspire_group', 'georeferenzdaten_bool', 'url_download', 'geocat', 'geobasisdaten_tech_number', 'rechtsgrundlage', 'datenherr', 'geoadmin_inspire_theme', 'projekte', 'bezeichnung_geobasisdaten_katalog', 'zustaendig', 'inspire_num', 'inspire_name_public', 'oereb_bool', 'geobasisdaten_sammlung_bundesrecht_bezeichnung', 'geoadmin_kurz_bez', 'geoadmin_bezeichnung']
+            fields: ['tech_layer_name', 'abstract', 'datenstand', 'url_portale', 'geobasisdaten_num', 'wms_url', 'geoadmin_inspire_group', 'georeferenzdaten_bool', 'url_download', 'geocat', 'geobasisdaten_tech_number', 'rechtsgrundlage', 'geoadmin_inspire_theme', 'projekte', 'bezeichnung_geobasisdaten_katalog', 'zustaendige_stelle', 'fachstelle_bund', 'inspire_num', 'inspire_name_public', 'oereb_bool', 'download_bool', 'geobasisdaten_sammlung_bundesrecht_bezeichnung', 'geoadmin_kurz_bez', 'geoadmin_bezeichnung', 'zugang', 'ausser_kraft_bool', 'minimalmodell', 'ansprechperson']
         });
 
         bodStore.load();
@@ -138,11 +147,6 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 },
                 {
                     type: 'string',
-                    dataIndex: 'datenherr',
-                    disabled: false
-                },
-                {
-                    type: 'string',
                     dataIndex: 'geoadmin_inspire_theme',
                     disabled: false
                 },
@@ -158,7 +162,12 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 },
                 {
                     type: 'string',
-                    dataIndex: 'zustaendig',
+                    dataIndex: 'zustaendige_stelle',
+                    disabled: false
+                },
+                {
+                    type: 'string',
+                    dataIndex: 'fachstelle_bund',
                     disabled: false
                 },
                 {
@@ -177,6 +186,11 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                     disabled: false
                 },
                 {
+                    type: 'boolean',
+                    dataIndex: 'download_bool',
+                    disabled: false
+                },
+                {
                     type: 'string',
                     dataIndex: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
                     disabled: false
@@ -189,6 +203,26 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 {
                     type: 'string',
                     dataIndex: 'geoadmin_bezeichnung',
+                    disabled: false
+                },
+                {
+                    type: 'string',
+                    dataIndex: 'zugang',
+                    disabled: false
+                },
+                {
+                    type: 'boolean',
+                    dataIndex: 'ausser_kraft_bool',
+                    disabled: false
+                },
+                {
+                    type: 'string',
+                    dataIndex: 'minimalmodell',
+                    disabled: false
+                },
+                {
+                    type: 'string',
+                    dataIndex: 'ansprechperson',
                     disabled: false
                 }
             ]
@@ -207,6 +241,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                     }
                 });
             },
+
             canDrop: function(dragSource, event, sampleData) {
                 var sorters = getSorters(),
                     column = this.getColumnFromDragDrop(sampleData);
@@ -222,14 +257,38 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             getColumnFromDragDrop: function(sampleData) {
 
                 var index = sampleData.header.cellIndex,
-                colModel = bodGridColModel,
-                column = bodGridColModel.getColumnById(bodGridColModel.getColumnId(index));
+                    colModel = bodGridColModel,
+                    column = bodGridColModel.getColumnById(bodGridColModel.getColumnId(index+1));
                 return column;
             }
         });
 
+        Ext.override(Ext.grid.ColumnModel, {
+            moveColumn: function(oldIndex, newIndex) {
+                if (this.isMovable(oldIndex)) {
+                    var c = this.config[oldIndex];
+                    this.config.splice(oldIndex, 1);
+                    this.config.splice(newIndex, 0, c);
+                    this.dataMap = null;
+                    this.fireEvent("columnmoved", this, oldIndex, newIndex);
+                }
+            },
+
+            isMovable: function(col) {
+                if (typeof this.config[col].movable == "undefined") {
+                    return this.enableColumnMove || true;
+                }
+                return this.config[col].movable;
+            }
+        });
+
         var bodGridColModel = new Ext.ux.grid.LockingColumnModel([
-            new Ext.grid.RowNumberer(),
+            new Ext.grid.RowNumberer({movable: false,
+                locked: true,
+                width: 25,
+                id: 'rownumberercolumn'
+                //css: 'padding: 0px 0px 3px 5px;'
+            }),
             {
                 dataIndex: 'tech_layer_name',
                 id: 'tech_layer_name',
@@ -264,7 +323,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150
+                width: 150,
+                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                }
             },
             {
                 dataIndex: 'geobasisdaten_num',
@@ -282,7 +344,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150
+                width: 150,
+                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                }
             },
             {
                 dataIndex: 'geoadmin_inspire_group',
@@ -300,7 +365,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150
+                width: 150,
+                renderer:function(value) {
+                    return(value == true) ? 'X' : ''
+                }
             },
             {
                 dataIndex: 'url_download',
@@ -309,7 +377,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
+                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                }
             },
             {
                 dataIndex: 'geocat',
@@ -333,15 +404,6 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 dataIndex: 'rechtsgrundlage',
                 id: 'rechtsgrundlage',
                 header: 'rechtsgrundlage',
-                sortable: true,
-                filterable: true,
-                type: 'string',
-                width: 150
-            },
-            {
-                dataIndex: 'datenherr',
-                id: 'datenherr',
-                header: 'datenherr',
                 sortable: true,
                 filterable: true,
                 type: 'string',
@@ -375,9 +437,18 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 width: 150
             },
             {
-                dataIndex: 'zustaendig',
-                id: 'zustaendig',
-                header: 'zustaendig',
+                dataIndex: 'zustaendige_stelle',
+                id: 'zustaendige_stelle',
+                header: 'zustaendige_stelle',
+                sortable: true,
+                filterable: true,
+                type: 'string',
+                width: 150
+            },
+            {
+                dataIndex: 'fachstelle_bund',
+                id: 'fachstelle_bund',
+                header: 'fachstelle_bund',
                 sortable: true,
                 filterable: true,
                 type: 'string',
@@ -408,7 +479,22 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 sortable: true,
                 filterable: true,
                 type: 'boolean',
-                width: 150
+                width: 150,
+                renderer:function(value) {
+                    return(value == true) ? 'X' : ''
+                }
+            },
+            {
+                dataIndex: 'download_bool',
+                id: 'download_bool',
+                header: 'download_bool',
+                sortable: true,
+                filterable: true,
+                type: 'boolean',
+                width: 150,
+                renderer:function(value) {
+                    return(value == true) ? 'X' : ''
+                }
             },
             {
                 dataIndex: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
@@ -432,6 +518,45 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 dataIndex: 'geoadmin_bezeichnung',
                 id: 'geoadmin_bezeichnung',
                 header: 'geoadmin_bezeichnung',
+                sortable: true,
+                filterable: true,
+                type: 'string',
+                width: 150
+            },
+            {
+                dataIndex: 'zugang',
+                id: 'zugang',
+                header: 'zugang',
+                sortable: true,
+                filterable: true,
+                type: 'string',
+                width: 150
+            },
+            {
+                dataIndex: 'ausser_kraft_bool',
+                id: 'ausser_kraft_bool',
+                header: 'ausser_kraft_bool',
+                sortable: true,
+                filterable: true,
+                type: 'boolean',
+                width: 150,
+                renderer:function(value) {
+                    return(value == true) ? 'X' : ''
+                }
+            },
+            {
+                dataIndex: 'minimalmodell',
+                id: 'minimalmodell',
+                header: 'minimalmodell',
+                sortable: true,
+                filterable: true,
+                type: 'string',
+                width: 150
+            },
+            {
+                dataIndex: 'ansprechperson',
+                id: 'ansprechperson',
+                header: 'ansprechperson',
                 sortable: true,
                 filterable: true,
                 type: 'string',
@@ -593,6 +718,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             items: ['Sorting order:', '-'
             ],
             plugins: [reorderer, droppable],
+            //plugins: [droppable],
             listeners: {
                 scope: this,
                 reordered: function(button) {
@@ -611,7 +737,15 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                         text: 'Export',
                         grid: this,
                         handler: function(b, e) {
-                            document.location = 'data:application/vnd.ms-excel;base64,' + Base64.encode(b.grid.getExcelXml());
+                            if (!Ext.isIE) {
+                                document.location = 'data:application/vnd.ms-excel;base64,' + Base64.encode(b.grid.getExcelXml())
+                            } else {
+                                Ext.Msg.show({
+                                    title: 'Warning',
+                                    msg: 'Export does not work in Internet Explorer. Please use another browser (like firefox)',
+                                    icon: Ext.MessageBox.WARNING
+                                });
+                            }
                         }
                     }
                 ]
@@ -639,7 +773,6 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
 
 
         }, config);
-
 
         function doSort() {
             bodStore.sort(getSorters(), "ASC");
@@ -827,9 +960,9 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                     var v = r[cm.getDataIndex(j)];
                     t += '<ss:Cell ss:StyleID="' + cellClass + cellTypeClass[k] + '"><ss:Data ss:Type="' + cellType[k] + '">';
                     if (cellType[k] == 'DateTime') {
-                        t += '<![CDATA['+v.format('Y-m-d')+']]>';       // <![CDATA[ ... ]] is needed to tell the xml parser to ignore the cell text
+                        t += '<![CDATA[' + v.format('Y-m-d') + ']]>';       // <![CDATA[ ... ]] is needed to tell the xml parser to ignore the cell text
                     } else {
-                        t += '<![CDATA['+v+']]>'
+                        t += '<![CDATA[' + v + ']]>'
 
                     }
                     t += '</ss:Data></ss:Cell>';
