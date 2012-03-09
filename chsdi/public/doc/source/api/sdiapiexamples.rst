@@ -20,5 +20,4 @@ API Examples
     routing
     wms
     meteoswiss
-    profile
     swissimagelevel27
