@@ -31,7 +31,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 autoAbort: true
             }),
             root: 'results',
-            fields: ['tech_layer_name', 'abstract', 'datenstand', 'url_portale', 'geobasisdaten_num', 'wms_url', 'geoadmin_inspire_group', 'georeferenzdaten_bool', 'url_download', 'geocat', 'geobasisdaten_tech_number', 'rechtsgrundlage', 'geoadmin_inspire_theme', 'projekte', 'bezeichnung_geobasisdaten_katalog', 'zustaendige_stelle', 'fachstelle_bund', 'inspire_num', 'inspire_name_public', 'oereb_bool', 'download_bool', 'geobasisdaten_sammlung_bundesrecht_bezeichnung', 'geoadmin_kurz_bez', 'geoadmin_bezeichnung', 'zugang', 'ausser_kraft_bool', 'minimalmodell', 'ansprechperson']
+            fields: ['tech_layer_name', 'abstract', 'datenstand', 'url_portale', 'geobasisdaten_num', 'wms_url', 'geoadmin_inspire_group', 'georeferenzdaten_bool', 'url_download', 'geocat', 'geobasisdaten_tech_number', 'rechtsgrundlage', 'geoadmin_inspire_theme', 'projekte', 'bezeichnung_geobasisdaten_katalog', 'zustaendige_stelle', 'fachstelle_bund', 'inspire_num', 'inspire_name_public', 'oereb_bool', 'download_bool', 'geobasisdaten_sammlung_bundesrecht_bezeichnung', 'geoadmin_kurz_bez', 'geoadmin_bezeichnung', 'zugang', 'ausser_kraft_bool', 'termin_minimalmodell', 'ansprechperson']
         });
 
         bodStore.load();
@@ -217,7 +217,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 },
                 {
                     type: 'string',
-                    dataIndex: 'minimalmodell',
+                    dataIndex: 'termin_minimalmodell',
                     disabled: false
                 },
                 {
@@ -545,9 +545,9 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 }
             },
             {
-                dataIndex: 'minimalmodell',
-                id: 'minimalmodell',
-                header: 'minimalmodell',
+                dataIndex: 'termin_minimalmodell',
+                id: 'termin_minimalmodell',
+                header: 'termin_minimalmodell',
                 sortable: true,
                 filterable: true,
                 type: 'string',

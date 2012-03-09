@@ -49,7 +49,7 @@ GeoAdmin.BodDetailPanel = Ext.extend(Ext.Panel, {
                 OpenLayers.i18n('geoadmin_bezeichnung:') + ' {geoadmin_bezeichnung}<br/>',
                 OpenLayers.i18n('zugang:') + ' {zugang}<br/>',
                 OpenLayers.i18n('ausser_kraft_bool:') + ' {ausser_kraft_bool}<br/>',
-                OpenLayers.i18n('minimalmodell:') + ' {minimalmodell}<br/>',
+                OpenLayers.i18n('termin_minimalmodell:') + ' {termin_minimalmodell}<br/>',
                 OpenLayers.i18n('ansprechperson:') + ' {ansprechperson}<br/>'
             ]),
             html: OpenLayers.i18n('plselectadd'),
