@@ -15,3 +15,7 @@
 .legend-button .x-btn-tl, .legend-button .x-btn-tr, .legend-button .x-btn-tc, .legend-button .x-btn-ml, .legend-button .x-btn-mr, .legend-button .x-btn-mc, .legend-button .x-btn-bl, .legend-button .x-btn-br, .legend-button .x-btn-bc {
   background-image: none !important;
 }
+
+.ext-gecko .x-window-body .x-form-item { 
+    overflow: visible;
+}
