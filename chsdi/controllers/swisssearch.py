@@ -88,7 +88,7 @@ class SwisssearchController(BaseController):
         # For "awk.ch", see email from lttsb from 18.nov. 2011
         # cadastre.ch see ticket #3695
         referer = request.headers.get('referer', '')
-        if referer.find( 'admin.ch') < 0 and referer.find('awk.ch') and referer.find('cadastre.ch'):
+        if referer.find( 'admin.ch') < 0 and referer.find('awk.ch') < 0 and referer.find('cadastre.ch') < 0:
             if not self.no_geom:
                self.origins = [o for o in self.origins if o != 'address']
         
