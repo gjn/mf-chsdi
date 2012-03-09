@@ -44,3 +44,14 @@
 .gx-featureediting-export {
   background-image: url("../images/page_white_go.png") !important;
 }
+
+.redlining-panel .x-btn-over .x-btn-mc, .redlining-panel .x-btn-over .x-btn-ml, .redlining-panel .x-btn-over .x-btn-mr, 
+.redlining-panel .x-btn-over .x-btn-bc, .redlining-panel .x-btn-over .x-btn-bl, .redlining-panel .x-btn-over .x-btn-br,
+.redlining-panel .x-btn-over .x-btn-tc, .redlining-panel .x-btn-over .x-btn-tl, .redlining-panel .x-btn-over .x-btn-tr {
+    background-image: none !important;
+    background-color: #FFFFFF;
+} 
+
+.redlining-panel .x-btn-pressed .x-btn-text {
+    color: #FF0000;
+}
