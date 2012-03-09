@@ -174,7 +174,7 @@ GeoExt.ux.FeatureEditingControler.prototype.initDrawControls = function(layer) {
                 map: this.map,
                 // button options
                 toggleGroup: this.toggleGroup,
-                allowDepress: false,
+                allowDepress: true,
                 pressed: false,
                 tooltip: tooltip,
                 // check item options
