@@ -260,6 +260,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambiente, biologia e geologia',
 	'Umweltüberwachung':'Impianti di monitoraggio ambientale',
+	'Use current location':'Usa la posizione corrente',
 	'Use the ':'Voligate usare il ',
 	'Verkehrsnetze':'Reti di trasporto',
 	'WGS 84':'WGS 84',

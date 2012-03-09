@@ -256,6 +256,7 @@ OpenLayers.Lang.rm= {
 	'URL':'URL',
 	'Umwelt, Biologie und Geologie':'Ambient, biologia e geologia',
 	'Umweltüberwachung':'Monitoring da l\'ambient',
+	'Use current location':'Utilisar posiziun actual',
 	'Use the ':'Utilisar servetsch da ',
 	'Verkehrsnetze':'Raits da traffic',
 	'WGS 84':'WGS 84',

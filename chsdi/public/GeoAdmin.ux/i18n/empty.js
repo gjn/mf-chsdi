@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Use current location': "",
     'Alert.print.profile': "",
     'Distance': "",
     'Measure.MeasureProfil': "",
