@@ -7,6 +7,7 @@ available to Controllers. This module is available to templates as 'h'.
 from webhelpers.html import escape, HTML, literal, url_escape
 from webhelpers.html.tags import *
 import math
+from pylons import config
 
 from urllib import quote
 
@@ -62,4 +63,15 @@ def graph_range(min, max):
     while tick < 5:
         tick = tick * 2
     return [the_min, the_max, int(tick + 0.5)]
+
+
+def versioned(path):
+    version = config.get('api_version')
+    if version is not None:
+        if path.startswith('/'):
+            return '/' + version + path
+        else:
+            return version + '/' + path
+    else:
+        return path
 

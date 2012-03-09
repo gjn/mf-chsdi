@@ -19,6 +19,7 @@ port = 5000
 use = config:production.ini
 static_files = true
 set debug = true
+api_version = ${api-version}
 
 # Logging configuration
 [loggers]
