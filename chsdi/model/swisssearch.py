@@ -20,6 +20,7 @@ class SwissSearch(Base, Queryable):
     __mapper_args__ = {'exclude_properties': ['bgdi_modified', 'bgdi_created', 'bgdi_modified_by', 'bgdi_created_by']}
     
     id = Column('gid', Integer, primary_key=True)
+    rank = Column('rank', Integer)
     the_geom = Column('the_geom', Geometry)
     geom_point = Column('the_geom_point', Geometry)
     geom_poly = Column('the_geom_poly', Geometry)
@@ -38,34 +39,34 @@ class SwissSearch(Base, Queryable):
 
     #@property
     def json(self, rawjson=False, nogeom=False):
-            o = {'service': '', 'rank': -1, 'id': self.id, 'label': '',
+            o = {'service': '', 'rank': self.rank, 'id': self.id, 'label': '',
                     'bbox': self.bbox if not nogeom else None, 'objectorig': self.objectorig, 'name': self.name}
             if self.origin == 'zipcode':
                 o.update({'service': 'postalcodes',
-                          'rank': 1,
+                          'rank': self.rank,
                           'name': self.name,
                           'nr': self.plz,
                           'label': "%s <b>%s - %s (%s)</b>"%(_('plz'), self.plz, self.ort_27, self.kanton)})
             elif self.origin == 'sn25':
                 o.update({'service': 'swissnames',
-                          'rank': 5,
+                          'rank': self.rank,
                           'label': "<b>%s</b> (%s) - %s"%(self.name, self.kanton, self.gemname)})
             elif self.origin == 'gg25':
                 o.update({'service': 'cities',
-                          'rank': 4,
+                          'rank': self.rank,
                           'name': self.gemname,
                           'nr': self.id,
                           'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
             elif self.origin == 'kantone':
                 o.update({'service': 'cantons',
-                          'rank': 3,
+                          'rank': self.rank,
                           'name': self.name,
                           'code': self.kanton,
                           'nr': self.id,
                           'label': "%s <b>%s</b>"%(_('ct'), self.name)})
             elif self.origin == 'district':
                 o.update({'service': 'districts',
-                          'rank': 2,
+                          'rank': self.rank,
                           'name': self.name,
                           'label': "%s <b>%s</b>"%( _('district'), self.name)})
             elif self.origin == 'address':
@@ -74,7 +75,7 @@ class SwissSearch(Base, Queryable):
                 else:
                    address_nr = self.deinr
                 o.update({'service': 'address',
-                          'rank': 10,
+                          'rank': self.rank,
                           'egid': self.egid,
                           'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.ort_27)})
             

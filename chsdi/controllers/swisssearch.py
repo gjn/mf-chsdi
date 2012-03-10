@@ -69,7 +69,7 @@ class SwisssearchController(BaseController):
             ftsOrderBy = "similarity(search_name,'remove_accents(%(query)s)') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
             terms = q.split()
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
-            tsvector = 'tsvector_search_name'
+            tsvector = 'to_tsvector(\'english\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
 
@@ -108,7 +108,6 @@ class SwisssearchController(BaseController):
                properties = feature.attributes
                #Remove unneeded properties
                del properties['search_name']
-               del properties['tsvector_search_name']
                del properties['the_geom_real']
                features.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
                                        geometry=feature.geometry if not self.no_geom else None, 
