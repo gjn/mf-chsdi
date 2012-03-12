@@ -314,8 +314,440 @@ msgstr "Nummer Unterregion"
 msgid "blind warning"
 msgstr "This page is a geographic application and is not optimized for blind persons."
 
+msgid "ch.are.agglomerationen_isolierte_staedte-2000"
+msgstr "Agglomeration and isolated cities"
+
+msgid "ch.are.alpenkonvention"
+msgstr "Convention of the Alps"
+
+msgid "ch.are.gemeindetyp-1990-9klassen"
+msgstr "Typology of municipalities ARE"
+
+msgid "ch.astra.ausnahmetransportrouten"
+msgstr "Cant. routes for exceptional loads"
+
+msgid "ch.astra.ivs-gelaendekarte"
+msgstr "Inventory historical routes terrain map"
+
+msgid "ch.astra.ivs-nat"
+msgstr "Inventory historical routes national"
+
+msgid "ch.astra.ivs-reg_loc"
+msgstr "Inventory historical routes national & regional"
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
+msgstr "Traffic counting locations local"
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
+msgstr "Traffic counting locations principal"
+
+msgid "ch.babs.kulturgueter"
+msgstr "Protection of cultural property inventory"
+
+msgid "ch.bafu.bundesinventare-amphibien"
+msgstr "Amphibian spawning area"
+
+msgid "ch.bafu.bundesinventare-auen"
+msgstr "Wetlands"
+
+msgid "ch.bafu.bundesinventare-bln"
+msgstr "BLN (Federal Inventory)"
+
+msgid "ch.bafu.bundesinventare-flachmoore"
+msgstr "Fens"
+
+msgid "ch.bafu.bundesinventare-hochmoore"
+msgstr "Raised bogs"
+
+msgid "ch.bafu.bundesinventare-jagdbanngebiete"
+msgstr "No-hunting area"
+
+msgid "ch.bafu.bundesinventare-moorlandschaften"
+msgstr "Moor landscapes"
+
+msgid "ch.bafu.bundesinventare-vogelreservate"
+msgstr "Water and migrant bird game reserves"
+
+msgid "ch.bafu.fauna-steinbockkolonien"
+msgstr "Ibex colonies"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen"
+msgstr "Earth quake risk zones"
+
+msgid "ch.bafu.holznutzung"
+msgstr "Use of wood and mortality (LFI)"
+
+msgid "ch.bafu.holzvorrat"
+msgstr "Stock of wood  (LFI)"
+
+msgid "ch.bafu.holzzuwachs"
+msgstr "Growth of the wood volume (LFI)"
+
+msgid "ch.bafu.hydrologie-hydromessstationen"
+msgstr "Hydrological measurement stations"
+
+msgid "ch.bafu.laerm-bahnlaerm_nacht"
+msgstr "Railway noise (Lr_night)"
+
+msgid "ch.bafu.laerm-bahnlaerm_tag"
+msgstr "Railway noise (Lr_day)"
+
+msgid "ch.bafu.laerm-strassenlaerm_nacht"
+msgstr "Road noise (Lr_night)"
+
+msgid "ch.bafu.laerm-strassenlaerm_tag"
+msgstr "Road noise (Lr_day)"
+
+msgid "ch.bafu.nabelstationen"
+msgstr "Air quality: NABEL stations"
+
+msgid "ch.bafu.permafrost"
+msgstr "Permafrost indication map"
+
+msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
+msgstr "REN extensive agricultural area"
+
+msgid "ch.bafu.ren-feuchtgebiete"
+msgstr "REN humid areas"
+
+msgid "ch.bafu.ren-fliessgewaesser_seen"
+msgstr "REN aquatic zones"
+
+msgid "ch.bafu.ren-trockenstandorte"
+msgstr "REN dry areas"
+
+msgid "ch.bafu.ren-wald"
+msgstr "REN forest zones"
+
+msgid "ch.bafu.ren-wald_ueber_1000_meter"
+msgstr "REN forest zones>1000m"
+
+msgid "ch.bafu.ren-wald_unter_1000_meter"
+msgstr "REN forest zones<1000m"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
+msgstr "Parcs"
+
+msgid "ch.bafu.schutzgebiete-ramsar"
+msgstr "Ramsar"
+
+msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
+msgstr "National parc"
+
+msgid "ch.bafu.schutzgebiete-wildruhezonen"
+msgstr "Wildlife sanctuary zones"
+
+msgid "ch.bafu.showme-gemeinden_hochwasser"
+msgstr "ShowMe municipalities: Flood"
+
+msgid "ch.bafu.showme-gemeinden_lawinen"
+msgstr "ShowMe municipalities: Avalanches"
+
+msgid "ch.bafu.showme-gemeinden_rutschungen"
+msgstr "ShowMe municipalities: Landslide"
+
+msgid "ch.bafu.showme-gemeinden_sturzprozesse"
+msgstr "ShowMe municipalities: Rockfall"
+
+msgid "ch.bafu.showme-kantone_hochwasser"
+msgstr "ShowMe cantons: Flood"
+
+msgid "ch.bafu.showme-kantone_lawinen"
+msgstr "ShowMe cantons: Avalanches"
+
+msgid "ch.bafu.showme-kantone_rutschungen"
+msgstr "ShowMe cantons: Landslide"
+
+msgid "ch.bafu.showme-kantone_sturzprozesse"
+msgstr "ShowMe cantons: Rockfall"
+
+msgid "ch.bafu.swissprtr"
+msgstr "Pollutant Releases (SwissPRTR)"
+
+msgid "ch.bafu.unesco-weltnaturerbe"
+msgstr "UNESCO World natural heritage"
+
+msgid "ch.bafu.wasser-entnahme"
+msgstr "Withdrawal of water"
+
+msgid "ch.bafu.wasser-leitungen"
+msgstr "Inlet of water"
+
+msgid "ch.bafu.wasser-rueckgabe"
+msgstr "Water restitution"
+
+msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
+msgstr "Wildlife sanctuary zones - tracks"
+
+msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
+msgstr "Wildlife sanctuary zones - no hunting areas"
+
+msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
+msgstr "Federal Inventory ISOS"
+
 msgid "ch.bak.isos.warning"
 msgstr "This Website is updated twice a year. If you want to use a site record in a legal procedure, please contact the Federal office of culture (isos@bak.admin.ch). © Data:  FOC, Bern"
+
+msgid "ch.bak.isos.warning"
+msgstr "This Website is updated twice a year. If you want to use a site record in a legal procedure, please contact the Federal office of culture (isos@bak.admin.ch). © Data:  FOC, Bern"
+
+msgid "ch.bazl.luftfahrtkarten-icao"
+msgstr "Aeronautical Chart ICAO"
+
+msgid "ch.bazl.segelflugkarte"
+msgstr "Glider Chart"
+
+msgid "ch.bfe.abgeltung-wasserkraftnutzung"
+msgstr "Abandonment of hydropower"
+
+msgid "ch.bfe.energieforschung"
+msgstr "Energy research"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen"
+msgstr "Hydropower statistic"
+
+msgid "ch.bfe.stauanlagen-bundesaufsicht"
+msgstr "Dam"
+
+msgid "ch.bfs.arealstatistik-1985"
+msgstr "Area statistics 1979/1985"
+
+msgid "ch.bfs.arealstatistik-1997"
+msgstr "Area statistics 1992/1997"
+
+msgid "ch.bfs.arealstatistik-hintergrund"
+msgstr "Simplified land occupancy"
+
+msgid "ch.bfs.arealstatistik-waldmischungsgrad"
+msgstr "Mixture of forests 1990/1992"
+
+msgid "ch.bfs.gebaeude_wohnungs_register"
+msgstr "Register of Buildings and Dwellings"
+
+msgid "ch.blw.erosion"
+msgstr "Risk of erosion"
+
+msgid "ch.blw.hang_steillagen"
+msgstr "hillside and steep slopes situation"
+
+msgid "ch.blw.landwirtschaftliche-zonengrenzen"
+msgstr "Agricultural zones boundaries"
+
+msgid "ch.blw.steil_terrassenlagen_rebbau"
+msgstr "Terrain viticulture in steep areas and terraces"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch"
+msgstr "PDO meat products"
+
+msgid "ch.blw.ursprungsbezeichnungen-kaese"
+msgstr "PDO cheese"
+
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen"
+msgstr "PDO plant products"
+
+msgid "ch.blw.ursprungsbezeichnungen-spirituosen"
+msgstr "PDO spirits"
+
+msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
+msgstr "Plans for Emergency protection"
+
+msgid "ch.swisstopo-vd.geometa-los"
+msgstr "Works in progress"
+
+msgid "ch.swisstopo-vd.geometa-standav"
+msgstr "Cadastral survey status"
+
+msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
+msgstr "ZIP and locations"
+
+msgid "ch.swisstopo-vd.spannungsarme-gebiete"
+msgstr "Low distortion area"
+
+msgid "ch.swisstopo.fixpunkte-agnes"
+msgstr "AGNES"
+
+msgid "ch.swisstopo.fixpunkte-hoehe"
+msgstr "Vertical control point"
+
+msgid "ch.swisstopo.fixpunkte-hoehe"
+msgstr "Vertical control point"
+
+msgid "ch.swisstopo.fixpunkte-lage"
+msgstr "Horizontal control points"
+
+msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
+msgstr "Last glacial maximum"
+
+msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
+msgstr "Bouguer-Anomalies"
+
+msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
+msgstr "Isostatic anomalies"
+
+msgid "ch.swisstopo.geologie-geologische_karte"
+msgstr "Geology 1:500 000"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas"
+msgstr "Geological Atlas 1:25 000"
+
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
+msgstr "Aeromagnetic"
+
+msgid "ch.swisstopo.geologie-geophysik-deklination"
+msgstr "Declination"
+
+msgid "ch.swisstopo.geologie-geophysik-geothermie"
+msgstr "Geothermal energy"
+
+msgid "ch.swisstopo.geologie-geophysik-inklination"
+msgstr "Inclination"
+
+msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
+msgstr "Magnetic field strength"
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-genese"
+msgstr "Rocks origin"
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
+msgstr "Classification of rocks"
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
+msgstr "Main lithological groups"
+
+msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
+msgstr "Groundwater resources"
+
+msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
+msgstr "Groundwater vulnerability"
+
+msgid "ch.swisstopo.geologie-tektonische_karte"
+msgstr "Tectonic 1:500 000"
+
+msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
+msgstr "District boundaries"
+
+msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
+msgstr "Municipal boundaries"
+
+msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
+msgstr "Cantonal boundaries"
+
+msgid "ch.swisstopo.gg25-land-flaeche.fill"
+msgstr "National boundaries"
+
+msgid "ch.swisstopo.hiks-dufour"
+msgstr "Dufour Map"
+
+msgid "ch.swisstopo.hiks-siegfried"
+msgstr "Siegfried Map"
+
+msgid "ch.swisstopo.images-swissimage"
+msgstr "Aerial imagery"
+
+msgid "ch.swisstopo.images-swissimage.metadata"
+msgstr "Tiling SWISSIMAGE"
+
+msgid "ch.swisstopo.pixelkarte-farbe"
+msgstr "Color map"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
+msgstr "National Map 1:100'000"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
+msgstr "National Map 1:200'000"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk25.noscale"
+msgstr "National Map 1:25'000"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
+msgstr "National Map 1:50'000"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
+msgstr "National Map 1:500'000"
+
+msgid "ch.swisstopo.pixelkarte-grau"
+msgstr "Grey map"
+
+msgid "ch.swisstopo.pixelkarte-pk100.metadata"
+msgstr "Division National Map 1:100'000"
+
+msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
+msgstr "Division National Map 1:1'000'000"
+
+msgid "ch.swisstopo.pixelkarte-pk200.metadata"
+msgstr "Division National Map 1:200'000"
+
+msgid "ch.swisstopo.pixelkarte-pk25.metadata"
+msgstr "Division National Map 1:25'000"
+
+msgid "ch.swisstopo.pixelkarte-pk50.metadata"
+msgstr "Division National Map 1:50'000"
+
+msgid "ch.swisstopo.pixelkarte-pk500.metadata"
+msgstr "Division National Map 1:500'000"
+
+msgid "ch.swisstopo.swissalti3d-reliefschattierung"
+msgstr "swissALTI3D Hillshade"
+
+msgid "ch.swisstopo.swissimage"
+msgstr "Aerial imagery"
+
+msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
+msgstr "National parks VECTOR200"
+
+msgid "ch.swisstopo.vec200-building"
+msgstr "Building generalized VECTOR200"
+
+msgid "ch.swisstopo.vec200-hydrography"
+msgstr "Hydrology VECTOR200"
+
+msgid "ch.swisstopo.vec200-landcover"
+msgstr "Land cover VECTOR200"
+
+msgid "ch.swisstopo.vec200-landcover-wald"
+msgstr "Forest area"
+
+msgid "ch.swisstopo.vec200-miscellaneous"
+msgstr "Single objects  VECTOR200"
+
+msgid "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
+msgstr "Public transportation VECTOR200"
+
+msgid "ch.swisstopo.vec200-transportation-strassennetz"
+msgstr "Road system VECTOR200"
+
+msgid "ch.swisstopo.vec25-anlagen"
+msgstr "Facilities VECTOR25"
+
+msgid "ch.swisstopo.vec25-einzelobjekte"
+msgstr "Single objetcs  VECTOR25"
+
+msgid "ch.swisstopo.vec25-eisenbahnnetz"
+msgstr "Railway network VECTOR25"
+
+msgid "ch.swisstopo.vec25-gebaeude"
+msgstr "Buildings VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz"
+msgstr "Hydrological network VECTOR25"
+
+msgid "ch.swisstopo.vec25-heckenbaeume"
+msgstr "Hedges and trees  VECTOR25"
+
+msgid "ch.swisstopo.vec25-primaerflaechen"
+msgstr "Primary surfaces VECTOR25"
+
+msgid "ch.swisstopo.vec25-strassennetz"
+msgstr "Road network  VECTOR25"
+
+msgid "ch.swisstopo.vec25-uebrigerverkehr"
+msgstr "Other traffic  VECTOR25"
+
+msgid "ch.swisstopo.vec25-wander"
+msgstr "Hiking trails  VECTOR25"
+
+msgid "ch.vbs.territorialregionen"
+msgstr "Territorial regions"
 
 msgid "city_name"
 msgstr "Name der Ortschaft"
@@ -344,8 +776,9 @@ msgstr "Copyright & Data protection"
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright"
 
+#. TODO
 msgid "district"
-msgstr "district" #: TODO
+msgstr "district"
 
 msgid "egid"
 msgstr "EGID"
@@ -806,8 +1239,17 @@ msgstr "Totholzvolumen [m3/ha]"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Fläche [ha]"
 
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
+msgstr "Fläche [ha]"
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
 msgstr "Ende Schutzverpflichtung"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
+msgstr "Ende Schutzverpflichtung"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr "Name"
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
 msgstr "Name"
@@ -815,8 +1257,17 @@ msgstr "Name"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
 msgstr "Objektnummer"
 
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
+msgstr "Objektnummer"
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
 msgstr "Umfang [m]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
+msgstr "Umfang [m]"
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
+msgstr "Beginn Schutzverpflichtung"
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Beginn Schutzverpflichtung"
@@ -824,8 +1275,17 @@ msgstr "Beginn Schutzverpflichtung"
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Description"
 
+msgid "tt_ch.bfe.energieforschung_beschreibung"
+msgstr "Description"
+
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Contact SFOE"
+
+msgid "tt_ch.bfe.energieforschung_kontaktperson"
+msgstr "Contact SFOE"
+
+msgid "tt_ch.bfe.energieforschung_projekt_nr"
+msgstr "Project no."
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Project no."
@@ -833,8 +1293,17 @@ msgstr "Project no."
 msgid "tt_ch.bfe.energieforschung_projektstatus"
 msgstr "Project state"
 
+msgid "tt_ch.bfe.energieforschung_projektstatus"
+msgstr "Project state"
+
 msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Project titel"
+
+msgid "tt_ch.bfe.energieforschung_projekttitel"
+msgstr "Project titel"
+
+msgid "tt_ch.bfe.energieforschung_schlussbericht"
+msgstr "Final report"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Final report"
@@ -842,8 +1311,17 @@ msgstr "Final report"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Beginning of operation"
 
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
+msgstr "Beginning of operation"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr "Canton"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
+msgstr "Canton"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
+msgstr "End of operation"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "End of operation"
@@ -851,8 +1329,17 @@ msgstr "End of operation"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
 msgstr "Status"
 
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgstr "Status"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
 msgstr "Type"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
+msgstr "Type"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
+msgstr "Location"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
 msgstr "Location"
@@ -860,8 +1347,17 @@ msgstr "Location"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
 msgstr "Name"
 
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
+msgstr "Name"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "WASTA-Number"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
+msgstr "WASTA-Number"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr "Kronenlänge"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
 msgstr "Kronenlänge"
@@ -869,11 +1365,23 @@ msgstr "Kronenlänge"
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
 msgstr "Kronenkote"
 
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
+msgstr "Kronenkote"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
+msgstr "Sprerrenhöhe"
+
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
 msgstr "Sprerrenhöhe"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
+msgstr "Name"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgstr "Sperrentyp"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr "Sperrentyp"
