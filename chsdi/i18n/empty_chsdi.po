@@ -957,3 +957,510 @@ msgstr ""
 msgid "No additional information for this object type"
 msgstr ""
 
+msgid "ch.swisstopo.fixpunkte-hoehe"
+msgstr ""
+
+msgid "ch.are.agglomerationen_isolierte_staedte-2000"
+msgstr ""
+
+msgid "ch.are.alpenkonvention"
+msgstr ""
+
+msgid "ch.are.gemeindetyp-1990-9klassen"
+msgstr ""
+
+msgid "ch.astra.ausnahmetransportrouten"
+msgstr ""
+
+msgid "ch.astra.ivs-gelaendekarte"
+msgstr ""
+
+msgid "ch.astra.ivs-nat"
+msgstr ""
+
+msgid "ch.astra.ivs-reg_loc"
+msgstr ""
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
+msgstr ""
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
+msgstr ""
+
+msgid "ch.babs.kulturgueter"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-amphibien"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-auen"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-bln"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-flachmoore"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-hochmoore"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-jagdbanngebiete"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-moorlandschaften"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-vogelreservate"
+msgstr ""
+
+msgid "ch.bafu.fauna-steinbockkolonien"
+msgstr ""
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen"
+msgstr ""
+
+msgid "ch.bafu.holznutzung"
+msgstr ""
+
+msgid "ch.bafu.holzvorrat"
+msgstr ""
+
+msgid "ch.bafu.holzzuwachs"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-hydromessstationen"
+msgstr ""
+
+msgid "ch.bafu.laerm-bahnlaerm_nacht"
+msgstr ""
+
+msgid "ch.bafu.laerm-bahnlaerm_tag"
+msgstr ""
+
+msgid "ch.bafu.laerm-strassenlaerm_nacht"
+msgstr ""
+
+msgid "ch.bafu.laerm-strassenlaerm_tag"
+msgstr ""
+
+msgid "ch.bafu.nabelstationen"
+msgstr ""
+
+msgid "ch.bafu.permafrost"
+msgstr ""
+
+msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
+msgstr ""
+
+msgid "ch.bafu.ren-feuchtgebiete"
+msgstr ""
+
+msgid "ch.bafu.ren-fliessgewaesser_seen"
+msgstr ""
+
+msgid "ch.bafu.ren-trockenstandorte"
+msgstr ""
+
+msgid "ch.bafu.ren-wald"
+msgstr ""
+
+msgid "ch.bafu.ren-wald_ueber_1000_meter"
+msgstr ""
+
+msgid "ch.bafu.ren-wald_unter_1000_meter"
+msgstr ""
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
+msgstr ""
+
+msgid "ch.bafu.schutzgebiete-ramsar"
+msgstr ""
+
+msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
+msgstr ""
+
+msgid "ch.bafu.schutzgebiete-wildruhezonen"
+msgstr ""
+
+msgid "ch.bafu.showme-gemeinden_hochwasser"
+msgstr ""
+
+msgid "ch.bafu.showme-gemeinden_lawinen"
+msgstr ""
+
+msgid "ch.bafu.showme-gemeinden_rutschungen"
+msgstr ""
+
+msgid "ch.bafu.showme-gemeinden_sturzprozesse"
+msgstr ""
+
+msgid "ch.bafu.showme-kantone_hochwasser"
+msgstr ""
+
+msgid "ch.bafu.showme-kantone_lawinen"
+msgstr ""
+
+msgid "ch.bafu.showme-kantone_rutschungen"
+msgstr ""
+
+msgid "ch.bafu.showme-kantone_sturzprozesse"
+msgstr ""
+
+msgid "ch.bafu.swissprtr"
+msgstr ""
+
+msgid "ch.bafu.unesco-weltnaturerbe"
+msgstr ""
+
+msgid "ch.bafu.wasser-entnahme"
+msgstr ""
+
+msgid "ch.bafu.wasser-leitungen"
+msgstr ""
+
+msgid "ch.bafu.wasser-rueckgabe"
+msgstr ""
+
+msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
+msgstr ""
+
+msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
+msgstr ""
+
+msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
+msgstr ""
+
+msgid "ch.bak.isos.warning"
+msgstr ""
+
+msgid "ch.bazl.luftfahrtkarten-icao"
+msgstr ""
+
+msgid "ch.bazl.segelflugkarte"
+msgstr ""
+
+msgid "ch.bfe.abgeltung-wasserkraftnutzung"
+msgstr ""
+
+msgid "ch.bfe.energieforschung"
+msgstr ""
+
+msgid "ch.bfe.statistik-wasserkraftanlagen"
+msgstr ""
+
+msgid "ch.bfe.stauanlagen-bundesaufsicht"
+msgstr ""
+
+msgid "ch.bfs.arealstatistik-1985"
+msgstr ""
+
+msgid "ch.bfs.arealstatistik-1997"
+msgstr ""
+
+msgid "ch.bfs.arealstatistik-hintergrund"
+msgstr ""
+
+msgid "ch.bfs.arealstatistik-waldmischungsgrad"
+msgstr ""
+
+msgid "ch.bfs.gebaeude_wohnungs_register"
+msgstr ""
+
+msgid "ch.blw.erosion"
+msgstr ""
+
+msgid "ch.blw.hang_steillagen"
+msgstr ""
+
+msgid "ch.blw.landwirtschaftliche-zonengrenzen"
+msgstr ""
+
+msgid "ch.blw.steil_terrassenlagen_rebbau"
+msgstr ""
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch"
+msgstr ""
+
+msgid "ch.blw.ursprungsbezeichnungen-kaese"
+msgstr ""
+
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen"
+msgstr ""
+
+msgid "ch.blw.ursprungsbezeichnungen-spirituosen"
+msgstr ""
+
+msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
+msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-los"
+msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-standav"
+msgstr ""
+
+msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
+msgstr ""
+
+msgid "ch.swisstopo-vd.spannungsarme-gebiete"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-agnes"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-hoehe"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-lage"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologische_karte"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geophysik-deklination"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geophysik-geothermie"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geophysik-inklination"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-genese"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tektonische_karte"
+msgstr ""
+
+msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
+msgstr ""
+
+msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
+msgstr ""
+
+msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
+msgstr ""
+
+msgid "ch.swisstopo.gg25-land-flaeche.fill"
+msgstr ""
+
+msgid "ch.swisstopo.hiks-dufour"
+msgstr ""
+
+msgid "ch.swisstopo.hiks-siegfried"
+msgstr ""
+
+msgid "ch.swisstopo.images-swissimage"
+msgstr ""
+
+msgid "ch.swisstopo.images-swissimage.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk25.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-grau"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk100.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk200.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk25.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk50.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-pk500.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.swissalti3d-reliefschattierung"
+msgstr ""
+
+msgid "ch.swisstopo.swissimage"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-building"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-hydrography"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-landcover"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-landcover-wald"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-miscellaneous"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
+msgstr ""
+
+msgid "ch.swisstopo.vec200-transportation-strassennetz"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-anlagen"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-einzelobjekte"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-eisenbahnnetz"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-gebaeude"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-gewaessernetz"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-heckenbaeume"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-primaerflaechen"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-strassennetz"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-uebrigerverkehr"
+msgstr ""
+
+msgid "ch.swisstopo.vec25-wander"
+msgstr ""
+
+msgid "ch.vbs.territorialregionen"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_perimeter"
+msgstr ""
+
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_beschreibung"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_kontaktperson"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projekt_nr"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projektstatus"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_projekttitel"
+msgstr ""
+
+msgid "tt_ch.bfe.energieforschung_schlussbericht"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_location"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
+msgstr ""
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgstr ""
+
