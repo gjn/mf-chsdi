@@ -378,7 +378,13 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         var availableLayers = GeoAdmin.layers.init();
         var layerArray = [];
         for (var layer in availableLayers) {
-            if (layer != 'ch.swisstopo.swissimage' && layer != 'ch.swisstopo.pixelkarte-farbe' && layer != 'ch.swisstopo.pixelkarte-grau' && layer != 'voidLayer' && availableLayers[layer].name.toString().indexOf('ch.') != 0) {
+            if (layer != 'ch.swisstopo.swissimage' &&
+                layer != 'ch.swisstopo.pixelkarte-farbe' &&
+                layer != 'ch.swisstopo.pixelkarte-grau' &&
+                layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
+                layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
+                layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
+                layer != 'voidLayer' && availableLayers[layer].name.toString().indexOf('ch.') != 0) {
                 layerArray.push([layer, availableLayers[layer].name]);
             }
         }
