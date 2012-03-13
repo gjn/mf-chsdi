@@ -54,7 +54,7 @@
   display: none;
 }
 .ext-ie .geoadmin-layertree .gx-tree-layer-actions .open {
-  top: 5px;
+  margin-top: 5px;
 }
 
 .geoadmin-layertree .gx-tree-layer-actions .close {
