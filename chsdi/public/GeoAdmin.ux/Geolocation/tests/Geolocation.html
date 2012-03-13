@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	  <head>
+	  	<script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+      <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../lib/Geolocation.js"></script>
+      <script type="text/javascript">
+      	
+          function test_ctor(t) {
+          	t.plan(2);
+          	
+          	var map, geolocation;
+          	
+            map = new GeoAdmin.Map("map");
+            
+            geolocation = new GeoAdmin.Geolocation( {map: map} );
+            
+            t.ok(geolocation instanceof GeoAdmin.Geolocation,
+                 "ctor returns a GeoAdmin.Geolocation");
+            t.ok(geolocation instanceof Ext.Button,
+                 "ctor returns a Ext.Button"); 
+          }
+          
+      </script>
+      </head>
+  <body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div id="tbar"></div>
+  </body>
+</html>

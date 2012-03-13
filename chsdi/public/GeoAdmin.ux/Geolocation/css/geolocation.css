@@ -1,0 +1,19 @@
+.geolocation-btn {
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
+
+.geolocation-icon {
+    background: url("../images/geolocation.png") no-repeat scroll center transparent;
+}
+
+.x-btn-pressed .geolocation-icon, .x-btn-over .geolocation-icon {
+    background: url("../images/geolocation_on.png") no-repeat scroll center transparent;
+}
+
+.geolocation-btn .x-btn-mc, .geolocation-btn .x-btn-ml, .geolocation-btn .x-btn-mr, .geolocation-btn .x-btn-bl,
+.geolocation-btn .x-btn-bc, .geolocation-btn .x-btn-br, .geolocation-btn .x-btn-tl, .geolocation-btn .x-btn-tc,
+.geolocation-btn .x-btn-tr {
+    background-image: none !important;
+    background-color: #FFFFFF;
+}
