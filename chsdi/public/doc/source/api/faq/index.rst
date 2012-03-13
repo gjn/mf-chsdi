@@ -88,7 +88,11 @@ Which layers are available ?
         var availableLayers = GeoAdmin.layers.init();
         var layerArray = [];
         for (var layer in availableLayers) {
-            if (layer != 'voidLayer' && availableLayers[layer].name.toString().indexOf('ch.') != 0) {
+            if (layer != 'voidLayer' &&
+                layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
+                layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
+                layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
+                availableLayers[layer].name.toString().indexOf('ch.') != 0) {
                 layerArray.push([layer, availableLayers[layer].name]);
             }
         }
