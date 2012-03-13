@@ -1659,6 +1659,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            /* only used in SwissMap online
             "ch.swisstopo-karto.wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
                 layertype: 'wmts',
@@ -1672,15 +1673,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo-karto.hangneigung"),
                 layertype: 'wmts',
                 timestamp: '20081107',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
-            "ch.swisstopo.swissalti3d-reliefschattierung": {
-                name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
-                layertype: 'wmts',
-                timestamp: '20000101',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1703,6 +1695,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true
+            },
+            */
+             "ch.swisstopo.swissalti3d-reliefschattierung": {
+                name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
+                layertype: 'wmts',
+                timestamp: '20000101',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
             },
             "ch.swisstopo.pixelkarte-pk25.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk25.metadata"),
