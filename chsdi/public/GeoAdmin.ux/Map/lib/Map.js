@@ -551,11 +551,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (this.KMLpopup) {
                 this.KMLpopup.destroy();
             }
+            
+            var widthPopup = getPopupWidth;
+            
             this.KMLpopup = new GeoExt.Popup({
                 cls: 'feature-popup',
                 title: OpenLayers.i18n("KML Information"),
                 location: feature.geometry.getBounds().getCenterLonLat(),
-                width:600,
+                bodyStyle: "max-width: 500px",
+                width: widthPopup,
                 map: this,
                 autoScroll: true,
                 html: content,
@@ -571,7 +575,22 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.KMLpopup.destroy();
             }
         }
-
+        
+        //Pre-compute the geoext popup window to adapt the width
+        function getPopupWidth() {
+            this.KMLpopup = new GeoExt.Popup({
+                bodyStyle: "max-width: 500px",
+                html: content
+            });
+            
+            this.KMLpopup.doLayout();
+            var widthPopup = this.KMLpopup.width;
+            // For IE only because dosen't support max-width
+            if (widthPopup > 500) { widthPopup = 500; }
+            this.KMLpopup.destroy();
+            return widthPopup
+        }
+        	
         this.selectControl.activate();
 
         return layer;
