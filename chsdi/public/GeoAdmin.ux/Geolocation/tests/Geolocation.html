@@ -3,9 +3,14 @@
 	  	<script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
       <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
       <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+      <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
       <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
       <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
       <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
+
       <script type="text/javascript" src="../lib/Geolocation.js"></script>
       <script type="text/javascript">
       	
@@ -13,11 +18,11 @@
           	t.plan(2);
           	
           	var map, geolocation;
-          	
+
             map = new GeoAdmin.Map("map");
-            
+
             geolocation = new GeoAdmin.Geolocation( {map: map} );
-            
+ 
             t.ok(geolocation instanceof GeoAdmin.Geolocation,
                  "ctor returns a GeoAdmin.Geolocation");
             t.ok(geolocation instanceof Ext.Button,
