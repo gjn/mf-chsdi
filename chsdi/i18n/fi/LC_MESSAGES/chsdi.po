@@ -111,7 +111,7 @@ msgid "No"
 msgstr "Na"
 
 msgid "No additional information for this object type"
-msgstr "Keine weiteren Informationen für diesen Objekttyp"
+msgstr "Betg infurmaziuns davart il object"
 
 msgid "Not applicable"
 msgstr "nicht anwendbar"
@@ -232,6 +232,9 @@ msgstr "Abgeschätzte Magnitude"
 
 msgid "abk_meter_ueber_meer"
 msgstr "m.ü.M."
+
+msgid "abkuerzung"
+msgstr "Abkürzung"
 
 msgid "aktuelle_daten"
 msgstr "Aktuelle und historische Daten"
@@ -902,6 +905,9 @@ msgstr "Zuppentar ils temas"
 msgid "hoehe_see"
 msgstr "Höhe über Meer des Seespiegels [m]"
 
+msgid "hoehe_ueber_meer"
+msgstr "Höhe über Meer [m]"
+
 msgid "holz_region"
 msgstr "Region"
 
@@ -1069,6 +1075,9 @@ msgstr "Num"
 
 msgid "name_lang1"
 msgstr "Name in der 1. Sprache"
+
+msgid "name_lang2"
+msgstr "Name in der 2. Sprache"
 
 msgid "name_terreg"
 msgstr "Name der Territorialregion"

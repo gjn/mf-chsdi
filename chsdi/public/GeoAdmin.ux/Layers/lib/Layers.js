@@ -742,6 +742,42 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+            "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill": {
+                name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20120101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill": {
+                name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20120101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.swissboundaries3d-kanton-flaeche.fill": {
+                name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20120101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.swissboundaries3d-land-flaeche.fill": {
+                name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-land-flaeche.fill"),
+                layertype: 'wmts',
+                timestamp: '20120101',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.swisstopo.fixpunkte-agnes": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-agnes"),
                 layertype: 'wmts',
@@ -895,6 +931,25 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.vec200-miscellaneous-geodpoint": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous-geodpoint"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
+            "ch.swisstopo.vec200-names-namedlocation": {
+                name: OpenLayers.i18n("ch.swisstopo.vec200-names-namedlocation"),
+                layertype: 'wmts',
+                timestamp: '20100101',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+
              "ch.swisstopo.geologie-geotechnik-gk500-genese": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
                 layertype: 'wmts',

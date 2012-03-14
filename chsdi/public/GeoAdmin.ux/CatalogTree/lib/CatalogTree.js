@@ -492,7 +492,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                      },
                      {
                         layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
-                     }
+                     }/*,
+                     {
+                        layerId: "ch.swisstopo.vec200-names-namedlocation"
+                     }*/
                 ]
             },
             {
@@ -518,6 +521,18 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.gg25-gemeinde-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.swissboundaries3d-kanton-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-adminboundaries-protectedarea"
@@ -571,6 +586,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Höhe',
                   children: [
+                    /*{
+                        layerId: "ch.swisstopo.vec200-miscellaneous-geodpoint"
+                    },*/
                     {
                         layerId: "ch.bazl.luftfahrtkarten-icao"
                     },

@@ -765,6 +765,9 @@ msgstr ""
 msgid "name_lang1"
 msgstr ""
 
+msgid "name_lang2"
+msgstr ""
+
 msgid "einwohnerzahl_b"
 msgstr ""
 
@@ -1464,3 +1467,8 @@ msgstr ""
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr ""
 
+msgid "abkuerzung"
+msgstr ""
+
+msgid "hoehe_ueber_meer"
+msgstre ""

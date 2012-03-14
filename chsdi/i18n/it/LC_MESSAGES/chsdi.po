@@ -233,6 +233,9 @@ msgstr "Magnitude estimée"
 msgid "abk_meter_ueber_meer"
 msgstr "m.s.l.m."
 
+msgid "abkuerzung"
+msgstr "Abréviation"
+
 msgid "aktuelle_daten"
 msgstr "Données actuelles et historiques"
 
@@ -902,6 +905,9 @@ msgstr "Chiudere la barra dei temi"
 msgid "hoehe_see"
 msgstr "Altitude du plan d'eau [m]"
 
+msgid "hoehe_ueber_meer"
+msgstr "Altitude au-dessus du niveau de la mer [m]"
+
 msgid "holz_region"
 msgstr "Région"
 
@@ -1069,6 +1075,9 @@ msgstr "Nome"
 
 msgid "name_lang1"
 msgstr "Nom dans la 1ère langue"
+
+msgid "name_lang2"
+msgstr "Nom dans la 2ème langue"
 
 msgid "name_terreg"
 msgstr "Nom de la région territoriale"
