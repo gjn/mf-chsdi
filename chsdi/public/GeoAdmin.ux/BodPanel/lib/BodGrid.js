@@ -31,7 +31,37 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 autoAbort: true
             }),
             root: 'results',
-            fields: ['tech_layer_name', 'abstract', 'datenstand', 'url_portale', 'geobasisdaten_num', 'wms_url', 'geoadmin_inspire_group', 'georeferenzdaten_bool', 'url_download', 'geocat', 'geobasisdaten_tech_number', 'rechtsgrundlage', 'geoadmin_inspire_theme', 'projekte', 'bezeichnung_geobasisdaten_katalog', 'zustaendige_stelle', 'fachstelle_bund', 'inspire_num', 'inspire_name_public', 'oereb_bool', 'download_bool', 'geobasisdaten_sammlung_bundesrecht_bezeichnung', 'geoadmin_kurz_bez', 'geoadmin_bezeichnung', 'zugang', 'ausser_kraft_bool', 'termin_minimalmodell', 'ansprechperson']
+            fields: ['tech_layer_name'
+                , 'abstract'
+                , 'datenstand'
+                , 'url_portale'
+                , 'geobasisdaten_num'
+                , 'wms_url'
+                , 'geoadmin_inspire_group'
+                , 'georeferenzdaten_bool'
+                , 'url_download', 'geocat'
+                , 'geobasisdaten_tech_number'
+                , 'rechtsgrundlage'
+                , 'geoadmin_inspire_theme'
+                , 'projekte'
+                , 'bezeichnung_geobasisdaten_katalog'
+                , 'zustaendige_stelle'
+                , 'fachstelle_bund'
+                , 'inspire_num'
+                , 'inspire_name_public'
+                , 'oereb_bool'
+                , 'download_bool'
+                , 'geobasisdaten_sammlung_bundesrecht_bezeichnung'
+                , 'geoadmin_kurz_bez'
+                , 'geoadmin_bezeichnung'
+                , 'zugang'
+                , 'ausser_kraft_bool'
+                , 'termin_minimalmodell'
+                /* commented out for Personal Data Protection
+                 , 'ansprechperson'
+                 */
+            ]
+
         });
 
         bodStore.load();
@@ -219,12 +249,15 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                     type: 'string',
                     dataIndex: 'termin_minimalmodell',
                     disabled: false
-                },
-                {
-                    type: 'string',
-                    dataIndex: 'ansprechperson',
-                    disabled: false
                 }
+                /*commented out for Personal Data protection
+                 ,
+                 {
+                 type: 'string',
+                 dataIndex: 'ansprechperson',
+                 disabled: false
+                 }
+                 */
             ]
         });
 
@@ -258,7 +291,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
 
                 var index = sampleData.header.cellIndex,
                     colModel = bodGridColModel,
-                    column = bodGridColModel.getColumnById(bodGridColModel.getColumnId(index+1));
+                    column = bodGridColModel.getColumnById(bodGridColModel.getColumnId(index + 1));
                 return column;
             }
         });
@@ -552,16 +585,20 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 filterable: true,
                 type: 'string',
                 width: 150
-            },
-            {
-                dataIndex: 'ansprechperson',
-                id: 'ansprechperson',
-                header: 'ansprechperson',
-                sortable: true,
-                filterable: true,
-                type: 'string',
-                width: 150
             }
+
+            /*commented out for Personal Data protection
+             ,
+             {
+             dataIndex: 'ansprechperson',
+             id: 'ansprechperson',
+             header: 'ansprechperson',
+             sortable: true,
+             filterable: true,
+             type: 'string',
+             width: 150
+             }
+             */
         ]);
         //var bufferview = new Ext.ux.grid.BufferView({
         //    scrolldelay: false
