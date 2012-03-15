@@ -511,18 +511,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.are.gemeindetyp-1990-9klassen"
                     },
                     {
-                        layerId: "ch.swisstopo.gg25-land-flaeche.fill"
-                    },
-                    {
-                        layerId: "ch.swisstopo.gg25-kanton-flaeche.fill"
-                    },
-                    {
-                        layerId: "ch.swisstopo.gg25-bezirk-flaeche.fill"
-                    },
-                    {
-                        layerId: "ch.swisstopo.gg25-gemeinde-flaeche.fill"
-                    },
-                    {
                         layerId: "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
                     },
                     {
@@ -533,6 +521,18 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.gg25-land-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.gg25-kanton-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.gg25-bezirk-flaeche.fill"
+                    },
+                    {
+                        layerId: "ch.swisstopo.gg25-gemeinde-flaeche.fill"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-adminboundaries-protectedarea"
