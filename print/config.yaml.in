@@ -41,8 +41,8 @@ layouts:
               - !image
                 condition: customLogo
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                #maxWidth: 251
+                #maxHeight: 34
                 url: "$${mapLogo}"
               - !image
                 condition: "!customLogo"
@@ -309,8 +309,8 @@ layouts:
               - !image
                 condition: customLogo
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                #maxWidth: 251
+                #maxHeight: 34
                 url: "$${mapLogo}"
               - !image
                 condition: "!customLogo"
@@ -574,8 +574,8 @@ layouts:
               - !image
                 condition: customLogo
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                #maxWidth: 251
+                #maxHeight: 34
                 url: "$${mapLogo}"
               - !image
                 condition: "!customLogo"
@@ -841,8 +841,8 @@ layouts:
               - !image
                 condition: customLogo
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                #maxWidth: 251
+                #maxHeight: 34
                 url: "$${mapLogo}"
               - !image
                 condition: "!customLogo"
