@@ -537,8 +537,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         layer.events.on({
             "featureselected": onFeatureSelect,
             "featureunselected": onFeatureUnselect,
+            "removed": removeControl,
             scope: this
         });
+        
+        function removeControl(event) {
+            this.selectControl.destroy();
+        }
 
         function onFeatureSelect(event) {
             var feature = event.feature;
