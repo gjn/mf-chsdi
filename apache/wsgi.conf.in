@@ -54,7 +54,7 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|de
 RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|wmts|sswmts|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
@@ -66,6 +66,9 @@ ServerAlias wmts4.geo.admin.ch
 ServerAlias wmts.swisstopo.admin.ch
 
 # WMTS and ssWMTS
+# Legacy service not used anymore since 30.11.2011
+RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities\.xml - [G,L]
+# GetCapabilities for WMTS (used by swissmap online)
 RewriteCond %{HTTP_HOST}   ^wmts.swisstopo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts?mode=swisstopowmts [PT,NC,QSA,L]
 # RewriteCond %{HTTP_HOST}   ^wmts[01234]?
