@@ -66,16 +66,13 @@ informations in a popup window is.
                renderTo: "mymap",
                height: 340
            });
-
-           api.map.complementaryLayer.setOpacity(0);
            var kmlLayer = api.createKmlLayer('../../data/swissmetnet.kml',true);
-           api.map.setCenter(new OpenLayers.LonLat(660000,190000),0);
        }
        </script>
           <body onload="init();">
        </script>
        <body onload="init();">
-           <div id="mymap" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+           <div id="mymap" style="float: right; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
            <script type="text/javascript" src="../../../loader.js"></script>
        </body>
 
@@ -98,7 +95,6 @@ informations in a popup window is.
                height: 340
            });
 
-           api.map.complementaryLayer.setOpacity(0);
            var kmlLayer = api.createKmlLayer('../../data/swissmetnet.kml',true);
        }
        </script>

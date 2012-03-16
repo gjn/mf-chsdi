@@ -1,95 +1,95 @@
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="Content-Language" content="de" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Content-Language" content="de"/>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
     <title>Aggregate Layers mit dem Geb&auml;ude- und Wohnungsregister</title>
 
-<script type="text/javascript">
-            var api;
-            var map;
-            function init() {
+    <script type="text/javascript">
+        var api;
+        var map;
+        function init() {
 
-               var toolbar = new Ext.Toolbar({});
-               api = new GeoAdmin.API();
-               map = api.createMap({div: "mymap", width: 500});
+            var toolbar = new Ext.Toolbar({});
+            api = new GeoAdmin.API();
+            map = api.createMap({div: "mymap", width: 500});
 
-               //Layer
-               map.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
-               map.addLayerByName("ch.swisstopo.fixpunkte-hoehe");
+            //Layer
+            map.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
+            map.addLayerByName("ch.swisstopo.fixpunkte-hoehe");
 
-              //Create a GeoExt map panel placed in the mymap div
-              mapPanel = api.createMapPanel({
-                   renderTo: "mymap",
-                   height: 700
-                   //Add the toolbar in the map panel
-                   ,tbar: toolbar
-                });
+            //Create a GeoExt map panel placed in the mymap div
+            mapPanel = api.createMapPanel({
+                renderTo: "mymap",
+                height: 700
+                //Add the toolbar in the map panel
+                ,tbar: toolbar
+            });
 
 
-                //Add a tool to select the background layer.
-                var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});
-                toolbar.add(baseLayerTool);
-                toolbar.doLayout();
-                toolbar.add(' ');
-                toolbar.doLayout();
+            //Add a tool to select the background layer.
+            var baseLayerTool = api.createBaseLayerTool({label: "Orthophoto",slider: {width: 80},combo: { width: 120}});
+            toolbar.add(baseLayerTool);
+            toolbar.doLayout();
+            toolbar.add(' ');
+            toolbar.doLayout();
 
-                //Permalink
-                permalink = new GeoAdmin.Permalink();
-                toolbar.add(permalink);
-                toolbar.doLayout();
-                toolbar.add(' ');
-                toolbar.doLayout();
+            //Permalink
+            permalink = new GeoAdmin.Permalink();
+            toolbar.add(permalink);
+            toolbar.doLayout();
+            toolbar.add(' ');
+            toolbar.doLayout();
 
-                //Print
-                toolbar.add([
-                    new GeoAdmin.Print({
-                        text: OpenLayers.i18n('print map'),
-                        printPanelOptions: {
+            //Print
+            toolbar.add([
+                new GeoAdmin.Print({
+                    text: OpenLayers.i18n('print map'),
+                    printPanelOptions: {
                         mapPanel: mapPanel
                     }
                 })]);
-                toolbar.doLayout();
+            toolbar.doLayout();
 
 
-               //Layer Tree
-               api.createLayerTree({
-                   renderTo: "mylayertree",
-                   width: 285
-               });
+            //Layer Tree
+            api.createLayerTree({
+                renderTo: "mylayertree",
+                width: 285
+            });
 
-               //Catalog Tree
-                var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree", map: map});
-
-
-               //Tooltip
-                var tooltip = new GeoAdmin.Tooltip({});
-                map.addControl(tooltip);
-                tooltip.activate();
-
-               //Search
-                api.createBodSearchCombo({
-                         width: 280,
-                         renderTo: "mysearch"
-                      });
+            //Catalog Tree
+            var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree", map: map});
 
 
-            }
+            //Tooltip
+            var tooltip = new GeoAdmin.Tooltip({});
+            map.addControl(tooltip);
+            tooltip.activate();
+
+            //Search
+            api.createBodSearchCombo({
+                width: 280,
+                renderTo: "mysearch"
+            });
 
 
+        }
 
-</script>
+
+    </script>
 </head>
 <body onload="init();">
-    <div style="width:1200px">
+<div style="width:1200px">
     <div id="mylayertree" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
-    <div id="mymap" style="float: right; width:800px;height:540px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+    <div id="mymap"
+         style="float: right; width:800px;height:540px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
     <div id="mysearch" style="float: left; margin:10px !important;width:280px;"></div>
     <div id="mycatalogtree" style="float: left; margin:10px !important;width:280px;"></div>
     <script type="text/javascript" src="../loader.js"></script>
- </div>
+</div>
 </body>
 
 </html>
