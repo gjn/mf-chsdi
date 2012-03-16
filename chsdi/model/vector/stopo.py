@@ -32,6 +32,36 @@ class GG25(Base, Queryable):
 
 register('ch.swisstopo.gg25-gemeinde-flaeche.fill', GG25)
 
+class SwissboundariesBezirk(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'swissboundaries_bezirke'
+    __table_args__ = ({'schema': 'tlm', 'autoload': True})
+    __template__ = 'tooltips/swissboundaries_bezirk.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill', SwissboundariesBezirk)
+
+class SwissboundariesGemeinde(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'swissboundaries_gemeinden'
+    __table_args__ = ({'schema': 'tlm', 'autoload': True})
+    __template__ = 'tooltips/swissboundaries_gemeinde.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
+
+class SwissboundariesKanton(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'swissboundaries_kantone'
+    __table_args__ = ({'schema': 'tlm', 'autoload': True})
+    __template__ = 'tooltips/swissboundaries_kanton.mako'
+    id = Column('kantonsnr', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKanton)
+
 class Vec200Terminal(Base, Queryable):
     __tablename__ = 'vec200_terminal_tiles'
     __table_args__ = ({'autoload': True})
@@ -170,6 +200,15 @@ class Vec200Supply(Base, Queryable):
 register('ch.swisstopo.vec200-miscellaneous', Vec200Builtupp)
 register('ch.swisstopo.vec200-miscellaneous', Vec200Poi)
 register('ch.swisstopo.vec200-miscellaneous', Vec200Supply)
+
+class Vec200Namedlocation(Base, Queryable):
+    __tablename__ = 'vec200_namedlocation'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_namedlocation.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.vec200-names-namedlocation', Vec200Namedlocation)
 
 class Vec25Wanderwege(Base, Queryable):
  	__tablename__ = 'v25_wanderweg'

@@ -492,10 +492,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                      },
                      {
                         layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
-                     }/*,
+                     },
                      {
                         layerId: "ch.swisstopo.vec200-names-namedlocation"
-                     }*/
+                     }
                 ]
             },
             {
@@ -586,9 +586,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Höhe',
                   children: [
-                    /*{
+                    {
                         layerId: "ch.swisstopo.vec200-miscellaneous-geodpoint"
-                    },*/
+                    },
                     {
                         layerId: "ch.bazl.luftfahrtkarten-icao"
                     },
