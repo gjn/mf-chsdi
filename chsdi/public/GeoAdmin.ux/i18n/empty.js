@@ -511,6 +511,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     '4 A3 portrait': "",
     'mapFooter': "",
     'No result': "",
+    'Geocoding failed. No result has been found.': "",
     'Metadata': "",
     'Please type at least 3 characters': "",
     'select one location for': "",

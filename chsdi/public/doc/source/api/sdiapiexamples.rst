@@ -9,6 +9,7 @@ API Examples
     sdiapiexamples3
     sdiapiexamples5
     sdiapiexamples4
+    geocoder
     mappanel
     layertree
     print

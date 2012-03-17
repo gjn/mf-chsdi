@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../lib/Geocoder.js"></script>
+    <script type="text/javascript">
+
+        window.GeoAdmin.webServicesUrl = "../../..";
+
+        function test_constructor(t) {
+            t.plan(2);
+            GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+            var map = new GeoAdmin.Map();
+            var geocoder = new GeoAdmin.Geocoder({map: map});
+            t.ok(geocoder instanceof GeoAdmin.Geocoder, "Geocoder gives an instance of GeoAdmin.Geocoder");
+            geocoder.geocode('Berges 37 Payerne');
+            t.delay_call(2, function() {
+                console.log(map.getCenter());
+                var lonlat = new OpenLayers.LonLat(561289, 185240);
+                t.ok(map.getCenter().equals(lonlat), "map has been recentered");
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+</body>
+</html>

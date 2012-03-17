@@ -54,6 +54,7 @@
  * @include Map/lib/MapPanel.js
  * @include Measure/lib/Measure.js
  * @include WmsBrowser/lib/WmsBrowser.js
+ * @include Geocoder/lib/Geocoder.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js
