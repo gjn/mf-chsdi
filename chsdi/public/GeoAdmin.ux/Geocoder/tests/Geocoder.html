@@ -22,8 +22,7 @@
             var geocoder = new GeoAdmin.Geocoder({map: map});
             t.ok(geocoder instanceof GeoAdmin.Geocoder, "Geocoder gives an instance of GeoAdmin.Geocoder");
             geocoder.geocode('Berges 37 Payerne');
-            t.delay_call(2, function() {
-                console.log(map.getCenter());
+            t.delay_call(3, function() {
                 var lonlat = new OpenLayers.LonLat(561289, 185240);
                 t.ok(map.getCenter().equals(lonlat), "map has been recentered");
             });
