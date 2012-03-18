@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-      <!-- ** Javascript ** -->
+<head>
+    <!-- ** Javascript ** -->
     <!-- base library -->
     <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
@@ -8,6 +8,8 @@
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/Reorderer.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarDroppable.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarReorderer.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
     <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
 
 
@@ -16,7 +18,7 @@
     <script type="text/javascript" src="../lib/BodGrid.js"></script>
     <script type="text/javascript" src="../lib/BodPanel.js"></script>
 
-      <script type="text/javascript">
+    <script type="text/javascript">
         function test_ctor(t) {
             t.plan(6);
 
@@ -27,8 +29,8 @@
             t.ok(bodGrid.store instanceof Ext.data.JsonStore, "bodGrid has a jsonstore");
             t.ok(bodGrid.store.proxy instanceof Ext.data.ScriptTagProxy, "bodGrid creates a store with a script tag proxy");
             /*
-            var bodPanel = new GeoAdmin.BodPanel();
-            t.ok(bodPanel instanceof GeoAdmin.BodPanel, "bodPanel gives an instance of BodPanel");
+             var bodPanel = new GeoAdmin.BodPanel();
+             t.ok(bodPanel instanceof GeoAdmin.BodPanel, "bodPanel gives an instance of BodPanel");
              */
 
             var bodDetailPanel = new GeoAdmin.BodDetailPanel();
@@ -36,9 +38,9 @@
             t.ok(bodDetailPanel instanceof Ext.Panel, "bodDetailPanel is an instance of Ext.Panel");
         }
 
-      </script>
-  </head>
-  <body>
-    <div style="width: 100px; height: 600px" id="map"></div>
-  </body>
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+</body>
 </html>
