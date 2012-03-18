@@ -84,7 +84,7 @@
     }
 
     function test_extendConfigFromCapabilities_wmts(t) {
-        t.plan(4);
+        t.plan(7);
 
         var xml = document.getElementById("wmts-getcaps").firstChild.nodeValue;
         var doc = new OpenLayers.Format.XML().read(xml);
@@ -101,9 +101,18 @@
              'ch.are.agglomerationen_isolierte_staedte-2000 config legendURL as expected');
         t.eq(config.timestamp, '20090101',
              'ch.are.agglomerationen_isolierte_staedte-2000 config timestamp as expected');
-        t.eq(config.extent.toString(),
-             '419995.74880736344,30006.663199481554,916216.8805490293,350004.29247885564',
-             'ch.are.agglomerationen_isolierte_staedte-2000 config extent as expected');
+        t.eq(Math.round(config.extent.left).toString(),
+             '419996',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config extent left as expected');
+        t.eq(Math.round(config.extent.bottom).toString(),
+             '30007',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config extent bottom as expected');
+        t.eq(Math.round(config.extent.right).toString(),
+             '916217',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config extent right as expected');
+        t.eq(Math.round(config.extent.top).toString(),
+             '350004',
+             'ch.are.agglomerationen_isolierte_staedte-2000 config extent top as expected');
         t.eq(config.requestEncoding, 'REST',
              'ch.are.agglomerationen_isolierte_staedte-2000 config requestEncoding as expected');
 
