@@ -66,21 +66,32 @@ class SwisssearchController(BaseController):
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
         else:
-            ftsOrderBy = "similarity(search_name,'remove_accents(%(query)s)') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
+            ftsOrderBy = "similarity(search_name,'%(query)s') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
             terms = q.split()
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'to_tsvector(\'english\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
-
             query = Session.query(SwissSearch).filter(ftsFilter)
+
+
             # Try to optimize search if initial search doesn't return something. It results in an additional query
+            # Remove all numbers with more than 3 characters (in order to solve the postcode issue)
             if query.count() == 0:
-               terms2 = ' '.join([('' if term.isdigit() and len(term) > 3 else term+':*')  for term in terms])
+               terms2 = ' '.join([('' if term.isdigit() and len(term) > 3 else term+('' if term.isdigit() else ':*'))  for term in terms])
                terms2 = terms2.split()
                terms2 = ' & '.join([term for term in terms2])
                terms2 =  terms2.replace("'", "''").replace('"', '\"')
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
+               query = Session.query(SwissSearch).filter(ftsFilter)
+
+            # Remove all strings starting with a number
+            if query.count() == 0:
+               terms3 = ' '.join([('' if term[0].isdigit() else term+('' if term.isdigit() else ':*'))  for term in terms])
+               terms3 = terms3.split()
+               terms3 = ' & '.join([term for term in terms3])
+               terms3 =  terms3.replace("'", "''").replace('"', '\"')
+               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
                query = Session.query(SwissSearch).filter(ftsFilter)
 
 
