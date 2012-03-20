@@ -1,13 +1,11 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-   <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${c.feature.name or '-'}</%def>
 
 <%def name="table_body()">
 <% c.stable_id = True %>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber')}</td><td>${c.feature.id or '-'}</td></tr>
-    <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_name')}</td><td>${c.feature.name or '-'}</td></tr>
+    <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_name')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_location')}</td><td>${c.feature.location or '-'}</td></tr>
     <tr><td width="150">${_('tt_ch.bfe.statistik-wasserkraftanlagen_canton')}</td><td>${c.feature.canton or '-'}</td></tr>
 % if c.lang=='it':

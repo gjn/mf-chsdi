@@ -4,14 +4,12 @@
    from chsdi.lib.helpers import quoting
 %>
 
-<%def name="preview()">
-   <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${c.feature.ortsbildname or '-'}</%def>
 
 <%def name="table_body()">
     <% c.stable_id = True %>
     <tr><td width="150">${_('kanton')}</td>          <td>${c.feature.kanton or '-'}</td></tr>
-    <tr><td width="150">${_('ortsbildname')}</td>         <td>${c.feature.ortsbildname or '-'}</td></tr>
+    <tr><td width="150">${_('ortsbildname')}</td>         <td>${self.preview()}</td></tr>
     <tr><td width="150">${_('kategorie')}</td>          <td>${c.feature.vergleichsrastereinheit or '-'}</td></tr>
     <tr><td width="150">${_('lagequalitaeten')}</td>    <td>${c.feature.lagequalitaeten or '-'}</td></tr>
     <tr><td width="150">${_('raeumliche_qualitaeten')}</td>         <td>${c.feature.raeumliche_qualitaeten or '-'}</td></tr>

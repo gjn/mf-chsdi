@@ -1,12 +1,10 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-   <tr><td width="150">${_('name_lang1')}</td>  <td>${c.feature.objname1 or '-'}</td></tr>
-</%def>
+<%def name="preview()">${c.feature.objname1 or '-'}</%def>
  
 <%def name="table_body()">
 <% c.stable_id = True %> 
-    <tr><td width="150">${_('name_lang1')}</td><td>${c.feature.objname1 or '-'}</td></tr>
+    <tr><td width="150">${_('name_lang1')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150">${_('name_lang2')}</td><td>
     % if c.feature.objname2.strip() in ['N_P','N_A']:
         -

@@ -1,8 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-    <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${_('feature')}</%def>
 
 <%def name="table_body()">
     <tr><td width="150">${_('spectralinfolink')}</td>    <td>${c.feature.spectral_4 or '-'}</td></tr>

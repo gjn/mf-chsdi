@@ -1,12 +1,10 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-    <tr><td width="150">${_('nummer')}</td>    <td>${c.feature.object or '-'}</td></tr>
-</%def>
+<%def name="preview()">${c.feature.object or '-'}</%def>
 
 <%def name="table_body()">
     <% c.stable_id = True %>
-    ${self.preview()}
+    <tr><td width="150">${_('nummer')}</td>    <td>${self.preview()}</td></tr>
     <tr><td width="150">${_('typnummer')}</td>    <td>${c.feature.typ_nr or '-'}</td></tr>
     <tr><td width="150">${_('typ')}</td>
       % if c.lang == 'de':

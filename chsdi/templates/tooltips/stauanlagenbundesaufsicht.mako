@@ -1,12 +1,10 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-   <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${c.feature.damname or '-'}</%def>
 
 <%def name="table_body()">
 <% c.stable_id = True %>
-    <tr><td width="150">${_('tt_ch.bfe.stauanlagen-bundesaufsicht_damname')}</td><td>${c.feature.damname or '-'}</td></tr>
+    <tr><td width="150">${_('tt_ch.bfe.stauanlagen-bundesaufsicht_damname')}</td><td>${self.preview()}</td></tr>
 % if c.lang =='fr':
     <tr><td width="150">${_('tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de')}</td><td>${c.feature.damtype_fr or '-'}</td></tr>
 % else:

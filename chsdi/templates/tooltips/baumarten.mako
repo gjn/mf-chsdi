@@ -1,8 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">
-    <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${_('feature')}</%def>
 
 <%def name="table_body()">
     <tr><td width="150">${_('laubholzanteil')}</td>    <td>${c.feature.anteil_lau or '-'}</td></tr>

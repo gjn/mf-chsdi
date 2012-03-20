@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-<%def name="preview()">
-   <tr>${_('feature')}</tr>
-</%def>
+<%def name="preview()">${_('feature')}</%def>
 
 <div class="tooltip_header">
   <span style="font-weight:bold;">${c.layer_bezeichnung}</span> (${c.layer_datenherr})

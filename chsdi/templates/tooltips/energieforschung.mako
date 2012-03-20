@@ -2,35 +2,35 @@
 
 <%def name="preview()">
 % if c.lang =='fr':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_fr or '-'}</td></tr>
+    ${c.feature.titel_fr or '-'}
 % elif c.lang == 'it':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_it or '-'}</td></tr>
+    ${c.feature.titel_it or '-'}
 % elif c.lang =='en':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_en or '-'}</td></tr>
+    ${c.feature.titel_en or '-'}
 % else:
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_de or '-'}</td></tr>
+    ${c.feature.titel_de or '-'}
 % endif
 </%def>
 
 <%def name="table_body()">
 <% c.stable_id = True %>
 % if c.lang =='fr':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_fr or '-'}</td></tr>
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_beschreibung')}</td><td>${c.feature.beschreibung_fr or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projektstatus')}</td><td>${c.feature.projektstatus_fr or '-'}</td></tr>
 
 % elif c.lang == 'it':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_it or '-'}</td></tr>
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_beschreibung')}</td><td>${c.feature.beschreibung_it or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projektstatus')}</td><td>${c.feature.projektstatus_it or '-'}</td></tr>
 
 % elif c.lang =='en':
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_en or '-'}</td></tr>
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_beschreibung')}</td><td>${c.feature.beschreibung_en or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projektstatus')}</td><td>${c.feature.projektstatus_en or '-'}</td></tr>
 
 % else:
-    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${c.feature.titel_de or '-'}</td></tr>
+    <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projekttitel')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_beschreibung')}</td><td>${c.feature.beschreibung_de or '-'}</td></tr>
     <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_projektstatus')}</td><td>${c.feature.projektstatus_de or '-'}</td></tr>
 % endif

@@ -1,17 +1,15 @@
 <%inherit file="base.mako"/>
 
 <%def name="preview()">
-    <tr><td width="150">${_('typ')}</td>
       % if c.lang == 'de':
-           <td>${c.feature.name or '-'}</td>
+           ${c.feature.name or '-'}
       % elif c.lang == 'fr':
-           <td>${c.feature.nom or '-'}</td>
+           ${c.feature.nom or '-'}
       % endif
-    </tr>
 </%def>
 
 <%def name="table_body()">
     <% c.stable_id = True %>
-     ${self.preview()}
+    <tr><td width="150">${_('typ')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150">${_('flaeche_ha')}</td>    <td>${int(round(c.feature.flaeche_ha)) or '-'}</td></tr>
 </%def>
