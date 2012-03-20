@@ -73,7 +73,7 @@ class Queryable(object):
         c.html_type = 'full'
         self.html = render(self.__template__)
         c.html_type = 'preview'
-        self.html_preview = render(self.__template__)
+        self.html_preview = render(self.__template__).strip()
 
     def compute_attribute(self):
         c.feature = self
