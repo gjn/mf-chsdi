@@ -152,7 +152,7 @@ class FeatureController(BaseController):
                             properties =  feature.attributes
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
-                        properties['html_preview'] = feature.html_preview
+                        properties['preview'] = feature.preview
 
                         if self.no_geom:
                             features.append(Feature(id=feature.id,

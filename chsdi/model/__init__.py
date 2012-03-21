@@ -40,7 +40,7 @@ class Queryable(object):
 
     html = None
     layer_id = None
-    html_preview = None
+    preview = None
     attributes = {}
     stable_id = False
     
@@ -73,7 +73,7 @@ class Queryable(object):
         c.html_type = 'full'
         self.html = render(self.__template__)
         c.html_type = 'preview'
-        self.html_preview = render(self.__template__).strip()
+        self.preview = render(self.__template__).strip()
 
     def compute_attribute(self):
         c.feature = self
@@ -95,8 +95,8 @@ class Queryable(object):
     def __geo_interface__(self):
         if self.html is not None:
             self.attributes['html'] = self.html
-        if self.html_preview is not None:
-            self.attributes['html_preview'] = self.html_preview
+        if self.preview is not None:
+            self.attributes['preview'] = self.preview
         if self.layer_id is not None:
             self.attributes['layer_id'] = self.layer_id
         return Feature(id=self.id, geometry=self.geometry,
