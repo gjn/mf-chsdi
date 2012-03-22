@@ -84,14 +84,16 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                             this.popup.destroy();
                         }
                         this.popup = new GeoExt.Popup({
-                            cls: 'positionPopup',
                             title: OpenLayers.i18n('Position'),
                             location: this.map.getLonLatFromPixel(this.xy),
                             width:300,
                             map: this.map,
                             html: content,
                             maximizable: false,
-                            collapsible: false
+                            collapsible: false,
+                            unpinnable: false,
+                            anchorPosition: 'auto',
+                            ancCls: 'auto'
                         });
                         this.popup.show();
                     }
