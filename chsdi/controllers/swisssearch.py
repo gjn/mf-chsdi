@@ -21,7 +21,7 @@ from pylons.i18n import set_lang
 
 log = logging.getLogger(__name__)
 
-MAX_FEATURES_GEOCODING = 20
+MAX_FEATURES_GEOCODING = 50
 MAX_FEATURES_REVERSEGEOCODING = 50
 
 class SwisssearchController(BaseController):
@@ -66,14 +66,15 @@ class SwisssearchController(BaseController):
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
         else:
-            ftsOrderBy = "similarity(search_name,'%(query)s') desc, gid asc" % {'query': q.replace("'","''").replace('"','\"') }
+            # order addresses by 1/gid instead of similarity, addresses (gid) are sorted in import table by house number, street etc.
+            # otherwise limit 20 is truncating important results (e.g. Kirchweg Glis -> there is no kirchweg 11 or kirchweg 15)
+            ftsOrderBy = "CASE WHEN origin = 'address' THEN 1/gid ELSE similarity(search_name,'%(query)s') END desc" % {'query': q.replace("'","''").replace('"','\"') }
             terms = q.split()
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'to_tsvector(\'english\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
             query = Session.query(SwissSearch).filter(ftsFilter)
-
 
             # Try to optimize search if initial search doesn't return something. It results in an additional query
             # Remove all numbers with more than 3 characters (in order to solve the postcode issue)
@@ -93,7 +94,6 @@ class SwisssearchController(BaseController):
                terms3 =  terms3.replace("'", "''").replace('"', '\"')
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
                query = Session.query(SwissSearch).filter(ftsFilter)
-
 
         # FIXME Address search is only for admin.ch and awk.ch
         # For "awk.ch", see email from lttsb from 18.nov. 2011
