@@ -21,7 +21,7 @@ from pylons.i18n import set_lang
 
 log = logging.getLogger(__name__)
 
-MAX_FEATURES_GEOCODING = 50
+MAX_FEATURES_GEOCODING = 20
 MAX_FEATURES_REVERSEGEOCODING = 50
 
 class SwisssearchController(BaseController):
