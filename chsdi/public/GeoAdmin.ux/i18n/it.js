@@ -103,6 +103,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Gebäude':'Edifici',
 	'Gemeinde':'Comuni',
 	'Geo search...':'Ricerca località, NPA, coordinate ...',
+	'Geocoding failed. No result has been found.':'Geocoding failed. No result has been found.', //TODO
 	'Geografische Gittersysteme':'Sistemi di griglie geografiche',
 	'Geografische Namen':'Nomi geografici',
 	'Geographic names':'Nomi geografici',

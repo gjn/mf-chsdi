@@ -103,6 +103,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Gebäude':'Buildings',
 	'Gemeinde':'City',
 	'Geo search...':'Search location, zip, coordinate ...',
+	'Geocoding failed. No result has been found.':'Geocoding failed. No result has been found.', //TODO
 	'Geografische Gittersysteme':'Geographical grid systems',
 	'Geografische Namen':'Geographical names',
 	'Geographic names':'Geographic names',

@@ -103,6 +103,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Gebäude':'Bâtiments',
 	'Gemeinde':'Commune',
 	'Geo search...':'Recherche lieu, NPA, coordonnées...',
+	'Geocoding failed. No result has been found.':'Geocoding failed. No result has been found.', //TODO
 	'Geografische Gittersysteme':'Systèmes de maillage géographique',
 	'Geografische Namen':'Dénominations géographiques',
 	'Geographic names':'Noms',
