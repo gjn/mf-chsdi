@@ -170,6 +170,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bfs.arealstatistik-hintergrund':"",
     'ch.bfs.gebaeude_wohnungs_register':"",
     'ch.bafu.bundesinventare-amphibien':"",
+    'ch.bafu.bundesinventare-amphibien_wanderobjekte':"",
     'ch.bafu.fauna-steinbockkolonien':"",
     'ch.bafu.ren-extensive_landwirtschaftsgebiete':"",
     'ch.bafu.ren-feuchtgebiete':"",

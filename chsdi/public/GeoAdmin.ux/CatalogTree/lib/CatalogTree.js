@@ -791,6 +791,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.bundesinventare-amphibien"
                     },
                     {
+                        layerId: "ch.bafu.bundesinventare-amphibien_wanderobjekte"
+                    },
+                    {
                         layerId: "ch.bafu.bundesinventare-auen"
                     },
                     {
@@ -969,6 +972,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bafu.bundesinventare-amphibien"
+                    },
+                    {
+                        layerId: "ch.bafu.bundesinventare-amphibien_wanderobjekte"
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-auen"

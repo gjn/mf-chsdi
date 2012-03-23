@@ -1100,11 +1100,20 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),
                 layertype: 'wmts',
-                timestamp: '20070701',
+                timestamp: '20070702',
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bafu",
                 opacity: 0.75,
+                queryable: true
+            },
+            "ch.bafu.bundesinventare-amphibien_wanderobjekte": {
+                name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien_wanderobjekte"),
+                layertype: 'wmts',
+                timestamp: '20070702',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bafu",
                 queryable: true
             },
             "ch.bafu.ren-extensive_landwirtschaftsgebiete": {

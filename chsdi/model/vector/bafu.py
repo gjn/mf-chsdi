@@ -395,7 +395,7 @@ class baugrundklassen(Base, Queryable):
 register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
 
 
-register('ch.bafu.bundesinventare-amphibien', AM_G)
+register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
 register('ch.bafu.bundesinventare-auen', AU)
