@@ -1,0 +1,31 @@
+<head><script type="text/javascript">
+//Create a global api variable to simplify debugging
+var api;
+
+//init function is started when page onload event is triggered
+function init() {
+
+   //Create an instance of the GeoAdmin API
+   api = new GeoAdmin.API();
+
+   //Create a GeoExt map panel placed in the mymap div
+   api.createMapPanel({
+      renderTo: "mymap",
+      height: 500
+   });
+
+   //Add layer in the map
+   api.map.addLayerByName('ch.bfs.gebaeude_wohnungs_register');
+
+   //Add a tooltip when the user clicks on a feature in the map
+   api.createTooltip({});
+
+   //Recenter the map and define a zoom level
+   api.map.setCenter(new OpenLayers.LonLat(562080,185250),9);
+}
+window.onload = init;
+</script></head>
+<body>
+  <div id="mymap" style="width:700px;height:500px;padding: 0 0 0 0"></div>
+  <script type="text/javascript" src="../../../loader.js"></script>
+</body>
