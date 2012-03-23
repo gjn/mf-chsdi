@@ -79,6 +79,14 @@ class TestSwisssearchController(TestController):
 
         assert len(results) == 0
 
+    def test_geocoding_services_egid(self):
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                params={"egid": "867194"}
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        assert len(results["results"]) > 0
+
     # If the referer is not whitelisted, you cannot use the service 'address' unless using the parameter 'no_geom'
     def test_geocoding_services_no_referer_no_geom(self):
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),

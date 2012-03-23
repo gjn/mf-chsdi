@@ -65,6 +65,7 @@ class SwisssearchController(BaseController):
 
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
+            ftsOrderBy = "egid"
         else:
             # order addresses by 1/gid instead of similarity, addresses (gid) are sorted in import table by house number, street etc.
             # otherwise limit 20 is truncating important results (e.g. Kirchweg Glis -> there is no kirchweg 11 or kirchweg 15)
