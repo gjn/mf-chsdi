@@ -85,7 +85,11 @@ class TestSwisssearchController(TestController):
         )
         results = simplejson.loads(resp.response.body)['results']
 
-        assert len(results) > 0
+        counter = 0
+        for r in results:
+             counter = counter+1
+
+        assert counter == 1
 
     # If the referer is not whitelisted, you cannot use the service 'address' unless using the parameter 'no_geom'
     def test_geocoding_services_no_referer_no_geom(self):
