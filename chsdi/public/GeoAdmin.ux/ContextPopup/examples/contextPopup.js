@@ -1,4 +1,4 @@
-GeoAdmin.OpenLayersImgPath = "../../images/";
+GeoAdmin.OpenLayersImgPath = "../../Map/img/";
 
 var mapPanel;
 
