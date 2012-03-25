@@ -85,7 +85,7 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                         }
                         this.popup = new GeoExt.Popup({
                             title: OpenLayers.i18n('Position'),
-                            location: this.map.getLonLatFromPixel(this.xy),
+                            location: new OpenLayers.Geometry.Point(this.map.getLonLatFromPixel(this.xy).lon, this.map.getLonLatFromPixel(this.xy).lat),
                             width:300,
                             map: this.map,
                             html: content,
