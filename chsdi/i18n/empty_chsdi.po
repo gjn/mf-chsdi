@@ -1471,31 +1471,37 @@ msgid "abkuerzung"
 msgstr ""
 
 msgid "hoehe_ueber_meer"
-msgstre ""
+msgstr ""
 
 msgid "zielhafen"
-msgstre ""
+msgstr ""
 
 msgid "jahrezeitenrythmus"
-msgstre ""
+msgstr ""
 
 msgid "nutzungsart_verbindung"
-msgstre ""
+msgstr ""
 
 msgid "Autofaehre"
-msgstre ""
+msgstr ""
 
 msgid "Kursschiff_Linie"
-msgstre ""
+msgstr ""
 
 msgid "All year"
-msgstre ""
+msgstr ""
 
 msgid "Seasonal"
-msgstre ""
+msgstr ""
 
 msgid "National"
-msgstre ""
+msgstr ""
 
 msgid "International"
-msgstre ""
+msgstr ""
+
+msgid "link to canton geoportal"
+msgstr ""
+
+msgid "Canton has provided no link to portal"
+msgstr ""

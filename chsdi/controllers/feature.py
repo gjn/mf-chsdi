@@ -5,6 +5,7 @@ from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
 from sqlalchemy import exc
 
+from shapely.geometry.polygon import Polygon
 from geojson.feature import FeatureCollection
 from geojson.feature import Feature
 from mapfish.decorators import MapFishEncoder, _jsonify
@@ -134,9 +135,25 @@ class FeatureController(BaseController):
 
     @validate_params(validator_bbox, validator_layers, validator_scale)
     def search(self):
+        # optional paramater "extent"
+        # Get current map extent or calculate a 'sensitive' default based on available information  (scale !) 
+        extent = request.params.get('extent')
+        if extent is not None:
+            try:
+                extent = map(float, extent.split(','))
+            except ValueError:
+                abort(400, "Parameter 'extent' is invalid. Use extent=656430,254350,657930,25585 for instance.")
+        else:
+            resolution = 1 / ((1 / (c.scale > 0 or 1000.0)) * 39.3701 * 72)
+            meters = 300 * resolution 
+            cx, cy = c.bbox[0:2]
+            extent =(cx-meters, cy-meters, cx+meters, cy+meters)
+        c.extent = Polygon(((extent[0], extent[1]), (extent[0], extent[3]),
+                            (extent[2], extent[3]), (extent[2], extent[1]),
+                            (extent[0], extent[1])))
+
         c.baseUrl =  request.params.get('baseUrl')  or ''
         features = []
-
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
@@ -160,7 +177,6 @@ class FeatureController(BaseController):
                                             properties=properties))
                         else:
                             features.append(feature)
-
         if 'print' in request.params:
             c.features = features
             return render('/tooltips/_print.mako')
@@ -173,7 +189,6 @@ class FeatureController(BaseController):
             else:
                 response.headers['Content-Type'] = 'application/json'
                 return output
-
 
     @cacheable
     @_jsonify(cb="cb")
