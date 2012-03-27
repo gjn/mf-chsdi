@@ -99,7 +99,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 layers: this.queryable.join(","),
                 bbox: bigBounds.toBBOX(),
                 scale: Math.round(this.map.getScale()/100) * 100,
-                extent: this.map.map.getExtent().toString()
+                extent: this.map.getExtent().toString()
             };
 
             Ext.ux.JSONP.request(this.url, {
