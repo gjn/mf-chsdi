@@ -17,8 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "All year"
+msgstr "Das ganze Jahr"
+
 msgid "Antenne"
 msgstr "Antennenanlage"
+
+msgid "Autofaehre"
+msgstr "Autofähre"
 
 msgid "Bauernhof"
 msgstr "Bauernhof"
@@ -77,6 +83,9 @@ msgstr "Hydro-elektrische"
 msgid "Information"
 msgstr "Infurmaziuns"
 
+msgid "International"
+msgstr "International"
+
 msgid "Kirche"
 msgstr "Kirche oder Kapelle"
 
@@ -85,6 +94,9 @@ msgstr "Kloster"
 
 msgid "Kraftwerk"
 msgstr "Kraftwerk"
+
+msgid "Kursschiff_Linie"
+msgstr "Passagierschiff"
 
 msgid "Legend"
 msgstr "Leggenda"
@@ -103,6 +115,9 @@ msgstr "Mehrfach"
 
 msgid "Museum"
 msgstr "Museum"
+
+msgid "National"
+msgstr "National"
 
 msgid "Natural"
 msgstr "Natürlich"
@@ -148,6 +163,9 @@ msgstr "Schloss"
 
 msgid "Schule"
 msgstr "Schule"
+
+msgid "Seasonal"
+msgstr "Saisonal"
 
 msgid "See"
 msgstr "See"
@@ -348,7 +366,7 @@ msgid "ch.babs.kulturgueter"
 msgstr "Inventari dals bains culturals"
 
 msgid "ch.bafu.bundesinventare-amphibien"
-msgstr "Zona frega amfibis"
+msgstr "Amfibis object ferms"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Ognas"
@@ -627,16 +645,16 @@ msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonica 1:500000"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
-msgstr "Cunfins districtuals"
+msgstr "Cunfins districtuals GG25"
 
 msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
-msgstr "Cunfins communals"
+msgstr "Cunfins communals GG25"
 
 msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
-msgstr "Cunfins chantunals"
+msgstr "Cunfins chantunals GG25"
 
 msgid "ch.swisstopo.gg25-land-flaeche.fill"
-msgstr "Cunfins naziunals"
+msgstr "Cunfins naziunals GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour"
@@ -950,6 +968,9 @@ msgstr "(Objekt in IVS-GIS)"
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
 
+msgid "jahrezeitenrythmus"
+msgstr "Jahreszeitenrythmus"
+
 msgid "jb_name"
 msgstr "Jagdbanngebiet"
 
@@ -1105,6 +1126,9 @@ msgstr "Nummer der Territorialregion"
 
 msgid "nutzung"
 msgstr "Hauptnutzung"
+
+msgid "nutzungsart_verbindung"
+msgstr "Nutzungsart der Verbindung"
 
 msgid "objektname"
 msgstr "Objektname"
@@ -1471,6 +1495,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "zielhafen"
+msgstr "Zielhafen"
 
 msgid "zone"
 msgstr "Zone"

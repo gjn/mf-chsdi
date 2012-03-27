@@ -1472,3 +1472,30 @@ msgstr ""
 
 msgid "hoehe_ueber_meer"
 msgstre ""
+
+msgid "zielhafen"
+msgstre ""
+
+msgid "jahrezeitenrythmus"
+msgstre ""
+
+msgid "nutzungsart_verbindung"
+msgstre ""
+
+msgid "Autofaehre"
+msgstre ""
+
+msgid "Kursschiff_Linie"
+msgstre ""
+
+msgid "All year"
+msgstre ""
+
+msgid "Seasonal"
+msgstre ""
+
+msgid "National"
+msgstre ""
+
+msgid "International"
+msgstre ""

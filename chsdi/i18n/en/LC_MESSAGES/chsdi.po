@@ -17,8 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "All year"
+msgstr "Das ganze Jahr"
+
 msgid "Antenne"
 msgstr "Antennenanlage"
+
+msgid "Autofaehre"
+msgstr "Autofähre"
 
 msgid "Bauernhof"
 msgstr "Bauernhof"
@@ -77,6 +83,9 @@ msgstr "Hydro-electric"
 msgid "Information"
 msgstr "Information"
 
+msgid "International"
+msgstr "International"
+
 msgid "Kirche"
 msgstr "Kirche oder Kapelle"
 
@@ -85,6 +94,9 @@ msgstr "Kloster"
 
 msgid "Kraftwerk"
 msgstr "Kraftwerk"
+
+msgid "Kursschiff_Linie"
+msgstr "Passagierschiff"
 
 msgid "Legend"
 msgstr "Legend"
@@ -103,6 +115,9 @@ msgstr "Multiple"
 
 msgid "Museum"
 msgstr "Museum"
+
+msgid "National"
+msgstr "National"
 
 msgid "Natural"
 msgstr "Natural"
@@ -148,6 +163,9 @@ msgstr "Schloss"
 
 msgid "Schule"
 msgstr "Schule"
+
+msgid "Seasonal"
+msgstr "Saisonal"
 
 msgid "See"
 msgstr "See"
@@ -348,7 +366,7 @@ msgid "ch.babs.kulturgueter"
 msgstr "Protection of cultural property inventory"
 
 msgid "ch.bafu.bundesinventare-amphibien"
-msgstr "Amphibian spawning area"
+msgstr "Amphibians Stationary Objects"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Wetlands"
@@ -627,16 +645,16 @@ msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonic 1:500 000"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
-msgstr "District boundaries"
+msgstr "District boundaries GG25"
 
 msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
-msgstr "Municipal boundaries"
+msgstr "Municipal boundaries GG25"
 
 msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
-msgstr "Cantonal boundaries"
+msgstr "Cantonal boundaries GG25"
 
 msgid "ch.swisstopo.gg25-land-flaeche.fill"
-msgstr "National boundaries"
+msgstr "National boundaries GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Dufour Map"
@@ -951,6 +969,9 @@ msgstr "(Objekt in IVS-GIS)"
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
 
+msgid "jahrezeitenrythmus"
+msgstr "Jahreszeitenrythmus"
+
 msgid "jb_name"
 msgstr "Jagdbanngebiet"
 
@@ -1106,6 +1127,9 @@ msgstr "Nummer der Territorialregion"
 
 msgid "nutzung"
 msgstr "Hauptnutzung"
+
+msgid "nutzungsart_verbindung"
+msgstr "Nutzungsart der Verbindung"
 
 msgid "objektname"
 msgstr "Object name"
@@ -1472,6 +1496,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "zielhafen"
+msgstr "Zielhafen"
 
 msgid "zone"
 msgstr "Zone"

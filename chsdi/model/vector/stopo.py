@@ -69,6 +69,13 @@ class Vec200Terminal(Base, Queryable):
     id = Column('gtdboid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
+class Vec200ShipKursschiff(Base, Queryable):
+    __tablename__ = 'v200_ship_kursschiff_linie_tooltip'
+    __table_args__ = ({'autoload': True})
+    __template__ = 'tooltips/vec200_ship_kursschiff_linie.mako'
+    id = Column('gtdboid', Text, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
 class Vec200Runway(Base, Queryable):
     __tablename__ = 'vec200_runway'
     __table_args__ = ({'autoload': True})
@@ -91,6 +98,7 @@ class Vec200Airport(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Terminal)
+register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200ShipKursschiff)
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Railway)
 
 
@@ -101,10 +109,10 @@ class Vec200Trafficinfo(Base, Queryable):
     id = Column('gtdboid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
-class Vec200Ship(Base, Queryable):
-    __tablename__ = 'vec200_ship'
+class Vec200ShipAutofaehre(Base, Queryable):
+    __tablename__ = 'v200_ship_autofaehre_tooltip'
     __table_args__ = ({'autoload': True})
-    __template__ = 'tooltips/vec200_ship.mako'
+    __template__ = 'tooltips/vec200_ship_autofaehre.mako'
     id = Column('gtdboid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
@@ -137,6 +145,7 @@ class Vec200Customsoffice(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Trafficinfo)
+register('ch.swisstopo.vec200-transportation-strassennetz', Vec200ShipAutofaehre)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Road)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Ramp)
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Customsoffice)

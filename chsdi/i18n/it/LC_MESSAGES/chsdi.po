@@ -17,8 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "All year"
+msgstr "Toute l'année"
+
 msgid "Antenne"
 msgstr "Antenne"
+
+msgid "Autofaehre"
+msgstr "Bacs pour voitures"
 
 msgid "Bauernhof"
 msgstr "Ferme"
@@ -77,6 +83,9 @@ msgstr "Hydro-électrique"
 msgid "Information"
 msgstr "Informazioni"
 
+msgid "International"
+msgstr "International"
+
 msgid "Kirche"
 msgstr "Eglise ou chapelle"
 
@@ -85,6 +94,9 @@ msgstr "Couvent"
 
 msgid "Kraftwerk"
 msgstr "Centrale électrique"
+
+msgid "Kursschiff_Linie"
+msgstr "Bateau de transport passagers"
 
 msgid "Legend"
 msgstr "Leggenda"
@@ -103,6 +115,9 @@ msgstr "Multiple"
 
 msgid "Museum"
 msgstr "Musée"
+
+msgid "National"
+msgstr "National"
 
 msgid "Natural"
 msgstr "Naturelle"
@@ -148,6 +163,9 @@ msgstr "Château"
 
 msgid "Schule"
 msgstr "Ecole"
+
+msgid "Seasonal"
+msgstr "Saisonnier"
 
 msgid "See"
 msgstr "Lac"
@@ -348,7 +366,7 @@ msgid "ch.babs.kulturgueter"
 msgstr "Inventario dei beni culturali"
 
 msgid "ch.bafu.bundesinventare-amphibien"
-msgstr "Aree di fregolo degli anfibi"
+msgstr "Anfibi oggetti fissi"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zone alluvionali"
@@ -627,16 +645,16 @@ msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tettonica 1:500 000"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
-msgstr "Limiti di distretto"
+msgstr "Limiti di distretto GG25"
 
 msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
-msgstr "Frontiere comunali"
+msgstr "Frontiere comunali GG25"
 
 msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
-msgstr "Frontiere cantonali"
+msgstr "Frontiere cantonali GG25"
 
 msgid "ch.swisstopo.gg25-land-flaeche.fill"
-msgstr "Frontiere nazionali"
+msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour"
@@ -950,6 +968,9 @@ msgstr "(Oggetto in IVS-GIS)"
 msgid "ivs_objekt"
 msgstr "Oggetto IVS"
 
+msgid "jahrezeitenrythmus"
+msgstr "Rythme saisonnier"
+
 msgid "jb_name"
 msgstr "District franc"
 
@@ -1105,6 +1126,9 @@ msgstr "Numéro de la région territoriale"
 
 msgid "nutzung"
 msgstr "Type"
+
+msgid "nutzungsart_verbindung"
+msgstr "Usage de la connexion"
 
 msgid "objektname"
 msgstr "Nom de l'objet"
@@ -1471,6 +1495,9 @@ msgstr "Poste de comptage"
 
 msgid "zeitraum"
 msgstr "Période de protection"
+
+msgid "zielhafen"
+msgstr "Destination"
 
 msgid "zone"
 msgstr "Zona"
