@@ -62,9 +62,12 @@ class BodsearchController(BaseController):
         """
 
         if datenstand == self.TAG_DATENSTAND:
-            for model in models_from_name(layer_id):
-                modified = Session.query(func.max(model.bgdi_created))
-            return modified.first()[0].strftime("%Y%m%d")
+            try:
+                for model in models_from_name(layer_id):
+                    modified = Session.query(func.max(model.bgdi_created))
+                return modified.first()[0].strftime("%Y%m%d")
+            except:
+                return datenstand
         else:
             return datenstand
 
