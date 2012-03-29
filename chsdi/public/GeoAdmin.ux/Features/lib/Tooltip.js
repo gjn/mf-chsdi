@@ -36,6 +36,8 @@
   */
 GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
+    baseUrl: '',
+
     layer: null,
 
     url: null,
@@ -43,6 +45,9 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     params: {},
 
     initialize: function(options) {
+
+        this.baseUrl = options.baseUrl ? options.baseUrl : '';
+
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
         if (GeoAdmin.webServicesUrl) {
@@ -99,7 +104,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 layers: this.queryable.join(","),
                 bbox: bigBounds.toBBOX(),
                 scale: Math.round(this.map.getScale()/100) * 100,
-                extent: this.map.getExtent().toString()
+                extent: this.map.getExtent().toString(),
+                baseUrl: this.baseUrl
             };
 
             Ext.ux.JSONP.request(this.url, {
