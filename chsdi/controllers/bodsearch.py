@@ -5,14 +5,20 @@ from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
 
 from mapfish.decorators import _jsonify
+from sqlalchemy import func
+from datetime import date
 
 from chsdi.lib.base import BaseController, render
 from chsdi.model.bod import BodLayerDe, BodLayerFr, LayerLegend
+from chsdi.model import models_from_name
+from chsdi.model.vector import *
 from chsdi.model.meta import Session
 
 log = logging.getLogger(__name__)
 
 class BodsearchController(BaseController):
+
+    TAG_DATENSTAND = "bgdi_created" # Tag being compared with entries in db bod.dataset.datenstand
 
     def __before__(self):
         super(BodsearchController, self).__before__()
@@ -48,6 +54,21 @@ class BodsearchController(BaseController):
         res.extend(pixelmap_gray)
         return {'results': res}
 
+
+    def datenstand(self, layer_id, datenstand):
+        """
+        if the value in bod.dataset.datenstand == TAG_DATENSTAND, return the most recent date of the data table,
+        else return the regular value datenstand.
+        """
+
+        if datenstand == self.TAG_DATENSTAND:
+            for model in models_from_name(layer_id):
+                modified = Session.query(func.max(model.bgdi_created))
+            return modified.first()[0].strftime("%Y%m%d")
+        else:
+            return datenstand
+
+
     def details(self, id=None):
         c.host = request.params.get('h', '')
         c.full = True
@@ -59,6 +80,8 @@ class BodsearchController(BaseController):
         c.legend = Session.query(LayerLegend).get(id)
         if c.legend is None:
             abort(404)
+
+        c.legend.datenstand = self.datenstand(c.layer.bod_layer_id, c.legend.datenstand)
 
         if 'print' in request.params:
             return render('/bod-details-print.mako')
