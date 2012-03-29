@@ -90,7 +90,7 @@ Tooltip
       function init() {
          var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
          map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
-         var tooltip = new GeoAdmin.Tooltip({});
+         var tooltip = new GeoAdmin.Tooltip({baseUrl: 'http://map.geo.admin.ch'});
          map7.addControl(tooltip);
          tooltip.activate();
       }
