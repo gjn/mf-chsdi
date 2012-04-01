@@ -1,5 +1,4 @@
 /*
- * @include OpenLayers/Layer/TileCache.js
  * @include OpenLayers/Layer/WMS.js
  * @include OpenLayers/Layer/WMTS.js
  * @include OpenLayers/Lang.js

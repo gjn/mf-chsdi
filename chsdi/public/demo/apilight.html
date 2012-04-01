@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>GeoAdmin Light API example</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="../build/api-light.js"></script>
+    <link rel=stylesheet type=text/css href=../build/api-light.css>
+    <script type="text/javascript">
+
+        var map;
+
+        function init() {
+            resizeMap();
+
+            OpenLayers.ImgPath = "http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/Map/img/";
+            map = new GeoAdmin.Map("map", {doZoomToMaxExtent: true});
+            map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe',{opacity: 100});
+
+            window.onresize = function() {
+                resizeMap();
+            };
+
+            function resizeMap() {
+                var winW = 630, winH = 460;
+                if (document.body && document.body.offsetWidth) {
+                    winW = document.body.offsetWidth;
+                    winH = document.body.offsetHeight;
+                }
+                if (document.compatMode == 'CSS1Compat' &&
+                        document.documentElement &&
+                        document.documentElement.offsetWidth) {
+                    winW = document.documentElement.offsetWidth;
+                    winH = document.documentElement.offsetHeight;
+                }
+                if (window.innerWidth && window.innerHeight) {
+                    winW = window.innerWidth;
+                    winH = window.innerHeight;
+                }
+                winW = winW - 20;
+                winH = winH - 20;
+                var mapElement = document.getElementById('map');
+                mapElement.style.width = winW + "px";
+                mapElement.style.height = winH + "px";
+            }
+
+        }
+    </script>
+</head>
+<body onload="init();">
+
+<div id="map"></div>
+
+</body>
+
+</html>
