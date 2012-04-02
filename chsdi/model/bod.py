@@ -166,3 +166,8 @@ class BodGridDe(Base, BodGrid):
     __tablename__ = 'view_bod_to_cms_de'
     __table_args__ = ({'autoload': True})
     id = Column('bodgrid_id', String, primary_key=True)
+
+class BodGridFr(Base, BodGrid):
+    __tablename__ = 'view_bod_to_cms_fr'
+    __table_args__ = ({'autoload': True})
+    id = Column('bodgrid_id_fr', String, primary_key=True)

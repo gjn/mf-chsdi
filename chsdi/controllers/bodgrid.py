@@ -11,7 +11,7 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model import bod
+from chsdi.model.bod import BodGridFr, BodGridDe
 
 from chsdi.model.meta import Session
 
@@ -29,21 +29,20 @@ except:
 
 class BodgridController(BaseController):
 
+
     def __before__(self):
         # default lang is 'de'
         lang = request.params.get('lang', 'de')
         c.lang = lang
-        #h.set_lang(c.lang)
-        self._set_lang(lang)
-
-    def _set_lang(self, lang):
-        subclass = "BodGrid%s" % lang.capitalize()
-        self.klass = hasattr(bod,subclass) and getattr(bod,subclass) or bod.bodGridDe
+        if c.lang == 'fr' or c.lang == 'it':
+            self.BodGrid = BodGridFr
+        else:
+            self.BodGrid = BodGridDe
 
     def index(self):
             layers = []
             format = request.params.get('format','json')
-            query = Session.query(self.klass)
+            query = Session.query(self.BodGrid)
 
             for layer in query:
                layers.append(layer)
