@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title id='title'>BodPanel</title>
+
+    <!-- ** CSS ** -->
+    <!-- base library -->
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/css/LockingGridView.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/gridfilters/css/GridFilters.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/ux/gridfilters/css/RangeMenu.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../lib/ext/Ext/examples/grid/multiple-sorting.css"/>
+
+
+    <!-- overrides to base library -->
+
+
+    <!-- ** Javascript ** -->
+    <!-- base library -->
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ux-all.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/Reorderer.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarDroppable.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarReorderer.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+
+    <script type="text/javascript" src="../../GeoAdmin.js"></script>
+
+
+    <!-- page specific -->
+    <script type="text/javascript" src="../lib/BodDetailPanel.js"></script>
+    <script type="text/javascript" src="../lib/BodGrid.js"></script>
+    <script type="text/javascript" src="../lib/BodPanel.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/i18n/en.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+Ext.onReady(function() {
+    Ext.QuickTips.init();
+    var chLogo = '../images/chLogo.png';
+    var dummyLogo = '../images/transparent.png';
+    new GeoAdmin.BodGrid({renderTo:'bodPanel_div', width:800, height:600, colModel: new Ext.ux.grid.LockingColumnModel([new Ext.grid.RowNumberer({movable: false,
+        locked: true,
+        width: 30,
+        id: 'rownumberercolumn',
+        css: 'padding: 3px 3px 3px 4px;'
+    }),
+        {
+            dataIndex: 'geobasisdaten_num',
+            id: 'geobasisdaten_num',
+            header: OpenLayers.i18n('geobasisdaten_num'),
+            sortable: true,
+            filterable: true,
+            xtype: 'gridcolumn',
+            width: 75,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'bezeichnung_geobasisdaten_katalog',
+            id: 'bezeichnung_geobasisdaten_katalog',
+            header: OpenLayers.i18n('bezeichnung_geobasisdaten_katalog'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 150,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'rechtsgrundlage',
+            id: 'rechtsgrundlage',
+            header: OpenLayers.i18n('rechtsgrundlage'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 150,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'zustaendige_stelle',
+            id: 'zustaendige_stelle',
+            header: OpenLayers.i18n('zustaendige_stelle'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'fachstelle_bund',
+            id: 'fachstelle_bund',
+            header: OpenLayers.i18n('fachstelle_bund'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'georeferenzdaten_bool',
+            id: 'georeferenzdaten_bool',
+            header: OpenLayers.i18n('georeferenzdaten_bool'),
+            sortable: true,
+            filterable: true,
+            xtype: 'gridcolumn',
+            width: 75,
+            renderer:function(value) {
+                return(value == true) ? 'X' : ''
+            },
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'oereb_bool',
+            id: 'oereb_bool',
+            header: OpenLayers.i18n('oereb_bool'),
+            sortable: true,
+            filterable: true,
+            type: 'boolean',
+            width: 75,
+            renderer:function(value) {
+                return(value == true) ? 'X' : ''
+            },
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'zugangberechtigung',
+            id: 'zugangberechtigung',
+            header: OpenLayers.i18n('zugangberechtigung'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'download_bool',
+            id: 'download_bool',
+            header: OpenLayers.i18n('download_bool'),
+            sortable: true,
+            filterable: true,
+            type: 'boolean',
+            width: 75,
+            renderer:function(value) {
+                return(value == true) ? 'X' : ''
+            },
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'geobasisdaten_tech_number',
+            id: 'geobasisdaten_tech_number',
+            header: OpenLayers.i18n('geobasisdaten_tech_number'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
+            id: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
+            header: OpenLayers.i18n('geobasisdaten_sammlung_bundesrecht_bezeichnung'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 150,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'ausser_kraft_bool',
+            id: 'ausser_kraft_bool',
+            header: OpenLayers.i18n('ausser_kraft_bool'),
+            sortable: true,
+            filterable: true,
+            type: 'boolean',
+            width: 75,
+            renderer:function(value) {
+                return(value == true) ? 'X' : ''
+            },
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'termin_minimalmodell',
+            id: 'termin_minimalmodell',
+            header: OpenLayers.i18n('termin_minimalmodell'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 150,
+            css: 'padding: 3px 0px 3px 0px;'
+        },
+        {
+            dataIndex: 'wms_url',
+            id: 'wms_url',
+            header: OpenLayers.i18n('wms_url'),
+            sortable: true,
+            filterable: true,
+            xtype: 'gridcolumn',
+            width: 75,
+            renderer: function (value, metadata) {
+                if (!value) {
+                    return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                } else {
+                    return '<a href="' + value + '" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                }
+            }
+        },
+        {
+            dataIndex: 'url_download',
+            id: 'url_download',
+            header: OpenLayers.i18n('url_download'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            renderer: function (value, metadata) {
+                if (!value) {
+                    return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                } else {
+                    return '<a href="' + value + '" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                }
+            }
+        },
+        {
+            dataIndex: 'url_portale',
+            id: 'url_portale',
+            header: OpenLayers.i18n('url_portale'),
+            sortable: true,
+            filterable: true,
+            xtype: 'gridcolumn',
+            width: 75,
+            renderer: function (value, metadata) {
+                if (!value) {
+                    return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                    //return ''
+                } else {
+                    return '<a href="' + value + '" target="_blank"> <img border="0" height="16" src="' + chLogo + '"/></a>';
+                }
+            }
+        },
+        {
+            dataIndex: 'geocat',
+            id: 'geocat',
+            header: OpenLayers.i18n('geocat'),
+            sortable: true,
+            filterable: true,
+            type: 'string',
+            width: 75,
+            renderer: function (value, metadata) {
+                if (!value) {
+                    return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                } else {
+                    return '<a href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?fileIdentifier=' + value + '&currTab=simple" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                }
+            }
+        }
+    ])
+});
+})
+</script>
+<div id="bodPanel_div"></div>
+
+</body>
+</html>

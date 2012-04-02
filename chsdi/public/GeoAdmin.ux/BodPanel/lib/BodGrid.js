@@ -1,6 +1,7 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /**
+ * @requires OpenLayers/Lang.js
  * @requires Ext/examples/ux/ux-all.js
  * @requires Ext/examples/ux/Reorderer.js
  * @requires Ext/examples/ux/ToolbarReorderer.js
@@ -21,10 +22,11 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
         var encode = false; //filter query encoded by default?
         var local = true;   //filter performed locally by default?
 
+        var bodGridUrl = 'http://api.geo.admin.ch/main/wsgi/bodgrid?';
+
         var bodStore = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
-                //url: 'http://api.geo.admin.ch/main/wsgi/cmslayer?',
-                url: '../../../bodgrid?',
+                url: bodGridUrl,
                 callbackParam: 'callback',
                 method: 'GET',
                 nocache: false,
@@ -54,7 +56,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 , 'geobasisdaten_sammlung_bundesrecht_bezeichnung'
                 , 'geoadmin_kurz_bez'
                 , 'geoadmin_bezeichnung'
-                , 'zugang'
+                , 'zugangberechtigung'
                 , 'ausser_kraft_bool'
                 , 'termin_minimalmodell'
                 /* commented out for Personal Data Protection
@@ -64,7 +66,9 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
 
         });
 
-        bodStore.load();
+        bodStore.load({
+            params: {}
+        });
 
         var cursorRe = /^(?:col|e|w)-resize$/;
         Ext.ux.grid.AutoSizeColumns = Ext.extend(Object, {
@@ -237,7 +241,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 },
                 {
                     type: 'string',
-                    dataIndex: 'zugang',
+                    dataIndex: 'zugangberechtigung',
                     disabled: false
                 },
                 {
@@ -315,276 +319,358 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             }
         });
 
+        var qTipTpl = new Ext.XTemplate(
+            '<h3>Abstract:</h3>',
+            '<tpl for=".">',
+            '<div>{value}</div>',
+            '</tpl>'
+        );
+
+
         var bodGridColModel = new Ext.ux.grid.LockingColumnModel([
             new Ext.grid.RowNumberer({movable: false,
                 locked: true,
-                width: 25,
-                id: 'rownumberercolumn'
-                //css: 'padding: 0px 0px 3px 5px;'
+                width: 30,
+                id: 'rownumberercolumn',
+                css: 'padding: 3px 3px 3px 4px;'
             }),
             {
                 dataIndex: 'tech_layer_name',
+                header: OpenLayers.i18n('tech_layer_name'),
                 id: 'tech_layer_name',
-                header: 'tech_layer_name',
-                sortable: true,
-                filterable: true,
-                xtype: 'gridcolumn',
-                width: 150
-            },
-            {
-                dataIndex: 'abstract',
-                id: 'abstract',
-                header: 'abstract',
-                sortable: true,
-                filterable: true,
-                xtype: 'gridcolumn',
-                width: 150
-            },
-            {
-                dataIndex: 'datenstand',
-                id: 'datenstand',
-                header: 'datenstand',
-                sortable: true,
-                filterable: true,
-                xtype: 'gridcolumn',
-                width: 150
-            },
-            {
-                dataIndex: 'url_portale',
-                id: 'url_portale',
-                header: 'url_portale',
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
                 width: 150,
-                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
-                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                css: 'padding: 3px 0px 3px 0px;'
+            },
+            {
+                dataIndex: 'abstract',
+                id: 'abstract',
+                header: OpenLayers.i18n('abstract'),
+                sortable: true,
+                filterable: true,
+                xtype: 'gridcolumn',
+                width: 50,
+                renderer: function(value, metadata) {
+                    metadata.attr = 'ext:qtip="' + value + '"';
+                    return value;
+                    /* if (!value) {
+                    return '';
+                    } else {
+                    return '<img src="' + textLogo + '">';
+                    }     */
+        },
+                css: 'padding: 3px 0px 3px 0px;'
+            },
+            {
+                dataIndex: 'datenstand',
+                id: 'datenstand',
+                header: OpenLayers.i18n('datenstand'),
+                sortable: true,
+                filterable: true,
+                xtype: 'gridcolumn',
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
+            },
+            {
+                dataIndex: 'url_portale',
+                id: 'url_portale',
+                header: OpenLayers.i18n('url_portale'),
+                sortable: true,
+                filterable: true,
+                xtype: 'gridcolumn',
+                width: 75,
+                renderer: function (value, metadata) {
+                    if (!value) {
+                        return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                        //return ''
+                    } else {
+                        return '<a href="' + value + '" target="_blank"> <img border="0" height="16" src="' + chLogo + '"/></a>';
+                    }
                 }
             },
             {
                 dataIndex: 'geobasisdaten_num',
                 id: 'geobasisdaten_num',
-                header: 'geobasisdaten_num',
+                header: OpenLayers.i18n('geobasisdaten_num'),
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'wms_url',
                 id: 'wms_url',
-                header: 'wms_url',
+                header: OpenLayers.i18n('wms_url'),
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150,
-                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
-                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                width: 75,
+                renderer: function (value, metadata) {
+                    if (!value) {
+                        return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                    } else {
+                        return '<a href="' + value + '" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                    }
                 }
             },
             {
                 dataIndex: 'geoadmin_inspire_group',
                 id: 'geoadmin_inspire_group',
-                header: 'geoadmin_inspire_group',
+                header: OpenLayers.i18n('geoadmin_inspire_group'),
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'georeferenzdaten_bool',
                 id: 'georeferenzdaten_bool',
-                header: 'georeferenzdaten_bool',
+                header: OpenLayers.i18n('georeferenzdaten_bool'),
                 sortable: true,
                 filterable: true,
                 xtype: 'gridcolumn',
-                width: 150,
+                width: 75,
                 renderer:function(value) {
                     return(value == true) ? 'X' : ''
-                }
+                },
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'url_download',
                 id: 'url_download',
-                header: 'url_download',
+                header: OpenLayers.i18n('url_download'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150,
-                renderer: function(value, metaData, record, rowIndex, colIndex, store) {
-                    return '<a href="' + value + '" target="_blank">' + value + '</a>'
+                width: 75,
+                 renderer: function (value, metadata) {
+                    if (!value) {
+                        return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                    } else {
+                        return '<a href="' + value + '" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                    }
                 }
             },
             {
                 dataIndex: 'geocat',
                 id: 'geocat',
-                header: 'geocat',
+                header: OpenLayers.i18n('geocat'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                renderer: function (value, metadata) {
+                    if (!value) {
+                        return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                    } else {
+                        return '<a href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?fileIdentifier=' + value + '&currTab=simple" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a>';
+                    }
+                }
             },
             {
                 dataIndex: 'geobasisdaten_tech_number',
                 id: 'geobasisdaten_tech_number',
-                header: 'geobasisdaten_tech_number',
+                header: OpenLayers.i18n('geobasisdaten_tech_number'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'rechtsgrundlage',
                 id: 'rechtsgrundlage',
-                header: 'rechtsgrundlage',
+                header: OpenLayers.i18n('rechtsgrundlage'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'geoadmin_inspire_theme',
                 id: 'geoadmin_inspire_theme',
-                header: 'geoadmin_inspire_theme',
+                header: OpenLayers.i18n('geoadmin_inspire_theme'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'projekte',
                 id: 'projekte',
-                header: 'projekte',
+                header: OpenLayers.i18n('projekte'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                renderer: function (value, metadata) {
+                    if (!value) {
+                        return '<img border="0" height="16" src="' + dummyLogo + '"/>';
+                    } else {
+                        portals = value.split(',');
+                        elem=portals.length;
+                        apiPortal = '';
+                        geoPortal = '';
+                        arePortal = '';
+                        bafuPortal = '';
+                        for (i=0;i<elem;i++) {
+                            if (portals[i]=="mf-geoadmin2") {
+                                 apiPortal = '<a href="http://api.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                                 geoPortal = '<a href="http://map.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                            } else if (portals[i]=="mf-are2") {
+                                 arePortal = '<a href="http://map.are.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                            } else if (portals[i]=="mf-bafu") {
+                                 bafuPortal = '<a href="http://map.bafu.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                            }
+                        }
+                        return apiPortal + geoPortal + arePortal + bafuPortal;
+                    }
+                }
             },
             {
                 dataIndex: 'bezeichnung_geobasisdaten_katalog',
                 id: 'bezeichnung_geobasisdaten_katalog',
-                header: 'bezeichnung_geobasisdaten_katalog',
+                header: OpenLayers.i18n('bezeichnung_geobasisdaten_katalog'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'zustaendige_stelle',
                 id: 'zustaendige_stelle',
-                header: 'zustaendige_stelle',
+                header: OpenLayers.i18n('zustaendige_stelle'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'fachstelle_bund',
                 id: 'fachstelle_bund',
-                header: 'fachstelle_bund',
+                header: OpenLayers.i18n('fachstelle_bund'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'inspire_num',
                 id: 'inspire_num',
-                header: 'inspire_num',
+                header: OpenLayers.i18n('inspire_num'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'inspire_name_public',
                 id: 'inspire_name_public',
-                header: 'inspire_name_public',
+                header: OpenLayers.i18n('inspire_name_public'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'oereb_bool',
                 id: 'oereb_bool',
-                header: 'oereb_bool',
+                header: OpenLayers.i18n('oereb_bool'),
                 sortable: true,
                 filterable: true,
                 type: 'boolean',
-                width: 150,
+                width: 75,
                 renderer:function(value) {
                     return(value == true) ? 'X' : ''
-                }
+                },
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'download_bool',
                 id: 'download_bool',
-                header: 'download_bool',
+                header: OpenLayers.i18n('download_bool'),
                 sortable: true,
                 filterable: true,
                 type: 'boolean',
-                width: 150,
+                width: 75,
                 renderer:function(value) {
                     return(value == true) ? 'X' : ''
-                }
+                },
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
                 id: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
-                header: 'geobasisdaten_sammlung_bundesrecht_bezeichnung',
+                header: OpenLayers.i18n('geobasisdaten_sammlung_bundesrecht_bezeichnung'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'geoadmin_kurz_bez',
                 id: 'geoadmin_kurz_bez',
-                header: 'geoadmin_kurz_bez',
+                header: OpenLayers.i18n('geoadmin_kurz_bez'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'geoadmin_bezeichnung',
                 id: 'geoadmin_bezeichnung',
-                header: 'geoadmin_bezeichnung',
+                header: OpenLayers.i18n('geoadmin_bezeichnung'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
-                dataIndex: 'zugang',
-                id: 'zugang',
-                header: 'zugang',
+                dataIndex: 'zugangberechtigung',
+                id: 'zugangberechtigung',
+                header: OpenLayers.i18n('zugangberechtigung'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 75,
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'ausser_kraft_bool',
                 id: 'ausser_kraft_bool',
-                header: 'ausser_kraft_bool',
+                header: OpenLayers.i18n('ausser_kraft_bool'),
                 sortable: true,
                 filterable: true,
                 type: 'boolean',
-                width: 150,
+                width: 75,
                 renderer:function(value) {
                     return(value == true) ? 'X' : ''
-                }
+                },
+                css: 'padding: 3px 0px 3px 0px;'
             },
             {
                 dataIndex: 'termin_minimalmodell',
                 id: 'termin_minimalmodell',
-                header: 'termin_minimalmodell',
+                header: OpenLayers.i18n('termin_minimalmodell'),
                 sortable: true,
                 filterable: true,
                 type: 'string',
-                width: 150
+                width: 150,
+                css: 'padding: 3px 0px 3px 0px;'
             }
 
             /*commented out for Personal Data protection
@@ -592,18 +678,19 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
              {
              dataIndex: 'ansprechperson',
              id: 'ansprechperson',
-             header: 'ansprechperson',
+             header: OpenLayers.i18n('ansprechperson'),
              sortable: true,
              filterable: true,
              type: 'string',
-             width: 150
+             width: 150,
+             css: 'padding: 3px 0px 3px 0px;'
              }
              */
         ]);
-        //var bufferview = new Ext.ux.grid.BufferView({
-        //    scrolldelay: false
-        //});
-        var lockingView = new Ext.ux.grid.LockingGridView();
+        var bufferview = new Ext.ux.grid.BufferView({
+            scrolldelay: false
+        });
+        //var lockingView = new Ext.ux.grid.LockingGridView();
 
         var bodLoadMask = new Ext.LoadMask(Ext.getBody(), {msg:"Loading data..."});
         bodLoadMask.show();
@@ -751,8 +838,11 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
 
         };
 
+        var chLogo = 'https://dav0.bgdi.admin.ch/swisstopo/cms2007/geoadmin/chLogo.png';
+        var dummyLogo = 'https://dav0.bgdi.admin.ch/swisstopo/cms2007/geoadmin/chLogo.png';
+
         var tbar = new Ext.Toolbar({
-            items: ['Sorting order:', '-'
+            items: [OpenLayers.i18n('Sorting_order'), '-'
             ],
             plugins: [reorderer, droppable],
             //plugins: [droppable],
@@ -763,15 +853,16 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                 }
             }
         });
-
-        config = Ext.apply({
-            id: 'bodGrid',
-            tbar: tbar,
-            bbar: new Ext.Toolbar({
+        var bbar = new Ext.Toolbar({
+                //pageSize: 20,
+                //store: bodStore,
+                //displayInfo: true,
+                //displayMsg: OpenLayers.i18n('layers' + {0} + ' - ' + {1} 'de ' {2}),
+                //buttons: [
                 buttons: [
-                    {
+                     {
                         id: 'grid-excel-button',
-                        text: 'Export',
+                        text: OpenLayers.i18n('Export'),
                         grid: this,
                         handler: function(b, e) {
                             if (!Ext.isIE) {
@@ -779,22 +870,27 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                             } else {
                                 Ext.Msg.show({
                                     title: 'Warning',
-                                    msg: 'Export does not work in Internet Explorer. Please use another browser (like firefox)',
+                                    msg: OpenLayers.i18n('ExportFromIE'),
                                     icon: Ext.MessageBox.WARNING
                                 });
                             }
                         }
                     }
                 ]
-            }),
+            });
+
+        config = Ext.apply({
+            id: 'bodGrid',
+            tbar: tbar,
+            bbar: bbar,
             border: false,
             store: bodStore,
-            colModel: bodGridColModel,
+            //colModel: bodGridColModel,
             plugins: [filters, 'autosizecolumns'],
             stripeRows: true,
             sm: new Ext.grid.RowSelectionModel({singleSelect: true}),
-            view: lockingView,
-            //view: bufferview,
+            //view: lockingView,
+            view: bufferview,
             height: 200,
             split: true,
             region: 'north',
@@ -807,7 +903,6 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                     droppable.addDDGroup(ddGroup);
                 }
             }
-
 
         }, config);
 
