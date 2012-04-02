@@ -2,36 +2,6 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['stopo'])
 
-class Bezirke25(Base, Queryable):
-    __tablename__ = 'bezirke25'
-    __table_args__ = ({'autoload': False})
-    __template__ = 'tooltips/bezirke25.mako'
-    id = Column('id', Integer, primary_key=True)
-    name = Column('name', Text)
-    flaeche = Column('flaeche', Integer)
-    the_geom = Column(Geometry)
-
-register('ch.swisstopo.gg25-bezirk-flaeche.fill', Bezirke25)
-
-class Kantone25(Base, Queryable):
-    __tablename__ = 'kantone25'
-    __table_args__ = ({'autoload': True})
-    __template__ = 'tooltips/kanton25.mako'
-    id = Column('kantonsnr', Integer, primary_key=True)
-    the_geom = Column(Geometry)
-
-register('ch.swisstopo.gg25-kanton-flaeche.fill', Kantone25)
-
-class GG25(Base, Queryable):
-    __tablename__ = 'gg25'
-    __table_args__ = ({'autoload': True})
-    __template__ = 'tooltips/gg25.mako'
-    id = Column(Integer, primary_key=True)
-    the_geom = Column('the_geom_gen50', Geometry)
-    not_used = Column('the_geom', Geometry)
-
-register('ch.swisstopo.gg25-gemeinde-flaeche.fill', GG25)
-
 class SwissboundariesBezirk(Base, Queryable):
     # view in a schema
     __tablename__ = 'swissboundaries_bezirke'

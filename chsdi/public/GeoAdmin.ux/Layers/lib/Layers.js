@@ -705,42 +705,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            "ch.swisstopo.gg25-gemeinde-flaeche.fill": {
-                name: OpenLayers.i18n("ch.swisstopo.gg25-gemeinde-flaeche.fill"),
-                layertype: 'wmts',
-                timestamp: '20090601',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.gg25-bezirk-flaeche.fill": {
-                name: OpenLayers.i18n("ch.swisstopo.gg25-bezirk-flaeche.fill"),
-                layertype: 'wmts',
-                timestamp: '20090601',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.gg25-kanton-flaeche.fill": {
-                name: OpenLayers.i18n("ch.swisstopo.gg25-kanton-flaeche.fill"),
-                layertype: 'wmts',
-                timestamp: '20090601',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.gg25-land-flaeche.fill": {
-                name: OpenLayers.i18n("ch.swisstopo.gg25-land-flaeche.fill"),
-                layertype: 'wmts',
-                timestamp: '20090601',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
             "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"),
                 layertype: 'wmts',
