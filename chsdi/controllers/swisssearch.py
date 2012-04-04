@@ -16,6 +16,7 @@ from mapfish.decorators import MapFishEncoder, _jsonify
 from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
+from chsdi.controllers.feature import get_features_by_attributes
 from paste.deploy.converters import asbool
 from pylons.i18n import set_lang
 
@@ -59,9 +60,13 @@ class SwisssearchController(BaseController):
         if q is None:
             if egid is None:
                 abort(400, "missing 'query' or 'egid' parameter")
+        layers = request.params.get('layers')
+        if layers is not None:
+            layers = layers.split(',')
 
 
         citynr = request.params.get('citynr')
+        features = []
 
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
@@ -112,8 +117,11 @@ class SwisssearchController(BaseController):
 
         query = query.order_by(ftsOrderBy).limit(MAX_FEATURES_GEOCODING)
 
+        if layers:
+            features = get_features_by_attributes(layers, q)
+
         if self.rawjson:
-            features = []
+            #features = []
             for feature in query.all():
                properties = {}
                feature.compute_attribute()
@@ -127,7 +135,8 @@ class SwisssearchController(BaseController):
 
             return FeatureCollection(features)
         else:
-            return {'results': sorted([f.json(rawjson=False, nogeom=self.no_geom) for f in query], key=itemgetter('rank'))}
+            features += query.all()
+            return {'results': sorted([f.json(rawjson=False, nogeom=self.no_geom) for f in features], key=itemgetter('rank'))}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):
