@@ -218,3 +218,71 @@ class TestFeatureController(TestController):
         assert 'Ext.ux.JSONP(' in resp
         assert 'FeatureCollection' in resp
         assert 'MultiPolygon' in resp
+
+    def test_attributes_no_query(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params,
+                 status=400
+        )
+    def test_attributes_no_layer(self):
+        params = {
+                'query': 'BE00'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params,
+                 status=400
+        )
+    def test_attributes(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE010'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params
+        )
+        assert 'results' in resp
+        assert 'ch.swisstopo.fixpunkte-hoehe' in resp
+        assert 'BE010' in resp
+    def test_attributes_raw(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE010',
+             'format': 'raw'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params
+        )
+        assert 'FeatureCollection' in resp
+        assert 'geometry' in resp
+        assert 'properties' in resp
+        assert 'BE010' in resp
+
+    def test_attributes_non_queryable_layer(self):
+        params = {
+             'layers': 'ch.swisstopo.pixelkarte-farbe',
+             'query': 'BE010'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        assert len(results) == 0
+        
+
+
+    def test_attributes_cb(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE010',
+             'cb': 'Ext.ux.JSONP'
+        }
+        resp = self.app.get(url(controller='feature', action='attributes'),
+                 params=params
+        )
+        assert 'BE010' in resp
+        assert 'Ext.ux.JSONP' in resp
+

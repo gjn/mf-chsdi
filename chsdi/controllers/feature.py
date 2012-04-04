@@ -1,8 +1,12 @@
 import logging
 import simplejson
+from operator import itemgetter
+
 
 from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
+from pylons.i18n import set_lang, ugettext as _
+
 from sqlalchemy import exc
 
 from shapely.geometry.polygon import Polygon
@@ -189,6 +193,55 @@ class FeatureController(BaseController):
             else:
                 response.headers['Content-Type'] = 'application/json'
                 return output
+    @cacheable
+    @_jsonify(cb="cb", cls=MapFishEncoder)
+    @validate_params(validator_layers)
+    def attributes(self):
+        if c.layers is None:
+            abort(400, "Parameter 'layers' is missing")
+        q = request.params.get('query', None)
+        if q is None:
+            abort(400, "Parameter 'query' is missing")
+
+        features = []
+
+        max_features_pro_layer = int(MAX_FEATURES / len(c.layers))
+        terms = q.split()
+        terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
+       
+ 
+        for layer in c.layers:
+            for model in models_from_name(layer):
+                if hasattr(model, '__queryable_attributes__'):
+                    ftsFilter = 'to_tsvector(' + ' || \' \' || '.join(["coalesce(%s::text,'') " %s for s in model.__queryable_attributes__]) + ") @@ to_tsquery('simple','%s')" % terms1 
+                    for feature in Session.query(model).filter(ftsFilter).limit(max_features_pro_layer).all():
+                        found = ''
+                        feature.compute_attribute()
+                        for key in feature.__queryable_attributes__:
+                            if (hasattr(feature, key)):
+                                    value = feature.attributes[key]
+                                    if unicode(value).find(q) > -1:
+                                        feature.attributes['found_col'] =  key
+                                        feature.attributes['found_value'] = unicode(value).strip()
+                                        break
+
+                        layername = _(layer)
+                        html = '<span class="attributes"><b>%s</b> - %s</span>' % (layername[0:15]+'...' if len(layername) > 15 else layername, 
+                                feature.attributes['found_value'])
+                        feature.attributes['html'] = html
+                        feature.layer_id = layer
+                        features.append(feature)
+
+                           
+        if self.rawjson:
+            return FeatureCollection([Feature(id=feature.id,  bbox=feature.bbox if not self.no_geom else None, 
+                    geometry=feature.geometry if not self.no_geom else None, properties=feature.attributes) for feature in features])
+        else:
+            results = [f.json(rawjson=False, nogeom=self.no_geom) for f in features] 
+            return {'results': sorted(results, key=itemgetter('rank'))}
+
+
+
 
     @cacheable
     @_jsonify(cb="cb")
