@@ -1668,6 +1668,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.4,
                 queryable: true
             },
+            "ch.bav.kataster-belasteter-standorte-oev": {
+                name: OpenLayers.i18n("ch.bav.kataster-belasteter-standorte-oev"),
+                layertype: 'wms',
+                layers: 'ch.bav.kataster-belasteter-standorte-oev',
+                format: "image/png",
+                datenherr: "ch.bav",
+                queryable: true,
+                type: "polygon"
+            },
             "ch.swisstopo.vec25-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-strassennetz"),
                 layertype: 'wmts',

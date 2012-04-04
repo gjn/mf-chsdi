@@ -35,6 +35,9 @@ msgstr "Berghütte"
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
+msgid "Canton has provided no link to portal"
+msgstr "Kein Link zu kantonalem Portal vorhanden"
+
 msgid "Chemical"
 msgstr "Chemikalie"
 
@@ -920,6 +923,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.h
 msgid "hide column"
 msgstr "Ausblenden der Themen"
 
+msgid "hier"
+msgstr "Hier"
+
 msgid "hoehe_see"
 msgstr "Höhe über Meer des Seespiegels [m]"
 
@@ -1039,6 +1045,9 @@ msgstr "Link zu Detailbeschreibung"
 
 msgid "length_km"
 msgstr "Länge [km]"
+
+msgid "link to canton geoportal"
+msgstr "Link zum kantonalen Portal"
 
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
@@ -1417,6 +1426,27 @@ msgstr "Sperrentyp"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr "Sperrentyp"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
+msgstr "Detaillierte Beschreibung"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung"
+msgstr "Beurteilung BAV"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug"
+msgstr "Katasterauszug"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortname"
+msgstr "Standortname"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortnummer"
+msgstr "BAV Standortnummer"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp"
+msgstr "Standorttyp"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
+msgstr "Untersuchungsstand gemäss AltIV"
 
 msgid "twitter title"
 msgstr "Twitter"

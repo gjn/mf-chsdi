@@ -21,6 +21,15 @@ class ZAEHLSTELLEN(Base, Queryable):
 register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', ZAEHLSTELLEN)
 register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', ZAEHLSTELLEN)
 
+class KATASTERBELASTETERSTANDORTE(Base, Queryable):
+    __tablename__ = 'kataster_belasteter_standorte_oev'
+    __table_args__ = ({'schema': 'bav', 'autoload': True})
+    __template__ = 'tooltips/kataster_belasteter_standorte_oev.mako'
+    id = Column('vflz_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bav.kataster-belasteter-standorte-oev', KATASTERBELASTETERSTANDORTE)
+
 class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Queryable):
     __tablename__ = 'abgeltung_wasserkraftnutzung'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})

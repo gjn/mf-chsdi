@@ -35,6 +35,9 @@ msgstr "Cabane de montagne"
 msgid "Campingplatz"
 msgstr "Camping"
 
+msgid "Canton has provided no link to portal"
+msgstr "Pas de lien disponible vers le géoportail cantonal"
+
 msgid "Chemical"
 msgstr "Chimique"
 
@@ -920,6 +923,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/fr/commons/help/viewer_help.h
 msgid "hide column"
 msgstr "Faire disparaître le gestionnaire de couches"
 
+msgid "hier"
+msgstr "Ici"
+
 msgid "hoehe_see"
 msgstr "Altitude du plan d'eau [m]"
 
@@ -1039,6 +1045,9 @@ msgstr "Lien vers la description détaillée des données"
 
 msgid "length_km"
 msgstr "Longueur [km]"
+
+msgid "link to canton geoportal"
+msgstr "Lien sur le géoportail cantonal"
 
 msgid "linkzurbeschreibung"
 msgstr "Description détaillée"
@@ -1417,6 +1426,28 @@ msgstr "Type de barrage"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr "Type de barrage"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
+msgstr "Description détaillée"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung"
+msgstr "Evaluation de l'OFT"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug"
+msgstr "Extrait du cadastre
+"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortname"
+msgstr "Nom du site"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortnummer"
+msgstr "No de site OFT"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp"
+msgstr "Type de site"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
+msgstr "Phase d'investigation selon OSites"
 
 msgid "twitter title"
 msgstr "Twitter"

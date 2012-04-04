@@ -876,6 +876,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Boden',
                 children: [
                     {
+                        layerId: "ch.bav.kataster-belasteter-standorte-oev"
+                    },
+                    {
                         layerId: "ch.blw.erosion"
                     },
                     {
@@ -891,6 +894,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.are.alpenkonvention"
+                    },
+                    {
+                        layerId: "ch.bav.kataster-belasteter-standorte-oev"
                     },
                     {
                         layerId: "ch.bafu.hydrologie-hydromessstationen"
