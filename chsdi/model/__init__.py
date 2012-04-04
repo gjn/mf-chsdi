@@ -86,6 +86,15 @@ class Queryable(object):
 	            attributes[column] = getattr(self, column)
         self.attributes = attributes
 
+    def json(self, rawjson=False, nogeom=False):
+        o = {'service': self.layer_id, 'rank': 0, 'id': self.id, 'label': self.attributes['html'] if 'html' in self.attributes.keys() else None,
+             'bbox': self.bbox if not nogeom else None, 'objectorig': self.attributes['found_col'], 'name': self.attributes['found_value']}
+        return o
+
+    @property
+    def bbox(self):
+        bbox = loads(self.the_geom.geom_wkb.decode('hex')).bounds
+        return tuple([int(c) for c in bbox])
 
     @property
     def geometry(self):
