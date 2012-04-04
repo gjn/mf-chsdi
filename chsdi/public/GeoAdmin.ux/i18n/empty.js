@@ -555,7 +555,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'We have been unable to receive your message due to transmission errors': "",
     'Retry': "",
     'Thanks': "",
-    'Tanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.': "",
+    'Thanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.': "",
     'Your data will exclusively be used for our internal production and will not be forwarded to others.': "",
     'Send another report': "",
     'Report Summary': "",
@@ -591,5 +591,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'geoadmin_bezeichnung': "",
     'zugangberechtigung': "",
     'ausser_kraft_bool': "",
-    'termin_minimalmodell': ""
+    'termin_minimalmodell': "",
+    'Attachment Validation': "",
+	'Your photo must have a common file format (jpg; jpeg; png; gif)': "",
+	'Your photo must not exceed the maximum size of 3 MB.': "",
+	'Your track must have a common file format (gpx; kml; kmz)': "",
+	'Your track must not exceed the maximum size of 4 MB.': ""
 });
