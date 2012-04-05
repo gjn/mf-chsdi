@@ -1313,6 +1313,9 @@ msgstr "Début de l'obligation de protection"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Début de l'obligation de protection"
 
+msgid "tt_ch.bfe.energieforschung_beauftragter"
+msgstr "Chargé"
+
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Description"
 

@@ -1482,6 +1482,9 @@ msgstr ""
 msgid "tt_ch.bfe.energieforschung_installationsort"
 msgstr ""
 
+msgid "tt_ch.bfe.energieforschung_beauftragter"
+msgstr ""
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr ""
 

@@ -1314,6 +1314,9 @@ msgstr "Beginn Schutzverpflichtung"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Beginn Schutzverpflichtung"
 
+msgid "tt_ch.bfe.energieforschung_beauftragter"
+msgstr "Mandatory"
+
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Description"
 
