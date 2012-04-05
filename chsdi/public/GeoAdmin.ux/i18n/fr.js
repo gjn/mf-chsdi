@@ -284,7 +284,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Votre browser ou appareil ne supporte pas le transfer de fichiers. Utilisez http://map.revision.admin.ch à partir d\'un ordinateur si vous voules nous envoyer des images ou des routes GPS.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Vos données seront utilisées exclusivement pour le traitement interne et ne serons pas partagé avec des tiers.',
 	'Your description exceeeds the maximum permitted length.':'Longueur maximale 200 caractères',
-	'Your email':'Votre email',
+	'Your email':'Votre e-mail',
 	'Your email (optional)':'Votre email (optionnel)',
 	'Your email was sent successfully!':'Votre courriel a été envoyé avec succès!',
 	'Your email:':'Votre email:',
