@@ -596,8 +596,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ausser_kraft_bool': "",
     'termin_minimalmodell': "",
     'Attachment Validation': "",
-	'Your photo must have a common file format (jpg; jpeg; png; gif)': "",
-	'Your photo must not exceed the maximum size of 3 MB.': "",
-	'Your track must have a common file format (gpx; kml; kmz)': "",
-	'Your track must not exceed the maximum size of 4 MB.': ""
+	'Your photo must have a common file format (jpg; jpeg; png; gif).': "",
+	'Your photo must not exceed the maximum size of 3MB.': "",
+	'Your track must have a common file format (gpx; kml; kmz).': "",
+	'Your track must not exceed the maximum size of 4MB.': ""
 });

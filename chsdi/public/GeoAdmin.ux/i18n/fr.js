@@ -290,12 +290,12 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Your email:':'Votre email:',
 	'Your feedback about current map extent':'Votre description du problème concernant la carte',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Votre feedback a été envoyé avec succès. Merci de nous l\'avoir transmis.',
-	'Your photo must have a common file format (jpg; jpeg; png; gif)':'Format pas valide. SVP choisir un fichier .jpg, .jpeg, .png ou .gif',
-	'Your photo must not exceed the maximum size of 3 MB.':'Photo trop grande. Max. 3 MB',
+	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Your photo must have a common file format (jpg; jpeg; png; gif).', //TODO
+	'Your photo must not exceed the maximum size of 3MB.':'Your photo must not exceed the maximum size of 3MB.', //TODO
 	'Your report was successfully posted':'Votre rapport a été correctement envoyé',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Votre résolution d\'écran est inférieure à 1024x768 pixels. map.geo.admin.ch n\'est pas optimisé pour de petites résolutions d\'écrans.',
-	'Your track must have a common file format (gpx; kml; kmz)':'Format pas valide. SVP choisir un fichier .gpx, .kml ou .kmz',
-	'Your track must not exceed the maximum size of 4 MB.':'Fichier trop grande. Max 4MB',
+	'Your track must have a common file format (gpx; kml; kmz).':'Your track must have a common file format (gpx; kml; kmz).', //TODO
+	'Your track must not exceed the maximum size of 4MB.':'Your track must not exceed the maximum size of 4MB.', //TODO
 	'Zoom to the max extent':'Voir toute la Suisse',
 	'about that layer':'Informations à propos de ce jeu de données',
 	'abstract':'Résumé',

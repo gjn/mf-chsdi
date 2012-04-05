@@ -286,12 +286,12 @@ OpenLayers.Lang.rm= {
 	'Your email:':'Vus emagl:',
 	'Your feedback about current map extent':'Rapport davart l\'extract actual da la charta',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Rapport tramess cun success',
-	'Your photo must have a common file format (jpg; jpeg; png; gif)':'§Your photo must have a common file format (jpg; jpeg; png; gif)',
-	'Your photo must not exceed the maximum size of 3 MB.':'§Your photo must not exceed the maximum size of 3 MB.',
+	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Your photo must have a common file format (jpg; jpeg; png; gif).', //TODO
+	'Your photo must not exceed the maximum size of 3MB.':'Your photo must not exceed the maximum size of 3MB.', //TODO
 	'Your report was successfully posted':'Voss messadi è vegnì tramess correctamain.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
-	'Your track must have a common file format (gpx; kml; kmz)':'§Your track must have a common file format (gpx; kml; kmz)',
-	'Your track must not exceed the maximum size of 4 MB.':'§Your track must not exceed the maximum size of 4 MB.',
+	'Your track must have a common file format (gpx; kml; kmz).':'Your track must have a common file format (gpx; kml; kmz).', //TODO
+	'Your track must not exceed the maximum size of 4MB.':'Your track must not exceed the maximum size of 4MB.', //TODO
 	'Zoom to the max extent':'Vesair tut la Svizra',
 	'about that layer':'Davart da data teschernida',
 	'abstract':'Zusammenfassung',
