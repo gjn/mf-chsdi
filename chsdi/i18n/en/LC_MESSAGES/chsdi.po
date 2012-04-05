@@ -1320,17 +1320,41 @@ msgstr "Description"
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Description"
 
+msgid "tt_ch.bfe.energieforschung_ch_hauptbereich"
+msgstr "Main domain CH"
+
+msgid "tt_ch.bfe.energieforschung_ch_unterbereich"
+msgstr "Sub domain CH"
+
+msgid "tt_ch.bfe.energieforschung_iea_hauptbereich"
+msgstr "Main domain CH"
+
+msgid "tt_ch.bfe.energieforschung_iea_unterbereich"
+msgstr "Sub domain IEA"
+
+msgid "tt_ch.bfe.energieforschung_installationsort"
+msgstr "Place of installation"
+
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Contact SFOE"
 
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Contact SFOE"
+
+msgid "tt_ch.bfe.energieforschung_land"
+msgstr "Country"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Project no."
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Project no."
+
+msgid "tt_ch.bfe.energieforschung_projektanfang"
+msgstr "Start of the project"
+
+msgid "tt_ch.bfe.energieforschung_projektende"
+msgstr "End of project"
 
 msgid "tt_ch.bfe.energieforschung_projektstatus"
 msgstr "Project state"
@@ -1344,11 +1368,17 @@ msgstr "Project titel"
 msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Project titel"
 
+msgid "tt_ch.bfe.energieforschung_schluesselwoerter"
+msgstr "Keyword"
+
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Final report"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Final report"
+
+msgid "tt_ch.bfe.energieforschung_sprachregion"
+msgstr "Language region"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Beginning of operation"

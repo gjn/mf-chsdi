@@ -35,6 +35,9 @@ msgstr "Berghütte"
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
+msgid "Canton has provided no link to portal"
+msgstr "Link tar portal chantunala indisponibel"
+
 msgid "Chemical"
 msgstr "Chemikalie"
 
@@ -920,6 +923,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/rm/commons/help/viewer_help.h
 msgid "hide column"
 msgstr "Zuppentar ils temas"
 
+msgid "hier"
+msgstr "Qua"
+
 msgid "hoehe_see"
 msgstr "Höhe über Meer des Seespiegels [m]"
 
@@ -1039,6 +1045,9 @@ msgstr "Link tar la descripziun da detagl"
 
 msgid "length_km"
 msgstr "Länge [km]"
+
+msgid "link to canton geoportal"
+msgstr "Link tar portal chantunala"
 
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
@@ -1310,17 +1319,41 @@ msgstr "Beschreibung"
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Beschreibung"
 
+msgid "tt_ch.bfe.energieforschung_ch_hauptbereich"
+msgstr "CH-Hauptbereich"
+
+msgid "tt_ch.bfe.energieforschung_ch_unterbereich"
+msgstr "CH-Unterbereich"
+
+msgid "tt_ch.bfe.energieforschung_iea_hauptbereich"
+msgstr "IEA-Hauptbereich"
+
+msgid "tt_ch.bfe.energieforschung_iea_unterbereich"
+msgstr "IEA-Unterbereich"
+
+msgid "tt_ch.bfe.energieforschung_installationsort"
+msgstr "Installationsort"
+
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Kontaktperson BFE"
 
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Kontaktperson BFE"
+
+msgid "tt_ch.bfe.energieforschung_land"
+msgstr "Land"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Projekt-Nr."
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Projekt-Nr."
+
+msgid "tt_ch.bfe.energieforschung_projektanfang"
+msgstr "Projektanfang"
+
+msgid "tt_ch.bfe.energieforschung_projektende"
+msgstr "Projektende"
 
 msgid "tt_ch.bfe.energieforschung_projektstatus"
 msgstr "Projektstatus"
@@ -1334,11 +1367,17 @@ msgstr "Projekttitel"
 msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Projekttitel"
 
+msgid "tt_ch.bfe.energieforschung_schluesselwoerter"
+msgstr "Schlüsselwörter"
+
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Schlussbericht"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Schlussbericht"
+
+msgid "tt_ch.bfe.energieforschung_sprachregion"
+msgstr "Sprachregion"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Inbetriebnahme"
@@ -1417,6 +1456,27 @@ msgstr "Sperrentyp"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr "Sperrentyp"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
+msgstr "Detaillierte Beschreibung"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung"
+msgstr "Beurteilung BAV"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug"
+msgstr "Katasterauszug"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortname"
+msgstr "Standortname"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortnummer"
+msgstr "BAV Standortnummer"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp"
+msgstr "Standorttyp"
+
+msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
+msgstr "Untersuchungsstand gemäss AltIV"
 
 msgid "twitter title"
 msgstr "Twitter"

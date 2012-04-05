@@ -1319,17 +1319,41 @@ msgstr "Descripzione"
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Descripzione"
 
+msgid "tt_ch.bfe.energieforschung_ch_hauptbereich"
+msgstr "Branche principale CH"
+
+msgid "tt_ch.bfe.energieforschung_ch_unterbereich"
+msgstr "Sous-domaine CH"
+
+msgid "tt_ch.bfe.energieforschung_iea_hauptbereich"
+msgstr "Branche principale IEA"
+
+msgid "tt_ch.bfe.energieforschung_iea_unterbereich"
+msgstr "Sous-domaine CH"
+
+msgid "tt_ch.bfe.energieforschung_installationsort"
+msgstr "Localité de l'installation"
+
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Contatto UFE"
 
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
 msgstr "Contatto UFE"
+
+msgid "tt_ch.bfe.energieforschung_land"
+msgstr "Land"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Progetto no"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
 msgstr "Progetto no"
+
+msgid "tt_ch.bfe.energieforschung_projektanfang"
+msgstr "Début du projet"
+
+msgid "tt_ch.bfe.energieforschung_projektende"
+msgstr "Fin du projet"
 
 msgid "tt_ch.bfe.energieforschung_projektstatus"
 msgstr "Stato del progetto"
@@ -1343,11 +1367,17 @@ msgstr "Titolo eld progetto"
 msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Titolo eld progetto"
 
+msgid "tt_ch.bfe.energieforschung_schluesselwoerter"
+msgstr "parolas chiave"
+
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Rapporto final"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Rapporto final"
+
+msgid "tt_ch.bfe.energieforschung_sprachregion"
+msgstr "Zone linguistique"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Mise en service"
