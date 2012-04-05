@@ -74,7 +74,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                 "http://wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
-            layers:  'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
+            layers:  'ch.bafu.bundesinventare-jagdbanngebiete',
             format: 'image/png'
         }, {
             singleTile: true,
@@ -178,7 +178,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                 "http://wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
-            layers:  'ch.bafu.schutzgebiete-wildruhezonen,ch.bafu.bundesinventare-jagdbanngebiete',
+            layers:  'ch.bafu.bundesinventare-jagdbanngebiete',
             format: 'image/png'
         }, {
             singleTile: true,
