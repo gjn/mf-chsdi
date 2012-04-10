@@ -15,10 +15,10 @@ Ext.onReady(function() {
 
 
     // PLEASE NOTE SEQUENCE OF LAYERS SHOULD MATCH TREE MODEL!
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-gemeinde-flaeche.fill', {visibility: false}));
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-bezirk-flaeche.fill', {visibility: false}));
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-kanton-flaeche.fill', {visibility: false}));
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-land-flaeche.fill', {visibility: false}));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', {visibility: false}));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill', {visibility: false}));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', {visibility: false}));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-land-flaeche.fill', {visibility: false}));
 
     layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.schutzgebiete-ramsar', {visibility: false, opacity: 0.6}));
     layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-vogelreservate', {visibility: false, opacity: 0.6}));
@@ -87,19 +87,19 @@ Ext.onReady(function() {
                     children: [
                         {
                             layerType: 'wmts',
-                            layer: 'ch.swisstopo.gg25-land-flaeche.fill'
+                            layer: 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
                         },
                         {
                             layerType: 'wmts',
-                            layer: 'ch.swisstopo.gg25-kanton-flaeche.fill'
+                            layer: 'ch.swisstopo.swissboundaries3d-kanton-flaeche.fill'
                         },
                         {
                             layerType: 'wmts',
-                            layer: 'ch.swisstopo.gg25-bezirk-flaeche.fill'
+                            layer: 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill'
                         },
                         {
                             layerType: 'wmts',
-                            layer: 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+                            layer: 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
                         }
                     ]
                 }
