@@ -8,8 +8,8 @@ Ext.onReady(function() {
 
     var layers = [];
 
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-gemeinde-flaeche.fill'));
-    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.gg25-bezirk-flaeche.fill'));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'));
+    layers.push(GeoAdmin.layers.buildLayerByName('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill'));
 
     layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.schutzgebiete-ramsar'));
     layers.push(GeoAdmin.layers.buildLayerByName('ch.bafu.bundesinventare-vogelreservate'));
