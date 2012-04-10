@@ -20,7 +20,7 @@
             var map = new GeoAdmin.Map();
             var features = new GeoAdmin.Features({map: map});
             t.ok(features instanceof GeoAdmin.Features, "Features give an instance of GeoAdmin.Features");
-            features.recenter('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+            features.recenter('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function(response) {
                 var lonlat = OpenLayers.Bounds.fromArray(response.bbox).getCenterLonLat();
                 t.ok(features.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
             });
