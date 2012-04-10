@@ -11,7 +11,7 @@ class TestFeatureController(TestController):
 
     def test_search_no_bbox(self):
         params = {
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
             }
         resp = self.app.get(url(controller='feature', action='search'),
                             params=params,
@@ -21,7 +21,7 @@ class TestFeatureController(TestController):
     def test_search_bad_bbox(self):
         params = {
             'bbox': '1,2,3',
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
             }
         resp = self.app.get(url(controller='feature', action='search'),
                             params=params,
@@ -40,7 +40,7 @@ class TestFeatureController(TestController):
     def test_search_no_scale(self):
         params = {
             'bbox': '600000,100000,610000,110000',
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
             }
         resp = self.app.get(url(controller='feature', action='search'),
                             params=params
@@ -52,7 +52,7 @@ class TestFeatureController(TestController):
     def test_search(self):
         params = {
             'bbox': '600000,100000,610000,110000',
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'scale': '100000'
             }
         resp = self.app.get(url(controller='feature', action='search'),
@@ -77,7 +77,7 @@ class TestFeatureController(TestController):
     def test_search_with_cb(self):
         params = {
             'bbox': '600000,100000,610000,110000',
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'scale': '100000',
             'cb': 'Ext.ux.JSONP'
             }
@@ -143,7 +143,7 @@ class TestFeatureController(TestController):
         params = {
             'bbox': '600000,100000,610000,110000',
             'ids': '6083',
-            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
             }
         resp1 = self.app.get(url(controller='feature', action='bbox'),
                             params=params
@@ -162,7 +162,7 @@ class TestFeatureController(TestController):
         params = {
             'bbox': '600000,100000,610000,110000',
             'ids': '6083',
-            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'cb': 'Ext.ux.JSONP'
             }
         resp = self.app.get(url(controller='feature', action='bbox'),
@@ -182,7 +182,7 @@ class TestFeatureController(TestController):
 
     def test_geometry_no_ids(self):
         params = {
-            'layers': 'ch.swisstopo.gg25-gemeinde-flaeche.fill'
+            'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
             }
         resp = self.app.get(url(controller='feature', action='geometry'),
                             params=params,
@@ -191,7 +191,7 @@ class TestFeatureController(TestController):
 
     def test_geometry(self):
         params = {
-            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'ids': '6083'
             }
         resp1 = self.app.get(url(controller='feature', action='geometry'),
@@ -208,7 +208,7 @@ class TestFeatureController(TestController):
 
     def test_geometry_with_cb(self):
         params = {
-            'layer': 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'ids': '6083',
             'cb': 'Ext.ux.JSONP'
             }
