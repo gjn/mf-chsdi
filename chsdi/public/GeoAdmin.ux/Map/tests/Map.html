@@ -36,14 +36,14 @@
             t.ok((count === map.layers.length) && (layer === null), "nonexistent layers are not added to the map");
 
             //
-            var layer = map.addLayerByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
-            var found = map.getLayerByLayerName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+            var layer = map.addLayerByName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
+            var found = map.getLayerByLayerName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
 
             t.ok(found != null && OpenLayers.Util.indexOf(map.layers, found) != -1, "valid layers are added to the map");
 
             //
             var count = map.layers.length;
-            var layer = map.addLayerByName("ch.swisstopo.gg25-gemeinde-flaeche.fill");
+            var layer = map.addLayerByName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
 
             t.ok(map.layers.length === count, "layers are added only once");
 
