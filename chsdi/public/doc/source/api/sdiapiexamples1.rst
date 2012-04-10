@@ -128,7 +128,7 @@ Map with overlay layers
             easting: 568550,
             northing: 173975,
             zoom: 6,
-            layers: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            layers: 'ch.swisstopo.hiks-dufour,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             layers_indices: '3,4',
             layers_opacity: '0.2,0.7',
             bgLayer: 'pixelmaps-gray',
@@ -168,8 +168,9 @@ Recenter features
          var api4 = new GeoAdmin.API();
          api4.createMap({
             div: "mymap4"
-         });
-         api4.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+         })
+         // Recentering without hilight on commune 'Genève'
+         api4.recenterFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644);
       }
    </script>
    <body onload="init();">
@@ -206,7 +207,8 @@ The function showFeatures will highlight and recenter the features. The function
          api5.createMap({
             div: "mymap5"
          });
-         api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
+         // Recenter and hilight communes 'Genève' and 'Carouge'
+         api5.showFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', [6621,6608]);
       }
    </script>
    <body onload="init();">
@@ -250,7 +252,7 @@ The function showFeatures will highlight and recenter the features. The function
             easting: 568550,
             northing: 173975,
             zoom: 6,
-            layers: 'ch.swisstopo.hiks-dufour,ch.swisstopo.gg25-gemeinde-flaeche.fill',
+            layers: 'ch.swisstopo.hiks-dufour,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             layers_indices: '3,4',
             layers_opacity: '0.2,0.7',
             bgLayer: 'pixelmaps-gray',
@@ -261,13 +263,13 @@ The function showFeatures will highlight and recenter the features. The function
          api4.createMap({
             div: "mymap4"
          });
-         api4.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922);
+         api4.recenterFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644);
 
          var api5 = new GeoAdmin.API();
          api5.createMap({
             div: "mymap5"
          });
-         api5.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', [5586, 5642]);
+         api5.showFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', [6621,6608]);
          
          }
    </script>
