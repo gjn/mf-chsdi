@@ -378,12 +378,12 @@ function test_recenterFeatures(t) {
         div: "map_1"
     });
     var lonlat;
-    api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+    api.recenterFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function(response) {
         lonlat = OpenLayers.Bounds.fromArray(response.bbox).getCenterLonLat();
         t.ok(api.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
     });
     
-    api.recenterFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 'dummy-id', function(response) {
+    api.recenterFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'dummy-id', function(response) {
         t.ok(api.map.getCenter().equals(lonlat), "check no recentering if id does not match any feature");
     });
 
@@ -398,7 +398,7 @@ function test_highlightFeatures(t) {
         div: "map_1"
     });
 
-    api.highlightFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function() {
+    api.highlightFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function() {
         t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after highlightFeatures");
     });
     t.wait_result(10);
@@ -412,7 +412,7 @@ function test_showFeatures(t) {
         div: "map_1"
     });
 
-    api.showFeatures('ch.swisstopo.gg25-gemeinde-flaeche.fill', 5922, function(response) {
+    api.showFeatures('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function(response) {
         var features = this.format.read(response);
         t.eq(features.length, 1, "received 1 feature");
         t.eq(api.map.vector.features.length, 1, "api.map.vector has 1 feature after showFeatures");
