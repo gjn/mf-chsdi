@@ -186,7 +186,7 @@ The following input parameters are required:
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 
-Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill?lang=de&print=true
+Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill?lang=de&print=true
 
 BodSearch: layers
 -----------------
@@ -235,7 +235,7 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
 
-Example: http://api.geo.admin.ch/feature/5922?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
+Example: http://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
 
 Result
 ^^^^^^
@@ -266,7 +266,7 @@ The following parameters are required:
 - format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format. 
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
 
-Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
+Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
 
 Result
 ^^^^^^
@@ -293,7 +293,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback function
 
-Example: http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922&cb=Ext.ux.JSONP.callback
+Example: http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback
 
 Result
 ^^^^^^
@@ -320,7 +320,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback funtion
 
-Example: http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922&cb=Ext.ux.JSONP.callback
+Example: http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback
 
 Result
 ^^^^^^
