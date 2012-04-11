@@ -63,6 +63,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     defaultZoom: 5,
 
+    attributesSearch: false,
+
     // default Ext.form.ComboBox config
     hideTrigger: true,
     minChars: 2,
@@ -136,6 +138,14 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     onBeforeQuery: function(queryEvent) {
         // FIXME: check if this.map is valid
+        if (this.attributesSearch) {
+            var layers = [];
+            for (var l in this.map.layers) {
+                var layer = this.map.layers[l].layer;
+                if (layer) layers.push(layer);
+            }
+        }
+        this.store.baseParams.layers = layers.join(',');
         var testRecenter = this.testRecenter(queryEvent.query);
 
         queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
