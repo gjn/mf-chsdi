@@ -1,4 +1,4 @@
-/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+/*yersglobal GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /*
  * @include OpenLayers/Projection.js
@@ -144,8 +144,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 var layer = this.map.layers[l].layer;
                 if (layer) layers.push(layer);
             }
+           this.store.baseParams.layers = layers.join(',');
         }
-        this.store.baseParams.layers = layers.join(',');
         var testRecenter = this.testRecenter(queryEvent.query);
 
         queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
