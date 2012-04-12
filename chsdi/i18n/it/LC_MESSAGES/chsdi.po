@@ -102,7 +102,7 @@ msgid "Kursschiff_Linie"
 msgstr "Bateau de transport passagers"
 
 msgid "Legend"
-msgstr "Leggenda"
+msgstr "Legenda"
 
 msgid "Link to object"
 msgstr "Link verso l'oggetto"
@@ -1371,7 +1371,7 @@ msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Titolo eld progetto"
 
 msgid "tt_ch.bfe.energieforschung_schluesselwoerter"
-msgstr "parolas chiave"
+msgstr "Parolas chiave"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Rapporto final"
