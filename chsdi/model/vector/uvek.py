@@ -26,8 +26,8 @@ class KATASTERBELASTETERSTANDORTE(Base, Queryable):
     __table_args__ = ({'schema': 'bav', 'autoload': True})
     __template__ = 'tooltips/kataster_belasteter_standorte_oev.mako'
     id = Column('vflz_id', Integer, primary_key=True)
-    the_geom = Column('the_geom_gen50', Geometry(21781))
-    not_used = Column('the_geom', Geometry(21781))
+    the_geom = Column('the_geom', Geometry(21781))
+    not_used = Column('the_geom_gen50', Geometry(21781))
 
 register('ch.bav.kataster-belasteter-standorte-oev', KATASTERBELASTETERSTANDORTE)
 
