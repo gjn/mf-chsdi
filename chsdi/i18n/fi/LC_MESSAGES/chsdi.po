@@ -102,7 +102,7 @@ msgid "Kursschiff_Linie"
 msgstr "Passagierschiff"
 
 msgid "Legend"
-msgstr "Leggenda"
+msgstr "Legenda"
 
 msgid "Link to object"
 msgstr "Link tar l'object"
