@@ -19,6 +19,7 @@ class Gebaeuderegister(Base, Queryable):
     plzname = Column('plzname', Text)
     gdename = Column('gdename', Text)
     gdenr = Column('gdenr', Integer)
+    bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry)
 
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
