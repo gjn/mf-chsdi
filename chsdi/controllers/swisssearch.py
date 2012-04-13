@@ -8,7 +8,7 @@ from sqlalchemy.sql import func
 from geojson.feature import FeatureCollection
 from geojson.feature import Feature
 
-from pylons import request
+from pylons import request, config
 from pylons.controllers.util import abort
 
 from mapfish.decorators import MapFishEncoder, _jsonify
@@ -101,16 +101,17 @@ class SwisssearchController(BaseController):
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
                query = Session.query(SwissSearch).filter(ftsFilter)
 
-        # FIXME Address search is only for admin.ch and awk.ch
+        # FIXME Address search is only for some allowed referers (see list in production.ini.in)
         # For "awk.ch", see email from lttsb from 18.nov. 2011
         # cadastre.ch see ticket #3695
+        # rollstuhlparkplatz.ch see ticket #3846 
         referer = request.headers.get('referer', '')
-        if referer.find('localhost') < 0 and referer.find( 'admin.ch') < 0 and referer.find('awk.ch') < 0 and referer.find('cadastre.ch') < 0:
+        allowed_referers = config['address_search_referers'].split(',')
+        if not any([ref in referer  for ref in allowed_referers]):
             if not self.no_geom:
                self.origins = [o for o in self.origins if o != 'address']
         
-        if self.origins:
-            query = query.filter(SwissSearch.origin.in_(self.origins))
+        query = query.filter(SwissSearch.origin.in_(self.origins))
 
         if citynr is not None:
             query = query.filter(SwissSearch.gdenr == '' + citynr)

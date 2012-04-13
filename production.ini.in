@@ -36,6 +36,9 @@ sqlalchemy.bak.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhos
 dtm_path = /var/www/mf-chsdi/private/data/profile/
 data_path = /var/local/cartoweb/
 
+# Allowed referers for address search service
+address_search_referers = localhost,admin.ch,awk.ch,cadastre.ch,rspp.ch,rollstuhlparkplatz.ch,placehandicape.ch,parcheggiodisabili.chi,zh.ch
+
 # WARNING: *THE LINE BELOW MUST BE UNCOMMENTED ON A PRODUCTION ENVIRONMENT*
 # Debug mode will enable the interactive debugging tool, allowing ANYONE to
 # execute malicious code after an exception is raised.
