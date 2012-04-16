@@ -32,6 +32,13 @@ class SwissboundariesKanton(Base, Queryable):
 
 register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKanton)
 
+# These two layers do not have a table on their own
+class CadastralWebMap(SwissboundariesKanton):
+    __template__ = 'tooltips/cadastralwebmap.mako'
+register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
+register('ch.kantone.cadastralwebmap-grau', CadastralWebMap)
+
+
 class Vec200Terminal(Base, Queryable):
     __tablename__ = 'vec200_terminal_tiles'
     __table_args__ = ({'autoload': True})
