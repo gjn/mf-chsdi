@@ -204,8 +204,7 @@ class FeatureController(BaseController):
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
                         properties['preview'] = feature.preview
-
-                        if self.no_geom:
+                        if self.no_geom or layer_name == 'ch.kantone.cadastralwebmap-farbe':
                             features.append(Feature(id=feature.id,
                                             bbox=feature.geometry.bounds,
                                             properties=properties))
