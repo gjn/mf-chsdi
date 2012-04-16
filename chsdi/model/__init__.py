@@ -65,8 +65,8 @@ class Queryable(object):
 
     def compute_template(self, layer_id, bodlayer):
         c.feature = self
-        c.layer_bezeichnung = bodlayer.bezeichnung
-        c.layer_datenherr = bodlayer.datenherr
+        c.layer_bezeichnung = bodlayer.bezeichnung if hasattr(bodlayer, 'bezeichnung') else ''
+        c.layer_datenherr = bodlayer.datenherr if hasattr(bodlayer, 'datenherr') else  ''
         c.layer_id = layer_id
         c.stable_id = c.feature.stable_id
         self.layer_id= layer_id
