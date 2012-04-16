@@ -36,7 +36,6 @@ register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKa
 class CadastralWebMap(SwissboundariesKanton):
     __template__ = 'tooltips/cadastralwebmap.mako'
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
-register('ch.kantone.cadastralwebmap-grau', CadastralWebMap)
 
 
 class Vec200Terminal(Base, Queryable):
