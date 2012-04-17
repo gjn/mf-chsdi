@@ -9,11 +9,6 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['bod'])
 
-class LayerLegend(Base):
-    __tablename__ = 'view_bod_layer_legende'
-    __table_args__ = ({'autoload': True})
-    id = Column('bod_layer_id', Text, primary_key=True)
-
 class BodLayer(object):
 
     def json(self, hilight, rawjson=False):
@@ -40,6 +35,16 @@ class BodLayer(object):
             'id': self.bod_layer_id,
             'description': self.bezeichnung.strip()
         }
+    
+    def layers_results(self, properties):
+        results = {}
+        # If no properties are passed return all the columns
+        for prop in properties:
+            # Check if the propeties is in the layer
+            if hasattr(self, prop):
+                results.update({prop: self.__getattribute__(prop)})
+                    	
+        return results
 
     @property
     def short_abstract(self):
@@ -69,6 +74,11 @@ class BodLayer(object):
         else:
             return False
 
+class LayerLegend(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_legende'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+
 class BodLayerDe(Base, BodLayer):
     __tablename__ = 'view_bod_layer_suche_de'
     __table_args__ = ({'autoload': True})
@@ -80,7 +90,21 @@ class BodLayerFr(Base, BodLayer):
     __table_args__ = ({'autoload': True})
     bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
 
-
+class BodLayerEn(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_en'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
+class BodLayerIt(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_it'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
+class BodLayerRm(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_rm'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
 class GetCapFr(Base):
     __tablename__ = 'view_bod_wmts_getcapabilities_fr'
     __table_args__ = ({'autoload': True, })

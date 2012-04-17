@@ -52,6 +52,10 @@ def make_map(config):
     map.connect('/height', controller="height", action='index')
     map.connect('/profile.csv', controller="profile", action='csv')
     map.connect('/profile.json', controller="profile", action='json')
+    
+    map.connect('/layers/{id}', controller="layers", action='index')
+    map.connect('/layers', controller="layers", action='index')
+
 
     map.connect('/{controller}/{action}')
     map.connect('/{controller}/{action}/{id}')

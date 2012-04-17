@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 from sqlalchemy.types import Integer, Text, String
 from sqlalchemy.orm import column_property
+from pylons.controllers.util import abort
 
 from geoalchemy import Geometry, WKBSpatialElement
 
@@ -33,6 +34,12 @@ def models_from_name(name):
         return meta.bodmap[name]
     else:
         return []
+        
+def column_from_name(name, map_properties):
+    if name in map_properties:
+        return map_properties[name]
+    else:
+        abort(400, "The property '%s' doesn't exist"%name)
 
 class Queryable(object):
     __minscale__ = 0
