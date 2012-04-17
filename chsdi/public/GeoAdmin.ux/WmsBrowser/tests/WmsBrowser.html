@@ -24,7 +24,7 @@
 
     <script type="text/javascript">
         function test_ctor(t) {
-            t.plan(2);
+            t.plan(4);
 
             // set up
 
@@ -32,15 +32,20 @@
             map = new GeoAdmin.Map();
             mapPanel = new GeoAdmin.MapPanel({map: map, tbar: ["->"]});
 
-            wmsBrowser = new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers});
+            wmsBrowser = new GeoAdmin.WmsBrowser({layerStore: mapPanel.layers, map: mapPanel.map});
             mapPanel.getTopToolbar().add(wmsBrowser);
+            wmsBrowserWindow = new GeoAdmin.WmsBrowserWindow({serverStore: wmsBrowser.serverStore, layerStore: wmsBrowser.layerStore, map: mapPanel.map});
+
             // test
 
             t.ok(wmsBrowser instanceof GeoAdmin.WmsBrowser,
                     "ctor returns a GeoAdmin.WmsBrowser");
             t.ok(wmsBrowser instanceof Ext.Action,
                     "ctor returns a Ext.Action");
-
+            t.ok(wmsBrowserWindow instanceof GeoAdmin.WmsBrowserWindow,
+                    "ctor returns a GeoAdmin.WmsBrowserWindow");
+            t.ok(wmsBrowserWindow instanceof Ext.Window,
+                    "ctor returns a Ext.Window");
             // tear down
 
             mapPanel.destroy();

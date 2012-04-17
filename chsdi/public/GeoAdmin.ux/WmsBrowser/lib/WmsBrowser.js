@@ -122,7 +122,7 @@ GeoAdmin.WmsBrowserWindow = Ext.extend(Ext.Window, {
             closeAction: 'hide',
             renderTo: Ext.getBody()
       }, config);
-      GeoAdmin.KmlSelectorWindow.superclass.constructor.call(this, config);
+      GeoAdmin.WmsBrowserWindow.superclass.constructor.call(this, config);
     },
     show: function() {
         GeoAdmin.WmsBrowserWindow.superclass.show.apply(this, arguments);
