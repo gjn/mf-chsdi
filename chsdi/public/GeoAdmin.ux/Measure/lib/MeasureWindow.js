@@ -8,12 +8,13 @@
 Ext.namespace('GeoAdmin');
 
 GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
+    map: null,
 
     constructor: function(config) {
-
+        this.map = config.map || null;
         var measurePanel = new GeoAdmin.MeasurePanel({
             //title: OpenLayers.i18n("Measure Panel"),
-            map: config.map
+            map: this.map
 
         });
 
@@ -25,16 +26,26 @@ GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
             height: 113,
             title: OpenLayers.i18n("Measure.title"),
             layout: 'fit',
-            items: [measurePanel]
+            items: [measurePanel],
+            map: this.map
         }, config);
 
         GeoAdmin.MeasureWindow.superclass.constructor.call(this, config);
     },
     show: function() {
-        GeoAdmin.MeasureWindow.superclass.show.apply(this, arguments);
-        var mapBox = Ext.fly(this.map.div).getBox(true);
-        var left = -(this.width/2) + mapBox.x + mapBox.width/2;
-        var top = -(this.height/2) + mapBox.y + mapBox.height/2;
-        this.setPosition(left, top);
-   }
+        GeoAdmin.MeasureWindow.superclass.show.apply(this,arguments);
+        var mapDiv = Ext.fly(this.map.div);
+        var mapViewPort = this.map.getViewport();
+        if (mapDiv && mapViewPort) {
+            var mapBox = mapDiv.getBox(true);
+            var OffsetLeft = OffsetTop = 0;
+            if (mapViewPort.offsetParent) {
+                do {
+                    OffsetLeft += mapViewPort.offsetLeft;
+                    OffsetTop += mapViewPort.offsetTop;
+                   } while (mapViewPort = mapViewPort.offsetParent); 
+            }
+            this.setPosition(OffsetLeft + mapBox.width/2 - this.width/2, OffsetTop);
+       }  
+  }
 });

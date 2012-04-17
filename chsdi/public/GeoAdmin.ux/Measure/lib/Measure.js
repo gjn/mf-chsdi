@@ -25,12 +25,16 @@ Ext.namespace('GeoAdmin');
 
 GeoAdmin.Measure = Ext.extend(Ext.Action, {
     measureWindow: null,
+    
+    map: null,
     /**
      */
     constructor : function(config) {
 
+        this.map = config.map || null;
         this.measureWindow = new GeoAdmin.MeasureWindow(Ext.apply({
-            renderTo: Ext.getBody()
+            renderTo: Ext.getBody(),
+            map: this.map
         }, config));
 
         config = Ext.apply({

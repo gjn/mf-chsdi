@@ -6,10 +6,13 @@ Ext.namespace("GeoAdmin");
 
 
 GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
+    
+    map: null,
 
     /**
      */
     constructor : function(config) {
+        this.map = config.map|| null;
 
         var serverStore = new Ext.data.SimpleStore({
             fields: ['url'],
@@ -59,36 +62,8 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 ['http://vogis.cnv.at/mapserver/mapserv?map=i_topographie_r_wms.map']
             ]
         });
-
-
-        var WmsBrowserPanel = new GeoAdmin.WmsBrowserPanel({
-            border: false,
-            gridPanelOptions: {
-                'height': 250
-            },
-            allowInvalidUrl: true,
-            layerStore: config.layerStore,
-            serverStore: serverStore,
-            zoomOnLayerAdded: false,
-            layerOptions: {
-                singleTile: true,
-                ratio: 1,
-                buffer: 0,
-                attribution: "WMS third party data"
-            }
-        });
-
-        var WmsBrowserWindow = new Ext.Window({
-            title: OpenLayers.i18n("WmsBrowser"),
-            height: 350,
-            width: 800,
-            layout: 'fit',
-            items: WmsBrowserPanel,
-            closeAction: 'hide',
-            renderTo: Ext.getBody()
-        });
-
-
+        
+        
         config = Ext.apply({
             allowDepress: false,
             iconCls: 'wms-browser',
@@ -98,6 +73,8 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
             }
         }, config);
 
+        var WmsBrowserWindow = new GeoAdmin.WmsBrowserWindow({serverStore: serverStore, layerStore: config.layerStore, map: this.map});
+        
         GeoAdmin.WmsBrowser.superclass.constructor.call(this, config);
     }
 });
@@ -105,3 +82,65 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
 /** api: xtype = ga_wmsbrowser */
 Ext.reg("ga_wmsbrowser", GeoAdmin.WmsBrowser);
 
+
+
+GeoAdmin.WmsBrowserWindow = Ext.extend(Ext.Window, {
+    
+    serverStore: null,
+    
+    layerStore: null,
+    
+    map: null,
+    
+    constructor: function(config) {
+    	  this.serverStore = config.serverStore || null;
+    	  this.layerStore = config.layerStore || null;
+    	  this.map = config.map || null;
+        var WmsBrowserPanel = new GeoAdmin.WmsBrowserPanel({
+            border: false,
+            gridPanelOptions: {
+                'height': 250
+            },
+            allowInvalidUrl: true,
+            serverStore: this.serverStore,
+            layerStore: this.layerStore,
+            zoomOnLayerAdded: false,
+            layerOptions: {
+                singleTile: true,
+                ratio: 1,
+                buffer: 0,
+                attribution: "WMS third party data"
+            }
+        });
+    	
+        var config = Ext.apply({
+            title: OpenLayers.i18n("WmsBrowser"),
+            height: 350,
+            width: 800,
+            layout: 'fit',
+            items: WmsBrowserPanel,
+            closeAction: 'hide',
+            renderTo: Ext.getBody()
+      }, config);
+      GeoAdmin.KmlSelectorWindow.superclass.constructor.call(this, config);
+    },
+    show: function() {
+        GeoAdmin.WmsBrowserWindow.superclass.show.apply(this, arguments);
+        var mapDiv = Ext.fly(this.map.div);
+        var mapViewPort = this.map.getViewport();
+        if (mapDiv && mapViewPort) {
+            var mapBox = mapDiv.getBox(true);
+            var OffsetLeft = OffsetTop = 0;
+            if (mapViewPort.offsetParent) {
+                do {
+                    OffsetLeft += mapViewPort.offsetLeft;
+                    OffsetTop += mapViewPort.offsetTop;
+                } while (mapViewPort = mapViewPort.offsetParent);
+            }
+            this.setPosition(OffsetLeft + mapBox.width/2 - this.width/2, OffsetTop);
+        }
+    }
+});
+/** api: xtype = ga_wmsbrowserwindow */
+Ext.reg("ga_wmsbrowserwindow", GeoAdmin.WmsBrowserWindow);
+        

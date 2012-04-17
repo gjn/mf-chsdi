@@ -43,13 +43,16 @@ OpenLayers.Control.SelectFeature.prototype.unselectAll = function(options) {
 };
 
 GeoAdmin.KmlSelector = Ext.extend(Ext.Action, {
-
+    
+    map: null,
     /**
      */
     constructor : function(config) {
 
+        this.map = config.map || null;
         var kmlSelectorWindow = new GeoAdmin.KmlSelectorWindow(Ext.apply({
-            renderTo: Ext.getBody()
+            renderTo: Ext.getBody(),
+            map: this.map
         }, config));
 
         config = Ext.apply({

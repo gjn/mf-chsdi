@@ -36,11 +36,13 @@ Ext.namespace('GeoAdmin');
  */
 
 GeoAdmin.Redlining = Ext.extend(Ext.Action, {
+	
+	  map: null,
 
     /**
      */
     constructor : function(config) {
-
+        this.map = config.map || null;
         var redliningWindow = new GeoAdmin.RedliningWindow(Ext.apply({
             renderTo: Ext.getBody()
         }, config));
@@ -50,7 +52,8 @@ GeoAdmin.Redlining = Ext.extend(Ext.Action, {
             text: OpenLayers.i18n('Redlining'),
             handler: function() {
                 redliningWindow.show();
-            }
+            },
+            map: this.map
         }, config);
 
         GeoAdmin.Redlining.superclass.constructor.call(this, config);

@@ -18,9 +18,11 @@ Ext.namespace('GeoAdmin');
 
 
 GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
+    
+    map: null,
 
     constructor: function(config) {
-
+        this.map = config.map || null;
         var redliningPanel = new GeoExt.ux.form.RedLiningPanel({
             map: config.map,
             'import': false,
@@ -59,6 +61,22 @@ GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
         }, config);
 
         GeoAdmin.RedliningWindow.superclass.constructor.call(this, config);
+    },
+    show: function() {
+        GeoAdmin.RedliningWindow.superclass.show.apply(this, arguments);
+        var mapDiv = Ext.fly(this.map.div);
+        var mapViewPort = this.map.getViewport();
+        if (mapDiv && mapViewPort) {
+            var mapBox = mapDiv.getBox(true);
+            var OffsetLeft = OffsetTop = 0;
+            if (mapViewPort.offsetParent) {
+                do {
+                    OffsetLeft += mapViewPort.offsetLeft;
+                    OffsetTop += mapViewPort.offsetTop;
+                } while (mapViewPort = mapViewPort.offsetParent);
+            }
+            this.setPosition(OffsetLeft + mapBox.width/2 - this.width/2, OffsetTop);
+        }
     },
     onDisable : function() {
         this.getActionEl().addClass(this.disabledClass);

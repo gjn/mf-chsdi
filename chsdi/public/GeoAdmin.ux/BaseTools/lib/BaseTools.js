@@ -26,7 +26,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     mail: false,
 
     constructor : function(config) {
-    	Ext.apply(this, config);
+        Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
         Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms', 'redlining']});
 
@@ -93,10 +93,10 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                         menu.push(new GeoAdmin.Measure({map: this.mapPanel.map}));
                         break;
                     case 'wms':
-                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers}));
+                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers, map: this.mapPanel.map}));
                         break;
                     case 'redlining':
-                        menu.push(new GeoAdmin.Redlining());
+                        menu.push(new GeoAdmin.Redlining({map: this.mapPanel.map}));
                        break;
                 }
             }
