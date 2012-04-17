@@ -19,7 +19,7 @@
     % elif c.feature.ak == 'GL':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://geo.gl.ch/maps/Public?visibleLayers=MOpublic" target="_blank">GL</a></td></tr>
     % elif c.feature.ak == 'JU':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/jura.php?Y=${c.extent.centroid.y}&X=${c.extent.centroid.x}&echelle=${c.scale}&theme=cadastre" target="_blank">JU</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/jura.php?Y=${c.extent.centroid.x}&X=${c.extent.centroid.y}&echelle=${c.scale}&theme=cadastre" target="_blank">JU</a></td></tr>
     % elif c.feature.ak == 'SG':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://schnittstelle.geoportal.ch/aufruf.aspx?VERSION=1.0&REQUEST=GetIGis&MAP=&WIDTH=600&TOPIC=Coord&ATTRIBUTE1=${c.extent.centroid.x}&ATTRIBUTE2=${c.extent.centroid.y}" target="_blank">SG</a></td></tr>
     % elif c.feature.ak == 'SH':
