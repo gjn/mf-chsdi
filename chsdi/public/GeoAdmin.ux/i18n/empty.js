@@ -599,5 +599,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Your photo must have a common file format (jpg; jpeg; png; gif).': "",
 	'Your photo must not exceed the maximum size of 3MB.': "",
 	'Your track must have a common file format (gpx; kml; kmz).': "",
-	'Your track must not exceed the maximum size of 4MB.': ""
+	'Your track must not exceed the maximum size of 4MB.': "",
+    'ch.kantone': "",
+    'ch.swisstopo.hintergrund-farbe': "",
+    'ch.kantone.cadastralwebmap-farbe': ""
 });
