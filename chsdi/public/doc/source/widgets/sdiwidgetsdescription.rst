@@ -131,13 +131,6 @@ This widget display the legend of all activelayers in a new windows.
 
 See example:  :ref:`legendwindow`
 
-Redlining
-************
-  
-This widget allows you to draw point, line and polygon feature on the map.
- 
-See example:  :ref:`redlining`
- 
 Measure
 *******
   
