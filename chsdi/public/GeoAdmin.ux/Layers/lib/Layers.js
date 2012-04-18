@@ -669,6 +669,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.swissbuildings3d": {
+                name: OpenLayers.i18n("ch.swisstopo.swissbuildings3d"),
+                layertype: 'wmts',
+                timestamp: '19980101',
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.swisstopo.vec25-eisenbahnnetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-eisenbahnnetz"),
                 layertype: 'wmts',
@@ -686,6 +695,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true
+            },
+            "ch.swisstopo.swisstlm3d-wanderwege": {
+                name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-wanderwege"),
+                layertype: 'wmts',
+                timestamp: '20050101',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
             },
             "ch.swisstopo.vec25-einzelobjekte": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-einzelobjekte"),

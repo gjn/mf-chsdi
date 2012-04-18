@@ -731,6 +731,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.vec25-uebrigerverkehr"
                     },
                     {
+                        layerId: "ch.swisstopo.swisstlm3d-wanderwege"
+                    },
+                    {
                         layerId: "ch.swisstopo.vec25-wander"
                     },
                     {
@@ -746,6 +749,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
+                    },
+                    {
+                        layerId: "ch.swisstopo.swissbuildings3d"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-building"

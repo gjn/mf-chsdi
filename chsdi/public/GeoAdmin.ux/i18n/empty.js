@@ -603,4 +603,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.kantone': "",
     'ch.swisstopo.hintergrund-farbe': "",
     'ch.kantone.cadastralwebmap-farbe': ""
+    'ch.swisstopo.swissbuildings3d': ""
+    'ch.swisstopo.swisstlm3d-wanderwege': ""
 });
