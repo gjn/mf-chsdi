@@ -20,6 +20,16 @@ Who can use the GeoAdmin API ?
 
 The GeoAdmin API terms of use are accessible here: http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html
 
+What is the license of the GeoAdmin API ?
+-----------------------------------------
+
+The api.geo.admin.ch source may be distributed with a BSD license. ExtJS provides a license exception (http://extjs.com/products/ux-exception.php) for open source frameworks using ExtJS that allows this license. Practically, this means you can modify and redistribute api.geo.admin.ch without any special requirements. Keep in mind that the same is not true for ExtJS - if you redistribute the source or make any modifications, you are bound to the terms of their license.
+
+From a practical point of view, two solutions can be proposed:
+
+ * You accept that everyone can use your code (you still can sell it), then you don't need to buy an ExtJS license and your code will be BSD.
+ * You don't accept that someone uses your code (you can of course sell it), then you need to buy an ExtJS license.
+
 What are the technical restrictions of the GeoAdmin API ?
 ---------------------------------------------------------
 
