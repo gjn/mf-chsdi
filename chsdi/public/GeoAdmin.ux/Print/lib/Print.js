@@ -330,7 +330,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         var enc;
                         // Support aggregateLayer
                         if (layer.maxScale && layer.minScale && scale) {
-                            if (scale >= Math.round(layer.maxScale, 2) && scale <= Math.round(layer.minScale, 2)) {
+                            if (scale >= Math.round(layer.maxScale, 2) && scale <= Math.round(layer.minScale, 2) || scale == '1000') {
                                 enc = this.encodeLayer(layer);
                                 enc && encodedLayers.push(enc);
                             }
