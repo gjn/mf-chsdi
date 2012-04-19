@@ -84,7 +84,9 @@ API
 
    api/sdiapitutorial
    api/sdiapidoc
+   lightapi/sdilightapidoc
    api/sdiapiexamples
+   lightapi/sdiapiexamples
    api/sdiapigenerator
    widgets/sdiwidgetsdescription
    api/faq/index

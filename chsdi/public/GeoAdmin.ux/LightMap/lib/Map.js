@@ -33,18 +33,16 @@
 
 /** api: example
  *  Sample code to create a map (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html>`_):
- *
- *
+ *  
  *  .. code-block:: javascript
  *
  *     var map = new GeoAdmin.Map("mapdiv", {doZoomToMaxExtent: true});
- *
  *
  */
 
 /** api: constructor
  *  .. class:: Map(div, options)
- *
+ *  
  *  :param div:    ``String`` The element where the map will be rendered (or the id for that element).
  *  :param config: ``Object`` options (optional).
  *
@@ -403,6 +401,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (scale == 20000) return 9;
         if (scale == 10000) return 10;
         if (scale == 5000) return 11;
+        if (scale == 1000) return 12;
+        if (scale == 500) return 13;
         return null;
     }
 });

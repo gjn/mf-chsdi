@@ -15,6 +15,23 @@ The GeoAdmin API provides also some REST web services like :doc:`../../services/
 
 The GeoAdmin API integrates the ExtJS, GeoExt and OpenLayers library. You can use these libraries when you use the GeoAdmin API.
 
+What is the GeoAdmin Light API (BETA) ?
+---------------------------------------
+
+The GeoAdmin Light API allows the integration in web pages of geospatial information provided by the Swiss Confederation.
+
+The GeoAdmin Light API is a light version of GeoAdmin API and contains a subset of the functions of GeoAdmin API.
+
+The GeoAdmin Light API targets the user who want to have only a simple map in their web page.
+
+The GeoAdmin Light API contains the minimum part of the OpenLayers library.
+
+The GeoAdmin Light API contains also CSS code which is less intrusive than the CSS code of the GeoAdmin API.
+
+Terms of use of GeoAdmin Light API are the same like GeoAdmin API.
+
+License of GeoAdmin Light API is BSD and, since ExtJS is not par of it, it can be used completely according to the BSD license.
+
 Who can use the GeoAdmin API ?
 ------------------------------
 
@@ -252,6 +269,23 @@ Call it with:
    <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=debug"></script>
 
 In this case, the api code will be uncompressed and this simplifies the debugging process.
+
+How can I use the GeoAdmin Light API (BETA) ?
+---------------------------------------------
+
+The GeoAdmin Light API (BETA) can be loaded by calling:
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.jsi?mode=light"></script>
+
+If you want to be in debug mode, then load it with:
+
+.. code-block:: html
+
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=light-debug"></script>
+
+In this case, the light api code will be uncompressed and this simplifies the debugging process.
 
 Why do some cool functionalities from OpenLayers miss from api.js ?
 --------------------------------------------------------------------------

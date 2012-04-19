@@ -678,6 +678,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (scale == 20000) return 9;
         if (scale == 10000) return 10;
         if (scale == 5000) return 11;
+        if (scale == 1000) return 12;
+        if (scale == 500) return 13;
         return null;
     }
 });
