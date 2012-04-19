@@ -119,11 +119,11 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                     new GeoExt.Popup({
                         title: OpenLayers.i18n("Feature Info"),
                         width: 300,
-                        height: 250,
+                        height: 150,
                         autoScroll: true,
                         maximizable: true,
                         map: api20.mapPanel.map,
-                        location: api20.map.getLonLatFromPixel(e.xy),
+                        location: new OpenLayers.Geometry.Point(api20.mapPanel.map.getLonLatFromPixel(e.xy).lon,api20.mapPanel.map.getLonLatFromPixel(e.xy).lat),
                         html: formatInfo(features)
                     }).show();
                     // reset the cursor
@@ -223,11 +223,11 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
                     new GeoExt.Popup({
                         title: OpenLayers.i18n("Feature Info"),
                         width: 300,
-                        height: 250,
+                        height: 150,
                         autoScroll: true,
                         maximizable: true,
                         map: api20.mapPanel.map,
-                        location: api20.map.getLonLatFromPixel(e.xy),
+                        location: new OpenLayers.Geometry.Point(api20.mapPanel.map.getLonLatFromPixel(e.xy).lon,api20.mapPanel.map.getLonLatFromPixel(e.xy).lat),
                         html: formatInfo(features)
                     }).show();
                     // reset the cursor

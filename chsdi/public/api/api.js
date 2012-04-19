@@ -771,8 +771,7 @@ GeoAdmin.API = OpenLayers.Class({
             options.location = feature;
             options.html = feature.attributes.html || feature.attributes.description;
         } else {
-            options.location = new OpenLayers.LonLat(
-                    options.easting, options.northing);
+            options.location = new OpenLayers.Geometry.Point(options.easting, options.northing); 
         }
 
         if (this.popup) {
