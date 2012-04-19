@@ -46,7 +46,7 @@ App.catalogConfig = {
                 text: 'Landschaftsmerkmale & -informationen',
                 children: [
                     {
-                        layerId: 'ch.swisstopo.gg25-gemeinde-flaeche.fill',
+                        layerId: 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
                         leaf: true
                     },
                     {
