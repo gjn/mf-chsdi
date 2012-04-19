@@ -49,7 +49,7 @@ This example presents a combination of WMS and WMTS layers.
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
 
     map6.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
-    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+    map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
 
     var layertree = new GeoAdmin.LayerTree({
         map: map6,
@@ -76,7 +76,7 @@ This example presents a combination of WMS and WMTS layers.
     var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
 
     map6.addLayerByName("ch.bfs.gebaeude_wohnungs_register");
-    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+    map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
 
     var layertree = new GeoAdmin.LayerTree({
         map: map6,

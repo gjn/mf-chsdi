@@ -51,7 +51,7 @@ more detailed informations on the layers and the legend.
                     var api = new GeoAdmin.API();
                     var map6 = api.createMap({div: "mymap", width: 500});
                     map6.addLayerByName("ch.swisstopo.hiks-dufour");
-                    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+                    map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
                     map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
                     api.createLayerTree({
                         renderTo: "mylayertree",
@@ -77,7 +77,7 @@ more detailed informations on the layers and the legend.
                     var api = new GeoAdmin.API();
                     var map6 = api.createMap({div: "mymap", width: 500});
                     map6.addLayerByName("ch.swisstopo.hiks-dufour");
-                    map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+                    map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
                     map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
                     api.createLayerTree({
                         renderTo: "mylayertree",

@@ -77,7 +77,7 @@ Map with gray pixelmap and overlay layer
       function init() {
          var map2 = new GeoAdmin.Map("mymap2", {doZoomToMaxExtent: true});
          map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
-         map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map2.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
       }
    </script>
    <body onload="init();">
@@ -227,7 +227,7 @@ BOD Search
 
          var map2 = new GeoAdmin.Map("mymap2", {doZoomToMaxExtent: true});
          map2.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
-         map2.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map2.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
 
          var map3 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          map3.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});

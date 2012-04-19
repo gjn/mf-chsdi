@@ -46,7 +46,7 @@ Layer Tree
       function init() {
          var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.hiks-dufour");
-         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
          map6.addLayerByName("ch.bafu.wasser-entnahme");
          var layertree = new GeoAdmin.LayerTree({
@@ -89,7 +89,7 @@ Tooltip
    <script type="text/javascript">
       function init() {
          var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
-         map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map7.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          var tooltip = new GeoAdmin.Tooltip({baseUrl: 'http://map.geo.admin.ch'});
          map7.addControl(tooltip);
          tooltip.activate();
@@ -239,7 +239,7 @@ Navigation History
          
          var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.hiks-dufour");
-         map6.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          map6.addLayerByName("ch.bafu.wasser-entnahme");
          var layertree = new GeoAdmin.LayerTree({
              map: map6,
@@ -248,7 +248,7 @@ Navigation History
          });
 
          var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
-         map7.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+         map7.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          var tooltip = new GeoAdmin.Tooltip({baseUrl: 'http://map.geo.admin.ch'});
          map7.addControl(tooltip);
          tooltip.activate();
