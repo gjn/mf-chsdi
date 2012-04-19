@@ -63,8 +63,8 @@ class CheckerController(BaseController):
             
             # Test BOD details 
             check = self._checkUrl('BOD search details service',
-                                   'http://'+serviceUrl+'/bodsearch/details/ch.swisstopo.gg25-kanton-flaeche.fill',
-                                   'ch.swisstopo.gg25-kanton-flaeche.fill', request.host)
+                                   'http://'+serviceUrl+'/bodsearch/details/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill',
+                                   'ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', request.host)
             if  (check != 'OK'):
                 response.status='500'
                 return check
@@ -87,7 +87,7 @@ class CheckerController(BaseController):
 
             # Test feature search 
             check = self._checkUrl('Feature search  service',
-                                   'http://'+serviceUrl+'/feature/search?lang=en&layers=ch.swisstopo.gg25-kanton-flaeche.fill&bbox='+bbox,
+                                   'http://'+serviceUrl+'/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox='+bbox,
                                    'FeatureCollection', request.host)
             if  (check != 'OK'):
                 response.status='500'
@@ -95,7 +95,7 @@ class CheckerController(BaseController):
 
             # Test feature bbox 
             check = self._checkUrl('Feature bbox  service',
-                                   'http://'+serviceUrl+'/feature/bbox?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922',
+                                   'http://'+serviceUrl+'/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=5922',
                                    'bbox', request.host)
             if  (check != 'OK'):
                 response.status='500'
@@ -103,7 +103,7 @@ class CheckerController(BaseController):
 
             # Test feature geometry
             check = self._checkUrl('Feature geometry service',
-                                   'http://'+serviceUrl+'/feature/geometry?layer=ch.swisstopo.gg25-gemeinde-flaeche.fill&ids=5922',
+                                   'http://'+serviceUrl+'/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=5922',
                                    'MultiPolygon', request.host)
             if  (check != 'OK'):
                 response.status='500'
