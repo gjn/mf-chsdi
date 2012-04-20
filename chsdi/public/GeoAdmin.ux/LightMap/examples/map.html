@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel=stylesheet type=text/css href=../../../build/api-light.css>
+    <style>
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body onload="init()">
+<div id="map"></div>
+<script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="../../GeoAdmin.js"></script>
+<script type="text/javascript" src="../lib/Map.js"></script>
+<script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+<script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+<script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+<script>
+    var map;
+    GeoAdmin.OpenLayersImgPath = "../../Map/img/";
+    function init() {
+        map = new GeoAdmin.Map("map", {doZoomToMaxExtent: true});
+        map.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+    }
+</script>
+</body>
+</html>

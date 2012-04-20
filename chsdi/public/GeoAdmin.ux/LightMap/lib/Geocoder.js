@@ -1,9 +1,13 @@
 /*global GeoAdmin:true, OpenLayers: true */
 
 /**
- * @include Ext/src/ext-core/examples/jsonp/jsonp.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
+ * @requires OpenLayers/Geometry.js
+ * @requires OpenLayers/Geometry/MultiLineString.js
+ * @requires OpenLayers/Format/JSON.js
+ * @requires OpenLayers/Format/WKT.js
+ * @requires OpenLayers/Protocol/Script.js
  */
 
 /** api: (define)
@@ -38,6 +42,7 @@ GeoAdmin.Geocoder = OpenLayers.Class({
     url: null,
     store: null,
     query: null,
+    popup: null,
 
     /*
      * objectorig to zoom level
@@ -51,7 +56,6 @@ GeoAdmin.Geocoder = OpenLayers.Class({
         'LK25' : 8
     },
 
-
     /** api: config[map]
      *  ``OpenLayers.Map``
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
@@ -63,92 +67,100 @@ GeoAdmin.Geocoder = OpenLayers.Class({
             this.url = GeoAdmin.webServicesUrl + "/swisssearch/geocoding";
         }
         OpenLayers.Util.extend(this, options || {});
+        this.scriptProtocol = new OpenLayers.Protocol.Script({
+            url: this.url,
+            callback: this.geocodeCb,
+            callbackKey: 'cb',
+            format: new OpenLayers.Format.JSON({
+                nativeJSON: false
+            }),
+            scope: this
+        });
+        window.geocoderPopup = this;
+        // Create div for popup
+        this.initPopup();
+
         if (options.query) {
             this.geocode(options.query);
         }
     },
 
+    initPopup: function() {
+        this.popup = document.createElement('div');
+        this.popup.style.position = 'fixed';
+        this.popup.style.left = '50%';
+        this.popup.style.top = '50%';
+        this.popup.style.width = '400px';
+        this.popup.style.height = '250px';
+        this.popup.style.overflow = 'auto';
+        this.popup.style.display = 'none';
+        this.popup.style.marginLeft = '-200px';
+        this.popup.style.marginTop = '-125px';
+        this.popup.style.zIndex = '20000';
+        this.popup.style.backgroundColor = '#eeeeee';
+        document.body.appendChild(this.popup);
+    },
+
+    showPopup: function(html) {
+        this.popup.innerHTML = html;
+        this.popup.style.display = 'block';
+    },
+
+    hidePopup: function() {
+        this.popup.style.display = 'none';
+    },
+
     geocodeCb: function(response) {
-        var reader = new Ext.data.JsonReader({
-            root: 'results',
-            fields: ['label', 'service', 'bbox', 'objectorig']});
-        var records = reader.readRecords(response);
-        this.store = new Ext.data.Store({reader: reader});
-        this.store.loadData(reader.jsonData);
-        if (this.store.totalLength == 0) {
-            Ext.MessageBox.show({
-                title: OpenLayers.i18n("No result"),
-                msg: OpenLayers.i18n("Geocoding failed. No result has been found.")
-            })
-        }
-        if (this.store.totalLength == 1) {
-            var record = this.store.getAt(0);
-            this.centerOnRecord(record);
+        window.geocoderResults = response.data.results;
 
+        if (response.data.results.length == 0) {
+            alert(OpenLayers.i18n("Geocoding failed. No result has been found."))
         }
-        if (this.store.totalLength > 1) {
-            // !! Duplicated code from SwissSearchCombo !!
-            var grid = new Ext.grid.GridPanel({
-                store: this.store,
-                hideHeaders: true,
-                colModel: new Ext.grid.ColumnModel({
-                    columns: [
-                        {id: 'label', header: OpenLayers.i18n('Name'), sortable: true, dataIndex: 'label'}
-                    ]
-                }),
-                sm: new Ext.grid.RowSelectionModel({
-                    singleSelect:true,
-                    listeners: {
-                        rowselect: function(smObj, rowIndex, r) {
-                            if (this.map.vector) {
-                                this.map.vector.removeAllFeatures();
-                            }
-                            this.centerOnRecord(r);
-                            this.selectWindow.hide();
-                        },
-                        scope: this
-                    }
-                }),
-                viewConfig: {forceFit: true}
-            });
-            this.selectWindow = new Ext.Window({
-                width: 400,
-                height: 300,
-                autoScroll: true,
-                modal: true,
-                layout: 'fit',
-                title: OpenLayers.i18n("select one location for") + " " + this.query,
-                items: [grid]
-            });
-            this.selectWindow.show();
-
+        if (response.data.results.length == 1) {
+            this.centerOnRecord(response.data.results[0]);
+        }
+        if (response.data.results.length > 1) {
+            this.showPopup(this.createResultHtml(response.data.results));
         }
     },
 
-    // !! Duplicated code from SwissSearchCombo !!
     centerOnRecord: function(record) {
-        // !! Duplicated code from SwissSearchCombo !!
-        var extent = OpenLayers.Bounds.fromArray(record.data.bbox);
+        if (this.map.vector) {
+            this.map.vector.removeAllFeatures();
+        }
+        if (typeof record == 'number') {
+            record = window.geocoderResults[record];
+        }
+        var extent = OpenLayers.Bounds.fromArray(record.bbox);
         var zoom = undefined;
-        if (record.data.service == 'address') {
+        if (record.service == 'address') {
             zoom = 10;
-        } else if (record.data.service === 'swissnames') {
+        } else if (record.service === 'swissnames') {
             zoom = 8;
         } else {
-            zoom = this.objectorig_zoom[record.data.objectorig];
+            zoom = this.objectorig_zoom[record.objectorig];
         }
 
         if (zoom === undefined) {
             this.map.zoomToExtent(extent);
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
-            if (record.data.service == 'address' || record.data.service === 'swissnames') {
+            if (record.service == 'address' || record.service === 'swissnames') {
                 var cross = this.createRedCross(extent.getCenterLonLat());
                 if (this.map.vector) {
                     this.map.vector.addFeatures([cross]);
                 }
             }
         }
+    },
+
+    createResultHtml: function(results) {
+        var html = '<p style="font-weight:bold;margin-left: 3px">' + OpenLayers.i18n("select one location for") + " " + this.query + '</p>';
+        for (var i = 0; i < results.length; i++) {
+            html = html + '<a style="margin-left: 3px" href="javascript:window.geocoderPopup.centerOnRecord(' + i + ');window.geocoderPopup.hidePopup();">' + results[i].label + '</a><br>';
+        }
+        html = html + '<input style="float: right;margin-right: 3px;margin-bottom: 3px;" type="button"" value="' + OpenLayers.i18n('Close') + '" onClick="window.geocoderPopup.hidePopup();">';
+        return html;
     },
 
     // !! Duplicated code from SwissSearchCombo !!
@@ -164,8 +176,8 @@ GeoAdmin.Geocoder = OpenLayers.Class({
             ")";
         var geom = OpenLayers.Geometry.fromWKT(wkt);
         var cross = new OpenLayers.Feature.Vector(geom, {}, {strokeColor: 'red', strokeWidth: 2.0, strokeOpacity: 1, strokeDashstyle: 'solid', strokeLinecap: 'round'});
-
         return cross;
+
     },
 
     /** api: method[geocode]
@@ -175,14 +187,12 @@ GeoAdmin.Geocoder = OpenLayers.Class({
      */
     geocode: function(query) {
         this.query = query;
-        Ext.ux.JSONP.request(this.url, {
-            callbackKey: "cb",
+
+        this.scriptProtocol.read({
             params: {
                 query: query,
                 lang: OpenLayers.Lang.getCode()
-            },
-            scope: this,
-            callback: this.geocodeCb
+            }
         });
     }
 

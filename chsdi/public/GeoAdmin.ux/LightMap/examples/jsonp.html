@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body onload="init()">
+<script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="../../GeoAdmin.js"></script>
+<script type="text/javascript" src="../lib/Map.js"></script>
+<script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+<script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+<script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+<script>
+   function init() {
+       var scriptProtocol = new OpenLayers.Protocol.Script({
+           url: 'http://api.geo.admin.ch/feature/6644?',
+           callback: function(response) {
+               alert("JSONP requests provided a result");
+           },
+           callbackKey: 'cb',
+           format: new OpenLayers.Format.JSON({
+               nativeJSON: false
+           })
+       });
+      scriptProtocol.read({
+         params: {layer: 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'}
+      });
+   }
+</script>
+</body>
+</html>

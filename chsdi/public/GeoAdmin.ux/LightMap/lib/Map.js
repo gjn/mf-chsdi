@@ -5,11 +5,9 @@
  * @requires OpenLayers/Kinetic.js
  * @include OpenLayers/Control/TouchNavigation.js
  * @include OpenLayers/Control/Navigation.js
- * @include OpenLayers/Control/PanZoomBar.js
  * @include OpenLayers/Control/Attribution.js
  * @include OpenLayers/Control/ScaleLine.js
- * @include OpenLayers/Control/Panel.js
- * @include OpenLayers/Control/ZoomToMaxExtent.js
+ * @include OpenLayers/Control/Zoom.js
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/Protocol/HTTP.js
@@ -23,6 +21,7 @@
  *
  * @include proj4js/lib/defs/EPSG21781.js
  * @include Map/lib/EPSG2056.js
+ * @include LightMap/lib/Geocoder.js
  */
 
 /** api: (define)
@@ -71,14 +70,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
         OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
 
-        var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
-            title: OpenLayers.i18n('Zoom to the max extent')
-        });
-        var panel = new OpenLayers.Control.Panel({
-            defaultControl: zoom_max
-        });
-        panel.addControls([zoom_max]);
-
         this.attributionCtrl = OpenLayers.Util.extend(new OpenLayers.Control.Attribution(), {
             updateAttribution: function () {
                 var attributions = [];
@@ -112,7 +103,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 }
             });
         } else {
-            navigationControl = new OpenLayers.Control.Navigation();
+            navigationControl = new OpenLayers.Control.Navigation({
+                dragPanOptions: {
+                    interval: 100,
+                    enableKinetic: true
+                }
+            });
         }
 
         options = OpenLayers.Util.extend(options, {
@@ -120,10 +116,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             units: "m",
             controls: [
                 navigationControl,
-                new OpenLayers.Control.PanZoomBar(),
+                new OpenLayers.Control.Zoom(),
                 this.attributionCtrl,
                 new OpenLayers.Control.ScaleLine({maxWidth: 120}),
-                panel,
                 this.overviewMapCtrl
             ],
             theme: false,

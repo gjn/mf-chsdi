@@ -5,3 +5,4 @@ Light API Examples (BETA)
     :maxdepth: 1
 
     sdiapiexamples1
+    sdiapiexamples2
