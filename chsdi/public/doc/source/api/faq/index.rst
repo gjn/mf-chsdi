@@ -32,6 +32,21 @@ Terms of use of GeoAdmin Light API are the same like GeoAdmin API.
 
 License of GeoAdmin Light API is BSD and, since ExtJS is not par of it, it can be used completely according to the BSD license.
 
+How to choose between the GeoAdmin API and the GeoAdmin Light API ?
+-------------------------------------------------------------------
+
+If you need only a simple map, use the GeoAdmin Light API.
+
+If you want to use only OpenLayers, use the GeoAdmin Light API.
+
+If you want to create a web mapping application, use the GeoAdmin API.
+
+If you want to use ExtJS, GeoExt and OpenLayers, use the GeoAdmin API.
+
+If you want a less intrusive API, use the GeoAdmin Light API.
+
+If you ask us, we'll simply anwer that it depends of your needs ;-)
+
 Who can use the GeoAdmin API ?
 ------------------------------
 
