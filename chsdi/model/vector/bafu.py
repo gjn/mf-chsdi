@@ -180,7 +180,7 @@ class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
     __table_args__ = ({'schema': 'schutzge', 'autoload': True})
     __template__ = 'tooltips/paerke_nationaler_bedeutung.mako'
 
-    id = Column('park_id', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class RA(Base, Queryable):
@@ -311,7 +311,7 @@ class biosphaerenreservate(Base, Queryable):
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __template__ = 'tooltips/biosphaerenreservate.mako'
 
-    id = Column('biores_id', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     biores_ver = Column('biores_ver', Text)
     biores_fl = Column('biores_fl', Text)
     biores_gf = Column('biores_gf', Text)
@@ -381,7 +381,7 @@ class trockenwiesenundweiden(Base, Queryable):
     __tablename__ = 'tww'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/trockenwiesenundweiden.mako'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
 
