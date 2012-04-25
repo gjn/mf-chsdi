@@ -344,14 +344,6 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             }
 
         }
-        // zoom
-        if (state.zoom) {
-            this.zoomTo(state.zoom);
-        }
-        // scale
-        if (state.scale) {
-            this.zoomTo(this._getZoomFromScale(state.scale), true);
-        }
     },
     /** api: method[destroy]
      *
