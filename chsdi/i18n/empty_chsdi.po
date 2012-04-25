@@ -16,6 +16,9 @@ msgstr ""
 msgid "contact title"
 msgstr ""
 
+msgid "parcel"
+msgstr ""
+
 msgid "contact url"
 msgstr ""
 

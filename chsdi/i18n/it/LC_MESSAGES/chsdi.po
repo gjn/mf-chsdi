@@ -1160,6 +1160,9 @@ msgstr "Insediamento"
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch viene caricata"
 
+msgid "parcel"
+msgstr "Parcella"
+
 msgid "pdf"
 msgstr "PDF"
 

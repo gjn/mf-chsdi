@@ -1160,6 +1160,9 @@ msgstr "Maletg dal lieu"
 msgid "page is loading. please wait..."
 msgstr "map.geo.admin.ch vegn chargià."
 
+msgid "parcel"
+msgstr "Parcel"
+
 msgid "pdf"
 msgstr "PDF"
 
