@@ -1,4 +1,4 @@
-<Proxy ajp://localhost:8009/print-geoadmin-${instanceid}>
+<Proxy ajp://localhost:8009/print-chsdi${instanceid}>
     Order deny,allow
     Allow from all
 </Proxy>
@@ -8,8 +8,8 @@
     Header set Set-Cookie "SRV=${hostname-digest}; path=/${vars:instanceid}/wsgi/print/"
 </Location>
 
-ProxyPass        /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-geoadmin-${instanceid}/
-ProxyPassReverse /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-geoadmin-${instanceid}/
+ProxyPass        /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-chsdi${instanceid}/pdf/
+ProxyPassReverse /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-chsdi${instanceid}/pdf/
 
 # Try to force IE to open the PDF in a new window
 # overriding what set by the print server
