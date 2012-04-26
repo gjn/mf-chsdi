@@ -465,7 +465,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.swissboundaries3d-land-flaeche.fill':'National boundaries',
 	'ch.swisstopo.swissbuildings3d':'Simplified 3D buildings',
 	'ch.swisstopo.swissimage':'Aerial imagery',
-	'ch.swisstopo.swisstlm3d-wanderwege':'hiking trails',
+	'ch.swisstopo.swisstlm3d-wanderwege':'Hiking trails',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'National parks VECTOR200',
 	'ch.swisstopo.vec200-building':'Building generalized VECTOR200',
