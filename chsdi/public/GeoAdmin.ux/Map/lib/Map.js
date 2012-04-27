@@ -162,7 +162,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         OpenLayers.Util.applyDefaults(options, {
             maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
-            resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25],
+            resolutions: [650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.0, 0.5, 0.25, 0.1],
             layers: [this.aerial, this.vector]
         });
 
@@ -601,8 +601,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.layers[i].arrayOrder = 1;
             } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.pixelkarte-grau') {
                 this.layers[i].arrayOrder = 2;
-            } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.hintergrund-farbe') {
                 this.layers[i].arrayOrder = 3;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
+                this.layers[i].arrayOrder = 4;
             } else {
                 this.layers[i].arrayOrder = 100 + i;
             }

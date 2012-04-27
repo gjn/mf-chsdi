@@ -552,6 +552,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
+                    },
+                    {
+                        layerId: "ch.kantone.cadastralwebmap-farbe"
                     }
                 ]
             }

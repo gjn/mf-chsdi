@@ -113,7 +113,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['label', 'service', 'bbox', 'objectorig']
+            fields: ['label', 'service', 'bbox', 'objectorig', 'Y', 'X', 'name']
         });
         this.tpl = new Ext.XTemplate(
                 '<tpl for="."><div class="x-combo-list-item {service}">',
@@ -213,12 +213,17 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
         if (zoom === undefined) {
             this.map.zoomToExtent(extent);
+            if (record.data.service == 'parcel') {
+                var labelGeometry = new OpenLayers.Geometry.Point(record.data.Y, record.data.X);
+                var label = new OpenLayers.Feature.Vector(labelGeometry, {}, {label: record.data.name, labelOutlineColor: "white", labelOutlineWidth: 3, fontStyle: 'italic', fontWeight: 'bold', stroke: true, fontColor: '#ff0000'})
+                this.map.vector.addFeatures([label]);
+            }
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
             if (record.data.service == 'address' || record.data.service === 'swissnames') {
                 var cross = this.createRedCross(extent.getCenterLonLat());
                 this.map.vector.addFeatures([cross]);
-            }
+            } 
         }
     },
 

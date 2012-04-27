@@ -456,7 +456,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
-                maxScale: config.maxScale ? config.maxScale : 250,
+                maxScale: config.maxScale,
                 minScale: config.minScale,
                 ratio: 1.1,
                 transitionEffect: myTransitionEffect
@@ -470,7 +470,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             var sub_layers = [];
             var i;
             for (i = 0; i < config.subLayersName.length; i++) {
-                sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {});
+                sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {aggregateChild: true});
             }
             var layer_options_aggregate = OpenLayers.Util.extend({
                 layername: name,
@@ -512,7 +512,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 geoadmin_queryable: config.queryable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
-                maxScale: config.maxScale ? config.maxScale : 250,
+                maxScale: config.maxScale,
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
                 minScale: config.minScale
             }, options);
@@ -568,6 +568,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+            "ch.swisstopo.hintergrund-farbe": {
+                name: OpenLayers.i18n("ch.swisstopo.hintergrund-farbe"),
+                layer: 'ch.kantone.cadastralweb-farbe.test',
+                isBgLayer: true,
+                layertype: 'wmts',
+                timestamp: '20120319',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.kantone",
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
+            },
             "voidLayer": {
                 name: OpenLayers.i18n("voidLayer"),
                 isBgLayer: true
@@ -582,6 +593,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.babs",
                 queryable: true
+            },
+            "ch.kantone.cadastralwebmap-farbe": {
+                name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
+                layer: 'ch.kantone.cadastralweb-farbe.test',
+                layertype: 'wmts',
+                timestamp: '20120319',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.kantone",
+                queryable: true,
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
             },
             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
@@ -610,6 +632,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bfs",
                 queryable: false,
                 minScale: 25001,
+                maxScale: 1,
                 type: "point"
             },
             "ch.swisstopo.hiks-dufour": {
@@ -795,6 +818,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false,
                 minScale: 200001,
+                maxScale: 1,
                 type: "point"
             },
             "ch.swisstopo.fixpunkte-hoehe": {
@@ -824,6 +848,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false,
                 minScale: 200001,
+                maxScale: 1,
                 type: "point"
             },
             "ch.bfs.arealstatistik-1985": {
