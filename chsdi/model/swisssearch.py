@@ -78,7 +78,15 @@ class SwissSearch(Base, Queryable):
                           'rank': self.id,
                           'egid': self.egid,
                           'label': "%s %s <b>%s %s</b> "%(self.strname1, address_nr,self.plz, self.ort_27)})
-            
+            elif self.origin == 'parcel':
+                o.update({'service': 'parcel',
+                          'rank': self.rank,
+                          'name': self.name,
+                          'bfsnr': self.gdenr,
+                          'city': self.gemname,
+                          'Y' : loads(self.geom_point.geom_wkb.decode('hex')).x,
+                          'X' : loads(self.geom_point.geom_wkb.decode('hex')).y,
+                          'label': "<b>%s %s</b> (%s)"%(self.gemname,self.name,_('parcel'))}) 
             if rawjson:
                     del o['label']
                     del o['bbox']

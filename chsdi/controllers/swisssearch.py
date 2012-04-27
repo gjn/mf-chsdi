@@ -41,10 +41,10 @@ class SwisssearchController(BaseController):
             set_lang(self.lang, fallback=True)
 
         self.services = None
-        available_services = 'cities,swissnames,districts,address,cantons,postalcodes'
+        available_services = 'cities,swissnames,districts,address,cantons,postalcodes,parcel'
         services = request.params.get('services', available_services).split(',')
         self.services = [s for s in services if s in available_services.split(',')]
-        origin_to_service_map = {'zipcode': 'postalcodes', 'sn25': 'swissnames', 'gg25': 'cities', 'kantone': 'cantons', 'district': 'districts', 'address': 'address'}
+        origin_to_service_map = {'zipcode': 'postalcodes', 'sn25': 'swissnames', 'gg25': 'cities', 'kantone': 'cantons', 'district': 'districts', 'address': 'address', 'parcel': 'parcel'}
         self.origins = [ origin for origin, service in origin_to_service_map.iteritems() if service in self.services ]
 
         if len(self.services) < 1:
@@ -74,7 +74,7 @@ class SwisssearchController(BaseController):
         else:
             # order addresses by 1/gid instead of similarity, addresses (gid) are sorted in import table by house number, street etc.
             # otherwise limit 20 is truncating important results (e.g. Kirchweg Glis -> there is no kirchweg 11 or kirchweg 15)
-            ftsOrderBy = "CASE WHEN origin = 'address' THEN 1/gid ELSE similarity(search_name,'%(query)s') END desc" % {'query': q.replace("'","''").replace('"','\"') }
+            ftsOrderBy = "rank asc, CASE WHEN origin = 'address' THEN 1/gid::float WHEN origin = 'parcel' THEN 1/SUBSTRING(name FROM '([0-9]+)')::float ELSE similarity(search_name,'%(query)s') END desc" % {'query': q.replace("'","''").replace('"','\"') }            
             terms = q.split()
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'to_tsvector(\'english\',search_name)'
@@ -137,7 +137,7 @@ class SwisssearchController(BaseController):
             return FeatureCollection(features)
         else:
             features += query.all()
-            return {'results': sorted([f.json(rawjson=False, nogeom=self.no_geom) for f in features], key=itemgetter('rank'))}
+            return {'results': [f.json(rawjson=False, nogeom=self.no_geom) for f in features]}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):
