@@ -531,6 +531,26 @@ GeoAdmin._Layers = OpenLayers.Class({
     initialize: function() {
     },
 
+    getCadastralTimestamp: function() {
+        // Rule: if the day is bigger than the 3 of the month, then the timestamp is the first day of the month
+        var currentDate = new Date();
+        var dayNumber = currentDate.getDate();
+        if (dayNumber < 4) {
+            // set last month
+            currentDate.setMonth(currentDate.getMonth() -1);
+        }
+        var monthNumber = currentDate.getMonth() + 1;
+        var yearNumber = currentDate.getFullYear();
+        // TODO: can be removed after go live
+        if (yearNumber == 2012 && monthNumber < 5)  {
+            return '20120319';
+        }
+        if (monthNumber < 10) {
+           monthNumber = '0'+monthNumber;
+        }
+        return ''+yearNumber+''+monthNumber+'01';
+    },
+
     init: function() {
         if (this.layers !== null) {
             return this.layers;
@@ -573,7 +593,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layer: 'ch.kantone.cadastralweb-farbe.test',
                 isBgLayer: true,
                 layertype: 'wmts',
-                timestamp: '20120319',
+                timestamp: this.getCadastralTimestamp(),
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.kantone",
@@ -598,7 +618,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
                 layer: 'ch.kantone.cadastralweb-farbe.test',
                 layertype: 'wmts',
-                timestamp: '20120319',
+                timestamp: this.getCadastralTimestamp(),
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.kantone",
