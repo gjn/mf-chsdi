@@ -32,6 +32,9 @@ class LayersController(BaseController):
 ##----------------------------------------Databases----------------------------------------##               
         c.lang = request.params.get('lang','de')
         
+        # Initialilze the dictionary mapping the table properties
+        self.map_properties = {}
+        
         if self.mode == 'wmts':
             if c.lang == 'fr' or c.lang == 'it':
                 self.GetCap = GetCapFr
@@ -41,17 +44,19 @@ class LayersController(BaseController):
                 self.GetCap = GetCapDe
                 self.GetCapThemes = GetCapThemesDe
                 self.ServiceMetadata = ServiceMetadataDe
+            self.get_model(self.GetCap)
+            self.get_model(self.GetCapThemes)
+            self.get_model(self.ServiceMetadata)
         else: 
             if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch':   
                 if c.lang == 'fr' or c.lang == 'it':
                     self.BodLayer = BodLayerFr
                 else:
                     self.BodLayer = BodLayerDe
+                self.get_model(self.BodLayer)
             if self.mode == 'all'  or self.mode =='legend':
                 self.LayerLegend = LayerLegend
-
-        # Initialilze the dictionary mapping the table properties
-        self.map_properties = {}
+                self.get_model(self.LayerLegend)
     
     def index(self, id=None):
 
@@ -61,17 +66,13 @@ class LayersController(BaseController):
             # TODO: create a mapper in order to fuse both models 
             query = Session.query(self.BodLayer, self.LayerLegend)
             query = query.filter(self.BodLayer.bod_layer_id == self.LayerLegend.bod_layer_id)
-            self.register_layerlegend()
-            self.register_bodlayer()
         # Query only view_bod_layer_suche_{lang}
         elif self.mode == 'bodsearch':
             query = Session.query(self.BodLayer)  
-            self.register_bodlayer()
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
             query = Session.query(self.GetCap)
             self.BodLayer = self.GetCap
-            self.register_getcapview()
         else:
             abort(400, 'The parameter provided for mode is not valid') 
             
@@ -93,10 +94,10 @@ class LayersController(BaseController):
                     abort(400, 'The property(-ies) you provided is not valid')
         if not isinstance(properties,list):
             abort(400, 'An error occured while parsing the properties')             
-            
+
 ##----------------------------------------Project----------------------------------------##            
         # Per default all the projects in the view are selected
-        project = request.params.get('projekte','all')
+        project = request.params.get('project','all')
         project = project.split(',')
         if not isinstance(project,list):
             abort(400, 'An error occured while parsing the projects')           
@@ -229,49 +230,7 @@ class LayersController(BaseController):
         name = unicode(name)
         if name not in self.map_properties:
             self.map_properties[name] = column
-    
-    def register_bodlayer(self):
-        # Register all the necessary properties for BodLayer
-        self.register_columns('bod_layer_id', self.BodLayer.bod_layer_id)
-        self.register_columns('projekte', self.BodLayer.projekte)
-        self.register_columns('bezeichnung', self.BodLayer.bezeichnung)
-        self.register_columns('kurzbezeichnung', self.BodLayer.kurzbezeichnung)
-        self.register_columns('abstract', self.BodLayer.abstract)
-        self.register_columns('inspire_name', self.BodLayer.inspire_name)
-        self.register_columns('inspire_abstract', self.BodLayer.inspire_abstract)
-        self.register_columns('inspire_oberthema_name', self.BodLayer.inspire_oberthema_name)
-        self.register_columns('inspire_oberthema_abstract', self.BodLayer.inspire_oberthema_abstract)
-        self.register_columns('datenherr', self.BodLayer.datenherr)
-        self.register_columns('volltextsuche', self.BodLayer.volltextsuche)
-        self.register_columns('wms_kontakt_abkuerzung', self.BodLayer.wms_kontakt_abkuerzung)
-        self.register_columns('wms_kontakt_name', self.BodLayer.wms_kontakt_name)
-        
-    def register_layerlegend(self):
-        #Register all the necesary properties for LayerLegend
-        if self.mode != 'all':
-            self.register_columns('bod_layer_id', self.LayerLegend.bod_layer_id)
-        self.register_columns('scale_limit', self.LayerLegend.scale_limit)
-        self.register_columns('geocat_uuid', self.LayerLegend.geocat_uuid)
-        self.register_columns('url', self.LayerLegend.url)
-        self.register_columns('url_download', self.LayerLegend.url_download)
-        self.register_columns('url_portale', self.LayerLegend.url_portale)
-        self.register_columns('wms_resource', self.LayerLegend.wms_resource)
-        self.register_columns('datenstand', self.LayerLegend.datenstand)
-        self.register_columns('fk_geobasisdaten_sammlung_bundesrecht', self.LayerLegend.fk_geobasisdaten_sammlung_bundesrecht)
-        
-    def register_getcapview(self):
-        #Register all the necesary properties for GetCap
-        self.register_columns('tile_matrix_set_id', self.GetCap.tile_matrix_set_id)
-        self.register_columns('timestamp', self.GetCap.timestamp)
-        self.register_columns('bod_layer_id', self.GetCap.bod_layer_id)
-        self.register_columns('projekte', self.GetCap.projekte)
-        self.register_columns('bezeichnung', self.GetCap.bezeichnung)
-        self.register_columns('kurzbezeichnung', self.GetCap.kurzbezeichnung)
-        self.register_columns('abstract', self.GetCap.abstract)
-        self.register_columns('inspire_name', self.GetCap.inspire_name)
-        self.register_columns('inspire_oberthema_name', self.GetCap.inspire_oberthema_name)
-        self.register_columns('inspire_oberthema_abstract', self.GetCap.inspire_oberthema_abstract)
-        self.register_columns('geobasisdatensatz_name', self.GetCap.geobasisdatensatz_name)
-        self.register_columns('datenherr', self.GetCap.datenherr)
-        self.register_columns('wms_kontakt_abkuerzung', self.GetCap.wms_kontakt_abkuerzung)
-        self.register_columns('wms_kontakt_name', self.GetCap.wms_kontakt_name)
+            
+    def get_model(self, model):
+        for col in model.__table__.columns:
+            self.register_columns(col.key, col)
