@@ -1,4 +1,4 @@
-/*yersglobal GeoAdmin:true, OpenLayers: true, Ext:true */
+/*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /*
  * @include OpenLayers/Projection.js
