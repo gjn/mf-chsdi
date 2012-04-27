@@ -71,7 +71,7 @@ class LayersController(BaseController):
             query = Session.query(self.BodLayer)  
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
-            query = Session.query(self.GetCap)
+            query = Session.query(self.GetCap).filter(self.GetCap.sswmts == False)
             self.BodLayer = self.GetCap
         else:
             abort(400, 'The parameter provided for mode is not valid') 
