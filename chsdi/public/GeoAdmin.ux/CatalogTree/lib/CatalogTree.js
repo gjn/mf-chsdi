@@ -551,10 +551,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Flurstücke / Grundstücke',
                 children: [
                     {
-                        layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
+                        layerId: "ch.kantone.cadastralwebmap-farbe"
                     },
                     {
-                        layerId: "ch.kantone.cadastralwebmap-farbe"
+                        layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]
             }
