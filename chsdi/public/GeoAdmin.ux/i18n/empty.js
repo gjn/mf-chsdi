@@ -602,7 +602,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Your track must not exceed the maximum size of 4MB.': "",
     'ch.kantone': "",
     'ch.swisstopo.hintergrund-farbe': "",
-    'ch.kantone.cadastralwebmap-farbe': ""
-    'ch.swisstopo.swissbuildings3d': ""
-    'ch.swisstopo.swisstlm3d-wanderwege': ""
+    'ch.kantone.cadastralwebmap-farbe': "",
+    'ch.swisstopo.swissbuildings3d': "",
+    'ch.swisstopo.swisstlm3d-wanderwege': "",
+    'ch.kanton.av': ""
 });
