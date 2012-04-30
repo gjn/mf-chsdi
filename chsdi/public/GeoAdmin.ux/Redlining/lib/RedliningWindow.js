@@ -32,7 +32,12 @@ GeoAdmin.RedliningWindow = Ext.extend(Ext.Window, {
             cls: "redlining-panel",
             ctCls: "redlining-panel-ct",
             baseCls: "redlining-panel",
-            popupOptions: {anchored: false, unpinnable: false, draggable: true},
+            popupOptions: { 
+                           unpinnable: false, 
+                           draggable: true,
+                           anchorPosition: 'auto',
+                           ancCls: 'auto'
+                          },
             selectControlOptions: {
                 toggle: false,
                 clickout: false
