@@ -105,3 +105,8 @@ div.olControlMousePosition {
     background-color: #FFFFFF;
 }
 
+.kml-popup .x-window-body {
+  height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
+  max-height: 280px !important;
+}
+

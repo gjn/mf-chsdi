@@ -548,22 +548,41 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (this.KMLpopup) {
                 this.KMLpopup.destroy();
             }
-            
-            var widthPopup = getPopupWidth;
-            
+           
+            // This is done in order to determine the window width
+            if (!window.myProvisoryPopupDiv) {
+                window.myProvisoryPopupDiv = document.createElement('div');
+                window.myProvisoryPopupDiv.style.visibility = 'hidden';
+                window.myProvisoryPopupDiv.style.width = '1px';
+                window.myProvisoryPopupDiv.style.overflow = 'auto';
+                window.myProvisoryPopupDiv.id = 'myProvisoryPopupDiv';
+                document.body.appendChild(window.myProvisoryPopupDiv);
+            }
+            startFakeRendering(content);
+
+
+            var lonlat = feature.geometry.getBounds().getCenterLonLat();
+
             this.KMLpopup = new GeoExt.Popup({
-                cls: 'feature-popup',
+                cls: 'kml-popup',
                 title: OpenLayers.i18n("KML Information"),
-                location: feature.geometry.getBounds().getCenterLonLat(),
-                bodyStyle: "max-width: 500px",
-                width: widthPopup,
+                location: new OpenLayers.Geometry.Point(lonlat.lon,lonlat.lat),
+                bodyStyle: "max-width: 800px",
+                width: 400,
                 map: this,
                 autoScroll: true,
                 html: content,
                 maximizable: false,
-                collapsible: false
+                collapsible: false,
+                anchorPosition: 'auto',
+                ancCls: 'auto'
             });
+
             this.KMLpopup.show();
+
+            // Assign the popup to a global variable in order to use it easily in a setTimeout
+            window.KMLpopup = this.KMLpopup;
+            setTimeout(" var widthPopup = window.myProvisoryPopupDiv.scrollWidth;window.myProvisoryPopupDiv.style.width = '1px';window.myProvisoryPopupDiv.style.visibility = 'hidden'; widthPopup = widthPopup + 30; if (widthPopup > 800) { widthPopup = 800; }; window.KMLpopup.setWidth(widthPopup);",1000);
         }
 
         function onFeatureUnselect(event) {
@@ -572,22 +591,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.KMLpopup.destroy();
             }
         }
-        
-        //Pre-compute the geoext popup window to adapt the width
-        function getPopupWidth() {
-            this.KMLpopup = new GeoExt.Popup({
-                bodyStyle: "max-width: 500px",
-                html: content
-            });
-            
-            this.KMLpopup.doLayout();
-            var widthPopup = this.KMLpopup.width;
-            // For IE only because dosen't support max-width
-            if (widthPopup > 500) { widthPopup = 500; }
-            this.KMLpopup.destroy();
-            return widthPopup
+
+        function startFakeRendering(content) {
+           window.myProvisoryPopupDiv.innerHTML = content;
+           window.myProvisoryPopupDiv.style.visibility = 'visible';
         }
-        	
+        
         this.selectControl.activate();
 
         return layer;
