@@ -587,7 +587,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'revision service of swisstopo':'Revisionsdienst swisstopo',
 	'rightHanded':'Rechtshänder',
 	'salmon':'Lachsrosa',
-	'searchQuicktip':'Hier können Sie nach Ort, PLZ, administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 3007<br><b>Schweizerkoordinaten:</b> für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> für "46.7N 6.0E " tippen Sie 46.7 6.0<br><b>Adressen: </b> Für "Rue de l\'Évêché in Genf" tippen Sie évêch<br><b> Parzellen: </b> eine Parzellenummer und eine Ortschaft z.B. "1381 Payerne"',
+	'searchQuicktip':'Hier können Sie nach Ort, PLZ, administrativen Einheiten, Koordinaten und Adressen suchen.<br>Suchbeispiele:<br><b>PLZ:</b> Für "3007 in Bern" tippen Sie 3007<br><b>Schweizerkoordinaten:</b> für "600000/200000" tippen Sie 600000 200000<br><b>Koordinaten (LatLon):</b> für "46.7N 6.0E " tippen Sie 46.7 6.0<br><b>Adressen: </b> Für "Rue de l\'Évêché in Genf" tippen Sie évêch<br><b> Parzellen: </b> eine Parzellenummer und eine Ortschaft z.B. "2034 Bern"',
 	'select a color...':'Farbe auswählen',
 	'select one location for':'Es gibt mehrere Orte mit diesem Namen:',
 	'show column':'Themen öffnen',
