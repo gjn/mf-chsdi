@@ -6,6 +6,7 @@
  * @include OpenLayers/Geometry/Point.js
  * @include OpenLayers/Geometry/Polygon.js
  * @include OpenLayers/Feature/Vector.js
+ * @include OpenLayers/Control/Geolocate.js
  * @include proj4js/lib/defs/EPSG21781.js
  * @include Map/lib/EPSG2056.js
  */
@@ -44,8 +45,13 @@ GeoAdmin.Geolocation = Ext.extend(Ext.Button, {
        this.iconCls = "geolocation-icon";
        this.tooltip = OpenLayers.i18n('Use current location');
        this.enableToggle = true;
-       this.handler = this.geolocate;  
        this.addGeolocationLayer(); 
+       this.geolocationControl = new OpenLayers.Control.Geolocate({
+           watch: false,
+           bind: false
+       });
+       this.map.addControl(this.geolocationControl);
+       this.handler = this.geolocate;
        GeoAdmin.Geolocation.superclass.initComponent.call(this);
        
     },
@@ -106,10 +112,9 @@ GeoAdmin.Geolocation = Ext.extend(Ext.Button, {
              circleStyle
          );
          vector.addFeatures([circleFeature, ptFeature]);
-         
          var precisionExtent = vector.getDataExtent();
          var zoom = this.map.getZoomForExtent(precisionExtent);
-         map.setCenter(positionCH, zoom);
+         map.setCenter(coord, zoom);
          
      },
     
@@ -118,23 +123,23 @@ GeoAdmin.Geolocation = Ext.extend(Ext.Button, {
      *
      *  Get the current posistion and recenter
      */
-    geolocate: function() {
+    geolocate: function() {  
         me = this;
-        if (this.pressed) {    
-            if (navigator.geolocation) {
-                /* geolocation is available  */
-               navigator.geolocation.getCurrentPosition(function(position) {
-                   var accuracy = position.coords.accuracy;
-                   positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
-                   positionCH.transform("EPSG:4326", me.map.getProjection(map));
-                   me.addGeolocationFeatures(positionCH, me.geolocationVectorLayer, accuracy); 
-               });
-           } else {
-               alert(OpenLayers.i18n("Your browser doesn't support geolocation. Upgrade to a modern browser."));
-           }
-       } else {
-           if (me.geolocationVectorLayer.features.length != 0) { me.geolocationVectorLayer.removeAllFeatures(); }
+        if (me.pressed) {
+            me.geolocationControl.activate();
+        } else {
+            if (me.geolocationVectorLayer.features.length != 0) { 
+                me.geolocationVectorLayer.removeAllFeatures(); 
+            }
+            me.geolocationControl.deactivate();
+        }
+        me.LocationListener = function(event) {
+            me.geolocationVectorLayer.removeAllFeatures();
+            var accuracy = event.position.coords.accuracy;
+            var positionCH = new OpenLayers.LonLat(event.point.x, event.point.y);
+            me.addGeolocationFeatures(positionCH, me.geolocationVectorLayer, accuracy); 
        }
+       me.geolocationControl.events.register("locationupdated", me.geolocationControl, me.LocationListener);
     }
 })
 
