@@ -403,7 +403,7 @@ OpenLayers.Lang.rm= {
 	'ch.ensi':'ENSI',
 	'ch.ensi.zonenplan-notfallschutz-kernanlagen':'Plans da zonas per la protecziun d\'urgenza',
 	'ch.kanton.av':'Mesiraziun uffiziala svizra / FL',
-	'ch.kanton.av.url':'http://www.cadastre.ch/cwm',
+	'ch.kanton.av.url':'http://www.cadastre.ch/internet/cadastre/de/home/products/webmap/cwm.html',
 	'ch.kantone':'Chantuns',
 	'ch.kantone.cadastralwebmap-farbe':'Cadastral Web Map',
 	'ch.kantone.hintergrund-farbe':'Cadastral Web Map',
