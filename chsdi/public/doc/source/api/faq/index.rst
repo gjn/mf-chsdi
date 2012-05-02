@@ -163,7 +163,7 @@ What mean the permalink parameters ?
 Parameter                      Description                                                    Example
 ===================            ==========================================================    =========================================================
 lang                           Language of the interface: de, fr, it, rm or en               http://map.geo.admin.ch?lang=rm
-zoom                           Zoom level, from 0 to 14                                      http://map.geo.admin.ch?zomm=12
+zoom                           Zoom level, from 0 to 13                                      http://map.geo.admin.ch?zoom=12
 scale                          Scale                                                         http://map.geo.admin.ch?scale=100000
 Y                              easting value (from 450'000 to                                http://map.geo.admin.ch?Y=600000
                                900'000)
@@ -174,7 +174,7 @@ bgOpacity                      Opacity of national map covering the             
 bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           http://map.geo.admin.ch?bgLayer=voidLayer
                                `ch.swisstopo.pixelkarte-farbe` or `voidLayer`
 layers                         Layer to display, see :ref:`available_layers`
-                               for a complete list                                           http://map.geo.admin.ch/ltmoc/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml
+                               for a complete list                                           http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml
                                KML layers are supported with a || separated list with:
                                KML||kml url
                                WMS layers are supported with a || separated list with:
@@ -207,13 +207,11 @@ a RESTful OGC `Web Map Tile Service <http://www.opengeospatial.org/standards/wmt
 
 The parameters for the tiles are the following:
 
- * **Resolution** (meters): 4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5
+ * **Resolution** (meters): 4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5,0.25,0.1
 
  * **Maximum extent bounding box**: 420000,30000,900000,350000
 
  * **Coordinate system**: EPSG:21781
-
-The old TileCache interface (http://tile5.geo.admin.ch through http://tile9.geo.admin.ch) will remain in service until end 2011
 
 For practical information on how to use the tiles, see our description of the :ref:`wmts_description` service.
 
