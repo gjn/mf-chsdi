@@ -407,6 +407,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.ensi':'ENSI',
 	'ch.ensi.zonenplan-notfallschutz-kernanlagen':'Zonenpläne für den Notfallschutz',
 	'ch.kanton.av':'Amtliche Vermessung Schweiz / FL',
+	'ch.kanton.av.url':'http://www.cadastre.ch/cwm',
 	'ch.kantone':'Kantone',
 	'ch.kantone.cadastralwebmap-farbe':'Cadastral Web Map',
 	'ch.kantone.hintergrund-farbe':'Cadastral Web Map',
