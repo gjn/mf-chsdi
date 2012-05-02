@@ -67,6 +67,7 @@ class SwisssearchController(BaseController):
 
         citynr = request.params.get('citynr')
         features = []
+        onlyOneTerm = False
 
         if egid is not None:
             query = Session.query(SwissSearch).filter(SwissSearch.egid == '' + egid)
@@ -76,17 +77,22 @@ class SwisssearchController(BaseController):
             # otherwise limit 20 is truncating important results (e.g. Kirchweg Glis -> there is no kirchweg 11 or kirchweg 15)
             ftsOrderBy = "rank asc, CASE WHEN origin = 'address' THEN 1/gid::float WHEN origin = 'parcel' THEN 1/SUBSTRING(name FROM '([0-9]+)')::float ELSE similarity(search_name,'%(query)s') END desc" % {'query': q.replace("'","''").replace('"','\"') }            
             terms = q.split()
+            if len(terms) == 1:
+               onlyOneTerm = True
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'to_tsvector(\'english\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
             query = Session.query(SwissSearch).filter(ftsFilter)
 
+
             # Try to optimize search if initial search doesn't return something. It results in an additional query
             # Remove all numbers with more than 3 characters (in order to solve the postcode issue)
             if query.count() == 0:
                terms2 = ' '.join([('' if term.isdigit() and len(term) > 3 else term+('' if term.isdigit() else ':*'))  for term in terms])
                terms2 = terms2.split()
+               if len(terms2) == 1:
+                  onlyOneTerm = True
                terms2 = ' & '.join([term for term in terms2])
                terms2 =  terms2.replace("'", "''").replace('"', '\"')
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
@@ -96,10 +102,17 @@ class SwisssearchController(BaseController):
             if query.count() == 0:
                terms3 = ' '.join([('' if term[0].isdigit() else term+('' if term.isdigit() else ':*'))  for term in terms])
                terms3 = terms3.split()
+               if len(terms3) == 1:
+                  onlyOneTerm = True
                terms3 = ' & '.join([term for term in terms3])
                terms3 =  terms3.replace("'", "''").replace('"', '\"')
                ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
                query = Session.query(SwissSearch).filter(ftsFilter)
+
+        # If only one search term is used, this can't be a parcel or an address
+        if onlyOneTerm:
+            query = query.filter(SwissSearch.origin  != 'parcel')
+            query = query.filter(SwissSearch.origin  != 'address')
 
         # FIXME Address search is only for some allowed referers (see list in production.ini.in)
         # For "awk.ch", see email from lttsb from 18.nov. 2011
