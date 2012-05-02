@@ -610,7 +610,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.layers[i].arrayOrder = 1;
             } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.pixelkarte-grau') {
                 this.layers[i].arrayOrder = 2;
-            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.hintergrund-farbe') {
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.kantone.hintergrund-farbe') {
                 this.layers[i].arrayOrder = 3;
             } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
                 this.layers[i].arrayOrder = 4;
