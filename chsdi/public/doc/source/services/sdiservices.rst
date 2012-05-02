@@ -494,9 +494,9 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
       1250           11                   320000        2        1               2
       1000           12                   256000        2        2               4
        750           13                   192000        3        2               6
-       650           14        0          166400        3        2               6    1:2'456'694
-       500           15        1          128000        4        3              12    1:1'889'765
-       250           16        2           64000        8        5              40    1:  944'882
+       650           14        0          166400        3        2               6    1 : 2'456'694
+       500           15        1          128000        4        3              12    1 : 1'889'765
+       250           16        2           64000        8        5              40    1 : 944'882
        100           17        3           25600       19       13             247    1 : 377'953
         50           18        4           12800       38       25             950    1 : 188'976
         20           19        5            5120       94       63           5'922    1 : 75'591
@@ -508,6 +508,7 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
          1           25       10             256     1875     1250       2'343'750    1 : 3'780
        0.5           26       11             128     3750     2500       9'375'000    1 : 1'890
        0.25          27       12              64     7500     5000      37'500'000    1 : 945
+       0.1           28       13              32    15000    10000     150'000'000    1 : 472
 ===============  ========= ========= ============ ======== ======== =============== ================
 
 
@@ -515,7 +516,7 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
 **Notes**
 
  #. The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.
- #. The zoom level 27 (resolution 0.25m) is only available for a few layers, e.g. swissimage (ch.swisstopo.swissimage). For the others 
+ #. The zoom level 27 and 28 (resolution 0.25m and 0.1m) is only available for a few layers, e.g. swissimage or cadastral web map. For the others 
     layers it is only a client zoom (tiles are stretched).
 
 Result
