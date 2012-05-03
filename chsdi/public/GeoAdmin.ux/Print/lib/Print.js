@@ -422,8 +422,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         });
         // Open pdf legends after the print event
         this.printProvider.on('print', function () {
-            for (var l = 0; l < pdfLayerNames.length; l++) { 
-                window.open(GeoAdmin.webServicesUrl + "/legend/" + pdfLayerNames[l] + "_" OpenLayers.Lang.getCode() + "_" + pdfFormat[l]);
+            for (var l = 0; l < pdfLayerNames.length; l++) {
+                window.open(GeoAdmin.webServicesUrl + "/legend/" + pdfLayerNames[l] + "_" + OpenLayers.Lang.getCode() + "_" + pdfFormat[l]);
             }
         });
 
