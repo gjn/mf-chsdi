@@ -41,9 +41,9 @@ class SwisssearchController(BaseController):
             set_lang(self.lang, fallback=True)
 
         self.services = None
-        available_services = 'cities,swissnames,districts,address,cantons,postalcodes,parcel'
+        available_services = 'cities,swissnames,districts,address,cantons,postalcodes'
         services = request.params.get('services', available_services).split(',')
-        self.services = [s for s in services if s in available_services.split(',')]
+        self.services = [s for s in services if s in available_services.split(',') or 'parcel']
         origin_to_service_map = {'zipcode': 'postalcodes', 'sn25': 'swissnames', 'gg25': 'cities', 'kantone': 'cantons', 'district': 'districts', 'address': 'address', 'parcel': 'parcel'}
         self.origins = [ origin for origin, service in origin_to_service_map.iteritems() if service in self.services ]
 
