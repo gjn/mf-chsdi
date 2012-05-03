@@ -186,11 +186,20 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }, this.config);
         }
         // Define a list of "big" legends
-        var pdfLegendList = ["ch.astra.ivs-gelaendekarte","ch.astra.ausnahmetransportrouten","ch.bazl.luftfahrtkarten-icao", "ch.bazl.segelflugkarte","ch.swisstopo.geologie-eiszeit-lgm-raster",
-                             "ch.swisstopo.geologie-geologische_karte","ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
-                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet","ch.swisstopo.geologie-tektonische_karte","ch.kantone.hintergrund-farbe","ch.kantone.cadastralwebmap-farbe"];
+        var pdfLegendList = ["ch.astra.ivs-gelaendekarte",
+                             "ch.astra.ausnahmetransportrouten",
+                             "ch.bazl.luftfahrtkarten-icao", 
+                             "ch.bazl.segelflugkarte",
+                             "ch.swisstopo.geologie-eiszeit-lgm-raster",
+                             "ch.swisstopo.geologie-geologische_karte",
+                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
+                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet",
+                             "ch.swisstopo.geologie-tektonische_karte",
+                             "ch.kantone.cadastralwebmap-farbe"];
+
         var pdfLayerNames = [];
         var pdfFormat = [];
+
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
                 url: this.config.printBaseUrl
@@ -209,10 +218,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             var layer = map.layers[i];
                             var LegendFormat = lang + ".png";
                             for (k = 0, lenp = pdfLegendList.length; k < lenp; k++) {
-                                if (layer.layername === pdfLegendList[k]) {
+                                if (layer.layer === pdfLegendList[k]) {
                                     LegendFormat = "big.pdf"; 
                                     if (!secondPageNeeded) { provider.customParams.enhableLegends = false; }
-                                    pdfLayerNames[pdfCounter] = layer.layername;
+                                    pdfLayerNames[pdfCounter] = layer.layer;
                                     pdfFormat[pdfCounter] = LegendFormat;
                                     pdfCounter = pdfCounter + 1;
                                 }
@@ -224,7 +233,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                                     provider.customParams.legends.push({
                                         classes: [{
                                             name: '',
-                                            icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layername + "_" + LegendFormat
+                                            icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layer + "_" + LegendFormat
                                         }],
                                         name: layer.name
                                     });
