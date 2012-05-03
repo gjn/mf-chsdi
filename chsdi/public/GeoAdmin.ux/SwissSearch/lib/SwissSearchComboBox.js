@@ -148,6 +148,18 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         }
         var testRecenter = this.testRecenter(queryEvent.query);
 
+        // Search parcel only if the parcel layer is visible
+        this.store.baseParams.services = 'cities,swissnames,districts,cantons,postalcodes,address';
+        if (this.map) {
+           for (var l in this.map.layers) {
+                var layer = this.map.layers[l].layer;
+                if (layer == 'ch.kantone.cadastralwebmap-farbe' || layer == 'ch.kantone.hintergrund-farbe') {
+                    this.store.baseParams.services = 'cities,swissnames,districts,cantons,postalcodes,address,parcel';
+                    break;
+                }
+            }
+        }
+
         queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
 
         return testRecenter;
