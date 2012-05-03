@@ -50,7 +50,7 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
-- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
+- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services except 'parcel'
 
 The service returns a maximum of 20 results.
 
@@ -61,7 +61,7 @@ Services in use:
 - **districts**: the swiss districts (not all cantons have districts)
 - **postalcodes**: ZIP code from swiss Post
 - **adress**: from the register for buildings and dwellings (BFS)
-- **parcel**: cadastral information provided by the cantons
+- **parcel**: cadastral information provided by the cantons. A parcel is identified by a city name and a parcel id (or eventually by a BFS city number and a parcel id)
 
 Examples:
 
