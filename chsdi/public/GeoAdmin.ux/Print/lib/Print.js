@@ -188,7 +188,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         // Define a list of "big" legends
         var pdfLegendList = ["ch.astra.ivs-gelaendekarte","ch.astra.ausnahmetransportrouten","ch.bazl.luftfahrtkarten-icao", "ch.bazl.segelflugkarte","ch.swisstopo.geologie-eiszeit-lgm-raster",
                              "ch.swisstopo.geologie-geologische_karte","ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
-                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet","ch.swisstopo.geologie-tektonische_karte"];
+                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet","ch.swisstopo.geologie-tektonische_karte","ch.kantone.hintergrund-farbe","ch.kantone.cadastralwebmap-farbe"];
         var pdfLayerNames = [];
         var pdfFormat = [];
         this.printProvider = new GeoExt.data.PrintProvider({
