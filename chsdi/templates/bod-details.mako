@@ -16,32 +16,32 @@
 
 % if c.layer.bod_layer_id == "ch.swisstopo.geologie-eiszeit-lgm-raster":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-eiszeit-lgm-raster_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-eiszeit-lgm-raster_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-geologische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-tektonische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-tektonische_karte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.astra.ivs-gelaendekarte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.astra.ivs-gelaendekarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.astra.ausnahmetransportrouten":
     <span style="font-weight:bold;">${_('Legend')}</span><br><br>
-    <a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br><br>
-    <center><a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_annex_de_fr.pdf" target="_blank">${_('mehrinformationen')}</a></center><br>
+    <a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br><br>
+    <center><a href="${c.host}/legend/ch.astra.ausnahmetransportrouten_${c.lang}_big.pdf" target="_blank">${_('mehrinformationen')}</a></center><br>
 % elif c.layer.bod_layer_id == "ch.bazl.luftfahrtkarten-icao":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.bazl.luftfahrtkarten-icao_de_fr_en.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+    <a href="${c.host}/legend/ch.bazl.luftfahrtkarten-icao_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.bazl.segelflugkarte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.bazl.segelflugkarte_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+    <a href="${c.host}/legend/ch.bazl.segelflugkarte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.kantone.cadastralwebmap-farbe":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.kantone.cadastralwebmap-farbe_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
