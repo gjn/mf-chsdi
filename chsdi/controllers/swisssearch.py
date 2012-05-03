@@ -112,7 +112,6 @@ class SwisssearchController(BaseController):
         # If only one search term is used, this can't be a parcel or an address
         if onlyOneTerm:
             query = query.filter(SwissSearch.origin  != 'parcel')
-            query = query.filter(SwissSearch.origin  != 'address')
 
         # FIXME Address search is only for some allowed referers (see list in production.ini.in)
         # For "awk.ch", see email from lttsb from 18.nov. 2011
