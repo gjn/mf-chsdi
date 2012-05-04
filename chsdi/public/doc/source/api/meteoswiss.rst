@@ -24,7 +24,7 @@
 Meteo Schweiz
 -------------
 
-This example demonstrate how easy adding a KML file to the map, including styling,  and displaying additional
+This example demonstrates how easy adding a KML file to the map, including styling, and displaying additional
 informations in a popup window is.
 
 .. raw:: html

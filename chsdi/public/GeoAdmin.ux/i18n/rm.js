@@ -584,7 +584,7 @@ OpenLayers.Lang.rm= {
 	'revision service of swisstopo':'revisiun da swisstopo',
 	'rightHanded':'dretger',
 	'salmon':'colur da salmun',
-	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>NP:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>Coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br><b>Adressas: </b> Per "Bundesplatz 3 Berna" tippais Vus Bundesplatz 3"<br><b> Parcella: </b> numer da parcella e vischnanca sco "3024 Berne"',
+	'searchQuicktip':'Qua pudais Vus tschertgar tenor lieu, tenor NP, tenor unitad administrativa, tenor coordinatas e tenor adressas.<br>Exempels da tschertga:<br><b>NP:</b> Per "3007 a Berna" scrivai 30007<br><b>coordinatas svizras:</b> Per "600000/200000" scrivai 600000 200000<br><b>Coordinatas (LatLon):</b> Per "46.7N 6.0E " scrivai 46.7 6.0<br><b>Adressas: </b> Per "Bundesplatz 3 Berna" tippais Vus Bundesplatz 3"',
 	'select a color...':'Tscherner la colur',
 	'select one location for':'Pliras localitads cun quest num:',
 	'show column':'Avrir ils temas',

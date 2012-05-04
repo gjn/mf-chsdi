@@ -588,7 +588,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'revision service of swisstopo':'service de révision de swisstopo',
 	'rightHanded':'Droitier',
 	'salmon':'saumon',
-	'searchQuicktip':'Ici vous pouvez rechercher des lieux (-dits), NPA, unités administrative, coordonnées et adresses.<br>Exemples de recherche : <br> <b>NPA: </b> Pour "3007 à Bern" tapez 3007<br><b>coordonnés (Suisse): </b> Pour "600000/200000 " tapez 600000 200000<br><b>coordonnées (LatLon): </b> Pour "46.7N 6.0E " tapez 46.7 6.0<br><b>Adresses: </b> Pour "Rue de l\'Évêché à Genève" tapez evech <br><b> Parcelle: </b> un numéro de parcelle et commune comme "2034 Berne"',
+	'searchQuicktip':'Ici vous pouvez rechercher des lieux (-dits), NPA, unités administrative, coordonnées et adresses.<br>Exemples de recherche : <br> <b>NPA: </b> Pour "3007 à Bern" tapez 3007<br><b>coordonnés (Suisse): </b> Pour "600000/200000 " tapez 600000 200000<br><b>coordonnées (LatLon): </b> Pour "46.7N 6.0E " tapez 46.7 6.0<br><b>Adresses: </b> Pour "Rue de l\'Évêché à Genève" tapez evech',
 	'select a color...':'Choisir une couleur',
 	'select one location for':'Il existe plusieurs lieux avec ce nom:',
 	'show column':'Afficher le gestionaire des couches',
