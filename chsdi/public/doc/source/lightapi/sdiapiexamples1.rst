@@ -46,7 +46,7 @@ Map (BETA)
    </script>
    <body onload="init();">
       <div id="mymap" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.jsi?mode=light"></script>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=light"></script>
    </body>
 
 .. raw:: html
