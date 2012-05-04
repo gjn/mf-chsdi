@@ -8,6 +8,7 @@ Ext.namespace("GeoExt.ux.form");
  * @include Styler/ux/LayerStyleManager.js
  * @include Styler/ux/widgets/StyleSelectorComboBox.js
  * @requires FeatureEditing/ux/widgets/FeatureEditingControler.js
+ * @requires FeatureEditing/ux/widgets/form/RedLiningPanel.js
  */
 GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     var oItems, oGroup, feature, field, oGroupItems;
@@ -36,14 +37,14 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     return {
         fields: ['name', 'style'],
         data: [
-            [OpenLayers.i18n('blue'), {fillColor: 'blue', strokeColor: 'blue'}],
-            [OpenLayers.i18n('red'), {fillColor: 'red', strokeColor: 'red'}],
-            [OpenLayers.i18n('green'), {fillColor: 'green', strokeColor: 'green'}],
-            [OpenLayers.i18n('yellow'), {fillColor: 'yellow', strokeColor: 'yellow'}],
-            [OpenLayers.i18n('orange'), {fillColor: '#FFA500', strokeColor: '#FFA500'}],
-            [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white'}],
-            [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black'}],
-            [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray'}]
+            [OpenLayers.i18n('blue'), {fillColor: 'blue', strokeColor: 'blue', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('red'), {fillColor: 'red', strokeColor: 'red', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('green'), {fillColor: 'green', strokeColor: 'green', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('yellow'), {fillColor: 'yellow', strokeColor: 'yellow', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('orange'), {fillColor: '#FFA500', strokeColor: '#FFA500', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black', strokeWidth: 2, strokeOpacity: 0.75}],
+            [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray', strokeWidth: 2, strokeOpacity: 0.75}]
         ]
     }
 };
@@ -246,4 +247,22 @@ GeoExt.ux.FeatureEditingControler.prototype.initDeleteAllAction = function(layer
 
         this.deleteAllAction = action;
         this.actions.push(action);
+};
+
+GeoExt.ux.form.RedLiningPanel.prototype.initControler = function() {
+    this.controler = new GeoExt.ux.FeatureEditingControler({
+        'cosmetic': true,
+        'map': this.map,
+        'import': this['import'],
+        'export': this['export'],
+        'toggleGroup': this.toggleGroup,
+        'popupOptions': this.popupOptions,
+        'selectControlOptions': this.selectControlOptions,
+        'defaultStyle': {
+            fillColor: "red",
+            strokeColor: "red",
+            strokeWidth: 2,
+            strokeOpacity: 0.75
+        }
+    });
 };
