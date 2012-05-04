@@ -108,7 +108,7 @@ The following parameters are required:
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
 - cb (optional): the name of the callback funtion
-- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
+- services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
 
 **Note: The swiss cantons only allow websites of the federal governement to use the addresses search service**.
 
