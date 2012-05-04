@@ -12,9 +12,9 @@
  */
 
 
-    if (!window.GeoAdmin) {
-        window.GeoAdmin = {};
-    }
+if (!window.GeoAdmin) {
+    window.GeoAdmin = {};
+}
 
 // Overides needed due to the addition of KML layers. The second couldn't be removed.
 OpenLayers.Layer.prototype.setZIndex = function (zIndex) {
@@ -151,7 +151,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             url = config.url + '/1.0.0/WMTSCapabilities.xml?lang=' + OpenLayers.Lang.getCode() || 'de';
         } else {
             throw new Error('GeoAdmin._Layers.getCapabilitiesURL ' +
-                            'only works for WMS and WMTS layers');
+                'only works for WMS and WMTS layers');
         }
         return url;
     },
@@ -218,7 +218,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 if (config.requestEncoding === undefined) {
                     config.requestEncoding = this.getRequestEncoding(capabilities);
                 }
-                
+
                 config.capabilities = layer;
                 break;
             }
@@ -254,10 +254,10 @@ GeoAdmin._Layers = OpenLayers.Class({
 
             if (layer.bbox['EPSG:21781']) {
                 extent = OpenLayers.Bounds.fromArray(
-                        layer.bbox['EPSG:21781'].bbox);
+                    layer.bbox['EPSG:21781'].bbox);
             } else if (layer.bbox['EPSG:4326']) {
                 extent = OpenLayers.Bounds.fromArray(
-                        layer.bbox['EPSG:4326'].bbox);
+                    layer.bbox['EPSG:4326'].bbox);
                 extent.transform(
                     new OpenLayers.Projection('EPSG:4326'),
                     new OpenLayers.Projection('EPSG:21781')
@@ -280,7 +280,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layer.projection.match('EPSG:+21781')) {
                 extent = layer.bounds;
             } else if (!layer.projection ||
-                       layer.projection.match('EPSG:+4326')) {
+                layer.projection.match('EPSG:+4326')) {
                 extent = layer.bounds.transform(
                     new OpenLayers.Projection('EPSG:4326'),
                     new OpenLayers.Projection('EPSG:21781')
@@ -337,7 +337,7 @@ GeoAdmin._Layers = OpenLayers.Class({
      */
     getLegendURL: function(layer) {
         var legend = layer.styles && layer.styles.length > 0 &&
-                     layer.styles[0].legend;
+            layer.styles[0].legend;
         if (legend) {
             return legend.href;
         }
@@ -376,18 +376,18 @@ GeoAdmin._Layers = OpenLayers.Class({
     getRequestEncoding: function(caps) {
         var requestEncoding,
             allowedValues =
-            caps.operationsMetadata &&
-            caps.operationsMetadata.GetTile &&
-            caps.operationsMetadata.GetTile.dcp &&
-            caps.operationsMetadata.GetTile.dcp.http &&
-            caps.operationsMetadata.GetTile.dcp.http &&
-            caps.operationsMetadata.GetTile.dcp.http.get &&
-            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints &&
-            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding &&
-            caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding.allowedValues;
+                caps.operationsMetadata &&
+                    caps.operationsMetadata.GetTile &&
+                    caps.operationsMetadata.GetTile.dcp &&
+                    caps.operationsMetadata.GetTile.dcp.http &&
+                    caps.operationsMetadata.GetTile.dcp.http &&
+                    caps.operationsMetadata.GetTile.dcp.http.get &&
+                    caps.operationsMetadata.GetTile.dcp.http.get[0].constraints &&
+                    caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding &&
+                    caps.operationsMetadata.GetTile.dcp.http.get[0].constraints.GetEncoding.allowedValues;
         if (allowedValues) {
             var possibleValues = ['KVP', 'REST'];
-            for (var i=0, len=possibleValues.length; i<len; i++) {
+            for (var i = 0, len = possibleValues.length; i < len; i++) {
                 if (possibleValues[i] in allowedValues) {
                     requestEncoding = possibleValues[i];
                     break;
@@ -415,7 +415,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         ];
         var myTransitionEffect = "resize";
         if (config.transitionEffect === "no") {
-           myTransitionEffect = null;
+            myTransitionEffect = null;
         }
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
@@ -571,6 +571,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.kantone.hintergrund-farbe": {
                 name: OpenLayers.i18n("ch.kantone.hintergrund-farbe"),
                 layer: 'ch.kantone.cadastralwebmap-farbe',
+                layername: 'ch.kantone.cadastralwebmap-farbe',
                 isBgLayer: true,
                 layertype: 'wmts',
                 timestamp: '20120501',
@@ -597,6 +598,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.kantone.cadastralwebmap-farbe": {
                 name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
                 layer: 'ch.kantone.cadastralwebmap-farbe',
+                layername: 'ch.kantone.cadastralwebmap-farbe',
                 layertype: 'wmts',
                 timestamp: '20120501',
                 type: "raster",
@@ -616,7 +618,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register_wmts"),
                 layertype: 'wmts',
                 layer: 'ch.bfs.gebaeude_wohnungs_register',
-                layeranme: 'ch.bfs.gebaeude_wohnungs_register',
+                layername: 'ch.bfs.gebaeude_wohnungs_register',
                 timestamp: '20110509',
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -802,7 +804,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage_wmts"),
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-lage',
-                layeranme: 'ch.swisstopo.fixpunkte-lage',
+                layername: 'ch.swisstopo.fixpunkte-lage',
                 timestamp: '20110509',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -832,7 +834,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe_wmts"),
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-hoehe',
-                layeranme: 'ch.swisstopo.fixpunkte-hoehe',
+                layername: 'ch.swisstopo.fixpunkte-hoehe',
                 timestamp: '20110509',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -916,7 +918,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true 
+                queryable: true
             },
             "ch.swisstopo.vec200-landcover": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-landcover"),
@@ -956,7 +958,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true
             },
 
-             "ch.swisstopo.geologie-geotechnik-gk500-genese": {
+            "ch.swisstopo.geologie-geotechnik-gk500-genese": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
                 layertype: 'wmts',
                 timestamp: '20000101',
@@ -1312,16 +1314,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: false
             },
             /* "ch.bafu.schutzgebiete-wildruhezonen": {
-                name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
-                layertype: 'wmts',
-                timestamp: '20101201',
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.kt.bafu",
-                opacity: 0.75,
-                queryable: true,
-                transitionEffect: "no"
-            }, */
+             name: OpenLayers.i18n("ch.bafu.schutzgebiete-wildruhezonen"),
+             layertype: 'wmts',
+             timestamp: '20101201',
+             type: "polygon",
+             format: "image/png",
+             datenherr: "ch.kt.bafu",
+             opacity: 0.75,
+             queryable: true,
+             transitionEffect: "no"
+             }, */
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
                 layertype: 'wmts',
@@ -1739,44 +1741,44 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true
             },
             /* only used in SwissMap online
-            "ch.swisstopo-karto.wanderwege": {
-                name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
-                layertype: 'wmts',
-                timestamp: '20110525',
-                type: "line",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo-karto.hangneigung": {
-                name: OpenLayers.i18n("ch.swisstopo-karto.hangneigung"),
-                layertype: 'wmts',
-                timestamp: '20081107',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
-            "ch.swisstopo-karto.skitouren": {
-                name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
-                layertype: 'wmts',
-                timestamp: '20111219',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
-            "ch.tamedia.schweizerfamilie-feuerstellen": {
-                name: OpenLayers.i18n("ch.tamedia.schweizerfamilie-feuerstellen"),
-                layertype: 'wmts',
-                timestamp: '20110124',
-                type: "point",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            */
-             "ch.swisstopo.swissalti3d-reliefschattierung": {
+             "ch.swisstopo-karto.wanderwege": {
+             name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
+             layertype: 'wmts',
+             timestamp: '20110525',
+             type: "line",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo-karto.hangneigung": {
+             name: OpenLayers.i18n("ch.swisstopo-karto.hangneigung"),
+             layertype: 'wmts',
+             timestamp: '20081107',
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: false
+             },
+             "ch.swisstopo-karto.skitouren": {
+             name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
+             layertype: 'wmts',
+             timestamp: '20111219',
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: false
+             },
+             "ch.tamedia.schweizerfamilie-feuerstellen": {
+             name: OpenLayers.i18n("ch.tamedia.schweizerfamilie-feuerstellen"),
+             layertype: 'wmts',
+             timestamp: '20110124',
+             type: "point",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             */
+            "ch.swisstopo.swissalti3d-reliefschattierung": {
                 name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
                 layertype: 'wmts',
                 timestamp: '20000101',
@@ -1940,41 +1942,41 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true
             },
             "ch.bfe.energieforschung": {
-             name: OpenLayers.i18n("ch.bfe.energieforschung"),
-             layers: ["ch.bfe.energieforschung"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.bfe",
-             queryable: true
-             },
+                name: OpenLayers.i18n("ch.bfe.energieforschung"),
+                layers: ["ch.bfe.energieforschung"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
             "ch.bfe.statistik-wasserkraftanlagen": {
-             name: OpenLayers.i18n("ch.bfe.statistik-wasserkraftanlagen"),
-             layers: ["ch.bfe.statistik-wasserkraftanlagen"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.bfe",
-             queryable: true
-             },
-             "ch.bfe.stauanlagen-bundesaufsicht": {
-             name: OpenLayers.i18n("ch.bfe.stauanlagen-bundesaufsicht"),
-             layers: ["ch.bfe.stauanlagen-bundesaufsicht"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.bfe",
-             queryable: true
-             },
-             "ch.bfe.abgeltung-wasserkraftnutzung": {
-             name: OpenLayers.i18n("ch.bfe.abgeltung-wasserkraftnutzung"),
-             layers: ["ch.bfe.abgeltung-wasserkraftnutzung"],
-             layertype: "wms",
-             type: "polygon",
-             format: "image/png",
-             datenherr: "ch.bfe",
-             queryable: true
-             },
+                name: OpenLayers.i18n("ch.bfe.statistik-wasserkraftanlagen"),
+                layers: ["ch.bfe.statistik-wasserkraftanlagen"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
+            "ch.bfe.stauanlagen-bundesaufsicht": {
+                name: OpenLayers.i18n("ch.bfe.stauanlagen-bundesaufsicht"),
+                layers: ["ch.bfe.stauanlagen-bundesaufsicht"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
+            "ch.bfe.abgeltung-wasserkraftnutzung": {
+                name: OpenLayers.i18n("ch.bfe.abgeltung-wasserkraftnutzung"),
+                layers: ["ch.bfe.abgeltung-wasserkraftnutzung"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
             "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 layertype: 'wmts',
