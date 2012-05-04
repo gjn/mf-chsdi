@@ -22,4 +22,3 @@ API Examples
     wms
     meteoswiss
     swissimagelevel27
-    panoramio
