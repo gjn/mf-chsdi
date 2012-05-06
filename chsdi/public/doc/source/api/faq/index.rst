@@ -112,6 +112,8 @@ Here is a non exhaustive list (don't hesitate to inform us about your own web si
 Which layers are available ?
 ----------------------------
 
+Some layers can't be freely used. For these layers (Pixelmaps, Swissimage for example), please read the `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
+
 .. raw:: html
 
    <body>
