@@ -4,6 +4,7 @@ API Examples
 .. toctree::
     :maxdepth: 1
 
+    reversegeocoder
     sdiapiexamples1
     sdiapiexamples2
     sdiapiexamples3
