@@ -30,15 +30,15 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
 
    <style>
       .gx-popup {
-          width: auto !important;
-          max-width: 600px;
+          width 250px;
+          max-width: 250px;
       }
       .gx-popup .x-window-body {
           height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
           max-height: 280px !important;
           overflow:hidden;
           overflow-y:auto;
-          width:600px;
+          width: 250px;
           margin: 5px;
       }
    </style>
