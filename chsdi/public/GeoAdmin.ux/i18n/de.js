@@ -434,6 +434,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Entstehung der Gesteine',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Gesteinklassierung',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Lithologie-Hauptgruppen',
+	'ch.swisstopo.geologie-geotope':'Geotope nationaler Bedeutung',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Grundwasservorkommen',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Grundwasservulnerabilität',
 	'ch.swisstopo.geologie-tektonische_karte':'Tektonik 1:500 000',

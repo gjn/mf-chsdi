@@ -430,6 +430,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origin da crap',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificaziun da mineral',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppa litologia principal',
+	'ch.swisstopo.geologie-geotope':'Geotop da impurtanza naziunala',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Resursas d\'aua sutterrana',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabladad da l\'aua sutterrana',
 	'ch.swisstopo.geologie-tektonische_karte':'Tectonica 1:500000',

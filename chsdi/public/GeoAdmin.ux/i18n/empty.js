@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'ch.swisstopo.geologie-geotope': "",
     'Use current location': "",
     'Alert.print.profile': "",
     'Distance': "",

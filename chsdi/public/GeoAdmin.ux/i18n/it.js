@@ -434,6 +434,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origine delle rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificazione delle rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppi litologici principali',
+	'ch.swisstopo.geologie-geotope':'Geotopi d\'importanza nazionale',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Riserve acquifere',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabilitá delle falde acquifere',
 	'ch.swisstopo.geologie-tektonische_karte':'Tettonica 1:500 000',
