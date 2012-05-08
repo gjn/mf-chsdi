@@ -462,28 +462,28 @@ msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Wildlife sanctuary zones"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
-msgstr "ShowMe municipalities: Flood"
+msgstr "ShowMe communes: floods"
 
 msgid "ch.bafu.showme-gemeinden_lawinen"
-msgstr "ShowMe municipalities: Avalanches"
+msgstr "ShowMe communes: avalanches"
 
 msgid "ch.bafu.showme-gemeinden_rutschungen"
-msgstr "ShowMe municipalities: Landslide"
+msgstr "ShowMe communes: landslides"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe municipalities: Rockfall"
+msgstr "ShowMe communes: rockfall"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
-msgstr "ShowMe cantons: Flood"
+msgstr "ShowMe cantons: floods"
 
 msgid "ch.bafu.showme-kantone_lawinen"
-msgstr "ShowMe cantons: Avalanches"
+msgstr "ShowMe cantons: avalanches"
 
 msgid "ch.bafu.showme-kantone_rutschungen"
-msgstr "ShowMe cantons: Landslide"
+msgstr "ShowMe cantons: landslides"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantons: Rockfall"
+msgstr "ShowMe cantons: rockfall"
 
 msgid "ch.bafu.swissprtr"
 msgstr "Pollutant Releases (SwissPRTR)"
@@ -890,6 +890,9 @@ msgstr "Gewässername"
 
 msgid "gewissnr"
 msgstr "GEWISS number"
+
+msgid "gin_nummer"
+msgstr "Zugeordnete GIN-Nummer"
 
 msgid "gmde"
 msgstr "BFS-City nummer (State 2006)"

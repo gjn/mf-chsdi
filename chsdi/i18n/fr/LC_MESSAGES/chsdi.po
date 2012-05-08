@@ -471,7 +471,7 @@ msgid "ch.bafu.showme-gemeinden_rutschungen"
 msgstr "ShowMe communes: glissements"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe communes: chute de pierres"
+msgstr "ShowMe communes: chutes"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
 msgstr "ShowMe cantons: crues"
@@ -483,7 +483,7 @@ msgid "ch.bafu.showme-kantone_rutschungen"
 msgstr "ShowMe cantons: glissements"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantons: chutes de pierres"
+msgstr "ShowMe cantons: chutes"
 
 msgid "ch.bafu.swissprtr"
 msgstr "Rejets de polluants (SwissPRTR)"
@@ -889,6 +889,9 @@ msgstr "Nom du plan d’eau"
 
 msgid "gewissnr"
 msgstr "Numéro GEWISS"
+
+msgid "gin_nummer"
+msgstr "Numéro GIN attribué"
 
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"

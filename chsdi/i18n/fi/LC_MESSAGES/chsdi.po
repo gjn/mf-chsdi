@@ -471,7 +471,7 @@ msgid "ch.bafu.showme-gemeinden_rutschungen"
 msgstr "ShowMe vischnancas: bovas"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe vischnancas: process da crudada"
+msgstr "ShowMe vischnancas: crudadas"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
 msgstr "ShowMe chantuns: aua gronda"
@@ -483,7 +483,7 @@ msgid "ch.bafu.showme-kantone_rutschungen"
 msgstr "ShowMe chantuns: bovas"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe chantuns: process da crudada"
+msgstr "ShowMe chantuns: crudadas"
 
 msgid "ch.bafu.swissprtr"
 msgstr "Emiss. da subs. nuschaivla (SwissPRTR)"
@@ -889,6 +889,9 @@ msgstr "Gewässername"
 
 msgid "gewissnr"
 msgstr "GEWISS-Nummer"
+
+msgid "gin_nummer"
+msgstr "Zugeordnete GIN-Nummer"
 
 msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"

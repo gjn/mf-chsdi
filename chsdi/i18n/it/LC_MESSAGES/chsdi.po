@@ -462,28 +462,28 @@ msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Zone di tranquillitá"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
-msgstr "ShowMe comuni: inondazioni"
+msgstr "ShowMe comuni: piene"
 
 msgid "ch.bafu.showme-gemeinden_lawinen"
 msgstr "ShowMe comuni: valanghe"
 
 msgid "ch.bafu.showme-gemeinden_rutschungen"
-msgstr "ShowMe comuni: slittamenti"
+msgstr "ShowMe comuni: scivolamento"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe comuni: caduta di pietre"
+msgstr "ShowMe comuni: crollo"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
-msgstr "ShowMe cantoni: inondazioni"
+msgstr "ShowMe cantoni: piene"
 
 msgid "ch.bafu.showme-kantone_lawinen"
 msgstr "ShowMe cantoni: valanghe"
 
 msgid "ch.bafu.showme-kantone_rutschungen"
-msgstr "ShowMe cantoni: slittamenti"
+msgstr "ShowMe cantoni: scivolamento"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantoni: caduta di pietre"
+msgstr "ShowMe cantoni: crollo"
 
 msgid "ch.bafu.swissprtr"
 msgstr "Emissioni di inquinanti (SwissPRTR)"
@@ -889,6 +889,9 @@ msgstr "Nom du plan d’eau"
 
 msgid "gewissnr"
 msgstr "Numéro GEWISS"
+
+msgid "gin_nummer"
+msgstr "Numéro GIN attribué"
 
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"

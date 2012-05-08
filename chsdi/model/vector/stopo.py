@@ -529,3 +529,26 @@ class spannungsarmeGebiete(Base, Queryable):
        the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo-vd.spannungsarme-gebiete',spannungsarmeGebiete)
+
+class geologieGeotopePunkte(Base, Queryable):
+     __tablename__ = 'geotope_punkte'
+     __table_args__ = ({'schema': 'geol', 'autoload': True})
+     __template__ = 'tooltips/geotope.mako'
+     id = Column('gid', Integer, primary_key=True)
+     the_geom = Column(Geometry(21781))
+
+     code = Column('code', Text)
+     nom = Column('nom', Text)
+
+class geologieGeotopeFlaechen(Base, Queryable):
+     __tablename__ = 'geotope_flaechen'
+     __table_args__ = ({'schema': 'geol', 'autoload': True})
+     __template__ = 'tooltips/geotope.mako'
+     id = Column('gid', Integer, primary_key=True)
+     the_geom = Column(Geometry(21781))
+     
+     code = Column('code', Text)
+     nom = Column('nom', Text)
+
+register('ch.swisstopo.geologie-geotope',geologieGeotopePunkte)
+register('ch.swisstopo.geologie-geotope',geologieGeotopeFlaechen)

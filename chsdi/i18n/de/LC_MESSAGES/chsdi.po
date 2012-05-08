@@ -890,6 +890,9 @@ msgstr "Gewässername"
 msgid "gewissnr"
 msgstr "GEWISS-Nummer"
 
+msgid "gin_nummer"
+msgstr "Zugeordnete GIN-Nummer"
+
 msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"
 
