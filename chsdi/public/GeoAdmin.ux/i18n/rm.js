@@ -513,6 +513,7 @@ OpenLayers.Lang.rm= {
 	'geocat':'geocat.ch',
 	'georeferenzdaten_bool':'Georeferenzdaten',
 	'german':'Deutsch',
+	'gin_nummer':'Zugeordnete GIN-Nummer',
 	'gold':'aur',
 	'gray':'grisch',
 	'green':'verd',

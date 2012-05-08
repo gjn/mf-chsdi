@@ -517,6 +517,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'geocat':'geocat.ch',
 	'georeferenzdaten_bool':'Géodonnées de référence',
 	'german':'Deutsch',
+	'gin_nummer':'Numéro GIN attribué',
 	'gold':'or',
 	'gray':'gris',
 	'green':'vert',
