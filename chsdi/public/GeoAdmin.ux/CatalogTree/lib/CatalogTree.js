@@ -850,6 +850,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geologie-geophysik-geothermie"
                     },
                     {
+                        layerId: "ch.swisstopo.geologie-geotope"
+                    },
+                    {
                         layerId: "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
                     },
                     {
