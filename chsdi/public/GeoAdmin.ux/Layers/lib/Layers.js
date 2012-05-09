@@ -730,6 +730,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+            "ch.swisstopo.swisstlm3d-karte": {
+                name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-karte"),
+                layertype: 'wmts',
+                timestamp: '20120401',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.swisstopo.vec25-einzelobjekte": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-einzelobjekte"),
                 layertype: 'wmts',

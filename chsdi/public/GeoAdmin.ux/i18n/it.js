@@ -468,6 +468,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.swissboundaries3d-land-flaeche.fill':'Frontiere nazionali',
 	'ch.swisstopo.swissbuildings3d':'Gli edifici semplificati in 3D',
 	'ch.swisstopo.swissimage':'Veduta aerea',
+	'ch.swisstopo.swisstlm3d-karte':'Modello topo. del paesaggio',
 	'ch.swisstopo.swisstlm3d-wanderwege':'Percorsi escursionistici',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/it/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Parchi nazionali VECTOR200',
