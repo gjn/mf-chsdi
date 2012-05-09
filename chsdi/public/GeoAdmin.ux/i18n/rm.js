@@ -464,7 +464,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.swissboundaries3d-land-flaeche.fill':'Confins naziunals',
 	'ch.swisstopo.swissbuildings3d':'3D- Edifizis simplifitgà',
 	'ch.swisstopo.swissimage':'Fotografia or da l\'aria',
-	'ch.swisstopo.swisstlm3d-karte':'ch.swisstopo.swisstlm3d-karte', //TODO
+	'ch.swisstopo.swisstlm3d-karte':'Model cuntrada topol.',
 	'ch.swisstopo.swisstlm3d-wanderwege':'Sendas da viandar',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Parcs naziunal VECTOR200',
