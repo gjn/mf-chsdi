@@ -45,6 +45,9 @@
 % elif c.layer.bod_layer_id == "ch.kantone.cadastralwebmap-farbe":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.kantone.cadastralwebmap-farbe_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.swisstlm3d-karte":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte_${c.lang}_big.png" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>
