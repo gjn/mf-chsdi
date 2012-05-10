@@ -61,6 +61,7 @@
  * @include i18n/fr.js
  * @include i18n/it.js
  * @include i18n/en.js
+ * @include i18n/rm.js
  */
 
 /** api: (define)

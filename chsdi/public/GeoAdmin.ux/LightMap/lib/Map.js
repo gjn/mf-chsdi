@@ -10,6 +10,9 @@
  * @include OpenLayers/Control/Zoom.js
  * @include OpenLayers/Control/SelectFeature.js
  * @include OpenLayers/Layer/Vector.js
+ * @include OpenLayers/Layer/Markers.js
+ * @include OpenLayers/Icon.js
+ * @include OpenLayers/Marker.js
  * @include OpenLayers/Protocol/HTTP.js
  * @include OpenLayers/Strategy/Fixed.js
  * @include OpenLayers/Format/KML.js

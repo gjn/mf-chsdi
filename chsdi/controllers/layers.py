@@ -32,7 +32,7 @@ class LayersController(BaseController):
 ##----------------------------------------Databases----------------------------------------##               
         c.lang = request.params.get('lang','de')
         
-        # Initialilze the dictionary mapping the table properties
+        # Initialize the dictionary mapping the table properties
         self.map_properties = {}
         
         if self.mode == 'wmts':
@@ -48,13 +48,13 @@ class LayersController(BaseController):
             self.get_model(self.GetCapThemes)
             self.get_model(self.ServiceMetadata)
         else: 
-            if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch':   
+            if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch' or self.mode == 'preview':
                 if c.lang == 'fr' or c.lang == 'it':
                     self.BodLayer = BodLayerFr
                 else:
                     self.BodLayer = BodLayerDe
                 self.get_model(self.BodLayer)
-            if self.mode == 'all'  or self.mode =='legend':
+            if self.mode == 'all'  or self.mode =='legend' or self.mode == 'preview':
                 self.LayerLegend = LayerLegend
                 self.get_model(self.LayerLegend)
     
@@ -62,7 +62,7 @@ class LayersController(BaseController):
 
 ##----------------------------------------Session----------------------------------------##     	
     	  # Define which view are taken into account
-        if self.mode == 'all' or self.mode == 'legend':
+        if self.mode == 'all' or self.mode == 'legend' or self.mode == 'preview':
             # TODO: create a mapper in order to fuse both models 
             query = Session.query(self.BodLayer, self.LayerLegend)
             query = query.filter(self.BodLayer.bod_layer_id == self.LayerLegend.bod_layer_id)
@@ -182,7 +182,9 @@ class LayersController(BaseController):
             result = [q.layers_results(properties) for r in query for q in r]
             results = []
             for i in range(0, len(result), 2):
-                results.append(dict(result[i].items() + result[i+1].items())) 
+                results.append(dict(result[i].items() + result[i+1].items()))
+        elif self.mode == 'preview':
+            result = [q.layers_results(['bod_layer_id']) for r in query for q in r]
         
 ##----------------------------------------Results----------------------------------------##
         cb_name = request.params.get('cb')
@@ -216,14 +218,23 @@ class LayersController(BaseController):
             response.headers['Cache-Control'] = 'no-cache'
             response.charset = 'utf8'
             return render('/WMTSCapabilities.mako')
-        else:
+        elif self.mode == 'all':
             if cb_name is not None:
                 response.headers['Content-Type'] = 'text/javascript'
                 results = simplejson.dumps({"results": results})
                 return str(cb_name) + '(' + results + ');'
             else:
                 response.headers['Content-Type'] = 'application/json'             
-                return simplejson.dumps({'results': results}) 
+                return simplejson.dumps({'results': results})
+        elif self.mode == 'preview':
+            c.layers = []
+            for object in result:
+                for id,bodLayerId in object.iteritems():
+                    if bodLayerId not in c.layers:
+                       c.layers.append(bodLayerId)
+            response.headers['Content-Type'] = mimetypes.types_map['.html']
+            response.charset = 'utf8'
+            return render('/layersPreview.mako')
             
 ##----------------------------------------Utils----------------------------------------##             	
     def register_columns(self, name, column):
