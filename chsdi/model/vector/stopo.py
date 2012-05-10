@@ -38,6 +38,7 @@ class CadastralWebMap(Base, Queryable):
     __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/cadastralwebmap.mako'
     id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
 
 
