@@ -101,6 +101,9 @@ msgstr "Kraftwerk"
 msgid "Kursschiff_Linie"
 msgstr "Passagierschiff"
 
+msgid "LI"
+msgstr "Liechstenstein"
+
 msgid "Legend"
 msgstr "Legend"
 
@@ -1052,6 +1055,9 @@ msgstr "Länge [km]"
 
 msgid "link to canton geoportal"
 msgstr "Link to the portal of canton"
+
+msgid "link to geoportal"
+msgstr "Link to the portal"
 
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"

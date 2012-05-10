@@ -101,6 +101,9 @@ msgstr "Centrale électrique"
 msgid "Kursschiff_Linie"
 msgstr "Bateau de transport passagers"
 
+msgid "LI"
+msgstr "Liechstenstein"
+
 msgid "Legend"
 msgstr "Legenda"
 
@@ -1051,6 +1054,9 @@ msgstr "Longueur [km]"
 
 msgid "link to canton geoportal"
 msgstr "Link verso il portale cantonale"
+
+msgid "link to geoportal"
+msgstr "Link verso il portale"
 
 msgid "linkzurbeschreibung"
 msgstr "Description detaillee"

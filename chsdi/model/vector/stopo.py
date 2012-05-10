@@ -33,8 +33,11 @@ class SwissboundariesKanton(Base, Queryable):
 register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKanton)
 
 # These two layers do not have a table on their own
-class CadastralWebMap(SwissboundariesKanton):
+class CadastralWebMap(Base, Queryable):
+    __tablename__ = 'kantone25plus'
+    __table_args__ = ({'autoload': True})
     __template__ = 'tooltips/cadastralwebmap.mako'
+    id = Column('gid', Integer, primary_key=True)
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
 
 

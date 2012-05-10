@@ -101,6 +101,9 @@ msgstr "Kraftwerk"
 msgid "Kursschiff_Linie"
 msgstr "Passagierschiff"
 
+msgid "LI"
+msgstr "Fürstentum Liechstenstein"
+
 msgid "Legend"
 msgstr "Legende"
 
@@ -1051,6 +1054,9 @@ msgstr "Länge [km]"
 
 msgid "link to canton geoportal"
 msgstr "Link zum kantonalen Portal"
+
+msgid "link to geoportal"
+msgstr "Link zum Geoportal"
 
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
