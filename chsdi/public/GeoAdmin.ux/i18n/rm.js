@@ -215,6 +215,7 @@ OpenLayers.Lang.rm= {
 	'Previous view':'Enavos',
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Stabiliments da producziun e d\'industria',
+	'QueryByRect.CtrlKeyUsageNotice':'Selecziunplirs  objects: Ctrl tasta',
 	'Queryable':'Consultar',
 	'Raum und Bevölkerung':'Territori e populaziun',
 	'Raumplanung':'Secturs reglads ed unitads da rapport',

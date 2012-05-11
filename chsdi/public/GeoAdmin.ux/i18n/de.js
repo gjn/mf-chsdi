@@ -219,6 +219,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Previous view':'Rückwärts',
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Produktions- und Industrieanlagen',
+	'QueryByRect.CtrlKeyUsageNotice':'Sie können die Ctrl Taste benutzen um eine Auswahl über ein Rechteck zu treffen',
 	'Queryable':'Abfragbar',
 	'Raum und Bevölkerung':'Raum und Bevölkerung',
 	'Raumplanung':'Geregelte Gebiete und Berichterstattungseinheiten',

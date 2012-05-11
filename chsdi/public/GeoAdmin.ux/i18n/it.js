@@ -219,6 +219,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Previous view':'Indietro',
 	'Problems submitting:':'Problema di trasmissione',
 	'Produktions- und Industrieanlagen':'Produzione e impianti industriali',
+	'QueryByRect.CtrlKeyUsageNotice':'Vous pouvez utiliser la touche Ctrl pour activer la sélection par rectangle',
 	'Queryable':'Interrogabile',
 	'Raum und Bevölkerung':'Territori e popolazione',
 	'Raumplanung':'Zone regolamentate e unità con obbligo di rapporto',

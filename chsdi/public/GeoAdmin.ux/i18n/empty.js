@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'QueryByRect.CtrlKeyUsageNotice': "",
     'Max features notice': "",
     'ch.swisstopo.geologie-geotope': "",
     'Use current location': "",
