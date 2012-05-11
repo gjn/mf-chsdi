@@ -10,6 +10,7 @@
        body {
           background-color: #000000;
           font-family:arial;
+          font-size: smaller;
        }
        A:link {text-decoration: none; color: white;}
        A:visited {text-decoration: none; color: white;}
