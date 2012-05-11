@@ -834,6 +834,9 @@ msgstr "Epizentrale Zone"
 msgid "fassung"
 msgstr "Version"
 
+msgid "feature"
+msgstr "Object"
+
 msgid "federal administration"
 msgstr "The Federal Authorities of the Swiss Confederation"
 

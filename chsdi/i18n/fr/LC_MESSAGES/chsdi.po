@@ -833,6 +833,9 @@ msgstr "Zone épicentrale"
 msgid "fassung"
 msgstr "Version"
 
+msgid "feature"
+msgstr "Objet"
+
 msgid "federal administration"
 msgstr "Administration fédérale admin.ch"
 
