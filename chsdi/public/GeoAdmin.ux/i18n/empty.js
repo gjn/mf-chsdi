@@ -1,5 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
-    'gin_nummer': "",
+    'Max features notice': "",
     'ch.swisstopo.geologie-geotope': "",
     'Use current location': "",
     'Alert.print.profile': "",
