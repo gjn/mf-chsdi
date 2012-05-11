@@ -168,7 +168,7 @@ class FM_REG(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/fm_reg.mako'
 
-    id = Column('fm_id', Integer, primary_key=True)
+    id = Column('fm_reg_id', Integer, primary_key=True)
     fm_name = Column('fm_name', Text)
     fm_obj = Column('fm_obj', Text)
     fm_gf = Column('fm_gf', Text)

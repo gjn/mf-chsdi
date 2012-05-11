@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">${int(round(c.feature.popt_ha)) or '-'} ${_('einwohner_ha')}</%def>
 
 <%def name="table_body()">
     <tr><td width="150">${_('einwohner_ha')}</td>    <td>${int(round(c.feature.popt_ha)) or '-'}</td></tr>
