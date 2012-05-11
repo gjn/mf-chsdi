@@ -6,6 +6,16 @@
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
     <script type="text/javascript" src="loader.js?mode=light"></script>
+    <style type="text/css">
+       body {
+          background-color: #000000;
+          font-family:arial;
+       }
+       A:link {text-decoration: none; color: white;}
+       A:visited {text-decoration: none; color: white;}
+       A:active {text-decoration: none; color: white;}
+       A:hover {text-decoration: underline overline; color: red;}
+    </style>
     <script type="text/javascript">
         var maps = []
         var moving = false;
@@ -120,5 +130,8 @@
     </script>
 </head>
 <body onload="init()">
+<div>
+<h1 style='color:white;text-align:center;'>GeoAdmin Layers Hall of Fame</h1>
+</div>
 </body>
 </html>
