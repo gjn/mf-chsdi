@@ -1799,7 +1799,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissalti3d-reliefschattierung": {
                 name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
                 layertype: 'wmts',
-                timestamp: '20000101',
+                timestamp: '20110101',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
