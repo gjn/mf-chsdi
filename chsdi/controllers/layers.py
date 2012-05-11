@@ -96,15 +96,15 @@ class LayersController(BaseController):
             abort(400, 'An error occured while parsing the properties')             
 
 ##----------------------------------------Project----------------------------------------##            
-        # Per default all the projects in the view are selected
-        project = request.params.get('project','all')
+        # Per default the project geoadmin is selected
+        project = request.params.get('project','geoadmin')
         project = project.split(',')
         if not isinstance(project,list):
             abort(400, 'An error occured while parsing the projects')           
 
 ##----------------------------------------Layer_id----------------------------------------##
         if id is None:        
-            # Per default all the layers are taken into account
+            # Per default all layers are taken into account
             layer_id = request.params.get('layer_id','all')
             layer_id = layer_id.split(',')
             if not isinstance(layer_id,list):

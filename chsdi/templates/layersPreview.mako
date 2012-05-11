@@ -5,23 +5,6 @@
     <meta name="content-language" content="${c.lang}"/>
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
-    <style type="text/css">
-        .left {
-            float: left;
-            width: 400px;
-            height: 400px;
-            margin: 5px;
-        }
-
-        .map {
-            width: 400px;
-            height: 380px;
-        }
-
-        .title {
-            margin: 3px;
-        }
-    </style>
     <script type="text/javascript" src="loader.js?mode=light"></script>
     <script type="text/javascript">
         var maps = []
@@ -31,21 +14,28 @@
         var marker = [];
 
         function init() {
+            var divMain = document.createElement('div');
+            document.body.appendChild(divMain); 
             % for layer in c.layers:
             var div = document.createElement('div');
             div.setAttribute('id', 'div${layer}');
-            div.setAttribute('class', 'left');
-            document.body.appendChild(div);
+            div.style.width = '250px';
+            div.style.height = '200px';
+            div.style.cssFloat = 'left';
+            div.style.styleFloat = 'left';
+            div.style.margin = '5px';
+            divMain.appendChild(div);
 
             var divTitle = document.createElement('div');
             divTitle.setAttribute('id', 'div${layer}title');
-            divTitle.setAttribute('class', 'title');
+            divTitle.style.width = '250px';
+            divTitle.style.margin = '3px';
             divTitle.innerHTML = '<a href="http://map.geo.admin.ch/?layers=${layer}" target="new">' + OpenLayers.i18n('${layer}') + '</a>';
             div.appendChild(divTitle);
 
             var divMap = document.createElement('div');
             divMap.setAttribute('id', 'div${layer}map');
-            divMap.setAttribute('class', 'map');
+            divMap.style.height = '180px';
             div.appendChild(divMap);
 
             var map = new GeoAdmin.Map('div${layer}map', {doZoomToMaxExtent: true});
@@ -62,6 +52,7 @@
             }
 
         }
+
         function initMarker(n) {
             markersLayer[n] = new OpenLayers.Layer.Markers("Marker");
             maps[n].addLayer(markersLayer[n]);
