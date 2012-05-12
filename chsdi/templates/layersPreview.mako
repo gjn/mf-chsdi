@@ -26,11 +26,13 @@
 
         function init() {
             OpenLayers.Lang.setCode("${c.lang}");
+            var mySpan = document.getElementById('layerNumber');
+            mySpan.innerHTML = ${len(c.layers)};
             var divMain = document.createElement('div');
             document.body.appendChild(divMain); 
             % for layer in c.layers:
             var div = document.createElement('div');
-            div.setAttribute('id', 'div${layer}');
+            div.setAttribute('id', 'divmain${layer}');
             div.style.width = '250px';
             div.style.height = '200px';
             div.style.cssFloat = 'left';
@@ -39,20 +41,20 @@
             divMain.appendChild(div);
 
             var divTitle = document.createElement('div');
-            divTitle.setAttribute('id', 'div${layer}title');
+            divTitle.setAttribute('id', 'divtitle${layer}');
             divTitle.style.width = '250px';
             divTitle.style.margin = '3px';
             divTitle.innerHTML = '<a href="http://map.geo.admin.ch/?layers=${layer}" target="new">' + OpenLayers.i18n('${layer}') + '</a>';
             div.appendChild(divTitle);
 
             var divMap = document.createElement('div');
-            divMap.setAttribute('id', 'div${layer}map');
+            divMap.setAttribute('id', 'divmap${layer}');
             divMap.style.height = '180px';
             div.appendChild(divMap);
 
-            var map = new GeoAdmin.Map('div${layer}map', {doZoomToMaxExtent: true});
-            map.addLayerByName('${layer}');
-            maps.push(map);
+            Window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}', {doZoomToMaxExtent: true});
+            Window['map'+maps.length].addLayerByName('${layer}');
+            maps.push(Window['map'+maps.length]);
             % endfor
             for (var n = 0; n < maps.length; n++) {
                 maps[n].events.register('movestart', n, moveStart);
@@ -129,11 +131,46 @@
 
             return (false);
         }
+        function handleKeyUp(e,form) {
+           var key=e.keyCode || e.which;
+
+           if (key==13) {
+              var allDivs = document.getElementsByTagName('div');
+              var myInputValue = document.getElementById('inputWidth').value;
+              var mapCounter = 0;
+              if (myInputValue < 150) {
+                  alert("Your screen seems to be very, very small... But the GeoAdmin Light Api makes all you want;-)");
+              }
+              if (myInputValue > 1980) {
+                  alert("Such a big screen ! But the GeoAdmin Light Api makes all you want ;-)");
+              }
+              for (var i = 0; i < allDivs.length; i++) {
+                 var myDiv = allDivs[i];
+                 var ratio = 250/200;
+                 var height = Math.round(Number(myInputValue)/ratio);
+                 if (myDiv.id.indexOf('divmain') != -1) {
+                    myDiv.style.width = myInputValue + "px";
+                    myDiv.style.height = height + "px";
+                 }
+                 if (myDiv.id.indexOf('divtitle') != -1) {
+                    myDiv.style.width = myInputValue + "px";
+                 }
+                 if (myDiv.id.indexOf('divmap') != -1) {
+                    height = height-20;
+                    myDiv.style.height = height + "px";
+                    var myMapId = 'map'+mapCounter.toString();
+                    Window[myMapId].updateSize();
+                    mapCounter++
+                 }
+              }
+           }
+        }
     </script>
 </head>
 <body onload="init()">
 <div>
-<h1 style='color:white;text-align:center;'>GeoAdmin Layers Hall of Fame</h1>
+<h1 style='color:white;text-align:center;'>geo.admin.ch: <span id="layerNumber"></span> layers</h1>
+<div style='color:white;margin:5px;'>Map width: <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="250" maxLength="5" style="width:50px;"></input>&nbsp px</div>
 </div>
 </body>
 </html>
