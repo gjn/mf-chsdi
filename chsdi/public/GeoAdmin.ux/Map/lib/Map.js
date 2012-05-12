@@ -582,7 +582,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
             // Assign the popup to a global variable in order to use it easily in a setTimeout
             window.KMLpopup = this.KMLpopup;
-            setTimeout(" var widthPopup = window.myProvisoryPopupDiv.scrollWidth;window.myProvisoryPopupDiv.style.width = '1px';window.myProvisoryPopupDiv.style.visibility = 'hidden'; widthPopup = widthPopup + 30; if (widthPopup > 800) { widthPopup = 800; }; window.KMLpopup.setWidth(widthPopup);",1000);
+            setTimeout(" var widthPopup = window.myProvisoryPopupDiv.scrollWidth;window.myProvisoryPopupDiv.style.width = '1px';window.myProvisoryPopupDiv.style.visibility = 'hidden'; widthPopup = widthPopup + 30; if (widthPopup > 800) { widthPopup = 800; }; if (widthPopup < 200) {widthPopup=200}; window.KMLpopup.setWidth(widthPopup);",1000);
         }
 
         function onFeatureUnselect(event) {
