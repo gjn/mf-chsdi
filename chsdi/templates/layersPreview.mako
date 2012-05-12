@@ -25,6 +25,7 @@
         var marker = [];
 
         function init() {
+            OpenLayers.Lang.setCode("${c.lang}");
             var divMain = document.createElement('div');
             document.body.appendChild(divMain); 
             % for layer in c.layers:
