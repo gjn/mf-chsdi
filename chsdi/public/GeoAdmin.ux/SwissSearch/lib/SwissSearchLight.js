@@ -212,7 +212,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
     createResultHtml: function(results) {
         var html = '';
         for (var i = 0; i < results.length; i++) {
-            html = html + '<a style="margin-left: 3px" href="javascript:window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();">' + results[i].label + '</a><br>';
+            html = html + '<a style="margin-left: 3px" href="#" onclick="window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();">' + results[i].label + '</a><br>';
         }
         return html;
     },
