@@ -1055,12 +1055,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Landnutzung',
                 children: [
                     {
-                        layerId: "ch.bfs.arealstatistik-1985"
-                    },
-                    {
-                        layerId: "ch.bfs.arealstatistik-1997"
-                    },
-                    {
                         layerId: "ch.bfs.arealstatistik-hintergrund"
                     },
                     /* FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
