@@ -348,25 +348,25 @@ msgid "ch.are.alpenkonvention"
 msgstr "Alpenkonvention"
 
 msgid "ch.are.bauzonen-2007"
-msgstr "Bauzonen Schweiz 2007 (harmonisiert)"
+msgstr "Bauzonen Schweiz 2007"
 
 msgid "ch.are.belastung-gueterverkehr-bahn-2008"
-msgstr "Jährliche Belastung der schweizerischen Bahnen 2008 (Güterverkehr)"
+msgstr "Güterverkehr 2008"
 
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
-msgstr "Jährliche Belastung des schweizerischen Strassennetzes 2008 (schwerer Güterverkehr)"
+msgstr "Schwerer Güterverkehr 2008"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
-msgstr "Jährliche Belastung des öffentlichen Verkehrs 2008 (Personenverkehr)"
+msgstr "Personenverkehr 2008"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Jährliche Belastung des schweizerischen Strassennetzes 2008 (Personenverkehr)"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
-msgstr "Beschäftigtendichte - Betriebszählung 2008"
+msgstr "Beschäftigtendichte 2008"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
-msgstr "Bevölkerungsdichte - Volkszählung 2000"
+msgstr "Bevölkerungsdichte 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Gemeindetypologie ARE"
@@ -381,7 +381,7 @@ msgid "ch.are.reisezeit_miv-2005"
 msgstr "Reisezeit zu Zentren mit dem MIV 2005"
 
 msgid "ch.are.reisezeit_oev-2005"
-msgstr "Reisezeit zu Zentren mit dem ÖV 2005"
+msgstr "Reisezeit zu Zentren ÖV 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Kant. Ausnahmetransportrouten"
@@ -404,6 +404,18 @@ msgstr "Verkehrszählstellen übergeordnet"
 msgid "ch.babs.kulturgueter"
 msgstr "Kulturgüterschutz Inventar"
 
+msgid "ch.bafu.aquaprotect_050"
+msgstr "Überschwemmung Aquaprotect 50"
+
+msgid "ch.bafu.aquaprotect_100"
+msgstr "Überschwemmung Aquaprotect 100"
+
+msgid "ch.bafu.aquaprotect_250"
+msgstr "Überschwemmung Aquaprotect 250"
+
+msgid "ch.bafu.aquaprotect_500"
+msgstr "Überschwemmung Aquaprotect 500"
+
 msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Amphibien Ortsfeste Objekte"
 
@@ -425,14 +437,50 @@ msgstr "Jagdbanngebiete"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Moorlandschaften"
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
+msgstr "Trockenwiesen und -weiden"
+
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Wasser- und Zugvogelreservate"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Steinbockkolonien"
 
+msgid "ch.bafu.fauna-vernetzungsachsen_national"
+msgstr "Vernetzungssystem"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national"
+msgstr "Wildtierkorridore National"
+
+msgid "ch.bafu.fischerei-krebspest"
+msgstr "Krebspest"
+
+msgid "ch.bafu.fischerei-proliferative_nierenkrankheit"
+msgstr "PKD (Proliferative Nierenkrankheit)"
+
+msgid "ch.bafu.flora-schwingrasen"
+msgstr "Schwingrasen"
+
+msgid "ch.bafu.flora-verbreitungskarten"
+msgstr "Raster Verbreitungskarten"
+
+msgid "ch.bafu.flora-weltensutter_atlas"
+msgstr "Atlas Welten&Sutter"
+
+msgid "ch.bafu.gefahren-baugrundklassen"
+msgstr "Baugrundklassen"
+
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Gefährdungszonen für Erdbeben"
+
+msgid "ch.bafu.gefahren-historische_erdbeben"
+msgstr "Historische Erdbeben"
+
+msgid "ch.bafu.gefahren-mikrozonierung"
+msgstr "Mikrozonierungen"
+
+msgid "ch.bafu.gefahren-spektral"
+msgstr "Spektrale Mikrozonierung"
 
 msgid "ch.bafu.holznutzung"
 msgstr "Holznutzung und Mortalität (LFI)"
@@ -457,6 +505,15 @@ msgstr "Strassenlärm (Lr_Nacht)"
 
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Strassenlärm (Lr_Tag)"
+
+msgid "ch.bafu.landesforstinventar-baumarten"
+msgstr "Baumarten (LFI)"
+
+msgid "ch.bafu.landesforstinventar-totholz"
+msgstr "Totholz (LFI)"
+
+msgid "ch.bafu.landesforstinventar-waldanteil"
+msgstr "Waldanteil (LFI)"
 
 msgid "ch.bafu.nabelstationen"
 msgstr "Luftbelastung: Stationen NABEL"
@@ -485,6 +542,9 @@ msgstr "REN  Wald>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Wald<1000m"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+msgstr "Biosphärenreservate"
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Pärke"
 
@@ -493,6 +553,9 @@ msgstr "Ramsar"
 
 msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
 msgstr "Nationalpark"
+
+msgid "ch.bafu.schutzgebiete-smaragd"
+msgstr "Smaragd"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Wildruhezonen"
@@ -526,6 +589,12 @@ msgstr "Schadstoff-Freisetzungen (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
 msgstr "UNESCO Welterbe Naturstätten"
+
+msgid "ch.bafu.waldschadenflaechen-lothar"
+msgstr "Sturmschaden Lothar"
+
+msgid "ch.bafu.waldschadenflaechen-vivian"
+msgstr "Sturmschaden Vivian"
 
 msgid "ch.bafu.wasser-entnahme"
 msgstr "Wasserentnahme"

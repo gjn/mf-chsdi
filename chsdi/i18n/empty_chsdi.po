@@ -3,6 +3,75 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+msgstr ""
+
+msgid "ch.bafu.flora-verbreitungskarten"
+msgstr ""
+
+msgid "ch.bafu.waldschadenflaechen-lothar"
+msgstr ""
+
+msgid "ch.bafu.fischerei-krebspest"
+msgstr ""
+
+msgid "ch.bafu.aquaprotect_100"
+msgstr ""
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
+msgstr ""
+
+msgid "ch.bafu.landesforstinventar-waldanteil"
+msgstr ""
+
+msgid "ch.bafu.fauna-wildtierkorridor_national"
+msgstr ""
+
+msgid "ch.bafu.aquaprotect_250"
+msgstr ""
+
+msgid "ch.bafu.gefahren-baugrundklassen"
+msgstr ""
+
+msgid "ch.bafu.landesforstinventar-totholz"
+msgstr ""
+
+msgid "ch.bafu.gefahren-historische_erdbeben"
+msgstr ""
+
+msgid "ch.bafu.waldschadenflaechen-vivian"
+msgstr ""
+
+msgid "ch.bafu.schutzgebiete-smaragd"
+msgstr ""
+
+msgid "ch.bafu.flora-weltensutter_atlas"
+msgstr ""
+
+msgid "ch.bafu.gefahren-mikrozonierung"
+msgstr ""
+
+msgid "ch.bafu.fauna-vernetzungsachsen_national"
+msgstr ""
+
+msgid "ch.bafu.aquaprotect_050"
+msgstr ""
+
+msgid "ch.bafu.fischerei-proliferative_nierenkrankheit"
+msgstr ""
+
+msgid "ch.bafu.landesforstinventar-baumarten"
+msgstr ""
+
+msgid "ch.bafu.gefahren-spektral"
+msgstr ""
+
+msgid "ch.bafu.aquaprotect_500"
+msgstr ""
+
+msgid "ch.bafu.flora-schwingrasen"
+msgstr ""
+
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr ""
 

@@ -348,25 +348,25 @@ msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
 msgid "ch.are.bauzonen-2007"
-msgstr "Zones à bâtir Suisse 2007 (harmonisées)"
+msgstr "Zones à bâtir Suisse 2007"
 
 msgid "ch.are.belastung-gueterverkehr-bahn-2008"
-msgstr "Charge annuelle du réseau ferroviaire 2008 (trafic marchandises)"
+msgstr "Trafic marchandises 2008"
 
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
-msgstr "Charge annuelle du réseau routier suisse 2008 (trafic marchandises poids lourds)"
+msgstr "Trafic marchandises poids lourds 2008"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
-msgstr "Charge annuelle du réseau ferroviaire 2008 (trafic voyageurs)"
+msgstr "Trafic voyageurs 2008"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Charge annuelle du réseau routier suisse 2008 (trafic voyageurs)"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
-msgstr "Densité de l`emploi - Recensement des entreprises 2008"
+msgstr "Densité de l`emploi 2008"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
-msgstr "Densité de population - Recensement de la population 2000"
+msgstr "Densité de population 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typologie des communes ARE"
@@ -381,10 +381,10 @@ msgid "ch.are.reisezeit_miv-2005"
 msgstr "Temps de parcours en TIM vers un centre 2005"
 
 msgid "ch.are.reisezeit_oev-2005"
-msgstr "Temps de parcours en TP vers un centre 2005"
+msgstr "Temps de parcours en TP 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Itinéraires cant. pour convois exceptionnels"
+msgstr "Itinéraires cant. convois exceptionnels"
 
 msgid "ch.astra.ivs-gelaendekarte"
 msgstr "IVS carte de terrain"
@@ -403,6 +403,18 @@ msgstr "Circulation routière (principal)"
 
 msgid "ch.babs.kulturgueter"
 msgstr "Inventaire des biens culturels"
+
+msgid "ch.bafu.aquaprotect_050"
+msgstr "Inondation Aquaprotect 50"
+
+msgid "ch.bafu.aquaprotect_100"
+msgstr "Inondation Aquaprotect 100"
+
+msgid "ch.bafu.aquaprotect_250"
+msgstr "Inondation Aquaprotect 250"
+
+msgid "ch.bafu.aquaprotect_500"
+msgstr "Inondation Aquaprotect 500"
 
 msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Batraciens objets fixes"
@@ -425,14 +437,50 @@ msgstr "Districts francs"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Sites marécageux"
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
+msgstr "Prairies et pâturages secs"
+
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau et migrateurs"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
 
+msgid "ch.bafu.fauna-vernetzungsachsen_national"
+msgstr "Système de mise en réseau"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national"
+msgstr "Corridors faunistiques de Suisse"
+
+msgid "ch.bafu.fischerei-krebspest"
+msgstr "Peste de l'écrevisse"
+
+msgid "ch.bafu.fischerei-proliferative_nierenkrankheit"
+msgstr "MRP (Maladie rénale proliférative)"
+
+msgid "ch.bafu.flora-schwingrasen"
+msgstr "Gazons flottants"
+
+msgid "ch.bafu.flora-verbreitungskarten"
+msgstr "Grille des cartes de distribution"
+
+msgid "ch.bafu.flora-weltensutter_atlas"
+msgstr "Atlas Welten&Sutter"
+
+msgid "ch.bafu.gefahren-baugrundklassen"
+msgstr "Classes de sol de fondation"
+
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Zones de risque sismique"
+
+msgid "ch.bafu.gefahren-historische_erdbeben"
+msgstr "Séismes historiques"
+
+msgid "ch.bafu.gefahren-mikrozonierung"
+msgstr "Microzonages sismiques"
+
+msgid "ch.bafu.gefahren-spektral"
+msgstr "Microzonage spectral"
 
 msgid "ch.bafu.holznutzung"
 msgstr "Exploitations de bois (IFN)"
@@ -457,6 +505,15 @@ msgstr "Bruit routier (Lr_nuit)"
 
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Bruit routier (Lr_jour)"
+
+msgid "ch.bafu.landesforstinventar-baumarten"
+msgstr "Essences (IFN)"
+
+msgid "ch.bafu.landesforstinventar-totholz"
+msgstr "Bois mort (IFN)"
+
+msgid "ch.bafu.landesforstinventar-waldanteil"
+msgstr "Taux de boisement (IFN)"
 
 msgid "ch.bafu.nabelstationen"
 msgstr "Qualité de l´air: Stations NABEL"
@@ -485,6 +542,9 @@ msgstr "REN  Zones forestières>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Zones forestières<1000m"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+msgstr "Réserves de biosphère"
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parcs"
 
@@ -493,6 +553,9 @@ msgstr "Ramsar"
 
 msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
 msgstr "Parc national"
+
+msgid "ch.bafu.schutzgebiete-smaragd"
+msgstr "Emeraude"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Zones de tranquillité"
@@ -526,6 +589,12 @@ msgstr "Rejets de polluants (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
 msgstr "UNESCO sites naturels"
+
+msgid "ch.bafu.waldschadenflaechen-lothar"
+msgstr "Dégâts de tempête Lothar"
+
+msgid "ch.bafu.waldschadenflaechen-vivian"
+msgstr "Dégâts de tempête Vivian"
 
 msgid "ch.bafu.wasser-entnahme"
 msgstr "Prélèvement"
