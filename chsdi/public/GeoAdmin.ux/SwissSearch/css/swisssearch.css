@@ -1,0 +1,19 @@
+.autocompletion A:link {
+    text-decoration: none;
+    color: black;
+}
+
+.autocompletion A:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.autocompletion A:active {
+    text-decoration: none;
+    color: black;
+}
+
+.autocompletion A:hover {
+    text-decoration: none;
+    color: red;
+}

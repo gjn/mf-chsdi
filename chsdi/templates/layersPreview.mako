@@ -5,7 +5,7 @@
     <meta name="content-language" content="${c.lang}"/>
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
-    <script type="text/javascript" src="loader.js?mode=light"></script>
+    <script type="text/javascript" src="loader.js?mode=light-debug"></script>
     <style type="text/css">
        body {
           background-color: #000000;
@@ -29,6 +29,7 @@
             var mySpan = document.getElementById('layerNumber');
             mySpan.innerHTML = ${len(c.layers)};
             var divMain = document.createElement('div');
+            divMain.style.clear = 'both';
             document.body.appendChild(divMain); 
             % for layer in c.layers:
             var div = document.createElement('div');
@@ -52,9 +53,9 @@
             divMap.style.height = '180px';
             div.appendChild(divMap);
 
-            Window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}', {doZoomToMaxExtent: true});
-            Window['map'+maps.length].addLayerByName('${layer}');
-            maps.push(Window['map'+maps.length]);
+            window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}', {doZoomToMaxExtent: true});
+            window['map'+maps.length].addLayerByName('${layer}');
+            maps.push(window['map'+maps.length]);
             % endfor
             for (var n = 0; n < maps.length; n++) {
                 maps[n].events.register('movestart', n, moveStart);
@@ -63,6 +64,11 @@
                 maps[n].events.register('mouseover', n, mouseOver);
                 maps[n].events.register('mouseout', n, mouseOut);
                 initMarker(n);
+            }
+
+            // Create SwissSearch
+            if (window['map0']) {
+               mySwissSearch = new GeoAdmin.SwissSearchCombo(document.getElementById('swissSearch'), {map: window['map0']});
             }
 
         }
@@ -159,7 +165,7 @@
                     height = height-20;
                     myDiv.style.height = height + "px";
                     var myMapId = 'map'+mapCounter.toString();
-                    Window[myMapId].updateSize();
+                    window[myMapId].updateSize();
                     mapCounter++
                  }
               }
@@ -169,8 +175,14 @@
 </head>
 <body onload="init()">
 <div>
-<h1 style='color:white;text-align:center;'>geo.admin.ch: <span id="layerNumber"></span> layers</h1>
-<div style='color:white;margin:5px;'>Map width: <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="250" maxLength="5" style="width:50px;"></input>&nbsp px</div>
+   <h1 style='color:white;text-align:center;'>geo.admin.ch: <span id="layerNumber"></span>&nbsp layers</h1>
+   <div style='color:white;margin:5px;float:left;css-float:left;'>Map width:
+      <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="250" maxLength="5" style="width:50px;"></input>&nbsp px
+   </div>
+   <div style='color:white;margin:5px;float:left;css-float:left;'>
+         <div style='color:white;;margin:4px;float:left;css-float:left;'>Search for a location:</div>
+         <div style='color:white;float:left;css-float:left;width:350px;' id="swissSearch"></div>
+   </div>
 </div>
 </body>
 </html>
