@@ -108,11 +108,10 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
          };
          */
         this.inputElement.onkeyup = function(event) {
-            var tm;
             window.swissSearchCombo.autoCompletion.style.display = 'block';
             window.swissSearchCombo.autoCompletion.innerHTML = OpenLayers.i18n("Searching...");
-            clearTimeout(tm);
-            tm = setTimeout(function() {
+            clearTimeout(window.swissSearchCombo.tm);
+            window.swissSearchCombo.tm = setTimeout(function() {
                 window.swissSearchCombo.onkeyupdelay()
             }, 250);
         };
@@ -142,6 +141,13 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         document.body.appendChild(this.autoCompletion);
         // Create a global variable due to scope issues in IE
         window.swissSearchCombo = this;
+        window.swissSearchCombo.tm = null;
+        document.body.onclick = function(event) {
+            console.log("click somewhere");
+            window.swissSearchCombo.hideAutocompletion();
+            clearTimeout(window.swissSearchCombo.tm);
+        }
+
     },
 
     getPositionTop: function(obj) {
@@ -207,7 +213,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
     createResultHtml: function(results) {
         var html = '';
         for (var i = 0; i < results.length; i++) {
-            html = html + '<a style="margin-left: 3px" href="javascript:window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();">' + results[i].label + '</a><br>';
+            html = html + '<a style="margin-left: 3px" href="javascript:window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();clearTimeout(window.swissSearchCombo.tm);">' + results[i].label + '</a><br>';
         }
         return html;
     },
