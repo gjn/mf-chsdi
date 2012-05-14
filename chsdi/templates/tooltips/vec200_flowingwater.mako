@@ -1,6 +1,12 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">
+    % if c.feature.name.strip()== 'N_P':
+        -
+    % else:
+        ${c.feature.name or '-'}
+    % endif
+</%def>
 
 <%def name="table_body()">
 
@@ -23,12 +29,6 @@
     % endif
     </td></tr>
     
-    <tr><td width="150">${_('name')}</td><td>
-    % if c.feature.name.strip()== 'N_P':
-    -
-    % else:
-    ${c.feature.name or '-'}
-    % endif
-    </td></tr>
+    <tr><td width="150">${_('name')}</td><td>${self.preview()}</td></tr>
 </%def>
 

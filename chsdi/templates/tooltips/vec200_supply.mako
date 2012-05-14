@@ -1,10 +1,10 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">${_(c.feature.fco or '-')}</%def>
 
 <%def name="table_body()">
     <% c.stable_id = True %>
-    <tr><td width="150">${_('konf_objekt')}</td><td>${_(c.feature.fco or '-')}</td></tr>
+    <tr><td width="150">${_('konf_objekt')}</td><td>${self.preview()}</td></tr>
     
     <tr><td width="150">${_('lage_objekt')}</td><td>${_(c.feature.loc or '-')}</td></tr>
     

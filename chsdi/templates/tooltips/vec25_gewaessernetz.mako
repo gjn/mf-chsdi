@@ -1,6 +1,13 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${c.feature.name or '-'}</%def>
+<%def name="preview()">
+    % if c.feature.name == '':
+        -
+    % else:
+        ${c.feature.name or ''}
+    % endif
+
+</%def>
 
 <%def name="table_body()">
     <tr><td width="150">${_('gewissnr')}</td>       <td>${c.feature.gewissnr or '-'}</td></tr>
