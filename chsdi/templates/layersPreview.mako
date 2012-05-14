@@ -5,7 +5,7 @@
     <meta name="content-language" content="${c.lang}"/>
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
-    <script type="text/javascript" src="loader.js?mode=light-debug"></script>
+    <script type="text/javascript" src="loader.js?mode=light"></script>
     <style type="text/css">
        body {
           background-color: #000000;

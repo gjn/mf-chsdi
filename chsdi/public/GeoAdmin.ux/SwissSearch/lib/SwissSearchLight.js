@@ -143,7 +143,6 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         window.swissSearchCombo = this;
         window.swissSearchCombo.tm = null;
         document.body.onclick = function(event) {
-            console.log("click somewhere");
             window.swissSearchCombo.hideAutocompletion();
             clearTimeout(window.swissSearchCombo.tm);
         }
@@ -213,7 +212,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
     createResultHtml: function(results) {
         var html = '';
         for (var i = 0; i < results.length; i++) {
-            html = html + '<a style="margin-left: 3px" href="javascript:window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();clearTimeout(window.swissSearchCombo.tm);">' + results[i].label + '</a><br>';
+            html = html + '<a style="margin-left: 3px" href="javascript:window.swissSearchCombo.centerOnRecord(' + i + ');window.swissSearchCombo.hideAutocompletion();">' + results[i].label + '</a><br>';
         }
         return html;
     },
