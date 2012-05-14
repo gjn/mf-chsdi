@@ -347,8 +347,41 @@ msgstr "Agglomérations et villes isolées"
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
+msgid "ch.are.bauzonen-2007"
+msgstr "Zones à bâtir Suisse 2007 (harmonisées)"
+
+msgid "ch.are.belastung-gueterverkehr-bahn-2008"
+msgstr "Charge annuelle du réseau ferroviaire 2008 (trafic marchandises)"
+
+msgid "ch.are.belastung-gueterverkehr-strasse-2008"
+msgstr "Charge annuelle du réseau routier suisse 2008 (trafic marchandises poids lourds)"
+
+msgid "ch.are.belastung-personenverkehr-bahn-2008"
+msgstr "Charge annuelle du réseau ferroviaire 2008 (trafic voyageurs)"
+
+msgid "ch.are.belastung-personenverkehr-strasse-2008"
+msgstr "Charge annuelle du réseau routier suisse 2008 (trafic voyageurs)"
+
+msgid "ch.are.beschaeftigtendichte-bz08"
+msgstr "Densité de l`emploi - Recensement des entreprises 2008"
+
+msgid "ch.are.bevoelkerungsdichte-vz00"
+msgstr "Densité de population - Recensement de la population 2000"
+
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typologie des communes ARE"
+
+msgid "ch.are.gueteklassen_oev"
+msgstr "Niveaux de qualité de la desserte par les TP ARE"
+
+msgid "ch.are.landschaftstypen"
+msgstr "Typologie des paysages suisses"
+
+msgid "ch.are.reisezeit_miv-2005"
+msgstr "Temps de parcours en TIM vers un centre 2005"
+
+msgid "ch.are.reisezeit_oev-2005"
+msgstr "Temps de parcours en TP vers un centre 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Itinéraires cant. pour convois exceptionnels"
