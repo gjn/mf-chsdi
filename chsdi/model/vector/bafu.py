@@ -156,7 +156,7 @@ class FM(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/fm.mako'
 
-    id = Column('fm_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     fm_name = Column('fm_name', Text)
     fm_obj = Column('fm_obj', Text)
     fm_gf = Column('fm_gf', Text)
@@ -164,14 +164,14 @@ class FM(Base, Queryable):
 
 class FM_REG(Base, Queryable):
     # view in a schema
-    __tablename__ = 'fm_reg'
+    __tablename__ = 'flachmoore_regional'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __template__ = 'tooltips/fm_reg.mako'
 
-    id = Column('fm_reg_id', Integer, primary_key=True)
-    fm_name = Column('fm_name', Text)
-    fm_obj = Column('fm_obj', Text)
-    fm_gf = Column('fm_gf', Text)
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fmreg_name = Column('fmreg_name', Text)
+    fmreg_obj = Column('fmreg_obj', Text)
+    fmreg_gf = Column('fmreg_gf', Text)
     the_geom = Column(Geometry)
 
 class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
