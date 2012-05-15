@@ -457,6 +457,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.pixelkarte-farbe-pk50.noscale':'Landeskarte 1:50\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk500.noscale':'Landeskarte 1:500\'000',
 	'ch.swisstopo.pixelkarte-grau':'Karte SW',
+	'ch.swisstopo.pixelkarte-grau-pk1000.noscale':'Landeskarte 1:1 Mio. (grau)',
 	'ch.swisstopo.pixelkarte-pk100.metadata':'Einteilung Landeskarte 1:100\'000',
 	'ch.swisstopo.pixelkarte-pk1000.metadata':'Einteilung Landeskarte 1:1\'000\'000',
 	'ch.swisstopo.pixelkarte-pk200.metadata':'Einteilung Landeskarte 1:200\'000',
