@@ -712,15 +712,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            "ch.swisstopo.vec25-wander": {
-                name: OpenLayers.i18n("ch.swisstopo.vec25-wander"),
-                layertype: 'wmts',
-                timestamp: '20090401',
-                type: "line",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
             "ch.swisstopo.swisstlm3d-wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-wanderwege"),
                 layertype: 'wmts',

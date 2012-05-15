@@ -740,9 +740,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.swisstlm3d-wanderwege"
                     },
                     {
-                        layerId: "ch.swisstopo.vec25-wander"
-                    },
-                    {
                         layerId: "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
                     },
                     {

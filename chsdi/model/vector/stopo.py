@@ -199,15 +199,6 @@ class Vec200Namedlocation(Base, Queryable):
 
 register('ch.swisstopo.vec200-names-namedlocation', Vec200Namedlocation)
 
-class Vec25Wanderwege(Base, Queryable):
- 	__tablename__ = 'v25_wanderweg'
- 	__table_args__ = ({'autoload': True})
- 	__template__ = 'tooltips/vec25_wanderwege.mako'
- 	id = Column('objectid', Integer, primary_key=True)
- 	the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo.vec25-wander', Vec25Wanderwege)
-
 class Vec25Strassennetz(Base, Queryable):
  	__tablename__ = 'v25_str_25_l_tooltip'
  	__table_args__ = ({'autoload': True})
