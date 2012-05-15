@@ -453,7 +453,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.pixelkarte-farbe-pk50.noscale':'Charta naziunala 1:50\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk500.noscale':'Charta naziunala 1:500\'000',
 	'ch.swisstopo.pixelkarte-grau':'Charta en alv e nair',
-	'ch.swisstopo.pixelkarte-grau-pk1000.noscale':'Charta naziunala 1:500\'000 (grisch)',
+	'ch.swisstopo.pixelkarte-grau-pk1000.noscale':'Charta naziunala 1:1 milliun (grisch)',
 	'ch.swisstopo.pixelkarte-pk100.metadata':'Divisiun carta naziunala 1:100\'000',
 	'ch.swisstopo.pixelkarte-pk1000.metadata':'Divisiun charta naziunala 1:1\'000\'000',
 	'ch.swisstopo.pixelkarte-pk200.metadata':'Divisiun charta naziunala 1:200\'000',

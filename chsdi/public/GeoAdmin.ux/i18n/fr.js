@@ -457,7 +457,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.pixelkarte-farbe-pk50.noscale':'Carte nationale 1:50\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk500.noscale':'Carte nationale 1:500\'000',
 	'ch.swisstopo.pixelkarte-grau':'Cartes noir & blanc',
-	'ch.swisstopo.pixelkarte-grau-pk1000.noscale':'Carte nationale 1:500\'000 (grise)',
+	'ch.swisstopo.pixelkarte-grau-pk1000.noscale':'Carte nationale 1:1 million (grise)',
 	'ch.swisstopo.pixelkarte-pk100.metadata':'Découpage carte nationale 1:100\'000',
 	'ch.swisstopo.pixelkarte-pk1000.metadata':'Découpage carte nationale 1:1\'000\'000',
 	'ch.swisstopo.pixelkarte-pk200.metadata':'Découpage carte nationale 1:200\'000',
