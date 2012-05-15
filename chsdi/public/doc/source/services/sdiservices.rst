@@ -165,8 +165,10 @@ A JSON
 - all attributes if format is 'raw'
 
 
-BodSearch: details
-------------------
+BodSearch: details (deprecated) 
+-------------------------------
+
+**Note: please refer to the service Layers**.
 
 This service display detailed informations on a layer, including a detailed description, a legend and various links to additional informations.
 
@@ -188,8 +190,10 @@ The following input parameters are required:
 
 Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill?lang=de&print=true
 
-BodSearch: layers
------------------
+BodSearch: layers (deprecated)
+------------------------------
+
+**Note: please refer to the service Layers**.
 
 This service provides the list of available layers.
 
@@ -327,6 +331,43 @@ Result
 
 A GeoJSON representation of the found features.
 
+Layers
+------
+
+This service allows to obtain diverse information about the layers in the bod.
+
+URL
+^^^
+
+http://api.geo.admin.ch/layers
+http://api.geo.admin.ch/layers/{id} or http://api.geo.admin.ch/layers/{id},{id},{id}  (a comma creates a list of layers)
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameters are required:
+
+- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
+- project (optinal): (default to all) name of the project in which you desire to look for properties (a comma creates a list of projects)
+- query (optinal): a query string for the full text search
+- properties (optinal): (default to all) properties you wich to return (a comma creates a list of properties)
+- layer (optinal): layer you want to return (a comma creates a list of layers)
+- cb (optional): the name of the callback function
+- mode (optinal): (default to no mode) a mode is defined whenever a particular template is required
+                 - bodsearch: this mode requires the definition of query string, all the other parameters can be used
+                 - legend: returns the legend of a layer, only one layer id must be provided
+                 - wmts: retruns a GetCapabilities document which provides information about the service along with a description of the layers
+                 - preview: returns per default a preview of all the layers in geoadmin
+	
+Examples:
+
+- http://api.geo.admin.ch/layers: returns all the layers available with all their properties
+- http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography: returns all the available information about this layer
+- http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichung: returns all the layers where the query string wasser is found
+- http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb: returns the legend of the layer in a callback
+- http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
+- http://api.geo.admin.ch/layers?mode=preview
+
 Profile.json
 ------------
 
@@ -432,8 +473,11 @@ URL
 - http://wmts3.geo.admin.ch
 - http://wmts4.geo.admin.ch
 
-GetCapabilities
-^^^^^^^^^^^^^^^
+GetCapabilities (deprecated)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Note: please refer to the service Layers**.
+
 The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
 http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
