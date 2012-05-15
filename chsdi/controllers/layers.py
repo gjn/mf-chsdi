@@ -105,7 +105,7 @@ class LayersController(BaseController):
 ##----------------------------------------Layer_id----------------------------------------##
         if id is None:        
             # Per default all layers are taken into account
-            layer_id = request.params.get('layer_id','all')
+            layer_id = request.params.get('layer','all')
             layer_id = layer_id.split(',')
             if not isinstance(layer_id,list):
                 abort(400, 'An error occured while parsing the layer Id(s)')
