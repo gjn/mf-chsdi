@@ -134,6 +134,9 @@ msgstr "Na"
 msgid "No additional information for this object type"
 msgstr "Betg infurmaziuns davart il object"
 
+msgid "No info outside CH and FL"
+msgstr "Nessun informazione di fuori della Svizzera e Liechstenstein"
+
 msgid "Not applicable"
 msgstr "nicht anwendbar"
 

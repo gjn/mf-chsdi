@@ -1678,3 +1678,6 @@ msgstr ""
 
 msgid "FL"
 msgstr ""
+
+msgid "No info outside CH and FL"
+msgstr ""
