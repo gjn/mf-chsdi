@@ -1676,5 +1676,5 @@ msgstr ""
 msgid "link to geoportal"
 msgstr ""
 
-msgid "LI"
+msgid "FL"
 msgstr ""
