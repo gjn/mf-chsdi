@@ -4,7 +4,9 @@
 
 <%def name="table_body()">
     <% c.stable_id = False %>
-    % if c.feature.ak == 'AG':
+    % if c.feature.ak in ['D','I','F','AUT']:
+        <tr><td width="150">${_('No info outside CH and FL')}</td><td></td></tr>
+    % elif c.feature.ak == 'AG':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.ag.ch/geoportal/agisviewer/viewer.aspx?PageWidth=1000&PageHeight=700&map=va_avdaten&Benutzergruppe=3&xmin=${c.extent.bounds[0]}&ymin=${c.extent.bounds[1]}&xmax=${c.extent.bounds[2]}&ymax=${c.extent.bounds[3]}" target="_blank">AG</a></td></tr>
     % elif c.feature.ak == 'BS':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.stadtplan.bs.ch/geoviewer/index.php?theme=258&extent=${','.join(map(str,c.extent.bounds))}&layers=parzplan_vektor_grau_1000,av_parzellen_labels" target="_blank">BS</a></td></tr>
@@ -17,7 +19,7 @@
     % elif c.feature.ak == 'GL':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://geo.gl.ch/maps/Public?visibleLayers=MOpublic" target="_blank">GL</a></td></tr>
     % elif c.feature.ak == 'JU':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/jura.php?Y=${c.bbox[0]}&X=${c.bbox[1]}&echelle=${c.scale}&theme=cadastre" target="_blank">JU</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/jura.php?Y=${c.bbox[0]}&X=${c.bbox[1]}&echelle=${c.scale if float(c.scale) <=5000 else 5000}&theme=cadastre" target="_blank">JU</a></td></tr>
     % elif c.feature.ak == 'SH':   
        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.gis.sh.ch/GIS_SH_Beta/?idp=1&uid=1&pwd=&map=10&lan=de&typ=3&bmurl=Nav@g@98@u@West@g@${c.bbox[0]}@u@Nord@g@${c.bbox[1]}@u@B@g@600" target="_blank">SH</a></td></tr>
     % elif c.feature.ak == 'SZ':
@@ -52,8 +54,8 @@
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.geo.bl.ch" target="_blank">BL</a></td></tr>
     % elif c.feature.ak == 'ZG':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.zugmap.ch" target="_blank">ZG</a></td></tr>
-    % elif c.feature.ak == 'LI':
-        <tr><td width="150">${_('link to geoportal')}</td><td><a href="http://geodaten.llv.li/geoshop/public.html" target="_blank">${_('LI')}</a></td></tr>
+    % elif c.feature.ak == 'FL':
+        <tr><td width="150">${_('link to geoportal')}</td><td><a href="http://geodaten.llv.li/geoshop/public.html" target="_blank">${_('FL')}</a></td></tr>
     % else:
         <tr><td width="150">${_('link to canton geoportal')}</td><td>${_('Canton has provided no link to portal')}</td></tr>
     % endif
