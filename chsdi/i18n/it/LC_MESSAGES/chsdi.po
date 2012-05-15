@@ -59,6 +59,9 @@ msgstr "Détails"
 msgid "Double"
 msgstr "Double"
 
+msgid "FL"
+msgstr "Liechstenstein"
+
 msgid "Fels"
 msgstr "Falaise"
 
@@ -100,9 +103,6 @@ msgstr "Centrale électrique"
 
 msgid "Kursschiff_Linie"
 msgstr "Bateau de transport passagers"
-
-msgid "LI"
-msgstr "Liechstenstein"
 
 msgid "Legend"
 msgstr "Legenda"

@@ -59,6 +59,9 @@ msgstr "Detaildaten"
 msgid "Double"
 msgstr "Doppelt"
 
+msgid "FL"
+msgstr "Liechtenstein"
+
 msgid "Fels"
 msgstr "Fels"
 
@@ -100,9 +103,6 @@ msgstr "Kraftwerk"
 
 msgid "Kursschiff_Linie"
 msgstr "Passagierschiff"
-
-msgid "LI"
-msgstr "Liechtenstein"
 
 msgid "Legend"
 msgstr "Legenda"
