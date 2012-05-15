@@ -78,9 +78,10 @@ GeoAdmin.BodSearchWindow = {
             ]
         });
 
-        _window._url = GeoAdmin.webServicesUrl + '/bodsearch/details/' + id;
+        _window._url = GeoAdmin.webServicesUrl + '/layers/' + id;
 
         _window._params = {
+            mode: 'legend',       
             lang: OpenLayers.Lang.getCode(),
             h: GeoAdmin.webServicesUrl
         };

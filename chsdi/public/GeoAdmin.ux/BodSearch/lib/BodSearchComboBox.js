@@ -68,7 +68,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         this.emptyText = OpenLayers.i18n('Search data...');
 
         if (!this.url && GeoAdmin.webServicesUrl !== null) {
-            this.url = GeoAdmin.webServicesUrl + '/bodsearch/search';
+            this.url = GeoAdmin.webServicesUrl + '/layers';
         }
         this.store = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
@@ -100,7 +100,9 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         this.lang = this.lang || OpenLayers.Lang.getCode();
 
         this.store.baseParams = {
-          lang: this.lang
+          lang: this.lang,
+          mode: 'bodsearch',
+          properties: 'bod_layer_id,kurzbezeichnung,volltextsuche'
         };
         if (this.project) {
             this.store.baseParams.project = this.project;
