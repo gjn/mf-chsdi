@@ -311,7 +311,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             }
 
             docIframe.close();
-            window.setTimeout('manageIframeMapEvent()',5000);
+            window.setTimeout('manageIframeMapEvent()',8500);
 
         }
     }
@@ -330,7 +330,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         }
     }
     
-    function manageIframeMapEvent() {
+    function manageIframeMapEvent(myiframe) {
          var myiframe = document.getElementById("ifrm");
          myiframe.contentWindow.api.map.events.register("moveend", null, mapMoveEnd);
     }
@@ -353,7 +353,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         }
     }
 
-    function init() {
+    function createRecord(layerList) {
         mapWidth = 700;
         mapHeight = 500;
         backgroundLayer = 0;
@@ -373,24 +373,9 @@ Please read the terms of use and register before using the GeoAdmin API: http://
            path: "../_static/CodeMirror-0.9/js/"
         });
         }
-
-
-        var availableLayers = GeoAdmin.layers.init();
-        var layerArray = [];
-        for (var layer in availableLayers) {
-            if (layer != 'ch.swisstopo.swissimage' &&
-                layer != 'ch.swisstopo.pixelkarte-farbe' &&
-                layer != 'ch.swisstopo.pixelkarte-grau' &&
-                layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
-                layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
-                layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
-                layer != 'voidLayer' && availableLayers[layer].name.toString().indexOf('ch.') != 0) {
-                layerArray.push([layer, availableLayers[layer].name]);
-            }
-        }
-
+        
         var ds = new Ext.data.ArrayStore({
-            data: layerArray,
+            data: layerList,
             fields: ['value','text'],
             sortInfo: {
                 field: 'text',
@@ -398,7 +383,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             }
         });
 
-        configurator = new Ext.FormPanel({
+        var configurator = new Ext.FormPanel({
             frame: true,
             labelWidth: 200,
             width: 775,
@@ -593,9 +578,36 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             ]
         });
         window.setTimeout("createPreview()", 2000);
-
-
     }
+    
+    function init() {
+        OpenLayers.Lang.setCode('en');
+        layerArray = [];
+        Ext.ux.JSONP.request('http://api.geo.admin.ch/layers', {
+            callbackKey: "cb",
+            lang: "en",
+            params: {
+                properties: 'bod_layer_id',
+                project: 'geoadmin'
+            },
+            scope: this,
+            callback: function(response) {
+                for (i in response.results) {
+                    var layer = response.results[i];
+                    if (layer.bod_layer_id != 'ch.swisstopo.swissimage' &&
+                        layer.bod_layer_id != 'ch.swisstopo.pixelkarte-farbe' &&
+                        layer.bod_layer_id != 'ch.swisstopo.pixelkarte-grau' &&
+                        layer.bod_layer_id != 'ch.bafu.schutzgebiete-wildruhezonen' &&
+                        layer.bod_layer_id != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
+                        layer.bod_layer_id != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
+                        layer.bod_layer_id != undefined) {
+                        layerArray.push([layer.bod_layer_id, OpenLayers.i18n(layer.bod_layer_id)]);
+                    }
+                }
+                createRecord(layerArray);
+            }
+        });
+   }
 
    </script>
 
