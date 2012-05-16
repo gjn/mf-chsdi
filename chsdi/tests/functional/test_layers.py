@@ -37,14 +37,14 @@ class TestLayersController(TestController):
         
     def test_legend_raw(self):
         resp = self.app.get(url(controller='layers', action='index'),
-                            params={"mode": "legend", "h": "http://api.geo.admin.ch", "layer_id": "ch.swisstopo.fixpunkte-agnes"}
+                            params={"mode": "legend", "h": "http://api.geo.admin.ch", "layer": "ch.swisstopo.fixpunkte-agnes"}
                             )
                             
         assert "<div" in resp.response.body
 
     def test_legend_with_cb(self):
         resp = self.app.get(url(controller='layers', action='index'),
-                            params={"mode": "legend", "h": "http://api.geo.admin.ch", "layer_id": "ch.swisstopo.fixpunkte-agnes", "cb": "callback"}
+                            params={"mode": "legend", "h": "http://api.geo.admin.ch", "layer": "ch.swisstopo.fixpunkte-agnes", "cb": "callback"}
                             )
                             
         assert resp.response.body.startswith("callback(")
