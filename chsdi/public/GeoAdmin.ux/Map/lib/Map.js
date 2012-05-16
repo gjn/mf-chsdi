@@ -475,7 +475,70 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         return layer;
     },
 
-    addKmlLayer: function(url, visibility, opacity) {
+    addKmlLayer: function(url, visibility, opacity, showPopup) {
+
+        OpenLayers.Format.KML.prototype.parseData = function(data, options) {
+            if (typeof data == "string") {
+                data = OpenLayers.Format.XML.prototype.read.apply(this, [data]);
+            }
+
+            // Loop throught the following node types in this order and
+            // process the nodes found
+            var types = ["Document", "Link", "NetworkLink", "Style", "StyleMap", "Placemark"];
+            for (var i = 0, len = types.length; i < len; ++i) {
+                var type = types[i];
+
+                var nodes = this.getElementsByTagNameNS(data, "*", type);
+
+                // skip to next type if no nodes are found
+                if (nodes.length == 0) {
+                    continue;
+                }
+
+                switch (type.toLowerCase()) {
+
+                    // Fetch external links
+                    case "link":
+                    case "networklink":
+                        this.parseLinks(nodes, options);
+                        break;
+
+                    // parse style information
+                    case "style":
+                        if (this.extractStyles) {
+                            this.parseStyles(nodes, options);
+                        }
+                        break;
+                    case "stylemap":
+                        if (this.extractStyles) {
+                            this.parseStyleMaps(nodes, options);
+                        }
+                        break;
+
+                    // parse features
+                    case "placemark":
+                        this.parseFeatures(nodes, options);
+                        break;
+
+                    case "document":
+                        this.documentName = "KML file";
+                        this.parseDocument(nodes, options);
+                        break;
+                }
+            }
+
+            return this.features;
+        };
+
+
+        OpenLayers.Format.KML.prototype.parseDocument = function(nodes, options) {
+            var name = this.parseProperty(nodes[0], "*", "name");
+            if (name) {
+                this.documentName = name;
+            } else {
+                this.documentName = 'KML document';
+            }
+        };
         //Attribution management with hyperlink
         var urlDomain = this.getHostname(url);
         OpenLayers.Lang[OpenLayers.Lang.getCode()][urlDomain + ".url"] = 'http://' + urlDomain;
@@ -513,6 +576,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         this.addLayer(layer);
         this.sortLayer();
 
+
         if (!this.selectControl) {
             this.selectControl = new OpenLayers.Control.SelectFeature(layer);
             this.addControl(this.selectControl);
@@ -532,7 +596,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             "removed": removeControl,
             scope: this
         });
-        
+
         function removeControl(event) {
             this.selectControl.destroy();
         }
@@ -548,7 +612,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (this.KMLpopup) {
                 this.KMLpopup.destroy();
             }
-           
+
             // This is done in order to determine the window width
             if (!window.myProvisoryPopupDiv) {
                 window.myProvisoryPopupDiv = document.createElement('div');
@@ -566,7 +630,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             this.KMLpopup = new GeoExt.Popup({
                 cls: 'kml-popup',
                 title: OpenLayers.i18n("KML Information"),
-                location: new OpenLayers.Geometry.Point(lonlat.lon,lonlat.lat),
+                location: new OpenLayers.Geometry.Point(lonlat.lon, lonlat.lat),
                 bodyStyle: "max-width: 800px",
                 width: 400,
                 map: this,
@@ -582,7 +646,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
             // Assign the popup to a global variable in order to use it easily in a setTimeout
             window.KMLpopup = this.KMLpopup;
-            setTimeout(" var widthPopup = window.myProvisoryPopupDiv.scrollWidth;window.myProvisoryPopupDiv.style.width = '1px';window.myProvisoryPopupDiv.style.visibility = 'hidden'; widthPopup = widthPopup + 30; if (widthPopup > 800) { widthPopup = 800; }; if (widthPopup < 350) {widthPopup=350}; window.KMLpopup.setWidth(widthPopup);",1000);
+            setTimeout(" var widthPopup = window.myProvisoryPopupDiv.scrollWidth;window.myProvisoryPopupDiv.style.width = '1px';window.myProvisoryPopupDiv.style.visibility = 'hidden'; widthPopup = widthPopup + 30; if (widthPopup > 800) { widthPopup = 800; }; if (widthPopup < 350) {widthPopup=350}; window.KMLpopup.setWidth(widthPopup);", 1000);
         }
 
         function onFeatureUnselect(event) {
@@ -593,11 +657,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         }
 
         function startFakeRendering(content) {
-           window.myProvisoryPopupDiv.innerHTML = content;
-           window.myProvisoryPopupDiv.style.visibility = 'visible';
+            window.myProvisoryPopupDiv.innerHTML = content;
+            window.myProvisoryPopupDiv.style.visibility = 'visible';
         }
-        
-        this.selectControl.activate();
+
+        if (showPopup) {
+            this.selectControl.activate();
+        }
 
         return layer;
     },
