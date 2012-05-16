@@ -55,7 +55,7 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                         }
                         // Add KML layer
                         if (this.map.addKmlLayer) {
-                            this.map.addKmlLayer(url, true, 1);
+                            this.map.addKmlLayer(url, true, 1, true);
                         }
                         Ext.getCmp('kmlurl').setValue("");
                         this.closeWindow();
