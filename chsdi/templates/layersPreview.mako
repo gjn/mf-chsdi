@@ -23,8 +23,13 @@
         var movestarted = false;
         var markersLayer = [];
         var marker = [];
+        var permalink;
 
         function init() {
+            // Compute map width and height
+            var map_width = ${c.map_width};
+            var ratio = 250/200;
+            var map_height = Math.round(Number(map_width)/ratio);
             OpenLayers.Lang.setCode("${c.lang}");
             var mySpan = document.getElementById('layerNumber');
             mySpan.innerHTML = ${len(c.layers)};
@@ -34,8 +39,8 @@
             % for layer in c.layers:
             var div = document.createElement('div');
             div.setAttribute('id', 'divmain${layer}');
-            div.style.width = '250px';
-            div.style.height = '200px';
+            div.style.width = map_width + 'px';
+            div.style.height = map_height + 'px';
             div.style.cssFloat = 'left';
             div.style.styleFloat = 'left';
             div.style.margin = '5px';
@@ -43,18 +48,26 @@
 
             var divTitle = document.createElement('div');
             divTitle.setAttribute('id', 'divtitle${layer}');
-            divTitle.style.width = '250px';
+            divTitle.style.width = map_width + 'px';
             divTitle.style.margin = '3px';
             divTitle.innerHTML = '<a href="http://map.geo.admin.ch/?layers=${layer}" target="new">' + OpenLayers.i18n('${layer}') + '</a>';
             div.appendChild(divTitle);
 
             var divMap = document.createElement('div');
             divMap.setAttribute('id', 'divmap${layer}');
-            divMap.style.height = '180px';
+            var small_height = map_height-20;
+            divMap.style.height = small_height + 'px';
             div.appendChild(divMap);
 
             window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}', {doZoomToMaxExtent: true});
             window['map'+maps.length].addLayerByName('${layer}');
+            if (maps.length == 0) {
+                permalink = new OpenLayers.Control.Permalink('permalink');
+                window['map'+maps.length].addControl(permalink);
+            } else {
+                var argParser = new OpenLayers.Control.ArgParser();
+                window['map'+maps.length].addControl(argParser);
+            }
             maps.push(window['map'+maps.length]);
             % endfor
             for (var n = 0; n < maps.length; n++) {
@@ -143,6 +156,22 @@
            if (key==13) {
               var allDivs = document.getElementsByTagName('div');
               var myInputValue = document.getElementById('inputWidth').value;
+
+              // Manage map width permalink
+              var link = permalink.base.split("?");
+              var params = link[1].split("&");
+              var found = false;
+              for (var i = 0; i < params.length;i++) {
+                 var pair  = params[i].split("=");
+                 if (pair[0] == "width") {
+                     params[i] = "width=" + myInputValue;
+                 }
+              }
+              if (!found) {
+                 params.push("width="+myInputValue);
+              }
+              permalink.base = link[0] + "?" + params.join("&");
+
               var mapCounter = 0;
               if (myInputValue < 150) {
                   alert("Your screen seems to be very, very small... But the GeoAdmin Light Api makes all you want;-)");
@@ -177,11 +206,14 @@
 <div>
    <h1 style='color:white;text-align:center;'>geo.admin.ch: <span id="layerNumber"></span>&nbsp layers</h1>
    <div style='color:white;margin:5px;float:left;css-float:left;'>Map width:
-      <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="250" maxLength="5" style="width:50px;"></input>&nbsp px
+      <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="${c.map_width}" maxLength="5" style="width:50px;"></input>&nbsp px
    </div>
    <div style='color:white;margin:5px;float:left;css-float:left;'>
          <div style='color:white;;margin:4px;float:left;css-float:left;'>Search for a location:</div>
          <div style='color:white;float:left;css-float:left;width:350px;' id="swissSearch"></div>
+   </div>
+   <div style='color:white;margin:5px;float:right;css-float:right;'>
+      <a href="#" id="permalink">Permalink</a>
    </div>
 </div>
 </body>

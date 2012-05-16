@@ -9,6 +9,7 @@
  * @include OpenLayers/Control/ScaleLine.js
  * @include OpenLayers/Control/Zoom.js
  * @include OpenLayers/Control/SelectFeature.js
+ * @include OpenLayers/Control/Permalink.js
  * @include OpenLayers/Layer/Vector.js
  * @include OpenLayers/Layer/Markers.js
  * @include OpenLayers/Icon.js

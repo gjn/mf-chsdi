@@ -234,6 +234,8 @@ class LayersController(BaseController):
                        c.layers.append(bodLayerId)
             response.headers['Content-Type'] = mimetypes.types_map['.html']
             response.charset = 'utf8'
+            map_width = request.params.get('width',250)
+            c.map_width = map_width
             return render('/layersPreview.mako')
             
 ##----------------------------------------Utils----------------------------------------##             	
