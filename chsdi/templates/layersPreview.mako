@@ -63,6 +63,37 @@
             window['map'+maps.length].addLayerByName('${layer}');
             if (maps.length == 0) {
                 permalink = new OpenLayers.Control.Permalink('permalink');
+                permalink.createParams = function(center, zoom, layers) {
+                   center = center || this.map.getCenter();
+                   var params = OpenLayers.Util.getParameters(this.base);
+
+                   // If there's still no center, map is not initialized yet. 
+                   // Break out of this function, and simply return the params from the
+                   // base link.
+                   if (center) {
+ 
+                     //zoom
+                     params.zoom = zoom || this.map.getZoom();
+
+                     //lon,lat
+                     var lat = center.lat;
+                     var lon = center.lon;
+
+                     if (this.displayProjection) {
+                        var mapPosition = OpenLayers.Projection.transform(
+                        { x: lon, y: lat },
+                        this.map.getProjectionObject(),
+                        this.displayProjection );
+                        lon = mapPosition.x;
+                        lat = mapPosition.y;
+                     }
+                     params.lat = Math.round(lat*100000)/100000;
+                     params.lon = Math.round(lon*100000)/100000;
+
+                  }
+
+                return params;
+                };
                 window['map'+maps.length].addControl(permalink);
             } else {
                 var argParser = new OpenLayers.Control.ArgParser();
