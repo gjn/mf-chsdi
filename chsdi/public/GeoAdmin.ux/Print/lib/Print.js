@@ -1,5 +1,4 @@
-/*oadglobal GeoAdmin:true, OpenLayers: true, Ext:true */
-ad
+/*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /**
  * @include OpenLayers/Lang.js
