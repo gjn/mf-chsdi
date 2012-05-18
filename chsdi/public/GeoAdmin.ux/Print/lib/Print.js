@@ -1,4 +1,5 @@
-/*global GeoAdmin:true, OpenLayers: true, Ext:true */
+/*oadglobal GeoAdmin:true, OpenLayers: true, Ext:true */
+ad
 
 /**
  * @include OpenLayers/Lang.js
@@ -155,7 +156,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      *  Private constructor override.
      */
     constructor: function(config) {
-        this.loadMask = new Ext.LoadMask(Ext.getBody(), {msg:OpenLayers.i18n('Loading...')});
         this.config = Ext.apply({
             scope: this,
             // text: OpenLayers.i18n('print'),
@@ -534,7 +534,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Creates the print tool interface.
      */
     initPanel: function() {
-        this.loadMask.show();
         var scope = this;
         this.printLayer = new OpenLayers.Layer.Vector(null, {
             displayInLayerSwitcher: false,
@@ -684,7 +683,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             this.printPanel.container.hide();
         }
         delete this.config.windowOptions;
-        this.loadMask.hide();
     },
 
     /** private: method[pHandler]
