@@ -43,7 +43,6 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
          api.createMap({
             div: "mymap1"
          });
-         startCounter();
       }
    </script>
    <body onload="init();">
