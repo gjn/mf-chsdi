@@ -220,6 +220,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Problems submitting:':'Transmission problem',
 	'Produktions- und Industrieanlagen':'Production and industrial facilities',
 	'QueryByRect.CtrlKeyUsageNotice':'You can use the Ctrl key to activate the selection by rectangle',
+	'QueryByRect.MetaKeyUsageNotice':'You can use the Meta key to activate the selection by rectangle',
 	'Queryable':'Queryable',
 	'Raum und Bevölkerung':'Area and population',
 	'Raumplanung':'Area restriction zones and reporting units',

@@ -216,6 +216,7 @@ OpenLayers.Lang.rm= {
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Stabiliments da producziun e d\'industria',
 	'QueryByRect.CtrlKeyUsageNotice':'Selecziunplirs  objects: Ctrl tasta',
+	'QueryByRect.MetaKeyUsageNotice':'Selecziunplirs  objects: Meta tasta',
 	'Queryable':'Consultar',
 	'Raum und Bevölkerung':'Territori e populaziun',
 	'Raumplanung':'Secturs reglads ed unitads da rapport',

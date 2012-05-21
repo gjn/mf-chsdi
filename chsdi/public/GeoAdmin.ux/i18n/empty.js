@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'QueryByRect.MetaKeyUsageNotice': "",
     'ch.swisstopo.pixelkarte-grau-pk1000.noscale': "",
     'QueryByRect.CtrlKeyUsageNotice': "",
     'Max features notice': "",
