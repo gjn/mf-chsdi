@@ -1133,6 +1133,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: true
             },
+            "ch.bafu.bundesinventare-amphibien_anhang4": {
+                name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien_anhang4"),
+                layertype: 'wmts',
+                timestamp: '20111205',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
             "ch.bafu.ren-extensive_landwirtschaftsgebiete": {
                 name: OpenLayers.i18n("ch.bafu.ren-extensive_landwirtschaftsgebiete"),
                 layertype: 'wmts',
@@ -1241,6 +1250,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 opacity: 0.75,
                 queryable: true
+            },
+            "ch.bafu.bundesinventare-flachmoore_regional": {
+                name: OpenLayers.i18n("ch.bafu.bundesinventare-flachmoore_regional"),
+                layertype: 'wmts',
+                timestamp: '20070731',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
             },
             "ch.bafu.bundesinventare-hochmoore": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-hochmoore"),
@@ -1352,6 +1371,56 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.kt.bafu",
                 queryable: false,
                 transitionEffect: "no"
+            },
+            "ch.bafu.silvaprotect-lawinen": {
+                name: OpenLayers.i18n("ch.bafu.silvaprotect-lawinen"),
+                layertype: 'wmts',
+                timestamp: '20060701',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.bafu.silvaprotect-sturz": {
+                name: OpenLayers.i18n("ch.bafu.silvaprotect-sturz"),
+                layertype: 'wmts',
+                timestamp: '20060701',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.bafu.silvaprotect-murgang": {
+                name: OpenLayers.i18n("ch.bafu.silvaprotect-murgang"),
+                layertype: 'wmts',
+                timestamp: '20060701',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.bafu.silvaprotect-hangmuren": {
+                name: OpenLayers.i18n("ch.bafu.silvaprotect-hangmuren"),
+                layertype: 'wmts',
+                timestamp: '20060701',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.bafu.silvaprotect-uebersarung": {
+                name: OpenLayers.i18n("ch.bafu.silvaprotect-uebersarung"),
+                layertype: 'wmts',
+                timestamp: '20080501',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: false
             },
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
@@ -2146,6 +2215,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2": {
+                name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"),
+                layertype: 'wmts',
+                timestamp: '20120111',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.bafu.unesco-weltnaturerbe": {
                 name: OpenLayers.i18n("ch.bafu.unesco-weltnaturerbe"),
                 layertype: 'wmts',
@@ -2154,6 +2233,51 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 opacity: 0.75,
+                queryable: false
+            },
+            "ch.bafu.fischerei-aeschen_verbreitungsgebiet": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_verbreitungsgebiet"),
+                layertype: 'wmts',
+                timestamp: '20110905',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",                
+                queryable: false
+            },
+            "ch.bafu.fischerei-aeschen_kernzonen": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_kernzonen"),
+                layertype: 'wmts',
+                timestamp: '20110829',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",                
+                queryable: false
+            },
+            "ch.bafu.fischerei-aeschen_larvenhabitate": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_larvenhabitate"),
+                layertype: 'wmts',
+                timestamp: '20110829',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",                
+                queryable: false
+            },
+            "ch.bafu.fischerei-aeschen_laichplaetze": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_laichplaetze"),
+                layertype: 'wmts',
+                timestamp: '20110829',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",              
+                queryable: false
+            },
+            "ch.bafu.fischerei-nasenlaichplaetze": {
+                name: OpenLayers.i18n("ch.bafu.fischerei-nasenlaichplaetze"),
+                layertype: 'wmts',
+                timestamp: '20060220',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",                
                 queryable: false
             },
             "ch.bafu.fischerei-krebspest": {

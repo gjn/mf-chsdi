@@ -385,6 +385,15 @@ class trockenwiesenundweiden(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
 
+class trockenwiesenundweiden_anhang2(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'trockenwiesen_weiden_anhang2'
+    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __template__ = 'tooltips/tww_anhang2.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', trockenwiesenundweiden_anhang2)
+
 class baugrundklassen(Base, Queryable):
     # view in a schema
     __tablename__ = 'baugrundklassen'
