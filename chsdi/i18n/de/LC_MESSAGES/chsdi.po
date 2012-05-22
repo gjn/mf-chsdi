@@ -443,6 +443,9 @@ msgstr "Moorlandschaften"
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Trockenwiesen und -weiden"
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
+msgstr "TWW Anhang 2"
+
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Wasser- und Zugvogelreservate"
 

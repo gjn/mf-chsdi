@@ -21,6 +21,9 @@ msgstr ""
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr ""
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
+msgstr ""
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr ""
 

@@ -443,6 +443,9 @@ msgstr "Moor landscapes"
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Dry grasslands"
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
+msgstr "Dry grasslands appendix 2"
+
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Water and migrant bird game reserves"
 

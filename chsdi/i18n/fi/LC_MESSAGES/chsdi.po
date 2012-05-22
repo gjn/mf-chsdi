@@ -135,7 +135,7 @@ msgid "No additional information for this object type"
 msgstr "Betg infurmaziuns davart il object"
 
 msgid "No info outside CH and FL"
-msgstr "Nessun informazione di fuori della Svizzera e Liechstenstein"
+msgstr "Nessun informazione fuori della Svizzera e Liechstenstein"
 
 msgid "Not applicable"
 msgstr "nicht anwendbar"
@@ -442,6 +442,9 @@ msgstr "Cuntradas da palì"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Trockenwiesen und -weiden"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
+msgstr "TWW Anhang 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Reservats d'utschels da l'aua e migrants"

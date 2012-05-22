@@ -443,6 +443,9 @@ msgstr "Sites marécageux"
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Prairies et pâturages secs"
 
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
+msgstr "PPS annexe 2"
+
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau et migrateurs"
 
