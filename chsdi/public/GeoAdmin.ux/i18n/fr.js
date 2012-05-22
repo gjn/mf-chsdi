@@ -546,16 +546,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'imprint 3':'<b>Institution maîtresse</b> <br> La Confédération, représentée par les Offices concernés.',
 	'imprint 4':'<b>Mentions légales</b> <br> Pour geo.admin.ch les dispositions générales en conformité avec <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a> s\'appliquent.',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg">',
-	'imprint revision overall data controller':'"Institution maîtresse
-Office fédéral de topographie
-Seftigenstrasse 264
-Case postale
-3084 Wabern
-Téléphone +41 31 963 21 11
-Téléfax +41 31 963 24 59
-info@swisstopo.ch"',
-	'imprint revision terms and conditions':'"Mentions légales
-Pour map.revision.admin.ch les dispositions générales en conformité avec www.disclaimer.admin.ch s\'appliquent. Vos données seront utilisées exclusivement pour notre production interne et ne seront pas transférées à des tiers."',
+	'imprint revision overall data controller':'<b>Institution maîtresse</b> <br>Office fédéral de topographie <br>Seftigenstrasse 264 <br>Case postale 3084 Wabern <br>Téléphone +41 31 963 21 11 <br>Téléfax +41 31 963 24 59 <br>info@swisstopo.ch',
+	'imprint revision terms and conditions':'<b>Mentions légales</b> <br> Pour map.revision.admin.ch les dispositions générales en conformité avec <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a> s\'appliquent. Vos données seront utilisées exclusivement pour notre production interne et ne seront pas transférées à des tiers.',
 	'indigo':'indigo',
 	'inputURLInvalidText':'L\'adresse (url) entrée n\'est pas valide.',
 	'inputURLText':'Sélectionner ou entrer une adresse de serveur (URL)',

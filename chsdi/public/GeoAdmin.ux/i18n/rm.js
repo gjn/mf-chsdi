@@ -542,16 +542,8 @@ OpenLayers.Lang.rm= {
 	'imprint 3':'<b>Possessura da las datas</b> <br /> La confederaziun, represchentada da l\'uffizi federal correspundent',
 	'imprint 4':'<b>Infurmaziuns giuridicas</b> <br /> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
-	'imprint revision overall data controller':'"Possessura da las datas
-Bundesamt für Landestopografie
-Seftigenstrasse 264
-Postfach
-3084 Wabern
-Telefon +41 31 963 21 11
-Telefax +41 31 963 24 59
-info@swisstopo.ch "',
-	'imprint revision terms and conditions':'"Infurmaziuns giuridicas
-Per map.revision.admin.ch valan las disposiziuns generalas tenor www.disclaimer.admin.ch. Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs."',
+	'imprint revision overall data controller':'<b>Possessura da las datas</b> <br>Bundesamt für Landestopografie <br>Seftigenstrasse 264 <br>Postfach 3084 Wabern <br>Telefon +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
+	'imprint revision terms and conditions':'<b>Infurmaziuns giuridicas</b> <br /> Per map.revision.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>. Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs.',
 	'indigo':'indigo',
 	'inputURLInvalidText':'L\'adressa endatada (URL) è nunvalaivla',
 	'inputURLText':'Tscherner u agiuntar in server (URL)',

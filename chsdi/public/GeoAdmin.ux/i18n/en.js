@@ -546,16 +546,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'imprint 3':'<b>Overall data controller</b> <br> The Confederation, represented by the relevant Federal Office',
 	'imprint 4':'<b>Terms and conditions</b> <br> geo.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
-	'imprint revision overall data controller':'"Overall data controller
-Federal Office of Topography 
-Seftigenstrasse 264 
-P.O. Box 
-3084 Wabern 
-Telephone +41 31 963 21 11 
-Telefax +41 31 963 24 59 
-info@swisstopo.ch "',
-	'imprint revision terms and conditions':'"Terms and conditions
-map.revision.admin.ch is covered by the general conditions in accordance with www.disclaimer.admin.ch. Your data will exclusively be used for our internal production and will not be forwarded to others. "',
+	'imprint revision overall data controller':'<b>Overall data controller</b> <br>Federal Office of Topography <br>Seftigenstrasse 264 <br>P.O. Box 3084 Wabern <br>Telephone +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
+	'imprint revision terms and conditions':'<b>Terms and conditions</b> <br> map.revision.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>. Your data will exclusively be used for our internal production and will not be forwarded to others.',
 	'indigo':'indigo',
 	'inputURLInvalidText':'Adress (URL) provided is not valid',
 	'inputURLText':'Select or add a server (URL)',

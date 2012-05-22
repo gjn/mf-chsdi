@@ -546,16 +546,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'imprint 3':'<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt',
 	'imprint 4':'<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
-	'imprint revision overall data controller':'"Datenherr 
-Bundesamt für Landestopografie
-Seftigenstrasse 264
-Postfach
-3084 Wabern
-Telefon +41 31 963 21 11
-Telefax +41 31 963 24 59
-info@swisstopo.ch "',
-	'imprint revision terms and conditions':'"Rechtliches
-Für map.revision.admin.ch gelten die Allgemeinen Bestimmungen gemäss www.disclaimer,admin.ch. Ihre Daten werden ausschliesslich für unsere interne Produktion verwendet und nicht an Dritte weitergeleitet."',
+	'imprint revision overall data controller':'<b>Datenherr </b> <br>Bundesamt für Landestopografie <br>Seftigenstrasse 264 <br>Postfach 3084 Wabern <br>Telefon +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
+	'imprint revision terms and conditions':'<b>Rechtliches</b> <br> Für map.revision.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>. Ihre Daten werden ausschliesslich für unsere interne Produktion verwendet und nicht an Dritte weitergeleitet.',
 	'indigo':'Indigo',
 	'inputURLInvalidText':'Eingegeber Link (URL) ist ungültig',
 	'inputURLText':'Auswahl oder Hinzufügen eines Servers (URL)',
