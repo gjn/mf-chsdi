@@ -97,8 +97,11 @@ class LayersController(BaseController):
 
 ##----------------------------------------Project----------------------------------------##            
         # Per default the project geoadmin is selected
-        project = request.params.get('project','geoadmin')
-        project = project.split(',')
+        if self.mode == 'legend':
+           project = ['all']
+        else:
+           project = request.params.get('project','geoadmin')
+           project = project.split(',')
         if not isinstance(project,list):
             abort(400, 'An error occured while parsing the projects')           
 
