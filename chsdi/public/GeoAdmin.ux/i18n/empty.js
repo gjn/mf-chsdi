@@ -614,5 +614,18 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.kanton.av': "",
     'ch.kanton.av.url': "",
     'imprint revision overall data controller': "",
-    'imprint revision terms and conditions': ""
+    'imprint revision terms and conditions': "",
+    'ch.bafu.fischerei-aeschen_verbreitungsgebiet': "",
+    'ch.bafu.fischerei-aeschen_kernzonen': "",
+    'ch.bafu.fischerei-aeschen_larvenhabitate': "",
+    'ch.bafu.fischerei-aeschen_laichplaetze': "",
+    'ch.bafu.fischerei-nasenlaichplaetze': "",
+    'ch.bafu.bundesinventare-amphibien_anhang4': "",
+    'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2': "",
+    'ch.bafu.bundesinventare-flachmoore_regional': "",
+    'ch.bafu.silvaprotect-lawinen': "",
+    'ch.bafu.silvaprotect-sturz': "",
+    'ch.bafu.silvaprotect-murgang': "",
+    'ch.bafu.silvaprotect-hangmuren': "",
+    'ch.bafu.silvaprotect-uebersarung': ""
 });
