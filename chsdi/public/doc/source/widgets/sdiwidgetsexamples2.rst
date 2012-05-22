@@ -43,8 +43,9 @@ Layer Tree
 .. code-block:: html
 
    <script type="text/javascript">
+      var map6;
       function init() {
-         var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
+         map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.hiks-dufour");
          map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          map6.addLayerByName("ch.swisstopo.vec200-transportation-strassennetz");
@@ -87,10 +88,21 @@ Tooltip
 .. code-block:: html
 
    <script type="text/javascript">
+      var map7;
       function init() {
-         var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
-         map7.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
-         var tooltip = new GeoAdmin.Tooltip({baseUrl: 'http://map.geo.admin.ch'});
+         map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+         map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.Tooltip({
+             baseUrl: 'http://map.geo.admin.ch',
+             autoActivate: true,
+             box: true,
+             handlerOptions: {
+                 box: {
+                     keyMask: Ext.isMac ? OpenLAyers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL
+                 }
+             }
+         });
+
          map7.addControl(tooltip);
          tooltip.activate();
       }
@@ -126,8 +138,9 @@ Catalog Tree
 .. code-block:: html
 
    <script type="text/javascript">
+      var map8;
       function init() {
-         var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+         map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
 
       }
@@ -164,8 +177,9 @@ Mouse Position
 .. code-block:: html
 
    <script type="text/javascript">
+      var map9;
       function init() {
-         var map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
+         map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
          var mouseposition9  = new GeoAdmin.MousePositionBox({
                 renderTo: "mymouseposition9",
                 map: map9
@@ -204,8 +218,9 @@ Navigation History
 .. code-block:: html
 
    <script type="text/javascript">
+      var map10;
       function init() {
-         var map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
+         map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
          var navigationhistory10  = new GeoAdmin.NavigationHistory({
                 renderTo: "mynavigationhistory10",
                 map: map10
@@ -233,11 +248,12 @@ Navigation History
 .. raw:: html
 
    <script type="text/javascript">
+      var map6, map7, map8, map9, map10;
       function init() {
 
          OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "de");
          
-         var map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
+         map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
          map6.addLayerByName("ch.swisstopo.hiks-dufour");
          map6.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
          map6.addLayerByName("ch.bafu.wasser-entnahme");
@@ -247,22 +263,31 @@ Navigation History
              width: 300
          });
 
-         var map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
-         map7.addLayerByName("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill");
-         var tooltip = new GeoAdmin.Tooltip({baseUrl: 'http://map.geo.admin.ch'});
+         map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
+         map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.Tooltip({
+             baseUrl: 'http://map.geo.admin.ch', 
+             autoActivate: true, 
+             box: true,
+             handlerOptions: {
+                 box: {
+                     keyMask: Ext.isMac ? OpenLAyers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL
+                 }
+             }
+         });
          map7.addControl(tooltip);
          tooltip.activate();
 
-         var map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+         map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
 
-         var map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
+         map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
          var mouseposition9  = new GeoAdmin.MousePositionBox({
                 renderTo: "mymouseposition9",
                 map: map9
          });
 
-         var map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
+         map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
          var navigationhistory10  = new GeoAdmin.NavigationHistory({
                 renderTo: "mynavigationhistory10",
                 map: map10
