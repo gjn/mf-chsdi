@@ -366,7 +366,7 @@ Examples:
 
 - http://api.geo.admin.ch/layers: returns all the layers available with all their properties
 - http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography: returns all the available information about this layer
-- http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichung: returns all the layers where the query string wasser is found
+- http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung: returns all the layers where the query string wasser is found
 - http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb: returns the legend of the layer in a callback
 - http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
 - http://api.geo.admin.ch/layers?mode=preview
