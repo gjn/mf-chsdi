@@ -28,7 +28,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Artenvielfalt':'Verteilung der Arten',
 	'Atmosphärische Bedingungen':'Atmosphärische Bedingungen',
 	'Attachment Validation':'Anhang überprüfen',
-	'Attachments And Reporter':'Anhänge',
+	'Attachments And Reporter':'Datei anhängen:',
 	'Attributes':'Attribute',
 	'Azimut: ':'Azimut: ', //TODO
 	'Back':'Zurück',
@@ -111,7 +111,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Geocoding failed. No result has been found.':'Geocoding failed. No result has been found.', //TODO
 	'Geografische Gittersysteme':'Geografische Gittersysteme',
 	'Geografische Namen':'Geografische Bezeichnungen',
-	'Geographic names':'Namen',
+	'Geographic names':'Geografische Namen',
 	'Geolocation':'Standortbestimmung',
 	'Geologie':'Geologie',
 	'Gesundheit une Sicherheit':'Gesundheit und Sicherheit',
@@ -229,7 +229,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'RedliningWindow':'Zeichnen',
 	'Referenzsysteme':'Koordinatenreferenzsysteme',
 	'Report':'Melden Sie ein Problem mit der Karte',
-	'Report Summary':'Zusammenfassung',
+	'Report Summary':'Melden',
 	'Reporter (your email address)':'Ihre E-Mail',
 	'Retry':'Wiederholen',
 	'Roads and paths':'Strassen und Wege',
@@ -238,10 +238,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Schweiz':'Schweiz',
 	'Search':'Suche',
 	'Search data...':'Suche Daten...',
-	'Select GPS track':'GPS-Track wählen',
+	'Select GPS track':'GPS-Track',
 	'Select a file to import':'Wählen Sie eine Datei für den Import aus',
 	'Select or input a server address (URL)':'Serveradresse (URL) eingeben oder auswählen',
-	'Select photo':'Bild wählen',
+	'Select photo':'Bild',
 	'Send':'Senden',
 	'Send another report':'Weiter',
 	'Send feedback':'Absenden',
@@ -278,13 +278,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Warning screen resolution':'Warnung Bildschirmauflösung',
 	'We have been unable to receive your message due to transmission errors':'Aufgrund eines Übertragungsfehlers haben wir Ihre Meldung leider nicht erhalten',
 	'We recommend to upgrade to a newer release.':'Wir empfehlen ein neuer Version zu benutzen.',
-	'What problem with the map do you want to report?':'Was möchten Sie melden?',
+	'What problem with the map do you want to report?':'Was möchten Sie swisstopo melden?',
 	'WmsBrowser':'WMS Import',
 	'WmsBrowserWindow':'WMS Dienst hinzufügen',
 	'Yes':'Ja',
 	'You are using Internet Explorer 6.':'Sie benutzen Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Sie können nur 5 Layers in Layer Baum addieren.',
-	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Ihr Browser oder Gerät bietet keine Unterstützung für Dateiübertragung. Bitte verwenden Sie http://map.revision.admin.ch/ mit einem Computer anstelle dieses Dienstes, wenn Sie Bilder oder GPS-Tracks zusammen mit Ihrer Meldung senden wollen.',
+	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Ihr Gerät unterstützt die Integration von Anhängen nicht. Bitte verwenden Sie einen Computer, wenn Sie Bilder oder GPS-Tracks zusammen mit Ihrer Meldung senden wollen (http://map.revision.admin.ch/).',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Ihre Daten werden ausschliesslich für unsere interne Produktion verwendet und nicht an Dritte weitergeleitet.',
 	'Your description exceeeds the maximum permitted length.':'Maximale Länge ist 200 Zeichen',
 	'Your email':'Ihre E-Mail Adresse',
@@ -293,7 +293,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Your email:':'Ihre E-Mail Adresse:',
 	'Your feedback about current map extent':'Ihr Bericht zum aktuellen Kartenausschnitt',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Ihre Rückmeldung wurde erfolgreich verschickt. Vielen Dank für Ihre Mitteilung.',
-	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Falsches Dateiformat! Akzeptiert werden: jpg; jpeg; png und gif',
+	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Falsches Dateiformat! Akzeptiert werden: jpg, jpeg, png und gif',
 	'Your photo must not exceed the maximum size of 3MB.':'Datei zu gross! Max. 3 MB.',
 	'Your report was successfully posted':'Ihr Bericht wurde erfolgreich übermittelt.',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Ihre Bildschirmauflösung ist kleiner als 1024x768 pixels. map.geo.admin.ch ist nicht für kleine Bildschirmauflösung optimiert.',
@@ -533,6 +533,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'imprint 3':'<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt',
 	'imprint 4':'<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint revision overall data controller':'"Datenherr 
+Bundesamt für Landestopografie
+Seftigenstrasse 264
+Postfach
+3084 Wabern
+Telefon +41 31 963 21 11
+Telefax +41 31 963 24 59
+info@swisstopo.ch "',
+	'imprint revision terms and conditions':'"Rechtliches
+Für map.revision.admin.ch gelten die Allgemeinen Bestimmungen gemäss www.disclaimer,admin.ch. Ihre Daten werden ausschliesslich für unsere interne Produktion verwendet und nicht an Dritte weitergeleitet."',
 	'indigo':'Indigo',
 	'inputURLInvalidText':'Eingegeber Link (URL) ist ungültig',
 	'inputURLText':'Auswahl oder Hinzufügen eines Servers (URL)',

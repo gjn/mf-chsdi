@@ -28,7 +28,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Artenvielfalt':'Species distribution',
 	'Atmosphärische Bedingungen':'Atmospheric conditions',
 	'Attachment Validation':'Validate attachments',
-	'Attachments And Reporter':'Attachments',
+	'Attachments And Reporter':'Add a file:',
 	'Attributes':'Attributes',
 	'Azimut: ':'Azimut: ', //TODO
 	'Back':'Back',
@@ -46,7 +46,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Cantons':'Canton',
 	'Catalog':'Catalog [INSPIRE]',
 	'Cities':'Cities',
-	'Classification:':'Category:',
+	'Classification:':'Category',
 	'Climb: ':'Climb: ',
 	'Close':'Close',
 	'Close this window':'Close this window',
@@ -229,7 +229,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'RedliningWindow':'Draw',
 	'Referenzsysteme':'Coordinate reference systems',
 	'Report':'Report a problem with the map',
-	'Report Summary':'Summary',
+	'Report Summary':'Report',
 	'Reporter (your email address)':'Your email ',
 	'Retry':'Retry',
 	'Roads and paths':'Roads and paths',
@@ -238,10 +238,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Schweiz':'Switzerland',
 	'Search':'Search',
 	'Search data...':'Search data [in German] ...',
-	'Select GPS track':'Add GPS track',
+	'Select GPS track':'GPS Track',
 	'Select a file to import':'Select the file for the import',
 	'Select or input a server address (URL)':'Select or input a server address (URL)',
-	'Select photo':'Add picture',
+	'Select photo':'Picture',
 	'Send':'Send',
 	'Send another report':'Send another report',
 	'Send feedback':'Send problem report',
@@ -254,7 +254,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Style':'style',
 	'Subject':'Subject',
 	'Success':'Report sent successfully',
-	'Summary of your report':'Summary. Please accept below',
+	'Summary of your report':'Summary. Please accept below.',
 	'Swiss Coordinate':'CH03',
 	'Swissnames':'Swissnames',
 	'Thanks':'Thank you',
@@ -278,13 +278,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Warning screen resolution':'Screen resolution warning',
 	'We have been unable to receive your message due to transmission errors':'We have been unable to receive your message due to transmission errors',
 	'We recommend to upgrade to a newer release.':'We recommend to update to a newer release.',
-	'What problem with the map do you want to report?':'What is your advice?',
+	'What problem with the map do you want to report?':'What is your advice to swisstopo?',
 	'WmsBrowser':'WMS import',
 	'WmsBrowserWindow':'Add a WMS service',
 	'Yes':'Yes',
 	'You are using Internet Explorer 6.':'Are you crazy ? You are using Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'You can add only 5 layers in the layer tree.',
-	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Your browser or device does not support file transfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.',
+	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Your device does not support the integration of attachments. Please use a computer instead of this service if you intend to send pictures or GPS tracks along with your report (http://map.revision.admin.ch/).',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Your data will exclusively be used for our internal production and will not be forwarded to others.',
 	'Your description exceeeds the maximum permitted length.':'Maximum length is 200 characters',
 	'Your email':'Your Email',
@@ -533,6 +533,16 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'imprint 3':'<b>Overall data controller</b> <br> The Confederation, represented by the relevant Federal Office',
 	'imprint 4':'<b>Terms and conditions</b> <br> geo.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint revision overall data controller':'"Overall data controller
+Federal Office of Topography 
+Seftigenstrasse 264 
+P.O. Box 
+3084 Wabern 
+Telephone +41 31 963 21 11 
+Telefax +41 31 963 24 59 
+info@swisstopo.ch "',
+	'imprint revision terms and conditions':'"Terms and conditions
+map.revision.admin.ch is covered by the general conditions in accordance with www.disclaimer.admin.ch. Your data will exclusively be used for our internal production and will not be forwarded to others. "',
 	'indigo':'indigo',
 	'inputURLInvalidText':'Adress (URL) provided is not valid',
 	'inputURLText':'Select or add a server (URL)',

@@ -612,5 +612,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.swisstlm3d-wanderwege': "",
     'ch.swisstopo.swisstlm3d-karte': "",
     'ch.kanton.av': "",
-    'ch.kanton.av.url': ""
+    'ch.kanton.av.url': "",
+    'imprint revision overall data controller': "",
+    'imprint revision terms and conditions': ""
 });

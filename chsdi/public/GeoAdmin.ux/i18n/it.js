@@ -28,7 +28,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Artenvielfalt':'Distribuzione delle specie',
 	'Atmosphärische Bedingungen':'Condizioni atmosferiche',
 	'Attachment Validation':'Validazione allegati',
-	'Attachments And Reporter':'Allegati',
+	'Attachments And Reporter':'Allega un file:',
 	'Attributes':'Attributi',
 	'Azimut: ':'Azimut: ', //TODO
 	'Back':'Indietro',
@@ -46,7 +46,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Cantons':'Cantone',
 	'Catalog':'Catalogo [INSPIRE]',
 	'Cities':'Comuni',
-	'Classification:':'Categoria:',
+	'Classification:':'Categoria',
 	'Climb: ':'Salita : ',
 	'Close':'Chiudere',
 	'Close this window':'Chiudere questa finestra',
@@ -229,10 +229,10 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'RedliningWindow':'Disegnare',
 	'Referenzsysteme':'Sistemi di coordinate',
 	'Report':'Segnala un problema con la cartina',
-	'Report Summary':'Riassunto',
+	'Report Summary':'Annunciare',
 	'Reporter (your email address)':'La sua email',
 	'Retry':'Riprovare',
-	'Roads and paths':'Strade e percorsi',
+	'Roads and paths':'Strade e sentieri',
 	'Save context':'Salvare il contenuto',
 	'Schutzgebiete':'Siti protetti',
 	'Schweiz':'Svizzera',
@@ -254,7 +254,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Style':'Stile',
 	'Subject':'Soggetto',
 	'Success':'Il rapporto è stato inviato',
-	'Summary of your report':'Riassunto. Accettare in basso',
+	'Summary of your report':'Riassunto. Accettare in basso.',
 	'Swiss Coordinate':'CH03',
 	'Swissnames':'Swissnames',
 	'Thanks':'Grazie',
@@ -278,13 +278,13 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Warning screen resolution':'Attenzione Risoluzione dello schermo',
 	'We have been unable to receive your message due to transmission errors':'Non siamo stati in grado di ricevere il suo rapporto a causa di errori di trasmissione',
 	'We recommend to upgrade to a newer release.':'Vi preghiamo di utilizzare una versione più recente.',
-	'What problem with the map do you want to report?':'Cosa desidera annunciare?',
+	'What problem with the map do you want to report?':'Cosa desidera annunciare a swisstopo?',
 	'WmsBrowser':'Importare WMS',
 	'WmsBrowserWindow':'Aggiungere un servizio WMS',
 	'Yes':'Si',
 	'You are using Internet Explorer 6.':'State utilizzando Explorer 6',
 	'You can add only 5 layers in the layer tree.':'Potete solamente aggiungere 5 strati di piani nell\'albero dei piani.',
-	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Il suo browser o il suo terminale non supporta il trasferimento di files. La preghiamo di utilizzare http://map.revision.admin.ch/ da un PC invece di questo servizio mobile se desidera inviarci immagini o tracce GPS in allegato.',
+	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Il suo terminale non supporta il trasferimento di allegati. La preghiamo di utilizzare http://map.revision.admin.ch/ da un PC se desidera inviarci immagini o tracce GPS in allegato.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'I suoi dati saranno usati esclusivamente nell\'ambito della produzione interna e non saranno messi a disposizione di terzi.',
 	'Your description exceeeds the maximum permitted length.':'Lunghezza massima 200 caratteri',
 	'Your email':'La sua email',
@@ -293,11 +293,11 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Your email:':'La sua email:',
 	'Your feedback about current map extent':'La sua descrizione del problema concernente la cartina',
 	'Your feedback was successfully commited. Thank you for providing your feedback.':'Il vostro commento è stato inviato con successo. Grazie per avercelo trasmesso.',
-	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Formato non supportato. I formati supportati sono: .jpg, .jpeg, .png e .gif',
+	'Your photo must have a common file format (jpg; jpeg; png; gif).':'Formato non supportato. I formati supportati sono: jpg, jpeg, png e gif',
 	'Your photo must not exceed the maximum size of 3MB.':'Immagine troppo grande. Max. 3 MB',
 	'Your report was successfully posted':'Il suo rapporto è stato inviato con successo',
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La vostra risoluzione dello schermo è inferiore a 1024x768pixel. map.geo.admin.ch non è  ottimizzata per risoluzioni inferiori.',
-	'Your track must have a common file format (gpx; kml; kmz).':'Formato non supportato. I formati supportati sono: .gpx, .kml e .kmz',
+	'Your track must have a common file format (gpx; kml; kmz).':'Formato non supportato. I formati supportati sono: gpx, kml e kmz',
 	'Your track must not exceed the maximum size of 4MB.':'File troppo grande. Max 4 MB',
 	'Zoom to the max extent':'Tutta la Svizzera',
 	'about that layer':'Informazioni su questo layer',
@@ -533,6 +533,17 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'imprint 3':'<b>Proprietario di dati</b> <br> Confederazione, rappresentata dall\'ufficio concernente',
 	'imprint 4':'<b>Aspetti giuridici</b> <br> Per geo.admin.ch valgono le condizioni generali secondo <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint revision overall data controller':'"Proprietario di dati
+Ufficio federale di topografia 
+Seftigenstrasse 264 
+Casella postale
+3084 Wabern
+Telefono +41 31 963 21 11
+Telefax +41 31 963 24 59
+info@swisstopo.ch "',
+	'imprint revision terms and conditions':'"Aspetti giuridici
+Per map.revision.admin.ch valgono le condizioni generali secondo www.disclaimer.admin.ch.
+I suoi dati saranno usati esclusivamente nell\'ambito della produzione interna e non saranno messi a disposizione di terzi."',
 	'indigo':'Indigo',
 	'inputURLInvalidText':'L\'indirizzo (URL) non è valido.',
 	'inputURLText':'Scegliere o aggiungere un server (URL)',

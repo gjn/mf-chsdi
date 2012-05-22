@@ -24,7 +24,7 @@ OpenLayers.Lang.rm= {
 	'Artenvielfalt':'Repartiziun da las spezias',
 	'Atmosphärische Bedingungen':'Cundiziuns atmosfericas',
 	'Attachment Validation':'Validar agiunta',
-	'Attachments And Reporter':'Agiuntas',
+	'Attachments And Reporter':'Sutvart una datoteca:',
 	'Attributes':'Attributs',
 	'Azimut: ':'Azimut: ', //TODO
 	'Back':'Turnar',
@@ -225,7 +225,7 @@ OpenLayers.Lang.rm= {
 	'RedliningWindow':'Dissegnar',
 	'Referenzsysteme':'Sistems da referenza da coordinatas',
 	'Report':'Rapportar in problem cun la charta',
-	'Report Summary':'Resumaziun',
+	'Report Summary':'Annunziar',
 	'Reporter (your email address)':'Vossa adressa electronica',
 	'Retry':'Repeter',
 	'Roads and paths':'Vias e sendas',
@@ -234,10 +234,10 @@ OpenLayers.Lang.rm= {
 	'Schweiz':'Svizra',
 	'Search':'Tschertga',
 	'Search data...':'Tschertgar datas [en tudestg] ...',
-	'Select GPS track':'Agiuntar ina ruta GPS',
+	'Select GPS track':'Ruta GPS',
 	'Select a file to import':'Tscherni ina datoteca per l\'import',
 	'Select or input a server address (URL)':'Tscherner u agiuntar in server (URL)',
-	'Select photo':'Agiuntar in maletg',
+	'Select photo':'Maletg',
 	'Send':'Trametter',
 	'Send another report':'Enavant',
 	'Send feedback':'Rapportar il problem',
@@ -250,7 +250,7 @@ OpenLayers.Lang.rm= {
 	'Style':'Stil',
 	'Subject':'Object',
 	'Success':'Rapport tramess cun success',
-	'Summary of your report':'Resumaziun. Confermar sut',
+	'Summary of your report':'Resumaziun. Confermar sut.',
 	'Swiss Coordinate':'CH03',
 	'Swissnames':'Swissnames',
 	'Thanks':'Grazia fitg',
@@ -280,7 +280,7 @@ OpenLayers.Lang.rm= {
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
 	'You can add only 5 layers in the layer tree.':'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
-	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Voss browser u Voss computer da sustegna betg il transferiment da datotecas. Utilisai p.pl. http://map.revision.admin.ch/ cun in computer empè da quest servetsch per ans trametter maletgs u rutas GPS.',
+	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Voss computer da sustegna betg il transferiment da datotecas. Utilisai p.pl. http://map.revision.admin.ch/ cun in computer empè da quest servetsch per ans trametter maletgs u rutas GPS.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs.',
 	'Your description exceeeds the maximum permitted length.':'La lunghezza maximala è da 200 segns',
 	'Your email':'Voss e-mail',
@@ -529,6 +529,16 @@ OpenLayers.Lang.rm= {
 	'imprint 3':'<b>Possessura da las datas</b> <br /> La confederaziun, represchentada da l\'uffizi federal correspundent',
 	'imprint 4':'<b>Infurmaziuns giuridicas</b> <br /> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>',
 	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint revision overall data controller':'"Possessura da las datas
+Bundesamt für Landestopografie
+Seftigenstrasse 264
+Postfach
+3084 Wabern
+Telefon +41 31 963 21 11
+Telefax +41 31 963 24 59
+info@swisstopo.ch "',
+	'imprint revision terms and conditions':'"Infurmaziuns giuridicas
+Per map.revision.admin.ch valan las disposiziuns generalas tenor www.disclaimer.admin.ch. Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs."',
 	'indigo':'indigo',
 	'inputURLInvalidText':'L\'adressa endatada (URL) è nunvalaivla',
 	'inputURLText':'Tscherner u agiuntar in server (URL)',
