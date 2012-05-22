@@ -87,7 +87,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     }
                 }
             }
-            if (typeof layer !== 'undefined') {
+            if (typeof layer !== 'undefined' && typeof this.popup !== 'undefined') {
                 if (layer.type === 'removelayer' || layer.type === 'changelayer' && this.popup) {
                         this.popup.hide(null);
                 }
