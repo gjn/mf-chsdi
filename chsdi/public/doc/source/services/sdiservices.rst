@@ -131,8 +131,8 @@ A JSON content is sent back with the following content:
 - id: id of the feature in the database
 - objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
 
-BodSearch: search
------------------
+BodSearch: search (deprecated)
+------------------------------
 
 This service allows to query all layers present in geoadmin for a certain expression present in their title and description.
 
@@ -357,8 +357,11 @@ The following parameters are required:
                  - bodsearch: this mode requires the definition of query string, all the other parameters can be used
                  - legend: returns the legend of a layer, only one layer id must be provided
                  - wmts: retruns a GetCapabilities document which provides information about the service along with a description of the layers
-                 - preview: returns per default a preview of all the layers in geoadmin
-	
+                 - preview: returns per default a preview of all the layers in separated and syncronized frames
+                     - width: define the width of the map previews
+                     - lon,lat: define the central point of the map
+                     - zoom: define the zoom level
+
 Examples:
 
 - http://api.geo.admin.ch/layers: returns all the layers available with all their properties
@@ -367,6 +370,7 @@ Examples:
 - http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb: returns the legend of the layer in a callback
 - http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
 - http://api.geo.admin.ch/layers?mode=preview
+- http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200: returns a set of syncronized maps filtered with the query string lac
 
 Profile.json
 ------------
