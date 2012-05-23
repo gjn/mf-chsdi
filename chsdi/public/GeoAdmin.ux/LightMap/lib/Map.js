@@ -29,7 +29,7 @@
  */
 
 /** api: (define)
- *  module =  GeoAdmin
+ *  module =  LightMap
  *  class = Map
  *  base_link = `OpenLayers.Map <http://dev.openlayers.org/apidocs/files/OpenLayers/Map-js.html>`_
  */

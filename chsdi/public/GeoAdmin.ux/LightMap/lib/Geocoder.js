@@ -11,7 +11,7 @@
  */
 
 /** api: (define)
- *  module = GeoAdmin
+ *  module = LightMap
  *  class = Geocoder
  */
 
