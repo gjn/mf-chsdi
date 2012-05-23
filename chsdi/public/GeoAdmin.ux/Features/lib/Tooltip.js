@@ -105,7 +105,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
         this.popup && this.popup.removeAll();
         if (this.queryable.length > 0) {
-            this.layer.removeAllFeatures();
+            if (typeof this.popup !== 'undefined') {this.popup.hide();}
             // Set the cursor to "wait" to tell the user we're working.
             OpenLayers.Element.addClass(this.map.viewPortDiv, "olCursorWait");
 
@@ -206,7 +206,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
            items: [item],
            listeners : {
                hide: function(popup) {
-                   if (this.layer.features.length > 0) { this.layer.removeAllFeatures() }
+                   if (this.layer.features.length > 0) { this.layer.removeAllFeatures(); }
                    if (this.hoverControl) {
                         this.map.removeControl(this.hoverControl);
                         this.hoverControl.deactivate();
