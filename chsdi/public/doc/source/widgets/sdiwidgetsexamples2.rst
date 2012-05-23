@@ -104,7 +104,6 @@ Tooltip
          });
 
          map7.addControl(tooltip);
-         tooltip.activate();
       }
    </script>
    <body onload="init();">
