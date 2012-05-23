@@ -46,6 +46,7 @@
     font-weight: bold;
     font-size: 11px;
     color: #555555;
+    line-height: 120% !important;
 }
 
 .feature-popup .x-window-bc {

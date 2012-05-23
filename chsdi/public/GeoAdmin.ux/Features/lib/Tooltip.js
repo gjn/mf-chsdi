@@ -47,6 +47,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     
     hoverControl: null,
 
+    firstAnimate: true,
+
     initialize: function(options) {
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
@@ -89,7 +91,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             }
             if (typeof layer !== 'undefined' && typeof this.popup !== 'undefined') {
                 if (layer.type === 'removelayer' || layer.type === 'changelayer' && this.popup) {
-                        this.popup.hide(null);
+                        this.popup.hide();
                 }
             }
         }
@@ -143,7 +145,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     deactivate: function() {
         if (this.popup) {
-            this.popup.hide(null);
+            this.popup.hide();
         }
         return OpenLayers.Control.GetFeature.prototype.deactivate.apply(this, arguments);
     },
@@ -158,16 +160,19 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         var item, height;
         if (evt.features.length > 1) {
             item = this.onSelectMulti(evt);
+            this.singleResult = false;
         } else {
             item = this.onSelectSingle(evt);
+            this.singleResult = true;
+            var centerObject = evt.features[0].bounds.getCenterLonLat();
+            var singlePosition = this.map.getPixelFromLonLat(centerObject);             
         }
-         
         this.popup = new Ext.Window({
-           animateTarget: this.map.getViewport(),
+           animateTarget: this.firstAnimate && !this.singleResult ? this.map.getViewport() : null,
            cls: 'feature-popup',
            layout: 'fit',
-           width: 300,
-           height: 283,
+           width: this.singleResult ? 430 : 300,
+           height: this.singleResult ? 200 : 283,
            footer: true,
            footerCfg: {
               tag: 'span',
@@ -201,7 +206,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
            items: [item],
            listeners : {
                hide: function(popup) {
-                   this.layer.removeAllFeatures();
+                   if (this.layer.features.length > 0) { this.layer.removeAllFeatures() }
                    if (this.hoverControl) {
                         this.map.removeControl(this.hoverControl);
                         this.hoverControl.deactivate();
@@ -213,18 +218,23 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                         this.clickControl = null;
                    }
                },
-               show: function() {
-                   var mapViewPort = this.map.getViewport();
-                   if (mapViewPort) { 
-                       var OffsetTop = 0;
-                       if (mapViewPort.offsetParent) {
-                           do {
-                               OffsetTop += mapViewPort.offsetTop;
-                           } while (mapViewPort = mapViewPort.offsetParent);
+               show: function(evt) {
+                   if (this.singleResult) { 
+                       this.popup.setPosition(singlePosition.x, singlePosition.y - 100);
+                   } else {
+                       this.firstAnimate = false;
+                       var mapViewPort = this.map.getViewport();
+                       if (mapViewPort) { 
+                           var OffsetTop = 0;
+                           if (mapViewPort.offsetParent) {
+                               do {
+                                   OffsetTop += mapViewPort.offsetTop;
+                               } while (mapViewPort = mapViewPort.offsetParent);
+                           }
+                           this.popup.setPosition(40, OffsetTop + 54);
                        }
-                       this.popup.doLayout();
-                       this.popup.setPosition(40, OffsetTop + 54);
-                   }             
+                  }
+                  this.popup.doLayout();            
                },
                scope: this
            }
@@ -386,7 +396,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             this.layer.removeFeatures([evt.feature]);
         } 
         if (this.popup) {
-            this.popup.hide(null);
+            this.popup.hide();
         }
     }
 });
