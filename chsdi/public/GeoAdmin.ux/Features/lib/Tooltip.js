@@ -136,8 +136,11 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     activate: function() {
         if (!this.layer) {
-            this.layer = new OpenLayers.Layer.Vector("", {
-               displayInLayerSwitcher: false});
+            this.layer = this.map.vector;
+            if (typeof this.layer === 'undefined') {
+                this.layer = new OpenLayers.Layer.Vector("fake drawing", {
+                   displayInLayerSwitcher: false});
+            }
             this.map.addLayer(this.layer);
         }
         return OpenLayers.Control.GetFeature.prototype.activate.apply(this, arguments);
