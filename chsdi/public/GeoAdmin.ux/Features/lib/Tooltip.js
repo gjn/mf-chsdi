@@ -89,9 +89,11 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     }
                 }
             }
+            
             if (typeof layer !== 'undefined' && typeof this.popup !== 'undefined') {
-                if (layer.type === 'removelayer' || layer.type === 'changelayer' && this.popup) {
-                        this.popup.hide();
+                if (layer.type === 'removelayer' || layer.type === 'changelayer' 
+                   && this.popup && typeof layer.layer.aggregate === 'undefined') {
+                    this.popup.hide();
                 }
             }
         }
@@ -335,7 +337,7 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             sm: new GeoExt.ux.FeatureSelectionModel({
                 singleSelect: true,
                 hoverControl: this.hoverControl,
-                selectControl: this.hoverControl, // required for getLayers to work
+                selectControl: this.clickControl, // required for getLayers to work
                 controlMode: 'hover',
                 // override handleMouseDown to prevent row click selection
                 handleMouseDown: Ext.emptyFn,
