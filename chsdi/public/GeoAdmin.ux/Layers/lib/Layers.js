@@ -1140,7 +1140,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: true
             },
             "ch.bafu.ren-extensive_landwirtschaftsgebiete": {
                 name: OpenLayers.i18n("ch.bafu.ren-extensive_landwirtschaftsgebiete"),

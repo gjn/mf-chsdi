@@ -655,6 +655,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.swissprtr"
                     },
                     {
+                        layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
+                    },
+                    {
                         layerId: "ch.ensi.zonenplan-notfallschutz-kernanlagen"
                     }
                 ]
