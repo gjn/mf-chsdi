@@ -48,27 +48,19 @@ class LayersController(BaseController):
             self.get_model(self.GetCapThemes)
             self.get_model(self.ServiceMetadata)
         else: 
-            if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch' or self.mode == 'preview':
+            if self.mode == 'all' or self.mode == 'legend' or self.mode =='bodsearch' or self.mode == 'preview':
                 if c.lang == 'fr' or c.lang == 'it':
                     self.BodLayer = BodLayerFr
                 else:
                     self.BodLayer = BodLayerDe
                 self.get_model(self.BodLayer)
-            if self.mode == 'all'  or self.mode =='legend' or self.mode == 'preview':
-                self.LayerLegend = LayerLegend
-                self.get_model(self.LayerLegend)
     
     def index(self, id=None):
 
 ##----------------------------------------Session----------------------------------------##     	
     	  # Define which view are taken into account
-        if self.mode == 'all' or self.mode == 'legend' or self.mode == 'preview':
-            # TODO: create a mapper in order to fuse both models 
-            query = Session.query(self.BodLayer, self.LayerLegend)
-            query = query.filter(self.BodLayer.bod_layer_id == self.LayerLegend.bod_layer_id)
-        # Query only view_bod_layer_suche_{lang}
-        elif self.mode == 'bodsearch':
-            query = Session.query(self.BodLayer)  
+        if self.mode == 'all' or self.mode == 'legend' or self.mode == 'preview' or self.mode == 'bodsearch':
+            query = Session.query(self.BodLayer)
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
             query = Session.query(self.GetCap).filter(self.GetCap.sswmts == False)
@@ -162,14 +154,13 @@ class LayersController(BaseController):
             c.full = True
             c.hilight = ''
             for r in query:
-                c.layer = r[0]
-                c.legend = r[1]
+                c.layer = r
+                c.legend = r
             # If value in bod.dataset.datenstand == bgdi_created, return the most recent date of the data table
             if c.legend.datenstand == 'bgdi_created':
                 for model in models_from_name(c.layer.bod_layer_id):
                     modified = Session.query(func.max(model.bgdi_created))
-                c.legend.datenstand = modified.first()[0].strftime("%Y%m%d")
-                
+                c.legend.datenstand = modified.first()[0].strftime("%Y%m%d")                
         elif self.mode == 'wmts':
             c.layers = query
             c.themes = Session.query(self.GetCapThemes).all() 
@@ -182,12 +173,9 @@ class LayersController(BaseController):
             else:
                 c.onlineressource = "http://api.geo.admin.ch/wmts"
         elif self.mode == 'all':
-            result = [q.layers_results(properties) for r in query for q in r]
-            results = []
-            for i in range(0, len(result), 2):
-                results.append(dict(result[i].items() + result[i+1].items()))
+            results = [q.layers_results(properties) for q in query]
         elif self.mode == 'preview':
-            result = [q.layers_results(['bod_layer_id']) for r in query for q in r]
+            result = [q.layers_results(['bod_layer_id']) for q in query]
         
 ##----------------------------------------Results----------------------------------------##
         cb_name = request.params.get('cb')
@@ -234,7 +222,7 @@ class LayersController(BaseController):
             for object in result:
                 for id,bodLayerId in object.iteritems():
                     if bodLayerId not in c.layers:
-                       c.layers.append(bodLayerId)
+                        c.layers.append(bodLayerId)
             response.headers['Content-Type'] = mimetypes.types_map['.html']
             response.charset = 'utf8'
             map_width = request.params.get('width',250)
