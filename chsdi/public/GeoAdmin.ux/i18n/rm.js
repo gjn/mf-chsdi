@@ -388,6 +388,7 @@ OpenLayers.Lang.rm= {
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=rm',
 	'ch.bav':'BAV',
 	'ch.bav.kataster-belasteter-standorte-oev':'Debits vegls- traffic public',
+	'ch.bav.laerm-emissionplan_eisenbahn_2015':'Emissionsplan Eisenbahn  2015',
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=de',
 	'ch.bazl':'UFAC',
 	'ch.bazl.luftfahrtkarten-icao':'Charta da aviatica ICAO',

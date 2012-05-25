@@ -392,6 +392,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=en',
 	'ch.bav':'FOT',
 	'ch.bav.kataster-belasteter-standorte-oev':'Deposition region- pub. trans.',
+	'ch.bav.laerm-emissionplan_eisenbahn_2015':'Emission plan 2015',
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=en',
 	'ch.bazl':'FOCA',
 	'ch.bazl.luftfahrtkarten-icao':'Aeronautical Chart ICAO',

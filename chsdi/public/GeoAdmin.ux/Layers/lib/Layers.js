@@ -1650,6 +1650,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.bav.laerm-emissionplan_eisenbahn_2015": {
+                name: OpenLayers.i18n("ch.bav.laerm-emissionplan_eisenbahn_2015"),
+                layertype: 'wmts',
+                timestamp: '20101108',
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bav",
+                queryable: false
+            },
             // *********************************
             // *********************************
             // *********************************

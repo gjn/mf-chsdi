@@ -392,6 +392,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=fr',
 	'ch.bav':'OFT',
 	'ch.bav.kataster-belasteter-standorte-oev':'Sites pollués transports publics',
+	'ch.bav.laerm-emissionplan_eisenbahn_2015':'Plan des émissions en 2015',
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=fr',
 	'ch.bazl':'OFAC',
 	'ch.bazl.luftfahrtkarten-icao':'Carte aéronautique OACI',
