@@ -5,9 +5,6 @@
  * @include OpenLayers/Format/GeoJSON.js
  *
  * @include GeoExt/widgets/Popup.js
- * @include GeoExt/data/FeatureStore.js
- * @requires FeatureSelectionModel/lib/GeoExt.ux/GeoExt.ux.FeatureSelectionModel.js
- * @include FeatureSelectionModel/lib/GeoExt.ux/Ext.ux.grid.GridMouseEvents.js
  */
 
 /** api: (define)
@@ -39,17 +36,18 @@
   */
 GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
+    baseUrl: '',
+
     layer: null,
 
     url: null,
 
     params: {},
-    
-    hoverControl: null,
-
-    firstAnimate: true,
 
     initialize: function(options) {
+
+        this.baseUrl = options.baseUrl ? options.baseUrl : '';
+
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
         if (GeoAdmin.webServicesUrl) {
@@ -77,7 +75,6 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         if (this.map) {
             this.queryable = [];
             var layers = this.map.getLayersBy("geoadmin_queryable", true);
-            
             for (var i = 0, len = layers.length; i < len; i++) {
                 if (layers[i].visibility) {
                     if (!layers[i].opacity) {
@@ -89,34 +86,26 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     }
                 }
             }
-            
-            if (typeof layer !== 'undefined' && typeof this.popup !== 'undefined') {
-                if (layer.type === 'removelayer' || layer.type === 'changelayer' 
-                   && this.popup && typeof layer.layer.aggregate === 'undefined') {
-                    this.popup.hide();
-                }
-            }
         }
     },
 
     request: function(bounds, options) {
-        if (this.box && !this.handlers.box.keyMask) {
-            // we deactivate the control to get back to standard navigation
-            this.deactivate();
-        }
-
-        this.popup && this.popup.removeAll();
         if (this.queryable.length > 0) {
-            if (typeof this.popup !== 'undefined') {this.popup.hide();}
             // Set the cursor to "wait" to tell the user we're working.
             OpenLayers.Element.addClass(this.map.viewPortDiv, "olCursorWait");
 
             this.lastClick = bounds.getCenterLonLat();
+
+            var bigBounds = bounds.clone();
+            bigBounds = bigBounds.scale(3);
+
             this.params = {
                 lang: OpenLayers.Lang.getCode(),
                 layers: this.queryable.join(","),
-                bbox: bounds.toBBOX(),
-                scale: Math.round(this.map.getScale()/100) * 100
+                bbox: bigBounds.toBBOX(),
+                scale: Math.round(this.map.getScale()/100) * 100,
+                extent: this.map.getExtent().toString(),
+                baseUrl: this.baseUrl
             };
 
             Ext.ux.JSONP.request(this.url, {
@@ -138,11 +127,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     activate: function() {
         if (!this.layer) {
-            this.layer = this.map.vector;
-            if (typeof this.layer === 'undefined') {
-                this.layer = new OpenLayers.Layer.Vector("fake drawing", {
-                   displayInLayerSwitcher: false});
-            }
+            this.layer = new OpenLayers.Layer.Vector("", {
+               displayInLayerSwitcher: false});
             this.map.addLayer(this.layer);
         }
         return OpenLayers.Control.GetFeature.prototype.activate.apply(this, arguments);
@@ -150,7 +136,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     deactivate: function() {
         if (this.popup) {
-            this.popup.hide();
+            this.popup.destroy();
+            this.popup = null;
         }
         return OpenLayers.Control.GetFeature.prototype.deactivate.apply(this, arguments);
     },
@@ -162,238 +149,56 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     onSelect: function(evt) {
         this.layer.addFeatures(evt.features);
-        var item, height;
-        if (evt.features.length > 1) {
-            item = this.onSelectMulti(evt);
-            this.singleResult = false;
-        } else {
-            item = this.onSelectSingle(evt);
-            this.singleResult = true;
-            var centerObject = evt.features[0].bounds.getCenterLonLat();
-            var singlePosition = this.map.getPixelFromLonLat(centerObject);             
-        }
-        this.popup = new Ext.Window({
-           animateTarget: this.firstAnimate && !this.singleResult ? this.map.getViewport() : null,
-           cls: 'feature-popup',
-           layout: 'fit',
-           width: this.singleResult ? 430 : 300,
-           height: this.singleResult ? 200 : 283,
-           footer: true,
-           footerCfg: {
-              tag: 'span',
-              cls: 'window-feature-footer',
-              html: Ext.isMac ? 
-                    OpenLayers.i18n('QueryByRect.MetaKeyUsageNotice') :
-                    OpenLayers.i18n('QueryByRect.CtrlKeyUsageNotice')
-                },
-           title: OpenLayers.i18n('Feature tooltip'),
-           toolTemplate: new Ext.XTemplate(
-               '<tpl if="id==\'print\'">',
-               '<div class="x-window-printtool">'+OpenLayers.i18n('print')+'</div>',
-               '</tpl>',
-               '<tpl if="id!=\'print\'">',
-               '<div class="x-tool x-tool-{id}">&#160;</div>',
-               '</tpl>'
-           ),
-           tools:[{
-               id: 'print',
-               scope: this,
-               handler: function(evt, toolEl, panel, tc) {
-                   delete this.params['cb'];
-                   this.params['print'] = true;
-                   var url = Ext.urlAppend(this.url, Ext.urlEncode(this.params));
-                   window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
-                                        'directories=no, status=no, menubar=no, scrollbars=yes,' +
-                                        'copyhistory=no, resizable=no');
-               }
-           }],
-           closeAction: 'hide',
-           items: [item],
-           listeners : {
-               hide: function(popup) {
-                   if (this.layer.features.length > 0) { this.layer.removeAllFeatures(); }
-                   if (this.hoverControl) {
-                        this.map.removeControl(this.hoverControl);
-                        this.hoverControl.deactivate();
-                        this.hoverControl = null;
-                   }
-                   if (this.clickControl) {
-                        this.map.removeControl(this.clickControl);
-                        this.clickControl.deactivate();
-                        this.clickControl = null;
-                   }
-               },
-               show: function(evt) {
-                   if (this.singleResult) { 
-                       this.popup.setPosition(singlePosition.x, singlePosition.y - 100);
-                   } else {
-                       this.firstAnimate = false;
-                       var mapViewPort = this.map.getViewport();
-                       if (mapViewPort) { 
-                           var OffsetTop = 0;
-                           if (mapViewPort.offsetParent) {
-                               do {
-                                   OffsetTop += mapViewPort.offsetTop;
-                               } while (mapViewPort = mapViewPort.offsetParent);
-                           }
-                           this.popup.setPosition(40, OffsetTop + 54);
-                       }
-                  }
-                  this.popup.doLayout();            
-               },
-               scope: this
-           }
-        });
-        this.popup.show();
-    },
 
-    onSelectSingle: function(evt) {
-        return new Ext.BoxComponent({
-            html: evt.features[0].attributes.html 
-        });
-    },
+        this.popup = new GeoExt.Popup({
+            cls: 'feature-popup',
+            width: 450,
+            title: OpenLayers.i18n('Feature tooltip'),
+            toolTemplate: new Ext.XTemplate(
+                '<tpl if="id==\'print\'">',
+                '<div class="x-window-printtool">'+OpenLayers.i18n('print')+'</div>',
+                '</tpl>',
+                '<tpl if="id!=\'print\'">',
+                '<div class="x-tool x-tool-{id}">&#160;</div>',
+                '</tpl>'
+            ),
+            tools:[{
+                id: 'print',
+                scope: this,
+                handler: function(evt, toolEl, panel, tc) {
+                    delete this.params['cb'];
+                    this.params['print'] = true;
+                    var url = Ext.urlAppend(this.url, Ext.urlEncode(this.params));
+                    window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
+                                         'directories=no, status=no, menubar=no, scrollbars=yes,' +
+                                         'copyhistory=no, resizable=no');
 
-    onSelectMulti: function(evt) {
-        if (!this.hoverControl) {
-            // control for hovering
-            this.hoverControl = new OpenLayers.Control.SelectFeature(this.layer, {
-                hover: true,
-                highlightOnly: true,
-                renderIntent: 'hover',
-                allowSelection: false
-            });
-            this.map.addControl(this.hoverControl);
-        }
-        
-        this.hoverControl.activate();
-        
-        if (!this.clickControl) {
-            //control for the click (zoom in)
-            this.clickControl = new OpenLayers.Control.SelectFeature(this.layer, {
-                click: true,
-                onSelect: function(evt) {
-                    this.map.zoomToExtent(evt.bounds);
-                    this.unselect(evt);
-                    if (this.map.zoom === 13) {
-                        this.map.zoomTo(12);
-                    }
                 }
-            });
-            this.map.addControl(this.clickControl);
-        }
-        
-        this.clickControl.activate();
-        
-        // translate the layer_id
-        Ext.each(evt.features, function(feature) {
-            feature.attributes.layer_id = OpenLayers.i18n(feature.attributes.layer_id);
-        });
-
-        var FeatureGroupingStore = Ext.extend(
-            Ext.data.GroupingStore,
-            GeoExt.data.FeatureStoreMixin()
-        );
-
-        var store = new FeatureGroupingStore({
-            features: evt.features,
-            groupField: 'layer_id',
-            fields: [
-                'layer_id',
-                'preview',
-                'html'
-            ],
-            sortInfo: {
-                field: 'preview',
-                direction: 'ASC'
-            }
-        });
-
-        var grid = new Ext.grid.GridPanel({
-            map: this.map,
-            border: false,
-            store: store,
-            columns: [{
-                dataIndex: 'layer_id',
-                hidden: true
-            }, {
-                dataIndex: 'preview'
             }],
-            view: new Ext.grid.GroupingView({
-                forceFit: true,
-                showGroupName: false,
-                groupTextTpl: [
-                    '{text}',
-                    ' (' ,
-                    '{[values.rs.length >= 50 ? "',
-                    '<a href=\'javascript:void(0);\'',
-                    ' qtip=\'', OpenLayers.i18n('Max features notice'), '\'',
-                    '> &gt;= </a>" : ""]}',
-                    '{[values.rs.length]}',
-                    ' {[values.rs.length > 1 ? "Items" : "Item"]})'
-                ].join('')
-            }),
-            hideHeaders: true,
-            disableSelection: true,
-            sm: new GeoExt.ux.FeatureSelectionModel({
-                singleSelect: true,
-                hoverControl: this.hoverControl,
-                selectControl: this.clickControl, // required for getLayers to work
-                controlMode: 'hover',
-                // override handleMouseDown to prevent row click selection
-                handleMouseDown: Ext.emptyFn,
-                listeners: {
-                    rowselect: function(sm, index, r) {
-                        var el = Ext.get(grid.getView().getRow(index));
-                        if (el) { 
-                            // defer show so that it happens after the scroll to element
-                            el.tooltip.show.defer(5, el.tooltip, [el]);
-                        }
-                    },
-                    rowdeselect: function(sm, index, r) {
-                        var el = Ext.get(grid.getView().getRow(index));
-                        if (el) { 
-                            // also defer hide to be sure that we don't hide
-                            // tooltip before it has been show
-                            el.tooltip.hide.defer(5, el.tooltip);
-                        }
-                    }
+            autoScroll: true,
+            panIn: true,
+            anchored: false,
+            draggable: true,
+            map: this.map,
+            layer: this.layer,
+            location: this.lastClick,
+            unpinnable: false,
+            listeners : {
+                close: function(popup) {
+                    popup.layer.removeAllFeatures();
                 }
-            }),
-            plugins: [
-                Ext.ux.grid.GridMouseEvents
-            ],
-            listeners: { 
-                viewready: function(grid) {
-                    var view = grid.getView();
-                    var index = 0;
-                    grid.store.each(function(record) {
-                        var el = view.getRow(index);
-                        var html = record.get('html');
-                        var tooltip = new Ext.ToolTip({
-                            width: 430, // required by the service (the html contains a table with fixed size)
-                            showDelay: 5,
-                            hideDelay: 5,
-                            target: el, 
-                            html: html,
-                            anchor: 'left'
-                        }); 
-                        index++;
-                        // keep a reference to the tooltip to show it
-                        // programmatically later
-                        Ext.get(el).tooltip = tooltip;
-
-                    }); 
-                },
-                rowclick: function(grid, index) {
-                    var bounds = grid.store.data.items[index].data.feature.bounds;
-                    this.map.zoomToExtent(bounds);
-                    if (this.map.zoom === 13) {
-                        this.map.zoomTo(12);
-                    }
-                }   
             }
         });
-        return grid;
+
+        var items = [];
+        for (var i = 0, len = evt.features.length; i < len; i++) {
+            items.push({
+                xtype: "box",
+                html: evt.features[i].attributes.html
+            });
+        }
+        this.popup.add(items);
+        this.popup.show();
     },
 
     onUnselect: function(evt) {
@@ -401,31 +206,8 @@ GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             this.layer.removeFeatures([evt.feature]);
         } 
         if (this.popup) {
-            this.popup.hide();
+            this.popup.destroy();
+            this.popup = null;
         }
     }
-});
-
-// The following code allows user to keep the tooltip shown when hovering it
-Ext.sequence(Ext.ToolTip.prototype, 'afterRender', function () {
-    this.mon(this.el, 'mouseover', function () {
-        this.clearTimer('hide');
-        this.clearTimer('dismiss');
-    }, this);
-    this.mon(this.el, 'mouseout', function () {
-        this.clearTimer('show');
-        if (this.autoHide !== false) {
-            this.delayHide();
-        }
-    }, this);
-});
-
-// The following code fixes a bug in ExtJS with which the 'ext:anchor'
-// attribute is not taken into account
-Ext.sequence(Ext.QuickTip.prototype, 'onTargetOver', function (e) {
-    var t = e.getTarget();
-    if(!t || t.nodeType !== 1 || t == document || t == document.body){
-        return;
-    }
-    this.origAnchor = this.anchor;
 });

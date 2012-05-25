@@ -9,6 +9,7 @@
 }
 
 .tooltip_header, .tooltip_footer {
+  margin: 1px;
   padding: 4px;
   font-family: tahoma,arial;
   font-size:11px;
@@ -30,29 +31,7 @@
     display: none;
 }
 
-.feature-popup .x-window-mc {
-    background-color: white;  
-}
-
-.feature-popup .x-grid3-row-over {
-    /* same style as .x-grid3-row-selected */
-    background-color: #CCCCCC !important;
-    background-image: none;
-    border-color: #ACACAC;
-}
-
-.feature-popup .window-feature-footer {
-    font-family: tahoma,arial;
-    font-weight: bold;
-    font-size: 11px;
-    color: #555555;
-    line-height: 120% !important;
-}
-
-.feature-popup .x-window-bc {
-    height: 32px;
-}
-
-.feature-popup div.x-grid-group-title {
-    background-color: #F0F0F0;
+.feature-popup .x-window-body {
+  height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
+  max-height: 280px !important;
 }
