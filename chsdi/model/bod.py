@@ -74,63 +74,36 @@ class BodLayer(object):
         else:
             return False
 
-class BodLayerDe(Base, BodLayer):
-    __tablename__ = 'view_bod_layer_info_de'
-    __table_args__ = ({'autoload': False})
+class LayerLegend(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_legende'
+    __table_args__ = ({'autoload': True})
     bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
-    projekte = Column('projekte', Text)
-    bezeichnung = Column('bezeichnung', Text)
-    kurzbezeichnung = Column('kurzbezeichnung', Text)
-    abstract = Column('abstract', Text)
-    inspire_name = Column('inspire_name', Text)
-    inspire_abstract = Column('inspire_abstract', Text)
-    inspire_oberthema_name = Column('inspire_oberthema_name', Text)
-    inspire_oberthema_abstract = Column('inspire_oberthema_abstract', Text)
-    geobasisdatensatz_name = Column('geobasisdatensatz_name', Text)
-    datenherr = Column('datenherr', Text)
-    wms_kontakt_abkuerzung = Column('wms_kontakt_abkuerzung', Text)
-    wms_kontakt_name = Column('wms_kontakt_name', Text)
-    scale_limit = Column('scale_limit', Text)
-    geocat_uuid = Column('geocat_uuid', Text)
-    url = Column('url', Text)
-    url_download = Column('url_download', Text)
-    url_portale = Column('url_portale', Text)
-    wms_resource = Column('wms_resource', Text)
-    datenstand = Column('datenstand', Text)
-    dataset_query = Column('dataset_query', Text)
-    dataset_label = Column('dataset_label', Text)
-    fk_geobasisdaten_sammlung_bundesrecht = Column('fk_geobasisdaten_sammlung_bundesrecht', Text)
-    volltextsuche = Column('volltextsuche', Text)
-    staging = Column('staging', Text)
+
+class BodLayerDe(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_de'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
 
 class BodLayerFr(Base, BodLayer):
-    __tablename__ = 'view_bod_layer_info_fr'
-    __table_args__ = ({'autoload': False})
+    __tablename__ = 'view_bod_layer_suche_fr'
+    __table_args__ = ({'autoload': True})
     bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
-    projekte = Column('projekte', Text)
-    bezeichnung = Column('bezeichnung', Text)
-    kurzbezeichnung = Column('kurzbezeichnung', Text)
-    abstract = Column('abstract', Text)
-    inspire_name = Column('inspire_name', Text)
-    inspire_abstract = Column('inspire_abstract', Text)
-    inspire_oberthema_name = Column('inspire_oberthema_name', Text)
-    inspire_oberthema_abstract = Column('inspire_oberthema_abstract', Text)
-    geobasisdatensatz_name = Column('geobasisdatensatz_name', Text)
-    datenherr = Column('datenherr', Text)
-    wms_kontakt_abkuerzung = Column('wms_kontakt_abkuerzung', Text)
-    wms_kontakt_name = Column('wms_kontakt_name', Text)
-    scale_limit = Column('scale_limit', Text)
-    geocat_uuid = Column('geocat_uuid', Text)
-    url = Column('url', Text)
-    url_download = Column('url_download', Text)
-    url_portale = Column('url_portale', Text)
-    wms_resource = Column('wms_resource', Text)
-    datenstand = Column('datenstand', Text)
-    dataset_query = Column('dataset_query', Text)
-    dataset_label = Column('dataset_label', Text)
-    fk_geobasisdaten_sammlung_bundesrecht = Column('fk_geobasisdaten_sammlung_bundesrecht', Text)
-    volltextsuche = Column('volltextsuche', Text)
-    staging = Column('staging', Text)
+
+class BodLayerEn(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_en'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
+class BodLayerIt(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_it'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
+    
+class BodLayerRm(Base, BodLayer):
+    __tablename__ = 'view_bod_layer_suche_rm'
+    __table_args__ = ({'autoload': True})
+    bod_layer_id = Column('bod_layer_id', Text, primary_key=True)
     
 class GetCapFr(Base):
     __tablename__ = 'view_bod_wmts_getcapabilities_fr'
