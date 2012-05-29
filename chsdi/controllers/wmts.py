@@ -4,7 +4,7 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model.bod import LayerLegend, GetCapFr, GetCapDe, GetCapThemesFr, GetCapThemesDe,ServiceMetadataFr,ServiceMetadataDe
+from chsdi.model.bod import GetCapFr, GetCapDe, GetCapThemesFr, GetCapThemesDe,ServiceMetadataFr,ServiceMetadataDe
 from chsdi.model.meta import Session
 
 import mimetypes

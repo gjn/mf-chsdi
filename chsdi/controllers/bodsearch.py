@@ -9,7 +9,7 @@ from sqlalchemy import func
 from datetime import date
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model.bod import BodLayerDe, BodLayerFr, LayerLegend
+from chsdi.model.bod import BodLayerDe, BodLayerFr
 from chsdi.model import models_from_name
 from chsdi.model.vector import *
 from chsdi.model.meta import Session
