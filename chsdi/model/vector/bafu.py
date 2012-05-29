@@ -394,6 +394,15 @@ class trockenwiesenundweiden_anhang2(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', trockenwiesenundweiden_anhang2)
 
+class amphibien_anhang4(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'amphibien_anhang4'
+    __table_args__ = ({'schema': 'bundinv', 'autoload': True})
+    __template__ = 'tooltips/amphibien_anhang4.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.bundesinventare-amphibien_anhang4', amphibien_anhang4)
+
 class baugrundklassen(Base, Queryable):
     # view in a schema
     __tablename__ = 'baugrundklassen'
