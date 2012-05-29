@@ -627,6 +627,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.silvaprotect-sturz': "",
     'ch.bafu.silvaprotect-murgang': "",
     'ch.bafu.silvaprotect-hangmuren': "",
-    'ch.bafu.silvaprotect-uebersarung': "",
-    'ch.bav.laerm-emissionplan_eisenbahn_2015': ""
+    'ch.bafu.silvaprotect-uebersarung': ""
+    //'ch.bav.laerm-emissionplan_eisenbahn_2015': ""
 });
