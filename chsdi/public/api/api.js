@@ -511,22 +511,50 @@ GeoAdmin.API = OpenLayers.Class({
      *
      */
     createKmlLayer: function(kmlPath, showPopup) {
-         var kmlLayer;
+        var kmlLayer = new OpenLayers.Layer.Vector("KML", {
+            projection: this.map.projection,
+            strategies: [new OpenLayers.Strategy.Fixed()],
+            protocol: new OpenLayers.Protocol.HTTP({
+                url: kmlPath,
+                format: new OpenLayers.Format.KML({
+                    externalProjection: new OpenLayers.Projection("EPSG:4326"),
+                    internalProjection: this.map.projection,
+                    extractStyles: true,
+                    extractAttributes: true,
+                    kmlns: "http://www.opengis.net/kml/2.2"
+                })
+            })
+        });
+        this.map.addLayers([kmlLayer]);
+        if (showPopup) {
+            this.kmlSelectCtrl = new OpenLayers.Control.SelectFeature(kmlLayer);
 
-         function qualifyUrl(url) {
-             var img = document.createElement('img');
-             img.src = url; 
-             url = img.src; 
-             img.src = null; 
-             return url;
-         }
+            kmlLayer.events.on({
+                "featureselected": this._onFeatureSelect,
+                "featureunselected": this._onFeatureUnselect,
+                scope: this
+            });
 
-        if (this.map.addKmlLayer) {
-            kmlLayer = this.map.addKmlLayer(qualifyUrl(kmlPath), true, 1, showPopup);
-        };
-
+            this.map.addControl(this.kmlSelectCtrl);
+            this.kmlSelectCtrl.activate();
+        }
         return kmlLayer;
     },
+
+    _onFeatureSelect: function(event) {
+        var feature = event.feature;
+        var fpopup = this.showPopup({feature:feature,width:350,title: feature.attributes.name, html: feature.attributes.description || feature.attributes.html, panIn: false});
+        feature.fpopup = fpopup;
+    },
+
+    _onFeatureUnselect: function (event) {
+        var feature = event.feature;
+        if (feature.fpopup) {
+            feature.fpopup.destroy();
+            delete feature.fpopup;
+        }
+    },
+
 
     /**
      * Alias for backward compatibility
