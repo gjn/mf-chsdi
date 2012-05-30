@@ -348,19 +348,22 @@ Input parameters
 The following parameters are required:
 
 - lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
-- project (optinal): (default to all) name of the project in which you desire to look for properties (a comma creates a list of projects)
-- query (optinal): a query string for the full text search
-- properties (optinal): (default to all) properties you wich to return (a comma creates a list of properties)
-- layer (optinal): layer you want to return (a comma creates a list of layers)
+- project (optional): (default to all) name of the project in which you desire to look for properties (a comma creates a list of projects)
+- query (optional): a query string for the full text search
+- properties (optional): (default to all) properties you wich to return (a comma creates a list of properties)
+- layer (optional): layer you want to return (a comma creates a list of layers)
 - cb (optional): the name of the callback function
-- mode (optinal): (default to no mode) a mode is defined whenever a particular template is required
-                 - bodsearch: this mode requires the definition of query string, all the other parameters can be used
-                 - legend: returns the legend of a layer, only one layer id must be provided
-                 - wmts: retruns a GetCapabilities document which provides information about the service along with a description of the layers
-                 - preview: returns per default a preview of all the layers in separated and syncronized frames
-                     - width: define the width of the map previews
-                     - lon,lat: define the central point of the map
-                     - zoom: define the zoom level
+- mode (optional): (default to no mode) a mode is defined whenever a particular template is required. The following 4 modes are available:
+
+    - bodsearch: this mode requires the definition of query string, all the other parameters can be used
+    - legend: returns the legend of a layer, only one layer id must be provided
+    - wmts: returns a GetCapabilities document which provides information about the service along with a description of the layers
+    - preview: returns per default a preview of all the layers in separated and syncronized frames. In conjunction with this mode,
+      the following optional parameters are available:
+
+        - width (optional): define the width of the map previews
+        - lon,lat (optional): define the central point of the map
+        - zoom (optional): define the zoom level
 
 Examples:
 
