@@ -3,7 +3,6 @@
 <%def name="preview()">${c.feature.name or '-'}</%def>
 
 <%def name="table_body()">
-    <% c.stable_id = True %>
     <tr><td width="150">${_('name')}</td><td>${self.preview()}</td></tr>
     <tr><td width="150">${_('klasse')}</td>
       % if c.lang == 'de':

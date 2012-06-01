@@ -7,7 +7,6 @@
 <%def name="preview()">${c.feature.ortsbildname or '-'}</%def>
 
 <%def name="table_body()">
-    <% c.stable_id = True %>
     <tr><td width="150">${_('kanton')}</td>          <td>${c.feature.kanton or '-'}</td></tr>
     <tr><td width="150">${_('ortsbildname')}</td>         <td>${self.preview()}</td></tr>
     <tr><td width="150">${_('kategorie')}</td>          <td>${c.feature.vergleichsrastereinheit or '-'}</td></tr>
