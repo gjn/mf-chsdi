@@ -44,7 +44,7 @@ class AU(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/au.mako'
 
-    id = Column('au_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class BLN(Base, Queryable):
@@ -53,7 +53,7 @@ class BLN(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/bln.mako'
 
-    id = Column('bln_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class HM(Base, Queryable):
@@ -62,7 +62,7 @@ class HM(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/hm.mako'
 
-    id = Column('hm_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class JB(Base, Queryable):
@@ -80,7 +80,7 @@ class ML(Base, Queryable):
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/ml.mako'
 
-    id = Column('ml_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class WV(Base, Queryable):
@@ -230,7 +230,7 @@ class SB(Base, Queryable):
     __table_args__ = ({'schema': 'fauna', 'autoload': True})
     __template__ = 'tooltips/sb.mako'
 
-    id = Column('sb_id', Integer, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 class SWISSPRTR(Base, Queryable):

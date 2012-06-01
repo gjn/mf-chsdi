@@ -98,7 +98,7 @@ class AggloIsoStaedte(Base, Queryable):
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
     __template__ = 'tooltips/aggloisostaedte.mako'
 
-    id = Column('agglo00_no', Integer, primary_key=True)
+    id = Column('row_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.are.agglomerationen_isolierte_staedte-2000', AggloIsoStaedte)
