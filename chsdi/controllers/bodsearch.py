@@ -9,7 +9,7 @@ from sqlalchemy import func
 from datetime import date
 
 from chsdi.lib.base import BaseController, render
-from chsdi.model.bod import BodLayerDe, BodLayerFr, LayerLegend
+from chsdi.model import bod
 from chsdi.model import models_from_name
 from chsdi.model.vector import *
 from chsdi.model.meta import Session
@@ -22,8 +22,8 @@ class BodsearchController(BaseController):
 
     def __before__(self):
         super(BodsearchController, self).__before__()
-        if self.lang == 'fr' or self.lang == 'it':
-            self.BodLayer = BodLayerFr
+        if self.lang in ['de','fr','it','rm','en']:
+            self.BodLayer = getattr(bod, 'BodLayer' + self.lang.capitalize())
         else:
             self.BodLayer = BodLayerDe
         self.rawjson = request.params.get('format') == 'raw' or False
@@ -80,7 +80,7 @@ class BodsearchController(BaseController):
         if c.layer is None:
             abort(404)
 
-        c.legend = Session.query(LayerLegend).get(id)
+        c.legend = Session.query(bod.LayerLegend).get(id)
         if c.legend is None:
             abort(404)
 
