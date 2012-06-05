@@ -15,7 +15,7 @@ from chsdi.lib.base import BaseController, cacheable, validate_params, render
 
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
-from chsdi.model.bod import *
+from chsdi.model import bod, column_from_name
 from chsdi.model.vector import *
 
 log = logging.getLogger(__name__)
@@ -37,25 +37,25 @@ class LayersController(BaseController):
         
         if self.mode == 'wmts':
             if c.lang == 'fr' or c.lang == 'it':
-                self.GetCap = GetCapFr
-                self.GetCapThemes = GetCapThemesFr
-                self.ServiceMetadata = ServiceMetadataFr
+                self.GetCap = bod.GetCapFr
+                self.GetCapThemes = bod.GetCapThemesFr
+                self.ServiceMetadata = bod.ServiceMetadataFr
             else:
-                self.GetCap = GetCapDe
-                self.GetCapThemes = GetCapThemesDe
-                self.ServiceMetadata = ServiceMetadataDe
+                self.GetCap = bod.GetCapDe
+                self.GetCapThemes = bod.GetCapThemesDe
+                self.ServiceMetadata = bod.ServiceMetadataDe
             self.get_model(self.GetCap)
             self.get_model(self.GetCapThemes)
             self.get_model(self.ServiceMetadata)
         else: 
             if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch' or self.mode == 'preview':
-                if c.lang == 'fr' or c.lang == 'it':
-                    self.BodLayer = BodLayerFr
+                if self.lang in ['de','fr','it','rm','en']:
+                     self.BodLayer = getattr(bod, 'BodLayer' + self.lang.capitalize())
                 else:
-                    self.BodLayer = BodLayerDe
+                    self.BodLayer = bod.BodLayerDe
                 self.get_model(self.BodLayer)
             if self.mode == 'all'  or self.mode =='legend' or self.mode == 'preview':
-                self.LayerLegend = LayerLegend
+                self.LayerLegend = bod.LayerLegend
                 self.get_model(self.LayerLegend)
     
     def index(self, id=None):
