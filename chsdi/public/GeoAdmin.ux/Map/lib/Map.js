@@ -477,6 +477,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     addKmlLayer: function(url, visibility, opacity, showPopup) {
 
+        if (typeof showPopup === 'undefined')  var showPopup = true;
+
         OpenLayers.Format.KML.prototype.parseData = function(data, options) {
             if (typeof data == "string") {
                 data = OpenLayers.Format.XML.prototype.read.apply(this, [data]);
