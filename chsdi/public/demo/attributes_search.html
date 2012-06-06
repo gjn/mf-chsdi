@@ -1,0 +1,50 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+    .x-combo-list-item {
+        background-color: #dd0;
+    }
+
+
+</style>
+<head><script type="text/javascript">
+//Create a global api variable to simplify debugging
+var api;
+
+//init function is started when page onload event is triggered
+function init() {
+
+   //Create a toolbar placed above the map panel
+   var toolbar = new Ext.Toolbar({});
+
+   //Create an instance of the GeoAdmin API
+   api = new GeoAdmin.API({lang: 'fr'});
+
+   //Create a GeoExt map panel placed in the mymap div
+   api.createMapPanel({
+      renderTo: "mymap",
+      height: 500
+      //Add the toolbar in the map panel
+      ,tbar: toolbar
+   });
+
+   //Add a tool to search for Swissnames, Zip code, Cities and Cantons
+   var swissSearchCombo = api.createSwissSearchCombo({width: 250, attributesSearch: true});
+   toolbar.add(swissSearchCombo);
+   toolbar.doLayout();
+
+   //Add layer in the map
+   api.map.addLayerByName('ch.astra.ivs-nat');
+   api.map.addLayerByName('ch.swisstopo.fixpunkte-hoehe');
+
+   //Add a tooltip when the user clicks on a feature in the map
+   api.createTooltip({});
+
+   //Recenter the map and define a zoom level
+   api.map.setCenter(new OpenLayers.LonLat(615917.5,270555),5);
+}
+window.onload = init;
+</script></head>
+<body>
+  <div id="mymap" style="width:700px;height:500px;padding: 0 0 0 0"></div>
+  <script type="text/javascript" src="../loader.js"></script>
+</body>
