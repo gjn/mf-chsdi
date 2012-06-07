@@ -3,6 +3,7 @@ import simplejson
 import mimetypes
 
 from pylons import request, response, tmpl_context as c
+from pylons import config
 from pylons.controllers.util import abort
 from sqlalchemy import exc, or_, func
 from sqlalchemy.orm import relationship, mapper
@@ -60,11 +61,15 @@ class LayersController(BaseController):
 ##----------------------------------------Session----------------------------------------##     	
     	  # Define which view are taken into account
         if self.mode in ['all','legend','bodsearch','preview']:
-            query = Session.query(self.BodLayer)  
+            query = Session.query(self.BodLayer)
+            # Global variable defined in the config files
+            Geodata_staging  = config['geodata_staging'].split(',')
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
             query = Session.query(self.GetCap).filter(self.GetCap.sswmts == False)
             self.BodLayer = self.GetCap
+            # random variable so that no filter is applied 
+            Geodata_staging = ['geodata_staging']
         else:
             abort(400, 'The parameter provided for mode is not valid') 
             
@@ -117,7 +122,11 @@ class LayersController(BaseController):
         # Per default no query string are applied 
         query_string = request.params.get('query') 
 
-##----------------------------------------Filters----------------------------------------##         
+##----------------------------------------Filters----------------------------------------##    
+        # Filter by staging attribute
+        if 'test_integration' not in Geodata_staging:
+            query = query.filter(self.BodLayer.staging == 'prod')
+     
         # Filter by layer_id
         if layer_id[0] != 'all':
             list_layers = []
