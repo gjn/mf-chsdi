@@ -156,6 +156,20 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     strokeColor: "#FF8000",
                     strokeOpacity: 0.8,
                     strokeWidth: 3
+                }),
+                "hover": OpenLayers.Util.applyDefaults({
+                    pointRadius: "10",
+                    fillColor: 'red',
+                    fillOpacity: 1.0,
+                    strokeColor: 'black',   
+                    strokeOpacity: 1.0
+                }, OpenLayers.Feature.Vector.style.temporary),
+                "select": new OpenLayers.Style({
+                    pointRadius: "10",
+                    fillColor: 'red',
+                    fillOpacity: 1.0,
+                    strokeColor: 'black',   
+                    strokeOpacity: 1.0
                 })
             })
         });
