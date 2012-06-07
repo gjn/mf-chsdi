@@ -20,6 +20,8 @@ use = config:production.ini
 static_files = true
 set debug = true
 api_version = ${api-version}
+# Staging for geodata
+geodata_staging = ${vars:geodata_staging}
 
 # Logging configuration
 [loggers]
