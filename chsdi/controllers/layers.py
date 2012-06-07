@@ -48,26 +48,18 @@ class LayersController(BaseController):
             self.get_model(self.GetCapThemes)
             self.get_model(self.ServiceMetadata)
         else: 
-            if self.mode == 'all' or self.mode =='legend' or self.mode =='bodsearch' or self.mode == 'preview':
-                if self.lang in ['de','fr','it','rm','en']:
-                     self.BodLayer = getattr(bod, 'BodLayer' + self.lang.capitalize())
+            if self.mode in ['all','legend','bodsearch','preview']:
+                if c.lang in ['de','fr','it','rm','en']:
+                     self.BodLayer = getattr(bod, 'BodLayer' + c.lang.capitalize())
                 else:
                     self.BodLayer = bod.BodLayerDe
                 self.get_model(self.BodLayer)
-            if self.mode == 'all'  or self.mode =='legend' or self.mode == 'preview':
-                self.LayerLegend = bod.LayerLegend
-                self.get_model(self.LayerLegend)
     
     def index(self, id=None):
 
 ##----------------------------------------Session----------------------------------------##     	
     	  # Define which view are taken into account
-        if self.mode == 'all' or self.mode == 'legend' or self.mode == 'preview':
-            # TODO: create a mapper in order to fuse both models 
-            query = Session.query(self.BodLayer, self.LayerLegend)
-            query = query.filter(self.BodLayer.bod_layer_id == self.LayerLegend.bod_layer_id)
-        # Query only view_bod_layer_suche_{lang}
-        elif self.mode == 'bodsearch':
+        if self.mode in ['all','legend','bodsearch','preview']:
             query = Session.query(self.BodLayer)  
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
@@ -137,7 +129,7 @@ class LayersController(BaseController):
         if project[0] != 'all':
             list_projects = []
             for proj in project:
-                 list_projects.append(self.BodLayer.projekte.like('%%%s%%' % proj))
+                 list_projects.append(self.BodLayer.projekte.ilike('%%%s%%' % proj))
             query = query.filter(or_(*list_projects))
 
         # Filter by query string
@@ -162,8 +154,8 @@ class LayersController(BaseController):
             c.full = True
             c.hilight = ''
             for r in query:
-                c.layer = r[0]
-                c.legend = r[1]
+                c.layer = r
+                c.legend = r
             # If value in bod.dataset.datenstand == bgdi_created, return the most recent date of the data table
             if c.legend.datenstand == 'bgdi_created':
                 for model in models_from_name(c.layer.bod_layer_id):
@@ -182,12 +174,9 @@ class LayersController(BaseController):
             else:
                 c.onlineressource = "http://api.geo.admin.ch/wmts"
         elif self.mode == 'all':
-            result = [q.layers_results(properties) for r in query for q in r]
-            results = []
-            for i in range(0, len(result), 2):
-                results.append(dict(result[i].items() + result[i+1].items()))
+            results = [q.layers_results(properties) for q in query]
         elif self.mode == 'preview':
-            result = [q.layers_results(['bod_layer_id']) for r in query for q in r]
+            result = [q.layers_results(['bod_layer_id']) for q in query]
         
 ##----------------------------------------Results----------------------------------------##
         cb_name = request.params.get('cb')
