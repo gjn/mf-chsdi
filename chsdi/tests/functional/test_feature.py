@@ -286,3 +286,40 @@ class TestFeatureController(TestController):
         assert 'BE010' in resp
         assert 'Ext.ux.JSONP' in resp
 
+    def test_feature_by_id(self):
+        params = {
+                'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
+        }
+        resp = self.app.get('/feature/6644',
+                 params=params
+        )
+        results = simplejson.loads(resp.response.body)
+        assert '6644' in resp
+        assert 'coordinates' in resp
+        assert 'MultiPolygon' in resp
+        assert len(results['features']) == 1
+
+
+
+    def test_feature_by_id_with_cb(self):
+        params = {
+                'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                'cb': 'callback'
+        }
+        resp = self.app.get('/feature/6644',
+                 params=params
+        )
+        assert 6644 in resp
+        assert 'callback({' in resp
+    
+    def test_feature_by_id_no_geom(self):
+        params = {
+                'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                'no_geom': True
+        }
+        resp = self.app.get('/feature/6644',
+                 params=params
+        )
+        assert 6644 in resp
+        assert 'MultiPolygon' not in resp
+        assert 'coordinates' not in resp
