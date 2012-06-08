@@ -60,11 +60,6 @@
     margin-top: -3px;
 }
 
-.ext-ie .x-menu-floating {
-   top: 152px !important;
-
-}
-
 .x-btn-no-over .x-btn-tl, .x-btn-no-over .x-btn-tc, .x-btn-no-over .x-btn-tr,
 .x-btn-no-over .x-btn-ml, .x-btn-no-over .x-btn-mc, .x-btn-no-over .x-btn-mr,
 .x-btn-no-over .x-btn-bl, .x-btn-no-over .x-btn-bc, .x-btn-no-over .x-btn-br {
@@ -84,11 +79,21 @@
     background-color: #FFFFFF;
 }
 
-.x-menu-floating {
+.advanced-menu-noheader {
+   top: 26px !important;
+   border-top-width: 0px;
+}
+
+.ext-ie .advanced-menu-noheader {
+   top: 27px !important;
+}
+
+.advanced-menu {
    top: 151px !important;
    border-top-width: 0px;
 }
-.ext-ie .x-menu-floating {
+
+.ext-ie .advanced-menu {
    top: 152px !important;
 }
 

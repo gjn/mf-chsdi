@@ -25,10 +25,16 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
     /* Parameter used to define whether one wants the email function in the share buttons */
     mail: false,
 
+    noHeader: false,
+
     constructor : function(config) {
         Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
         Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms', 'redlining']});
+
+        if (OpenLayers.Util.getParameters().noHeader) {
+            this.noHeader = OpenLayers.Util.getParameters().noHeader;
+        }
 
         var permalink = new GeoAdmin.PermalinkPanel({'hidden': true, 'mail': this.mail});
         this.permalinkAction = new Ext.Button({
@@ -102,6 +108,12 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             }
         }
 
+        // Manage the header (if noHeader)
+        var menuClass = 'advanced-menu';
+        if (this.noHeader) {
+             menuClass = 'advanced-menu-noheader';
+        }
+
         return  new Ext.Button({
             tooltip: OpenLayers.i18n('AdvancedMenu.tooltip'),
             cls: 'x-btn-no-over',
@@ -110,7 +122,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             allowDepress: false,
             enableToggle: true,
             toggleGroup: 'tools',
-            menu: new Ext.menu.Menu({cls: 'advanced-menu', items: menu})
+            menu: new Ext.menu.Menu({cls: menuClass, items: menu})
         });
     },
     createPrintAction: function(options) {
