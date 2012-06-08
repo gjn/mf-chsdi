@@ -13,7 +13,7 @@ function qualifyURL(url){
 
 window.GeoAdmin.version="2609111920";
 window.GeoAdmin.OpenLayersImgPath="../../GeoAdmin.ux/Map/img/";
-window.GeoAdmin.webServicesUrl= "../../..";
+window.GeoAdmin.webServicesUrl= "../..";
 
 
 function init() {
