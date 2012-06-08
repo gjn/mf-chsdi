@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Aggregate Layer</title>
+
+
+</head>
+<body onload="init()">
+<script type="text/javascript">
+    var map, layer, layer1;
+    function init() {
+        OpenLayers.ImgPath = "http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/Map/img/";
+        api = new GeoAdmin.API();
+        map = api.createMap({div: "map", width: 500});
+
+        layer = new OpenLayers.Layer.WMS("Building", "http://wms.geo.admin.ch?", {
+            layers: 'ch.swisstopo.pixelkarte-pk25.metadata',
+            transparent:true
+        }, {
+            singleTile: true,
+            maxScale: 25001,
+            ratio: 1.1
+        });
+        layer1 = new OpenLayers.Layer.WMS("Building", "http://wms.geo.admin.ch?", {
+            layers: 'ch.bfs.gebaeude_wohnungs_register',
+            transparent: true
+        }, {
+            singleTile: true,
+            minScale: 25001,
+            ratio: 1.1
+        });
+
+        var aggregateLayer = new OpenLayers.Layer.Aggregate("MyAggregate", [layer, layer1]);
+
+        map.addLayer(aggregateLayer);
+    }
+</script>
+<div id="map" style="width:500px;height:340px;border:1px solid;padding: 0 0 0 0;margin:10px !important;"></div>
+   <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+</body>
+</html>
