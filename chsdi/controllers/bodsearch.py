@@ -80,7 +80,7 @@ class BodsearchController(BaseController):
         if c.layer is None:
             abort(404)
 
-        c.legend = Session.query(bod.LayerLegend).get(id)
+        c.legend = Session.query(self.BodLayer).get(id)
         if c.legend is None:
             abort(404)
 
