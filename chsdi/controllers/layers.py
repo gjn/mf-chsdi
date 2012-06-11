@@ -124,7 +124,7 @@ class LayersController(BaseController):
 
 ##----------------------------------------Filters----------------------------------------##    
         # Filter by staging attribute
-        if 'test_integration' not in Geodata_staging:
+        if 'test_integration' not in Geodata_staging and self.mode in ['all','legend','bodsearch','preview']:
             query = query.filter(self.BodLayer.staging == 'prod')
      
         # Filter by layer_id

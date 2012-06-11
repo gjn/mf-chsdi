@@ -129,11 +129,13 @@ class SwisssearchController(BaseController):
 
         if citynr is not None:
             query = query.filter(SwissSearch.gdenr == '' + citynr)
-        
+       
+        maxFeaturesGeocoding = MAX_FEATURES_GEOCODING
+ 
         if layers:
-           MAX_FEATURES_GEOCODING = 10
+           maxFeaturesGeocoding = MAX_FEATURES_GEOCODING - 10
 
-        query = query.order_by(ftsOrderBy).limit(MAX_FEATURES_GEOCODING)
+        query = query.order_by(ftsOrderBy).limit(maxFeaturesGeocoding)
 
         if layers:
             features = query_features(self.lang, layers, q)
