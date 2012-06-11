@@ -69,8 +69,8 @@ Layer Tree
 
 .. _tooltip:
 
-Tooltip
--------
+Tooltip (deprecated)
+--------------------
 
 .. raw:: html
 
@@ -94,13 +94,7 @@ Tooltip
          map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
          var tooltip = new GeoAdmin.Tooltip({
              baseUrl: 'http://map.geo.admin.ch',
-             autoActivate: true,
-             box: true,
-             handlerOptions: {
-                 box: {
-                     keyMask: Ext.isMac ? OpenLAyers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL
-                 }
-             }
+             autoActivate: true
          });
 
          map7.addControl(tooltip);
@@ -108,6 +102,90 @@ Tooltip
    </script>
    <body onload="init();">
       <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+    
+.. _extended_tooltip:
+
+ExtendedTooltip Single Click
+----------------------------
+
+.. raw:: html
+
+   <body>
+      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock7" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      var map8;
+      function init() {
+      // Without any further parameters, the function is similar to the tooltip above
+         map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
+         map8.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true});
+
+         map8.addControl(tooltip);
+      }
+   </script>
+   <body onload="init();">
+      <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+    
+.. _extended_tooltip_box:
+
+ExtendedTooltip With Box Selection
+-----------------------------------
+
+.. raw:: html
+
+   <body>
+      <div id="mymap9" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef9" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef9" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock7" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      var map9;
+      function init() {
+      // Press Ctrl + click to activate the selection by rectangle
+         map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
+         map9.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.ExtendedTooltip({
+             autoActivate: true,
+             box: true,
+             handlerOptions : { 'box': { keyMask: Ext.isMac ? OpenLayers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL } }       
+         });
+
+         map9.addControl(tooltip);
+      }
+   </script>
+   <body onload="init();">
+      <div id="mymap9" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -123,30 +201,30 @@ Catalog Tree
 .. raw:: html
 
    <body>
-      <div id="mycatalogtree8" style="float: left; margin:10px !important;width:280px;"></div>
-      <div id="mymap8" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mycatalogtree10" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap10" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
-    <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
-    <div id="codeBlock8" style="margin:10px !important;">
+    <a id="showRef10" href="javascript:showdiv('codeBlock8','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef10" href="javascript:hidediv('codeBlock8','showRef10','hideRef10')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock10" style="margin:10px !important;">
 
 .. code-block:: html
 
    <script type="text/javascript">
-      var map8;
+      var map10;
       function init() {
-         map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
-         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
+         map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
+         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree10", map: map10});
 
       }
    </script>
    <body onload="init();">
-      <div id="mycatalogtree8" style="float: left; margin:10px !important;width:280px;"></div>
-      <div id="mymap8" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mycatalogtree10" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap10" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -162,32 +240,32 @@ Mouse Position
 .. raw:: html
 
    <body>
-      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="mymouseposition9" style="margin:10px !important;;height:25px"></div>
+      <div id="mymap11" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition11" style="margin:10px !important;;height:25px"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef9" href="javascript:showdiv('codeBlock9','showRef9','hideRef9')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
-    <a id="hideRef9" href="javascript:hidediv('codeBlock9','showRef9','hideRef9')" style="margin:10px !important;">Hide code</a>
-    <div id="codeBlock9" style="margin:10px !important;">
+    <a id="showRef11" href="javascript:showdiv('codeBlock11','showRef11','hideRef11')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef11" href="javascript:hidediv('codeBlock11','showRef11','hideRef11')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock11" style="margin:10px !important;">
 
 .. code-block:: html
 
    <script type="text/javascript">
-      var map9;
+      var map11;
       function init() {
-         map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
-         var mouseposition9  = new GeoAdmin.MousePositionBox({
-                renderTo: "mymouseposition9",
-                map: map9
+         map11 = new GeoAdmin.Map("mymap11", {doZoomToMaxExtent: true});
+         var mouseposition11  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition11",
+                map: map11
          });
       }
    </script>
    <body onload="init();">
-      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="mymouseposition9" style="margin:10px !important;height:25px"></div>
+      <div id="mymap11" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition11" style="margin:10px !important;height:25px"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -203,32 +281,32 @@ Navigation History
 .. raw:: html
 
    <body>
-      <div id="mynavigationhistory10" style="margin:10px !important;"></div>
-      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mynavigationhistory12" style="margin:10px !important;"></div>
+      <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
 .. raw:: html
 
-    <a id="showRef10" href="javascript:showdiv('codeBlock10','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
-    <a id="hideRef10" href="javascript:hidediv('codeBlock10','showRef10','hideRef10')" style="margin:10px !important;">Hide code</a>
-    <div id="codeBlock10" style="margin:10px !important;">
+    <a id="showRef12" href="javascript:showdiv('codeBlock12','showRef12','hideRef12')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef12" href="javascript:hidediv('codeBlock12','showRef12','hideRef12')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock12" style="margin:10px !important;">
 
 .. code-block:: html
 
    <script type="text/javascript">
-      var map10;
+      var map12;
       function init() {
-         map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
-         var navigationhistory10  = new GeoAdmin.NavigationHistory({
-                renderTo: "mynavigationhistory10",
-                map: map10
+         map12 = new GeoAdmin.Map("mymap12", {doZoomToMaxExtent: true});
+         var navigationhistory12  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory12",
+                map: map12
          });
       }
    </script>
    <body onload="init();">
-      <div id="mynavigationhistory10" style="margin:10px !important;"></div>
-      <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mynavigationhistory12" style="margin:10px !important;"></div>
+      <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -247,9 +325,8 @@ Navigation History
 .. raw:: html
 
    <script type="text/javascript">
-      var map6, map7, map8, map9, map10;
+      var map6, map7, map8, map9, map10, map11, map12;
       function init() {
-
          OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "de");
          
          map6 = new GeoAdmin.Map("mymap6", {doZoomToMaxExtent: true});
@@ -278,18 +355,34 @@ Navigation History
          tooltip.activate();
 
          map8 = new GeoAdmin.Map("mymap8", {doZoomToMaxExtent: true});
-         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree8", map: map8});
-
+         map8.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true});
+         map8.addControl(tooltip);
+         
          map9 = new GeoAdmin.Map("mymap9", {doZoomToMaxExtent: true});
-         var mouseposition9  = new GeoAdmin.MousePositionBox({
-                renderTo: "mymouseposition9",
-                map: map9
+         map9.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
+         var tooltip = new GeoAdmin.ExtendedTooltip({
+             autoActivate: true,
+             box: true,
+             handlerOptions : { 'box': { keyMask: Ext.isMac ? OpenLayers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL } }       
          });
 
+         map9.addControl(tooltip);
+         
+         
          map10 = new GeoAdmin.Map("mymap10", {doZoomToMaxExtent: true});
-         var navigationhistory10  = new GeoAdmin.NavigationHistory({
-                renderTo: "mynavigationhistory10",
-                map: map10
+         var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree10", map: map10});
+
+         map11 = new GeoAdmin.Map("mymap11", {doZoomToMaxExtent: true});
+         var mouseposition11  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition11",
+                map: map11
+         });
+
+         map12 = new GeoAdmin.Map("mymap12", {doZoomToMaxExtent: true});
+         var navigationhistory12  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory12",
+                map: map12
          });
 
       }

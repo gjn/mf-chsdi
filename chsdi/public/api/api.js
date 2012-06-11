@@ -43,6 +43,7 @@
  * @include BaseLayerTool/lib/BaseLayerTool.js
  * @include Features/lib/Features.js
  * @include Features/lib/Tooltip.js
+ * @include Features/lib/ExtendedTooltip.js
  * @include LayerTree/lib/LayerTree.js
  * @include CatalogTree/lib/CatalogTree.js
  * @include TreePanel/lib/TreePanel.js
@@ -491,6 +492,26 @@ GeoAdmin.API = OpenLayers.Class({
      */
     createTooltip: function(options) {
         var tooltip = new GeoAdmin.Tooltip(options);
+        this.map.addControl(tooltip);
+        tooltip.activate();
+        return tooltip;
+    },
+    
+     /** api: method[createExtendedTooltip]
+     *
+     *  :param options: ``Object`` Options to pass to the ``GeoAdmin.ExtendedTooltip`` constructor.
+     *
+     *  :return: ``GeoAdmin.ExtendedTooltip`` An ``OpenLayers.Control.GetFeature`` displaying feature tooltip after user click in the map. If box: true and handlerOptions: { box: { keyMask: Ext.isMac ? OpenLAyers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL } } passed in options, the interactive selection by rectangle is activated on key Ctrl + click.
+     *
+     *  Example:
+     *
+     *  .. code-block:: javascript
+     *
+     *     api.createExtendedTooltip({});
+     *
+     */
+    createExtendedTooltip: function(options) {
+        var tooltip = new GeoAdmin.ExtendedTooltip(options);
         this.map.addControl(tooltip);
         tooltip.activate();
         return tooltip;

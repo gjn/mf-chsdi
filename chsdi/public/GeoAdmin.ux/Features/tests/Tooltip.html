@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext.ux/ux/FeatureSelectionModel/lib/GeoExt.ux/Ext.ux.grid.GridMouseEvents.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext.ux/ux/FeatureSelectionModel/lib/GeoExt.ux/GeoExt.ux.FeatureSelectionModel.js"></script>
+    <script type="text/javascript" src="../../GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Permalink/lib/PermalinkProvider.js"></script>
+    <script type="text/javascript" src="../../Permalink/lib/Permalink.js"></script>
+    <script type="text/javascript" src="../lib/ExtendedTooltip.js"></script>
+    <script type="text/javascript">
+
+        window.GeoAdmin.webServicesUrl = "../../..";
+
+        function test_constructor(t) {
+            t.plan(3);
+            var map = new GeoAdmin.Map();
+            var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true});
+            map.addControl(tooltip);
+            t.ok(tooltip instanceof GeoAdmin.ExtendedTooltip, "tooltip give an instance of GeoAdmin.ExtendedTooltip");
+            t.ok(tooltip instanceof OpenLayers.Control.GetFeature, "tooltip give an instance of OpenLayer.Control.GetFeature");
+            t.ok(tooltip.layer instanceof OpenLayers.Layer.Vector, "tooltip give an instance of OpenLayers.Layer.Vector"); 
+        }
+        
+        function test_request(t) {
+            t.plan(1);
+            var map = new GeoAdmin.Map();
+            var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true, box: true});
+            map.addControl(tooltip);
+            map.addLayerByName('ch.bafu.swissprtr');
+            map.controls[map.controls.length-1].request(new OpenLayers.Bounds(512950,139400,586400,181650));
+            var featureSelected = false;
+            map.controls[map.controls.length-1].events.on('featureselected', featureSelected = true)
+            t.delay_call(8, function() {
+                t.ok(featureSelected, "at least one feature has been selected");
+            });        
+        }
+        
+        function test_popup(t) {
+            t.plan(1);
+            var map = new GeoAdmin.Map();
+            var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true, box: true});
+            map.addControl(tooltip);
+            map.controls[map.controls.length-1].createPopup();
+            var popup = map.controls[map.controls.length-1].popup;
+            t.ok(popup instanceof Ext.Window, "popup window created");
+        }
+
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+</body>
+</html>

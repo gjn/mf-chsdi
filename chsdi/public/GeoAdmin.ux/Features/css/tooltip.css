@@ -9,7 +9,6 @@
 }
 
 .tooltip_header, .tooltip_footer {
-  margin: 1px;
   padding: 4px;
   font-family: tahoma,arial;
   font-size:11px;
@@ -34,4 +33,70 @@
 .feature-popup .x-window-body {
   height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
   max-height: 280px !important;
+}
+
+.box-popup .gx-popup-anc, .click-popup .gx-popup-anc{
+    display: none;
+}
+
+.box-popup .x-window-mc, .click-popup .x-window-mc{
+    background-color: white;  
+}
+
+.box-popup .x-grid3-row-over, .click-popup .x-grid3-row-over{
+    /* same style as .x-grid3-row-selected */
+    background-color: #CCCCCC !important;
+    background-image: none;
+    border-color: #ACACAC;
+}
+
+.box-popup .window-feature-footer, .click-popup .window-feature-footer{
+    font-family: tahoma,arial;
+    font-weight: bold;
+    font-size: 11px;
+    color: #555555;
+    line-height: 120% !important;
+}
+
+.click-popup .x-window-bc {
+    height: "auto";
+    max-height: 35px;
+}
+
+.box-popup div.x-grid-group-title, .click-popup div.x-grid-group-title{
+    background-color: #F0F0F0;
+}
+
+.click-popup .x-window-body {
+    height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
+    max-height: 280px !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box-popup .x-grid3-row-selected .x-grid3-cell-inner {
+    color: #FF0000;	
+}
+
+.box-popup .x-grid3-cell-inner {
+    float: left;
+    width: 75% !important;
+}
+
+.box-popup .zoom-button-out, .box-popup .zoom-button-over {
+    float: right !important;
+    border: none;
+}
+
+.box-popup .zoom-button-out {
+    background: url("../images/black-cross.png") no-repeat scroll center transparent !important;
+}
+
+.box-popup .zoom-button-over {
+    background: url("../images/red-cross.png") no-repeat scroll center transparent !important;
+}
+
+.box-popup .x-window-print-tool, .click-popup .x-window-print-tool {
+   float: right !important;
+   padding-right: 10px;
 }

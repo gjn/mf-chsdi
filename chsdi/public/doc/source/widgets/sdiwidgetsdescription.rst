@@ -117,12 +117,20 @@ SwissSearch is a combo box allowing the user to search within various data sourc
 
 See example: :ref:`swiss-search`
 
-Tooltip
-*******
+Tooltip (depracated)
+********************
 
 This widget allows the user to click in the map and get a tooltip of the selected features.
 
 See example: :ref:`tooltip`
+
+ExtendedTooltip
+***************
+
+This widget allows the user to click in the map and get a tooltip of the selected features. A selection by rectangle is also possible to allow the user to interact with the selected features.
+
+See examples: :ref:`extended_tooltip`
+See examples: :ref:`extended_tooltip_box`
 
 LegendWindow
 ************
