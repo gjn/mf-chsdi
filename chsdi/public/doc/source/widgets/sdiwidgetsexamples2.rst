@@ -347,7 +347,7 @@ Navigation History
              box: true,
              handlerOptions: {
                  box: {
-                     keyMask: Ext.isMac ? OpenLAyers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL
+                     keyMask: Ext.isMac ? OpenLayers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL
                  }
              }
          });
