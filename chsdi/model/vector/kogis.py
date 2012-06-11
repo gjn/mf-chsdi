@@ -42,8 +42,9 @@ class FIXPUNKTELAGE(Base, Queryable):
     __tablename__ = 'punkt_lage'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
+    __queryable_attributes__ = ['nbident','nummer','punktname','status','zugang','pointid']
 
-    id = Column('nummer', Text, primary_key=True)
+    id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 150000

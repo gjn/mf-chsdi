@@ -801,7 +801,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'aggregate',
                 subLayersName: ['ch.swisstopo.fixpunkte-lage_wmts','ch.swisstopo.fixpunkte-lage_wms'],
                 queryable: true,
-                type: "point"
+                type: "point",
+                searchable: true
             },
             "ch.swisstopo.fixpunkte-lage_wmts": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage_wmts"),
@@ -2003,7 +2004,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
