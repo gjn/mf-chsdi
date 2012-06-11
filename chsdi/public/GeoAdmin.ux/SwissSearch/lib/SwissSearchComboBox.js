@@ -38,6 +38,15 @@
  *  :return:  ``GeoAdmin.SwissSearchComboBox``
  *
  *  Create a swiss search combo box
+ *  The swiss search combo searches within various data sets:
+ *   - cities
+ *   - swissnames
+ *   - districts
+ *   - cantons
+ *   - postalcodes
+ *   - address (only for *.admin.ch domains)
+ *   - parcel (if Cadastral Web Map layer is visible)
+ *  Some layers are searchable. In this case, the swiss search combo will search within the visible layers.
  */
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
@@ -51,18 +60,19 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      *
      */
     stateId: "swisssearch",
-
     /** private: property[stateEvents]
      *  ``Array(String)`` Array of state events.
      */
     stateEvents: ["beforequery", "select", "change"],
+
     stateful: true,
-    /** config
-     */
+
     url: null,
 
-    defaultZoom: 5,
-
+    /** api: config[attributesSearch]
+     *  ``Boolean``
+     *  Defines if swisssearch also search within visible layer. Default: false
+     */
     attributesSearch: false,
 
     // default Ext.form.ComboBox config
@@ -76,7 +86,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         render: function() {
             this.el.set(
                 {'ext:qtip':OpenLayers.i18n('searchQuicktip'),
-                'ext:qwidth':400}
+                    'ext:qwidth':400}
             );
         }
     },
@@ -116,9 +126,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             fields: ['label', 'service', 'bbox', 'objectorig', 'Y', 'X', 'name']
         });
         this.tpl = new Ext.XTemplate(
-                '<tpl for="."><div class="x-combo-list-item {service}">',
-                '{label}',
-                '</div></tpl>').compile();
+            '<tpl for="."><div class="x-combo-list-item {service}">',
+            '{label}',
+            '</div></tpl>').compile();
 
         GeoAdmin.SwissSearchComboBox.superclass.initComponent.call(this);
 
@@ -137,21 +147,21 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     onBeforeQuery: function(queryEvent) {
-        // FIXME: check if this.map is valid
-        if (this.attributesSearch) {
+        if (this.map && this.attributesSearch) {
             var layers = [];
             for (var l in this.map.layers) {
-                var layer = this.map.layers[l].layer;
-                if (layer) layers.push(layer);
+                var layer = this.map.layers[l];
+                var  name = layer.layer || layer.layername;
+                if (name && layer.visibility && layer.geoadmin_searchable) layers.push(name);
             }
-           this.store.baseParams.layers = layers.join(',');
+            this.store.baseParams.layers = layers.join(',');
         }
         var testRecenter = this.testRecenter(queryEvent.query);
 
         // Search parcel only if the parcel layer is visible
         this.store.baseParams.services = 'cities,swissnames,districts,cantons,postalcodes,address';
         if (this.map) {
-           for (var l in this.map.layers) {
+            for (var l in this.map.layers) {
                 var layer = this.map.layers[l].layer;
                 if (layer == 'ch.kantone.cadastralwebmap-farbe' || layer == 'ch.kantone.hintergrund-farbe') {
                     this.store.baseParams.services = 'cities,swissnames,districts,cantons,postalcodes,address,parcel';
@@ -164,7 +174,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
         return testRecenter;
     },
-    
+
     testRecenter: function(query, onlyTest) {
         var match = query.match(this.coordRegExp);
 
@@ -198,13 +208,13 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                     this.map.vector.removeFeatures(this.map.vector.features);
                 }
                 if (!onlyTest) {
-                   var cross = this.createRedCross(this.map.getCenter());
-                   this.map.vector.addFeatures([cross]);
-                   this.setValue(query);
-                   this.fireEvent("change", this, "", "");
+                    var cross = this.createRedCross(this.map.getCenter());
+                    this.map.vector.addFeatures([cross]);
+                    this.setValue(query);
+                    this.fireEvent("change", this, "", "");
                 } else {
-                   alert(OpenLayers.i18n("Use Y,X with zoom instead of swisssearch in the permalink when you want to recenter the map, something like:")+" ?Y="+position.lon+"&X="+position.lat);
-		}
+                    alert(OpenLayers.i18n("Use Y,X with zoom instead of swisssearch in the permalink when you want to recenter the map, something like:") + " ?Y=" + position.lon + "&X=" + position.lat);
+                }
                 return false;
             }
         }
@@ -235,23 +245,23 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             if (record.data.service == 'address' || record.data.service === 'swissnames') {
                 var cross = this.createRedCross(extent.getCenterLonLat());
                 this.map.vector.addFeatures([cross]);
-            } 
+            }
         }
     },
 
     createRedCross: function(PointCoordinates) {
         var size = 20 * this.map.getResolution() / this.map.getResolutionForZoom(8);
-        var offset = size /2;
+        var offset = size / 2;
         var wkt = "MULTILINESTRING(" +
-            "(" + (PointCoordinates.lon - offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon - offset - size) + " " + PointCoordinates.lat + ")," + 
-            "(" + (PointCoordinates.lon + offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon + offset + size) + " " + PointCoordinates.lat + ")," + 
-            "(" + PointCoordinates.lon  + " " + (PointCoordinates.lat - offset - size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat - offset) + ")," + 
-            "(" + PointCoordinates.lon  + " " + (PointCoordinates.lat + offset + size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat + offset) + ")" + 
-            
-        ")";
+            "(" + (PointCoordinates.lon - offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon - offset - size) + " " + PointCoordinates.lat + ")," +
+            "(" + (PointCoordinates.lon + offset) + " " + PointCoordinates.lat + "," + (PointCoordinates.lon + offset + size) + " " + PointCoordinates.lat + ")," +
+            "(" + PointCoordinates.lon + " " + (PointCoordinates.lat - offset - size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat - offset) + ")," +
+            "(" + PointCoordinates.lon + " " + (PointCoordinates.lat + offset + size) + "," + PointCoordinates.lon + " " + (PointCoordinates.lat + offset) + ")" +
+
+            ")";
         var geom = OpenLayers.Geometry.fromWKT(wkt);
-        var cross = new OpenLayers.Feature.Vector( geom, {}, {strokeColor: 'red', strokeWidth: 2.0, strokeOpacity: 1, strokeDashstyle: 'solid', strokeLinecap: 'round'});
-  
+        var cross = new OpenLayers.Feature.Vector(geom, {}, {strokeColor: 'red', strokeWidth: 2.0, strokeOpacity: 1, strokeDashstyle: 'solid', strokeLinecap: 'round'});
+
         return cross;
     },
 
@@ -261,59 +271,59 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      *  Apply the state to the combobox.
      */
     applyState: function(state) {
-       this.setValue(state.swisssearch);
-       this.fireEvent("change", this, "", "");
-       if (state.use_swisssearch && this.testRecenter(state.swisssearch, true)) {
-           this.store.load({params: {query: this.value},callback: this.permalinkCallback ,scope: this}); 
-       }
+        this.setValue(state.swisssearch);
+        this.fireEvent("change", this, "", "");
+        if (state.use_swisssearch && this.testRecenter(state.swisssearch, true)) {
+            this.store.load({params: {query: this.value},callback: this.permalinkCallback ,scope: this});
+        }
     },
 
     permalinkCallback: function(r, options, success) {
-       if (success) {
-          if (r.length == 0) {
-             this.clearValue();
-          }
-          if (r.length == 1) {
-             this.setValue(r[0].data.label.replace(/<[\/]?[^>]*>/g, ''));
-             this.fireEvent("change", this, "", "");
-             this.recordSelected(null, r[0], null);    
-	  } 
-          if (r.length > 1) {
-             var grid = new Ext.grid.GridPanel({
-                store: this.store,
-                hideHeaders: true,
-                colModel: new Ext.grid.ColumnModel({
-                   columns: [
-                      {id: 'label', header: OpenLayers.i18n('Name'), sortable: true, dataIndex: 'label'}
-                   ]
-                }),
-                sm: new Ext.grid.RowSelectionModel({
-                   singleSelect:true,
-                   listeners: {
-                      rowselect: function(smObj, rowIndex, r) {
-                         this.map.vector.removeAllFeatures();
-                         this.recordSelected(null, r, null);
-                         this.setValue(r.data.label.replace(/<[\/]?[^>]*>/g, ''));
-                         this.fireEvent("change", this, "", "");
-                         this.selectWindow.hide();
-                      },
-                      scope: this
-                   }
-                }),
-                viewConfig: {forceFit: true}
-             });
-             this.selectWindow = new Ext.Window({
-                width: 400,
-                height: 300,
-                autoScroll: true,
-                modal: true,
-                layout: 'fit',
-                title: OpenLayers.i18n("select one location for") +  " " + this.value,
-                items: [grid]
-             });
-             this.selectWindow.show();
-          }
-       }
+        if (success) {
+            if (r.length == 0) {
+                this.clearValue();
+            }
+            if (r.length == 1) {
+                this.setValue(r[0].data.label.replace(/<[\/]?[^>]*>/g, ''));
+                this.fireEvent("change", this, "", "");
+                this.recordSelected(null, r[0], null);
+            }
+            if (r.length > 1) {
+                var grid = new Ext.grid.GridPanel({
+                    store: this.store,
+                    hideHeaders: true,
+                    colModel: new Ext.grid.ColumnModel({
+                        columns: [
+                            {id: 'label', header: OpenLayers.i18n('Name'), sortable: true, dataIndex: 'label'}
+                        ]
+                    }),
+                    sm: new Ext.grid.RowSelectionModel({
+                        singleSelect:true,
+                        listeners: {
+                            rowselect: function(smObj, rowIndex, r) {
+                                this.map.vector.removeAllFeatures();
+                                this.recordSelected(null, r, null);
+                                this.setValue(r.data.label.replace(/<[\/]?[^>]*>/g, ''));
+                                this.fireEvent("change", this, "", "");
+                                this.selectWindow.hide();
+                            },
+                            scope: this
+                        }
+                    }),
+                    viewConfig: {forceFit: true}
+                });
+                this.selectWindow = new Ext.Window({
+                    width: 400,
+                    height: 300,
+                    autoScroll: true,
+                    modal: true,
+                    layout: 'fit',
+                    title: OpenLayers.i18n("select one location for") + " " + this.value,
+                    items: [grid]
+                });
+                this.selectWindow.show();
+            }
+        }
     },
 
     /** private: method[getState]
@@ -322,8 +332,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      *  Returns the state of the swisssearch combo.
      */
     getState: function() {
-      //return {swisssearch: this.value};
-    } 
+        //return {swisssearch: this.value};
+    }
 });
 
 /** api: xtype = ga_swisssearchcombo */

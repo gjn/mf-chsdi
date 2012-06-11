@@ -16,7 +16,7 @@ from mapfish.decorators import MapFishEncoder, _jsonify
 from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
-from chsdi.controllers.feature import get_features_by_attributes
+from chsdi.controllers.feature import query_features
 from paste.deploy.converters import asbool
 from pylons.i18n import set_lang
 
@@ -50,8 +50,6 @@ class SwisssearchController(BaseController):
         if len(self.services) < 1:
             abort(400, "parameter 'services' is invalid. Available services are: '%s'" % "','".join(available_services.split(',')))
 
- 
-
     @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def index(self):
@@ -60,13 +58,18 @@ class SwisssearchController(BaseController):
         if q is None:
             if egid is None:
                 abort(400, "missing 'query' or 'egid' parameter")
-        layers = request.params.get('layers')
-        if layers is not None:
-            layers = layers.split(',')
 
+        # layers are used t for the advanced search
+        layers = request.params.get('layers')
+
+        if layers is not None and len(layers) > 0:
+            layers = layers.split(',')
+        else:
+            layers = None
 
         citynr = request.params.get('citynr')
         features = []
+        allfeatures = []
         onlyOneTerm = False
 
         if egid is not None:
@@ -84,7 +87,6 @@ class SwisssearchController(BaseController):
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
             query = Session.query(SwissSearch).filter(ftsFilter)
-
 
             # Try to optimize search if initial search doesn't return something. It results in an additional query
             # Remove all numbers with more than 3 characters (in order to solve the postcode issue)
@@ -127,14 +129,20 @@ class SwisssearchController(BaseController):
 
         if citynr is not None:
             query = query.filter(SwissSearch.gdenr == '' + citynr)
+        
+        if layers:
+           MAX_FEATURES_GEOCODING = 10
 
         query = query.order_by(ftsOrderBy).limit(MAX_FEATURES_GEOCODING)
 
         if layers:
-            features = get_features_by_attributes(layers, q)
+            features = query_features(self.lang, layers, q)
 
         if self.rawjson:
-            #features = []
+            for feature in features:
+               allfeatures.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
+                                       geometry=feature.geometry if not self.no_geom else None,
+                                       properties=feature.attributes))
             for feature in query.all():
                properties = {}
                feature.compute_attribute()
@@ -142,14 +150,16 @@ class SwisssearchController(BaseController):
                #Remove unneeded properties
                del properties['search_name']
                del properties['the_geom_real']
-               features.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
+               allfeatures.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
                                        geometry=feature.geometry if not self.no_geom else None, 
                                        properties=properties))
 
-            return FeatureCollection(features)
+            return FeatureCollection(allfeatures)
         else:
-            features += query.all()
-            return {'results': [f.json(rawjson=False, nogeom=self.no_geom) for f in features]}
+            # Put in the good order...
+            allfeatures = query.all()
+            allfeatures += features
+            return {'results': [f.json(rawjson=False, nogeom=self.no_geom) for f in allfeatures]}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
     def reversegeocoding(self):

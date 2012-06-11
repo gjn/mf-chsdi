@@ -51,6 +51,7 @@ The following parameters are required:
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
 - services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services except 'parcel'
+- layers (optional): Comma separated list of layer technical names.
 
 The service returns a maximum of 20 results.
 
@@ -72,6 +73,7 @@ Examples:
 - Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
 - Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
 - Search for addresses without the geometry: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
+- Search for a feature within a layer: `http://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a>`_
 
 Note: In French, search for "leopold robert", not only for "robert"
 

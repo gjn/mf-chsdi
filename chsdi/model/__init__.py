@@ -94,8 +94,11 @@ class Queryable(object):
         self.attributes = attributes
 
     def json(self, rawjson=False, nogeom=False):
-        o = {'service': self.layer_id, 'rank': 0, 'id': self.id, 'label': self.attributes['html'] if 'html' in self.attributes.keys() else None,
-             'bbox': self.bbox if not nogeom else None, 'objectorig': self.attributes['found_col'], 'name': self.attributes['found_value']}
+        o = {'service': 'attributes', 'id': self.id, 'label': self.attributes['html'] if 'html' in self.attributes.keys() else None,
+             'bbox': self.bbox if not nogeom else None}
+        if rawjson:
+            del o['label']
+            del o['bbox']
         return o
 
     @property

@@ -12,7 +12,7 @@
       <script type="text/javascript" src="../lib/SwissSearchComboBox.js"></script>
       <script type="text/javascript">
         function test_ctor(t) {
-            t.plan(6);
+            t.plan(7);
 
             // test
 
@@ -29,6 +29,8 @@
                  "ctor creates an XTemplate");
             t.ok(c.hasListener("select"),
                  "ctor registers a listener on \"select\"");
+            t.ok(!c.attributesSearch,
+                 "attribute search is per default not activated");
         }
 
         function test_query(t) {
@@ -49,6 +51,7 @@
             t.eq(log.lang, OpenLayers.Lang.getCode(), "lang param is correct");
             t.eq(log.query, query , "query param is correct");
         }
+
         function test_testRecenter(t) {
            t.plan(1);
            var map = new GeoAdmin.Map();

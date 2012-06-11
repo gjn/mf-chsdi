@@ -2,7 +2,6 @@ import logging
 import simplejson
 from operator import itemgetter
 
-
 from pylons import request, response, tmpl_context as c
 from pylons.controllers.util import abort
 from pylons.i18n import set_lang, ugettext as _
@@ -39,6 +38,7 @@ def validator_bbox():
         return False
     return True
 
+
 def validator_ids():
     """ Validator for the "ids" parameter. For use with
     the validate_params action decorator."""
@@ -48,15 +48,17 @@ def validator_ids():
     c.ids = ids.split(',')
     return True
 
+
 def validator_layers():
     """ Validator for the "layers" parameter. For use with
     the validate_params action decorator."""
-    layers = request.params.get('layers') or \
-              request.params.get('layer')
+    layers = request.params.get('layers') or\
+             request.params.get('layer')
     if layers is None:
         return False
     c.layers = layers.split(',')
     return True
+
 
 def validator_scale():
     """ Validator for the "scale" parameter. For use with
@@ -70,10 +72,10 @@ def validator_scale():
     c.scale = scale
     return True
 
+
 def get_features(layer, ids):
     features = []
     for model in models_from_name(layer):
-    #FIXME: features.append(Session.query(model).filter(model.id.in_(ids)).all())
         for fid in ids:
             if len(features) < MAX_FEATURES:
                 try:
@@ -86,41 +88,44 @@ def get_features(layer, ids):
                 break
     return features
 
-def get_features_by_attributes(layers, query):
+
+def query_features(lang, layers, query):
     features = []
-    max_features_pro_layer = int(MAX_FEATURES / len(layers))
+    max_features_pro_layer = int(10 / len(layers))
     terms = query.split()
     terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
-       
- 
+    if lang == 'fr' or lang == 'it':
+       bodsearch = BodLayerFr
+    else:
+       bodsearch = BodLayerDe
+
+    c.baseUrl = ''
+    c.lang = lang
+
     for layer in layers:
+        bodlayer = Session.query(bodsearch).get(layer)
         for model in models_from_name(layer):
             if hasattr(model, '__queryable_attributes__'):
-                ftsFilter = 'to_tsvector(' + ' || \' \' || '.join(["coalesce(%s::text,'') " %s for s in model.__queryable_attributes__]) + ") @@ to_tsquery('simple','%s')" % terms1 
+                ftsFilter = 'to_tsvector(\'english\',' + ' || \' \' || '.join(["coalesce(%s::text,'') " % s for s in
+                                                                   model.__queryable_attributes__]) + ") @@ to_tsquery('english','%s')" % terms1
+
                 for feature in Session.query(model).filter(ftsFilter).limit(max_features_pro_layer).all():
-                    found = ''
                     feature.compute_attribute()
-                    for key in feature.__queryable_attributes__:
-                        if (hasattr(feature, key)):
-                                value = feature.attributes[key]
-                                if unicode(value).find(query) > -1:
-                                    feature.attributes['found_col'] =  key
-                                    feature.attributes['found_value'] = unicode(value).strip()
-                                    break
+                    feature.compute_template(layer, bodlayer)
+
                     layername = _(layer)
-                    html = '<span class="attributes"><b>%s</b> - %s</span>' % (layername[0:15]+'...' if len(layername) > 15 else layername, 
-                            feature.attributes['found_value'])
+                    html = '<b>%s </b><br>%s' % (layername[0:35]+'...' if len(layername) > 35 else layername,
+                       feature.preview)
                     feature.attributes['html'] = html
                     feature.layer_id = layer
                     features.append(feature)
-    return features         
+    return features
 
 
 class FeatureController(BaseController):
-
     def __before__(self):
         super(FeatureController, self).__before__()
-        if self.lang == 'fr' or self.lang =='it':
+        if self.lang == 'fr' or self.lang == 'it':
             self.bodsearch = BodLayerFr
         else:
             self.bodsearch = BodLayerDe
@@ -141,7 +146,7 @@ class FeatureController(BaseController):
 
         features = []
         urlContent = request.url.split("?")
-        id = urlContent[0].split("/")[len(urlContent[0].split("/"))-1]
+        id = urlContent[0].split("/")[len(urlContent[0].split("/")) - 1]
 
         for model in models_from_name(layer):
             if len(features) < MAX_FEATURES:
@@ -150,8 +155,8 @@ class FeatureController(BaseController):
                     feature.compute_attribute()
                     if (self.no_geom):
                         features.append(Feature(id=feature.id,
-                                            bbox=feature.geometry.bounds,
-                                            properties=feature.attributes))
+                                                bbox=feature.geometry.bounds,
+                                                properties=feature.attributes))
                     else:
                         features.append(feature)
             else:
@@ -179,15 +184,17 @@ class FeatureController(BaseController):
                 abort(400, "Parameter 'extent' is invalid. Use extent=656430,254350,657930,25585 for instance.")
         else:
             resolution = 1 / ((1 / (c.scale > 0 or 1000.0)) * 39.3701 * 72)
-            meters = 300 * resolution 
+            meters = 300 * resolution
             cx, cy = c.bbox[0:2]
-            extent =(cx-meters, cy-meters, cx+meters, cy+meters)
-        c.extent = Polygon(((extent[0], extent[1]), (extent[0], extent[3]),
-                            (extent[2], extent[3]), (extent[2], extent[1]),
-                            (extent[0], extent[1])))
+            extent = (cx - meters, cy - meters, cx + meters, cy + meters)
 
-        c.baseUrl =  request.params.get('baseUrl')  or ''
+        c.extent = Polygon(((extent[0], extent[1]), (extent[0], extent[3]),
+                                (extent[2], extent[3]), (extent[2], extent[1]),
+                                (extent[0], extent[1])))
+
+        c.baseUrl = request.params.get('baseUrl')  or ''
         features = []
+
         for layer_name in c.layers:
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
@@ -200,16 +207,17 @@ class FeatureController(BaseController):
                         feature.compute_template(layer_name, bodlayer)
                         if self.rawjson:
                             feature.compute_attribute()
-                            properties =  feature.attributes
+                            properties = feature.attributes
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
                         properties['preview'] = feature.preview
                         if self.no_geom or layer_name == 'ch.kantone.cadastralwebmap-farbe':
                             features.append(Feature(id=feature.id,
-                                            bbox=feature.geometry.bounds,
-                                            properties=properties))
+                                                    bbox=feature.geometry.bounds,
+                                                    properties=properties))
                         else:
                             features.append(feature)
+
         if 'print' in request.params:
             c.features = features
             return render('/tooltips/_print.mako')
@@ -222,28 +230,6 @@ class FeatureController(BaseController):
             else:
                 response.headers['Content-Type'] = 'application/json'
                 return output
-    @cacheable
-    @_jsonify(cb="cb", cls=MapFishEncoder)
-    @validate_params(validator_layers)
-    def attributes(self):
-        if c.layers is None:
-            abort(400, "Parameter 'layers' is missing")
-        q = request.params.get('query', None)
-        if q is None:
-            abort(400, "Parameter 'query' is missing")
-
-        features = get_features_by_attributes(c.layers, q)
-       
-                           
-        if self.rawjson:
-            return FeatureCollection([Feature(id=feature.id,  bbox=feature.bbox if not self.no_geom else None, 
-                    geometry=feature.geometry if not self.no_geom else None, properties=feature.attributes) for feature in features])
-        else:
-            results = [f.json(rawjson=False, nogeom=self.no_geom) for f in features] 
-            return {'results': sorted(results, key=itemgetter('rank'))}
-
-
-
 
     @cacheable
     @_jsonify(cb="cb")
@@ -252,7 +238,7 @@ class FeatureController(BaseController):
     # if a list of layers was provided the first layer in the
     # list will be taken
         layer = c.layers[0]
-        bboxes =  [feature.geometry.bounds for feature in get_features(layer, c.ids)]
+        bboxes = [feature.geometry.bounds for feature in get_features(layer, c.ids)]
         if  bboxes:
             right = max([bbox[0] for bbox in bboxes])
             left = min([bbox[1] for bbox in bboxes])

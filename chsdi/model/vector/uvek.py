@@ -17,6 +17,7 @@ class ZAEHLSTELLEN(Base, Queryable):
     __template__ = 'tooltips/verkehrszaehlstellen.mako'
     id = Column('nr', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
+    __queryable_attributes__ = ['nr','zaehlstellen_bezeichnung']
 
 register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', ZAEHLSTELLEN)
 register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', ZAEHLSTELLEN)

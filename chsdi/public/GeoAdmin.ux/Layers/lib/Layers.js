@@ -454,6 +454,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: config.opacity ? config.opacity : 1.0,
                 singleTile: true,
                 geoadmin_queryable: config.queryable,
+                geoadmin_searchable: config.searchable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
                 maxScale: config.maxScale,
@@ -479,6 +480,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 attribution: config.datenherr,
                 opacity: config.opacity ? config.opacity : 1.0,
                 geoadmin_queryable: config.queryable,
+                geoadmin_searchable: config.searchable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type
             }, options);
@@ -510,6 +512,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: config.opacity ? config.opacity : 1.0,
                 displayInLayerSwitcher: !config.isBgLayer,
                 geoadmin_queryable: config.queryable,
+                geoadmin_searchable: config.searchable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
                 layerType: config.type,
                 maxScale: config.maxScale,
@@ -828,7 +831,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'aggregate',
                 subLayersName: ['ch.swisstopo.fixpunkte-hoehe_wmts','ch.swisstopo.fixpunkte-hoehe_wms'],
                 queryable: true,
-                type: "point"
+                type: "point",
+                searchable: true
             },
             "ch.swisstopo.fixpunkte-hoehe_wmts": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe_wmts"),
@@ -1989,7 +1993,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.astra.ivs-reg_loc": {
                 name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
@@ -2017,7 +2022,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet": {
                 name: OpenLayers.i18n("ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"),
@@ -2026,7 +2032,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.bfe.energieforschung": {
                 name: OpenLayers.i18n("ch.bfe.energieforschung"),
