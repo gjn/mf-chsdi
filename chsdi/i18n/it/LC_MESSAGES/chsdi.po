@@ -774,7 +774,7 @@ msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour"
 
 msgid "ch.swisstopo.hiks-siegfried"
-msgstr "Carta Siegfrien"
+msgstr "Carta Siegfried"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Veduta aerea"

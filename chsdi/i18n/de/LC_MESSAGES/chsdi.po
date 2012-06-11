@@ -1578,10 +1578,10 @@ msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Sperrentyp"
+msgstr "Sperentyp"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Sperrentyp"
+msgstr "Sperentyp"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
 msgstr "Detaillierte Beschreibung"
