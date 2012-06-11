@@ -295,6 +295,7 @@ OpenLayers.Lang.rm= {
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'La dissoluziun da Voss monitur è pli pitschna che 1024x768 pixels. map.geo.admin.ch n\'è betg optimà per dissoluziuns dal monitur pitschnas.',
 	'Your track must have a common file format (gpx; kml; kmz).':'Faus format da datoteca  (gpx; kml; kmz)',
 	'Your track must not exceed the maximum size of 4MB.':'Datoteca memia grond! Max. 4 MB.',
+	'Zoom to object':'Vesair il objects',
 	'Zoom to the max extent':'Vesair tut la Svizra',
 	'about that layer':'Davart da data teschernida',
 	'abstract':'Zusammenfassung',

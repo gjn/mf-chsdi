@@ -299,6 +299,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Your screen resolution is smaller than 1024x768 pixels. map.geo.admin.ch is not optmized for small screen resolution.':'Votre résolution d\'écran est inférieure à 1024x768 pixels. map.geo.admin.ch n\'est pas optimisé pour de petites résolutions d\'écrans.',
 	'Your track must have a common file format (gpx; kml; kmz).':'Format pas valide. Formats acceptés: gpx, kml et kmz',
 	'Your track must not exceed the maximum size of 4MB.':'Fichier trop grand. Max 4 MB',
+	'Zoom to object':'Voir  l\'objet',
 	'Zoom to the max extent':'Voir toute la Suisse',
 	'about that layer':'Informations à propos de ce jeu de données',
 	'abstract':'Résumé',
