@@ -39,14 +39,17 @@
  *
  *  Create a swiss search combo box
  *  The swiss search combo searches within various data sets:
- *   - cities
- *   - swissnames
- *   - districts
- *   - cantons
- *   - postalcodes
- *   - address (only for *.admin.ch domains)
- *   - parcel (if Cadastral Web Map layer is visible)
+ *
+ *     * cities
+ *     * swissnames
+ *     * districts
+ *     * cantons
+ *     * postalcodes
+ *     * address (only for admin.ch domains)
+ *     * parcel (if Cadastral Web Map layer is visible)
+ *
  *  Some layers are searchable. In this case, the swiss search combo will search within the visible layers.
+ *
  */
 GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
