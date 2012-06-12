@@ -61,6 +61,7 @@
 .click-popup .x-window-bc {
     height: "auto";
     max-height: 35px;
+    padding-bottom: 5px;
 }
 
 .box-popup div.x-grid-group-title, .click-popup div.x-grid-group-title{
