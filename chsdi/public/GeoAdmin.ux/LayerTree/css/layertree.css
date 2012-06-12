@@ -176,3 +176,7 @@
 .geoadmin-layertree .x-toolbar .x-btn-over .x-btn-bc{
 	background-position: 500px 500px;
 }
+
+div.x-tree-node-leaf a.x-tree-node-anchor span {
+    margin-left: 0px !important;
+}
