@@ -102,7 +102,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     swisssearch_state.use_swisssearch = true;
                     swisssearch_state.swisssearch = params.swisssearch;
                 } else if (k !== 'lang' && k !== 'noHeader' &&
-                           k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices') {
+                           k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices' && k !== 'mobile') {
                     // probably a layer to recenter on
                     map_state.layers.push({
                         layername: k,
