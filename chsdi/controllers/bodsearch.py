@@ -2,6 +2,7 @@ import logging
 import simplejson
 
 from pylons import request, response, tmpl_context as c
+from pylons import config
 from pylons.controllers.util import abort
 
 from mapfish.decorators import _jsonify
@@ -27,6 +28,7 @@ class BodsearchController(BaseController):
         else:
             self.BodLayer = BodLayerDe
         self.rawjson = request.params.get('format') == 'raw' or False
+        self.Geodata_staging  = config['geodata_staging'].split(',')
 
     @_jsonify(cb='cb')
     def search(self):
@@ -34,7 +36,12 @@ class BodsearchController(BaseController):
         if q is None:
             abort(400, "missing 'query' parameter")
         p = request.params.get('project') or 'mf-geoadmin2'
+        # Filter by staging attribute
+
         query = Session.query(self.BodLayer).order_by(self.BodLayer.kurzbezeichnung).order_by(self.BodLayer.bezeichnung).order_by(self.BodLayer.geobasisdatensatz_name)
+        
+        if 'test_integration' not in self.Geodata_staging:
+            query = query.filter(self.BodLayer.staging == 'prod')
 
         query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p + '(,|\s|$)'))
 

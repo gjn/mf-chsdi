@@ -49,9 +49,15 @@ class BodLayer(object):
                 results[col.name] = getattr(self,col.name)
             return results
         else:
+            
+            if self.bezeichnung is not None:
+                label = self.bezeichnung.strip()
+            else:
+                label = ''
+            
             return {
                 'id': self.bod_layer_id,
-                'label': self.bezeichnung.strip(),
+                'label': label,
                 'datenherr': self.datenherr,
                 'content': render('/bod-details.mako')
             }     
