@@ -49,7 +49,7 @@ class LayersController(BaseController):
             self.get_model(self.GetCapThemes)
             self.get_model(self.ServiceMetadata)
         else: 
-            if self.mode in ['all','legend','bodsearch','preview']:
+            if self.mode in ['all','legend','bodsearch','preview','mobile']:
                 if c.lang in ['de','fr','it','rm','en']:
                      self.BodLayer = getattr(bod, 'BodLayer' + c.lang.capitalize())
                 else:
@@ -60,7 +60,7 @@ class LayersController(BaseController):
 
 ##----------------------------------------Session----------------------------------------##     	
     	  # Define which view are taken into account
-        if self.mode in ['all','legend','bodsearch','preview']:
+        if self.mode in ['all','legend','bodsearch','preview','mobile']:
             query = Session.query(self.BodLayer)
             # Global variable defined in the config files
             Geodata_staging  = config['geodata_staging'].split(',')
@@ -124,7 +124,7 @@ class LayersController(BaseController):
 
 ##----------------------------------------Filters----------------------------------------##    
         # Filter by staging attribute
-        if 'test_integration' not in Geodata_staging and self.mode in ['all','legend','bodsearch','preview']:
+        if 'test_integration' not in Geodata_staging and self.mode in ['all','legend','bodsearch','preview','mobile']:
             query = query.filter(self.BodLayer.staging == 'prod')
      
         # Filter by layer_id
@@ -170,7 +170,8 @@ class LayersController(BaseController):
                 for model in models_from_name(c.layer.bod_layer_id):
                     modified = Session.query(func.max(model.bgdi_created))
                 c.legend.datenstand = modified.first()[0].strftime("%Y%m%d")
-                
+        elif self.mode == 'mobile':
+            results = [r.json(query_string) for r in query]
         elif self.mode == 'wmts':
             c.layers = query
             c.themes = Session.query(self.GetCapThemes).all() 
@@ -191,7 +192,7 @@ class LayersController(BaseController):
         cb_name = request.params.get('cb')
         #self.format = request.params.get('format','json')
 
-        if self.mode == 'bodsearch':    
+        if self.mode == 'bodsearch' or self.mode == 'mobile':    
             if cb_name is not None:
                 response.headers['Content-Type'] = 'text/javascript'
                 results = simplejson.dumps({"results": results})
