@@ -1068,7 +1068,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geologischer_atlas": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geologischer_atlas"),
                 layertype: 'wmts',
-                timestamp: '20101221',
+                timestamp: '20120601',
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
