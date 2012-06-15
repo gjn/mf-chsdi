@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Meta information are not available for this layer': "",
     'Zoom to object': "",
     'QueryByRect.MetaKeyUsageNotice': "",
     'ch.swisstopo.pixelkarte-grau-pk1000.noscale': "",

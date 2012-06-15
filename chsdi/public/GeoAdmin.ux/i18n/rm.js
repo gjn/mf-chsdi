@@ -164,6 +164,7 @@ OpenLayers.Lang.rm= {
 	'Measure.MeasureProfil':'Profil',
 	'Measure.MeasureProfile.ToolTip':'Mesirar en profil',
 	'Measure.title':'Mesiraziun da distanzas & mesiraziun da surfatschas',
+	'Meta information are not available for this layer':'Betg metadatas',
 	'Metadata':'Metadatas',
 	'Meteorologie':'Indicaturs geografic-meteorologics',
 	'Mineralische Bodenschätze':'Resursas mineralas',

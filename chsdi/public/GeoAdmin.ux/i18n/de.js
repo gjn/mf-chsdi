@@ -168,6 +168,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Measure.MeasureProfil':'Profile',
 	'Measure.MeasureProfile.ToolTip':'Profile messen',
 	'Measure.title':'Distanz, Flächen un Azimuthmessung',
+	'Meta information are not available for this layer':'Keine Metainformationen für diesen Datensatz verfügbar',
 	'Metadata':'Metadaten',
 	'Meteorologie':'Meteorologisch-geografische Kennwerte',
 	'Mineralische Bodenschätze':'Mineralische Bodenschätze',

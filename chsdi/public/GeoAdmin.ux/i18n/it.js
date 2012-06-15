@@ -168,6 +168,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Measure.MeasureProfil':'Profilo',
 	'Measure.MeasureProfile.ToolTip':'Calcolare un profilo',
 	'Measure.title':'Misurazione di distanza, superficie e azimuth',
+	'Meta information are not available for this layer':'Nessun metadato disponibile per questo layer ',
 	'Metadata':'Metadati',
 	'Meteorologie':'Elementi geografici meteorologici',
 	'Mineralische Bodenschätze':'Risorse minerarie',
