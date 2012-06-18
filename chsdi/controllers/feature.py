@@ -136,6 +136,7 @@ class FeatureController(BaseController):
         else:
             self.no_geom = False
         self.rawjson = request.params.get('format') == 'raw' or False
+        c.baseUrl =  request.params.get('baseUrl')  or ''
 
 
     @validate_params(validator_layers)
@@ -147,6 +148,39 @@ class FeatureController(BaseController):
         features = []
         urlContent = request.url.split("?")
         id = urlContent[0].split("/")[len(urlContent[0].split("/")) - 1]
+
+        # extended infos
+        if '.html' in id:
+            id = id.strip('.html')
+            for model in models_from_name(layer):
+                if len(features) < MAX_FEATURES:
+                    feature = Session.query(model).get(id)
+                    bodlayer = Session.query(self.bodsearch).get(layer)
+   
+                    if feature:
+                        properties = {}
+                        feature.compute_template(layer, bodlayer)
+                        feature.compute_attribute()
+                        properties = feature.attributes
+                        body_tooltip = render('/tooltips/body_tooltip.mako')
+                        feature.html = body_tooltip.encode('utf8')
+
+
+                        if (self.no_geom):
+                            features.append(Feature(id=feature.id,
+                                                bbox=feature.geometry.bounds,
+                                                properties=feature.attributes))
+                        else:
+                            features.append(feature)
+                        response.headers['Content-Type'] = 'text/html'
+                        return feature.html
+                    else:
+                        abort(204)
+                else:
+                    break
+
+                response.headers['Content-Type'] = 'text/html'
+                return feature.html
 
         for model in models_from_name(layer):
             if len(features) < MAX_FEATURES:
