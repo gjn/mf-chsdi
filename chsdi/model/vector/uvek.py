@@ -45,6 +45,7 @@ class ENERGIEFORSCHUNG(Base, Queryable):
     __tablename__ = 'energieforschung'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})
     __template__ = 'tooltips/energieforschung.mako'
+    __extended_info__ = True
     id = Column('tid', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 

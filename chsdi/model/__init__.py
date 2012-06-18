@@ -87,6 +87,7 @@ class Queryable(object):
         attributes = {}
         fid_column = self.primary_key_column().name
         geom_column = self.geometry_column().name
+        attributes['extended_info'] =  self.__extended_info__  if hasattr(self, '__extended_info__') else False
         for column in self.__table__.c.keys():
             column = str(column)
             if column != fid_column and column != geom_column and hasattr(self, column):
