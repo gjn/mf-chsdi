@@ -14,5 +14,10 @@ class EntryController(BaseController):
         response.content_type = 'application/javascript'
         return render("loader.js")
 
+    def crossdomain(self):
+        c.wsgi_base = request.environ["SCRIPT_NAME"]
+        response.content_type = 'text/x-cross-domain-policy'
+        return render("crossdomain.xml")
+
     def do_not_exist(self):
         abort(404)

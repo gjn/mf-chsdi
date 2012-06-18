@@ -50,8 +50,9 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|de
     Header merge Cache-Control "public"
 </LocationMatch>
 
-# loader:
-RewriteRule ^${vars:apache-entry-point}loader.js$ /${vars:instanceid}/wsgi/loader.js [PT]
+# loader.js & crossdomaini.xml:
+RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+
 
 # web services:
 RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]

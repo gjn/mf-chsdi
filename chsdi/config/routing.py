@@ -24,7 +24,7 @@ def make_map(config):
     map.resource('cmslayer', 'cmslayer')
     map.resource('bodgrid', 'bodgrid')
     #map.resource('feedback', 'feedback')
-
+    map.connect('/crossdomain.xml', controller='entry', action='crossdomain')
     map.connect('/loader.js', controller='entry', action='loader')
     map.connect('/swisssearch', controller='swisssearch', action='index')
     map.connect('/swisssearch/geocoding', controller='swisssearch', action='index')
