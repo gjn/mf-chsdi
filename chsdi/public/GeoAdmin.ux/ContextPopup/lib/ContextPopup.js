@@ -78,8 +78,9 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                         lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
                         content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
                         content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None', '-') + ' [m] </td></tr>';
-                        content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr></table>";
-
+                        content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr>";
+                        var qrcodeurl = escape("http://map.geo.admin.ch/?crosshair=bowl&"+params);
+                        content = content + "<tr><td align='center' colspan='2'><img src='http://chart.apis.google.com/chart?chs=128x128&choe=UTF-8&cht=qr&chl="+qrcodeurl+"' width='128' height='128'/></td></tr></table>";
                         if (this.popup) {
                             this.popup.destroy();
                         }
