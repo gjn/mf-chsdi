@@ -15,6 +15,7 @@ use = egg:chsdi
 full_stack = true
 static_files = false
 api_version = ${api-version}
+instanceid = ${instanceid}
 
 beaker.session.type = memory
 beaker.cache.type = memory

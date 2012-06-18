@@ -2,7 +2,7 @@ import logging
 import simplejson
 from operator import itemgetter
 
-from pylons import request, response, tmpl_context as c
+from pylons import request, response, tmpl_context as c, config
 from pylons.controllers.util import abort
 from pylons.i18n import set_lang, ugettext as _
 
@@ -137,6 +137,8 @@ class FeatureController(BaseController):
             self.no_geom = False
         self.rawjson = request.params.get('format') == 'raw' or False
         c.baseUrl =  request.params.get('baseUrl')  or ''
+        c.api_version = config['api_version']
+        c.instanceid = config['instanceid']
 
 
     @validate_params(validator_layers)
