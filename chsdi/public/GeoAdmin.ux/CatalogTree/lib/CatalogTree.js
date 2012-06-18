@@ -657,9 +657,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.swissprtr"
                     },
+                   /*FIXME ltfoa: still not ready (advanced tooltip)
                     {
                         layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
-                    },
+                    },*/
                     {
                         layerId: "ch.ensi.zonenplan-notfallschutz-kernanlagen"
                     }
