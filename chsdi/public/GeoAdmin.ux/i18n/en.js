@@ -427,7 +427,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfe':'SFOE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abandonment of hydropower',
 	'ch.bfe.energieforschung':'Energy research',
-	'ch.bfe.kleinwasserkraftpotentiale':'ch.bfe.kleinwasserkraftpotentiale', //TODO
+	'ch.bfe.kleinwasserkraftpotentiale':'Small hydroelectric potential',
 	'ch.bfe.statistik-wasserkraftanlagen':'Hydropower statistics',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Dam',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=en',

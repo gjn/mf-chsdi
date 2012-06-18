@@ -427,7 +427,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bfe':'OFEN',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renonciation force hydraulique',
 	'ch.bfe.energieforschung':'Recherche énergétique',
-	'ch.bfe.kleinwasserkraftpotentiale':'ch.bfe.kleinwasserkraftpotentiale', //TODO
+	'ch.bfe.kleinwasserkraftpotentiale':'Potentiel petite hydraulique',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistique hydroélectricité',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Ouvrages d’accumulation',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=fr',

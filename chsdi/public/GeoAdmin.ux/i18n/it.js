@@ -427,7 +427,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bfe':'UFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abbandono dell\'idroelettricitá',
 	'ch.bfe.energieforschung':'Ricerca energetica',
-	'ch.bfe.kleinwasserkraftpotentiale':'ch.bfe.kleinwasserkraftpotentiale', //TODO
+	'ch.bfe.kleinwasserkraftpotentiale':'Potenziale piccola idroelettrica',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistica idroelettricitá',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Impianti di sbarramento',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=it',
