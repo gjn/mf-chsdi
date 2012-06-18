@@ -387,7 +387,7 @@ msgid "ch.are.reisezeit_oev-2005"
 msgstr "Reisezeit zu Zentren ÖV 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Rutas cant. per transports excepziunals"
+msgstr "Rutas cant. per transp. excepziunals"
 
 msgid "ch.astra.ivs-gelaendekarte"
 msgstr "IVS charta topografica"
@@ -435,7 +435,7 @@ msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Palids autas"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
-msgstr "Territoris scumandads per la chatscha"
+msgstr "Territoris scumandads de la chatscha"
 
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Cuntradas da palì"
@@ -447,7 +447,7 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "TWW Anhang 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Reservats d'utschels da l'aua e migrants"
+msgstr "Reservats d'utschels: aua e migrants"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonias da capricorns"
@@ -525,7 +525,7 @@ msgid "ch.bafu.nabelstationen"
 msgstr "Contaminaziun da l'aria: Staziuns NABEL"
 
 msgid "ch.bafu.permafrost"
-msgstr "Charta indicativa da la schelira permanenta"
+msgstr "Charta indicativa schelira permanenta"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN  Territori agricul extensiv"
@@ -612,10 +612,10 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restituziun d'aua"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Zonas da paus per la selvaschina  vias e rutas"
+msgstr "Zonas da paus per la selvaschina ? vias e rutas"
 
 msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr "Zonas da paus per la selvaschina  territoris scumandads per la chatscha"
+msgstr "Zonas da paus per la selvaschina ? territoris scumandads per la chatscha"
 
 msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
 msgstr "Inventari federal ISOS"
@@ -642,7 +642,7 @@ msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica implant idraulic"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
-msgstr "Implant electric "
+msgstr "Implant electric"
 
 msgid "ch.bfs.arealstatistik-1985"
 msgstr "Statistica da la surfatscha 1979/1985"
@@ -669,7 +669,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Cunfin da zona agricultura"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Territoris spundivs e terrassas en la viticultura"
+msgstr "Viticultura en spundivs e terrassas"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP products da charn"
@@ -684,7 +684,7 @@ msgid "ch.blw.ursprungsbezeichnungen-spirituosen"
 msgstr "DOP spirituosas"
 
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
-msgstr "Plans da zonas per la protecziun d'urgenza"
+msgstr "Plans da zonas protecziun d'urgenza"
 
 msgid "ch.swisstopo-vd.geometa-los"
 msgstr "Lavurs currents"
@@ -1123,6 +1123,12 @@ msgstr "KKW"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "klwkp_gwlnr"
+msgstr "Gewässerlauf-Nummer"
+
+msgid "klwkp_kwprometer"
+msgstr "Theoretisches hydroelektrisches Potential [kW/m]"
 
 msgid "konf_objekt"
 msgstr "Konfiguration der Objekte"

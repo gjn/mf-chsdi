@@ -348,7 +348,7 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomerati e cittá isolate"
 
 msgid "ch.are.alpenkonvention"
-msgstr "Convenzione delle Alpi"
+msgstr "Convenzione delle alpi"
 
 msgid "ch.are.bauzonen-2007"
 msgstr "Zones à bâtir Suisse 2007"
@@ -387,16 +387,16 @@ msgid "ch.are.reisezeit_oev-2005"
 msgstr "Temps de parcours en TP 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Percorsi cant. per trasporti eccezionali"
+msgstr "Percorsi trasporti eccezionali"
 
 msgid "ch.astra.ivs-gelaendekarte"
 msgstr "IVS cara del territorio"
 
 msgid "ch.astra.ivs-nat"
-msgstr "IVS nazionale"
+msgstr "IVS Nazionale"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IVS regionale e locale"
+msgstr "VCS regionali e locali"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circolazione stradale (regionale)"
@@ -423,10 +423,10 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Anfibi oggetti fissi"
 
 msgid "ch.bafu.bundesinventare-auen"
-msgstr "Zone alluvionali"
+msgstr "Zone golenali"
 
 msgid "ch.bafu.bundesinventare-bln"
-msgstr "Inventario IFP"
+msgstr "IFP"
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Paludi"
@@ -435,7 +435,7 @@ msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Torbiere alte"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
-msgstr "Bandite di caccia"
+msgstr "Bandite federali di caccia"
 
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Zone palustri"
@@ -480,7 +480,7 @@ msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Zone di rischio sismico"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
-msgstr "Séismes historiques"
+msgstr "Terremoti storici"
 
 msgid "ch.bafu.gefahren-mikrozonierung"
 msgstr "Microzonazione"
@@ -489,16 +489,16 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Microzonazione spettrale"
 
 msgid "ch.bafu.holznutzung"
-msgstr "Sfruttamento e mortalitá (IFN)"
+msgstr "Utilizzo di legname e mortalità (IFN)"
 
 msgid "ch.bafu.holzvorrat"
-msgstr "Riserve di legname (IFN)"
+msgstr "Provvigione di legname (IFN)"
 
 msgid "ch.bafu.holzzuwachs"
-msgstr "Accrescimento annuale (IFN)"
+msgstr "Incremento del legno (IFN)"
 
 msgid "ch.bafu.hydrologie-hydromessstationen"
-msgstr "Stazioni idrometriche"
+msgstr "Stazioni idrologiche"
 
 msgid "ch.bafu.laerm-bahnlaerm_nacht"
 msgstr "Rumore ferroviario (Lr_notte)"
@@ -525,22 +525,22 @@ msgid "ch.bafu.nabelstationen"
 msgstr "Qualità dell'aria: stazioni NABEL"
 
 msgid "ch.bafu.permafrost"
-msgstr "Carta indicativa del permafrost"
+msgstr "Cartina indicativa del permafrost"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
-msgstr "REN Zone agricole estensive"
+msgstr "REN zona di agricoltura estensiva"
 
 msgid "ch.bafu.ren-feuchtgebiete"
-msgstr "REN Zone umide"
+msgstr "REN zona umida"
 
 msgid "ch.bafu.ren-fliessgewaesser_seen"
-msgstr "REN Zone acquatiche"
+msgstr "REN corsi d'acqua / laghi"
 
 msgid "ch.bafu.ren-trockenstandorte"
-msgstr "REN Zone secche"
+msgstr "REN ambienti secchi"
 
 msgid "ch.bafu.ren-wald"
-msgstr "REN Zone di foresta"
+msgstr "REN bosco"
 
 msgid "ch.bafu.ren-wald_ueber_1000_meter"
 msgstr "REN Zone di foresta>1000m"
@@ -558,7 +558,7 @@ msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
 
 msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
-msgstr "Parco nazionale"
+msgstr "Parco Nazionale Svizzero"
 
 msgid "ch.bafu.schutzgebiete-smaragd"
 msgstr "Zone Smeraldo"
@@ -591,19 +591,19 @@ msgid "ch.bafu.showme-kantone_sturzprozesse"
 msgstr "ShowMe cantoni: crollo"
 
 msgid "ch.bafu.swissprtr"
-msgstr "Emissioni di inquinanti (SwissPRTR)"
+msgstr "Emissioni di sostanze inquinanti (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO Patrimonio nautrale mondiale"
+msgstr "UNESCO beni naturali"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
-msgstr "Aree boschive danneggiate "Lothar""
+msgstr "Aree boschive danneggiate Lothar"
 
 msgid "ch.bafu.waldschadenflaechen-vivian"
-msgstr "Aree boschive danneggiate "Vivian""
+msgstr "Aree boschive danneggiate Vivian"
 
 msgid "ch.bafu.wasser-entnahme"
-msgstr "Prelevamento"
+msgstr "Prelievi d'acqua"
 
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Derivazione"
@@ -642,7 +642,7 @@ msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
-msgstr "Impioanti di sbarramento"
+msgstr "Impianti di sbarramento"
 
 msgid "ch.bfs.arealstatistik-1985"
 msgstr "Statistica di superficie 1979/1985"
@@ -660,25 +660,25 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e degli alloggi"
 
 msgid "ch.blw.erosion"
-msgstr "Rischio d'erosione"
+msgstr "Rischio di erosione"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terreni in pendio e in forte pendenza"
 
 msgid "ch.blw.landwirtschaftliche-zonengrenzen"
-msgstr "Limiti della zone agricole"
+msgstr "Limiti delle zone agricole"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Terreni viticoli in pendio e in terrazze"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
-msgstr "IGP Prodotti a base di carne"
+msgstr "IGP Prodotto a base di carne"
 
 msgid "ch.blw.ursprungsbezeichnungen-kaese"
-msgstr "DOP formaggio"
+msgstr "DOP Formaggio"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen"
-msgstr "DOP prodotti vegetali"
+msgstr "DOP Prodotti vegetali"
 
 msgid "ch.blw.ursprungsbezeichnungen-spirituosen"
 msgstr "DOP distillati"
@@ -687,13 +687,13 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Piani delle zone d'urgenza"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Settori in corso"
+msgstr "Lotti della MU"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Stato della misurazione ufficiale"
+msgstr "Stato della MU"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
-msgstr "CAP e localitá"
+msgstr "NPA e località"
 
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Zone di tensioni trascurabili"
@@ -804,28 +804,28 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carta bianca e nera"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisione delle carta nazionale 1:100'000"
+msgstr "Divisione carte nazionali 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
-msgstr "Divisione delle carta nazionale 1:1'000'000"
+msgstr "Divisione carte nazionali 1:1 milione"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Divisione delle carta nazionale 1:200'000"
+msgstr "Divisione carta nazionale 1:200'000"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Divisione delle carta nazionale 1:25'000"
+msgstr "Divisione carta nazionale 1:25'000"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Divisione delle carta nazionale 1:50'000"
+msgstr "Divisione carta nazionale 1:50'000"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
-msgstr "Divisione delle carta nazionale 1:500'000"
+msgstr "Divisione carta nazionale 1:500'000"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "Veduta aerea"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Parchi nazionali VECTOR200"
@@ -840,7 +840,7 @@ msgid "ch.swisstopo.vec200-landcover"
 msgstr "Copertura prim. suolo VECTOR200"
 
 msgid "ch.swisstopo.vec200-landcover-wald"
-msgstr "Aree di foresta"
+msgstr "Superficie forestali"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
 msgstr "Oggetti singoli VECTOR200"
@@ -1124,6 +1124,12 @@ msgstr "Centrale nucleare"
 msgid "klasse"
 msgstr "Classe"
 
+msgid "klwkp_gwlnr"
+msgstr "Numéro de cours d’eau"
+
+msgid "klwkp_kwprometer"
+msgstr "Potentiel théorique hydro-électrique [kW/m]"
+
 msgid "konf_objekt"
 msgstr "Configuration des objets"
 
@@ -1131,7 +1137,7 @@ msgid "krebsart"
 msgstr "Nom latin de l’espèce d’écrevisse"
 
 msgid "laenge_m"
-msgstr "Longueur [m]"
+msgstr "Lunghezza [m]"
 
 msgid "laenge_strecke_m"
 msgstr "Longueur du tronçon [m]"

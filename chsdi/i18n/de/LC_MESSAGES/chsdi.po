@@ -381,13 +381,13 @@ msgid "ch.are.landschaftstypen"
 msgstr "Landschaftstypologie Schweiz"
 
 msgid "ch.are.reisezeit_miv-2005"
-msgstr "Reisezeit zu Zentren mit dem MIV 2005"
+msgstr "Reisezeit zu Zentren MIV 2005"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Reisezeit zu Zentren ÖV 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Kant. Ausnahmetransportrouten"
+msgstr "Ausnahmetransportrouten"
 
 msgid "ch.astra.ivs-gelaendekarte"
 msgstr "IVS Geländekarte"
@@ -396,13 +396,13 @@ msgid "ch.astra.ivs-nat"
 msgstr "IVS National"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IVS Regional & Lokal"
+msgstr "IVS Regional und Lokal"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Verkehrszählstellen lokal"
+msgstr "Verkehrszählung (Regional)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
-msgstr "Verkehrszählstellen übergeordnet"
+msgstr "Verkehrszählung (Übergeordnet)"
 
 msgid "ch.babs.kulturgueter"
 msgstr "Kulturgüterschutz Inventar"
@@ -426,7 +426,7 @@ msgid "ch.bafu.bundesinventare-auen"
 msgstr "Auengebiete"
 
 msgid "ch.bafu.bundesinventare-bln"
-msgstr "BLN Inventar"
+msgstr "BLN"
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Flachmoore"
@@ -453,7 +453,7 @@ msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Steinbockkolonien"
 
 msgid "ch.bafu.fauna-vernetzungsachsen_national"
-msgstr "Vernetzungssystem"
+msgstr "Vernetzungssystem Wildtiere"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Wildtierkorridore National"
@@ -612,7 +612,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Wasserrückgabe"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Wildruhezonen - Wege und Routen"
+msgstr "WRZ - Wege und Routen"
 
 msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
 msgstr "Wildruhezonen - Jagdbanngebiete"
@@ -687,10 +687,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Zonenpläne für den Notfallschutz"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Laufende Arbeiten"
+msgstr "Lose der AV"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Stand der amtlichen Vermessung"
+msgstr "Stand der AV"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "PLZ und Ortschaften"
@@ -717,13 +717,13 @@ msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Bouguer-Anomalien"
 
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
-msgstr "Isostatische Anomalie"
+msgstr "Isostatische Anomalien"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
-msgstr "Geologie 1:500 000"
+msgstr "Geologie 1:500000"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
-msgstr "Geologischer Atlas 1:25 000"
+msgstr "Geologischer Atlas 1:25000"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aeromagnetik"
@@ -756,7 +756,7 @@ msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Grundwasservulnerabilität"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
-msgstr "Tektonik 1:500 000"
+msgstr "Tektonik 1:500000"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
 msgstr "Bezirksgrenzen GG25"
@@ -807,7 +807,7 @@ msgid "ch.swisstopo.pixelkarte-pk100.metadata"
 msgstr "Einteilung Landeskarte 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
-msgstr "Einteilung Landeskarte 1:1'000'000"
+msgstr "Einteilung Landeskarte 1:1 Mio."
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
 msgstr "Einteilung Landeskarte 1:200'000"
@@ -825,7 +825,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Reliefschattierung"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "Luftbild"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Nationalparks VECTOR200"
@@ -1123,6 +1123,12 @@ msgstr "KKW"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "klwkp_gwlnr"
+msgstr "Gewässerlauf-Nummer"
+
+msgid "klwkp_kwprometer"
+msgstr "Theoretisches hydroelektrisches Potential [kW/m]"
 
 msgid "konf_objekt"
 msgstr "Konfiguration der Objekte"

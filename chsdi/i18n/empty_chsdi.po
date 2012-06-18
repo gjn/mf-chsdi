@@ -111,6 +111,12 @@ msgstr ""
 msgid "feature"
 msgstr ""
 
+msgid "klwkp_gwlnr"
+msgstr ""
+
+msgid "klwkp_kwprometer"
+msgstr ""
+
 msgid "gin_nummer"
 msgstr ""
 

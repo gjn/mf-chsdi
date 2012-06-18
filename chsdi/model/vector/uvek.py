@@ -68,3 +68,11 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Queryable):
 
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
 
+class kleinwasserkraftpotentiale(Base, Queryable):
+    __tablename__ = 'kleinwasserkraftpotentiale'
+    __table_args__ = ({'schema': 'bfe', 'autoload': True})
+    __template__ = 'tooltips/kleinwasserkraftpotentiale.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bfe.kleinwasserkraftpotentiale', kleinwasserkraftpotentiale)

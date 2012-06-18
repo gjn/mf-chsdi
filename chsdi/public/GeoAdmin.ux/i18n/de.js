@@ -427,6 +427,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Verzicht Wasserkraftnutzung',
 	'ch.bfe.energieforschung':'Energieforschung',
+	'ch.bfe.kleinwasserkraftpotentiale':'Kleinwasserkraftpotentiale',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistik Wasserkraft',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Stauanlagen',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=de',

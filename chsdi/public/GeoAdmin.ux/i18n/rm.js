@@ -423,6 +423,7 @@ OpenLayers.Lang.rm= {
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renunzia forza idraulica',
 	'ch.bfe.energieforschung':'Retschertga energia',
+	'ch.bfe.kleinwasserkraftpotentiale':'ch.bfe.kleinwasserkraftpotentiale', //TODO
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistica implant idraulic',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Implant electric',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=de',

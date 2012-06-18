@@ -375,28 +375,28 @@ msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typologie des communes ARE"
 
 msgid "ch.are.gueteklassen_oev"
-msgstr "Niveaux de qualité de la desserte par les TP ARE"
+msgstr "Qualité de desserte par TP ARE"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Typologie des paysages suisses"
 
 msgid "ch.are.reisezeit_miv-2005"
-msgstr "Temps de parcours en TIM vers un centre 2005"
+msgstr "Temps de parcours en TIM 2005"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Temps de parcours en TP 2005"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Itinéraires cant. convois exceptionnels"
+msgstr "Itinéraires convois exceptionnels"
 
 msgid "ch.astra.ivs-gelaendekarte"
 msgstr "IVS carte de terrain"
 
 msgid "ch.astra.ivs-nat"
-msgstr "IVS national"
+msgstr "IVS National"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IVS régional & local"
+msgstr "IVS régional et local"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circulation routière (régional)"
@@ -426,7 +426,7 @@ msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zones alluviales"
 
 msgid "ch.bafu.bundesinventare-bln"
-msgstr "Inventaire IFP"
+msgstr "IFP"
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Bas-marais"
@@ -447,7 +447,7 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS annexe 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Réserves d'oiseaux d'eau et migrateurs"
+msgstr "Réserves d'oiseaux d'eau et de migrateurs"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
@@ -522,7 +522,7 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Taux de boisement (IFN)"
 
 msgid "ch.bafu.nabelstationen"
-msgstr "Qualité de l´air: Stations NABEL"
+msgstr "Qualité de l'air: Stations NABEL"
 
 msgid "ch.bafu.permafrost"
 msgstr "Carte indicative du Pergélisol"
@@ -603,7 +603,7 @@ msgid "ch.bafu.waldschadenflaechen-vivian"
 msgstr "Dégâts de tempête Vivian"
 
 msgid "ch.bafu.wasser-entnahme"
-msgstr "Prélèvement"
+msgstr "Prélèvements"
 
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Dérivation"
@@ -660,7 +660,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registre des bâtiments et des logements"
 
 msgid "ch.blw.erosion"
-msgstr "Risques d´érosion"
+msgstr "Risque d’érosion"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terrains en pente et en forte pente"
@@ -684,16 +684,16 @@ msgid "ch.blw.ursprungsbezeichnungen-spirituosen"
 msgstr "AOP spiritueux"
 
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
-msgstr "Plans des zones d'urgence"
+msgstr "Plans des zones d’urgence"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Travaux en cours"
+msgstr "Lots de la MO"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Etat de la mensuration"
+msgstr "Etat de la MO"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
-msgstr "NPA et localité"
+msgstr "NPA et localités"
 
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Zones de tensions négligeables"
@@ -720,10 +720,10 @@ msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalies isostatiques"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
-msgstr "Géologie 1:500 000"
+msgstr "Géologie 1:500000"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
-msgstr "Atlas géologique 1:25 000"
+msgstr "Atlas géologique 1:25000"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aéromagnétique"
@@ -747,7 +747,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classification des roches"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Groupes lithologiques principaux"
+msgstr "Groupe lithologiques"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères"
@@ -756,7 +756,7 @@ msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Vulnérabilité des aquifères"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
-msgstr "Tectonique 1:500 000"
+msgstr "Tectonique 1:500000"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
 msgstr "Limites de districts GG25"
@@ -804,28 +804,28 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Cartes noir & blanc"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Découpage carte nationale 1:100'000"
+msgstr "Découpage carte nationale 1:100’000"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
-msgstr "Découpage carte nationale 1:1'000'000"
+msgstr "Découpage carte nationale 1:1 million"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Découpage carte nationale 1:200'000"
+msgstr "Découpage carte nationale 1:200’000"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Découpage carte nationale 1:25'000"
+msgstr "Découpage carte nationale 1:25’000"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Découpage carte nationale 1:50'000"
+msgstr "Découpage carte nationale 1:50’000"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
-msgstr "Découpage carte nationale 1:500'000"
+msgstr "Découpage carte nationale 1:500’000"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "Photo aérienne"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Parcs nationaux VECTOR200"
@@ -1123,6 +1123,12 @@ msgstr "Centrale nucléaire"
 
 msgid "klasse"
 msgstr "Classe"
+
+msgid "klwkp_gwlnr"
+msgstr "Numéro de cours d’eau"
+
+msgid "klwkp_kwprometer"
+msgstr "Potentiel théorique hydro-électrique [kW/m]"
 
 msgid "konf_objekt"
 msgstr "Configuration des objets"

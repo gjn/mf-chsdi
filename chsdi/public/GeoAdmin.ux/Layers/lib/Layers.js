@@ -1662,7 +1662,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bav",
-                queryable: false
+                queryable: true
             },
             // *********************************
             // *********************************
@@ -1897,6 +1897,36 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.bakom.radio-fernsehsender": {
+                name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
+                layers: ["ch.bakom.radio-fernsehsender"],
+                layertype: "wms",
+                url: 'http://wms-bod0t.bgdi.admin.ch',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
+            "ch.bakom.mobil-antennenstandorte-gsm": {
+                name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
+                layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
+                layertype: "wms",
+                url: 'http://wms-bod0t.bgdi.admin.ch',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
+            "ch.bakom.mobil-antennenstandorte-umts": {
+                name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-umts"),
+                layers: ["ch.bakom.mobil-antennenstandorte-umts"],
+                layertype: "wms",
+                url: 'http://wms-bod0t.bgdi.admin.ch',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
@@ -2069,6 +2099,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.bfe.abgeltung-wasserkraftnutzung"],
                 layertype: "wms",
                 type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
+            "ch.bfe.kleinwasserkraftpotentiale": {
+                name: OpenLayers.i18n("ch.bfe.kleinwasserkraftpotentiale"),
+                layertype: 'wmts',
+                timestamp: '20120531',
+                type: "line",
                 format: "image/png",
                 datenherr: "ch.bfe",
                 queryable: true

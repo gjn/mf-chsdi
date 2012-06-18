@@ -348,7 +348,7 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomeration and isolated cities"
 
 msgid "ch.are.alpenkonvention"
-msgstr "Convention of the Alps"
+msgstr "Alpine Convention"
 
 msgid "ch.are.bauzonen-2007"
 msgstr "Bauzonen Schweiz 2007"
@@ -396,7 +396,7 @@ msgid "ch.astra.ivs-nat"
 msgstr "Inventory historical routes national"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "Inventory historical routes national & regional"
+msgstr "IHR national & regional"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Traffic counting locations local"
@@ -420,13 +420,13 @@ msgid "ch.bafu.aquaprotect_500"
 msgstr "Areas of flooding Aquaprotect 500"
 
 msgid "ch.bafu.bundesinventare-amphibien"
-msgstr "Amphibians Stationary Objects"
+msgstr "Amphibians stationary objects"
 
 msgid "ch.bafu.bundesinventare-auen"
-msgstr "Wetlands"
+msgstr "Floodplains"
 
 msgid "ch.bafu.bundesinventare-bln"
-msgstr "BLN (Federal Inventory)"
+msgstr "ILNM"
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Fens"
@@ -435,10 +435,10 @@ msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Raised bogs"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
-msgstr "No-hunting area"
+msgstr "Swiss game reserves"
 
 msgid "ch.bafu.bundesinventare-moorlandschaften"
-msgstr "Moor landscapes"
+msgstr "Mire landscapes"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Dry grasslands"
@@ -447,13 +447,13 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "Dry grasslands appendix 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Water and migrant bird game reserves"
+msgstr "Reserves for waterbirds and migratory birds"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Ibex colonies"
 
 msgid "ch.bafu.fauna-vernetzungsachsen_national"
-msgstr "Network system"
+msgstr "Wildlife network system"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "National wildlife corridor"
@@ -468,7 +468,7 @@ msgid "ch.bafu.flora-schwingrasen"
 msgstr "Quaking bogs"
 
 msgid "ch.bafu.flora-verbreitungskarten"
-msgstr "Raster Verbreitungskarten"
+msgstr "Raster distribution maps"
 
 msgid "ch.bafu.flora-weltensutter_atlas"
 msgstr "Welten&Sutter atlas"
@@ -477,7 +477,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Subsoil classes"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Earth quake risk zones"
+msgstr "Seismic risk zones"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Past earthquakes"
@@ -489,28 +489,28 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Spectral micro-zoning"
 
 msgid "ch.bafu.holznutzung"
-msgstr "Use of wood and mortality (LFI)"
+msgstr "Wood harvesting and mortality (NFI)"
 
 msgid "ch.bafu.holzvorrat"
-msgstr "Stock of wood  (LFI)"
+msgstr "Standing volume (NFI)"
 
 msgid "ch.bafu.holzzuwachs"
-msgstr "Growth of the wood volume (LFI)"
+msgstr "Wood increment (NFI)"
 
 msgid "ch.bafu.hydrologie-hydromessstationen"
-msgstr "Hydrological measurement stations"
+msgstr "Hydrological gauging stations"
 
 msgid "ch.bafu.laerm-bahnlaerm_nacht"
-msgstr "Railway noise (Lr_night)"
+msgstr "Noise levels from railway traffic (night)"
 
 msgid "ch.bafu.laerm-bahnlaerm_tag"
 msgstr "Railway noise (Lr_day)"
 
 msgid "ch.bafu.laerm-strassenlaerm_nacht"
-msgstr "Road noise (Lr_night)"
+msgstr "Road traffic noise (Lr_night)"
 
 msgid "ch.bafu.laerm-strassenlaerm_tag"
-msgstr "Road noise (Lr_day)"
+msgstr "Road traffic noise (Lr_day)"
 
 msgid "ch.bafu.landesforstinventar-baumarten"
 msgstr "Tree species (NFI)"
@@ -522,25 +522,25 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentage of forest area (NFI)"
 
 msgid "ch.bafu.nabelstationen"
-msgstr "Air quality: NABEL stations"
+msgstr "Air pollution: Monitoring stations NABEL"
 
 msgid "ch.bafu.permafrost"
-msgstr "Permafrost indication map"
+msgstr "Potential permafrost distribution"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN extensive agricultural area"
 
 msgid "ch.bafu.ren-feuchtgebiete"
-msgstr "REN humid areas"
+msgstr "REN wetland site"
 
 msgid "ch.bafu.ren-fliessgewaesser_seen"
-msgstr "REN aquatic zones"
+msgstr "REN watercourses / lakes"
 
 msgid "ch.bafu.ren-trockenstandorte"
-msgstr "REN dry areas"
+msgstr "REN dry habitat"
 
 msgid "ch.bafu.ren-wald"
-msgstr "REN forest zones"
+msgstr "REN forest"
 
 msgid "ch.bafu.ren-wald_ueber_1000_meter"
 msgstr "REN forest zones>1000m"
@@ -549,16 +549,16 @@ msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN forest zones<1000m"
 
 msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
-msgstr "Biosphärenreservate"
+msgstr "Biosphere reserves"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Parcs"
+msgstr "Parks"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
 
 msgid "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
-msgstr "National parc"
+msgstr "Swiss National Park"
 
 msgid "ch.bafu.schutzgebiete-smaragd"
 msgstr "Emerald sites"
@@ -591,25 +591,25 @@ msgid "ch.bafu.showme-kantone_sturzprozesse"
 msgstr "ShowMe cantons: rockfall"
 
 msgid "ch.bafu.swissprtr"
-msgstr "Pollutant Releases (SwissPRTR)"
+msgstr "Pollutant releases (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO World natural heritage"
+msgstr "UNESCO World Heritage Sites"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
-msgstr "“Lothar” storm damage"
+msgstr "Lothar storm damage"
 
 msgid "ch.bafu.waldschadenflaechen-vivian"
-msgstr "“Vivian” storm damage"
+msgstr "Vivian storm damage"
 
 msgid "ch.bafu.wasser-entnahme"
-msgstr "Withdrawal of water"
+msgstr "Catchment"
 
 msgid "ch.bafu.wasser-leitungen"
-msgstr "Inlet of water"
+msgstr "Supply"
 
 msgid "ch.bafu.wasser-rueckgabe"
-msgstr "Water restitution"
+msgstr "Return flows"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
 msgstr "Wildlife sanctuary zones - tracks"
@@ -639,7 +639,7 @@ msgid "ch.bfe.energieforschung"
 msgstr "Energy research"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
-msgstr "Hydropower statistic"
+msgstr "Hydropower statistics"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Dam"
@@ -669,7 +669,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Agricultural zones boundaries"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Terrain viticulture in steep areas and terraces"
+msgstr "Viticulture in steep areas and terraces"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "PDO meat products"
@@ -807,7 +807,7 @@ msgid "ch.swisstopo.pixelkarte-pk100.metadata"
 msgstr "Division National Map 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
-msgstr "Division National Map 1:1'000'000"
+msgstr "Division National Map 1:1 million"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
 msgstr "Division National Map 1:200'000"
@@ -825,7 +825,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "Aerial imagery"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "National parks VECTOR200"
@@ -840,7 +840,7 @@ msgid "ch.swisstopo.vec200-landcover"
 msgstr "Land cover VECTOR200"
 
 msgid "ch.swisstopo.vec200-landcover-wald"
-msgstr "Forest area"
+msgstr "Forested areas"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
 msgstr "Single objects  VECTOR200"
@@ -852,10 +852,10 @@ msgid "ch.swisstopo.vec200-transportation-strassennetz"
 msgstr "Road system VECTOR200"
 
 msgid "ch.swisstopo.vec25-anlagen"
-msgstr "Facilities VECTOR25"
+msgstr "Functional surfaces VECTOR25"
 
 msgid "ch.swisstopo.vec25-einzelobjekte"
-msgstr "Single objetcs  VECTOR25"
+msgstr "Single objects VECTOR25"
 
 msgid "ch.swisstopo.vec25-eisenbahnnetz"
 msgstr "Railway network VECTOR25"
@@ -1124,6 +1124,12 @@ msgstr "Atomic power plant"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "klwkp_gwlnr"
+msgstr "Gewässerlauf-Nummer"
+
+msgid "klwkp_kwprometer"
+msgstr "Theoretisches hydroelektrisches Potential [kW/m]"
 
 msgid "konf_objekt"
 msgstr "Konfiguration der Objekte"

@@ -570,6 +570,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Gewässernetz',
                 children: [
                     {
+                        layerId: "ch.bfe.kleinwasserkraftpotentiale"
+                    },
+                    {
                         layerId: "ch.swisstopo.vec200-hydrography"
                     },
                     {
@@ -654,9 +657,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.swissprtr"
                     },
-                    /* FIXME ltfoa: deactivated momentarily because of bugfixing deploy of 30.05.2012 {
+                    {
                         layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
-                    },*/
+                    },
                     {
                         layerId: "ch.ensi.zonenplan-notfallschutz-kernanlagen"
                     }
@@ -1101,6 +1104,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
+                    },
+                    {
+                        layerId: "ch.bfe.kleinwasserkraftpotentiale"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-miscellaneous"
