@@ -101,3 +101,44 @@
    float: right !important;
    padding-right: 10px;
 }
+.tooltip_large_header {
+    margin: 0px -10px 5px -10px;
+}
+
+.tooltip_large_footer {
+    margin: 5px -10px 0px -10px;
+}
+
+h1.tooltip_large_titel {
+    font-size:14px;
+    font-weight: bolder;
+    margin: 5px 0px 5px 0px;
+}
+
+.tooltip_black_border {
+    border: 1px solid #888888;
+    margin: 5px;
+    padding: 0px 10px 0px 10px;
+    width: 635px;
+    font-size:12px;
+    letter-spacing: 0;
+    word-spacing: 0;
+    text-align: left;
+    line-height: 15px;
+    font-family: arial,helvetia,verdana;
+    font-style: normal;
+
+}
+
+a.tooltip_red_link:link, a.tooltip_red_link:hover, a.tooltip_red_link:visited, a.tooltip_red_link:active {
+    color: #CC0000;
+    text-decoration: none;
+}
+
+a.tooltip_red_link:visited:hover, a.tooltip_red_link:hover {
+    color: #CC0000;
+    text-decoration: underline;
+}
+
+}
+
