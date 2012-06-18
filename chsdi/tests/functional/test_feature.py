@@ -256,3 +256,12 @@ class TestFeatureController(TestController):
         assert 6644 in resp
         assert 'MultiPolygon' not in resp
         assert 'coordinates' not in resp
+    
+    def test_extended_tooltip(self):
+        params = {
+                'layers': 'ch.bfe.energieforschung'
+        }
+        resp = self.app.get('/feature/3.html',
+                 params=params
+        )
+        assert '<html' in resp
