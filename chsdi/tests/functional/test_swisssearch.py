@@ -155,3 +155,76 @@ class TestSwisssearchController(TestController):
         assert resp.response.body.startswith("callback(")
         assert resp.response.body.endswith(");")
 
+    def test_attributes_no_query(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params,
+                 status=400
+        )
+    def test_attributes_no_layer(self):
+        params = {
+                'query': 'BE00'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        assert len(results) == 0
+
+    def test_attributes(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE0100000001972'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        assert 'results' in resp
+        assert 'bbox' in resp
+        assert 'attributes' in resp
+        assert 'BE0100000001972' in resp
+
+    def test_attributes_raw(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE0100000001972',
+             'format': 'raw'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        assert 'FeatureCollection' in resp
+        assert 'geometry' in resp
+        assert 'properties' in resp
+        assert 'BE0100000001972' in resp
+
+    def test_attributes_non_queryable_layer(self):
+        params = {
+             'layers': 'ch.swisstopo.pixelkarte-farbe',
+             'query': 'BE0100000001972'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        results = simplejson.loads(resp.response.body)['results']
+
+        assert len(results) == 0
+        
+
+
+    def test_attributes_cb(self):
+        params = {
+             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'query': 'BE0100000001972',
+             'cb': 'Ext.ux.JSONP'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        assert 'BE0100000001972' in resp
+        assert 'Ext.ux.JSONP' in resp
+
+ 
