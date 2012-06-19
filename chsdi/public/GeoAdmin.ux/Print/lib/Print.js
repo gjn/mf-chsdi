@@ -186,15 +186,15 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         }
         // Define a list of "big" legends
         var pdfLegendList = ["ch.astra.ivs-gelaendekarte",
-                             "ch.astra.ausnahmetransportrouten",
-                             "ch.bazl.luftfahrtkarten-icao", 
-                             "ch.bazl.segelflugkarte",
-                             "ch.swisstopo.geologie-eiszeit-lgm-raster",
-                             "ch.swisstopo.geologie-geologische_karte",
-                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
-                             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet",
-                             "ch.swisstopo.geologie-tektonische_karte",
-                             "ch.kantone.cadastralwebmap-farbe"];
+            "ch.astra.ausnahmetransportrouten",
+            "ch.bazl.luftfahrtkarten-icao",
+            "ch.bazl.segelflugkarte",
+            "ch.swisstopo.geologie-eiszeit-lgm-raster",
+            "ch.swisstopo.geologie-geologische_karte",
+            "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
+            "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet",
+            "ch.swisstopo.geologie-tektonische_karte",
+            "ch.kantone.cadastralwebmap-farbe"];
 
         var pdfLayerNames = [];
         var pdfFormat = [];
@@ -210,30 +210,39 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     var lang = OpenLayers.Lang.getCode();
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
+                    // QRCode
+                    var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
+                    var params = OpenLayers.Util.getParameterString(paramsObject);
+                    var qrcodeurl = escape("http://map.geo.admin.ch/?"+params);
+                    provider.customParams.qrcodeurl =  "http://chart.apis.google.com/chart?chld=L%7C0&chs=512x512&choe=UTF-8&cht=qr&chl="+qrcodeurl;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
                         var pdfCounter = 0;
                         for (var i = 0, len = map.layers.length; i < len; i++) {
                             var layer = map.layers[i];
                             var LegendFormat = lang + ".png";
-                            for (k = 0, lenp = pdfLegendList.length; k < lenp; k++) {
+                            for (k = 0,lenp = pdfLegendList.length; k < lenp; k++) {
                                 if (layer.layer === pdfLegendList[k]) {
-                                    LegendFormat = "big.pdf"; 
-                                    if (!secondPageNeeded) { provider.customParams.enhableLegends = false; }
+                                    LegendFormat = "big.pdf";
+                                    if (!secondPageNeeded) {
+                                        provider.customParams.enhableLegends = false;
+                                    }
                                     pdfLayerNames[pdfCounter] = layer.layer;
                                     pdfFormat[pdfCounter] = LegendFormat;
                                     pdfCounter = pdfCounter + 1;
                                 }
                             }
                             if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
-                                if (LegendFormat !== "big.pdf") { 
-                                    var secondPageNeeded = true; 
-                                    provider.customParams.enhableLegends = true; 
+                                if (LegendFormat !== "big.pdf") {
+                                    var secondPageNeeded = true;
+                                    provider.customParams.enhableLegends = true;
                                     provider.customParams.legends.push({
-                                        classes: [{
-                                            name: '',
-                                            icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layer + "_" + LegendFormat
-                                        }],
+                                        classes: [
+                                            {
+                                                name: '',
+                                                icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layer + "_" + LegendFormat
+                                            }
+                                        ],
                                         name: layer.name
                                     });
                                 }
@@ -262,11 +271,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         var onClick = 'Ext.getCmp(\'printPopup\').destroy();';
                         onClick += 'window.location=\'' + url + '\';';
                         var content = OpenLayers.Lang.translate('mf.print.pdfReady') + '<br /><br />' +
-                                '<table onclick="' + onClick + '" border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap" align="center">' +
-                                '<tbody><tr>' +
-                                '<td><button>' + Ext.MessageBox.buttonText.ok + '</button></td>' +
-                                '' +
-                                '</tbody></table>';
+                            '<table onclick="' + onClick + '" border="0" cellpadding="0" cellspacing="0" class="x-btn-wrap" align="center">' +
+                            '<tbody><tr>' +
+                            '<td><button>' + Ext.MessageBox.buttonText.ok + '</button></td>' +
+                            '' +
+                            '</tbody></table>';
                         var popup = new Ext.Window({
                             bodyStyle: 'padding: 7px;',
                             width: 200,
@@ -384,7 +393,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         if (!cmp.hidden) {
                             var encFn = this.encoders.legends[cmp.getXType()];
                             encodedLegends = encodedLegends.concat(
-                                    encFn.call(this, cmp));
+                                encFn.call(this, cmp));
                         }
                     }, this);
                     if (!rendered) {
@@ -395,7 +404,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
                 if (this.method === "GET") {
                     var url = Ext.urlAppend(this.capabilities.printURL,
-                            "spec=" + encodeURIComponent(Ext.encode(jsonData)));
+                        "spec=" + encodeURIComponent(Ext.encode(jsonData)));
                     this.download(url);
                 } else {
                     Ext.Ajax.request({
@@ -471,8 +480,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     continue;
                 }
                 style = feature.style || layer.style ||
-                        layer.styleMap.createSymbolizer(feature,
-                                feature.renderIntent);
+                    layer.styleMap.createSymbolizer(feature,
+                        feature.renderIntent);
                 dictKey = styleFormat.write(style);
                 dictItem = styleDict[dictKey];
                 if (dictItem) {
@@ -484,13 +493,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     if (style.externalGraphic) {
                         encStyles[styleName] = Ext.applyIf({
                             externalGraphic: this.getAbsoluteUrl(
-                                    style.externalGraphic)}, style);
+                                style.externalGraphic)}, style);
                     } else {
                         encStyles[styleName] = style;
                     }
                 }
                 var featureGeoJson = featureFormat.extract.feature.call(
-                        featureFormat, feature);
+                    featureFormat, feature);
 
                 featureGeoJson.properties = OpenLayers.Util.extend({
                     _gx_style: styleName
@@ -745,14 +754,14 @@ GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
             handler: function() {
                 if (this.pressed == false) {
                     this.setIconClass("visibility_on");
-                    this.pressed = true; 
+                    this.pressed = true;
                 } else {
                     this.setIconClass("visibility_off");
-                    this.pressed = false; 
+                    this.pressed = false;
                 }
-           }
-       });
-       GeoAdmin.LegendButton.superclass.initComponent.apply(this, arguments);
+            }
+        });
+        GeoAdmin.LegendButton.superclass.initComponent.apply(this, arguments);
     }
 });
 
