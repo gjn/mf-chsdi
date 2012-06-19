@@ -139,6 +139,7 @@ class FeatureController(BaseController):
         c.baseUrl =  request.params.get('baseUrl')  or ''
         c.api_version = config['api_version']
         c.instanceid = config['instanceid']
+        c.path_url = request.path_url
 
 
     @validate_params(validator_layers)
