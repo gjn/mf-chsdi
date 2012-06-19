@@ -164,7 +164,9 @@ class FeatureController(BaseController):
                         feature.compute_template(layer, bodlayer)
                         feature.compute_attribute()
                         properties = feature.attributes
-                        body_tooltip = render('/tooltips/body_tooltip.mako')
+                        c.html_type = 'extended'
+                        feature.html = render(feature.__template__)
+                        body_tooltip = render('/tooltips/extended_tooltips.mako')
                         feature.html = body_tooltip.encode('utf8')
 
 
