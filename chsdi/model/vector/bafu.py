@@ -358,7 +358,7 @@ register('ch.bafu.landesforstinventar-totholz', totholz)
 
 class histerdbeben(Base, Queryable):
     # view in a schema
-    __tablename__ = 'historische_erdbeben_new'
+    __tablename__ = 'historische_erdbeben'
     __table_args__ = ({'schema': 'gefahren', 'autoload': True})
     __template__ = 'tooltips/histerdbeben.mako'
     id = Column('bgdi_id', Integer, primary_key=True)
