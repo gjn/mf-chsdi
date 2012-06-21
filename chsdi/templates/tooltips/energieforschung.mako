@@ -212,15 +212,15 @@
 <table border="0" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
      <tr><td width="48%" valign="top">
 % if c.feature.bild_1:
-     <img src="https://dav0.bgdi.admin.ch/bfe/images_energieforschung/${c.feature.bild_1}.jpg" alt="" width="300px" />
+     <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_energieforschung/${c.feature.bild_1}.jpg" alt="" width="300px" />
 % endif 
      </td><td width="48%" valign="top">
 % if c.feature.bild_2:     
-     <img src="https://dav0.bgdi.admin.ch/bfe/images_energieforschung/${c.feature.bild_2}.jpg" alt="" width="300px" />
+     <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_energieforschung/${c.feature.bild_2}.jpg" alt="" width="300px" />
 % endif     
      </td></tr><tr><td width="48%" valign="top">
 % if c.feature.bild_3:     
-     <img src="https://dav0.bgdi.admin.ch/bfe/images_energieforschung/${c.feature.bild_3}.jpg" alt="" width="300px" />
+     <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_energieforschung/${c.feature.bild_3}.jpg" alt="" width="300px" />
 % endif     
      </td><td>&nbsp;</td></tr>
 </table>
