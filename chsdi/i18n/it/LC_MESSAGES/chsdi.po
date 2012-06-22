@@ -447,7 +447,7 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS allegato 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Riserve di uccelli acquatici e migratori"
+msgstr "Riserve di uccelli acquatici"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonie di stambecchi"
@@ -468,7 +468,7 @@ msgid "ch.bafu.flora-schwingrasen"
 msgstr "Prati galleggianti"
 
 msgid "ch.bafu.flora-verbreitungskarten"
-msgstr "Grafica raster delle cartine di diffusione"
+msgstr "Raster cartine di diffusione"
 
 msgid "ch.bafu.flora-weltensutter_atlas"
 msgstr "Atlante Welten&Sutter"
@@ -489,7 +489,7 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Microzonazione spettrale"
 
 msgid "ch.bafu.holznutzung"
-msgstr "Utilizzo di legname e mortalità (IFN)"
+msgstr "Utilizzo e mortalità di legno (IFN)"
 
 msgid "ch.bafu.holzvorrat"
 msgstr "Provvigione di legname (IFN)"
@@ -516,7 +516,7 @@ msgid "ch.bafu.landesforstinventar-baumarten"
 msgstr "Specie arboree (IFN)"
 
 msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Legno morto (LFI)"
+msgstr "Legno morto (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentuale di bosco (IFN)"
@@ -591,7 +591,7 @@ msgid "ch.bafu.showme-kantone_sturzprozesse"
 msgstr "ShowMe cantoni: crollo"
 
 msgid "ch.bafu.swissprtr"
-msgstr "Emissioni di sostanze inquinanti (SwissPRTR)"
+msgstr "Emissioni di inquinanti (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
 msgstr "UNESCO beni naturali"
@@ -1610,6 +1610,63 @@ msgstr "Tipo di sito"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
 msgstr "Stato di avanzamento dei lavori OSiti"
+
+msgid "tt_emission_bis_abkz"
+msgstr "à (abrév.)"
+
+msgid "tt_emission_bis_bpk_bp"
+msgstr "à"
+
+msgid "tt_emission_bis_m"
+msgstr "Fin tronçon (m)"
+
+msgid "tt_emission_datum"
+msgstr "Année"
+
+msgid "tt_emission_fb1"
+msgstr "F1"
+
+msgid "tt_emission_fb2"
+msgstr "F2"
+
+msgid "tt_emission_grund1"
+msgstr "Motif (voie)"
+
+msgid "tt_emission_grund2"
+msgstr "Motif (pont)"
+
+msgid "tt_emission_k1_n"
+msgstr "K1 (n)"
+
+msgid "tt_emission_k1_t"
+msgstr "K1 (t)"
+
+msgid "tt_emission_kursbuchfe"
+msgstr "Num. indicateur officiel"
+
+msgid "tt_emission_lin_nr_dfa"
+msgstr "Num. ligne BD installations fixes"
+
+msgid "tt_emission_linienbeze"
+msgstr "Désignation"
+
+msgid "tt_emission_lre_n"
+msgstr "Lr,e (n)"
+
+msgid "tt_emission_lre_t"
+msgstr "Lr,e (t)"
+
+msgid "tt_emission_typ_aender"
+msgstr "Remarque"
+
+msgid "tt_emission_von_abkz"
+msgstr "de (abrév.)"
+
+msgid "tt_emission_von_bpk_bp"
+msgstr "de"
+
+msgid "tt_emission_von_m"
+msgstr "Début tronçon (m)"
 
 msgid "twitter title"
 msgstr "Twitter"

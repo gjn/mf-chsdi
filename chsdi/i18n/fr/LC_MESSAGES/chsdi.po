@@ -447,7 +447,7 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS annexe 2"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Réserves d'oiseaux d'eau et de migrateurs"
+msgstr "Réserves d'oiseaux d'eau"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
@@ -1610,6 +1610,63 @@ msgstr "Type de site"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
 msgstr "Phase d'investigation selon OSites"
+
+msgid "tt_emission_bis_abkz"
+msgstr "à (abrév.)"
+
+msgid "tt_emission_bis_bpk_bp"
+msgstr "à"
+
+msgid "tt_emission_bis_m"
+msgstr "Fin tronçon (m)"
+
+msgid "tt_emission_datum"
+msgstr "Année"
+
+msgid "tt_emission_fb1"
+msgstr "F1"
+
+msgid "tt_emission_fb2"
+msgstr "F2"
+
+msgid "tt_emission_grund1"
+msgstr "Motif (voie)"
+
+msgid "tt_emission_grund2"
+msgstr "Motif (pont)"
+
+msgid "tt_emission_k1_n"
+msgstr "K1 (n)"
+
+msgid "tt_emission_k1_t"
+msgstr "K1 (t)"
+
+msgid "tt_emission_kursbuchfe"
+msgstr "Num. indicateur officiel"
+
+msgid "tt_emission_lin_nr_dfa"
+msgstr "Num. ligne BD installations fixes"
+
+msgid "tt_emission_linienbeze"
+msgstr "Désignation"
+
+msgid "tt_emission_lre_n"
+msgstr "Lr,e (n)"
+
+msgid "tt_emission_lre_t"
+msgstr "Lr,e (t)"
+
+msgid "tt_emission_typ_aender"
+msgstr "Remarque"
+
+msgid "tt_emission_von_abkz"
+msgstr "de (abrév.)"
+
+msgid "tt_emission_von_bpk_bp"
+msgstr "de"
+
+msgid "tt_emission_von_m"
+msgstr "Début tronçon (m)"
 
 msgid "twitter title"
 msgstr "Twitter"

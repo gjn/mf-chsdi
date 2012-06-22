@@ -1923,11 +1923,29 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.bakom.mobil-antennenstandorte-umts"],
                 layertype: "wms",
                 url: 'http://wms-bod0t.bgdi.admin.ch',
-                type: "polygon",
+                type: "point",
                 format: "image/png",
                 datenherr: "ch.bakom",
                 queryable: true
-            },  */
+            },
+            "ch.bakom.versorgungsgebiet-tv": {
+                name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-tv"),
+                layertype: 'wmts',
+                timestamp: '20111206',
+                type: "polygon",
+                format: "image/jpeg",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
+            "ch.bakom.versorgungsgebiet-ukw": {
+                name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-ukw"),
+                layertype: 'wmts',
+                timestamp: '20111206',
+                type: "polygon",
+                format: "image/jpeg",
+                datenherr: "ch.bakom",
+                queryable: true
+            },*/
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],

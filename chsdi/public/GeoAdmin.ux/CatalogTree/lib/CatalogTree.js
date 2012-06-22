@@ -657,10 +657,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.swissprtr"
                     },
-                   /*FIXME ltfoa: still not ready (advanced tooltip)
                     {
                         layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
-                    },*/
+                    },
                     {
                         layerId: "ch.ensi.zonenplan-notfallschutz-kernanlagen"
                     }
@@ -779,7 +778,23 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
-                    }
+                    } /* FIXME ltfoa: still not ready
+                    ,
+                    {
+                        layerId: "ch.bakom.radio-fernsehsender"
+                    },
+                    {
+                        layerId: "ch.bakom.mobil-antennenstandorte-gsm"
+                    },
+                    {
+                        layerId: "ch.bakom.mobil-antennenstandorte-umts"
+                    },
+                    {
+                        layerId: "ch.bakom.versorgungsgebiet-tv"
+                    },
+                    {
+                        layerId: "ch.bakom.versorgungsgebiet-ukw"
+                    }*/
                 ]
 
             }

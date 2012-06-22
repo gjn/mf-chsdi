@@ -412,6 +412,16 @@ class baugrundklassen(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
 
+class emissionplan(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'laerm_emplan_bahn_2015'
+    __table_args__ = ({'schema': 'diverse', 'autoload': True})
+    __template__ = 'tooltips/emissionplan.mako'
+    __extended_info__ = True
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bav.laerm-emissionplan_eisenbahn_2015', emissionplan)
+
 
 register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)
