@@ -1658,7 +1658,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bav.laerm-emissionplan_eisenbahn_2015": {
                 name: OpenLayers.i18n("ch.bav.laerm-emissionplan_eisenbahn_2015"),
                 layertype: 'wmts',
-                timestamp: '20101108',
+                timestamp: '20101109',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bav",

@@ -32,7 +32,6 @@
     <tr><td valign="middle">${_('tt_emission_grund1')}</td><td>${c.feature.grund1 or '-'}</td></tr>
     <tr><td valign="middle">${_('tt_emission_fb2')}</td><td>${c.feature.fb2 or '-'}</td></tr>
     <tr><td valign="middle">${_('tt_emission_grund2')}</td><td>${c.feature.grund2 or '-'}</td></tr>
-    <tr><td valign="middle">${_('tt_emission_kursbuchfe')}</td><td>${c.feature.kursbuchfe or '-'}</td></tr>
     <tr><td valign="middle">${_('tt_emission_typ_aender')}</td><td>${c.feature.typ_aender or '-'}</td></tr>
     <tr><td valign="middle">${_('tt_emission_datum')}</td><td>${c.feature.datum or '-'}</td></tr>
 
