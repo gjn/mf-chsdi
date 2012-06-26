@@ -467,6 +467,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         return layer || null;
     },
 
+    removeLayerByName: function(layername) {
+         var layer = this.getLayerByLayerName(layername);
+         this.removeLayer(layer);
+    },
+
     addWmsLayer: function(name, url, layers, visibility, opacity) {
         //Attribution management with hyperlink
         var urlDomain = this.getHostname(url);
