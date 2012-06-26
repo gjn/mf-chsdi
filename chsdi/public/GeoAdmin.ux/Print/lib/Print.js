@@ -214,7 +214,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
                     var params = OpenLayers.Util.getParameterString(paramsObject);
                     var qrcodeurl = escape("http://map.geo.admin.ch/?"+params);
-                    provider.customParams.qrcodeurl =  "http://chart.apis.google.com/chart?chld=L%7C0&chs=512x512&choe=UTF-8&cht=qr&chl="+qrcodeurl;
+                    provider.customParams.qrcodeurl = GeoAdmin.webServicesUrl + "/qrcode?longurl="+qrcodeurl;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
                         var pdfCounter = 0;

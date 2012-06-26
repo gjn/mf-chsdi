@@ -80,7 +80,7 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                         content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None', '-') + ' [m] </td></tr>';
                         content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr>";
                         var qrcodeurl = escape("http://map.geo.admin.ch/?crosshair=bowl&"+params);
-                        content = content + "<tr><td align='center' colspan='2'><img src='http://chart.apis.google.com/chart?chld=L%7C1&chs=256x256&choe=UTF-8&cht=qr&chl="+qrcodeurl+"' width='128' height='128'/></td></tr></table>";
+                        content = content + "<tr><td align='center' colspan='2'><img src='"+GeoAdmin.webServicesUrl+"/qrcode?longurl="+qrcodeurl+"' width='128' height='128'/></td></tr></table>";
                         if (this.popup) {
                             this.popup.destroy();
                         }
