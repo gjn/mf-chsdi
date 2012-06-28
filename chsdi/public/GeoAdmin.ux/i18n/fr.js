@@ -515,6 +515,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.swissimage':'SWISSIMAGE',
 	'ch.swisstopo.swisstlm3d-karte':'Modèle topographique du paysage',
 	'ch.swisstopo.swisstlm3d-wanderwege':'chemins de randonnée pédestre',
+	'ch.swisstopo.treasurehunt':'Chasse-Tresor',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/fr/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Parcs nationaux VECTOR200',
 	'ch.swisstopo.vec200-building':'Bâtiments gén. VECTOR200',

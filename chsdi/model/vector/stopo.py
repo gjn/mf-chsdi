@@ -81,6 +81,14 @@ register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Termin
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200ShipKursschiff)
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Railway)
 
+class treasurehunt(Base, Queryable):
+    __tablename__ = 'treasurehunt'
+    __table_args__ = ({'schema': 'public', 'autoload': True})
+    __template__ = 'tooltips/treasurehunt.mako'
+    id = Column('bgdi_id', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.swisstopo.treasurehunt', treasurehunt)
 
 class Vec200Trafficinfo(Base, Queryable):
     __tablename__ = 'vec200_trafficinfo_tiles'

@@ -548,9 +548,6 @@ msgstr "REN  Wald>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Wald<1000m"
 
-msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
-msgstr "Biosphärenreservate"
-
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Pärke"
 
@@ -1079,6 +1076,9 @@ msgstr "Grundkategorie Arealstatistik 1992/97"
 msgid "identificator"
 msgstr "Identifikator"
 
+msgid "information"
+msgstr "Information"
+
 msgid "intern"
 msgstr "Intern"
 
@@ -1168,6 +1168,9 @@ msgstr "Link zu Detailbeschreibung"
 
 msgid "length_km"
 msgstr "Länge [km]"
+
+msgid "link"
+msgstr "Link"
 
 msgid "link to canton geoportal"
 msgstr "Link zum kantonalen Portal"
@@ -1399,6 +1402,9 @@ msgstr "Teilobjektnr."
 
 msgid "tilenumber"
 msgstr "Blattnummer"
+
+msgid "title"
+msgstr "Titel"
 
 msgid "toll"
 msgstr "Strassenbenutzungsgebühr"

@@ -548,9 +548,6 @@ msgstr "REN  Zones forestières>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Zones forestières<1000m"
 
-msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
-msgstr "Réserves de biosphère"
-
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parcs"
 
@@ -1079,6 +1076,9 @@ msgstr "Catégorie de base de la statistique de la superficie 1992/97"
 msgid "identificator"
 msgstr "Identifiant"
 
+msgid "information"
+msgstr "Information"
+
 msgid "intern"
 msgstr "Interne"
 
@@ -1168,6 +1168,9 @@ msgstr "Lien vers la description détaillée des données"
 
 msgid "length_km"
 msgstr "Longueur [km]"
+
+msgid "link"
+msgstr "Lien"
 
 msgid "link to canton geoportal"
 msgstr "Lien sur le géoportail cantonal"
@@ -1399,6 +1402,9 @@ msgstr "Numéro du sous-objet"
 
 msgid "tilenumber"
 msgstr "Numéro de feuille"
+
+msgid "title"
+msgstr "Titre"
 
 msgid "toll"
 msgstr "Péage"

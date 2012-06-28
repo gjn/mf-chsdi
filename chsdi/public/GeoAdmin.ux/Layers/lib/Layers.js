@@ -660,6 +660,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 hasLegend: false,
                 queryable: true
             },
+            "ch.swisstopo.treasurehunt": {
+                name: OpenLayers.i18n("ch.swisstopo.treasurehunt"),
+                layertype: 'wmts',
+                timestamp: '20120602',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.swisstopo.vec25-primaerflaechen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-primaerflaechen"),
                 layertype: 'wmts',

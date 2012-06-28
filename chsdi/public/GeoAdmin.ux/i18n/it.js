@@ -515,6 +515,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.swissimage':'SWISSIMAGE',
 	'ch.swisstopo.swisstlm3d-karte':'Modello topo. del paesaggio',
 	'ch.swisstopo.swisstlm3d-wanderwege':'percorsi escursionistici',
+	'ch.swisstopo.treasurehunt':'Mappa-Tesoro',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/it/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Parchi nazionali VECTOR200',
 	'ch.swisstopo.vec200-building':'Edifici gen. VECTOR200',

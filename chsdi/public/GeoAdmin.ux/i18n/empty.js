@@ -167,6 +167,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.vec200-miscellaneous-geodpoint':"",
     'ch.swisstopo.vec200-names-namedlocation':"",
     'ch.swisstopo.swissimage':"",
+	'ch.swisstopo.treasurehunt':"",
     'ch.bfe.energieforschung':"",
     'ch.bfe.stauanlagen-bundesaufsicht':"",
     'ch.bfe.abgeltung-wasserkraftnutzung':"",

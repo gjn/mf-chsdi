@@ -548,9 +548,6 @@ msgstr "REN  Guaud>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Guaud<1000m"
 
-msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
-msgstr "Biosphärenreservate"
-
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parcs"
 
@@ -1079,6 +1076,9 @@ msgstr "Grundkategorie Arealstatistik 1992/97"
 msgid "identificator"
 msgstr "Identifikator"
 
+msgid "information"
+msgstr "Infomation"
+
 msgid "intern"
 msgstr "Intern"
 
@@ -1168,6 +1168,9 @@ msgstr "Link tar la descripziun da detagl"
 
 msgid "length_km"
 msgstr "Länge [km]"
+
+msgid "link"
+msgstr "Link"
 
 msgid "link to canton geoportal"
 msgstr "Link tar portal chantunala"
@@ -1399,6 +1402,9 @@ msgstr "Teilobjektnr."
 
 msgid "tilenumber"
 msgstr "Blattnummer"
+
+msgid "title"
+msgstr "Title"
 
 msgid "toll"
 msgstr "Strassenbenutzungsgebühr"

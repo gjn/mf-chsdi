@@ -548,9 +548,6 @@ msgstr "REN forest zones>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN forest zones<1000m"
 
-msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
-msgstr "Biosphere reserves"
-
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parks"
 
@@ -1080,6 +1077,9 @@ msgstr "ID area statistic 1992/97"
 msgid "identificator"
 msgstr "Identificator"
 
+msgid "information"
+msgstr "Infomation"
+
 msgid "intern"
 msgstr "Intern"
 
@@ -1169,6 +1169,9 @@ msgstr "Link to description"
 
 msgid "length_km"
 msgstr "Länge [km]"
+
+msgid "link"
+msgstr "Link"
 
 msgid "link to canton geoportal"
 msgstr "Link to the portal of canton"
@@ -1400,6 +1403,9 @@ msgstr "Area of the partial object"
 
 msgid "tilenumber"
 msgstr "Sheet number"
+
+msgid "title"
+msgstr "Title"
 
 msgid "toll"
 msgstr "Toll"

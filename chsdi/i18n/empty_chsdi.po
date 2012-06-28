@@ -3,7 +3,14 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
-msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+
+msgid "title"
+msgstr ""
+
+msgid "information"
+msgstr ""
+
+msgid "link"
 msgstr ""
 
 msgid "ch.bafu.flora-verbreitungskarten"
