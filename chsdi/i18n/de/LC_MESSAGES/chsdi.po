@@ -548,6 +548,9 @@ msgstr "REN  Wald>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN  Wald<1000m"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+msgstr "Biosphärenreservate"
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Pärke"
 

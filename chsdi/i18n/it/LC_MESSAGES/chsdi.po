@@ -548,6 +548,9 @@ msgstr "REN Zone di foresta>1000m"
 msgid "ch.bafu.ren-wald_unter_1000_meter"
 msgstr "REN Zone di foresta<1000m"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
+msgstr "Riserve di biosfera"
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parchi"
 
