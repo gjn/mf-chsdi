@@ -66,8 +66,11 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         if (GeoAdmin.webServicesUrl != null) {
             this.url = GeoAdmin.webServicesUrl + "/swisssearch/geocoding";
         }
-        OpenLayers.Util.extend(this, options || {});
-        this.div = div;
+        this.div = OpenLayers.Util.getElement(div);
+
+        this.map = map;
+                          
+        OpenLayers.Element.addClass(this.div, 'geoadmin-swisssearchlight');
         this.scriptProtocol = new OpenLayers.Protocol.Script({
             url: this.url,
             callback: this.geocodeCb,
@@ -79,10 +82,10 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         });
         // Create input field
         this.inputElement = document.createElement('input');
-        if (div.style.width) {
-            this.inputElement.style.width = div.style.width;
+        if (this.div.style && this.div.style.width) {
+            this.inputElement.style.width = this.div.style.width;
         }
-        div.appendChild(this.inputElement);
+        this.div.appendChild(this.inputElement);
 
         /* Doesnt work in IE, but kept for the record
          this.inputElement.onkeyup = (function(event) {
