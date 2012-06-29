@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel=stylesheet type=text/css href=../../../build/api-light.css>
+    <style>
+        #map {
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body onload="init()">
+<h1>Light SwissSearch Example</h1>
+<div id="swisssearch"></div>
+<div id="map"></div>
+<script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="../../GeoAdmin.js"></script>
+<script type="text/javascript" src="../lib/Map.js"></script>
+<script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+<script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+<script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+<script type="text/javascript" src="../../SwissSearch/lib/SwissSearchLight.js"></script>
+<script>
+    var map, swisssearch;
+    GeoAdmin.OpenLayersImgPath = "../../Map/img/";
+    GeoAdmin.webServicesUrl = "http://api.geo.admin.ch";
+    function init() {
+        map = new GeoAdmin.Map("map", {doZoomToMaxExtent: true});
+        map.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");
+        swisssearch = new GeoAdmin.SwissSearchCombo('swisssearch', {map: map });
+    }
+   
+</script>
+</body>
+</html>
