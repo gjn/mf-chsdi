@@ -130,17 +130,11 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
 
         // Create autocompletion div
         this.autoCompletion = document.createElement('div');
-        this.autoCompletion.style.backgroundColor = "#FFFFFF";
-        this.autoCompletion.style.color = "#000000";
         this.autoCompletion.className = "autocompletion";
-        this.autoCompletion.style.position = "absolute";
         this.autoCompletion.style.width = this.inputElement.style.width;
-        this.autoCompletion.style.border = '1px';
         var myTop = this.getPositionTop(this.inputElement) + 25;
         this.autoCompletion.style.top = myTop + "px";
         this.autoCompletion.style.left = this.getPositionLeft(this.inputElement) + "px";
-        this.autoCompletion.style.display = 'none';
-        this.autoCompletion.style.zIndex = 2000;
         document.body.appendChild(this.autoCompletion);
         // Create a global variable due to scope issues in IE
         window.swissSearchCombo = this;

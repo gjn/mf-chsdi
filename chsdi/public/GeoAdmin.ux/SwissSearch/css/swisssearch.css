@@ -1,5 +1,14 @@
+.autocompletion {
+    background-color: #ffffff;
+    color: #000000;
+    position: absolute;
+    border: 1px solid black;
+    display: none;
+    z-index: 2000;
+}
+
 .autocompletion A:link {
-    text-decoration: none;
+   text-decoration: none;
     color: black;
 }
 
