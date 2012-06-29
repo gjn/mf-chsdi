@@ -120,6 +120,30 @@ msgstr ""
 msgid "feature"
 msgstr ""
 
+msgid "tt_ch.bakom.leistung"
+msgstr ""
+
+msgid "tt_ch.bakom.versorgungsgebiet_prog"
+msgstr ""
+
+msgid "tt_ch.bakom.radio-fernsehsender_name"
+msgstr ""
+
+msgid "tt_ch.bakom.radio-fernsehsender_code"
+msgstr ""
+
+msgid "tt_bakom_veryweak"
+msgstr ""
+
+msgid "tt_bakom_weak"
+msgstr ""
+
+msgid "tt_bakom_middle"
+msgstr ""
+
+msgid "tt_bakom_strong"
+msgstr ""
+
 msgid "klwkp_gwlnr"
 msgstr ""
 

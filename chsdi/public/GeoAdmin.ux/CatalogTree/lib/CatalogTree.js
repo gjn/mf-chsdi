@@ -778,8 +778,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
-                    } /* FIXME ltfoa: still not ready
-                    ,
+                    },
                     {
                         layerId: "ch.bakom.radio-fernsehsender"
                     },
@@ -794,7 +793,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bakom.versorgungsgebiet-ukw"
-                    }*/
+                    }
                 ]
 
             }

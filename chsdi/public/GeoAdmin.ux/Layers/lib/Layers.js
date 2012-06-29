@@ -1906,7 +1906,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-            /*FIXME ltfoa: missing advanced tooltip. Acivate them when ready
             "ch.bakom.radio-fernsehsender": {
                 name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
                 layers: ["ch.bakom.radio-fernsehsender"],
@@ -1940,21 +1939,23 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bakom.versorgungsgebiet-tv": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-tv"),
                 layertype: 'wmts',
-                timestamp: '20111206',
+                timestamp: '20070704',
                 type: "polygon",
-                format: "image/jpeg",
+                format: "image/png",
                 datenherr: "ch.bakom",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.bakom.versorgungsgebiet-ukw": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-ukw"),
                 layertype: 'wmts',
-                timestamp: '20111206',
+                timestamp: '20070704',
                 type: "polygon",
-                format: "image/jpeg",
+                format: "image/png",
                 datenherr: "ch.bakom",
+                opacity: 0.75,
                 queryable: true
-            },*/
+            },
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],

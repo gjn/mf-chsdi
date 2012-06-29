@@ -77,3 +77,51 @@ class kleinwasserkraftpotentiale(Base, Queryable):
     the_geom = Column(Geometry(21781))
 
 register('ch.bfe.kleinwasserkraftpotentiale', kleinwasserkraftpotentiale)
+
+class bakomfernsehsender(Base, Queryable):
+    __tablename__ = 'nisdb_bro_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomfernsehsender.mako'
+    __extended_info__ = True
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.radio-fernsehsender', bakomfernsehsender)
+
+class bakomgsm(Base, Queryable):
+    __tablename__ = 'nisdb_gsm'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomgsm.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.mobil-antennenstandorte-gsm', bakomgsm)
+
+class bakomumts(Base, Queryable):
+    __tablename__ = 'nisdb_umts'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomumts.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.mobil-antennenstandorte-umts', bakomumts)
+
+class bakomtv(Base, Queryable):
+    __tablename__ = 'tv_gebiet'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomtv.mako'
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.versorgungsgebiet-tv', bakomtv)
+
+class bakomukw(Base, Queryable):
+    __tablename__ = 'ukw_gebiet'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomukw.mako'
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.versorgungsgebiet-ukw', bakomukw)
+
+

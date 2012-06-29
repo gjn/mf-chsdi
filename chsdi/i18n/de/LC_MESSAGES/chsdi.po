@@ -1415,6 +1415,30 @@ msgstr "Strassenbenutzungsgebühr"
 msgid "totholz"
 msgstr "Totholzvolumen [m3/ha]"
 
+msgid "tt_bakom_middle"
+msgstr "Mittel"
+
+msgid "tt_bakom_strong"
+msgstr "Gross"
+
+msgid "tt_bakom_veryweak"
+msgstr "Sehr klein"
+
+msgid "tt_bakom_weak"
+msgstr "Klein"
+
+msgid "tt_ch.bakom.leistung"
+msgstr "Sendeleistung (ERP)"
+
+msgid "tt_ch.bakom.radio-fernsehsender_code"
+msgstr "Code"
+
+msgid "tt_ch.bakom.radio-fernsehsender_name"
+msgstr "Name"
+
+msgid "tt_ch.bakom.versorgungsgebiet_prog"
+msgstr "Programme"
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Fläche [ha]"
 
