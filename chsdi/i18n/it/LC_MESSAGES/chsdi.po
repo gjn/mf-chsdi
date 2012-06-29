@@ -312,7 +312,7 @@ msgid "bestimmung"
 msgstr "Dispositions"
 
 msgid "betrieb"
-msgstr "Entreprise"
+msgstr "Complesso/azienda"
 
 msgid "bfsnr"
 msgstr "Numéro OFS"
@@ -1700,6 +1700,12 @@ msgstr "de"
 
 msgid "tt_emission_von_m"
 msgstr "Début tronçon (m)"
+
+msgid "tt_swissprtr_detaildaten"
+msgstr "Informazioni dettagliate sul complesso/azienda"
+
+msgid "tt_swissprtr_ort"
+msgstr "Luogo"
 
 msgid "twitter title"
 msgstr "Twitter"

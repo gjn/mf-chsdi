@@ -305,6 +305,15 @@ class biogeoreg(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.biogeographische_regionen', biogeoreg)
 
+class smaragd(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'smaragd'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': True})
+    __template__ = 'tooltips/smaragd.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.schutzgebiete-smaragd', smaragd)
+
 class biosphaerenreservate(Base, Queryable):
     # view in a schema
     __tablename__ = 'biores'

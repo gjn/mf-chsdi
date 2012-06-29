@@ -453,6 +453,12 @@ msgstr ""
 msgid "ort"
 msgstr ""
 
+msgid "tt_swissprtr_ort"
+msgstr ""
+
+msgid "tt_swissprtr_detaildaten"
+msgstr ""
+
 msgid "gemeinde"
 msgstr ""
 
