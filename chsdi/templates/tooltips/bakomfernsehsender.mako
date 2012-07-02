@@ -26,18 +26,18 @@ freqchan = c.feature.freqchan.split(',')
 i = 0 
 %>
 
-<table border="2" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
+<table border="1" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
 <tr>
-<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_service')}</th>
-<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_program')}</th>
-<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_freqchan')}</th>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold; text-align: center;">${_('tt_service')}</th>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold; text-align: center;">${_('tt_program')}</th>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold; text-align: center;">${_('tt_freqchan')}</th>
 </tr>
-
+</br>
 % while i < len(service):
 <tr>
-<td width="50" valign="middle">${service[i] or '-'}</td>
-<td width="50" valign="middle">${program[i] or '-'}</td>
-<td width="50" valign="middle">${freqchan[i] or '-'}</td>
+<td width="50" valign="middle" style="text-align: center;">${service[i] or '-'}</td>
+<td width="50" valign="middle" style="text-align: center;">${program[i] or '-'}</td>
+<td width="50" valign="middle" style="text-align: center;">${freqchan[i] or '-'}</td>
 </tr>
 <% 
 i = i + 1
