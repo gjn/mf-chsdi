@@ -19,5 +19,30 @@
 <tr><td width="150" valign="middle">${_('tt_ch.bakom.leistung')}</td><td>${c.feature.power or '-'}</td></tr>
 <!-- -------------------------- -->
 </table>
+<% 
+service = c.feature.service.split(',')
+program = c.feature.program.split(',')
+freqchan = c.feature.freqchan.split(',')
+i = 0 
+%>
+
+<table border="2" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
+<tr>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_service')}</th>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_program')}</th>
+<th width="50" valign="middle" style="background-color: #EFEFEF; font-weight: bold;">${_('tt_freqchan')}</th>
+</tr>
+
+% while i < len(service):
+<tr>
+<td width="50" valign="middle">${service[i] or '-'}</td>
+<td width="50" valign="middle">${program[i] or '-'}</td>
+<td width="50" valign="middle">${freqchan[i] or '-'}</td>
+</tr>
+<% 
+i = i + 1
+%>
+% endwhile
+</table>
 <br/>
 </%def>
