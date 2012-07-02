@@ -242,10 +242,7 @@ GeoAdmin.API = OpenLayers.Class({
         }
 
         if (!this.selectCtrl) {
-            this.selectCtrl = new OpenLayers.Control.SelectFeature(this.map.vector, {
-                hover: true,
-                highlightOnly: true
-            });
+            this.selectCtrl = new OpenLayers.Control.SelectFeature(this.map.vector);
             this.map.addControl(this.selectCtrl);
             this.selectCtrl.activate();
             this.map.vector.events.on({
@@ -783,7 +780,7 @@ GeoAdmin.API = OpenLayers.Class({
             recenter: "false",
             title: '',
             html: null,
-            width: 200,
+            width: 300,
             collapsible: false,
             unpinnable: true,
             panIn: true,

@@ -41,6 +41,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
     var addBaseLayerTool;
     var backgroundLayer;
     var addTooltip;
+    var addExtendedTooltip;
     var editor;
     var easting;
     var northing;
@@ -217,10 +218,16 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
             code = code + '   //Add a tooltip when the user clicks on a feature in the map';
             code = code + separator;
-            code = code + '   api.createTooltip({});';
+            code = code + '   api.createExtendedTooltip({});';
             code = code + separator;
         }
-
+        if (addExtendedTooltip) {
+            code = code + separator;
+            code = code + '   //Add a tooltip when the user clicks on a feature in the map';
+            code = code + separator;
+            code = code + '   api.createExtendedTooltip({box: true, handlerOptions : { box: { keyMask: Ext.isMac ? OpenLayers.Handler.MOD_META : OpenLayers.Handler.MOD_CTRL }}});';
+            code = code + separator;
+        }
 
         code = code + separator;
         code = code + '   //Recenter the map and define a zoom level';
@@ -270,6 +277,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         }
         code = code + separator;
         code = code + '<\/body>';
+
         return code;
     }
 
@@ -286,18 +294,15 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             }
         } else {
             iframeElement = document.createElement("iframe");
-            iframeElement.setAttribute('id', 'ifrm');
-
+            iframeElement.id = 'ifrm';
             if (addSwissSearch) {
                 iframeElement.setAttribute('width', mapWidth + 30);
-            } else {
-                iframeElement.setAttribute('width', mapWidth + 2);
-            }
-            if (addSwissSearch) {
                 iframeElement.setAttribute('height', mapHeight + 30);
             } else {
+                iframeElement.setAttribute('width', mapWidth + 2);
                 iframeElement.setAttribute('height', mapHeight + 2);
             }
+
             panel.appendChild(iframeElement);
             var docIframe = iframeElement.contentWindow.document;
             docIframe.open();
@@ -311,7 +316,11 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             }
 
             docIframe.close();
-            window.setTimeout('manageIframeMapEvent()',8500);
+            if (Ext.isGecko) {
+                window.setTimeout('manageIframeMapEvent()',15000);
+            } else {
+                window.setTimeout('manageIframeMapEvent()',7500);
+            }
 
         }
     }
@@ -330,7 +339,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
         }
     }
     
-    function manageIframeMapEvent(myiframe) {
+    function manageIframeMapEvent() {
          var myiframe = document.getElementById("ifrm");
          myiframe.contentWindow.api.map.events.register("moveend", null, mapMoveEnd);
     }
@@ -512,7 +521,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                 {
                     xtype: 'checkbox',
                     anchor: '95%',
-                    fieldLabel: '<a href="../widgets/sdiwidgetsexamples2.html#tooltip" target="new">Add feature tooltip<\/a>',
+                    fieldLabel: '<a href="../widgets/sdiwidgetsexamples2.html#extendedtooltip-single-click" target="new">Add feature tooltip<\/a>',
                     listeners:{
                         'check': function(field, checked) {
                             addTooltip = checked;
@@ -520,6 +529,19 @@ Please read the terms of use and register before using the GeoAdmin API: http://
                             createPreview();
                         }
                     }
+                },
+                {
+                    xtype: 'checkbox',
+                    anchor: '95%',
+                    fieldLabel: '<a href="../widgets/sdiwidgetsexamples2.html#extendedtooltip-with-box-selection" target="new">Add extended feature tooltip<\/a>',
+                    listeners:{
+                        'check': function(field, checked) {
+                            addExtendedTooltip = checked;
+                            dropPreview();
+                            createPreview();
+                        }
+                    }
+
                 },
                 {
                     xtype: 'textfield',
