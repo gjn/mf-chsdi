@@ -3,6 +3,15 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "tt_service"
+msgstr ""
+
+msgid "tt_program"
+msgstr ""
+
+msgid "tt_freqchan"
+msgstr ""
+
 msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
 msgstr ""
 

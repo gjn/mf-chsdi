@@ -1701,6 +1701,15 @@ msgstr "de"
 msgid "tt_emission_von_m"
 msgstr "Début tronçon (m)"
 
+msgid "tt_freqchan"
+msgstr "Fréquence / Canal TV"
+
+msgid "tt_program"
+msgstr "Programme"
+
+msgid "tt_service"
+msgstr "Service radio"
+
 msgid "tt_swissprtr_detaildaten"
 msgstr "Détails de l’établissement"
 
