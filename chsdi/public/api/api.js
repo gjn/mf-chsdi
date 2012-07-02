@@ -250,7 +250,7 @@ GeoAdmin.API = OpenLayers.Class({
             this.selectCtrl.activate();
             this.map.vector.events.on({
                 featureselected: function(e) {
-                    if (this.activatePopup) {
+                    if (this.activatePopup && this.map.getControlsByClass('OpenLayers.Control.GetFeature').length === 0) {
                         this.showPopup({
                             feature: e.feature
                         });
@@ -783,7 +783,7 @@ GeoAdmin.API = OpenLayers.Class({
             recenter: "false",
             title: '',
             html: null,
-            width: 'auto',
+            width: 200,
             collapsible: false,
             unpinnable: true,
             panIn: true,
