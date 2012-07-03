@@ -108,6 +108,7 @@ GeoAdmin.BaseLayerTool = Ext.extend(Ext.Container, {
             "ch.swisstopo.pixelkarte-farbe",
             "ch.swisstopo.pixelkarte-grau",
             "ch.kantone.hintergrund-farbe",
+            "ch.swisstopo.tml3d-hintergrund-karte",
             "voidLayer"
         ];
 
