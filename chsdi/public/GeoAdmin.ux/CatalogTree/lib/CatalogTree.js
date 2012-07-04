@@ -778,7 +778,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
-                    },
+                    } /*FIXME ltfoa 04.07.2012: layers ready but datenherr wants to wait for the deploy,
                     {
                         layerId: "ch.bakom.radio-fernsehsender"
                     },
@@ -793,7 +793,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bakom.versorgungsgebiet-ukw"
-                    }
+                    } */
                 ]
 
             }
