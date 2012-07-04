@@ -445,9 +445,23 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfs.gebaeude_wohnungs_register':'Register of Buildings and Dwellings',
 	'ch.bfs.url':'http://www.bfs.admin.ch/bfs/portal/en/index.html',
 	'ch.blw':'FOAG',
+	'ch.blw.alpprodukte':'ch.blw.alpprodukte', //TODO
+	'ch.blw.bergprodukte':'ch.blw.bergprodukte', //TODO
+	'ch.blw.bewaesserungsbeduerftigkeit':'ch.blw.bewaesserungsbeduerftigkeit', //TODO
+	'ch.blw.bodeneignung-kulturland':'Aptitude: Cropland',
+	'ch.blw.bodeneignung-kulturtyp':'Aptitude: crop types',
 	'ch.blw.erosion':'Risk of erosion',
 	'ch.blw.hang_steillagen':'hillside and steep slopes situation',
+	'ch.blw.klimaeignung-futterbau':'Clima - forage crops',
+	'ch.blw.klimaeignung-getreidebau':'Clima - cereal crops',
+	'ch.blw.klimaeignung-kartoffeln':'Clima - potatoes',
+	'ch.blw.klimaeignung-koernermais':'Clima - corn grain',
+	'ch.blw.klimaeignung-kulturland':'Clima - cultivated land',
+	'ch.blw.klimaeignung-spezialkulturen':'Clima - special crops',
+	'ch.blw.klimaeignung-typ':'Clima - overview',
+	'ch.blw.klimaeignung-zwischenfruchtbau':'Clima - crops stolen',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Agricultural zones boundaries',
+	'ch.blw.niederschlagshaushalt':'Rainfall',
 	'ch.blw.steil_terrassenlagen_rebbau':'Viticulture in steep areas and terraces',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=en',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'PDO meat products',

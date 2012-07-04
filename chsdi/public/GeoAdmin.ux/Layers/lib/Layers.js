@@ -2153,6 +2153,136 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bfe",
                 queryable: true
             },
+            "ch.blw.klimaeignung-typ": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-typ"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-spezialkulturen": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-spezialkulturen"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-zwischenfruchtbau": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-zwischenfruchtbau"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-koernermais": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-koernermais"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-kartoffeln": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-kartoffeln"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-getreidebau": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-getreidebau"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.niederschlagshaushalt": {
+                name: OpenLayers.i18n("ch.blw.niederschlagshaushalt"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-futterbau": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-futterbau"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.klimaeignung-kulturland": {
+                name: OpenLayers.i18n("ch.blw.klimaeignung-kulturland"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-kulturtyp": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-kulturtyp"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-kulturland": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-kulturland"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bergprodukte": {
+                name: OpenLayers.i18n("ch.blw.bergprodukte"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.alpprodukte": {
+                name: OpenLayers.i18n("ch.blw.alpprodukte"),
+                layertype: 'wmts',
+                timestamp: '20081024',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 layertype: 'wmts',
@@ -2186,7 +2316,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.ursprungsbezeichnungen-fleisch": {
                 name: OpenLayers.i18n("ch.blw.ursprungsbezeichnungen-fleisch"),
                 layertype: 'wmts',
-                timestamp: '20081024',
+                timestamp: '20110805',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -2226,7 +2356,17 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.landwirtschaftliche-zonengrenzen": {
                 name: OpenLayers.i18n("ch.blw.landwirtschaftliche-zonengrenzen"),
                 layertype: 'wmts',
-                timestamp: '20111010',
+                timestamp: '20111214',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bewaesserungsbeduerftigkeit": {
+                name: OpenLayers.i18n("ch.blw.bewaesserungsbeduerftigkeit"),
+                layertype: 'wmts',
+                timestamp: '20091110',
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",

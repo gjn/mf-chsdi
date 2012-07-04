@@ -441,9 +441,23 @@ OpenLayers.Lang.rm= {
 	'ch.bfs.gebaeude_wohnungs_register':'Register dals edifizis e da las abitaziuns',
 	'ch.bfs.url':'http://www.bfs.admin.ch/bfs/portal/de/index.html',
 	'ch.blw':'BLW',
+	'ch.blw.alpprodukte':'ch.blw.alpprodukte', //TODO
+	'ch.blw.bergprodukte':'ch.blw.bergprodukte', //TODO
+	'ch.blw.bewaesserungsbeduerftigkeit':'ch.blw.bewaesserungsbeduerftigkeit', //TODO
+	'ch.blw.bodeneignung-kulturland':'ch.blw.bodeneignung-kulturland', //TODO
+	'ch.blw.bodeneignung-kulturtyp':'ch.blw.bodeneignung-kulturtyp', //TODO
 	'ch.blw.erosion':'Ristga d\'erosiun',
 	'ch.blw.hang_steillagen':'Costas e spundas',
+	'ch.blw.klimaeignung-futterbau':'ch.blw.klimaeignung-futterbau', //TODO
+	'ch.blw.klimaeignung-getreidebau':'ch.blw.klimaeignung-getreidebau', //TODO
+	'ch.blw.klimaeignung-kartoffeln':'ch.blw.klimaeignung-kartoffeln', //TODO
+	'ch.blw.klimaeignung-koernermais':'ch.blw.klimaeignung-koernermais', //TODO
+	'ch.blw.klimaeignung-kulturland':'ch.blw.klimaeignung-kulturland', //TODO
+	'ch.blw.klimaeignung-spezialkulturen':'ch.blw.klimaeignung-spezialkulturen', //TODO
+	'ch.blw.klimaeignung-typ':'ch.blw.klimaeignung-typ', //TODO
+	'ch.blw.klimaeignung-zwischenfruchtbau':'ch.blw.klimaeignung-zwischenfruchtbau', //TODO
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Cunfin da zona agricultura',
+	'ch.blw.niederschlagshaushalt':'ch.blw.niederschlagshaushalt', //TODO
 	'ch.blw.steil_terrassenlagen_rebbau':'Viticultura en spundivs e terrassas',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=de',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP products da charn',

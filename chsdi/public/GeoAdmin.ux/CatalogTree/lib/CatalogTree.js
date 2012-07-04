@@ -431,7 +431,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Basisdaten',
         children: [
             {
-                text: 'Referenzsysteme',
+                text: 'Referenzsysteme',  // Id Inspire 11
                 children: [
                     {
                         layerId: "ch.swisstopo.fixpunkte-agnes"
@@ -448,11 +448,11 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Geografische Gittersysteme',
+                text: 'Geografische Gittersysteme',  // Id Inspire ??
                 hidden: true
             },
             {
-                text: 'Geografische Namen',
+                text: 'Geografische Namen',  // Id Inspire 13 ??
                 children: [
                      {
                         layerId: "ch.swisstopo.hiks-dufour"
@@ -502,7 +502,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Administrative Einheiten',
+                text: 'Administrative Einheiten',  // Id Inspire 14 ??
                 children: [
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
@@ -540,7 +540,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Adressen',
+                text: 'Adressen',  // Id Inspire 15 ??
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
@@ -551,7 +551,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Flurstücke / Grundstücke',
+                text: 'Flurstücke / Grundstücke',  // Id Inspire 16 ??
                 children: [
                     {
                         layerId: "ch.kantone.cadastralwebmap-farbe"
@@ -567,7 +567,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Oberflächendarstellung',
         children: [
             {
-                text: 'Gewässernetz',
+                text: 'Gewässernetz',  // Id Inspire 18 ??
                 children: [
                     {
                         layerId: "ch.bfe.kleinwasserkraftpotentiale"
@@ -581,7 +581,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Höhe',
+                text: 'Höhe',  // Id Inspire 21
                   children: [
                     {
                         layerId: "ch.swisstopo.vec200-miscellaneous-geodpoint"
@@ -598,7 +598,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Bodenbedeckung',
+                text: 'Bodenbedeckung',  // Id Inspire 22
                 children: [
                     {
                         layerId: "ch.bfs.arealstatistik-1985"
@@ -624,7 +624,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Luft und Satellitenbilder',
+                text: 'Luft und Satellitenbilder',  // Id Inspire ??
                 children: [
                     {
                         layerId: "ch.swisstopo.images-swissimage.metadata"
@@ -637,7 +637,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Raum und Bevölkerung',
         children: [
             {
-                text: 'Gesundheit une Sicherheit',
+                text: 'Gesundheit une Sicherheit',  // Id Inspire 35 ??
                 children: [
                     {
                         layerId: "ch.bafu.laerm-bahnlaerm_nacht"
@@ -670,7 +670,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 hidden: true
             },
             {
-                text: 'Raumplanung',
+                text: 'Raumplanung',  // Id Inspire 311
                 children: [
                     {
                         layerId: "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
@@ -704,7 +704,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Infrastruktur und Kommunikation',
         children: [
             {
-                text: 'Verkehrsnetze',
+                text: 'Verkehrsnetze',  // Id Inspire 17 ??
                 children: [
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
@@ -754,7 +754,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Gebäude',
+                text: 'Gebäude',  // Id Inspire 32 ??
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
@@ -771,7 +771,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Öffentliche Einrichtungen und Dienste',
+                text: 'Öffentliche Einrichtungen und Dienste', // Id Inspire 36 ??
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
@@ -803,7 +803,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Umwelt, Biologie und Geologie',
         children: [
             {
-                text: 'Schutzgebiete',
+                text: 'Schutzgebiete',  // Id Inspire 19
                 children: [
                     {
                         layerId: "ch.bafu.bundesinventare-amphibien"
@@ -850,7 +850,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Geologie',
+                text: 'Geologie',  // Id Inspire 24
                 children: [
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
@@ -906,7 +906,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Boden',
+                text: 'Boden',  // Inspire 33 ??
                 children: [
                     {
                         layerId: "ch.bav.kataster-belasteter-standorte-oev"
@@ -923,7 +923,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Umweltüberwachung',
+                text: 'Umweltüberwachung',  // Id Inspire 37 ??
                 children: [
                     {
                         layerId: "ch.are.alpenkonvention"
@@ -946,7 +946,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Natürliche Risikozonen',
+                text: 'Natürliche Risikozonen',  // Id Inspire 312
                 children: [
                     /*      FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
                      {
@@ -987,15 +987,58 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 hidden: true
             },
             {
-                text: 'Meteorologie',
-                hidden: true
+                text: 'Meteorologie', // Id Inspire = 314
+                children: [
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturland"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturtyp"
+                    },
+                    {
+                        layerId: "ch.blw.bewaesserungsbeduerftigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-futterbau"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-getreidebau"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-kartoffeln"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-koernermais"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-kulturland"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-spezialkulturen"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-typ"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-zwischenfruchtbau"
+                    },
+                    {
+                        layerId: "ch.blw.niederschlagshaushalt"
+                    },
+                    {
+                        layerId: "ch.blw.alpprodukte"
+                    },
+                    {
+                        layerId: "ch.blw.bergprodukte"
+                    }
+                ]
             },
             {
                 text: 'Biogeografische Regionen',
                 hidden: true
             },
             {
-                text: 'Lebensräume une Biotope',
+                text: 'Lebensräume une Biotope',  // Id Inspire 318
                 children: [
                     {
                         layerId: "ch.bafu.bundesinventare-amphibien"
@@ -1042,7 +1085,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Artenvielfalt',
+                text: 'Artenvielfalt',  // Id Inspire 319
                 children: [
                     {
                         layerId: "ch.bafu.fauna-steinbockkolonien"
@@ -1059,7 +1102,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Energie und Wirtschaft',
         children: [
             {
-                text: 'Statistische Einheiten',
+                text: 'Statistische Einheiten',  // Id Inspire 31 ??
                 children: [
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
@@ -1070,7 +1113,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Landnutzung',
+                text: 'Landnutzung', //Id Inspire = 34
                 children: [
                     {
                         layerId: "ch.bfs.arealstatistik-hintergrund"
@@ -1088,6 +1131,45 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                      */
                     {
                         layerId: "ch.swisstopo.vec25-einzelobjekte"
+                    },
+                    {
+                        layerId: "ch.blw.alpprodukte"
+                    },
+                    {
+                        layerId: "ch.blw.bergprodukte"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturland"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturtyp"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-futterbau"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-getreidebau"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-kartoffeln"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-koernermais"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-kulturland"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-spezialkulturen"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-typ"
+                    },
+                    {
+                        layerId: "ch.blw.klimaeignung-zwischenfruchtbau"
+                    },
+                    {
+                        layerId: "ch.blw.niederschlagshaushalt"
                     },
                     {
                         layerId: "ch.blw.ursprungsbezeichnungen-fleisch"
@@ -1111,11 +1193,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 hidden: true
             },
             {
-                text: 'Land- und Wassertwirtschaft',
-                hidden: true
+                text: 'Land- und Wassertwirtschaft', // Id Inspire 39 
+                children: [
+                    {
+                        layerId: "ch.blw.bewaesserungsbeduerftigkeit"
+                    }
+                ] 
             },
             {
-                text: 'Energiequellen',
+                text: 'Energiequellen',  // Id Inspire 320 ??
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
