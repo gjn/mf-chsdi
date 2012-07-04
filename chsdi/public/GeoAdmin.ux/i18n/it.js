@@ -347,7 +347,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'PPS allegato 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Riserve di uccelli acquatici',
 	'ch.bafu.fauna-steinbockkolonien':'Colonie di stambecchi',
-	'ch.bafu.fauna-vernetzungsachsen_national':'Sistema di collegamento',
+	'ch.bafu.fauna-vernetzungsachsen_national':'Sistema di collegamento fauna',
 	'ch.bafu.fauna-wildtierkorridor_national':'Corridoi faunistici nazionali',
 	'ch.bafu.fischerei-aeschen_kernzonen':'Temoli: zone centrali',
 	'ch.bafu.fischerei-aeschen_laichplaetze':'Temoli: siti di riproduzione',

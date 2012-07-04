@@ -347,7 +347,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'PPS annexe 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Réserves d\'oiseaux d\'eau',
 	'ch.bafu.fauna-steinbockkolonien':'Colonies de bouquetins',
-	'ch.bafu.fauna-vernetzungsachsen_national':'Système de mise en réseau',
+	'ch.bafu.fauna-vernetzungsachsen_national':'Système de mise en réseau faune',
 	'ch.bafu.fauna-wildtierkorridor_national':'Corridors faunistiques de Suisse',
 	'ch.bafu.fischerei-aeschen_kernzonen':'Ombre: zones principales',
 	'ch.bafu.fischerei-aeschen_laichplaetze':'Ombre: frayères',
