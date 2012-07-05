@@ -111,7 +111,7 @@ class bakomtv(Base, Queryable):
     __tablename__ = 'tv_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': True})
     __template__ = 'tooltips/bakomtv.mako'
-     __queryable_attributes__ = ['prog']
+    __queryable_attributes__ = ['prog']
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
@@ -121,7 +121,7 @@ class bakomukw(Base, Queryable):
     __tablename__ = 'ukw_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': True})
     __template__ = 'tooltips/bakomukw.mako'
-     __queryable_attributes__ = ['prog']
+    __queryable_attributes__ = ['prog']
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 

@@ -1926,7 +1926,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bakom",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.bakom.mobil-antennenstandorte-gsm": {
                 name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
@@ -1956,7 +1957,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.bakom.versorgungsgebiet-ukw": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-ukw"),
@@ -1966,7 +1968,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
