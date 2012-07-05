@@ -272,8 +272,11 @@
 
             // 'Meteorologie'
             // node does not currently exist
-            t.ok(tree.getNodeById(tree.id + '_LT2_23') == null,
-                 'LT2_23 does not exist');
+            n = tree.getNodeById(tree.id + '_LT2_23');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Meteorologie',
+                     'LT2_23 is Meteorologie');
+            }
 
             // 'Biogeografische Regionen'
             // node does not currently exist
@@ -306,8 +309,11 @@
 
             // 'and- und Wassertwirtschaft'
             // node does not currently exist
-            t.ok(tree.getNodeById(tree.id + '_LT2_31') == null,
-                 'LT2_31 does not exist');
+            n = tree.getNodeById(tree.id + '_LT2_31');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Land- und Wassertwirtschaft',
+                     'LT2_31 is Land- und Wassertwirtschaft');
+            }
 
             // 'Energiequellen'
             n = tree.getNodeById(tree.id + '_LT2_32');
