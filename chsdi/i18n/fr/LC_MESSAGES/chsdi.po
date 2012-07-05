@@ -453,7 +453,7 @@ msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
 
 msgid "ch.bafu.fauna-vernetzungsachsen_national"
-msgstr "Système de mise en réseau"
+msgstr "Système de mise en réseau faune"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridors faunistiques de Suisse"
@@ -625,6 +625,21 @@ msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à 
 
 msgid "ch.bak.isos.warning"
 msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à l’office compétent (isos@bak.admin.ch) si vous envisagez d’utiliser un relevé ISOS dans un cadre légal. © Données: OFC, Berne"
+
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr "Emplacement des antennes GSM"
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr "Emplacement des antennes UMTS"
+
+msgid "ch.bakom.radio-fernsehsender"
+msgstr "Emetteurs radio et télévision"
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr "Zones de diffusion TV"
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr "Zones de diffusion radio"
 
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carte aéronautique OACI"

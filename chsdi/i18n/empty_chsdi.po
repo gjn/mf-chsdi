@@ -24,6 +24,21 @@ msgstr ""
 msgid "link"
 msgstr ""
 
+msgid "ch.bakom.radio-fernsehsender"
+msgstr ""
+
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr ""
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr ""
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr ""
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr ""
+
 msgid "ch.bafu.flora-verbreitungskarten"
 msgstr ""
 

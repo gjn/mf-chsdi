@@ -626,6 +626,21 @@ msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da d
 msgid "ch.bak.isos.warning"
 msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da duvrar in maletg dad ISOS en ina procedura giuridica, contactai ppl. l’uffizi federal cumpetent (isos@bak.admin.ch). © Datas: UFC, Berna"
 
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr "Antennenstandorte GSM"
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr "Antennenstandorte UMTS"
+
+msgid "ch.bakom.radio-fernsehsender"
+msgstr "Radio- und Fernsehsender"
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr "Versorgungsgebiete TV"
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr "Versorgungsgebiete Radio"
+
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Charta da aviatica ICAO"
 

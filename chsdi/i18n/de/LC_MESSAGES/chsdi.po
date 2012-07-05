@@ -626,6 +626,21 @@ msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, 
 msgid "ch.bak.isos.warning"
 msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch). © Daten: BAK, Bern"
 
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr "Antennenstandorte GSM"
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr "Antennenstandorte UMTS"
+
+msgid "ch.bakom.radio-fernsehsender"
+msgstr "Radio- und Fernsehsender"
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr "Versorgungsgebiete TV"
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr "Versorgungsgebiete Radio"
+
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Luftfahrtkarte ICAO"
 

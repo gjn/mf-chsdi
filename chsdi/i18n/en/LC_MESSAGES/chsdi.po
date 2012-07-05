@@ -626,6 +626,21 @@ msgstr "This Website is updated twice a year. If you want to use a site record i
 msgid "ch.bak.isos.warning"
 msgstr "This Website is updated twice a year. If you want to use a site record in a legal procedure, please contact the Federal office of culture (isos@bak.admin.ch). © Data:  FOC, Bern"
 
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr "GMS antenna positions"
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr "UMTS antenna positions"
+
+msgid "ch.bakom.radio-fernsehsender"
+msgstr "Radio and TV emitters"
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr "TV coverage areas"
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr "VHF coverage areas"
+
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Aeronautical Chart ICAO"
 

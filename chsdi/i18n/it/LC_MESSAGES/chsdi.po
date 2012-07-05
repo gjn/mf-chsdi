@@ -453,7 +453,7 @@ msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonie di stambecchi"
 
 msgid "ch.bafu.fauna-vernetzungsachsen_national"
-msgstr "Sistema di collegamento"
+msgstr "Sistema di collegamento fauna"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridoi faunistici nazionali"
@@ -625,6 +625,21 @@ msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare
 
 msgid "ch.bak.isos.warning"
 msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare una rilevazione ISOS in un ambito legale vi preghiamo di rivolgervi al servizio competente (isos@bak.admin.ch). © Dati: UFC, Berna"
+
+msgid "ch.bakom.mobil-antennenstandorte-gsm"
+msgstr "Posizioni antenne GSM"
+
+msgid "ch.bakom.mobil-antennenstandorte-umts"
+msgstr "Posizioni antenne UMTS"
+
+msgid "ch.bakom.radio-fernsehsender"
+msgstr "Emettitori radio e televisione"
+
+msgid "ch.bakom.versorgungsgebiet-tv"
+msgstr "Zone di diffusione TV"
+
+msgid "ch.bakom.versorgungsgebiet-ukw"
+msgstr "Zone di diffusione OUC"
 
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carta aeronautica OACI"

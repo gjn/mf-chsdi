@@ -101,6 +101,7 @@ def query_features(lang, layers, query):
 
     c.baseUrl = ''
     c.lang = lang
+    c.path_url = ''
 
     for layer in layers:
         bodlayer = Session.query(bodsearch).get(layer)
