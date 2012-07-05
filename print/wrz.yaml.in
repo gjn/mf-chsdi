@@ -38,23 +38,58 @@ layouts:
         height: 42
         items:
           - !columns
-            widths: [35, 65,60]
+            widths: [25, 25, 50, 50]
             items:
               - !image
+                condition: langde
                 align: left
-                #maxWidth: 251
-                maxHeight: 42
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_it.png"
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 39
                 url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_it.png"
               - !text
                 fontSize: 14
                 fontColor: #333333
                 text: |
                   $${mapTitle}
               - !image
+                condition: langde
                 align: left
-                maxWidth: 45
-                maxHeight: 16
-                url: "${buildout:directory}/print/rdg_legende_de.jpg"
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_it.png"
 
 #---------------------------------------
 # Map & overviewmap
@@ -85,18 +120,6 @@ layouts:
               text: |
                 Echelle 1: $${format %,d scale}
             - !text
-              condition: langen
-              fontSize: 9
-              align: right
-              text: |
-                Scale 1: $${format %,d scale}
-            - !text
-              condition: langfi
-              fontSize: 9
-              align: right
-              text: |
-                Scala 1: $${format %,d scale}
-            - !text
               condition: langit
               fontSize: 9
               align: right
@@ -123,18 +146,6 @@ layouts:
                 $${dataOwner}
             - !text
               condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langfi
               fontSize: 7
               align: left
               text: |
@@ -188,18 +199,6 @@ layouts:
               text: |
                 Malgré la grande attention qu’elles portent à la justesse des informations diffusées sur ce site, les autorités responsables ne peuvent endosser aucune responsabilité quant à la fidélité, à l’exactitude, à l’actualité, à la fiabilité et à l’intégralité de ces informations. 
             - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                Limitation of liability. Although every care has been taken by the Federal Authorities to ensure the accuracy of the information published, no warranty can be given in respect of the accuracy, reliability, up-to-dateness or completeness of this information. Copyright, Swiss federal authorities, 2007. http://www.disclaimer.admin.ch/terms_and_conditions.html
-            - !text
-              condition: langfi
-              fontSize: 7
-              align: left
-              text: |
-                Responsabladad: Malgrà che las autoritads dattan bain adatg che las infurmaziuns publitgadas sin questa pagina d'internet sajan correctas, na pon ellas surpigliar nagina responsabladad per la correctadad dal cuntegn, per l'exactezza, per l'actualitad, per l'autenticitad e per la cumplettezza da talas infurmaziuns. Copyright: autoritads da la confederaziun svizra, 2007. http://www.disclaimer.admin.ch
-            - !text
               condition: langit
               fontSize: 7
               align: left
@@ -236,32 +235,6 @@ layouts:
                 fontSize: 8
                 maxSize: 150
 
-    lastPage:
-      pageSize: A4
-      landscape: true
-      condition: "enhableLegends"
-      items:
-#---------------------------------------
-# Legend
-#---------------------------------------
-        - !columns
-          absoluteX: 45
-          absoluteY: 500
-          width: 250
-          items:
-            - !legends
-              inline: false
-              defaultScale: 0.3
-              maxHeight: 400
-              maxWidth: 250
-              maxIconHeight: 0
-              maxIconWidth: 0
-              columnMargin: 10
-              classIndentation: 3
-              classSpace: 5
-              backgroundColor: white
-              layerFontSize: 9
-
 #---------------------------------------
 # A4 portrait:
 #---------------------------------------
@@ -276,25 +249,59 @@ layouts:
         height: 42
         items:
           - !columns
-            widths: [50, 50]
+            widths: [20, 20, 33, 20]
             items:
               - !image
-                condition: customLogo
+                condition: langde
                 align: left
-                #maxWidth: 251
-                #maxHeight: 34
-                url: "$${mapLogo}"
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_de.png"
               - !image
-                condition: "!customLogo"
+                condition: langfr
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_it.png"
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
                 url: "${buildout:directory}/print/rdg_logo_de.png"
               - !text
                 fontSize: 14
                 fontColor: #333333
                 text: |
                   $${mapTitle}
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_it.png"
+
       items:
 #---------------------------------------
 # Map & overviewmap
@@ -324,18 +331,6 @@ layouts:
               text: |
                 Echelle 1: $${format %,d scale}
             - !text
-              condition: langen
-              fontSize: 9
-              align: right
-              text: |
-                Scale 1: $${format %,d scale}
-            - !text
-              condition: langfi
-              fontSize: 9
-              align: right
-              text: |
-                Scala 1: $${format %,d scale}
-            - !text
               condition: langit
               fontSize: 9
               align: right
@@ -345,41 +340,6 @@ layouts:
 #---------------------------------------
 # C part
 #---------------------------------------
-        - !columns
-          absoluteY: 805
-          absoluteX: 297
-          width: 300
-          items:
-            - !text
-              condition: langde
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, das Geoportal des Bundes
-            - !text
-              condition: langfr
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, le géoportail fédéral
-            - !text
-              condition: langen
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, the swiss geoportal
-            - !text
-              condition: langfi
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportal da la confederaziun
-            - !text
-              condition: langit
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportale della Confederazione
 
 #---------------------------------------
 # E part: copyright
@@ -397,18 +357,6 @@ layouts:
                 $${dataOwner}
             - !text
               condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langfi
               fontSize: 7
               align: left
               text: |
@@ -455,18 +403,6 @@ layouts:
               text: |
                 Responsabilité: Malgré la grande attention quâelles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à lâexactitude, à lâactualité, à la fiabilité et à lâintégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html
             - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                Limitation of liability. Although every care has been taken by the Federal Authorities to ensure the accuracy of the information published, no warranty can be given in respect of the accuracy, reliability, up-to-dateness or completeness of this information. Copyright, Swiss federal authorities, 2007. http://www.disclaimer.admin.ch/terms_and_conditions.html
-            - !text
-              condition: langfi
-              fontSize: 7
-              align: left
-              text: |
-                Responsabladad: Malgrà che las autoritads dattan bain adatg che las infurmaziuns publitgadas sin questa pagina d'internet sajan correctas, na pon ellas surpigliar nagina responsabladad per la correctadad dal cuntegn, per l'exactezza, per l'actualitad, per l'autenticitad e per la cumplettezza da talas infurmaziuns. Copyright: autoritads da la confederaziun svizra, 2007. http://www.disclaimer.admin.ch
-            - !text
               condition: langit
               fontSize: 7
               align: left
@@ -500,31 +436,7 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
-    lastPage:
-      pageSize: A4
-      landscape: false
-      condition: "enhableLegends"
-      items:
-#---------------------------------------
-# Legend
-#---------------------------------------
-        - !columns
-          absoluteX: 45
-          absoluteY: 795
-          width: 250
-          items:
-            - !legends
-              inline: false
-              defaultScale: 0.3
-              maxHeight: 400
-              maxWidth: 250
-              maxIconHeight: 0
-              maxIconWidth: 0
-              columnMargin: 10
-              classIndentation: 3
-              classSpace: 5
-              backgroundColor: white
-              layerFontSize: 9
+
 #---------------------------------------
 # A3 landscape:
 #---------------------------------------
@@ -541,25 +453,58 @@ layouts:
         height: 42
         items:
           - !columns
-            widths: [35, 65]
+            widths: [25, 25, 50, 50]
             items:
               - !image
-                condition: customLogo
+                condition: langde
                 align: left
-                #maxWidth: 251
-                #maxHeight: 34
-                url: "$${mapLogo}"
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_de.png"
               - !image
-                condition: "!customLogo"
+                condition: langfr
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_it.png"
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 39
                 url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_it.png"
               - !text
                 fontSize: 14
                 fontColor: #333333
                 text: |
                   $${mapTitle}
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/wrz_legend_it.png"
 
 
 #---------------------------------------
@@ -591,18 +536,6 @@ layouts:
               text: |
                 Echelle 1: $${format %,d scale}
             - !text
-              condition: langen
-              fontSize: 9
-              align: right
-              text: |
-                Scale 1: $${format %,d scale}
-            - !text
-              condition: langrm
-              fontSize: 9
-              align: right
-              text: |
-                Scala 1: $${format %,d scale}
-            - !text
               condition: langit
               fontSize: 9
               align: right
@@ -612,41 +545,6 @@ layouts:
 #---------------------------------------
 # C part
 #---------------------------------------
-        - !columns
-          absoluteY: 800
-          absoluteX: 428
-          width: 300
-          items:
-            - !text
-              condition: langde
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, das Geoportal des Bundes
-            - !text
-              condition: langfr
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, le géoportail fédéral
-            - !text
-              condition: langen
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, the swiss geoportal
-            - !text
-              condition: langrm
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportal da la confederaziun
-            - !text
-              condition: langit
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportale della Confederazione
 
 #---------------------------------------
 # E part: copyright
@@ -664,18 +562,6 @@ layouts:
                 $${dataOwner}
             - !text
               condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langrm
               fontSize: 7
               align: left
               text: |
@@ -722,18 +608,6 @@ layouts:
               text: |
                 Responsabilité: Malgré la grande attention qu'elles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à l'exactitude, à l'actualité, à la fiabilité et à l'intégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html
             - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                Limitation of liability. Although every care has been taken by the Federal Authorities to ensure the accuracy of the information published, no warranty can be given in respect of the accuracy, reliability, up-to-dateness or completeness of this information. Copyright, Swiss federal authorities, 2007. http://www.disclaimer.admin.ch/terms_and_conditions.html
-            - !text
-              condition: langrm
-              fontSize: 7
-              align: left
-              text: |
-                Responsabladad: Malgrà che las autoritads dattan bain adatg che las infurmaziuns publitgadas sin questa pagina d'internet sajan correctas, na pon ellas surpigliar nagina responsabladad per la correctadad dal cuntegn, per l'exactezza, per l'actualitad, per l'autenticitad e per la cumplettezza da talas infurmaziuns. Copyright: autoritads da la confederaziun svizra, 2007. http://www.disclaimer.admin.ch
-            - !text
               condition: langit
               fontSize: 7
               align: left
@@ -769,31 +643,7 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
-    lastPage:
-      pageSize: A3
-      landscape: true
-      condition: "enhableLegends"
-      items:
-#---------------------------------------
-# Legend
-#---------------------------------------
-        - !columns
-          absoluteX: 90
-          absoluteY: 800
-          width: 250
-          items:
-            - !legends
-              inline: false
-              defaultScale: 0.3
-              maxHeight: 400
-              maxWidth: 250
-              maxIconHeight: 0
-              maxIconWidth: 0
-              columnMargin: 10
-              classIndentation: 3
-              classSpace: 5
-              backgroundColor: white
-              layerFontSize: 9
+
 #---------------------------------------
 # A3 portait:
 #---------------------------------------
@@ -808,25 +658,58 @@ layouts:
         height: 42
         items:
           - !columns
-            widths: [50, 50]
+            widths: [20, 20, 33, 20]
             items:
               - !image
-                condition: customLogo
+                condition: langde
                 align: left
-                #maxWidth: 251
-                #maxHeight: 34
-                url: "$${mapLogo}"
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_de.png"
               - !image
-                condition: "!customLogo"
+                condition: langfr
                 align: left
-                maxWidth: 251
-                maxHeight: 34
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/conf_it.png"
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 39
+                url: "${buildout:directory}/print/rdg_logo_de.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 39
                 url: "${buildout:directory}/print/rdg_logo_de.png"
               - !text
                 fontSize: 14
                 fontColor: #333333
                 text: |
                   $${mapTitle}
+              - !image
+                condition: langde
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_de.png"
+              - !image
+                condition: langfr
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_fr.png"
+              - !image
+                condition: langit
+                align: left
+                maxHeight: 28
+                url: "${buildout:directory}/print/wrz_legend_it.png"
       items:
 #---------------------------------------
 # Map & overviewmap
@@ -839,8 +722,8 @@ layouts:
 # Scales
 #---------------------------------------
         - !columns
-          absoluteY: 1150
-          absoluteX: 570
+          absoluteY: 1142
+          absoluteX: 620
           width: 150
           items:
             - !text
@@ -856,18 +739,6 @@ layouts:
               text: |
                 Echelle 1: $${format %,d scale}
             - !text
-              condition: langen
-              fontSize: 9
-              align: right
-              text: |
-                Scale 1: $${format %,d scale}
-            - !text
-              condition: langrm
-              fontSize: 9
-              align: right
-              text: |
-                Scala 1: $${format %,d scale}
-            - !text
               condition: langit
               fontSize: 9
               align: right
@@ -877,41 +748,6 @@ layouts:
 #---------------------------------------
 # C part
 #---------------------------------------
-        - !columns
-          absoluteY: 1150
-          absoluteX: 420
-          width: 300
-          items:
-            - !text
-              condition: langde
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, das Geoportal des Bundes
-            - !text
-              condition: langfr
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, le géoportail fédéral
-            - !text
-              condition: langen
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, the swiss geoportal
-            - !text
-              condition: langrm
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportal da la confederaziun
-            - !text
-              condition: langit
-              fontSize: 8
-              align: left
-              text: |
-                geo.admin.ch, il geoportale della Confederazione
 
 #---------------------------------------
 # E part: copyright
@@ -929,18 +765,6 @@ layouts:
                 $${dataOwner}
             - !text
               condition: langfr
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                $${dataOwner}
-            - !text
-              condition: langrm
               fontSize: 7
               align: left
               text: |
@@ -986,18 +810,6 @@ layouts:
               text: |
                 Responsabilité: Malgré la grande attention qu'elles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à l'exactitude, à l'actualité, à la fiabilité et à l'intégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html
             - !text
-              condition: langen
-              fontSize: 7
-              align: left
-              text: |
-                Limitation of liability. Although every care has been taken by the Federal Authorities to ensure the accuracy of the information published, no warranty can be given in respect of the accuracy, reliability, up-to-dateness or completeness of this information. Copyright, Swiss federal authorities, 2007. http://www.disclaimer.admin.ch/terms_and_conditions.html
-            - !text
-              condition: langrm
-              fontSize: 7
-              align: left
-              text: |
-                Responsabladad: Malgrà che las autoritads dattan bain adatg che las infurmaziuns publitgadas sin questa pagina d'internet sajan correctas, na pon ellas surpigliar nagina responsabladad per la correctadad dal cuntegn, per l'exactezza, per l'actualitad, per l'autenticitad e per la cumplettezza da talas infurmaziuns. Copyright: autoritads da la confederaziun svizra, 2007. http://www.disclaimer.admin.ch
-            - !text
               condition: langit
               fontSize: 7
               align: left
@@ -1031,30 +843,4 @@ layouts:
                 align: center
                 fontSize: 8
                 maxSize: 150
-    lastPage:
-      pageSize: A3
-      landscape: false
-      condition: "enhableLegends"
-      items:
-#---------------------------------------
-# Legend
-#---------------------------------------
-        - !columns
-          absoluteX: 90
-          absoluteY: 1150
-          width: 250
-          items:
-            - !legends
-              inline: false
-              defaultScale: 0.3
-              maxHeight: 400
-              maxWidth: 250
-              maxIconHeight: 0
-              maxIconWidth: 0
-              columnMargin: 10
-              classIndentation: 3
-              classSpace: 5
-              backgroundColor: white
-              layerFontSize: 9
-
 
