@@ -535,6 +535,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.swissimage':'SWISSIMAGE',
 	'ch.swisstopo.swisstlm3d-karte':'Topo. Landschaftsmodell',
 	'ch.swisstopo.swisstlm3d-wanderwege':'Wanderwege',
+	'ch.swisstopo.tml3d-hintergrund-karte':'swissTLM-Map',
 	'ch.swisstopo.treasurehunt':'Schatzkarte',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Nationalparks VECTOR200',

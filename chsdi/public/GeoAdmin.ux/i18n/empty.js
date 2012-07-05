@@ -3,6 +3,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Zoom to object': "",
     'QueryByRect.MetaKeyUsageNotice': "",
     'ch.swisstopo.pixelkarte-grau-pk1000.noscale': "",
+    'ch.swisstopo.tml3d-hintergrund-karte':"",
     'QueryByRect.CtrlKeyUsageNotice': "",
     'Max features notice': "",
     'ch.swisstopo.geologie-geotope': "",

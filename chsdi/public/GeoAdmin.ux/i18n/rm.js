@@ -531,6 +531,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.swissimage':'Fotografia or da l\'aria',
 	'ch.swisstopo.swisstlm3d-karte':'Model cuntrada topol.',
 	'ch.swisstopo.swisstlm3d-wanderwege':'Sendas da viandar',
+	'ch.swisstopo.tml3d-hintergrund-karte':'swissTLM-Map',
 	'ch.swisstopo.treasurehunt':'Treasurehunt',
 	'ch.swisstopo.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html',
 	'ch.swisstopo.vec200-adminboundaries-protectedarea':'Parcs naziunal VECTOR200',
