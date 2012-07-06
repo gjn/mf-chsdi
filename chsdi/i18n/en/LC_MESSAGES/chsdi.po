@@ -803,6 +803,9 @@ msgstr "Color map"
 msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "National Map 1:100'000"
 
+msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
+msgstr "National Map 1:1 million (colour)"
+
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "National Map 1:200'000"
 

@@ -803,6 +803,9 @@ msgstr "Karte farbig"
 msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Landeskarte 1:100'000"
 
+msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
+msgstr "Landeskarte 1:1 Mio. (farbig)"
+
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "Landeskarte 1:200'000"
 

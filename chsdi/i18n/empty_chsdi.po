@@ -1571,6 +1571,9 @@ msgstr ""
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr ""
 
+msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
+msgstr ""
+
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr ""
 
