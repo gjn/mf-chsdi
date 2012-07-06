@@ -127,19 +127,34 @@ Some layers can't be freely used. For these layers (Pixelmaps, Swissimage for ex
 
     function init() {
         var myInnerHtml = "<br><table border=\"0\">";
-        var myLayerArray = [];
+        var layerArray = [];
 
         var availableLayers = GeoAdmin.layers.init();
-        var layerArray = [];
-        for (var layer in availableLayers) {
-            if (layer != 'voidLayer' &&
-                layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
-                layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
-                layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
-                availableLayers[layer].name.toString().indexOf('ch.') != 0) {
-                layerArray.push([layer, availableLayers[layer].name]);
+        Ext.ux.JSONP.request('http://api.geo.admin.ch/layers', {
+            callbackKey: "cb",
+            lang: "en",
+            params: {
+                properties: 'bod_layer_id,kurzbezeichnung',
+                project: 'mf-geoadmin2',
+                lang: 'en'
+            },
+            scope: this,
+            callback: function(response) {
+                for (i in response.results) {
+                    var layer = response.results[i];
+                    if (layer != 'voidLayer' &&
+                        layer.bod_layer_id != 'ch.swisstopo.swissimage' &&
+                        layer.bod_layer_id != 'ch.swisstopo.pixelkarte-farbe' &&
+                        layer.bod_layer_id != 'ch.swisstopo.pixelkarte-grau' &&
+                        layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
+                        layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
+                        layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
+                        layer.bod_layer_id != undefined  ) { 
+                            layerArray.push([layer, layer.kurzbezeichnung]);
+                        }
+                }
             }
-        }
+        });
         layerArray.sort();
         var i = 1;
         for (layerKey in layerArray) {
