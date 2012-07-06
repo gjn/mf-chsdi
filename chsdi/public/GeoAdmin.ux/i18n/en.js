@@ -445,9 +445,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfs.gebaeude_wohnungs_register':'Register of Buildings and Dwellings',
 	'ch.bfs.url':'http://www.bfs.admin.ch/bfs/portal/en/index.html',
 	'ch.blw':'FOAG',
-	'ch.blw.alpprodukte':'ch.blw.alpprodukte', //TODO
-	'ch.blw.bergprodukte':'ch.blw.bergprodukte', //TODO
-	'ch.blw.bewaesserungsbeduerftigkeit':'ch.blw.bewaesserungsbeduerftigkeit', //TODO
+	'ch.blw.alpprodukte':'Alpprodukte',
+	'ch.blw.bergprodukte':'Bergprodukte',
+	'ch.blw.bewaesserungsbeduerftigkeit':'Bewässerungsbedürftigkeit',
 	'ch.blw.bodeneignung-kulturland':'Aptitude: Cropland',
 	'ch.blw.bodeneignung-kulturtyp':'Aptitude: crop types',
 	'ch.blw.erosion':'Risk of erosion',
