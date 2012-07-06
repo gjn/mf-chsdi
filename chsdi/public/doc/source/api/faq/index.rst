@@ -142,29 +142,30 @@ Some layers can't be freely used. For these layers (Pixelmaps, Swissimage for ex
             callback: function(response) {
                 for (i in response.results) {
                     var layer = response.results[i];
-                    if (layer != 'voidLayer' &&
+                    if (layer.bod_layer_id != 'voidLayer' &&
                         layer.bod_layer_id != 'ch.swisstopo.swissimage' &&
                         layer.bod_layer_id != 'ch.swisstopo.pixelkarte-farbe' &&
                         layer.bod_layer_id != 'ch.swisstopo.pixelkarte-grau' &&
-                        layer != 'ch.bafu.schutzgebiete-wildruhezonen' &&
-                        layer != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
-                        layer != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
+                        layer.bod_layer_id != 'ch.bafu.schutzgebiete-wildruhezonen' &&
+                        layer.bod_layer_id != 'ch.bafu.wege-wildruhezonen-jagdbanngebiete' &&
+                        layer.bod_layer_id != 'ch.bafu.wildruhezonen-jagdbanngebiete' &&
                         layer.bod_layer_id != undefined  ) { 
-                            layerArray.push([layer, layer.kurzbezeichnung]);
-                        }
+                            layerArray.push([layer.bod_layer_id, layer.kurzbezeichnung]);
+                    }
                 }
+                layerArray.sort();
+                var i = 1;
+                for (layerKey in layerArray) {
+                    var layer =  layerArray[layerKey];
+                    if (typeof(layer) != 'function') {
+                        myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
+                                      layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
+                    i = i+1;
+                    }
+                 }
+                 document.getElementById("mylayerference").innerHTML=myInnerHtml;
             }
         });
-        layerArray.sort();
-        var i = 1;
-        for (layerKey in layerArray) {
-           var layer =  layerArray[layerKey];
-           if (typeof(layer) != 'function') {
-               myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' + layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
-               i = i+1;
-           }
-        }
-        document.getElementById("mylayerference").innerHTML=myInnerHtml;
     }
 
    </script>
