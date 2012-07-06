@@ -514,6 +514,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/it/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Carta a colori',
 	'ch.swisstopo.pixelkarte-farbe-pk100.noscale':'Carta nazionale 1:100\'000',
+	'ch.swisstopo.pixelkarte-farbe-pk1000.noscale':'Carta nazionale 1:1 milione (colore)',
 	'ch.swisstopo.pixelkarte-farbe-pk200.noscale':'Carta nazionale 1:200\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk25.noscale':'Carta nazionale 1:25\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk50.noscale':'Carta nazionale 1:50\'000',

@@ -510,6 +510,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.kt.url':'http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html',
 	'ch.swisstopo.pixelkarte-farbe':'Charta en colur',
 	'ch.swisstopo.pixelkarte-farbe-pk100.noscale':'Charta naziunala 1:100\'000',
+	'ch.swisstopo.pixelkarte-farbe-pk1000.noscale':'Charta naziunala 1:1 milliun (colurus)',
 	'ch.swisstopo.pixelkarte-farbe-pk200.noscale':'Charta naziunala 1:200\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk25.noscale':'Charta naziunala 1:25\'000',
 	'ch.swisstopo.pixelkarte-farbe-pk50.noscale':'Charta naziunala 1:50\'000',
