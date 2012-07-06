@@ -174,6 +174,7 @@ Some layers can't be freely used. For these layers (Pixelmaps, Swissimage for ex
      <script type="text/javascript" src="../../../../loader.js"></script>
    </body>
 
+
 What mean the permalink parameters ?
 ------------------------------------
 
@@ -191,19 +192,20 @@ bgOpacity                      Opacity of national map covering the             
                                underlaying image (0 to 1)
 bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           http://map.geo.admin.ch?bgLayer=voidLayer
                                `ch.swisstopo.pixelkarte-farbe` or `voidLayer`
-layers                         Layer to display, see :ref:`available_layers`
-                               for a complete list                                           http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml
-                               KML layers are supported with a || separated list with:
-                               KML||kml url
-                               WMS layers are supported with a || separated list with:
-                               WMS||layer title||wms url||layer name
+layers                         Layer to display, see :ref:`available_layers`                 `http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7C
+                               for a complete list                                           http%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geo
+                               KML layers are supported with a || separated list with:       logie-geophysik-geothermie,ch.ensi.zonenplan-notfallschut
+                               KML||kml url                                                  z-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admi
+                               WMS layers are supported with a || separated list with:       n.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_ea
+                               WMS||layer title||wms url||layer name                         rth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml <http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml>`_
 layers_opacity                 Layers opaciy, should match number of layers (0-1.0)          http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_opacity=0.5
-layers_visibility              Toggle the visibility of layers present in the tree           http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_visibility=False
+layers_visibility              Toggle the visibility of layers present in the tree           `http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&l
+                                                                                             ayers_visibility=False <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_visibility=False>`_
 selectedNode                   Selected node in INSPIRE Catalog tree                         http://map.geo.admin.ch?selectedNode=LT2_3
-<layer bod id>                 Layer bod id (:ref:`available_layers`) from which
-                               to highlight feature(s) with id                               http://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
-crosshair                      crosshair=<type>, possible type: cross, circle, bowl and
-                               point                                                         http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
+<layer bod id>                 Layer bod id (:ref:`available_layers`) from which             http://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
+                               to highlight feature(s) with id                               
+crosshair                      crosshair=<type>, possible type: cross, circle, bowl and      http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
+                               point                                                         
 swisssearch                    swisssearch=<query string>                                    http://map.geo.admin.ch?swisssearch=berges%2037%20payerne 
 ===================            ==========================================================    =========================================================
 
