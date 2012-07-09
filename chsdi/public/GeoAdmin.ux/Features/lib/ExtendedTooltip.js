@@ -41,6 +41,8 @@
   */
 GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
+    id: 'getFeatureRectangle',
+    
     layer: null,
 
     url: null,
@@ -188,7 +190,6 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         } else {
             var item = this.onSelectClick(evt);
         }
-        
         this.createPopup(item);
     },
     
@@ -388,8 +389,11 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         return [grid];
     },
     
-    createPopup: function (item) {
-    
+    createPopup: function (item, showFeature) {
+        // Extra parameter showFeature set to true when this method is called from GeoAdmin.Feature.prototype.showCb
+        if (showFeature === true) {
+            this.clicked = true;
+        }
         this.popup = new Ext.Window({
             animateTarget: this.firstAnimate && !this.clicked ? this.map.getViewport() : null,
             cls: this.clicked ? 'click-popup' : 'box-popup',
@@ -452,7 +456,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     this.popup = null;
                 },
                 show: function(evt) {
-                    if (this.popup.footer) { 
+                    if (this.popup.footer && this.lastClick !== undefined) { 
                         var singlePosition = this.map.getPixelFromLonLat(this.lastClick); 
                         var mapBox = Ext.fly(this.map.div).getBox(true);
                         var top = singlePosition.y + mapBox.y;
