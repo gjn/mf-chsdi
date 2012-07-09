@@ -20,11 +20,11 @@
 	% endif
 % else:
 	% if c.lang =='fr':
-	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_fr or '-'}" target="_blank">${_('link')}</a></td></tr>
+	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_fr or '-'}" target="_parent">${_('link')}</a></td></tr>
 	% elif c.lang == 'it':
-	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_it or '-'}" target="_blank">${_('link')}</a></td></tr>
+	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_it or '-'}" target="_parent">${_('link')}</a></td></tr>
 	% else:
-	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_de or '-'}" target="_blank">${_('link')}</a></td></tr>
+	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><a href="${c.feature.link_de or '-'}" target="_parent">${_('link')}</a></td></tr>
 	% endif
 % endif
 </%def>
