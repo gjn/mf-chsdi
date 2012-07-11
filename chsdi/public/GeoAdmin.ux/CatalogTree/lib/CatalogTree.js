@@ -386,6 +386,38 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         }
     },
 
+    sortLayerConfig: function(config) {
+        for (child0 in config) {
+            var children = config[child0].children;
+            if (children !== undefined) {
+                for (child1 in children) {
+                    var layers = children[child1].children;
+                    var layer_list = [];
+                    if (layers !== undefined) {
+                        for (i in layers) {
+                            if (layers[i].layerId !== undefined &&  OpenLayers.i18n(layers[i].layerId) !== undefined) {
+                                layer_list.push({'id': layers[i].layerId,
+                                                 'text': OpenLayers.i18n(layers[i].layerId)})
+                            }
+                        }
+                        layer_list.sort(function(a, b) {
+                            var nameA = a.text.toLowerCase(), nameB = b.text.toLowerCase()
+                            if (nameA < nameB)
+                                return -1
+                            if (nameA > nameB)
+                                return 1
+                            return 0
+                        })
+                        for (j in layer_list) {
+                            layers[j].layerId = layer_list[j].id;
+                        }
+                    }
+                }
+            }
+        }
+        return config;
+    },
+
     initComponent: function() {
 
         this.layers = GeoAdmin.layers.init();
@@ -405,8 +437,9 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         this.root = this.root || {};
         this.root.nodeType = 'async';
 
-        this.root.children = this.root.children || 
+        var config = this.root.children ||
                              GeoAdmin.CatalogTree.createDefaultConfig();
+        this.root.children = this.sortLayerConfig(config);
         this.adaptNodeConfig(this.root);
         GeoAdmin.CatalogTree.superclass.initComponent.call(this);
 
