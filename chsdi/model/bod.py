@@ -50,8 +50,8 @@ class BodLayer(object):
             return results
         else:
             
-            if self.bezeichnung is not None:
-                label = self.bezeichnung.strip()
+            if self.kurzbezeichnung is not None:
+                label = self.kurzbezeichnung.strip()
             else:
                 label = ''
             
