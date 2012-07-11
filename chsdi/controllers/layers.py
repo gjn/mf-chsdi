@@ -29,7 +29,6 @@ class LayersController(BaseController):
 ##----------------------------------------Mode----------------------------------------##    	
     	  # Per default infos are requested on all views
         self.mode = request.params.get('mode','all')
-
 ##----------------------------------------Databases----------------------------------------##               
         c.lang = request.params.get('lang','de')
         
@@ -190,6 +189,7 @@ class LayersController(BaseController):
         
 ##----------------------------------------Results----------------------------------------##
         cb_name = request.params.get('cb')
+        print_legend = request.params.get('print', False)
         #self.format = request.params.get('format','json')
 
         if self.mode == 'bodsearch' or self.mode == 'mobile':    
@@ -206,13 +206,15 @@ class LayersController(BaseController):
                 abort(400, "Please provide only one layer at a time")
             if not hasattr(c, 'layer'):
                 abort(400, "The parameters you provided didn't return any layer")
-            response.headers['Content-Type'] = 'text/javascript'
-            results = simplejson.dumps(render('/bod-details.mako'))
-            if cb_name is not None:
-                return str(cb_name) + '(' + results + ');'
-            # If no callback is defined, retrun a raw result
+            if print_legend == "true":
+                return render('/bod-details-print.mako')
             else:
-                return results
+                response.headers['Content-Type'] = 'text/javascript'
+                results = simplejson.dumps(render('/bod-details.mako'))
+                if cb_name is not None:
+                    return str(cb_name) + '(' + results + ');'
+                else:
+                    return results
         elif self.mode == 'wmts':
             response.headers['Content-Type'] = mimetypes.types_map['.xml']
             response.headers['Pragma'] = 'public'
