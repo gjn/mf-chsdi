@@ -137,6 +137,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
         this.on("beforequery", this.onBeforeQuery, this);
         this.on("select", this.recordSelected, this);
+        this.on("specialkey", this.recenterOnFirstItem, this);
     },
 
     // private
@@ -176,6 +177,12 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         queryEvent.query = Ext.util.Format.htmlEncode(queryEvent.query);
 
         return testRecenter;
+    },
+
+    recenterOnFirstItem: function(data, event) {
+        if (event.getKey() == event.ENTER && data.store.data.items.length !== 0) {
+            this.recordSelected(null, data.store.data.items[0], 0);
+        }
     },
 
     testRecenter: function(query, onlyTest) {
