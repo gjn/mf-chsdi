@@ -32,6 +32,17 @@ GeoAdmin.MeasureWindow = Ext.extend(Ext.Window, {
 
         GeoAdmin.MeasureWindow.superclass.constructor.call(this, config);
     },
+
+    onHide: function () {
+        var controls = this.map.getControlsBy("displayClass", "olControlMeasure");
+        for (i in controls) {
+            var control = controls[i];
+            if (control.active) {
+                control.deactivate();
+            }
+        }
+    },
+
     show: function() {
         GeoAdmin.MeasureWindow.superclass.show.apply(this,arguments);
         var mapDiv = Ext.fly(this.map.div);
