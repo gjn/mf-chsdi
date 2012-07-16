@@ -53,7 +53,7 @@ sources:
     http:
       headers:
         Referer: http://www.geoportail.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20110914/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20120225/21781/%(z)d/%(y)d/%(x)d.jpeg
     origin: nw
 
   pixelkarte-farbe-tiles:
@@ -62,7 +62,7 @@ sources:
     http:
       headers:
         Referer: http://www.geoportail.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/21781/%(z)d/%(y)d/%(x)d.jpeg
     origin: nw
 
   # TMS Example
