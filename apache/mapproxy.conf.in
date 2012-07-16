@@ -23,6 +23,19 @@ WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/part
 # assign the WSGI app instance the process group defined aboven, we put the WSGI
 # app instance in the global application group so it is always executed within
 # the main interpreter
+
+# Some services are not "free": TODO THIS IS A PROVISORY SOLUTION
+SetEnvIf X-Forwarded-For "193.5.216.100"                GOODIP  # BIT proxy
+SetEnvIf X-Forwarded-For "193.5.216.70"                 GOODIP  # BIT proxy
+SetEnvIf X-Forwarded-For "160.92.125.32"                GOODIP  # IGN proxy
+SetEnvIf X-Forwarded-For "192.134.132.15"               GOODIP  # IGN SIEL proxy
+SetEnvIf X-Forwarded-For "192.134.133.9"                GOODIP  # IGN
+SetEnvIf X-Forwarded-For "10.48.109.212"                GOODIP
+SetEnvIf X-Forwarded-For "10.49.118.84"                 GOODIP
+SetEnvIf X-Forwarded-For "10.48.166.233"                GOODIP
+SetEnvIf X-Forwarded-For "10.48.109.212"                GOODIP
+
+
 <Location /${vars:instanceid}/mapproxy>
     WSGIProcessGroup mf-chsdi:${vars:instanceid}-mapproxy
     WSGIApplicationGroup %{GLOBAL}
@@ -30,14 +43,7 @@ WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/part
     Order Deny,Allow
     Deny from all
     Allow from env=GOODIP
-    # Setting for test server
-    Allow from  10.131.50. 10.131.51.     # swisstopo net
-    Allow from 193.5.216.100 193.5.216.70 # BIT proxy
-    Allow from 160.92.125.32              # IGN proxy
-    Allow from 192.134.132.15                        #proxy SIEL ign
-    Allow from 192.134.133.9                          #proxy ign
-    Allow from 10.49.118.84 10.48.109.212 10.227.26.191 10.48.166.233 # AWS where mf-chsdi is deployed
-    
+      
     ExpiresActive on
     ExpiresDefault "now plus 7 days"
     Header set Cache-Control "public"
