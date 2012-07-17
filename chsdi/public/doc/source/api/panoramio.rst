@@ -71,6 +71,15 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
 
            var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
            api.map.addLayer(vectorPano);
+
+           var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
+               hover: true,
+               highlightOnly: true,
+               renderIntent: 'hover',
+               autoActivate: true
+           });
+           api.map.addControls([hoverControl]);
+
            api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
            var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
            api.map.zoomToExtent(bounds); 
@@ -106,15 +115,6 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
             var vectorPano = api.map.getLayersByName('Panoramio Photos')[0] 
             vectorPano.removeAllFeatures();
             vectorPano.addFeatures(features);
-
-            var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
-                hover: true,
-                highlightOnly: true,
-                renderIntent: 'hover',
-                autoActivate: true
-            });
-            api.map.addControls([hoverControl]);
-
        }
 
        function moveEnd(event) {
@@ -178,6 +178,15 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
 
            var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
            api.map.addLayer(vectorPano);
+
+           var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
+               hover: true,
+               highlightOnly: true,
+               renderIntent: 'hover',
+               autoActivate: true
+           });
+           api.map.addControls([hoverControl]);
+
            api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
            var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
            api.map.zoomToExtent(bounds); 
@@ -213,15 +222,6 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
             var vectorPano = api.map.getLayersByName('Panoramio Photos')[0] 
             vectorPano.removeAllFeatures();
             vectorPano.addFeatures(features);
-
-            var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
-                hover: true,
-                highlightOnly: true,
-                renderIntent: 'hover',
-                autoActivate: true
-            });
-            api.map.addControls([hoverControl]);
-
        }
 
        function moveEnd(event) {
