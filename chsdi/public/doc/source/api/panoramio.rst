@@ -24,7 +24,7 @@
 Panoramio
 ---------
 
-This example integrates the GeoAdmin API with the Panoramio REST service.
+This example integrates the GeoAdmin API with the Panoramio REST service. The 20 most recent pictures are displayed dynamically according to the map extent.
 
 .. raw:: html
 
@@ -53,86 +53,90 @@ This example integrates the GeoAdmin API with the Panoramio REST service.
                renderTo: "mymap",
                height: 340
            });
+           api.map.events.register('moveend', api.map, moveEnd);
 
-           // Function handling the response from the get request
-           function handler(response) {
-               var json = new OpenLayers.Format.JSON();
-               var panoramio = json.read(response.responseText);
+           // Define the styles
+           var symbolizer = OpenLayers.Util.applyDefaults({
+               externalGraphic: "${photo_file_url}", // We use the variable defined in the attributes of each feature
+               fillOpacity: 1,
+               pointRadius: 15}, OpenLayers.Feature.Vector.style["default"]);
 
-               // Create points and attach attributes
-               var features = new Array(panoramio.photos.length);
+           var styleMap = new OpenLayers.StyleMap({
+               "default": symbolizer,
+               "hover": OpenLayers.Util.applyDefaults({
+                   externalGraphic: "${photo_file_url}",
+                   fillOpacity: 1,
+                   pointRadius: 100}, OpenLayers.Feature.Vector.style.temporary)
+           });
 
-               for (var i = 0; i < panoramio.photos.length; i++) {
-                   var lon = panoramio.photos[i].longitude;
-                   var lat = panoramio.photos[i].latitude;
-                   var photo_title = panoramio.photos[i].photo_title;
-                   var photo_file_url = panoramio.photos[i].photo_file_url;
-                   var photo_url = panoramio.photos[i].photo_url;
+           var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
+           api.map.addLayer(vectorPano);
+           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
+           var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
+           api.map.zoomToExtent(bounds); 
+       }
 
-                   // You need to transform your point in Swiss Coordinates
-                   var fpoint = new OpenLayers.Geometry.Point(lon,lat).transform("EPSG:4326","EPSG:21781");
+       // Function handling the response from the get request
+       function handler(response) {
+           var json = new OpenLayers.Format.JSON();
+           var panoramio = json.read(response.responseText);
+           // Create points and attach attributes
+           var features = new Array(panoramio.photos.length);
 
-                   var attributes = {
-                          'photo_title': photo_title,
-                          'photo_file_url': photo_file_url,
-                          'photo_url': photo_url
-                   }
+           for (var i = 0; i < panoramio.photos.length; i++) {
+               var lon = panoramio.photos[i].longitude;
+               var lat = panoramio.photos[i].latitude;
+               var photo_title = panoramio.photos[i].photo_title;
+               var photo_file_url = panoramio.photos[i].photo_file_url;
+               var photo_url = panoramio.photos[i].photo_url;
 
-                   features[i] = new OpenLayers.Feature.Vector(fpoint, attributes);
+               // You need to transform your point in Swiss Coordinates
+               var fpoint = new OpenLayers.Geometry.Point(lon,lat).transform("EPSG:4326","EPSG:21781");
 
-                }
-                var symbolizer = OpenLayers.Util.applyDefaults({
-                    externalGraphic: "${photo_file_url}", // We use the variable defined in the attributes of each feature
-                    fillOpacity: 1,
-                    pointRadius: 15}, OpenLayers.Feature.Vector.style["default"]);
+               var attributes = {
+                      'photo_title': photo_title,
+                      'photo_file_url': photo_file_url,
+                      'photo_url': photo_url
+               }
 
-                var styleMap = new OpenLayers.StyleMap({
-                    "default": symbolizer, 
-                    "hover": OpenLayers.Util.applyDefaults({
-                        externalGraphic: "${photo_file_url}",
-                        fillOpacity: 1,
-                        pointRadius: 100}, OpenLayers.Feature.Vector.style.temporary)
-                });
+               features[i] = new OpenLayers.Feature.Vector(fpoint, attributes);
 
-                var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
+            }
 
-                vectorPano.addFeatures(features);
-                api.map.addLayer(vectorPano);
+            var vectorPano = api.map.getLayersByName('Panoramio Photos')[0] 
+            vectorPano.removeAllFeatures();
+            vectorPano.addFeatures(features);
 
-                // Here we juste play with the size of the image when hoovering,
-                // but you could create a popup and insert the image inside (ref: OpenLayers.Popup)
-                var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
-                    hover: true,
-                    highlightOnly: true,
-                    renderIntent: 'hover',
-                    autoActivate: true
-                });
-                api.map.addControls([hoverControl]);
+            var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
+                hover: true,
+                highlightOnly: true,
+                renderIntent: 'hover',
+                autoActivate: true
+            });
+            api.map.addControls([hoverControl]);
 
-           }
+       }
 
-           // You can load the picutres from panoramio.com with a simple get request 
+       function moveEnd(event) {
+           var extent = api.map.getExtent().transform("EPSG:21781","EPSG:4326");
+           // You can load the picutres from panoramio.com with a simple get request
            var request = new OpenLayers.Request.GET({
                url: "http://www.panoramio.com/map/get_panoramas.php",
                params: {
                         set: 'public',
                         from: 0,  // Take the 20 most recent picutres
                         to: 20,
-                        minx: 7.36378, // Coordinates must be provided in WSG 84
-                        miny: 46.93487,
-                        maxx: 7.54247,
-                        maxy: 46.98612,
-                        size: 'small', // Other available sizes (thumbnail, medium, original, square, mini-square) 
+                        minx: extent.left, // Coordinates must be provided in WSG 84
+                        miny: extent.bottom,
+                        maxx: extent.right,
+                        maxy: extent.top,
+                        size: 'small', // Other available sizes (thumbnail, medium, original, square, mini-square)
                         mapfilter: true  // If activated, pictures look better when placed on the map
                },
                callback: handler
            });
-           
-           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
-           var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
-           api.map.zoomToExtent(bounds);
-
        }
+ 
     </script>
     <body onload="init();">
         <div id="mymap" style="float: right; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
@@ -156,84 +160,90 @@ This example integrates the GeoAdmin API with the Panoramio REST service.
                renderTo: "mymap",
                height: 340
            });
+           api.map.events.register('moveend', api.map, moveEnd);
 
-           // Function handling the response from the get request
-           function handler(response) {
-               var json = new OpenLayers.Format.JSON();
-               var panoramio = json.read(response.responseText);
+           // Define the styles
+           var symbolizer = OpenLayers.Util.applyDefaults({
+               externalGraphic: "${photo_file_url}", // We use the variable defined in the attributes of each feature
+               fillOpacity: 1,
+               pointRadius: 15}, OpenLayers.Feature.Vector.style["default"]);
 
-               // Create points and attach attributes
-               var features = new Array(panoramio.photos.length);
+           var styleMap = new OpenLayers.StyleMap({
+               "default": symbolizer,
+               "hover": OpenLayers.Util.applyDefaults({
+                   externalGraphic: "${photo_file_url}",
+                   fillOpacity: 1,
+                   pointRadius: 100}, OpenLayers.Feature.Vector.style.temporary)
+           });
 
-               for (var i = 0; i < panoramio.photos.length; i++) {
-                   var lon = panoramio.photos[i].longitude;
-                   var lat = panoramio.photos[i].latitude;
-                   var photo_title = panoramio.photos[i].photo_title;
-                   var photo_file_url = panoramio.photos[i].photo_file_url;
-                   var photo_url = panoramio.photos[i].photo_url;
+           var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
+           api.map.addLayer(vectorPano);
+           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
+           var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
+           api.map.zoomToExtent(bounds); 
+       }
 
-                   // You need to transform your point in Swiss Coordinates
-                   var fpoint = new OpenLayers.Geometry.Point(lon,lat).transform("EPSG:4326","EPSG:21781");
+       // Function handling the response from the get request
+       function handler(response) {
+           var json = new OpenLayers.Format.JSON();
+           var panoramio = json.read(response.responseText);
+           // Create points and attach attributes
+           var features = new Array(panoramio.photos.length);
 
-                   var attributes = {
-                          'photo_title': photo_title,
-                          'photo_file_url': photo_file_url,
-                          'photo_url': photo_url
-                   }
+           for (var i = 0; i < panoramio.photos.length; i++) {
+               var lon = panoramio.photos[i].longitude;
+               var lat = panoramio.photos[i].latitude;
+               var photo_title = panoramio.photos[i].photo_title;
+               var photo_file_url = panoramio.photos[i].photo_file_url;
+               var photo_url = panoramio.photos[i].photo_url;
 
-                   features[i] = new OpenLayers.Feature.Vector(fpoint, attributes);
+               // You need to transform your point in Swiss Coordinates
+               var fpoint = new OpenLayers.Geometry.Point(lon,lat).transform("EPSG:4326","EPSG:21781");
 
-                }
-                var symbolizer = OpenLayers.Util.applyDefaults({
-                    externalGraphic: "${photo_file_url}", // We use the variable defined in the attributes of each feature
-                    fillOpacity: 1,
-                    pointRadius: 15}, OpenLayers.Feature.Vector.style["default"]);
+               var attributes = {
+                      'photo_title': photo_title,
+                      'photo_file_url': photo_file_url,
+                      'photo_url': photo_url
+               }
 
-                var styleMap = new OpenLayers.StyleMap({
-                    "default": symbolizer, 
-                    "hover": OpenLayers.Util.applyDefaults({
-                        externalGraphic: "${photo_file_url}",
-                        fillOpacity: 1,
-                        pointRadius: 100}, OpenLayers.Feature.Vector.style.temporary)
-                });
+               features[i] = new OpenLayers.Feature.Vector(fpoint, attributes);
 
-                var vectorPano = new OpenLayers.Layer.Vector("Panoramio Photos", {styleMap: styleMap});
+            }
 
-                vectorPano.addFeatures(features);
-                api.map.addLayer(vectorPano);
+            var vectorPano = api.map.getLayersByName('Panoramio Photos')[0] 
+            vectorPano.removeAllFeatures();
+            vectorPano.addFeatures(features);
 
-                var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
-                    hover: true,
-                    highlightOnly: true,
-                    renderIntent: 'hover',
-                    autoActivate: true
-                });
-                api.map.addControls([hoverControl]);
+            var hoverControl = new OpenLayers.Control.SelectFeature(vectorPano, {
+                hover: true,
+                highlightOnly: true,
+                renderIntent: 'hover',
+                autoActivate: true
+            });
+            api.map.addControls([hoverControl]);
 
-           }
+       }
 
-           // You can load the picutres from panoramio.com with a simple get request 
+       function moveEnd(event) {
+           var extent = api.map.getExtent().transform("EPSG:21781","EPSG:4326");
+           // You can load the picutres from panoramio.com with a simple get request
            var request = new OpenLayers.Request.GET({
                url: "http://www.panoramio.com/map/get_panoramas.php",
                params: {
                         set: 'public',
                         from: 0,  // Take the 20 most recent picutres
                         to: 20,
-                        minx: 7.36378, // Coordinates must be provided in WSG 84
-                        miny: 46.93487,
-                        maxx: 7.54247,
-                        maxy: 46.98612,
-                        size: 'small', // Other available sizes (thumbnail, medium, original, square, mini-square) 
+                        minx: extent.left, // Coordinates must be provided in WSG 84
+                        miny: extent.bottom,
+                        maxx: extent.right,
+                        maxy: extent.top,
+                        size: 'small', // Other available sizes (thumbnail, medium, original, square, mini-square)
                         mapfilter: true  // If activated, pictures look better when placed on the map
                },
                callback: handler
            });
-           
-           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
-           var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
-           api.map.zoomToExtent(bounds);
-
        }
+
        </script>
           <body onload="init();">
           <script type="text/javascript" src="../../../loader.js"></script>
