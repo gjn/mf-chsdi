@@ -32,6 +32,17 @@ function init() {
         map: map
     });
 
+   GeoAdmin.Translate();
+
+}
+
+GeoAdmin.Translate = function() {
+    var nodeList = document.querySelectorAll(".i18n");
+    for (var i = 0, length = nodeList.length; i < length; i++) {
+        var msgId =nodeList[i].innerHTML;
+        nodeList[i].innerHTML = OpenLayers.i18n(msgId);  console.log(msgId);
+
+    }
 }
 
 GeoAdmin.LayerCombo = OpenLayers.Class({
