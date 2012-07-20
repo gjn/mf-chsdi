@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+
+  <title></title>
+</head>
+<body onload="init();">  
+    <div id="header">
+        <table>
+           <tr>
+             <td></td>
+             <td></td>
+             <td><div class="trapeze"> Feedback | Vote</div></td>
+             <td><a href="">Kontakt</a></td>
+             <td><a href="">Hilfe</a></td>
+             <td><a href="">Mobile</a></td>
+             <td><div id="lang" class="geoadmin-layertool">
+               <select>
+                   <option value="fr">fr</option>
+                   <option value="de">de</option>
+                   <option value="it">it</option>
+        
+             </div></td>
+        </tr></table> 
+     </div>  <!-- end header -->
+     <div id="toolbar">
+          <div id="swisssearch-div">  </div>
+          <div id="layertool" ></div> 
+     </div> <!-- end toolbar -->
+<div id="menu">
+    <div id="logo"></div>
+
+    <div class="accordion-container">
+    <!--accordion-->
+        <ul>
+            <li class="block_header">map.geo.admin.ch</li>
+            <li class="block" id="block_1"><a class="header" href="#block_1">Link versenden</a><div class="arrow"></div>
+               <div>
+                 <img src="img/link.png" />
+              </div>
+            </li>
+           <li class="block" id="block_2"><a class="header" href="#block_2">Drucken</a><div class="arrow"></div>
+					<div>
+						 <img src="img/print.png" />
+					</div>
+	   </li>
+	   <li class="block" id="block_3"><a class="header" href="#block_3">Katalog</a><div class="arrow"></div>
+					<div>
+						 <img src="img/catalog.png" />
+					</div>
+				</li>
+	   <li class="block" id="block_4"><a class="header" href="#block_4">Expertenwerkzeug</a><div class="arrow"></div>
+					<div>
+						<p>KML Import</p>
+                                                <p>Messen</p>
+                                                <p>WMS Import</p>
+                                                <p>Zeichnen</p>
+	          	</div>
+           </li>
+	   <li class="block" id="block_5"><a class="header" href="#block_5">Layers</a>  <!-- <div class="arrow"></div>  -->
+					<div>
+						 <img src="img/layer.png" />
+					</div>
+	  </li>
+
+      </ul>
+
+   </div> <!-- accordion-container -->
+</div>  <!-- end menu -->
+
+ <div id="mymap" style="width:100%;height:100%;border:1px solid grey;padding: 0 0 0 0;margin:0 !important;"></div>
+ <div id="footer">
+     <div  id="coords"></div>
+     <div id="copyright"><a href="">Copyright & Datenschutz</a></div>
+</div> <!-- end footer -->
+
+<script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/ltmom/loader.js?mode=light"></script>
+<script type="text/javascript" src="re3.js"></script>
+<link rel="stylesheet" href="re3.css"  type="text/css" />
+</body>
+</html>
+
+

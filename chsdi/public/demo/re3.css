@@ -1,0 +1,393 @@
+/*  css */
+
+
+body {
+   font-family: arial, sans, helvetica;
+   margin: 0 !important;
+}
+
+div.olcontrolzoom {
+    position: absolute;
+    top: 50px;
+    right: 8px;
+    width: 20px !important;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+div.olcontrolmouseposition {
+ font-size: 12px;
+ font-weight: bold;
+ top: auto !important;
+ bottom: 10px !important;
+ left: 20px !important;
+
+}
+
+#header {
+top: 0;
+width: 100%
+height: 40px;
+
+}
+
+#toolbar {
+ position: absolute;
+ float: right;
+ top: 50px;
+ right: 0;
+ height: 50px;
+ left: 0px;
+ background-color: #989898;
+ z-index: 1200;
+ padding: 10px;
+}
+
+
+#menu {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    height: 300px;
+    background-color: #989898;
+    z-index: 1300;
+    width: 300px;
+}
+
+#logo {
+background-image: url(img/logo_bund.jpg);
+width: 300px;
+height: 96px;
+background-color: #989898;
+}
+
+
+.trapeze{
+    width: 90px;
+    height: 1px;
+    border: solid 90px transparent;
+    border-bottom: solid 50px #f00;
+    border-top: none;
+    filter: alpha(opacity=40);
+    -moz-opacity:.40;
+    opacity:.40;
+}
+
+#swisssearch {
+    float: left;
+}
+.geoadmin-layertool {
+    overflow:hidden; 
+    width:350px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border-radius: 9px 9px 9px 9px;
+    box-shadow: 1px 1px 11px #330033;
+    background-image: url("img/arrow.gif"); /* no-repeat scroll 319px 5px #58B14C;*/
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #8c8c8c;
+    float:right;
+    margin-top: 8px;
+}
+select { 
+    border:0; 
+    color:#EEE; 
+    background:transparent;
+    font-size:20px; 
+    font-weight:bold; 
+    padding:2px 10px; 
+    width:378px;
+    width:350px; /*background:#58B14C; */ 
+    -webkit-appearance: none;  
+}
+
+
+input, textarea,  option {
+ background-color:#fff;
+ }
+input, textarea {
+ padding:3px;
+ border:1px solid #ccc;
+ border-radius:5px;
+ width:200px;
+ box-shadow:1px 1px 2px #aaa inset;
+ height: 30px;
+ }
+
+
+.autocompletion a {
+  font-size: 12px;
+
+}
+
+.geoadmin-swisssearchlight {
+    width: 350px;
+    padding-left: 350px;
+    padding-top: 10px;
+    float: left;
+}
+
+
+#footer {
+     font-size: 12px;}
+
+#coords {
+    float:left;
+    width: 100px;
+}
+#copyright {
+    float: right;
+    width: 200px;
+}
+
+/*
+CSS3 Accordions
+Author: Marcell Purham
+URL: http://www.webdevtuts.net
+*/
+
+	
+/* --- accordion body --- */
+div.accordion-container {
+	width: 300px;	/* total width = 510 */
+	height: 100%;
+	padding: 0; /*5px; */
+	margin-left: auto;
+	margin-right: auto;
+	font-family: arial, sans-serif;
+	font-size: 13px;
+	line-height: normal;
+	/* CSS3 radius */
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-background-clip: padding-box;
+}
+	
+/* --- lists global --- */
+div.accordion-container ul,
+div.accordion-container li {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	line-height: normal;
+}
+	
+/* --- links global --- */
+div.accordion-container a {
+	font-family: arial, sans-serif;
+	font-size: 13px;
+	line-height: normal;
+	text-decoration: none;
+	outline: none;
+}
+	
+div.accordion-container a:hover {
+	text-decoration: underline;
+}
+	
+/* --- accordion header label --- */
+div.accordion-container li.block_header {
+	width: 100%;
+	height: 12px;	/* total height = 38 */
+	padding: 0px 10px 10px 10px;
+	font-weight: bold;
+        font-size: 1.2em;
+        text-align:center;
+
+}
+	
+/* --- single block arrow --- */
+div.accordion-container li.block div.arrow {
+	width: 0px;
+	height: 0px;
+	float: right;
+	margin-top: -22px;
+	margin-right: 10px;
+	visibility: visible;
+	background-color: transparent;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	border-bottom: 0;
+}
+
+/* --- single block label --- */
+div.accordion-container li.block a.header {
+	height: 20px;
+	padding: 10px 10px 8px 10px;
+	display: block;
+	/* CSS3 transition */
+	-webkit-transition: padding-left 0.1s ease-out;
+	-moz-transition: padding-left 0.1s ease-out;
+	-o-transition: padding-left 0.1s ease-out;
+	-ms-transition: padding-left 0.1s ease-out;
+	transition: padding-left 0.1s ease-out;
+}
+	
+/* ---  single block hover --- */	
+div.accordion-container li.block a.header:hover {
+	text-decoration: none !important;
+	/* padding-left: 20px; */
+}
+	
+/* --- single block section --- */
+div.accordion-container li.block div {
+	height: 0px;
+	visibility: hidden;
+	overflow: hidden;
+	/* CSS3 transition */
+	-webkit-transition: height 0.3s ease-in-out;
+	-moz-transition: height 0.3s ease-in-out;
+	-o-transition: height 0.3s ease-in-out;
+	-ms-transition: height 0.3s ease-in-out;
+	transition: height 0.3s ease-in-out;
+}
+	
+/* --- single block section paragraph --- */	
+div.accordion-container li.block div p {
+	padding: 10px 10px 10px 10px;
+	margin: 0px;
+	position: relative;
+	top: 50px;
+}
+	
+/* --- single block target --- */
+div.accordion-container li.block:target,
+div.accordion-container li.block.target {
+	width: 100%;
+}
+
+/* ---  single block label target --- */
+div.accordion-container li.block:target a.header,
+div.accordion-container li.block.target a.header {
+	font-weight: bold;	
+}
+	
+/* --- single block section target --- */
+div.accordion-container li:target div,
+div.accordion-container li.target div {
+	width: 100%;
+	height: 150px;	/* expanded section height */
+	visibility: visible;
+	overflow: hidden;
+}
+
+div.accordion-container li#block_5 div {
+	width: 100%;
+	height: 250px;	/* expanded section height */
+	visibility: visible;
+	overflow: auto;
+   background-color: #ffffff;
+}
+
+	
+/* --- single block section paragraph target --- */	
+div.accordion-container li.block:target div p,
+div.accordion-container li.block.target div p {
+	top: 0px;
+	z-index: 0;
+	/* CSS3 transition */
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+	
+/* --- single block arrow target --- */		
+div.accordion-container li.block:target div.arrow,
+div.accordion-container li.block.target div.arrow {
+	margin-top: -23px;
+}
+
+/* --- accordion body --- */
+div.accordion-container {
+	color: #666666;
+	background-color: #aaa;
+}
+
+/* --- links global --- */
+div.accordion-container a {
+	color: #2678a8;
+}
+	
+/* --- accordion header label --- */
+div.accordion-container li.block_header {
+	color: #ffffff;
+}
+	
+/* --- single block --- */
+div.accordion-container li.block {
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #bcbcbc;
+	background-color: #e8e8e8; /* background color for non-css3 browsers like Internet Explorer */
+	/* CSS3 gradient */
+	background-image: linear-gradient(top, #ccc, #999); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc', endColorstr='#999'); /* IE5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc', endColorstr='#999'); /* IE8 */
+	background: -ms-linear-gradient(top, #ccc, #999); /* IE9 */
+	background: -moz-linear-gradient(top, #ccc, #999); /* Firefox */ 
+	background: -o-linear-gradient(top, #ccc, #999); /* Opera 11  */
+	background: -webkit-linear-gradient(top, #fff, #fff); /* Chrome 11  */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #fff)); /* Chrome 10, Safari */
+}
+	
+div.accordion-container li.block:nth-last-child(1) {
+	border-bottom: 0;
+}
+	
+/* --- single block arrow --- */
+div.accordion-container li.block div.arrow {
+	border-top: 4px solid #aaaaaa;
+}
+
+/* --- single block label --- */
+div.accordion-container li.block a.header {
+	color: #666666;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+
+/* ---  single block hover --- */	
+div.accordion-container li.block a.header:hover {
+	color: #222222;
+	text-shadow: 0px 1px 0px #ffffff;
+	background-color: #f1f1f1; /* background color for non-css3 browsers */
+	/* CSS3 gradient */
+	background-image: linear-gradient(top, #f5f5f5, #ececec); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE8 */
+	background: -ms-linear-gradient(top, #f5f5f5, #ececec); /* IE9 */
+	background: -moz-linear-gradient(top, #f5f5f5, #ececec); /* Firefox */ 
+	background: -o-linear-gradient(top, #f5f5f5, #ececec); /* Opera 11  */
+	background: -webkit-linear-gradient(top, #f5f5f5, #ececec); /* Chrome 11  */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f5f5f5), color-stop(1, #ececec)); /* Chrome 10, Safari */
+}
+	
+/* ---  single block label target --- */
+div.accordion-container li.block:target a.header,
+div.accordion-container li.block.target a.header {
+	color: #222222;
+	text-shadow: 0px 1px 0px #ffffff;
+	border-bottom: 1px solid #bcbcbc;
+	background-color: #f1f1f1; /* background color for non-css3 browsers */
+	/* CSS3 gradient */
+	background-image: linear-gradient(top, #f5f5f5, #ececec); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE8 */
+	background: -ms-linear-gradient(top, #f5f5f5, #ececec); /* IE9 */
+	background: -moz-linear-gradient(top, #f5f5f5, #ececec); /* Firefox */ 
+	background: -o-linear-gradient(top, #f5f5f5, #ececec); /* Opera 11  */
+	background: -webkit-linear-gradient(top, #fff, #fff); /* Chrome 11  */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f5f5f5), color-stop(1, #ececec)); /* Chrome 10, Safari */	
+}	
+		
+/* --- single block section target --- */
+div.accordion-container li:target div,
+div.accordion-container li.target div {
+	background-color: #ffffff;
+	border-top: 1px solid #ececec;
+}	
+
+
