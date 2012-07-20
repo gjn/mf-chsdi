@@ -41,7 +41,7 @@ GeoAdmin.LayerCombo = OpenLayers.Class({
     initialize: function(options) {
         this.div = OpenLayers.Util.getElement(options.div);
         this.map = options.map;
-        var layers = options.layers || ["ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau", "ch.kantone.hintergrund-farbe", "ch.swisstopo.tml3d-hintergrund-karte", "voidLayer"];
+        var layers = options.layers || ["ch.swisstopo.pixelkarte-farbe", "ch.swisstopo.pixelkarte-grau", "ch.swisstopo.swissimage", "ch.kantone.hintergrund-farbe", "ch.swisstopo.tml3d-hintergrund-karte", "voidLayer"];
         var selectEl = document.createElement('select');
         selectEl.id = 'backgroundlayer';
 
@@ -61,7 +61,13 @@ GeoAdmin.LayerCombo = OpenLayers.Class({
 
             selectEl.onchange = function(event) {
             var layerId = event.target.value;
-            options.map.switchComplementaryLayer(layerId);
+            if (layerId == 'ch.swisstopo.swissimage') {
+                options.map.complementaryLayer.setOpacity(0.0);
+            } else {
+                options.map.switchComplementaryLayer(layerId);
+                options.map.complementaryLayer.setOpacity(1.0);
+            }
+            
 
         }
     }
