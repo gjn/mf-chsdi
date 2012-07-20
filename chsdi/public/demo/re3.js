@@ -8,6 +8,13 @@ if (!window.GeoAdmin) {
 }
 
 function init() {
+
+    var parameters = OpenLayers.Util.getParameters();	
+    if (parameters.lang) {
+ 	OpenLayers.Lang.setCode(parameters.lang);
+        document.getElementById('lang').children[0].value = parameters.lang;
+    }
+
     $ = OpenLayers.Util.getElement;
     map = new GeoAdmin.Map("mymap", {});
     map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe', {
@@ -36,11 +43,13 @@ function init() {
 
 }
 
-GeoAdmin.Translate = function() {
+
+
+GeoAdmin.Translate = function(lang) {
     var nodeList = document.querySelectorAll(".i18n");
     for (var i = 0, length = nodeList.length; i < length; i++) {
-        var msgId =nodeList[i].innerHTML;
-        nodeList[i].innerHTML = OpenLayers.i18n(msgId);  console.log(msgId);
+        var msgId =nodeList[i].innerHTML; 
+        nodeList[i].innerHTML = OpenLayers.i18n(msgId); 
 
     }
 }
