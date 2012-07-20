@@ -214,6 +214,15 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
         }
     },
 
+    /** private: method[setVisibilityCheckboxVisibility]
+     * Displays or hides checkbox that the user would use to set a layer's visibility
+     */
+    setVisibilityCheckboxVisibility: function(nodeId, checkboxVisibility){
+        var node = Ext.get(nodeId + '_cb');
+        node.setDisplayed(checkboxVisibility);
+        node.next().setDisplayed(checkboxVisibility);
+    },
+
     addtreeLayerLink: function(id, nodeId) {
         var layerlink = OpenLayers.i18n(id) + '<div class="layerNodeTools">' +
                 '<div class="treelayerpipe"></div><div class="nodeTP3">' +
@@ -244,6 +253,25 @@ GeoAdmin.TreePanel = Ext.extend(Ext.tree.TreePanel, {
             if (layer.visibility) {
                 this.updateCustomizedCheckbox(layer.layername, true);
             }
+            // Allow the user to set a layer's visibility
+            if(typeof(layer.visibilityEditable)==='boolean'){
+                this.setVisibilityCheckboxVisibility(layer.layername, layer.visibilityEditable);
+            }
+        }
+        this.preventChecking(this.root);
+    },
+
+    /** private: method[preventChecking]
+     * Prevent a node an its children from modifying checked-states on double click
+     */
+    preventChecking: function(node){
+        if(node.layer && node.layer.visibilityEditable===false){
+            node.on('beforedblclick', function(){
+                return false;
+            });
+        }
+        for(var i=0; i<node.childNodes.length; i++){
+            this.preventChecking(node.childNodes[i]);
         }
     },
 

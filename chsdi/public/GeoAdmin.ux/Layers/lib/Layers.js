@@ -2754,6 +2754,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: false
+            },
+
+            'ch.bazl.luftfahrthindernisse': {
+                name: OpenLayers.i18n('ch.bazl.luftfahrthindernisse'),
+                layertype: 'wmts',
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true
             }
         };
         return this.layers;
