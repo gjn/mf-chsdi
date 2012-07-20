@@ -169,7 +169,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }
         }
 
-        // in segond pass to avoid that printPanelOptions don't exists
+        // in second pass to avoid that printPanelOptions don't exists
         this.config = Ext.apply({
             enableToggle: this.config.printPanelOptions.renderTo ? true : false
         }, this.config);
@@ -623,7 +623,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             },
             printExtentOptions: {
                 transformFeatureOptions: {
-                    rotationHandleSymbolizer: "rotate"
+                    rotationHandleSymbolizer: "rotate",
+                    rotate: (this.config.rotationEnabled!==false)
                 }
             }
         }, this.config.printPanelOptions);

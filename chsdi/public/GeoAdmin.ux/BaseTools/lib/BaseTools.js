@@ -83,6 +83,10 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             return tbar;
         }
     },
+
+    /**
+     * Create button with drop-down to select tools
+     */
     createAdvancedMenu: function(options) {
         var menu = [];
 
@@ -125,6 +129,10 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
             menu: new Ext.menu.Menu({cls: menuClass, items: menu})
         });
     },
+    
+    /**
+     * Creates a button which opens a dialog to set print options and to trigger printing
+     */
     createPrintAction: function(options) {
         var options = options || {};
         Ext.apply(options,{
@@ -135,7 +143,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                 tbar: ["->", {
                     iconCls: "close-button",
                     handler: function() {
-                    	  this.printAction.items[0].pressed = false;
+                        this.printAction.items[0].pressed = false;
                         this.printAction.pHandler();
                     },
                     scope: this
