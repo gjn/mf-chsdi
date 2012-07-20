@@ -736,6 +736,17 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }
         }
         this.printPanel.doLayout();
+    },
+
+    setDisabled: function(disabled){
+        Ext.Action.prototype.setDisabled.call(this, disabled);
+        if(this.printPanel){
+            // Make sure dialog is invisible whenever printing gets disabled
+            this.printPanel.container.setVisible(false);
+            this.printPanel.hideExtent();
+            this.printLayer.setVisibility(false);
+        }
+        return this;
     }
 });
 
