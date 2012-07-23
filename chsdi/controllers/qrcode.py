@@ -18,14 +18,20 @@ class QrcodeController(BaseController):
            return 'Can be used only to shorten url for admin.ch'
      
         longurl = urllib.quote_plus(longurl)
-        responseShort = urllib2.urlopen('http://api.xav.cc/simple/encode?url='+longurl)
-        shorturl = responseShort.read()
+        try:
+            responseShort = urllib2.urlopen('http://api.xav.cc/simple/encode?url='+longurl)
+            shorturl = responseShort.read()
+        except urllib2.HTTPError, e:
+            shorturl = "http://map.geo.admin.ch"
         
-        responseQR = urllib2.urlopen('http://chart.apis.google.com/chart?chld=L%7C1&chs=128x128&choe=UTF-8&cht=qr&chl='+shorturl)
-        
+        try:
+            responseQR = urllib2.urlopen('http://chart.apis.google.com/chart?chld=L%7C1&chs=128x128&choe=UTF-8&cht=qr&chl='+shorturl)
+            content = responseQR.read()
+        except urllib2.HTTPError, e:
+            abort(e.code)
         response.headers['Pragma'] = 'public'
         response.headers['Content-Type'] = 'image/png'
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
 
-        return responseQR.read()
+        return content
