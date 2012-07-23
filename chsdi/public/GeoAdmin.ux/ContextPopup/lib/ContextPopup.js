@@ -40,6 +40,13 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
+
+    /** api: config[qrcode]
+     *  ``Boolean``
+     * Whether to show a QR code image.
+     */
+    qrcode: true,
+    
     defaultHandlerOptions: {
         'single': true,
         'double': false,
@@ -79,8 +86,11 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                         content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
                         content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None', '-') + ' [m] </td></tr>';
                         content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr>";
-                        var qrcodeurl = escape("http://map.geo.admin.ch/?crosshair=bowl&"+params);
-                        content = content + "<tr><td align='center' colspan='2'><img src='"+GeoAdmin.webServicesUrl+"/qrcode?longurl="+qrcodeurl+"' width='128' height='128'/></td></tr></table>";
+                        if(this.qrcode){
+                            var qrcodeurl = escape("http://map.geo.admin.ch/?crosshair=bowl&"+params);
+                            content = content + "<tr><td align='center' colspan='2'><img src='"+GeoAdmin.webServicesUrl+"/qrcode?longurl="+qrcodeurl+"' width='128' height='128'/></td></tr>";
+                        }
+                        content = content + "</table>";
                         if (this.popup) {
                             this.popup.destroy();
                         }
