@@ -96,7 +96,7 @@ class TestLayersController(TestController):
     def test_validate_getcapabilities(self):
         if socket.gethostname() == 'bgdimf01t':
             raise SkipTest("Cannot run this test on 'bgdimf0t'. Sorry.") 
-        schema_url="http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd"
+        schema_url = os.path.join(os.path.dirname(__file__),"wmts/1.0/wmtsGetCapabilities_response.xsd")
         os.environ['XML_CATALOG_FILES'] = os.path.join(os.path.dirname(__file__),"xml/catalog")
 
         for lang in ['de','fr']:
@@ -105,7 +105,7 @@ class TestLayersController(TestController):
             resp = self.app.get(url(controller='layers', action='index'), params={'mode': 'wmts', 'lang': lang} )
             f.write(resp.response.body)
             f.seek(0)
-            retcode = subprocess.call(["xmllint", "--noout", "--catalogs","--schema", schema_url, f.name ])
+            retcode = subprocess.call(["xmllint", "--noout", "--nocatalogs","--schema", schema_url, f.name ])
             f.close()
 
             assert retcode == 0
