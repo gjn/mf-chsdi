@@ -1026,11 +1026,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geophysik-inklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
                 layertype: 'wmts',
-                timestamp: '19791231',
+                timestamp: '20111128',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-deklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-deklination"),
