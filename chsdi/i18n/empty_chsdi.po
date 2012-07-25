@@ -9,6 +9,9 @@ msgstr ""
 msgid "tt_program"
 msgstr ""
 
+msgid "contour"
+msgstr ""
+
 msgid "tt_freqchan"
 msgstr ""
 

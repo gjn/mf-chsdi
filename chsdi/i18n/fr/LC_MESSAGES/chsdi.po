@@ -914,6 +914,9 @@ msgstr "Contact"
 msgid "contact url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/fr/tools/contact.html"
 
+msgid "contour"
+msgstr "Inclinaison [°]"
+
 msgid "ct"
 msgstr "Ct."
 
