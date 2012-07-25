@@ -385,6 +385,16 @@ class GeologischerAtlasPK(Base, Queryable):
 
 register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)
 
+class Geologischer_Inklination(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geophysik_inklination'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/inklination.mako'
+        id = Column('gid', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-inklination',Geologischer_Inklination)
+
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'wanderwege_swissmap'
