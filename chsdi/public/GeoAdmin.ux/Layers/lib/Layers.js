@@ -2763,30 +2763,30 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: true
-            },
-            'ch.bazl.heliports-gebirgslandeplaetze': {
-                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
-                layertype: 'wmts',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.bazl",
-                queryable: false
-            },
-            'ch.bazl.points-of-interest': {
-                name: OpenLayers.i18n('ch.bazl.points-of-interest'),
-                layertype: 'wmts',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.bazl",
-                queryable: false
-            },
-            'ch.bafu.schutzgebiete-luftfahrt': {
-                name: OpenLayers.i18n('ch.bafu.schutzgebiete-luftfahrt'),
-                layertype: 'wmts',
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.bazl",
-                queryable: false
+//            },
+//            'ch.bazl.heliports-gebirgslandeplaetze': {
+//                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
+//                layertype: 'wmts',
+//                type: "raster",
+//                format: "image/png",
+//                datenherr: "ch.bazl",
+//                queryable: false
+//            },
+//            'ch.bazl.points-of-interest': {
+//                name: OpenLayers.i18n('ch.bazl.points-of-interest'),
+//                layertype: 'wmts',
+//                type: "raster",
+//                format: "image/png",
+//                datenherr: "ch.bazl",
+//                queryable: false
+//            },
+//            'ch.bafu.schutzgebiete-luftfahrt': {
+//                name: OpenLayers.i18n('ch.bafu.schutzgebiete-luftfahrt'),
+//                layertype: 'wmts',
+//                type: "raster",
+//                format: "image/png",
+//                datenherr: "ch.bazl",
+//                queryable: false
             }
         };
         return this.layers;
