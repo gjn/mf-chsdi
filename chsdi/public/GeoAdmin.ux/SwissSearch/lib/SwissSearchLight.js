@@ -68,7 +68,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         }
         this.div = OpenLayers.Util.getElement(div);
 
-        this.map = map;
+        this.map = options.map;
                           
         OpenLayers.Element.addClass(this.div, 'geoadmin-swisssearchlight');
         this.scriptProtocol = new OpenLayers.Protocol.Script({
@@ -82,6 +82,8 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
         });
         // Create input field
         this.inputElement = document.createElement('input');
+        this.inputElement.setAttribute('id','geoadmin-swisssearchlight-input');
+        this.inputElement.setAttribute('value', OpenLayers.i18n('Geo search...'));
         if (this.div.style && this.div.style.width) {
             this.inputElement.style.width = this.div.style.width;
         }
@@ -119,7 +121,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
             }, 250);
         };
         this.onkeyupdelay = function() {
-            var myInputValue = document.getElementById(window.swissSearchCombo.div.id).firstChild.value;
+            var myInputValue = document.getElementById('geoadmin-swisssearchlight-input').value;
             window.swissSearchCombo.scriptProtocol.read({
                 params: {
                     query: myInputValue,
@@ -217,6 +219,7 @@ GeoAdmin.SwissSearchCombo = OpenLayers.Class({
     hideAutocompletion: function() {
         window.swissSearchCombo.autoCompletion.style.display = 'none';
         window.swissSearchCombo.autoCompletion.innerHTML = '';
+        document.getElementById('geoadmin-swisssearchlight-input').value ='';
     },
 
     // !! Duplicated code from SwissSearchCombo !!
