@@ -1,8 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-     <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
-
-  <title></title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+      <!-- <meta name="viewport" content="width=device-width" />  -->
+     <link rel="stylesheet" href="re3.css"  type="text/css" media="screen" />
+     <title>GeoAdmin RE3 Mockup</title>
 </head>
 <body onload="init();">  
     <div id="header">
@@ -27,10 +28,12 @@
 <div id="menu">
     <div id="logo"></div>
 
-    <div class="accordion-container">
+   <div class="block_header" ><a class="i18n">map.geo.admin.ch</a></div>
+    <div class="toggle_accordion" onclick="toggle_accordion_visibility('accordion')"><a id='open_close' href="#accordion" class="i18n">Close</a><div id='arrow' class="arrow up"></div></div>
+    <div id="accordion" class="accordion-container">
     <!--accordion-->
         <ul>
-            <li class="block_header i18n">map.geo.admin.ch</li>
+            
             <li class="block" id="block_1"><a class="header i18n" href="#block_1">permalink action</a><div class="arrow"></div>
                <div>
                  <img src="img/link.png" />
@@ -73,7 +76,6 @@
 
 <script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/ltmom/loader.js?mode=light"></script>
 <script type="text/javascript" src="re3.js"></script>
-<link rel="stylesheet" href="re3.css"  type="text/css" />
 </body>
 </html>
 

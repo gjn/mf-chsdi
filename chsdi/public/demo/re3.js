@@ -20,12 +20,7 @@ function init() {
     map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe', {
         opacity: 100
     });
-    map.zoomTo(3);
-    var control = new OpenLayers.Control.MousePosition({
-        numDigits: 0,
-        prefix: OpenLayers.i18n("Coordinates (m):")
-        });
-    map.addControl(control);
+    map.zoomTo(5);
     map.events.register("mousemove", map, function(e) {
         var position = this.events.getMousePosition(e);
         OpenLayers.Util.getElement("coords").innerHTML = map.getLonLatFromPixel(position);
@@ -41,6 +36,24 @@ function init() {
 
    GeoAdmin.Translate();
 
+}
+
+toggle_accordion_visibility = function(id) {
+    var el = OpenLayers.Util.getElement(id);
+    var ar = OpenLayers.Util.getElement('arrow');
+    var oc = OpenLayers.Util.getElement('open_close');
+    if (el) {
+        var  visibility = el.style.display;
+        if (visibility == 'none') {
+            el.style.display = 'block';
+            ar.className = 'arrow down';
+            oc.innerHTML = OpenLayers.i18n('Close');
+        } else {
+            el.style.display = 'none'
+            ar.className = 'arrow up';
+            oc.innerHTML = OpenLayers.i18n('Permalink.openlink');
+        }
+    }
 }
 
 

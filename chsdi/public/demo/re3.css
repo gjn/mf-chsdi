@@ -1,20 +1,24 @@
 /*  css */
 
 
+@media screen and (max-width: 640px) {
+    #header{
+              display: none;
+    }
+}
+
 body {
    font-family: arial, sans, helvetica;
    margin: 0 !important;
 }
 
-div.olcontrolzoom {
+div.olControlZoom.olControlNoSelect {
     position: absolute;
-    top: 50px;
-    right: 8px;
-    width: 20px !important;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
-    padding: 2px;
+    top: 65px !important;
+    right: 8px !important;
+    left: auto;
 }
+
 
 div.olcontrolmouseposition {
  font-size: 12px;
@@ -43,6 +47,10 @@ div#lang {
     width: 100%;
 }
 
+a {
+   text-decoration: none;
+}
+
 #toolbar {
  position: absolute;
  float: right;
@@ -60,7 +68,7 @@ div#lang {
     position: absolute;
     top: 50px;
     left: 10px;
-    height: 300px;
+    /*height: 300px;  */
     background-color: #989898;
     z-index: 1300;
     width: 300px;
@@ -82,11 +90,54 @@ div#lang {
 }
 
 #header table tr td:last-child {
-  width: 10%
+  width: 8%
 }
 
+.block_header {
+	font-weight: bold;
+        font-size:1.4em;
+        text-align:center;
+        background-color: #989898;
+        color: #fff;
+}
+.toggle_accordion {
+        font-size: 0.6em;
+        font-size: bold;
+        text-align:center;
+        background-color: #f00;
+        color: #fff;
+}
+
+.toggle_accordion a {
+        text-decoration: none;
+	font-weight: bold;
+        color: #fff;
+}
+.toggle_accordion  div.arrow {
+	width: 0px;
+	height: 0px;
+	float: right;
+	margin-top: 2px;
+	margin-right: 10px;
+	visibility: visible;
+	background-color: transparent;
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+}
+
+.toggle_accordion  div.arrow.down{
+	border-top: 0;
+        border-bottom: 6px solid #fff;
+}
+
+.toggle_accordion  div.arrow.up{
+	border-bottom: 0;
+        border-top: 6px solid #fff;
+}
+
+
 .trapeze{
-    width: 80%;
+    width: 70%;
     height: 1px;
     border: solid 90px transparent;
     border-bottom: solid 50px #f00;
@@ -124,7 +175,7 @@ div#lang {
 }
 select { 
     border:0; 
-    color:#EEE; 
+    color:#aaa; 
     background:transparent;
     font-size:20px; 
     font-weight:bold; 
@@ -199,7 +250,12 @@ div.accordion-container {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-background-clip: padding-box;
+        display: block;
 }
+
+/*div.accordion-container:target {
+   diplay: block;
+}  */
 	
 /* --- lists global --- */
 div.accordion-container ul,
@@ -233,6 +289,7 @@ div.accordion-container li.block_header {
         text-align:center;
 
 }
+
 	
 /* --- single block arrow --- */
 div.accordion-container li.block div.arrow {
@@ -262,9 +319,11 @@ div.accordion-container li.block a.header {
 }
 	
 /* ---  single block hover --- */	
-div.accordion-container li.block a.header:hover {
+div.accordion-container li.block a.header.i18n:hover {
 	text-decoration: none !important;
 	/* padding-left: 20px; */
+        color: #fff;
+        background: -webkit-linear-gradient(top, #f00, #f55); /* Chrome 11  */
 }
 	
 /* --- single block section --- */
@@ -311,7 +370,7 @@ div.accordion-container li.target div {
 
 div.accordion-container li#block_5 div {
 	width: 100%;
-	height: 250px;	/* expanded section height */
+	height: 200px;	/* expanded section height */
 	visibility: visible;
 	overflow: auto;
    background-color: #ffffff;
