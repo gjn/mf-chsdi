@@ -86,9 +86,11 @@ a {
 }
 
 #header table tr td:nth-child(2) {
-    width: 60%
+    width: 50%
 }
-
+#header table tr td:nth-child(3) {
+   width: 12%
+}
 #header table tr td:last-child {
   width: 8%
 }
@@ -137,7 +139,7 @@ a {
 
 
 .trapeze{
-    width: 70%;
+    width: 80%;
     height: 1px;
     border: solid 90px transparent;
     border-bottom: solid 50px #f00;
