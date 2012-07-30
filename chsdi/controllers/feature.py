@@ -156,37 +156,56 @@ class FeatureController(BaseController):
         # extended infos
         if '.html' in id:
             id = id.strip('.html')
-            for model in models_from_name(layer):
-                if len(features) < MAX_FEATURES:
-                    feature = Session.query(model).get(id)
-                    bodlayer = Session.query(self.bodsearch).get(layer)
-   
-                    if feature:
-                        properties = {}
-                        feature.compute_template(layer, bodlayer)
-                        feature.compute_attribute()
-                        properties = feature.attributes
-                        c.html_type = 'extended'
-                        feature.html = render(feature.__template__)
-                        body_tooltip = render('/tooltips/extended_tooltips.mako')
-                        feature.html = body_tooltip.encode('utf8')
-
-
-                        if (self.no_geom):
-                            features.append(Feature(id=feature.id,
-                                                bbox=feature.geometry.bounds,
-                                                properties=feature.attributes))
+            ids = id.split(',')
+            if ids > 1:
+                innerHtml = ''
+                for model in models_from_name(layer):
+                    for fid in ids:
+                        feature = Session.query(model).get(fid)
+                        bodlayer = Session.query(self.bodsearch).get(layer)
+                        if feature is not None:
+                            feature.compute_template(layer, bodlayer)
+                            feature.compute_attribute()
+                            c.html_type = 'extended'
+                            c.feature = feature
+                            innerHtml = innerHtml + render(feature.__template__)
                         else:
-                            features.append(feature)
-                        response.headers['Content-Type'] = 'text/html'
-                        return feature.html
+                            abort(404, 'One of the id you provided is not valid')
+                feature.html = innerHtml
+                body_tooltip = render('/tooltips/extended_tooltips.mako')
+                feature.html = body_tooltip.encode('utf8')
+            else:
+                for model in models_from_name(layer):
+                    if len(features) < MAX_FEATURES:
+                        feature = Session.query(model).get(id)
+                        bodlayer = Session.query(self.bodsearch).get(layer)
+       
+                        if feature is not None:
+                            properties = {}
+                            feature.compute_template(layer, bodlayer)
+                            feature.compute_attribute()
+                            properties = feature.attributes
+                            c.html_type = 'extended'
+                            feature.html = render(feature.__template__)
+                            body_tooltip = render('/tooltips/extended_tooltips.mako')
+                            feature.html = body_tooltip.encode('utf8')
+    
+    
+                            if (self.no_geom):
+                                features.append(Feature(id=feature.id,
+                                                    bbox=feature.geometry.bounds,
+                                                    properties=feature.attributes))
+                            else:
+                                features.append(feature)
+                            response.headers['Content-Type'] = 'text/html'
+                            return feature.html
+                        else:
+                            abort(404, 'One of the id you provided is not valid')
                     else:
-                        abort(204)
-                else:
-                    break
+                        break
 
-                response.headers['Content-Type'] = 'text/html'
-                return feature.html
+            response.headers['Content-Type'] = 'text/html'
+            return feature.html
 
         for model in models_from_name(layer):
             if len(features) < MAX_FEATURES:
