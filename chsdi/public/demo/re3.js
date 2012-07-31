@@ -2,13 +2,13 @@ var map,
 swisssearch,
 layertool;
 var $;
+var _;
 
 if (!window.GeoAdmin) {
     window.GeoAdmin = {};
 }
 
 function init() {
-
     var parameters = OpenLayers.Util.getParameters();	
     if (parameters.lang) {
  	OpenLayers.Lang.setCode(parameters.lang);
@@ -20,7 +20,7 @@ function init() {
     map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe', {
         opacity: 100
     });
-    map.zoomTo(5);
+    map.zoomTo(5);  
     map.events.register("mousemove", map, function(e) {
         var position = this.events.getMousePosition(e);
         OpenLayers.Util.getElement("coords").innerHTML = map.getLonLatFromPixel(position);
@@ -56,15 +56,15 @@ toggle_accordion_visibility = function(id) {
     }
 }
 
-
-
 GeoAdmin.Translate = function(lang) {
-    var nodeList = document.querySelectorAll(".i18n");
-    for (var i = 0, length = nodeList.length; i < length; i++) {
-        var msgId =nodeList[i].innerHTML; 
-        nodeList[i].innerHTML = OpenLayers.i18n(msgId); 
-
+    if (document.querySelector) {
+        var nodeList = document.querySelectorAll("[i18n]");
+        for (var i = 0, length = nodeList.length; i < length; i++) {
+            var msgId =nodeList[i].innerHTML; 
+            nodeList[i].innerHTML = OpenLayers.i18n(msgId); 
+        }
     }
+    return true;
 }
 
 GeoAdmin.LayerCombo = OpenLayers.Class({
