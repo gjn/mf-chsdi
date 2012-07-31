@@ -157,7 +157,7 @@ class FeatureController(BaseController):
         if '.html' in id:
             id = id.strip('.html')
             ids = id.split(',')
-            if ids > 1:
+            if len(ids) > 1:
                 innerHtml = ''
                 for model in models_from_name(layer):
                     for fid in ids:
