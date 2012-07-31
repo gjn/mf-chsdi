@@ -1,6 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+        <!-- Set document compatibility mode to IE8Mode. -->
+          <meta http-equiv="X-UA-Compatible" content="IE=9">
       <!-- <meta name="viewport" content="width=device-width" />  -->
      <link rel="stylesheet" href="re3.css"  type="text/css" media="screen" />
      <title>GeoAdmin RE3 Mockup</title>
@@ -10,8 +12,8 @@
         <table>
            <tr>
              <td></td>
-             <td><div class="trapeze"><p><a href="http://www.feedback.com" target="_blank" class="i18n">Feedback</a> | <a href="http://www.vote.com" target="_blank" class="i18n">Vote</a></p></div></td>
-             <td><a href="" class="i18n">Contact</a> | <a href="" class="i18n">Help</a> | <a href="" class="i18n">Mobile version</a></td>
+             <td><div class="trapeze"><p><a href="http://www.feedback.com" target="_blank" i18n="true">Feedback</a> | <a href="http://www.vote.com" target="_blank" i18n="true">Vote</a></p></div></td>
+             <td><a href="" i18n="true">Contact</a> | <a href="" i18n="true">Help</a> | <a href="" i18n="true">Mobile version</a></td>
              <td><div id="lang" class="geoadmin-layertool">
                <select onChange="window.location.search='lang='+this.value">
                    <option value="fr">fr</option>
@@ -28,36 +30,36 @@
 <div id="menu">
     <div id="logo"></div>
 
-   <div class="block_header" ><a class="i18n">map.geo.admin.ch</a></div>
-    <div class="toggle_accordion" onclick="toggle_accordion_visibility('accordion')"><a id='open_close' href="#accordion" class="i18n">Close</a><div id='arrow' class="arrow up"></div></div>
+    <div class="block_header" i18n="true"><a>map.geo.admin.ch</a></div>
+    <div class="toggle_accordion" onclick="toggle_accordion_visibility('accordion')"><a id='open_close' href="#accordion" i18n="true">Close</a><div id='arrow' class="arrow up"></div></div>
     <div id="accordion" class="accordion-container">
     <!--accordion-->
         <ul>
             
-            <li class="block" id="block_1"><a class="header i18n" href="#block_1">permalink action</a><div class="arrow"></div>
+            <li class="block" id="block_1"><a class="header" href="#block_1" i18n="true">permalink action</a><div class="arrow"></div>
                <div>
                  <img src="img/link.png" />
               </div>
             </li>
-           <li class="block" id="block_2"><a class="header i18n" href="#block_2">mf.print.print</a><div class="arrow"></div>
+            <li class="block" id="block_2"><a class="header" href="#block_2" i18n="true">mf.print.print</a><div class="arrow"></div>
 					<div>
 						 <img src="img/print.png" />
 					</div>
 	   </li>
-	   <li class="block" id="block_3"><a class="header i18n" href="#block_3">Catalog</a><div class="arrow"></div>
+       <li class="block" id="block_3"><a class="header" href="#block_3" i18n="true">Catalog</a><div class="arrow"></div>
 					<div>
 						 <img src="img/catalog.png" />
 					</div>
 				</li>
-	   <li class="block" id="block_4"><a class="header i18n" href="#block_4">AdvancedMenu.title</a><div class="arrow"></div>
+                <li class="block" id="block_4"><a class="header" href="#block_4" i18n="true">AdvancedMenu.title</a><div class="arrow"></div>
 					<div>
-						<p class="i18n">KML</p>
-                                                <p class="i18n">Measure</p>
-                                                <p class="i18n">WmsBrowser</p>
-                                                <p >Redlining</p>
+						<p i18n="true">KML</p>
+                                                <p i18n="true">Measure</p>
+                                                <p i18n="true">WmsBrowser</p>
+                                                <p i18n="true">Redlining</p>
 	          	</div>
            </li>
-	   <li class="block" id="block_5"><a class="header i18n" href="#block_5">Layer Selection</a>  <!-- <div class="arrow"></div>  -->
+           <li class="block" id="block_5"><a class="header i18n" href="#block_5">Layer Selection</a>  <!-- <div class="arrow"></div>  -->
 					<div>
 						 <img src="img/layer.png" />
 					</div>
@@ -68,12 +70,13 @@
    </div> <!-- accordion-container -->
 </div>  <!-- end menu -->
 
- <div id="mymap" style="width:100%;height:100%;border:1px solid grey;padding: 0 0 0 0;margin:0 !important;"></div>
+ <div id="mymap" style="position: absolute; width:100%;top:90px; height: auto; bottom: 15px;border:1px solid grey;padding: 0 0 0 0; margin:0 !important;"></div>
  <div id="footer">
      <div  id="coords"></div>
-     <div id="copyright"><a href="" class="i18n">Copyright & Datenschutz</a></div>
+     <div id="copyright"><a href="" i18n="true">Copyright & Datenschutz</a></div>
 </div> <!-- end footer -->
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../loader.js?mode=light"></script>
 <script type="text/javascript" src="re3.js"></script>
 </body>
