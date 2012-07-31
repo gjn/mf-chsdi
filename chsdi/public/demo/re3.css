@@ -35,13 +35,7 @@ width: 100%
 height: 40px;
 }
 
-div#lang {
-  margin: 0 10px 5px 0;
-}
 
-#lang select {
-    width: 75px !important;
-}
 
 #header table {
     width: 100%;
@@ -175,7 +169,14 @@ a {
     background-color: #8c8c8c;
     float:right;
     margin-top: 8px;
+    width: 250px;
 }
+
+div#lang {
+    width: 75px;
+    margin: 0 10px 5px 0;
+}
+
 select { 
     border:0; 
     color:#aaa; 
@@ -188,9 +189,9 @@ select {
 }
 
 
-input, textarea,  option {
+/*input, textarea,  option {
  background-color:#fff;
- }
+ } */
 input, textarea {
  padding:3px;
  border:1px solid #ccc;
