@@ -234,8 +234,7 @@ input, textarea {
 
 /*
 CSS3 Accordions
-Author: Marcell Purham
-URL: http://www.webdevtuts.net
+Heavily modified ffrom http://www.webdevtuts.net
 */
 
 	
@@ -289,8 +288,8 @@ div.accordion-container li.block_header {
 	height: 12px;	/* total height = 38 */
 	padding: 0px 10px 10px 10px;
 	font-weight: bold;
-        font-size: 1.2em;
-        text-align:center;
+    font-size: 1.2em;
+    text-align:center;
 
 }
 
@@ -307,6 +306,7 @@ div.accordion-container li.block div.arrow {
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	border-bottom: 0;
+        border-top: 4px solid #aaaaaa;
 }
 
 /* --- single block label --- */
@@ -314,6 +314,10 @@ div.accordion-container li.block a.header {
 	height: 20px;
 	padding: 10px 10px 8px 10px;
 	display: block;
+	color: #666666;
+	text-shadow: 0px 1px 0px #ffffff;
+    font-size: 18px;
+    font-weight: bold;
 	/* CSS3 transition */
 	-webkit-transition: padding-left 0.1s ease-out;
 	-moz-transition: padding-left 0.1s ease-out;
@@ -321,18 +325,8 @@ div.accordion-container li.block a.header {
 	-ms-transition: padding-left 0.1s ease-out;
 	transition: padding-left 0.1s ease-out;
 }
-	
-/* ---  single block hover --- */	
-div.accordion-container li.block a.header:hover {
-     text-decoration: none !important;
-	 /* padding-left: 20px; */
-     color: '#fff';
-     background: -webkit-linear-gradient(top, #f00, #f55); /* Chrome 11  */
-	 background: -ms-linear-gradient(top, #f00, #f55); /* IE9 */
-	 background: -moz-linear-gradient(top, #f00, #f55); /* Firefox */ 
-	 -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f00', endColorstr='#f55'); /* IE8 */
-	 background: -ms-linear-gradient(top, #f00, #f55); /* IE9 */
-}
+
+
 	
 /* --- single block section --- */
 div.accordion-container li.block div {
@@ -361,11 +355,7 @@ div.accordion-container li.block.target {
 	width: 100%;
 }
 
-/* ---  single block label target --- */
-div.accordion-container li.block:target a.header,
-div.accordion-container li.block.target a.header {
-	font-weight: bold;	
-}
+
 	
 /* --- single block section target --- */
 div.accordion-container li:target div,
@@ -410,11 +400,7 @@ div.accordion-container {
 	background-color: #aaa;
 }
 
-/* --- links global --- */
-div.accordion-container a {
-	color: #2678a8;
-}
-	
+
 /* --- accordion header label --- */
 div.accordion-container li.block_header {
 	color: #ffffff;
@@ -424,9 +410,9 @@ div.accordion-container li.block_header {
 div.accordion-container li.block {
 	border-top: 1px solid #ffffff;
 	border-bottom: 1px solid #bcbcbc;
-	background-color: #e8e8e8; /* background color for non-css3 browsers like Internet Explorer */
+	background-color: #fff; /* background color for non-css3 browsers like Internet Explorer */
 	/* CSS3 gradient */
-	background-image: linear-gradient(top, #ccc, #999); /* W3C */
+	background-image: linear-gradient(top, #fff, #fff); /* W3C */
 	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff'); /* IE5.5 - 7 */
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff'); /* IE8 */
 	background: -ms-linear-gradient(top, #fff, #fff); /* IE9 */
@@ -440,54 +426,46 @@ div.accordion-container li.block:nth-last-child(1) {
 	border-bottom: 0;
 }
 	
-/* --- single block arrow --- */
-div.accordion-container li.block div.arrow {
-	border-top: 4px solid #aaaaaa;
-}
 
-/* --- single block label --- */
-div.accordion-container li.block a.header {
-	color: #666666;
-	text-shadow: 0px 1px 0px #ffffff;
-    font-size: 18px;
-    font-weight: bold;
-}
 
-/* ---  single block hover --- */	
-div.accordion-container li.block a.header:hover {
-	text-shadow: 0px 1px 0px #ddd;
-        text-decoration: none !important;
-	 /* padding-left: 20px; */
-        color: '#fff';
-	background-color: #f1f1f1; /* background color for non-css3 browsers */
-	/* CSS3 gradient */
-	background-image: linear-gradient(top, #f5f5f5, #ececec); /* W3C */
-	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE5.5 - 7 */
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f00', endColorstr='#f55'); /* IE8 */
-	background: -ms-linear-gradient(top, #f00, #f555); /* IE9 */
-	background: -moz-linear-gradient(top, #f00, #f55); /* Firefox */ 
-	background: -o-linear-gradient(top, #f5f5f5, #ececec); /* Opera 11  */
-	background: -webkit-linear-gradient(top, #f00, #f55); /* Chrome 11  */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f00), color-stop(1, #f55)); /* Chrome 10, Safari */
-}
 	
 /* ---  single block label target --- */
-div.accordion-container li.block:target a.header,
 div.accordion-container li.block.target a.header {
 	color: #222222;
+        font-weight: bold;
 	text-shadow: 0px 1px 0px #ffffff;
 	border-bottom: 1px solid #bcbcbc;
 	background-color: #fff; /* background color for non-css3 browsers */
 	/* CSS3 gradient */
-	background-image: linear-gradient(top, #f5f5f5, #ececec); /* W3C */
+	background-image: linear-gradient(top, #ffff, #fff); /* W3C */
 	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#ececec'); /* IE5.5 - 7 */
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff'); /* IE8 */
 	background: -ms-linear-gradient(top, #fff, #fff); /* IE9 */
-	background: -moz-linear-gradient(top, #f5f5f5, #ececec); /* Firefox */ 
+	background: -moz-linear-gradient(top, #fff, #fff); /* Firefox */ 
 	background: -o-linear-gradient(top, #f5f5f5, #ececec); /* Opera 11  */
 	background: -webkit-linear-gradient(top, #fff, #fff); /* Chrome 11  */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f5f5f5), color-stop(1, #ececec)); /* Chrome 10, Safari */	
-}	
+}
+
+/* ---  single block hover --- */	
+div.accordion-container li.block a.header:hover {
+        text-decoration: none !important;
+	/* padding-left: 20px; */
+        color: white !important;
+        text-shadow: 0px 1px 0px #aaa !important;
+	background-color: #f00; /* background color for non-css3 browsers */
+	/* CSS3 gradient */
+	background-image: linear-gradient(top, #f00, #f55); /* W3C */
+	//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f00', endColorstr='#f55'); /* IE5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f00', endColorstr='#f55'); /* IE8 */
+	background: -ms-linear-gradient(top, #f00, #f555); /* IE9 */
+	background: -moz-linear-gradient(top, #f00, #f55); /* Firefox */ 
+	background: -o-linear-gradient(top, #f00, #f55); /* Opera 11  */
+	background: -webkit-linear-gradient(top, #f00, #f55); /* Chrome 11  */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f00), color-stop(1, #f55)); /* Chrome 10, Safari */
+}
+
+
 		
 /* --- single block section target --- */
 div.accordion-container li:target div,
