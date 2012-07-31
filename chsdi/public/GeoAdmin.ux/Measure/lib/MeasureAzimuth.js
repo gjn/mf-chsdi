@@ -112,9 +112,9 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
     measureDone: function(geometry) {
         function onElevationResponse(index, response) {
             var json = new OpenLayers.Format.JSON();
-            if (response && response.status == 200) {
-                var data = json.read(response.responseText);
-                this.elevations[index] = data.height;
+            if (response.height !== 'None') {
+                var data = json.read(response.height);
+                this.elevations[index] = data;
             }
             this.components = geometry.components;
             var stat = this.getBestLength(geometry),
@@ -129,12 +129,13 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
 
         this.measuring = false;
         for (var i = 0; i <= 1; i++) {
-            OpenLayers.Request.GET({
-                url: this.elevationServiceUrl,
+            Ext.ux.JSONP.request(this.elevationServiceUrl, {
+                callbackKey: "cb",
                 params: {
                     lon: geometry.components[i].x,
                     lat: geometry.components[i].y
                 },
+                scope: this,
                 callback: OpenLayers.Function.bind(onElevationResponse, this, i)
             });
         }
