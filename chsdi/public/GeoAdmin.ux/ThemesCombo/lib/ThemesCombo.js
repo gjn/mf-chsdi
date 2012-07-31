@@ -37,7 +37,7 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
         });
 
         this.tpl = new Ext.XTemplate(
-            '<tpl for="."><div class="x-combo-list-item">',
+            '<tpl for="."><div class="x-combo-list-item" style="height: 36px;">',
             '<div style="width: 70%; float: left;">{title}<br>',
             'Here is a little description </div>',
             '<div style="padding: 10px; float: right; "><img src="' + OpenLayers.ImgPath + '{image}" style="vertical-align: middle;"></div>',
