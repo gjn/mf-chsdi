@@ -38,6 +38,8 @@ RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
 
 # non cached urls:
 RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+# demo
+RewriteRule ^${vars:apache-entry-point}demo/(.*)$  ${buildout:directory}/chsdi/public/demo/$1 [L]
 
 # legend urls
 RewriteRule ^/${vars:instanceid}/wsgi/legend/(.*)$   ${buildout:directory}/chsdi/public/legend/$1
