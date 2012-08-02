@@ -55,7 +55,7 @@ a {
 #toolbar {
  position: absolute;
  float: right;
- top: 50px;
+ top: 43px;
  right: 0;
  height: 50px;
  left: 0px;
@@ -70,7 +70,7 @@ a {
     height: 20px;
     width: 19px;
     position: absolute;
-    left: 575px;
+    left: 725px;
 }
 #menu {
     position: absolute;
@@ -192,16 +192,16 @@ a {
 }
 
 select#backgroundlayer  {
-    width: 250px !important;
+    width: 120% !important;
 }
 
 
 div#lang {
-    width: 75px;
+    width: 90px;
     margin: 0 10px 5px 0;
 }
 select#lang-select {
-    width: 75px;
+    width: 130% !important;
 }
 
 select { 
@@ -247,6 +247,7 @@ input, textarea {
 .geoadmin-swisssearchlight input {
     color:#ddd; 
     font-style: italic;
+    width: 350px !important;
 }
 
 
@@ -263,9 +264,11 @@ input, textarea {
 }
 #coords {
     float:left;
+    width: 300px;
 }
 #copyright {
     float: right;
+    width: 300px;
 }
 
 /*
