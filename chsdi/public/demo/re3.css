@@ -29,6 +29,13 @@ div.olcontrolmouseposition {
 
 }
 
+#OpenLayers_Control_PanZoomBar_37 {
+    right: 80px !important;
+    top: 25px !important;
+    left: auto !important;
+}
+
+
 #header {
 top: 0;
 width: 100%
@@ -57,7 +64,14 @@ a {
  padding: 10px;
 }
 
-
+#geolocation {
+    background: url('../GeoAdmin.ux/Geolocation/images/geolocation.png') no-repeat;
+    top: 27px;
+    height: 20px;
+    width: 19px;
+    position: absolute;
+    left: 575px;
+}
 #menu {
     position: absolute;
     top: 50px;
@@ -140,17 +154,22 @@ a {
     border-top: none;
     filter: alpha(opacity=40);
     -moz-opacity:.40;
-    opacity:.40;
+    opacity: 1.0;
     text-align: center;
     
 }
 
 .trapeze p {
    padding: 10px;
-   color:#EEE; 
    font-size:20px; 
    font-weight:bold;
    margin: 0;
+}
+
+.trapeze a {
+   color:#fff; 
+   font-size:20px; 
+   font-weight:bold;
 }
 
 #swisssearch {
@@ -172,9 +191,17 @@ a {
     width: 250px;
 }
 
+select#backgroundlayer  {
+    width: 250px !important;
+}
+
+
 div#lang {
     width: 75px;
     margin: 0 10px 5px 0;
+}
+select#lang-select {
+    width: 75px;
 }
 
 select { 
@@ -188,6 +215,9 @@ select {
     -webkit-appearance: none;  
 }
 
+.autocompletion {
+    width: 199px !important;
+}
 
 /*input, textarea,  option {
  background-color:#fff;
@@ -221,15 +251,21 @@ input, textarea {
 
 
 #footer {
+     position: absolute;
+     bottom: 0;
      font-size: 12px;}
 
+#footer table {
+    width: 100%;
+}
+#footer td {
+    width: 50%
+}
 #coords {
     float:left;
-    width: 100px;
 }
 #copyright {
     float: right;
-    width: 200px;
 }
 
 /*
@@ -361,7 +397,7 @@ div.accordion-container li.block.target {
 div.accordion-container li:target div,
 div.accordion-container li.target div {
 	width: 100%;
-	height: 150px;	/* expanded section height */
+	height: 175px;	/* expanded section height */
 	visibility: visible;
 	overflow: hidden;
 }

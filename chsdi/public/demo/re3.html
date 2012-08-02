@@ -12,10 +12,10 @@
         <table>
            <tr>
              <td></td>
-             <td><div class="trapeze"><p><a href="http://www.feedback.com" target="_blank" i18n="true">Feedback</a> | <a href="http://www.vote.com" target="_blank" i18n="true">Vote</a></p></div></td>
+             <td><div></div></td>
              <td><a href="" i18n="true">Contact</a> | <a href="" i18n="true">Help</a> | <a href="" i18n="true">Mobile version</a></td>
              <td><div id="lang" class="geoadmin-layertool">
-               <select onChange="window.location.search='lang='+this.value">
+               <select id="lang-select" onChange="window.location.search='lang='+this.value">
                    <option value="fr">fr</option>
                    <option value="de">de</option>
                    <option value="it">it</option>
@@ -25,6 +25,7 @@
      </div>  <!-- end header -->
      <div id="toolbar">
           <div id="swisssearch-div">  </div>
+          <div id="geolocation" onClick="warning()"></div>
           <div id="layertool" ></div> 
      </div> <!-- end toolbar -->
 <div id="menu">
@@ -38,30 +39,27 @@
             
             <li class="block" id="block_1"><a class="header" href="#block_1" i18n="true">permalink action</a><div class="arrow"></div>
                <div>
-                 <img src="img/link.png" />
+                 <img src="img/link.png" onClick="warning()"/>
               </div>
             </li>
             <li class="block" id="block_2"><a class="header" href="#block_2" i18n="true">mf.print.print</a><div class="arrow"></div>
 					<div>
-						 <img src="img/print.png" />
+						 <img src="img/print.png" onClick="warning()"/>
 					</div>
 	   </li>
        <li class="block" id="block_3"><a class="header" href="#block_3" i18n="true">Catalog</a><div class="arrow"></div>
 					<div>
-						 <img src="img/catalog.png" />
+						 <img src="img/catalog.png" onClick="warning()"/>
 					</div>
 				</li>
                 <li class="block" id="block_4"><a class="header" href="#block_4" i18n="true">AdvancedMenu.title</a><div class="arrow"></div>
 					<div>
-						<p i18n="true">KML</p>
-                                                <p i18n="true">Measure</p>
-                                                <p i18n="true">WmsBrowser</p>
-                                                <p i18n="true">Redlining</p>
+						 <img src="img/tools.png" onClick="warning()"/>
 	          	</div>
            </li>
            <li class="block" id="block_5"><a class="header" href="#block_5" i18n="true">Layer Selection</a>  <!-- <div class="arrow"></div>  -->
 					<div>
-						 <img src="img/layer.png" />
+						 <img src="img/layer.png" onClick="warning()"/>
 					</div>
 	  </li>
 
@@ -70,15 +68,25 @@
    </div> <!-- accordion-container -->
 </div>  <!-- end menu -->
 
- <div id="mymap" style="position: absolute; width:100%;top:90px; height: auto; bottom: 15px;border:1px solid grey;padding: 0 0 0 0; margin:0 !important;"></div>
+ <div id="mymap" style="position: absolute; width:100%;top:90px; height: auto; bottom: 25px;padding: 0 0 0 0; margin:0 !important;"></div>
  <div id="footer">
-     <div  id="coords"></div>
-     <div id="copyright"><a href="" i18n="true">Copyright & Datenschutz</a></div>
+     <table><tr>
+             <td> <div  id="coords"></div></td>
+             <td><div id="copyright"><a href="" i18n="true">Copyright & Datenschutz</a></div></td>
+     </tr></table>
 </div> <!-- end footer -->
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../loader.js?mode=light"></script>
 <script type="text/javascript" src="re3.js"></script>
+<script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/LgTNAW8UuUxzdQXeMAeWMA.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
 </body>
 </html>
 

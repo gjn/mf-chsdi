@@ -17,13 +17,15 @@ function init() {
 
     $ = OpenLayers.Util.getElement;
     map = new GeoAdmin.Map("mymap", {});
+    map.controls[1].destroy();
+    map.addControls([new OpenLayers.Control.PanZoomBar()]);
     map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe', {
         opacity: 100
     });
     map.zoomTo(5);  
     map.events.register("mousemove", map, function(e) {
         var position = this.events.getMousePosition(e);
-        OpenLayers.Util.getElement("coords").innerHTML = map.getLonLatFromPixel(position);
+        OpenLayers.Util.getElement("coords").innerHTML = "&nbsp;" + map.getLonLatFromPixel(position).lon + " / " + map.getLonLatFromPixel(position).lat;
     });
     swisssearch = new GeoAdmin.SwissSearchCombo('swisssearch-div', {
         map: map
@@ -36,6 +38,10 @@ function init() {
 
    GeoAdmin.Translate();
 
+}
+
+function warning() {
+    alert('This is only a mockup :-) This function has not been implemented. Please give us your feedback to make us build your dream map.geo.admin.ch!');
 }
 
 toggle_accordion_visibility = function(id) {
