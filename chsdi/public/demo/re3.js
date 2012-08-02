@@ -37,6 +37,11 @@ function init() {
     });
 
    GeoAdmin.Translate();
+   // feedback tab
+   var f = OpenLayers.Util.getElement('uvTab');
+   if (f)) {
+       f.style.left = '310px';
+   }
 
 }
 
