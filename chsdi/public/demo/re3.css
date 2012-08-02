@@ -65,7 +65,7 @@ a {
 }
 
 #geolocation {
-    background: url('../GeoAdmin.ux/Geolocation/images/geolocation.png') no-repeat;
+    background: url('http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/Geolocation/images/geolocation.png') no-repeat;
     top: 27px;
     height: 20px;
     width: 19px;
