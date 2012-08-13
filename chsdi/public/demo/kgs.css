@@ -111,7 +111,7 @@
     background-image: url("http://www.bafu.admin.ch/images/pipe.gif");
     background-position: right center;
     background-repeat: no-repeat;
-	width: 9px;
+        width: 9px;
 	}
 	
 	#servnav li a {
@@ -126,3 +126,7 @@
 	#servnav ul {
     margin-bottom: 0;
 	}
+    .ext-ie iframe {
+        height: 80%;
+    }        
+    
