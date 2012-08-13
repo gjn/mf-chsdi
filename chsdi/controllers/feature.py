@@ -160,6 +160,8 @@ class FeatureController(BaseController):
             if len(ids) > 1:
                 innerHtml = ''
                 for model in models_from_name(layer):
+                    items_nb = len(ids)
+                    item_count = 0
                     for fid in ids:
                         feature = Session.query(model).get(fid)
                         bodlayer = Session.query(self.bodsearch).get(layer)
@@ -168,6 +170,11 @@ class FeatureController(BaseController):
                             feature.compute_attribute()
                             c.html_type = 'extended'
                             c.feature = feature
+                            item_count = item_count + 1
+                            if items_nb == item_count:
+                                c.last = True
+                            else:
+                                c.last = False
                             innerHtml = innerHtml + render(feature.__template__)
                         else:
                             abort(404, 'One of the id you provided is not valid')

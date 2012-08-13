@@ -12,8 +12,11 @@
     from datetime import date
     today = date.today()
 %>
-
+% if c.last == False:
 <div style="height: 650px !important; page-break-after: always;">
+% elif c.last == True:
+<div style="height: 650px !important;">
+% endif
     <table border="0" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr>
             <td style="font-weight: bold; font-size: 14px; width:100%;">${_('tt_ch.bazl.registrationnummer')} ${c.feature.registrationnumber}</td>
@@ -53,6 +56,12 @@
         </tr>
         <tr>
             <td style="padding-left: 200px;">E=${c.feature.geometry.bounds[2]}  N=${c.feature.geometry.bounds[3]}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; font-size: 14px; width:100%;">${_('tt_ch.bazl.markierung')}</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;">${c.feature.obstacletype}</td>
         </tr>
     </table>
     </br>
@@ -117,6 +126,8 @@
         %>
     % endif
     <img src="http://wms.swisstopo4inspire.admin.ch/?LAYERS=ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe&FORMAT=image/png&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG:21781&BBOX=${xmin},${ymin},${xmax},${ymax}&WIDTH=${width}&HEIGHT=${height}"/> 
+    </br>
+    <style> .tooltip_large_header { display: none; } </style>
 </div>
 
 </%def>
