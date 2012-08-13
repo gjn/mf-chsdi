@@ -1,6 +1,6 @@
 	* {margin:0;padding:0;}
 	html,body {height:100%;}
-	iframe {width:100%;height:90%;border:none;}
+	iframe {width:100%; height:87%; border:none;}
 
 	#header_right {
 	background-image: url("http://kgs-gis.admin.ch/kgs/gfx/layout/bs.HeaderImage.jpg");
@@ -61,7 +61,7 @@
 	background-image: url("http://kgs-gis.admin.ch/kgs/gfx/layout/logo_ch.jpg");
 	background-repeat: no-repeat;
 	color: #FFFFFF;
-	height: 7.8%;
+	min-height: 7.8%;
 	}
 	
 	body {
@@ -90,7 +90,7 @@
     background-color: #CCCCCC;
     border-top: 1px solid #FFFFFF;
     font-size: 0.9em;
-	height: 1.2%;
+	min-height: 1.2%;
     padding-bottom: 2px;
     padding-right: 13px;
     padding-top: 2px;
@@ -127,6 +127,6 @@
     margin-bottom: 0;
 	}
     .ext-ie iframe {
-        height: 80%;
+        height: 82%;
     }        
     
