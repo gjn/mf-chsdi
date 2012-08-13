@@ -1,0 +1,128 @@
+	* {margin:0;padding:0;}
+	html,body {height:100%;}
+	iframe {width:100%;height:90%;border:none;}
+
+	#header_right {
+	background-image: url("http://kgs-gis.admin.ch/kgs/gfx/layout/bs.HeaderImage.jpg");
+	background-position: right center;
+	background-repeat: no-repeat;
+	height: 103px;
+	}
+		
+	#adminch a {
+	color: #000000;
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding-top: 2px;
+	text-align: right;
+	text-decoration: none;
+	}
+		
+	#depart a {
+	color: #FFFFFF;
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin: 0 10px 0 0;
+	padding-top: 4px;
+	text-align: right;
+	text-decoration: none;
+	}
+			
+	#amt h1 a {
+	color: #FFFFFF;
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 10px 10px 0 0;
+	text-align: right;
+	text-decoration: none;
+	}
+	
+	#topnav {
+	background: none repeat scroll 0 0 transparent;
+	color: #FFFFFF;
+	height: 103px;
+	left: 0;
+	padding-left: 300px;
+	right: 0;
+	text-align: right;
+	top: 0;
+	}
+	
+	* {
+	margin: 0;
+	padding: 0;
+	}
+	
+	#header {
+	background-image: url("http://kgs-gis.admin.ch/kgs/gfx/layout/logo_ch.jpg");
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	height: 7.8%;
+	}
+	
+	body {
+	color: #000000;
+	font-family: arial,helvetica,sans-serif;
+	font-size: 0.75em;
+	}
+	
+	#header_adminch {
+	background-image: url("http://kgs-gis.admin.ch/kgs/gfx/layout/bg_adminlink.jpg");
+	background-position: right center;
+	background-repeat: no-repeat;
+	height: 20px;
+	}
+	
+	#page {
+	background: none repeat scroll 0 0 #FFFFFF;
+	}
+	
+	#servnav {
+    clear: both;
+    width: auto;
+	}
+	
+	#servnav {
+    background-color: #CCCCCC;
+    border-top: 1px solid #FFFFFF;
+    font-size: 0.9em;
+	height: 1.2%;
+    padding-bottom: 2px;
+    padding-right: 13px;
+    padding-top: 2px;
+    text-align: right;
+	}
+	#serv_links {
+    left: 10px;
+    position: absolute;
+	}
+	#servnav li {
+    display: inline;
+    list-style: none outside none;
+    margin: 0 3px 0 0;
+    padding-right: 6px;
+	}
+	
+	.followed {
+    background-image: url("http://www.bafu.admin.ch/images/pipe.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+	width: 9px;
+	}
+	
+	#servnav li a {
+    color: #000000;
+    text-decoration: none;
+	}
+	
+	#servnav li a.active {
+    font-weight: bold;
+	}
+	
+	#servnav ul {
+    margin-bottom: 0;
+	}
