@@ -182,6 +182,7 @@ class FeatureController(BaseController):
                 body_tooltip = render('/tooltips/extended_tooltips.mako')
                 feature.html = body_tooltip.encode('utf8')
             else:
+                c.last = True
                 for model in models_from_name(layer):
                     if len(features) < MAX_FEATURES:
                         feature = Session.query(model).get(id)
