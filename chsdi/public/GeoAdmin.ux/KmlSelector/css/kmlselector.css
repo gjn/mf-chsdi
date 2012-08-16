@@ -1,0 +1,43 @@
+.file-upload .x-form-file {
+    opacity: 0;
+}
+.kml-window .x-form-item {
+    overflow: hidden !important;
+}
+.kml-window .x-form-file-wrap {
+    background-color: #F1F1F1;
+}
+.kml-window .x-tab-strip-wrap {
+    height: 23px;
+}
+.kml-window ul.x-tab-strip-top {
+    background-image: none !important;
+    background-color: #F1F1F1;
+    border-width: 0px;
+    margin-bottom: 4px;
+}
+.kml-window .x-unselectable {
+    border-width: 0px;
+}
+.kml-window .x-tab-panel-body-top {
+    border-width: 0px;
+}
+.kml-window ul.x-tab-strip li {
+    margin-left: 0px;
+}
+.kml-window ul.x-tab-strip li.x-tab-edge {
+    width: 0px;
+}
+.kml-window .x-tab-panel-body-top {
+    background-color: transparent;
+}
+.kml-window .load-button {
+    float: right !important;
+    margin-top: 10px;
+}
+.ext-ie .kml-window .x-form-element {
+    padding-left: 0px !important;
+}
+.kml-window .x-window-body {
+    height: 95px !important;
+}

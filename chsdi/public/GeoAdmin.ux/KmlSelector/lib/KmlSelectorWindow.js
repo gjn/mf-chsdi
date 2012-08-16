@@ -12,7 +12,7 @@ GeoAdmin.KmlSelectorWindow = Ext.extend(Ext.Window, {
     map: null,
     
     constructor: function(config) {
-    	
+        this.cls = 'kml-window',	
         this.map = config.map|| null;
         var kmlSelectorPanel = new GeoAdmin.KmlSelectorPanel({
             map: this.map
@@ -22,8 +22,8 @@ GeoAdmin.KmlSelectorWindow = Ext.extend(Ext.Window, {
             resizable: true,
             modal: false,
             closeAction: 'hide',
-            width: 510,
-            height: 108,
+            width: 426,
+            height: 134,
             title: OpenLayers.i18n("KML"),
             layout: 'fit',
             items: [kmlSelectorPanel],
