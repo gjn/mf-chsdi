@@ -2754,6 +2754,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: false
+            },
             "ch.bafu.schutzgebiete-luftfahrt": {
                 name: OpenLayers.i18n('ch.bafu.schutzgebiete-luftfahrt'),
                 layertype: 'wmts',
@@ -2765,7 +2766,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: false
             }
 //             },
-
 //            'ch.bazl.luftfahrthindernisse': {
 //                name: OpenLayers.i18n('ch.bazl.luftfahrthindernisse'),
 //                layertype: 'wmts',
