@@ -2754,6 +2754,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: false
+            "ch.bafu.schutzgebiete-luftfahrt": {
+                name: OpenLayers.i18n('ch.bafu.schutzgebiete-luftfahrt'),
+                layertype: 'wmts',
+                timestamp: '20110818',
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                opacity: 0.75,
+                queryable: false
+            }
 //             },
 
 //            'ch.bazl.luftfahrthindernisse': {
@@ -2779,15 +2789,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 //                format: "image/png",
 //                datenherr: "ch.bazl",
 //                queryable: false
-//            },
-//            'ch.bafu.schutzgebiete-luftfahrt': {
-//                name: OpenLayers.i18n('ch.bafu.schutzgebiete-luftfahrt'),
-//                layertype: 'wmts',
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.bazl",
-//                queryable: false
-            }
+//            }
         };
         return this.layers;
     }
