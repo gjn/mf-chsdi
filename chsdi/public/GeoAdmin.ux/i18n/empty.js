@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'ch.bafu.schutzgebiete-luftfahrt': "",
     'Meta information are not available for this layer': "",
     'Zoom to object': "",
     'QueryByRect.MetaKeyUsageNotice': "",
