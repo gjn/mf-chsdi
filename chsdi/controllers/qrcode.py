@@ -4,6 +4,13 @@ from pylons import response, config
 from chsdi.lib.base import *
 import chsdi.lib.helpers as h
 
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.MIMEText import MIMEText
+from email import Encoders
+import unicodedata
+
 import urllib
 import urllib2
 import httplib2
@@ -31,19 +38,26 @@ class QrcodeController(BaseController):
                     json = simplejson.loads(content)
                     if 'id' in json.keys():
                         shorturl = json['id']
-                except simplejson.JSONDecodeError, e:
+                except Exception, e:
+                    self.mail('Error in qrcode generation', 'JSON decoder:' + str(e))
                     pass
-        except httplib2.ServerNotFoundError:
+        except Exception, e:
+            self.mail('Error in qrcode generation', 'Shortener:' + str(e))
             pass
         try:
             h = httplib2.Http()
             responseQR, data  = h.request('http://chart.apis.google.com/chart?chld=L%7C1&chs=128x128&choe=UTF-8&cht=qr&chl='+shorturl)
-            if responseQR.status == 200:
+            if responseQR.status == 200 and responseQR['content-type'] == 'image/png':
                 content = data
-        except httplib2.ServerNotFoundError:
+            else:
+                raise Exception('Chart service produces an error')
+        except Exception, e:
+            self.mail('Error in qrcode generation', 'QRCode generator: ' + str(e))
             try:
                 img = open(os.path.join(config['global_conf']['here'], 'print', 'qrcode.png'))
                 content = img.read()
+            except Exception, e:
+                 self.mail('Error in qrcode generation', 'Image not found: ' + str(e))
             finally:
                 img.close()
 
@@ -53,3 +67,20 @@ class QrcodeController(BaseController):
         response.headers['Cache-Control'] = 'no-cache'
 
         return content
+
+    def mail(self, subject, text):
+        # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
+        msg = MIMEMultipart()
+
+        msg['To'] = 'webgis@swisstopo.ch'
+        msg['Subject'] = subject
+
+        msg.attach(MIMEText(unicodedata.normalize('NFKD',unicode(text)).encode('ascii','ignore')))
+
+        mailServer = smtplib.SMTP("127.0.0.1", 25)
+        mailServer.ehlo()
+        mailServer.starttls()
+        mailServer.ehlo()
+        mailServer.sendmail('webgis@swisstopo.ch', 'webgis@swisstopo.ch', msg.as_string())
+        mailServer.close()
+

@@ -19,7 +19,8 @@ setup(
         "lxml<=2.2.8",
         "Babel<=0.9.99",
         "MapProxy",
-        "OWSLib>=0.5.0"
+        "OWSLib>=0.5.0",
+        "qrcode>=2.4.1"
     ],
     #setup_requires=["PasteScript>=1.6.3"],
     packages = find_packages(exclude=['ez_setup']),
