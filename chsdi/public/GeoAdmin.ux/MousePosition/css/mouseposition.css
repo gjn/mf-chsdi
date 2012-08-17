@@ -1,0 +1,15 @@
+#mouseposition {
+    position: relative !important;
+    top: 0px;
+    left: 25px;
+    float: left;
+    padding-top: 3px;
+    font-weight: none;
+    font: 11px arial,tahoma,helvetica,sans-serif;
+}
+.projection-selector {
+    float: left;
+}
+.box-projection-selector .x-form-field-wrap {
+    height: 0px !important;
+}

@@ -2,6 +2,8 @@
 
 /**
  * @include OpenLayers/Control/MousePosition.js
+ * @include MousePosition/lib/MousePosition.js
+ * @include MousePosition/lib/DisplayProjectionSelectorCombo.js
  */
 
 /** api: (define)
@@ -44,23 +46,32 @@
 
 GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
 	
-	  /** api: config[map]
+     /** api: config[map]
      *  ``OpenLayers.Map``
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
 
     afterRender: function() {
-        var control = new OpenLayers.Control.MousePosition({
-            div: this.getEl().dom,
-            numDigits: 0,
-            prefix: OpenLayers.i18n("Coordinates (m):")
-        });
+        this.map.displayProjection = new OpenLayers.Projection('EPSG:21781');
+        this.width = 423;
+        var divEl = this.getEl().dom;
+        var control = new GeoAdmin.MousePosition({prefix:OpenLayers.i18n('Coordinates (m):')});
         this.map.addControl(control);
+ 
+        var displayProjection = new GeoExt.ux.DisplayProjectionSelectorCombo({
+            map: this.map,
+            renderTo: divEl,
+            controls: [control],
+            updateMapDisplayProjection: true,
+            projections: ['EPSG:21781','EPSG:4326'],
+            width: 170
+        });
+
+        divEl.appendChild(control.element);
         GeoAdmin.MousePositionBox.superclass.afterRender.apply(this, arguments);
     }
 });
 
 /** api: xtype = ga_mousepositionbox */
 Ext.reg("ga_mousepositionbox", GeoAdmin.MousePositionBox);
-
