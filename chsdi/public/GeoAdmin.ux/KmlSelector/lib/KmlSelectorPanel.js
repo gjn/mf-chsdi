@@ -79,7 +79,7 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                                 }
                             }
                         } else {
-                            alert(OpenLayers.i18n('The file you are tying to load is not a KML file'))
+                            alert(OpenLayers.i18n('The file you are trying to load is not a KML file'))
                         }   
                     }
                 },
