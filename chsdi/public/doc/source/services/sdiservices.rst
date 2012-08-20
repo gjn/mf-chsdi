@@ -464,6 +464,52 @@ Result
 
 A JSON containing the height information.
 
+Shorten
+-------
+
+This service allows to shorten an URL.
+
+URL
+^^^
+
+http://api.geo.admin.ch/shorten
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameter is required:
+
+- url: an encoded url (http://www.albionresearch.com/misc/urlencode.php) 
+
+Example: http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
+
+Result
+^^^^^^
+
+The identifier of the short url (for example: 0baf08b)
+
+Shorten: decode
+---------------
+
+This service allows to decode a shortened URL identified by 7 characters.
+
+URL
+^^^
+
+http://api.geo.admin.ch/shorten/[id]
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+No input parameters
+
+Example: http://api.geo.admin.ch/shorten/6a9bc34
+
+Result
+^^^^^^
+
+Redirects to the unshortened URL
+
 .. _wmts_description:
 
 WMTS

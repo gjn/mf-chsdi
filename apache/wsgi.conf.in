@@ -22,12 +22,15 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml
 
 Header set Access-Control-Allow-Origin "*"
 
-# profile and height service
+# height, feature, shorten and profile service
 RewriteCond %{HTTP_HOST}   ^height.geo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/height [PT,QSA]
 
 RewriteCond %{HTTP_HOST}   ^feature.geo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}(.*)$ /${vars:instanceid}/wsgi/feature/$1 [PT]
+
+RewriteCond %{HTTP_HOST}   ^s.geo.admin.ch$
+RewriteRule ^${vars:apache-entry-point}(.*)$ /${vars:instanceid}/wsgi/shorten/$1 [PT]
 
 RewriteCond %{HTTP_HOST}   ^profile.geo.admin.ch$
 RewriteCond %{QUERY_STRING} format=(json|csv)
@@ -57,7 +60,7 @@ RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml)$ /${vars:inst
 
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcode|demo)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcode|demo|shorten)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch

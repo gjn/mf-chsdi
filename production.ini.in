@@ -33,6 +33,7 @@ sqlalchemy.uvek.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbho
 sqlalchemy.ivs2b.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/ivs2b
 sqlalchemy.dritte.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/dritte
 sqlalchemy.bak.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bak
+sqlalchemy.clientdata.url = postgresql://www-data:www-data@db1.bgdi.admin.ch:5432/clientdata
 
 dtm_path = /var/www/mf-chsdi/private/data/profile/
 data_path = /var/local/cartoweb/

@@ -44,6 +44,8 @@ def make_map(config):
     map.connect('/checker', controller='checker', action='index')
     map.connect('/sanity', controller='checker', action='sanity')
     map.connect('/qrcode', controller='qrcode', action='qrcode')
+    map.connect('/shorten', controller='shortener', action='shorten')
+    map.connect('/shorten/{id}', controller='shortener', action='decode')
 
     # Uncomment this line if you need the OGC proxy in your application
     map.connect('/ogcproxy', controller='ogcproxy', action='index')
