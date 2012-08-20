@@ -607,7 +607,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.babs",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.kantone.cadastralwebmap-farbe": {
                 name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
