@@ -9,6 +9,7 @@ from chsdi.model.clientdata import ShortUrl
 from chsdi.model.meta import Session
 import hashlib
 from datetime import datetime
+from routes import url_for
 
 def shorten(myUrl):
     # The current time is hashed and then, only the seven first characters are used.
@@ -16,7 +17,7 @@ def shorten(myUrl):
     shortUrlObject = ShortUrl(url_short=shorturl,url=myUrl)
     Session.add(shortUrlObject)
     Session.commit()
-    absoluteUrl = url('http://' + request.host + request.path[0:request.path.index('wsgi')] + 'shorten/' + shorturl)
+    absoluteUrl = url_for(controller='shortener', action='decode', id=shorturl, qualified=True)
     return absoluteUrl
 
 class ShortenerController(BaseController):

@@ -4,11 +4,11 @@ import simplejson as simplejson
 
 from chsdi.tests import *
 
-class TestQrcodeController(TestController):
+class TestQrcodegeneratorController(TestController):
 
-    def test_qrcode(self):
-        resp = self.app.get(url(controller='qrcode', action='qrcode'),
-                            params={"longurl": "http://www.geo.admin.ch"},
+    def test_qrcodegenerator(self):
+        resp = self.app.get(url(controller='qrcodegenerator', action='qrcodegenerator'),
+                            params={"url": "http://www.geo.admin.ch"},
                             )
 
         # test that content_type is "image/png"
