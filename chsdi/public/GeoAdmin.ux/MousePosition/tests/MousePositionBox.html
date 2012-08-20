@@ -5,25 +5,54 @@
       <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
       <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
       <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+      <script type="text/javascript" src="../lib/MousePosition.js"></script>
+      <script type="text/javascript" src="../lib/DisplayProjectionSelectorCombo.js"</script>
       <script type="text/javascript" src="../lib/MousePositionBox.js"></script>
+      <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/proj4js.js"></script>
+      <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
+      <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+      <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+      <script type="text/javascript" src="../../..//GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/Map.js"></script>
+      <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/MapPanel.js"></script>
       <script type="text/javascript">
 
         function test_ctor(t) {
-            t.plan(2);
+            t.plan(4);
 
             // test
-
-            var c = new GeoAdmin.MousePositionBox();
-            t.ok(c instanceof GeoAdmin.MousePositionBox,
-                 "ctor gives an instance of MousePositionBox");
-            t.ok(c instanceof Ext.BoxComponent,
-                 "ctor gives an instance of Ext.BoxComponent");
+            var map = new GeoAdmin.Map();
+            map.displayProjection = new OpenLayers.Projection('EPSG:21781');
+            var d = new GeoAdmin.MousePosition();
+            var e = new GeoExt.ux.DisplayProjectionSelectorCombo({map:map});
+ 
+            t.ok(d instanceof GeoAdmin.MousePosition,
+                 "ctor gives an instance of MousePosition");
+            t.ok(d instanceof OpenLayers.Control.MousePosition,
+                 "ctor gives an instance of OpenLayers.Control.MousePosition");
+            t.ok(e instanceof GeoExt.ux.DisplayProjectionSelectorCombo,
+                 "ctor gives an instance of GeoExt.ux.DisplayProjectionSelectorCombo");
+            t.ok(e instanceof Ext.form.ComboBox,
+                 "ctor gives an instance of Ext.form.ComboBox");
         };
 
+        function test_box(t) {
+            t.plan(2);
+
+            var map = new GeoAdmin.Map();
+            var c = new GeoAdmin.MousePositionBox({renderTo:'mousebox',map:map});
+
+            t.ok(c instanceof GeoAdmin.MousePositionBox,
+                "ctor gives an instance of MousePositionBox");
+            t.ok(c instanceof Ext.BoxComponent,
+                "ctor gives an instance of Ext.BoxComponent");
+        };
    
       </script>
   </head>
   <body>
+    <script type="text/javascript" src="../lib/MousePositionBox.js"></script>
     <div style="width: 100px; height: 600px" id="map"></div>
+    <div id="mousebox" style="margin:10px !important;height:25px"></div>
   </body>
 </html>
