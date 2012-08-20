@@ -43,7 +43,7 @@ def make_map(config):
     map.connect("/wmts9/{path_info:.*}",controller="wmts", action="manager")
     map.connect('/checker', controller='checker', action='index')
     map.connect('/sanity', controller='checker', action='sanity')
-    map.connect('/qrcode', controller='qrcode', action='qrcode')
+    map.connect('/qrcodegenerator', controller='qrcodegenerator', action='qrcodegenerator')
     map.connect('/shorten', controller='shortener', action='shorten')
     map.connect('/shorten/{id}', controller='shortener', action='decode')
 

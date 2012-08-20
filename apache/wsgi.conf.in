@@ -12,6 +12,7 @@ ServerAlias demo.geo.admin.ch
 ServerAlias height.geo.admin.ch
 ServerAlias profile.geo.admin.ch
 ServerAlias feature.geo.admin.ch
+ServerAlias s.geo.admin.ch
 
 RewriteEngine On
 ExpiresActive On
@@ -60,7 +61,7 @@ RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml)$ /${vars:inst
 
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcode|demo|shorten)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|bodsearch|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcodegenerator|demo|shorten)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
