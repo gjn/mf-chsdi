@@ -1346,7 +1346,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bafu.schutzgebiete-ramsar": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-ramsar"),
