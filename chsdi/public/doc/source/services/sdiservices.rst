@@ -486,7 +486,7 @@ Example: http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3F
 Result
 ^^^^^^
 
-The identifier of the short url (for example: 0baf08b)
+The short link (for example: http://s.geo.admin.ch/0baf08b)
 
 Shorten: decode
 ---------------

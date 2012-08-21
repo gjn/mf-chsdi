@@ -18,6 +18,9 @@ def shorten(myUrl):
     Session.add(shortUrlObject)
     Session.commit()
     absoluteUrl = url_for(controller='shortener', action='decode', id=shorturl, qualified=True)
+    # Manage the web service paths
+    absoluteUrl = absoluteUrl.replace('/main/wsgi','')
+    absoluteUrl = absoluteUrl.replace('/wsgi','')
     return absoluteUrl
 
 class ShortenerController(BaseController):

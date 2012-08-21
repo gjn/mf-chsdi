@@ -4,10 +4,11 @@ from pylons import url
 
 from chsdi.lib.base import *
 import chsdi.lib.helpers as h
-import qrcode
+#import qrcode
 import pylons
-import StringIO
+#import StringIO
 from chsdi.controllers.shortener import shorten 
+import httplib2
 
 class QrcodegeneratorController(BaseController):
 
@@ -23,22 +24,38 @@ class QrcodegeneratorController(BaseController):
 
         shorturl = shorten(url)
 
-        qr = qrcode.QRCode(
-            version=1,
-            error_correction=qrcode.constants.ERROR_CORRECT_L,
-            box_size=4,
-            border=4
-        )        
-        qr.add_data(shorturl)
-        qr.make()
-        img=qr.make_image()
+#        qr = qrcode.QRCode(
+#            version=1,
+#            error_correction=qrcode.constants.ERROR_CORRECT_L,
+#            box_size=4,
+#            border=4
+#        )        
+#        qr.add_data(shorturl)
+#        qr.make()
+#        img=qr.make_image()
 
-        output = StringIO.StringIO()
-        img.save(output, "PNG")
+#        output = StringIO.StringIO()
+#        img.save(output, "PNG")
+        try:
+            h = httplib2.Http()
+            responseQR, data = h.request('http://chart.apis.google.com/chart?chld=L%7C1&chs=128x128&choe=UTF-8&cht=qr&chl='+shorturl)
+            if responseQR.status == 200 and responseQR['content-type'] == 'image/png':
+                content = data
+            else:
+                raise Exception('Chart service produces an error')
+        except Exception,e:
+            try:
+                img = open(os.path.join(config['global_conf']['here'], 'print', 'qrcode.png'))
+                content = img.read()
+            except Exception, e:
+                pass
+            finally:
+                img.close()
       
         response.headers['Pragma'] = 'public'
         response.headers['Content-Type'] = 'image/png'
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
 
-        return output.getvalue()
+#        return output.getvalue()
+        return content
