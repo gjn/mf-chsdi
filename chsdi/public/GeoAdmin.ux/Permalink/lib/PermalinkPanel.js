@@ -235,7 +235,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             var url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         } else if (j === "qrcode") {
-            var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + Ext.state.Manager.getProvider().getLink(); 
+            var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + encodeURIComponent(Ext.state.Manager.getProvider().getLink()); 
             window.open(url, '_blank');
         }
     },
