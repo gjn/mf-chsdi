@@ -737,7 +737,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Infrastruktur und Kommunikation',
         children: [
             {
-                text: 'Verkehrsnetze',  // Id Inspire 17 ??
+                text: 'Verkehrsnetze',  // Id Inspire 17
                 children: [
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
@@ -747,6 +747,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.astra.ivs-reg_loc"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat_abgrenzungen"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat_wegbegleiter"
                     },
                     {
                         layerId: "ch.astra.ivs-gelaendekarte"
@@ -879,6 +885,18 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },*/
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat"
+                    },
+                    { 
+                        layerId: "ch.astra.ivs-reg_loc"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat_abgrenzungen"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat_wegbegleiter"
                     }
                 ]
             },
