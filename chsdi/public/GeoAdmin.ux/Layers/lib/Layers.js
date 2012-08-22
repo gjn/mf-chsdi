@@ -2082,7 +2082,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat_abgrenzungen": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
                 layertype: 'wmts',
-                timestamp: '20100414',
+                timestamp: ['20100414'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -2091,7 +2091,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat_wegbegleiter": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
                 layertype: 'wmts',
-                timestamp: '20100414',
+                timestamp: ['20100414'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.astra",
