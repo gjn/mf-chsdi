@@ -2,6 +2,26 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['uvek'])
 
+class IVS_NAT(Base, Queryable):
+    __tablename__ = 'ivs_nat_aggregated'
+    __table_args__ = ({'schema': 'astra', 'autoload': True})
+    __template__ = 'tooltips/ivs_nat.mako'
+    __queryable_attributes__ = ['ivs_slaname','ivs_nummer','ivs_signatur']
+    id = Column('oid', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.astra.ivs-nat', IVS_NAT)
+
+class IVS_REG_LOC(Base, Queryable):
+    __tablename__ = 'ivs_reg_loc_aggregated'
+    __table_args__ = ({'schema': 'astra', 'autoload': True})
+    __template__ = 'tooltips/ivs_reg_loc.mako'
+    __queryable_attributes__ = ['ivs_slaname','ivs_nummer','ivs_signatur']
+    id = Column('oid', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.astra.ivs-reg_loc', IVS_REG_LOC)
+
 class AUSNAHMETRANSPORTROUTEN(Base, Queryable):
     __tablename__ = 'ausnahmetransportrouten'
     __table_args__ = ({'schema': 'astra', 'autoload': True})
