@@ -454,7 +454,13 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             if (layer) {
                 // check if the layer is already loaded
                 for (var i=0, len = self.layers.length; i<len; i++) {
-                    if (self.layers[i].layername === layer.layername) {
+                    var sameTimestamp = false;
+                    if (layer.timestamp) {
+                       if (self.layers[i].timestamp) {
+                          sameTimestamp = (layer.timestamp === self.layers[i].timestamp)
+                       }
+                    }
+                    if (self.layers[i].layername === layer.layername && sameTimestamp) {
                         self.layers[i].addOptions(options);
                         return null;
                     }
