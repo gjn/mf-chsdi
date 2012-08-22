@@ -40,6 +40,9 @@
 .permalink-panel .share-button {
     background: url("../../images/share.gif") no-repeat scroll center transparent !important;
 }
+.permalink-panel .qrcode-button {
+    background: url("../../images/qrcode.gif") no-repeat scroll center transparent !important;
+}
 .permalink-panel .twitter-button {
     background: url("../../images/twitter.gif") no-repeat scroll center transparent !important;
 }
@@ -72,7 +75,7 @@
     margin-top: 0px;
 }
 
-.facebook-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
+.facebook-button .x-btn-text, .qrcode-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
     width: 16px !important;
 }
 

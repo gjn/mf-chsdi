@@ -115,6 +115,16 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             }
         });
         this.buttonShare.addClass("showBlock");
+        // Qrcode button
+        this.buttonQrcode = new Ext.Button({
+            cls: "qrcode-button",
+            tooltip: "QRcode",
+            scope: this,
+            handler: function () {
+                this.httpShare('qrcode');
+            }
+        });
+        this.buttonQrcode.addClass("hideBlock");
         // Twitter button
         this.buttonTwitter = new Ext.Button({
             cls: "twitter-button",
@@ -167,26 +177,30 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         this.buttonClose.addClass("hideBlock");
         // Finally add the pipes
         this.sharePipe1 = new Ext.Spacer({
-        	cls: 'sharepipe'
+            cls: 'sharepipe'
         });
         this.sharePipe1.addClass("hideBlock");
         this.sharePipe2 = new Ext.Spacer({
-        	cls: 'sharepipe'
+            cls: 'sharepipe'
         });
         this.sharePipe2.addClass("hideBlock");
         this.sharePipe3 = new Ext.Spacer({
-        	cls: 'sharepipe'
+            cls: 'sharepipe'
         });
         this.sharePipe3.addClass("hideBlock");
         this.sharePipe4 = new Ext.Spacer({
-        	cls: 'sharepipe'
+            cls: 'sharepipe'
         });
         this.sharePipe4.addClass("hideBlock");
+        this.sharePipe5 = new Ext.Spacer({
+            cls: 'sharepipe'
+        });
+        this.sharePipe5.addClass("hideBlock");    
         // Permalink Field
         var permalinkField = new GeoAdmin.PermalinkField({width: 440});
         this.items = permalinkField;
         if (this.mail) {
-            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.sharePipe1, this.buttonFacebook, this.sharePipe2, this.buttonGooglePlus, this.sharePipe3, this.buttonMail, this.sharePipe4, this.buttonClose, {
+            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare ,this.buttonQrcode, this.sharePipe1, this.buttonTwitter, this.sharePipe2, this.buttonFacebook, this.sharePipe3, this.buttonGooglePlus, this.sharePipe4, this.buttonMail, this.sharePipe5, this.buttonClose, {
                 iconCls: "close-button",
                 toggleGroup: this.closeButtonToggleGroup,
                 scope: this,
@@ -195,7 +209,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 }
             }];
         } else {
-            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonTwitter, this.buttonFacebook, this.buttonGooglePlus, this.buttonClose, {
+            this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare, this.buttonQrcode, this.sharePipe1, this.buttonTwitter, this.sharePipe2, this.buttonFacebook, this.sharePipe3, this.buttonGooglePlus, this.sharePipe4, this.buttonClose, {
                 iconCls: "close-button",
                 toggleGroup: this.closeButtonToggleGroup,
                 scope: this,
@@ -220,6 +234,9 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         } else if (j === "googleplus") {
             var url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
+        } else if (j === "qrcode") {
+            var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + Ext.state.Manager.getProvider().getLink(); 
+            window.open(url, '_blank');
         }
     },
     /** private method[switchDisplay]
@@ -233,6 +250,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.buttonShare.removeClass("showBlock");
             this.shareTextOpen.addClass("showBlock");
             this.shareTextOpen.removeClass("hideBlock");
+            this.buttonQrcode.addClass("showBlock");
+            this.buttonQrcode.removeClass("hideBlock");
             this.buttonTwitter.addClass("showBlock");
             this.buttonTwitter.removeClass("hideBlock");
             this.buttonFacebook.addClass("showBlock");
@@ -253,6 +272,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.sharePipe3.removeClass("hideBlock");
             this.sharePipe4.addClass("showBlock");
             this.sharePipe4.removeClass("hideBlock");
+            this.sharePipe5.addClass("showBlock");
+            this.sharePipe5.removeClass("hideBlock");
         } else {
             this.shareText.addClass("showBlock");
             this.shareText.removeClass("hideBlock");
@@ -260,6 +281,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.buttonShare.removeClass("hideBlock");
             this.shareTextOpen.addClass("hideBlock");
             this.shareTextOpen.removeClass("showBlock");
+            this.buttonQrcode.addClass("hideBlock");
+            this.buttonQrcode.removeClass("showBlock");
             this.buttonTwitter.addClass("hideBlock");
             this.buttonTwitter.removeClass("showBlock");
             this.buttonFacebook.addClass("hideBlock");
@@ -280,6 +303,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.sharePipe3.removeClass("showBlock");
             this.sharePipe4.addClass("hideBlock");
             this.sharePipe4.removeClass("showBlock");
+            this.sharePipe5.addClass("hideBlock");
+            this.sharePipe5.removeClass("showBlock");
         }
     },
    afterRender: function() {
