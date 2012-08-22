@@ -278,6 +278,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.ausnahmetransportrouten':"",
     'ch.astra.ivs-nat':"",
     'ch.astra.ivs-reg_loc' :"",
+    'ch.astra.ivs-nat_abgrenzungen' :"",
+    'ch.astra.ivs-nat_wegbegleiter' :"",
     'ch.astra.ivs-gelaendekarte':"",
     'ch.bav.kataster-belasteter-standorte-oev':"",
     'ch.blw.erosion' :"",

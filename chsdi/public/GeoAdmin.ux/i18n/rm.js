@@ -319,6 +319,8 @@ OpenLayers.Lang.rm= {
 	'ch.astra.ausnahmetransportrouten':'Rutas cant. per transp. excepziunals',
 	'ch.astra.ivs-gelaendekarte':'IVS charta topografica',
 	'ch.astra.ivs-nat':'IVS naziunal',
+	'ch.astra.ivs-nat_abgrenzungen':'IVS, cunfinaziun',
+	'ch.astra.ivs-nat_wegbegleiter':'IVS, Elements cuntrada da vias',
 	'ch.astra.ivs-reg_loc':'IVS regiunal & local',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Posts da quintar il traffic locals',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Posts da quintar il traffic surordinads',

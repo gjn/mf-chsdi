@@ -323,6 +323,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.astra.ausnahmetransportrouten':'Ausnahmetransportrouten',
 	'ch.astra.ivs-gelaendekarte':'IVS Geländekarte',
 	'ch.astra.ivs-nat':'IVS National',
+	'ch.astra.ivs-nat_abgrenzungen':'IVS Abgrenzungen',
+	'ch.astra.ivs-nat_wegbegleiter':'IVS Wegbegleiter',
 	'ch.astra.ivs-reg_loc':'IVS Regional und Lokal',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Verkehrszählung (Regional)',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Verkehrszählung (Übergeordnet)',

@@ -323,6 +323,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.astra.ausnahmetransportrouten':'Itinéraires convois exceptionnels',
 	'ch.astra.ivs-gelaendekarte':'IVS carte de terrain',
 	'ch.astra.ivs-nat':'IVS National',
+	'ch.astra.ivs-nat_abgrenzungen':'IVS, Délimitations',
+	'ch.astra.ivs-nat_wegbegleiter':'IVS, Eléments paysage routier',
 	'ch.astra.ivs-reg_loc':'IVS régional et local',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Circulation routière (régional)',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Circulation routière (principal)',
