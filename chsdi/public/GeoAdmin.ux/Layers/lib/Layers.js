@@ -2062,7 +2062,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',
-                timestamp: '20070712',
+                timestamp: '20100414',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -2072,12 +2072,30 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-reg_loc": {
                 name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
                 layertype: 'wmts',
-                timestamp: '20070712',
+                timestamp: '20100414',
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
                 queryable: true,
                 searchable: true
+            },
+            "ch.astra.ivs-nat_abgrenzungen": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
+                layertype: 'wmts',
+                timestamp: '20100414',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: false,
+            },
+            "ch.astra.ivs-nat_wegbegleiter": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
+                layertype: 'wmts',
+                timestamp: '20100414',
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: false,
             },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
