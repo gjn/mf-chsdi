@@ -891,12 +891,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     { 
                         layerId: "ch.astra.ivs-reg_loc"
-                    },
-                    {
-                        layerId: "ch.astra.ivs-nat_abgrenzungen"
-                    },
-                    {
-                        layerId: "ch.astra.ivs-nat_wegbegleiter"
                     }
                 ]
             },
