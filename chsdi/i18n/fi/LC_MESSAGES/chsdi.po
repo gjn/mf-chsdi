@@ -920,6 +920,9 @@ msgstr "Inclinaziun [°]"
 msgid "ct"
 msgstr "Kt."
 
+msgid "date"
+msgstr "Datum"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -958,6 +961,9 @@ msgstr "Fliessgewässer"
 
 msgid "epizentralzone"
 msgstr "Epizentrale Zone"
+
+msgid "est"
+msgstr "Ost"
 
 msgid "fassung"
 msgstr "Versiun"
@@ -1769,6 +1775,9 @@ msgstr "Firmenname"
 msgid "nfname"
 msgstr "Name"
 
+msgid "nord"
+msgstr "Nord"
+
 msgid "nr"
 msgstr "Nr."
 
@@ -1951,6 +1960,36 @@ msgstr "Name"
 
 msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Programme"
+
+msgid "tt_ch.bazl.abortionaccomplished"
+msgstr "Anlagedauer"
+
+msgid "tt_ch.bazl.elevation"
+msgstr "Maximale Meereshöhe AMSL [m]"
+
+msgid "tt_ch.bazl.geometriedaten"
+msgstr "Geometriedaten"
+
+msgid "tt_ch.bazl.hindernisart"
+msgstr "Hindernisart"
+
+msgid "tt_ch.bazl.markierung"
+msgstr "Markierung / Befeuerung"
+
+msgid "tt_ch.bazl.maxheight"
+msgstr "Maximale Höhe AGL [m]"
+
+msgid "tt_ch.bazl.registrationnummer"
+msgstr "Register-Nummer"
+
+msgid "tt_ch.bazl.startofconstruction"
+msgstr "Baubeginn"
+
+msgid "tt_ch.bazl.totallength"
+msgstr "Gesamtlänge [m]"
+
+msgid "tt_ch.bazl_longtext"
+msgstr "Die Luftfahrthindernisdaten können bezüglich der Vollständigkeit, der Nachführung sowie der Lage- und Höhenpositionen von Hindernissen Abweichungen enthalten."
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Fläche [ha]"

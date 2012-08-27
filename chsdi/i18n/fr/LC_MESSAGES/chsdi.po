@@ -920,6 +920,9 @@ msgstr "Inclinaison [°]"
 msgid "ct"
 msgstr "Ct."
 
+msgid "date"
+msgstr "Date"
+
 msgid "datumactu"
 msgstr "Date de la dernière mise à jour"
 
@@ -958,6 +961,9 @@ msgstr "Cours d'eau"
 
 msgid "epizentralzone"
 msgstr "Zone épicentrale"
+
+msgid "est"
+msgstr "Est"
 
 msgid "fassung"
 msgstr "Version"
@@ -1769,6 +1775,9 @@ msgstr "Bureau"
 msgid "nfname"
 msgstr "Nom"
 
+msgid "nord"
+msgstr "Nord"
+
 msgid "nr"
 msgstr "N°"
 
@@ -1951,6 +1960,36 @@ msgstr "Nom"
 
 msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Programmes"
+
+msgid "tt_ch.bazl.abortionaccomplished"
+msgstr "Début des travaux"
+
+msgid "tt_ch.bazl.elevation"
+msgstr "Altitude maximale AMSL [m]"
+
+msgid "tt_ch.bazl.geometriedaten"
+msgstr "Données géométriques"
+
+msgid "tt_ch.bazl.hindernisart"
+msgstr "Genre d'obstacle"
+
+msgid "tt_ch.bazl.markierung"
+msgstr "Marquage / balisage lum."
+
+msgid "tt_ch.bazl.maxheight"
+msgstr "Hauteur maximale AGL [m]"
+
+msgid "tt_ch.bazl.registrationnummer"
+msgstr "Numéro du registre"
+
+msgid "tt_ch.bazl.startofconstruction"
+msgstr "Début des travaux"
+
+msgid "tt_ch.bazl.totallength"
+msgstr "Longueur totale [m]"
+
+msgid "tt_ch.bazl_longtext"
+msgstr "Les données d'obstacles peuvent présenter des divergences au niveau de l'intégralité, de l'actualisation et de la situation géographique."
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Surface [ha]"

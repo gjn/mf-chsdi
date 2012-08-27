@@ -920,6 +920,9 @@ msgstr "Inclinazione [°]"
 msgid "ct"
 msgstr "Ct."
 
+msgid "date"
+msgstr "Data"
+
 msgid "datumactu"
 msgstr "Date de la dernière mise à jour"
 
@@ -958,6 +961,9 @@ msgstr "Cours d'eau"
 
 msgid "epizentralzone"
 msgstr "Zone épicentrale"
+
+msgid "est"
+msgstr "Ovest"
 
 msgid "fassung"
 msgstr "Stesura"
@@ -1769,6 +1775,9 @@ msgstr "Bureau"
 msgid "nfname"
 msgstr "Nom"
 
+msgid "nord"
+msgstr "Nord"
+
 msgid "nr"
 msgstr "N°"
 
@@ -1951,6 +1960,36 @@ msgstr "Nome"
 
 msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Programmi"
+
+msgid "tt_ch.bazl.abortionaccomplished"
+msgstr "Inizio lavori"
+
+msgid "tt_ch.bazl.elevation"
+msgstr "Altezza massima AMSL [m]"
+
+msgid "tt_ch.bazl.geometriedaten"
+msgstr "Dati di geometria"
+
+msgid "tt_ch.bazl.hindernisart"
+msgstr "Tipo di ostacolo"
+
+msgid "tt_ch.bazl.markierung"
+msgstr "Marcatura / segnalazione lum."
+
+msgid "tt_ch.bazl.maxheight"
+msgstr "Altezza massima AGL [m]"
+
+msgid "tt_ch.bazl.registrationnummer"
+msgstr "Numero di registrazione"
+
+msgid "tt_ch.bazl.startofconstruction"
+msgstr "Inizio lavori"
+
+msgid "tt_ch.bazl.totallength"
+msgstr "Lunghezza totale [m]"
+
+msgid "tt_ch.bazl_longtext"
+msgstr "Gli ostacoli possono contenere discrepanze per quanto riguarda la completezza, così come il monitoraggio delle loro posizioni e altezze."
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Surface [ha]"

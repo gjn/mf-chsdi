@@ -393,10 +393,10 @@ msgid "ch.astra.ivs-gelaendekarte"
 msgstr "Inventory historical routes terrain map"
 
 msgid "ch.astra.ivs-nat"
-msgstr "Inventory historical routes national"
+msgstr "IHR national"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IHR national & regional"
+msgstr "IHR regional & local"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Traffic counting locations local"
@@ -920,6 +920,9 @@ msgstr "Inclination [°]"
 msgid "ct"
 msgstr "Ct."
 
+msgid "date"
+msgstr "Date"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -959,6 +962,9 @@ msgstr "River"
 
 msgid "epizentralzone"
 msgstr "Epizentrale Zone"
+
+msgid "est"
+msgstr "East"
 
 msgid "fassung"
 msgstr "Version"
@@ -1770,6 +1776,9 @@ msgstr "Firmenname"
 msgid "nfname"
 msgstr "Name"
 
+msgid "nord"
+msgstr "Nord"
+
 msgid "nr"
 msgstr "Nr."
 
@@ -1952,6 +1961,36 @@ msgstr "Name"
 
 msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Channels"
+
+msgid "tt_ch.bazl.abortionaccomplished"
+msgstr "Start of construction"
+
+msgid "tt_ch.bazl.elevation"
+msgstr "Maximum top elevation AMSL [m]"
+
+msgid "tt_ch.bazl.geometriedaten"
+msgstr "Geometry data"
+
+msgid "tt_ch.bazl.hindernisart"
+msgstr "Obstacle type"
+
+msgid "tt_ch.bazl.markierung"
+msgstr "Marking / navigation lights"
+
+msgid "tt_ch.bazl.maxheight"
+msgstr "Maximum height AGL [m]"
+
+msgid "tt_ch.bazl.registrationnummer"
+msgstr "Registration number"
+
+msgid "tt_ch.bazl.startofconstruction"
+msgstr "Start of construction"
+
+msgid "tt_ch.bazl.totallength"
+msgstr "Total length [m]"
+
+msgid "tt_ch.bazl_longtext"
+msgstr "The aviation obstacle data may include deviations regarding it's completeness, up-to-date map maintenance as well as regarding the bearing- and hight positions of obstalces."
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_area"
 msgstr "Fläche [ha]"
