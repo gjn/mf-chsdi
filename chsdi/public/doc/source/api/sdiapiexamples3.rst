@@ -39,8 +39,9 @@ Popup
 .. code-block:: html
 
    <script type="text/javascript">
+      var api11;
       function init() {
-         var api11 = new GeoAdmin.API();
+         api11 = new GeoAdmin.API();
          api11.createMap({
             div: "mymap11",
             easting: 600000,
@@ -49,7 +50,9 @@ Popup
          });
          api11.showPopup({
             html: "My nice popup !",
-            title: "Title of my nice popup"
+            title: "Title of my nice popup",
+            recenter: "true",
+            width: 175
          });
       }
    </script>
@@ -66,9 +69,9 @@ Popup
 
 
    <script type="text/javascript">
+      var api11;
       function init() {
-
-         var api11 = new GeoAdmin.API();
+         api11 = new GeoAdmin.API();
          api11.createMap({
             div: "mymap11",
             easting: 600000,
@@ -77,7 +80,9 @@ Popup
          });
          api11.showPopup({
             html: "My nice popup !",
-            title: "Title of my nice popup"
+            title: "Title of my nice popup",
+            recenter: "true",
+            width: 175
          });
       }
    </script>
