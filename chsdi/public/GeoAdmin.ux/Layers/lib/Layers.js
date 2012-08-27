@@ -1351,7 +1351,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-ramsar": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-ramsar"),
                 layertype: 'wmts',
-                timestamp: ['20050202'],
+                timestamp: ['20110830'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
