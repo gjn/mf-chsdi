@@ -488,7 +488,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 
         } else if (config.layertype === "wmts") {
             var layer_options_wmts = OpenLayers.Util.extend({
-                name: config.name + ' ' + (options && options.timestamp !== undefined ? options.timestamp : ''),
+                name: config.name,
                 layer: config.layer || name,
                 layername: config.layername || name,
                 hasLegend: config.hasLegend,
