@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Swisstopo Time Series</title>
+</head>
+<body onload="init();">
+<div id="map" style="width:100%; height: 100%;"></div>
+<div id="layertree" style="width:300px; height:300px;position:absolute;top:15px;left:50px;z-index:1000"></div>
+<link rel=stylesheet type=text/css href=../build/api.css>
+<script type="text/javascript" src="../build/api.js"></script>
+<script type="text/javascript">
+    var map = null;
+    function init() {
+        window.GeoAdmin.OpenLayersImgPath = "http://api.geo.admin.ch/main/wsgi/GeoAdmin.ux/Map/img/";
+        map = new GeoAdmin.Map('map');
+        var cadastral = GeoAdmin.layers.layers['ch.kantone.cadastralwebmap-farbe'];
+        for (var i =  cadastral.timestamp.length -1; i >= 0; i--) {
+           map.addLayerByName("ch.kantone.cadastralwebmap-farbe", {timestamp: cadastral.timestamp[i], visibility: (i==0)});
+        }
+        map.zoomToMaxExtent();
+        var layertree = new GeoAdmin.LayerTree({
+          map: map,
+          renderTo: "layertree",
+          width: 300
+      });
+    }
+</script>
+
+
+</body>
+</html>
