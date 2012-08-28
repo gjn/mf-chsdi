@@ -21,6 +21,7 @@ def shorten(myUrl):
     # Manage the web service paths
     absoluteUrl = absoluteUrl.replace('/main/wsgi','')
     absoluteUrl = absoluteUrl.replace('/wsgi','')
+    absoluteUrl = absoluteUrl.replace('api.geo.admin.ch/shorten','s.geo.admin.ch')
     return absoluteUrl
 
 class ShortenerController(BaseController):
