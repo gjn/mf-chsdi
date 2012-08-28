@@ -89,8 +89,14 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
                     }
                     var lonlat = api.map.getLonLatFromViewPortPx(e.xy);
                     var scriptProtocol = new OpenLayers.Protocol.Script({
-                        url: url + "?services=parcel&tolerance=50&easting=" + lonlat.lon + "&northing=" + lonlat.lat,
-                        callback: function(response) {
+                        url: url,
+                        params: {
+                            services: 'parcel',
+                            tolerance: 50,
+                            easting: lonlat.lon,
+                            northing: lonlat.lat
+                        },
+                        handleResponse: function(response) {
                             var message,lon,lat;
                             if (response.data.length == 0) {
                                 message = "No parcel found. Sorry";
@@ -115,6 +121,7 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
                             popup = api.showPopup({
                                 easting: lon,
                                 northing: lat,
+                                recenter: "true",
                                 html: message
                             });
                         },
@@ -196,8 +203,14 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
                     }
                     var lonlat = api.map.getLonLatFromViewPortPx(e.xy);
                     var scriptProtocol = new OpenLayers.Protocol.Script({
-                        url: url + "?services=parcel&tolerance=50&easting=" + lonlat.lon + "&northing=" + lonlat.lat,
-                        callback: function(response) {
+                        url: url,
+                        params: {
+                            services: 'parcel',
+                            tolerance: 50,
+                            easting: lonlat.lon,
+                            northing: lonlat.lat
+                        },
+                        handleResponse: function(response) {
                             var message,lon,lat;
                             if (response.data.length == 0) {
                                 message = "No parcel found. Sorry";
@@ -222,6 +235,7 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
                             popup = api.showPopup({
                                 easting: lon,
                                 northing: lat,
+                                recenter: "true",
                                 html: message
                             });
                         },
