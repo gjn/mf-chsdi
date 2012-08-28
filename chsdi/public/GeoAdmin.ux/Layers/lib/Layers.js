@@ -517,7 +517,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layerType: config.type,
                 maxScale: config.maxScale,
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
-                minScale: config.minScale
+                minScale: config.minScale,
+                timestamp: options && options.timestamp !== undefined ? options.timestamp : config.timestamp[0]
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
