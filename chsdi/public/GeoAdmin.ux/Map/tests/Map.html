@@ -27,7 +27,7 @@
         }
 
         function test_addLayerByName(t) {
-            t.plan(8);
+            t.plan(10);
             var map = new GeoAdmin.Map("map");
 
             //
@@ -36,17 +36,21 @@
             t.ok((count === map.layers.length) && (layer === null), "nonexistent layers are not added to the map");
 
             //
-            var layer = map.addLayerByName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
-            var found = map.getLayerByLayerName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
+            var layer = map.addLayerByName("ch.swisstopo.geologie-geophysik-inklination");
+            var found = map.getLayerByLayerName("ch.swisstopo.geologie-geophysik-inklination");
 
             t.ok(found != null && OpenLayers.Util.indexOf(map.layers, found) != -1, "valid layers are added to the map");
 
             //
             var count = map.layers.length;
-            var layer = map.addLayerByName("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill");
+            var layer = map.addLayerByName("ch.swisstopo.geologie-geophysik-inklination");
 
             t.ok(map.layers.length === count, "layers are added only once");
-
+            // Per default the first timestamp of the array is taken into account, but one can specify a specific timestamp to add the same layer mutltiple times at different timestamps 
+            var count = map.layers.length + 1;
+            var layer = map.addLayerByName("ch.swisstopo.geologie-geophysik-inklination", { timestamp: '19791231' });
+            
+            t.ok(map.layers.length === count, "same layer can be added if different timestamps");
             t.eq(map.layers[0].arrayOrder, 0, "Test layers sort. First arrayOrder is 0");
 
             var previousOrder = -1;
