@@ -185,7 +185,7 @@ class PAERKE_NATIONALER_BEDEUTUNG(Base, Queryable):
 
 class RA(Base, Queryable):
     # view in a schema
-    __tablename__ = 'ra'
+    __tablename__ = 'ramsar'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __template__ = 'tooltips/ra.mako'
 
