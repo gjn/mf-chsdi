@@ -237,7 +237,7 @@ function test_showPopup_default(t) {
 
     t.eq(popup1, null, "no popup is created if html or feature is not provided");
 
-    var popup2 = api.showPopup({html: 'test'});
+    var popup2 = api.showPopup({html: 'test', recenter: "true"});
 
     var center = api.map.getCenter();
 
