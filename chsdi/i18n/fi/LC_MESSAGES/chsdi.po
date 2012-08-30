@@ -62,6 +62,9 @@ msgstr "Doppelt"
 msgid "FL"
 msgstr "Liechtenstein"
 
+msgid "Feature tooltip"
+msgstr "Infurmaziuns davart ils objects"
+
 msgid "Fels"
 msgstr "Fels"
 

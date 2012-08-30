@@ -62,6 +62,9 @@ msgstr "Double"
 msgid "FL"
 msgstr "Principauté du Liechstenstein"
 
+msgid "Feature tooltip"
+msgstr "Information sur l'objet"
+
 msgid "Fels"
 msgstr "Falaise"
 
