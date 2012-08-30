@@ -62,6 +62,9 @@ msgstr "Doppelt"
 msgid "FL"
 msgstr "Fürstentum Liechstenstein"
 
+msgid "Feature tooltip"
+msgstr "Objektinformation"
+
 msgid "Fels"
 msgstr "Fels"
 
