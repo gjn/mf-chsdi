@@ -10,7 +10,6 @@ import math
 from pylons import config
 
 from urllib import quote
-from urllib2 import urlopen
 
 from HTMLParser import HTMLParser
 
