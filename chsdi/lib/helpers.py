@@ -10,6 +10,51 @@ import math
 from pylons import config
 
 from urllib import quote
+from urllib2 import urlopen
+
+from HTMLParser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    # Please provide the begging of the pattern to match with fproject
+    # fid String (feature id)
+    # fproject String (feature project)
+    #
+    # Code example:
+    # from chsdi.lib.helpers import MyHTMLParser
+    # from urllib2 import urlopen
+    # f = urlopen('http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/')
+    # s = f.read()
+    # parser = MyHTMLParser(flayer='kgs',fid='5')
+    # parser.feed(s)
+    # print(parser.filesMatched)
+
+    def __init__(self, fid='', flayer=''):
+       self.filesList = []
+       self.filesMatched = []
+       self.fid = fid
+       self.flayer = flayer
+       HTMLParser.__init__(self)
+
+    def handle_starttag(self, tag, attrs):
+        self.buildPattern()
+        if tag == 'a':
+            for attr in attrs:
+                if attr[1][0:len(self.flayer)] == self.flayer:
+                    self.filesList.append(attr[1])
+                    f = attr[1].split('_')
+                    if len(f) == 3 and self.pattern == f[1]:
+                        self.filesMatched.append(attr[1])
+
+    def buildPattern(self):
+        # The structure of the file name always follows the same pattern
+        # <flayer>_<fid>_<extra info>
+        nb = 5 - len(self.fid)
+        i = 0
+        self.pattern = ''
+        while i < nb:
+            self.pattern = self.pattern + '0'
+            i = i + 1
+        self.pattern = self.pattern + self.fid
 
 def quoting(text):
     return quote(text.encode('utf-8'))
