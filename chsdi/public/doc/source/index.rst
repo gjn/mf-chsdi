@@ -98,6 +98,18 @@ Services
 
    services/sdiservices
 
+Mobile API
+**********
+
+The mobile API allows the creation of mobile web applications. WebKit compliants browsers are supported. `Sencha Touch 2 <http://www.sencha.com/products/touch>`_ and `GXM 2 <https://github.com/geoext/GXM>`_ are used to create the GeoAdmin Mobile API.
+ 
+   * `Mobile API Doc <http://mobile.api.geo.admin.ch>`_
+
+.. toctree::
+   :maxdepth: 1
+   
+   api/msdiapiexamples
+
 Terms of use
 ************
 
