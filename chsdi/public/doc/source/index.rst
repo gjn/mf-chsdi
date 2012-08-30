@@ -98,15 +98,6 @@ Services
 
    services/sdiservices
 
-Mobile API
-**********
-
-.. toctree::
-   :maxdepth: 1
-
-   api/sdimapidoc
-   widgets/sdimwidgetsexamples
-
 Terms of use
 ************
 
