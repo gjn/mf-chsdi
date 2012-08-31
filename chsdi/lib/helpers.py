@@ -13,6 +13,12 @@ from urllib import quote
 
 from HTMLParser import HTMLParser
 
+import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email.MIMEText import MIMEText
+from email import Encoders
+
 class MyHTMLParser(HTMLParser):
     # Please provide the begging of the pattern to match with fproject
     # fid String (feature id)
@@ -103,7 +109,7 @@ def graph_range(min, max):
     theR = the_max - the_min
     tick = theR / t
     if tick == 1:
-        tick = 10;
+        tick = 10
     while tick < 5:
         tick = tick * 2
     return [the_min, the_max, int(tick + 0.5)]
@@ -118,4 +124,23 @@ def versioned(path):
             return version + '/' + path
     else:
         return path
+
+def mail(self, to, subject, text, typeOfRequest):
+    # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
+    msg = MIMEMultipart()
+
+    msg['To'] = to
+    msg['Subject'] = subject
+
+    msg.attach(MIMEText(unicodedata.normalize('NFKD',unicode(text)).encode('ascii','ignore')))
+
+    mailServer = smtplib.SMTP("127.0.0.1", 25)
+    mailServer.ehlo()
+    mailServer.starttls()
+    mailServer.ehlo()
+    if typeOfRequest == 'feedback':
+        mailServer.sendmail('webgis@swisstopo.ch', to, msg.as_string())
+    else:
+        mailServer.sendmail('no-reply@geo.admin.ch', to, msg.as_string())
+    mailServer.close()
 
