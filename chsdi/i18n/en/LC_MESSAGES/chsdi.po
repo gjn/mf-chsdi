@@ -1806,6 +1806,9 @@ msgstr "Object Nr."
 msgid "oeffentlich"
 msgstr "Öffentlich"
 
+msgid "official object webpage"
+msgstr "Official object webpage"
+
 msgid "optionaler_name"
 msgstr "Optionaler Name"
 
@@ -2258,6 +2261,21 @@ msgstr "Von m."
 
 msgid "tt_freqchan"
 msgstr "Frequency / TV-channel"
+
+msgid "tt_kbs_gemeinde"
+msgstr "Municipality"
+
+msgid "tt_kbs_gemeinde_ehemalige"
+msgstr "Former municipality"
+
+msgid "tt_kbs_nbr"
+msgstr "PCP ref. no"
+
+msgid "tt_kbs_objektart"
+msgstr "Type of object"
+
+msgid "tt_kbs_statistik"
+msgstr "Statistics"
 
 msgid "tt_program"
 msgstr "Channel"

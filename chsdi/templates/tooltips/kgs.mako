@@ -22,56 +22,58 @@
         float: left;
         margin-right: 10px;
         margin-bottom: 10px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
 </style>
 
 <% objektart = c.feature.objektart.split(',') %>
-<table border="0" cellspacing="10" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
+<table border="0" cellspacing="10" cellpadding="5" width="100%" style="font-size: 100%;" padding="1 1 1 1">
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('name')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('name')}:</td>
          <td style="width: 300px; float: left;">${c.feature.zkob or '-'}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('kategorie')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('kategorie')}:</td>
          <td style="width: 300px; float: left;">${c.feature.kategorie or '-'}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_objektart')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_objektart')}:</td>
 % for objart in objektart:
 <% obj = 'kultur' + objart %>
      <td style="width: 300px; float: left;">${_(obj)}</td>
 % endfor
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_nbr')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_nbr')}:</td>
          <td style="width: 300px; float: left;">${c.feature.id or '-'}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('nfadresse')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('nfadresse')}:</td>
          <td style="width: 300px; float: left;">${c.feature.adresse or ''}  ${c.feature.hausnr or ''}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')}/${_('tt_kbs_gemeinde_ehemalige')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')}/${_('tt_kbs_gemeinde_ehemalige')}:</td>
          <td style="width: 300px; float: left;">${c.feature.gemeinde or '-'}/${c.feature.gemeinde_ehemalig or '-'}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('Coordinates')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Coordinates')}:</td>
          <td style="width: 300px; float: left;">${c.feature.x or '-'}/${c.feature.y or '-'}</td>
      </tr>
      <tr>
-         <td style="font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
-         <td style="width: 300px; float: left;">${c.feature.kurztexte}</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
+         <td style="width: 300px; float: left;"><div style="margin-left: -313px;">${c.feature.kurztexte or ''}</div></td>
      </tr>
      <tr>
-         <td><a id="pdf">${_('tt_kbs_link_to_pdf')}</a></td>
+         <td style="float: left;"><div id="images"></div></td>
      </tr>
      <tr>
-         <td><div id="images"></div></td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
+         <td style="width: 300px; float: left;"><a id="pdf">PDF</a></td>
      </tr>
      <tr>
-         <td><a href="${c.feature.link_uri or '-'}">${_('tt_kbs_linkuri')}</a></td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('official object webpage')}:</td>
+         <td style="width: 300px; float: left;"><a href="${c.feature.link_uri or ''}">${c.feature.link_title or ''}</a></td>
      </tr>
      <tr>
          <td><a href="http://kgs.admin.ch/kgs_inventar/statistik.pdf">${_('tt_kbs_statistik')}</a></td>
@@ -125,7 +127,7 @@
         if (pdfs.length !== 0) {
             a.href = url2 + pdfs[0];
         } else {
-            a.innerHTML = '';
+            a.innerHTML = '-';
         }
     }
 </script>

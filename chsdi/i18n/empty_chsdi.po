@@ -3,6 +3,24 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "tt_kbs_statistik"
+msgstr ""
+
+msgid "official object webpage"
+msgstr ""
+
+msgid "tt_kbs_gemeinde_ehemalige"
+msgstr ""
+
+msgid "tt_kbs_gemeinde"
+msgstr ""
+
+msgid "tt_kbs_nbr"
+msgstr ""
+
+msgid "tt_kbs_objektart"
+msgstr ""
+
 msgid "Feature tooltip"
 msgstr ""
 

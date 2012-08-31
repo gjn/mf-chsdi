@@ -1805,6 +1805,9 @@ msgstr "Numéro de l'objet"
 msgid "oeffentlich"
 msgstr "Public"
 
+msgid "official object webpage"
+msgstr "Page officielle de l'objet"
+
 msgid "optionaler_name"
 msgstr "Nom optionel"
 
@@ -2258,6 +2261,21 @@ msgstr "Début tronçon (m)"
 
 msgid "tt_freqchan"
 msgstr "Fréquence / Canal TV"
+
+msgid "tt_kbs_gemeinde"
+msgstr "Municipalité"
+
+msgid "tt_kbs_gemeinde_ehemalige"
+msgstr "Ancienne municipalité"
+
+msgid "tt_kbs_nbr"
+msgstr "PCP ref. no"
+
+msgid "tt_kbs_objektart"
+msgstr "Type d'objet"
+
+msgid "tt_kbs_statistik"
+msgstr "Statistiques"
 
 msgid "tt_program"
 msgstr "Programme"
