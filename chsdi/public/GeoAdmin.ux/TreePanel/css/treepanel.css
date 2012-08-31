@@ -99,14 +99,13 @@
 	background-image:url(../images/elbow-line.gif);
 }
 
-.x-tree-node .x-tree-node-over
-{
-background-color: #ffffff;
+.x-tree-node .x-tree-node-over {
+  background-color: #ffffff;
 }
 
 .x-tree-node .x-tree-selected {
-	background-color: #ffffff;
-    color: red;
+  background-color: #ffffff;
+  color: red;
 }
 
 .treelayerpipe {
@@ -167,7 +166,7 @@ div.x-tree-node-leaf a.x-tree-node-anchor span {
   float: right;
   clear: left;
   height: 19px !important;
-  margin-top: -25px;
+  margin-top: -18px;
   width: 45px;
 }
 
