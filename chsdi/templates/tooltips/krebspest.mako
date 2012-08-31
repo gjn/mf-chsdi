@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${c.feature.kennummer or '-'}</%def>
+<%def name="preview()">${_('nachweisnummer')} ${c.feature.kennummer or '-'}</%def>
 
 <%def name="table_body()">
     <tr><td width="150">${_('gewaessername')}</td>    <td>${c.feature.gewaesser or '-'}</td></tr>
