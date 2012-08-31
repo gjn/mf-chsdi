@@ -5,6 +5,7 @@ from pylons import url
 
 from chsdi.lib.base import *
 import chsdi.lib.helpers as h
+from chsdi.lib.helpers import mail
 from chsdi.model.clientdata import ShortUrl
 from chsdi.model.meta import Session
 import hashlib
@@ -12,11 +13,24 @@ from datetime import datetime
 from routes import url_for
 
 def shorten(myUrl):
+    # Check that myUrl is not already in the database
+    query1 = Session.query(ShortUrl)
+    query1 = query1.filter(ShortUrl.url == myUrl)
+    dontExist = True
+    for r1 in query1:
+        dontExist = False
+        shorturl = r1.url_short
+        break
     # The current time is hashed and then, only the seven first characters are used.
-    shorturl = hashlib.md5(str(datetime.now())).hexdigest()[:7]
-    shortUrlObject = ShortUrl(url_short=shorturl,url=myUrl)
-    Session.add(shortUrlObject)
-    Session.commit()
+    if dontExist:
+        try:
+            shorturl = hashlib.md5(str(datetime.now())).hexdigest()[:7]
+            shortUrlObject = ShortUrl(url_short=shorturl,url=myUrl)
+            Session.add(shortUrlObject)
+            Session.commit()
+        except Exception, e:
+            mail("webgis@swisstopo.ch","Error in ShortenerController","Database insert error","")
+            raise Exception('Error by database insert in Shortener')
     absoluteUrl = url_for(controller='shortener', action='decode', id=shorturl, qualified=True)
     # Manage the web service paths
     absoluteUrl = absoluteUrl.replace('/main/wsgi','')
