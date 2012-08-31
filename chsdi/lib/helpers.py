@@ -19,6 +19,8 @@ from email.MIMEBase import MIMEBase
 from email.MIMEText import MIMEText
 from email import Encoders
 
+import unicodedata
+
 class MyHTMLParser(HTMLParser):
     # Please provide the begging of the pattern to match with fproject
     # fid String (feature id)
@@ -125,7 +127,7 @@ def versioned(path):
     else:
         return path
 
-def mail(self, to, subject, text, typeOfRequest):
+def mail(to, subject, text, typeOfRequest):
     # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
     msg = MIMEMultipart()
 

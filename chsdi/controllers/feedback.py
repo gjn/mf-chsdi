@@ -13,7 +13,6 @@ import os
 import shutil
 import urllib
 import mimetypes
-import unicodedata
 
 class FeedbackController(BaseController):
 

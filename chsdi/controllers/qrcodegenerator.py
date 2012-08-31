@@ -3,12 +3,14 @@ from pylons import response, config
 from pylons import url
 
 from chsdi.lib.base import *
-import chsdi.lib.helpers as h
+from chsdi.lib.helpers import mail
+
 #import qrcode
 import pylons
 #import StringIO
 from chsdi.controllers.shortener import shorten 
 import httplib2
+import os
 
 class QrcodegeneratorController(BaseController):
 
@@ -22,7 +24,11 @@ class QrcodegeneratorController(BaseController):
            response.status = '406'
            return 'Can be used only for admin.ch URls'
 
-        shorturl = shorten(url)
+        try:
+            shorturl = shorten(url)
+        except Exception, e:
+            mail("webgis@swisstopo.ch","Error in QrcodegeneratorController","Issue with URL shortener","")
+            pass
 
 #        qr = qrcode.QRCode(
 #            version=1,
@@ -42,12 +48,15 @@ class QrcodegeneratorController(BaseController):
             if responseQR.status == 200 and responseQR['content-type'] == 'image/png':
                 content = data
             else:
+                mail("webgis@swisstopo.ch","Error in QrcodegeneratorController","Issue with Google Chart API - a PNG is not returned","")
                 raise Exception('Chart service produces an error')
         except Exception,e:
+            mail("webgis@swisstopo.ch","Error in QrcodegeneratorController","Issue with Google Chart API - exception using it","")
             try:
                 img = open(os.path.join(config['global_conf']['here'], 'print', 'qrcode.png'))
                 content = img.read()
             except Exception, e:
+                mail("webgis@swisstopo.ch","Error in QrcodegeneratorController","Default qrcode.png is not readable","")
                 pass
             finally:
                 img.close()
