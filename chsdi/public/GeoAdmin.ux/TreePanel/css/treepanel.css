@@ -200,7 +200,7 @@ div.nodeTP3selected >  a.x-tree-node-anchor span {
 }
 
 .ext-ie .layerNodeTools {
-  margin-top: 0px !important;
+  margin-top: -1px !important;
 }
 
 .ext-safari .layerNodeTools {
