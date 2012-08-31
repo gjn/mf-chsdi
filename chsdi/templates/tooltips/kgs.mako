@@ -11,9 +11,9 @@
 </%def>
 
 <%def name="body()">
-<link rel="stylesheet" type="text/css" href="../GeoAdmin.ux/Lightbox/css/lightbox.css">
+<link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/css/lightbox.css">
 <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
-<script type="text/javascript" src="../GeoAdmin.ux/Lightbox/lib/Lightbox.js"></script>
+<script type="text/javascript" src="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/lib/Lightbox.js"></script>
 <style>
     .thumbnail {
         padding: 4px;
