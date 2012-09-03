@@ -2784,7 +2784,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.bazl.segelflugkarte": {
                 name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
