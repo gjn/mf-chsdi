@@ -2757,6 +2757,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bak",
                 queryable: true
             },
+			"ch.bazl.heliports-gebirgslandeplaetze": {
+                name: OpenLayers.i18n("ch.bazl.heliports-gebirgslandeplaetze"),
+                layertype: 'wmts',
+                timestamp: ['20110926'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+				serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
+				},
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
