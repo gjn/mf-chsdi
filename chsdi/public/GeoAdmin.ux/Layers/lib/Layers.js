@@ -2764,7 +2764,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bazl",
-                queryable: true,
+                queryable: false,
 				serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
 				},
             "ch.bazl.luftfahrtkarten-icao": {
