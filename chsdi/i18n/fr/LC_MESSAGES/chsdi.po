@@ -41,6 +41,9 @@ msgstr "Pas de lien disponible vers le géoportail cantonal"
 msgid "Chemical"
 msgstr "Chimique"
 
+msgid "Coordinates"
+msgstr "Coordonnées"
+
 msgid "Datenbezug"
 msgstr "Distribution des données"
 

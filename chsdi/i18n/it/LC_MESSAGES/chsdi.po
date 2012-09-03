@@ -41,6 +41,9 @@ msgstr "Nessun link verso un portale cantonale disponibile"
 msgid "Chemical"
 msgstr "Chimique"
 
+msgid "Coordinates"
+msgstr "Coordinate"
+
 msgid "Datenbezug"
 msgstr "Procacciamento dei dati"
 

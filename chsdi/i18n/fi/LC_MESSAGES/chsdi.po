@@ -41,6 +41,9 @@ msgstr "Link tar portal chantunala indisponibel"
 msgid "Chemical"
 msgstr "Chemikalie"
 
+msgid "Coordinates"
+msgstr "Coordinatas"
+
 msgid "Datenbezug"
 msgstr "Retratga da datas"
 

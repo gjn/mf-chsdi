@@ -41,6 +41,9 @@ msgstr "Link to the portal of canton not available"
 msgid "Chemical"
 msgstr "Chemical"
 
+msgid "Coordinates"
+msgstr "Coordinates"
+
 msgid "Datenbezug"
 msgstr "Order data"
 

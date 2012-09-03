@@ -12,7 +12,8 @@
 
 <%def name="body()">
 <link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/css/lightbox.css">
-<script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+<script type="text/javascript" src="/${c.instanceid}/wsgi/lib/ext/Ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/${c.instanceid}/wsgi/lib/ext/Ext/ext-all.js"></script>
 <script type="text/javascript" src="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/lib/Lightbox.js"></script>
 <style>
     .thumbnail {
@@ -24,7 +25,9 @@
         margin-bottom: 10px;
         margin-top: 5px;
     }
-
+    .tooltip_large_header {
+        margin-left: 7px !important;
+    } 
 </style>
 
 <% objektart = c.feature.objektart.split(',') %>
@@ -39,10 +42,12 @@
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_objektart')}:</td>
+         <td style="width: 300px; float: left;">
 % for objart in objektart:
 <% obj = 'kultur' + objart %>
-     <td style="width: 300px; float: left;">${_(obj)}</td>
+     ${_(obj)}
 % endfor
+         </td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_nbr')}:</td>
@@ -53,19 +58,20 @@
          <td style="width: 300px; float: left;">${c.feature.adresse or ''}  ${c.feature.hausnr or ''}</td>
      </tr>
      <tr>
-         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')}/${_('tt_kbs_gemeinde_ehemalige')}:</td>
-         <td style="width: 300px; float: left;">${c.feature.gemeinde or '-'}/${c.feature.gemeinde_ehemalig or '-'}</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')} / ${_('tt_kbs_gemeinde_ehemalige')}:</td>
+         <td style="width: 300px; float: left;">${c.feature.gemeinde or '-'} / ${c.feature.gemeinde_ehemalig or '-'}</td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Coordinates')}:</td>
-         <td style="width: 300px; float: left;">${c.feature.x or '-'}/${c.feature.y or '-'}</td>
+         <td style="width: 300px; float: left;">${c.feature.x or '-'} / ${c.feature.y or '-'}</td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
          <td style="width: 300px; float: left;"><div style="margin-left: -313px;">${c.feature.kurztexte or ''}</div></td>
      </tr>
      <tr>
-         <td style="float: left;"><div id="images"></div></td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
+         <td style="width: 300px; float: left;"><div style="margin-left: -313px;" id="images"></div></td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
@@ -116,7 +122,7 @@
             a.href = url + pic;
             var img = document.createElement('IMG');
             img.width = 100;
-            img.src = url + pic;
+            img.src = url + pic; 
             a.appendChild(img);
             div_child.appendChild(a);
             div.appendChild(div_child);
@@ -129,6 +135,8 @@
         } else {
             a.innerHTML = '-';
         }
+    var disclamer = document.getElementsByClassName('disclamer')[0];
+    disclamer.href.replace('http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html#copyright', 'http://www.disclamer.admin.ch');
     }
 </script>
 </%def>

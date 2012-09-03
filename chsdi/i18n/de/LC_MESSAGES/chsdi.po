@@ -41,6 +41,9 @@ msgstr "Kein Link zu kantonalem Portal vorhanden"
 msgid "Chemical"
 msgstr "Chemikalie"
 
+msgid "Coordinates"
+msgstr "Koordinaten"
+
 msgid "Datenbezug"
 msgstr "Datenbezug"
 
@@ -1806,7 +1809,7 @@ msgid "oeffentlich"
 msgstr "Öffentlich"
 
 msgid "official object webpage"
-msgstr "Offizielle Objectseite"
+msgstr "Offizielle Objektseite"
 
 msgid "optionaler_name"
 msgstr "Optionaler Name"

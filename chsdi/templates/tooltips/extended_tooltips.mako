@@ -14,7 +14,7 @@
     </div>
         ${c.feature.html or '-'}
     <div>
-        <div style="float:left; align: left" class="tooltip_large_footer"><a href="${_('disclaimer url')}" target="_blank">${_('disclaimer title')}</a></div>
+        <div style="float:left; align: left" class="tooltip_large_footer"><a class='disclamer' href="${_('disclaimer url')}" target="_blank">${_('disclaimer title')}</a></div>
             <div style="float:right; align: right" class="tooltip_large_footer">
         % if c.stable_id is True:
             <a class="tooltip_red_link" href="${c.baseUrl}?${c.layer_id}=${c.feature.id}&lang=${c.lang}" target="new">${_('Link to object')}</a>&nbsp;|&nbsp;
