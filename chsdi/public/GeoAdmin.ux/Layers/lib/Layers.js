@@ -2776,6 +2776,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bazl",
                 queryable: false
             },
+            "ch.bazl.projektierungszonen-flughafenanlagen": {
+                name: OpenLayers.i18n("ch.bazl.projektierungszonen-flughafenanlagen"),
+                layertype: 'wmts',
+                timestamp: ['20080723'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.bazl.segelflugkarte": {
                 name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
                 layertype: 'wmts',
