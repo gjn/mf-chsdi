@@ -1,4 +1,5 @@
 /**
+ * @include Ext/src/ext-core/examples/jsonp/jsonp.js
  * @include Permalink/lib/PermalinkField.js
  * @include Permalink/lib/MailWindow.js
  */
@@ -89,7 +90,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
     mail: false,
 
     initComponent: function (config) {
-    	Ext.apply(this, config);
+        Ext.apply(this, config);
+        this.layout = 'hbox';
         this.title = OpenLayers.i18n("Map URL");
         this.shareText = new Ext.menu.TextItem({
             cls: "shareText",
@@ -164,7 +166,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 }
             });
             this.buttonMail.addClass("hideBlock");
-        };
+        }
         // Close share button
         this.buttonClose = new Ext.Button({
             cls: "close-share-button",
@@ -195,10 +197,27 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         this.sharePipe5 = new Ext.Spacer({
             cls: 'sharepipe'
         });
-        this.sharePipe5.addClass("hideBlock");    
+        this.sharePipe5.addClass("hideBlock");
         // Permalink Field
-        var permalinkField = new GeoAdmin.PermalinkField({width: 440});
-        this.items = permalinkField;
+        this.permalinkField = new GeoAdmin.PermalinkField({width: 380});
+        var buttonShorten = new Ext.Button({
+            text: OpenLayers.i18n('Shorten'),
+            tooltip: OpenLayers.i18n('Shorten URL'),
+            scope: this,
+            handler: function () {
+                Ext.ux.JSONP.request(GeoAdmin.webServicesUrl + "/shorten.json", {
+                    callbackKey: "cb",
+                    params: {
+                        url: encodeURIComponent(Ext.state.Manager.getProvider().getLink()),
+                        lang: OpenLayers.Lang.getCode()
+                    },
+                    scope: this,
+                    callback: this.shortenCb
+                });
+            }
+        });
+
+        this.items = [this.permalinkField, buttonShorten];
         if (this.mail) {
             this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare ,this.buttonQrcode, this.sharePipe1, this.buttonTwitter, this.sharePipe2, this.buttonFacebook, this.sharePipe3, this.buttonGooglePlus, this.sharePipe4, this.buttonMail, this.sharePipe5, this.buttonClose, {
                 iconCls: "close-button",
@@ -217,8 +236,11 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                     this.hide();
                 }
             }];
-        };
+        }
         GeoAdmin.PermalinkPanel.superclass.initComponent.apply(this, arguments);
+    },
+    shortenCb: function(response) {
+       this.permalinkField.setValue(response.shorturl);
     },
     /** private method[httpShare]
      * Open a new tab with the permalink according to the button pushed
@@ -235,7 +257,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             var url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         } else if (j === "qrcode") {
-            var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + encodeURIComponent(Ext.state.Manager.getProvider().getLink()); 
+            var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + encodeURIComponent(Ext.state.Manager.getProvider().getLink());
             window.open(url, '_blank');
         }
     },
@@ -261,7 +283,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             if (this.mail) {
                 this.buttonMail.addClass("showBlock");
                 this.buttonMail.removeClass("hideBlock");
-            };
+            }
             this.buttonClose.addClass("showBlock");
             this.buttonClose.removeClass("hideBlock");
             this.sharePipe1.addClass("showBlock");
@@ -292,7 +314,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             if (this.mail) {
                 this.buttonMail.addClass("hideBlock");
                 this.buttonMail.removeClass("showBlock");
-            };
+            }
+            ;
             this.buttonClose.addClass("hideBlock");
             this.buttonClose.removeClass("showBlock");
             this.sharePipe1.addClass("hideBlock");
@@ -307,12 +330,12 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             this.sharePipe5.removeClass("showBlock");
         }
     },
-   afterRender: function() {
-       GeoAdmin.PermalinkPanel.superclass.afterRender.apply(this, arguments);
-       // we want to swallow events not to have the map move
-       // when mouse actions occur on this panel
-       this.body.swallowEvent(["mousedown", "mousemove", "mouseup", "click", "dblclick"]);
-   }
+    afterRender: function() {
+        GeoAdmin.PermalinkPanel.superclass.afterRender.apply(this, arguments);
+        // we want to swallow events not to have the map move
+        // when mouse actions occur on this panel
+        this.body.swallowEvent(["mousedown", "mousemove", "mouseup", "click", "dblclick"]);
+    }
 });
 
 /** api: xtype = ga_permalinkpanel */

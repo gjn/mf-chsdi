@@ -479,7 +479,7 @@ Input parameters
 
 The following parameter is required:
 
-- url: an encoded url (http://www.albionresearch.com/misc/urlencode.php) 
+- url: an encoded url (http://www.albionresearch.com/misc/urlencode.php)
 
 Example: http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
 
@@ -487,6 +487,32 @@ Result
 ^^^^^^
 
 The short link (for example: http://s.geo.admin.ch/0baf08b)
+
+Shorten.json
+------------
+
+This service allows to shorten an URL.
+
+URL
+^^^
+
+http://api.geo.admin.ch/shorten.json
+
+Input parameters
+^^^^^^^^^^^^^^^^
+
+The following parameter is required:
+
+- url: an encoded url (http://www.albionresearch.com/misc/urlencode.php)
+- cb: (optional) the name of the callback function (JSON or JSONP)
+
+
+Example: http://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
+
+Result
+^^^^^^
+
+A JSON with a shorturl
 
 Shorten: decode
 ---------------
@@ -764,7 +790,7 @@ The following parameters are required:
 
 - lang: optional lang: de or fr
 - query: the query string to find (mandatory if egid is not transmitted)
-- cb: (optional) the name of the callback funtion (JSON or JSONP)
+- cb: (optional) the name of the callback function (JSON or JSONP)
 - keyword: the word to look for in the abstract of the layer
 
 Examples: http://api.geo.admin.ch/main/wsgi/gcsearch/search?query=wasser&lang=de&keyword=wasser
