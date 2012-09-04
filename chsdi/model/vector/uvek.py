@@ -147,6 +147,15 @@ class bakomukw(Base, Queryable):
 
 register('ch.bakom.versorgungsgebiet-ukw', bakomukw)
 
+class ProjFlughafenanlagen(Base, Queryable):
+    __tablename__ = 'flughafenanlagen'
+    __table_args__ = ({'schema': 'bazl', 'autoload': True})
+    __template__ = 'tooltips/projflughafenanlagen.mako'
+    id = Column('xtf_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
+
 class Luftfahrthindernis(Base, Queryable):
     __tablename__ = 'luftfahrthindernis'
     __table_args__ = ({'schema': 'bazl', 'autoload': True})
