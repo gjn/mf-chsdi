@@ -54,7 +54,7 @@ GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
 
     afterRender: function() {
         this.map.displayProjection = new OpenLayers.Projection('EPSG:21781');
-        this.width = 423;
+        this.width = 350;
         var divEl = this.getEl().dom;
         var control = new GeoAdmin.MousePosition({prefix:OpenLayers.i18n('Coordinates (m):')});
         this.map.addControl(control);
@@ -65,7 +65,7 @@ GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
             controls: [control],
             updateMapDisplayProjection: true,
             projections: ['EPSG:21781','EPSG:4326'],
-            width: 170
+            width: 110
         });
 
         divEl.appendChild(control.element);
