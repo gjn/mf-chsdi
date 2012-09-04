@@ -208,8 +208,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 Ext.ux.JSONP.request(GeoAdmin.webServicesUrl + "/shorten.json", {
                     callbackKey: "cb",
                     params: {
-                        url: encodeURIComponent(Ext.state.Manager.getProvider().getLink()),
-                        lang: OpenLayers.Lang.getCode()
+                        url: Ext.state.Manager.getProvider().getLink()
                     },
                     scope: this,
                     callback: this.shortenCb
