@@ -21,7 +21,7 @@
     % elif c.feature.ak == 'JU':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/jura.php?Y=${c.bbox[0]}&X=${c.bbox[1]}&echelle=${c.scale if float(c.scale) <=5000 else 5000}&theme=cadastre" target="_blank">JU</a></td></tr>
     % elif c.feature.ak == 'SH':   
-       <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.gis.sh.ch/GIS_SH_Beta/?idp=1&uid=1&pwd=&map=10&lan=de&typ=3&bmurl=Nav@g@98@u@West@g@${c.bbox[0]}@u@Nord@g@${c.bbox[1]}@u@B@g@600" target="_blank">SH</a></td></tr>
+       <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.gis.sh.ch/GIS_SH/?idp=1&uid=1&pwd=&map=10&lan=de&typ=3&bmurl=Nav@g@98@u@West@g@${c.bbox[0]}@u@Nord@g@${c.bbox[1]}@u@B@g@600" target="_blank">SH</a></td></tr>
     % elif c.feature.ak == 'SZ':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://webmap.sz.ch/bm31_webmap/?idp=1&uid=3&bmurl=Nav@g@129@u@West@g@${c.bbox[0]}@u@Nord@g@${c.bbox[1]}@u@B@g@${c.scale}" target="_blank">SZ</a></td></tr>
     % elif c.feature.ak == 'SO':
