@@ -31,7 +31,7 @@ SetEnvIf X-Forwarded-For "160.92.125.32"                GOODIP  # IGN proxy
 SetEnvIf X-Forwarded-For "192.134.132.15"               GOODIP  # IGN SIEL proxy
 SetEnvIf X-Forwarded-For "192.134.133.9"                GOODIP  # IGN
 SetEnvIf X-Forwarded-For "160.92.7.69"                  GOODIP  # IGN
-SetEnvIf X-Forwarded-For "160.92.169.131"               GOODIP  # IGN
+SetEnvIf X-Forwarded-For "160.92.169.205"               GOODIP  # IGN
 SetEnvIf X-Forwarded-For "10.48.109.212"                GOODIP
 SetEnvIf X-Forwarded-For "10.49.118.84"                 GOODIP
 SetEnvIf X-Forwarded-For "10.48.166.233"                GOODIP
