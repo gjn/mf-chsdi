@@ -435,6 +435,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bazl':'UFAC',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Eliporti/Aree d\'atterr. in montagna',
 	'ch.bazl.luftfahrtkarten-icao':'Carta aeronautica OACI',
+	'ch.bazl.projektierungszonen-flughafenanlagen':'Zone riservate: Aerodromi',
 	'ch.bazl.segelflugkarte':'Carta volo a vela',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=it',
 	'ch.bfe':'UFE',

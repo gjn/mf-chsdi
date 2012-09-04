@@ -435,6 +435,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bazl':'BAZL',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heliports/Gebirgslandeplätze',
 	'ch.bazl.luftfahrtkarten-icao':'Luftfahrtkarte ICAO',
+	'ch.bazl.projektierungszonen-flughafenanlagen':'Projektierungszonen: Flughäfen',
 	'ch.bazl.segelflugkarte':'Segelflugkarte',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=de',
 	'ch.bfe':'BFE',

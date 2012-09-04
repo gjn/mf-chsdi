@@ -241,6 +241,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bazl.luftfahrtkarten-icao':"",
     'ch.bazl.segelflugkarte':"",
     'ch.bazl.heliports-gebirgslandeplaetze': "",
+    'ch.bazl.projektierungszonen-flughafenanlagen': "",
     'ch.swisstopo.swissalti3d-reliefschattierung':"",
     'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill':"",
     'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill':"",
