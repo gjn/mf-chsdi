@@ -119,7 +119,7 @@
 % endif
 % endfor
 <script type="text/javascript">
-    var pictures, url, pdfs, url2;
+    var pictures, url, pdfs, url2, meta;
     pictures = ${parser.filesMatched};
     url = '${url}';
     pdfs = ${parser2.filesMatched};
@@ -156,7 +156,7 @@
             a.innerHTML = '-';
         }
     var disclamer = document.getElementsByClassName('disclamer')[0];
-    disclamer.href.replace('http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html#copyright', 'http://www.disclamer.admin.ch');
+    disclamer.setAttribute("href","http://www.disclamer.admin.ch")
     }
 </script>
 </%def>
