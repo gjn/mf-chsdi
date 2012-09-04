@@ -590,6 +590,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.kantone.cadastralwebmap-farbe"
                     },
                     {
+                        layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
+                    },
+                    {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]
@@ -725,6 +728,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.landwirtschaftliche-zonengrenzen"
+                    },
+                    {
+                        layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
                     },
                     {
                         layerId: "ch.vbs.territorialregionen"
