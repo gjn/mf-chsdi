@@ -102,27 +102,47 @@
     parser2 = MyHTMLParser(flayer='kgs',fid=str(c.feature.id))
     parser2.feed(s2)
     pdfs = parser2.filesMatched
+
+    url3 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/meta.txt'
+    f3 = urlopen(url3)
+    s3 = f3.read()
+    d = s3.split('\n')
+    meta = []
 %>
+% for i in d:
+<% e = i.split(';') %>
+% if e[0] == parser.pattern and e[len(e)-1] not in meta:
+<% meta.append(e[len(e)-1]) %>
+% endif
+% if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
+<% meta.append(e[len(e)-2]) %>
+% endif
+% endfor
 <script type="text/javascript">
     var pictures, url, pdfs, url2;
     pictures = ${parser.filesMatched};
     url = '${url}';
     pdfs = ${parser2.filesMatched};
     url2 = '${url2}';
-
+    meta = ${meta};
     window.onload = function () {
 % if len(parser.filesMatched) != 0:
         var div = document.getElementById('images');
         for (var n = 0; n < pictures.length; n++) {
+            var title = '';
             var pic = pictures[n];
             var div_child = document.createElement('DIV');
             div_child.className = 'thumbnail';
             var a = document.createElement('A');
             a.className = 'lightbox';
             a.href = url + pic;
+            for (var m = 0; m < meta.length; m++) {
+                 title = title + meta[m].replace("/","");
+            }
+            a.title = title;
             var img = document.createElement('IMG');
             img.width = 100;
-            img.src = url + pic; 
+            img.src = url + pic;
             a.appendChild(img);
             div_child.appendChild(a);
             div.appendChild(div_child);
