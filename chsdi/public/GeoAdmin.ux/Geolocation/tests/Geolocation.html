@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-	  <head>
-	  	<script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+      <head>
+      <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
       <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
       <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
       <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
@@ -15,20 +15,22 @@
       <script type="text/javascript">
       	
           function test_ctor(t) {
-          	t.plan(2);
-          	
-          	var map, geolocation;
+              t.plan(3);
+	
+              var map, geolocation, vector;
 
-            map = new GeoAdmin.Map("map");
+              map = new GeoAdmin.Map("map");
+              geolocation = new GeoAdmin.Geolocation( {map: map} );
+              vector = map.getLayersByName('geolocation-vector')[0];
 
-            geolocation = new GeoAdmin.Geolocation( {map: map} );
- 
-            t.ok(geolocation instanceof GeoAdmin.Geolocation,
+              t.ok(geolocation instanceof GeoAdmin.Geolocation,
                  "ctor returns a GeoAdmin.Geolocation");
-            t.ok(geolocation instanceof Ext.Button,
-                 "ctor returns a Ext.Button"); 
-          }
-          
+              t.ok(geolocation instanceof Ext.Button,
+                 "ctor returns a Ext.Button");
+              t.ok(vector instanceof OpenLayers.Layer.Vector,
+                 "ctor returns a OpenLayers.Layer.Vector");
+          };
+
       </script>
       </head>
   <body>
