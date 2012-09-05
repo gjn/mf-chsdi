@@ -199,8 +199,9 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         });
         this.sharePipe5.addClass("hideBlock");
         // Permalink Field
-        this.permalinkField = new GeoAdmin.PermalinkField({width: 380});
+        this.permalinkField = new GeoAdmin.PermalinkField({width: 330});
         var buttonShorten = new Ext.Button({
+            cls: "shorten-button",
             text: OpenLayers.i18n('Shorten'),
             tooltip: OpenLayers.i18n('Shorten URL'),
             scope: this,
