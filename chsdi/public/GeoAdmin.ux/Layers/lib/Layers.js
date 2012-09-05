@@ -1920,34 +1920,34 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-//           "ch.bakom.radio-fernsehsender": {
-//               name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
-//               layers: ["ch.bakom.radio-fernsehsender"],
-//               layertype: "wms",
-//               type: "point",
-//               format: "image/png",
-//               datenherr: "ch.bakom",
-//               queryable: true,
-//               searchable: true
-//           },
-//           "ch.bakom.mobil-antennenstandorte-gsm": {
-//               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
-//               layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
-//               layertype: "wms",
-//               type: "point",
-//               format: "image/png",
-//               datenherr: "ch.bakom",
-//               queryable: true
-//           },
-//           "ch.bakom.mobil-antennenstandorte-umts": {
-//               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-umts"),
-//               layers: ["ch.bakom.mobil-antennenstandorte-umts"],
-//               layertype: "wms",
-//               type: "point",
-//               format: "image/png",
-//               datenherr: "ch.bakom",
-//               queryable: true
-//            },
+           "ch.bakom.radio-fernsehsender": {
+               name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
+               layers: ["ch.bakom.radio-fernsehsender"],
+               layertype: "wms",
+               type: "point",
+               format: "image/png",
+               datenherr: "ch.bakom",
+               queryable: true,
+               searchable: true
+           },
+           "ch.bakom.mobil-antennenstandorte-gsm": {
+               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
+               layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
+               layertype: "wms",
+               type: "point",
+               format: "image/png",
+               datenherr: "ch.bakom",
+               queryable: true
+           },
+           "ch.bakom.mobil-antennenstandorte-umts": {
+               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-umts"),
+               layers: ["ch.bakom.mobil-antennenstandorte-umts"],
+               layertype: "wms",
+               type: "point",
+               format: "image/png",
+               datenherr: "ch.bakom",
+               queryable: true
+            },
             "ch.bakom.versorgungsgebiet-tv": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-tv"),
                 layertype: 'wmts',
@@ -2801,7 +2801,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: ['20110818'],
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.bazl",
+                datenherr: "ch.bafu",
                 opacity: 0.75,
                 queryable: false
             }
