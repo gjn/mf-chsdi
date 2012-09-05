@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="../build/api.css" media="all" />
+    <script src="../build/api.js" type=""></script>
+</head>
+<body onload='init();'>
+    <script type="text/javascript">
+        var map;
+        window.GeoAdmin.OpenLayersImgPath="../GeoAdmin.ux/Map/img/";
+        window.GeoAdmin.webServicesUrl= "..";
+        function init() {
+            map = new GeoAdmin.Map('mymap', {doZoomToMaxExtent: true});
+            map.addLayerByName('ch.babs.kulturgueter');
+            var swisssearch = new GeoAdmin.SwissSearchComboBox({
+                width: 500,
+                renderTo: "mysearch",
+                map: map,
+                attributesSearch: true
+            });
+        }
+    </script>
+    <div id="mysearch" style="margin:10px !important;"></div>
+    <div id='mymap' style='width: 600px; height: 500px; position: absolute; left: 300px; top: 50px;'></div>
+</body>
+</html>
