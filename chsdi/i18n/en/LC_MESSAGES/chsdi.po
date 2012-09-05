@@ -281,6 +281,9 @@ msgstr "Anzahl Spuren"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "applicant"
+msgstr "Applicant"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Hist. -arch. qualities"
 
@@ -938,6 +941,9 @@ msgstr "Datum der letzten Aktualisierung"
 msgid "datumzeit"
 msgstr "Datum und Zeit"
 
+msgid "descriptionText"
+msgstr "Description"
+
 msgid "disclaimer title"
 msgstr "Copyright & Data protection"
 
@@ -947,6 +953,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html
 #. TODO
 msgid "district"
 msgstr "district"
+
+msgid "durationofeffect"
+msgstr "Duration of effect"
 
 msgid "egid"
 msgstr "EGID"
@@ -1157,6 +1166,9 @@ msgstr "Quartier unit"
 
 msgid "kategorie"
 msgstr "Category"
+
+msgid "kindofzone"
+msgstr "Reserved zone type"
 
 msgid "kkw"
 msgstr "Atomic power plant"
@@ -1698,6 +1710,9 @@ msgstr "Link to portal"
 msgid "layer_url_text"
 msgstr "Link to description"
 
+msgid "legalregulationlink"
+msgstr "Further information"
+
 msgid "length_km"
 msgstr "Länge [km]"
 
@@ -1746,6 +1761,9 @@ msgstr "Abmessung des Lichtraumprofils"
 msgid "messstellentyp"
 msgstr "Messstellentyp"
 
+msgid "modif_validfrom"
+msgstr "Date of enactment"
+
 msgid "nabeltyp"
 msgstr "Lage"
 
@@ -1762,6 +1780,9 @@ msgid "nadelholzanteil"
 msgstr "Nadelholzanteil [%]"
 
 msgid "name"
+msgstr "Name"
+
+msgid "name_bazl"
 msgstr "Name"
 
 msgid "name_lang1"

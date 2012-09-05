@@ -281,6 +281,9 @@ msgstr "Anzahl Spuren"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "applicant"
+msgstr "Gesuchsteller"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Arch. hist. Qualitäten"
 
@@ -938,6 +941,9 @@ msgstr "Datum der letzten Aktualisierung"
 msgid "datumzeit"
 msgstr "Datum und Zeit"
 
+msgid "descriptionText"
+msgstr "Beschreibung"
+
 msgid "disclaimer title"
 msgstr "Copyright & Datenschutzerklärung"
 
@@ -946,6 +952,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/contact.html
 
 msgid "district"
 msgstr "Bezirk"
+
+msgid "durationofeffect"
+msgstr "Wirkungsdauer"
 
 msgid "egid"
 msgstr "EGID"
@@ -1156,6 +1165,9 @@ msgstr "Kartiereinheiten"
 
 msgid "kategorie"
 msgstr "Kategorie"
+
+msgid "kindofzone"
+msgstr "Projektierungszonenart"
 
 msgid "kkw"
 msgstr "KKW"
@@ -1697,6 +1709,9 @@ msgstr "Link zum Fachportal"
 msgid "layer_url_text"
 msgstr "Link zu Detailbeschreibung"
 
+msgid "legalregulationlink"
+msgstr "Weitere Informationen"
+
 msgid "length_km"
 msgstr "Länge [km]"
 
@@ -1745,6 +1760,9 @@ msgstr "Abmessung des Lichtraumprofils"
 msgid "messstellentyp"
 msgstr "Messstellentyp"
 
+msgid "modif_validfrom"
+msgstr "Beschlussdatum"
+
 msgid "nabeltyp"
 msgstr "Lage"
 
@@ -1762,6 +1780,9 @@ msgstr "Nadelholzanteil [%]"
 
 msgid "name"
 msgstr "Name"
+
+msgid "name_bazl"
+msgstr "Bezeichnung"
 
 msgid "name_lang1"
 msgstr "Name in der 1. Sprache"

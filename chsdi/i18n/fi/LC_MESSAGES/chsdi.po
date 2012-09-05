@@ -281,6 +281,9 @@ msgstr "Anzahl Spuren"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "applicant"
+msgstr "Requirent"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Qualitads istoricas-architectonicas"
 
@@ -938,6 +941,9 @@ msgstr "Datum der letzten Aktualisierung"
 msgid "datumzeit"
 msgstr "Datum und Zeit"
 
+msgid "descriptionText"
+msgstr "Descripziun"
+
 msgid "disclaimer title"
 msgstr "Copyright & decleraziun da protecziun da datas"
 
@@ -946,6 +952,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/rm/home/geoadmin/contact.html
 
 msgid "district"
 msgstr "district"
+
+msgid "durationofeffect"
+msgstr "Durada da l'effect"
 
 msgid "egid"
 msgstr "EGID"
@@ -1156,6 +1165,9 @@ msgstr "Kartiereinheiten"
 
 msgid "kategorie"
 msgstr "Categoria"
+
+msgid "kindofzone"
+msgstr "Tip da zona da projectaziun"
 
 msgid "kkw"
 msgstr "KKW"
@@ -1697,6 +1709,9 @@ msgstr "Link tar il portal"
 msgid "layer_url_text"
 msgstr "Link tar la descripziun da detagl"
 
+msgid "legalregulationlink"
+msgstr "Ulteriurs infurmaziuns"
+
 msgid "length_km"
 msgstr "Länge [km]"
 
@@ -1745,6 +1760,9 @@ msgstr "Abmessung des Lichtraumprofils"
 msgid "messstellentyp"
 msgstr "Messstellentyp"
 
+msgid "modif_validfrom"
+msgstr "Data da conclus"
+
 msgid "nabeltyp"
 msgstr "Lage"
 
@@ -1762,6 +1780,9 @@ msgstr "Nadelholzanteil [%]"
 
 msgid "name"
 msgstr "Num"
+
+msgid "name_bazl"
+msgstr "Designaziun"
 
 msgid "name_lang1"
 msgstr "Name in der 1. Sprache"

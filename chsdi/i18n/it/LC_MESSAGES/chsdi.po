@@ -281,6 +281,9 @@ msgstr "Numero corsie"
 msgid "app title"
 msgstr "map.geo.admin.ch"
 
+msgid "applicant"
+msgstr "Richiedente"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Qualità storico-arch."
 
@@ -938,6 +941,9 @@ msgstr "Date de la dernière mise à jour"
 msgid "datumzeit"
 msgstr "Date et heure"
 
+msgid "descriptionText"
+msgstr "Descrizione"
+
 msgid "disclaimer title"
 msgstr "Copyright e  dicariazione della protezione dei diritti d\u2019autore"
 
@@ -946,6 +952,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html
 
 msgid "district"
 msgstr "distretto"
+
+msgid "durationofeffect"
+msgstr "Durata dell'effetto"
 
 msgid "egid"
 msgstr "EGID"
@@ -1156,6 +1165,9 @@ msgstr "Unité de cartographie"
 
 msgid "kategorie"
 msgstr "Categoria"
+
+msgid "kindofzone"
+msgstr "Tipo di zona riservata"
 
 msgid "kkw"
 msgstr "Centrale nucleare"
@@ -1697,6 +1709,9 @@ msgstr "Link per il portale"
 msgid "layer_url_text"
 msgstr "Link per la descrizione dei dettagli"
 
+msgid "legalregulationlink"
+msgstr "Informazioni supplementari"
+
 msgid "length_km"
 msgstr "Longueur [km]"
 
@@ -1745,6 +1760,9 @@ msgstr "Dimensions du gabarit d'espace libre"
 msgid "messstellentyp"
 msgstr "Type"
 
+msgid "modif_validfrom"
+msgstr "Data della decisione"
+
 msgid "nabeltyp"
 msgstr "Emplacement"
 
@@ -1762,6 +1780,9 @@ msgstr "Proportion de résineux [%]"
 
 msgid "name"
 msgstr "Nome"
+
+msgid "name_bazl"
+msgstr "Denominazione"
 
 msgid "name_lang1"
 msgstr "Nom dans la 1ère langue"
