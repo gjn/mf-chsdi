@@ -17,7 +17,7 @@
 
         function test_constructor(t) {
             t.plan(2);
-            GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+            GeoAdmin.webServicesUrl = "http://api.geo.admin.ch";
             var map = new GeoAdmin.Map();
             var geocoder = new GeoAdmin.Geocoder({map: map});
             t.ok(geocoder instanceof GeoAdmin.Geocoder, "Geocoder gives an instance of GeoAdmin.Geocoder");
