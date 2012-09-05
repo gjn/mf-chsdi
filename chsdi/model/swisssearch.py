@@ -52,17 +52,20 @@ class SwissSearch(Base, Queryable):
             elif self.origin == 'gg25':
                 o.update({'service': 'cities',
                           'name': self.gemname,
+                          'bfsnr': self.bfsnr,
                           'nr': self.id,
                           'label': "<b>%s (%s)</b>"%(self.gemname, self.kanton)})
             elif self.origin == 'kantone':
                 o.update({'service': 'cantons',
                           'name': self.name,
+                          'bfsnr': self.bfsnr,
                           'code': self.kanton,
                           'nr': self.id,
                           'label': "%s <b>%s</b>"%(_('ct'), self.name)})
             elif self.origin == 'district':
                 o.update({'service': 'districts',
                           'name': self.name,
+                          'bfsnr': self.bfsnr,
                           'label': "%s <b>%s</b>"%( _('district'), self.name)})
             elif self.origin == 'address':
                 if self.deinr is None:
@@ -75,7 +78,7 @@ class SwissSearch(Base, Queryable):
             elif self.origin == 'parcel':
                 o.update({'service': 'parcel',
                           'name': self.name,
-                          'bfsnr': self.gdenr,
+                          'bfsnr': self.bfsnr,
                           'city': self.gemname,
                           'Y' : loads(self.geom_point.geom_wkb.decode('hex')).x,
                           'X' : loads(self.geom_point.geom_wkb.decode('hex')).y,

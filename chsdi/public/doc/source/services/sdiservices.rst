@@ -46,7 +46,8 @@ The following parameters are required:
 - lang: optional lang: de (default) or fr
 - query: the query string to find (mandatory if egid is not transmitted)
 - egid: the egid used to find an address (mandatory if query is not transmitted)
-- citynr (optional): the city number (BFS id)
+- DEPRECATED citynr (optional): the city number (BFS id). Use the bfsnr parameter instead.
+- bfsnr (optional): the city number provided by the BFS
 - cb (optional): the name of the callback funtion
 - format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
@@ -70,7 +71,7 @@ Examples:
 - Postcode: `http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw <../../../swisssearch/geocoding?query=1290&format=raw>`_
 - Addresses: `http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw <../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
 - Addresses with EGID: `http://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
-- Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?citynr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
+- Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?bfsnr=5514&query=saug <../../../swisssearch/geocoding?citynr=5514&query=saug>`_ 
 - Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
 - Search for addresses without the geometry: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
 - Search for a feature within a layer: `http://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a>`_
@@ -87,7 +88,6 @@ A JSON content is sent back with the following content:
 - egid: EGID number for an address
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - id: id of the feature in the database
-- objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
 - all properties (apply only when raw format is requested)
 
 SwissSearch: reversegeocoding
@@ -126,12 +126,11 @@ Result
 
 A JSON content is sent back with the following content:
 
-- service: the name of the service. It can be postalcodes, cantons, cities or swissnames
-- label: html content presented in the Swissearch widget
-- rank: rank of the result, form 1 to 4. 1 for postalcodes, 2 for cantons, 3 for cities and 4 for swissnames
+- service: the name of the service. It can be postalcodes, cantons, cities, swissnames, districts, address or parcel
+- label: html content
 - bbox: array with bottom right and top lef coordinate, for example: [509317.96875, 160040.0, 516755.0, 171050.0]
 - id: id of the feature in the database
-- objectorig: optional: origin of the data in swissnames dataset. See http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html
+- bfsnr: optional: the city, district or canton number provided by the BFS (also for parcel)
 
 BodSearch: search (deprecated)
 ------------------------------

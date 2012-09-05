@@ -67,7 +67,9 @@ class SwisssearchController(BaseController):
         else:
             layers = None
 
-        citynr = request.params.get('citynr')
+        bfsnr = request.params.get('bfsnr')
+        if bfsnr is None:
+            bfsnr = request.params.get('citynr')
         features = []
         allfeatures = []
         onlyOneTerm = False
@@ -127,8 +129,8 @@ class SwisssearchController(BaseController):
         
         query = query.filter(SwissSearch.origin.in_(self.origins))
 
-        if citynr is not None:
-            query = query.filter(SwissSearch.gdenr == '' + citynr)
+        if bfsnr is not None:
+            query = query.filter(SwissSearch.bfsnr == '' + bfsnr)
        
         maxFeaturesGeocoding = MAX_FEATURES_GEOCODING
  
@@ -136,7 +138,6 @@ class SwisssearchController(BaseController):
            maxFeaturesGeocoding = MAX_FEATURES_GEOCODING - 10
 
         query = query.order_by(ftsOrderBy).limit(maxFeaturesGeocoding)
-
         if layers:
             features = query_features(self.lang, layers, q)
 
