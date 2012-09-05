@@ -3,6 +3,7 @@
 /*
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
+ * @include OpenLayers/Format/GeoJSON.js
  *
  * @include proj4js/lib/defs/EPSG21781.js
  * This is a workaround since Proj4JS doesn't support it (http://trac.osgeo.org/proj4js/ticket/55):
@@ -235,7 +236,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     recordSelected: function(combo, record, index) {
         var extent = OpenLayers.Bounds.fromArray(record.data.bbox);
         var zoom = undefined;
-        if (record.data.service == 'address') {
+        if (record.data.service === 'address') {
             zoom = 10;
         } else if (record.data.service === 'swissnames') {
             zoom = 8;
@@ -243,16 +244,48 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             zoom = this.objectorig_zoom[record.data.objectorig];
         }
 
-        if (zoom === undefined) {
+        if (record.data.service === 'attributes' && this.map.vector !== undefined) {
+            if (GeoAdmin.webServicesUrl) {
+                var url = GeoAdmin.webServicesUrl + "/feature/" + record.id.toString();
+                Ext.ux.JSONP.request(url, {
+                    callbackKey: "cb",
+                    scope: this,
+                    params: {
+                        layer: this.store.baseParams.layers
+                    },
+                    callback: function (response) {
+                        var format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
+                        var features = format.read(response);
+                        var control = this.map.getControlsBy('id', 'getFeatureRectangle');
+                        if (control.length > 0 && !!control[0].popup) {
+                            if (!control[0].popup.hidden) {
+                                control[0].popup.hide();
+                                if (!!control[0].popup) {
+                                    control[0].popup.on('hide', function () {
+                                        this.map.vector.addFeatures(features);
+                                    }, this);
+                                } else {
+                                    this.map.vector.addFeatures(features);
+                                }
+                            }
+                        } else {
+                            this.map.vector.removeAllFeatures();
+                            this.map.vector.addFeatures(features);
+                        }
+                        this.map.zoomToExtent(extent);
+                    }
+                });
+            }
+        } else if (zoom === undefined) {
             this.map.zoomToExtent(extent);
-            if (record.data.service == 'parcel') {
+            if (record.data.service === 'parcel') {
                 var labelGeometry = new OpenLayers.Geometry.Point(record.data.Y, record.data.X);
                 var label = new OpenLayers.Feature.Vector(labelGeometry, {}, {label: record.data.name, labelOutlineColor: "white", labelOutlineWidth: 3, fontStyle: 'italic', fontWeight: 'bold', stroke: true, fontColor: '#ff0000'})
                 this.map.vector.addFeatures([label]);
             }
         } else {
             this.map.setCenter(extent.getCenterLonLat(), zoom);
-            if (record.data.service == 'address' || record.data.service === 'swissnames') {
+            if (record.data.service === 'address' || record.data.service === 'swissnames') {
                 var cross = this.createRedCross(extent.getCenterLonLat());
                 this.map.vector.addFeatures([cross]);
             }

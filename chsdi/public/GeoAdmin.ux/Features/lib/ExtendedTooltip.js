@@ -182,6 +182,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     },
     
     onSelect: function (evt) {
+        if (this.layer.features.length > 0) { this.layer.removeAllFeatures(); }
         this.layer.addFeatures(evt.features);
 
         // Define whether the selection was made thanks to a click or a selection by rectangle
