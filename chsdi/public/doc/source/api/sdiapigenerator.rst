@@ -605,7 +605,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
     function init() {
         OpenLayers.Lang.setCode('en');
         layerArray = [];
-        Ext.ux.JSONP.request('http://api.geo.admin.ch/layers', {
+        Ext.ux.JSONP.request('../../../layers', {
             callbackKey: "cb",
             lang: "en",
             params: {
