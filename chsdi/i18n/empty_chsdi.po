@@ -66,6 +66,27 @@ msgstr ""
 msgid "tt_ch.bazl.registrationnummer"
 msgstr ""
 
+msgid "applicant"
+msgstr ""
+
+msgid "name_bazl"
+msgstr ""
+
+msgid "durationofeffect"
+msgstr ""
+
+msgid "descriptionText"
+msgstr ""
+
+msgid "kindofzone"
+msgstr ""
+
+msgid "legalregulationlink"
+msgstr ""
+
+msgid "modif_validfrom"
+msgstr ""
+
 msgid "kultur1"
 msgstr ""
 
