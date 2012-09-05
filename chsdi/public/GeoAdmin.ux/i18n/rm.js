@@ -249,6 +249,8 @@ OpenLayers.Lang.rm= {
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Share',
 	'Share:':'Share:',
+	'Shorten':'Shorten',
+	'Shorten URL':'Shorten URL',
 	'Sorting_order':'Zavrar',
 	'Statistische Einheiten':'Unitads statisticas',
 	'Style':'Stil',

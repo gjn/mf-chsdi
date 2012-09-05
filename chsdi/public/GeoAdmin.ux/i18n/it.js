@@ -253,6 +253,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Share',
 	'Share:':'Share:',
+	'Shorten':'Shorten',
+	'Shorten URL':'Shorten URL',
 	'Sorting_order':'Ordinare',
 	'Statistische Einheiten':'Unità statistiche',
 	'Style':'Stile',
