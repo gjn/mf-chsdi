@@ -689,5 +689,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.aquaprotect_500': "",
     'ch.bafu.bundesinventare-trockenwiesen_trockenweiden': "",
     'ch.bafu.schutzgebiete-biosphaerenreservate': "",
-    'ch.bfe.kleinwasserkraftpotentiale': ""
+    'ch.bfe.kleinwasserkraftpotentiale': "",
+    'Shorten': "",
+    'Shorten URL': ""
 });
