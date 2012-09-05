@@ -650,6 +650,9 @@ msgstr "Versorgungsgebiete Radio"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Luftfahrtkarte ICAO"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen"
+msgstr "Projektierungszonen: Flughäfen"
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Segelflugkarte"
 

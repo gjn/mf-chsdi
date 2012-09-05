@@ -650,6 +650,9 @@ msgstr "Zones de diffusion radio"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carte aéronautique OACI"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen"
+msgstr "Zones réservées: Aéroports"
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carte vol à voile"
 

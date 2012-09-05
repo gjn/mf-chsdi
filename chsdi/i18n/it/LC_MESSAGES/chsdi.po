@@ -650,6 +650,9 @@ msgstr "Zone di diffusione OUC"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carta aeronautica OACI"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen"
+msgstr "Zone riservate: Aerodromi"
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carta volo a vela"
 

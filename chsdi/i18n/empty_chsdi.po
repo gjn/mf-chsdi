@@ -1961,6 +1961,9 @@ msgstr ""
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr ""
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen"
+msgstr ""
+
 msgid "ch.bazl.segelflugkarte"
 msgstr ""
 

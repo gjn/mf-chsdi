@@ -650,6 +650,9 @@ msgstr "VHF coverage areas"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Aeronautical Chart ICAO"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen"
+msgstr "Reserved zones: Airports"
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Glider Chart"
 
