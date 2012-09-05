@@ -315,15 +315,18 @@ class FeatureController(BaseController):
         else:
             return {'bbox': None}
 
-    @cacheable
     @_jsonify(cb="cb", cls=MapFishEncoder)
     @validate_params(validator_layers, validator_ids)
     def geometry(self):
     # if a list of layers was provided the first layer in the
     # list will be taken
         layer = c.layers[0]
+        bodlayer = Session.query(self.bodsearch).get(layer)
         features = []
         for f in get_features(layer, c.ids):
             f.layer_id = layer
+            f.compute_attribute()
+            if bodlayer:
+                f.compute_template(layer, bodlayer)
             features.append(f)
         return FeatureCollection(features)
