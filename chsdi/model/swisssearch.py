@@ -40,7 +40,7 @@ class SwissSearch(Base, Queryable):
     #@property
     def json(self, rawjson=False, nogeom=False):
             o = {'service': '', 'id': self.id, 'label': '',
-                    'bbox': self.bbox if not nogeom else None, 'objectorig': self.objectorig, 'name': self.name}
+                    'bbox': self.bbox if not nogeom else None, 'name': self.name}
             if self.origin == 'zipcode':
                 o.update({'service': 'postalcodes',
                           'name': self.name,
