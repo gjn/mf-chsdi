@@ -111,6 +111,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     initComponent: function() {
         // i18n
         this.emptyText = OpenLayers.i18n("Geo search...");
+        // activate selection by arrow keys/enter
+        this.enableKeyEvents = true;
 
         if (!this.url && GeoAdmin.webServicesUrl != null) {
             this.url = GeoAdmin.webServicesUrl + "/swisssearch/geocoding";
@@ -181,8 +183,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     recenterOnFirstItem: function(data, event) {
-        if (event.getKey() == event.ENTER && data.store.data.items.length !== 0) {
-            this.recordSelected(null, data.store.data.items[0], 0);
+        if (event.getKey() == event.ENTER && data.store.data.items.length >= data.selectedIndex) {
+            this.recordSelected(null, data.store.data.items[data.selectedIndex], 0);
         }
     },
 
