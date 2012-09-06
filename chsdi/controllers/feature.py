@@ -321,12 +321,8 @@ class FeatureController(BaseController):
     # if a list of layers was provided the first layer in the
     # list will be taken
         layer = c.layers[0]
-        bodlayer = Session.query(self.bodsearch).get(layer)
         features = []
         for f in get_features(layer, c.ids):
             f.layer_id = layer
-            f.compute_attribute()
-            if bodlayer:
-                f.compute_template(layer, bodlayer)
             features.append(f)
         return FeatureCollection(features)
