@@ -734,6 +734,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.vbs.territorialregionen"
+                    },
+                    {
+                        layerId: "ch.blw.alpprodukte"
+                    },
+                    {
+                        layerId: "ch.blw.bergprodukte"
                     }
                 ]
             }
@@ -810,7 +816,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Öffentliche Einrichtungen und Dienste', // Id Inspire 36 ??
+                text: 'Öffentliche Einrichtungen und Dienste', // Id Inspire 36 
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
@@ -832,7 +838,13 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bakom.versorgungsgebiet-ukw"
-                    } 
+                    },
+                    {
+                        layerId: "ch.blw.alpprodukte"
+                    },
+                    {
+                        layerId: "ch.blw.bergprodukte"
+                    }
                 ]
 
             }
@@ -951,7 +963,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Boden',  // Inspire 33 ??
+                text: 'Boden',  // Inspire 33
                 children: [
                     {
                         layerId: "ch.bav.kataster-belasteter-standorte-oev"
@@ -964,6 +976,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.steil_terrassenlagen_rebbau"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturland"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-kulturtyp"
                     }
                 ]
             },
@@ -1032,7 +1050,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 hidden: true
             },
             {
-                text: 'Meteorologie', // Id Inspire = 314
+                text: 'Meteorologie', // Id Inspire 314
                 children: [
                     {
                         layerId: "ch.blw.bodeneignung-kulturland"
@@ -1069,12 +1087,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.niederschlagshaushalt"
-                    },
-                    {
-                        layerId: "ch.blw.alpprodukte"
-                    },
-                    {
-                        layerId: "ch.blw.bergprodukte"
                     }
                 ]
             },
@@ -1158,7 +1170,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Landnutzung', //Id Inspire = 34
+                text: 'Landnutzung', //Id Inspire 34
                 children: [
                     {
                         layerId: "ch.bfs.arealstatistik-hintergrund"
@@ -1176,18 +1188,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                      */
                     {
                         layerId: "ch.swisstopo.vec25-einzelobjekte"
-                    },
-                    {
-                        layerId: "ch.blw.alpprodukte"
-                    },
-                    {
-                        layerId: "ch.blw.bergprodukte"
-                    },
-                    {
-                        layerId: "ch.blw.bodeneignung-kulturland"
-                    },
-                    {
-                        layerId: "ch.blw.bodeneignung-kulturtyp"
                     },
                     {
                         layerId: "ch.blw.klimaeignung-futterbau"
