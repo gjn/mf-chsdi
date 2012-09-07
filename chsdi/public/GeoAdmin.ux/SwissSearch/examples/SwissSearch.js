@@ -27,8 +27,9 @@ Ext.onReady(function() {
     //
     //map.addLayerByName("ch.babs.kulturgueter");
     //map.addLayerByName('ch.kantone.cadastralwebmap-farbe');
-    //map.addLayerByName('ch.bakom.versorgungsgebiet-ukw');
-    map.addLayerByName('ch.swisstopo.fixpunkte-lage');
+    map.addLayerByName('ch.bakom.versorgungsgebiet-ukw');
+    map.addLayerByName('ch.bakom.versorgungsgebiet-tv');
+    //map.addLayerByName('ch.swisstopo.fixpunkte-lage');
 
 
     // add SwissSearch Combo to the map

@@ -130,7 +130,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                 lang: OpenLayers.Lang.getCode()
             },
             root: 'results',
-            fields: ['label', 'service', 'bbox', 'objectorig', 'Y', 'X', 'name']
+            fields: ['label', 'service', 'bbox', 'objectorig', 'Y', 'X', 'name','layer']
         });
         this.tpl = new Ext.XTemplate(
             '<tpl for="."><div class="x-combo-list-item {service}">',
@@ -258,7 +258,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                     callbackKey: "cb",
                     scope: this,
                     params: {
-                        layer: this.store.baseParams.layers
+                        layer: record.data.layer
                     },
                     callback: function (response) {
                         var format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
