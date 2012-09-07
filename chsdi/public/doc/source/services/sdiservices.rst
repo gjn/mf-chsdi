@@ -221,7 +221,7 @@ A JSON
 - id: the BOD Id of the layer
 - description: a description of the layer
 
-Feature
+Feature: [id]
 -------
 
 This service allows to search for a feature ID stored in the spatial data infrastructure.
@@ -239,6 +239,8 @@ The following parameters are required:
 - layer: searchable layer
 - cb (optional): the name of the callback funtion
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
+- format (optional): per default, it returns GeoJSON. 'html' returns all the properties in HTML format. 
+
 
 Example: http://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
 

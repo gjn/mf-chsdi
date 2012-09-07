@@ -136,7 +136,7 @@ class FeatureController(BaseController):
             self.no_geom = asbool(no_geom)
         else:
             self.no_geom = False
-        self.rawjson = request.params.get('format') == 'raw' or False
+        self.format = request.params.get('format') or ''
         c.baseUrl =  request.params.get('baseUrl')  or ''
         c.api_version = config['api_version']
         c.instanceid = config['instanceid']
@@ -214,18 +214,28 @@ class FeatureController(BaseController):
 
             response.headers['Content-Type'] = 'text/html'
             return feature.html
-
+        # not extended info
         for model in models_from_name(layer):
             if len(features) < MAX_FEATURES:
                 feature = Session.query(model).get(id)
                 if feature:
-                    feature.compute_attribute()
+                    properties = {}
+                    if self.format =='html':
+                        bodlayer = Session.query(self.bodsearch).get(layer)
+                        feature.compute_template(layer, bodlayer)
+                        c.html_type = 'full'
+                        feature.html = render(feature.__template__)
+                        properties['html'] = feature.html
+                    else:
+                        feature.compute_attribute()
+                        properties = feature.attributes
                     if (self.no_geom):
                         features.append(Feature(id=feature.id,
                                                 bbox=feature.geometry.bounds,
-                                                properties=feature.attributes))
+                                                properties=properties))
                     else:
                         features.append(feature)
+
             else:
                 break
 
@@ -272,7 +282,7 @@ class FeatureController(BaseController):
                     for feature in query.limit(MAX_FEATURES).all():
                         properties = {}
                         feature.compute_template(layer_name, bodlayer)
-                        if self.rawjson:
+                        if self.format == 'raw':
                             feature.compute_attribute()
                             properties = feature.attributes
                         properties['html'] = feature.html

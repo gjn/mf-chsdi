@@ -232,7 +232,39 @@ class TestFeatureController(TestController):
         assert 'MultiPolygon' in resp
         assert len(results['features']) == 1
 
+    def test_feature_by_id_format_html(self):
+        params = {
+                'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                'format': 'html'
+        }
+        resp = self.app.get('/feature/6644',
+                 params=params
+        )
+        results = simplejson.loads(resp.response.body)
+        body = resp.response.body
+        assert '6644' in resp
 
+        assert 'coordinates' in body
+        assert '<div class=' in body
+        assert 'MultiPolygon' in body
+        assert len(results['features']) == 1
+
+    def test_feature_by_id_format_html_no_geom(self):
+        params = {
+                'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                'format': 'html',
+                'no_geom': 'true'
+        }
+        resp = self.app.get('/feature/6644',
+                 params=params
+        )
+        body = resp.response.body
+
+        results = simplejson.loads(resp.response.body)
+        assert '6644' in body
+        assert 'coordinates' not in body
+        assert '<div class=' in body
+        assert 'MultiPolygon' not in body
 
     def test_feature_by_id_with_cb(self):
         params = {
@@ -248,7 +280,7 @@ class TestFeatureController(TestController):
     def test_feature_by_id_no_geom(self):
         params = {
                 'layers': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
-                'no_geom': True
+                'no_geom': 'true'
         }
         resp = self.app.get('/feature/6644',
                  params=params
