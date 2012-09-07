@@ -102,12 +102,6 @@ GeoAdmin.Features = OpenLayers.Class({
         if (this.highlightCb(response)) {
             this.map.zoomToExtent(this.map.vector.getDataExtent());
         }
-        if (this.map.getControlsBy('id', 'getFeatureRectangle').length !== 0) {
-            var control = this.map.getControlsBy('id', 'getFeatureRectangle')[0];
-            var html = response.features[0].properties.html;
-            // Keep tooltip on link to object, tell that by setting the second parameter of the method createPopup to true
-            control.createPopup([{ xtype: 'box', html: html }], true);
-        }
     },
 
     _request: function(layer, ids, url, callback, next) {
