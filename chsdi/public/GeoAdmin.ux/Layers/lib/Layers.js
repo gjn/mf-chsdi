@@ -501,7 +501,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 formatSuffix: config.format && config.format.split('/')[1].toLowerCase(),
                 dimensions: config.dimensions !== undefined ? config.dimensions : ['TIME'],
                 params: {
-                    'time': options && options.timestamp !== undefined ? options.timestamp : config.timestamp[0]
+                    'time': options && options.timestamp !== undefined ? options.timestamp : Ext.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp
                 },
                 projection: new OpenLayers.Projection('EPSG:21781'),
                 units: 'm',
