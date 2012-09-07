@@ -251,8 +251,6 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             zoom = this.objectorig_zoom[record.data.objectorig];
         }
 
-        console.log(zoom);
-
         if (record.data.service === 'attributes' && this.map.vector !== undefined) {
             if (GeoAdmin.webServicesUrl) {
                 var url = GeoAdmin.webServicesUrl + "/feature/" + record.id.toString();
