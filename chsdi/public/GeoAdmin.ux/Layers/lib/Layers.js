@@ -2433,6 +2433,36 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.6,
                 queryable: true
             },
+            "ch.swisstopo-vd.geometa-gemeinde": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-gemeinde"),
+                layers: ["ch.swisstopo-vd.geometa-gemeinde"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.swisstopo-vd.geometa-grundbuch": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-grundbuch"),
+                layers: ["ch.swisstopo-vd.geometa-grundbuch"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.swisstopo-vd.geometa-nfgeom": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-nfgeom"),
+                layers: ["ch.swisstopo-vd.geometa-nfgeom"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.swisstopo-vd.geometa-standav": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-standav"),
                 layers: ["ch.swisstopo-vd.geometa-standav"],
