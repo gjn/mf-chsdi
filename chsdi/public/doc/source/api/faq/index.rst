@@ -112,7 +112,7 @@ Here is a non exhaustive list (don't hesitate to inform us about your own web si
 Which layers are available ?
 ----------------------------
 
-Some layers can’t be freely used. These layers are accessable by the way of `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
+Some layers can’t be freely used. These layers are accessible by the way of `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
 
 Here is a list of the layers that requires a swisstopo web acesss:
 
@@ -149,7 +149,7 @@ Here is a list of the layers that requires a swisstopo web acesss:
   #.   `ch.swisstopo.vec25-primaerflaechen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-primaerflaechen>`_ (Primary surfaces VECTOR25)
   #.   `ch.swisstopo.vec25-uebrigerverkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-uebrigerverkehr>`_ (Other traffic VECTOR25)
 
-Here is a list of all the available layers, freely accessible:
+Here is a list of all the freely accessible layers:
 
 .. raw:: html
 
