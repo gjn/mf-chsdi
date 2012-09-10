@@ -563,12 +563,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
-                    },
-                    {
-                        layerId: "ch.swisstopo-vd.geometa-los"
-                    },
-                    {
-                        layerId: "ch.swisstopo-vd.geometa-standav"
                     }
                 ]
             },
@@ -590,10 +584,25 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.kantone.cadastralwebmap-farbe"
                     },
                     {
+                        layerId: "ch.swisstopo-vd.geometa-gemeinde"
+                    },
+                    {
+                        layerId: "ch.swisstopo-vd.geometa-grundbuch"
+                    },
+                    {
+                        layerId: "ch.swisstopo-vd.geometa-los"
+                    },
+                    {
+                        layerId: "ch.swisstopo-vd.geometa-nfgeom"
+                    },
+                    {
                         layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
                     },
                     {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
+                    },
+                    {
+                        layerId: "ch.swisstopo-vd.geometa-standav"
                     }
                 ]
             }
