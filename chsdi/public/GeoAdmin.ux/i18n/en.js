@@ -437,6 +437,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bazl':'FOCA',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heliports/Mountain landing sites',
 	'ch.bazl.luftfahrtkarten-icao':'Aeronautical Chart ICAO',
+	'ch.bazl.points-of-interest':'Points of Interest',
 	'ch.bazl.projektierungszonen-flughafenanlagen':'Reserved zones: Airports',
 	'ch.bazl.segelflugkarte':'Glider Chart',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=en',

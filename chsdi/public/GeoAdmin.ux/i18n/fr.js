@@ -437,6 +437,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bazl':'OFAC',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Héliports/Places d\'atterr. en mtgne',
 	'ch.bazl.luftfahrtkarten-icao':'Carte aéronautique OACI',
+	'ch.bazl.points-of-interest':'Points of Interest',
 	'ch.bazl.projektierungszonen-flughafenanlagen':'Zones réservées: Aéroports',
 	'ch.bazl.segelflugkarte':'Carte vol à voile',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=fr',

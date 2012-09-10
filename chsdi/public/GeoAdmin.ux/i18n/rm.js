@@ -433,6 +433,7 @@ OpenLayers.Lang.rm= {
 	'ch.bazl':'UFAC',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heli- und Gebirgslandeplätze',
 	'ch.bazl.luftfahrtkarten-icao':'Charta da aviatica ICAO',
+	'ch.bazl.points-of-interest':'Points of Interest',
 	'ch.bazl.projektierungszonen-flughafenanlagen':'Zonas reservà: Eroports',
 	'ch.bazl.segelflugkarte':'Charta da sgol senza motor',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=rm',
