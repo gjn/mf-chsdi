@@ -17,7 +17,7 @@
         window.GeoAdmin.webServicesUrl = "../../..";
 
         function test_constructor(t) {
-            t.plan(3);
+            t.plan(2);
             var map = new GeoAdmin.Map();
             var features = new GeoAdmin.Features({map: map});
             var tooltip = new GeoAdmin.ExtendedTooltip({autoActivate: true});
@@ -26,10 +26,6 @@
             features.recenter('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function(response) {
                 var lonlat = OpenLayers.Bounds.fromArray(response.bbox).getCenterLonLat();
                 t.ok(features.map.getCenter().equals(lonlat), "check new center after recenterFeatures");
-            });
-            features.show('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 6644, function(response) {
-                var control = map.getControlsBy('id', 'getFeatureRectangle')[0];
-                t.ok(!control.popup.hidden, "popup did not open");
             });
             t.wait_result(5);
         }
