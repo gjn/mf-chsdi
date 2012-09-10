@@ -33,7 +33,6 @@ def make_map(config):
     map.connect('/owschecker', controller='owschecker', action='index')
     map.connect("/feature/bbox",controller="feature", action="bbox")
     map.connect("/feature/geometry",controller="feature", action="geometry")
-    map.connect("/feature/attributes",controller="feature", action="attributes")
     map.connect("/feature/{path_info:.*}",controller="feature", action="index")
     map.connect("/wmts/{path_info:.*}",controller="wmts", action="manager")
     map.connect("/wmts5/{path_info:.*}",controller="wmts", action="manager")
