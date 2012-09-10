@@ -201,6 +201,9 @@ class SwisssearchController(BaseController):
         query = Session.query(SwissSearch)
         query = query.filter(or_(gfilter_poly, gfilter_point))
 
+        # remove the translated results
+        query = query.filter(SwissSearch.translated == False)
+
         if self.origins:
             query = query.filter(SwissSearch.origin.in_(self.origins))
 
