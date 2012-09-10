@@ -24,6 +24,18 @@
              'capabilities URL is as expected');
     }
 
+    function test_isArray(t) {
+        t.plan(2);
+
+        var layers = new GeoAdmin._Layers();
+
+        var myArray = ['20120101','20120102'];
+        var myNotArray = '20120101';
+
+        t.ok(layers.isArray(myArray),'["20120101","20120102"] is an array');
+        t.ok(!layers.isArray(myNotArray),'"20120101" is not an array');
+    }
+
     function test_getCapabilitiesParser(t) {
         t.plan(3);
 
