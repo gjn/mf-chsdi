@@ -1736,6 +1736,10 @@ msgstr "lokal"
 msgid "losactivite"
 msgstr "Tätigkeit"
 
+#. TODO
+msgid "losannerkennung"
+msgstr "losannerkennung"
+
 msgid "losarea"
 msgstr "Fläche (ha)"
 

@@ -1736,6 +1736,10 @@ msgstr "importanza locale"
 msgid "losactivite"
 msgstr "Activité"
 
+#. TODO
+msgid "losannerkennung"
+msgstr "losannerkennung"
+
 msgid "losarea"
 msgstr "Surface (ha)"
 
