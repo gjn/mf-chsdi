@@ -13,7 +13,7 @@ The GeoAdmin API allows the integration in web pages of geospatial information p
 
 The GeoAdmin API provides also some REST web services like :doc:`../../services/sdiservices`
 
-The GeoAdmin API integrates the ExtJS, GeoExt and OpenLayers library. You can use these libraries when you use the GeoAdmin API.
+The GeoAdmin API integrates the ExtJS, GeoExt and OpenLayers libraries. You can use these libraries when you use the GeoAdmin API.
 
 What is the GeoAdmin Light API (BETA) ?
 ---------------------------------------
@@ -30,7 +30,7 @@ The GeoAdmin Light API contains also CSS code which is less intrusive than the C
 
 Terms of use of GeoAdmin Light API are the same like GeoAdmin API.
 
-License of GeoAdmin Light API is BSD and, since ExtJS is not par of it, it can be used completely according to the BSD license.
+License of GeoAdmin Light API is BSD and, since ExtJS is not part of it, it can be used completely according to the BSD license.
 
 How to choose between the GeoAdmin API and the GeoAdmin Light API ?
 -------------------------------------------------------------------
@@ -45,7 +45,7 @@ If you want to use ExtJS, GeoExt and OpenLayers, use the GeoAdmin API.
 
 If you want a less intrusive API, use the GeoAdmin Light API.
 
-If you ask us, we'll simply anwer that it depends of your needs ;-)
+If you ask us, we'll simply answer that it depends of your needs ;-)
 
 Who can use the GeoAdmin API ?
 ------------------------------
@@ -67,7 +67,7 @@ What are the technical restrictions of the GeoAdmin API ?
 
 The GeoAdmin API has been tested in the following modern browsers: Firefox 3+, Internet Explorer 7+, Chrome 5+, Safari 4+.
 
-The GeoAdmin API doesn't support mobile devices.
+The GeoAdmin API doesn't support mobile devices. The GeoAdmin Light API does !
 
 Where can I find more documentation about the API ?
 ---------------------------------------------------
@@ -82,8 +82,8 @@ More information about these libraries can be found here:
  * `Proj4js website <http://proj4js.org/>`_ / `Proj4js trac  <http://trac.osgeo.org/proj4js/>`_
  * `GeoExt UX website <http://trac.geoext.org/wiki/Community>`_
 
-In order to optimize the size of the library, not all code has been integrated in the API. If you use a function that is not part of the API, you'll need to link the approriate source code yourself.
-We recommend using `JSBuild <http://dev.mapfish.org/sandbox/camptocamp/mapfish_workshop_fossgis2010/printing_src/_build/html/building_javascript.html>`_ when you deploy awebsite in production.
+In order to optimize the size of the library, not all code has been integrated in the GeoAdmin API. If you use a function that is not part of the GeoAdmin API, you'll need to link the approriate source code yourself.
+We recommend using `JSBuild <http://dev.mapfish.org/sandbox/camptocamp/mapfish_workshop_fossgis2010/printing_src/_build/html/building_javascript.html>`_ when you deploy a website in production.
 
 Where can I find the documentation of the TileForge ?
 -----------------------------------------------------
@@ -100,7 +100,7 @@ Feel free to use it and ask all the questions you want.
 Who is using the GeoAdmin API ?
 -------------------------------
 
-Here is a non exhaustive list (don't hesitate to inform us about your own web site, we would be happy to add it here:
+Here is a non exhaustive list (don't hesitate to inform us about your own web site, we would be happy to add it here):
 
 - `GeoCat partner map <http://www.geocat.ch/internet/geocat/fr/home/about/members.html>`_
 - `Wildruehzonen Schweiz <http://www.wildruhezonen.ch/wr400.php?na=400>`_
@@ -116,40 +116,40 @@ Some layers can’t be freely used. These layers are accessable by the way of `s
 
 Here is a list of the layers that requires a swisstopo web acesss:
 
-  *   `ch.swisstopo.vec25-anlagen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-anlagen>`_ (Functional surfaces VECTOR25)
-  *   `ch.swisstopo.vec25-einzelobjekte <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-einzelobjekte>`_ (Single objects VECTOR25)
-  *   `ch.swisstopo.vec25-eisenbahnnetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-eisenbahnnetz>`_ (Railway network VECTOR25)
-  *   `ch.swisstopo.vec25-gebaeude <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gebaeude>`_ (Buildings VECTOR25)
-  *   `ch.swisstopo.vec200-miscellaneous-geodpoint <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`_ (Elevations VECTOR200)
-  *   `ch.swisstopo.vec200-names-namedlocation <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-names-namedlocation>`_ (Names VECTOR200)
-  *   `ch.swisstopo.vec200-transportation-oeffentliche-verkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`_ (Public transportation VECTOR200)
-  *   `ch.swisstopo.vec200-transportation-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-strassennetz>`_ (Road system VECTOR200)
-  *   `ch.swisstopo.vec25-gewaessernetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gewaessernetz>`_ (Hydrological network VECTOR25)
-  *   `ch.swisstopo.vec25-heckenbaeume <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-heckenbaeume>`_ (Hedges and trees VECTOR25)
-  *   `ch.swisstopo.hiks-dufour <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour>`_ (Dufour Map)
-  *   `ch.swisstopo.geologie-geologischer_atlas <http://map.geo.admin.ch?layers=ch.swisstopo.geologie-geologischer_atlas>`_ (Geological Atlas 1:25 000)
-  *   `ch.swisstopo.pixelkarte-farbe <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-farbe>`_ (National Map)
-  *   `ch.swisstopo.hiks-siegfried <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-siegfried>`_ (Siegfried Map)
-  *   `ch.swisstopo.pixelkarte-farbe-pk200.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk200.noscale>`_ (National Map 1:200'000)
-  *   `ch.swisstopo.pixelkarte-farbe-pk100.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`_ (National Map 1:100'000)
-  *   `ch.swisstopo.pixelkarte-farbe-pk50.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`_ (National Map 1:50'000)
-  *   `ch.swisstopo.pixelkarte-farbe-pk25.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`_ (National Map 1:25'000)
-  *   `ch.swisstopo.pixelkarte-grau <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-grau>`_ (National Map gray)
-  *   `ch.swisstopo.pixelkarte-farbe-pk500.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk500.noscale>`_ (National Map 1:500'000)
-  *   `ch.swisstopo.swissbuildings3d <http://map.geo.admin.ch?layers=ch.swisstopo.swissbuildings3d>`_ (Simplified 3D buildings)
-  *   `ch.swisstopo.swissalti3d-reliefschattierung <http://map.geo.admin.ch?layers=ch.swisstopo.swissalti3d-reliefschattierung>`_ (swissALTI3D Hillshade)
-  *   `ch.swisstopo.swisstlm3d-karte <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-karte>`_ (Topographical landscape model)
-  *   `ch.swisstopo.swissimage <http://map.geo.admin.ch?bgLayer=ch.swisstopo.swissimage>`_ (SWISSIMAGE)
-  *   `ch.swisstopo.vec200-building <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-building>`_ (Building generalized VECTOR200)
-  *   `ch.swisstopo.swisstlm3d-wanderwege <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-wanderwege>`_ (Hiking trails)
-  *   `ch.swisstopo.vec200-landcover <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-landcover>`_ (Land cover VECTOR200)
-  *   `ch.swisstopo.vec200-hydrography <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-hydrography>`_ (Hydrology VECTOR200)
-  *   `ch.swisstopo.vec200-miscellaneous <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous>`_ (Single objects VECTOR200)
-  *   `ch.swisstopo.vec25-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-strassennetz>`_ (Road network VECTOR25)
-  *   `ch.swisstopo.vec25-primaerflaechen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-primaerflaechen>`_ (Primary surfaces VECTOR25)
-  *   `ch.swisstopo.vec25-uebrigerverkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-uebrigerverkehr>`_ (Other traffic VECTOR25)
+  1.   `ch.swisstopo.vec25-anlagen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-anlagen>`_ (Functional surfaces VECTOR25)
+  #.   `ch.swisstopo.vec25-einzelobjekte <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-einzelobjekte>`_ (Single objects VECTOR25)
+  #.   `ch.swisstopo.vec25-eisenbahnnetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-eisenbahnnetz>`_ (Railway network VECTOR25)
+  #.   `ch.swisstopo.vec25-gebaeude <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gebaeude>`_ (Buildings VECTOR25)
+  #.   `ch.swisstopo.vec200-miscellaneous-geodpoint <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`_ (Elevations VECTOR200)
+  #.   `ch.swisstopo.vec200-names-namedlocation <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-names-namedlocation>`_ (Names VECTOR200)
+  #.   `ch.swisstopo.vec200-transportation-oeffentliche-verkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`_ (Public transportation VECTOR200)
+  #.   `ch.swisstopo.vec200-transportation-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-strassennetz>`_ (Road system VECTOR200)
+  #.   `ch.swisstopo.vec25-gewaessernetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gewaessernetz>`_ (Hydrological network VECTOR25)
+  #.   `ch.swisstopo.vec25-heckenbaeume <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-heckenbaeume>`_ (Hedges and trees VECTOR25)
+  #.   `ch.swisstopo.hiks-dufour <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour>`_ (Dufour Map)
+  #.   `ch.swisstopo.geologie-geologischer_atlas <http://map.geo.admin.ch?layers=ch.swisstopo.geologie-geologischer_atlas>`_ (Geological Atlas 1:25 000)
+  #.   `ch.swisstopo.pixelkarte-farbe <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-farbe>`_ (National Map)
+  #.   `ch.swisstopo.hiks-siegfried <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-siegfried>`_ (Siegfried Map)
+  #.   `ch.swisstopo.pixelkarte-farbe-pk200.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk200.noscale>`_ (National Map 1:200'000)
+  #.   `ch.swisstopo.pixelkarte-farbe-pk100.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`_ (National Map 1:100'000)
+  #.   `ch.swisstopo.pixelkarte-farbe-pk50.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`_ (National Map 1:50'000)
+  #.   `ch.swisstopo.pixelkarte-farbe-pk25.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`_ (National Map 1:25'000)
+  #.   `ch.swisstopo.pixelkarte-grau <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-grau>`_ (National Map gray)
+  #.   `ch.swisstopo.pixelkarte-farbe-pk500.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk500.noscale>`_ (National Map 1:500'000)
+  #.   `ch.swisstopo.swissbuildings3d <http://map.geo.admin.ch?layers=ch.swisstopo.swissbuildings3d>`_ (Simplified 3D buildings)
+  #.   `ch.swisstopo.swissalti3d-reliefschattierung <http://map.geo.admin.ch?layers=ch.swisstopo.swissalti3d-reliefschattierung>`_ (swissALTI3D Hillshade)
+  #.   `ch.swisstopo.swisstlm3d-karte <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-karte>`_ (Topographical landscape model)
+  #.   `ch.swisstopo.swissimage <http://map.geo.admin.ch?bgLayer=ch.swisstopo.swissimage>`_ (SWISSIMAGE)
+  #.   `ch.swisstopo.vec200-building <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-building>`_ (Building generalized VECTOR200)
+  #.   `ch.swisstopo.swisstlm3d-wanderwege <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-wanderwege>`_ (Hiking trails)
+  #.   `ch.swisstopo.vec200-landcover <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-landcover>`_ (Land cover VECTOR200)
+  #.   `ch.swisstopo.vec200-hydrography <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-hydrography>`_ (Hydrology VECTOR200)
+  #.   `ch.swisstopo.vec200-miscellaneous <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous>`_ (Single objects VECTOR200)
+  #.   `ch.swisstopo.vec25-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-strassennetz>`_ (Road network VECTOR25)
+  #.   `ch.swisstopo.vec25-primaerflaechen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-primaerflaechen>`_ (Primary surfaces VECTOR25)
+  #.   `ch.swisstopo.vec25-uebrigerverkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-uebrigerverkehr>`_ (Other traffic VECTOR25)
 
-Here is a list of all the available layers:
+Here is a list of all the available layers, freely accessible:
 
 .. raw:: html
 

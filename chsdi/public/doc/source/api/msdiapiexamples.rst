@@ -18,6 +18,6 @@ The following widgets are available in the GeoAdmin Mobile API. In these example
  * `Revision Wizard - Location Menu <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/RevisionWizard/examples/LocationMenu.html>`_
  * `Revision Wizard - Rendering <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/RevisionWizard/examples/Rendering.html>`_
  * `Revision Wizard - Report Composer <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/RevisionWizard/examples/ReportComposer.html>`_
- * `Revision Wizard - Reporr Summary <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/RevisionWizard/examples/ReportSummary.html>`_
+ * `Revision Wizard - Report Summary <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/RevisionWizard/examples/ReportSummary.html>`_
  * `Settings Panel <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/SettingsPanel/examples/SettingsPanel.html>`_
  * `Swisssearch <http://mobile.api.geo.admin.ch/main/wsgi/GeoAdminMobile.ux/SwissSearch/examples/SwissSearch.html>`_
