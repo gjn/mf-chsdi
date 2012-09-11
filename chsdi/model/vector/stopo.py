@@ -440,99 +440,52 @@ class geometaLos(Base, Queryable):
 
 register('ch.swisstopo-vd.geometa-los',geometaLos)
 
-class geometaGem(Base, Queryable):
+class geometaGemeinde(Base, Queryable):
        # view in a schema
        __tablename__ = 'amogr_gemeinde'
        __table_args__ = ({'schema': 'vd', 'autoload': True})
-       __template__ = 'tooltips/los.mako'
+       __template__ = 'tooltips/gemeinde.mako'
        id = Column('gid', Integer, primary_key=True)
        fid = Column ('id', Integer)
-       gembfs = Column ('bfs_nr', Integer)
-       gemkanton = Column ('kanton', Text)
-       gemgemeinde = Column ('gemeindename', Text)
-       gemdarstellung = Column ('abgabestelle', Text)
-       gemflaeche = Column ('flaeche_ha', Text)
-       geompdf_liste = Column ('pdf_liste', Text)
+#       gembfs = Column ('bfs_nr', Integer)
+#       gemkanton = Column ('kanton', Text)
+#       gemgemeinde = Column ('gemeindename', Text)
+#       gemdarstellung = Column ('abgabestelle', Text)
+#       gemflaeche = Column ('flaeche_ha', Text)
+#       geompdf_liste = Column ('pdf_liste', Text)
        the_geom = Column(Geometry(21781))
 
-register('ch.swisstopo-vd.geometa-los',geometaGem)
+register('ch.swisstopo-vd.geometa-gemeinde',geometaGemeinde)
 
-class geometaGrundb(Base, Queryable):
+class geometaGrundbuch(Base, Queryable):
        # view in a schema
        __tablename__ = 'amogr_grundbuch'
        __table_args__ = ({'schema': 'vd', 'autoload': True})
-       __template__ = 'tooltips/los.mako'
+       __template__ = 'tooltips/grundbuch.mako'
        id = Column('gid', Integer, primary_key=True)
        fid = Column ('id', Integer)
-       grundgemeinde = Column ('ortsteil_grundbuch', Text)
-       grundfuehrung = Column ('grundbuchfuehrung_d', Text)
-       grundkreis = Column ('grundbuchkreis', Text)
-       grundadresse = Column ('adresse', Text)
-       grundtel = Column ('telefon', Text)
-       grundurl = Column ('email', Text)
+#       grundgemeinde = Column ('ortsteil_grundbuch', Text)
+#       grundfuehrung = Column ('grundbuchfuehrung_d', Text)
+#       grundkreis = Column ('grundbuchkreis', Text)
+#       grundadresse = Column ('adresse', Text)
+#       grundtel = Column ('telefon', Text)
+#       grundurl = Column ('email', Text)
        the_geom = Column(Geometry(21781))
 
-register('ch.swisstopo-vd.geometa-los',geometaGrundb)
+register('ch.swisstopo-vd.geometa-grundbuch',geometaGrundbuch)
 
 class geometaNfgeom(Base, Queryable):
        # view in a schema
        __tablename__ = 'amogr_nfgeom'
        __table_args__ = ({'schema': 'vd', 'autoload': True})
-       __template__ = 'tooltips/los.mako'
+       __template__ = 'tooltips/nfgeom.mako'
        id = Column('gid', Integer, primary_key=True)
-       nfname = Column ('name', Text)
-       nffirmenname = Column ('firmenname', Text)
-       nfadresse = Column ('adresse', Text)
+#       nfname = Column ('name', Text)
+#       nffirmenname = Column ('firmenname', Text)
+#       nfadresse = Column ('adresse', Text)
        the_geom = Column(Geometry(21781))
 
-register('ch.swisstopo-vd.geometa-los',geometaNfgeom)
-
-class geometaGem2(Base, Queryable):
-       # view in a schema
-       __tablename__ = 'amogr_gemeinde'
-       __table_args__ = ({'schema': 'vd', 'autoload': True, 'useexisting': True})
-       __template__ = 'tooltips/standav.mako'
-       id = Column('gid', Integer, primary_key=True)
-       fid = Column ('id', Integer)
-       gembfs = Column ('bfs_nr', Integer)
-       gemkanton = Column ('kanton', Text)
-       gemgemeinde = Column ('gemeindename', Text)
-       gemdarstellung = Column ('abgabestelle', Text)
-       gemflaeche = Column ('flaeche_ha', Text)
-       geompdf_liste = Column ('pdf_liste', Text)
-       the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo-vd.geometa-standav',geometaGem2)
-
-class geometaGrundb2(Base, Queryable):
-       # view in a schema
-       __tablename__ = 'amogr_grundbuch'
-       __table_args__ = ({'schema': 'vd', 'autoload': True, 'useexisting': True})
-       __template__ = 'tooltips/standav.mako'
-       id = Column('gid', Integer, primary_key=True)
-       fid = Column ('id', Integer)
-       grundgemeinde = Column ('ortsteil_grundbuch', Text)
-       grundfuehrung = Column ('grundbuchfuehrung_d', Text)
-       grundkreis = Column ('grundbuchkreis', Text)
-       grundadresse = Column ('adresse', Text)
-       grundtel = Column ('telefon', Text)
-       grundurl = Column ('email', Text)
-       the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo-vd.geometa-standav',geometaGrundb2)
-
-class geometaNfgeom2(Base, Queryable):
-       # view in a schema
-       __tablename__ = 'amogr_nfgeom'
-       __table_args__ = ({'schema': 'vd', 'autoload': True, 'useexisting': True})
-       __template__ = 'tooltips/standav.mako'
-       id = Column('gid', Integer, primary_key=True)
-       nfname = Column ('name', Text)
-       nffirmenname = Column ('firmenname', Text)
-       nfadresse = Column ('adresse', Text)
-       the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo-vd.geometa-standav',geometaNfgeom2)
+register('ch.swisstopo-vd.geometa-nfgeom',geometaNfgeom)
 
 class spannungsarmeGebiete(Base, Queryable):
        __tablename__ = 'spannungsarme_gebiete'
