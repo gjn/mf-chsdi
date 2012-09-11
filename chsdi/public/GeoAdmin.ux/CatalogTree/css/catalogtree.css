@@ -176,3 +176,7 @@
 .ext-ie .geoadmin-catalog-tree .layerNodeTools {
   margin-top: -20px;
 }
+.ext-ie .geoadmin-catalog-tree .treelayericon,
+.ext-ie .geoadmin-catalog-tree .treelayericon-queryable {
+  margin-top: 0px;
+}
