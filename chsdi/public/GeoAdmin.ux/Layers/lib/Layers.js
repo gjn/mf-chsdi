@@ -582,7 +582,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layername: 'ch.kantone.hintergrund-farbe',
                 isBgLayer: true,
                 layertype: 'wmts',
-                timestamp: ['20120801','20120701','20120601','20120501'],
+                timestamp: ['20120901','20120801','20120701','20120601','20120501'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.kanton.av",
