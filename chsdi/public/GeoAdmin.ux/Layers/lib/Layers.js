@@ -1929,6 +1929,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                layers: ["ch.bakom.radio-fernsehsender"],
                layertype: "wms",
                type: "point",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                format: "image/png",
                datenherr: "ch.bakom",
                queryable: true,
@@ -1939,6 +1940,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
                layertype: "wms",
                type: "point",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                format: "image/png",
                datenherr: "ch.bakom",
                queryable: true
@@ -1948,6 +1950,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                layers: ["ch.bakom.mobil-antennenstandorte-umts"],
                layertype: "wms",
                type: "point",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                format: "image/png",
                datenherr: "ch.bakom",
                queryable: true
@@ -2442,6 +2445,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.swisstopo-vd.geometa-gemeinde"],
                 layertype: "wms",
                 type: "polygon",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
@@ -2452,6 +2456,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.swisstopo-vd.geometa-grundbuch"],
                 layertype: "wms",
                 type: "polygon",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
@@ -2462,6 +2467,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.swisstopo-vd.geometa-nfgeom"],
                 layertype: "wms",
                 type: "polygon",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
@@ -2472,6 +2478,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.swisstopo-vd.geometa-standav"],
                 layertype: "wms",
                 type: "polygon",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
@@ -2482,6 +2489,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ["ch.swisstopo-vd.geometa-los"],
                 layertype: "wms",
                 type: "polygon",
+               url: 'http://wms-bgdi0i.bgdi.admin.ch', //FIXME: to delete before deploy of 12.09
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
