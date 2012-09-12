@@ -178,5 +178,5 @@
 }
 .ext-ie .geoadmin-catalog-tree .treelayericon,
 .ext-ie .geoadmin-catalog-tree .treelayericon-queryable {
-  margin-top: 0px;
+  margin-top: 0px !important;
 }
