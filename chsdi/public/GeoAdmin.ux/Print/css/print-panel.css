@@ -10,82 +10,100 @@
     top: -1px;
     width: 200px;
 }
+
 .print-panel .x-btn-text {
     font-weight: bold;
 }
+
 .print-panel .x-panel-btns, .print-panel .x-panel-btns td.x-toolbar-cell {
     padding: 0;
 }
+
 .print-panel .x-form-print-legend {
     text-align: right;
     padding-top: 0;
     float: right;
 }
+
 .print-panel .x-panel-body {
     border: none;
 }
+
 .print-panel .x-toolbar {
     border: 0 none !important;
-	position: absolute;
-	top: 2px;
-	right: 0;
-	background-color: transparent;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    background-color: transparent;
 }
+
 .ext-gecko .print-panel .x-toolbar {
     top: 1px;
 }
+
 .ext-ie .print-panel {
     padding-top: 9px;
     padding-right: 8px;
 }
+
 .ext-ie .print-panel .x-panel-bwrap {
     font-size: 1px;
 }
+
 .ext-ie .print-panel .x-panel-header {
     position: absolute;
 }
+
 .ext-ie .print-panel .x-toolbar {
     position: relative;
     top: -9px;
     left: 7px;
 }
 
-.print-panel .x-toolbar .x-btn-tl, .print-panel .x-toolbar .x-btn-tr, .print-panel .x-toolbar .x-btn-tc, 
-.print-panel .x-toolbar .x-btn-ml, .print-panel .x-toolbar .x-btn-mr, .print-panel .x-toolbar .x-btn-mc, 
+.print-panel .x-toolbar .x-btn-tl, .print-panel .x-toolbar .x-btn-tr, .print-panel .x-toolbar .x-btn-tc,
+.print-panel .x-toolbar .x-btn-ml, .print-panel .x-toolbar .x-btn-mr, .print-panel .x-toolbar .x-btn-mc,
 .print-panel .x-toolbar .x-btn-bl, .print-panel .x-toolbar .x-btn-br, .print-panel .x-toolbar .x-btn-bc {
     background: none;
 }
+
 .print-panel .x-panel-header {
-	background: none;
-	border: none;
-	text-align: left;
-	padding: 0;
-	font-size: 16px;
-	padding-bottom: 8px;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    font-size: 16px;
+    padding-bottom: 8px;
 }
+
 .print-panel .x-panel-header-text {
-    font-family: arial,helvetica,verdana,sans-serif;
+    font-family: arial, helvetica, verdana, sans-serif;
     font-size: 0.75em;
     font-weight: bold;
     letter-spacing: 0;
     text-decoration: none;
-	color: black;
+    color: black;
 }
-.print-panel .x-panel-bwrap { 
-/*    margin-top: 10px;*/
-}   
+
+.print-panel .x-panel-bwrap {
+    /*    margin-top: 10px;*/
+}
+
 .print-panel .close-button {
-  background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
+    background: url("../../images/close_button.png") no-repeat scroll 0 0 transparent !important;
 }
+
 .print-panel .visibility_on, .print-panel .visibility_off {
-  background: url("../../images/lt_visibility.png") no-repeat;
+    background: url("../../images/lt_visibility.png") no-repeat;
 }
+
 .print-panel .visibility_on {
-  background-position: 0 0;
+    background-position: 0 0;
 }
+
 .print-panel .visibility_off {
-  background-position: -15px 0;
+    background-position: -15px 0;
 }
+
 .legend-button .x-btn-tl, .legend-button .x-btn-tr, .legend-button .x-btn-tc, .legend-button .x-btn-ml, .legend-button .x-btn-mr, .legend-button .x-btn-mc, .legend-button .x-btn-bl, .legend-button .x-btn-br, .legend-button .x-btn-bc {
-  background-image: none !important;
+    background-image: none !important;
 }
