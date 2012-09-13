@@ -621,7 +621,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layer: 'ch.kantone.cadastralwebmap-farbe',
                 layername: 'ch.kantone.cadastralwebmap-farbe',
                 layertype: 'wmts',
-                timestamp: ['20120801','20120701','20120601','20120501'],
+                timestamp: ['20120901','20120801','20120701','20120601','20120501'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.kanton.av",
