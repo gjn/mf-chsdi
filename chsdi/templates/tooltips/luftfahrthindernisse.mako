@@ -3,17 +3,35 @@
 <%def name="preview()">${c.feature.registrationnumber or '-'}</%def>
 
 <%def name="table_body()">
-
+% if c.feature.sanctiontext == 'VOID':
+<% sanctiontext = '-' %>
+% else:
+<% sanctiontext = c.feature.sanctiontext %>
+% endif
+    <tr><td width="170">${_('tt_ch.bazl.registrationnummer')}</td><td>${self.preview()}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.hindernisart')}</td><td>${c.feature.obstacletype}</td></tr>
+    <tr><td width="170">${_('status')}</td><td>${c.feature.state}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.maxheight')}</td><td>${c.feature.maxheightagl}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.elevation')}</td><td>${c.feature.topelevationamsl}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.totallength')}</td><td>${c.feature.totallength}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.startofconstruction')}</td><td>${c.feature.startofconstruction or '-'}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.abortionaccomplished')}</td><td>${c.feature.abortionaccomplished or '-'}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.markierung')}</td><td>${sanctiontext}</td></tr>
+    <tr><td width="170"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 </%def>
 
 <%def name="body()">
+% if c.last == True:
+<script type="text/javascript" src="/${c.instanceid}/wsgi/build/api-light.js"></script>
+<link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/build/api-light.css">
+% endif
 <%
     import time
     from datetime import date
     today = date.today()
 %>
 % if c.feature.sanctiontext == 'VOID':
-<% sanctiontext = 'None' %>
+<% sanctiontext = '-' %>
 % else:
 <% sanctiontext = c.feature.sanctiontext %>
 % endif
@@ -31,10 +49,10 @@
             <td style="font-weight: bold; font-size: 14px; width:100%;">${_('status')}: ${c.feature.state}</td>
         </tr>
         <tr>
-            <td style="padding-left: 200px;">${_('tt_ch.bazl.startofconstruction')}: ${c.feature.startofconstruction}</td>
+            <td style="padding-left: 200px;">${_('tt_ch.bazl.startofconstruction')}: ${c.feature.startofconstruction or '-'}</td>
         </tr>
         <tr>
-            <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.abortionaccomplished}</td>
+            <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.abortionaccomplished or '-'}</td>
         </tr>
         <tr>
             <td style="font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.geometriedaten')}:</td>
@@ -70,69 +88,37 @@
             <td style="padding-left: 200px;">${sanctiontext}</td>
         </tr>
     </table>
-    </br>
+    <script type="text/javascript">
+        if (window.document.dic == undefined) {
+            window.document.dic = {};
+        }
+        window.document.dic['${c.feature.id}'] = [${c.feature.geometry.bounds[0]},${c.feature.geometry.bounds[1]},${c.feature.geometry.bounds[2]},${c.feature.geometry.bounds[3]}];
+    </script>
+% if c.last == True:
+    <script type="text/javascript">
+        var map;
+        window.onload = function () {
+            window.GeoAdmin.OpenLayersImgPath="../GeoAdmin.ux/Map/img/";
+            var divs = document.getElementsByClassName('features');
+            for (var i=0; i<divs.length; i++) {
+                var div = divs[i];
+                var fid = div.id;
+                
+                var divMap = document.createElement('div');
+                divMap.setAttribute('id', 'divmap' + fid);
+                divMap.style.height = '400px';
+                div.appendChild(divMap);
 
-    <%
-        width = 600
-        height = 400
-    %>
-    % if c.feature.geometry.bounds[0] == c.feature.geometry.bounds[2] and c.feature.geometry.bounds[1] == c.feature.geometry.bounds[3]:
-    <%
-        xmin = c.feature.geometry.bounds[0] - 150
-        ymin = c.feature.geometry.bounds[1] - 100
-        xmax = c.feature.geometry.bounds[0] + 150
-        ymax = c.feature.geometry.bounds[1] + 100
-    %>
-    % else:
-    <%
-        xlength = c.feature.geometry.bounds[2] - c.feature.geometry.bounds[0]
-        ylength = c.feature.geometry.bounds[3] - c.feature.geometry.bounds[1]
-    %>
-        % if xlength < 300 and ylength < 200:
-        <%
-            xhalf = 150
-            yhalf = 100
-        %>
-        % elif xlength < 600 and ylength < 400:
-        <%
-            xhalf = 300 
-            yhalf = 200
-        %>
-        % elif xlength < 1200 and ylength < 800:
-        <%
-            xhalf = 600
-            yhalf = 400
-        %>
-        % elif xlength < 3000  and ylength < 2000 :
-        <%
-            xhalf = 1500
-            yhalf = 1000
-        %>
-        % elif xlength < 6000  and ylength < 4000 :
-        <%
-            xhalf = 3000
-            yhalf = 2000
-        %>
-        % elif xlength < 12000  and ylength < 8000 :
-        <%
-            xhalf = 6000
-            yhalf = 4000
-        %>
-        % elif xlength < 30000  and ylength < 20000 :
-        <%
-            xhalf = 15000
-            yhalf = 10000
-        %>
-        % endif
-        <%
-            xmin = c.feature.geometry.bounds[0] - (xhalf-(xlength/2))
-            ymin = c.feature.geometry.bounds[1] - (yhalf-(ylength/2))
-            xmax = c.feature.geometry.bounds[2] + (xhalf-(xlength/2))
-            ymax = c.feature.geometry.bounds[3] + (yhalf-(ylength/2))
-        %>
-    % endif
-    <img src="http://wms-test0i.bgdi.admin.ch/?LAYERS=ch.bazl.luftfahrthindernis_point,ch.bazl.luftfahrthindernis_line,ch.bazl.luftfahrthindernis_poly&FORMAT=image/png&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&STYLES=&SRS=EPSG:21781&BBOX=${xmin},${ymin},${xmax},${ymax}&WIDTH=${width}&HEIGHT=${height}"/> 
-    </br>
+                map = new GeoAdmin.Map('divmap' + fid);
+                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe',{opacity: 100});
+                map.addLayerByName('ch.bazl.luftfahrthindernis');
+                var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
+                map.zoomToExtent(bounds, 7);
+            }
+        }
+    </script>
+% endif
+    <div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div>
 % if c.last == True:
     <style> .tooltip_large_header { display: none; } </style>
     <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
