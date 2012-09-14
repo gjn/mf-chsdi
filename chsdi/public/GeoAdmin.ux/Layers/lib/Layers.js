@@ -56,7 +56,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 
         // callback is called when the layer is ready, which
         // will occur after the execution of buildLayerByName
-        // if the "capabilitiedNeeded" is set in the layer
+        // if the "capabilitiesNeeded" is set in the layer
         // config
 
         this.init();
@@ -2792,7 +2792,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bak",
                 queryable: true
             },
-			"ch.bazl.heliports-gebirgslandeplaetze": {
+            "ch.bazl.heliports-gebirgslandeplaetze": {
                 name: OpenLayers.i18n("ch.bazl.heliports-gebirgslandeplaetze"),
                 layertype: 'wmts',
                 timestamp: ['20110926'],
@@ -2849,16 +2849,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 opacity: 0.75,
                 queryable: false
+            },
+            "ch.bazl.luftfahrthindernis": {
+                name: OpenLayers.i18n('ch.bazl.luftfahrthindernis'),
+                layertype: 'wms',
+                layers: 'ch.bazl.luftfahrthindernis',
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+                type: "wms"
             }
-//             },
-//            'ch.bazl.luftfahrthindernisse': {
-//                name: OpenLayers.i18n('ch.bazl.luftfahrthindernisse'),
-//                layertype: 'wmts',
-//                 type: "raster",
-//                 format: "image/png",
-//                 datenherr: "ch.bazl",
-//                 queryable: true
-//            },
 //            'ch.bazl.heliports-gebirgslandeplaetze': {
 //                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
 //                layertype: 'wmts',
