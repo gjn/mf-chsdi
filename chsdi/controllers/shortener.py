@@ -82,7 +82,7 @@ class ShortenerController(BaseController):
 
 
     def decode(self, id=None):
-        if id is None:
+        if id is None or id == 'robots.txt':
             abort(400, 'A short url is required')
         else:
             query = Session.query(ShortUrl)
