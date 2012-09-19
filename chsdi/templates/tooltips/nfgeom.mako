@@ -10,7 +10,13 @@
     <tr><td width="150">${_('nffirmenname')}</td>    <td>${c.feature.firmenname or '-'}</td></tr>
     % endif
     % if hasattr(c.feature, 'adresse'):
-    <tr><td width="150">${_('nfadresse')}</td>    <td>${c.feature.adresse or '-'}</td></tr>
+      <tr><td width="150">${_('nfadresse')}</td>
+      % if c.feature.adresse == '#':
+           <td>${c.feature.adresse.replace("#","-") or '-'}</td>
+      % else:  
+           <td>${c.feature.adresse.replace("#","<br>") or '-'}</td>
+      % endif
+    </tr>
     % endif
     % if hasattr(c.feature, 'telefon'):
     <tr><td width="150">${_('grundtel')}</td>    <td>${c.feature.telefon or '-'}</td></tr>
