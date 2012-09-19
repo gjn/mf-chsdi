@@ -157,7 +157,7 @@ class ProjFlughafenanlagen(Base, Queryable):
 register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
 
 class Luftfahrthindernis(Base, Queryable):
-    __tablename__ = 'luftfahrthindernis'
+    __tablename__ = 'luftfahrthindernis_tooltip'
     __table_args__ = ({'schema': 'bazl', 'autoload': True})
     __template__ = 'tooltips/luftfahrthindernisse.mako'
     id = Column('bgdi_id', Integer, primary_key=True)
