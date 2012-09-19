@@ -2398,3 +2398,9 @@ msgstr ""
 
 msgid "No info outside CH and FL"
 msgstr ""
+
+msgid "ivs_nat_historischen"
+msgstr ""
+
+msgid "ivs_nat_morphologischen"
+msgstr ""
