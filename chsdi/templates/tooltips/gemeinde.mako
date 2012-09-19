@@ -13,7 +13,13 @@
     <tr><td width="150">${_('gemgemeinde')}</td><td>${c.feature.gemeindename or '-'}</td></tr>
     % endif
     % if hasattr(c.feature, 'abgabestelle'):
-    <tr><td width="150">${_('gemdarstellung')}</td>    <td><a target="_blank" href="http://${c.feature.abgabestelle}">${_(c.feature.abgabestelle) or '-'}</a></td></tr>
+    <tr><td width="150">${_('gemdarstellung')}</td>
+       % if c.feature.abgabestelle == None:
+         <td>-</td> 
+      % else:  
+         <td><a target="_blank" href="http://${c.feature.abgabestelle}">${"Link" or '-'}</a></td>
+      % endif 
+    </tr>
     % endif
     % if hasattr(c.feature, 'flaeche_ha'):
     <tr><td width="150">${_('gemflaeche')}</td><td>${c.feature.flaeche_ha or '-'}</td></tr>
