@@ -2328,6 +2328,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            "ch.blw.erosion-mit_bergzonen": {
+                name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"),
+                layertype: 'wmts',
+                timestamp: ['20100101'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
                 layertype: 'wmts',
