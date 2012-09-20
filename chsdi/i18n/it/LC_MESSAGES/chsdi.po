@@ -687,7 +687,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e degli alloggi"
 
 msgid "ch.blw.erosion"
-msgstr "Rischio di erosione"
+msgstr "Rischio di erosione 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terreni in pendio e in forte pendenza"
@@ -1135,6 +1135,12 @@ msgstr "classificazione (LPN)"
 
 msgid "ivs_gis"
 msgstr "(Oggetto in IVS-GIS)"
+
+msgid "ivs_nat_historischen"
+msgstr "Data finale del lavoro descrittivo del tracciato storico"
+
+msgid "ivs_nat_morphologischen"
+msgstr "Data finale del lavoro descrittivo del tracciato morfologico"
 
 msgid "ivs_objekt"
 msgstr "Oggetto IVS"

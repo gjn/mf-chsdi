@@ -687,7 +687,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Gebäude- und Wohnungsregister"
 
 msgid "ch.blw.erosion"
-msgstr "Erosionsrisiko"
+msgstr "Erosionsrisiko 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Hang- und Steillagen"
@@ -1011,7 +1011,7 @@ msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
 msgid "frame"
-msgstr "Bezugsramen"
+msgstr "Bezugsrahmen"
 
 msgid "gembfs"
 msgstr "BFS Nr"
@@ -1135,6 +1135,12 @@ msgstr "Bedeutung (NHG)"
 
 msgid "ivs_gis"
 msgstr "(Objekt in IVS-GIS)"
+
+msgid "ivs_nat_historischen"
+msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
+
+msgid "ivs_nat_morphologischen"
+msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"

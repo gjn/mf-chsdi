@@ -687,10 +687,10 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Register of Buildings and Dwellings"
 
 msgid "ch.blw.erosion"
-msgstr "Risk of erosion"
+msgstr "Erosion risk 1"
 
 msgid "ch.blw.hang_steillagen"
-msgstr "hillside and steep slopes situation"
+msgstr "Hillside and steep slopes situation"
 
 msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Agricultural zones boundaries"
@@ -699,7 +699,7 @@ msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Viticulture in steep areas and terraces"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
-msgstr "PDO meat products"
+msgstr "PGI meat products"
 
 msgid "ch.blw.ursprungsbezeichnungen-kaese"
 msgstr "PDO cheese"
@@ -1136,6 +1136,12 @@ msgstr "Bedeutung (NHG)"
 
 msgid "ivs_gis"
 msgstr "(Objekt in IVS-GIS)"
+
+msgid "ivs_nat_historischen"
+msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
+
+msgid "ivs_nat_morphologischen"
+msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"

@@ -687,7 +687,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registre des bâtiments et des logements"
 
 msgid "ch.blw.erosion"
-msgstr "Risque d’érosion"
+msgstr "Risque d’érosion 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terrains en pente et en forte pente"
@@ -1059,7 +1059,7 @@ msgid "grundadresse"
 msgstr "Adresse"
 
 msgid "grundfuehrung"
-msgstr "Tenue du regiscre foncier"
+msgstr "Tenue du registre foncier"
 
 msgid "grundgemeinde"
 msgstr "Commune"
@@ -1135,6 +1135,12 @@ msgstr "Importance (LPN)"
 
 msgid "ivs_gis"
 msgstr "(Object dans IVS-SIG)"
+
+msgid "ivs_nat_historischen"
+msgstr "Date final du travail descriptive du tracé historique"
+
+msgid "ivs_nat_morphologischen"
+msgstr "Date final du travail descriptive du tracé morphologique"
 
 msgid "ivs_objekt"
 msgstr "Object IVS"
