@@ -459,6 +459,7 @@ OpenLayers.Lang.rm= {
 	'ch.blw.bodeneignung-kulturland':'Bodeneignung für Kulturland',
 	'ch.blw.bodeneignung-kulturtyp':'Bodeneignung: Kulturtyp',
 	'ch.blw.erosion':'Erosionsrisiko',
+	'ch.blw.erosion-mit_bergzonen':'Erosionsrisiko',
 	'ch.blw.hang_steillagen':'Costas e spundas',
 	'ch.blw.klimaeignung-futterbau':'Klimaeignung für Futterbau',
 	'ch.blw.klimaeignung-getreidebau':'Klimaeignung für Getreidebau',
