@@ -1133,6 +1133,12 @@ msgstr "Intern"
 msgid "ivs_bedeutung"
 msgstr "classificazione (LPN)"
 
+msgid "ivs_bedeutung_short"
+msgstr "Classificazione"
+
+msgid "ivs_documentation"
+msgstr "Documentazione"
+
 msgid "ivs_gis"
 msgstr "(Oggetto in IVS-GIS)"
 

@@ -1133,6 +1133,12 @@ msgstr "Interne"
 msgid "ivs_bedeutung"
 msgstr "Importance (LPN)"
 
+msgid "ivs_bedeutung_short"
+msgstr "Importance"
+
+msgid "ivs_documentation"
+msgstr "Documentation"
+
 msgid "ivs_gis"
 msgstr "(Object dans IVS-SIG)"
 

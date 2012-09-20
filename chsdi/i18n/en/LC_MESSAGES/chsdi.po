@@ -1134,6 +1134,12 @@ msgstr "Intern"
 msgid "ivs_bedeutung"
 msgstr "Bedeutung (NHG)"
 
+msgid "ivs_bedeutung_short"
+msgstr "Bedeutung"
+
+msgid "ivs_documentation"
+msgstr "Documentation"
+
 msgid "ivs_gis"
 msgstr "(Objekt in IVS-GIS)"
 
