@@ -1137,6 +1137,9 @@ msgstr "Bedeutung (NHG)"
 msgid "ivs_gis"
 msgstr "(Objekt in IVS-GIS)"
 
+msgid "ivs_name_objektes"
+msgstr "IHR object name"
+
 msgid "ivs_nat_historischen"
 msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
 

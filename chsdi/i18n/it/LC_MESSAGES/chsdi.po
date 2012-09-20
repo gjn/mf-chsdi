@@ -1136,6 +1136,9 @@ msgstr "classificazione (LPN)"
 msgid "ivs_gis"
 msgstr "(Oggetto in IVS-GIS)"
 
+msgid "ivs_name_objektes"
+msgstr "Nome dell’ oggetto IVS"
+
 msgid "ivs_nat_historischen"
 msgstr "Data finale del lavoro descrittivo del tracciato storico"
 

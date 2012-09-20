@@ -1136,6 +1136,9 @@ msgstr "Importance (LPN)"
 msgid "ivs_gis"
 msgstr "(Object dans IVS-SIG)"
 
+msgid "ivs_name_objektes"
+msgstr "Nom de l'objet IVS"
+
 msgid "ivs_nat_historischen"
 msgstr "Date final du travail descriptive du tracé historique"
 
