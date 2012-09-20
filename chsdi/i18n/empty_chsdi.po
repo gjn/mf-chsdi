@@ -2407,3 +2407,9 @@ msgstr ""
 
 msgid "ivs_name_objektes"
 msgstr ""
+
+msgid "ivs_documentation"
+msgstr ""
+
+msgid "ivs_bedeutung_short"
+msgstr ""
