@@ -981,6 +981,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.blw.erosion"
                     },
                     {
+                        layerId: "ch.blw.erosion-mit_bergzonen"
+                    },
+                    {
                         layerId: "ch.blw.hang_steillagen"
                     },
                     {
