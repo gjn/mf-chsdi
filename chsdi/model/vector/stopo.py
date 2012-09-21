@@ -85,6 +85,7 @@ class treasurehunt(Base, Queryable):
     __tablename__ = 'treasurehunt'
     __table_args__ = ({'schema': 'public', 'autoload': True})
     __template__ = 'tooltips/treasurehunt.mako'
+    __maxscale__ = 2505
     id = Column('bgdi_id', Text, primary_key=True)
     the_geom = Column(Geometry)
 
