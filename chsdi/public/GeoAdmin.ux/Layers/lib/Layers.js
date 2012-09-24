@@ -448,6 +448,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 }
             };
             var layer_options_wms = OpenLayers.Util.extend({
+                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -475,6 +476,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {aggregateChild: true});
             }
             var layer_options_aggregate = OpenLayers.Util.extend({
+                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
