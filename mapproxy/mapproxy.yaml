@@ -8,9 +8,9 @@ services:
     image_formats: ['image/jpeg', 'image/png']
     md:
       # metadata used in capabilities documents
-      title: Swisstopo MapProxy WMS
-      abstract: swisstopo geodata for IGN.
-      online_resource: http://wms.swisstopo4inspire.admin.ch/
+      title: GeoAdmin MapProxy WMS
+      abstract: GeoAdmin geodata
+      online_resource: http://api.geo.admin.ch/mapproxy/service?
       contact:
         person: webgis@swisstopo.ch
         organization: Bundesamt für Landestopografie swisstopo
@@ -22,7 +22,7 @@ services:
         fax: +41 (0)31 / 963 24
         email: webgis@swisstopo.ch
       access_constraints: 'License'
-      fees: 'None'
+      fees: 'This service cant be used without permission'
 
 layers:
     - name: ch.swisstopo.swissimage
@@ -31,71 +31,78 @@ layers:
     - name: ch.swisstopo.pixelkarte-farbe
       title: Landeskarte
       sources: [pixelkarte-farbe]
+    - name: osm
+      title: OpenStreetMap
+      sources: [osm_cache]
 
 caches:
   swissimage:
-    grids: [swisstopo]
+    grids: [swisstopo-swissimage]
     sources: [swissimage-tiles]
     format: image/jpeg
     image:
-      resampling_method: bilinear
+      resampling_method: bicubic
     disable_storage: true
   pixelkarte-farbe:
-    grids: [swisstopo]
+    grids: [swisstopo-pixelkarte]
     sources: [pixelkarte-farbe-tiles]
     format: image/jpeg
     disable_storage: true
+  osm_cache:
+    grids: [global_mercator_osm]
+    sources: [osm_tms]
+    disable_storage: true
+    watermark:
+      text: '@ OpenStreetMap contributors'
+      opacity: 30
+      font_size: 12
+      color: [0,0,0]
+      spacing: 'wide'
 
 sources:
   swissimage-tiles:
     type: tile
-    grid: swisstopo
+    grid: swisstopo-swissimage
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20120225/21781/%(z)d/%(y)d/%(x)d.jpeg
-    origin: nw
-
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20120809/21781/%(z)d/%(y)d/%(x)d.jpeg
   pixelkarte-farbe-tiles:
     type: tile
-    grid: swisstopo
+    grid: swisstopo-pixelkarte
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/21781/%(z)d/%(y)d/%(x)d.jpeg
-    origin: nw
-
-  # TMS Example
-  # sw-tiles:
-  #   type: tile
-  #   grid: swtopo
-  #   http:
-  #     headers:
-  #       Referer: http://www.geo.admin.ch/
-  #   url: http://tile5.bgdi.admin.ch/geoadmin/ch.swisstopo.pixelkarte-farbe/%(tc_path)s.jpeg
-
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20120809/21781/%(z)d/%(y)d/%(x)d.jpeg
+  osm_tms:
+    type: tile
+    grid: global_mercator_osm
+    url: http://c.tile.openstreetmap.org/%(tms_path)s.png
 
 grids:
-  swisstopo:
+  swisstopo-swissimage:
+    res: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5,0.25]
+    bbox: [420000,30000,900000,350000]
+    bbox_srs: EPSG:21781
+    srs: EPSG:21781
+    origin: nw
+    stretch_factor: 1.0
+  swisstopo-pixelkarte:
     res: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5]
     bbox: [420000,30000,900000,350000]
     bbox_srs: EPSG:21781
     srs: EPSG:21781
-  swisstopo-sparse:
-    res: [4000,2000,1000,500,250,100,50,20,10,5,2.5,1.5,1,0.5]
-    bbox: [420000,30000,900000,350000]
-    bbox_srs: EPSG:21781
-    srs: EPSG:21781
-  ign:
-    res: [0.035997544090479137,0.033747697584824196,0.031497851079169255,0.029248004573514307,0.026998158067859355,0.024748311562204410,0.022498465056549469,0.020248618550894520,0.017998772045239569,0.015748925539584627,0.013499079033929677,0.011249232528274734,0.008999386022619784,0.006749539516964839,0.005849600914702860,0.004499693011309892,0.002249846505654946,0.000899938602261979,0.000449969301130989,0.000179987720452396,0.000089993860226198,0.000044996930113099,0.000022498465056549,0.000017998772045240,0.000008999386022620,0.000004499693011310]
-    bbox: [0.0,0.0,11.479044,48.232047]
-    bbox_srs: EPSG:4258
-    srs: EPSG:4258
-  
+    origin: nw
+    stretch_factor: 1.0
+  global_mercator_osm:
+    base: GLOBAL_MERCATOR
+    num_levels: 18
+    origin: nw
+
 globals:
   cache:
     # use parallel requests to the WMTS sources
-    concurrent_tile_creators: 4
+    concurrent_tile_creators: 32
 
   image:
       resampling_method: bicubic
