@@ -244,8 +244,8 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
         if (record.data.service === 'address') {
             zoom = 10;
-        }  else {
-            zoom = this.objectorig_zoom[record.data.objectorig];
+        } else if (record.data.service === 'swissnames') { 
+            zoom = this.objectorig_zoom[record.data.objectorig]; 
         }
 
         if (record.data.service === 'attributes' && this.map.vector !== undefined) {
