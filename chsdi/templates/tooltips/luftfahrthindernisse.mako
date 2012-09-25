@@ -110,17 +110,29 @@
                 div.appendChild(divMap);
 
                 map = new GeoAdmin.Map('divmap' + fid);
-                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe',{opacity: 100});
+                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau',{opacity: 100});
                 map.addLayerByName('ch.bazl.luftfahrthindernis');
                 var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
-                map.zoomToExtent(bounds, 7);
+                var center = bounds.getCenterLonLat();
+                if (center === bounds) {
+                    map.setCenter(bounds, 7);
+                } else {
+                    map.zoomToExtent(bounds);
+                    // Object might be too small (default zoom set to 7)
+                    if (map.getZoom() > 7) {
+                        map.zoomTo(7)
+                    }
+                }
             }
         }
     </script>
 % endif
     <div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div>
 % if c.last == True:
-    <style> .tooltip_large_header { display: none; } </style>
+    <style> 
+        .tooltip_large_header { display: none; }
+        .olControlOverviewMap { display: none; }
+    </style>
     <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
     <p>${_('date')}: ${today}</p>
 % endif
