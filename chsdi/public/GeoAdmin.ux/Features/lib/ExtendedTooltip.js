@@ -359,10 +359,10 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                         zoomButton.title = OpenLayers.i18n('Zoom to object');
                         
                         var bounds = this.data.feature.bounds;
-                        var center = bounds.getCenterLonLat();
                         zoomButton.onclick = function() {
-                            if (center === bounds) {
-                                map.setCenter(center, 12);
+                            if (bounds.left === bounds.right) {
+                                var center = bounds.getCenterLonLat();
+                                map.setCenter(center, 7);
                             } else {
                                 map.zoomToExtent(bounds);
                             }
