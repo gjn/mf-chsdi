@@ -448,6 +448,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 }
             };
             var layer_options_wms = OpenLayers.Util.extend({
+                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -475,6 +476,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {aggregateChild: true});
             }
             var layer_options_aggregate = OpenLayers.Util.extend({
+                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -2338,6 +2340,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            "ch.blw.erosion-mit_bergzonen": { 	 
+	         name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"), 	 
+	         layertype: 'wmts', 	 
+	         timestamp: ['20100101'], 	 
+	         type: "polygon", 	 
+	         format: "image/png", 	 
+	         datenherr: "ch.blw", 	 
+	         opacity: 0.75, 	 
+	         queryable: true 	 
+	    },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
                 layertype: 'wmts',
