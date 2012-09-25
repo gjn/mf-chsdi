@@ -2326,6 +2326,51 @@ msgstr "Statistics"
 msgid "tt_program"
 msgstr "Channel"
 
+msgid "tt_sachplan_beschreibung"
+msgstr "Description"
+
+msgid "tt_sachplan_facility_anlageart"
+msgstr "Facility type"
+
+msgid "tt_sachplan_facility_anlagestatus"
+msgstr "Facility status"
+
+msgid "tt_sachplan_facility_beschlussdatum"
+msgstr "Valid from"
+
+msgid "tt_sachplan_facility_name"
+msgstr "Facility name"
+
+msgid "tt_sachplan_facility_uberobjekt"
+msgstr "Belongs to object"
+
+msgid "tt_sachplan_objektblatt"
+msgstr "Object sheet"
+
+msgid "tt_sachplan_planning_bis"
+msgstr "until"
+
+msgid "tt_sachplan_planning_coordstand"
+msgstr "Coordination level"
+
+msgid "tt_sachplan_planning_name"
+msgstr "Installation name"
+
+msgid "tt_sachplan_planning_planungstand"
+msgstr "Planning status"
+
+msgid "tt_sachplan_planning_typ"
+msgstr "Measure type"
+
+msgid "tt_sachplan_planning_ueberanlage"
+msgstr "Belongs to facility"
+
+msgid "tt_sachplan_planning_von"
+msgstr "from"
+
+msgid "tt_sachplan_weitereinfo"
+msgstr "More information"
+
 msgid "tt_service"
 msgstr "Radio Service"
 

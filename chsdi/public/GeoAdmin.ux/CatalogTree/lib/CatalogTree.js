@@ -830,6 +830,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bfe.energieforschung"
                     },
+					{
+                        layerId: "ch.bfe.sachplan-geologie-tiefenlager"
+                    },
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
                     },
@@ -1186,6 +1189,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bfs.arealstatistik-hintergrund"
+                    },
+					{
+                        layerId: "ch.bfe.sachplan-geologie-tiefenlager"
                     },
                     /* FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
                      {

@@ -66,6 +66,51 @@ msgstr ""
 msgid "tt_ch.bazl.registrationnummer"
 msgstr ""
 
+msgid "tt_sachplan_planning_name"
+msgstr ""
+
+msgid "tt_sachplan_planning_typ"
+msgstr ""
+
+msgid "tt_sachplan_planning_planungstand"
+msgstr ""
+
+msgid "tt_sachplan_planning_coordstand"
+msgstr ""
+
+msgid "tt_sachplan_planning_von"
+msgstr ""
+
+msgid "tt_sachplan_planning_bis"
+msgstr ""
+
+msgid "tt_sachplan_beschreibung"
+msgstr ""
+
+msgid "tt_sachplan_planning_ueberanlage"
+msgstr ""
+
+msgid "tt_sachplan_weitereinfo"
+msgstr ""
+
+msgid "tt_sachplan_facility_name"
+msgstr ""
+
+msgid "tt_sachplan_facility_anlageart"
+msgstr ""
+
+msgid "tt_sachplan_facility_anlagestatus"
+msgstr ""
+
+msgid "tt_sachplan_facility_beschlussdatum"
+msgstr ""
+
+msgid "tt_sachplan_facility_uberobjekt"
+msgstr ""
+
+msgid "tt_sachplan_objektblatt"
+msgstr ""
+
 msgid "applicant"
 msgstr ""
 

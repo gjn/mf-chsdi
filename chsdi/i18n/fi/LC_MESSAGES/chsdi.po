@@ -2325,6 +2325,51 @@ msgstr "Statistik"
 msgid "tt_program"
 msgstr "Programm"
 
+msgid "tt_sachplan_beschreibung"
+msgstr "Beschreibung"
+
+msgid "tt_sachplan_facility_anlageart"
+msgstr "Anlageart"
+
+msgid "tt_sachplan_facility_anlagestatus"
+msgstr "Anlagestatus"
+
+msgid "tt_sachplan_facility_beschlussdatum"
+msgstr "Beschlussdatum"
+
+msgid "tt_sachplan_facility_name"
+msgstr "Name Anlage"
+
+msgid "tt_sachplan_facility_uberobjekt"
+msgstr "Übergeordnetes Objekt"
+
+msgid "tt_sachplan_objektblatt"
+msgstr "Objektblatt"
+
+msgid "tt_sachplan_planning_bis"
+msgstr "bis"
+
+msgid "tt_sachplan_planning_coordstand"
+msgstr "Koordinationsstand"
+
+msgid "tt_sachplan_planning_name"
+msgstr "Name planerische Massnahme"
+
+msgid "tt_sachplan_planning_planungstand"
+msgstr "Planungsstand"
+
+msgid "tt_sachplan_planning_typ"
+msgstr "Massnahmetyp"
+
+msgid "tt_sachplan_planning_ueberanlage"
+msgstr "Übergeordnete Anlage"
+
+msgid "tt_sachplan_planning_von"
+msgstr "von"
+
+msgid "tt_sachplan_weitereinfo"
+msgstr "Weitere Informationen"
+
 msgid "tt_service"
 msgstr "Funkdienst"
 

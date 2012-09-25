@@ -448,7 +448,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 }
             };
             var layer_options_wms = OpenLayers.Util.extend({
-                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -476,7 +475,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 sub_layers[i] = this.buildLayerByName(config.subLayersName[i], {aggregateChild: true});
             }
             var layer_options_aggregate = OpenLayers.Util.extend({
-                layer: config.layer || name,
                 layername: name,
                 hasLegend: config.hasLegend,
                 displayInLayerSwitcher: !config.isBgLayer,
@@ -660,6 +658,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: 1,
                 type: "point"
             },
+            "ch.bfe.sachplan-geologie-tiefenlager": {
+                name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager"),
+                layertype: 'wms',
+                layers: ['ch.bfe.sachplan-geologie-tiefenlager'],                   
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true,
+				opacity: 0.75,				
+				type: "point"
+            },            
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
                 layertype: 'wmts',
@@ -2330,16 +2338,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
-            "ch.blw.erosion-mit_bergzonen": {
-                name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"),
-                layertype: 'wmts',
-                timestamp: ['20100101'],
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.blw",
-                opacity: 0.75,
-                queryable: true
-            },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
                 layertype: 'wmts',
@@ -2456,7 +2454,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
                 queryable: true
             },
@@ -2466,7 +2464,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
                 queryable: true
             },
@@ -2476,7 +2474,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
                 queryable: true
             },
@@ -2486,7 +2484,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
                 queryable: true
             },
@@ -2496,7 +2494,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
                 queryable: true
             },
@@ -2613,7 +2611,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: false
             },
             "ch.bafu.fauna-wildtierkorridor_national": {
-                name: OpenLayers.i18n("bafu.fauna-wildtierkorridor_national"),
+                name: OpenLayers.i18n("ch.bafu.fauna-wildtierkorridor_national"),
                 layertype: 'wmts',
                 timestamp: ['20080721'],
                 type: "polygon",

@@ -164,3 +164,36 @@ class Luftfahrthindernis(Base, Queryable):
     the_geom = Column(Geometry(21781))
 
 register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
+
+class sgt_facilities(Base, Queryable):
+    __tablename__ = 'geologische_tiefenlager_fac'
+    __table_args__ = ({'schema': 'bfe', 'autoload': True})
+    __template__ = 'tooltips/sgt_facilities.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    __minscale__ = 200005
+    __maxscale__ = 100000005	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bfe.sachplan-geologie-tiefenlager', sgt_facilities)
+
+class sgt_planning(Base, Queryable):
+    __tablename__ = 'geologische_tiefenlager'
+    __table_args__ = ({'schema': 'bfe', 'autoload': True})
+    __template__ = 'tooltips/sgt_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    __minscale__ = 50005	
+    __maxscale__ = 1000005	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning)
+
+class sgt_planning_raster(Base, Queryable):
+    __tablename__ = 'geologische_tiefenlager_raster'
+    __table_args__ = ({'schema': 'bfe', 'autoload': True})
+    __template__ = 'tooltips/sgt_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    __maxscale__ = 50005
+    __minscale__ = 1	
+    the_geom = Column('the_geom',Geometry(21781))
+	
+register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning_raster)

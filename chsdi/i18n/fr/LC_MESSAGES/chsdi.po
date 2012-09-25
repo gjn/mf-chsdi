@@ -2326,6 +2326,51 @@ msgstr "Statistiques"
 msgid "tt_program"
 msgstr "Programme"
 
+msgid "tt_sachplan_beschreibung"
+msgstr "Description"
+
+msgid "tt_sachplan_facility_anlageart"
+msgstr "Type d`installation"
+
+msgid "tt_sachplan_facility_anlagestatus"
+msgstr "Statut de l`installation"
+
+msgid "tt_sachplan_facility_beschlussdatum"
+msgstr "Date de l`arrêt"
+
+msgid "tt_sachplan_facility_name"
+msgstr "Nom de l`installation"
+
+msgid "tt_sachplan_facility_uberobjekt"
+msgstr "Objet d`appartenance"
+
+msgid "tt_sachplan_objektblatt"
+msgstr "Feuille de l'objet"
+
+msgid "tt_sachplan_planning_bis"
+msgstr "au"
+
+msgid "tt_sachplan_planning_coordstand"
+msgstr "Etat de coordination"
+
+msgid "tt_sachplan_planning_name"
+msgstr "Nom de la mesure"
+
+msgid "tt_sachplan_planning_planungstand"
+msgstr "Etat de la planification"
+
+msgid "tt_sachplan_planning_typ"
+msgstr "Type de mesure"
+
+msgid "tt_sachplan_planning_ueberanlage"
+msgstr "Installation d`appartenance"
+
+msgid "tt_sachplan_planning_von"
+msgstr "du"
+
+msgid "tt_sachplan_weitereinfo"
+msgstr "Autres informations"
+
 msgid "tt_service"
 msgstr "Service radio"
 
