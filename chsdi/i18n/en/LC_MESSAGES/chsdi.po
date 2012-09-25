@@ -2015,7 +2015,7 @@ msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Channels"
 
 msgid "tt_ch.bazl.abortionaccomplished"
-msgstr "Start of construction"
+msgstr "End of construction"
 
 msgid "tt_ch.bazl.elevation"
 msgstr "Maximum top elevation AMSL [m]"

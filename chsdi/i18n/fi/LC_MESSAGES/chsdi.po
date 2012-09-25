@@ -2014,7 +2014,7 @@ msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Programme"
 
 msgid "tt_ch.bazl.abortionaccomplished"
-msgstr "Anlagedauer"
+msgstr "Abschluss"
 
 msgid "tt_ch.bazl.elevation"
 msgstr "Maximale Meereshöhe AMSL [m]"
