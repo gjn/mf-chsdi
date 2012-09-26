@@ -426,7 +426,8 @@ class geometaStandAV(Base, Queryable):
        __template__ = 'tooltips/standav.mako'
        id = Column('gid', Integer, primary_key=True)
        fid = Column ('id', Integer)
-       the_geom = Column(Geometry(21781))
+       the_geom = Column('the_geom_gen50',Geometry(21781))
+       not_used = Column('the_geom',Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-standav',geometaStandAV)
 
@@ -437,7 +438,8 @@ class geometaLos(Base, Queryable):
        __template__ = 'tooltips/los.mako'
        id = Column('gid', Integer, primary_key=True)
        fid = Column ('id', Integer)
-       the_geom = Column(Geometry(21781))
+       the_geom = Column('the_geom_gen50',Geometry(21781))
+       not_used = Column('the_geom',Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-los',geometaLos)
 
@@ -454,7 +456,8 @@ class geometaGemeinde(Base, Queryable):
 #       gemdarstellung = Column ('abgabestelle', Text)
 #       gemflaeche = Column ('flaeche_ha', Text)
 #       geompdf_liste = Column ('pdf_liste', Text)
-       the_geom = Column(Geometry(21781))
+       the_geom = Column('the_geom_gen50',Geometry(21781))
+       not_used = Column('the_geom',Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-gemeinde',geometaGemeinde)
 
@@ -471,7 +474,8 @@ class geometaGrundbuch(Base, Queryable):
 #       grundadresse = Column ('adresse', Text)
 #       grundtel = Column ('telefon', Text)
 #       grundurl = Column ('email', Text)
-       the_geom = Column(Geometry(21781))
+       the_geom = Column('the_geom_gen50',Geometry(21781))
+       not_used = Column('the_geom',Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-grundbuch',geometaGrundbuch)
 
@@ -484,7 +488,8 @@ class geometaNfgeom(Base, Queryable):
 #       nfname = Column ('name', Text)
 #       nffirmenname = Column ('firmenname', Text)
 #       nfadresse = Column ('adresse', Text)
-       the_geom = Column(Geometry(21781))
+       the_geom = Column('the_geom_gen50',Geometry(21781))
+       not_used = Column('the_geom',Geometry(21781))
 
 register('ch.swisstopo-vd.geometa-nfgeom',geometaNfgeom)
 
