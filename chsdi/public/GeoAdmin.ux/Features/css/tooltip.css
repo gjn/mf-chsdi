@@ -140,4 +140,6 @@ a.tooltip_red_link:visited:hover, a.tooltip_red_link:hover {
     text-decoration: underline;
 }
 
-
+.geoadmin-click-tooltip .x-tip-bwrap {
+    margin-top: -15px !important;
+}

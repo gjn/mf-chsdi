@@ -333,6 +333,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                         var html = record.get('html');
 
                         var tooltip = new GeoAdmin.ClickToolTip({
+                            cls: 'geoadmin-click-tooltip',
                             autoHide: false,
                             closable: true,
                             width: 430, // required by the service (the html contains a table with fixed size)
