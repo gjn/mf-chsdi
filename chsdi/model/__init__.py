@@ -53,14 +53,15 @@ class Queryable(object):
     
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
-        if scale is None or scale in xrange(cls.__minscale__, cls.__maxscale__):
+        myFilter = None
+        if scale is None or (scale > cls.__minscale__ and scale < cls.__maxscale__):
             geom = Polygon(((bbox[0], bbox[1]), (bbox[0], bbox[3]),
                             (bbox[2], bbox[3]), (bbox[2], bbox[1]),
                             (bbox[0], bbox[1])))
             wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
             geom_column = cls.__table__.columns['the_geom']
-            return functions.within_distance(geom_column, wkb_geometry, tolerance)
-        return None
+            myFilter = functions.within_distance(geom_column, wkb_geometry, tolerance)
+        return myFilter
 
     @classmethod
     def geometry_column(cls):
