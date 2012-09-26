@@ -2014,7 +2014,7 @@ msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Programmi"
 
 msgid "tt_ch.bazl.abortionaccomplished"
-msgstr "Completamento"
+msgstr "Durata dell'installazione"
 
 msgid "tt_ch.bazl.elevation"
 msgstr "Altezza massima AMSL [m]"
@@ -2024,6 +2024,9 @@ msgstr "Dati di geometria"
 
 msgid "tt_ch.bazl.hindernisart"
 msgstr "Tipo di ostacolo"
+
+msgid "tt_ch.bazl.kartnummer"
+msgstr "Numero della carta [CN100]"
 
 msgid "tt_ch.bazl.markierung"
 msgstr "Marcatura / segnalazione lum."

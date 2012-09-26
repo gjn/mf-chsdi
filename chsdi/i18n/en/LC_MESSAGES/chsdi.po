@@ -2015,7 +2015,7 @@ msgid "tt_ch.bakom.versorgungsgebiet_prog"
 msgstr "Channels"
 
 msgid "tt_ch.bazl.abortionaccomplished"
-msgstr "End of construction"
+msgstr "Duration of installation"
 
 msgid "tt_ch.bazl.elevation"
 msgstr "Maximum top elevation AMSL [m]"
@@ -2025,6 +2025,9 @@ msgstr "Geometry data"
 
 msgid "tt_ch.bazl.hindernisart"
 msgstr "Obstacle type"
+
+msgid "tt_ch.bazl.kartnummer"
+msgstr "Map number [NM100]"
 
 msgid "tt_ch.bazl.markierung"
 msgstr "Marking / navigation lights"
