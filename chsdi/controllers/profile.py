@@ -202,7 +202,9 @@ class ProfileController(BaseController):
         """Returns the raster filename in function of its layer name"""
         return {
             'DTM25': config['data_path'] + 'bund/swisstopo/dhm25_25_matrix/mm0001.shp',
-            'DTM2': config['data_path'] + 'bund/swisstopo/swissalti3d/2m/index.shp'
+            'DTM2': config['data_path'] + 'bund/swisstopo/swissalti3d/2m/index.shp',
+            'BLEND': config['data_path'] + 'bund/swisstopo/swissalti3d/test/index_blend.shp',
+            'FIRST': config['data_path'] + 'bund/swisstopo/swissalti3d/test/index_first.shp'
         }
 
     def _filter_alt(self, alt):
