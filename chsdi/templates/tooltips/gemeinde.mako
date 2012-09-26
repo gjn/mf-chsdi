@@ -15,9 +15,9 @@
     % if hasattr(c.feature, 'abgabestelle'):
     <tr><td width="150">${_('gemdarstellung')}</td>
        % if c.feature.abgabestelle == None:
-         <td>-</td> 
-      % else:  
-         <td><a target="_blank" href="http://${c.feature.abgabestelle}">${"Link" or '-'}</a></td>
+         <td>-</td>
+      % else:
+         <td><a target="_blank" href="http://${c.feature.abgabestelle.replace("http://","")}">${"Link" or '-'}</a></td>
       % endif 
     </tr>
     % endif
