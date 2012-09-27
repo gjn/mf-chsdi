@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">${c.feature.ortsteil_grundbuch or '-'}</%def>
 
 <%def name="table_body()">
     % if hasattr(c.feature, 'ortsteil_grundbuch'):

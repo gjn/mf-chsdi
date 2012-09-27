@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">${c.feature.gemeindename or '-'}</%def>
 
 <%def name="table_body()">
     % if hasattr(c.feature, 'bfs_nr'):

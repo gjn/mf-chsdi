@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%def name="preview()">${_('feature')}</%def>
+<%def name="preview()">${_('losidentifikator')}: ${c.feature.neu_id or '-'}</%def>
 
 <%def name="table_body()">
     % if hasattr(c.feature, 'frame'):
