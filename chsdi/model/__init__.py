@@ -1,7 +1,7 @@
 from sys import maxint
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column
+from sqlalchemy import Column, func
 from sqlalchemy.types import Integer, Text, String
 from sqlalchemy.orm import column_property
 from pylons.controllers.util import abort
@@ -17,6 +17,7 @@ from shapely.geometry.polygon import Polygon
 
 from chsdi.lib.base import render, c
 from chsdi.model import meta
+from chsdi.model.meta import Session
 
 def init_model(key, engine):
     if key not in meta.engines:
@@ -76,6 +77,12 @@ class Queryable(object):
         c.layer_bezeichnung = bodlayer.bezeichnung if hasattr(bodlayer, 'bezeichnung') else ''
         c.layer_datenherr = bodlayer.datenherr if hasattr(bodlayer, 'datenherr') else  ''
         c.layer_id = layer_id
+        if bodlayer.datenstand == 'bgdi_created':
+            for model in models_from_name(layer_id):
+                modified = Session.query(func.max(model.bgdi_created))
+            c.datenstand = modified.first()[0].strftime("%d.%m.%Y")
+        else:
+            c.datenstand = bodlayer.datenstand
         c.stable_id = c.feature.stable_id
         self.layer_id= layer_id
         c.html_type = 'full'

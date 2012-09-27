@@ -26,11 +26,6 @@
 <script type="text/javascript" src="/${c.instanceid}/wsgi/build/api-light.js"></script>
 <link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/build/api-light.css">
 % endif
-<%
-    import time
-    from datetime import date
-    today = date.today()
-%>
 % if c.feature.sanctiontext == 'VOID':
 <% sanctiontext = '-' %>
 % else:
@@ -138,7 +133,7 @@
         .olControlOverviewMap { display: none; }
     </style>
     <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
-    <p style="width: 300px; float: left;">${_('date')}: ${today}</p><p style="width: 300px; float: right; text-align: right;">Haftungshinweis Bazl</p>
+    <p style="width: 300px; float: left;">${_('date')}: ${c.datenstand}</p><p style="width: 300px; float: right; text-align: right;">Haftungshinweis Bazl</p>
 % endif
 </div>
 
