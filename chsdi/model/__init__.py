@@ -54,7 +54,7 @@ class Queryable(object):
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
         myFilter = None
-        if scale is None or (scale > cls.__minscale__ and scale < cls.__maxscale__):
+        if scale is None or (scale >= cls.__minscale__ and scale <= cls.__maxscale__):
             geom = Polygon(((bbox[0], bbox[1]), (bbox[0], bbox[3]),
                             (bbox[2], bbox[3]), (bbox[2], bbox[1]),
                             (bbox[0], bbox[1])))
