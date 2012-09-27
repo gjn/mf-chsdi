@@ -36,9 +36,9 @@
 <% sanctiontext = c.feature.sanctiontext %>
 % endif
 % if c.last == False:
-<div style="height: 785px !important; page-break-after: always;">
+<div style="height: auto; page-break-after: always;">
 % elif c.last == True:
-<div style="height: 850px !important;">
+<div style="height: 860;">
 % endif
     <table border="0" cellspacing="8" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr>
@@ -52,7 +52,7 @@
             <td style="padding-left: 200px;">${_('tt_ch.bazl.startofconstruction')}: ${c.feature.startofconstruction or '-'}</td>
         </tr>
         <tr>
-            <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.abortionaccomplished or '-'}</td>
+            <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.duration or '-'}</td>
         </tr>
         <tr>
             <td style="font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.geometriedaten')}:</td>
@@ -87,9 +87,12 @@
         <tr>
             <td style="padding-left: 200px;">${sanctiontext}</td>
         </tr>
+        <tr style="float: right; margin-right: -195px;">
+            <td style="float: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
+        </tr>
     </table>
     <script type="text/javascript">
-        if (window.document.dic == undefined) {
+        if (window.document.dic === undefined) {
             window.document.dic = {};
         }
         window.document.dic['${c.feature.id}'] = [${c.feature.geometry.bounds[0]},${c.feature.geometry.bounds[1]},${c.feature.geometry.bounds[2]},${c.feature.geometry.bounds[3]}];
@@ -98,7 +101,7 @@
     <script type="text/javascript">
         var map;
         window.onload = function () {
-            window.GeoAdmin.OpenLayersImgPath="../GeoAdmin.ux/Map/img/";
+            window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
             var divs = document.getElementsByClassName('features');
             for (var i=0; i<divs.length; i++) {
                 var div = divs[i];
@@ -113,9 +116,9 @@
                 map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau',{opacity: 100});
                 map.addLayerByName('ch.bazl.luftfahrthindernis');
                 var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
-                var center = bounds.getCenterLonLat();
-                if (center === bounds) {
-                    map.setCenter(bounds, 7);
+                if (bounds.left === bounds.right) {
+                    var center = bounds.getCenterLonLat();
+                    map.setCenter(center, 7);
                 } else {
                     map.zoomToExtent(bounds);
                     // Object might be too small (default zoom set to 7)
@@ -134,7 +137,7 @@
         .olControlOverviewMap { display: none; }
     </style>
     <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
-    <p>${_('date')}: ${today}</p>
+    <p style="width: 300px; float: left;">${_('date')}: ${today}</p><p style="width: 300px; float: right; text-align: right;">Haftungshinweis Bazl</p>
 % endif
 </div>
 
