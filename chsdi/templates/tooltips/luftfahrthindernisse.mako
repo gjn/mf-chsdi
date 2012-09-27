@@ -9,6 +9,7 @@
 <% sanctiontext = c.feature.sanctiontext %>
 % endif
     <tr><td width="170">${_('tt_ch.bazl.registrationnummer')}</td><td>${self.preview()}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.kartnummer')}</td><td>${c.feature.lk100}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.hindernisart')}</td><td>${c.feature.obstacletype}</td></tr>
     <tr><td width="170">${_('status')}</td><td>${c.feature.state}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.maxheight')}</td><td>${c.feature.maxheightagl}</td></tr>
