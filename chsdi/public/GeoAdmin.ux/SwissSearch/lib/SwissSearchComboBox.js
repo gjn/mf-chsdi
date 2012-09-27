@@ -262,7 +262,9 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                         var features = format.read(response);
                         this.map.vector.removeAllFeatures();
                         this.map.vector.addFeatures(features);
-                        this.map.zoomToExtent(this.makeMinimalExtent(extent,120));
+                        // 1965 m is the height for the zoom 7
+                        // height smaller than width -> should be used for the extent
+                        this.map.zoomToExtent(this.makeMinimalExtent(extent,1965));
                     }
                 });
             }
@@ -360,12 +362,12 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     makeMinimalExtent: function(extent, minimalSize) {
-       if (extent.getWidth() < minimalSize && extent.getWidth() < minimalSize) {
+       if (extent.getHeight() < minimalSize && extent.getHeight() < minimalSize) {
            var center = extent.getCenterLonLat();
            var biggerExtent = new OpenLayers.Bounds(center.lon - minimalSize/2,
-               center.lat-minimalSize/2,
+               center.lat - minimalSize/2,
                center.lon + minimalSize/2,
-               center.lat+minimalSize/2);
+               center.lat + minimalSize/2);
            return biggerExtent;
        } else {
            return extent;
