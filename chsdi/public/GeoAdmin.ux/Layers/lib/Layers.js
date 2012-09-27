@@ -420,7 +420,7 @@ GeoAdmin._Layers = OpenLayers.Class({
         }
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
-            OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
+            /*OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
                 var shifted = true;
                 var buffer = this.buffer || 1;
                 if (this.grid[0]) {
@@ -446,7 +446,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                         this.timerId = window.setTimeout(this._moveGriddedTiles, 0);
                     }
                 }
-            };
+            };*/
             var layer_options_wms = OpenLayers.Util.extend({
                 layer: config.layer || name,
                 layername: name,
@@ -454,7 +454,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 displayInLayerSwitcher: !config.isBgLayer,
                 attribution: config.datenherr,
                 opacity: config.opacity ? config.opacity : 1.0,
-                singleTile: true,
+                singleTile: config.singleTile !== undefined ? config.singleTile : true,
                 geoadmin_queryable: config.queryable,
                 geoadmin_searchable: config.searchable,
                 geoadmin_isBgLayer: !!(config.isBgLayer),
@@ -2462,15 +2462,54 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo-vd.geometa-gemeinde": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-gemeinde"),
+                layertype: 'aggregate',
+                opacity: 0.75,
+                subLayersName: ['ch.swisstopo-vd.geometa-gemeinde_wmstile','ch.swisstopo-vd.geometa-gemeinde_wms'],
+                queryable: true,
+                type: "polygon"
+            },
+            "ch.swisstopo-vd.geometa-gemeinde_wmstile": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-gemeinde"),
+                layers: ["ch.swisstopo-vd.geometa-gemeinde"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo-vd",
+                singleTile: false,
+                opacity: 0.75,
+                maxScale: 200005
+            },
+            "ch.swisstopo-vd.geometa-gemeinde_wms": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-gemeinde"),
                 layers: ["ch.swisstopo-vd.geometa-gemeinde"],
                 layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
-                queryable: true
+                minScale: 200005,
+                maxScale: 1
             },
             "ch.swisstopo-vd.geometa-grundbuch": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-grundbuch"),
+                layertype: 'aggregate',
+                opacity: 0.75,
+                subLayersName: ['ch.swisstopo-vd.geometa-grundbuch_wmstile','ch.swisstopo-vd.geometa-grundbuch_wms'],
+                queryable: true,
+                type: "polygon"
+            },
+            "ch.swisstopo-vd.geometa-grundbuch_wmstile": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-grundbuch"),
+                layers: ["ch.swisstopo-vd.geometa-grundbuch"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo-vd",
+                singleTile: false,
+                opacity: 0.75,
+                maxScale: 200005
+            },
+            "ch.swisstopo-vd.geometa-grundbuch_wms": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-grundbuch"),
                 layers: ["ch.swisstopo-vd.geometa-grundbuch"],
                 layertype: "wms",
@@ -2478,9 +2517,29 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
-                queryable: true
+                minScale: 200005,
+                maxScale: 1
             },
             "ch.swisstopo-vd.geometa-nfgeom": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-nfgeom"),
+                layertype: 'aggregate',
+                opacity: 0.75,
+                subLayersName: ['ch.swisstopo-vd.geometa-nfgeom_wmstile','ch.swisstopo-vd.geometa-nfgeom_wms'],
+                queryable: true,
+                type: "polygon"
+            },
+            "ch.swisstopo-vd.geometa-nfgeom_wmstile": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-nfgeom"),
+                layers: ["ch.swisstopo-vd.geometa-nfgeom"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo-vd",
+                singleTile: false,
+                opacity: 0.75,
+                maxScale: 200005
+            },
+            "ch.swisstopo-vd.geometa-nfgeom_wms": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-nfgeom"),
                 layers: ["ch.swisstopo-vd.geometa-nfgeom"],
                 layertype: "wms",
@@ -2488,9 +2547,29 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
-                queryable: true
+                minScale: 200005,
+                maxScale: 1
             },
             "ch.swisstopo-vd.geometa-standav": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-standav"),
+                layertype: 'aggregate',
+                opacity: 0.75,
+                subLayersName: ['ch.swisstopo-vd.geometa-standav_wmstile','ch.swisstopo-vd.geometa-standav_wms'],
+                queryable: true,
+                type: "polygon"
+            },
+            "ch.swisstopo-vd.geometa-standav_wmstile": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-standav"),
+                layers: ["ch.swisstopo-vd.geometa-standav"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo-vd",
+                singleTile: false,
+                opacity: 0.75,
+                maxScale: 200005
+            },
+            "ch.swisstopo-vd.geometa-standav_wms": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-standav"),
                 layers: ["ch.swisstopo-vd.geometa-standav"],
                 layertype: "wms",
@@ -2498,9 +2577,29 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
-                queryable: true
+                minScale: 200005,
+                maxScale: 1
             },
             "ch.swisstopo-vd.geometa-los": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-los"),
+                layertype: 'aggregate',
+                opacity: 0.75,
+                subLayersName: ['ch.swisstopo-vd.geometa-los_wmstile','ch.swisstopo-vd.geometa-los_wms'],
+                queryable: true,
+                type: "polygon"
+            },
+            "ch.swisstopo-vd.geometa-los_wmstile": {
+                name: OpenLayers.i18n("ch.swisstopo-vd.geometa-los"),
+                layers: ["ch.swisstopo-vd.geometa-los"],
+                layertype: "wms",
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo-vd",
+                singleTile: false,
+                opacity: 0.75,
+                maxScale: 200005
+            },
+            "ch.swisstopo-vd.geometa-los_wms": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.geometa-los"),
                 layers: ["ch.swisstopo-vd.geometa-los"],
                 layertype: "wms",
@@ -2508,7 +2607,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo-vd",
                 opacity: 0.75,
-                queryable: true
+                minScale: 200005,
+                maxScale: 1
             },
             "ch.bafu.schutzgebiete-smaragd": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-smaragd"),
