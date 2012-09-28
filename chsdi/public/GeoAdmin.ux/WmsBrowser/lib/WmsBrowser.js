@@ -62,7 +62,14 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 ['http://vogis.cnv.at/mapserver/mapserv?map=i_relief_r_wms.map'],
                 ['http://vogis.cnv.at/mapserver/mapserv?map=i_historischekarten_r_wms.map'],
                 ['http://vogis.cnv.at/mapserver/mapserv?map=i_naturschutz_v_wms.map'],
-                ['http://vogis.cnv.at/mapserver/mapserv?map=i_topographie_r_wms.map']
+                ['http://vogis.cnv.at/mapserver/mapserv?map=i_topographie_r_wms.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_100000.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_25000.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/IGM_250000.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/DTM_20M.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/Vettoriali/Rete_ferroviaria.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/Vettoriali/Rete_stradale.map'],
+                ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/ortofoto_colore_06.map']
             ]
         });
         
