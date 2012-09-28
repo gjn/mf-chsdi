@@ -46,8 +46,8 @@ SetEnvIf X-Forwarded-For "10.48.109.212"                GOODIP
     Allow from env=GOODIP
       
     ExpiresActive on
-    ExpiresDefault "now plus 7 days"
-    Header set Cache-Control "public"
+    ExpiresDefault "now plus 1 days"
+    Header set Cache-Control "public, max-age=86400"
     Header unset Etag
 
 </Location>

@@ -34,6 +34,9 @@ layers:
     - name: osm
       title: OpenStreetMap
       sources: [osm_cache]
+    - name: ch.swisstopo-vd.geometa-standav
+      title: GeometaStandAv
+      sources: [geometa-standav]
 
 caches:
   swissimage:
@@ -58,6 +61,11 @@ caches:
       font_size: 12
       color: [0,0,0]
       spacing: 'wide'
+  geometa-standav:
+    grids: [swisstopo-pixelkarte]
+    sources: [ch_swisstopo-vd_geometa-standav]
+    format: image/png
+    disable_storage: true
 
 sources:
   swissimage-tiles:
@@ -78,6 +86,13 @@ sources:
     type: tile
     grid: global_mercator_osm
     url: http://c.tile.openstreetmap.org/%(tms_path)s.png
+  ch_swisstopo-vd_geometa-standav:
+    type: wms
+    supported_srs: ['EPSG:21781']
+    req:
+       url: http://wms.geo.admin.ch/
+       layers:  ch.swisstopo-vd.geometa-standav
+       transparent: true
 
 grids:
   swisstopo-swissimage:
@@ -103,6 +118,9 @@ globals:
   cache:
     # use parallel requests to the WMTS sources
     concurrent_tile_creators: 32
+
+  tile:
+    expires_hours: 24
 
   image:
       resampling_method: bicubic
