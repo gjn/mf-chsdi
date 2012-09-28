@@ -20,7 +20,7 @@
 	% endif
 % else:
 	% if c.lang =='fr':
-	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><span>Bravo! Clic </span><a href="${c.feature.link_fr or '-'}" target="_parent">ici</a><span> afin de découvrir l'indice suivant!</span></td></tr>
+	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><span>Bravo! Clique </span><a href="${c.feature.link_fr or '-'}" target="_parent">ici</a><span> afin de découvrir l'indice suivant!</span></td></tr>
 	% elif c.lang == 'it':
 	<tr><td width="150" style="vertical-align: top;">${_('link')}</td><td><span>Bravo! Clicca <a href="${c.feature.link_it or '-'}" target="_parent">qui</a><span> per trovare l'indizio successivo!</span></td></tr>
 	% else:
