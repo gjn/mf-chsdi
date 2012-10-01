@@ -16,7 +16,7 @@
     <tr><td width="170">${_('tt_ch.bazl.elevation')}</td><td>${c.feature.topelevationamsl}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.totallength')}</td><td>${c.feature.totallength}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.startofconstruction')}</td><td>${c.feature.startofconstruction or '-'}</td></tr>
-    <tr><td width="170">${_('tt_ch.bazl.abortionaccomplished')}</td><td>${c.feature.abortionaccomplished or '-'}</td></tr>
+    <tr><td width="170">${_('tt_ch.bazl.abortionaccomplished')}</td><td>${c.feature.duration or '-'}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.markierung')}</td><td>${sanctiontext}</td></tr>
     <tr><td width="170"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 </%def>
@@ -133,7 +133,7 @@
         .olControlOverviewMap { display: none; }
     </style>
     <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
-    <p style="width: 300px; float: left;">${_('date')}: ${c.datenstand}</p><p style="width: 300px; float: right; text-align: right;">Haftungshinweis Bazl</p>
+    <p style="width: 300px; float: left;">${_('date')}: ${c.datenstand}</p>
 % endif
 </div>
 
