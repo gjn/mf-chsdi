@@ -208,7 +208,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             listeners: {
                 "beforeprint": function(provider, map, pages, options) {
                     var lang = OpenLayers.Lang.getCode();
+                    var date = new Date();
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
+                    provider.customParams.date = date.getDate().toString() + '.' + date.getMonth().toString() + '.' + date.getFullYear().toString(); 
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
                     // QRCode
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
