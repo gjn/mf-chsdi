@@ -1363,7 +1363,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                opacity: 0.75,
+                opacity: 0.85,
                 queryable: false
             },
             "ch.bafu.schutzgebiete-ramsar": {
