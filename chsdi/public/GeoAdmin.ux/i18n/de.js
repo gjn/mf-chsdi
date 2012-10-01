@@ -496,7 +496,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo-vd.geometa-gemeinde':'GeoMeta Gemeinden',
 	'ch.swisstopo-vd.geometa-grundbuch':'Grundbuch',
 	'ch.swisstopo-vd.geometa-los':'Lose der AV',
-	'ch.swisstopo-vd.geometa-nfgeom':'Nachführungsgeometer(-in)',
+	'ch.swisstopo-vd.geometa-nfgeom':'Nachführungsgeometer',
 	'ch.swisstopo-vd.geometa-standav':'Stand der AV',
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'PLZ und Ortschaften',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Spannungsarme Gebiete',

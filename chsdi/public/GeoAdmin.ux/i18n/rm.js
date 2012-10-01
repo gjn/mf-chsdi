@@ -492,7 +492,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo-vd.geometa-gemeinde':'GeoMeta vischnancas',
 	'ch.swisstopo-vd.geometa-grundbuch':'Register funsil',
 	'ch.swisstopo-vd.geometa-los':'Lavurs currents',
-	'ch.swisstopo-vd.geometa-nfgeom':'geometer-revisur',
+	'ch.swisstopo-vd.geometa-nfgeom':'Geometer-revisur',
 	'ch.swisstopo-vd.geometa-standav':'Stadi da la MU',
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'NPVischnancas',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Territori cun tensiun pover',
