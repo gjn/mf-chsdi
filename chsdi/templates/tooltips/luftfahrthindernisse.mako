@@ -114,12 +114,12 @@
                 var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
                 if (bounds.left === bounds.right) {
                     var center = bounds.getCenterLonLat();
-                    map.setCenter(center, 7);
+                    map.setCenter(center, 6);
                 } else {
                     map.zoomToExtent(bounds);
                     // Object might be too small (default zoom set to 7)
-                    if (map.getZoom() > 7) {
-                        map.zoomTo(7)
+                    if (map.getZoom() > 6) {
+                        map.zoomTo(6)
                     }
                 }
             }
