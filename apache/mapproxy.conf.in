@@ -52,7 +52,7 @@ WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/part
     Order Deny,Allow
     Allow from all
 
-    ExpiresActiv on
+    ExpiresActive On
     ExpiresDefault "now plus 1 days"
     Header set Cache-Control "public, max-age=86400"
     Header unset Etag
