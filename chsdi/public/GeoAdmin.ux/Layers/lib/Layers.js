@@ -2555,7 +2555,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'aggregate',
                 opacity: 0.75,
                 subLayersName: ['ch.swisstopo-vd.geometa-standav_wmstile','ch.swisstopo-vd.geometa-standav_wms'],
-                queryable: true,
+                queryable: false,
                 type: "polygon"
             },
             "ch.swisstopo-vd.geometa-standav_wmstile": {
