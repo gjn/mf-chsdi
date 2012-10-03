@@ -419,18 +419,6 @@ class PLZOrtschaften(Base, Queryable):
 
 register('ch.swisstopo-vd.ortschaftenverzeichnis_plz',PLZOrtschaften)
 
-class geometaStandAV(Base, Queryable):
-       # view in a schema
-       __tablename__ = 'amogr_standav'
-       __table_args__ = ({'schema': 'vd', 'autoload': True})
-       __template__ = 'tooltips/standav.mako'
-       id = Column('gid', Integer, primary_key=True)
-       fid = Column ('id', Integer)
-       the_geom = Column('the_geom_gen50',Geometry(21781))
-       not_used = Column('the_geom',Geometry(21781))
-
-register('ch.swisstopo-vd.geometa-standav',geometaStandAV)
-
 class geometaLos(Base, Queryable):
        # view in a schema
        __tablename__ = 'amogr_los'
