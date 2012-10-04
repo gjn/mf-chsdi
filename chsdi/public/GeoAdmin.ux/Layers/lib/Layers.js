@@ -669,7 +669,37 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
 				opacity: 0.75,				
 				type: "point"
-            },            
+            },
+			"ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung": {
+                name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"),
+                layertype: 'wms',
+                layers: ['ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'],                   
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true,
+				opacity: 0.75,				
+				type: "point"
+            },
+			"ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+				url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
+				type: "point"
+            },
+			"ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+				url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
+				type: "point"
+            },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
                 layertype: 'wmts',

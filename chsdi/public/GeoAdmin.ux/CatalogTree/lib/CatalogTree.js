@@ -741,6 +741,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
                     },
+					{
+                        layerId: "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
+                    },
                     {
                         layerId: "ch.vbs.territorialregionen"
                     },
@@ -832,6 +835,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
 					{
                         layerId: "ch.bfe.sachplan-geologie-tiefenlager"
+                    },
+					{
+                        layerId: "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
                     },
                     {
                         layerId: "ch.astra.ausnahmetransportrouten"
