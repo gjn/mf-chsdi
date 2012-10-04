@@ -3,11 +3,11 @@ from chsdi.model import *
 Base = declarative_base(bind=meta.engines['uvek'])
 
 class IVS_NAT(Base, Queryable):
-    __tablename__ = 'ivs_nat_aggregated'
+    __tablename__ = 'ivs_nat'
     __table_args__ = ({'schema': 'astra', 'autoload': True})
     __template__ = 'tooltips/ivs_nat.mako'
     __queryable_attributes__ = ['ivs_slaname','ivs_nummer','ivs_signatur']
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('nat_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
 register('ch.astra.ivs-nat', IVS_NAT)
