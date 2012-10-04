@@ -18,7 +18,7 @@ from chsdi.lib.base import BaseController, cacheable, validate_params, render
 from chsdi.model import models_from_name
 from chsdi.model.meta import Session
 from chsdi.model.vector import *
-from chsdi.model.bod import BodLayerDe, BodLayerFr
+from chsdi.model.bod import BodLayerDe, BodLayerFr, BodLayerIt, BodLayerEn
 
 from paste.deploy.converters import asbool
 
@@ -126,8 +126,12 @@ def query_features(lang, layers, query):
 class FeatureController(BaseController):
     def __before__(self):
         super(FeatureController, self).__before__()
-        if self.lang == 'fr' or self.lang == 'it':
+        if self.lang == 'fr':
             self.bodsearch = BodLayerFr
+        elif self.lang == 'it':
+            self.bodsearch = BodLayerIt
+        elif self.lang == 'en':
+            self.bodsearch = BodLayerEn
         else:
             self.bodsearch = BodLayerDe
 
