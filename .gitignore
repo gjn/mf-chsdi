@@ -7,3 +7,12 @@ apache/*.conf
 development.ini
 production.ini
 test.ini
+chsdi/i18n/*.mo
+chsdi/i18n/*/LC_MESSAGES/*.mo
+chsdi/public/build/*
+chsdi/public/doc/build/*
+chsdi/public/doc/source/api/apidocs/*
+chsdi/public/doc/source/lightapi/apidocs/*
+chsdi/public/lib/geoext/*
+chsdi/public/lib/openlayers/*
+tilecache/tilecache.cfg
