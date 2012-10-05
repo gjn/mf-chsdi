@@ -2348,7 +2348,7 @@ msgid "tt_sachplan_facility_uberobjekt"
 msgstr "Oggetto preposto"
 
 msgid "tt_sachplan_objektblatt"
-msgstr "Foglio dell'oggetto"
+msgstr "Scheda di coordinamento"
 
 msgid "tt_sachplan_planning_bis"
 msgstr "al"

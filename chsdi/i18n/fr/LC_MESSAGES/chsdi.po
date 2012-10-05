@@ -114,7 +114,7 @@ msgid "Legend"
 msgstr "Légende"
 
 msgid "Link to object"
-msgstr "Lien vers objet"
+msgstr "Lien vers l'objet"
 
 msgid "Man-made"
 msgstr "Artificielle"
@@ -2348,7 +2348,7 @@ msgid "tt_sachplan_facility_uberobjekt"
 msgstr "Objet d`appartenance"
 
 msgid "tt_sachplan_objektblatt"
-msgstr "Feuille de l'objet"
+msgstr "Fiche par installation"
 
 msgid "tt_sachplan_planning_bis"
 msgstr "au"
