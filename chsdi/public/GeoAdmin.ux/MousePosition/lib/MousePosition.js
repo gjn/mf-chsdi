@@ -3,6 +3,7 @@
 /**
  *  @requires OpenLayers/Control/MousePosition.js
  *  @include proj4js/lib/defs/EPSG21781.js
+ *  @include Map/lib/EPSG2056.js
  */
 
 Ext.ns('GeoAdmin');
