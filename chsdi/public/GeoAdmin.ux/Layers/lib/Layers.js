@@ -720,7 +720,35 @@ GeoAdmin._Layers = OpenLayers.Class({
                 hasLegend: false,
                 queryable: true
             },
-            "ch.swisstopo.treasurehunt": {
+//            "ch.swisstopo.dreiecksvermaschung": {
+//                name: OpenLayers.i18n("ch.swisstopo.dreiecksvermaschung"),
+//                layertype: 'wmts',
+//                timestamp: ['20061231'],
+//                type: "polygon",
+//                format: "image/png",
+//                datenherr: "ch.swisstopo",
+//                queryable: true
+//            },
+//            "ch.swisstopo.koordinatenaenderung": {
+//                name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
+//                layertype: 'wmts',
+//                timestamp: ['20061231'],
+//                type: "raster",
+//                format: "image/png",
+//                datenherr: "ch.swisstopo",
+//                hasLegend: false,
+//                queryable: false
+//            },
+//            "ch.swisstopo.transformationsgenauigkeit": {
+//                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
+//                layertype: 'wmts',
+//                timestamp: ['20061231'],
+//                type: "raster",
+//                format: "image/png",
+//                datenherr: "ch.swisstopo",
+//                hasLegend: false,
+//                queryable: false
+//            },
                 name: OpenLayers.i18n("ch.swisstopo.treasurehunt"),
                 layertype: 'wmts',
                 timestamp: ['20120605'],
