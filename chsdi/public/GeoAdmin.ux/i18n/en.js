@@ -431,7 +431,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bakom.versorgungsgebiet-tv':'TV coverage areas',
 	'ch.bakom.versorgungsgebiet-ukw':'VHF coverage areas',
 	'ch.bav':'FOT',
-	'ch.bav.kataster-belasteter-standorte-oev':'Deposition region- pub. trans.',
+	'ch.bav.kataster-belasteter-standorte-oev':'Polluted sites - pub. transp.',
 	'ch.bav.laerm-emissionplan_eisenbahn_2015':'Emissions Plan 2015',
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=en',
 	'ch.bazl':'FOCA',
