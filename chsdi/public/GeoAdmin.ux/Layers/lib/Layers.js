@@ -400,8 +400,8 @@ GeoAdmin._Layers = OpenLayers.Class({
 
     /** private: method[createLayer]
      *  :param name: ``String``
-     *  :param config: ``Object``
-     *  :param options: ``Object``
+     *  :param config: ``Object``: Configuration object containing the characteristics of the layers defined in this file
+     *  :param options: ``Object``: Optional characteristics objects defined outside this file. Used to overide the normal characteristics
      *  :return: ``OpenLayers.Map``
      *
      *  Create a layer.
@@ -418,6 +418,11 @@ GeoAdmin._Layers = OpenLayers.Class({
         if (config.transitionEffect === "no") {
             myTransitionEffect = null;
         }
+        // 3 layer types are supported:
+        // - wms
+        // - wmts
+        // - aggregate
+        // Timestamps arrays are supported only for WMS and WMTS
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
             /*OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
@@ -462,13 +467,20 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: config.maxScale,
                 minScale: config.minScale,
                 ratio: 1.1,
-                transitionEffect: myTransitionEffect
+                transitionEffect: myTransitionEffect,
+                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp
             }, options);
-            return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/", {
+            var wmsParams = {
                 layers: config.layers,
                 format: config.format,
                 transparent: config.transparent || true
-            }, layer_options_wms);
+            };
+            if ((options && options.timestamp !== undefined) || config.timestamp !== undefined) {
+               wmsParams.time = options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp;
+            }
+            return new OpenLayers.Layer.WMS(config.name, config.url || "http://wms.geo.admin.ch/",
+                wmsParams,
+                layer_options_wms);
         } else if (config.layertype === "aggregate") {
             var sub_layers = [];
             var i;
@@ -521,7 +533,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: config.maxScale,
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
                 minScale: config.minScale,
-                timestamp: options && options.timestamp !== undefined ? options.timestamp : config.timestamp[0]
+                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
@@ -660,6 +672,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: 1,
                 type: "point"
             },
+            "ch.swisstopo.pixelkarte.zeitreihen.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte.zeitreihen.metadata"),
+                layertype: 'wms',
+                layers: 'lk25_meta',
+                format: 'image/png',
+                timestamp: ['2010','2009','2008'],
+                datenherr: 'ch.swisstopo',
+                queryable: true,
+                type: 'polygon',
+                url: 'http://wms-test0t.bgdi.admin.ch/zeitreihen/'
+            },
             "ch.bfe.sachplan-geologie-tiefenlager": {
                 name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager"),
                 layertype: 'wms',
@@ -667,10 +690,10 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bfe",
                 queryable: true,
-				opacity: 0.75,				
-				type: "point"
+	        opacity: 0.75,				
+                type: "point"
             },
-			"ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung": {
+            "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung": {
                 name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"),
                 layertype: 'wms',
                 layers: ['ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'],                   

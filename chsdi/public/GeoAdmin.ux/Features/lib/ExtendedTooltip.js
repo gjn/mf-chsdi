@@ -64,6 +64,12 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
     popup: null,
 
+    // List of queryable layers visible in the map
+    queryable: [],
+
+    // List of timestamps for the queryable layers
+    timestamps: [],
+
     initialize: function (options) {
         OpenLayers.Control.GetFeature.prototype.initialize.apply(this, arguments);
 
@@ -93,15 +99,17 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     updateLayersList: function (layer) {
         if (this.map) {
             this.queryable = [];
+            this.timestamps = [];
             var layers = this.map.getLayersBy("geoadmin_queryable", true);
-
             for (var i = 0, len = layers.length; i < len; i++) {
                 if (layers[i].visibility) {
                     if (!layers[i].opacity) {
                         this.queryable.push(layers[i].layername);
+                        this.timestamps.push(layers[i].timestamp !== undefined ? layers[i].timestamp : 'no');
                     } else {
                         if (layers[i].opacity > 0) {
                             this.queryable.push(layers[i].layername);
+                            this.timestamps.push(layers[i].timestamp !== undefined ? layers[i].timestamp : 'no');
                         }
                     }
                 }
@@ -128,6 +136,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
             this.params = {
                 lang: OpenLayers.Lang.getCode(),
                 layers: this.queryable.join(","),
+                timestamps: this.timestamps.join(","),
                 bbox: bounds.toBBOX(),
                 scale: Math.round(this.map.getScale()/100) * 100
             };
