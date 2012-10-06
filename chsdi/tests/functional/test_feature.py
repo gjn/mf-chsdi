@@ -61,6 +61,20 @@ class TestFeatureController(TestController):
         # test that we get a FeatureCollection with MultiPolygons
         assert "FeatureCollection" in resp
         assert "MultiPolygon" in resp
+
+    def test_search_timestamps(self):
+        params = {
+            'bbox': '562750,160000,570250,167500',
+            'layers': 'ch.swisstopo.pixelkarte.zeitreihen.metadata',
+            'timestamps': '2010',
+            'scale': '5000000'
+            }
+        resp = self.app.get(url(controller='feature', action='search'),
+                            params=params
+                            )
+        # test that we get a FeatureCollection with MultiPolygons
+        assert "FeatureCollection" in resp
+        assert "MultiPolygon" in resp
     
     def test_search_max_features(self):
         params = {

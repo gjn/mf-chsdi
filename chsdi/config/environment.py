@@ -55,6 +55,7 @@ def load_environment(global_conf, app_conf):
     init_model('ivs2b', engine_from_config(config, 'sqlalchemy.ivs2b.', pool_recycle = 55))
     init_model('dritte', engine_from_config(config, 'sqlalchemy.dritte.', pool_recycle = 55))
     init_model('bak', engine_from_config(config, 'sqlalchemy.bak.', pool_recycle = 55))
+    init_model('zeitreihen', engine_from_config(config, 'sqlalchemy.zeitreihen.', pool_recycle = 55))
     init_model('clientdata', engine_from_config(config, 'sqlalchemy.clientdata.', pool_recycle = 55))
 
     return config

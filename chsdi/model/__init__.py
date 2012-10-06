@@ -51,7 +51,10 @@ class Queryable(object):
     preview = None
     attributes = {}
     stable_id = False
-    
+    # Support the time
+    the_time = None   # Time column stored in the table
+    the_time_operator = '==' #Operator used for time comparison in table: '==' (per default) or '<='
+
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
         myFilter = None
@@ -62,6 +65,16 @@ class Queryable(object):
             wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
             geom_column = cls.__table__.columns['the_geom']
             myFilter = functions.within_distance(geom_column, wkb_geometry, tolerance)
+        return myFilter
+
+    @classmethod
+    def time_filter(cls, timestamp):
+        myFilter = None
+        if cls.the_time is not None:
+           if cls.the_time_operator == '==':
+              myFilter = cls.__table__.columns[cls.the_time] == timestamp
+           if cls.the_time_operator == '<=':
+              myFilter = cls.__table__.columns[cls.the_time] <= timestamp
         return myFilter
 
     @classmethod

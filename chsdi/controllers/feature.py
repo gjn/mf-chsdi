@@ -59,6 +59,16 @@ def validator_layers():
     c.layers = layers.split(',')
     return True
 
+def validator_timestamps():
+    """ Validator for the "timestamps" parameter. For use with
+    the validate_params action decorator."""
+    # Timestamps is optional
+    timestamps = request.params.get('timestamps')
+    if timestamps is None:
+       c.timestamps = None
+    else:
+       c.timestamps = timestamps.split(',')
+    return True
 
 def validator_scale():
     """ Validator for the "scale" parameter. For use with
@@ -253,7 +263,7 @@ class FeatureController(BaseController):
             response.headers['Content-Type'] = 'application/json'
             return output
 
-    @validate_params(validator_bbox, validator_layers, validator_scale)
+    @validate_params(validator_bbox, validator_layers, validator_scale, validator_timestamps)
     def search(self):
         # optional paramater "extent"
         # Get current map extent or calculate a 'sensitive' default based on available information  (scale !) 
@@ -274,13 +284,22 @@ class FeatureController(BaseController):
                                 (extent[0], extent[1])))
 
         c.baseUrl = request.params.get('baseUrl')  or ''
-        features = []
 
+        # Request features
+        features = []
+        layerCounter = 0
         for layer_name in c.layers:
+            layerCounter = layerCounter + 1
             for model in models_from_name(layer_name):
                 geom_filter = model.bbox_filter(c.scale, c.bbox)
+                if c.timestamps is not None:
+                    time_filter = model.time_filter(c.timestamps[layerCounter-1])
+                else:
+                    time_filter = None
                 if geom_filter is not None:
                     query = Session.query(model).filter(geom_filter)
+                    if time_filter is not None:
+                        query = query.filter(time_filter)
                     bodlayer = Session.query(self.bodsearch).get(layer_name)
 
                     for feature in query.limit(MAX_FEATURES).all():
@@ -299,6 +318,7 @@ class FeatureController(BaseController):
                         else:
                             features.append(feature)
 
+        # Send features back 
         if 'print' in request.params:
             c.features = features
             return render('/tooltips/_print.mako')
