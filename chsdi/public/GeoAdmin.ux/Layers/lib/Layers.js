@@ -775,7 +775,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.treasurehunt": {
                 name: OpenLayers.i18n("ch.swisstopo.treasurehunt"),
                 layertype: 'wmts',
-                timestamp: ['20120605'],
+                timestamp: ['20120606'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
