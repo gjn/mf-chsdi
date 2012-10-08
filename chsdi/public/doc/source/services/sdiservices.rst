@@ -138,96 +138,6 @@ A JSON content is sent back with the following content:
 - nr (optional): for service postalcodes, the postalcode
 - objectorig: defined for swissnames features the origin of the information. Possible values: 'LK25', 'LK50' or 'LK100'.
 
-
-BodSearch: search (deprecated)
-------------------------------
-
-This service allows to query all layers present in geoadmin for a certain expression present in their title and description.
-
-URL
-^^^
-
-http://api.geo.admin.ch/bodsearch/search
-
-Input parameters
-^^^^^^^^^^^^^^^^ 
-
-The following parameters are required:
-
-- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
-- query: the query string
-- cb (optional): the name of the callback funtion
-- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
-
-Example: http://api.geo.admin.ch/bodsearch/search?lang=de&query=moor
-
-Result
-^^^^^^
-
-A JSON 
-
-- id: the BOD Id of the layer
-- datenherr: the owner of the data, in full text
-- label: the short title of the data
-- content: an HTML description of the data, where the searched keyword are highlighted
-- all attributes if format is 'raw'
-
-
-BodSearch: details (deprecated) 
--------------------------------
-
-**Note: please refer to the service Layers**.
-
-This service display detailed informations on a layer, including a detailed description, a legend and various links to additional informations.
-
-URL
-^^^
-
-http://api.geo.admin.ch/bodsearch/details/[id]
-
-Input parameters
-^^^^^^^^^^^^^^^^
-
-The following input parameters are required:
-
-- lang (optional): de (default) or fr
-- baseUrl (optional): application base url
-- print (optional): force window to print
-- cb (optional): the name of the callback funtion
-- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
-
-Example: http://api.geo.admin.ch//bodsearch/details/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill?lang=de&print=true
-
-BodSearch: layers (deprecated)
-------------------------------
-
-**Note: please refer to the service Layers**.
-
-This service provides the list of available layers.
-
-URL
-^^^
-
-http://api.geo.admin.ch/bodsearch/layers
-
-Input parameters
-^^^^^^^^^^^^^^^^
-
-The following parameters are required:
-
-- lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
-- cb (optional): the name of the callback funtion
-
-Example: http://api.geo.admin.ch/bodsearch/layers?lang=de
-
-Result
-^^^^^^
-
-A JSON
-
-- id: the BOD Id of the layer
-- description: a description of the layer
-
 Feature: [id]
 -------------
 
@@ -359,6 +269,9 @@ The following parameters are required:
 
 - lang (optional): de (default) or fr (there is no description of layers in other language available in geoadmin for now)
 - project (optional): (default to all) name of the project in which you desire to look for properties (a comma creates a list of projects)
+
+    - api-free: layers available for free in the api
+    - api-notfree: layers which are not available for free in the api and requires `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
 - query (optional): a query string for the full text search
 - properties (optional): (default to all) properties you wich to return (a comma creates a list of properties)
 - layer (optional): layer you want to return (a comma creates a list of layers)
@@ -384,6 +297,7 @@ Examples:
 - http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
 - http://api.geo.admin.ch/layers?mode=preview
 - http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200: returns a set of syncronized maps filtered with the query string lac
+- http://api.geo.admin.ch/layers?project=api-notfree: returns all the layers that require a swisstopo web access
 
 Profile.json
 ------------
