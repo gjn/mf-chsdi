@@ -98,9 +98,9 @@ GeoAdmin.Features = OpenLayers.Class({
         this._request(layer, ids, this.highlightUrl, this.showCb, cb);
     },
 
-    showCb: function(response) {
+    showCb: function(response) { 
         if (this.highlightCb(response)) {
-            this.map.zoomToExtent(this.map.vector.getDataExtent());
+            this.map.zoomToExtent(this.makeMinimalExtent(this.map.vector.getDataExtent(), 1965));
         }
     },
 
@@ -121,5 +121,18 @@ GeoAdmin.Features = OpenLayers.Class({
             scope: this,
             callback: callback
         });
+    },
+
+    makeMinimalExtent: function(extent, minimalSize) {
+       if (extent.getHeight() < minimalSize && extent.getHeight() < minimalSize) {
+           var center = extent.getCenterLonLat();
+           var biggerExtent = new OpenLayers.Bounds(center.lon - minimalSize/2,
+               center.lat - minimalSize/2,
+               center.lon + minimalSize/2,
+               center.lat + minimalSize/2);
+           return biggerExtent;
+       } else {
+           return extent;
+       }
     }
 });
