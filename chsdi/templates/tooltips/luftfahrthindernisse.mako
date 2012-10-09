@@ -38,8 +38,10 @@
 % endif
     <table border="0" cellspacing="8" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr>
-            <td style="font-weight: bold; font-size: 14px; width: 70%;">${_('tt_ch.bazl.registrationnummer')}: ${c.feature.registrationnumber}</td>
-            <td style="width: 180px; float: left;">${_('tt_ch.bazl.hindernisart')}: ${c.feature.obstacletype}</td> 
+            <td>
+                <div style="float: left; font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.registrationnummer')}: ${c.feature.registrationnumber}</div>
+                <div style="float: right; text-align: right;">${_('tt_ch.bazl.hindernisart')}: ${c.feature.obstacletype}</div>
+            </td>
         </tr>
         <tr>
             <td style="font-weight: bold; font-size: 14px; width:100%;">${_('status')}: ${c.feature.state}</td>
@@ -83,8 +85,8 @@
         <tr>
             <td style="padding-left: 200px;">${sanctiontext}</td>
         </tr>
-        <tr style="float: right; margin-right: -195px;">
-            <td style="float: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
+        <tr>
+            <td style="text-align: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
         </tr>
     </table>
     <script type="text/javascript">
