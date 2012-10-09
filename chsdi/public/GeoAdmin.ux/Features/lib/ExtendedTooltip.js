@@ -470,11 +470,8 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 },
                 show: function(evt) {
                     if (this.popup.footer && this.lastClick !== undefined) { 
-                        var singlePosition = this.map.getPixelFromLonLat(this.lastClick); 
                         var mapBox = Ext.fly(this.map.div).getBox(true);
-                        var top = singlePosition.y + mapBox.y;
-                        var left = singlePosition.x + mapBox.x;
-                        this.popup.setPosition(left, top - 75);
+                        this.popup.setPosition(mapBox.x + mapBox.width/2 - this.popup.width/2, mapBox.y);
                     } else {
                         // First animation performed
                         this.firstAnimate = false;
