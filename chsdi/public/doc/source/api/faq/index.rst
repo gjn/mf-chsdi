@@ -116,55 +116,30 @@ Some layers can’t be freely used. These layers are accessible by the way of `s
 
 Here is a list of the layers that requires a swisstopo web acesss:
 
-  1.   `ch.swisstopo.vec25-anlagen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-anlagen>`_ (Functional surfaces VECTOR25)
-  #.   `ch.swisstopo.vec25-einzelobjekte <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-einzelobjekte>`_ (Single objects VECTOR25)
-  #.   `ch.swisstopo.vec25-eisenbahnnetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-eisenbahnnetz>`_ (Railway network VECTOR25)
-  #.   `ch.swisstopo.vec25-gebaeude <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gebaeude>`_ (Buildings VECTOR25)
-  #.   `ch.swisstopo.vec200-miscellaneous-geodpoint <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`_ (Elevations VECTOR200)
-  #.   `ch.swisstopo.vec200-names-namedlocation <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-names-namedlocation>`_ (Names VECTOR200)
-  #.   `ch.swisstopo.vec200-transportation-oeffentliche-verkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`_ (Public transportation VECTOR200)
-  #.   `ch.swisstopo.vec200-transportation-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-transportation-strassennetz>`_ (Road system VECTOR200)
-  #.   `ch.swisstopo.vec25-gewaessernetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-gewaessernetz>`_ (Hydrological network VECTOR25)
-  #.   `ch.swisstopo.vec25-heckenbaeume <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-heckenbaeume>`_ (Hedges and trees VECTOR25)
-  #.   `ch.swisstopo.hiks-dufour <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour>`_ (Dufour Map)
-  #.   `ch.swisstopo.geologie-geologischer_atlas <http://map.geo.admin.ch?layers=ch.swisstopo.geologie-geologischer_atlas>`_ (Geological Atlas 1:25 000)
-  #.   `ch.swisstopo.pixelkarte-farbe <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-farbe>`_ (National Map)
-  #.   `ch.swisstopo.hiks-siegfried <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-siegfried>`_ (Siegfried Map)
-  #.   `ch.swisstopo.pixelkarte-farbe-pk200.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk200.noscale>`_ (National Map 1:200'000)
-  #.   `ch.swisstopo.pixelkarte-farbe-pk100.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`_ (National Map 1:100'000)
-  #.   `ch.swisstopo.pixelkarte-farbe-pk50.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`_ (National Map 1:50'000)
-  #.   `ch.swisstopo.pixelkarte-farbe-pk25.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`_ (National Map 1:25'000)
-  #.   `ch.swisstopo.pixelkarte-grau <http://map.geo.admin.ch?bgLayer=ch.swisstopo.pixelkarte-grau>`_ (National Map gray)
-  #.   `ch.swisstopo.pixelkarte-farbe-pk500.noscale <http://map.geo.admin.ch?layers=ch.swisstopo.pixelkarte-farbe-pk500.noscale>`_ (National Map 1:500'000)
-  #.   `ch.swisstopo.swissbuildings3d <http://map.geo.admin.ch?layers=ch.swisstopo.swissbuildings3d>`_ (Simplified 3D buildings)
-  #.   `ch.swisstopo.swissalti3d-reliefschattierung <http://map.geo.admin.ch?layers=ch.swisstopo.swissalti3d-reliefschattierung>`_ (swissALTI3D Hillshade)
-  #.   `ch.swisstopo.swisstlm3d-karte <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-karte>`_ (Topographical landscape model)
-  #.   `ch.swisstopo.swissimage <http://map.geo.admin.ch?bgLayer=ch.swisstopo.swissimage>`_ (SWISSIMAGE)
-  #.   `ch.swisstopo.vec200-building <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-building>`_ (Building generalized VECTOR200)
-  #.   `ch.swisstopo.swisstlm3d-wanderwege <http://map.geo.admin.ch?layers=ch.swisstopo.swisstlm3d-wanderwege>`_ (Hiking trails)
-  #.   `ch.swisstopo.vec200-landcover <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-landcover>`_ (Land cover VECTOR200)
-  #.   `ch.swisstopo.vec200-hydrography <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-hydrography>`_ (Hydrology VECTOR200)
-  #.   `ch.swisstopo.vec200-miscellaneous <http://map.geo.admin.ch?layers=ch.swisstopo.vec200-miscellaneous>`_ (Single objects VECTOR200)
-  #.   `ch.swisstopo.vec25-strassennetz <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-strassennetz>`_ (Road network VECTOR25)
-  #.   `ch.swisstopo.vec25-primaerflaechen <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-primaerflaechen>`_ (Primary surfaces VECTOR25)
-  #.   `ch.swisstopo.vec25-uebrigerverkehr <http://map.geo.admin.ch?layers=ch.swisstopo.vec25-uebrigerverkehr>`_ (Other traffic VECTOR25)
+.. raw:: html
+
+   <body>
+      <div id="notfree" style="margin-left:10px;"></div>
+   </body>
 
 Here is a list of all the freely accessible layers:
 
 .. raw:: html
 
    <body>
-      <div id="mylayerference" style="margin-left:10px;"></div>
+      <div id="free" style="margin-left:10px;"></div>
    </body>
-
 
 .. raw:: html
 
    <script type="text/javascript">
 
     function init() {
-        var myInnerHtml = "<br><table border=\"0\">";
-        var layerArray = [];
+        var myInnerHtml_free, myInnerHtml_notfree, layerArray_free, layerArray_notfree;
+        myInnerHtml_free = "<br><table border=\"0\">";
+        myInnerHtml_notfree =  "<br><table border=\"0\">";
+        layerArray_free = [];
+        layerArray_notfree = [];
 
         var availableLayers = GeoAdmin.layers.init();
         Ext.ux.JSONP.request('http://api.geo.admin.ch/layers', {
@@ -172,66 +147,67 @@ Here is a list of all the freely accessible layers:
             lang: "en",
             params: {
                 properties: 'bod_layer_id,kurzbezeichnung',
-                project: 'mf-geoadmin2',
+                project: 'api-free',
                 lang: 'en'
             },
             scope: this,
             callback: function(response) {
                 var notInFreeWMTS = [
-                    "voidLayer",
-                    "ch.swisstopo.vec25-anlagen",
-                    "ch.swisstopo.vec25-einzelobjekte",
-                    "ch.swisstopo.vec25-eisenbahnnetz",
-                    "ch.swisstopo.vec25-gebaeude",
-                    "ch.swisstopo.vec200-miscellaneous-geodpoint",
-                    "ch.swisstopo.vec200-names-namedlocation",
-                    "ch.swisstopo.vec200-transportation-oeffentliche-verkehr",
-                    "ch.swisstopo.vec200-transportation-strassennetz",
-                    "ch.swisstopo.vec25-gewaessernetz",
-                    "ch.swisstopo.vec25-heckenbaeume",
-                    "ch.swisstopo.hiks-dufour",
-                    "ch.swisstopo.geologie-geologischer_atlas",
-                    "ch.swisstopo.pixelkarte-farbe",
-                    "ch.swisstopo.hiks-siegfried",
-                    "ch.swisstopo.pixelkarte-farbe-pk200.noscale",
-                    "ch.swisstopo.pixelkarte-farbe-pk100.noscale",
-                    "ch.swisstopo.pixelkarte-farbe-pk50.noscale",
-                    "ch.swisstopo.pixelkarte-farbe-pk25.noscale",
-                    "ch.swisstopo.pixelkarte-grau",
-                    "ch.swisstopo.pixelkarte-farbe-pk500.noscale",
-                    "ch.swisstopo.swissbuildings3d",
-                    "ch.swisstopo.swissalti3d-reliefschattierung",
-                    "ch.swisstopo.swisstlm3d-karte",
-                    "ch.swisstopo.swissimage",
-                    "ch.swisstopo.vec200-building",
-                    "ch.swisstopo.swisstlm3d-wanderwege",
-                    "ch.swisstopo.vec200-landcover",
-                    "ch.swisstopo.vec200-hydrography",
-                    "ch.swisstopo.vec200-miscellaneous",
-                    "ch.swisstopo.vec200-landcover-wald",
-                    "ch.swisstopo.vec25-strassennetz",
-                    "ch.swisstopo.vec25-primaerflaechen",
-                    "ch.swisstopo.vec25-uebrigerverkehr"
+                    "voidLayer"
                     ];
 
                 for (i in response.results) {
                     var layer = response.results[i];
                     if (notInFreeWMTS.indexOf(layer.bod_layer_id) === -1 && layer.bod_layer_id !== undefined) { 
-                            layerArray.push([layer.bod_layer_id, layer.kurzbezeichnung]);
+                            layerArray_free.push([layer.bod_layer_id, layer.kurzbezeichnung]);
                     }
                 }
-                layerArray.sort();
+                layerArray_free.sort();
                 var i = 1;
-                for (layerKey in layerArray) {
-                    var layer =  layerArray[layerKey];
+                for (layerKey in layerArray_free) {
+                    var layer =  layerArray_free[layerKey];
                     if (typeof(layer) != 'function') {
-                        myInnerHtml = myInnerHtml + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
+                        myInnerHtml_free = myInnerHtml_free + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
                                       layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
                     i = i+1;
                     }
                  }
-                 document.getElementById("mylayerference").innerHTML=myInnerHtml;
+                 document.getElementById("free").innerHTML=myInnerHtml_free;
             }
+        });
+        Ext.ux.JSONP.request('http://api.geo.admin.ch/layers', {
+            callbackKey: "cb",
+            lang: "en",
+            params: {
+                properties: 'bod_layer_id,kurzbezeichnung',
+                project: 'api-notfree',
+                lang: 'en'
+            },
+            scope: this,
+            callback: function(response) {
+                var notInFreeWMTS = [
+                    "voidLayer"
+                    ];
+
+                for (i in response.results) {
+                    var layer = response.results[i];
+                    if (notInFreeWMTS.indexOf(layer.bod_layer_id) === -1 && layer.bod_layer_id !== undefined) {
+                            layerArray_notfree.push([layer.bod_layer_id, layer.kurzbezeichnung]);
+                    }
+                }
+                layerArray_notfree.sort();
+                var i = 1;
+                for (layerKey in layerArray_notfree) {
+                    var layer =  layerArray_notfree[layerKey];
+                    if (typeof(layer) != 'function') {
+                        myInnerHtml_notfree = myInnerHtml_notfree + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
+                                      layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
+                    i = i+1;
+                    }
+                 }
+                 document.getElementById("notfree").innerHTML=myInnerHtml_notfree;
+            }
+
         });
     }
 
