@@ -449,7 +449,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bfe.energieforschung':'Energieforschung',
 	'ch.bfe.kleinwasserkraftpotentiale':'Kleinwasserkraftpotentiale',
 	'ch.bfe.sachplan-geologie-tiefenlager':'SP Geologische Tiefenlager',
-	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'SP Geologische Tiefenlager',
+	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'SP Geologische Tiefenlager: t.D.',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistik Wasserkraft',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Stauanlagen',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=de',

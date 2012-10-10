@@ -449,7 +449,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bfe.energieforschung':'Recherche énergétique',
 	'ch.bfe.kleinwasserkraftpotentiale':'Potentiel petite hydraulique',
 	'ch.bfe.sachplan-geologie-tiefenlager':'PS dépôts couches géol. profondes',
-	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'PS dépôts couches géol. profondes',
+	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'PS dépôts couches géol.prof.: p.t.',
 	'ch.bfe.statistik-wasserkraftanlagen':'Statistique hydroélectricité',
 	'ch.bfe.stauanlagen-bundesaufsicht':'Ouvrages d’accumulation',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=fr',
