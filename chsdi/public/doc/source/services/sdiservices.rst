@@ -295,7 +295,7 @@ Examples:
 - http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung: returns all the layers where the query string wasser is found
 - http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb: returns the legend of the layer in a callback
 - http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
-- http://api.geo.admin.ch/layers?mode=preview
+- http://api.geo.admin.ch/layers?mode=preview: list all layers of map.geo.admin.ch in preview mode
 - http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200: returns a set of syncronized maps filtered with the query string lac
 - http://api.geo.admin.ch/layers?project=api-notfree: returns all the layers that require a swisstopo web access
 

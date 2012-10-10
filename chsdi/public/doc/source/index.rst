@@ -75,6 +75,11 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
 
     </div>
 
+WMTS Restrictions
+*****************
+
+The WMTS service must be used exclusively in HTTP context. HTTPS and dekstop GIS clients are not supported. Not all layers are freely accessible and some of them require a `swisstopo web access <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_. For a list of all available layers and their accessibility please refer to the `FAQ <api/faq/index.html#which-layers-are-available>`_.
+
 API
 ***
 
