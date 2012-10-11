@@ -16,8 +16,8 @@ ExpiresActive On
 # TODO THIS IS A PROVISORY SOLUTION
 
 # Alwas allow if requested layer is 'osm'
-RewriteCond %{QUERY_STRING} LAYERS=osm[^,]  [NC] 
-RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$ /${vars:instanceid}/mapproxy/service$1 [PT,L]
+# RewriteCond %{QUERY_STRING} LAYERS=osm[^,]  [NC] 
+# RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$ /${vars:instanceid}/mapproxy/service$1 [PT,L]
 
 # Deny access for all but these IPs or referer
 RewriteCond %{HTTP:X-Forwarded-for} !^92.106.80.107$
