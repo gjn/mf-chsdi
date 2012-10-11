@@ -707,5 +707,6 @@ OpenLayers.Lang.rm= {
 	'zoomout':'Zoom vers anora',
 	'zugangberechtigung':'Zugangsberechtigungsstufe',
 	'zustaendige_stelle':'Zuständige Stelle',
-	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals'
+	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals',
+    'Swiss Coordinate LV95':'LV95'
 };

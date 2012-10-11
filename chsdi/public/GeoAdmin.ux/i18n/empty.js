@@ -703,5 +703,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.schutzgebiete-biosphaerenreservate': "",
     'ch.bfe.kleinwasserkraftpotentiale': "",
     'Shorten': "",
-    'Shorten URL': ""
+    'Shorten URL': "",
+    'Swiss Coordinate LV95': ""
 });

@@ -711,5 +711,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'zoomout':'Zoom out',
 	'zugangberechtigung':'Zugangsberechtigungsstufe',
 	'zustaendige_stelle':'Zuständige Stelle',
-	'Öffentliche Einrichtungen und Dienste':'Utility and governmental services'
+	'Öffentliche Einrichtungen und Dienste':'Utility and governmental services',
+    'Swiss Coordinate LV95':'LV95'
 });

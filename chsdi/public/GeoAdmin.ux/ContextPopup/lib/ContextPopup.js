@@ -82,6 +82,9 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                     callback: function(response) {
                         // Set popup content
                         var content = "<table style='font-size: 12px;'><tr><td width=\"150\">" + OpenLayers.i18n('Swiss Coordinate') + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
+                        lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:2056"));
+                        content = content + "<tr><td>" + OpenLayers.i18n('Swiss Coordinate LV95') + "</td><td>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</td></tr>';
+                        lonlat = lonlatCH.clone();                        
                         lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
                         content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
                         content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None', '-') + ' [m] </td></tr>';

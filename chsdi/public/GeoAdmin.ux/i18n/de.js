@@ -711,5 +711,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'zoomout':'Herauszoomen',
 	'zugangberechtigung':'Zugangsberechtigungsstufe',
 	'zustaendige_stelle':'Zuständige Stelle',
-	'Öffentliche Einrichtungen und Dienste':'Versorgungswirtschaft und staatliche Dienste'
+	'Öffentliche Einrichtungen und Dienste':'Versorgungswirtschaft und staatliche Dienste',
+    'Swiss Coordinate LV95':'LV95'
 });
