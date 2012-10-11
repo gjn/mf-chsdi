@@ -29,13 +29,6 @@ class CheckerController(BaseController):
                 response.status='500'
                 return check
 
-            # Test BOD search
-            check = self._checkUrl('BOD Search','http://'+serviceUrl+'/bodsearch/search?lang=de&query=moor',
-                                   '{"results": [{"content": ', request.host)
-            if  (check != 'OK'):
-                response.status='500'
-                return check
-
 
             # Test print
             check = self._checkUrl('Print',
@@ -61,21 +54,6 @@ class CheckerController(BaseController):
                 response.status='500'
                 return check
             
-            # Test BOD details 
-            check = self._checkUrl('BOD search details service',
-                                   'http://'+serviceUrl+'/bodsearch/details/ch.swisstopo.swissboundaries3d-kanton-flaeche.fill',
-                                   'ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', request.host)
-            if  (check != 'OK'):
-                response.status='500'
-                return check
-            
-            # Test BOD search 
-            check = self._checkUrl('BOD search  service',
-                                   'http://'+serviceUrl+'/bodsearch/layers?lang=de',
-                                   'description', request.host)
-            if  (check != 'OK'):
-                response.status='500'
-                return check
 
             # Test WMTS GetCapabilities
             check = self._checkUrl('WMTS GetCapabilities',
