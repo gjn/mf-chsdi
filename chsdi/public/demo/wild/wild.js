@@ -19,7 +19,11 @@ window.GeoAdmin.webServicesUrl= "../..";
 function init() {
   var popupRendered = false;
   OpenLayers.ProxyHost = "ogcproxy?url=";
-  api = new GeoAdmin.API({});  // French: fr
+  var argparse = new OpenLayers.Control.ArgParser();
+  var args = argparse.getParameters();
+  var lang = args.lang || 'de';
+  api = new GeoAdmin.API();  
+  OpenLayers.Lang.setCode(lang);
 	
 	var o = {
 		renderTo: 'mymap'
