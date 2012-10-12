@@ -94,6 +94,14 @@ GeoExt.ux.DisplayProjectionSelectorCombo = Ext.extend(Ext.form.ComboBox, {
             }
         ]);
 
+        //helper function for dirty hack. See #4611
+        var getCustomProjectionTitle = function (proj) {
+            if (proj.srsCodeInput === 'EPSG:2056') {
+                return "CH1903+ / LV95";
+            }
+            return proj.title;
+        }
+
         // Fill the combo box with the projections
         var mapProjection = null;
         var mapProjectionRecord = null;
@@ -103,7 +111,7 @@ GeoExt.ux.DisplayProjectionSelectorCombo = Ext.extend(Ext.form.ComboBox, {
             for (var i = 0; i < this.projections.length; i++) {
                 mapProjection = new OpenLayers.Projection(this.projections[i]);
                 mapProjectionRecord = new projectionRecord({
-                    title: mapProjection.proj.title,
+                    title: getCustomProjectionTitle(mapProjection.proj),
                     projName: mapProjection.proj.projName,
                     srsCode: mapProjection.proj.srsCodeInput
                 });
@@ -133,10 +141,14 @@ GeoExt.ux.DisplayProjectionSelectorCombo = Ext.extend(Ext.form.ComboBox, {
             }
         }
 
+        var setComboValue = function(combo, mapProjection) {
+            combo.setValue(getCustomProjectionTitle(mapProjection.proj));
+        }
+
         if (this.map.displayProjection) {
-            this.setValue(this.map.displayProjection.proj.title);
+            setComboValue(this, this.map.displayProjection);
         } else {
-            this.setValue(mapProjection.proj.title);
+            setComboValue(this, mapProjection);
         }
 
         this.on('select',
@@ -176,7 +188,7 @@ GeoExt.ux.DisplayProjectionSelectorCombo = Ext.extend(Ext.form.ComboBox, {
 
         this.on('displayProjectionChanged',
                 function(combo) {
-                    combo.setValue(this.map.displayProjection.proj.title);
+                    setComboValue(combo, this.map.displayProjection);
                 },
                 this
                 );

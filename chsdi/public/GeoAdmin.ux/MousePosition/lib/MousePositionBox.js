@@ -64,8 +64,8 @@ GeoAdmin.MousePositionBox = Ext.extend(Ext.BoxComponent, {
             renderTo: divEl,
             controls: [control],
             updateMapDisplayProjection: true,
-            projections: ['EPSG:21781','EPSG:4326','EPSG:2056'],
-            width: 110
+            projections: ['EPSG:21781','EPSG:2056','EPSG:4326'],
+            width: 120
         });
 
         divEl.appendChild(control.element);

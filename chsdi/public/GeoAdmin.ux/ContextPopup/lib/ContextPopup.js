@@ -81,12 +81,20 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                     scope: this,
                     callback: function(response) {
                         // Set popup content
-                        var content = "<table style='font-size: 12px;'><tr><td width=\"150\">" + OpenLayers.i18n('Swiss Coordinate') + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
-                        lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:2056"));
-                        content = content + "<tr><td>" + OpenLayers.i18n('Swiss Coordinate LV95') + "</td><td>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</td></tr>';
+                        var lv03Projection = this.map.getProjectionObject();
+                        var lv95Projection = new OpenLayers.Projection("EPSG:2056");
+                        var wgs84Projection = new OpenLayers.Projection("EPSG:4326");
+
+                        var content = "<table style='font-size: 12px;'><tr><td width=\"110\">" + lv03Projection.proj.title + "</td><td><a href='?" + params + "' target='new'>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</a></td></tr>';
+
+                        lonlat.transform(lv03Projection, lv95Projection);
+                        //dirty hack: hard coded text as proj4js does not support + in title..
+                        content = content + "<tr><td>" + "CH1903+ / LV95" + "</td><td>" + Math.round(lonlat.lon) + " " + Math.round(lonlat.lat) + '</td></tr>';
+
                         lonlat = lonlatCH.clone();                        
-                        lonlat.transform(this.map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
-                        content = content + "<tr><td>" + OpenLayers.i18n('WGS 84') + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
+                        lonlat.transform(lv03Projection, wgs84Projection);
+                        content = content + "<tr><td>" + wgs84Projection.proj.title + "</td><td>" + Math.round(lonlat.lon * 100000) / 100000 + " " + Math.round(lonlat.lat * 100000) / 100000 + '</td></tr>';
+
                         content = content + "<tr><td>" + OpenLayers.i18n('Elevation') + "</td><td>" + response.height.replace('None', '-') + ' [m] </td></tr>';
                         content = content + "<tr><td><div class='ch_bowl'></div></td><td><a href='?crosshair=bowl&" + params + "' target='new'>" + OpenLayers.i18n('Link with bowl crosshair') + "</a></td></tr>";
                         if(this.qrcode){
@@ -100,7 +108,7 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
                         this.popup = new GeoExt.Popup({
                             title: OpenLayers.i18n('Position'),
                             location: new OpenLayers.Geometry.Point(this.map.getLonLatFromPixel(this.xy).lon, this.map.getLonLatFromPixel(this.xy).lat),
-                            width:300,
+                            width:270,
                             map: this.map,
                             html: content,
                             maximizable: false,

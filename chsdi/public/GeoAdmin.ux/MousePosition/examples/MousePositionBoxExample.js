@@ -3,7 +3,10 @@ var mapPanel;
 
 Ext.onReady(function() {
     map = new GeoAdmin.Map();
-    map.displayProjection = new OpenLayers.Projection('EPSG:21781');
+    var mousePosition2 = new GeoAdmin.MousePositionBox({
+        map: map
+    });
+    /*
     var mousePosition = new GeoAdmin.MousePosition();
     map.addControl(mousePosition);
     var displayProjection = new GeoExt.ux.DisplayProjectionSelectorCombo({
@@ -20,5 +23,14 @@ Ext.onReady(function() {
         height: 400,
         width: 600,
         bbar: ['->', displayProjection]
+    });
+    */
+    mapPanel = new GeoExt.MapPanel({
+        title: "MapPanel",
+        renderTo: "map",
+        map: map,
+        height: 400,
+        widht: 600,
+        bbar: [ mousePosition2]
     });
 });
