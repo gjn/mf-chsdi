@@ -71,10 +71,21 @@ layouts:
                 maxHeight: 39
                 url: "${buildout:directory}/print/rdg_logo_it.png"
               - !text
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  $${mapTitle}
+                    condition: langde
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                       Wildruhezonen und Schutzgebiete der Schweiz
+                    condition: langfr
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                        Zones de tranquillité et sites de protection de la faune Suisse
+                    condition: langit
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                        Zone di tranquillità e siti di protezione della fauna selvatica Svizzera
               - !image
                 condition: langde
                 align: left
@@ -170,13 +181,19 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                Bitte beachten Sie deshalb unbedingt die Markierungen im Gelände.
+                Detaillierte Informationen: respektiere-deine-grenzen.ch, wildruhezonen.ch. Druckdatum $${now dd.MM.yyyy}
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                Merci donc de toujours respecter le balisage sur le terrain. 
+                Des informations détaillées: respecter-cest-proteger.ch, zones-de-tranquillite.ch. Date d'impression $${now dd.MM.yyyy}
+            - !text
+              condition: langit
+              fontSize: 7
+              align: left
+              text: |
+                Informazione specificata: respecter-cest-proteger.ch, zone-di-tranquillita.ch. $${now dd.MM.yyyy}
 
 #---------------------------------------
 # H part: disclaimer
@@ -191,19 +208,19 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                 Obwohl die zuständigen Behörden mit aller Sorgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden.
+                 Haftung: Obwohl die zuständigen Behörden mit aller SoYgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                Malgré la grande attention qu’elles portent à la justesse des informations diffusées sur ce site, les autorités responsables ne peuvent endosser aucune responsabilité quant à la fidélité, à l’exactitude, à l’actualité, à la fiabilité et à l’intégralité de ces informations. 
+                Responsabilité: Malgré la grande attention qu'elles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à l'exactitude, à l'actualité, à la fiabilité et à l'intégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html 
             - !text
               condition: langit
               fontSize: 7
               align: left
               text: |
-                Responsabilità: Nonostante si presti grande attenzione all’esattezza delle informazioni pubblicate su questo sito, le autorità federali declinano ogni responsabilità per la fedeltà, l’esattezza, l’attualità, l’affidabilità e la completezza di tali informazioni. Diritti d’autore: autorità della Confederazione Svizzera, anno 2007. http://www.disclaimer.admin.ch/basi_legali.html
+                 Responsabilità: Nonostante si presti grande attenzione all’esattezza delle informazioni pubblicate su questo sito, le autorità federali declinano ogni responsabilità per la fedeltà, l’esattezza, l’attualità, l’affidabilità e la completezza di tali informazioni. Diritti d’autore: autorità della Confederazione Svizzera, anno 2007. http://www.disclaimer.admin.ch/basi_legali.html
                   
 
 
@@ -275,17 +292,28 @@ layouts:
                 condition: langfr
                 align: left
                 maxHeight: 39
-                url: "${buildout:directory}/print/rdg_logo_de.png"
+                url: "${buildout:directory}/print/rdg_logo_fr.png"
               - !image
                 condition: langit
                 align: left
                 maxHeight: 39
-                url: "${buildout:directory}/print/rdg_logo_de.png"
+                url: "${buildout:directory}/print/rdg_logo_it.png"
               - !text
-                fontSize: 14
-                fontColor: #333333
-                text: |
-                  $${mapTitle}
+                    condition: langde
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                       Wildruhezonen und Schutzgebiete der Schweiz
+                    condition: langfr
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                        Zones de tranquillité et sites de protection de la faune Suisse
+                    condition: langit
+                    fontSize: 14
+                    fontColor: #333333
+                    text: |
+                        Zone di tranquillità e siti di protezione della fauna selvatica Svizzera
               - !image
                 condition: langde
                 align: left
@@ -377,10 +405,23 @@ layouts:
           width: 510
           items:
             - !text
+              condition: langde
               fontSize: 7
               align: left
               text: |
-                $${mapFooter}
+                Detaillierte Informationen: respektiere-deine-grenzen.ch, wildruhezonen.ch. Druckdatum $${now dd.MM.yyyy}
+            - !text
+              condition: langfr
+              fontSize: 7
+              align: left
+              text: |
+                Des informations détaillées: respecter-cest-proteger.ch, zones-de-tranquillite.ch. Date d'impression $${now dd.MM.yyyy}
+            - !text
+              condition: langit
+              fontSize: 7
+              align: left
+              text: |
+                Informazione specificata: respecter-cest-proteger.ch, zone-di-tranquillita.ch. $${now dd.MM.yyyy}
 
 #---------------------------------------
 # H part: disclaimer
@@ -392,22 +433,22 @@ layouts:
           items:
             - !text
               condition: langde
-              fontSize: 6
+              fontSize: 7
               align: left
               text: |
-                Haftung: Obwohl die Bundesbehörden mit aller Sorgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden.Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
+                 Haftung: Obwohl die zuständigen Behörden mit aller SoYgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
             - !text
               condition: langfr
               fontSize: 7
               align: left
               text: |
-                Responsabilité: Malgré la grande attention quâelles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à lâexactitude, à lâactualité, à la fiabilité et à lâintégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html
+                Responsabilité: Malgré la grande attention qu'elles portent à la justesse des informations diffusées sur ce site, les autorités fédérales ne peuvent endosser aucune responsabilité quant à la fidélité, à l'exactitude, à l'actualité, à la fiabilité et à l'intégralité de ces informations. Droits d'auteur: autorités de la Confédération suisse, 2007. http://www.disclaimer.admin.ch/conditions_dutilisation.html 
             - !text
               condition: langit
               fontSize: 7
               align: left
               text: |
-                Responsabilità: Nonostante si presti grande attenzione allâesattezza delle informazioni pubblicate su questo sito, le autorità federali declinano ogni responsabilità per la fedeltà, lâesattezza, lâattualità, lâaffidabilità e la completezza di tali informazioni. Diritti dâautore: autorità della Confederazione Svizzera, anno 2007. http://www.disclaimer.admin.ch/basi_legali.html
+                 Responsabilità: Nonostante si presti grande attenzione all’esattezza delle informazioni pubblicate su questo sito, le autorità federali declinano ogni responsabilità per la fedeltà, l’esattezza, l’attualità, l’affidabilità e la completezza di tali informazioni. Diritti d’autore: autorità della Confederazione Svizzera, anno 2007. http://www.disclaimer.admin.ch/basi_legali.html
 
 #-------------------------------------
 # Scalesbar
