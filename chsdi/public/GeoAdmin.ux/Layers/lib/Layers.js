@@ -1463,7 +1463,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"),
                 layertype: 'wmts',
-                timestamp: ['20120127','20110103'],
+                timestamp: ['20120901','20120127','20110103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
