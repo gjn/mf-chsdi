@@ -3117,7 +3117,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bazl",
                 queryable: true,
                 type: "wms"
-            }
+            },
 //            'ch.bazl.heliports-gebirgslandeplaetze': {
 //                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
 //                layertype: 'wmts',
@@ -3134,6 +3134,22 @@ GeoAdmin._Layers = OpenLayers.Class({
 //                datenherr: "ch.bazl",
 //                queryable: false
 //            }
+            "org.epsg.grid_21781": {
+                name: OpenLayers.i18n("org.epsg.grid_21781"),
+                layers: ["org.epsg.grid_21781"],
+                layertype: "wms",
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo"
+            },
+            "org.epsg.grid_4326": {
+                name: OpenLayers.i18n("org.epsg.grid_4326"),
+                layers: ["org.epsg.grid_4326"],
+                layertype: "wms",
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo"
+            }
         };
         return this.layers;
     }
