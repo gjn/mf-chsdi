@@ -59,19 +59,14 @@ class SwisssearchController(BaseController):
             if egid is None:
                 abort(400, "missing 'query' or 'egid' parameter")
 
-        # layers are used t for the advanced search
+        # layers are used for the advanced search
         layers = request.params.get('layers')
-
-        if layers is not None and len(layers) > 0:
+        if layers is not None:
             layers = layers.split(',')
-        else:
-            layers = None
 
         bfsnr = request.params.get('bfsnr')
         if bfsnr is None:
             bfsnr = request.params.get('citynr')
-        features = []
-        allfeatures = []
         onlyOneTerm = False
 
         if egid is not None:
@@ -136,32 +131,21 @@ class SwisssearchController(BaseController):
  
         if layers:
            maxFeaturesGeocoding = MAX_FEATURES_GEOCODING - 10
+           features = list(query_features(self.lang, layers, q))
+           allfeatures = list(self.getLayerFeatures(features))
 
         query = query.order_by(ftsOrderBy).limit(maxFeaturesGeocoding)
-        if layers:
-            features = query_features(self.lang, layers, q)
 
         if self.rawjson:
-            for feature in features:
-               allfeatures.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
-                                       geometry=feature.geometry if not self.no_geom else None,
-                                       properties=feature.attributes))
-            for feature in query.all():
-               properties = {}
-               feature.compute_attribute()
-               properties = feature.attributes
-               #Remove unneeded properties
-               del properties['search_name']
-               del properties['the_geom_real']
-               allfeatures.append(Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
-                                       geometry=feature.geometry if not self.no_geom else None, 
-                                       properties=properties))
-
-            return FeatureCollection(allfeatures)
+            if layers:
+                return FeatureCollection(allfeatures.append(self.getRawFeatures(query)))
+            else:
+                return FeatureCollection(list(self.getRawFeatures(query)))
         else:
             # Put in the good order...
             allfeatures = query.all()
-            allfeatures += features
+            if layers:
+                allfeatures += features
             return {'results': [f.json(rawjson=False, nogeom=self.no_geom) for f in allfeatures]}
 
     @_jsonify(cb="cb", cls=MapFishEncoder)
@@ -190,8 +174,6 @@ class SwisssearchController(BaseController):
         except:
             abort(400, "parameter 'tolerance' is not a number")
 
-
-
         # search for everything except sn25 data (who did not have 'the_geom_poly' geom)
         gfilter_poly = SwissSearch.within_filter(lon, lat, tolerance=tolerance, column='the_geom_poly')
 
@@ -208,5 +190,25 @@ class SwisssearchController(BaseController):
             query = query.filter(SwissSearch.origin.in_(self.origins))
 
         query = query.limit(MAX_FEATURES_REVERSEGEOCODING)
+        if self.rawjson:
+            return FeatureCollection(list(self.getRawFeatures(query)))
+        else:
+            return [f.json(rawjson=False, nogeom=self.no_geom) for f in query.all()]
 
-        return [f.json(rawjson=self.rawjson) for f in query.all()]
+    def getLayerFeatures(self, features):
+        for feature in features:
+           yield Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
+                                   geometry=feature.geometry if not self.no_geom else None,
+                                   properties=feature.attributes)
+   
+    def getRawFeatures(self, query):
+        for feature in query.all():
+           properties = {}
+           feature.compute_attribute()
+           properties = feature.attributes
+           # remove unneeded properties
+           del properties['search_name']
+           del properties['the_geom_real']
+           yield Feature(id=feature.id, bbox=feature.bbox if not self.no_geom else None,
+                                   geometry=feature.geometry if not self.no_geom else None,
+                                   properties=properties) 
