@@ -49,7 +49,7 @@ The following parameters are required:
 - DEPRECATED citynr (optional): the city number (BFS id). Use the bfsnr parameter instead.
 - bfsnr (optional): the city number provided by the BFS
 - cb (optional): the name of the callback funtion
-- format (optional): JSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in JSON format
+- format (optional): per default, the response is always in JSON format. Per default, a limited set of attributes are returned (notably a label attribute containing a html tag). ‘raw’ returns all the available properties of the selected feature(s) as well as their geometries
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back (apply only when raw format is requested)
 - services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services except 'parcel'
 - layers (optional): Comma separated list of layer technical names.
@@ -113,6 +113,8 @@ The following parameters are required:
 - northing: the X position in CH1903 coordinate system
 - tolerance: optional spatial tolerance for the search. Default: 10 [m]
 - cb (optional): the name of the callback funtion
+- format(optional): per default, the response is always in JSON format. Per default, a limited set of attributes are returned (notably a label attribute containing a html tag). ‘raw’ returns all the available properties of the selected feature(s) as well as their geometries
+- no_geom (optional): defines if the geometry is returned. ‘true’ means that the geometry is sent back. ‘false’ means that only the bbox is sent back (apply only when raw format is requested)
 - services (optional): Comma sepatared list of services to search in. Current possible values are: 'cities', swissnames', 'districts', 'cantons', 'postalcodes', 'parcel' and 'address'. The later is only for the federal administration, due to restrictions imposed by the cantons. Default is to search in all services
 
 **Note: The swiss cantons only allow websites of the federal governement to use the addresses search service**.
@@ -121,13 +123,15 @@ The service returns a maximum of 50 results.
 
 Examples:
 
-- Search everything ath the point location (well, within 10 m): `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
-- Search for communes and postcode within 2 km of point: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=10000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
+- Look for everything from the point location within a default radius of 10 m: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
+- Look for communes and postcode within 2 a radius of 2km: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
+- Look for communes within a radius of 500 m and returns all the properties: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw>`_ 
+- Same than above but without the geometries: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true>`_
 
 Result
 ^^^^^^
 
-A JSON content is sent back with the following content:
+Per default, a JSON content is sent back with the following content:
 
 - service: the name of the service. It can be postalcodes, cantons, cities, swissnames, districts, address or parcel
 - label: html content
