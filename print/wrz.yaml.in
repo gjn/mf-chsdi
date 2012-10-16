@@ -75,7 +75,7 @@ layouts:
                     fontSize: 14
                     fontColor: #333333
                     text: |
-                       Wildruhezonen und Schutzgebiete der Schweiz
+                       Wildruhezonen und Wildschutzgebiete der Schweiz 
               - !text
                     condition: langfr
                     fontSize: 14
@@ -116,7 +116,7 @@ layouts:
 # Scales
 #---------------------------------------
         - !columns
-          absoluteY: 550
+          absoluteY: 543
           absoluteX: 652
           width: 150
           items:
@@ -149,24 +149,28 @@ layouts:
         - !columns
           absoluteY: 60
           absoluteX: 45
-          width: 300
+          width: 150
+          height: 25
           items:
             - !text
               condition: langde
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
             - !text
               condition: langfr
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
             - !text
               condition: langit
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
 
@@ -210,7 +214,7 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                 Haftung: Obwohl die zuständigen Behörden mit aller SoYgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
+                 Haftung: Obwohl die zuständigen Behörden mit aller Sorgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
             - !text
               condition: langfr
               fontSize: 7
@@ -305,7 +309,7 @@ layouts:
                     fontSize: 14
                     fontColor: #333333
                     text: |
-                       Wildruhezonen und Schutzgebiete der Schweiz
+                       Wildruhezonen und Wildschutzgebiete der Schweiz 
               - !text
                     condition: langfr
                     fontSize: 14
@@ -379,24 +383,28 @@ layouts:
         - !columns
           absoluteY: 70
           absoluteX: 45
-          width: 300
+          width: 150
+          height: 25
           items:
             - !text
               condition: langde
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
             - !text
               condition: langfr
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
             - !text
               condition: langit
               fontSize: 7
               align: left
+              backgroundColor: white
               text: |
                 $${dataOwner}
 
@@ -440,7 +448,7 @@ layouts:
               fontSize: 7
               align: left
               text: |
-                 Haftung: Obwohl die zuständigen Behörden mit aller SoYgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
+                 Haftung: Obwohl die zuständigen Behörden mit aller Sorgfalt auf die Richtigkeit der veröffentlichten Informationen achten, kann hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit dieser Informationen keine Gewährleistung übernommen werden. Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007. http://www.disclaimer.admin.ch
             - !text
               condition: langfr
               fontSize: 7
@@ -458,7 +466,7 @@ layouts:
 # Scalesbar
 #-------------------------------------
         - !columns
-          absoluteY: 87
+          absoluteY: 80
           absoluteX: 400
           width: 150
           config:
