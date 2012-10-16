@@ -2,9 +2,9 @@ services:
   # comment out unneeded services
   demo:
   kml:
-  tms:
+  #tms:
   wms:
-    srs: ['EPSG:4326', 'EPSG:21781', 'EPSG:4258']
+    srs: ['EPSG:4326', 'EPSG:21781', 'EPSG:4258', 'EPSG:900913']
     image_formats: ['image/jpeg', 'image/png']
     md:
       # metadata used in capabilities documents
@@ -41,7 +41,7 @@ caches:
     sources: [swissimage-tiles]
     format: image/jpeg
     image:
-      resampling_method: bicubic
+      resampling_method: bilinear
     disable_storage: true
   pixelkarte-farbe:
     grids: [swisstopo-pixelkarte]
@@ -52,9 +52,10 @@ caches:
     grids: [global_mercator_osm]
     sources: [osm_tms]
     disable_storage: true
+    concurrent_tile_creators: 4
     watermark:
       text: '@ OpenStreetMap contributors'
-      opacity: 30
+      opacity: 70
       font_size: 12
       color: [0,0,0]
       spacing: 'wide'
@@ -78,6 +79,9 @@ sources:
     type: tile
     grid: global_mercator_osm
     url: http://c.tile.openstreetmap.org/%(tms_path)s.png
+    coverage:
+      bbox: [420000,30000,900000,350000]
+      bbox_srs: EPSG:21781
 
 grids:
   swisstopo-swissimage:
@@ -106,5 +110,3 @@ globals:
 
   image:
       resampling_method: bicubic
-      # resampling_method: bilinear
-      # resampling_method: bicubic
