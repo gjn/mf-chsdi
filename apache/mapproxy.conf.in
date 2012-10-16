@@ -36,7 +36,7 @@ RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$  - [F,L]
 RewriteRule ^${vars:apache-entry-point}mapproxy(.*)$ /${vars:instanceid}/mapproxy/$1 [PT]
 
 
-WSGIDaemonProcess mf-chsdi:${vars:instanceid}-mapproxy display-name=%{GROUP} user=${vars:modwsgi_user}
+WSGIDaemonProcess mf-chsdi:${vars:instanceid}-mapproxy display-name=%{GROUP} user=${vars:modwsgi_user} processes=4
 
 # define the path to the WSGI app
 WSGIScriptAlias /${vars:instanceid}/mapproxy ${buildout:directory}/buildout/parts/mapproxy/wsgi
