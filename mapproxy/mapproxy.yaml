@@ -55,10 +55,9 @@ caches:
     concurrent_tile_creators: 4
     watermark:
       text: '@ OpenStreetMap contributors'
-      opacity: 70
-      font_size: 12
+      font_size: 14
+      opacity: 100
       color: [0,0,0]
-      spacing: 'wide'
 
 sources:
   swissimage-tiles:

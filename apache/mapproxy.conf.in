@@ -30,7 +30,7 @@ RewriteCond %{HTTP:X-Forwarded-for} !^160.92.169.141$
 RewriteCond %{HTTP:X-Forwarded-for} !^10.48.109.212$ 
 RewriteCond %{HTTP:X-Forwarded-for} !^10.48.166.233$ 
 RewriteCond %{HTTP:X-Forwarded-for} !^10.48.109.212$  
-RewriteCond %{HTTP_REFERER}         !admin.ch$
+RewriteCond %{HTTP_REFERER}         !admin.ch
 RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$  - [F,L]
 
 RewriteRule ^${vars:apache-entry-point}mapproxy(.*)$ /${vars:instanceid}/mapproxy/$1 [PT]
