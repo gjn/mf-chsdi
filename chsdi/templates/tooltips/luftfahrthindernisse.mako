@@ -114,7 +114,11 @@
 
                 map = new GeoAdmin.Map('divmap' + fid);
                 map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau',{opacity: 100});
+                map.addLayerByName('org.epsg.grid_21781');
+                map.addLayerByName('org.epsg.grid_4326');
                 map.addLayerByName('ch.bazl.luftfahrthindernis');
+                map.getLayerByLayerName('org.epsg.grid_21781').mergeNewParams({lang: 'xx'});
+                map.getLayerByLayerName('org.epsg.grid_4326').mergeNewParams({lang: 'xx'});
                 var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
                 if (bounds.left === bounds.right) {
                     var center = bounds.getCenterLonLat();
