@@ -71,7 +71,6 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     stateEvents: ["beforequery", "select", "change"],
 
     stateful: true,
-
     url: null,
 
     /** api: config[attributesSearch]
@@ -145,6 +144,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     // private
+    // overrides Ext.form.ComboBox
     onSelect: function(record, index) {
         this.map.vector.removeAllFeatures();
         if (this.fireEvent('beforeselect', this, record, index) !== false) {
@@ -152,6 +152,38 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             this.collapse();
             this.fireEvent('select', this, record, index);
         }
+    },
+    // overrides Ext.form.ComboBox
+    expand : function(){
+        if(this.isExpanded()){
+            return;
+        }
+
+        if(this.title || this.pageSize){
+            this.assetHeight = 0;
+            if(this.title){
+                this.assetHeight += this.header.getHeight();
+            }
+            if(this.pageSize){
+                this.assetHeight += this.footer.getHeight();
+            }
+        }
+
+        if(this.bufferSize){
+            this.doResize(this.bufferSize);
+            delete this.bufferSize;
+        }
+        this.list.alignTo.apply(this.list, [this.el].concat(this.listAlign));
+        // zindex can change, re-check it and set it if necessary
+        this.list.setZIndex(this.getZIndex());
+        this.list.show();
+        this.innerList.setOverflow('auto'); // necessary for FF 2.0/Mac
+        this.mon(Ext.getDoc(), {
+            scope: this,
+            mousewheel: this.collapseIf,
+            mousedown: this.collapseIf
+        });
+        this.fireEvent('expand', this);
     },
 
     onBeforeQuery: function(queryEvent) {
