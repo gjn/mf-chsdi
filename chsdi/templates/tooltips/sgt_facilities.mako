@@ -33,7 +33,14 @@
     </tr>
 	<tr><td width="150">${_('tt_sachplan_facility_beschlussdatum')}</td> <td>${c.feature.validfrom or '-'}</td></tr>
 	<tr><td width="150">${_('tt_sachplan_beschreibung')}</td> <td>${c.feature.description or '-'}</td></tr>
-	<tr><td width="150">${_('tt_sachplan_weitereinfo')}</td> <td><a href="${c.feature.web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+    </tr>
+        <tr><td width="150">${_('tt_sachplan_weitereinfo')}</td>
+      % if c.feature.web is None:
+           <td> - </td>
+      % else:
+           <td><a href="${c.feature.web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td>
+      %endif
+    </tr>
 	<tr><td width="150">${_('tt_sachplan_facility_uberobjekt')}</td>
       % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
            <td>${c.feature.objname_text_de or '-'}</td>

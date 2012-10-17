@@ -52,5 +52,12 @@
            <td>${c.feature.facname_it or '-'}</td>   
       % endif
     </tr>
-	<tr><td width="150">${_('tt_sachplan_weitereinfo')}</td> <td><a href="${c.feature.web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+    </tr>
+        <tr><td width="150">${_('tt_sachplan_weitereinfo')}</td>
+      % if c.feature.web is None:
+           <td> - </td>
+      % else:
+           <td><a href="${c.feature.web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td>
+      %endif
+    </tr>
 </%def>

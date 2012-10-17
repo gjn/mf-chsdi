@@ -38,10 +38,16 @@
       % elif c.lang == 'fr':
            <td>${c.feature.description_text_fr or '-'}</td>
 	  % elif c.lang == 'it':
-           <td>${c.feature.description_text_de or '-'}</td>   
+           <td>${c.feature.description_text_it or '-'}</td>   
       % endif
     </tr>
-	<tr><td width="150">${_('tt_sachplan_weitereinfo')}</td> <td><a href="${c.feature.document_web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+	<tr><td width="150">${_('tt_sachplan_weitereinfo')}</td> 
+      % if c.feature.document_web is None:
+           <td> - </td>
+      % else:
+           <td><a href="${c.feature.document_web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td>
+      %endif
+    </tr>
 	<tr><td width="150">${_('tt_sachplan_facility_uberobjekt')}</td>
       % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
            <td>${c.feature.objectname_text_de or '-'}</td>
