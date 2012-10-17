@@ -466,7 +466,7 @@ layouts:
 # Scalesbar
 #-------------------------------------
         - !columns
-          absoluteY: 80
+          absoluteY: 95
           absoluteX: 400
           width: 150
           config:
