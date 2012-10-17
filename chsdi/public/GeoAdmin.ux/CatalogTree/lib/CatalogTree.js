@@ -773,6 +773,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.astra.ivs-reg_loc"
                     },
                     {
+                        layerId: "ch.astra.ivs-nat_wegbegleiter"
+                    },
+                    {
+                        layerId: "ch.astra.ivs-nat_abgrenzungen"
+                    },
+                    {
                         layerId: "ch.astra.ivs-gelaendekarte"
                     },
                     {
@@ -1167,6 +1173,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bafu.fauna-steinbockkolonien"
+//                    },
+//                    {
+//                        layerId: "ch.bafu.moose"
                     }
                 ]
             },
