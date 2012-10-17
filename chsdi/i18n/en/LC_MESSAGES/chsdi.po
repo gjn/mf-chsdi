@@ -2357,7 +2357,7 @@ msgid "tt_sachplan_planning_coordstand"
 msgstr "Coordination level"
 
 msgid "tt_sachplan_planning_name"
-msgstr "Installation name"
+msgstr "Measure name"
 
 msgid "tt_sachplan_planning_planungstand"
 msgstr "Planning status"

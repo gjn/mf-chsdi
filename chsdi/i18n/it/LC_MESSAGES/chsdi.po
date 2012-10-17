@@ -360,7 +360,7 @@ msgid "ch.are.alpenkonvention"
 msgstr "Convenzione delle alpi"
 
 msgid "ch.are.bauzonen-2007"
-msgstr "Zones à bâtir Suisse 2007"
+msgstr "Zone edificabili Svizzera 2007"
 
 msgid "ch.are.belastung-gueterverkehr-bahn-2008"
 msgstr "Trafic marchandises 2008"
@@ -399,7 +399,7 @@ msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Percorsi trasporti eccezionali"
 
 msgid "ch.astra.ivs-gelaendekarte"
-msgstr "IVS cara del territorio"
+msgstr "IVS carta del territorio"
 
 msgid "ch.astra.ivs-nat"
 msgstr "IVS Nazionale"
@@ -684,7 +684,7 @@ msgid "ch.bfs.arealstatistik-waldmischungsgrad"
 msgstr "Miscela della foresta 1990/1992"
 
 msgid "ch.bfs.gebaeude_wohnungs_register"
-msgstr "Registro degli edifici e degli alloggi"
+msgstr "Registro degli edifici e delle abitazioni"
 
 msgid "ch.blw.erosion"
 msgstr "Rischio di erosione 1"
