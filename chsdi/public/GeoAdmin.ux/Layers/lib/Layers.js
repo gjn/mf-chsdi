@@ -1263,6 +1263,29 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+// (ltalp) ch.bafu.moose avec wms pour tester tooltip sans les tiles
+//            "ch.bafu.moose": {
+//                name: OpenLayers.i18n("ch.bafu.moose"),
+//                layertype: 'wms',
+//                layers: ['ch.bafu.moose'],
+//                format: "image/png",
+//                datenherr: "ch.bafu",
+//                opacity: 0.75,
+//                queryable: true,
+//                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
+//                type: "point"
+//            },
+// (ltalp) ch.bafu.moose pour la PROD (quand les tiles seront générées)
+//            "ch.bafu.moose": {
+//                name: OpenLayers.i18n("ch.bafu.moose"),
+//                layertype: 'wmts',
+//                timestamp: ['20120416'],
+//                type: "mixed",
+//                format: "image/png",
+//                datenherr: "ch.bafu",
+//                opacity: 0.75,
+//                queryable: true
+//            },
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),
                 layertype: 'wmts',
@@ -2234,24 +2257,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
-//            "ch.astra.ivs-nat_abgrenzungen": {
-//                name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
-//                layertype: 'wmts',
-//                timestamp: ['20100414'],
-//                type: "point",
-//                format: "image/png",
-//                datenherr: "ch.astra",
-//                queryable: false,
-//            },
-//            "ch.astra.ivs-nat_wegbegleiter": {
-//                name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
-//                layertype: 'wmts',
-//                timestamp: ['20100414'],
-//                type: "point",
-//                format: "image/png",
-//                datenherr: "ch.astra",
-//                queryable: false,
-//            },
+            "ch.astra.ivs-nat_abgrenzungen": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
+                layertype: 'wmts',
+                timestamp: ['20100414'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: false,
+            },
+            "ch.astra.ivs-nat_wegbegleiter": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
+                layertype: 'wmts',
+                timestamp: ['20100414'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: false,
+            },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
                 layertype: 'wmts',
