@@ -61,7 +61,7 @@ RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml)$ /${vars:inst
 
 
 # web services:
-RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcodegenerator|demo|shorten)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(ogcproxy|cmslayer|layers|feature|publishers|swisssearch|profile.json|profile.csv|height|checker|sanity|geocatsearch|qrcodegenerator|demo|shorten|bodsearch)(.*)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 # WMTS new-style (does not handle GetTile any more)
 ServerAlias wmts.geo.admin.ch
