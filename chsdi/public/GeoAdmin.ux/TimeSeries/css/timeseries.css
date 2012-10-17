@@ -1,0 +1,179 @@
+.timeseriesWidget {
+    position: absolute;
+    top:120px;
+    left:50%;
+    width:600px;
+    margin-left:-300px;
+    font: 11px tahoma,arial,helvetica;
+    /* Paint over map layers */
+    z-index:999;
+}
+.timeseriesWidget .x-tab-panel-header, .timeseriesWidget ul.x-tab-strip-top {
+    background: transparent;
+}
+.timeseriesWidget ul.x-tab-strip li {
+    margin-left: 0;
+    border-left: 1px solid #fff;
+}
+.timeseriesWidget ul.x-tab-strip li:first-child {
+    border-left:0;
+}
+.timeseriesWidget ul.x-tab-strip li.x-tab-edge {
+    display:none;
+}
+.timeseriesWidget .x-tab-strip-spacer {
+    display:none;
+}
+.timeseriesWidget .x-tab-strip, .timeseriesWidget .x-tab-panel-body {
+    border:0;
+}
+.timeseriesWidget .x-tab-strip-top .x-tab-right,
+.timeseriesWidget .x-tab-strip-top .x-tab-left,
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-inner,
+.timeseriesWidget .x-tab-strip span.x-tab-strip-text,
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-active .x-tab-right {
+    background: lightgray;
+    color:#333;
+    font-weight:bold;
+}
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-active .x-tab-strip-inner,
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-active .x-tab-right span.x-tab-strip-text,
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-active .x-tab-right,
+.timeseriesWidget .x-tab-strip-top .x-tab-strip-active .x-tab-left {
+    background: transparent;
+}
+.timeseriesWidget .x-tab-strip-active, .timeseriesWidget .x-tab-panel-body {
+    /* The background color as fallback for IE8 as image */
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABVJREFUCNdj/P///xkGBgYGJgYoAAA7LgPNh5iRPAAAAABJRU5ErkJggg==);
+    background: rgba(255, 255, 255, 0.8);
+}
+.timeseriesWidget .x-panel-body {
+    background:transparent;
+}
+
+.period {
+    text-align: center;
+    padding: 1ex 0;
+}
+.period > div {
+    display: inline-block;
+    height: 10px;
+    margin-top: 36px;
+    position: relative;
+    width: 3px;
+    background:lightgray;
+    /* Get rid of vertical space that is caused by default baseline settings which reserves space for glyph descents */
+    vertical-align: text-bottom;
+}
+.period > div.marked {
+    
+}
+.period > div[title]:before {
+    bottom: 15px;
+    display: block;
+    margin-left: -50px;
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    content: attr(title);
+}
+.period > div:after {
+    display: block;
+    width: 2px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-left:1px solid transparent;
+}
+.period > div.marked:after {
+    width:2px;
+    border-left-color:black;
+}
+.period > div[title]:after {
+    border-left-color: black;
+    height: 15px;
+    width: 2px;
+}
+/* IE8 lacks support for :last-child */
+.period > div.last-child {
+    width: 1px;
+}
+
+.timeseriesWidget .button {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background: none repeat scroll 0 0 #333333;
+    border: 1px outset #333333;
+    color: #FFFFFF;
+    height: 26px;
+    padding: 1px;
+    width: 26px;
+    vertical-align:middle;
+    display:inline-block;
+    line-height:26px;
+    cursor:default;
+    background: center center #333333;
+}
+.timeseriesWidget .button:active {
+    border-style:inset;
+    padding: 1px 2px 1px 0;
+}
+.timeseriesWidget input[type="radio"] {
+    vertical-align:middle;
+}
+.timeseriesWidget-controls {
+    text-align:center;
+    line-height:28px;
+    height:30px;
+    
+    margin-bottom:6px;
+}
+.timeseriesWidget-controls-left {
+    display:inline-block;
+    width:200px;
+    text-align:right;
+    vertical-align:top;
+    padding: 1px 0;
+}
+.timeseriesWidget-controls-center {
+    display:inline-block;
+    /** width of .timeseriesWidget-controls-left */
+    padding-right:200px;
+}
+
+.timeseriesWidget-slider {
+    left: 200px;
+    position: absolute;
+    z-index: 1;
+    cursor: ew-resize;
+    top:5px;
+}
+.timeseriesWidget-slider input {
+    border: 0 none;
+    height: 20px;
+    left: 22px;
+    position: absolute;
+    top: 5px;
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.timeseriesWidgetShadow {
+    left: 50%;
+    margin-left: -304px;
+    position: absolute;
+    top: 115px;
+    width: 612px;
+    height:129px;
+    z-index: 998;
+}
+.timeseriesWidgetShadowTop {
+    position: absolute;
+    top: 115px;
+    width: 900px;
+    height:56px;
+    z-index: 998;
+}
