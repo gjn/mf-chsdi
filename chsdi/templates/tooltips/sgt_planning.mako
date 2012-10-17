@@ -43,21 +43,20 @@
 	<tr><td width="150">${_('tt_sachplan_planning_von')}</td> <td>${c.feature.validfrom or '-'}</td></tr>
 	<tr><td width="150">${_('tt_sachplan_planning_bis')}</td> <td>${c.feature.validuntil or '-'}</td></tr>
 	<tr><td width="150">${_('tt_sachplan_beschreibung')}</td> <td>${c.feature.description or '-'}</td></tr>
-	<tr><td width="150">${_('tt_sachplan_planning_ueberanlage')}</td>
-      % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
-           <td>${c.feature.facname_de or '-'}</td>
-      % elif c.lang == 'fr':
-           <td>${c.feature.facname_fr or '-'}</td>
-	  % elif c.lang == 'it':
-           <td>${c.feature.facname_it or '-'}</td>   
-      % endif
-    </tr>
-    </tr>
         <tr><td width="150">${_('tt_sachplan_weitereinfo')}</td>
       % if c.feature.web is None:
            <td> - </td>
       % else:
            <td><a href="${c.feature.web or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td>
       %endif
+    </tr>
+        <tr><td width="150">${_('tt_sachplan_planning_ueberanlage')}</td>
+      % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
+           <td>${c.feature.facname_de or '-'}</td>
+      % elif c.lang == 'fr':
+           <td>${c.feature.facname_fr or '-'}</td>
+          % elif c.lang == 'it':
+           <td>${c.feature.facname_it or '-'}</td>
+      % endif
     </tr>
 </%def>
