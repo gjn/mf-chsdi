@@ -212,6 +212,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
                     provider.customParams.date = date.getDate().toString() + '.' + (date.getMonth()+1).toString() + '.' + date.getFullYear().toString(); 
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
+                    provider.customParams.project = 'config';  // default print config
                     provider.customParams.lang = lang;
                     // QRCode
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
