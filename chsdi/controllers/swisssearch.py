@@ -61,8 +61,11 @@ class SwisssearchController(BaseController):
 
         # layers are used for the advanced search
         layers = request.params.get('layers')
-        if layers is not None:
+
+        if layers is not None and len(layers) > 0:
             layers = layers.split(',')
+        else:
+            layers = None
 
         bfsnr = request.params.get('bfsnr')
         if bfsnr is None:
