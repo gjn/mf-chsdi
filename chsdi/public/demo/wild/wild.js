@@ -50,9 +50,9 @@ function init() {
 		   height: 300,
 		   title: 'Print map'
 		},
-		renderTo: 'wrmapbuttons',
-		configureTitle: true, 
-		mapTitle: "Wildruhezonen Schweiz"
+		renderTo: 'wrmapbuttons'
+		//configureTitle: true, 
+		//mapTitle: "Wildruhezonen Schweiz"
 		// You need to set a mapLogo per default
 		//mapLogo: 'http://www.wild.uzh.ch/pi/ti/wildtier_logo_gruen.gif'
 	});
