@@ -293,6 +293,21 @@ msgstr "Numéro du atlas géologique"
 msgid "ausgabejahr"
 msgstr "Année de publication"
 
+msgid "bafu_NHVText"
+msgstr "Stato OPN"
+
+msgid "bafu_RLtext"
+msgstr "Nella Lista Rossa"
+
+msgid "bafu_jahr"
+msgstr "Anno di osservazione"
+
+msgid "bafu_population"
+msgstr "Numero della popolazione"
+
+msgid "bafu_standort"
+msgstr "Habitat"
+
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 

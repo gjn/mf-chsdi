@@ -293,6 +293,21 @@ msgstr "Nummer Geologischer Atlas"
 msgid "ausgabejahr"
 msgstr "Ausgabejahr"
 
+msgid "bafu_NHVText"
+msgstr "NHV Status"
+
+msgid "bafu_RLtext"
+msgstr "Rote Liste Status"
+
+msgid "bafu_jahr"
+msgstr "Fundjahr"
+
+msgid "bafu_population"
+msgstr "Populationsnummer"
+
+msgid "bafu_standort"
+msgstr "Lebensraum"
+
 msgid "band_1_2"
 msgstr "Band 1 | 2"
 
