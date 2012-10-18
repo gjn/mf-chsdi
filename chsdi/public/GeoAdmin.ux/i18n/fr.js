@@ -262,6 +262,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Success':'Envoi effectué avec succès',
 	'Summary of your report':'Résumé. Confirmer ci-dessous.',
 	'Swiss Coordinate':'CH03',
+	'Swiss Coordinate LV95':'Swiss Coordinate LV95', //TODO
 	'Swissnames':'Swissnames',
 	'Thanks':'Merci beaucoup',
 	'Thanks a lot for your feedback !':'Merci beaucoup pour votre retour',
@@ -382,6 +383,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.landesforstinventar-baumarten':'Essences (IFN)',
 	'ch.bafu.landesforstinventar-totholz':'Bois mort (IFN)',
 	'ch.bafu.landesforstinventar-waldanteil':'Taux de boisement (IFN)',
+	'ch.bafu.moose':'Rote Liste Moose',
 	'ch.bafu.nabelstationen':'Qualité de l\'air: Stations NABEL',
 	'ch.bafu.permafrost':'Carte indicative du Pergélisol',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Zones agricoles extensives',
@@ -711,6 +713,5 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'zoomout':'Zoom arrière',
 	'zugangberechtigung':'Niveau d\'autorisation d\'accès',
 	'zustaendige_stelle':'Service compétent',
-	'Öffentliche Einrichtungen und Dienste':'Services d\'utilité publique et services publics',
-    'Swiss Coordinate LV95':'LV95'
+	'Öffentliche Einrichtungen und Dienste':'Services d\'utilité publique et services publics'
 });

@@ -258,6 +258,7 @@ OpenLayers.Lang.rm= {
 	'Success':'Rapport tramess cun success',
 	'Summary of your report':'Resumaziun. Confermar sut.',
 	'Swiss Coordinate':'CH03',
+	'Swiss Coordinate LV95':'Swiss Coordinate LV95', //TODO
 	'Swissnames':'Swissnames',
 	'Thanks':'Grazia fitg',
 	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
@@ -378,6 +379,7 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.landesforstinventar-baumarten':'Baumarten (LFI)',
 	'ch.bafu.landesforstinventar-totholz':'Totholz (LFI)',
 	'ch.bafu.landesforstinventar-waldanteil':'Waldanteil (LFI)',
+	'ch.bafu.moose':'Rote Liste Moose',
 	'ch.bafu.nabelstationen':'Contaminaziun da l\'aria: Staziuns NABEL',
 	'ch.bafu.permafrost':'Charta indicativa schelira permanenta',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Territori agricul extensiv',
@@ -437,7 +439,7 @@ OpenLayers.Lang.rm= {
 	'ch.bazl.points-of-interest':'Points of Interest',
 	'ch.bazl.projektierungszonen-flughafenanlagen':'Zonas reservà: Eroports',
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':'PSIA in audiziun',
-	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'Plan sect. infrastructura aviatica',
+	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'PS infrastructura aviatica',
 	'ch.bazl.segelflugkarte':'Charta da sgol senza motor',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=rm',
 	'ch.bfe':'BFE',
@@ -707,6 +709,5 @@ OpenLayers.Lang.rm= {
 	'zoomout':'Zoom vers anora',
 	'zugangberechtigung':'Zugangsberechtigungsstufe',
 	'zustaendige_stelle':'Zuständige Stelle',
-	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals',
-    'Swiss Coordinate LV95':'LV95'
+	'Öffentliche Einrichtungen und Dienste':'Economia da provediment e servetschs statals'
 };

@@ -262,6 +262,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Success':'Bericht erfolgreich versendet',
 	'Summary of your report':'Meldung. Unten bestätigen.',
 	'Swiss Coordinate':'CH03',
+	'Swiss Coordinate LV95':'Swiss Coordinate LV95', //TODO
 	'Swissnames':'Swissnames',
 	'Thanks':'Vielen Dank',
 	'Thanks a lot for your feedback !':'Danke vielmals für Ihre Meldung !',
@@ -382,6 +383,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.landesforstinventar-baumarten':'Baumarten (LFI)',
 	'ch.bafu.landesforstinventar-totholz':'Totholz (LFI)',
 	'ch.bafu.landesforstinventar-waldanteil':'Waldanteil (LFI)',
+	'ch.bafu.moose':'Rote Liste Moose',
 	'ch.bafu.nabelstationen':'Luftbelastung: Stationen NABEL',
 	'ch.bafu.permafrost':'Permafrosthinweiskarte',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Extensives Landwirtschaftsgebiet',
@@ -711,6 +713,5 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'zoomout':'Herauszoomen',
 	'zugangberechtigung':'Zugangsberechtigungsstufe',
 	'zustaendige_stelle':'Zuständige Stelle',
-	'Öffentliche Einrichtungen und Dienste':'Versorgungswirtschaft und staatliche Dienste',
-    'Swiss Coordinate LV95':'LV95'
+	'Öffentliche Einrichtungen und Dienste':'Versorgungswirtschaft und staatliche Dienste'
 });

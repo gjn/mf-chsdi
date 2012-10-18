@@ -262,6 +262,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Success':'Il rapporto è stato inviato',
 	'Summary of your report':'Riassunto. Accettare in basso.',
 	'Swiss Coordinate':'CH03',
+	'Swiss Coordinate LV95':'Swiss Coordinate LV95', //TODO
 	'Swissnames':'Swissnames',
 	'Thanks':'Grazie',
 	'Thanks a lot for your feedback !':'Grazie mille per il suo rapporto !',
@@ -382,6 +383,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.landesforstinventar-baumarten':'Specie arboree (IFN)',
 	'ch.bafu.landesforstinventar-totholz':'Legno morto (IFN)',
 	'ch.bafu.landesforstinventar-waldanteil':'Percentuale di bosco (IFN)',
+	'ch.bafu.moose':'Rote Liste Moose',
 	'ch.bafu.nabelstationen':'Qualità dell\'aria: stazioni NABEL',
 	'ch.bafu.permafrost':'Cartina indicativa del permafrost',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN zona di agricoltura estensiva',
@@ -458,7 +460,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bfs.arealstatistik-1997':'Statistica di superficie 1992/1997',
 	'ch.bfs.arealstatistik-hintergrund':'Utilizzo semplificato del suolo',
 	'ch.bfs.arealstatistik-waldmischungsgrad':'Miscela della foresta 1990/1992',
-	'ch.bfs.gebaeude_wohnungs_register':'Registro degli edifici e degli alloggi',
+	'ch.bfs.gebaeude_wohnungs_register':'Registro degli edifici e delle abitazioni',
 	'ch.bfs.url':'http://www.bfs.admin.ch/bfs/portal/it/index.html',
 	'ch.blw':'UFAG',
 	'ch.blw.alpprodukte':'Prodotti dell\'alpe',
@@ -711,6 +713,5 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'zoomout':'Zoom indietro',
 	'zugangberechtigung':'Niveau d\'autorisation d\'accès',
 	'zustaendige_stelle':'Service compétent',
-	'Öffentliche Einrichtungen und Dienste':'Servizi di pubblica utilità e servizi amministrativi',
-    'Swiss Coordinate LV95':'LV95'
+	'Öffentliche Einrichtungen und Dienste':'Servizi di pubblica utilità e servizi amministrativi'
 });
