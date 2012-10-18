@@ -15,5 +15,7 @@ chsdi/public/doc/source/api/apidocs/*
 chsdi/public/doc/source/lightapi/apidocs/*
 chsdi/public/lib/geoext/*
 chsdi/public/lib/openlayers/*
-chsdi/public/lib/*
+chsdi/public/lib/ext/*
+chsdi/public/lib/geoext.ux.dev/*
+chsdi/public/lib/proj4js/*
 tilecache/tilecache.cfg
