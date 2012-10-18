@@ -704,5 +704,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bfe.kleinwasserkraftpotentiale': "",
     'Shorten': "",
     'Shorten URL': "",
-    'Swiss Coordinate LV95': ""
+    'Swiss Coordinate LV95': "",
+    'ch.bafu.moose': ""
 });
