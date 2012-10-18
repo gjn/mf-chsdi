@@ -1,0 +1,12 @@
+[submodule "submodules/openlayers"]
+	path = submodules/openlayers
+	url = https://github.com/openlayers/openlayers.git
+[submodule "submodules/geoext"]
+	path = submodules/geoext
+	url = https://github.com/geoext/geoext.git
+[submodule "submodules/jstranslate"]
+	path = submodules/jstranslate
+	url = https://github.com/ltjeg/jstranslate.git
+[submodule "submodules/tilegenerator"]
+	path = submodules/tilegenerator
+	url = https://github.com/ltjeg/tilegenerator.git

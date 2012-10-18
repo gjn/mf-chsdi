@@ -1,3 +1,17 @@
+After GIT clone
+===============
+Init the submodules:
+
+git submodule init
+
+Update the submodules:
+
+git submodule update
+
+Update the svn external repositories
+
+sh hooks/svnrepos.sh
+
 Installation
 ============
 
