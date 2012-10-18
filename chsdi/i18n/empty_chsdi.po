@@ -2461,3 +2461,18 @@ msgstr ""
 
 msgid "ivs_bedeutung_short"
 msgstr ""
+
+msgid "bafu_population"
+msgstr ""
+
+msgid "bafu_jahr"
+msgstr ""
+
+msgid "bafu_standort"
+msgstr ""
+
+msgid "bafu_RLtext"
+msgstr ""
+
+msgid "bafu_NHVText"
+msgstr ""
