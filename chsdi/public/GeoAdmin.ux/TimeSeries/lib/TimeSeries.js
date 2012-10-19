@@ -168,11 +168,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             window.clearInterval(this.animationTimer);
             this.animationTimer = null;
             this.animationState.pause();
+            console.log("paused by click");
         } else {
             // Play / Resume
-            //this.animationState.recordStart();
             this.animationState.setPeriod(this.animationSlider.getYear()-this.minYear);
             this.setAnimationTimer();
+            console.log("resumed by click");
         }
         this.animationIsPlaying = !this.animationIsPlaying;
     },
@@ -235,13 +236,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             function resume(){
                 activeOverlay.events.unregister('loadend', this, resume);
                 activeOverlay.setVisibility(true);
-                console.log('Resuming since tiles there');
                 // Continue with animation, now that all tiles are loaded
                 this.animationState.recordStart();
                 if(this.animationIsPlaying){
                     this.repaintAnimation();
+                    this.setAnimationTimer();
+                    console.log("resumed because tiles there");
                 }
-                this.setAnimationTimer();
             }
             activeOverlay.events.register('loadend', this, resume);
         }
@@ -415,15 +416,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             
             function changeAnimationSlider(){
                 var year = timeseriesWidget.animationSlider.getYear();
-                // TODO Should animation be stopped instead?
-                if(timeseriesWidget.animationIsPlaying===false){
-                    if(animationSliderPending){
-                        clearTimeout(animationSliderPending);
-                    }
-                    animationSliderPending = setTimeout(function(){
-                        timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
-                    }, sliderChangeDelay);
+                if(timeseriesWidget.animationIsPlaying){
+                    // Stop animation
+                    timeseriesWidget.playPause();
+                    console.log("stopped animation because slider drag");
                 }
+                if(animationSliderPending){
+                    clearTimeout(animationSliderPending);
+                }
+                animationSliderPending = setTimeout(function(){
+                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
+                }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
             }
@@ -482,7 +485,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 var animationSliderPending;
                 var compareSliderPending;
                 timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 46);
-                timeseriesWidget.animationSlider.on('change', changeAnimationSlider);
+                timeseriesWidget.animationSlider.on('userdrag', changeAnimationSlider);
                 timeseriesWidget.animationSlider.setYear(timeseriesWidget.getInitialAnimationYear());
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
@@ -711,11 +714,13 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         var firstYearElement = Ext.get(this.wholePeriod.firstChild);
         var lastYearElement = Ext.get(this.wholePeriod.lastChild);
         var timeseriesWidget = this;
+        slider.addEvents("userdrag");
         slider.tracker.onDrag = function(){
             var newX = startX+(-this.getOffset()[0]);
             newX = Math.max(firstYearElement.getX(), newX);
             newX = Math.min(lastYearElement.getX(), newX);
             slider.setYearIndicatorX(newX);
+            slider.fireEvent("userdrag");
         };
         
         // Extend slider API (methods that depend on elements of the painted period)
