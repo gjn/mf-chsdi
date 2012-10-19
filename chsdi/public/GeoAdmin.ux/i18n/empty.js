@@ -705,5 +705,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Shorten': "",
     'Shorten URL': "",
     'Swiss Coordinate LV95': "",
-    'ch.bafu.moose': ""
+    'ch.bafu.moose': "",
+    'ch.bazl.landschaftsruhezonen':""
 });

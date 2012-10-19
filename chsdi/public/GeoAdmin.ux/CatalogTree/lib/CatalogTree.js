@@ -785,6 +785,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bazl.luftfahrtkarten-icao"
                     },
                     {
+                        layerId: "ch.bazl.landschaftsruhezonen"
+                    },
+                    {
                         layerId: "ch.bazl.segelflugkarte"
                     },
                     {
@@ -921,6 +924,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },*/
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
+                    },
+                    {
+                        layerId: "ch.bazl.landschaftsruhezonen"
                     },
                     {
                         layerId: "ch.astra.ivs-nat"

@@ -438,6 +438,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=it',
 	'ch.bazl':'UFAC',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Eliporti/Aree d\'atterr. in montagna',
+	'ch.bazl.landschaftsruhezonen':'Zona di calma areonautica',
 	'ch.bazl.luftfahrthindernis':'Ostacoli alla navigazione aerea',
 	'ch.bazl.luftfahrtkarten-icao':'Carta aeronautica OACI',
 	'ch.bazl.points-of-interest':'Points of Interest',

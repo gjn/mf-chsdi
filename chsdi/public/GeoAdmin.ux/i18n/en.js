@@ -438,6 +438,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=en',
 	'ch.bazl':'FOCA',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heliports/Mountain landing sites',
+	'ch.bazl.landschaftsruhezonen':'Landschaftsruhezonen Luftfahrt',
 	'ch.bazl.luftfahrthindernis':'Air navigation obstacles',
 	'ch.bazl.luftfahrtkarten-icao':'Aeronautical Chart ICAO',
 	'ch.bazl.points-of-interest':'Points of Interest',

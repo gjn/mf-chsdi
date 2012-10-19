@@ -438,6 +438,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=de',
 	'ch.bazl':'BAZL',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heliports/Gebirgslandeplätze',
+	'ch.bazl.landschaftsruhezonen':'Landschaftsruhezonen Luftfahrt',
 	'ch.bazl.luftfahrthindernis':'Luftfahrthindernisse',
 	'ch.bazl.luftfahrtkarten-icao':'Luftfahrtkarte ICAO',
 	'ch.bazl.points-of-interest':'Points of Interest',

@@ -3141,6 +3141,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 type: "wms"
             },
+            "ch.bazl.landschaftsruhezonen": {
+                name: OpenLayers.i18n('ch.bazl.landschaftsruhezonen'),
+                layertype: 'wmts',
+                timestamp: ['20110101'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: false,
+                opacity: 0.75
+            },
 //            'ch.bazl.heliports-gebirgslandeplaetze': {
 //                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
 //                layertype: 'wmts',
