@@ -29,7 +29,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     framesPerSecond: 30,
     
-    
     /** private: property[minYear]
      *  ``Number`` Earliest year for which the layer is available
      */
@@ -71,11 +70,29 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     lastAnimationYearCache: null,
     
+    /** private: property[stateId]
+     * ``String`` Name of state object for Ext.state.Provider
+     */
+    stateId: "GeoAdmin.TimeSeries",
+    /** private: property[state]
+     * ``Object`` Serializable state of widget
+     */
+    state: {
+        activeTab: "playTab",
+        animationSlider: null,
+        compareSliderMin: null,
+        compareSliderMax: null,
+        compareTabOpacitySlider: 50,
+        playDirection: "forwards"
+    },
+    
     // TODO Remove when proof of concept is no longer needed
     easings: null,
     
     initComponent: function(){
-        GeoAdmin.TimeSeries.PeriodDisplay.superclass.initComponent.call(this);
+        GeoAdmin.TimeSeries.superclass.initComponent.call(this);
+        // Make sure state gets restored
+        this.initState();
         
         this.proofOfConceptInitEasings();
         
@@ -98,6 +115,14 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationSlider.setYear(this.maxYear);
         }, this);
         
+        var playDirectionHolder = Ext.get('playTab').child('.timeseriesWidget-controls-left');
+        playDirectionHolder.on('change', function(event, radio){
+            // Ext does only trigger change event for the radio that gets checked
+            this.state.playDirection = radio.value;
+            this.saveState();
+        }, this);
+        playDirectionHolder.child('input[value="'+this.state.playDirection+'"]').dom.checked = true;
+        
         // Load initial layer and preload a few more
         var preloadAmount = 3;
         var preloadStart = this.timestamps.indexOf(this.findTimestampNoLaterThan(this.getInitialAnimationYear()));
@@ -110,6 +135,25 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 layer.setOpacity(0);
             }
         }
+    },
+    
+    /** api: method[getState]
+     *  :return: ``Object`` Serializable widget state to be used by permalink provider
+     */
+    getState: function(){
+        return {
+            state: {
+                // Written by handler on tab change
+                activeTab: this.state.activeTab,
+                animationSlider: this.animationSlider ? this.animationSlider.getYear() : this.state.animationSlider,
+                compareSliderMin: this.compareSliderMin ? this.compareSliderMin.getYear() : this.state.compareSliderMin,
+                compareSliderMax: this.compareSliderMax ? this.compareSliderMax.getYear() : this.state.compareSliderMax,
+                // Written by handler on slider change
+                compareTabOpacitySlider: this.state.compareTabOpacitySlider,
+                // Written by handler on slider change
+                playDirection: this.state.playDirection
+            }
+        };
     },
     
     /** private: method[playPause]
@@ -313,6 +357,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      * :return: ``Number`` Default year of animation slider
      */
     getInitialAnimationYear: function(){
+        if(this.state.animationSlider){
+            return this.state.animationSlider;
+        }
         return Math.floor((this.minYear+this.maxYear)/2);
     },
     
@@ -324,8 +371,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             renderTo: 'compareTabOpacitySlider',
             width:120,
             aggressive: true,
-            value: 50
+            value: this.state.compareTabOpacitySlider
         });
+        compareTabOpacitySlider.on('changecomplete', function(event, value){
+            this.state.compareTabOpacitySlider = value;
+            this.saveState();
+        }, this);
         var playPeriod = new GeoAdmin.TimeSeries.PeriodDisplay({
             minYear: this.minYear,
             maxYear: this.maxYear,
@@ -338,7 +389,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         });
         var tabs = new Ext.TabPanel({
             renderTo: this.contentEl,
-            activeTab: 0,
+            activeTab: ["playTab", "compareTab", "informationTab"].indexOf(this.state.activeTab),
             plain: true,
             deferredRender: false,
             items: [{
@@ -373,6 +424,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
                     }, sliderChangeDelay);
                 }
+                
+                timeseriesWidget.saveState();
             }
             
             var ignoreYearChange = false;
@@ -420,6 +473,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         }
                     });
                 }, sliderChangeDelay);
+                
+                timeseriesWidget.saveState();
             }
             
             // Create sliders initially
@@ -432,9 +487,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
                 timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 11);
-                timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.maxYear);
+                timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
                 timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 82);
-                timeseriesWidget.compareSliderMin.setYear(timeseriesWidget.minYear);
+                timeseriesWidget.compareSliderMin.setYear(timeseriesWidget.state.compareSliderMin || timeseriesWidget.minYear);
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
             }
@@ -450,6 +505,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }
                 changeAnyCompareSlider();
             }
+            
+            // Store state
+            timeseriesWidget.state.activeTab = newlyActiveTab.contentEl;
+            timeseriesWidget.saveState();
         }
         tabs.on('tabchange', initializeSliders);
         initializeSliders(tabs, tabs.getActiveTab());
@@ -662,6 +721,11 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         // Extend slider API (methods that depend on elements of the painted period)
         var minYear = this.minYear;
         slider.getYear = function(){
+            if(firstYearElement.dom.offsetWidth===0){
+                // Assume slider is invisible as its tab is not shown. Do not use Ext's isVisible because it is buggier.
+                // Return cached value
+                return slider.input.getValue();
+            }
             return Math.round((this.getYearIndicatorX()-firstYearElement.getX())/firstYearElement.getWidth()+minYear);
         };
         slider.setYear = function(year){
