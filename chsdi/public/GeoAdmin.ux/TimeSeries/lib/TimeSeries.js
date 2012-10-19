@@ -267,7 +267,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Get rid of no longer needed layers
             if(lastOverlay){
                 for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
-                    if(map.layers[layerIter]!==activeOverlay){
+                    if(!(map.layers[layerIter] instanceof OpenLayers.Layer.Vector) && map.layers[layerIter]!==activeOverlay){
                         map.removeLayer(map.layers[layerIter]);
                     }
                 }
@@ -547,7 +547,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 firstAddedLayer.events.unregister('loadend', this, discard);
             }
             pendingForDiscard.forEach(function(layer){
-                if(map.layers.indexOf(layer)>=0){
+                if(!(layer instanceof OpenLayers.Layer.Vector) && map.layers.indexOf(layer)>=0){
                     map.removeLayer(layer);
                 }
             });
