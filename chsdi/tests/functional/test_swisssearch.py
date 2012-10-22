@@ -212,19 +212,29 @@ class TestSwisssearchController(TestController):
         results = simplejson.loads(resp.response.body)['results']
 
         assert len(results) == 0
-        
-
 
     def test_attributes_cb(self):
+         params = {
+           'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+           'query': 'BE0100000001972',
+           'cb': 'Ext.ux.JSONP'
+         }
+         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+         )
+         assert 'BE0100000001972' in resp
+         assert 'Ext.ux.JSONP' in resp
+
+    def test_reversegeocoding_with_cb_raw(self):
         params = {
-             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
-             'query': 'BE0100000001972',
+             'easting': 606163,
+             'northing': 199965,
+             'format': 'raw',
              'cb': 'Ext.ux.JSONP'
         }
-        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+        resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),
                  params=params
         )
-        assert 'BE0100000001972' in resp
+        assert resp.response.content_type == "text/javascript"
         assert 'Ext.ux.JSONP' in resp
-
- 
+        assert 'geometry' in resp
