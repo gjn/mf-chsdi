@@ -34,7 +34,7 @@
 % if c.last == False:
 <div style="height: auto; page-break-after: always;">
 % elif c.last == True:
-<div style="height: 860;">
+<div style="height: 850;">
 % endif
     <table border="0" cellspacing="8" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr>
@@ -51,6 +51,9 @@
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.duration or '-'}</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;">${_('tt_bazl_abortion')}: ${c.feature.abortionaccomplished or '-'}</td>
         </tr>
         <tr>
             <td style="font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.geometriedaten')}:</td>
