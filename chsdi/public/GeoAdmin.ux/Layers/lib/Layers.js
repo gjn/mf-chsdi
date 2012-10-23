@@ -703,26 +703,24 @@ GeoAdmin._Layers = OpenLayers.Class({
 				opacity: 0.75,				
 				type: "point"
             },
-			//"ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
-            //    name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
-            //    layertype: 'wms',
-            //    layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
-            //    format: "image/png",
-            //    datenherr: "ch.bazl",
-            //    queryable: true,
-			//	url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
-			//	type: "point"
-            //},
-			//"ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
-            //    name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
-            //    layertype: 'wms',
-            //    layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
-            //    format: "image/png",
-            //    datenherr: "ch.bazl",
-            //    queryable: true,
-			//	url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
-			//	type: "point"
-            //},
+            "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+		type: "point"
+            },
+	    "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+		type: "point"
+            },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
                 layertype: 'wmts',
