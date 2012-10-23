@@ -242,13 +242,14 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationState.pause();
             function resume(){
                 foreground.events.unregister('loadend', this, resume);
+                foreground.setOpacity(0);
                 foreground.setVisibility(true);
                 // Continue with animation, now that all tiles are loaded
                 this.animationState.recordStart();
                 if(this.animationIsPlaying){
                     this.repaintAnimation();
                     this.setAnimationTimer();
-                    console.log("resumed because tiles there");
+                    console.log("resumed because tiles "+state.foreground+" there");
                 }
             }
             foreground.events.register('loadend', this, resume);
