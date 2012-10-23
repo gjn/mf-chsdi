@@ -434,6 +434,7 @@ OpenLayers.Lang.rm= {
 	'ch.bav.url':'http://www.bav.admin.ch/?lang=de',
 	'ch.bazl':'UFAC',
 	'ch.bazl.heliports-gebirgslandeplaetze':'Heli- und Gebirgslandeplätze',
+	'ch.bazl.landschaftsruhezonen':'Landschaftsruhezonen Luftfahrt',
 	'ch.bazl.luftfahrthindernis':'--',
 	'ch.bazl.luftfahrtkarten-icao':'Charta da aviatica ICAO',
 	'ch.bazl.points-of-interest':'Points of Interest',

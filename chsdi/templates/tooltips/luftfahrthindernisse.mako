@@ -53,6 +53,9 @@
             <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.duration or '-'}</td>
         </tr>
         <tr>
+            <td style="padding-left: 200px;">${_('tt_bazl_abortion')}: ${c.feature.abortionaccomplished or '-'}</td>
+        </tr>
+        <tr>
             <td style="font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.geometriedaten')}:</td>
         </tr>
         <tr>

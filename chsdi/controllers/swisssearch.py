@@ -141,7 +141,8 @@ class SwisssearchController(BaseController):
 
         if self.rawjson:
             if layers:
-                return FeatureCollection(allfeatures.append(self.getRawFeatures(query)))
+                allfeatures = allfeatures + list(self.getRawFeatures(query))
+                return FeatureCollection(allfeatures)
             else:
                 return FeatureCollection(list(self.getRawFeatures(query)))
         else:
