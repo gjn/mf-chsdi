@@ -184,18 +184,21 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  Starts or stops the animation
      */
     playPause: function(){
+        var playButtonImage = Ext.get(this.contentEl).child('.play').dom;
         if(this.animationIsPlaying){
             // Pause animation
             window.clearInterval(this.animationTimer);
             this.animationTimer = null;
             this.animationState.pause();
             console.log("paused by click");
+            playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
         } else {
             this.initAnimationState();
             // Play / Resume
             this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection==="backwards");
             this.setAnimationTimer();
             console.log("resumed by click");
+            playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
         }
         this.animationIsPlaying = !this.animationIsPlaying;
     },
@@ -485,7 +488,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 contentEl: "informationTab"
             }]
         });
-        var sliderImagePath = OpenLayers.Util.getImagesLocation()+"../../TimeSeries/img/";
+        var sliderImagePath = OpenLayers.Util.getImagesLocation()+"../../../../lib/GeoAdmin.ux/TimeSeries/img/";
         var timeseriesWidget = this;
         
         /**
@@ -565,7 +568,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if(newlyActiveTab.contentEl==="playTab" && playPeriod.sliders.length===0){
                 var animationSliderPending;
                 var compareSliderPending;
-                timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 46);
+                timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 37);
                 timeseriesWidget.animationSlider.on('userdrag', changeAnimationSlider);
                 timeseriesWidget.animationSlider.setYear(timeseriesWidget.getInitialAnimationYear());
                 timeseriesWidget.animationSlider.on('yeartyped', function(year){
@@ -573,9 +576,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }, timeseriesWidget);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
-                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 11);
+                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 6);
                 timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
-                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 82);
+                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 69);
                 timeseriesWidget.compareSliderMin.setYear(timeseriesWidget.state.compareSliderMin || timeseriesWidget.minYear);
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
