@@ -1273,7 +1273,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 //                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
 //                type: "point"
 //            },
-// (ltalp) ch.bafu.moose pour la PROD (quand les tiles seront générées)
+// (ltalp) ch.bafu.moose pour la PROD 
 //            "ch.bafu.moose": {
 //                name: OpenLayers.i18n("ch.bafu.moose"),
 //                layertype: 'wmts',
@@ -1484,7 +1484,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"),
                 layertype: 'wmts',
-                timestamp: ['20120901','20120127','20110103'],
+                timestamp: ['20121023','20120127','20110103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2255,24 +2255,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
-            "ch.astra.ivs-nat_abgrenzungen": {
-                name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
-                layertype: 'wmts',
-                timestamp: ['20100414'],
-                type: "point",
-                format: "image/png",
-                datenherr: "ch.astra",
-                queryable: false,
-            },
-            "ch.astra.ivs-nat_wegbegleiter": {
-                name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
-                layertype: 'wmts',
-                timestamp: ['20100414'],
-                type: "point",
-                format: "image/png",
-                datenherr: "ch.astra",
-                queryable: false,
-            },
+//            "ch.astra.ivs-nat_abgrenzungen": {
+//                name: OpenLayers.i18n("ch.astra.ivs-nat_abgrenzungen"),
+//                layertype: 'wmts',
+//                timestamp: ['20100414'],
+//                type: "point",
+//                format: "image/png",
+//                datenherr: "ch.astra",
+//                queryable: false,
+//            },
+//            "ch.astra.ivs-nat_wegbegleiter": {
+//                name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
+//                layertype: 'wmts',
+//                timestamp: ['20100414'],
+//                type: "point",
+//                format: "image/png",
+//                datenherr: "ch.astra",
+//                queryable: false,
+//            },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
                 layertype: 'wmts',
