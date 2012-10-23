@@ -321,6 +321,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // TODO Use final values once proof of concept is no longer needed
         var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
         var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+        var selectPresentedPeriods = document.getElementById("presentedPeriods");
+        this.presentedPeriods = parseInt(selectPresentedPeriods.options[selectPresentedPeriods.selectedIndex].value, 10);
         
         // Limit the displayed periods to given number of periods (but keep earliest, selected and most recent year visible)
         var periods = [this.timestamps[0]];
