@@ -568,6 +568,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 46);
                 timeseriesWidget.animationSlider.on('userdrag', changeAnimationSlider);
                 timeseriesWidget.animationSlider.setYear(timeseriesWidget.getInitialAnimationYear());
+                timeseriesWidget.animationSlider.on('yeartyped', function(year){
+                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
+                }, timeseriesWidget);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
                 timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 11);
@@ -818,6 +821,17 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
             this.setYearIndicatorX((year-minYear)*firstYearElement.getWidth()+firstYearElement.getX());
         };
         slider.setYear(minYear+(this.maxYear-minYear)/2);
+        
+        // Raise yeartyped event whenever the user enters a valid year
+        slider.addEvents('yeartyped');
+        slider.input.on('change', function(){
+            var yearRaw = slider.input.getValue();
+            var year = parseInt(yearRaw, 10);
+            if(yearRaw===String(year) && timeseriesWidget.minYear<=year && timeseriesWidget.maxYear>=year){
+                slider.setYear(year);
+                slider.fireEvent("yeartyped", year);
+            }
+        }, timeseriesWidget);
         
         this.sliders.push(slider);
         return slider;
