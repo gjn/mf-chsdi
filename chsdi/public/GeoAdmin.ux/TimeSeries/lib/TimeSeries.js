@@ -146,19 +146,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         }, this);
         playDirectionHolder.child('input[value="'+this.state.playDirection+'"]').dom.checked = true;
-        
-        // Load initial layer and preload a few more
-        var preloadAmount = 3;
-        var preloadStart = this.timestamps.indexOf(this.findTimestampNoLaterThan(this.getInitialAnimationYear()));
-        for(var layerIter=preloadStart; layerIter<Math.min(this.timestamps.length, preloadStart + preloadAmount); layerIter++){
-            var layer = map.addLayerByName(this.layerName, {
-                timestamp: this.timestamps[layerIter]
-            });
-            // Keep the first loaded layer visible but hide the layers that are just added for preloading
-            if(layerIter>preloadStart){
-                layer.setOpacity(0);
-            }
-        }
     },
     
     /** api: method[getState]
@@ -314,13 +301,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         return String(candidate.getFullYear())+String(candidate.getMonth()+1)+String(candidate.getDate());
     },
     
-    /** private: method[initAnimationState]
-     * Initializes object that manages states of animation
+    /** private: method[getAnimationPeriods]
+     * :return: ``Array.<String>`` List of timestamps that are to be shown in animation
      */
-    initAnimationState: function(){
-        // TODO Use final values once proof of concept is no longer needed
-        var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
-        var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+    getAnimationPeriods: function(){
+        // TODO Use final value once proof of concept is no longer needed
         var selectPresentedPeriods = document.getElementById("presentedPeriods");
         this.presentedPeriods = parseInt(selectPresentedPeriods.options[selectPresentedPeriods.selectedIndex].value, 10);
         
@@ -340,6 +325,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             periods.push(this.findTimestampNoLaterThan(timestampYear));
         }
         periods.push(this.timestamps[this.timestamps.length-1]);
+        
+        return periods;
+    },
+    
+    /** private: method[initAnimationState]
+     * Initializes object that manages states of animation
+     */
+    initAnimationState: function(){
+        // TODO Use final values once proof of concept is no longer needed
+        var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
+        var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+        
+        var periods = this.getAnimationPeriods();
         
         /*
          * The state of the animation is derived purely from the time elapsed since animation start.
@@ -501,6 +499,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Moving sliders does only affect map after a delay because otherwise the DOM would need to be restructured a lot and pointless requests would be initiated
             var sliderChangeDelay = 500;
             
+            var animationPeriods;
             function changeAnimationSlider(){
                 var year = timeseriesWidget.animationSlider.getYear();
                 if(timeseriesWidget.animationIsPlaying){
@@ -512,7 +511,36 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     clearTimeout(animationSliderPending);
                 }
                 animationSliderPending = setTimeout(function(){
-                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
+                    var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
+                    timeseriesWidget.addLayers([timestamp], []);
+
+                    // Preload upcoming frames one after the other
+                    animationPeriods = timeseriesWidget.getAnimationPeriods();
+                    var shownLayer = map.layers.filter(function(layer){
+                        return layer.name=timeseriesWidget.layerName && layer.timestamp===timestamp;
+                    })[0];
+                    shownLayer.events.register("loadend", timeseriesWidget, function(){
+                        var indexOfShown = animationPeriods.indexOf(timestamp);
+                        var lowPrio = animationPeriods.splice(0, indexOfShown);
+                        lowPrio.forEach(function(preloadTimestamp){
+                            animationPeriods.push(preloadTimestamp);
+                        });
+                        console.log("animationPeriods: "+animationPeriods);
+                        function delayedPreload(timestampIndex){
+                            if(timestampIndex<animationPeriods.length-1){
+                                var preloadTimestamp = animationPeriods[timestampIndex];
+                                console.log("Preloading "+preloadTimestamp);
+                                var layer = map.addLayerByName(timeseriesWidget.layerName, {
+                                    timestamp: preloadTimestamp
+                                });
+                                layer.setVisibility(false);
+                                layer.events.register("loadend", timeseriesWidget, function(){
+                                    delayedPreload(timestampIndex + 1);
+                                });
+                            }
+                        }
+                        delayedPreload(1);
+                    });
                 }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
@@ -871,7 +899,10 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
         this.slider.addClass("timeseriesWidget-slider");
         this.draggable = Ext.get(document.createElement('img'));
         this.draggable.set({
-            'src': this.imageSrc
+            'src': this.imageSrc,
+            // Give explicit size due to bug in IE8
+            width: 77,
+            height: 29
         });
         this.slider.appendChild(this.draggable);
         this.input = Ext.get(document.createElement('input'));
