@@ -703,26 +703,24 @@ GeoAdmin._Layers = OpenLayers.Class({
 				opacity: 0.75,				
 				type: "point"
             },
-			//"ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
-            //    name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
-            //    layertype: 'wms',
-            //    layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
-            //    format: "image/png",
-            //    datenherr: "ch.bazl",
-            //    queryable: true,
-			//	url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
-			//	type: "point"
-            //},
-			//"ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
-            //    name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
-            //    layertype: 'wms',
-            //    layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
-            //    format: "image/png",
-            //    datenherr: "ch.bazl",
-            //    queryable: true,
-			//	url: "http://wms-bod0i.bgdi.admin.ch/?lang=de",				
-			//	type: "point"
-            //},
+            "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+		type: "point"
+            },
+	    "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
+                name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
+                format: "image/png",
+                datenherr: "ch.bazl",
+                queryable: true,
+		type: "point"
+            },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
                 layertype: 'wmts',
@@ -1275,7 +1273,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 //                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
 //                type: "point"
 //            },
-// (ltalp) ch.bafu.moose pour la PROD (quand les tiles seront générées)
+// (ltalp) ch.bafu.moose pour la PROD 
 //            "ch.bafu.moose": {
 //                name: OpenLayers.i18n("ch.bafu.moose"),
 //                layertype: 'wmts',
@@ -1486,7 +1484,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"),
                 layertype: 'wmts',
-                timestamp: ['20120901','20120127','20110103'],
+                timestamp: ['20121023','20120127','20110103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",

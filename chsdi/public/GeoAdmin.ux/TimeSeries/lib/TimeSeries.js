@@ -146,19 +146,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         }, this);
         playDirectionHolder.child('input[value="'+this.state.playDirection+'"]').dom.checked = true;
-        
-        // Load initial layer and preload a few more
-        var preloadAmount = 3;
-        var preloadStart = this.timestamps.indexOf(this.findTimestampNoLaterThan(this.getInitialAnimationYear()));
-        for(var layerIter=preloadStart; layerIter<Math.min(this.timestamps.length, preloadStart + preloadAmount); layerIter++){
-            var layer = map.addLayerByName(this.layerName, {
-                timestamp: this.timestamps[layerIter]
-            });
-            // Keep the first loaded layer visible but hide the layers that are just added for preloading
-            if(layerIter>preloadStart){
-                layer.setOpacity(0);
-            }
-        }
     },
     
     /** api: method[getState]
@@ -184,18 +171,21 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  Starts or stops the animation
      */
     playPause: function(){
+        var playButtonImage = Ext.get(this.contentEl).child('.play').dom;
         if(this.animationIsPlaying){
             // Pause animation
             window.clearInterval(this.animationTimer);
             this.animationTimer = null;
             this.animationState.pause();
             console.log("paused by click");
+            playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
         } else {
             this.initAnimationState();
             // Play / Resume
             this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection==="backwards");
             this.setAnimationTimer();
             console.log("resumed by click");
+            playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
         }
         this.animationIsPlaying = !this.animationIsPlaying;
     },
@@ -239,13 +229,14 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationState.pause();
             function resume(){
                 foreground.events.unregister('loadend', this, resume);
+                foreground.setOpacity(0);
                 foreground.setVisibility(true);
                 // Continue with animation, now that all tiles are loaded
                 this.animationState.recordStart();
                 if(this.animationIsPlaying){
                     this.repaintAnimation();
                     this.setAnimationTimer();
-                    console.log("resumed because tiles there");
+                    console.log("resumed because tiles "+state.foreground+" there");
                 }
             }
             foreground.events.register('loadend', this, resume);
@@ -310,13 +301,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         return String(candidate.getFullYear())+String(candidate.getMonth()+1)+String(candidate.getDate());
     },
     
-    /** private: method[initAnimationState]
-     * Initializes object that manages states of animation
+    /** private: method[getAnimationPeriods]
+     * :return: ``Array.<String>`` List of timestamps that are to be shown in animation
      */
-    initAnimationState: function(){
-        // TODO Use final values once proof of concept is no longer needed
-        var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
-        var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+    getAnimationPeriods: function(){
+        // TODO Use final value once proof of concept is no longer needed
+        var selectPresentedPeriods = document.getElementById("presentedPeriods");
+        this.presentedPeriods = parseInt(selectPresentedPeriods.options[selectPresentedPeriods.selectedIndex].value, 10);
         
         // Limit the displayed periods to given number of periods (but keep earliest, selected and most recent year visible)
         var periods = [this.timestamps[0]];
@@ -334,6 +325,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             periods.push(this.findTimestampNoLaterThan(timestampYear));
         }
         periods.push(this.timestamps[this.timestamps.length-1]);
+        
+        return periods;
+    },
+    
+    /** private: method[initAnimationState]
+     * Initializes object that manages states of animation
+     */
+    initAnimationState: function(){
+        // TODO Use final values once proof of concept is no longer needed
+        var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
+        var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+        
+        var periods = this.getAnimationPeriods();
         
         /*
          * The state of the animation is derived purely from the time elapsed since animation start.
@@ -485,7 +489,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 contentEl: "informationTab"
             }]
         });
-        var sliderImagePath = OpenLayers.Util.getImagesLocation()+"../../TimeSeries/img/";
+        var sliderImagePath = OpenLayers.Util.getImagesLocation()+"../../../../lib/GeoAdmin.ux/TimeSeries/img/";
         var timeseriesWidget = this;
         
         /**
@@ -495,6 +499,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Moving sliders does only affect map after a delay because otherwise the DOM would need to be restructured a lot and pointless requests would be initiated
             var sliderChangeDelay = 500;
             
+            var animationPeriods;
             function changeAnimationSlider(){
                 var year = timeseriesWidget.animationSlider.getYear();
                 if(timeseriesWidget.animationIsPlaying){
@@ -506,7 +511,36 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     clearTimeout(animationSliderPending);
                 }
                 animationSliderPending = setTimeout(function(){
-                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
+                    var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
+                    timeseriesWidget.addLayers([timestamp], []);
+
+                    // Preload upcoming frames one after the other
+                    animationPeriods = timeseriesWidget.getAnimationPeriods();
+                    var shownLayer = map.layers.filter(function(layer){
+                        return layer.name=timeseriesWidget.layerName && layer.timestamp===timestamp;
+                    })[0];
+                    shownLayer.events.register("loadend", timeseriesWidget, function(){
+                        var indexOfShown = animationPeriods.indexOf(timestamp);
+                        var lowPrio = animationPeriods.splice(0, indexOfShown);
+                        lowPrio.forEach(function(preloadTimestamp){
+                            animationPeriods.push(preloadTimestamp);
+                        });
+                        console.log("animationPeriods: "+animationPeriods);
+                        function delayedPreload(timestampIndex){
+                            if(timestampIndex<animationPeriods.length-1){
+                                var preloadTimestamp = animationPeriods[timestampIndex];
+                                console.log("Preloading "+preloadTimestamp);
+                                var layer = map.addLayerByName(timeseriesWidget.layerName, {
+                                    timestamp: preloadTimestamp
+                                });
+                                layer.setVisibility(false);
+                                layer.events.register("loadend", timeseriesWidget, function(){
+                                    delayedPreload(timestampIndex + 1);
+                                });
+                            }
+                        }
+                        delayedPreload(1);
+                    });
                 }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
@@ -565,14 +599,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if(newlyActiveTab.contentEl==="playTab" && playPeriod.sliders.length===0){
                 var animationSliderPending;
                 var compareSliderPending;
-                timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 46);
+                timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 37);
                 timeseriesWidget.animationSlider.on('userdrag', changeAnimationSlider);
                 timeseriesWidget.animationSlider.setYear(timeseriesWidget.getInitialAnimationYear());
+                timeseriesWidget.animationSlider.on('yeartyped', function(year){
+                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
+                }, timeseriesWidget);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
-                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 11);
+                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 6);
                 timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
-                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 82);
+                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 69);
                 timeseriesWidget.compareSliderMin.setYear(timeseriesWidget.state.compareSliderMin || timeseriesWidget.minYear);
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
@@ -819,6 +856,17 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         };
         slider.setYear(minYear+(this.maxYear-minYear)/2);
         
+        // Raise yeartyped event whenever the user enters a valid year
+        slider.addEvents('yeartyped');
+        slider.input.on('change', function(){
+            var yearRaw = slider.input.getValue();
+            var year = parseInt(yearRaw, 10);
+            if(yearRaw===String(year) && timeseriesWidget.minYear<=year && timeseriesWidget.maxYear>=year){
+                slider.setYear(year);
+                slider.fireEvent("yeartyped", year);
+            }
+        }, timeseriesWidget);
+        
         this.sliders.push(slider);
         return slider;
     }
@@ -851,7 +899,10 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
         this.slider.addClass("timeseriesWidget-slider");
         this.draggable = Ext.get(document.createElement('img'));
         this.draggable.set({
-            'src': this.imageSrc
+            'src': this.imageSrc,
+            // Give explicit size due to bug in IE8
+            width: 77,
+            height: 29
         });
         this.slider.appendChild(this.draggable);
         this.input = Ext.get(document.createElement('input'));

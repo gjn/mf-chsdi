@@ -29,6 +29,8 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
     /* Define a title (optional), an image (optional) and a state (based on the class OpenLayers.Map.prototype.applyState) */
     themes: null,
 
+    project: 'sachplan',
+
     initComponent: function (config) {
 
         this.store = new Ext.data.ArrayStore({
@@ -36,14 +38,7 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
             fields: ['title', 'image', 'state']
         });
 
-        this.tpl = new Ext.XTemplate(
-            '<tpl for="."><div class="x-combo-list-item" style="height: 36px;">',
-            '<div style="width: 70%; float: left;">{title}<br>',
-            'Here is a little description </div>',
-            '<div style="padding: 10px; float: right; "><img src="' + OpenLayers.ImgPath + '{image}" style="vertical-align: middle;"></div>',
-            '</div>',
-            '</div></tpl>'
-        ).compile();
+        this.buildTemplate();
 
         this.itemSelector = 'div.x-combo-list-item';
 
@@ -62,7 +57,19 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
         });
 
         GeoAdmin.ThemesCombo.superclass.initComponent.call(this);
+    },
+
+    buildTemplate: function () {
+
+        if (this.project === "sachplan") {
+            this.tpl = new Ext.XTemplate(
+                '<tpl for="."><div class="x-combo-list-item">',
+                '<div style="float: left; font-weigh: bold;">{title}</div>',
+                '</div></tpl>'
+            ).compile();
+        }
     }
+
 });
 
 /** api: xtype = ga_themescombo */

@@ -173,11 +173,15 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             this.doResize(this.bufferSize);
             delete this.bufferSize;
         }
-        this.list.alignTo.apply(this.list, [this.el].concat(this.listAlign));
-        // zindex can change, re-check it and set it if necessary
-        this.list.setZIndex(this.getZIndex());
-        this.list.show();
-        this.innerList.setOverflow('auto'); // necessary for FF 2.0/Mac
+        if (this.list) {
+            this.list.alignTo.apply(this.list, [this.el].concat(this.listAlign));
+            // zindex can change, re-check it and set it if necessary
+            this.list.setZIndex(this.getZIndex());
+            this.list.show();
+        };
+        if (this.innerList) {
+            this.innerList.setOverflow('auto'); // necessary for FF 2.0/Mac
+        };
         this.mon(Ext.getDoc(), {
             scope: this,
             mousewheel: this.collapseIf,
