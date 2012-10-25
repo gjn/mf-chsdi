@@ -1,7 +1,7 @@
 import logging
 import httplib2
 
-from pylons import request, response
+from pylons import request, response, session
 from pylons.controllers.util import abort
 
 from chsdi.lib.base import BaseController
@@ -33,6 +33,8 @@ class ApiprintproxyController(BaseController):
         http = httplib2.Http()
         h = dict(request.headers)
         h.pop("Host", h)
+        if session.get('SRV'):
+            h['Cookie'] = session["SRV"]
 
         try:
             if "url" in request.params:
@@ -45,7 +47,10 @@ class ApiprintproxyController(BaseController):
         if resp.has_key("content-type"):
             response.headers["Content-Type"] = resp["content-type"]
         if resp.has_key("set-cookie"):
-            response.headers["set-cookie"] = resp["set-cookie"]
+            response.headers["Set-Cookie"] = resp["set-cookie"]
+            if not session.get('SRV'):
+                session['SRV'] = resp['set-cookie']
+                session.save()
         if resp.has_key("Cookie"):
             response.headers["Cookie"] = resp["Cookie"]
         if resp.has_key("Content-Disposition"):
