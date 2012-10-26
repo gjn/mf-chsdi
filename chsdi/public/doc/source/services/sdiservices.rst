@@ -480,10 +480,8 @@ URL
 - http://wmts3.geo.admin.ch
 - http://wmts4.geo.admin.ch
 
-GetCapabilities (deprecated)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Note: please refer to the service Layers**.
+GetCapabilities
+^^^^^^^^^^^^^^^
 
 The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
