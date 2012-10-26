@@ -1261,18 +1261,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-// (ltalp) ch.bafu.moose avec wms pour tester tooltip sans les tiles
-//            "ch.bafu.moose": {
-//                name: OpenLayers.i18n("ch.bafu.moose"),
-//                layertype: 'wms',
-//                layers: ['ch.bafu.moose'],
-//                format: "image/png",
-//                datenherr: "ch.bafu",
-//                opacity: 0.75,
-//                queryable: true,
-//                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
-//                type: "point"
-//            },
 // (ltalp) ch.bafu.moose pour la PROD 
 //            "ch.bafu.moose": {
 //                name: OpenLayers.i18n("ch.bafu.moose"),
@@ -2257,7 +2245,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-reg_loc": {
                 name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
                 layertype: 'wmts',
-                timestamp: ['20100414','20070712'],
+                timestamp: ['20100415','20070712'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
