@@ -13,3 +13,7 @@
 .box-projection-selector .x-form-field-wrap {
     height: 0px !important;
 }
+
+.box-projection-selector {
+    white-space: normal !important;
+}

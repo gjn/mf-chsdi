@@ -185,10 +185,12 @@ class FeatureController(BaseController):
                             c.html_type = 'extended'
                             c.feature = feature
                             item_count = item_count + 1
+                            c.first = False
+                            if item_count == 1:
+                                c.first = True
+                            c.last = False
                             if items_nb == item_count:
                                 c.last = True
-                            else:
-                                c.last = False
                             innerHtml = innerHtml + render(feature.__template__)
                         else:
                             abort(404, 'One of the id you provided is not valid')
@@ -196,6 +198,7 @@ class FeatureController(BaseController):
                 body_tooltip = render('/tooltips/extended_tooltips.mako')
                 feature.html = body_tooltip.encode('utf8')
             else:
+                c.first = True
                 c.last = True
                 for model in models_from_name(layer):
                     if len(features) < MAX_FEATURES:

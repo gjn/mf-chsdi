@@ -11,6 +11,7 @@
 </%def>
 
 <%def name="body()">
+% if c.last == True:
 <link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/css/lightbox.css">
 <script type="text/javascript" src="/${c.instanceid}/wsgi/lib/ext/Ext/adapter/ext/ext-base.js"></script>
 <script type="text/javascript" src="/${c.instanceid}/wsgi/lib/ext/Ext/ext-all.js"></script>
@@ -29,6 +30,20 @@
         margin-left: 7px !important;
     } 
 </style>
+<div style="height: auto;">
+% else:
+<div style="height: auto; page-break-after: always;">
+% endif
+
+% if c.first == True:
+<script type="text/javascript">
+    var hpictures = {};
+    var hurl = {};
+    var hpdfs = {};
+    var hurl2 = {};
+    var hmeta = {};
+</script>
+% endif
 
 <% objektart = c.feature.objektart.split(',') %>
 <table border="0" cellspacing="10" cellpadding="5" width="100%" style="font-size: 100%;" padding="1 1 1 1">
@@ -71,11 +86,11 @@
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
-         <td style="width: 300px; float: left;"><div style="margin-left: -313px;" id="images"></div></td>
+         <td style="width: 300px; float: left;"><div style="margin-left: -313px;" class="images" id="${c.feature.id}"></div></td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
-         <td style="width: 300px; float: left;"><a id="pdf">PDF</a></td>
+         <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('official object webpage')}:</td>
@@ -108,55 +123,73 @@
     s3 = f3.read()
     d = s3.split('\n')
     meta = []
+    for i in d:
+        e = i.split(';')
+        if e[0] == parser.pattern and e[len(e)-1] not in meta:
+            meta.append(e[len(e)-1])
+        endif
+        if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
+            meta.append(e[len(e)-2])
+        endif
 %>
-% for i in d:
-<% e = i.split(';') %>
-% if e[0] == parser.pattern and e[len(e)-1] not in meta:
-<% meta.append(e[len(e)-1]) %>
-% endif
-% if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
-<% meta.append(e[len(e)-2]) %>
-% endif
-% endfor
+
 <script type="text/javascript">
-    var pictures, url, pdfs, url2, meta;
-    pictures = ${parser.filesMatched};
-    url = '${url}';
-    pdfs = ${parser2.filesMatched};
-    url2 = '${url2}';
-    meta = ${meta};
+    hpictures[${c.feature.id}] = ${parser.filesMatched};
+    hurl[${c.feature.id}] = '${url}';
+    hpdfs[${c.feature.id}] = ${parser2.filesMatched};
+    hurl2[${c.feature.id}] = '${url2}';
+    hmeta[${c.feature.id}] = ${meta};
+% if c.last == True:
     window.onload = function () {
-% if len(parser.filesMatched) != 0:
-        var div = document.getElementById('images');
-        for (var n = 0; n < pictures.length; n++) {
-            var title = '';
-            var pic = pictures[n];
-            var div_child = document.createElement('DIV');
-            div_child.className = 'thumbnail';
-            var a = document.createElement('A');
-            a.className = 'lightbox';
-            a.href = url + pic;
-            for (var m = 0; m < meta.length; m++) {
-                 title = title + meta[m].replace("/","");
+        var idivs = document.getElementsByClassName('images');
+        for (var i=0; i<idivs.length; i++){
+            var div = idivs[i];
+            var fid = div.id;
+
+            var pictures = hpictures[fid];
+            if (pictures.length > 0){
+                var url = hurl[fid];
+                var pdfs = hpdfs[fid];
+                var url2 = hurl2[fid];
+                var meta = hmeta[fid];
+                for (var n = 0; n < pictures.length; n++) {
+                    var title = '';
+                    var pic = pictures[n];
+                    var div_child = document.createElement('DIV');
+                    div_child.className = 'thumbnail';
+                    var a = document.createElement('A');
+                    a.className = 'lightbox';
+                    a.href = url + pic;
+                    for (var m = 0; m < meta.length; m++) {
+                         title = title + meta[m].replace("/","");
+                    }
+                    a.title = title;
+                    var img = document.createElement('IMG');
+                    img.width = 100;
+                    img.src = url + pic;
+                    a.appendChild(img);
+                    div_child.appendChild(a);
+                    div.appendChild(div_child);
+                }
+                Ext.ux.Lightbox.register('a.lightbox', true);
             }
-            a.title = title;
-            var img = document.createElement('IMG');
-            img.width = 100;
-            img.src = url + pic;
-            a.appendChild(img);
-            div_child.appendChild(a);
-            div.appendChild(div_child);
         }
-        Ext.ux.Lightbox.register('a.lightbox', true);
-% endif
-        var a = document.getElementById('pdf');
-        if (pdfs.length !== 0) {
-            a.href = url2 + pdfs[0];
-        } else {
-            a.innerHTML = '-';
+        var aels = document.getElementsByClassName('pdf');
+        for (var i=0; i<aels.length; i++){
+            var a = aels[i];
+            var fid = a.id;
+            var pdfs = hpdfs[fid];
+            var url2 = hurl2[fid];
+            if (pdfs.length !== 0) {
+                a.href = url2 + pdfs[0];
+            } else {
+                a.innerHTML = '-';
+            }
         }
     var disclamer = document.getElementsByClassName('disclamer')[0];
     disclamer.setAttribute("href","http://www.disclamer.admin.ch")
     }
+% endif
 </script>
+</div>
 </%def>
