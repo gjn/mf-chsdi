@@ -702,6 +702,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.swissprtr"
                     },
+					{
+                        layerId: "ch.bag.zecken-lyme"
+                    },
                     {
                         layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
                     },
