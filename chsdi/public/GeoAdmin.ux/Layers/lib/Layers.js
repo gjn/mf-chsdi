@@ -2259,7 +2259,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.astra",
-                queryable: false,
+                queryable: false
             },
             "ch.astra.ivs-nat_wegbegleiter": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat_wegbegleiter"),
@@ -2268,7 +2268,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.astra",
-                queryable: false,
+                queryable: false
             },
             "ch.astra.ivs-gelaendekarte": {
                 name: OpenLayers.i18n("ch.astra.ivs-gelaendekarte"),
