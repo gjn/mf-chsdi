@@ -3162,6 +3162,16 @@ GeoAdmin._Layers = OpenLayers.Class({
 //                datenherr: "ch.bazl",
 //                queryable: false
 //            }
+              'ch.bag.zecken-lyme': {
+                  name: OpenLayers.i18n('ch.bag.zecken-lyme'),
+                  layertype: 'wmts',
+                  timestamp: ['20110613'],
+                  type: "polygon",
+                  format: "image/png",
+                  datenherr: "ch.bag",
+                  opacity: 0.75,
+                  queryable: false
+              },
             "org.epsg.grid_21781": {
                 name: OpenLayers.i18n("org.epsg.grid_21781"),
                 layers: ["org.epsg.grid_21781"],
