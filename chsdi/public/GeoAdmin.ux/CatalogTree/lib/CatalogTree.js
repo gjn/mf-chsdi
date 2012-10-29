@@ -87,6 +87,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      */
     map: null,
 
+    /** api: config[sortCatalog]
+     * ``Boolean`` true to sort layers in alphabethic order. Default to true.
+     */
+    sortCatalog: true,
+
     listeners: {
         dblclick: function(node, e) {
             this.selectNode(node);
@@ -439,7 +444,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
         var config = this.root.children ||
                              GeoAdmin.CatalogTree.createDefaultConfig();
-        this.root.children = this.sortLayerConfig(config);
+        if (this.sortCatalog) {
+            this.root.children = this.sortLayerConfig(config);
+        } else {
+            this.root.children =  config;
+        }
         this.adaptNodeConfig(this.root);
         GeoAdmin.CatalogTree.superclass.initComponent.call(this);
 
