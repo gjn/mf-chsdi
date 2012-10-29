@@ -203,6 +203,7 @@ OpenLayers.Lang.rm= {
 	'Please check your email address for spelling errors':'Controllai p.pl. l\'adressa d\'e-mail inditgada',
 	'Please check your input':'Controllar per plaschair las endataziuns',
 	'Please classify your report:':'Selecziunar ina categoria:',
+	'Please deactivate "Private browsing". Some functionalities have been deactivated.':'Please deactivate "Private browsing". Some functionalities have been deactivated.', //TODO
 	'Please enter a description.':'Endatar il text',
 	'Please fill the communication field':'Bitte das Kommunikationsfeld ausfüllen',
 	'Please fill the feedback':'Empleni per plaschair il champ da rapport',
@@ -419,6 +420,7 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.wasser-rueckgabe':'Restituziun d\'aua',
 	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina ? vias e rutas',
 	'ch.bafu.wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina ? territoris scumandads per la chatscha',
+	'ch.bag.zecken-lyme':'Borreliose',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventari federal ISOS',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=rm',

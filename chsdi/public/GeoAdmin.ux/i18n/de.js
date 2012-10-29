@@ -207,6 +207,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Please check your email address for spelling errors':'Bitte überprüfen Sie Ihre E-Mail Adresse auf Schreibfehler',
 	'Please check your input':'Bitte Eingaben überprüfen',
 	'Please classify your report:':'Kategorie auswählen:',
+	'Please deactivate "Private browsing". Some functionalities have been deactivated.':'Please deactivate "Private browsing". Some functionalities have been deactivated.', //TODO
 	'Please enter a description.':'Bitte eingeben',
 	'Please fill the communication field':'Bitte füllen Sie  Feld aus',
 	'Please fill the feedback':'Bitte füllen Sie das Berichtsfeld aus',
@@ -423,6 +424,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.wasser-rueckgabe':'Wasserrückgabe',
 	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'WRZ - Wege und Routen',
 	'ch.bafu.wildruhezonen-jagdbanngebiete':'Wildruhezonen - Jagdbanngebiete',
+	'ch.bag.zecken-lyme':'Borreliose',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Bundesinventar ISOS',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=de',
