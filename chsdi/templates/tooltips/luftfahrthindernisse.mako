@@ -22,20 +22,27 @@
 </%def>
 
 <%def name="body()">
-% if c.last == True:
-<script type="text/javascript" src="/${c.instanceid}/wsgi/build/api-light.js"></script>
-<link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/build/api-light.css">
-% endif
+<% 
+   startofconstruction = str(c.feature.startofconstruction.day) + '.' + str(c.feature.startofconstruction.month) + '.' + str(c.feature.startofconstruction.year)
+%>
 % if c.feature.sanctiontext == 'VOID':
 <% sanctiontext = '-' %>
 % else:
 <% sanctiontext = c.feature.sanctiontext %>
 % endif
-% if c.last == False:
-<div style="height: auto; page-break-after: always;">
-% elif c.last == True:
-<div style="height: 860;">
+% if c.last == True:
+<script type="text/javascript" src="/${c.instanceid}/wsgi/build/api-light.js"></script>
+<link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/build/api-light.css">
+<div class="object" style="height: auto;">
+% else:
+<div class="object" style="height: auto; page-break-after: always;">
 % endif
+    <script type="text/javascript">
+        if (typeof dico === "undefined") {
+            dico = {};
+        }
+        dico['${c.feature.id}'] = [${c.feature.geometry.bounds[0]},${c.feature.geometry.bounds[1]},${c.feature.geometry.bounds[2]},${c.feature.geometry.bounds[3]}];
+    </script>
     <table border="0" cellspacing="8" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr>
             <td>
@@ -44,10 +51,10 @@
             </td>
         </tr>
         <tr>
-            <td style="font-weight: bold; font-size: 14px; width:100%;">${_('status')}: ${c.feature.state}</td>
+            <td style="font-weight: bold; font-size: 13px; width:100%;">${_('status')}: ${c.feature.state}</td>
         </tr>
         <tr>
-            <td style="padding-left: 200px;">${_('tt_ch.bazl.startofconstruction')}: ${c.feature.startofconstruction or '-'}</td>
+            <td style="padding-left: 200px;">${_('tt_ch.bazl.startofconstruction')}: ${startofconstruction or '-'}</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.duration or '-'}</td>
@@ -56,7 +63,7 @@
             <td style="padding-left: 200px;">${_('tt_bazl_abortion')}: ${c.feature.abortionaccomplished or '-'}</td>
         </tr>
         <tr>
-            <td style="font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.geometriedaten')}:</td>
+            <td style="font-weight: bold; font-size: 13px;">${_('tt_ch.bazl.geometriedaten')}:</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('tt_ch.bazl.maxheight')}: ${c.feature.maxheightagl}</td></tr>
@@ -68,8 +75,8 @@
             <td style="padding-left: 200px;">${_('tt_ch.bazl.totallength')}: ${c.feature.totallength}</td>
         </tr>
         <tr>
-            <td style="font-weight: bold; font-size: 14px; width:100%;">${_('Coordinates')} [CH1903]:</td>
-        <tr>
+            <td style="font-weight: bold; font-size: 13px; width:100%;">${_('Coordinates')} [CH1903]:</td>
+        </tr>
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
@@ -85,7 +92,7 @@
         </tr>
 % endif
         <tr>
-            <td style="font-weight: bold; font-size: 14px; width:100%;">${_('tt_ch.bazl.markierung')}:</td>
+            <td style="font-weight: bold; font-size: 13px; width:100%;">${_('tt_ch.bazl.markierung')}:</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${sanctiontext}</td>
@@ -93,13 +100,10 @@
         <tr>
             <td style="text-align: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
         </tr>
+        <tr>
+            <td><div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div></td>
+        </tr>
     </table>
-    <script type="text/javascript">
-        if (window.document.dic === undefined) {
-            window.document.dic = {};
-        }
-        window.document.dic['${c.feature.id}'] = [${c.feature.geometry.bounds[0]},${c.feature.geometry.bounds[1]},${c.feature.geometry.bounds[2]},${c.feature.geometry.bounds[3]}];
-    </script>
 % if c.last == True:
     <script type="text/javascript">
         var map;
@@ -116,13 +120,11 @@
                 div.appendChild(divMap);
 
                 map = new GeoAdmin.Map('divmap' + fid);
-                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau',{opacity: 100});
+                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 100});
                 map.addLayerByName('org.epsg.grid_21781');
                 map.addLayerByName('org.epsg.grid_4326');
                 map.addLayerByName('ch.bazl.luftfahrthindernis');
-                map.getLayerByLayerName('org.epsg.grid_21781').mergeNewParams({lang: 'xx'});
-                map.getLayerByLayerName('org.epsg.grid_4326').mergeNewParams({lang: 'xx'});
-                var bounds = new OpenLayers.Bounds(window.document.dic[fid]);
+                var bounds = new OpenLayers.Bounds(dico[fid]);
                 if (bounds.left === bounds.right) {
                     var center = bounds.getCenterLonLat();
                     map.setCenter(center, 6);
@@ -136,16 +138,17 @@
             }
         }
     </script>
-% endif
-    <div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div>
-% if c.last == True:
-    <style> 
+    <style>
         .tooltip_large_header { display: none; }
         .olControlOverviewMap { display: none; }
+        div.olControlZoom { display: none; }
+        @media print
+            { 
+              .tooltip_black_border { border: none; }
+              div.olMapViewport { overflow: hidden !important }
+            }
     </style>
-    <p style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')}</p>
-    <p style="width: 300px; float: left;">${_('date')}: ${c.datenstand}</p>
+    <div style="padding-top: 8px; padding-bottom: 8px;">${_('tt_ch.bazl_longtext')} <p style="padding-top: 2px;">${_('date')}: ${c.datenstand}</p></div>
 % endif
 </div>
-
 </%def>
