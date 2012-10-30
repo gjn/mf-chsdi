@@ -1899,6 +1899,9 @@ msgstr "Physique-virtuel"
 msgid "plz"
 msgstr "NPA"
 
+msgid "print"
+msgstr "Stampa"
+
 msgid "protokoll"
 msgstr "Protocole"
 
@@ -2017,7 +2020,7 @@ msgid "tt_bakom_weak"
 msgstr "Debole"
 
 msgid "tt_bazl_abortion"
-msgstr "Eliminazione effettuata:"
+msgstr "Eliminazione effettuata"
 
 msgid "tt_ch.bakom.leistung"
 msgstr "Potenza irradiata (ERP)"

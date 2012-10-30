@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "print"
+msgstr ""
+
 msgid "tt_bazl_abortion"
 msgstr ""
 

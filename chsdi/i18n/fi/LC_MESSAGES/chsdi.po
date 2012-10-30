@@ -1899,6 +1899,9 @@ msgstr "Physisch-virtuell"
 msgid "plz"
 msgstr "PLZ"
 
+msgid "print"
+msgstr "Stampar"
+
 msgid "protokoll"
 msgstr "Protokoll"
 
@@ -2017,7 +2020,7 @@ msgid "tt_bakom_weak"
 msgstr "Klein"
 
 msgid "tt_bazl_abortion"
-msgstr "Abbruch ausgeführt:"
+msgstr "Abbruch ausgeführt"
 
 msgid "tt_ch.bakom.leistung"
 msgstr "Sendeleistung (ERP)"

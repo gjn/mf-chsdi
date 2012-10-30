@@ -236,6 +236,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.laerm-strassenlaerm_nacht':"",
     'ch.bafu.wildruhezonen-jagdbanngebiete' :"",
     'ch.bafu.wege-wildruhezonen-jagdbanngebiete':"",
+    'ch.bag.zecken-lyme':"",
     'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':"",
     'ch.bakom':"",
     'ch.bakom.radio-fernsehsender':"",

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-
+<!DOCTYPE html>
 <html>
     <head>
         <meta content="text/html" charset="utf-8" http-equiv="Content-Type">
@@ -19,8 +19,7 @@
         % if c.stable_id is True:
             <a class="tooltip_red_link" href="${c.baseUrl}?${c.layer_id}=${c.feature.id}&lang=${c.lang}" target="new">${_('Link to object')}</a>&nbsp;|&nbsp;
         % endif
-            <a class="tooltip_red_link" href="javascript:window.print();">Drucken</a></div>
+            <a class="tooltip_red_link" href="javascript:window.print();">${_('print')}</a></div>
     </div>
     </body>
-    <div>
 </html>
