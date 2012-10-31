@@ -424,7 +424,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.wasser-rueckgabe':'Wasserrückgabe',
 	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'WRZ - Wege und Routen',
 	'ch.bafu.wildruhezonen-jagdbanngebiete':'Wildruhezonen - Jagdbanngebiete',
-	'ch.bag.zecken-lyme':'Borreliose',
+	'ch.bag.zecken-lyme':'Borreliose Risikogebiete',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Bundesinventar ISOS',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=de',

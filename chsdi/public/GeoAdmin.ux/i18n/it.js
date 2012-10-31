@@ -424,7 +424,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.wasser-rueckgabe':'Restituzione',
 	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'Zone di tranquillitá - strade',
 	'ch.bafu.wildruhezonen-jagdbanngebiete':'Zone di tranquillitá - bandite di caccia',
-	'ch.bag.zecken-lyme':'Borellosi',
+	'ch.bag.zecken-lyme':'Zone a rischio di Borreliosi',
 	'ch.bak':'UFC',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventario federale ISOS',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=it',

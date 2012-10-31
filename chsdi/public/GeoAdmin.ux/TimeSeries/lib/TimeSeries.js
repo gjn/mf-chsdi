@@ -18,11 +18,10 @@
  *  Paints a time axis from minYear to maxYear and allows to add sliders so that years or ranges can be selected.
  */
 GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
-    // TODO Change to ch.swisstopo once available
     /** api: config[layerName]
      *  ``String`` Name of layer whose versions should be presented
      */
-    layerName: "ch.swisstopo.hiks-siegfried-ta50",
+    layerName: "ch.swisstopo.zeitreihen",
     
     /** api: config[framesPerSecond]
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
