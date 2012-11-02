@@ -1,3 +1,4 @@
+.svn
 print/*.war
 print/*.yaml
 .installed.cfg
@@ -20,3 +21,11 @@ chsdi/public/lib/ext/*
 chsdi/public/lib/geoext.ux.dev/*
 chsdi/public/lib/proj4js/*
 tilecache/tilecache.cfg
+jstranslate/*
+chsdi/public/lib/geoext.ux.dev/*
+chsdi/public/lib/proj4js/*
+chsdi/public/doc/source/tileforge_userguide/*
+chsdi/public/doc/source/tileforge_devguide/*
+chsdi/public/lib/geoext.ux/*
+chsdi/public/lib/ext/Ext/*
+
