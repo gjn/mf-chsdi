@@ -84,12 +84,16 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                     if (!(params.layers_visibility instanceof Array)) {
                         params.layers_visibility = [params.layers_visibility];
                     }
+                    if (!(params.layers_timestamp instanceof Array)) {
+                        params.layers_timestamp = [params.layers_timestamp];
+                    }
                     
                     for (var i = 0, len = params.layers.length; i < len; i++) {
                         map_state.layers.push({
                             layername: params.layers[i],
                             visibility: (params.layers_visibility[i]) ? params.layers_visibility[i] === 'true' : true,
-                            opacity: (params.layers_opacity[i]) ? parseFloat(params.layers_opacity[i]) : undefined
+                            opacity: (params.layers_opacity[i]) ? parseFloat(params.layers_opacity[i]) : undefined,
+                            timestamp: (params.layers_timestamp[i]) ? params.layers_timestamp[i] : undefined
                         });
                     }
                 } else if (k == 'crosshair') {
@@ -101,7 +105,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k == 'swisssearch') {
                     swisssearch_state.use_swisssearch = true;
                     swisssearch_state.swisssearch = params.swisssearch;
-                } else if (k !== 'lang' && k !== 'noHeader' &&
+                } else if (k !== 'lang' && k !== 'noHeader' && k !== 'layers_timestamp' &&
                            k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices' && k !== 'mobile') {
                     // probably a layer to recenter on
                     map_state.layers.push({
