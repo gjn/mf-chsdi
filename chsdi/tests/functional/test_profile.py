@@ -20,6 +20,18 @@ class TestProfileController(TestController):
         assert len(profile)  == 201
         assert resp.response.content_type == "application/json"
 
+    def test_search_json_comb(self):
+        resp = self.app.get(url(controller='profile', action='json'),
+                            params={"geom": '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}',
+                            "elevation_models": "COMB"},
+                            )
+
+        results = simplejson.loads(resp.response.body)
+        profile = results['profile']
+
+        assert len(profile)  == 201
+        assert resp.response.content_type == "application/json"
+
     def test_search_csv(self):
         resp = self.app.get(url(controller='profile', action='csv'),
                             params={"geom": '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}'},
