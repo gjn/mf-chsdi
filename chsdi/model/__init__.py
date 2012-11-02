@@ -18,6 +18,7 @@ from shapely.geometry.polygon import Polygon
 from chsdi.lib.base import render, c
 from chsdi.model import meta
 from chsdi.model.meta import Session
+from time import strptime, strftime
 
 def init_model(key, engine):
     if key not in meta.engines:
@@ -54,6 +55,8 @@ class Queryable(object):
     # Support the time
     the_time = None   # Time column stored in the table
     the_time_operator = '==' #Operator used for time comparison in table: '==' (per default) or '<='
+    the_time_timestamp_format = '%Y%m%d' # Default format for WMTS: 20121231
+    the_time_db_format = '%Y%m%d' # Default format for WMTS: 20121231
 
     @classmethod
     def bbox_filter(cls, scale, bbox, tolerance=0):
@@ -72,9 +75,9 @@ class Queryable(object):
         myFilter = None
         if cls.the_time is not None:
            if cls.the_time_operator == '==':
-              myFilter = cls.__table__.columns[cls.the_time] == timestamp
+              myFilter = cls.__table__.columns[cls.the_time] == strftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
            if cls.the_time_operator == '<=':
-              myFilter = cls.__table__.columns[cls.the_time] <= timestamp
+              myFilter = cls.__table__.columns[cls.the_time] <= strftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
         return myFilter
 
     @classmethod
