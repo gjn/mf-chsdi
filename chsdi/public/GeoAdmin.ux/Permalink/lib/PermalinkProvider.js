@@ -178,6 +178,10 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         if (current_lang) {
             params.lang = current_lang;
         }
+        var current_project = GeoAdmin.project;
+        if (current_project) {
+            params.project = current_project;
+        }
 
         // merge params in the URL into the state params
         //OpenLayers.Util.applyDefaults(params, OpenLayers.Util.getParameters(base));
