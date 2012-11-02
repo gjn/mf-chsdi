@@ -27,7 +27,7 @@
         }
 
         function test_addLayerByName(t) {
-            t.plan(14);
+            t.plan(10);
             var map = new GeoAdmin.Map("map");
 
             //
@@ -58,21 +58,7 @@
                 t.ok(previousOrder<map.layers[i].arrayOrder, "Test layers sort. Test order of: " + map.layers[i].layername);
                 previousOrder = map.layers[i].arrayOrder;
             }
-            
-            var count = map.layers.length + 1;
-            var layer = map.addLayerByName("ch.swisstopo.pixelkarte.zeitreihen.metadata");
-            t.ok(map.layers.length === count, "Layer ch.swisstopo.pixelkarte.zeitreihen.metadata has been added");
-            t.ok(layer.timestamp === "2010","Default timestamp is 2010");
 
-            var count = map.layers.length + 1;
-
-            var layer = map.addLayerByName("ch.swisstopo.pixelkarte.zeitreihen.metadata",{timestamp: '2009'});
-            t.ok(map.layers.length === count, "Layer ch.swisstopo.pixelkarte.zeitreihen.metadata has been added, but with another timestamp");
-
-            var count = map.layers.length; 
-            var layer = map.addLayerByName("ch.swisstopo.pixelkarte.zeitreihen.metadata",{timestamp: '2009'});
-
-            t.ok(map.layers.length === count, "Layer ch.swisstopo.pixelkarte.zeitreihen.metadata is not added since the timestamp 2009 was already added");
             map.destroy();
         }
 

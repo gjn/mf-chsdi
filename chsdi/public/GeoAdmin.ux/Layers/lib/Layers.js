@@ -673,17 +673,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: 1,
                 type: "point"
             },
-            "ch.swisstopo.pixelkarte.zeitreihen.metadata": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte.zeitreihen.metadata"),
-                layertype: 'wms',
-                layers: 'lk25_meta',
-                format: 'image/png',
-                timestamp: ['2010','2009','2008'],
-                datenherr: 'ch.swisstopo',
-                queryable: true,
-                type: 'polygon',
-                url: 'http://wms-test0t.bgdi.admin.ch/zeitreihen/'
-            },
             "ch.bfe.sachplan-geologie-tiefenlager": {
                 name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager"),
                 layertype: 'wms',
@@ -2204,7 +2193,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false,
+                queryable: true,
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
             },
             "ch.swisstopo.pixelkarte-farbe-pk200.noscale": {

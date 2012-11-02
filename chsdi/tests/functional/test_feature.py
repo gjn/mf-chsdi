@@ -65,7 +65,7 @@ class TestFeatureController(TestController):
     def test_search_timestamps(self):
         params = {
             'bbox': '562750,160000,570250,167500',
-            'layers': 'ch.swisstopo.pixelkarte.zeitreihen.metadata',
+            'layers': 'ch.swisstopo.zeitreihen',
             'timestamps': '2010',
             'scale': '5000000'
             }
