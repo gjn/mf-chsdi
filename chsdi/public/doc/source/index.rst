@@ -163,6 +163,14 @@ Twitter
     }
    }).render().setUser('swiss_geoportal').start();
    </script>
+
+Release Notes
+*************
+
+.. toctree::
+   :maxdepth: 1
+
+   releasenotes/index
    
 Indices and tables
 ==================
