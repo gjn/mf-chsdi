@@ -257,12 +257,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             }
                         }
                     }
-                    for (var i = 0, len = map.layers.length; i < len;i++) {
-                       var layer = map.layers[i];
-                       if (layer.CLASS_NAME == 'OpenLayers.Layer.WMS') {
-                          layer.params.angle= this.printPanel.printExtent.control.rotation;
-                       }
-                    }
+                    //for (var i = 0, len = map.layers.length; i < len;i++) {
+                    //   var layer = map.layers[i];
+                    //   if (layer.CLASS_NAME == 'OpenLayers.Layer.WMS') {
+                    //    layer.params.angle= this.printPanel.printExtent.control.rotation;
+                    //   }
+                    //}
 
                     provider.baseParams.layout = provider.layout.get("name");
                     var overrides = {
