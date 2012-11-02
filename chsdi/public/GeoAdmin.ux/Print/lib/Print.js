@@ -212,7 +212,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
                     provider.customParams.date = date.getDate().toString() + '.' + (date.getMonth()+1).toString() + '.' + date.getFullYear().toString(); 
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
-                    provider.customParams.app = 'config';  // default print config
+                    if (GeoAdmin.project) {
+                        provider.customParams.app = GeoAdmin.project;
+                    } else {
+                        provider.customParams.app = 'config';  // default print config
+                    }
                     provider.customParams.lang = lang;
                     // QRCode
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
@@ -252,6 +256,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                                 }
                             }
                         }
+                    }
+                    for (var i = 0, len = map.layers.length; i < len;i++) {
+                       var layer = map.layers[i];
+                       if (layer.CLASS_NAME == 'OpenLayers.Layer.WMS') {
+                          layer.params.angle= this.printPanel.printExtent.control.rotation;
+                       }
                     }
 
                     provider.baseParams.layout = provider.layout.get("name");
