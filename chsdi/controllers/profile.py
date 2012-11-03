@@ -203,8 +203,7 @@ class ProfileController(BaseController):
         return {
             'DTM25': config['data_path'] + 'bund/swisstopo/dhm25_25_matrix/mm0001.shp',
             'DTM2': config['data_path'] + 'bund/swisstopo/swissalti3d/2m/index.shp',
-            'BLEND': config['data_path'] + 'bund/swisstopo/swissalti3d/test/index_blend.shp',
-            'FIRST': config['data_path'] + 'bund/swisstopo/swissalti3d/test/index_first.shp'
+            'COMB': config['data_path'] + 'bund/swisstopo/swissalti3d/kombo_2m_dhm25/index.shp'
         }
 
     def _filter_alt(self, alt):

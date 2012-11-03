@@ -21,3 +21,19 @@ class TestHeightController(TestController):
         # test the response structure
         assert isinstance(results, dict)
         assert "height" in results
+
+    def test_height_comb(self):
+        resp = self.app.get(url(controller='height', action='index'),
+                            params={"easting": "600000", "northing" : "200000", "elevation_model": "COMB"},
+                            )
+
+        # test that content_type is "application/json"
+        assert resp.response.content_type == "application/json"
+
+        # test that response is parsable (simplejson throws an exception
+        # if it fails to parse the string)
+        results = simplejson.loads(resp.response.body)
+
+        # test the response structure
+        assert isinstance(results, dict)
+        assert "height" in results

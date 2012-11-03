@@ -126,7 +126,7 @@ Examples:
 - Look for everything from the point location within a default radius of 10 m: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
 - Look for communes and postcode within 2 a radius of 2km: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
 - Look for communes within a radius of 500 m and returns all the properties: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw>`_ 
-- Same than above but without the geometries: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true>`_
+- Same than above but without the geometries: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true>`_
 
 Result
 ^^^^^^
@@ -319,7 +319,7 @@ Input parameters
 The following parameters are required:
 
 - geom: GeoJSON representation of the polyline (type = LineString)
-- elevation_models (optional): comma separated list of elevation models. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
+- elevation_models (optional): comma separated list of elevation models. Three elevation models are available DTM25, DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2). Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - cb (optional): the name of the callback funtion
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
@@ -352,7 +352,7 @@ Input parameters
 The following parameters are required:
 
 - geom: GeoJSON representation of the polyline (type = LineString)
-- elevation_models (optional): comma separated list of elevation models. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
+- elevation_models (optional): comma separated list of elevation models. Three elevation models are available DTM25, DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2). Default: DTM25
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
 
@@ -380,7 +380,7 @@ The following parameters are required:
 
 - easting: the Y position in CH1903 coordinate system
 - northing: the X position in CH1903 coordinate system
-- elevation_model (optional): elevation model. Two elevation models are available DTM25 and DTM2 (swissALTI3D). Default: DTM25
+- elevation_model (optional): elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2). Default: DTM25
 - cb (optional): the name of the callback funtion
 
 Example: http://api.geo.admin.ch/height?easting=600000&northing=200000

@@ -1,0 +1,1109 @@
+Release 20121030 - Tuesday, October 30th 2012 
+=============================================
+
+Geodata
+********
+
++--------+------------------------------------------------------------------+
+| New    | `Borreliosis regions at risk <http://s.geo.admin.ch/96c55e38>`__ |
++--------+------------------------------------------------------------------+
+| Update | `Zip and locations <http://s.geo.admin.ch/d9176c15>`__           |
++--------+------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+-------------------------------------
+
+Bug fixes and corrections
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+No changes
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bug fixes and corrections
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+-----------------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+---------------------------------------------------------+
+| Fixed | SwissSearch does not work when browsing in private mode |
++-------+---------------------------------------------------------+
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/2510121438/main/wsgi/build/api.css
+
+http://api.geo.admin.ch/2510121438/main/wsgi/build/api.js
+
+
+Release 20121025 - Thursday, October 25th 2012 
+==============================================
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `IHR Boundaries <http://s.geo.admin.ch/1aa46544>`__ (ch.astra.ivs-nat_abgrenzungen)                                  |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `IHR Elements of landscape <http://s.geo.admin.ch/e2f53ea7>`__ (ch.astra.ivs-nat_wegbegleiter)                       |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `SP aeronautical infrastructure <http://s.geo.admin.ch/c5c7c550>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft) |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Update | `Parks <http://s.geo.admin.ch/492006a2>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                       |
++--------+----------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+-------------------------------------------------------------------------------------------------------------+
+| New   | Add LV95 coordinates to context popup window                                                                |
++-------+-------------------------------------------------------------------------------------------------------------+
+| New   | Add raw option to reversegeocoding, enable no_geom when raw input, improve controller readability and logic |
++-------+-------------------------------------------------------------------------------------------------------------+
+| Fixed | Several bugs                                                                                                |
++-------+-------------------------------------------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+No changes
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bug fixes and corrections
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+No changes
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/1110121210/main/wsgi/build/api.css 
+
+http://api.geo.admin.ch/1110121210/main/wsgi/build/api.js
+
+
+Release 20121011 - Thursday, October 11th 2012 
+==============================================
+
+Services
+********
+
++------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New        | You can now also use the domain `geoadmin.ch <http://geoadmin.ch>`__, like `www.geoadmin.ch <http://www.geoadmin.ch>`__, `map.geoadmin.ch <http://map.geoadmin.ch>`__, etc... |
++------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Deprecated | The bodsearch service has been decommissioned. Use http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers instead.                                      |
++------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Cadastral survey status <http://s.geo.admin.ch/60ec7325>`__ (ch.swisstopo-vd.geometa-standav) |
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Historical roads <http://s.geo.admin.ch/26482af1>`__ (ch.astra.ivs-nat)                       |
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <http://s.geo.admin.ch/31d5da70>`__ (ch.kantone.cadastralwebmap-farbe)      |
++--------+------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy and branch 0.2 for GXM (Sencha 2.x branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/2609111920/main/wsgi/build/api.css 
+
+http://api.geo.admin.ch/2609111920/main/wsgi/build/api.js
+
+
+Release 20120926 - Wednesday, September 26th 2012 
+=================================================
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------------------------------+
+| New    | `Deep Geological Repositories sectoral plan <http://s.geo.admin.ch/da0a8c82>`__ (ch.bfe.sachplan-geologie-tiefenlager) |
++--------+------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <http://s.geo.admin.ch/5e51a2a>`__ (ch.bfe.statistik-wasserkraftanlagen)                        |
++--------+------------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion Risk 2 <http://s.geo.admin.ch/61a143bc>`__ (ch.blw.erosion-mit_bergzonen)                                     |
++--------+------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy and branch 0.2 for GXM (Sencha 2.x branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/1409120626/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
+
+
+Release 20120912 - Wednesday, September 12th 2012 
+===================================================
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `VHF coverage area <http://s.geo.admin.ch/18d9b9a>`__ (ch.bakom.versorgungsgebiet-ukw)                     |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `TV coverage area <http://s.geo.admin.ch/c7b59ce>`__ (ch.bakom.versorgungsgebiet-tv)                       |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Radio and TV emitters <http://s.geo.admin.ch/1e40514>`__ (ch.bakom.radio-fernsehsender)                   |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `GSM antenna positions <http://s.geo.admin.ch/c569d2e>`__ (ch.bakom.mobil-antennenstandorte-gsm)           |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `UMTS antenna positions <http://s.geo.admin.ch/d58cf6d>`__ (ch.bakom.mobil-antennenstandorte-umts)         |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones: Airports <http://s.geo.admin.ch/83414eb>`__ (ch.bazl.projektierungszonen-flughafenanlage) |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `GeoMeta communes <http://s.geo.admin.ch/c58da56>`__ (ch.swisstopo-vd.geometa-gemeinde)                    |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Register <http://s.geo.admin.ch/1c274df>`__ (ch.swisstopo-vd.geometa-grundbuch)                           |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Land Surveyor <http://s.geo.admin.ch/52e3a37>`__ (ch.swisstopo-vd.geometa-nfgeom)                         |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Cadastral survey status <http://s.geo.admin.ch/d968f9e>`__ (ch.swisstopo-vd.geometa-standav)              |
++--------+------------------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <http://s.geo.admin.ch/74d27b4>`__ (ch.kantone.cadastralwebmap-farbe)                   |
++--------+------------------------------------------------------------------------------------------------------------+
+| Update | `Works in progress <http://s.geo.admin.ch/283edca>`__ (ch.swisstopo-vd.geometa-los)                        |
++--------+------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <http://s.geo.admin.ch/cc4378c>`__ (ch.bfe.statistik_wasserkraftanlagen)            |
++--------+------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+----------------------------------------------------------------------------------------------------+
+| New    | Permalink panel: possibility to shorten an URL with http://s.geo.admin.ch service                  |
++--------+----------------------------------------------------------------------------------------------------+
+| Update | Performance optimization of WMS services                                                           |
++--------+----------------------------------------------------------------------------------------------------+
+| New    | bfsnr can be used in order to search within the geocoding service (http://s.geo.admin.ch/af5c5c3 ) |
++--------+----------------------------------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | The mobile API has been migrated to the latest version of the base libaries (GXM branch 0.2, based on Sencha Touch 2.0). Performance and stability have been improved. Feedback welcome! |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Documentation at http://s.geo.admin.ch/eb7345d                                                                                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+------------------------------------------------------------------------------+
+| New    | Permalink: possibility to shorten an URL with https://s.geo.admin.ch service |
++--------+------------------------------------------------------------------------------+
+| Update | Feature is highlighted when searched with the search combo                   |
++--------+------------------------------------------------------------------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Mobile Geoadmin has been migrated to the latest version of the base libaries (GXM branch 0.2, based on Sencha Touch 2.0). Performance and stability have been improved. Feedback welcome! |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.2 for GXM (Sencha 2.x branch). We are quite proud to have significantly contributed to the evolution of the OpenSource library GXM https://github.com/geoext/GXM
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
+
+http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
+
+Release 20120828 - Wednesday, August 28th 2012 
+=================================================
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `Color Map <http://s.geo.admin.ch/9760998>`__ (ch.swisstopo.pixelkarte-farbe)                            |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `Grey Map <http://s.geo.admin.ch/929a8e1>`__ (ch.swisstopo.pixelkarte-grau)                              |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <http://s.geo.admin.ch/d7a1128>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)   |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <http://s.geo.admin.ch/4b667cb>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)   |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <http://s.geo.admin.ch/610dd76>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `Inventory historical routes national <http://s.geo.admin.ch/3344dc9>`__ (ch.astra.ivs-nat)              |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `IHR National & Regional <http://s.geo.admin.ch/84d12e5>`__ (ch.astra.ivs-reg_loc)                       |
++--------+----------------------------------------------------------------------------------------------------------+
+| Update | `Ramsar <http://s.geo.admin.ch/ae2e798>`__ (ch.bafu.schutzgebiete-ramsar)                                |
++--------+----------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+------------------------------------------------------+
+| New   | URL shortener service: http://s.geo.admin.ch/78ea417 |
++-------+------------------------------------------------------+
+| Fixed | Several Bugs                                         |
++-------+------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Nothing: we develop the next generation ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | Possibility to load KML stored on your computer (all browsers supported except IE since the FileAPI standard is not supported by IE).         |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | Possibility to display coordinates in coordinate system WGS84 and CH1903                                                                      |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | Possibility to search features within the layer "Protection of cultural property inventory" http://s.geo.admin.ch/9c6ae24                     |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | Possibility to generate a QRCode from the permalink panel. Practical if you want to transfer what you see on the screen to you smartphone ;-) |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| Fixed | Several Bugs                                                                                                                                  |
++-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Nothing: we develop the next generation ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/1708120828/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/1708120828/main/wsgi/build/api.css
+
+
+Release 20120816 - Thursday, August 16th 2012 
+=============================================
+
+Preview
+*******
+
+You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: http://api.geo.admin.ch/demo/re3.html
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <http://goo.gl/wQ2cc>`__ (ch.kantone.cadastralwebmap-farbe) |
++--------+--------------------------------------------------------------------------------+
+| Update | `Swissimage <http://goo.gl/nykmj>`__ (ch.swisstopo.swissimage)                 |
++--------+--------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+Bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+----------------------------+
+| Fixed | Avoid tile blinking effect |
++-------+----------------------------+
+
+Also, we develop the next generation ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bugfixing
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-------+----------------------------+
+| Fixed | Avoid tile blinking effect |
++-------+----------------------------+
+
+Also, we develop the next generation ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/0208122345/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/0208122345/main/wsgi/build/api.css
+
+
+Release 20120802 - Thursday, August 2nd 2012 
+=============================================
+
+Preview
+*******
+
+You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: http://api.geo.admin.ch/demo/re3.html
+
+Geodata
+*******
+
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Inclination (Geophysic) <http://goo.gl/QQVEj>`__ (ch.swisstopo.geologie-gephysik-inklination)      |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Federal inventory ISOS <http://goo.gl/phQqQ>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder) |
++--------+-----------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-----+---------------------------+
+| New | Mockup to discuss the RE3 |
++-----+---------------------------+
+
+Bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Nothing, we develop the next generation ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bugfixing
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Nothing, we develop the next generation ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/2307121737/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/2307121737/main/wsgi/build/api.css 
+
+
+Release 20120718 - Wednesday, July 18th 2012 
+=============================================
+
+Geodata
+*******
+
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Federal inventory ISOS <http://goo.gl/QkVYK>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder) |
++--------+-----------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-----+----------------------------------------------------------------------------------------+
+| New | Added WMS of Zürich City to GeoAdmin.WmsBrowser                                        |
++-----+----------------------------------------------------------------------------------------+
+| New | Open tooltip on link to object when combined with GeoAdmin.ExtendedTooltip             |
++-----+----------------------------------------------------------------------------------------+
+| New | Add panoramio example (http://api.geo.admin.ch/main/wsgi/doc/build/api/panoramio.html) |
++-----+----------------------------------------------------------------------------------------+
+
+Bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Nothing, we develop the next generation ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bugfixing
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Nothing, we develop the next generation ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/0507121747/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/0507121747/main/wsgi/build/api.css 
+
+
+Release 20120705 - Wednesday, July 5th 2012 
+=============================================
+
+Geodata
+*******
+
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `New background layer: SwissTLM-Map <http://goo.gl/KCSsE>`__ (ch.swisstopo.tml3d-hintergrund-karte) |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate overview <http://goo.gl/NV8RF>`__ (ch.blw.klimaeignung-typ)                                |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - special crop <http://goo.gl/wghWj>`__ (ch.blw.klimaeignung-spezialkulturen)              |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - crop stolen <http://goo.gl/ealwS>`__ (ch.blw.klimaeignung-zwischenfruchtbau)             |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - corn grain <http://goo.gl/Mv0zZ>`__ (ch.blw.klimaeignung-koernermais)                    |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - potateos <http://goo.gl/csnLH>`__ (ch.blw.klimaeignung-kartoffeln)                       |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - cereal crop <http://goo.gl/txEkj>`__ (ch.blw.klimaeignung-getreidebau)                   |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Rainfall <http://goo.gl/k3IWr>`__ (ch.blw.niederschlagshaushalt)                                   |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Climate - forage crop <http://goo.gl/r5Jk3>`__ (ch.blw.klimaeignung-futterbau)                     |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Aptitude: crop types <http://goo.gl/Fo1WA>`__ (ch.blw.bodeneignung-kulturtyp)                      |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Aptitude: cropland <http://goo.gl/PBqok>`__ (ch.blw.bodeneignung-kulturland)                       |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Mountain product <http://goo.gl/2wngg>`__ (ch.blw.bergprodukte)                                    |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Alp products <http://goo.gl/1GtVC>`__ (ch.blw.alpprodukte)                                         |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Demand for irrigation <http://goo.gl/WZcmm>`__ (ch.blw.bewaesserungsbeduerftigkeit)                |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `Radio and TV emitters <http://goo.gl/UDAVv>`__ (ch.bakom.radio-fernsehsender)                      |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `GSM antenna positions <http://goo.gl/EORrR>`__ (ch.bakom.mobil-antennenstandorte-gsm)              |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `UMTS antennna positions <http://goo.gl/1KVaq>`__ (ch.bakom.mobil-antennenstandorte-umts)           |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `TV coverage area <http://goo.gl/1KVaq>`__ (ch.bakom.versorgungsgebiet-tv)                          |
++--------+-----------------------------------------------------------------------------------------------------+
+| New    | `VHF coverage area <http://goo.gl/dPHq2>`__ (ch.bakom.versorgungsgebiet-ukw)                        |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `PDO meat products <http://goo.gl/lUvLI>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                 |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `CadastralWebMap <http://goo.gl/NJ1Z1>`__ (ch.kantone.hintergrund-farbe)                            |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `AGNES station <http://goo.gl/R4D3b>`__ (ch.swisstopo.fixpunkte-agnes)                              |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Emisions Plan 2015 <http://goo.gl/bL7FC>`__ (ch.bav.laerm-emissionplan_eisenbahn_2015)             |
++--------+-----------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+-----------------------------------------------------------------------------+
+| Update | Use custom QRcode service using a shortener in order to make smaller QRcode |
++--------+-----------------------------------------------------------------------------+
+| New    | New baselayer SwissTLM-Map (see above)                                      |
++--------+-----------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-----+----------------------------------------+
+| New | New baselayer SwissTLM-Map (see above) |
++-----+----------------------------------------+
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+---------------------------------+
+| Update | Enhanced QR-Code (i.e. smaller) |
++--------+---------------------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Nothing new, but all nice features are still there ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+
+http://api.geo.admin.ch/2006121657/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/2006121657/main/wsgi/build/api.css
+
+
+Release 20120620 - Wednesday, June 20th 2012 
+=============================================
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------+
+| New    | `Small hydroelectric potential <http://goo.gl/R2dqr>`__ (ch.bfe.kleinwasserkraftpotentiale)    |
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas 1:25'000 <http://goo.gl/EkPSt>`__ (ch.swisstopo.geologie-geologischer_atlas) |
++--------+------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+    <p>
+
++--------+---------------------------------------------------------------------------------------+
+| New    | OL popup in the Light API                                                             |
++--------+---------------------------------------------------------------------------------------+
+| New    | Support mobile parameter with permalink                                               |
++--------+---------------------------------------------------------------------------------------+
+| New    | Add crossdomain.xml (for Flash and Flex) http://api.geo.admin.ch/crossdomain.xml      |
++--------+---------------------------------------------------------------------------------------+
+| New    | Add QRCode in the Context popup                                                       |
++--------+---------------------------------------------------------------------------------------+
+| New    | Add QRCode support in print                                                           |
++--------+---------------------------------------------------------------------------------------+
+| Update | Extended tooltips. Tooltips has now three modes: preview, summary and extended infos. |
++--------+---------------------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Nothing new, but all nice features are still there ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+    <p>
+
++--------+--------------------------------------------------------------------------------------------------------------------+
+| New    | Print has a QRCode: the generated PDF has the permalink printed has a QRCode. Scan it and send it to your browser. |
++--------+--------------------------------------------------------------------------------------------------------------------+
+| Update | Some layers have extended informations provided ("extended tooltips")                                              |
++--------+--------------------------------------------------------------------------------------------------------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+.. raw:: html
+
+    <p>
+
++-------+---------------------------------------------------------+
+| Fixed | Small bug when redirecting from the desktop application |
++-------+---------------------------------------------------------+
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/1406121349/main/wsgi/build/api.js
+
+http://api.geo.admin.ch/1406121349/main/wsgi/build/api.css 
+
+
+Release 20120614 - Wednesday, June 14th 2012 
+=============================================
+
+Geodata
+*******
+
+No changes.
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Possibility to make a full text search within feature attributes. Currently available for layers `ch.astra.ivs-nat <http://map.geo.admin.ch/?layers=ch.astra.ivs-nat>`__ , `ch.astra.ivs-reg_loc <http://map.geo.admin.ch/?layers=ch.astra.ivs-reg_loc>`__ , `ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal <http://map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ , `ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet <http://map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ , `ch.swisstopo.fixpunkte-hoehe <http://map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hoehe>`__, `ch.swisstopo.fixpunkte-lage <http://map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lage>`__ |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | SwissSearch Widget has been extended in order to support the attribute search                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Extended Tooltip widget: allows the feature selection by rectangle and delivers information about the features. The currrent tooltip as usual is still working. `Example <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#extendedtooltip-with-box-selection>`__.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Light API contains OpenLayers Popup                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+Nothing new, but all nice features are still there ;-)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+   <p>
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Extended Tooltip and attribute search are available                                                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Survey is referenced. Please, help us to improve: http://tinyurl.com/umfrage-geoadminch (DE) or http://tinyurl.com/questionnaire-geoadminch (FR) |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Nothing new, but all nice features are still there ;-)
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://api.geo.admin.ch/main/wsgi/17fb7/build/app.js
+
+http://api.geo.admin.ch/main/wsgi/17fb7/build/app.css
+
+
+Release 20120605 - Tuesday, June 5th 2012 
+=============================================
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------------+
+| Update | Layer CadastralWebMap (ch.kantone.cadastralwebmap-farbe) N.B. This layer will be updated every month |
++--------+------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+Information
+***********
+
+No functional changes in the applications
+
+Release 20120522 - Tuesday, May 22nd 2012 
+=============================================
+
+Geodata
+*******
+
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New     | `Topographical landscape model <http://goo.gl/pnoQq>`__ (ch.swisstopo.swisstlm3d-karte)                                                                                                                                |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New     | `Geotope of national importance <http://goo.gl/RBjEX>`__ (http://goo.gl/RBjEX)                                                                                                                                         |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update  | swissALTI3d Hillshade (ch.swisstopo.swissalti3d-reliefschattierung)                                                                                                                                                    |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Removed | The layer 'ch.swisstopo.vec25-wander' is replaced through 'ch.swisstopo.swisstlm3d-wanderwege' in the API. The tiles won't be deleted, but you have to add it manually to API, but do this only if you really need it. |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+--------------------------------------
+
+.. raw:: html
+
+   <p>
+
++-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New       | Begin redesign the service: add a new service 'layers' (see doc http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers), to replace later the 'bodsearch' service |
++-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Developer | KML add method refactoring                                                                                                                                                              |
++-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+--------------------------------------------
+
+No changes
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+.. raw:: html
+
+    <p>
+
++-----+---------------------+
+| New | Select by rectangle |
++-----+---------------------+
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+.. raw:: html
+
+    <p>
+
++--------+------------------------------------------------------------------+
+| Update | Improve the magic rewrite between desktop and mobile application |
++--------+------------------------------------------------------------------+
+
+Other applications
+******************
+
+And in all projects, minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
+
+If you were experimenting issues with the new build in your project, try using the previous version by loading these
+two files instead of the latest one with "loader.js":
+
+http://map.geo.admin.ch/main/wsgi/950df/build/app.css
+
+http://map.geo.admin.ch/main/wsgi/950df/build/app.js 
+
+http://api.geo.admin.ch/0705121129/main/wsgi/build/api.js
+
+(api-debug.js, api-full.js, api-full-debug.js, api-light.js and
+api-light-debug.js)
+
+http://api.geo.admin.ch/0705121129/main/wsgi/build/api.css
+
+(api-light.css) 
+
+

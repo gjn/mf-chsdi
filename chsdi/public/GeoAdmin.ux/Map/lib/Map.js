@@ -331,7 +331,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     var layer = state.layers[i];
                     this.addLayerByName(layer.layername, {
                         visibility: layer.visibility,
-                        opacity: layer.opacity
+                        opacity: layer.opacity,
+                        timestamp: layer.timestamp
                     });
                 }
             }
