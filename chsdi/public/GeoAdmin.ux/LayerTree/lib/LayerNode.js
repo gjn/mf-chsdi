@@ -24,6 +24,11 @@ GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
         }else{
             config.iconCls = 'tree-layer-icon';
         }
+        if (config.layer.timestamp) {
+            if (!config.layer.isActualTimestamp(config.layer.timestamp)) {
+                config.layer.name = config.layer.name + ' ' + config.layer.timestamp.substring(0,4);
+            }
+        }
         GeoAdmin.LayerNode.superclass.constructor.apply(this, arguments);
     },
 
