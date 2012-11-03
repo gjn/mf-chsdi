@@ -26,7 +26,11 @@ GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
         }
         if (config.layer.timestamp) {
             if (!config.layer.isActualTimestamp(config.layer.timestamp)) {
-                config.layer.name = config.layer.name + ' ' + config.layer.timestamp.substring(0,4);
+                if (!config.layer.isTimeStamped) {
+                    config.layer.name = config.layer.name + ' ' + config.layer.timestamp;
+                }
+                config.layer.isTimeStamped = true;
+
             }
         }
         GeoAdmin.LayerNode.superclass.constructor.apply(this, arguments);
