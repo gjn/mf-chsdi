@@ -419,7 +419,7 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Create a layer.
      */
     createLayer: function(name, config, options) {
-        var protocol = document.location.protocol;
+        var protocol = window.GeoAdmin.protocol ? window.GeoAdmin.protocol : 'http:';
         var wmts_url = [
             protocol + '//wmts0.geo.admin.ch/',
             protocol + '//wmts1.geo.admin.ch/',
