@@ -24,6 +24,7 @@ GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
         }else{
             config.iconCls = 'tree-layer-icon';
         }
+        // This could be done also in createLayer from Layers.js
         if (config.layer.timestamp) {
             if (!config.layer.isActualTimestamp(config.layer.timestamp)) {
                 if (!config.layer.isTimeStamped) {
