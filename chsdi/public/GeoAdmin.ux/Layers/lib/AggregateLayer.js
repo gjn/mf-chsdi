@@ -17,8 +17,12 @@
  */
 
 if (!window.GeoAdmin) {
-        window.GeoAdmin = {};
+    window.GeoAdmin = {};
+    if (!window.GeoAdmin.protocol) {
+       window.GeoAdmin.protocol = document.location.protocol;
+    }
 }
+
 OpenLayers.Layer.Aggregate =
         OpenLayers.Class(OpenLayers.Layer, {
 

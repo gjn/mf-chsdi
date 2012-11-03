@@ -419,13 +419,12 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Create a layer.
      */
     createLayer: function(name, config, options) {
-        var protocol = window.GeoAdmin.protocol ? window.GeoAdmin.protocol : 'http:';
         var wmts_url = [
-            protocol + '//wmts0.geo.admin.ch/',
-            protocol + '//wmts1.geo.admin.ch/',
-            protocol + '//wmts2.geo.admin.ch/',
-            protocol + '//wmts3.geo.admin.ch/',
-            protocol + '//wmts4.geo.admin.ch/'
+            window.GeoAdmin.protocol + '//wmts0.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts1.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts2.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts3.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts4.geo.admin.ch/'
         ];
         var myTransitionEffect = "resize";
         if (config.transitionEffect === "no") {
