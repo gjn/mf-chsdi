@@ -5,7 +5,10 @@
  */
 
 if (!window.GeoAdmin) {
-        window.GeoAdmin = {};
+    window.GeoAdmin = {};
+    if (!window.GeoAdmin.protocol) {
+       window.GeoAdmin.protocol = document.location.protocol;
+    }
 }
 
 GeoAdmin.VoidLayer = OpenLayers.Class(OpenLayers.Layer, {

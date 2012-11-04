@@ -33,6 +33,18 @@ OpenLayers.Layer.prototype.getZIndex = function () {
     }
 };
 
+// Add a function to manage the timestamps
+OpenLayers.Layer.prototype.isActualTimestamp = function (timestamp) {
+    if (this.timestamps) {
+        if (this.timestamps[0] == timestamp) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return true;
+};
+
 
 GeoAdmin._Layers = OpenLayers.Class({
 
@@ -407,13 +419,12 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Create a layer.
      */
     createLayer: function(name, config, options) {
-        var protocol = document.location.protocol;
         var wmts_url = [
-            protocol + '//wmts0.geo.admin.ch/',
-            protocol + '//wmts1.geo.admin.ch/',
-            protocol + '//wmts2.geo.admin.ch/',
-            protocol + '//wmts3.geo.admin.ch/',
-            protocol + '//wmts4.geo.admin.ch/'
+            window.GeoAdmin.protocol + '//wmts0.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts1.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts2.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts3.geo.admin.ch/',
+            window.GeoAdmin.protocol + '//wmts4.geo.admin.ch/'
         ];
         var myTransitionEffect = "resize";
         if (config.transitionEffect === "no") {
@@ -469,7 +480,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 minScale: config.minScale,
                 ratio: 1.1,
                 transitionEffect: myTransitionEffect,
-                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp
+                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp,
+                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp]
             }, options);
             var wmsParams = {
                 layers: config.layers,
@@ -534,7 +546,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: config.maxScale,
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
                 minScale: config.minScale,
-                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp
+                timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp,
+                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp]
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
