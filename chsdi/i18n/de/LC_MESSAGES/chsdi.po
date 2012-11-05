@@ -1160,11 +1160,20 @@ msgstr "(Objekt in IVS-GIS)"
 msgid "ivs_name_objektes"
 msgstr "Name des IVS-Objektes"
 
+msgid "ivs_nat_abschnitt"
+msgstr "Abschnitt"
+
 msgid "ivs_nat_historischen"
 msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
 
+msgid "ivs_nat_linienfuehrung"
+msgstr "Linienführung"
+
 msgid "ivs_nat_morphologischen"
 msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
+
+msgid "ivs_nat_strecke"
+msgstr "Strecke"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
