@@ -620,6 +620,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'gray':'gris',
 	'green':'vert',
 	'handedness':'Impartialité',
+	'help_':'http://www.geo.admin.ch/internet/geoportal/fr/commons/help/viewer_help.html',
 	'hide column':'Faire disparaître le gestionnaire de couches',
 	'hide layer options':'Masquer les options de la couche',
 	'imprint 1':'<b>Coordination</b> <br> Organe de coordination de la géoinformation au niveau fédéral <a href="http://www.geo.admin.ch/internet/geoportal/fr/home/geoadmin/organisation.html"> (GCS)</a>',

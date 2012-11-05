@@ -620,6 +620,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'gray':'Grau',
 	'green':'Grün',
 	'handedness':'Händigkeit',
+	'help_':'http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.html',
 	'hide column':'Ausblenden der Themen',
 	'hide layer options':'Layeroptionen ausblenden',
 	'imprint 1':'<b>Koordination</b> <br> Koordinationsorgan für Geoinformation des Bundes <a href="http://www.geo.admin.ch/internet/geoportal/de/home/geoadmin/organisation.html"> (GKG)</a>',
