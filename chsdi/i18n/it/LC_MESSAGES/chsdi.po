@@ -1975,7 +1975,7 @@ msgid "stationsnr"
 msgstr "Numéro de la station"
 
 msgid "status"
-msgstr "Statut"
+msgstr "Stato"
 
 msgid "strasse"
 msgstr "Rue"
