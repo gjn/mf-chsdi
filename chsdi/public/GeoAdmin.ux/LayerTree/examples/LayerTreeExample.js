@@ -5,7 +5,8 @@ OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "fr");
 var map;
 var mapPanel, treePanel;
 
-GeoAdmin.webServicesUrl = 'http://api.geo.admin.ch';
+
+GeoAdmin.webServicesUrl = (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//api.geo.admin.ch';
 
 Ext.onReady(function() {
     map = new GeoAdmin.Map("map");

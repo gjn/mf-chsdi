@@ -221,7 +221,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     // QRCode
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
                     var params = OpenLayers.Util.getParameterString(paramsObject);
-                    var qrcodeurl = escape("http://map.geo.admin.ch/?"+params);
+                    var qrcodeurl = escape((GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//map.geo.admin.ch/?'+params);
                     provider.customParams.qrcodeurl = GeoAdmin.webServicesUrl + "/qrcodegenerator?url="+qrcodeurl;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
