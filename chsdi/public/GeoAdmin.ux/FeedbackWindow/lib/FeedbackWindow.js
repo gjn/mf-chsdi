@@ -146,6 +146,6 @@ GeoAdmin.FeedbackWindow = Ext.extend(Ext.Window, {
     },
 
     onProviderStatechange: function(provider) {
-        this.label.setText(OpenLayers.i18n('The following URL will be transferred:') + '<a href="' + this.getPermalink() + '" target="new">' + this.getPermalink() + '</a>' + '</br></br>' + OpenLayers.i18n("For a detailed revision of the national map: ") + '</br>' + OpenLayers.i18n("Use the ") + '<a href="http://map.revision.admin.ch/?Y='  + map.getCenter().lon + '&X=' + map.getCenter().lat + '&zoom=' + map.getZoom() + '" target="_blank">' + OpenLayers.i18n('revision service of swisstopo') + '</a>', false);
+        this.label.setText(OpenLayers.i18n('The following URL will be transferred:') + '<a href="' + this.getPermalink() + '" target="new">' + this.getPermalink() + '</a>' + '</br></br>' + OpenLayers.i18n("For a detailed revision of the national map: ") + '</br>' + OpenLayers.i18n("Use the ") + '<a href="' + (GeoAdmin.protocol ? GeoAdmin.protocol : 'http') + '//map.revision.admin.ch/?Y='  + map.getCenter().lon + '&X=' + map.getCenter().lat + '&zoom=' + map.getZoom() + '" target="_blank">' + OpenLayers.i18n('revision service of swisstopo') + '</a>', false);
     }
 });

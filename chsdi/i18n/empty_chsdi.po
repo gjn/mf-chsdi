@@ -2482,3 +2482,12 @@ msgstr ""
 
 msgid "bafu_NHVText"
 msgstr ""
+
+msgid "ivs_nat_strecke"
+msgstr ""
+
+msgid "ivs_nat_linienfuehrung"
+msgstr ""
+
+msgid "ivs_nat_abschnitt"
+msgstr ""

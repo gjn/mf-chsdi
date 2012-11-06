@@ -616,6 +616,7 @@ OpenLayers.Lang.rm= {
 	'gray':'grisch',
 	'green':'verd',
 	'handedness':'sanestrer/dretger',
+	'help_':'http://www.geo.admin.ch/internet/geoportal/rm/commons/help/viewer_help.html',
 	'hide column':'Zuppentar ils temas',
 	'hide layer options':'Zuppentar las opziuns da la stresa',
 	'imprint 1':'<b>Coordinaziun</b> <br> Organ federal da coordinaziun per la geoinfurmaziun  <a href="http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/organisation.html"> (GCS)</a>',

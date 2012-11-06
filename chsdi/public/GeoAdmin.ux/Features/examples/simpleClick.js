@@ -3,7 +3,7 @@ GeoAdmin.OpenLayersImgPath = "../../Map/img/";
 var mapPanel;
 
 function init() {
-    GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+   GeoAdmin.webServicesUrl = (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//mf-chsdi0t.bgdi.admin.ch';
     
     mapPanel = new GeoAdmin.MapPanel({renderTo: Ext.getBody(),
         region: "center",

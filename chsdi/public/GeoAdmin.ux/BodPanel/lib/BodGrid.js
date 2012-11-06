@@ -22,7 +22,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
         var encode = false; //filter query encoded by default?
         var local = true;   //filter performed locally by default?
 
-        var bodGridUrl = 'http://api.geo.admin.ch/main/wsgi/bodgrid?';
+        var bodGridUrl = (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//api.geo.admin.ch/main/wsgi/bodgrid?';
 
         var bodStore = new Ext.data.JsonStore({
             proxy: new Ext.data.ScriptTagProxy({
@@ -521,8 +521,8 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                         bafuPortal = '';
                         for (i=0;i<elem;i++) {
                             if (portals[i]=="mf-geoadmin2") {
-                                 apiPortal = '<a href="http://api.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
-                                 geoPortal = '<a href="http://map.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                                 apiPortal = '<a href="' + (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') +  '//api.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                                 geoPortal = '<a href="' + (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') +   + '//map.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
                             } else if (portals[i]=="mf-are2") {
                                  arePortal = '<a href="http://map.are.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
                             } else if (portals[i]=="mf-bafu") {

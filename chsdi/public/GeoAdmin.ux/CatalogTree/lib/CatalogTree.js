@@ -92,6 +92,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      */
     sortCatalog: true,
 
+    /** api:config[configCatalog]
+     * ``Array`` Array of litterals to configure the nodes of the catalog tree. Default array is geoadmin tree configuration
+     */
+    configCatalog: null,
+
     listeners: {
         dblclick: function(node, e) {
             this.selectNode(node);
@@ -442,8 +447,8 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
         this.root = this.root || {};
         this.root.nodeType = 'async';
 
-        var config = this.root.children ||
-                             GeoAdmin.CatalogTree.createDefaultConfig();
+        var config = this.configCatalog || GeoAdmin.CatalogTree.createDefaultConfig();
+
         if (this.sortCatalog) {
             this.root.children = this.sortLayerConfig(config);
         } else {

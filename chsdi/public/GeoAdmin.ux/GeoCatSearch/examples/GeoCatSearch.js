@@ -3,7 +3,7 @@ var gsearch;
 Ext.onReady(function() {
 
     // required for accessing layer information
-    GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+   GeoAdmin.webServicesUrl = (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//mf-chsdi0t.bgdi.admin.ch';
 
     gsearch = new GeoAdmin.GeoCatSearchField({
         renderTo: "GeoCatSearch",

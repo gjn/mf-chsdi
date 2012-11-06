@@ -45,7 +45,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
      *  ``String``
      *  Address of the target map where to open the selected layer. Default value: "http://map.geo.admin.ch/?layers={0}&lang={1}".
      */
-    redirectUrl: "http://map.geo.admin.ch/?layers={0}&lang={1}",
+    redirectUrl: (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//map.geo.admin.ch/?layers={0}&lang={1}',
 
     /** api: config[lang]
      *  ``String``

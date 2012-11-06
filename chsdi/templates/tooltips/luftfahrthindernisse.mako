@@ -119,12 +119,12 @@
                 divMap.style.height = '400px';
                 div.appendChild(divMap);
 
-                map = new GeoAdmin.Map('divmap' + fid);
-                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 100});
+                var bounds = new OpenLayers.Bounds(dico[fid]);
+                map = new GeoAdmin.Map('divmap' + fid, { restrictedExtent: bounds });
+                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau');
                 map.addLayerByName('org.epsg.grid_21781');
                 map.addLayerByName('org.epsg.grid_4326');
                 map.addLayerByName('ch.bazl.luftfahrthindernis');
-                var bounds = new OpenLayers.Bounds(dico[fid]);
                 if (bounds.left === bounds.right) {
                     var center = bounds.getCenterLonLat();
                     map.setCenter(center, 6);
