@@ -90,12 +90,14 @@
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
 % if c.feature.geometry.bounds[0] != c.feature.geometry.bounds[2]:
+% if c.feature.geomtype != 'line':
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
+% endif
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
         </tr>
