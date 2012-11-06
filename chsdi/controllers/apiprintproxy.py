@@ -1,5 +1,6 @@
 import logging
 import httplib2
+import Cookie
 
 from pylons import request, response, session
 from pylons.controllers.util import abort
@@ -19,6 +20,9 @@ class ApiprintproxyController(BaseController):
         if "url" in request.params:
             url = request.params["url"]
 
+        if "path" not in request.params:
+             abort(400, "Missing an 'url' parameter") # Bad Request
+
         printpath = request.params["path"]
 
         # get method
@@ -33,24 +37,26 @@ class ApiprintproxyController(BaseController):
         http = httplib2.Http()
         h = dict(request.headers)
         h.pop("Host", h)
-        if session.get('SRV'):
-            h['Cookie'] = session["SRV"]
 
         try:
             if "url" in request.params:
-                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
+                resp, content = http.request(url_scheme + "://api.geo.admin.ch/main/wsgi/print/" + str(printpath) + "?url=" + url, method=method, body=body, headers=h)
             else:
-                resp, content = http.request("http://api.geo.admin.ch/main/wsgi/print/" + str(printpath), method=method, body=body, headers=h)
+                resp, content = http.request(url_scheme + "://api.geo.admin.ch/main/wsgi/print/" + str(printpath), method=method, body=body, headers=h)
         except:
             abort(502) # Bad Gateway
 
         if resp.has_key("content-type"):
             response.headers["Content-Type"] = resp["content-type"]
         if resp.has_key("set-cookie"):
-            response.headers["Set-Cookie"] = resp["set-cookie"]
-            if not session.get('SRV'):
-                session['SRV'] = resp['set-cookie']
-                session.save()
+            c = Cookie.SimpleCookie()
+            c.load(resp["set-cookie"])
+            morsel = c.get('SRV')
+            if morsel is not None:
+                #morsel['max-age'] = 60 * 15 # seconds
+                morsel['path'] = request.path
+                response.headers["Set-Cookie"] = "SRV=%s; path=%s" % ( morsel.value, morsel['path'])
+
         if resp.has_key("Cookie"):
             response.headers["Cookie"] = resp["Cookie"]
         if resp.has_key("Content-Disposition"):
