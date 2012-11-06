@@ -102,11 +102,9 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
         this.store.baseParams = {
           lang: this.lang,
           mode: 'bodsearch',
-          properties: 'bod_layer_id,kurzbezeichnung,volltextsuche'
+          properties: 'bod_layer_id,kurzbezeichnung,volltextsuche',
+          project: this.project ? this.project : 'api'
         };
-        if (this.project) {
-            this.store.baseParams.project = this.project;
-        }
 
         this.on('select', this.recordSelected, this);
     },
