@@ -407,6 +407,8 @@ The following parameter is required:
 
 - url: an encoded url (http://www.albionresearch.com/misc/urlencode.php)
 
+**Note: Only url from domain admin.ch are supported.**
+
 Example: http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
 
 Result
@@ -432,6 +434,7 @@ The following parameter is required:
 - url: an encoded url (http://www.albionresearch.com/misc/urlencode.php)
 - cb: (optional) the name of the callback function (JSON or JSONP)
 
+**Note: Only url from domain admin.ch are supported.**
 
 Example: http://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
 
