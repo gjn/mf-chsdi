@@ -423,6 +423,7 @@ OpenLayers.Lang.rm= {
 	'ch.bag.zecken-lyme':'Borreliose',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventari federal ISOS',
+	'ch.bak.schutzgebiete-unesco_weltkulturerbe':'Patrimoni cultural UNESCO',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=rm',
 	'ch.bakom':'BAKOM',
 	'ch.bakom.mobil-antennenstandorte-gsm':'Antennenstandorte GSM',
