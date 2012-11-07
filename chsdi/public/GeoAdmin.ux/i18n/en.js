@@ -415,7 +415,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bafu.silvaprotect-sturz':'Rockfall',
 	'ch.bafu.silvaprotect-uebersarung':'Overbank sedimentation',
 	'ch.bafu.swissprtr':'Pollutant releases (SwissPRTR)',
-	'ch.bafu.unesco-weltnaturerbe':'UNESCO World Heritage Sites',
+	'ch.bafu.unesco-weltnaturerbe':'UNESCO World natural heritage',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=en',
 	'ch.bafu.waldschadenflaechen-lothar':'Lothar storm damage',
 	'ch.bafu.waldschadenflaechen-vivian':'Vivian storm damage',

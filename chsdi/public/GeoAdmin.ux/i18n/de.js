@@ -415,7 +415,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.silvaprotect-sturz':'Sturz',
 	'ch.bafu.silvaprotect-uebersarung':'Übersarung',
 	'ch.bafu.swissprtr':'Schadstoff-Freisetzungen (SwissPRTR)',
-	'ch.bafu.unesco-weltnaturerbe':'UNESCO Welterbe Naturstätten',
+	'ch.bafu.unesco-weltnaturerbe':'UNESCO-Welterbe Naturstätten',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=de',
 	'ch.bafu.waldschadenflaechen-lothar':'Sturmschaden Lothar',
 	'ch.bafu.waldschadenflaechen-vivian':'Sturmschaden Vivian',
