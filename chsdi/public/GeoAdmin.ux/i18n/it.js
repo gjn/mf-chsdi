@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Clima - colture intercalari',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Limiti delle zone agricole',
 	'ch.blw.niederschlagshaushalt':'Andamento delle precipitazioni',
-	'ch.blw.steil_terrassenlagen_rebbau':'Terreni viticoli in pendio e in terrazze',
+	'ch.blw.steil_terrassenlagen_rebbau':'Vigneti zone forte pendenza',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=it',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP Prodotto a base di carne',
 	'ch.blw.ursprungsbezeichnungen-kaese':'DOP Formaggio',

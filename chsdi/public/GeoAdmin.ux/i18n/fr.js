@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Climat - cultures dérobées',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Limites des zones agricoles',
 	'ch.blw.niederschlagshaushalt':'Régime pluviométrique',
-	'ch.blw.steil_terrassenlagen_rebbau':'Terrains viticoles en pente et terrasses',
+	'ch.blw.steil_terrassenlagen_rebbau':'Vignobles en forte pente',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=fr',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP produits à base de viande',
 	'ch.blw.ursprungsbezeichnungen-kaese':'AOP fromage',

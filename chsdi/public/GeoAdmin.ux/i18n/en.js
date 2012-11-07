@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Climate - catch crop',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Agricultural zones boundaries',
 	'ch.blw.niederschlagshaushalt':'Rainfall',
-	'ch.blw.steil_terrassenlagen_rebbau':'Viticulture in steep areas and terraces',
+	'ch.blw.steil_terrassenlagen_rebbau':'Viticulture in steep areas',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=en',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'PGI meat products',
 	'ch.blw.ursprungsbezeichnungen-kaese':'PDO cheese',

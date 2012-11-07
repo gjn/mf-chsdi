@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Klimaeignung Zwischenfruchtbau',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Landwirtschaftliche Zonengrenzen',
 	'ch.blw.niederschlagshaushalt':'Niederschlagshaushalt',
-	'ch.blw.steil_terrassenlagen_rebbau':'Steil- und Terrassenlagen im Rebbau',
+	'ch.blw.steil_terrassenlagen_rebbau':'Steillagen Reben',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=de',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'GGA Fleischware',
 	'ch.blw.ursprungsbezeichnungen-kaese':'GUB Käse',
