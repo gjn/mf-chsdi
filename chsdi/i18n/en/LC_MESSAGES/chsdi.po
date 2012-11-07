@@ -471,7 +471,7 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Mire landscapes"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
-msgstr "Dry grasslands"
+msgstr "Dry grasslands (DGS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "Dry grasslands appendix 2"
@@ -624,7 +624,7 @@ msgid "ch.bafu.swissprtr"
 msgstr "Pollutant releases (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO World Heritage Sites"
+msgstr "UNESCO World natural heritage"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Lothar storm damage"
@@ -720,7 +720,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Agricultural zones boundaries"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Viticulture in steep areas and terraces"
+msgstr "Viticulture in steep areas"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "PGI meat products"
@@ -2510,7 +2510,7 @@ msgid "zugang"
 msgstr "Access"
 
 msgid "zusatzinfo"
-msgstr "Zusatzinformation"
+msgstr "More info"
 
 msgid "zusziff"
 msgstr "Zip6"

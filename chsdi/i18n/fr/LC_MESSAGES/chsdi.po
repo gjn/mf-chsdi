@@ -471,7 +471,7 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Sites marécageux"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
-msgstr "Prairies et pâturages secs"
+msgstr "Prairies et pâturages secs (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS annexe 2"
@@ -720,7 +720,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limites des zones agricoles"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Terrains viticoles en pente et terrasses"
+msgstr "Vignobles en forte pente"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP produits à base de viande"

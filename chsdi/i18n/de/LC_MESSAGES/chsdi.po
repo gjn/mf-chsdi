@@ -471,7 +471,7 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Moorlandschaften"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
-msgstr "Trockenwiesen und -weiden"
+msgstr "Trockenwiesen und -weiden (TWW)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "TWW Anhang 2"
@@ -624,7 +624,7 @@ msgid "ch.bafu.swissprtr"
 msgstr "Schadstoff-Freisetzungen (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO Welterbe Naturstätten"
+msgstr "UNESCO-Welterbe Naturstätten"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Sturmschaden Lothar"
@@ -720,7 +720,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Landwirtschaftliche Zonengrenzen"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Steil- und Terrassenlagen im Rebbau"
+msgstr "Steillagen Reben"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "GGA Fleischware"
