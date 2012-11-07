@@ -352,7 +352,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bafu.bundesinventare-hochmoore':'Raised bogs',
 	'ch.bafu.bundesinventare-jagdbanngebiete':'Swiss game reserves',
 	'ch.bafu.bundesinventare-moorlandschaften':'Mire landscapes',
-	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Dry grasslands',
+	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Dry grasslands (DGS)',
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'Dry grasslands appendix 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Water & migrant bird reserves',
 	'ch.bafu.fauna-steinbockkolonien':'Ibex colonies',

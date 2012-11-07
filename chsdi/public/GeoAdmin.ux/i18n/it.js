@@ -352,7 +352,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.bundesinventare-hochmoore':'Torbiere alte',
 	'ch.bafu.bundesinventare-jagdbanngebiete':'Bandite federali di caccia',
 	'ch.bafu.bundesinventare-moorlandschaften':'Zone palustri',
-	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prati e pascoli secchi',
+	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prati e pascoli secchi (PPS)',
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'PPS allegato 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Riserve di uccelli acquatici',
 	'ch.bafu.fauna-steinbockkolonien':'Colonie di stambecchi',

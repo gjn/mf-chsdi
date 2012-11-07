@@ -352,7 +352,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.bundesinventare-hochmoore':'Hochmoore',
 	'ch.bafu.bundesinventare-jagdbanngebiete':'Jagdbanngebiete',
 	'ch.bafu.bundesinventare-moorlandschaften':'Moorlandschaften',
-	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Trockenwiesen und -weiden',
+	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Trockenwiesen und -weiden (TWW)',
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'TWW Anhang 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Wasser- und Zugvogelreservate',
 	'ch.bafu.fauna-steinbockkolonien':'Steinbockkolonien',

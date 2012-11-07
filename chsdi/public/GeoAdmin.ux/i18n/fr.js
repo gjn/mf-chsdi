@@ -352,7 +352,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.bundesinventare-hochmoore':'Hauts-marais',
 	'ch.bafu.bundesinventare-jagdbanngebiete':'Districts francs',
 	'ch.bafu.bundesinventare-moorlandschaften':'Sites marécageux',
-	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prairies et pâturages secs',
+	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prairies et pâturages secs (PPS)',
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'PPS annexe 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Réserves d\'oiseaux d\'eau',
 	'ch.bafu.fauna-steinbockkolonien':'Colonies de bouquetins',
