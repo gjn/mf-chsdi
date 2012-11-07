@@ -22,6 +22,7 @@ def make_map(config):
     map.resource('wmt', 'wmts')
     map.resource('publisher', 'publishers')
     map.resource('cmslayer', 'cmslayer')
+    map.resource('zeitreihen', 'zeitreihen')
     map.resource('bodgrid', 'bodgrid')
     #map.resource('feedback', 'feedback')
     map.connect('/crossdomain.xml', controller='entry', action='crossdomain')

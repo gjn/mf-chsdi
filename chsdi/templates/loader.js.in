@@ -22,35 +22,36 @@
     var theseScripts = document.getElementsByTagName("script");
     var thisScriptTag = theseScripts[ theseScripts.length - 1 ];
     var mode = getParamValue("mode",thisScriptTag.src);
+    var hostBase = document.location.protocol + '//' + '${vars:host}';
     switch(mode)  {
         case 'debug':
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-debug.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api-debug.js')}");
             break;
         case 'full':
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-full.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api-full.js')}");
             break;
         case 'full-debug':
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-full-debug.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api-full-debug.js')}");
             break;
         case 'light':
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-light.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api-light.js')}");
             break;
         case 'light-debug':
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api-light-debug.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api-light-debug.js')}");
             break;
         default:
-            scriptSrc = cleanup("${vars:host}/${api-version}$${url('/build/api.js')}");
+            scriptSrc = cleanup(hostBase + "/${api-version}$${url('/build/api.js')}");
     }
     document.write('<scr' + 'ipt type="text/javascript" src="' + scriptSrc + '"></scr' + 'ipt>');
 
-    var OpenLayersImgPath = cleanup("${vars:host}/${api-version}$${url('/GeoAdmin.ux/Map/img/')}");
+    var OpenLayersImgPath = cleanup(hostBase + "/${api-version}$${url('/GeoAdmin.ux/Map/img/')}");
     document.write(
         '<scr' + 'ipt type="text/javascript">' +
             'if (!window.GeoAdmin) {' +
                 'window.GeoAdmin = {};' +
             '}' +
             'window.GeoAdmin.version = "${api-version}";' +
-            'window.GeoAdmin.webServicesUrl = "${vars:host}$${c.wsgi_base}";' +
+            'window.GeoAdmin.webServicesUrl = "' + hostBase + '$${c.wsgi_base}";' +
             'window.GeoAdmin.OpenLayersImgPath = "' + OpenLayersImgPath + '";' +
             'window.GeoAdmin.protocol = document.location.protocol;' +
         '</scr' + 'ipt>');
@@ -59,13 +60,13 @@
     var cssHref = null;
     switch(mode)  {
         case 'light':
-            cssHref = cleanup("${vars:host}/${api-version}$${url('/build/api-light.css')}");
+            cssHref = cleanup(hostBase + "/${api-version}$${url('/build/api-light.css')}");
             break;
         case 'light-debug':
-            cssHref = cleanup("${vars:host}/${api-version}$${url('/build/api-light.css')}");
+            cssHref = cleanup(hostBase + "/${api-version}$${url('/build/api-light.css')}");
             break;
         default:
-            cssHref = cleanup("${vars:host}/${api-version}$${url('/build/api.css')}");
+            cssHref = cleanup(hostBase + "/${api-version}$${url('/build/api.css')}");
     }
     document.write('<link rel="stylesheet" type="text/css" href="' + cssHref + '" />');
 })();

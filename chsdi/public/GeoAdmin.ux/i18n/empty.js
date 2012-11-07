@@ -709,5 +709,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Swiss Coordinate LV95': "",
     'ch.bafu.moose': "",
     'ch.bazl.landschaftsruhezonen':"",
+    'ch.bak.schutzgebiete-unesco_weltkulturerbe':"",
     'Please deactivate "Private browsing". Some functionalities have been deactivated.': "" 
 });

@@ -427,6 +427,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bag.zecken-lyme':'Borreliosis regions at risk',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Federal Inventory ISOS',
+	'ch.bak.schutzgebiete-unesco_weltkulturerbe':'UNESCO World cultural heritage',
 	'ch.bak.url':'http://www.bak.admin.ch/index.html?lang=en',
 	'ch.bakom':'OFCOM',
 	'ch.bakom.mobil-antennenstandorte-gsm':'GSM antenna locations',

@@ -57,13 +57,6 @@ Information
 ***********
 The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/2510121438/main/wsgi/build/api.css
-
-http://api.geo.admin.ch/2510121438/main/wsgi/build/api.js
-
-
 Release 20121025 - Thursday, October 25th 2012 
 ==============================================
 
@@ -131,13 +124,6 @@ Information
 ***********
 The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/1110121210/main/wsgi/build/api.css 
-
-http://api.geo.admin.ch/1110121210/main/wsgi/build/api.js
-
 
 Release 20121011 - Thursday, October 11th 2012 
 ==============================================
@@ -198,14 +184,6 @@ Information
 ***********
 The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy and branch 0.2 for GXM (Sencha 2.x branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/2609111920/main/wsgi/build/api.css 
-
-http://api.geo.admin.ch/2609111920/main/wsgi/build/api.js
-
-
 Release 20120926 - Wednesday, September 26th 2012 
 =================================================
 
@@ -255,14 +233,6 @@ Minor bug fixes, documentation and translation improvements.
 Information
 ***********
 The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy and branch 0.2 for GXM (Sencha 2.x branch).
-
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/1409120626/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
-
 
 Release 20120912 - Wednesday, September 12th 2012 
 ===================================================
@@ -371,13 +341,6 @@ Information
 ***********
 The projects are built with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.2 for GXM (Sencha 2.x branch). We are quite proud to have significantly contributed to the evolution of the OpenSource library GXM https://github.com/geoext/GXM
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
-
-http://api.geo.admin.ch/1409120626/main/wsgi/build/api.css
-
 Release 20120828 - Wednesday, August 28th 2012 
 =================================================
 
@@ -465,14 +428,6 @@ Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/1708120828/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/1708120828/main/wsgi/build/api.css
-
-
 Release 20120816 - Thursday, August 16th 2012 
 =============================================
 
@@ -547,14 +502,6 @@ Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/0208122345/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/0208122345/main/wsgi/build/api.css
-
-
 Release 20120802 - Thursday, August 2nd 2012 
 =============================================
 
@@ -621,14 +568,6 @@ Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/2307121737/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/2307121737/main/wsgi/build/api.css 
-
-
 Release 20120718 - Wednesday, July 18th 2012 
 =============================================
 
@@ -691,14 +630,6 @@ And in all projects, minor bug fixes, documentation and translation improvements
 Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
-
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/0507121747/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/0507121747/main/wsgi/build/api.css 
-
 
 Release 20120705 - Wednesday, July 5th 2012 
 =============================================
@@ -815,15 +746,6 @@ Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-
-http://api.geo.admin.ch/2006121657/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/2006121657/main/wsgi/build/api.css
-
-
 Release 20120620 - Wednesday, June 20th 2012 
 =============================================
 
@@ -907,14 +829,6 @@ Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
 
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/1406121349/main/wsgi/build/api.js
-
-http://api.geo.admin.ch/1406121349/main/wsgi/build/api.css 
-
-
 Release 20120614 - Wednesday, June 14th 2012 
 =============================================
 
@@ -983,14 +897,6 @@ And in all projects, minor bug fixes, documentation and translation improvements
 Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
-
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://api.geo.admin.ch/main/wsgi/17fb7/build/app.js
-
-http://api.geo.admin.ch/main/wsgi/17fb7/build/app.css
-
 
 Release 20120605 - Tuesday, June 5th 2012 
 =============================================
@@ -1089,21 +995,5 @@ And in all projects, minor bug fixes, documentation and translation improvements
 Information
 ***********
 The projects are build with the trunk version of GeoExt and OpenLayers at the time of deploy, and branch 0.1 for GXM (Sencha 1.1 branch).
-
-If you were experimenting issues with the new build in your project, try using the previous version by loading these
-two files instead of the latest one with "loader.js":
-
-http://map.geo.admin.ch/main/wsgi/950df/build/app.css
-
-http://map.geo.admin.ch/main/wsgi/950df/build/app.js 
-
-http://api.geo.admin.ch/0705121129/main/wsgi/build/api.js
-
-(api-debug.js, api-full.js, api-full-debug.js, api-light.js and
-api-light-debug.js)
-
-http://api.geo.admin.ch/0705121129/main/wsgi/build/api.css
-
-(api-light.css) 
 
 

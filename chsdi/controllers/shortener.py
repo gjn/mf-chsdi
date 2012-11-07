@@ -2,6 +2,7 @@ from pylons import request, tmpl_context as c
 from pylons import response, config
 from pylons.controllers.util import redirect
 from pylons import url
+from urlparse import urlparse
 import json
 
 from chsdi.lib.base import *
@@ -39,22 +40,40 @@ def shorten(myUrl):
     absoluteUrl = absoluteUrl.replace('api.geo.admin.ch/shorten', 's.geo.admin.ch')
     return absoluteUrl
 
+#decorator function to check if url is valid for the shortener service
+def checkURL(function):
+    
+    def wrapper(self):
+        url = request.params.get('url')
+
+        if url is None:
+            abort(400, 'A url is required')
+
+        hostname = urlparse(url).hostname
+        if hostname is None:
+            abort(400, 'Could not determine hostname')
+
+        domain = ".".join(hostname.split(".")[-2:])
+        if not 'admin.ch' in domain:
+            abort(400, 'Shortener can only be used for admin.ch domain')
+
+        return function(self)
+    return wrapper
+        
 
 class ShortenerController(BaseController):
+
+    @checkURL
     def shorten(self):
         url = request.params.get('url')
-        if url is None:
-            abort(400, 'A url parameter is required')
-            # Check that admin.ch is part of the url
-        if not 'admin.ch' in url:
-            response.status = '406'
-            return 'Can be used only to shorten url for admin.ch'
+        
         try:
             return shorten(url)
         except Exception, e:
             response.status = '500'
             return 'Shortener error'
 
+    @checkURL
     def shortenjson(self):
         url = request.params.get('url')
         cb_name = request.params.get('cb')
@@ -62,12 +81,6 @@ class ShortenerController(BaseController):
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
 
-        if url is None:
-            abort(400, 'A url parameter is required')
-            # Check that admin.ch is part of the url
-        if not 'admin.ch' in url:
-            response.status = '406'
-            return 'Can be used only to shorten url for admin.ch'
         try:
             myResult = {'shorturl': shorten(url)}
             if cb_name is not None:

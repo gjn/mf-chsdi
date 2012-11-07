@@ -25,6 +25,15 @@
 <% 
    startofconstruction = str(c.feature.startofconstruction.day) + '.' + str(c.feature.startofconstruction.month) + '.' + str(c.feature.startofconstruction.year)
 %>
+% if c.feature.abortionaccomplished is not None:
+<%
+   abortionaccomplished = str(c.feature.abortionaccomplished.day) + '.' + str(c.feature.abortionaccomplished.month) + '.' + str(c.feature.abortionaccomplished.year)
+%>
+% else:
+<%
+   abortionaccomplished = '-'
+%>
+% endif
 % if c.feature.sanctiontext == 'VOID':
 <% sanctiontext = '-' %>
 % else:
@@ -60,7 +69,7 @@
             <td style="padding-left: 200px;">${_('tt_ch.bazl.abortionaccomplished')}: ${c.feature.duration or '-'}</td>
         </tr>
         <tr>
-            <td style="padding-left: 200px;">${_('tt_bazl_abortion')}: ${c.feature.abortionaccomplished or '-'}</td>
+            <td style="padding-left: 200px;">${_('tt_bazl_abortion')}: ${abortionaccomplished}</td>
         </tr>
         <tr>
             <td style="font-weight: bold; font-size: 13px;">${_('tt_ch.bazl.geometriedaten')}:</td>
@@ -81,12 +90,14 @@
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
 % if c.feature.geometry.bounds[0] != c.feature.geometry.bounds[2]:
+% if c.feature.geomtype != 'line':
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
+% endif
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
         </tr>
@@ -121,7 +132,7 @@
 
                 var bounds = new OpenLayers.Bounds(dico[fid]);
                 map = new GeoAdmin.Map('divmap' + fid, { restrictedExtent: bounds });
-                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau');
+                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 1});
                 map.addLayerByName('org.epsg.grid_21781');
                 map.addLayerByName('org.epsg.grid_4326');
                 map.addLayerByName('ch.bazl.luftfahrthindernis');

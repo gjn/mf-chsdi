@@ -51,3 +51,7 @@
 .geoadmin-baselayertool input {
     font-weight: bold !important;
 }
+
+.ext-ie .geoadmin-baselayertool .x-form-text {
+    height: 15px !important;
+}
