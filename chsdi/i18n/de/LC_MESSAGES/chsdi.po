@@ -308,6 +308,12 @@ msgstr "Populationsnummer"
 msgid "bafu_standort"
 msgstr "Lebensraum"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Fläche [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Name"
+
 msgid "band_1_2"
 msgstr "Band 1 | 2"
 
@@ -649,6 +655,9 @@ msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, 
 
 msgid "ch.bak.isos.warning"
 msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch). © Daten: BAK, Bern"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO-Welterbe Kulturstätten"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Antennenstandorte GSM"

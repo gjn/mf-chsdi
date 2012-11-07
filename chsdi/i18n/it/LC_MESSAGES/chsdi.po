@@ -308,6 +308,12 @@ msgstr "Numero della popolazione"
 msgid "bafu_standort"
 msgstr "Habitat"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Superficie [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Nome"
+
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
@@ -649,6 +655,9 @@ msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare
 
 msgid "ch.bak.isos.warning"
 msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare una rilevazione ISOS in un ambito legale vi preghiamo di rivolgervi al servizio competente (isos@bak.admin.ch). © Dati: UFC, Berna"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO siti culturali"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Ubicazione antenne GSM"

@@ -308,6 +308,12 @@ msgstr "Populationsnummer"
 msgid "bafu_standort"
 msgstr "Lebensraum"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Fläche [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Name"
+
 msgid "band_1_2"
 msgstr "Volum 1 | 2"
 
@@ -649,6 +655,9 @@ msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da d
 
 msgid "ch.bak.isos.warning"
 msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da duvrar in maletg dad ISOS en ina procedura giuridica, contactai ppl. l’uffizi federal cumpetent (isos@bak.admin.ch). © Datas: UFC, Berna"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "Patrimoni cultural UNESCO"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Antennenstandorte GSM"

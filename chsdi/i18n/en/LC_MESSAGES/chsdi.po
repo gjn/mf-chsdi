@@ -308,6 +308,12 @@ msgstr "Population nummer"
 msgid "bafu_standort"
 msgstr "Habitat"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Surface [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Name"
+
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
@@ -649,6 +655,9 @@ msgstr "This Website is updated twice a year. If you want to use a site record i
 
 msgid "ch.bak.isos.warning"
 msgstr "This Website is updated twice a year. If you want to use a site record in a legal procedure, please contact the Federal office of culture (isos@bak.admin.ch). © Data:  FOC, Bern"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO World cultural heritage"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "GSM antenna locations"

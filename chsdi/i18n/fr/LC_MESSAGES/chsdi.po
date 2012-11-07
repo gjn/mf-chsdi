@@ -308,6 +308,12 @@ msgstr "Numéro de la population"
 msgid "bafu_standort"
 msgstr "Habitat"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Surface [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Nom"
+
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
@@ -649,6 +655,9 @@ msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à 
 
 msgid "ch.bak.isos.warning"
 msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à l’office compétent (isos@bak.admin.ch) si vous envisagez d’utiliser un relevé ISOS dans un cadre légal. © Données: OFC, Berne"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO sites culturels"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Emplacement des antennes GSM"
