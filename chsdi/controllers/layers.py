@@ -31,6 +31,7 @@ class LayersController(BaseController):
         self.mode = request.params.get('mode','all')
 ##----------------------------------------Databases----------------------------------------##               
         c.lang = request.params.get('lang','de')
+        c.scheme  = request.headers.get('X-Forwarded-Proto',request.scheme)
         
         # Initialize the dictionary mapping the table properties
         self.map_properties = {}
@@ -161,7 +162,7 @@ class LayersController(BaseController):
             query = query.order_by(self.BodLayer.kurzbezeichnung).order_by(self.BodLayer.bezeichnung).order_by(self.BodLayer.geobasisdatensatz_name)
             results = [r.json(query_string) for r in query]    
         elif self.mode == 'legend':
-            c.host = request.params.get('h', 'http://api.geo.admin.ch ')
+            c.host = request.params.get('h', '%s://api.geo.admin.ch' % c.scheme)
             c.full = True
             c.hilight = ''
             for r in query:
@@ -182,9 +183,9 @@ class LayersController(BaseController):
             c.service_metadata = Session.query(self.ServiceMetadata).filter(self.ServiceMetadata.pk_map_name.like('%wmts-bgdi%')).first()
             request_uri = request.environ.get("REQUEST_URI", "")
             if request_uri.find("1.0.0"): # new bucket WMTS
-                c.onlineressource = "http://wmts.geo.admin.ch"
+                c.onlineressource = "%s://wmts.geo.admin.ch" % c.scheme
             else:
-                c.onlineressource = "http://api.geo.admin.ch/wmts"
+                c.onlineressource = "%s://api.geo.admin.ch/wmts" % c.scheme
         elif self.mode == 'all':
             results = [q.layers_results(properties) for q in query]
         elif self.mode == 'preview':
