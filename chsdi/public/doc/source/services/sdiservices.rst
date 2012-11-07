@@ -476,12 +476,12 @@ For detailed information, see See `WMTS OGC standard <http://www.opengeospatial.
 URL
 ^^^
 
-- http://wmts.geo.admin.ch
-- http://wmts0.geo.admin.ch
-- http://wmts1.geo.admin.ch
-- http://wmts2.geo.admin.ch
-- http://wmts3.geo.admin.ch
-- http://wmts4.geo.admin.ch
+- http://wmts.geo.admin.ch or  https://wmts.geo.admin.ch
+- http://wmts0.geo.admin.ch or https://wmts0.geo.admin.ch
+- http://wmts1.geo.admin.ch or https://wmts1.geo.admin.ch
+- http://wmts2.geo.admin.ch or https://wmts2.geo.admin.ch
+- http://wmts3.geo.admin.ch or https://wmts3.geo.admin.ch
+- http://wmts4.geo.admin.ch or https://wmts4.geo.admin.ch
 
 GetCapabilities
 ^^^^^^^^^^^^^^^
@@ -633,13 +633,13 @@ Usage Example
                new OpenLayers.Control.PanZoomBar(),
                new OpenLayers.Control.ScaleLine({maxWidth: 120})
            ],
-           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
            //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
            resolutions: [650,500,250,100,50,20,10,5,2.5]
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
@@ -671,7 +671,8 @@ Usage Example
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
                    params: {'time': '20110401'},
-                   formatSuffix: 'jpeg'
+                   formatSuffix: 'jpeg',
+                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
                });
                map.addLayer(layer);
            },
@@ -784,13 +785,13 @@ A JSON content is sent back with the following content
                new OpenLayers.Control.PanZoomBar(),
                new OpenLayers.Control.ScaleLine({maxWidth: 120})
            ],
-           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
            //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
            resolutions: [650,500,250,100,50,20,10,5,2.5]
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
@@ -821,7 +822,8 @@ A JSON content is sent back with the following content
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
                    params: {'time': '20110401'},
-                   formatSuffix: 'jpeg'
+                   formatSuffix: 'jpeg',
+                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
                });
                map.addLayer(layer);
            },
