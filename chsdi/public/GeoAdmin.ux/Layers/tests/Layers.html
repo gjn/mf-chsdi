@@ -13,14 +13,14 @@
         var layers = new GeoAdmin._Layers();
         var config, url;
 
-        config = {layertype: 'wms', url: 'http://wms'};
+        config = {layertype: 'wms', url: GeoAdmin.protocol + '//wms'};
         url = layers.getCapabilitiesURL(config);
-        t.eq(url, 'http://wms?SERVICE=WMS&REQUEST=GetCapabilities',
+        t.eq(url, GeoAdmin.protocol + '//wms?SERVICE=WMS&REQUEST=GetCapabilities',
              'capabilities URL is as expected');
 
-        config = {layertype: 'wmts', url: 'http://wmts'};
+        config = {layertype: 'wmts', url: GeoAdmin.protocol + '//wmts'};
         url = layers.getCapabilitiesURL(config);
-        t.eq(url, 'http://wmts/1.0.0/WMTSCapabilities.xml?lang=en',
+        t.eq(url, GeoAdmin.protocol + '//wmts/1.0.0/WMTSCapabilities.xml?lang=en',
              'capabilities URL is as expected');
     }
 
