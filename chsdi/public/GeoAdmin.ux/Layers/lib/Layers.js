@@ -766,15 +766,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 hasLegend: false,
                 queryable: true
             },
-//            "ch.swisstopo.dreiecksvermaschung": {
-//                name: OpenLayers.i18n("ch.swisstopo.dreiecksvermaschung"),
-//                layertype: 'wmts',
-//                timestamp: ['20061231'],
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.swisstopo",
-//                queryable: true
-//            },
+            "ch.swisstopo.dreiecksvermaschung": {
+                name: OpenLayers.i18n("ch.swisstopo.dreiecksvermaschung"),
+                layertype: 'wmts',
+                timestamp: ['20061231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
 //            "ch.swisstopo.koordinatenaenderung": {
 //                name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
 //                layertype: 'wmts',
