@@ -11,11 +11,6 @@ from chsdi.model.vector.zeitreihen import Zeitreihen_Metadata_15,Zeitreihen_Meta
 from chsdi.model.meta import Session
 from array import *
 
-try:
-    from json import dumps as json_dumps
-except:
-    from simplejson import dumps as json_dumps
-
 import mimetypes
 
 log = logging.getLogger(__name__)
