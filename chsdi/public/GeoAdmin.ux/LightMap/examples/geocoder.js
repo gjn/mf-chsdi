@@ -6,7 +6,7 @@ function init() {
 
     OpenLayers.Lang.setCode("fr");
     // required for accessing layer information
-    GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch";
+    GeoAdmin.webServicesUrl = GeoAdmin.protocol + "//mf-chsdi0t.bgdi.admin.ch";
 
     // create a map
     // (map is made global for easy debugging)
