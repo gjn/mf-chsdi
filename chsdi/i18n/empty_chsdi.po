@@ -2491,3 +2491,12 @@ msgstr ""
 
 msgid "ivs_nat_abschnitt"
 msgstr ""
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr ""
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr ""
+
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr ""

@@ -1,3 +1,60 @@
+Release 2012MMDD - wekday, month dayth 2012 
+=============================================
+
+When adding stuff
+- use keywords 'New', 'Update', 'Fixed', 'Removed', 'Developer'
+- final layout will be done by deployer
+- anyhow, if you want to do tables, use rst table creator/fixer for vi here: http://www.vim.org/scripts/script.php?script_id=3777
+
+Geodata
+********
+
+---> add geodata stuff here
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <http://s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <http://api.geo.admin.ch>`__
+-------------------------------------
+
+---> add desktop api stuff here
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+---> add mobile api stuff here
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+---> add desktop map.geo stuff here
+
+`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+-----------------------------------------------------------
+
+---> add mobile mag.geo stuff here
+
+Other Applications
+******************
+
+---> add other public application stuff here
+
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+---> add special information here
+
 Release 20121030 - Tuesday, October 30th 2012 
 =============================================
 

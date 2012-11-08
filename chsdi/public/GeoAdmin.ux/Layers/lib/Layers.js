@@ -2600,7 +2600,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-vd.spannungsarme-gebiete": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.spannungsarme-gebiete"),
                 layertype: 'wmts',
-                timestamp: ['20111216'],
+                timestamp: ['20121102','20111216'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -2780,7 +2780,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden"),
                 layertype: 'wmts',
-                timestamp: ['20120203'],
+                timestamp: ['20120312'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",

@@ -22,6 +22,7 @@ class WmtsController(BaseController):
 
     def __before__(self):
         super(WmtsController, self).__before__()
+        c.scheme  = request.headers.get('X-Forwarded-Proto',request.scheme)
         if self.lang == 'fr' or self.lang == 'it':
             self.GetCap = GetCapFr
             self.GetCapThemes = GetCapThemesFr
@@ -46,14 +47,14 @@ class WmtsController(BaseController):
         http_host = request.environ.get("HTTP_HOST")
         request_uri = request.environ.get("REQUEST_URI", "")
         if request_uri.find("1.0.0"): # new bucket WMTS
-            onlineressource = "http://wmts.geo.admin.ch"
+            onlineressource = "%s://wmts.geo.admin.ch" % c.scheme
         else:
-            onlineressource = "http://api.geo.admin.ch/wmts"
+            onlineressource = "%s://api.geo.admin.ch/wmts" % c.scheme
         # for ssWMTS
         c.is_swisstopowmts = request.params.get('mode', '') == 'swisstopowmts' 
         if c.is_swisstopowmts:
             c.layers = Session.query(self.GetCap).filter_by(sswmts=True).all()
-            onlineressource = "http://wmts.swistopo.admin.ch"
+            onlineressource = "%s://wmts.swistopo.admin.ch" % c.scheme
             c.service_metadata = Session.query(self.ServiceMetadata).filter(self.ServiceMetadata.pk_map_name.like('%wmts-swisstopo%')).first()
         else:
             c.layers = Session.query(self.GetCap).all()

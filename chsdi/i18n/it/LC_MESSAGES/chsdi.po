@@ -308,6 +308,12 @@ msgstr "Numero della popolazione"
 msgid "bafu_standort"
 msgstr "Habitat"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Superficie [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Nome"
+
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
@@ -465,7 +471,7 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Zone palustri"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
-msgstr "Prati e pascoli secchi"
+msgstr "Prati e pascoli secchi (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS allegato 2"
@@ -618,7 +624,7 @@ msgid "ch.bafu.swissprtr"
 msgstr "Emissioni di inquinanti (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO beni naturali"
+msgstr "UNESCO siti naturali"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Aree boschive danneggiate Lothar"
@@ -649,6 +655,9 @@ msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare
 
 msgid "ch.bak.isos.warning"
 msgstr "Questo sito è aggiornato due volte all’anno. Se desiderate utilizzare una rilevazione ISOS in un ambito legale vi preghiamo di rivolgervi al servizio competente (isos@bak.admin.ch). © Dati: UFC, Berna"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO siti culturali"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Ubicazione antenne GSM"
@@ -711,7 +720,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limiti delle zone agricole"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Terreni viticoli in pendio e in terrazze"
+msgstr "Vigneti zone forte pendenza"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP Prodotto a base di carne"
@@ -2501,7 +2510,7 @@ msgid "zugang"
 msgstr "Accessible"
 
 msgid "zusatzinfo"
-msgstr "Information suppl."
+msgstr "Informazioni suppl."
 
 msgid "zusziff"
 msgstr "NPA6"

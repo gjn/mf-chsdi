@@ -163,7 +163,7 @@ The following parameters are required:
 - format (optional): per default, it returns GeoJSON. 'html' returns all the properties in HTML format. 
 
 
-Example: http://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback
+Example: `http://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback <../../../feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -194,7 +194,7 @@ The following parameters are required:
 - format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format. 
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
 
-Example: http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback
+Example: `http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback <../../../feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -221,7 +221,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback function
 
-Example: http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback
+Example: `http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -248,7 +248,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback funtion
 
-Example: http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback
+Example: `http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -294,14 +294,14 @@ The following parameters are required:
 
 Examples:
 
-- http://api.geo.admin.ch/layers: returns all the layers available with all their properties
-- http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography: returns all the available information about this layer
-- http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung: returns all the layers where the query string wasser is found
-- http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb: returns the legend of the layer in a callback
-- http://api.geo.admin.ch/layers?mode=wmts: returns a GetCapabilities document
-- http://api.geo.admin.ch/layers?mode=preview: list all layers of map.geo.admin.ch in preview mode
-- http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200: returns a set of syncronized maps filtered with the query string lac
-- http://api.geo.admin.ch/layers?project=api-notfree: returns all the layers that require a swisstopo web access
+- `http://api.geo.admin.ch/layers <../../../layers>`_: returns all the layers available with all their properties
+- `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography <../../../layers/ch.swisstopo.vec200-hydrography>`_ : returns all the available information about this layer
+- `http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung <../../../layers?query=wasser&properties=kurzbezeichnung>`: returns all the layers where the query string wasser is found
+- `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb <../../../layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb>`_: returns the legend of the layer in a callback
+- `http://api.geo.admin.ch/layers?mode=wmts <../../../layers?mode=wmts>`_: returns a GetCapabilities document
+- `http://api.geo.admin.ch/layers?mode=preview <../../../layers?mode=preview>`_ list all layers of map.geo.admin.ch in preview mode
+- `http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200 <../../../layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200>`_: returns a set of syncronized maps filtered with the query string lac
+- `http://api.geo.admin.ch/layers?project=api-notfree <../../../layers?project=api-notfree>`_: returns all the layers that require a swisstopo web access
 
 Profile.json
 ------------
@@ -324,7 +324,7 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
 
-Example: `http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+Example: `http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
 Result
 ^^^^^^
@@ -356,7 +356,7 @@ The following parameters are required:
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
 
-Example: `http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+Example: `http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
 Result
 ^^^^^^
@@ -383,7 +383,7 @@ The following parameters are required:
 - elevation_model (optional): elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2). Default: DTM25
 - cb (optional): the name of the callback funtion
 
-Example: http://api.geo.admin.ch/height?easting=600000&northing=200000
+Example: `http://api.geo.admin.ch/height?easting=600000&northing=200000 <../../../height?easting=600000&northing=200000>`_
 
 Result
 ^^^^^^
@@ -409,7 +409,7 @@ The following parameter is required:
 
 **Note: Only url from domain admin.ch are supported.**
 
-Example: http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
+Example: `http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
 
 Result
 ^^^^^^
@@ -436,7 +436,7 @@ The following parameter is required:
 
 **Note: Only url from domain admin.ch are supported.**
 
-Example: http://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den
+Example: `http://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
 
 Result
 ^^^^^^
@@ -458,7 +458,7 @@ Input parameters
 
 No input parameters
 
-Example: http://api.geo.admin.ch/shorten/6a9bc34
+Example: `http://api.geo.admin.ch/shorten/6a9bc34 <../../../shorten/6a9bc34>`_
 
 Result
 ^^^^^^
@@ -476,12 +476,12 @@ For detailed information, see See `WMTS OGC standard <http://www.opengeospatial.
 URL
 ^^^
 
-- http://wmts.geo.admin.ch
-- http://wmts0.geo.admin.ch
-- http://wmts1.geo.admin.ch
-- http://wmts2.geo.admin.ch
-- http://wmts3.geo.admin.ch
-- http://wmts4.geo.admin.ch
+- http://wmts.geo.admin.ch or  https://wmts.geo.admin.ch
+- http://wmts0.geo.admin.ch or https://wmts0.geo.admin.ch
+- http://wmts1.geo.admin.ch or https://wmts1.geo.admin.ch
+- http://wmts2.geo.admin.ch or https://wmts2.geo.admin.ch
+- http://wmts3.geo.admin.ch or https://wmts3.geo.admin.ch
+- http://wmts4.geo.admin.ch or https://wmts4.geo.admin.ch
 
 GetCapabilities
 ^^^^^^^^^^^^^^^
@@ -633,13 +633,13 @@ Usage Example
                new OpenLayers.Control.PanZoomBar(),
                new OpenLayers.Control.ScaleLine({maxWidth: 120})
            ],
-           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
            //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
            resolutions: [650,500,250,100,50,20,10,5,2.5]
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
@@ -671,7 +671,8 @@ Usage Example
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
                    params: {'time': '20110401'},
-                   formatSuffix: 'jpeg'
+                   formatSuffix: 'jpeg',
+                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
                });
                map.addLayer(layer);
            },
@@ -784,13 +785,13 @@ A JSON content is sent back with the following content
                new OpenLayers.Control.PanZoomBar(),
                new OpenLayers.Control.ScaleLine({maxWidth: 120})
            ],
-           maxExtent: new OpenLayers.Bounds(0, 0, 1200000, 1200000),
+           maxExtent: new OpenLayers.Bounds(420000, 30000, 900000, 350000),
            //restrictedExtent: new OpenLayers.Bounds.fromArray(veloland.config.maxExtent),
            resolutions: [650,500,250,100,50,20,10,5,2.5]
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
@@ -821,7 +822,8 @@ A JSON content is sent back with the following content
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
                    params: {'time': '20110401'},
-                   formatSuffix: 'jpeg'
+                   formatSuffix: 'jpeg',
+                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
                });
                map.addLayer(layer);
            },

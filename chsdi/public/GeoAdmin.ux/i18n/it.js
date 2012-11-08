@@ -7,8 +7,8 @@
 OpenLayers.Util.extend(OpenLayers.Lang.it, {
 
 	//Globals
-	'1 A4 landscape':'A4 Paesaaggio',
-	'2 A4 portrait':'A4 Ritratto',
+	'1 A4 landscape':'A4 Orizzontale',
+	'2 A4 portrait':'A4 Verticale',
 	'3 A3 landscape':'A3 Paesaggio',
 	'4 A3 portrait':'A3 Ritratto',
 	'Activate dynamic location':'Attivare dynamic location',
@@ -352,7 +352,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.bundesinventare-hochmoore':'Torbiere alte',
 	'ch.bafu.bundesinventare-jagdbanngebiete':'Bandite federali di caccia',
 	'ch.bafu.bundesinventare-moorlandschaften':'Zone palustri',
-	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prati e pascoli secchi',
+	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden':'Prati e pascoli secchi (PPS)',
 	'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2':'PPS allegato 2',
 	'ch.bafu.bundesinventare-vogelreservate':'Riserve di uccelli acquatici',
 	'ch.bafu.fauna-steinbockkolonien':'Colonie di stambecchi',
@@ -415,7 +415,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.silvaprotect-sturz':'Caduta di massi',
 	'ch.bafu.silvaprotect-uebersarung':'Alluvionamento da sedimento',
 	'ch.bafu.swissprtr':'Emissioni di inquinanti (SwissPRTR)',
-	'ch.bafu.unesco-weltnaturerbe':'UNESCO beni naturali',
+	'ch.bafu.unesco-weltnaturerbe':'UNESCO siti naturali',
 	'ch.bafu.url':'http://www.bafu.admin.ch/index.html?lang=it',
 	'ch.bafu.waldschadenflaechen-lothar':'Aree boschive danneggiate Lothar',
 	'ch.bafu.waldschadenflaechen-vivian':'Aree boschive danneggiate Vivian',
@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Clima - colture intercalari',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Limiti delle zone agricole',
 	'ch.blw.niederschlagshaushalt':'Andamento delle precipitazioni',
-	'ch.blw.steil_terrassenlagen_rebbau':'Terreni viticoli in pendio e in terrazze',
+	'ch.blw.steil_terrassenlagen_rebbau':'Vigneti zone forte pendenza',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=it',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP Prodotto a base di carne',
 	'ch.blw.ursprungsbezeichnungen-kaese':'DOP Formaggio',

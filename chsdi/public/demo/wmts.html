@@ -39,11 +39,11 @@
             var wmts = new OpenLayers.Layer.WMTS({
                 layer: "ch.swisstopo.swissimage",
                 name: "Swissimage - WMTS",
-                url: ["http://wmts0.geo.admin.ch/",
-                      "http://wmts1.geo.admin.ch/",
-                      "http://wmts2.geo.admin.ch/",
-                      "http://wmts3.geo.admin.ch/",
-                      "http://wmts4.geo.admin.ch/" ],
+                url: ["https://wmts0.geo.admin.ch/",
+                      "https://wmts1.geo.admin.ch/",
+                      "https://wmts2.geo.admin.ch/",
+                      "https://wmts3.geo.admin.ch/",
+                      "https://wmts4.geo.admin.ch/" ],
                 tileOrigin: new OpenLayers.LonLat(420000.0, 350000.0),  //fix origin. Otherwqise, same as maxExtent
                 zoomOffset: 14,
                 matrixSet: "21781",

@@ -308,6 +308,12 @@ msgstr "Populationsnummer"
 msgid "bafu_standort"
 msgstr "Lebensraum"
 
+msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr "Fläche [ha]"
+
+msgid "bak_unesco_weltkulturerbe_name"
+msgstr "Name"
+
 msgid "band_1_2"
 msgstr "Band 1 | 2"
 
@@ -465,7 +471,7 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Moorlandschaften"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
-msgstr "Trockenwiesen und -weiden"
+msgstr "Trockenwiesen und -weiden (TWW)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "TWW Anhang 2"
@@ -618,7 +624,7 @@ msgid "ch.bafu.swissprtr"
 msgstr "Schadstoff-Freisetzungen (SwissPRTR)"
 
 msgid "ch.bafu.unesco-weltnaturerbe"
-msgstr "UNESCO Welterbe Naturstätten"
+msgstr "UNESCO-Welterbe Naturstätten"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Sturmschaden Lothar"
@@ -649,6 +655,9 @@ msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, 
 
 msgid "ch.bak.isos.warning"
 msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, eine ISOS-Aufnahme in einem rechtlichen Verfahren zu verwenden, bitten wir Sie, mit dem zuständigen Bundesamt Kontakt aufzunehmen (isos@bak.admin.ch). © Daten: BAK, Bern"
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+msgstr "UNESCO-Welterbe Kulturstätten"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Antennenstandorte GSM"
@@ -711,7 +720,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Landwirtschaftliche Zonengrenzen"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Steil- und Terrassenlagen im Rebbau"
+msgstr "Steillagen Reben"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "GGA Fleischware"
