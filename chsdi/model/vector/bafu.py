@@ -329,6 +329,16 @@ class biosphaerenreservate(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.schutzgebiete-biosphaerenreservate', biosphaerenreservate)
 
+# Only on test for the moment
+class moose(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'mooseflora'
+    __table_args__ = ({'schema': 'flora', 'autoload': True})
+    __template__ = 'tooltips/moose.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.moose', moose)
+
 class weltensutter(Base, Queryable):
     # view in a schema
     __tablename__ = 'ws'
