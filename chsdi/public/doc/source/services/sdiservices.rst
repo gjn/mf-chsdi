@@ -296,7 +296,7 @@ Examples:
 
 - `http://api.geo.admin.ch/layers <../../../layers>`_: returns all the layers available with all their properties
 - `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography <../../../layers/ch.swisstopo.vec200-hydrography>`_ : returns all the available information about this layer
-- `http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung <../../../layers?query=wasser&properties=kurzbezeichnung>`: returns all the layers where the query string wasser is found
+- `http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung <../../../layers?query=wasser&properties=kurzbezeichnung>`_: returns all the layers where the query string wasser is found
 - `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb <../../../layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb>`_: returns the legend of the layer in a callback
 - `http://api.geo.admin.ch/layers?mode=wmts <../../../layers?mode=wmts>`_: returns a GetCapabilities document
 - `http://api.geo.admin.ch/layers?mode=preview <../../../layers?mode=preview>`_ list all layers of map.geo.admin.ch in preview mode
@@ -603,7 +603,6 @@ Usage Example
 
    var geolocate = function() {
        if (navigator.geolocation) {
-           /* geolocation is available  */
            navigator.geolocation.getCurrentPosition(function(position) {
                positionCH = new OpenLayers.LonLat(position.coords.longitude, position.coords.latitude);
                positionCH.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:21781"));
@@ -639,14 +638,14 @@ Usage Example
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               GeoAdmin.protocol + "//wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../../ogcproxy?url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
+           url: "../../../ogcproxy?url=" + GeoAdmin.protocol + "//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",
