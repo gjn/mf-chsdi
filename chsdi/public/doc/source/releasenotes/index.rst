@@ -11,6 +11,11 @@ Geodata
 
 ---> add geodata stuff here
 
+gud :
+Layer updated :
+- ch.swisstopo-vd.spannungsarme-gebiete
+(database: stopo.vd.spannungsarme_gebiete)
+
 Listing all publicly available layers of the Geoadmin API:
 
 - `List only <http://s.geo.admin.ch/5d5d40a>`__
