@@ -481,6 +481,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Referenzsysteme',  // Id Inspire 11
                 children: [
                     {
+                        layerId: "ch.swisstopo.dreiecksvermaschung"
+                    },
+                    {
                         layerId: "ch.swisstopo.fixpunkte-agnes"
                     },
                     {
@@ -495,11 +498,11 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Geografische Gittersysteme',  // Id Inspire ??
+                text: 'Geografische Gittersysteme',  // Id Inspire 12
                 hidden: true
             },
             {
-                text: 'Geografische Namen',  // Id Inspire 13 ??
+                text: 'Geografische Namen',  // Id Inspire 13
                 children: [
                      {
                         layerId: "ch.swisstopo.hiks-dufour"
@@ -549,7 +552,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Administrative Einheiten',  // Id Inspire 14 ??
+                text: 'Administrative Einheiten',  // Id Inspire 14
                 children: [
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
@@ -581,7 +584,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Adressen',  // Id Inspire 15 ??
+                text: 'Adressen',  // Id Inspire 15
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
@@ -592,7 +595,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Flurstücke / Grundstücke',  // Id Inspire 16 ??
+                text: 'Flurstücke / Grundstücke',  // Id Inspire 16
                 children: [
                     {
                         layerId: "ch.kantone.cadastralwebmap-farbe"
@@ -626,7 +629,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Oberflächendarstellung',
         children: [
             {
-                text: 'Gewässernetz',  // Id Inspire 18 ??
+                text: 'Gewässernetz',  // Id Inspire 18
                 children: [
                     {
                         layerId: "ch.bfe.kleinwasserkraftpotentiale"
@@ -683,7 +686,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Luft und Satellitenbilder',  // Id Inspire ??
+                text: 'Luft und Satellitenbilder',  // Id Inspire 23
                 children: [
                     {
                         layerId: "ch.swisstopo.images-swissimage.metadata"
@@ -696,7 +699,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Raum und Bevölkerung',
         children: [
             {
-                text: 'Gesundheit une Sicherheit',  // Id Inspire 35 ??
+                text: 'Gesundheit une Sicherheit',  // Id Inspire 35
                 children: [
                     {
                         layerId: "ch.bafu.laerm-bahnlaerm_nacht"
@@ -834,7 +837,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Gebäude',  // Id Inspire 32 ??
+                text: 'Gebäude',  // Id Inspire 32
                 children: [
                     {
                         layerId: "ch.bfs.gebaeude_wohnungs_register"
@@ -1030,7 +1033,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Umweltüberwachung',  // Id Inspire 37 ??
+                text: 'Umweltüberwachung',  // Id Inspire 37
                 children: [
                     {
                         layerId: "ch.are.alpenkonvention"
@@ -1206,7 +1209,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
         text: 'Energie und Wirtschaft',
         children: [
             {
-                text: 'Statistische Einheiten',  // Id Inspire 31 ??
+                text: 'Statistische Einheiten',  // Id Inspire 31
                 children: [
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
@@ -1296,7 +1299,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ] 
             },
             {
-                text: 'Energiequellen',  // Id Inspire 320 ??
+                text: 'Energiequellen',  // Id Inspire 320
                 children: [
                     {
                         layerId: "ch.bfe.energieforschung"
