@@ -749,6 +749,9 @@ msgstr "ZIP and locations"
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Low distortion area"
 
+msgid "ch.swisstopo.dreiecksvermaschung"
+msgstr "LV95 Triangular network"
+
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
@@ -1858,11 +1861,17 @@ msgstr "Firmenname"
 msgid "nfname"
 msgstr "Name"
 
+msgid "nom_dreieck"
+msgstr "Associated pass points"
+
 msgid "nord"
 msgstr "North"
 
 msgid "nr"
 msgstr "Nr."
+
+msgid "num_dreieck"
+msgstr "Triangle number"
 
 msgid "nummer"
 msgstr "Number"
