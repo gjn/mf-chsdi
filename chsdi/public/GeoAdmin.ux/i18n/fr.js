@@ -510,6 +510,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'NPA et localités',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Zones de tensions négligeables',
 	'ch.swisstopo-vd.url':'http://www.cadastre.ch',
+	'ch.swisstopo.dreiecksvermaschung':'MN95 Maillage triangulaire',
 	'ch.swisstopo.fixpunkte-agnes':'AGNES',
 	'ch.swisstopo.fixpunkte-hoehe':'Points fixes en altimétrie',
 	'ch.swisstopo.fixpunkte-lage':'Points fixes en planimétrie',

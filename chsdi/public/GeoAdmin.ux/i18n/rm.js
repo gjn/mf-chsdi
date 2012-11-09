@@ -506,6 +506,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'NPVischnancas',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Territori cun tensiun pover',
 	'ch.swisstopo-vd.url':'http://www.cadastre.ch',
+	'ch.swisstopo.dreiecksvermaschung':'LV95 Rait triangulara',
 	'ch.swisstopo.fixpunkte-agnes':'AGNES',
 	'ch.swisstopo.fixpunkte-hoehe':'Puncts fixs altimetrics',
 	'ch.swisstopo.fixpunkte-lage':'Puncts fixs planimetrics',

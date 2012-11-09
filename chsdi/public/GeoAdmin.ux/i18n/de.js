@@ -510,6 +510,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'PLZ und Ortschaften',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Spannungsarme Gebiete',
 	'ch.swisstopo-vd.url':'http://www.cadastre.ch',
+	'ch.swisstopo.dreiecksvermaschung':'LV95 Dreiecksvermaschung',
 	'ch.swisstopo.fixpunkte-agnes':'AGNES',
 	'ch.swisstopo.fixpunkte-hoehe':'Höhenfixpunkte',
 	'ch.swisstopo.fixpunkte-lage':'Lagefixpunkte',

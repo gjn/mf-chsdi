@@ -510,6 +510,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'ZIP and locations',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Low distortion area',
 	'ch.swisstopo-vd.url':'http://www.cadastre.ch',
+	'ch.swisstopo.dreiecksvermaschung':'LV95 Triangular network',
 	'ch.swisstopo.fixpunkte-agnes':'AGNES',
 	'ch.swisstopo.fixpunkte-hoehe':'Vertical control point',
 	'ch.swisstopo.fixpunkte-lage':'Horizontal control points',
