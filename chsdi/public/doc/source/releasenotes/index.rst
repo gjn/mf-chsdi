@@ -11,6 +11,12 @@ Geodata
 
 ---> add geodata stuff here
 
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Spannungsarme Gebiete <http://s.geo.admin.ch/6bef8eb0>`__                                     |
++--------+------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <http://s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)      |
++--------+------------------------------------------------------------------------------------------------+
+
 Listing all publicly available layers of the Geoadmin API:
 
 - `List only <http://s.geo.admin.ch/5d5d40a>`__

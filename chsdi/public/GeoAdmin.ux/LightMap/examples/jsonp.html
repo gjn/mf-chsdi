@@ -13,7 +13,7 @@
 <script>
    function init() {
        var scriptProtocol = new OpenLayers.Protocol.Script({
-           url: 'http://api.geo.admin.ch/feature/6644?',
+           url: GeoAdmin.protocol + '//api.geo.admin.ch/feature/6644?',
            callback: function(response) {
                alert("JSONP requests provided a result");
            },
@@ -29,3 +29,4 @@
 </script>
 </body>
 </html>
+

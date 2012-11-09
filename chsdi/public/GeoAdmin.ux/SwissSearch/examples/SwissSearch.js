@@ -6,7 +6,7 @@ Ext.onReady(function() {
 
     OpenLayers.Lang.setCode("it");
     // required for accessing layer information
-    GeoAdmin.webServicesUrl = "http://mf-chsdi0t.bgdi.admin.ch/ltmoc";
+    GeoAdmin.webServicesUrl = GeoAdmin.protocol + "//mf-chsdi0t.bgdi.admin.ch";
 
     // create a map, and center it to its maximum extent
     // (map is made global for easy debugging)

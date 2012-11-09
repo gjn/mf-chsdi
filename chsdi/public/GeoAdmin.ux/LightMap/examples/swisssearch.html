@@ -28,7 +28,7 @@
 <script>
     var map, swisssearch;
     GeoAdmin.OpenLayersImgPath = "../../Map/img/";
-    GeoAdmin.webServicesUrl = "http://api.geo.admin.ch";
+    GeoAdmin.webServicesUrl = GeoAdmin.protocol + "//api.geo.admin.ch";
     function init() {
         map = new GeoAdmin.Map("map", {doZoomToMaxExtent: true});
         map.addLayerByName("ch.swisstopo.gg25-kanton-flaeche.fill");

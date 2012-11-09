@@ -178,6 +178,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationState.pause();
             console.log("paused by click");
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
+            playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
         } else {
             this.initAnimationState();
             // Play / Resume
@@ -185,6 +186,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.setAnimationTimer();
             console.log("resumed by click");
             playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
+            playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
         }
         this.animationIsPlaying = !this.animationIsPlaying;
     },

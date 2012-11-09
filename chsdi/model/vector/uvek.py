@@ -13,11 +13,11 @@ class IVS_NAT(Base, Queryable):
 register('ch.astra.ivs-nat', IVS_NAT)
 
 class IVS_REG_LOC(Base, Queryable):
-    __tablename__ = 'ivs_reg_loc_aggregated'
+    __tablename__ = 'ivs_reg_loc'
     __table_args__ = ({'schema': 'astra', 'autoload': True})
     __template__ = 'tooltips/ivs_reg_loc.mako'
     __queryable_attributes__ = ['ivs_slaname','ivs_nummer','ivs_signatur']
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('reg_loc_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
 register('ch.astra.ivs-reg_loc', IVS_REG_LOC)

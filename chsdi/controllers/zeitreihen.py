@@ -11,11 +11,6 @@ from chsdi.model.vector.zeitreihen import Zeitreihen_Metadata_15,Zeitreihen_Meta
 from chsdi.model.meta import Session
 from array import *
 
-try:
-    from json import dumps as json_dumps
-except:
-    from simplejson import dumps as json_dumps
-
 import mimetypes
 
 log = logging.getLogger(__name__)
@@ -95,6 +90,12 @@ class ZeitreihenController(BaseController):
         if timestamps[len(timestamps)-1] != 20101231:
             timestamps.append(20101231)
         timestamps.sort()
+
+        counter = 0
+        for value in timestamps:
+            timestamps[counter] = str(timestamps[counter])
+            counter = counter+1
+
         myjson = json_dumps(timestamps)
 
         response.headers['Cache-Control'] = 'no-cache'

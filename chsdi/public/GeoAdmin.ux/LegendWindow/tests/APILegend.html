@@ -11,7 +11,9 @@
       <script type="text/javascript" src="../../../GeoAdmin.ux/Map/lib/OverviewMap.js"></script>
       <script type="text/javascript" src="../lib/APILegend.js"></script>
       <script type="text/javascript">
-        GeoAdmin.webServicesUrl = 'http://api.geo.admin.ch';
+      
+        GeoAdmin.webServicesUrl = "../../..";
+
         var layerName = "ch.swisstopo.vec25-strassennetz";
         var expectedUrl = GeoAdmin.webServicesUrl + "/legend/" + layerName + "_" + OpenLayers.Lang.getCode() + ".png";
 
