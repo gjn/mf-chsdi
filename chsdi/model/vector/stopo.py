@@ -289,6 +289,16 @@ class Vec25Heckenbaeume(Base, Queryable):
 
 register('ch.swisstopo.vec25-heckenbaeume', Vec25Heckenbaeume)
 
+class Dreiecksvermaschung(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'dreiecksvermaschung'
+        __table_args__ = ({'schema': 'geodaesie', 'autoload': True})
+        __template__ = 'tooltips/dreiecksvermaschung.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.dreiecksvermaschung',Dreiecksvermaschung)
+
 class DufourErst(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'view_gridstand_datenhaltung_dufour_erst'

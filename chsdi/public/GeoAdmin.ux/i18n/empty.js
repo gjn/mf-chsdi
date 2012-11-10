@@ -156,6 +156,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.pixelkarte-farbe-pk200.noscale' :"",
     'ch.swisstopo.pixelkarte-farbe-pk500.noscale' :"",
     'ch.swisstopo.images-swissimage.metadata' :"",
+    'ch.swisstopo.dreiecksvermaschung':"",
     'ch.swisstopo.fixpunkte-agnes':"",
     'ch.swisstopo.fixpunkte-lage':"",
     'ch.swisstopo.fixpunkte-hoehe':"",

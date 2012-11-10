@@ -749,6 +749,9 @@ msgstr "PLZ und Ortschaften"
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Spannungsarme Gebiete"
 
+msgid "ch.swisstopo.dreiecksvermaschung"
+msgstr "LV95 Dreiecksvermaschung"
+
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
@@ -1857,11 +1860,17 @@ msgstr "Firmenname"
 msgid "nfname"
 msgstr "Name"
 
+msgid "nom_dreieck"
+msgstr "Zugehörige Transformationsstützpunkte"
+
 msgid "nord"
 msgstr "Nord"
 
 msgid "nr"
 msgstr "Nr."
+
+msgid "num_dreieck"
+msgstr "Dreiecksnummer"
 
 msgid "nummer"
 msgstr "Nummer"

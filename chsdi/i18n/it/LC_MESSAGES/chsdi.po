@@ -749,6 +749,9 @@ msgstr "NPA e località"
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Zone di tensioni trascurabili"
 
+msgid "ch.swisstopo.dreiecksvermaschung"
+msgstr "MN95 Magliatura triangolare"
+
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
@@ -1857,11 +1860,17 @@ msgstr "Bureau"
 msgid "nfname"
 msgstr "Nom"
 
+msgid "nom_dreieck"
+msgstr "Punti fissi di appoggio affini"
+
 msgid "nord"
 msgstr "Nord"
 
 msgid "nr"
 msgstr "N°"
+
+msgid "num_dreieck"
+msgstr "Numero di triangolo"
 
 msgid "nummer"
 msgstr "Numéro"

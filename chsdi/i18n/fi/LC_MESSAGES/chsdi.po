@@ -749,6 +749,9 @@ msgstr "NPVischnancas"
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Territori cun tensiun pover"
 
+msgid "ch.swisstopo.dreiecksvermaschung"
+msgstr "LV95 Rait triangulara"
+
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
@@ -1857,11 +1860,17 @@ msgstr "Firmenname"
 msgid "nfname"
 msgstr "Name"
 
+msgid "nom_dreieck"
+msgstr "Appartegnent  basa  da transfurmaziun"
+
 msgid "nord"
 msgstr "Nord"
 
 msgid "nr"
 msgstr "Nr."
+
+msgid "num_dreieck"
+msgstr "Numer da la triangul"
 
 msgid "nummer"
 msgstr "Nummer"

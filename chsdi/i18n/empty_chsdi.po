@@ -1086,6 +1086,12 @@ msgstr ""
 msgid "nr"
 msgstr ""
 
+msgid "nom_dreieck"
+msgstr ""
+
+msgid "num_dreieck"
+msgstr ""
+
 msgid "name_terreg"
 msgstr ""
 
@@ -2109,6 +2115,9 @@ msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr ""
 
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
+msgstr ""
+
+msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr ""
 
 msgid "ch.swisstopo.fixpunkte-agnes"
