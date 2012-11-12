@@ -97,6 +97,11 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
      */
     configCatalog: null,
 
+    /** api:config[limitLayers]
+     * ``Int`` maximal number of layers to be displayed at the same time. Default to 5.
+     */
+    limitLayers: 5,
+
     listeners: {
         dblclick: function(node, e) {
             this.selectNode(node);
@@ -116,7 +121,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                         layerCount++;
                     }
                 }
-                if (layerCount == 5) {
+                if (layerCount == this.limitLayers) {
                     this.suspendEvents();
                     node.getUI().toggleCheck(false);
                     this.updateCustomizedCheckbox(node, false);
