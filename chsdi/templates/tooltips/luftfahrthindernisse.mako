@@ -121,6 +121,7 @@
         window.onload = function () {
             var divs, format, map_list, url;
             window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
+            OpenLayers.Lang.setCode('de');
             divs = document.getElementsByName('features');
             format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
             map_list = []; 
@@ -174,7 +175,7 @@
                             map.zoomToExtent(bounds);
                             // Object might be too small (default zoom set to 7)
                             if (map.getZoom() > 6) {
-                                map.zoomTo(6)
+                                map.zoomTo(6);
                             }
                         }
                         map.addLayer(layer);
