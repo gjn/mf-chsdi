@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Choose a topic': "",
     'org.epsg.grid_4326': "",
     'org.epsg.grid_21781': "",
     'help_': "",

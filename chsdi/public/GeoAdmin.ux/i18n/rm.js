@@ -41,6 +41,7 @@ OpenLayers.Lang.rm= {
 	'Cancel reporting':'Annullar',
 	'Cantons':'Chantuns',
 	'Catalog':'Catalog [INSPIRE]',
+	'Choose a topic':'Ein Thema auswählen',
 	'Cities':'Vischnancas',
 	'Classification:':'Categoria',
 	'Climb: ':'Muntada : ',
