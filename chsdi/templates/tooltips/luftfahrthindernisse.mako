@@ -158,16 +158,17 @@
         
                         bounds = new OpenLayers.Bounds(dico[fid]);
                         map = new GeoAdmin.Map('divmap' + fid, { 
-                            restrictedExtent: bounds
+                            restrictedExtent: bounds,
+                            ratio: 1
                         });
                         // Remove zoom control
                         navControl = map.getControlsByClass('OpenLayers.Control.Navigation')[0];
                         navControl.destroy();
 
-                        map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 1});
-                        map.addLayerByName('org.epsg.grid_21781');
-                        map.addLayerByName('org.epsg.grid_4326');
-                        map.addLayerByName('ch.bazl.luftfahrthindernis');
+                        map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', { opacity: 1 });
+                        map.addLayerByName('org.epsg.grid_21781', { ratio: 1 });
+                        map.addLayerByName('org.epsg.grid_4326', { ratio: 1 });
+                        map.addLayerByName('ch.bazl.luftfahrthindernis', { ratio: 1 } );
         
                         if (bounds.left === bounds.right) {
                             center = bounds.getCenterLonLat();
