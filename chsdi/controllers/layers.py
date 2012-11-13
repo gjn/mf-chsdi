@@ -93,11 +93,11 @@ class LayersController(BaseController):
             abort(400, 'An error occured while parsing the properties')             
 
 ##----------------------------------------Project----------------------------------------##            
-        # Per default the project geoadmin is selected
+        # Per default the project api is selected
         if self.mode == 'legend':
            project = ['all']
         else:
-           project = request.params.get('project','geoadmin')
+           project = request.params.get('project','api')
            project = project.split(',')
         if not isinstance(project,list):
             abort(400, 'An error occured while parsing the projects')           
