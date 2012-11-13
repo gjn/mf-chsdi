@@ -15,8 +15,8 @@ The GeoAdmin API provides also some REST web services like :doc:`../../services/
 
 The GeoAdmin API integrates the ExtJS, GeoExt and OpenLayers libraries. You can use these libraries when you use the GeoAdmin API.
 
-What is the GeoAdmin Light API (BETA) ?
----------------------------------------
+What is the GeoAdmin Light API ?
+--------------------------------
 
 The GeoAdmin Light API allows the integration in web pages of geospatial information provided by the Swiss Confederation.
 
@@ -349,10 +349,10 @@ Call it with:
 
 In this case, the api code will be uncompressed and this simplifies the debugging process.
 
-How can I use the GeoAdmin Light API (BETA) ?
----------------------------------------------
+How can I use the GeoAdmin Light API ?
+--------------------------------------
 
-The GeoAdmin Light API (BETA) can be loaded by calling:
+The GeoAdmin Light API can be loaded by calling:
 
 .. code-block:: html
 
