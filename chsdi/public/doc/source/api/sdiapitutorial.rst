@@ -70,7 +70,7 @@ Add a script tag to load the API. This script will load all the necessary JavaSc
         </head>
         <body>
              <h1>This is my very first map</h1>
-            <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+            <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script></body>
         </body>
     </html>
         
@@ -101,7 +101,7 @@ In the header section of your HTML page, place a JavaScript function which creat
         </head>
         <body>
             <h1>This is my very first map</h1>
-            <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+            <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script></body>
         </body>
     </html>
 
@@ -132,7 +132,7 @@ In the body section of your web page, add a `<div>` with `id="mymap1"`. The map 
      <body>
         <h1>This is my very first map</h1>
         <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-        <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+        <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script></body>
     </body>
     </html>
       
@@ -164,7 +164,7 @@ And finally, tell the web page to execute the JavaScript function you defined by
      <body onload="init();">
         <h1>This is my very first map</h1>
         <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-        <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script></body>
+        <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script></body>
     </body>
     </html>
 

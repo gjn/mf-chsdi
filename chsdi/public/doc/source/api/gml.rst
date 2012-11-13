@@ -75,7 +75,7 @@ Display a remote GML file with custom symbols. In this example, some triangulati
        }
    </script>
    <body onload="init();">
-       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+       <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>    
 
 .. raw:: html

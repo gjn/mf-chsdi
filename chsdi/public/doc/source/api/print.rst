@@ -73,7 +73,7 @@ The print widget needs a Map Panel.
    <body onload="init();">
       <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myprint22" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -136,7 +136,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                 );
 
            var restwasser = new OpenLayers.Layer.WMS("Restwasserkarte (BGDI WMS)",
-                "http://wms.geo.admin.ch/", {
+                "https://wms.geo.admin.ch/", {
                     layers: [
                         "ch.bafu.wasser-entnahme",
                         "ch.bafu.wasser-leitungen",
@@ -153,7 +153,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
    <body onload="init();">
       <div id="mymap23" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myprint23" style="width: 200px; margin-left: 10px; margin-top: 20px;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -223,7 +223,7 @@ can be printed! In this example, the surface layer is a KML and the point layer 
                 );
                 
            var restwasser = new OpenLayers.Layer.WMS("Restwasserkarte (BGDI WMS)",
-                "http://wms.geo.admin.ch/", {
+                "https://wms.geo.admin.ch/", {
                     layers: [
                         "ch.bafu.wasser-entnahme",
                         "ch.bafu.wasser-leitungen",

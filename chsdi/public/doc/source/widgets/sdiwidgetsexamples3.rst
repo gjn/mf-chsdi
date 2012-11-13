@@ -84,7 +84,7 @@ A Map Panel is required in order to add a toolbar with the permalink function.
    </script>
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -156,7 +156,7 @@ A custom title, footer and logo (we recommend to use a 516x70 px logo) can be de
    <body onload="init();">
      <div id="myprint" style="margin-left:10px !important;width: 200px;"></div>
      <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -192,7 +192,7 @@ A context popup provide information on the map right mouse click
    </script>
    <body onload="init();">
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -225,7 +225,7 @@ Map Panel
    </script>
    <body onload="init();">
      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

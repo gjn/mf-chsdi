@@ -24,7 +24,7 @@
 Reverse geocoder: identify parcel
 ---------------------------------
 
-Click in the map and identfy parcels. This demonstration uses the SwissSearch Reverse Geocoding service (`Documentation <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#swisssearch-reversegeocoding>`_)
+Click in the map and identfy parcels. This demonstration uses the SwissSearch Reverse Geocoding service (`Documentation <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#swisssearch-reversegeocoding>`_)
 
 .. raw:: html
 
@@ -161,7 +161,7 @@ Click in the map and identfy parcels. This demonstration uses the SwissSearch Re
    <body onload="init();">
      <div id="mymap" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
      <div id="mysearch" style="width:300px;height:30px;margin:10px;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=full"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js?mode=full"></script>
    </body>
 
 .. raw:: html

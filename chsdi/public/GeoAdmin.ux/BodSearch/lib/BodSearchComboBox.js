@@ -12,7 +12,7 @@
  */
 
 /** api: example
- *  Sample code to create a bod search combo (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#bod-search>`_)
+ *  Sample code to create a bod search combo (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#bod-search>`_)
  *
  *  .. code-block:: javascript
  *
@@ -43,7 +43,7 @@ GeoAdmin.BodSearchComboBox = Ext.extend(Ext.form.ComboBox, {
 
     /** api: config[redirectUrl]
      *  ``String``
-     *  Address of the target map where to open the selected layer. Default value: "http://map.geo.admin.ch/?layers={0}&lang={1}".
+     *  Address of the target map where to open the selected layer. Default value: "https://map.geo.admin.ch/?layers={0}&lang={1}".
      */
     redirectUrl: (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') + '//map.geo.admin.ch/?layers={0}&lang={1}',
 

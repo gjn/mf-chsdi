@@ -14,7 +14,7 @@
  */
 
 /** api: example
- *  Sample code to create a tooltip (click with left mouse button) (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#tooltip>`_)
+ *  Sample code to create a tooltip (click with left mouse button) (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#tooltip>`_)
  *
  *  .. code-block:: javascript
  *
@@ -32,7 +32,7 @@
   *
   *  :param options: ``Object`` options
   *
-  *  Create a GetFeature control used to show feature information on left mouse click. This control consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+  *  Create a GetFeature control used to show feature information on left mouse click. This control consumes the feature services described `here <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
   */
 GeoAdmin.Tooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 

@@ -15,7 +15,7 @@
  *
  *  :param options: ``Object`` options
  *
- *  Class providing the functions necessary to recenter and highlight features. It consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+ *  Class providing the functions necessary to recenter and highlight features. It consumes the feature services described `here <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
  */
 
 /** api: example
@@ -52,7 +52,7 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
    /** api: method[recenter]
-    *  :param layer: ``String``: the layer id. The layer list can be found `there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+    *  :param layer: ``String``: the layer id. The layer list can be found `there <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
     *  :param ids: ``String``: comma separated list of feature ids
     *  :param cb: ``String``: optional callback 
     * 
@@ -70,7 +70,7 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
    /** api: method[highlight]
-    *  :param layer: ``String``: the layer id. The layer list can be found `at this link <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+    *  :param layer: ``String``: the layer id. The layer list can be found `at this link <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
     *  :param ids: ``String``: comma separated list of feature ids
     *  :param cb: ``String``: optional callback 
     * 
@@ -88,7 +88,7 @@ GeoAdmin.Features = OpenLayers.Class({
     },
 
    /** api: method[show]
-    *  :param layer: ``String``: the layer id. The layer list can be found `over there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+    *  :param layer: ``String``: the layer id. The layer list can be found `over there <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
     *  :param ids: ``String``: comma separated list of feature ids
     *  :param cb: ``String``: optional callback 
     * 

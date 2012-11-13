@@ -59,7 +59,7 @@ A Map panel is really an ExtJS Panel with an OpenLayers Map, allowing you you ad
        }
    </script>
    <body onload="init();">
-       <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>       
+       <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>       
        <div id="mymap22" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
    </body>    
 

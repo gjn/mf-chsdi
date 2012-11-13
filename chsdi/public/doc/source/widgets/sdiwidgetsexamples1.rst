@@ -47,7 +47,7 @@ Default Map
    </script>
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -82,7 +82,7 @@ Map with gray pixelmap and overlay layer
    </script>
    <body onload="init();">
      <div id="mymap2" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -122,7 +122,7 @@ Base Layer Tool
    <body onload="init();">
      <div id="baselayertool3"></div>
      <div id="mymap3" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -164,7 +164,7 @@ Swiss Search
    <body onload="init();">
      <div id="mysearch4" style="margin:10px !important;"></div>
      <div id="mymap4" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -204,7 +204,7 @@ BOD Search
    <body onload="init();">
      <div id="mysearch5" style="margin:10px !important;"></div>
      <div id="mymap5" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

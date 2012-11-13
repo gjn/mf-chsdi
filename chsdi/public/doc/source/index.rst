@@ -68,7 +68,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
    </script>
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

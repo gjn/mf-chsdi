@@ -120,7 +120,7 @@ StreetView
    </script> 
    <body onload="init();">
      <div id="mypanel21" style="width:500px;height:500px;margin: 10px; !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
      <!-- Use your own key please -->
      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAzQ-mOk5vsRF_OLoN-mOVjhSHRXVQO97xZDVElO7Kaxb3_E7dkBRAys4lZqDtTngdp3fHGDiZ-9QpCw" type="text/javascript"></script>
 

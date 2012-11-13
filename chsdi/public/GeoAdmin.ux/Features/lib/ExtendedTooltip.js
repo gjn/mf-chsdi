@@ -37,7 +37,7 @@
   *
   *  :param options: ``Object`` options
   *
-  *  Create a GetFeature control used to show feature information on left mouse click or Ctrl + left mouse click. This control consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+  *  Create a GetFeature control used to show feature information on left mouse click or Ctrl + left mouse click. This control consumes the feature services described `here <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
   */
 GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 

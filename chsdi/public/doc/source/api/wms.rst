@@ -71,7 +71,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
        OpenLayers.ProxyHost = "/main/wsgi/ogcproxy?url=";
 
        var wms = new OpenLayers.Layer.WMS("vd",
-                "http://wms.geo.admin.ch/",
+                GeoAdmin.protocol + "//wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
             layers:  'ch.bafu.bundesinventare-jagdbanngebiete',
@@ -85,7 +85,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
 
         var featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
             //  format: new OpenLayers.Format.WMSGetFeatureInfo(), //'application/vnd.ogc.gml' //'plain/text'
-            url: 'http://wms.geo.admin.ch/',
+            url: GeoAdmin.protocol + '//wms.geo.admin.ch/',
             //title: 'Identify features by clicking',
             //layers: [wms],
             //queryVisible: true,
@@ -175,7 +175,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
        OpenLayers.ProxyHost = "/main/wsgi/ogcproxy?url=";
 
        var wms = new OpenLayers.Layer.WMS("vd",
-                "http://wms.geo.admin.ch/",
+                GeoAdmin.protocol + "//wms.geo.admin.ch/",
         {
             srs: 'EPSG:21781',
             layers:  'ch.bafu.bundesinventare-jagdbanngebiete',
@@ -189,7 +189,7 @@ See `ProxyHost <http://trac.osgeo.org/openlayers/wiki/FrequentlyAskedQuestions#P
 
         var featureInfo = new OpenLayers.Control.WMSGetFeatureInfo({
             //  format: new OpenLayers.Format.WMSGetFeatureInfo(), //'application/vnd.ogc.gml' //'plain/text'
-            url: 'http://wms.geo.admin.ch/',
+            url: GeoAdmin.protocol + '//wms.geo.admin.ch/',
             //title: 'Identify features by clicking',
             //layers: [wms],
             //queryVisible: true,

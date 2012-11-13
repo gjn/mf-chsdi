@@ -11,11 +11,11 @@ Geodata
 
 ---> add geodata stuff here
 
-+--------+------------------------------------------------------------------------------------------------+
-| Update | `Spannungsarme Gebiete <http://s.geo.admin.ch/6bef8eb0>`__                                     |
-+--------+------------------------------------------------------------------------------------------------+
-| Update | `Cadastral Web Map <http://s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)      |
-+--------+------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------+
+| Update | `Spannungsarme Gebiete <//s.geo.admin.ch/6bef8eb0>`__                                |
++--------+--------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe) |
++--------+--------------------------------------------------------------------------------------+
 | New    | `LV95 Dreiecksvermaschung`__ (ch.swisstopo.dreiecksvermaschung)                                |
 +--------+------------------------------------------------------------------------------------------------+
 
@@ -23,14 +23,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
 ---> add desktop api stuff here
@@ -71,22 +71,22 @@ Release 20121030 - Tuesday, October 30th 2012
 Geodata
 ********
 
-+--------+------------------------------------------------------------------+
-| New    | `Borreliosis regions at risk <http://s.geo.admin.ch/96c55e38>`__ |
-+--------+------------------------------------------------------------------+
-| Update | `Zip and locations <http://s.geo.admin.ch/d9176c15>`__           |
-+--------+------------------------------------------------------------------+
++--------+-------------------------------------------------------------+
+| New    | `Borreliosis regions at risk <//s.geo.admin.ch/96c55e38>`__ |
++--------+-------------------------------------------------------------+
+| Update | `Zip and locations <//s.geo.admin.ch/d9176c15>`__           |
++--------+-------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
 Bug fixes and corrections
@@ -130,26 +130,26 @@ Release 20121025 - Thursday, October 25th 2012
 Geodata
 *******
 
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| New    | `IHR Boundaries <http://s.geo.admin.ch/1aa46544>`__ (ch.astra.ivs-nat_abgrenzungen)                                  |
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| New    | `IHR Elements of landscape <http://s.geo.admin.ch/e2f53ea7>`__ (ch.astra.ivs-nat_wegbegleiter)                       |
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| New    | `SP aeronautical infrastructure <http://s.geo.admin.ch/c5c7c550>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft) |
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| Update | `Parks <http://s.geo.admin.ch/492006a2>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                       |
-+--------+----------------------------------------------------------------------------------------------------------------------+
++--------+-----------------------------------------------------------------------------------------------------------------+
+| New    | `IHR Boundaries <//s.geo.admin.ch/1aa46544>`__ (ch.astra.ivs-nat_abgrenzungen)                                  |
++--------+-----------------------------------------------------------------------------------------------------------------+
+| New    | `IHR Elements of landscape <//s.geo.admin.ch/e2f53ea7>`__ (ch.astra.ivs-nat_wegbegleiter)                       |
++--------+-----------------------------------------------------------------------------------------------------------------+
+| New    | `SP aeronautical infrastructure <//s.geo.admin.ch/c5c7c550>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft) |
++--------+-----------------------------------------------------------------------------------------------------------------+
+| Update | `Parks <//s.geo.admin.ch/492006a2>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                       |
++--------+-----------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -201,30 +201,30 @@ Services
 +------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New        | You can now also use the domain `geoadmin.ch <http://geoadmin.ch>`__, like `www.geoadmin.ch <http://www.geoadmin.ch>`__, `map.geoadmin.ch <http://map.geoadmin.ch>`__, etc... |
 +------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Deprecated | The bodsearch service has been decommissioned. Use http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers instead.                                      |
+| Deprecated | The bodsearch service has been decommissioned. Use https://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers instead.                                      |
 +------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Geodata
 *******
 
-+--------+------------------------------------------------------------------------------------------------+
-| Update | `Cadastral survey status <http://s.geo.admin.ch/60ec7325>`__ (ch.swisstopo-vd.geometa-standav) |
-+--------+------------------------------------------------------------------------------------------------+
-| Update | `Historical roads <http://s.geo.admin.ch/26482af1>`__ (ch.astra.ivs-nat)                       |
-+--------+------------------------------------------------------------------------------------------------+
-| Update | `Cadastral Web Map <http://s.geo.admin.ch/31d5da70>`__ (ch.kantone.cadastralwebmap-farbe)      |
-+--------+------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------+
+| Update | `Cadastral survey status <//s.geo.admin.ch/60ec7325>`__ (ch.swisstopo-vd.geometa-standav) |
++--------+-------------------------------------------------------------------------------------------+
+| Update | `Historical roads <//s.geo.admin.ch/26482af1>`__ (ch.astra.ivs-nat)                       |
++--------+-------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <//s.geo.admin.ch/31d5da70>`__ (ch.kantone.cadastralwebmap-farbe)      |
++--------+-------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 Minor bug fixes, documentation and translation improvements.
@@ -257,24 +257,24 @@ Release 20120926 - Wednesday, September 26th 2012
 Geodata
 *******
 
-+--------+------------------------------------------------------------------------------------------------------------------------+
-| New    | `Deep Geological Repositories sectoral plan <http://s.geo.admin.ch/da0a8c82>`__ (ch.bfe.sachplan-geologie-tiefenlager) |
-+--------+------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <http://s.geo.admin.ch/5e51a2a>`__ (ch.bfe.statistik-wasserkraftanlagen)                        |
-+--------+------------------------------------------------------------------------------------------------------------------------+
-| Update | `Erosion Risk 2 <http://s.geo.admin.ch/61a143bc>`__ (ch.blw.erosion-mit_bergzonen)                                     |
-+--------+------------------------------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------------------------------+
+| New    | `Deep Geological Repositories sectoral plan <//s.geo.admin.ch/da0a8c82>`__ (ch.bfe.sachplan-geologie-tiefenlager) |
++--------+-------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//s.geo.admin.ch/5e51a2a>`__ (ch.bfe.statistik-wasserkraftanlagen)                        |
++--------+-------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion Risk 2 <//s.geo.admin.ch/61a143bc>`__ (ch.blw.erosion-mit_bergzonen)                                     |
++--------+-------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 Minor bug fixes, documentation and translation improvements.
@@ -307,44 +307,44 @@ Release 20120912 - Wednesday, September 12th 2012
 Geodata
 *******
 
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `VHF coverage area <http://s.geo.admin.ch/18d9b9a>`__ (ch.bakom.versorgungsgebiet-ukw)                     |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `TV coverage area <http://s.geo.admin.ch/c7b59ce>`__ (ch.bakom.versorgungsgebiet-tv)                       |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `Radio and TV emitters <http://s.geo.admin.ch/1e40514>`__ (ch.bakom.radio-fernsehsender)                   |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `GSM antenna positions <http://s.geo.admin.ch/c569d2e>`__ (ch.bakom.mobil-antennenstandorte-gsm)           |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `UMTS antenna positions <http://s.geo.admin.ch/d58cf6d>`__ (ch.bakom.mobil-antennenstandorte-umts)         |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `Reserved zones: Airports <http://s.geo.admin.ch/83414eb>`__ (ch.bazl.projektierungszonen-flughafenanlage) |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `GeoMeta communes <http://s.geo.admin.ch/c58da56>`__ (ch.swisstopo-vd.geometa-gemeinde)                    |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `Register <http://s.geo.admin.ch/1c274df>`__ (ch.swisstopo-vd.geometa-grundbuch)                           |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `Land Surveyor <http://s.geo.admin.ch/52e3a37>`__ (ch.swisstopo-vd.geometa-nfgeom)                         |
-+--------+------------------------------------------------------------------------------------------------------------+
-| New    | `Cadastral survey status <http://s.geo.admin.ch/d968f9e>`__ (ch.swisstopo-vd.geometa-standav)              |
-+--------+------------------------------------------------------------------------------------------------------------+
-| Update | `Cadastral Web Map <http://s.geo.admin.ch/74d27b4>`__ (ch.kantone.cadastralwebmap-farbe)                   |
-+--------+------------------------------------------------------------------------------------------------------------+
-| Update | `Works in progress <http://s.geo.admin.ch/283edca>`__ (ch.swisstopo-vd.geometa-los)                        |
-+--------+------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <http://s.geo.admin.ch/cc4378c>`__ (ch.bfe.statistik_wasserkraftanlagen)            |
-+--------+------------------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `VHF coverage area <//s.geo.admin.ch/18d9b9a>`__ (ch.bakom.versorgungsgebiet-ukw)                     |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `TV coverage area <//s.geo.admin.ch/c7b59ce>`__ (ch.bakom.versorgungsgebiet-tv)                       |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `Radio and TV emitters <//s.geo.admin.ch/1e40514>`__ (ch.bakom.radio-fernsehsender)                   |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `GSM antenna positions <//s.geo.admin.ch/c569d2e>`__ (ch.bakom.mobil-antennenstandorte-gsm)           |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `UMTS antenna positions <//s.geo.admin.ch/d58cf6d>`__ (ch.bakom.mobil-antennenstandorte-umts)         |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones: Airports <//s.geo.admin.ch/83414eb>`__ (ch.bazl.projektierungszonen-flughafenanlage) |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `GeoMeta communes <//s.geo.admin.ch/c58da56>`__ (ch.swisstopo-vd.geometa-gemeinde)                    |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `Register <//s.geo.admin.ch/1c274df>`__ (ch.swisstopo-vd.geometa-grundbuch)                           |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `Land Surveyor <//s.geo.admin.ch/52e3a37>`__ (ch.swisstopo-vd.geometa-nfgeom)                         |
++--------+-------------------------------------------------------------------------------------------------------+
+| New    | `Cadastral survey status <//s.geo.admin.ch/d968f9e>`__ (ch.swisstopo-vd.geometa-standav)              |
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <//s.geo.admin.ch/74d27b4>`__ (ch.kantone.cadastralwebmap-farbe)                   |
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | `Works in progress <//s.geo.admin.ch/283edca>`__ (ch.swisstopo-vd.geometa-los)                        |
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//s.geo.admin.ch/cc4378c>`__ (ch.bfe.statistik_wasserkraftanlagen)            |
++--------+-------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -352,11 +352,11 @@ API
    <p>
 
 +--------+----------------------------------------------------------------------------------------------------+
-| New    | Permalink panel: possibility to shorten an URL with http://s.geo.admin.ch service                  |
+| New    | Permalink panel: possibility to shorten an URL with https://s.geo.admin.ch service                  |
 +--------+----------------------------------------------------------------------------------------------------+
 | Update | Performance optimization of WMS services                                                           |
 +--------+----------------------------------------------------------------------------------------------------+
-| New    | bfsnr can be used in order to search within the geocoding service (http://s.geo.admin.ch/af5c5c3 ) |
+| New    | bfsnr can be used in order to search within the geocoding service (https://s.geo.admin.ch/af5c5c3 ) |
 +--------+----------------------------------------------------------------------------------------------------+
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
@@ -369,7 +369,7 @@ API
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | The mobile API has been migrated to the latest version of the base libaries (GXM branch 0.2, based on Sencha Touch 2.0). Performance and stability have been improved. Feedback welcome! |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | Documentation at http://s.geo.admin.ch/eb7345d                                                                                                                                           |
+| Update | Documentation at https://s.geo.admin.ch/eb7345d                                                                                                                                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Mapping Applications
@@ -414,34 +414,34 @@ Release 20120828 - Wednesday, August 28th 2012
 Geodata
 *******
 
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `Color Map <http://s.geo.admin.ch/9760998>`__ (ch.swisstopo.pixelkarte-farbe)                            |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `Grey Map <http://s.geo.admin.ch/929a8e1>`__ (ch.swisstopo.pixelkarte-grau)                              |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `National Map 1:25'000 <http://s.geo.admin.ch/d7a1128>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)   |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `National Map 1:50'000 <http://s.geo.admin.ch/4b667cb>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)   |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `National Map 1:100'000 <http://s.geo.admin.ch/610dd76>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `Inventory historical routes national <http://s.geo.admin.ch/3344dc9>`__ (ch.astra.ivs-nat)              |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `IHR National & Regional <http://s.geo.admin.ch/84d12e5>`__ (ch.astra.ivs-reg_loc)                       |
-+--------+----------------------------------------------------------------------------------------------------------+
-| Update | `Ramsar <http://s.geo.admin.ch/ae2e798>`__ (ch.bafu.schutzgebiete-ramsar)                                |
-+--------+----------------------------------------------------------------------------------------------------------+
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Color Map <//s.geo.admin.ch/9760998>`__ (ch.swisstopo.pixelkarte-farbe)                            |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Grey Map <//s.geo.admin.ch/929a8e1>`__ (ch.swisstopo.pixelkarte-grau)                              |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//s.geo.admin.ch/d7a1128>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)   |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//s.geo.admin.ch/4b667cb>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)   |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//s.geo.admin.ch/610dd76>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Inventory historical routes national <//s.geo.admin.ch/3344dc9>`__ (ch.astra.ivs-nat)              |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `IHR National & Regional <//s.geo.admin.ch/84d12e5>`__ (ch.astra.ivs-reg_loc)                       |
++--------+-----------------------------------------------------------------------------------------------------+
+| Update | `Ramsar <//s.geo.admin.ch/ae2e798>`__ (ch.bafu.schutzgebiete-ramsar)                                |
++--------+-----------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -474,7 +474,7 @@ Mapping Applications
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | New   | Possibility to display coordinates in coordinate system WGS84 and CH1903                                                                      |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| New   | Possibility to search features within the layer "Protection of cultural property inventory" http://s.geo.admin.ch/9c6ae24                     |
+| New   | Possibility to search features within the layer "Protection of cultural property inventory" https://s.geo.admin.ch/9c6ae24                     |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | New   | Possibility to generate a QRCode from the permalink panel. Practical if you want to transfer what you see on the screen to you smartphone ;-) |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -501,7 +501,7 @@ Release 20120816 - Thursday, August 16th 2012
 Preview
 *******
 
-You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: http://api.geo.admin.ch/demo/re3.html
+You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: https://api.geo.admin.ch/demo/re3.html
 
 Geodata
 *******
@@ -514,14 +514,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 Bugfixing
@@ -575,7 +575,7 @@ Release 20120802 - Thursday, August 2nd 2012
 Preview
 *******
 
-You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: http://api.geo.admin.ch/demo/re3.html
+You are welcome to provide feedback/ideas about the layout preview of the future version of `map.geo.admin.ch <http://map.geo.admin.ch/>`__. Link to the preview: https://api.geo.admin.ch/demo/re3.html
 
 Geodata
 *******
@@ -588,14 +588,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -647,14 +647,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -666,7 +666,7 @@ API
 +-----+----------------------------------------------------------------------------------------+
 | New | Open tooltip on link to object when combined with GeoAdmin.ExtendedTooltip             |
 +-----+----------------------------------------------------------------------------------------+
-| New | Add panoramio example (http://api.geo.admin.ch/main/wsgi/doc/build/api/panoramio.html) |
+| New | Add panoramio example (https://api.geo.admin.ch/main/wsgi/doc/build/api/panoramio.html) |
 +-----+----------------------------------------------------------------------------------------+
 
 Bugfixing
@@ -754,14 +754,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -827,14 +827,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -846,7 +846,7 @@ API
 +--------+---------------------------------------------------------------------------------------+
 | New    | Support mobile parameter with permalink                                               |
 +--------+---------------------------------------------------------------------------------------+
-| New    | Add crossdomain.xml (for Flash and Flex) http://api.geo.admin.ch/crossdomain.xml      |
+| New    | Add crossdomain.xml (for Flash and Flex) https://api.geo.admin.ch/crossdomain.xml      |
 +--------+---------------------------------------------------------------------------------------+
 | New    | Add QRCode in the Context popup                                                       |
 +--------+---------------------------------------------------------------------------------------+
@@ -906,14 +906,14 @@ No changes.
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -925,7 +925,7 @@ API
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | SwissSearch Widget has been extended in order to support the attribute search                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | Extended Tooltip widget: allows the feature selection by rectangle and delivers information about the features. The currrent tooltip as usual is still working. `Example <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#extendedtooltip-with-box-selection>`__.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| New    | Extended Tooltip widget: allows the feature selection by rectangle and delivers information about the features. The currrent tooltip as usual is still working. `Example <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#extendedtooltip-with-box-selection>`__.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | Light API contains OpenLayers Popup                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -977,9 +977,9 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 Information
 ***********
@@ -1004,14 +1004,14 @@ Geodata
 
 Listing all publicly available layers of the Geoadmin API:
 
-- `List only <http://s.geo.admin.ch/5d5d40a>`__
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
-- `With Preview <http://s.geo.admin.ch/ebae1145>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 API
 ***
 
-`Desktop <http://api.geo.admin.ch>`__
+`Desktop <//api.geo.admin.ch>`__
 --------------------------------------
 
 .. raw:: html
@@ -1019,7 +1019,7 @@ API
    <p>
 
 +-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New       | Begin redesign the service: add a new service 'layers' (see doc http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers), to replace later the 'bodsearch' service |
+| New       | Begin redesign the service: add a new service 'layers' (see doc https://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#layers), to replace later the 'bodsearch' service |
 +-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Developer | KML add method refactoring                                                                                                                                                              |
 +-----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
