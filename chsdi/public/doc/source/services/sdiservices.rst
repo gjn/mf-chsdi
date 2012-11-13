@@ -488,9 +488,9 @@ GetCapabilities
 
 The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
-http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml or https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
 
-http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr or https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
 
 Parameters
 ^^^^^^^^^^
@@ -499,13 +499,14 @@ Only the RESTFul interface ist implemented. No KVP and SOAP.
 
 A request is in the form:
 
-    ``http://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
+    ``<protocol>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
 
 with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
+Protocol               http ou https                   
 ServerName             wmts[0-4].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
@@ -576,7 +577,7 @@ Result
 
 A tile.
 
-http://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
+http://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg or https://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg 
 
 Usage Example
 ^^^^^^^^^^^^^
@@ -797,7 +798,7 @@ A JSON content is sent back with the following content
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../../ogcproxy?url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
+           url: "../../../ogcproxy?url="+GeoAdmin.protocol+"//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",
