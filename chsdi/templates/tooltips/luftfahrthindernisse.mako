@@ -112,26 +112,26 @@
             <td style="text-align: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
         </tr>
         <tr>
-            <td><div id="${c.feature.id}" name="features" style="width=600px; height=400px;"></div></td>
+            <td><div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div></td>
         </tr>
     </table>
 % if c.last == True:
     <script type="text/javascript">
         var map;
         window.onload = function () {
-            var divs, format, map_list, url;
+            var tables, format, map_list, url;
             window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
             OpenLayers.Lang.setCode('de');
-            divs = document.getElementsByName('features');
+            tables = document.getElementsByTagName('table');
             format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
             map_list = []; 
             url = 'api.geo.admin.ch/features/';
 
-            for (var i=0; i<divs.length; i++) {
+            for (var i=0; i<tables.length; i++) {
                 var scriptProtocol = new OpenLayers.Protocol.Script({
-                    url: url + divs[i].id + '?layer=ch.bazl.luftfahrthindernis&cb=cb',
+                    url: url + tables[i].lastElementChild.lastElementChild.lastElementChild.lastElementChild.id + '?layer=ch.bazl.luftfahrthindernis&cb=cb',
                     callback: function(response) {
-                        var fid, div, layer, features, divMap, bounds, map, center;
+                        var fid, div, layer, features, divMap, navControl, bounds, map, center;
                         fid = response.data.features[0].id.toString();
                         div = document.getElementById(fid);
                         layer =  new OpenLayers.Layer.Vector('vector_luft', {
@@ -153,6 +153,7 @@
                         divMap = document.createElement('div');
                         divMap.setAttribute('id', 'divmap' + fid);
                         divMap.style.height = '400px';
+                        divMap.style.width = '600px';
                         div.appendChild(divMap);
         
                         bounds = new OpenLayers.Bounds(dico[fid]);
@@ -189,7 +190,7 @@
                 });
                 map_list.push(scriptProtocol);
             }
-            for (var i=0; i<divs.length; i++) {
+            for (var i=0; i<tables.length; i++) {
                 map_list[i].read();
             }
         }
