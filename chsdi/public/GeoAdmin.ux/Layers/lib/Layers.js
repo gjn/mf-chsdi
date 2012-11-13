@@ -15,6 +15,9 @@
 
 if (!window.GeoAdmin) {
     window.GeoAdmin = {};
+    if (!window.GeoAdmin.protocol) {
+        window.GeoAdmin.protocol = document.location.protocol;
+    }
 }
 
 // Overides needed due to the addition of KML layers. The second couldn't be removed.
