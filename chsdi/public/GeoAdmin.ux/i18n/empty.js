@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'org.epsg.grid_4326': "",
+    'org.epsg.grid_21781': "",
     'help_': "",
     'ch.bazl.luftfahrthindernis': "",
     'ch.bafu.schutzgebiete-luftfahrt': "",

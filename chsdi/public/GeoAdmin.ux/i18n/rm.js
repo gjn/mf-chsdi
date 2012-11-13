@@ -668,6 +668,8 @@ OpenLayers.Lang.rm= {
 	'oereb_bool':'ÖREB-Kataster',
 	'olive':'Olive',
 	'orange':'oransch',
+	'org.epsg.grid_21781':'Koordinatennetz CH1903/LV03',
+	'org.epsg.grid_4326':'Koordinatennetz WGS84',
 	'permalink action':'Integrar la charta',
 	'pink':'rosa',
 	'pleaseCheckALayerInTreeText':'Tscherni l\'emprim in u plirs nivels da la glista',

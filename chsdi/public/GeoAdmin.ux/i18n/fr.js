@@ -672,6 +672,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'oereb_bool':'Cadastre RDPPF',
 	'olive':'olive',
 	'orange':'orange',
+	'org.epsg.grid_21781':'Coordonnées CH1903/MN03',
+	'org.epsg.grid_4326':'Réseau de coordonnées WGS84',
 	'permalink action':'Lien',
 	'pink':'rose',
 	'pleaseCheckALayerInTreeText':'Veuillez cocher une ou plusieurs couches dans l\'arbre d\'abord.',

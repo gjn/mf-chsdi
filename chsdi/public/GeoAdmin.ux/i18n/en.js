@@ -672,6 +672,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'oereb_bool':'ÖREB-Kataster',
 	'olive':'olive',
 	'orange':'orange',
+	'org.epsg.grid_21781':'Coordinate grid CH1903/LV03',
+	'org.epsg.grid_4326':'Coordinate grid WGS84',
 	'permalink action':'Link',
 	'pink':'pink',
 	'pleaseCheckALayerInTreeText':'Select first one or more layers from the list',

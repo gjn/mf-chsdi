@@ -672,6 +672,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'oereb_bool':'Cadastre RDPPF',
 	'olive':'Oliva',
 	'orange':'Arancione',
+	'org.epsg.grid_21781':'Coordinate CH1903/MN03',
+	'org.epsg.grid_4326':'Coordinate WGS84',
 	'permalink action':'Link',
 	'pink':'Rosa',
 	'pleaseCheckALayerInTreeText':'Prego selezionare prima uno o più livelli dalla lista',

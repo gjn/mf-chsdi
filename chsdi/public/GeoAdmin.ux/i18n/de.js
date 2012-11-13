@@ -672,6 +672,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'oereb_bool':'ÖREB-Kataster',
 	'olive':'Olive',
 	'orange':'Orange',
+	'org.epsg.grid_21781':'Koordinatennetz CH1903/LV03',
+	'org.epsg.grid_4326':'Koordinatennetz WGS84',
 	'permalink action':'Karte einbinden',
 	'pink':'Rosa',
 	'pleaseCheckALayerInTreeText':'Wählen Sie zuerst eine oder mehrere Ebenen aus der Liste aus',
