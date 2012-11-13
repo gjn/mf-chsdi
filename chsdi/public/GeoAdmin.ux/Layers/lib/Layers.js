@@ -3180,7 +3180,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.swisstopo"
+                datenherr: "ch.swisstopo",
+                maxScale: 49999,
+                minScale: 100001
             },
             "org.epsg.grid_4326": {
                 name: OpenLayers.i18n("org.epsg.grid_4326"),
@@ -3188,7 +3190,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.swisstopo"
+                datenherr: "ch.swisstopo",
+                maxScale: 49999,
+                minScale: 100001
             }
         };
         return this.layers;
