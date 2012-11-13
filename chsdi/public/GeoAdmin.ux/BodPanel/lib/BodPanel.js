@@ -1,6 +1,7 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
 /**
+ * @requires GeoAdmin.js
  * @requires BodPanel/lib/BodDetailPanel.js
  * @requires BodPanel/lib/BodGrid.js
  */

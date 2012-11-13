@@ -1,4 +1,8 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
+/*
+ * @requires GeoAdmin.js
+ *
+ */
 
 Ext.namespace("GeoAdmin");
 

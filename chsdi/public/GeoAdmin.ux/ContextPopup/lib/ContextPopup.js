@@ -5,6 +5,7 @@
  * @requires OpenLayers/Projection.js
  *
  * @include GeoExt/widgets/Popup.js
+ * @requires GeoAdmin.js
  */
 
 /** api: (define)
