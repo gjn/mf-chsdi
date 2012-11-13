@@ -112,40 +112,85 @@
             <td style="text-align: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
         </tr>
         <tr>
-            <td><div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div></td>
+            <td><div id="${c.feature.id}" name="features" style="width=600px; height=400px;"></div></td>
         </tr>
     </table>
 % if c.last == True:
     <script type="text/javascript">
         var map;
         window.onload = function () {
+            var divs, format, map_list, url;
             window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
-            var divs = document.getElementsByClassName('features');
-            for (var i=0; i<divs.length; i++) {
-                var div = divs[i];
-                var fid = div.id;
-                
-                var divMap = document.createElement('div');
-                divMap.setAttribute('id', 'divmap' + fid);
-                divMap.style.height = '400px';
-                div.appendChild(divMap);
+            OpenLayers.Lang.setCode('de');
+            divs = document.getElementsByName('features');
+            format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
+            map_list = []; 
+            url = 'api.geo.admin.ch/features/';
 
-                var bounds = new OpenLayers.Bounds(dico[fid]);
-                map = new GeoAdmin.Map('divmap' + fid, { restrictedExtent: bounds });
-                map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 1});
-                map.addLayerByName('org.epsg.grid_21781');
-                map.addLayerByName('org.epsg.grid_4326');
-                map.addLayerByName('ch.bazl.luftfahrthindernis');
-                if (bounds.left === bounds.right) {
-                    var center = bounds.getCenterLonLat();
-                    map.setCenter(center, 6);
-                } else {
-                    map.zoomToExtent(bounds);
-                    // Object might be too small (default zoom set to 7)
-                    if (map.getZoom() > 6) {
-                        map.zoomTo(6)
-                    }
-                }
+            for (var i=0; i<divs.length; i++) {
+                var scriptProtocol = new OpenLayers.Protocol.Script({
+                    url: url + divs[i].id + '?layer=ch.bazl.luftfahrthindernis&cb=cb',
+                    callback: function(response) {
+                        var fid, div, layer, features, divMap, bounds, map, center;
+                        fid = response.data.features[0].id.toString();
+                        div = document.getElementById(fid);
+                        layer =  new OpenLayers.Layer.Vector('vector_luft', {
+                            displayInLayerSwitcher: false,
+                            styleMap: new OpenLayers.StyleMap({
+                                "default": new OpenLayers.Style({
+                                    pointRadius: "7",
+                                    fillColor: "#ffff80",
+                                    fillOpacity: 0.8,
+                                    strokeColor: "#feea00",
+                                    strokeOpacity: 1,
+                                    strokeWidth: 5
+                                })
+                            })
+                        });
+                        features = format.read(response.data.features[0]);
+                        layer.addFeatures(features);
+                        
+                        divMap = document.createElement('div');
+                        divMap.setAttribute('id', 'divmap' + fid);
+                        divMap.style.height = '400px';
+                        div.appendChild(divMap);
+        
+                        bounds = new OpenLayers.Bounds(dico[fid]);
+                        map = new GeoAdmin.Map('divmap' + fid, { 
+                            restrictedExtent: bounds
+                        });
+                        // Remove zoom control
+                        navControl = map.getControlsByClass('OpenLayers.Control.Navigation')[0];
+                        navControl.destroy();
+
+                        map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', {opacity: 1});
+                        map.addLayerByName('org.epsg.grid_21781');
+                        map.addLayerByName('org.epsg.grid_4326');
+                        map.addLayerByName('ch.bazl.luftfahrthindernis');
+        
+                        if (bounds.left === bounds.right) {
+                            center = bounds.getCenterLonLat();
+                            map.setCenter(center, 6);
+                        } else {
+                            map.zoomToExtent(bounds);
+                            // Object might be too small (default zoom set to 7)
+                            if (map.getZoom() > 6) {
+                                map.zoomTo(6);
+                            }
+                        }
+                        map.addLayer(layer);
+                        
+                    },
+                    callbackKey: 'cb',
+                    format: new OpenLayers.Format.JSON({
+                        nativeJSON: false
+                    }),
+                    scope: this
+                });
+                map_list.push(scriptProtocol);
+            }
+            for (var i=0; i<divs.length; i++) {
+                map_list[i].read();
             }
         }
     </script>

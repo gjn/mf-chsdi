@@ -57,7 +57,8 @@ class ZeitreihenController(BaseController):
             lat = float(lat)
         except:
             abort(400, "parameter 'northing' is not a number")
-
+        
+        # Manage scale dependent view
         mymodel = Zeitreihen_Metadata_15
         if c.scale > 50005 and c.scale <= 100005:
             mymodel =  Zeitreihen_Metadata_20
@@ -66,17 +67,20 @@ class ZeitreihenController(BaseController):
         if c.scale > 1 and c.scale <= 25005:
             mymodel =  Zeitreihen_Metadata_22
 
+        # Select only features having a bgdi_order = 1
         query = Session.query(mymodel)
         spatialFilter = mymodel.within_filter(lon, lat, column='the_geom')
         query = query.filter(spatialFilter)
-        query = query.order_by(mymodel.bgdi_order)
-        query = query.limit(1)
+        query = query.filter(mymodel.bgdi_order == 1)
 
         #Default timestamp
         timestamps = ['1938','1950','1960','1970','1980','1990','2000','2010']
 
         for f in query.all():
-            timestamps = f.release_year
+            timestamps = timestamps + f.release_year
+        
+        # Remove duplicate items
+        timestamps = list(set(timestamps))
 
         counter = 0
         for value in timestamps:
@@ -84,12 +88,12 @@ class ZeitreihenController(BaseController):
             counter = counter+1
 
         timestamps.sort()
-        if timestamps[0] != 19381231:
-            timestamps.append(19381231)
-        timestamps.sort()
-        if timestamps[len(timestamps)-1] != 20101231:
-            timestamps.append(20101231)
-        timestamps.sort()
+        #if timestamps[0] != 19381231:
+        #    timestamps.append(19381231)
+        #timestamps.sort()
+        #if timestamps[len(timestamps)-1] != 20101231:
+        #    timestamps.append(20101231)
+        #timestamps.sort()
 
         counter = 0
         for value in timestamps:
