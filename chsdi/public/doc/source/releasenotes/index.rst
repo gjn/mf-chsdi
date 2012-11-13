@@ -16,6 +16,10 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------+
 | Update | `Cadastral Web Map <http://s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)      |
 +--------+------------------------------------------------------------------------------------------------+
+| New    | `LV95 Dreiecksvermaschung`__ (ch.swisstopo.dreiecksvermaschung)                                |
++--------+------------------------------------------------------------------------------------------------+
+
+
 
 Listing all publicly available layers of the Geoadmin API:
 
