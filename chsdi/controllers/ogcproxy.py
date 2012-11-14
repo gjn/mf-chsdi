@@ -45,14 +45,13 @@ class OgcproxyController(BaseController):
 
         # get method
         method = request.method
-
         # get body
         body = None
         if method in ("POST", "PUT"):
             body = request.body
 
         # forward request to target (without Host Header)
-        http = httplib2.Http()
+        http = httplib2.Http(disable_ssl_certificate_validation=True)
         h = dict(request.headers)
         h.pop("Host", h)
         try:

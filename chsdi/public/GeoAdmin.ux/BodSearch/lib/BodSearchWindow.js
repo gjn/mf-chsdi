@@ -8,7 +8,7 @@
  */
 
 /** api: example
- *  Sample code to create a bod search window (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#>`_)
+ *  Sample code to create a bod search window (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#>`_)
  *
  *  .. code-block:: javascript
  *
@@ -20,7 +20,7 @@
 GeoAdmin.BodSearchWindow = {
 
     /** api: method[show]
-     *  :param id: ``String``: the layer id. The layer list can be found `here <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+     *  :param id: ``String``: the layer id. The layer list can be found `here <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *
      *  Show a layer metadata window
      */

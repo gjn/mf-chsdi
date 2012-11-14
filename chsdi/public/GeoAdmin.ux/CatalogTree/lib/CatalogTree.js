@@ -13,7 +13,7 @@
  */
 
 /** api: example
- *  Sample code to create a catalog tree (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#catalog-tree>`_):
+ *  Sample code to create a catalog tree (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#catalog-tree>`_):
  *
  *  .. code-block:: javascript
  *

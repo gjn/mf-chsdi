@@ -14,7 +14,7 @@ Ext.ns("GeoAdmin");
  */
 
 /** api: example
- *  Sample code to create a base layer tool (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#base-layer-tool>`_):
+ *  Sample code to create a base layer tool (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html#base-layer-tool>`_):
  *
  *  .. code-block:: javascript
  * 

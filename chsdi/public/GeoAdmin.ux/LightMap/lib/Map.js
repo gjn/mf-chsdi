@@ -35,7 +35,7 @@
  */
 
 /** api: example
- *  Sample code to create a map (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html>`_):
+ *  Sample code to create a map (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples1.html>`_):
  *  
  *  .. code-block:: javascript
  *
@@ -203,7 +203,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[getLayerByLayerName]
-     *  :param layername: ``String`` Layer name id. The layer list can be found `here <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+     *  :param layername: ``String`` Layer name id. The layer list can be found `here <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *
      *  :return: ``OpenLayers.Layer``
      *
@@ -277,7 +277,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[addLayerByName]
-     *  :param layername: ``String`` Layer name id. The layer list can be found `there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+     *  :param layername: ``String`` Layer name id. The layer list can be found `there <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *  :param options: ``Object`` Layer options (optional)
      *
      *  Add a layer overlay to the map.
@@ -351,7 +351,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     },
 
     /** api: method[switchComplementaryLayer]
-     *  :param layername: ``String`` Layer name id of the base layers. The complete layer list can be found `over there <http://api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
+     *  :param layername: ``String`` Layer name id of the base layers. The complete layer list can be found `over there <//api.geo.admin.ch/main/wsgi/doc/build/api/faq/index.html#which-layers-are-available>`_
      *  :param options: ``Object`` - Layer option (optional)
      *
      *  :return:  ``OpenLayers:Layer``

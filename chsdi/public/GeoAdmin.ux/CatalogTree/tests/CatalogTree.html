@@ -332,8 +332,7 @@
                 'id000': {},
                 'id001': {}
             }
-            return {
-                children: [{
+            return [{
                     text: '',
                     children: [{
                         text: '',
@@ -349,8 +348,7 @@
                 }, {
                     text: '',
                     children: [{}]
-                }]
-            };
+                }];
         }
         function tearDown() {
             GeoAdmin.layers.layers = null;
@@ -374,9 +372,9 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var tree = new GeoAdmin.CatalogTree(
-                {renderTo: "tree", map: map, root: root}
+                {renderTo: "tree", map: map, configCatalog: config}
             );
 
             // mocking getNodeText causes a js error in
@@ -416,10 +414,10 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: root,
+                configCatalog: config,
                 map: map
             });
 
@@ -455,10 +453,10 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: root,
+                configCatalog: config,
                 map: map
             });
 
@@ -493,10 +491,10 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: root,
+                configCatalog: config,
                 map: map
             });
 
@@ -570,10 +568,10 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: root,
+                configCatalog: config,
                 map: map
             });
 
@@ -648,10 +646,10 @@
                 return '';
             };
 
-            var root = setUp();
+            var config = setUp();
             var cat = new GeoAdmin.CatalogTree({
                 renderTo: "tree",
-                root: root,
+                configCatalog: config,
                 map: map
             });
 

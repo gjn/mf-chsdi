@@ -103,7 +103,7 @@ http://www.sogis1.so.ch/cgi-bin/sogis/sogis_ortho.wms (Canton Solothurn)
    <body onload="init();">
       <div id="mytreepanel4" style="float: left; margin:10px !important;width:285px;height: 340px;"></div>
       <div id="mymap4" style="float: left; width:450px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

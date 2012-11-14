@@ -7,6 +7,7 @@
  * @include GeoExt.ux/SimplePrint.js
  * @include GeoExt/data/PrintProvider.js
  * @include GeoExt/plugins/PrintPageField.js
+ * @requires GeoAdmin.js
  */
 
 

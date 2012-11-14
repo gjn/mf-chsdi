@@ -15,6 +15,9 @@
 
 if (!window.GeoAdmin) {
     window.GeoAdmin = {};
+    if (!window.GeoAdmin.protocol) {
+        window.GeoAdmin.protocol = document.location.protocol;
+    }
 }
 
 // Overides needed due to the addition of KML layers. The second couldn't be removed.
@@ -2204,7 +2207,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 timestamp: ['20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231','19531231','19521231','19511231','19501231','19491231','19481231','19471231','19461231','19451231','19441231','19431231','19421231','19411231','19401231','19391231','19381231'],
                 type: "raster",
-                format: "image/png",
+                format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true,
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
@@ -3180,7 +3183,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.swisstopo"
+                datenherr: "ch.swisstopo",
+                maxScale: 49999,
+                minScale: 100001
             },
             "org.epsg.grid_4326": {
                 name: OpenLayers.i18n("org.epsg.grid_4326"),
@@ -3188,7 +3193,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: "wms",
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.swisstopo"
+                datenherr: "ch.swisstopo",
+                maxScale: 49999,
+                minScale: 100001
             }
         };
         return this.layers;

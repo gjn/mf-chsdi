@@ -52,7 +52,7 @@ Marker
    </script>
    <body onload="init();">
      <div id="mymap6" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -97,7 +97,7 @@ Custom marker
    </script>
    <body onload="init();">
      <div id="mymap7" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -132,7 +132,7 @@ BOD Search
    </script>
    <body onload="init();">
      <div id="mysearch8" style="width:300px;height:30px;margin:10px;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -170,7 +170,7 @@ Map with Swissimage
    </script>
    <body onload="init();">
      <div id="mymap9" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -219,7 +219,7 @@ Base layer tool
    <body onload="init();">
       <div id="baselayertool10" style="display: none; visibility: hidden; margin:10px !important;"></div>
       <div id="mymap10" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

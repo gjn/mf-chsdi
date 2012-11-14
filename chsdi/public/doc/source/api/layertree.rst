@@ -62,7 +62,7 @@ more detailed informations on the layers and the legend.
      <body onload="init();">
          <div id="mylayertree" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
          <div id="mymap" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-         <script type="text/javascript" src="../../..//loader.js"></script>
+         <script type="text/javascript" src="../../../loader.js"></script>
      </body>    
 
 .. raw:: html
@@ -86,6 +86,6 @@ more detailed informations on the layers and the legend.
                  }
        </script>
           <body onload="init();">
-          <script type="text/javascript" src="../../..//loader.js"></script>
+          <script type="text/javascript" src="../../../loader.js"></script>
        </body>
    

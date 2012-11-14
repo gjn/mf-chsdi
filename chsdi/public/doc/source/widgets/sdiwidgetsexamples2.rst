@@ -60,7 +60,7 @@ Layer Tree
    <body onload="init();">
       <div id="mylayertree6" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
       <div id="mymap6" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -93,7 +93,7 @@ Tooltip (deprecated)
          map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
          map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
          var tooltip = new GeoAdmin.Tooltip({
-             baseUrl: 'http://map.geo.admin.ch',
+             baseUrl: GeoAdmin.protocol + '//map.geo.admin.ch',
              autoActivate: true
          });
 
@@ -102,7 +102,7 @@ Tooltip (deprecated)
    </script>
    <body onload="init();">
       <div id="mymap7" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -142,7 +142,7 @@ ExtendedTooltip Single Click
    </script>
    <body onload="init();">
       <div id="mymap8" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -186,7 +186,7 @@ ExtendedTooltip With Box Selection
    </script>
    <body onload="init();">
       <div id="mymap9" style="float: left; width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -225,7 +225,7 @@ Catalog Tree
    <body onload="init();">
       <div id="mycatalogtree10" style="float: left; margin:10px !important;width:280px;"></div>
       <div id="mymap10" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -266,7 +266,7 @@ Mouse Position
    <body onload="init();">
       <div id="mymap11" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="mymouseposition11" style="margin:10px !important;height:25px"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -307,7 +307,7 @@ Navigation History
    <body onload="init();">
       <div id="mynavigationhistory12" style="margin:10px !important;"></div>
       <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -342,7 +342,7 @@ Navigation History
          map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
          map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
          var tooltip = new GeoAdmin.Tooltip({
-             baseUrl: 'http://map.geo.admin.ch', 
+             baseUrl: GeoAdmin.protocol + '//map.geo.admin.ch', 
              autoActivate: true, 
              box: true,
              handlerOptions: {

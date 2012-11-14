@@ -1,5 +1,5 @@
-Light API Examples (BETA)
-=========================
+Light API Examples
+==================
 
 .. toctree::
     :maxdepth: 1

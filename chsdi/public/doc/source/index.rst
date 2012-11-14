@@ -68,7 +68,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
    </script>
    <body onload="init();">
      <div id="mymap1" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-     <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+     <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -80,7 +80,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
     <div class="warning"i style="background-color: #ffffff; padding: 5px; border: 1px solid black;">
     <img src="_static/warning.png" style="float: left; margin: 10px;" />
 
-The API and all services, must be used exclusively in HTTP context. The only exception is the WMTS service which supports HTTP and HTTPS protocol. Though most layers are freely accessible, a `swisstopo web access <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_ is required. For a list of all available layers and their accessibility please refer to the `FAQ <api/faq/index.html#which-layers-are-available>`_.
+The GeoAdmin API and all GeoAdmin services can be used in HTTPS context. Though most layers are freely accessible, a `swisstopo web access <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_ is required. For a list of all available layers and their accessibility please refer to the `FAQ <api/faq/index.html#which-layers-are-available>`_.
 
 .. raw:: html
 

@@ -44,6 +44,8 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
 
         this.displayField = 'title';
 
+        this.emptyText = OpenLayers.i18n('Choose a topic');
+
         this.on('select', function (combo, record, index) {
             var state, i, len, layername;
             this.map.vector.removeAllFeatures();

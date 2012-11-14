@@ -5,6 +5,7 @@
  * @requires OpenLayers/Projection.js
  *
  * @include GeoExt/widgets/Popup.js
+ * @requires GeoAdmin.js
  */
 
 /** api: (define)
@@ -14,7 +15,7 @@
  */
 
 /** api: example
- *  Sample code to create a context popup (click with right mouse button) (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#context-popup>`_)
+ *  Sample code to create a context popup (click with right mouse button) (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#context-popup>`_)
  *
  *  .. code-block:: javascript
  *

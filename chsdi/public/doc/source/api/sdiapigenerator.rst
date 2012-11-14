@@ -267,7 +267,7 @@ Please read the terms of use and register before using the GeoAdmin API: http://
             code = code + separator;
         }
         if (htmlSeparator) {
-            code = code + '  <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"><\/script>';
+            code = code + '  <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"><\/script>';
         } else {
             if (forPublication) {
                 code = code + '  <script type="text/javascript" src="loader.js"><\/script>';

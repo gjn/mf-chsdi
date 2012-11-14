@@ -36,7 +36,7 @@ to check for the existence of an address.
 URL
 ^^^
 
-http://api.geo.admin.ch/swisssearch/geocoding
+https://api.geo.admin.ch/swisssearch/geocoding
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -68,14 +68,14 @@ Services in use:
 
 Examples:
 
-- Toponymy: `http://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex <../../../swisssearch/geocoding?lang=fr&query=maisonnex>`_
-- Postcode: `http://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw <../../../swisssearch/geocoding?query=1290&format=raw>`_
-- Addresses: `http://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw <../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
-- Addresses with EGID: `http://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
-- Addresses with city number: `http://api.geo.admin.ch/swisssearch/geocoding?bfsnr=5514&query=saug <../../../swisssearch/geocoding?bfsnr=5514&query=saug>`_ 
-- Search only swissnames: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
-- Search for addresses without the geometry: `http://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
-- Search for a feature within a layer: `http://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a>`_
+- Toponymy: `https://api.geo.admin.ch/swisssearch/geocoding?lang=fr&query=maisonnex <../../../swisssearch/geocoding?lang=fr&query=maisonnex>`_
+- Postcode: `https://api.geo.admin.ch/swisssearch/geocoding?query=1290&format=raw <../../../swisssearch/geocoding?query=1290&format=raw>`_
+- Addresses: `https://api.geo.admin.ch/swisssearch/geocoding?query=dorfstr&format=raw <../../../swisssearch/geocoding?query=dorfstr&format=raw>`_
+- Addresses with EGID: `https://api.geo.admin.ch/swisssearch/geocoding?egid=867194 <../../../swisssearch/geocoding?egid=867194>`_
+- Addresses with city number: `https://api.geo.admin.ch/swisssearch/geocoding?bfsnr=5514&query=saug <../../../swisssearch/geocoding?bfsnr=5514&query=saug>`_ 
+- Search only swissnames: `https://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
+- Search for addresses without the geometry: `https://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
+- Search for a feature within a layer: `https://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a>`_
 
 Note: In French, search for "leopold robert", not only for "robert"
 
@@ -101,7 +101,7 @@ Swisssearch reverse geocoding allows the user to search for swiss locations, lik
 URL
 ^^^
 
-http://api.geo.admin.ch/swisssearch/reversegeocoding
+https://api.geo.admin.ch/swisssearch/reversegeocoding
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -123,10 +123,10 @@ The service returns a maximum of 50 results.
 
 Examples:
 
-- Look for everything from the point location within a default radius of 10 m: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
-- Look for communes and postcode within 2 a radius of 2km: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
-- Look for communes within a radius of 500 m and returns all the properties: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw>`_ 
-- Same than above but without the geometries: `http://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true>`_
+- Look for everything from the point location within a default radius of 10 m: `https://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965 <../../../swisssearch/reversegeocoding?easting=606163&northing=199965>`_
+- Look for communes and postcode within 2 a radius of 2km: `https://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes <../../../swisssearch/reversegeocoding?easting=606748&northing=125460&lang=de&tolerance=2000&services=cities,postalcodes>`_
+- Look for communes within a radius of 500 m and returns all the properties: `https://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw>`_ 
+- Same than above but without the geometries: `https://api.geo.admin.ch/swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true <../../../swisssearch/reversegeocoding?easting=606163&northing=199965&services=cities&tolerance=500&format=raw&no_geom=true>`_
 
 Result
 ^^^^^^
@@ -150,7 +150,7 @@ This service allows to search for a feature ID stored in the spatial data infras
 URL
 ^^^
 
-http://api.geo.admin.ch/feature/[id]
+https://api.geo.admin.ch/feature/[id]
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -163,7 +163,7 @@ The following parameters are required:
 - format (optional): per default, it returns GeoJSON. 'html' returns all the properties in HTML format. 
 
 
-Example: `http://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback <../../../feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback>`_
+Example: `https://api.geo.admin.ch/feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback <../../../feature/6644?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -179,7 +179,7 @@ This service allows to search within the feature stored in the spatial data infr
 URL
 ^^^
 
-http://api.geo.admin.ch/feature/search
+https://api.geo.admin.ch/feature/search
 
 Input parameters
 ^^^^^^^^^^^^^^^^ 
@@ -194,7 +194,7 @@ The following parameters are required:
 - format (optional): GeoJSON format returned by the services. Per default, it returns HTML content. 'raw' returns all the properties in GeoJSON format. 
 - no_geom (optional): defines if the geometry is returned. 'true' means that the geometry is sent back. 'false' means that only the bbox is sent back. Default: False
 
-Example: `http://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback <../../../feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback>`_
+Example: `https://api.geo.admin.ch/feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback <../../../feature/search?lang=en&layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill&bbox=592725%2C209304.998016%2C595975%2C212554.998016&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -209,7 +209,7 @@ This service allows to obtain the bbox of the searched features.
 URL
 ^^^
 
-http://api.geo.admin.ch/feature/bbox
+https://api.geo.admin.ch/feature/bbox
 
 Input parameters
 ^^^^^^^^^^^^^^^^ 
@@ -221,7 +221,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback function
 
-Example: `http://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
+Example: `https://api.geo.admin.ch/feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/bbox?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -236,7 +236,7 @@ This service allows to obtain the geometry of the searched features.
 URL
 ^^^
 
-http://api.geo.admin.ch/feature/geometry
+https://api.geo.admin.ch/feature/geometry
 
 Input parameters
 ^^^^^^^^^^^^^^^^ 
@@ -248,7 +248,7 @@ The following parameters are required:
 - ids: comma separated list of feature id
 - cb (optional): the name of the callback funtion
 
-Example: `http://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
+Example: `https://api.geo.admin.ch/feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback <../../../feature/geometry?layer=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill&ids=6644&cb=Ext.ux.JSONP.callback>`_
 
 Result
 ^^^^^^
@@ -263,8 +263,8 @@ This service allows to obtain diverse information about the layers in the bod.
 URL
 ^^^
 
-http://api.geo.admin.ch/layers
-http://api.geo.admin.ch/layers/{id} or http://api.geo.admin.ch/layers/{id},{id},{id}  (a comma creates a list of layers)
+https://api.geo.admin.ch/layers
+https://api.geo.admin.ch/layers/{id} or https://api.geo.admin.ch/layers/{id},{id},{id}  (a comma creates a list of layers)
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -294,14 +294,14 @@ The following parameters are required:
 
 Examples:
 
-- `http://api.geo.admin.ch/layers <../../../layers>`_: returns all the layers available with all their properties
-- `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography <../../../layers/ch.swisstopo.vec200-hydrography>`_ : returns all the available information about this layer
-- `http://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung <../../../layers?query=wasser&properties=kurzbezeichnung>`_: returns all the layers where the query string wasser is found
-- `http://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb <../../../layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb>`_: returns the legend of the layer in a callback
-- `http://api.geo.admin.ch/layers?mode=wmts <../../../layers?mode=wmts>`_: returns a GetCapabilities document
-- `http://api.geo.admin.ch/layers?mode=preview <../../../layers?mode=preview>`_ list all layers of map.geo.admin.ch in preview mode
-- `http://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200 <../../../layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200>`_: returns a set of syncronized maps filtered with the query string lac
-- `http://api.geo.admin.ch/layers?project=api-notfree <../../../layers?project=api-notfree>`_: returns all the layers that require a swisstopo web access
+- `https://api.geo.admin.ch/layers <../../../layers>`_: returns all the layers available with all their properties
+- `https://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography <../../../layers/ch.swisstopo.vec200-hydrography>`_ : returns all the available information about this layer
+- `https://api.geo.admin.ch/layers?query=wasser&properties=kurzbezeichnung <../../../layers?query=wasser&properties=kurzbezeichnung>`_: returns all the layers where the query string wasser is found
+- `https://api.geo.admin.ch/layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb <../../../layers/ch.swisstopo.vec200-hydrography?mode=legend&cb=cb>`_: returns the legend of the layer in a callback
+- `https://api.geo.admin.ch/layers?mode=wmts <../../../layers?mode=wmts>`_: returns a GetCapabilities document
+- `https://api.geo.admin.ch/layers?mode=preview <../../../layers?mode=preview>`_ list all layers of map.geo.admin.ch in preview mode
+- `https://api.geo.admin.ch/layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200 <../../../layers?mode=preview&query=lac&lang=fr&width=400&zoom=1&lat=188274.99908&lon=652200>`_: returns a set of syncronized maps filtered with the query string lac
+- `https://api.geo.admin.ch/layers?project=api-notfree <../../../layers?project=api-notfree>`_: returns all the layers that require a swisstopo web access
 
 Profile.json
 ------------
@@ -311,7 +311,7 @@ This service allows to obtain elevation information for a polyline. **Note: this
 URL
 ^^^
 
-http://api.geo.admin.ch/profile.json
+https://api.geo.admin.ch/profile.json
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -324,7 +324,7 @@ The following parameters are required:
 - cb (optional): the name of the callback funtion
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
 
-Example: `http://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+Example: `https://api.geo.admin.ch/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
 Result
 ^^^^^^
@@ -344,7 +344,7 @@ This service allows to obtain elevation information for a polyline in CSV format
 URL
 ^^^
 
-http://api.geo.admin.ch/profile.csv
+https://api.geo.admin.ch/profile.csv
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -356,7 +356,7 @@ The following parameters are required:
 - nb_points (optional): number of points used for the polyline segmentization. Default: 200
 - offset (optional): offset value (int) for using the exponential moving average algorithm (http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average). For a given value, the offset value specify the number of values before and after used to calculate the average.
 
-Example: `http://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+Example: `https://api.geo.admin.ch/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
 Result
 ^^^^^^
@@ -371,7 +371,7 @@ This service allows to obtain elevation information for a point. **Note: this se
 URL
 ^^^
 
-http://api.geo.admin.ch/height
+https://api.geo.admin.ch/height
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -383,7 +383,7 @@ The following parameters are required:
 - elevation_model (optional): elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2). Default: DTM25
 - cb (optional): the name of the callback funtion
 
-Example: `http://api.geo.admin.ch/height?easting=600000&northing=200000 <../../../height?easting=600000&northing=200000>`_
+Example: `https://api.geo.admin.ch/height?easting=600000&northing=200000 <../../../height?easting=600000&northing=200000>`_
 
 Result
 ^^^^^^
@@ -398,7 +398,7 @@ This service allows to shorten an URL.
 URL
 ^^^
 
-http://api.geo.admin.ch/shorten
+https://api.geo.admin.ch/shorten
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -409,12 +409,12 @@ The following parameter is required:
 
 **Note: Only url from domain admin.ch are supported.**
 
-Example: `http://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
+Example: `https://api.geo.admin.ch/shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten?url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
 
 Result
 ^^^^^^
 
-The short link (for example: http://s.geo.admin.ch/0baf08b)
+The short link (for example: https://s.geo.admin.ch/0baf08b)
 
 Shorten.json
 ------------
@@ -424,7 +424,7 @@ This service allows to shorten an URL.
 URL
 ^^^
 
-http://api.geo.admin.ch/shorten.json
+https://api.geo.admin.ch/shorten.json
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -436,7 +436,7 @@ The following parameter is required:
 
 **Note: Only url from domain admin.ch are supported.**
 
-Example: `http://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
+Example: `https://api.geo.admin.ch/shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den <../../../shorten.json?cb=callback&url=http%3A%2F%2Fmap.geo.admin.ch%2F%3FY%3D660000%26X%3D190000%26zoom%3D1%26bgLayer%3Dch.swisstopo.pixelkarte-farbe%26lang%3Den>`_
 
 Result
 ^^^^^^
@@ -451,14 +451,14 @@ This service allows to decode a shortened URL identified by 7 characters.
 URL
 ^^^
 
-http://api.geo.admin.ch/shorten/[id]
+https://api.geo.admin.ch/shorten/[id]
 
 Input parameters
 ^^^^^^^^^^^^^^^^
 
 No input parameters
 
-Example: `http://api.geo.admin.ch/shorten/6a9bc34 <../../../shorten/6a9bc34>`_
+Example: `https://api.geo.admin.ch/shorten/6a9bc34 <../../../shorten/6a9bc34>`_
 
 Result
 ^^^^^^
@@ -488,9 +488,9 @@ GetCapabilities
 
 The GetCapabilites document provides informations on the service, along with layer description, both in german and french.
 
-http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml or https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml
 
-http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
+http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr or https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr
 
 Parameters
 ^^^^^^^^^^
@@ -499,16 +499,17 @@ Only the RESTFul interface ist implemented. No KVP and SOAP.
 
 A request is in the form:
 
-    ``http://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
+    ``<protocol>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>``
 
 with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
+Protocol               http ou https                   
 ServerName             wmts[0-4].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
-Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
+Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
 StyleName              default                         mostly constant
 Time                   2010, 2010-01                   Date of tile generation in (ISO-8601). Some dataset will be updated quite often.
 TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
@@ -576,7 +577,7 @@ Result
 
 A tile.
 
-http://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
+http://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg or https://wmts1.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg 
 
 Usage Example
 ^^^^^^^^^^^^^
@@ -616,7 +617,7 @@ Usage Example
    function init() {
 
 
-       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
+       OpenLayers.ImgPath = GeoAdmin.protocol + "//map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
        var format = new OpenLayers.Format.WMTSCapabilities({
 
@@ -691,7 +692,7 @@ Usage Example
       <a href="javascript:geolocate()" style="padding: 0 0 0 0;margin:10px !important;">
                       Click here to center the map at your current location</a>
       <div id="mymap1" style="width:800px;height:600px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html
@@ -708,7 +709,7 @@ GcSearch (Geocat Search) allows the user to access the layers stored in GeoCat.
 URL
 ^^^
 
-http://api.geo.admin.ch/main/wsgi/gcsearch/search
+https://api.geo.admin.ch/main/wsgi/gcsearch/search
 
 Input parameters
 ^^^^^^^^^^^^^^^^
@@ -720,7 +721,7 @@ The following parameters are required:
 - cb: (optional) the name of the callback function (JSON or JSONP)
 - keyword: the word to look for in the abstract of the layer
 
-Examples: http://api.geo.admin.ch/main/wsgi/gcsearch/search?query=wasser&lang=de&keyword=wasser
+Examples: https://api.geo.admin.ch/main/wsgi/gcsearch/search?query=wasser&lang=de&keyword=wasser
 
 Result
 ^^^^^^
@@ -768,7 +769,7 @@ A JSON content is sent back with the following content
    function init() {
 
 
-       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
+       OpenLayers.ImgPath = GeoAdmin.protocol + "//map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
        var format = new OpenLayers.Format.WMTSCapabilities({
 
@@ -790,14 +791,14 @@ A JSON content is sent back with the following content
        });
 
        var voidLayer = new OpenLayers.Layer.WMS("pk (wms)",
-               "http://wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
+               GeoAdmin.protocol + "//wms.geo.admin.ch/", {'format':'jpeg', 'layers':  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale'}, {'buffer':1,  isBaseLayer:true, singleTile: true, opacity:0.0, displayInLayerSwitcher: false
        });
 
 
        map.addLayers([voidLayer]);
 
        OpenLayers.Request.GET({
-           url: "../../../ogcproxy?url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
+           url: "../../../ogcproxy?url="+GeoAdmin.protocol+"//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr",
            params: {
                SERVICE: "WMTS",
                VERSION: "1.0.0",

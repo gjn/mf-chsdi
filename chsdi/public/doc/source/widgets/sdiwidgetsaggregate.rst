@@ -61,7 +61,7 @@ This example presents a combination of WMS and WMTS layers.
    <body onload="init();">
       <div id="mylayertree6" style="float: left;margin:10px !important;width:285px;height: 340px;"></div>
       <div id="mymap6" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <script type="text/javascript" src="http://api.geo.admin.ch/loader.js"></script>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
 .. raw:: html

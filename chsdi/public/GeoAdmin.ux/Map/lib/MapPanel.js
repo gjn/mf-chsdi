@@ -11,7 +11,7 @@
  */
 
 /** api: example
- *  Sample code to create a map panel (see also `demo <http://api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#map-panel>`_):
+ *  Sample code to create a map panel (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples3.html#map-panel>`_):
  *
  *
  *  .. code-block:: javascript
