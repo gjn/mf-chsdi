@@ -1,8 +1,9 @@
 if (!window.GeoAdmin) {
     window.GeoAdmin = {};
-    if (!window.GeoAdmin.protocol) {
-       window.GeoAdmin.protocol = document.location.protocol;
-    }
+}
+
+if (!window.GeoAdmin.protocol) {
+    window.GeoAdmin.protocol = document.location.protocol;
 }
 
 // the tests, and possibly other stuff, don't load Ext, so
