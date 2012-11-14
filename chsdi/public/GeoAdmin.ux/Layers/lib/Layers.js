@@ -2508,7 +2508,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 	         type: "polygon", 	 
 	         format: "image/png", 	 
 	         datenherr: "ch.blw", 	 
-	         opacity: 0.75, 	 
+	         opacity: 0.75
 	    },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
