@@ -38,7 +38,11 @@ RewriteCond %{QUERY_STRING} format=(json|csv)
 RewriteRule ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/profile.json [PT,QSA]
 
 # Main entry point
-RedirectMatch ^${vars:apache-entry-point}$ /${vars:instanceid}/wsgi/doc/build/
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^${vars:apache-entry-point}$ http://%{SERVER_NAME}/${vars:instanceid}/wsgi/doc/build/ [R=302,L]
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteRule ^${vars:apache-entry-point}$ https://%{SERVER_NAME}/${vars:instanceid}/wsgi/doc/build/ [R=302,L]
+
 
 # non cached urls:
 RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
