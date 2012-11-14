@@ -1,25 +1,19 @@
-Release 2012MMDD - wekday, month dayth 2012 
-=============================================
-
-When adding stuff
-- use keywords 'New', 'Update', 'Fixed', 'Removed', 'Developer'
-- final layout will be done by deployer
-- anyhow, if you want to do tables, use rst table creator/fixer for vi here: http://www.vim.org/scripts/script.php?script_id=3777
+Release 20121114 - Wednesday, November 14th 2012 
+================================================
 
 Geodata
 ********
 
----> add geodata stuff here
 
-+--------+--------------------------------------------------------------------------------------+
-| Update | `Spannungsarme Gebiete <//s.geo.admin.ch/6bef8eb0>`__                                |
-+--------+--------------------------------------------------------------------------------------+
-| Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe) |
-+--------+--------------------------------------------------------------------------------------+
-| New    | `LV95 Dreiecksvermaschung`__ (ch.swisstopo.dreiecksvermaschung)                      |
-+--------+--------------------------------------------------------------------------------------+
-
-
++--------+------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//s.geo.admin.ch/214a91a2>`__ (ch.swisstopo-vd.spannungsarme-gebiete)          |
++--------+------------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)                 |
++--------+------------------------------------------------------------------------------------------------------+
+| Update | `Dry grasslands <//s.geo.admin.ch/1f35401d>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden) |
++--------+------------------------------------------------------------------------------------------------------+
+| New    | `LV95 Triangular Network <//s.geo.admin.ch/b0e6e7a8>`__ (ch.swisstopo.dreiecksvermaschung)           |
++--------+------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
@@ -33,12 +27,25 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
----> add desktop api stuff here
+
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | All release notes are now available online: `Release notes <//s.geo.admin.ch/d3db5ddf>`__                                                                                                                  |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | GeoAdmin API will support HTTPS. This release contains preparatory work to support HTTP and HTTPS.                                                                                                         |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | CatalogTree widget contains now a configCatalog parameter which allow the creation of custom tree                                                                                                          |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | New read only layers_timestamp parameter. This allows the creation of permalink containing layer with defined timestamps. Per default, the last timestamp is used. `Example <//s.geo.admin.ch/816336d1>`__ |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | Height and profile services can use a new COMB model combining DTM2 and DTM25. `Documentation <//s.geo.admin.ch/336ee070>`__                                                                               |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
 
----> add mobile api stuff here
+Bugfixing.
 
 Mapping Applications
 ********************
@@ -46,24 +53,22 @@ Mapping Applications
 `map.geo.admin.ch <http://map.geo.admin.ch>`__
 --------------------------------------------------
 
----> add desktop map.geo stuff here
+map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
 
 `mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 -----------------------------------------------------------
 
----> add mobile mag.geo stuff here
+Bugfixing.
 
 Other Applications
 ******************
 
----> add other public application stuff here
-
+Minor bug fixes, documentation and translation improvements.
 
 Information
 ***********
 The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
 
----> add special information here
 
 Release 20121030 - Tuesday, October 30th 2012 
 =============================================
