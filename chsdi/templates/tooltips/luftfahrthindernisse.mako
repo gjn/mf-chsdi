@@ -3,6 +3,7 @@
 <%def name="preview()">${c.feature.registrationnumber or '-'}</%def>
 
 <%def name="table_body()">
+
 % if c.feature.sanctiontext == 'VOID':
 <% sanctiontext = '-' %>
 % else:
@@ -122,14 +123,14 @@
             var tables, format, map_list, url;
             window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
             OpenLayers.Lang.setCode('de');
-            tables = document.getElementsByTagName('table');
+            tables = document.querySelectorAll('div.features');
             format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
             map_list = []; 
             url = 'api.geo.admin.ch/features/';
 
             for (var i=0; i<tables.length; i++) {
                 var scriptProtocol = new OpenLayers.Protocol.Script({
-                    url: url + tables[i].lastElementChild.lastElementChild.lastElementChild.lastElementChild.id + '?layer=ch.bazl.luftfahrthindernis&cb=cb',
+                    url: url + tables[i].id + '?layer=ch.bazl.luftfahrthindernis&cb=cb',
                     callback: function(response) {
                         var fid, div, layer, features, divMap, navControl, bounds, map, center;
                         fid = response.data.features[0].id.toString();
