@@ -167,7 +167,7 @@ Here is a list of all the freely accessible layers:
                 for (layerKey in layerArray_free) {
                     var layer =  layerArray_free[layerKey];
                     if (typeof(layer) != 'function') {
-                        myInnerHtml_free = myInnerHtml_free + '<tr><th>' + i.toString() + '</th><th><a href="//map.geo.admin.ch/?layers=' +
+                        myInnerHtml_free = myInnerHtml_free + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
                                       layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
                     i = i+1;
                     }
@@ -200,7 +200,7 @@ Here is a list of all the freely accessible layers:
                 for (layerKey in layerArray_notfree) {
                     var layer =  layerArray_notfree[layerKey];
                     if (typeof(layer) != 'function') {
-                        myInnerHtml_notfree = myInnerHtml_notfree + '<tr><th>' + i.toString() + '</th><th><a href="//map.geo.admin.ch/?layers=' +
+                        myInnerHtml_notfree = myInnerHtml_notfree + '<tr><th>' + i.toString() + '</th><th><a href="http://map.geo.admin.ch/?layers=' +
                                       layer[0] + '" target="new"> ' + layer[0] + '</a>&nbsp('+layer[1]+')</th></tr>';
                     i = i+1;
                     }
@@ -224,35 +224,35 @@ What mean the permalink parameters ?
 ===================            ==========================================================    =========================================================
 Parameter                      Description                                                    Example
 ===================            ==========================================================    =========================================================
-lang                           Language of the interface: de, fr, it, rm or en               https://map.geo.admin.ch?lang=rm
-zoom                           Zoom level, from 0 to 13                                      https://map.geo.admin.ch?zoom=12
-scale                          Scale                                                         https://map.geo.admin.ch?scale=100000
-Y                              easting value (from 450'000 to                                https://map.geo.admin.ch?Y=600000
+lang                           Language of the interface: de, fr, it, rm or en               http://map.geo.admin.ch?lang=rm
+zoom                           Zoom level, from 0 to 13                                      http://map.geo.admin.ch?zoom=12
+scale                          Scale                                                         http://map.geo.admin.ch?scale=100000
+Y                              easting value (from 450'000 to                                http://map.geo.admin.ch?Y=600000
                                900'000)
-X                              northing value, ranging from 50'000 to                        https://map.geo.admin.ch?X=150000
+X                              northing value, ranging from 50'000 to                        http://map.geo.admin.ch?X=150000
                                350'000 (always smaller than Y)
-bgOpacity                      Opacity of national map covering the                          https://map.geo.admin.ch?bgOpacity=0.1
+bgOpacity                      Opacity of national map covering the                          http://map.geo.admin.ch?bgOpacity=0.1
                                underlaying image (0 to 1)
-bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           https://map.geo.admin.ch?bgLayer=voidLayer
+bgLayer                        Base layer: one of `ch.swisstopo.pixelkarte-farbe`,           http://map.geo.admin.ch?bgLayer=voidLayer
                                `ch.swisstopo.pixelkarte-farbe` or `voidLayer`
-layers                         Layer to display, see :ref:`available_layers`                 `https://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7C
+layers                         Layer to display, see :ref:`available_layers`                 `http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7C
                                for a complete list                                           http%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geo
                                KML layers are supported with a || separated list with:       logie-geophysik-geothermie,ch.ensi.zonenplan-notfallschut
                                KML||kml url                                                  z-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admi
                                WMS layers are supported with a || separated list with:       n.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_ea
-                               WMS||layer title||wms url||layer name                         rth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml <//map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml>`_
-layers_opacity                 Layers opaciy, should match number of layers (0-1.0)          https://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_opacity=0.5
-layers_visibility              Toggle the visibility of layers present in the tree           `https://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&l
-                                                                                             ayers_visibility=False <//map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_visibility=False>`_
-layers_timestamp               Layers timestamps.                                            https://map.geo.admin.ch/?layers=ch.kantone.cadastralwebmap-farbe&layers_timestamp=20120501
+                               WMS||layer title||wms url||layer name                         rth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml <http://map.geo.admin.ch/?layers=WMS%7C%7CGeothermie%7C%7Chttp%3A%2F%2Fwms.geo.admin.ch%2F%3F%7C%7Cch.swisstopo.geologie-geophysik-geothermie,ch.ensi.zonenplan-notfallschutz-kernanlagen,KML%7C%7Chttp%3A%2F%2Fwww.meteoschweiz.admin.ch%2Fweb%2Fde%2Fklima%2Fmesssysteme%2Fboden%2Fgoogle_earth.Par.0007.DownloadFile.ext.tmp%2Fobs.kml>`_
+layers_opacity                 Layers opaciy, should match number of layers (0-1.0)          http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_opacity=0.5
+layers_visibility              Toggle the visibility of layers present in the tree           `http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&l
+                                                                                             ayers_visibility=False <http://map.geo.admin.ch?layers=ch.swisstopo.hiks-dufour&layers_visibility=False>`_
+layers_timestamp               Layers timestamps.                                            http://map.geo.admin.ch/?layers=ch.kantone.cadastralwebmap-farbe&layers_timestamp=20120501
                                Only for WMS and WMTS services.
                                This parameter is only read and is never set.
-selectedNode                   Selected node in INSPIRE Catalog tree                         https://map.geo.admin.ch?selectedNode=LT2_3
-<layer bod id>                 Layer bod id (:ref:`available_layers`) from which             https://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
+selectedNode                   Selected node in INSPIRE Catalog tree                         http://map.geo.admin.ch?selectedNode=LT2_3
+<layer bod id>                 Layer bod id (:ref:`available_layers`) from which             http://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
                                to highlight feature(s) with id                               
-crosshair                      crosshair=<type>, possible type: cross, circle, bowl and      https://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
+crosshair                      crosshair=<type>, possible type: cross, circle, bowl and      http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
                                point                                                         
-swisssearch                    swisssearch=<query string>                                    https://map.geo.admin.ch?swisssearch=berges%2037%20payerne 
+swisssearch                    swisssearch=<query string>                                    http://map.geo.admin.ch?swisssearch=berges%2037%20payerne 
 ===================            ==========================================================    =========================================================
 
 How can I define the language ?

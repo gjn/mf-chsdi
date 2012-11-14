@@ -522,7 +522,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
                         for (i=0;i<elem;i++) {
                             if (portals[i]=="mf-geoadmin2") {
                                  apiPortal = '<a href="' + (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') +  '//api.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
-                                 geoPortal = '<a href="' + (GeoAdmin.protocol ? GeoAdmin.protocol : 'http:') +   + '//map.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
+                                 geoPortal = '<a href="http://map.geo.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
                             } else if (portals[i]=="mf-are2") {
                                  arePortal = '<a href="http://map.are.admin.ch" target="_blank"> <img border="0" height="16" style="border:none;" src="' + chLogo + '"/></a> ';
                             } else if (portals[i]=="mf-bafu") {

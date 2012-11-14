@@ -93,7 +93,7 @@ Tooltip (deprecated)
          map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
          map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
          var tooltip = new GeoAdmin.Tooltip({
-             baseUrl: GeoAdmin.protocol + '//map.geo.admin.ch',
+             baseUrl: 'http://map.geo.admin.ch',
              autoActivate: true
          });
 
@@ -342,7 +342,7 @@ Navigation History
          map7 = new GeoAdmin.Map("mymap7", {doZoomToMaxExtent: true});
          map7.addLayerByName("ch.swisstopo.pixelkarte-pk25.metadata");
          var tooltip = new GeoAdmin.Tooltip({
-             baseUrl: GeoAdmin.protocol + '//map.geo.admin.ch', 
+             baseUrl: 'http://map.geo.admin.ch', 
              autoActivate: true, 
              box: true,
              handlerOptions: {

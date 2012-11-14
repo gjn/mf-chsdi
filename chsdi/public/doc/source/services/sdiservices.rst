@@ -617,7 +617,7 @@ Usage Example
    function init() {
 
 
-       OpenLayers.ImgPath = GeoAdmin.protocol + "//map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
+       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
        var format = new OpenLayers.Format.WMTSCapabilities({
 
@@ -769,7 +769,7 @@ A JSON content is sent back with the following content
    function init() {
 
 
-       OpenLayers.ImgPath = GeoAdmin.protocol + "//map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
+       OpenLayers.ImgPath = "http://map.geo.admin.ch/main/wsgi/lib/GeoAdmin.ux/Map/img/";
 
        var format = new OpenLayers.Format.WMTSCapabilities({
 
