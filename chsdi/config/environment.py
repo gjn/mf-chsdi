@@ -57,5 +57,6 @@ def load_environment(global_conf, app_conf):
     init_model('bak', engine_from_config(config, 'sqlalchemy.bak.', pool_recycle = 55))
     init_model('zeitreihen', engine_from_config(config, 'sqlalchemy.zeitreihen.', pool_recycle = 55))
     init_model('clientdata', engine_from_config(config, 'sqlalchemy.clientdata.', pool_recycle = 55))
+    init_model('evd', engine_from_config(config, 'sqlalchemy.evd.', pool_recycle = 55))
 
     return config
