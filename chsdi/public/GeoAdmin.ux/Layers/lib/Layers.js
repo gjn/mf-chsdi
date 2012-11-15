@@ -706,8 +706,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bfe",
                 queryable: true,
-				opacity: 0.75,				
-				type: "point"
+                opacity: 0.75,				
+                type: "point"
             },
             "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
                 name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
@@ -2499,7 +2499,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
-                opacity: 0.75,
+                opacity: 0.75
             },
             "ch.blw.erosion-mit_bergzonen": { 	 
 	         name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"), 	 
@@ -2508,7 +2508,7 @@ GeoAdmin._Layers = OpenLayers.Class({
 	         type: "polygon", 	 
 	         format: "image/png", 	 
 	         datenherr: "ch.blw", 	 
-	         opacity: 0.75, 	 
+	         opacity: 0.75
 	    },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
@@ -3082,9 +3082,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: false,
-				serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
-				},
-			"ch.bazl.points-of-interest": {
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
+            },
+            "ch.bazl.points-of-interest": {
                 name: OpenLayers.i18n("ch.bazl.points-of-interest"),
                 layertype: 'wmts',
                 timestamp: ['20120829'],
@@ -3092,8 +3092,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: false,
-				serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
-				},
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
+            },
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
@@ -3151,32 +3151,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: false,
                 opacity: 0.75
             },
-//            'ch.bazl.heliports-gebirgslandeplaetze': {
-//                name: OpenLayers.i18n('ch.bazl.heliports-gebirgslandeplaetze'),
-//                layertype: 'wmts',
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.bazl",
-//                queryable: false
-//            },
-//            'ch.bazl.points-of-interest': {
-//                name: OpenLayers.i18n('ch.bazl.points-of-interest'),
-//                layertype: 'wmts',
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.bazl",
-//                queryable: false
-//            }
-              'ch.bag.zecken-lyme': {
-                  name: OpenLayers.i18n('ch.bag.zecken-lyme'),
-                  layertype: 'wmts',
-                  timestamp: ['20110613'],
-                  type: "polygon",
-                  format: "image/png",
-                  datenherr: "ch.bag",
-                  opacity: 0.75,
-                  queryable: false
-              },
+            'ch.bag.zecken-lyme': {
+                name: OpenLayers.i18n('ch.bag.zecken-lyme'),
+                layertype: 'wmts',
+                timestamp: ['20110613'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bag",
+                opacity: 0.75,
+                queryable: false
+            },
             "org.epsg.grid_21781": {
                 name: OpenLayers.i18n("org.epsg.grid_21781"),
                 layers: ["org.epsg.grid_21781"],
