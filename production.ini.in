@@ -35,6 +35,7 @@ sqlalchemy.dritte.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:db
 sqlalchemy.bak.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bak
 sqlalchemy.zeitreihen.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/zeitreihen
 sqlalchemy.clientdata.url = postgresql://www-data:www-data@db1.bgdi.admin.ch:5432/clientdata
+sqlalchemy.evd.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/evd
 
 dtm_path = /var/www/mf-chsdi/private/data/profile/
 data_path = /var/local/cartoweb/

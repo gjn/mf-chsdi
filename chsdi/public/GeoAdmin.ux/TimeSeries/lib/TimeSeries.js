@@ -155,7 +155,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             state: {
                 // Written by handler on tab change
                 activeTab: this.state.activeTab,
-                animationSlider: this.animationSlider ? this.animationSlider.getYear() : this.state.animationSlider,
+                animationSlider: this.animationSlider ? this.findTimestampNoLaterThan(this.animationSlider.getYear()) : this.state.animationSlider,
                 compareSliderMin: this.compareSliderMin ? this.compareSliderMin.getYear() : this.state.compareSliderMin,
                 compareSliderMax: this.compareSliderMax ? this.compareSliderMax.getYear() : this.state.compareSliderMax,
                 // Written by handler on slider change
