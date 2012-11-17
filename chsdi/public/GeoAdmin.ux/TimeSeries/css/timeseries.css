@@ -129,17 +129,23 @@
     
     margin-bottom:6px;
 }
-.timeseriesWidget-controls-left {
+.timeseriesWidget-controls-left, .timeseriesWidget-controls-right {
     display:inline-block;
     width:200px;
-    text-align:right;
     vertical-align:top;
     padding: 1px 0;
 }
 .timeseriesWidget-controls-center {
     display:inline-block;
-    /** width of .timeseriesWidget-controls-left */
-    padding-right:200px;
+}
+.timeseriesWidget-loading {
+    vertical-align: middle;
+}
+.timeseriesWidget-preload-status-loading {
+    background: url("../img/ajax-loader.gif") no-repeat scroll 2px center transparent;
+    padding-left: 20px;
+    text-align: left;
+    width: 180px;
 }
 
 .timeseriesWidget-slider {

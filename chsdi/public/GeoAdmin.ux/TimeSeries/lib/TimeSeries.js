@@ -93,6 +93,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     // TODO Remove when proof of concept is no longer needed
     easings: null,
     
+    /** private: property[preloadingDone]
+     * ``Boolean`` True when enough frames have been loaded to start the animation
+     */
+    preloadingDone: false,
+    
     initComponent: function(){
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
         // Make sure state gets restored
@@ -145,6 +150,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         }, this);
         playDirectionHolder.child('input[value="'+this.state.playDirection+'"]').dom.checked = true;
+        
+        /**
+         * Gets triggered when enough frames have been loaded to start animation
+         */
+        this.addEvents('preloadingDone');
     },
     
     /** api: method[getState]
@@ -170,25 +180,73 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  Starts or stops the animation
      */
     playPause: function(){
+        var timeseriesWidget = this;
         var playButtonImage = Ext.get(this.contentEl).child('.play').dom;
+        
+        var preloadStatus = Ext.get(timeseriesWidget.contentEl).child('.timeseriesWidget-preload-status');
+        /**
+         * Displays a text in the lower right of the widget
+         * @param {String} textContent Text to display
+         */
+        preloadStatus.setTextContent = function(textContent){
+            if(typeof(this.dom.textContent)==="string"){
+                this.dom.textContent = textContent;
+            } else {
+                // IE
+                this.dom.innerText = textContent;
+            }
+            this.setStyle({
+                visibility: "visible"
+            });
+        }
+        preloadStatus.removeClass("timeseriesWidget-preload-status-loading");
+        preloadStatus.setStyle({
+            visibility: "hidden"
+        });
+        
         if(this.animationIsPlaying){
             // Pause animation
             window.clearInterval(this.animationTimer);
             this.animationTimer = null;
-            this.animationState.pause();
             console.log("paused by click");
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
             playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
+            this.animationIsPlaying = false;
         } else {
-            this.initAnimationState();
             // Play / Resume
-            this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection==="backwards");
-            this.setAnimationTimer();
-            console.log("resumed by click");
+            if(timeseriesWidget.preloadingDone===false){
+                // Wait for preloading to finish
+                preloadStatus.addClass("timeseriesWidget-preload-status-loading");
+                preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
+                timeseriesWidget.on("preloadingDone", function(){
+                    preloadStatus.setStyle({
+                        visibility: "hidden"
+                    });
+                    // Clean up timers
+                    timeseriesWidget.playPause();
+                    // Start a new animation
+                    timeseriesWidget.playPause();
+                });
+            } else {
+                // Try to start animation
+                this.initAnimationState(function(animationState){
+                    if(animationState===null){
+                        preloadStatus.setTextContent(OpenLayers.i18n("Failed to load animation"));
+                    } else {
+                        timeseriesWidget.animationState = animationState;
+                        
+                        // Play / Resume
+                        timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
+                        timeseriesWidget.setAnimationTimer();
+                        console.log("resumed by click");
+                    }
+                });
+            }
             playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
             playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
+            
+            timeseriesWidget.animationIsPlaying = true;
         }
-        this.animationIsPlaying = !this.animationIsPlaying;
     },
     
     /** private: method[setAnimationTimer]
@@ -217,13 +275,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         
         var state = this.animationState.getStateRatio(timeseriesWidget.state.playDirection==="backwards");
         var foreground = getLayer(state.foreground);
-        if(!foreground){
+        if(!foreground || foreground.loading){
             // Load foreground layer if not yet there and wait for it to complete loading
             map.addLayerByName(this.layerName, {
-                timestamp: state.foreground
+                timestamp: state.foreground,
+                opacity: 0
             });
             foreground = getLayer(state.foreground);
-            foreground.setVisibility(false);
             
             clearInterval(this.animationTimer);
             this.animationTimer = null;
@@ -231,7 +289,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             function resume(){
                 foreground.events.unregister('loadend', this, resume);
                 foreground.setOpacity(0);
-                foreground.setVisibility(true);
                 // Continue with animation, now that all tiles are loaded
                 this.animationState.recordStart();
                 if(this.animationIsPlaying){
@@ -243,12 +300,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             foreground.events.register('loadend', this, resume);
             return;
         }
-        foreground.setZIndex(101);
+  
         var background = getLayer(state.background);
-        if(background){
-            background.setOpacity(1);
-            background.setZIndex(100);
-        }
+      
         
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
         map.layers.forEach(function(layer){
@@ -267,7 +321,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         } else {
             // Make foreground fully opaque since animation is now waiting for the next fade to be due
             foreground.setOpacity(1);
-            // Get rid of no longer needed layers
+            /*
+             * One could get rid of no longer needed layers.
+             * Current OpenLayers versions mess up the layers' z-index when any layer is removed unless a base layer is set.
+             */
             if(background){
                 for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
                     var layer = map.layers[layerIter];
@@ -276,6 +333,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                 }
             }
+        }
+        foreground.setZIndex(101);
+        if(background){
+            background.setOpacity(1);
+            background.setZIndex(100);
         }
         
         // Update slider but only when needed to keep reflows low
@@ -303,141 +365,146 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     },
     
     /** private: method[getAnimationPeriods]
-     * :return: ``Array.<String>`` List of timestamps that are to be shown in animation
+     * :param onCompletion: ``Function`` Called when available timestamps are known and receives list of timestamps that are to be shown in animation (``Array.<String>``). The list is ``undefined`` however if gathering the available timestamps failed.
      */
-    getAnimationPeriods: function(){
-        // TODO Use final value once proof of concept is no longer needed
-        var selectPresentedPeriods = document.getElementById("presentedPeriods");
-        this.presentedPeriods = parseInt(selectPresentedPeriods.options[selectPresentedPeriods.selectedIndex].value, 10);
-        
-        // Limit the displayed periods to given number of periods (but keep earliest, selected and most recent year visible)
-        var periods = [this.timestamps[0]];
-        var animationSliderYear = this.animationSlider.getYear();
-        var numForcedSteps = 2;
-        if(animationSliderYear===this.minYear || animationSliderYear===this.maxYear){
-            numForcedSteps = numForcedSteps + 1;
+    getAnimationPeriods: function(onCompletion){
+        var timeseriesWidget = this;
+        window.geoAdminTimeSeriesGetAnimationPeriodsCallback = function geoAdminTimeSeriesGetAnimationPeriodsCallback(timestamps){
+            var animationSliderTimestamp = timeseriesWidget.animationSlider.getYear()*1e4;
+            onCompletion(timestamps);
+        };
+        var mapCenter = map.getCenter();
+        var documentHead = document.getElementsByTagName("head")[0];
+        var jsonpRequester = document.createElement("script");
+        jsonpRequester.type = "text/javascript";
+        // URI of service providing the animation timestamps
+        jsonpRequester.src = GeoAdmin.webServicesUrl+"/zeitreihen?scale="+encodeURIComponent(Math.round(map.getScale()))+"&easting="+encodeURIComponent(mapCenter.lon)+"&northing="+encodeURIComponent(mapCenter.lat)+"&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
+        function discardRequester(){
+            documentHead.removeChild(jsonpRequester);
+            delete window.geoAdminTimeSeriesGetAnimationPeriodsCallback;
         }
-        var stepLength = Math.floor((this.maxYear - this.minYear) / (this.presentedPeriods - numForcedSteps) );
-        for(var timestampYear = this.minYear+stepLength; timestampYear<animationSliderYear; timestampYear = timestampYear + stepLength){
-            periods.push(this.findTimestampNoLaterThan(timestampYear));
-        }
-        periods.push(this.findTimestampNoLaterThan(animationSliderYear));
-        for(var timestampYear = animationSliderYear+stepLength; timestampYear<this.maxYear; timestampYear = timestampYear + stepLength){
-            periods.push(this.findTimestampNoLaterThan(timestampYear));
-        }
-        periods.push(this.timestamps[this.timestamps.length-1]);
-        
-        return periods;
+        jsonpRequester.onload = discardRequester;
+        jsonpRequester.onerror = function(){
+            discardRequester();
+            onCompletion();
+        };
+        documentHead.appendChild(jsonpRequester);
     },
     
     /** private: method[initAnimationState]
      * Initializes object that manages states of animation
+     * :param onCompletion: ``Function`` Called when available timestamps are known and receives animation state model. The model is ``null`` however if gathering the available timestamps failed.
      */
-    initAnimationState: function(){
+    initAnimationState: function(onCompletion){
         // TODO Use final values once proof of concept is no longer needed
         var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
         var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
         
-        var periods = this.getAnimationPeriods();
-        
-        /*
-         * The state of the animation is derived purely from the time elapsed since animation start.
-         */
-        this.animationState = new (function AnimationStates(fadeTime, transitionTime, periods){
-            var periodsLength = periods.length;
-            var totalAnimationDuration = periodsLength*transitionTime+(periodsLength-1)*fadeTime;
-            
-            var start = new Date().getTime();
-            var pauseStart;
-            this.recordStart = function recordStart(){
-                if(pauseStart===undefined){
-                    start = new Date().getTime();
-                } else {
-                    start = start + (new Date().getTime()-pauseStart);
-                }
-            };
-            this.pause = function(){
-                pauseStart = new Date().getTime();
-            };
-            function getTotalOffset(){
-                return new Date().getTime()-start;
+        this.getAnimationPeriods(function(periods){
+            if(!(periods instanceof Array)){
+                // Report failure to get timestamps of animation
+                onCompletion(null);
+            } else {
+                /*
+                * The state of the animation is derived purely from the time elapsed since animation start.
+                */
+                onCompletion(new (function AnimationStates(fadeTime, transitionTime, periods){
+                    var periodsLength = periods.length;
+                    var totalAnimationDuration = periodsLength*transitionTime+(periodsLength-1)*fadeTime;
+                    
+                    var start = new Date().getTime();
+                    var pauseStart;
+                    this.recordStart = function recordStart(){
+                        if(pauseStart===undefined){
+                            start = new Date().getTime();
+                        } else {
+                            start = start + (new Date().getTime()-pauseStart);
+                        }
+                    };
+                    this.pause = function(){
+                        pauseStart = new Date().getTime();
+                    };
+                    function getTotalOffset(){
+                        return new Date().getTime()-start;
+                    }
+                    /**
+                    * @param {boolean} reverse Whether to get state for forwards or backwards playing animation
+                    * @return {object}
+                    */
+                    this.getStateRatio = function getStateRatio(reverse){
+                        var totalOffset = getTotalOffset();
+                        // Limit offset to period length in case of loops
+                        var offset = totalOffset % totalAnimationDuration;
+                        var isLastState;
+                        if(reverse){
+                            offset = totalAnimationDuration - offset;
+                            isLastState = totalOffset===0;
+                        } else {
+                            isLastState = totalOffset>0 && offset===0;
+                        }
+                        var overlayOffset = offset % (fadeTime+transitionTime);
+                        var ratio;
+                        if(overlayOffset<=transitionTime){
+                            state = "transitioning";
+                            ratio = overlayOffset/transitionTime;
+                        } else {
+                            state = "fading";
+                            ratio = (overlayOffset-transitionTime)/fadeTime;
+                        }
+                        if(isLastState){
+                            ratio = 1;
+                        }
+                        var foreground = isLastState ? periodsLength-1 : Math.floor(offset/(transitionTime+fadeTime)) + (((offset % (transitionTime+fadeTime)) <= transitionTime) ? 0 : 1);
+                        state = (offset % (transitionTime+fadeTime)) <= transitionTime ? "transitioning" : "fading";
+                        var background = periods[(reverse && state==="fading") ? foreground : (foreground-1)];
+                        foreground = periods[(reverse && state==="fading") ? (foreground - 1) : foreground];
+                        ratio = reverse ? 1 - ratio : ratio;
+                        return {
+                            foreground: foreground,
+                            background: background,
+                            state: state,
+                            ratio: ratio,
+                            // Interpolated year (interpolated in between the visualized timestamps being currently faded)
+                            year: (state==="transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio)
+                        };
+                    };
+                    
+                    /**
+                    * Adjust internally recorded time to match up with given year
+                    * @param {Number} targetYear Year that is displayed / State to which to push animation
+                    * @param {boolean} reverse
+                    */
+                    this.setYear = function setYear(targetYear, reverse){
+                        var offset = transitionTime;
+                        if(reverse===false){
+                            for(var i=0; i<periods.length; i++){
+                                var year = this.yearFromTimestamp(periods[i]);
+                                if(year<targetYear){
+                                    offset = offset + fadeTime + transitionTime;
+                                }
+                            }
+                        } else {
+                            for(var i=periods.length-1; i>=0; i--){
+                                var year = this.yearFromTimestamp(periods[i]);
+                                if(targetYear<year){
+                                    offset = offset + fadeTime + transitionTime;
+                                }
+                            }
+                        }
+                        start = new Date().getTime()-offset;
+                    };
+                    
+                    this.interpolateYears = function(from, to, ratio){
+                        var fromYear = this.yearFromTimestamp(from);
+                        var toYear = this.yearFromTimestamp(to);
+                        return Math.floor(fromYear + (toYear - fromYear)*ratio);
+                    };
+                    this.yearFromTimestamp = function(timestamp){
+                        return parseInt(timestamp.substring(0, 4), 10);
+                    };
+                })(fadeTime, transitionTime, periods));
             }
-            /**
-             * @param {boolean} reverse Whether to get state for forwards or backwards playing animation
-             * @return {object}
-             */
-            this.getStateRatio = function getStateRatio(reverse){
-                var totalOffset = getTotalOffset();
-                // Limit offset to period length in case of loops
-                var offset = totalOffset % totalAnimationDuration;
-                var isLastState;
-                if(reverse){
-                    offset = totalAnimationDuration - offset;
-                    isLastState = totalOffset===0;
-                } else {
-                    isLastState = totalOffset>0 && offset===0;
-                }
-                var overlayOffset = offset % (fadeTime+transitionTime);
-                var ratio;
-                if(overlayOffset<=transitionTime){
-                    state = "transitioning";
-                    ratio = overlayOffset/transitionTime;
-                } else {
-                    state = "fading";
-                    ratio = (overlayOffset-transitionTime)/fadeTime;
-                }
-                if(isLastState){
-                    ratio = 1;
-                }
-                var foreground = isLastState ? periodsLength-1 : Math.floor(offset/(transitionTime+fadeTime)) + (((offset % (transitionTime+fadeTime)) <= transitionTime) ? 0 : 1);
-                state = (offset % (transitionTime+fadeTime)) <= transitionTime ? "transitioning" : "fading";
-                var background = periods[(reverse && state==="fading") ? foreground : (foreground-1)];
-                foreground = periods[(reverse && state==="fading") ? (foreground - 1) : foreground];
-                ratio = reverse ? 1 - ratio : ratio;
-                return {
-                    foreground: foreground,
-                    background: background,
-                    state: state,
-                    ratio: ratio,
-                    // Interpolated year (interpolated in between the visualized timestamps being currently faded)
-                    year: (state==="transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio)
-                };
-            };
-            
-            /**
-             * Adjust internally recorded time to match up with given year
-             * @param {Number} targetYear Year that is displayed / State to which to push animation
-             * @param {boolean} reverse
-             */
-            this.setYear = function setYear(targetYear, reverse){
-                var offset = transitionTime;
-                if(reverse===false){
-                    for(var i=0; i<periods.length; i++){
-                        var year = this.yearFromTimestamp(periods[i]);
-                        if(year<targetYear){
-                            offset = offset + fadeTime + transitionTime;
-                        }
-                    }
-                } else {
-                    for(var i=periods.length-1; i>=0; i--){
-                        var year = this.yearFromTimestamp(periods[i]);
-                        if(targetYear<year){
-                            offset = offset + fadeTime + transitionTime;
-                        }
-                    }
-                }
-                start = new Date().getTime()-offset;
-            };
-            
-            this.interpolateYears = function(from, to, ratio){
-                var fromYear = this.yearFromTimestamp(from);
-                var toYear = this.yearFromTimestamp(to);
-                return Math.floor(fromYear + (toYear - fromYear)*ratio);
-            };
-            this.yearFromTimestamp = function(timestamp){
-                return parseInt(timestamp.substring(0, 4), 10);
-            };
-        })(fadeTime, transitionTime, periods);
+        });
     },
     
     /** private: method[getInitialAnimationYear]
@@ -500,7 +567,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Moving sliders does only affect map after a delay because otherwise the DOM would need to be restructured a lot and pointless requests would be initiated
             var sliderChangeDelay = 500;
             
-            var animationPeriods;
             function changeAnimationSlider(){
                 var year = timeseriesWidget.animationSlider.getYear();
                 if(timeseriesWidget.animationIsPlaying){
@@ -516,31 +582,67 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timeseriesWidget.addLayers([timestamp], []);
 
                     // Preload upcoming frames one after the other
-                    animationPeriods = timeseriesWidget.getAnimationPeriods();
-                    var shownLayer = map.layers.filter(function(layer){
-                        return layer.name=timeseriesWidget.layerName && layer.timestamp===timestamp;
-                    })[0];
-                    shownLayer.events.register("loadend", timeseriesWidget, function(){
-                        var indexOfShown = animationPeriods.indexOf(timestamp);
-                        var lowPrio = animationPeriods.splice(0, indexOfShown);
-                        lowPrio.forEach(function(preloadTimestamp){
-                            animationPeriods.push(preloadTimestamp);
+                    timeseriesWidget.getAnimationPeriods(function(animationPeriods){
+                        if(!(animationPeriods instanceof Array)){
+                            // Failed to get periods from server, don't proceed with preloading
+                            return;
+                        }
+                        
+                        // Create a clone of the list and sort it so that it contains the timestamps in ascending upcoming order
+                        animationPeriods = animationPeriods.slice(0).sort(function(a, b){
+                            if(a<timestamp && b>timestamp){
+                                // Everything that comes after the currently shown timestamp comes later in result
+                                return 1;
+                            }
+                            return a-b;
                         });
-                        console.log("animationPeriods: "+animationPeriods);
+                        var shownLayer = map.layers.filter(function(layer){
+                            return layer.name=timeseriesWidget.layerName && layer.timestamp===timestamp;
+                        })[0];
+                        if(shownLayer.loading){
+                            // Preload once currently shown layer is loaded
+                            shownLayer.events.register("loadend", timeseriesWidget, function(){
+                                var indexOfShown = animationPeriods.indexOf(timestamp);
+                                var lowPrio = animationPeriods.splice(0, indexOfShown);
+                                lowPrio.forEach(function(preloadTimestamp){
+                                    animationPeriods.push(preloadTimestamp);
+                                });
+                                console.log("animationPeriods: "+animationPeriods);
+                                delayedPreload(1);
+                            });
+                        } else {
+                            // Preload immediately because currently shown layer is already loaded
+                            delayedPreload(1);
+                        }
                         function delayedPreload(timestampIndex){
                             if(timestampIndex<animationPeriods.length-1){
                                 var preloadTimestamp = animationPeriods[timestampIndex];
-                                console.log("Preloading "+preloadTimestamp);
+                                console.log(timestampIndex+". Preloading "+preloadTimestamp);
                                 var layer = map.addLayerByName(timeseriesWidget.layerName, {
-                                    timestamp: preloadTimestamp
+                                    timestamp: preloadTimestamp,
+                                    opacity: 0
                                 });
-                                layer.setVisibility(false);
-                                layer.events.register("loadend", timeseriesWidget, function(){
+                                function layerPreloaded(){
+                                    layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
+                                    
+                                    // TODO Use final value once proof of concept is no longer needed
+                                    var selectPreloadedFramesRequired = document.getElementById("preloadedFramesRequired");
+                                    var preloadedFramesRequired = parseInt(selectPreloadedFramesRequired.options[selectPreloadedFramesRequired.selectedIndex].value, 10);
+                                    
+                                    if(timestampIndex===preloadedFramesRequired){
+                                        timeseriesWidget.preloadingDone = true;
+                                        console.log("Enough preloading done");
+                                        timeseriesWidget.fireEvent("preloadingDone");
+                                    }
                                     delayedPreload(timestampIndex + 1);
-                                });
+                                }
+                                layer.events.register("loadend", timeseriesWidget, layerPreloaded);
+                            } else if(timeseriesWidget.preloadingDone===false) {
+                                // Trigger preloadingDone when all frame are loaded
+                                timeseriesWidget.preloadingDone = true;
+                                timeseriesWidget.fireEvent("preloadingDone");
                             }
                         }
-                        delayedPreload(1);
                     });
                 }, sliderChangeDelay);
                 
@@ -666,7 +768,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 firstAddedLayer.events.unregister('loadend', this, discard);
             }
             pendingForDiscard.forEach(function(layer){
-                if(!(layer instanceof OpenLayers.Layer.Vector) && map.layers.indexOf(layer)>=0){
+                if(!(layer instanceof OpenLayers.Layer.Vector) && map.layers.indexOf(layer)>=0 && layer.layername!=="voidLayer"){
                     map.removeLayer(layer);
                 }
             });
