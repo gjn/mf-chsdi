@@ -28,11 +28,17 @@
     }
     .tooltip_large_header {
         margin-left: 7px !important;
-    } 
+    }
+    table {
+        border: 1px solid black; 
+    }
+    #ux-lightbox-overlay {
+        height: 5000px !important;
+    }
 </style>
-<div style="height: auto;">
+<div id="main_div" style="height: auto;">
 % else:
-<div style="height: auto; page-break-after: always;">
+<div id="main_div" style="height: auto; page-break-after: always;">
 % endif
 
 % if c.first == True:
@@ -46,10 +52,14 @@
 % endif
 
 <% objektart = c.feature.objektart.split(',') %>
-<table border="0" cellspacing="10" cellpadding="5" width="100%" style="font-size: 100%;" padding="1 1 1 1">
+% if c.last == True:
+<table border="0" cellspacing="15" cellpadding="15" width="100%" style="font-size: 100%; margin-bottom: 10px;" padding="1 1 1 1">
+% else:
+<table border="0" cellspacing="15" cellpadding="15" width="100%" style="font-size: 100%;" padding="1 1 1 1">
+% endif
      <tr>
-         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('name')}:</td>
-         <td style="width: 300px; float: left;">${c.feature.zkob or '-'}</td>
+         <td style="width: 300px; font-weight: bold; font-size: 14px; vertical-align: top; color: #660099;">${_('name')}:</td>
+         <td style="width: 300px; font-weight: bold; float: left; color: #660099; font-size: 14px;">${c.feature.zkob or '-'}</td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('kategorie')}:</td>
@@ -82,7 +92,7 @@
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
-         <td style="width: 300px; float: left;"><div style="margin-left: -313px;">${c.feature.kurztexte or ''}</div></td>
+         <td style="width: 300px; float: left; text-align: justify;"><div style="margin-left: -309px;">${c.feature.kurztexte or ''}</div></td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;"></td>
