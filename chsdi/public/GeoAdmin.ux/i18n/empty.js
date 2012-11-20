@@ -290,6 +290,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.are.gemeindetyp-1990-9klassen':"",
     'ch.astra.ausnahmetransportrouten':"",
     'ch.astra.ivs-nat':"",
+    'ch.astra.ivs-nat-verlaeufe':"",
     'ch.astra.ivs-reg_loc' :"",
     'ch.astra.ivs-nat_abgrenzungen' :"",
     'ch.astra.ivs-nat_wegbegleiter' :"",
