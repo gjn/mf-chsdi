@@ -1,7 +1,7 @@
-.x-window-print-tool {
+.x-window-print-tool, .x-window-export_all-tool {
     float: right;
     margin-right: 10px;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .x-window-header {
@@ -142,4 +142,8 @@ a.tooltip_red_link:visited:hover, a.tooltip_red_link:hover {
 
 .geoadmin-click-tooltip .x-tip-bwrap {
     margin-top: -15px !important;
+}
+
+div.x-window-export_all-tool:hover, div.x-window-print-tool:hover {
+    color: red;
 }
