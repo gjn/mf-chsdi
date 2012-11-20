@@ -6,6 +6,13 @@
         <meta content="text/html" charset="utf-8" http-equiv="Content-Type">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
         <link href="/${c.api_version}/${c.instanceid}/wsgi/build/api.css" type="text/css" rel="stylesheet">
+        <style>
+        @media print
+            {
+                .tooltip_black_border { border: none; }
+            }            
+        </style>
+
     </head>
     <body>
     <div class="tooltip_black_border">
