@@ -168,6 +168,7 @@ class Luftfahrthindernis(Base, Queryable):
     __tablename__ = 'luftfahrthindernis'
     __table_args__ = ({'schema': 'bazl', 'autoload': True})
     __template__ = 'tooltips/luftfahrthindernisse.mako'
+    __extended_info__ = True
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
