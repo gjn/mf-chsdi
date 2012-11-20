@@ -778,16 +778,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-//            "ch.swisstopo.koordinatenaenderung": {
-//                name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
-//                layertype: 'wmts',
-//                timestamp: ['20061231'],
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.swisstopo",
-//                hasLegend: false,
-//                queryable: false
-//            },
+            "ch.swisstopo.koordinatenaenderung": {
+                name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
+                layertype: 'wmts',
+                timestamp: ['20061231'],
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                hasLegend: false,
+                queryable: false
+            },
 //            "ch.swisstopo.transformationsgenauigkeit": {
 //                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
 //                layertype: 'wmts',

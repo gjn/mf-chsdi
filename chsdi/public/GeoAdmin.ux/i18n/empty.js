@@ -169,6 +169,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.gg25-kanton-flaeche.fill':"",
     'ch.swisstopo.gg25-bezirk-flaeche.fill':"",
     'ch.swisstopo.gg25-gemeinde-flaeche.fill':"",
+    'ch.swisstopo.koordinatenaenderung':"",
     'ch.swisstopo.vec200-adminboundaries-protectedarea':"",
     'ch.swisstopo.vec200-building':"",
     'ch.swisstopo.vec200-hydrography':"",
