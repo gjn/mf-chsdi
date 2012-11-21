@@ -9,6 +9,7 @@ from pylons.i18n import set_lang, ugettext as _
 from sqlalchemy import exc
 
 from shapely.geometry.polygon import Polygon
+from shapely.wkb import loads
 from geojson.feature import FeatureCollection
 from geojson.feature import Feature
 from mapfish.decorators import MapFishEncoder, _jsonify
@@ -311,11 +312,14 @@ class FeatureController(BaseController):
                         if self.format == 'raw':
                             feature.compute_attribute()
                             properties = feature.attributes
+                        properties['extended_info'] =  model.__extended_info__  if hasattr(model, '__extended_info__') else False
                         properties['html'] = feature.html
                         properties['layer_id'] = feature.layer_id
                         properties['preview'] = feature.preview
-                        if (self.no_geom or layer_name == 'ch.kantone.cadastralwebmap-farbe') and 'print' not in request.params:
+                        geometry = None if self.no_geom else loads(feature.the_geom.geom_wkb.decode('hex'))
+                        if layer_name == 'ch.kantone.cadastralwebmap-farbe' or 'print' not in request.params:
                             features.append(Feature(id=feature.id,
+                                                    geometry = geometry,
                                                     bbox=feature.geometry.bounds,
                                                     properties=properties))
                         else:

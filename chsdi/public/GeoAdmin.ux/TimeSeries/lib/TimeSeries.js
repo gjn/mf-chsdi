@@ -139,16 +139,20 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }, this);
         
         var playDirectionHolder = Ext.get('playTab').child('.timeseriesWidget-controls-left');
-        playDirectionHolder.on('change', function(event, radio){
-            // Ext does only trigger change event for the radio that gets checked
-            this.state.playDirection = radio.value;
-            this.saveState();
-            
-            if(this.animationSlider){
-                // Update offset of animation if already running
-                this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection==="backwards");
-            }
-        }, this);
+        // Add handler to each radio element separately because otherwise IE fails to call the handlers
+        var playDirectionRadioButtons = playDirectionHolder.query("input[type=radio]");
+        for(var i=0; i<playDirectionRadioButtons.length; i++){
+            Ext.get(playDirectionRadioButtons[i]).on('change', function(event, radio){
+                // Ext does only trigger change event for the radio that gets checked
+                this.state.playDirection = radio.value;
+                this.saveState();
+                
+                if(this.animationState){
+                    // Update offset of animation if already running
+                    this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection==="backwards");
+                }
+            }, this);
+        }
         playDirectionHolder.child('input[value="'+this.state.playDirection+'"]').dom.checked = true;
         
         /**

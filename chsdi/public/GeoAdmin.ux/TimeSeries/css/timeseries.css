@@ -1,6 +1,6 @@
 .timeseriesWidget {
     position: absolute;
-    top:120px;
+    top:16px;
     left:50%;
     width:600px;
     margin-left:-300px;
@@ -170,14 +170,14 @@
     left: 50%;
     margin-left: -304px;
     position: absolute;
-    top: 115px;
+    top: 11px;
     width: 612px;
     height:118px;
     z-index: 998;
 }
 .timeseriesWidgetShadowTop {
     position: absolute;
-    top: 115px;
+    top: 11px;
     width: 900px;
     height:56px;
     z-index: 998;

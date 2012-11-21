@@ -498,6 +498,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.fixpunkte-hoehe"
                     },
                     {
+                        layerId: "ch.swisstopo.koordinatenaenderung"
+                    },
+                    {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]

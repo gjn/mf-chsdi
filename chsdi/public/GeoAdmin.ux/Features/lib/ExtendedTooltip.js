@@ -37,7 +37,7 @@
   *
   *  :param options: ``Object`` options
   *
-  *  Create a GetFeature control used to show feature information on left mouse click or Ctrl + left mouse click. This control consumes the feature services described `here <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
+  *  Create a GetFeature control used to show feature information on left mouse click or Ctrl + left mouse click. This control consumes the feature services described `here <http://api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html#feature-search>`_
   */
 GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
 
@@ -212,6 +212,14 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         var item = [{ xtype: 'box', html: html }];
         return item;
     },
+
+    numKeys: function(obj) {
+        var count = 0;
+        for (var prop in obj) {
+            count++;
+        }
+        return count;
+    },
     
     //private methode use to prepare the results of the selection by rectangle
     onSelectRectangle: function (evt) {
@@ -237,9 +245,21 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         
         this.map.addControl(clickControl);
         
-        // Translate the layer_id
+        // list containing the fids 
+        var list_fid = this.list_fid = {};
+
+        // Translate the layer_id and store id in case extended tooltip exists
         Ext.each(evt.features, function(feature) {
-            feature.attributes.layer_id = OpenLayers.i18n(feature.attributes.layer_id);
+            var layer_id = feature.attributes.layer_id;
+            if (feature.attributes.extended_info) {
+                if (!list_fid.hasOwnProperty(layer_id)) {
+                    list_fid[layer_id] = [];
+                    list_fid[layer_id] = feature.fid;
+                } else {
+                    list_fid[layer_id] = list_fid[layer_id] + ',' + feature.fid; 
+                }
+            }
+            feature.attributes.layer_id = OpenLayers.i18n(layer_id);
         });
 
         var FeatureGroupingStore = Ext.extend(
@@ -336,11 +356,9 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     var view = grid.getView();
                     var index = 0;
                     var map = this.map;
-                    
                     grid.store.each(function(record) {
                         var el = view.getRow(index);
                         var html = record.get('html');
-
                         var tooltip = new GeoAdmin.ClickToolTip({
                             cls: 'geoadmin-click-tooltip',
                             autoHide: false,
@@ -423,16 +441,37 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                } : null,
             title: OpenLayers.i18n('Feature tooltip'),
             toolTemplate: new Ext.XTemplate(
+                '<tpl if="id==\'export_all\' && extended_info==true">',
+                '<div class="x-window-export_all-tool">'+OpenLayers.i18n('Info+')+'</div>',
+                '</tpl>',
                 '<tpl if="id==\'print\'">',
                 '<div class="x-window-print-tool">'+OpenLayers.i18n('print')+'</div>',
                 '</tpl>',
-                '<tpl if="id!=\'print\'">',
+                '<tpl if="id==\'close\'">',
                 '<div class="x-tool x-tool-{id}">&#160;</div>',
                 '</tpl>'
             ),
             tools:[{
+                id: 'export_all',
+                // if there are objects in list_fid -> extended info exists
+                extended_info: this.numKeys(this.list_fid) && !this.clicked > 0 ? true : false,
+                scope: this,
+                qtip: OpenLayers.i18n('Export all'),
+                handler: function(evt, toolEl, panel, tc) {
+                    var layers = this.params.layers.split(',');
+                    for (var i = 0; i < layers.length; i++) {
+                        var url = this.url.split('search')[0];
+                        var layer = layers[i];
+                        if (this.list_fid.hasOwnProperty(layer)) {
+                            var par = encodeURIComponent(this.list_fid[layer] + '.html?layer=' + layer + '&lang=' + this.params.lang);
+                            url = url + par;
+                            window.open(url, '_blank');
+                        }
+                    }}
+                },{
                 id: 'print',
                 scope: this,
+                qtip: OpenLayers.i18n('Print all'),
                 handler: function(evt, toolEl, panel, tc) {
                     delete this.params['cb'];
                     this.params['print'] = true;
@@ -440,7 +479,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                     window.open(url, '', 'width=500, height=400, toolbar=no, location=no,' +
                                          'directories=no, status=no, menubar=no, scrollbars=yes,' +
                                          'copyhistory=no, resizable=no');
-                }
+                    }
             }],
             closeAction: 'hide',
             items: item,
@@ -458,9 +497,9 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                         clickControl.deactivate();
                         this.map.removeControl(clickControl);
                     }
-                    if (!this.popup.footer) {
+                    if (typeof this.popup !== 'undefined' && this.popup.footer !== null && typeof this.popup.footer !== 'undefined') {
                         var sm = evt.items.items[0].selModel;
-                        if (sm.el) {
+                        if (typeof sm !== 'undefined' && sm.el !== null && typeof sm.el.tooltip !== 'undefined') {
                             if (!sm.el.tooltip.hidden) {
                                 sm.el.tooltip.hide();
                             }

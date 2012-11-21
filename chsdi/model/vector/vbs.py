@@ -8,6 +8,7 @@ class Kulturgueter(Base, Queryable):
     __table_args__ = ({'schema': 'babs', 'autoload': True})
     __template__ = 'tooltips/kgs.mako'
     __queryable_attributes__ = ['zkob']
+    __extended_info__ = True
    # __minscale__ = 5001
    # __maxscale__ = 25000
 
