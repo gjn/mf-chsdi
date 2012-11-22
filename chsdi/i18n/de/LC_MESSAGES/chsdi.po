@@ -738,10 +738,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Zonenpläne für den Notfallschutz"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Lose der AV"
+msgstr "Gebiete in Arbeit"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Stand der AV"
+msgstr "Stand der amtlichen Vermessung"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "PLZ und Ortschaften"
@@ -1041,19 +1041,19 @@ msgid "frame"
 msgstr "Bezugsrahmen"
 
 msgid "gembfs"
-msgstr "BFS Nr"
+msgstr "BFS-Nr."
 
 msgid "gemdarstellung"
-msgstr "Darstellungsdienst"
+msgstr "Kantonales Geoportal"
 
 msgid "gemeinde"
 msgstr "Gemeinde"
 
 msgid "gemflaeche"
-msgstr "Fläche (ha)"
+msgstr "Gemeindefläche (ha)"
 
 msgid "gemgemeinde"
-msgstr "Gemeinde"
+msgstr "Gemeindename"
 
 msgid "gemkanton"
 msgstr "Kanton"
@@ -1065,7 +1065,7 @@ msgid "geometalink"
 msgstr "Nachführungsgeometer, Grundbuch und andere Metadata"
 
 msgid "geompdf_liste"
-msgstr "Metadata (INTERLIS)"
+msgstr "Detailinformationen"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
@@ -1086,10 +1086,10 @@ msgid "grundadresse"
 msgstr "Adresse"
 
 msgid "grundfuehrung"
-msgstr "Grundbuchführung"
+msgstr "Stand Grundbuch"
 
 msgid "grundgemeinde"
-msgstr "Gemeinde"
+msgstr "Gemeindename"
 
 msgid "grundkreis"
 msgstr "Grundbuchkreis"
@@ -1101,7 +1101,7 @@ msgid "grundtel"
 msgstr "Telefon"
 
 msgid "grundurl"
-msgstr "E-Mail/URL"
+msgstr "E-Mail / Web"
 
 msgid "help title"
 msgstr "Hilfe"
@@ -1785,11 +1785,7 @@ msgid "lokal"
 msgstr "lokal"
 
 msgid "losactivite"
-msgstr "Tätigkeit"
-
-#. TODO
-msgid "losannerkennung"
-msgstr "losannerkennung"
+msgstr "Art der Tätigkeit"
 
 msgid "losarea"
 msgstr "Fläche (ha)"
@@ -1851,11 +1847,8 @@ msgstr "Name der Territorialregion"
 msgid "national"
 msgstr "national"
 
-msgid "nfadresse"
-msgstr "Adresse"
-
 msgid "nffirmenname"
-msgstr "Firmenname"
+msgstr "Firma / Amt"
 
 msgid "nfname"
 msgstr "Name"

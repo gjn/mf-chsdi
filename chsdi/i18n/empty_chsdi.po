@@ -1437,9 +1437,6 @@ msgstr ""
 msgid "losquality"
 msgstr ""
 
-msgid "losannerkennung"
-msgstr ""
-
 msgid "losarea"
 msgstr ""
 
@@ -1483,9 +1480,6 @@ msgid "nfname"
 msgstr ""
 
 msgid "nffirmenname"
-msgstr ""
-
-msgid "nfadresse"
 msgstr ""
 
 msgid "geompdf_liste"

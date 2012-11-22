@@ -402,7 +402,7 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
-msgstr "Tipoogia dei comuni ARE"
+msgstr "Tipologia dei comuni ARE"
 
 msgid "ch.are.gueteklassen_oev"
 msgstr "Niveaux de qualité de la desserte par les TP ARE"
@@ -738,10 +738,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Piani delle zone d'urgenza"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Lotti della MU"
+msgstr "Aree con lavori in corso"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Stato della MU"
+msgstr "Stato della misurazione ufficiale"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "NPA e località"
@@ -936,10 +936,10 @@ msgid "ch.swisstopo.vec25-uebrigerverkehr"
 msgstr "Altri mezzi di trasporto  VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
-msgstr "Sentieri escurionistici  VECTOR25"
+msgstr "Sentieri VECTROR25"
 
 msgid "ch.vbs.territorialregionen"
-msgstr "Régions territoriales"
+msgstr "Regioni territoriali"
 
 msgid "city_name"
 msgstr "Nom de la localité"
@@ -1041,22 +1041,22 @@ msgid "frame"
 msgstr "Cadre de référence"
 
 msgid "gembfs"
-msgstr "No OFS"
+msgstr "No. UST"
 
 msgid "gemdarstellung"
-msgstr "Service de visualisation"
+msgstr "Geoportale cantonale"
 
 msgid "gemeinde"
 msgstr "Commune"
 
 msgid "gemflaeche"
-msgstr "Surface (ha)"
+msgstr "Superficie del Comune (ha)"
 
 msgid "gemgemeinde"
-msgstr "Commune"
+msgstr "Nome del Comune"
 
 msgid "gemkanton"
-msgstr "Canton"
+msgstr "Cantone"
 
 msgid "geobasisdatensatz"
 msgstr "ID geodati di base"
@@ -1065,7 +1065,7 @@ msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
 msgid "geompdf_liste"
-msgstr "Métadonnées (INTERLIS)"
+msgstr "Informazioni di dettaglio"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
@@ -1083,16 +1083,16 @@ msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"
 
 msgid "grundadresse"
-msgstr "Adresse"
+msgstr "Indirizzo"
 
 msgid "grundfuehrung"
-msgstr "Tenue du regiscre foncier"
+msgstr "Stato del registro fondiario"
 
 msgid "grundgemeinde"
-msgstr "Commune"
+msgstr "Nome del Comune"
 
 msgid "grundkreis"
-msgstr "Arrondissement"
+msgstr "Circondario del registro fondiario"
 
 msgid "grundlage"
 msgstr "Base de décision"
@@ -1101,7 +1101,7 @@ msgid "grundtel"
 msgstr "Téléphone"
 
 msgid "grundurl"
-msgstr "Courriel/URL"
+msgstr "E-mail / Internet"
 
 msgid "help title"
 msgstr "Aiuto"
@@ -1785,29 +1785,25 @@ msgid "lokal"
 msgstr "importanza locale"
 
 msgid "losactivite"
-msgstr "Activité"
-
-#. TODO
-msgid "losannerkennung"
-msgstr "losannerkennung"
+msgstr "Tipo di attività"
 
 msgid "losarea"
-msgstr "Surface (ha)"
+msgstr "Superficie (ha)"
 
 msgid "losbezungsramen"
-msgstr "Cadre de référence"
+msgstr "Quadro di riferimento"
 
 msgid "losentreprise"
-msgstr "Entreprise"
+msgstr "Nome dell’operato"
 
 msgid "losidentifikator"
-msgstr "Identifiant"
+msgstr "Identificatore"
 
 msgid "losnummer"
-msgstr "Numéro lot"
+msgstr "Numero del lotto"
 
 msgid "losquality"
-msgstr "Standard de qualité"
+msgstr "Standard qualitativi"
 
 msgid "mehrinformationen"
 msgstr "Dimensions du gabarit d'espace libre"
@@ -1851,14 +1847,11 @@ msgstr "Nom de la région territoriale"
 msgid "national"
 msgstr "importanza nazionale"
 
-msgid "nfadresse"
-msgstr "Adresse"
-
 msgid "nffirmenname"
-msgstr "Bureau"
+msgstr "Società / ufficio"
 
 msgid "nfname"
-msgstr "Nom"
+msgstr "Name"
 
 msgid "nom_dreieck"
 msgstr "Punti fissi di appoggio affini"
