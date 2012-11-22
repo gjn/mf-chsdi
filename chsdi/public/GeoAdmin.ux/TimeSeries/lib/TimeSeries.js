@@ -696,17 +696,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 
                 compareSliderPending = setTimeout(function(){
                     var maxTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMax.getYear());
+                    var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear())
                     timeseriesWidget.addLayers([
-                        timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear()),
+                        minTimestamp,
                         maxTimestamp,
                     ], []);
-                    map.layers.forEach(function(layer){
-                        if(layer.timestamp===maxTimestamp){
-                            // Reuse opacity of foreground layer
-                            layer.setOpacity(compareTabOpacitySlider.getValue()/100);
-                            compareTabOpacitySlider.setLayer(layer);
-                        }
-                    });
+                    var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
+                    minLayer.setZIndex(100);
+                    minLayer.setOpacity(100);
+                    var maxLayer = timeseriesWidget.getLayerForTimestamp(maxTimestamp);
+                    maxLayer.setZIndex(101);
+                    maxLayer.setOpacity(compareTabOpacitySlider.getValue()/100);
+                    compareTabOpacitySlider.setLayer(maxLayer);
                 }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
