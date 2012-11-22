@@ -55,7 +55,7 @@ Mapping Applications
 
 map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 -----------------------------------------------------------
 
 Bugfixing.
@@ -109,7 +109,7 @@ Mapping Applications
 
 Bug fixes and corrections
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 -----------------------------------------------------------
 
 .. raw:: html
@@ -182,7 +182,7 @@ Mapping Applications
 
 Bug fixes and corrections
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 No changes
@@ -247,7 +247,7 @@ Mapping Applications
 
 Minor bug fixes, documentation and translation improvements.
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Minor bug fixes, documentation and translation improvements.
@@ -297,7 +297,7 @@ Mapping Applications
 
 Minor bug fixes, documentation and translation improvements.
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Minor bug fixes, documentation and translation improvements.
@@ -393,7 +393,7 @@ Mapping Applications
 | Update | Feature is highlighted when searched with the search combo                   |
 +--------+------------------------------------------------------------------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 .. raw:: html
@@ -486,7 +486,7 @@ Mapping Applications
 | Fixed | Several Bugs                                                                                                                                  |
 +-------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Nothing: we develop the next generation ;-)
@@ -552,7 +552,7 @@ Mapping Applications
 
 Bugfixing
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 .. raw:: html
@@ -626,7 +626,7 @@ Mapping Applications
 
 Bugfixing
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Nothing, we develop the next generation ;-)
@@ -689,7 +689,7 @@ Mapping Applications
 
 Bugfixing
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Nothing, we develop the next generation ;-)
@@ -804,7 +804,7 @@ Mapping Applications
 | Update | Enhanced QR-Code (i.e. smaller) |
 +--------+---------------------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Nothing new, but all nice features are still there ;-)
@@ -881,7 +881,7 @@ Mapping Applications
 | Update | Some layers have extended informations provided ("extended tooltips")                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 .. raw:: html
@@ -956,7 +956,7 @@ Mapping Applications
 | New    | Survey is referenced. Please, help us to improve: http://tinyurl.com/umfrage-geoadminch (DE) or http://tinyurl.com/questionnaire-geoadminch (FR) |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 Nothing new, but all nice features are still there ;-)
@@ -1048,7 +1048,7 @@ Mapping Applications
 | New | Select by rectangle |
 +-----+---------------------+
 
-`mobil.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
 .. raw:: html
