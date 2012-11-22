@@ -611,7 +611,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'extentNotSupportedShortText':'Fuori dagli attuali limiti della carta',
 	'fachstelle_bund':'Service spécialisé de la Confédération',
 	'french':'Français',
-	'geoadmin_bezeichnung':'Deʳcription',
+	'geoadmin_bezeichnung':'Description',
 	'geoadmin_inspire_group':'geoadmin_inspire_group', //TODO
 	'geoadmin_inspire_theme':'geoadmin_inspire_theme', //TODO
 	'geoadmin_kurz_bez':'Description (courte)',
