@@ -42,7 +42,7 @@ Mapping Applications
 map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
------------------------------------------------------------
+------------------------------------------------------------
 
 Bugfixing.
 
@@ -114,7 +114,7 @@ Mapping Applications
 map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
------------------------------------------------------------
+-------------------------------------------------------------
 
 Bugfixing.
 
@@ -168,7 +168,7 @@ Mapping Applications
 Bug fixes and corrections
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
------------------------------------------------------------
+------------------------------------------------------------
 
 .. raw:: html
 
