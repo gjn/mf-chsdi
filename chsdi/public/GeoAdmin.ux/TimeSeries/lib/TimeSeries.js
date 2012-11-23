@@ -974,14 +974,23 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         
         // Raise yeartyped event whenever the user enters a valid year
         slider.addEvents('yeartyped');
-        slider.input.on('change', function(){
+        function changeHandler(){
             var yearRaw = slider.input.getValue();
             var year = parseInt(yearRaw, 10);
             if(yearRaw===String(year) && timeseriesWidget.minYear<=year && timeseriesWidget.maxYear>=year){
                 slider.setYear(year);
                 slider.fireEvent("yeartyped", year);
             }
-        }, timeseriesWidget);
+        }
+        slider.input.on('change', changeHandler, timeseriesWidget);
+        if(slider.input.dom.attachEvent){
+            slider.input.dom.attachEvent('onkeyup', function(e){
+                if(event.keyCode===13){
+                    // Simulate change event that other browsers send on enter
+                    changeHandler();
+                }
+            });
+        }
         
         this.sliders.push(slider);
         return slider;
