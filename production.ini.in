@@ -39,6 +39,7 @@ sqlalchemy.evd.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhos
 
 dtm_path = /var/www/mf-chsdi/private/data/profile/
 data_path = /var/local/cartoweb/
+buildout_path = ${buildout:directory}
 
 # Allowed referers for address search service
 address_search_referers = localhost,admin.ch,awk.ch,cadastre.ch,rspp.ch,rollstuhlparkplatz.ch,placehandicape.ch,parcheggiodisabili.chi,zh.ch
