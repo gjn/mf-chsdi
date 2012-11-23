@@ -96,6 +96,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Export':'Esportare',
 	'Export KML':'Esporta KML',
 	'Export Window':'Export Window', //TODO
+	'Export all':'Esporta tutti',
 	'ExportFromIE':'L\'esportazione die dati non funziona su IE. Prego utilizzare Firefox',
 	'Failure':'Errore',
 	'Feature tooltip':'Informazioni sull\'oggetto',
@@ -223,6 +224,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Positioning failed.':'Posizionamento fallito',
 	'Preview':'Anteprima',
 	'Previous view':'Indietro',
+	'Print all':'Stampa tutto',
 	'Problems submitting:':'Problema di trasmissione',
 	'Produktions- und Industrieanlagen':'Produzione e impianti industriali',
 	'QueryByRect.CtrlKeyUsageNotice':'Potete usare in tasto Ctrl per attivare la funzione di selezione per rettangolo',
@@ -611,7 +613,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'extentNotSupportedShortText':'Fuori dagli attuali limiti della carta',
 	'fachstelle_bund':'Service spécialisé de la Confédération',
 	'french':'Français',
-	'geoadmin_bezeichnung':'Deʳcription',
+	'geoadmin_bezeichnung':'Description',
 	'geoadmin_inspire_group':'geoadmin_inspire_group', //TODO
 	'geoadmin_inspire_theme':'geoadmin_inspire_theme', //TODO
 	'geoadmin_kurz_bez':'Description (courte)',

@@ -266,15 +266,24 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     },
     
     /** private: method[repaintAnimation]
+     * :param timestamp: ``String`` Timestamp
+     * :return: ``OpenLayers.Layer`` Layer that displays the given timestamp
+     */
+    getLayerForTimestamp: function(timestamp){
+        var timeseriesWidget = this;
+        return map.layers.filter(function(layer){
+            return layer.layername===timeseriesWidget.layerName && layer.timestamp===timestamp;
+        })[0];
+    },
+    
+    /** private: method[repaintAnimation]
      *  Paints an animation frame.
      */
     repaintAnimation: function(){
         var timeseriesWidget = this;
         
         function getLayer(timestamp){
-            return map.layers.filter(function(layer){
-                return layer.layername===timeseriesWidget.layerName && layer.timestamp===timestamp;
-            })[0];
+            return timeseriesWidget.getLayerForTimestamp(timestamp);
         }
         
         var state = this.animationState.getStateRatio(timeseriesWidget.state.playDirection==="backwards");
@@ -584,6 +593,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 animationSliderPending = setTimeout(function(){
                     var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
                     timeseriesWidget.addLayers([timestamp], []);
+                    timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
 
                     // Preload upcoming frames one after the other
                     timeseriesWidget.getAnimationPeriods(function(animationPeriods){
@@ -686,17 +696,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 
                 compareSliderPending = setTimeout(function(){
                     var maxTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMax.getYear());
+                    var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear())
                     timeseriesWidget.addLayers([
-                        timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear()),
+                        minTimestamp,
                         maxTimestamp,
                     ], []);
-                    map.layers.forEach(function(layer){
-                        if(layer.timestamp===maxTimestamp){
-                            // Reuse opacity of foreground layer
-                            layer.setOpacity(compareTabOpacitySlider.getValue()/100);
-                            compareTabOpacitySlider.setLayer(layer);
-                        }
-                    });
+                    var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
+                    minLayer.setZIndex(100);
+                    minLayer.setOpacity(100);
+                    var maxLayer = timeseriesWidget.getLayerForTimestamp(maxTimestamp);
+                    maxLayer.setZIndex(101);
+                    maxLayer.setOpacity(compareTabOpacitySlider.getValue()/100);
+                    compareTabOpacitySlider.setLayer(maxLayer);
                 }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
@@ -709,9 +720,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.animationSlider = playPeriod.addSlider(sliderImagePath+"slider-middle.png", 37);
                 timeseriesWidget.animationSlider.on('userdrag', changeAnimationSlider);
                 timeseriesWidget.animationSlider.setYear(timeseriesWidget.getInitialAnimationYear());
-                timeseriesWidget.animationSlider.on('yeartyped', function(year){
-                    timeseriesWidget.addLayers([timeseriesWidget.findTimestampNoLaterThan(year)], []);
-                }, timeseriesWidget);
+                timeseriesWidget.animationSlider.on('yeartyped', changeAnimationSlider);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
                 timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 6);

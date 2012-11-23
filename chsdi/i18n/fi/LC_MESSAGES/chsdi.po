@@ -1041,19 +1041,19 @@ msgid "frame"
 msgstr "Bezugsramen"
 
 msgid "gembfs"
-msgstr "BFS Nr"
+msgstr "BFS-Nr."
 
 msgid "gemdarstellung"
-msgstr "Darstellungsdienst"
+msgstr "Kantonales Geoportal"
 
 msgid "gemeinde"
 msgstr "Gemeinde"
 
 msgid "gemflaeche"
-msgstr "Fläche (ha)"
+msgstr "Gemeindefläche (ha)"
 
 msgid "gemgemeinde"
-msgstr "Gemeinde"
+msgstr "Gemeindename"
 
 msgid "gemkanton"
 msgstr "Kanton"
@@ -1065,7 +1065,7 @@ msgid "geometalink"
 msgstr "Nachführungsgeometer"
 
 msgid "geompdf_liste"
-msgstr "Metadata (INTERLIS)"
+msgstr "Detailinformationen"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
@@ -1089,7 +1089,7 @@ msgid "grundfuehrung"
 msgstr "Grundbuchführung"
 
 msgid "grundgemeinde"
-msgstr "Gemeinde"
+msgstr "Gemeindename"
 
 msgid "grundkreis"
 msgstr "Grundbuchkreis"
@@ -1098,10 +1098,10 @@ msgid "grundlage"
 msgstr "Grundlage"
 
 msgid "grundtel"
-msgstr "Telefon"
+msgstr "Telefono"
 
 msgid "grundurl"
-msgstr "E-Mail/URL"
+msgstr "E-Mail / Web"
 
 msgid "help title"
 msgstr "Agid"
@@ -1785,11 +1785,7 @@ msgid "lokal"
 msgstr "lokal"
 
 msgid "losactivite"
-msgstr "Tätigkeit"
-
-#. TODO
-msgid "losannerkennung"
-msgstr "losannerkennung"
+msgstr "Art der Tätigkeit"
 
 msgid "losarea"
 msgstr "Fläche (ha)"
@@ -1851,11 +1847,8 @@ msgstr "Name der Territorialregion"
 msgid "national"
 msgstr "national"
 
-msgid "nfadresse"
-msgstr "Adresse"
-
 msgid "nffirmenname"
-msgstr "Firmenname"
+msgstr "Firma / Amt"
 
 msgid "nfname"
 msgstr "Name"

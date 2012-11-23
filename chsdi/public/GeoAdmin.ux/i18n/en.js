@@ -96,6 +96,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Export':'Export',
 	'Export KML':'Export KML',
 	'Export Window':'Export Window', //TODO
+	'Export all':'Export all',
 	'ExportFromIE':'The export function does not work with IE. Please use Firefox',
 	'Failure':'Error',
 	'Feature tooltip':'Object information',
@@ -223,6 +224,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Positioning failed.':'Positioning failed',
 	'Preview':'Preview',
 	'Previous view':'back',
+	'Print all':'Print all',
 	'Problems submitting:':'Transmission problem',
 	'Produktions- und Industrieanlagen':'Production and industrial facilities',
 	'QueryByRect.CtrlKeyUsageNotice':'You can use the Ctrl key to activate the selection by rectangle',

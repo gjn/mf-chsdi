@@ -738,10 +738,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans for Emergency protection"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Works in progress"
+msgstr "Cadastral surveying lots."
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Cadastral survey status"
+msgstr "Status of cadastral surveying"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "ZIP and locations"
@@ -1042,22 +1042,22 @@ msgid "frame"
 msgstr "Bezugsramen"
 
 msgid "gembfs"
-msgstr "BFS Nr"
+msgstr "FSO-No."
 
 msgid "gemdarstellung"
-msgstr "Darstellungsdienst"
+msgstr "Cantonal geoportal"
 
 msgid "gemeinde"
 msgstr "City"
 
 msgid "gemflaeche"
-msgstr "Fläche (ha)"
+msgstr "Area of Municipality (ha)"
 
 msgid "gemgemeinde"
-msgstr "Gemeinde"
+msgstr "Name of Municipality"
 
 msgid "gemkanton"
-msgstr "Kanton"
+msgstr "Canton"
 
 msgid "geobasisdatensatz"
 msgstr "Basic geodata ID"
@@ -1066,7 +1066,7 @@ msgid "geometalink"
 msgstr "Nachführungsgeometer"
 
 msgid "geompdf_liste"
-msgstr "Metadata (INTERLIS)"
+msgstr "Details"
 
 msgid "gesamtflaeche_ha"
 msgstr "Total area [ha]"
@@ -1084,25 +1084,25 @@ msgid "gmde"
 msgstr "BFS-City nummer (State 2006)"
 
 msgid "grundadresse"
-msgstr "Adresse"
+msgstr "Address"
 
 msgid "grundfuehrung"
-msgstr "Grundbuchführung"
+msgstr "Status of land registry"
 
 msgid "grundgemeinde"
-msgstr "Gemeinde"
+msgstr "Name of Municipality"
 
 msgid "grundkreis"
-msgstr "Grundbuchkreis"
+msgstr "Land registry district"
 
 msgid "grundlage"
 msgstr "Grundlage"
 
 msgid "grundtel"
-msgstr "Telefon"
+msgstr "Phone"
 
 msgid "grundurl"
-msgstr "E-Mail/URL"
+msgstr "E-Mail / Web"
 
 msgid "help title"
 msgstr "Help"
@@ -1786,29 +1786,25 @@ msgid "lokal"
 msgstr "lokal"
 
 msgid "losactivite"
-msgstr "Tätigkeit"
-
-#. TODO
-msgid "losannerkennung"
-msgstr "losannerkennung"
+msgstr "Type of work"
 
 msgid "losarea"
-msgstr "Fläche (ha)"
+msgstr "Area (ha)"
 
 msgid "losbezungsramen"
-msgstr "Bezugsrahmen"
+msgstr "Reference frame"
 
 msgid "losentreprise"
-msgstr "Operatsname"
+msgstr "Name of project"
 
 msgid "losidentifikator"
-msgstr "Identifikator"
+msgstr "Identifier"
 
 msgid "losnummer"
-msgstr "Losnummer"
+msgstr "Lot number"
 
 msgid "losquality"
-msgstr "Qualitätsstandard"
+msgstr "Quality standard"
 
 msgid "mehrinformationen"
 msgstr "Abmessung des Lichtraumprofils"
@@ -1852,11 +1848,8 @@ msgstr "Name der Territorialregion"
 msgid "national"
 msgstr "national"
 
-msgid "nfadresse"
-msgstr "Adresse"
-
 msgid "nffirmenname"
-msgstr "Firmenname"
+msgstr "Name of office"
 
 msgid "nfname"
 msgstr "Name"

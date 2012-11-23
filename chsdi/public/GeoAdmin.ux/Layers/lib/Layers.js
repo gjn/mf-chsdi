@@ -785,7 +785,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                hasLegend: false,
+                opacity: 0.75,
                 queryable: false
             },
 //            "ch.swisstopo.transformationsgenauigkeit": {

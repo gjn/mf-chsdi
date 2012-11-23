@@ -738,10 +738,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans des zones d’urgence"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Lots de la MO"
+msgstr "Secteurs en travaux"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Etat de la MO"
+msgstr "Etat de la mensuration officielle"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "NPA et localités"
@@ -801,7 +801,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classification des roches"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Groupe lithologiques"
+msgstr "Groupes lithologiques"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères"
@@ -1041,19 +1041,19 @@ msgid "frame"
 msgstr "Cadre de référence"
 
 msgid "gembfs"
-msgstr "No OFS"
+msgstr "N° OFS"
 
 msgid "gemdarstellung"
-msgstr "Service de visualisation"
+msgstr "Géoportail cantonal"
 
 msgid "gemeinde"
 msgstr "Commune"
 
 msgid "gemflaeche"
-msgstr "Surface (ha)"
+msgstr "Surface de la commune (ha)"
 
 msgid "gemgemeinde"
-msgstr "Commune"
+msgstr "Nom de la commune"
 
 msgid "gemkanton"
 msgstr "Canton"
@@ -1065,7 +1065,7 @@ msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
 msgid "geompdf_liste"
-msgstr "Métadonnées (INTERLIS)"
+msgstr "Informations détaillées"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
@@ -1086,22 +1086,22 @@ msgid "grundadresse"
 msgstr "Adresse"
 
 msgid "grundfuehrung"
-msgstr "Tenue du registre foncier"
+msgstr "Etat du registre foncier"
 
 msgid "grundgemeinde"
-msgstr "Commune"
+msgstr "Nom de la commune"
 
 msgid "grundkreis"
-msgstr "Arrondissement"
+msgstr "Arrondissement du registre foncier"
 
 msgid "grundlage"
 msgstr "Base de décision"
 
 msgid "grundtel"
-msgstr "Téléphone"
+msgstr "N° de téléphone"
 
 msgid "grundurl"
-msgstr "Courriel/URL"
+msgstr "Courriel / Internet"
 
 msgid "help title"
 msgstr "Aide"
@@ -1785,11 +1785,7 @@ msgid "lokal"
 msgstr "Locale"
 
 msgid "losactivite"
-msgstr "Activité"
-
-#. TODO
-msgid "losannerkennung"
-msgstr "losannerkennung"
+msgstr "Type de travaux en cours"
 
 msgid "losarea"
 msgstr "Surface (ha)"
@@ -1798,16 +1794,16 @@ msgid "losbezungsramen"
 msgstr "Cadre de référence"
 
 msgid "losentreprise"
-msgstr "Entreprise"
+msgstr "Nom de l’entreprise"
 
 msgid "losidentifikator"
 msgstr "Identifiant"
 
 msgid "losnummer"
-msgstr "Numéro lot"
+msgstr "Numéro du lot"
 
 msgid "losquality"
-msgstr "Standard de qualité"
+msgstr "Norme de qualité"
 
 msgid "mehrinformationen"
 msgstr "Dimensions du gabarit d'espace libre"
@@ -1851,11 +1847,8 @@ msgstr "Nom de la région territoriale"
 msgid "national"
 msgstr "Nationale"
 
-msgid "nfadresse"
-msgstr "Adresse"
-
 msgid "nffirmenname"
-msgstr "Bureau"
+msgstr "Entreprise / office"
 
 msgid "nfname"
 msgstr "Nom"

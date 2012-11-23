@@ -92,6 +92,7 @@ OpenLayers.Lang.rm= {
 	'Export':'Exportar',
 	'Export KML':'Export KML',
 	'Export Window':'Export Window', //TODO
+	'Export all':'Exportieren Sie alle',
 	'ExportFromIE':'The export function does not work with IE. Please use Firefox',
 	'Failure':'Sbagl',
 	'Feature tooltip':'Infurmaziuns davart ils objects',
@@ -219,6 +220,7 @@ OpenLayers.Lang.rm= {
 	'Positioning failed.':'Il posiziunament n\'ha betg funcziunà',
 	'Preview':'Prevista',
 	'Previous view':'Enavos',
+	'Print all':'Drucken Sie alle',
 	'Problems submitting:':'Problem',
 	'Produktions- und Industrieanlagen':'Stabiliments da producziun e d\'industria',
 	'QueryByRect.CtrlKeyUsageNotice':'Selecziunplirs  objects: Ctrl tasta',
