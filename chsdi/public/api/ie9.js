@@ -34,6 +34,29 @@ if (Ext) {
     });
 }
 
+Ext.dd.DragTracker.override({
+    onMouseMove: function(e, target){
+    // HACK: IE hack to see if button was released outside of window. */
+        if(this.active && Ext.isIE && !e.browserEvent.button && !Ext.isIE9){
+            e.preventDefault();
+            this.onMouseUp(e);
+            return;
+        }
 
+       e.preventDefault();
+       var xy = e.getXY(), s = this.startXY;
+       this.lastXY = xy;
+           if(!this.active){
+               if(Math.abs(s[0]-xy[0]) > this.tolerance || Math.abs(s[1]-xy[1]) > this.tolerance){
+                   this.triggerStart(e);
+               }else{
+                   return;
+              }
+           }
+           this.fireEvent('mousemove', this, e);
+           this.onDrag(e);
+           this.fireEvent('drag', this, e);
+       }
+ });
 
 
