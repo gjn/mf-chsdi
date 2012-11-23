@@ -509,7 +509,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo-vd.geometa-gemeinde':'Informazioni sul Comune',
 	'ch.swisstopo-vd.geometa-grundbuch':'Informazioni del registro fondiario',
 	'ch.swisstopo-vd.geometa-los':'Aree con lavori in corso',
-	'ch.swisstopo-vd.geometa-nfgeom':'Geometra preposto/a alla tenuta a giorno',
+	'ch.swisstopo-vd.geometa-nfgeom':'Geometra revisore',
 	'ch.swisstopo-vd.geometa-standav':'Stato della misurazione ufficiale',
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'NPA e località',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Zone di tensioni trascurabili',
