@@ -19,9 +19,17 @@
     </tr>
     % endif
     % if hasattr(c.feature, 'telefon'):
-    <tr><td width="150">${_('grundtel')}</td>    <td>${c.feature.telefon or '-'}</td></tr>
+     <tr><td width="150">${_('grundtel')}</td>    <td>${c.feature.telefon or '-'}</td></tr>
     % endif
     % if hasattr(c.feature, 'email'):
-    <tr><td width="150">${_('grundurl')}</td>    <td>${c.feature.email or '-'}</td></tr>
+      <tr><td width="150">${_('grundurl')}</td>
+      %if c.feature.email == None:
+       <td>-</td>
+      % elif "@" in c.feature.email:
+           <td><a href="mailto:${c.feature.email}">${_(c.feature.email) or '-'}</a></td>
+      % elif "http" in c.feature.email:
+           <td><a target="_blank" href="${c.feature.email}">${c.feature.email or '-'}</a></td>
+      </tr>
+      % endif
     % endif
 </%def>

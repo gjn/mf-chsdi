@@ -509,7 +509,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo-vd.geometa-gemeinde':'Information about Municipality',
 	'ch.swisstopo-vd.geometa-grundbuch':'Land registry information',
 	'ch.swisstopo-vd.geometa-los':'Cadastral surveying lots.',
-	'ch.swisstopo-vd.geometa-nfgeom':'Cadastral surveyor responsible for updating',
+	'ch.swisstopo-vd.geometa-nfgeom':'Cadastral surveyor',
 	'ch.swisstopo-vd.geometa-standav':'Status of cadastral surveying',
 	'ch.swisstopo-vd.ortschaftenverzeichnis_plz':'ZIP and locations',
 	'ch.swisstopo-vd.spannungsarme-gebiete':'Low distortion area',

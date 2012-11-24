@@ -1,3 +1,61 @@
+Release 20121128 - Wednesday, November 28th 2012
+================================================
+
+Geodata
+********
+
+
++--------+------------------------------------------------------------------------------------------------------+
+| New    | `LV95 Coordinate changes`__ (ch.swisstopo.koordinatenaenderung)                                      |
++--------+------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     |                                                                                                                                                                                                            |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+
 Release 20121114 - Wednesday, November 14th 2012 
 ================================================
 
@@ -56,7 +114,7 @@ Mapping Applications
 map.geo.admin.ch can deliver content for various projects. This allows the creation of layout like project with custom catalog tree, custom print template etc..
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
------------------------------------------------------------
+-------------------------------------------------------------
 
 Bugfixing.
 
@@ -110,7 +168,7 @@ Mapping Applications
 Bug fixes and corrections
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
------------------------------------------------------------
+------------------------------------------------------------
 
 .. raw:: html
 
