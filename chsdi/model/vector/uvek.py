@@ -11,6 +11,7 @@ class IVS_NAT(Base, Queryable):
     the_geom = Column(Geometry(21781))
 
 register('ch.astra.ivs-nat', IVS_NAT)
+register('ch.astra.ivs-nat-verlaeufe', IVS_NAT)
 
 class IVS_REG_LOC(Base, Queryable):
     __tablename__ = 'ivs_reg_loc'
