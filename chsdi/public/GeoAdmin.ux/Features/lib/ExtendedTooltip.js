@@ -497,7 +497,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                         clickControl.deactivate();
                         this.map.removeControl(clickControl);
                     }
-                    if (typeof this.popup !== 'undefined' && this.popup.footer !== null && typeof this.popup.footer !== 'undefined') {
+                    if (typeof this.popup !== 'undefined' && this.popup !== null && this.popup.footer !== null && typeof this.popup.footer !== 'undefined') {
                         var sm = evt.items.items[0].selModel;
                         if (typeof sm !== 'undefined' && sm.el !== null && typeof sm.el.tooltip !== 'undefined') {
                             if (!sm.el.tooltip.hidden) {
