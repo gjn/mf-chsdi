@@ -66,7 +66,7 @@ class LayersController(BaseController):
             Geodata_staging  = config['geodata_staging'].split(',')
         # Query only view_bod_wmts_getcapabilities_{lang}
         elif self.mode == 'wmts':
-            query = Session.query(self.GetCap).filter(self.GetCap.sswmts == False)
+            query = Session.query(self.GetCap)
             self.BodLayer = self.GetCap
             # random variable so that no filter is applied 
             Geodata_staging = ['geodata_staging']
