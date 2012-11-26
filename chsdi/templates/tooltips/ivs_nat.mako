@@ -22,10 +22,13 @@
     from urllib2 import urlopen
     PDF_Full = c.feature.ivs_sortsla
     PDF_Level_1 =  PDF_Full[0:6] + '0000'
+    PDF_Level_1_Name = PDF_Full[0:2]+ ' ' + str(int(PDF_Full[2:6]))
     PDF_Level_2_exist = PDF_Full[6:8]
     PDF_Level_2 = PDF_Full[0:8] + '00'
+    PDF_Level_2_Name = PDF_Level_1_Name + '.' +  str(int(PDF_Full[6:8]))
     PDF_Level_3_exist = PDF_Full[8:10] 
     PDF_Level_3 = PDF_Full 
+    PDF_Level_3_Name = PDF_Level_2_Name + '.' + str(int(PDF_Full[8:10]))
     url = "http://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/"+c.feature.ivs_sortsla+".pdf"
     try:
         response = urlopen(url)
@@ -37,28 +40,28 @@
 % if pdf: 
     <td>
     % if c.lang =='fr':
-        ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1}</a><br />
+        ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2}</a><br />
+        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
       % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3}</a><br />
+        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
     % elif c.lang == 'it':
-      ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1}</a><br />
+      ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2}</a><br />
+        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
       % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3}</a><br />
+        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/it/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
     % else:
-      ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1}</a><br />
+      ${_('ivs_nat_strecke')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2}</a><br />
+        ${_('ivs_nat_linienfuehrung')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
       % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3}</a><br />
+        ${_('ivs_nat_abschnitt')} : <a href="https://dav0.bgdi.admin.ch/kogis_web/downloads/ivs/beschr/de/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
     % endif
     </td></tr>
