@@ -213,7 +213,7 @@ Annex A
 
 Server Settings file for WMS 
 -----------------------------
-http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/files/ssurl_wms.xml
+`http://api.geo.admin.ch/main/wsgi/demo/owschecker/ssurl/ssurl_wms.xml </main/wsgi/demo/owschecker/ssurl/ssurl_wms.xml>`_
 
 This file can be tested against the server: http://lidarserver.com/sandiego 
 
@@ -221,6 +221,6 @@ This file can be tested against the server: http://lidarserver.com/sandiego
 
 Server Settings file for WFS
 -----------------------------
-http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/files/ssurl_wfs.xml
+`http://api.geo.admin.ch/main/wsgi/demo/owschecker/ssurl/ssurl_wfs.xml </main/wsgi/demo/owschecker/ssurl/ssurl_wfs.xml>`_
 
 This file can be tested against the server: http://v2.suite.opengeo.org/geoserver/ows 
