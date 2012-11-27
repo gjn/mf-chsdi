@@ -55,3 +55,7 @@
 .ext-ie .geoadmin-baselayertool .x-form-text {
     height: 15px !important;
 }
+
+.ext-ie .geoadmin-baselayertool .x-column-inner {
+    width: 100% !important;
+}
