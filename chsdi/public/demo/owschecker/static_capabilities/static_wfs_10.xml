@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding="UTF-8" ?>
+<WFS_Capabilities 
+   version="1.0.0" 
+   updateSequence="0" 
+   xmlns="http://www.opengis.net/wfs" 
+   xmlns:ogc="http://www.opengis.net/ogc" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:ech0056="http://www.ech.ch/xmlns/eCH-0056/2"
+   xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.0.0/WFS-capabilities.xsd">
+
+<!-- MapServer version 6.0.3 OUTPUT=GIF OUTPUT=PNG OUTPUT=JPEG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=CAIRO SUPPORTS=FREETYPE SUPPORTS=ICONV SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=SOS_SERVER SUPPORTS=FASTCGI SUPPORTS=THREADS SUPPORTS=GEOS INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+<Service>
+  <Name>WFS A</Name>
+  <Title>WFS-BGDI</Title>
+  <Abstract>BGDI WFS Dienst mit oeffentlich zugaenglichen Daten ($Rev: 43 $)</Abstract>
+  <Keywords>
+    BGDI Geodaten
+  </Keywords>
+  <OnlineResource>http://wfs.geo.admin.ch/?</OnlineResource>
+  <Fees>none</Fees>
+  <AccessConstraints>none</AccessConstraints>
+</Service>
+
+<Capability>
+  <Request>
+    <GetCapabilities>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+    </GetCapabilities>
+    <DescribeFeatureType>
+      <SchemaDescriptionLanguage>
+        <XMLSCHEMA/>
+      </SchemaDescriptionLanguage>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+    </DescribeFeatureType>
+    <GetFeature>
+      <ResultFormat>
+        <GML2/>
+        <OGRGeoJSON/>
+      </ResultFormat>
+      <DCPType>
+        <HTTP>
+          <Get onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+      <DCPType>
+        <HTTP>
+          <Post onlineResource="http://wfs.geo.admin.ch/?" />
+        </HTTP>
+      </DCPType>
+    </GetFeature>
+  </Request>
+	 
+ <VendorSpecificCapabilities>
+	<ech0056:ExternalServiceMetadata>
+		<OnlineResource>http://wfs.geo.admin.ch/?</OnlineResource>
+	</ech0056:ExternalServiceMetadata>
+  </VendorSpecificCapabilities>
+
+
+</Capability>
+
+<FeatureTypeList>
+  <Operations>
+    <Query/>
+  </Operations>
+    <FeatureType>
+        <Name>ch.swisstopo.fixpunkte-agnes</Name>
+        <Title>ch.swisstopo.fixpunkte-agnes</Title>
+
+        <SRS>EPSG:21781</SRS>
+
+
+        <LatLongBoundingBox minx="-2.5e+07" miny="-2.5e+07" maxx="2.5e+07" maxy="2.5e+07" />
+	  
+
+  <VendorSpecificCapabilities>
+		<ech0056:ExternalDataMetadata>
+			<OnlineResource>http://wfs.geo.admin.ch/?</OnlineResource>
+		</ech0056:ExternalDataMetadata>
+	</VendorSpecificCapabilities>
+
+
+    </FeatureType>
+</FeatureTypeList>
+
+<ogc:Filter_Capabilities>
+  <ogc:Spatial_Capabilities>
+    <ogc:Spatial_Operators>
+      <ogc:Equals/>
+      <ogc:Disjoint/>
+      <ogc:Touches/>
+      <ogc:Within/>
+      <ogc:Overlaps/>
+      <ogc:Crosses/>
+      <ogc:Intersect/>
+      <ogc:Contains/>
+      <ogc:DWithin/>
+      <ogc:BBOX/>
+    </ogc:Spatial_Operators>
+  </ogc:Spatial_Capabilities>
+  <ogc:Scalar_Capabilities>
+    <ogc:Logical_Operators />
+    <ogc:Comparison_Operators>
+      <ogc:Simple_Comparisons />
+      <ogc:Like />
+      <ogc:Between />
+    </ogc:Comparison_Operators>
+  </ogc:Scalar_Capabilities>
+</ogc:Filter_Capabilities>
+
+</WFS_Capabilities>

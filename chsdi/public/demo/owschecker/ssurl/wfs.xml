@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- for http://v2.suite.opengeo.org/geoserver/ows -->
+<!-- example Request
+http://v2.suite.opengeo.org/geoserver/ows?request=GetFeature&service=WFS&typename=usa:states&maxfeatures=1&outputformat=GML2&filter=%3CFilter%3E%3CBBOX%3E%3CPropertyName%3Ethe_geom%3C/PropertyName%3E%3CEnvelope%20srsName=%22EPSG:4326%22%3E%3ClowerCorner%3E-88.169921588558%2032.597655642372%3C/lowerCorner%3E%3CupperCorner%3E-87.291015338558%2033.476561892372%3C/upperCorner%3E%3C/Envelope%3E%3C/BBOX%3E%3C/Filter%3E
+-->
+<ServerSettings>
+    <ServerCapabilities>
+        <Security>
+            <SSL>0</SSL>
+            <SSLCertificate></SSLCertificate>
+            <SwissID></SwissID>
+            <HTTPSLogin>
+                <Username></Username>
+                <Password></Password>
+            </HTTPSLogin>
+        </Security>
+    </ServerCapabilities>
+    <WFS>
+        <FeatureTypes>
+            <FeatureType>medford:bikelanes</FeatureType>
+            <FeatureType>medford:buildings</FeatureType>
+            <FeatureType>medford:citylimits</FeatureType>
+            <FeatureType>usa:states</FeatureType>
+        </FeatureTypes>
+        <GetFeature>
+            <Feature fid="states.17">
+                <Params>
+                    <REQUEST>GetFeature</REQUEST>
+                    <TYPENAME>usa:states</TYPENAME>
+                    <MAXFEATURES>1</MAXFEATURES>
+                    <OUTPUTFORMAT>GML2</OUTPUTFORMAT>
+                    <Filter>
+                        <BBOX>
+                            <PropertyName>the_geom</PropertyName>
+                            <Envelope srsName="EPSG:4326">
+                                <lowerCorner>-88.169921588558 32.597655642372</lowerCorner>
+                                <upperCorner>-87.291015338558 33.476561892372</upperCorner>
+                            </Envelope>
+                        </BBOX>
+                    </Filter>
+                </Params>
+                <Attribute xpath="gml:featureMember/usa:states/@fid">states.17</Attribute>
+                <Attribute xpath="gml:featureMember/usa:states/usa:HOUSHOLD/text()">1506790.0</Attribute>
+                <Attribute xpath="gml:featureMember/usa:states/usa:STATE_NAME/text()">Aabama</Attribute>
+            </Feature>
+        </GetFeature>
+    </WFS>
+</ServerSettings>
