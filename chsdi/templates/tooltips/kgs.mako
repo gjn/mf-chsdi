@@ -11,6 +11,7 @@
 </%def>
 
 <%def name="body()">
+
 % if c.last == True:
 <link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/GeoAdmin.ux/Lightbox/css/lightbox.css">
 <script type="text/javascript" src="/${c.instanceid}/wsgi/lib/ext/Ext/adapter/ext/ext-base.js"></script>
@@ -35,20 +36,15 @@
     #ux-lightbox-overlay {
         height: 5000px !important;
     }
+    @media print {
+        table {
+            border: none;
+        }
+    }
 </style>
 <div id="main_div" style="height: auto;">
 % else:
 <div id="main_div" style="height: auto; page-break-after: always;">
-% endif
-
-% if c.first == True:
-<script type="text/javascript">
-    var hpictures = {};
-    var hurl = {};
-    var hpdfs = {};
-    var hurl2 = {};
-    var hmeta = {};
-</script>
 % endif
 
 <% objektart = c.feature.objektart.split(',') %>
@@ -111,56 +107,80 @@
      </tr>
 </table>
 
-<%
-    from chsdi.lib.helpers import MyHTMLParser
-    from urllib2 import urlopen
+% if c.first == True:
+<% 
+    c.fid_list = []
+    c.fid_list.append(str(c.feature.id))
+%>
+% else:
+<% 
+    c.fid_list.append(str(c.feature.id))
+%>
+% endif
 
+% if c.last == True:
+<%
+    import json 
+    from urllib2 import urlopen
+    from chsdi.lib.helpers import MyHTMLParser
+    
     url = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/'
     f = urlopen(url)
     s = f.read()
-    parser = MyHTMLParser(flayer='kgs',fid=str(c.feature.id))
-    parser.feed(s)
-
+    
     url2 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/matrizen/'
     f2 = urlopen(url2)
     s2 = f2.read()
-    parser2 = MyHTMLParser(flayer='kgs',fid=str(c.feature.id))
-    parser2.feed(s2)
-    pdfs = parser2.filesMatched
-
+    
     url3 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/meta.txt'
     f3 = urlopen(url3)
     s3 = f3.read()
     d = s3.split('\n')
-    meta = []
-    for i in d:
-        e = i.split(';')
-        if e[0] == parser.pattern and e[len(e)-1] not in meta:
-            meta.append(e[len(e)-1])
-        endif
-        if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
-            meta.append(e[len(e)-2])
-        endif
+    
+    hpictures = {}
+    hpdfs = {}
+    hmeta = {}
+    for fid in c.fid_list:
+        parser = MyHTMLParser(flayer='kgs',fid=str(fid))
+        parser2 = MyHTMLParser(flayer='kgs',fid=str(fid))
+        parser.feed(s)
+        parser2.feed(s2)
+        meta = list()
+        for i in d:
+            e = i.split(';')
+            if e[0] == parser.pattern and e[len(e)-1] not in meta:
+                meta.append(e[len(e)-1])
+            endif
+            if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
+                meta.append(e[len(e)-2])
+            endif
+        hpictures[str(fid)] = parser.filesMatched
+        hpdfs[str(fid)] = parser2.filesMatched
+        hmeta[str(fid)] = meta        
+        endfor
+    endfor
+    hpictures = json.dumps(hpictures)
+    hpdfs = json.dumps(hpdfs)
+    hmeta = json.dumps(hmeta)
 %>
 
+
 <script type="text/javascript">
-    hpictures[${c.feature.id}] = ${parser.filesMatched};
-    hurl[${c.feature.id}] = '${url}';
-    hpdfs[${c.feature.id}] = ${parser2.filesMatched};
-    hurl2[${c.feature.id}] = '${url2}';
-    hmeta[${c.feature.id}] = ${meta};
-% if c.last == True:
+    var hpictures = ${hpictures};
+    var hpdfs = ${hpdfs};
+    var hmeta = ${hmeta};
+    var url = '${url}';
+    var url2 = '${url2}';
     window.onload = function () {
-        var idivs = document.getElementsByClassName('images');
+        var idivs = document.querySelectorAll('.images');
         for (var i=0; i<idivs.length; i++){
             var div = idivs[i];
             var fid = div.id;
 
             var pictures = hpictures[fid];
             if (pictures.length > 0){
-                var url = hurl[fid];
+                var pictures = hpictures[fid];
                 var pdfs = hpdfs[fid];
-                var url2 = hurl2[fid];
                 var meta = hmeta[fid];
                 for (var n = 0; n < pictures.length; n++) {
                     var title = '';
@@ -184,22 +204,21 @@
                 Ext.ux.Lightbox.register('a.lightbox', true);
             }
         }
-        var aels = document.getElementsByClassName('pdf');
+        var aels = document.querySelectorAll('.pdf');
         for (var i=0; i<aels.length; i++){
             var a = aels[i];
             var fid = a.id;
             var pdfs = hpdfs[fid];
-            var url2 = hurl2[fid];
             if (pdfs.length !== 0) {
                 a.href = url2 + pdfs[0];
             } else {
                 a.innerHTML = '-';
             }
         }
-    var disclamer = document.getElementsByClassName('disclamer')[0];
+    var disclamer = document.querySelector('.disclamer');
     disclamer.setAttribute("href","http://www.disclamer.admin.ch")
     }
-% endif
 </script>
+% endif
 </div>
 </%def>

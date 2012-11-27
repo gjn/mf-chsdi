@@ -296,8 +296,24 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
                     callback: function (response) {
                         var format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
                         var features = format.read(response);
-                        this.map.vector.removeAllFeatures();
-                        this.map.vector.addFeatures(features);
+                        // if doen't exists returns an empty list -> no compatibility issue
+                        var control = this.map.getControlsBy('id', 'getFeatureRectangle');     
+                        if (control.length > 0 && !!control[0].popup) {     
+                             if (!control[0].popup.hidden) {     
+                                 control[0].popup.hide();    
+                                 if (!!control[0].popup) {   
+                                     control[0].popup.on('hide', function () {   
+                                         this.map.vector.addFeatures(features);      
+                                     }, this);   
+                                 } else {    
+                                     this.map.vector.addFeatures(features);      
+                                 }
+                            } 
+                        } else {
+                            this.map.vector.removeAllFeatures();
+                            this.map.vector.addFeatures(features);
+                        }
+
                         // 1965 m is the height for the zoom 7
                         // height smaller than width -> should be used for the extent
                         this.map.zoomToExtent(this.makeMinimalExtent(extent,1965));

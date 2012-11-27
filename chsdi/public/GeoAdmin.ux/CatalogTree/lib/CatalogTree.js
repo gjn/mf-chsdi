@@ -797,10 +797,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.astra.ivs-nat"
                     },
-// ltalp (wait protocole)
-//                    {
-//                        layerId: "ch.astra.ivs-nat-verlaeufe"
-//                    },
+                    {
+                        layerId: "ch.astra.ivs-nat-verlaeufe"
+                    },
                     {
                         layerId: "ch.astra.ivs-reg_loc"
                     },
@@ -954,7 +953,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
 //                    },
-// ltalp (wait protocole)
+// Put in comment before commit : ltalp (wait protocole)
 //                    {
 //                        layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
                     }

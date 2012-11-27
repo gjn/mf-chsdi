@@ -2239,23 +2239,20 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.astra",
                 queryable: true
             },
-// Attente protocole pour activer nouveau layer (ltalp)
-//            "ch.astra.ivs-nat-verlaeufe": {
-//                name: OpenLayers.i18n("ch.astra.ivs-nat-verlaeufe"),
-//                layertype: 'wmts',
-//                timestamp: ['20100415'],
-//                type: "line",
-//                format: "image/png",
-//                datenherr: "ch.astra",
-//                queryable: true,
-//                searchable: true
-//            },
+            "ch.astra.ivs-nat-verlaeufe": {
+                name: OpenLayers.i18n("ch.astra.ivs-nat-verlaeufe"),
+                layertype: 'wmts',
+                timestamp: ['20100415'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.astra",
+                queryable: true,
+                searchable: true
+            },
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',
-// Attente protocole pour activer nouveau timestamp (ltalp)
-//                timestamp: ['20100415','20100414','20070712'],
-                timestamp: ['20100414','20070712'],
+                timestamp: ['20100415','20100414','20070712'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -2823,6 +2820,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+// Attente protocole pour activer nouveau layer (ltalp)
 //            "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
 //                name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
 //                layertype: 'wms',
