@@ -2424,6 +2424,57 @@ msgstr "Facility details"
 msgid "tt_swissprtr_ort"
 msgstr "Town"
 
+msgid "tt_wrz_portal_beschluss"
+msgstr "Decision year"
+
+msgid "tt_wrz_portal_best"
+msgstr "Dispositions"
+
+msgid "tt_wrz_portal_grundlage"
+msgstr "Decision basis"
+
+msgid "tt_wrz_portal_kanton"
+msgstr "Canton"
+
+msgid "tt_wrz_portal_name"
+msgstr "Zone name"
+
+msgid "tt_wrz_portal_obj"
+msgstr "Object number"
+
+msgid "tt_wrz_portal_schutz"
+msgstr "Protection status"
+
+msgid "tt_wrz_portal_schutzzeit"
+msgstr "Protection period"
+
+msgid "tt_wrz_portal_zusatz"
+msgstr "More info"
+
+msgid "tt_wrz_select_best"
+msgstr "Dispositions"
+
+msgid "tt_wrz_select_grundlage"
+msgstr "Decision basis"
+
+msgid "tt_wrz_select_kanton"
+msgstr "Canton"
+
+msgid "tt_wrz_select_name"
+msgstr "Reserve name"
+
+msgid "tt_wrz_select_obj"
+msgstr "Object number"
+
+msgid "tt_wrz_select_schutz"
+msgstr "Protection status"
+
+msgid "tt_wrz_select_schutzzeit"
+msgstr "Protection period"
+
+msgid "tt_wrz_select_zusatz"
+msgstr "More info"
+
 msgid "twitter title"
 msgstr "Twitter"
 

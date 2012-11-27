@@ -441,6 +441,24 @@ class emissionplan(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bav.laerm-emissionplan_eisenbahn_2015', emissionplan)
 
+class wrzselect(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'jgd_select'
+    __table_args__ = ({'schema': 'wrzportal', 'autoload': True})
+    __template__ = 'tooltips/wrz_select.mako'
+    id = Column('objectid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.wrz-jagdbanngebiete_select', wrzselect)
+
+class wrzportal(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wrz_portal'
+    __table_args__ = ({'schema': 'wrzportal', 'autoload': True})
+    __template__ = 'tooltips/wrz_portal.mako'
+    id = Column('objectid', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.wrz-wildruhezonen_portal', wrzportal)
+
 
 register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AM_G)
 register('ch.bafu.bundesinventare-amphibien', AM_L)

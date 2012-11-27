@@ -424,6 +424,9 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.wasser-rueckgabe':'Restituziun d\'aua',
 	'ch.bafu.wege-wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina ? vias e rutas',
 	'ch.bafu.wildruhezonen-jagdbanngebiete':'Zonas da paus per la selvaschina ? territoris scumandads per la chatscha',
+	'ch.bafu.wrz-jagdbanngebiete_select':'ch.bafu.wrz-jagdbanngebiete_select', //TODO
+	'ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen':'ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen', //TODO
+	'ch.bafu.wrz-wildruhezonen_portal':'ch.bafu.wrz-wildruhezonen_portal', //TODO
 	'ch.bag.zecken-lyme':'Borreliose',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventari federal ISOS',
