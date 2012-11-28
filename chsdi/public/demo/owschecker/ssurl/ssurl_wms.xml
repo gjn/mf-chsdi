@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServerSettings>
+<ServerCapabilities>
+<Security>
+<SSL></SSL>
+<SSLCertificate></SSLCertificate>
+<SwissID></SwissID>
+<HTTPSLogin>
+<Username></Username>
+<Password></Password>
+</HTTPSLogin>
+</Security>
+</ServerCapabilities>
+
+
+    <WMS>
+        <Layers>
+            <Layer status="must">Points</Layer>
+            <Layer status="must">Contours</Layer>
+
+        </Layers>
+        <GetFeatureInfo>
+            <Feature>
+                <Params>
+                    <REQUEST>GetFeatureInfo</REQUEST>
+                    <CRS>EPSG:900913</CRS>
+                    <FORMAT>image/png</FORMAT>
+                    <WIDTH>984</WIDTH>
+                    <HEIGHT>60</HEIGHT>
+                    <BBOX>-13042086.162853,3856412.296628,-13041792.35806,3856609.360842</BBOX>                
+                    <QUERY_LAYERS>TIN</QUERY_LAYERS>
+                    <LAYERS>TIN</LAYERS>
+                    <STYLES>GroundElevation</STYLES>
+                    <I>745</I>
+                    <J>0</J>
+                    <FEATURE_COUNT>1</FEATURE_COUNT>
+                    <INFO_FORMAT>text/xml</INFO_FORMAT>
+                    <EXCEPTIONS>application/vnd.ogc.se_xml</EXCEPTIONS>
+                </Params>
+                <Attribute xpath="Features/FeatureInfo/Attributes/Attribute/FieldName[text()='Elevation (Z)']/../Value/text()">13.849</Attribute>
+                <Attribute xpath="Features/FeatureInfo/Attributes/Attribute/FieldName[text()='Slope (Degrees)']/../Value/text()">5.484</Attribute>     
+                <Attribute xpath="Features/FeatureInfo/Attributes/Attribute/FieldName[text()='Aspect']/../Value/text()">359.073</Attribute>
+                <Attribute xpath="Features/FeatureInfo/Attributes/Attribute/FieldName[text()='Intensity']/../Value/text()">218</Attribute>
+            </Feature>   
+        </GetFeatureInfo>
+        </WMS>
+</ServerSettings>

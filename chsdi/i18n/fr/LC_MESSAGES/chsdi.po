@@ -2424,6 +2424,57 @@ msgstr "Détails de l’établissement"
 msgid "tt_swissprtr_ort"
 msgstr "Lieu"
 
+msgid "tt_wrz_portal_beschluss"
+msgstr "Année de décision"
+
+msgid "tt_wrz_portal_best"
+msgstr "Dispositions"
+
+msgid "tt_wrz_portal_grundlage"
+msgstr "Bases de décision"
+
+msgid "tt_wrz_portal_kanton"
+msgstr "Canton"
+
+msgid "tt_wrz_portal_name"
+msgstr "Zone de tranquillité"
+
+msgid "tt_wrz_portal_obj"
+msgstr "Numéro de l’objet"
+
+msgid "tt_wrz_portal_schutz"
+msgstr "Statut de protection"
+
+msgid "tt_wrz_portal_schutzzeit"
+msgstr "Période de protection"
+
+msgid "tt_wrz_portal_zusatz"
+msgstr "Informations supplémentaires"
+
+msgid "tt_wrz_select_best"
+msgstr "Dispositions"
+
+msgid "tt_wrz_select_grundlage"
+msgstr "Bases de décision"
+
+msgid "tt_wrz_select_kanton"
+msgstr "Canton"
+
+msgid "tt_wrz_select_name"
+msgstr "District franc"
+
+msgid "tt_wrz_select_obj"
+msgstr "Numéro de l’objet"
+
+msgid "tt_wrz_select_schutz"
+msgstr "Statut de protection"
+
+msgid "tt_wrz_select_schutzzeit"
+msgstr "Période de protection"
+
+msgid "tt_wrz_select_zusatz"
+msgstr "Informations supplémentaires"
+
 msgid "twitter title"
 msgstr "Twitter"
 

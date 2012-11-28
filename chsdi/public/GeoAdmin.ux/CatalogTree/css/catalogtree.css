@@ -180,3 +180,9 @@
 .ext-ie .geoadmin-catalog-tree .treelayericon-queryable {
   margin-top: 0px !important;
 }
+.ext-ie7 .geoadmin-catalog-tree .treelayericon-queryable, .ext-ie7 .geoadmin-catalog-tree .treelayericon {
+  margin-top: -18px !important;
+}
+.ext-ie7 .geadmin-catalog-tree .x-tree-node {
+  height: 22px;
+}

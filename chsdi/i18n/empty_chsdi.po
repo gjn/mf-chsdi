@@ -54,6 +54,57 @@ msgstr ""
 msgid "nord"
 msgstr ""
 
+msgid "tt_wrz_portal_name"
+msgstr ""
+
+msgid "tt_wrz_portal_obj"
+msgstr ""
+
+msgid "tt_wrz_portal_schutz"
+msgstr ""
+
+msgid "tt_wrz_portal_best"
+msgstr ""
+
+msgid "tt_wrz_portal_schutzzeit"
+msgstr ""
+
+msgid "tt_wrz_portal_grundlage"
+msgstr ""
+
+msgid "tt_wrz_portal_beschluss"
+msgstr ""
+
+msgid "tt_wrz_portal_zusatz"
+msgstr ""
+
+msgid "tt_wrz_portal_kanton"
+msgstr ""
+
+msgid "tt_wrz_select_name"
+msgstr ""
+
+msgid "tt_wrz_select_obj"
+msgstr ""
+
+msgid "tt_wrz_select_schutz"
+msgstr ""
+
+msgid "tt_wrz_select_best"
+msgstr ""
+
+msgid "tt_wrz_select_schutzzeit"
+msgstr ""
+
+msgid "tt_wrz_select_grundlage"
+msgstr ""
+
+msgid "tt_wrz_select_zusatz"
+msgstr ""
+
+msgid "tt_wrz_select_kanton"
+msgstr ""
+
 msgid "tt_ch.bazl.totallength"
 msgstr ""
 

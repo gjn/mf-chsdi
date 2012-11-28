@@ -28,11 +28,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     framesPerSecond: 30,
     
-    /** api: config[presentedPeriods]
-     *  ``Number`` Number of timestamps that are loaded/show whilst animation is progressing
+    /** private: property[preloadedFramesRequired]
+     * ``Number`` Number of timestamps that are loaded before animation initially starts
      */
-    presentedPeriods: 10,
-    
+    preloadedFramesRequired: 10,
+    /** private: property[fadeTime]
+     * ``Number`` Duration of fading timestamps [milliseconds]
+     */
+    fadeTime: 1250,
+    /** private: property[transitionTime]
+     * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
+     */
+    transitionTime: 0,
     /** private: property[minYear]
      *  ``Number`` Earliest year for which the layer is available
      */
@@ -90,9 +97,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         playDirection: "forwards"
     },
     
-    // TODO Remove when proof of concept is no longer needed
-    easings: null,
-    
     /** private: property[preloadingDone]
      * ``Boolean`` True when enough frames have been loaded to start the animation
      */
@@ -102,8 +106,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
         // Make sure state gets restored
         this.initState();
-        
-        this.proofOfConceptInitEasings();
         
         Ext.get(this.contentEl).addClass('timeseriesWidget');
         
@@ -382,13 +384,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         });
         
-        // TODO Use only final easing after proof of concept is no longer needed
-        var selectEasing = document.getElementById("selectEasing");
-        // IE8 does not support HTMLSelectElement.value
-        var easingName = selectEasing.options[selectEasing.selectedIndex].value;
         if(state.state==="fading"){
             // Fade foreground layer
-            foreground.setOpacity(this.easings[easingName](state.ratio));
+            foreground.setOpacity(this.easing(state.ratio));
         } else {
             // Make foreground fully opaque since animation is now waiting for the next fade to be due
             foreground.setOpacity(1);
@@ -467,9 +465,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      * :param onCompletion: ``Function`` Called when available timestamps are known and receives animation state model. The model is ``null`` however if gathering the available timestamps failed.
      */
     initAnimationState: function(onCompletion){
-        // TODO Use final values once proof of concept is no longer needed
-        var fadeTime = parseInt(document.getElementById("fadeTime").value, 10);
-        var transitionTime = parseInt(document.getElementById("transitionTime").value, 10);
+        var fadeTime = this.fadeTime;
+        var transitionTime = this.transitionTime;
         
         this.getAnimationPeriods(function(periods){
             if(!(periods instanceof Array)){
@@ -697,11 +694,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                                 function layerPreloaded(){
                                     layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
                                     
-                                    // TODO Use final value once proof of concept is no longer needed
-                                    var selectPreloadedFramesRequired = document.getElementById("preloadedFramesRequired");
-                                    var preloadedFramesRequired = parseInt(selectPreloadedFramesRequired.options[selectPreloadedFramesRequired.selectedIndex].value, 10);
-                                    
-                                    if(timestampIndex===preloadedFramesRequired){
+                                    if(timestampIndex===this.preloadedFramesRequired){
                                         timeseriesWidget.preloadingDone = true;
                                         console.log("Enough preloading done");
                                         timeseriesWidget.fireEvent("preloadingDone");
@@ -853,66 +846,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
     },
     
-    // TODO Remove when proof of concept is no longer needed
-    proofOfConceptInitEasings: function (){
-        // Easings based on https://github.com/jquery/jquery-ui/blob/1-8-stable/ui/jquery.effects.core.js#L607
-        this.easings = (function(){
-            var easings = {
-                Linear: function(p){
-                    return p;
-                }
-            };
-            var baseEasings = {
-                Sine: function ( p ) {
-                    return 1 - Math.cos( p * Math.PI / 2 );
-                },
-                Circ: function ( p ) {
-                    return 1 - Math.sqrt( 1 - p * p );
-                },
-                Elastic: function( p ) {
-                    return p === 0 || p === 1 ? p :
-                    -Math.pow( 2, 8 * (p - 1) ) * Math.sin( ( (p - 1) * 80 - 7.5 ) * Math.PI / 15 );
-                },
-                Back: function( p ) {
-                    return p * p * ( 3 * p - 2 );
-                },
-                Bounce: function ( p ) {
-                    var pow2,
-                    bounce = 4;
-
-                    while ( p < ( ( pow2 = Math.pow( 2, --bounce ) ) - 1 ) / 11 ) {}
-                    return 1 / Math.pow( 4, 3 - bounce ) - 7.5625 * Math.pow( ( pow2 * 3 - 2 ) / 22 - p, 2 );
-                }
-            };
-
-            [ "Quad", "Cubic", "Quart", "Quint", "Expo" ].forEach(function( name, i ) {
-                baseEasings[ name ] = function( p ) {
-                    return Math.pow( p, i + 2 );
-                };
-            });
-
-            ["Sine", "Circ", "Elastic", "Back", "Bounce", "Quad", "Cubic", "Quart", "Quint", "Expo"].forEach(function(name){
-                var easeIn = baseEasings[name];
-                easings[ "easeIn" + name ] = easeIn;
-                easings[ "easeOut" + name ] = function( p ) {
-                    return 1 - easeIn( 1 - p );
-                };
-                easings[ "easeInOut" + name ] = function( p ) {
-                    return p < .5 ?
-                    easeIn( p * 2 ) / 2 :
-                    easeIn( p * -2 + 2 ) / -2 + 1;
-                };
-            });
-            return easings;
-        })();
-        var selectEasing = document.getElementById("selectEasing");
-        for(var name in this.easings){
-            // IE 8 does not support Option constructor
-            var option = document.createElement('option');
-            option.appendChild(document.createTextNode(name));
-            selectEasing.appendChild(option);
+    /**
+     * Calculates the opacity of the overlaying layer during fades.
+     * :param p: ``Number`` Fraction of the animation progress (range 0..1)
+     * :return: ``Number`` Opacity (range 0=tranparent to 1=opaque)
+     */
+    easing: function (p){
+        // Easing based on EaseInOutSine of https://github.com/jquery/jquery-ui/blob/1-8-stable/ui/jquery.effects.core.js#L607
+        if(p<0.5){
+            return (1 - Math.cos( p * Math.PI ))/2;
+        } else {
+            return (1 - Math.cos( (p * -2 + 2) * Math.PI / 2 )) / -2 + 1;
         }
-        selectEasing.selectedIndex = 3;//"easeInOutSine";
     }
 });
 

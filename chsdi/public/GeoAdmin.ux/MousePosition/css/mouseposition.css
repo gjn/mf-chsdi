@@ -17,3 +17,6 @@
 .box-projection-selector {
     white-space: normal !important;
 }
+.ext-ie7 div#mouseposition {
+    left: 125px !important;
+}

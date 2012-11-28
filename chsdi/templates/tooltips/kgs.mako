@@ -135,7 +135,8 @@
     url3 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/meta.txt'
     f3 = urlopen(url3)
     s3 = f3.read()
-    d = s3.split('\n')
+    s4 = s3.decode('cp1252')
+    d = s4.split('\n')
     
     hpictures = {}
     hpdfs = {}
@@ -156,12 +157,12 @@
             endif
         hpictures[str(fid)] = parser.filesMatched
         hpdfs[str(fid)] = parser2.filesMatched
-        hmeta[str(fid)] = meta        
+        hmeta[str(fid)] = meta 
         endfor
     endfor
     hpictures = json.dumps(hpictures)
     hpdfs = json.dumps(hpdfs)
-    hmeta = json.dumps(hmeta)
+    hmeta = json.dumps(hmeta, encoding="utf-8")
 %>
 
 

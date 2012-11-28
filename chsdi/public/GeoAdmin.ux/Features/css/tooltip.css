@@ -99,7 +99,7 @@
 
 .box-popup .x-window-print-tool, .click-popup .x-window-print-tool {
    float: right !important;
-   padding-right: 10px;
+   padding-right: 0px;
 }
 .tooltip_large_header {
     margin: 0px -10px 5px -10px;

@@ -2424,6 +2424,57 @@ msgstr "Informazioni dettagliate sul complesso/azienda"
 msgid "tt_swissprtr_ort"
 msgstr "Luogo"
 
+msgid "tt_wrz_portal_beschluss"
+msgstr "Anno della decisione"
+
+msgid "tt_wrz_portal_best"
+msgstr "Disposizioni"
+
+msgid "tt_wrz_portal_grundlage"
+msgstr "Basi di decisione"
+
+msgid "tt_wrz_portal_kanton"
+msgstr "Cantone"
+
+msgid "tt_wrz_portal_name"
+msgstr "Nome della zona"
+
+msgid "tt_wrz_portal_obj"
+msgstr "Numero dell'oggetto"
+
+msgid "tt_wrz_portal_schutz"
+msgstr "Stato della protezione"
+
+msgid "tt_wrz_portal_schutzzeit"
+msgstr "Periodo di protezione"
+
+msgid "tt_wrz_portal_zusatz"
+msgstr "Ulteriori informazioni"
+
+msgid "tt_wrz_select_best"
+msgstr "Disposizioni"
+
+msgid "tt_wrz_select_grundlage"
+msgstr "Basi di decisione"
+
+msgid "tt_wrz_select_kanton"
+msgstr "Cantone"
+
+msgid "tt_wrz_select_name"
+msgstr "Nome della bandita"
+
+msgid "tt_wrz_select_obj"
+msgstr "Numero dell'oggetto"
+
+msgid "tt_wrz_select_schutz"
+msgstr "Stato della protezione"
+
+msgid "tt_wrz_select_schutzzeit"
+msgstr "Periodo di protezione"
+
+msgid "tt_wrz_select_zusatz"
+msgstr "Ulteriori informazioni"
+
 msgid "twitter title"
 msgstr "Twitter"
 

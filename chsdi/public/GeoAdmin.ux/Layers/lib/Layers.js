@@ -1516,6 +1516,38 @@ GeoAdmin._Layers = OpenLayers.Class({
              queryable: true,
              transitionEffect: "no"
              }, */
+            "ch.bafu.wrz-jagdbanngebiete_select": {
+                name: OpenLayers.i18n("ch.bafu.wrz-jagdbanngebiete_select"),
+                layertype: 'wmts',
+                timestamp: ['20100801'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.kt.bafu",
+                queryable: true,
+                opacity: 0.75,
+                transitionEffect: "no"
+            },
+            "ch.bafu.wrz-wildruhezonen_portal": {
+                name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen_portal"),
+                layertype: 'wmts',
+                timestamp: ['20121115'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.kt.bafu",
+                queryable: true,
+                opacity: 0.75,
+                transitionEffect: "no"
+            },
+            "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen": {
+                name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"),
+                layertype: 'wmts',
+                timestamp: ['20121115'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.kt.bafu",
+                queryable: false,
+                transitionEffect: "no"
+            },			
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
                 layertype: 'wmts',
