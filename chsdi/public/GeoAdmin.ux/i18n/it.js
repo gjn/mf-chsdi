@@ -45,7 +45,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Cancel reporting':'Annullare',
 	'Cantons':'Cantone',
 	'Catalog':'Catalogo [INSPIRE]',
-	'Choose a topic':'Seleziona un tema',
+	'Choose a topic':'Seleziona un piano settoriale...',
 	'Cities':'Comuni',
 	'Classification:':'Categoria',
 	'Climb: ':'Salita : ',
