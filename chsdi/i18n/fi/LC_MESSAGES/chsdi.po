@@ -374,6 +374,66 @@ msgstr "Nummer Unterregion"
 msgid "blind warning"
 msgstr "Questa pagina d'internet è in'applicaziun cartografica e n'è pervia da quai betg optimada per persunas tschorvas."
 
+msgid "blw_farbe_0"
+msgstr "Seen, Enklaven"
+
+msgid "blw_farbe_1"
+msgstr "Getreidebau, Futterbau: ++, Hackfruchtbau: +/++"
+
+msgid "blw_farbe_10"
+msgstr "Naturfutterbau: + Kunstfutterbau: +/-"
+
+msgid "blw_farbe_11"
+msgstr "Kleinviehweide: +; Futterbau, Jungviehweide: +/-"
+
+msgid "blw_farbe_12"
+msgstr "Grossviehweide: + Futterbau: +/-"
+
+msgid "blw_farbe_13"
+msgstr "Jungviehweide: + Grossviehweide: +/- Naturfutterbau: +/-"
+
+msgid "blw_farbe_14"
+msgstr "Jungviehweide: ++; Naturfutterbau: +; Grossviehweide: +/-"
+
+msgid "blw_farbe_15"
+msgstr "Kleinviehweide: ++; Jungviehweide: +; Grossviehweide: +/-"
+
+msgid "blw_farbe_16"
+msgstr "Kleinviehweide: +; Jungviehweide: +/-; Grossviehweide: -"
+
+msgid "blw_farbe_17"
+msgstr "Kleinviehweide: +; Jungviehweide: +/-"
+
+msgid "blw_farbe_18"
+msgstr "Kleinviehweide: +/-"
+
+msgid "blw_farbe_19"
+msgstr "Siedlungsgebiete, Fels, Gletscher"
+
+msgid "blw_farbe_2"
+msgstr "Futterbau: +/++; Getreidebau: +"
+
+msgid "blw_farbe_3"
+msgstr "Getreidebau: + Naturfutterbau: + Kunstfutterbau: +/-"
+
+msgid "blw_farbe_4"
+msgstr "Getreidebau: + Futterbau: ++ Hackfruchtbau: +/-"
+
+msgid "blw_farbe_5"
+msgstr "Getreidebau: +/- Naturfutterbau: +/- Grossviehweide: +/-"
+
+msgid "blw_farbe_6"
+msgstr "Futterbau: + Getreidebau: +/- Grossviehweide: ++"
+
+msgid "blw_farbe_7"
+msgstr "Futterbau, Grossviehweide: +; Getreidebau: +/-"
+
+msgid "blw_farbe_8"
+msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-"
+
+msgid "blw_farbe_9"
+msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
+
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Aglomeraziuns e citads isoladas"
 
