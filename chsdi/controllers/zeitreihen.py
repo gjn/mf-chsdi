@@ -75,8 +75,11 @@ class ZeitreihenController(BaseController):
 
         #Default timestamp
         timestamps = ['1938','1950','1960','1970','1980','1990','2000','2010']
-
+        counter = 0
         for f in query.all():
+            if counter == 0:
+                timestamps = []
+                counter = 1
             timestamps = timestamps + f.release_year
         
         # Remove duplicate items
