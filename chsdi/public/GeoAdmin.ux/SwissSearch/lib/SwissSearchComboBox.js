@@ -273,6 +273,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     },
 
     recordSelected: function(combo, record, index) {
+  
+        if (!record) {
+            return false;
+        };
 
         var extent = OpenLayers.Bounds.fromArray(record.data.bbox);
 
