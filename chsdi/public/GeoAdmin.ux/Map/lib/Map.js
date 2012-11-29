@@ -18,6 +18,8 @@
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
  *
+ * @require GeoAdmin.js
+ * @include ie9.js
  * @include Layers/lib/Layers.js
  * @include Map/lib/OverviewMap.js
  *
