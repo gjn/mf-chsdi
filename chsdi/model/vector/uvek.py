@@ -538,3 +538,15 @@ class sil_planning_raster_k(Base, Queryable):
     the_geom = Column('the_geom',Geometry(21781))
 	
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
+
+class ngamapping (Base, Queryable):
+	__tablename__ = 'ngamapping'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.anbieter-eigenes_festnetz', ngamapping)
+register('ch.bakom.downlink1', ngamapping)
+register('ch.bakom.uplink1', ngamapping)
+register('ch.bakom.verfuegbarkeit-hdtv', ngamapping)

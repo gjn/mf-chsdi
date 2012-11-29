@@ -2426,6 +2426,9 @@ msgstr "Objektart"
 msgid "tt_kbs_statistik"
 msgstr "Statistik"
 
+msgid "tt_ngamapping_provider"
+msgstr "Provider"
+
 msgid "tt_program"
 msgstr "Programm"
 

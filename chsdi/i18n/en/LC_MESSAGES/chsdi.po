@@ -2427,6 +2427,9 @@ msgstr "Type of object"
 msgid "tt_kbs_statistik"
 msgstr "Statistics"
 
+msgid "tt_ngamapping_provider"
+msgstr "Provider"
+
 msgid "tt_program"
 msgstr "Channel"
 

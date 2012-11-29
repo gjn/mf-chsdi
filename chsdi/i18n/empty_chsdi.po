@@ -9,6 +9,9 @@ msgstr ""
 msgid "tt_bazl_abortion"
 msgstr ""
 
+msgid "tt_ngamapping_provider"
+msgstr ""
+
 msgid "tt_ch.bazl.kartnummer"
 msgstr ""
 

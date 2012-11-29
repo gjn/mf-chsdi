@@ -721,5 +721,9 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.moose': "",
     'ch.bazl.landschaftsruhezonen':"",
     'ch.bak.schutzgebiete-unesco_weltkulturerbe':"",
-    'Please deactivate "Private browsing". Some functionalities have been deactivated.': "" 
+    'Please deactivate "Private browsing". Some functionalities have been deactivated.': "",
+	'ch.bakom.anbieter-eigenes_festnetz':"",
+	'ch.bakom.downlink1':"",
+	'ch.bakom.uplink1':"",
+	'ch.bakom.verfuegbarkeit-hdtv':""
 });
