@@ -272,7 +272,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Pause animation
             window.clearInterval(this.animationTimer);
             this.animationTimer = null;
-            console.log("paused by click");
+            //console.log("paused by click");
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
             playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
             this.animationIsPlaying = false;
@@ -302,7 +302,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         // Play / Resume
                         timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
                         timeseriesWidget.setAnimationTimer();
-                        console.log("resumed by click");
+                        //console.log("resumed by click");
                     }
                 });
             }
@@ -367,7 +367,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 if(this.animationIsPlaying){
                     this.repaintAnimation();
                     this.setAnimationTimer();
-                    console.log("resumed because tiles "+state.foreground+" there");
+                    //console.log("resumed because tiles "+state.foreground+" there");
                 }
             }
             foreground.events.register('loadend', this, resume);
@@ -582,7 +582,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         if(this.state.animationSlider){
             return this.state.animationSlider;
         }
-        return Math.floor((this.minYear+this.maxYear)/2);
+        return 1938;
+        //return Math.floor((this.minYear+this.maxYear)/2);
     },
     
     /** private: method[initTabs]
@@ -640,7 +641,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 if(timeseriesWidget.animationIsPlaying){
                     // Stop animation
                     timeseriesWidget.playPause();
-                    console.log("stopped animation because slider drag");
+                    //console.log("stopped animation because slider drag");
                 }
                 if(animationSliderPending){
                     clearTimeout(animationSliderPending);
@@ -676,7 +677,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                                 lowPrio.forEach(function(preloadTimestamp){
                                     animationPeriods.push(preloadTimestamp);
                                 });
-                                console.log("animationPeriods: "+animationPeriods);
+                                //console.log("animationPeriods: "+animationPeriods);
                                 delayedPreload(1);
                             });
                         } else {
@@ -686,7 +687,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         function delayedPreload(timestampIndex){
                             if(timestampIndex<animationPeriods.length-1){
                                 var preloadTimestamp = animationPeriods[timestampIndex];
-                                console.log(timestampIndex+". Preloading "+preloadTimestamp);
+                                //console.log(timestampIndex+". Preloading "+preloadTimestamp);
                                 var layer = map.addLayerByName(timeseriesWidget.layerName, {
                                     timestamp: preloadTimestamp,
                                     opacity: 0
@@ -696,7 +697,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                                     
                                     if(timestampIndex===this.preloadedFramesRequired){
                                         timeseriesWidget.preloadingDone = true;
-                                        console.log("Enough preloading done");
+                                        //console.log("Enough preloading done");
                                         timeseriesWidget.fireEvent("preloadingDone");
                                     }
                                     delayedPreload(timestampIndex + 1);
