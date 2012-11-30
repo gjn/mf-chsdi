@@ -1541,7 +1541,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen": {
                 name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"),
                 layertype: 'wmts',
-                timestamp: ['20121115'],
+                timestamp: ['20121128'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
@@ -2138,6 +2138,48 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
+            //FIXME ltfoa: those layers are to TEST the ngamapping application.
+            "ch.bakom.anbieter-eigenes_festnetz": {
+                name: OpenLayers.i18n("ch.bakom.anbieter-eigenes_festnetz"),
+                layertype: 'wmts',
+                timestamp: ['20121128'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink1": {
+                name: OpenLayers.i18n("ch.bakom.downlink1"),
+                layertype: 'wmts',
+                timestamp: ['20121128'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink1": {
+                name: OpenLayers.i18n("ch.bakom.uplink1"),
+                layertype: 'wmts',
+                timestamp: ['20121128'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.verfuegbarkeit-hdtv": {
+                name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-hdtv"),
+                layertype: 'wmts',
+                timestamp: ['20121128'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            // FIXME ltfoa END
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
@@ -2635,7 +2677,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-vd.ortschaftenverzeichnis_plz": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
                 layertype: 'wmts',
-                timestamp: ['20121101','20120501','20111101','20110502'],
+                timestamp: ['20121102','20120501','20111101','20110502'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",

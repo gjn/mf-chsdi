@@ -374,6 +374,66 @@ msgstr "Numéro de la subdivision"
 msgid "blind warning"
 msgstr "Cette page est une application cartographique et n'est donc pas optimisée pour les aveugles."
 
+msgid "blw_farbe_0"
+msgstr "Enclaves"
+
+msgid "blw_farbe_1"
+msgstr "Céréales, prairies: ++; cultures sarclées: +/++"
+
+msgid "blw_farbe_10"
+msgstr "Prairies permanentes: +; prairies temporaires: +/-"
+
+msgid "blw_farbe_11"
+msgstr "Pâturage de chèvres et moutons: +; prairies, pâturage du jeune bétail: +/-"
+
+msgid "blw_farbe_12"
+msgstr "Pâturage du gros bétail: +; prairies: +/-"
+
+msgid "blw_farbe_13"
+msgstr "Pâturage du jeune bétail: +; pâturage du gros bétail, prairies permanentes: +/-"
+
+msgid "blw_farbe_14"
+msgstr "Pâturage du jeune bétail: ++; prairies permanentes: +; pâturage du gros bétail: +/-"
+
+msgid "blw_farbe_15"
+msgstr "Pâturage des chèvres et moutons: ++; pâturage du jeune bétail: +; pâturage du gros bétail: +/-"
+
+msgid "blw_farbe_16"
+msgstr "Pâturage des chèvres et moutons: +; pâturage du jeune bétail: +/-; pâturage du gros bétail: -"
+
+msgid "blw_farbe_17"
+msgstr "Pâturage des chèvres et moutons: +; pâturage du jeune bétail: +/-"
+
+msgid "blw_farbe_18"
+msgstr "Pâturage des chèvres et moutons: +/-"
+
+msgid "blw_farbe_19"
+msgstr "Surfaces construites, rochers, glaciers"
+
+msgid "blw_farbe_2"
+msgstr "Prairies: +/++; grandes cultures: +"
+
+msgid "blw_farbe_3"
+msgstr "Grandes cultures, prairies permanentes: +; prairies temporaires: +/-"
+
+msgid "blw_farbe_4"
+msgstr "Prairies: ++; céréales: +; cultures sarclées: +/-"
+
+msgid "blw_farbe_5"
+msgstr "Céréales, prairies permanentes, pâturages du gros bétail: +/-"
+
+msgid "blw_farbe_6"
+msgstr "Pâturage du gros bétail: ++; prairies: +; céréales: +/-"
+
+msgid "blw_farbe_7"
+msgstr "Prairies, pâturages du gros bétail: +; céréales: +/-"
+
+msgid "blw_farbe_8"
+msgstr "Prairies permanentes, pâturages du gros bétail: +; prairies temporaires, céréales: +/-"
+
+msgid "blw_farbe_9"
+msgstr "Prairies permanentes: +; prairies temporaires, céréales: +/-; pâturage du gros bétail: -"
+
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomérations et villes isolées"
 
@@ -2366,6 +2426,9 @@ msgstr "Type d'objet"
 
 msgid "tt_kbs_statistik"
 msgstr "Statistiques"
+
+msgid "tt_ngamapping_provider"
+msgstr "Provider"
 
 msgid "tt_program"
 msgstr "Programme"

@@ -9,6 +9,9 @@ msgstr ""
 msgid "tt_bazl_abortion"
 msgstr ""
 
+msgid "tt_ngamapping_provider"
+msgstr ""
+
 msgid "tt_ch.bazl.kartnummer"
 msgstr ""
 
@@ -2553,4 +2556,64 @@ msgid "bak_unesco_weltkulturerbe_name"
 msgstr ""
 
 msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr ""
+
+msgid "blw_farbe_0"
+msgstr ""
+
+msgid "blw_farbe_1"
+msgstr ""
+
+msgid "blw_farbe_2"
+msgstr ""
+
+msgid "blw_farbe_3"
+msgstr ""
+
+msgid "blw_farbe_4"
+msgstr ""
+
+msgid "blw_farbe_5"
+msgstr ""
+
+msgid "blw_farbe_6"
+msgstr ""
+
+msgid "blw_farbe_7"
+msgstr ""
+
+msgid "blw_farbe_8"
+msgstr ""
+
+msgid "blw_farbe_9"
+msgstr ""
+
+msgid "blw_farbe_10"
+msgstr ""
+
+msgid "blw_farbe_11"
+msgstr ""
+
+msgid "blw_farbe_12"
+msgstr ""
+
+msgid "blw_farbe_13"
+msgstr ""
+
+msgid "blw_farbe_14"
+msgstr ""
+
+msgid "blw_farbe_15"
+msgstr ""
+
+msgid "blw_farbe_16"
+msgstr ""
+
+msgid "blw_farbe_17"
+msgstr ""
+
+msgid "blw_farbe_18"
+msgstr ""
+
+msgid "blw_farbe_19"
 msgstr ""

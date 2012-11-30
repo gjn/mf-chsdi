@@ -186,6 +186,19 @@ class TestSwisssearchController(TestController):
         assert 'bbox' in resp
         assert 'attributes' in resp
         assert 'BE0100000001972' in resp
+    
+    def test_attributes_quote(self):
+        params = {
+             'layers': 'ch.babs.kulturgueter',
+             'query': "Mont Vully"
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+                 params=params
+        )
+        assert 'results' in resp
+        assert 'bbox' in resp
+        assert 'attributes' in resp
+        assert 'Mont Vully'  in resp
 
     def test_attributes_raw(self):
         params = {

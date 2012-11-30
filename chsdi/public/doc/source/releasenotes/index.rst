@@ -1,3 +1,80 @@
+Release 201212xx - Day, December xxth 2012
+====================================================
+
+Geodata
+********
+
+
++--+--+
+|  |  |
++--+--+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+
++--+--+
+|  |  |
++--+--+
+
+Bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+
++--+--+
+|  |  |
++--+--+
+
+Bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+
++--+--+
+|  |  |
++--+--+
+
+Bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+
++--+--+
+|  |  |
++--+--+
+
+Bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+
+
+
+
+
 Release 20121128 - Wednesday, November 28th 2012
 ================================================
 

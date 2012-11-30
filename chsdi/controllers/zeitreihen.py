@@ -71,20 +71,31 @@ class ZeitreihenController(BaseController):
         query = Session.query(mymodel)
         spatialFilter = mymodel.within_filter(lon, lat, column='the_geom')
         query = query.filter(spatialFilter)
-        query = query.filter(mymodel.bgdi_order == 1)
 
         #Default timestamp
         timestamps = ['1938','1950','1960','1970','1980','1990','2000','2010']
+        counter = 0
+        minYear = 2020
+        minTimestamp = 1938
 
+        # Fill the array in time descending direction
         for f in query.all():
-            timestamps = timestamps + f.release_year
-        
+            if counter == 0:
+                timestamps = []
+                counter = 1
+            for x in f.release_year:
+                if int(x) < minYear and int(x) >= minTimestamp:
+                    timestamps.append(x)
+                    minYear = x
+                if int(x) < minTimestamp:
+                    timestamps.append(minTimestamp)
+
         # Remove duplicate items
         timestamps = list(set(timestamps))
 
         counter = 0
         for value in timestamps:
-            timestamps[counter] = int(str(timestamps[counter]+'1231'))
+            timestamps[counter] = int(str(str(timestamps[counter])+'1231'))
             counter = counter+1
 
         timestamps.sort()
