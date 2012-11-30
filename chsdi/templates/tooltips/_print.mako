@@ -17,6 +17,11 @@
 </head>
 <body onload="init()" class="x-window-mc" style="background-color: white">
 % for feature in c.features:
-  <div style="border: 1px solid #ddd">${feature.html}</div>
+%     if hasattr(feature, 'html'):
+          <div style="border: 1px solid #ddd">${feature.html}</div>
+%     else:
+          <div style="border: 1px solid #ddd">${feature.properties['html']}</div>
+%     endif
+       
 % endfor
 </body>
