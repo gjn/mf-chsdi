@@ -67,7 +67,6 @@ class ZeitreihenController(BaseController):
         if c.scale > 1 and c.scale <= 25005:
             mymodel =  Zeitreihen_Metadata_22
 
-        # Select only features having a bgdi_order = 1
         query = Session.query(mymodel)
         spatialFilter = mymodel.within_filter(lon, lat, column='the_geom')
         query = query.filter(spatialFilter)
@@ -85,11 +84,10 @@ class ZeitreihenController(BaseController):
                 counter = 1
             for x in f.release_year:
                 if int(x) < minYear and int(x) >= minTimestamp:
-                    timestamps.append(x)
+                    timestamps.append(str(x))
                     minYear = x
                 if int(x) < minTimestamp:
-                    timestamps.append(minTimestamp)
-
+                    timestamps.append(str(minTimestamp))
         # Remove duplicate items
         timestamps = list(set(timestamps))
 
@@ -99,12 +97,6 @@ class ZeitreihenController(BaseController):
             counter = counter+1
 
         timestamps.sort()
-        #if timestamps[0] != 19381231:
-        #    timestamps.append(19381231)
-        #timestamps.sort()
-        #if timestamps[len(timestamps)-1] != 20101231:
-        #    timestamps.append(20101231)
-        #timestamps.sort()
 
         counter = 0
         for value in timestamps:
