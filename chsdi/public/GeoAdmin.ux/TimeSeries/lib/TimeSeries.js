@@ -26,7 +26,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[framesPerSecond]
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
-    framesPerSecond: 30,
+    framesPerSecond: 15,
     
     /** private: property[preloadedFramesRequired]
      * ``Number`` Number of timestamps that are loaded before animation initially starts
@@ -35,7 +35,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
      */
-    fadeTime: 1250,
+    fadeTime: 2500,
     /** private: property[transitionTime]
      * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
      */
