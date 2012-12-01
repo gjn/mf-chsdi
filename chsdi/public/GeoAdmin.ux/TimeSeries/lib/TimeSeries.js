@@ -26,7 +26,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[framesPerSecond]
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
-    framesPerSecond: 30,
+    framesPerSecond: 15,
     
     /** private: property[preloadedFramesRequired]
      * ``Number`` Number of timestamps that are loaded before animation initially starts
@@ -35,7 +35,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
      */
-    fadeTime: 1250,
+    fadeTime: 2500,
     /** private: property[transitionTime]
      * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
      */
@@ -187,7 +187,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
         function anyLayerLoadEnd(){
             // Remove spinner when last layer was loaded
-            if(layersCurrentlyLoading()===false && this.preloadingDone){
+            if(layersCurrentlyLoading()===false){
                 clearTimeout(preloadStatusTimer);
                 this.clearAndGetPreloadStatusIndicator();
             }
@@ -211,6 +211,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 layer: layer
             });
         }, this);
+        
+        function handleExtentChanged(){
+            if(this.animationIsPlaying){
+                // Stop the animation
+                this.playPause();
+            }
+            this.discardInvisibleLayers();
+            this.preloadingDone = false;
+        }
+        map.events.register('moveend', this, handleExtentChanged);
+        map.events.register('zoomend', this, handleExtentChanged);
     },
     
     /** api: method[getState]
@@ -279,6 +290,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         } else {
             // Play / Resume
             if(timeseriesWidget.preloadingDone===false){
+                timeseriesWidget.preloadLayersInSequence();
                 // Wait for preloading to finish
                 preloadStatus.addClass("timeseriesWidget-preload-status-loading");
                 preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
@@ -352,9 +364,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Load foreground layer if not yet there and wait for it to complete loading
             map.addLayerByName(this.layerName, {
                 timestamp: state.foreground,
-                opacity: 0
+                //opacity: 0
             });
             foreground = getLayer(state.foreground);
+            foreground.setOpacity(0);
             
             clearInterval(this.animationTimer);
             this.animationTimer = null;
@@ -586,6 +599,102 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         //return Math.floor((this.minYear+this.maxYear)/2);
     },
     
+    isTimeSeriesLayer: function(layer){
+        return layer.name===this.layerName || layer.layername===this.layerName;
+    },
+    
+    discardInvisibleLayers: function(){
+        this.map.layers.slice(0).forEach(function(layer){
+            if((layer.opacity===0 || layer.getVisibility()===false) && this.isTimeSeriesLayer(layer)){
+                this.map.removeLayer(layer);
+            }
+        }, this);
+    },
+    
+    preloadLayersInSequence: function(){
+        var timeseriesWidget = this;
+        
+        // Preload upcoming frames one after the other
+        timeseriesWidget.getAnimationPeriods(function(animationPeriods){
+            var timestamp;
+            var year = timeseriesWidget.animationSlider.getYear();
+            animationPeriods.forEach(function(ts){
+                if(parseInt(ts.substring(0,4), 10)<=year){
+                    timestamp = ts;
+                }
+            });
+            if(!(animationPeriods instanceof Array)){
+                // Failed to get periods from server, don't proceed with preloading
+                return;
+            }
+            
+            // Create a clone of the list and sort it so that it contains the timestamps in ascending upcoming order
+            animationPeriods = animationPeriods.slice(0).sort();
+            for(var i=0; i<animationPeriods.length; i++){
+                if(parseInt(animationPeriods[i], 10)>=parseInt(timestamp, 10)){
+                    break;
+                }
+            }
+            var beforeTimestamp = animationPeriods.splice(0,i);
+            while(beforeTimestamp.length>0){
+                animationPeriods.push(beforeTimestamp.shift());
+            }
+            if(timeseriesWidget.state.playDirection==="backwards"){
+                animationPeriods.reverse();
+            }
+            
+            var timestampShown = timeseriesWidget.findTimestampNoLaterThan(year);
+            var shownLayer = map.layers.filter(function(layer){
+                return timeseriesWidget.isTimeSeriesLayer(layer) && (layer.opacity>0 && layer.getVisibility());// && layer.timestamp===timestampShown;
+            }).pop();
+            if(shownLayer.loading){
+                // Preload once currently shown layer is loaded
+                shownLayer.events.register("loadend", timeseriesWidget, function(){
+                    var indexOfShown = animationPeriods.indexOf(timestamp);
+                    var lowPrio = animationPeriods.splice(0, indexOfShown);
+                    lowPrio.forEach(function(preloadTimestamp){
+                        animationPeriods.push(preloadTimestamp);
+                    });
+                    //console.log("animationPeriods: "+animationPeriods);
+                    delayedPreload(1);
+                });
+            } else {
+                // Preload immediately because currently shown layer is already loaded
+                delayedPreload(1);
+            }
+            function delayedPreload(timestampIndex){
+                if(timestampIndex<animationPeriods.length-1){
+                    var preloadTimestamp = animationPeriods[timestampIndex];
+                    //console.log(timestampIndex+". Preloading "+preloadTimestamp);
+                    var layer = map.addLayerByName(timeseriesWidget.layerName, {
+                        timestamp: preloadTimestamp,
+                        //opacity: 0
+                    });
+                    layer.setOpacity(0);
+                    function layerPreloaded(){
+                        layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
+                        
+                        if(timestampIndex===this.preloadedFramesRequired){
+                            timeseriesWidget.preloadingDone = true;
+                            //console.log("Enough preloading done");
+                            timeseriesWidget.fireEvent("preloadingDone");
+                        }
+                        delayedPreload(timestampIndex + 1);
+                    }
+                    if(layer.tileQueue.length>0){
+                        layer.events.register("loadend", timeseriesWidget, layerPreloaded);
+                    } else {
+                        delayedPreload(timestampIndex + 1);
+                    }
+                } else if(timeseriesWidget.preloadingDone===false) {
+                    // Trigger preloadingDone when all frame are loaded
+                    timeseriesWidget.preloadingDone = true;
+                    timeseriesWidget.fireEvent("preloadingDone");
+                }
+            }
+        });
+    },
+    
     /** private: method[initTabs]
      * Instantiates tabs, periods within and assigns handlers to elements in tabs
      */
@@ -651,65 +760,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timeseriesWidget.addLayers([timestamp], []);
                     timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
 
-                    // Preload upcoming frames one after the other
-                    timeseriesWidget.getAnimationPeriods(function(animationPeriods){
-                        if(!(animationPeriods instanceof Array)){
-                            // Failed to get periods from server, don't proceed with preloading
-                            return;
-                        }
-                        
-                        // Create a clone of the list and sort it so that it contains the timestamps in ascending upcoming order
-                        animationPeriods = animationPeriods.slice(0).sort(function(a, b){
-                            if(a<timestamp && b>timestamp){
-                                // Everything that comes after the currently shown timestamp comes later in result
-                                return 1;
-                            }
-                            return a-b;
-                        });
-                        var shownLayer = map.layers.filter(function(layer){
-                            return layer.name=timeseriesWidget.layerName && layer.timestamp===timestamp;
-                        })[0];
-                        if(shownLayer.loading){
-                            // Preload once currently shown layer is loaded
-                            shownLayer.events.register("loadend", timeseriesWidget, function(){
-                                var indexOfShown = animationPeriods.indexOf(timestamp);
-                                var lowPrio = animationPeriods.splice(0, indexOfShown);
-                                lowPrio.forEach(function(preloadTimestamp){
-                                    animationPeriods.push(preloadTimestamp);
-                                });
-                                //console.log("animationPeriods: "+animationPeriods);
-                                delayedPreload(1);
-                            });
-                        } else {
-                            // Preload immediately because currently shown layer is already loaded
-                            delayedPreload(1);
-                        }
-                        function delayedPreload(timestampIndex){
-                            if(timestampIndex<animationPeriods.length-1){
-                                var preloadTimestamp = animationPeriods[timestampIndex];
-                                //console.log(timestampIndex+". Preloading "+preloadTimestamp);
-                                var layer = map.addLayerByName(timeseriesWidget.layerName, {
-                                    timestamp: preloadTimestamp,
-                                    opacity: 0
-                                });
-                                function layerPreloaded(){
-                                    layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
-                                    
-                                    if(timestampIndex===this.preloadedFramesRequired){
-                                        timeseriesWidget.preloadingDone = true;
-                                        //console.log("Enough preloading done");
-                                        timeseriesWidget.fireEvent("preloadingDone");
-                                    }
-                                    delayedPreload(timestampIndex + 1);
-                                }
-                                layer.events.register("loadend", timeseriesWidget, layerPreloaded);
-                            } else if(timeseriesWidget.preloadingDone===false) {
-                                // Trigger preloadingDone when all frame are loaded
-                                timeseriesWidget.preloadingDone = true;
-                                timeseriesWidget.fireEvent("preloadingDone");
-                            }
-                        }
-                    });
+                    
                 }, sliderChangeDelay);
                 
                 timeseriesWidget.saveState();
