@@ -60,6 +60,7 @@ def make_map(config):
     
     map.connect('/layers/{id}', controller="layers", action='index')
     map.connect('/layers', controller="layers", action='index')
+    map.connect('/maps', controller="maps", action='index')
 
 
     map.connect('/{controller}/{action}')
