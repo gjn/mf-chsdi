@@ -18,7 +18,7 @@
        A:hover {text-decoration: underline overline; color: red;}
     </style>
     <script type="text/javascript">
-        var maps = []
+        var maps = [];
         var moving = false;
         var movestarted = false;
         var markersLayer = [];
@@ -237,7 +237,7 @@
 <div>
    <h1 style='color:white;text-align:center;'>geo.admin.ch: <span id="layerNumber"></span>&nbsp layers</h1>
    <div style='color:white;margin:5px;float:left;css-float:left;'>Map width:
-      <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="${c.map_width}" maxLength="5" style="width:50px;"></input>&nbsp px
+      <input id='inputWidth' type="text" onkeyup="handleKeyUp(event);" value="${c.map_width}" maxLength="5" style="width:50px;">&nbsp px
    </div>
    <div style='color:white;margin:5px;float:left;css-float:left;'>
          <div style='color:white;;margin:4px;float:left;css-float:left;'>Search for a location:</div>
