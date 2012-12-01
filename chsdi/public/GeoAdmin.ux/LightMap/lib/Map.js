@@ -385,7 +385,16 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     layer: this.complementaryLayer
                 });
             }
+        } else {
+            if (options.opacity !== undefined) {
+                opacity = options.opacity;
+                this.complementaryLayer.setOpacity(opacity !== undefined ? opacity : 1.0);
+            }
+            if (this.complementaryLayer.opacity == 1) {
+                this.aerial.setVisibility(false);
+            }
         }
+
         return this.complementaryLayer;
     },
 
