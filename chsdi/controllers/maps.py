@@ -27,6 +27,7 @@ class MapsController(BaseController):
             c.layers_timestamp = c.layers_timestamp.split(',')
         c.map_width = request.params.get('width',250)
         c.bgLayer =  request.params.get('bgLayer',None)
+        c.bgOpacity = request.params.get('bgOpacity','1')
 
         # Prepare answer
         response.headers['Content-Type'] = mimetypes.types_map['.html']

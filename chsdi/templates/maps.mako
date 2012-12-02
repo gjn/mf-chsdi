@@ -68,7 +68,7 @@
             window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}${counter}', {doZoomToMaxExtent: true});
 
             % if c.bgLayer is not None:
-            window['map'+maps.length].switchComplementaryLayer('${c.bgLayer}',{opacity: 1});
+            window['map'+maps.length].switchComplementaryLayer('${c.bgLayer}',{opacity: ${c.bgOpacity}});
             % endif
 
             % if c.layers_timestamp is not None:
