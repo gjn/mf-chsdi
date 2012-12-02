@@ -163,14 +163,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                     pointRadius: "10",
                     fillColor: 'red',
                     fillOpacity: 1.0,
-                    strokeColor: 'black',   
+                    strokeColor: 'black',
                     strokeOpacity: 1.0
                 }, OpenLayers.Feature.Vector.style.temporary),
                 "select": new OpenLayers.Style({
                     pointRadius: "10",
                     fillColor: 'red',
                     fillOpacity: 1.0,
-                    strokeColor: 'black',   
+                    strokeColor: 'black',
                     strokeOpacity: 1.0
                 })
             })
@@ -453,15 +453,16 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
      */
     addLayerByName: function(layername, options) {
         var self = this;
+
         function cb(layer) {
             if (layer) {
                 // check if the layer is already loaded
-                for (var i=0, len = self.layers.length; i<len; i++) {
+                for (var i = 0, len = self.layers.length; i < len; i++) {
                     var sameTimestamp = false;
                     if (layer.timestamp) {
-                       if (self.layers[i].timestamp) {
-                          sameTimestamp = (layer.timestamp === self.layers[i].timestamp)
-                       }
+                        if (self.layers[i].timestamp) {
+                            sameTimestamp = (layer.timestamp === self.layers[i].timestamp)
+                        }
                     }
                     if (self.layers[i].layername === layer.layername && sameTimestamp) {
                         self.layers[i].addOptions(options);
@@ -472,13 +473,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 self.sortLayer();
             }
         }
+
         var layer = GeoAdmin.layers.buildLayerByName(layername, options, cb);
         return layer || null;
     },
 
     removeLayerByName: function(layername) {
-         var layer = this.getLayerByLayerName(layername);
-         this.removeLayer(layer);
+        var layer = this.getLayerByLayerName(layername);
+        this.removeLayer(layer);
     },
 
     addWmsLayer: function(name, url, layers, visibility, opacity) {
@@ -759,6 +761,14 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.events.triggerEvent("changecomplementarylayer", {
                     layer: this.complementaryLayer
                 });
+            }
+        } else {
+            if (options.opacity !== undefined) {
+                opacity = options.opacity;
+                this.complementaryLayer.setOpacity(opacity !== undefined ? opacity : 1.0);
+            }
+            if (this.complementaryLayer.opacity == 1) {
+                this.aerial.setVisibility(false);
             }
         }
         return this.complementaryLayer;

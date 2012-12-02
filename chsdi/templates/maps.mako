@@ -5,7 +5,7 @@
     <meta name="content-language" content="${c.lang}"/>
     <meta name="revisit-after" content="7 days"/>
     <meta name="robots" content="index,follow "/>
-    <script type="text/javascript" src="http://api.geo.admin.ch/loader.js?mode=light"></script>
+    <script type="text/javascript" src="loader.js?mode=light-debug"></script>
     <style type="text/css">
        body {
           background-color: #000000;
@@ -35,10 +35,11 @@
             mySpan.innerHTML = ${len(c.layers)};
             var divMain = document.createElement('div');
             divMain.style.clear = 'both';
-            document.body.appendChild(divMain); 
+            document.body.appendChild(divMain);
+            <% counter = 0 %>
             % for layer in c.layers:
             var div = document.createElement('div');
-            div.setAttribute('id', 'divmain${layer}');
+            div.setAttribute('id', 'divmain${layer}${counter}');
             div.style.width = map_width + 'px';
             div.style.height = map_height + 'px';
             div.style.cssFloat = 'left';
@@ -47,31 +48,46 @@
             divMain.appendChild(div);
 
             var divTitle = document.createElement('div');
-            divTitle.setAttribute('id', 'divtitle${layer}');
+            divTitle.setAttribute('id', 'divtitle${layer}${counter}');
             divTitle.style.width = map_width + 'px';
             divTitle.style.margin = '3px';
+            % if c.layers_timestamp is not None:
+            divTitle.innerHTML = '<a href="http://map.geo.admin.ch/?layers=${layer}&layers_timestamp=${c.layers_timestamp[counter]}" target="new">' + OpenLayers.i18n('${layer}') + ' ${c.layers_timestamp[counter]}</a>';
+            % else:
             divTitle.innerHTML = '<a href="http://map.geo.admin.ch/?layers=${layer}" target="new">' + OpenLayers.i18n('${layer}') + '</a>';
+            % endif
+
             div.appendChild(divTitle);
 
             var divMap = document.createElement('div');
-            divMap.setAttribute('id', 'divmap${layer}');
+            divMap.setAttribute('id', 'divmap${layer}${counter}');
             var small_height = map_height-20;
             divMap.style.height = small_height + 'px';
             div.appendChild(divMap);
 
-            window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}', {doZoomToMaxExtent: true});
+            window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}${counter}', {doZoomToMaxExtent: true});
+
+            % if c.bgLayer is not None:
+            window['map'+maps.length].switchComplementaryLayer('${c.bgLayer}',{opacity: 1});
+            % endif
+
+            % if c.layers_timestamp is not None:
+            window['map'+maps.length].addLayerByName('${layer}',{timestamp: '${c.layers_timestamp[counter]}'});
+            % else:
             window['map'+maps.length].addLayerByName('${layer}');
+            % endif
+
             if (maps.length == 0) {
                 permalink = new OpenLayers.Control.Permalink('permalink');
                 permalink.createParams = function(center, zoom, layers) {
                    center = center || this.map.getCenter();
                    var params = OpenLayers.Util.getParameters(this.base);
 
-                   // If there's still no center, map is not initialized yet. 
+                   // If there's still no center, map is not initialized yet.
                    // Break out of this function, and simply return the params from the
                    // base link.
                    if (center) {
- 
+
                      //zoom
                      params.zoom = zoom || this.map.getZoom();
 
@@ -100,6 +116,7 @@
                 window['map'+maps.length].addControl(argParser);
             }
             maps.push(window['map'+maps.length]);
+               <% counter = counter + 1 %>
             % endfor
             for (var n = 0; n < maps.length; n++) {
                 maps[n].events.register('movestart', n, moveStart);
