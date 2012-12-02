@@ -129,9 +129,9 @@
             % endif
 
             % if c.layers_timestamp is not None:
-            window['map'+maps.length].addLayerByName('${layer}',{timestamp: '${c.layers_timestamp[counter]}'});
+            window['map'+maps.length].addLayerByName('${layer}',{timestamp: '${c.layers_timestamp[counter]}',opacity: ${c.layers_opacity[counter]},visibility: ${c.layers_visibility[counter]}});
             % else:
-            window['map'+maps.length].addLayerByName('${layer}');
+            window['map'+maps.length].addLayerByName('${layer}',{opacity: ${c.layers_opacity[counter]},visibility: ${c.layers_visibility[counter]}});
             % endif
 
             if (maps.length == 0) {
