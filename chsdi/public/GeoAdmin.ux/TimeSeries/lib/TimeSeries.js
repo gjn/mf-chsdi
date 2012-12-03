@@ -216,11 +216,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             });
         }, this);
         
+        // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
             if(this.animationIsPlaying){
                 // Stop the animation
                 this.playPause();
             }
+            this.abortPreloading();
             this.discardInvisibleLayers();
             this.preloadingDone = false;
         }
@@ -367,8 +369,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         if(!foreground || foreground.loading){
             // Load foreground layer if not yet there and wait for it to complete loading
             map.addLayerByName(this.layerName, {
-                timestamp: state.foreground,
-                //opacity: 0
+                timestamp: state.foreground
             });
             foreground = getLayer(state.foreground);
             foreground.setOpacity(0);
@@ -603,10 +604,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         //return Math.floor((this.minYear+this.maxYear)/2);
     },
     
+    /** private: method[isTimeSeriesLayer]
+     * Checks if a layer is an animation key frame (consists of animation tiles)
+     * :return: ``Boolean`` True if layer is a key frame
+     */
     isTimeSeriesLayer: function(layer){
         return layer.name===this.layerName || layer.layername===this.layerName;
     },
     
+    /** private: method[discardInvisibleLayers]
+     * Removes invisible layers from the map where invisible means either the
+     * visibility flag is false or a layer is fully transparent.
+     */
     discardInvisibleLayers: function(){
         this.map.layers.slice(0).forEach(function(layer){
             if((layer.opacity===0 || layer.getVisibility()===false) && this.isTimeSeriesLayer(layer)){
@@ -615,6 +624,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }, this);
     },
     
+    /** private: method[preloadLayersInSequence]
+     * Sequentially loads upcoming animation layers. The layers are loading in
+     * the order in which they appear in the animation such that the next layer
+     * is attempted to load after the currently loading layer completed to load.
+     * Whether a layer has yet been shown to the user is considered unimportant
+     * by the preloading.
+     */
     preloadLayersInSequence: function(){
         var timeseriesWidget = this;
         
@@ -666,17 +682,24 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Preload immediately because currently shown layer is already loaded
                 delayedPreload(1);
             }
+            /**
+             * Loads tiles for key frame with given index. Triggers loading of
+             * next key frame when requested frame is fully loaded.
+             */
             function delayedPreload(timestampIndex){
                 if(timestampIndex<animationPeriods.length-1){
                     var preloadTimestamp = animationPeriods[timestampIndex];
                     //console.log(timestampIndex+". Preloading "+preloadTimestamp);
                     var layer = map.addLayerByName(timeseriesWidget.layerName, {
-                        timestamp: preloadTimestamp,
-                        //opacity: 0
+                        timestamp: preloadTimestamp
                     });
                     layer.setOpacity(0);
-                    function layerPreloaded(){
+                    function markLayerPreloadDone(){
                         layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
+                        timeseriesWidget.abortPreloading = function(){};
+                    }
+                    function layerPreloaded(){
+                        markLayerPreloadDone();
                         
                         if(timestampIndex===this.preloadedFramesRequired){
                             timeseriesWidget.preloadingDone = true;
@@ -687,6 +710,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                     if(layer.tileQueue.length>0){
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
+                        timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {
                         delayedPreload(timestampIndex + 1);
                     }
@@ -697,6 +721,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }
             }
         });
+    },
+    
+    /**
+     * Aborts sequential preloading
+     */
+    abortPreloading: function(){
+        // Reference to function is overridden during preloading with reference to appropriate implementation
     },
     
     /** private: method[initTabs]
