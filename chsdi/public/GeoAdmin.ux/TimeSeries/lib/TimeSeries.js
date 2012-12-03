@@ -298,6 +298,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
             playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
             this.animationIsPlaying = false;
+            
+            // animationState is not yet set after preload completes
+            if(this.animationState){
+                // Show foreground layer only after animation stops
+                this.addLayers([
+                    this.animationState.getStateRatio().foreground
+                ], []);
+                var layer = timeseriesWidget.getLayerForTimestamp(this.animationState.getStateRatio().foreground);
+                layer.setOpacity(1);
+                this.discardInvisibleLayers();
+            }
         } else {
             // Play / Resume
             if(timeseriesWidget.preloadingDone===false){
