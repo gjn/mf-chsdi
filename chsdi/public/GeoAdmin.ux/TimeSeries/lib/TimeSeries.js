@@ -810,7 +810,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     ], []);
                     var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
                     minLayer.setZIndex(100);
-                    minLayer.setOpacity(100);
+                    minLayer.setOpacity(1);
                     var maxLayer = timeseriesWidget.getLayerForTimestamp(maxTimestamp);
                     maxLayer.setZIndex(101);
                     maxLayer.setOpacity(compareTabOpacitySlider.getValue()/100);
