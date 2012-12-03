@@ -888,6 +888,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.animationSlider.on('yeartyped', changeAnimationSlider);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
+                // In case animation slider is present and compare range is undefined, guess
+                if(playPeriod.sliders.length===1 && (timeseriesWidget.state.compareSliderMin===null || timeseriesWidget.state.compareSliderMax===null)){
+                    var year = timeseriesWidget.animationSlider.getYear();
+                    // Guess suitable slider positions so that displayed range is maximal and one slider position equals the animation slider's position
+                    if(Math.abs(timeseriesWidget.minYear-timeseriesWidget.animationSlider.getYear())>Math.abs(timeseriesWidget.maxYear-year)){
+                        timeseriesWidget.state.compareSliderMin = timeseriesWidget.minYear;
+                        timeseriesWidget.state.compareSliderMax = year;
+                    } else {
+                        timeseriesWidget.state.compareSliderMin = year;
+                        timeseriesWidget.state.compareSliderMax = timeseriesWidget.maxYear;
+                    }
+                }
+                
                 timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 6);
                 timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
                 timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 69);
