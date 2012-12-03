@@ -174,7 +174,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         var preloadStatusTimer;
         function anyLayerLoadStart(e){
             // Show message that layer is loading when a visible layer starts to load
-            if(e.object.opacity>0){
+            if(e.object.opacity>0 || this.preloadingDone===false){
                 clearTimeout(preloadStatusTimer);
                 var timeseriesWidget = this;
                 // Delay message so that no message is shown whilst browser does load from disk cache
@@ -189,7 +189,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Remove spinner when last layer was loaded
             if(layersCurrentlyLoading()===false){
                 clearTimeout(preloadStatusTimer);
-                this.clearAndGetPreloadStatusIndicator();
+                var timeseriesWidget = this;
+                // Hide spinner only after a wee delay to prevent flickering whilst instructing OpenLayers to load next layer
+                preloadStatusTimer = setTimeout(function(){
+                    timeseriesWidget.clearAndGetPreloadStatusIndicator();
+                }, 500);
             }
         }
         function anyLayerAdded(e){
