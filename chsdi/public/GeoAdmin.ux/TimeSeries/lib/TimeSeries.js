@@ -102,6 +102,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     preloadingDone: false,
     
+    /** private: property[animationTimestampsCache]
+     * ``Object`` Holds timestamp of current animation by zeitreihen service request URI
+     */
+    animationTimestampsCache: {},
+    
     initComponent: function(){
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
         // Make sure state gets restored
@@ -456,26 +461,37 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getAnimationPeriods: function(onCompletion){
         var timeseriesWidget = this;
-        window.geoAdminTimeSeriesGetAnimationPeriodsCallback = function geoAdminTimeSeriesGetAnimationPeriodsCallback(timestamps){
-            var animationSliderTimestamp = timeseriesWidget.animationSlider.getYear()*1e4;
-            onCompletion(timestamps);
-        };
         var mapCenter = map.getCenter();
-        var documentHead = document.getElementsByTagName("head")[0];
-        var jsonpRequester = document.createElement("script");
-        jsonpRequester.type = "text/javascript";
+        
         // URI of service providing the animation timestamps
-        jsonpRequester.src = GeoAdmin.webServicesUrl+"/zeitreihen?scale="+encodeURIComponent(Math.round(map.getScale()))+"&easting="+encodeURIComponent(mapCenter.lon)+"&northing="+encodeURIComponent(mapCenter.lat)+"&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
-        function discardRequester(){
-            documentHead.removeChild(jsonpRequester);
-            delete window.geoAdminTimeSeriesGetAnimationPeriodsCallback;
+        var requestURI = GeoAdmin.webServicesUrl+"/zeitreihen?scale="+encodeURIComponent(Math.round(map.getScale()))+"&easting="+encodeURIComponent(mapCenter.lon)+"&northing="+encodeURIComponent(mapCenter.lat)+"&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
+        
+        // See if a request is needed or if the result is already known
+        if(timeseriesWidget.animationTimestampsCache.hasOwnProperty(requestURI)){
+            onCompletion(timeseriesWidget.animationTimestampsCache[requestURI]);
+        } else {
+            var documentHead = document.getElementsByTagName("head")[0];
+            var jsonpRequester = document.createElement("script");
+            jsonpRequester.type = "text/javascript";
+            jsonpRequester.src = requestURI;
+            window.geoAdminTimeSeriesGetAnimationPeriodsCallback = function geoAdminTimeSeriesGetAnimationPeriodsCallback(timestamps){
+                // Cache response of zeitreihen service
+                timeseriesWidget.animationTimestampsCache = {};
+                timeseriesWidget.animationTimestampsCache[requestURI] = timestamps;
+                
+                onCompletion(timestamps);
+            };
+            function discardRequester(){
+                documentHead.removeChild(jsonpRequester);
+                delete window.geoAdminTimeSeriesGetAnimationPeriodsCallback;
+            }
+            jsonpRequester.onload = discardRequester;
+            jsonpRequester.onerror = function(){
+                discardRequester();
+                onCompletion();
+            };
+            documentHead.appendChild(jsonpRequester);
         }
-        jsonpRequester.onload = discardRequester;
-        jsonpRequester.onerror = function(){
-            discardRequester();
-            onCompletion();
-        };
-        documentHead.appendChild(jsonpRequester);
     },
     
     /** private: method[initAnimationState]
