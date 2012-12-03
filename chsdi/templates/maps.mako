@@ -36,6 +36,63 @@
             var divMain = document.createElement('div');
             divMain.style.clear = 'both';
             document.body.appendChild(divMain);
+            OpenLayers.Control.ArgParser.prototype.setMap = function(map) {
+                OpenLayers.Control.prototype.setMap.apply(this, arguments);
+
+                //make sure we dont already have an arg parser attached
+                for(var i=0, len=this.map.controls.length; i<len; i++) {
+                    var control = this.map.controls[i];
+                    if ( (control != this) &&
+                         (control.CLASS_NAME == "OpenLayers.Control.ArgParser") ) {
+
+                        // If a second argparser is added to the map, then we
+                        // override the displayProjection to be the one added to the
+                        // map.
+                        if (control.displayProjection != this.displayProjection) {
+                            this.displayProjection = control.displayProjection;
+                        }
+
+                        break;
+                    }
+                }
+                if (i == this.map.controls.length) {
+
+                    var args = this.getParameters();
+                    // Be careful to set layer first, to not trigger unnecessary layer loads
+                    if (args.layers) {
+                        this.layers = args.layers;
+
+                        // when we add a new layer, set its visibility
+                        this.map.events.register('addlayer', this,
+                                                 this.configureLayers);
+                        this.configureLayers();
+                    }
+                    if (args.lat && args.lon) {
+                        this.center = new OpenLayers.LonLat(parseFloat(args.lon),
+                                                            parseFloat(args.lat));
+                        if (args.zoom) {
+                            this.zoom = parseFloat(args.zoom);
+                        }
+
+                        // when we add a new baselayer to see when we can set the center
+                        this.map.events.register('changebaselayer', this,
+                                                 this.setCenter);
+                        this.setCenter();
+                    }
+                    if (args.X && args.Y) {
+                        this.center = new OpenLayers.LonLat(parseFloat(args.Y),
+                                                            parseFloat(args.X));
+                        if (args.zoom) {
+                            this.zoom = parseFloat(args.zoom);
+                        }
+
+                        // when we add a new baselayer to see when we can set the center
+                        this.map.events.register('changebaselayer', this,
+                                                 this.setCenter);
+                        this.setCenter();
+                    }
+                }
+            }
             <% counter = 0 %>
             % for layer in c.layers:
             var div = document.createElement('div');
@@ -68,13 +125,13 @@
             window['map'+maps.length] = new GeoAdmin.Map('divmap${layer}${counter}', {doZoomToMaxExtent: true});
 
             % if c.bgLayer is not None:
-            window['map'+maps.length].switchComplementaryLayer('${c.bgLayer}',{opacity: 1});
+            window['map'+maps.length].switchComplementaryLayer('${c.bgLayer}',{opacity: ${c.bgOpacity}});
             % endif
 
             % if c.layers_timestamp is not None:
-            window['map'+maps.length].addLayerByName('${layer}',{timestamp: '${c.layers_timestamp[counter]}'});
+            window['map'+maps.length].addLayerByName('${layer}',{timestamp: '${c.layers_timestamp[counter]}',opacity: ${c.layers_opacity[counter]},visibility: ${c.layers_visibility[counter]}});
             % else:
-            window['map'+maps.length].addLayerByName('${layer}');
+            window['map'+maps.length].addLayerByName('${layer}',{opacity: ${c.layers_opacity[counter]},visibility: ${c.layers_visibility[counter]}});
             % endif
 
             if (maps.length == 0) {
