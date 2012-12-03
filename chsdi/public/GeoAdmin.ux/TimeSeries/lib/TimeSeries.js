@@ -1094,9 +1094,13 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         function changeHandler(){
             var yearRaw = slider.input.getValue();
             var year = parseInt(yearRaw, 10);
-            if(yearRaw===String(year) && timeseriesWidget.minYear<=year && timeseriesWidget.maxYear>=year){
+            if(yearRaw===String(year)){
+                year = Math.min(year, timeseriesWidget.maxYear);
+                year = Math.max(year, timeseriesWidget.minYear);
                 slider.setYear(year);
                 slider.fireEvent("yeartyped", year);
+            } else {
+                slider.input.addClass("x-form-invalid");
             }
         }
         slider.input.on('change', changeHandler, timeseriesWidget);
@@ -1175,6 +1179,7 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
         this.slider.setX(x-this.xOffset);
         var year = this.getYear();
         this.input.dom.value = year;
+        this.input.removeClass("x-form-invalid");
         this.fireEvent('change', year);
     }
 });
