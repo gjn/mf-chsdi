@@ -233,6 +233,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
         map.events.register('moveend', this, handleExtentChanged);
         map.events.register('zoomend', this, handleExtentChanged);
+        map.events.register('click', this, function(e){
+            if(e.which===1 || button===0){
+                // Stop animation and preloading on left click
+                handleExtentChanged.apply(this);
+            }
+        });
     },
     
     /** api: method[getState]
