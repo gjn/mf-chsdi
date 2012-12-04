@@ -370,7 +370,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     getLayerForTimestamp: function(timestamp){
         var timeseriesWidget = this;
         return map.layers.filter(function(layer){
-            return layer.layername===timeseriesWidget.layerName && layer.timestamp===timestamp;
+            return timeseriesWidget.isTimeSeriesLayer(layer) && layer.timestamp===timestamp;
         })[0];
     },
     
@@ -399,10 +399,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationState.pause();
             function resume(){
                 foreground.events.unregister('loadend', this, resume);
-                foreground.setOpacity(0);
-                // Continue with animation, now that all tiles are loaded
-                this.animationState.recordStart();
                 if(this.animationIsPlaying){
+                    foreground.setOpacity(0);
+                    // Continue with animation, now that all tiles are loaded
+                    this.animationState.recordStart();
                     this.repaintAnimation();
                     this.setAnimationTimer();
                     //console.log("resumed because tiles "+state.foreground+" there");
