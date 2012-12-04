@@ -24,7 +24,9 @@ def validator_scale():
     """ Validator for the "scale" parameter. For use with
     the validate_params action decorator."""
     scale = request.params.get('scale')
-    if scale is not None:
+    if scale is None:
+        return False
+    else:       
         try:
             scale = int(scale)
         except ValueError:
