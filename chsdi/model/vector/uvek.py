@@ -544,6 +544,8 @@ class ngamapping (Base, Queryable):
 	__table_args__ = ({'schema': 'bakom', 'autoload': True})
 	__template__ = 'tooltips/ngamapping.mako'
 	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
 	the_geom = Column('the_geom',Geometry(21781))
 
 register('ch.bakom.anbieter-eigenes_festnetz', ngamapping)

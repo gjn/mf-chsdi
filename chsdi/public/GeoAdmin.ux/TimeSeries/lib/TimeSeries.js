@@ -102,6 +102,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     preloadingDone: false,
     
+    /** private: property[animationTimestampsCache]
+     * ``Object`` Holds timestamp of current animation by zeitreihen service request URI
+     */
+    animationTimestampsCache: {},
+    
     initComponent: function(){
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
         // Make sure state gets restored
@@ -174,7 +179,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         var preloadStatusTimer;
         function anyLayerLoadStart(e){
             // Show message that layer is loading when a visible layer starts to load
-            if(e.object.opacity>0){
+            if(e.object.opacity>0 || this.preloadingDone===false){
                 clearTimeout(preloadStatusTimer);
                 var timeseriesWidget = this;
                 // Delay message so that no message is shown whilst browser does load from disk cache
@@ -189,7 +194,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             // Remove spinner when last layer was loaded
             if(layersCurrentlyLoading()===false){
                 clearTimeout(preloadStatusTimer);
-                this.clearAndGetPreloadStatusIndicator();
+                var timeseriesWidget = this;
+                // Hide spinner only after a wee delay to prevent flickering whilst instructing OpenLayers to load next layer
+                preloadStatusTimer = setTimeout(function(){
+                    timeseriesWidget.clearAndGetPreloadStatusIndicator();
+                }, 500);
             }
         }
         function anyLayerAdded(e){
@@ -212,11 +221,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             });
         }, this);
         
+        // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
             if(this.animationIsPlaying){
                 // Stop the animation
                 this.playPause();
             }
+            this.abortPreloading();
             this.discardInvisibleLayers();
             this.preloadingDone = false;
         }
@@ -287,6 +298,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
             playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
             this.animationIsPlaying = false;
+            
+            // animationState is not yet set after preload completes
+            if(this.animationState){
+                // Show foreground layer only after animation stops
+                this.addLayers([
+                    this.animationState.getStateRatio().foreground
+                ], []);
+                var layer = timeseriesWidget.getLayerForTimestamp(this.animationState.getStateRatio().foreground);
+                layer.setOpacity(1);
+                this.discardInvisibleLayers();
+            }
         } else {
             // Play / Resume
             if(timeseriesWidget.preloadingDone===false){
@@ -363,8 +385,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         if(!foreground || foreground.loading){
             // Load foreground layer if not yet there and wait for it to complete loading
             map.addLayerByName(this.layerName, {
-                timestamp: state.foreground,
-                //opacity: 0
+                timestamp: state.foreground
             });
             foreground = getLayer(state.foreground);
             foreground.setOpacity(0);
@@ -451,26 +472,37 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getAnimationPeriods: function(onCompletion){
         var timeseriesWidget = this;
-        window.geoAdminTimeSeriesGetAnimationPeriodsCallback = function geoAdminTimeSeriesGetAnimationPeriodsCallback(timestamps){
-            var animationSliderTimestamp = timeseriesWidget.animationSlider.getYear()*1e4;
-            onCompletion(timestamps);
-        };
         var mapCenter = map.getCenter();
-        var documentHead = document.getElementsByTagName("head")[0];
-        var jsonpRequester = document.createElement("script");
-        jsonpRequester.type = "text/javascript";
+        
         // URI of service providing the animation timestamps
-        jsonpRequester.src = GeoAdmin.webServicesUrl+"/zeitreihen?scale="+encodeURIComponent(Math.round(map.getScale()))+"&easting="+encodeURIComponent(mapCenter.lon)+"&northing="+encodeURIComponent(mapCenter.lat)+"&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
-        function discardRequester(){
-            documentHead.removeChild(jsonpRequester);
-            delete window.geoAdminTimeSeriesGetAnimationPeriodsCallback;
+        var requestURI = GeoAdmin.webServicesUrl+"/zeitreihen?scale="+encodeURIComponent(Math.round(map.getScale()))+"&easting="+encodeURIComponent(mapCenter.lon)+"&northing="+encodeURIComponent(mapCenter.lat)+"&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
+        
+        // See if a request is needed or if the result is already known
+        if(timeseriesWidget.animationTimestampsCache.hasOwnProperty(requestURI)){
+            onCompletion(timeseriesWidget.animationTimestampsCache[requestURI]);
+        } else {
+            var documentHead = document.getElementsByTagName("head")[0];
+            var jsonpRequester = document.createElement("script");
+            jsonpRequester.type = "text/javascript";
+            jsonpRequester.src = requestURI;
+            window.geoAdminTimeSeriesGetAnimationPeriodsCallback = function geoAdminTimeSeriesGetAnimationPeriodsCallback(timestamps){
+                // Cache response of zeitreihen service
+                timeseriesWidget.animationTimestampsCache = {};
+                timeseriesWidget.animationTimestampsCache[requestURI] = timestamps;
+                
+                onCompletion(timestamps);
+            };
+            function discardRequester(){
+                documentHead.removeChild(jsonpRequester);
+                delete window.geoAdminTimeSeriesGetAnimationPeriodsCallback;
+            }
+            jsonpRequester.onload = discardRequester;
+            jsonpRequester.onerror = function(){
+                discardRequester();
+                onCompletion();
+            };
+            documentHead.appendChild(jsonpRequester);
         }
-        jsonpRequester.onload = discardRequester;
-        jsonpRequester.onerror = function(){
-            discardRequester();
-            onCompletion();
-        };
-        documentHead.appendChild(jsonpRequester);
     },
     
     /** private: method[initAnimationState]
@@ -599,10 +631,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         //return Math.floor((this.minYear+this.maxYear)/2);
     },
     
+    /** private: method[isTimeSeriesLayer]
+     * Checks if a layer is an animation key frame (consists of animation tiles)
+     * :return: ``Boolean`` True if layer is a key frame
+     */
     isTimeSeriesLayer: function(layer){
         return layer.name===this.layerName || layer.layername===this.layerName;
     },
     
+    /** private: method[discardInvisibleLayers]
+     * Removes invisible layers from the map where invisible means either the
+     * visibility flag is false or a layer is fully transparent.
+     */
     discardInvisibleLayers: function(){
         this.map.layers.slice(0).forEach(function(layer){
             if((layer.opacity===0 || layer.getVisibility()===false) && this.isTimeSeriesLayer(layer)){
@@ -611,6 +651,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }, this);
     },
     
+    /** private: method[preloadLayersInSequence]
+     * Sequentially loads upcoming animation layers. The layers are loading in
+     * the order in which they appear in the animation such that the next layer
+     * is attempted to load after the currently loading layer completed to load.
+     * Whether a layer has yet been shown to the user is considered unimportant
+     * by the preloading.
+     */
     preloadLayersInSequence: function(){
         var timeseriesWidget = this;
         
@@ -662,17 +709,24 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Preload immediately because currently shown layer is already loaded
                 delayedPreload(1);
             }
+            /**
+             * Loads tiles for key frame with given index. Triggers loading of
+             * next key frame when requested frame is fully loaded.
+             */
             function delayedPreload(timestampIndex){
                 if(timestampIndex<animationPeriods.length-1){
                     var preloadTimestamp = animationPeriods[timestampIndex];
                     //console.log(timestampIndex+". Preloading "+preloadTimestamp);
                     var layer = map.addLayerByName(timeseriesWidget.layerName, {
-                        timestamp: preloadTimestamp,
-                        //opacity: 0
+                        timestamp: preloadTimestamp
                     });
                     layer.setOpacity(0);
-                    function layerPreloaded(){
+                    function markLayerPreloadDone(){
                         layer.events.unregister("loadend", timeseriesWidget, layerPreloaded);
+                        timeseriesWidget.abortPreloading = function(){};
+                    }
+                    function layerPreloaded(){
+                        markLayerPreloadDone();
                         
                         if(timestampIndex===this.preloadedFramesRequired){
                             timeseriesWidget.preloadingDone = true;
@@ -683,6 +737,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                     if(layer.tileQueue.length>0){
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
+                        timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {
                         delayedPreload(timestampIndex + 1);
                     }
@@ -693,6 +748,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }
             }
         });
+    },
+    
+    /**
+     * Aborts sequential preloading
+     */
+    abortPreloading: function(){
+        // Reference to function is overridden during preloading with reference to appropriate implementation
     },
     
     /** private: method[initTabs]
@@ -806,7 +868,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     ], []);
                     var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
                     minLayer.setZIndex(100);
-                    minLayer.setOpacity(100);
+                    minLayer.setOpacity(1);
                     var maxLayer = timeseriesWidget.getLayerForTimestamp(maxTimestamp);
                     maxLayer.setZIndex(101);
                     maxLayer.setOpacity(compareTabOpacitySlider.getValue()/100);
@@ -826,6 +888,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.animationSlider.on('yeartyped', changeAnimationSlider);
             }
             if(newlyActiveTab.contentEl==="compareTab" && comparePeriod.sliders.length===0){
+                // In case animation slider is present and compare range is undefined, guess
+                if(playPeriod.sliders.length===1 && (timeseriesWidget.state.compareSliderMin===null || timeseriesWidget.state.compareSliderMax===null)){
+                    var year = timeseriesWidget.animationSlider.getYear();
+                    // Guess suitable slider positions so that displayed range is maximal and one slider position equals the animation slider's position
+                    if(Math.abs(timeseriesWidget.minYear-timeseriesWidget.animationSlider.getYear())>Math.abs(timeseriesWidget.maxYear-year)){
+                        timeseriesWidget.state.compareSliderMin = timeseriesWidget.minYear;
+                        timeseriesWidget.state.compareSliderMax = year;
+                    } else {
+                        timeseriesWidget.state.compareSliderMin = year;
+                        timeseriesWidget.state.compareSliderMax = timeseriesWidget.maxYear;
+                    }
+                }
+                
                 timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath+"slider-right.png", 6);
                 timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
                 timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath+"slider-left.png", 69);
@@ -1032,9 +1107,13 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
         function changeHandler(){
             var yearRaw = slider.input.getValue();
             var year = parseInt(yearRaw, 10);
-            if(yearRaw===String(year) && timeseriesWidget.minYear<=year && timeseriesWidget.maxYear>=year){
+            if(yearRaw===String(year)){
+                year = Math.min(year, timeseriesWidget.maxYear);
+                year = Math.max(year, timeseriesWidget.minYear);
                 slider.setYear(year);
                 slider.fireEvent("yeartyped", year);
+            } else {
+                slider.input.addClass("x-form-invalid");
             }
         }
         slider.input.on('change', changeHandler, timeseriesWidget);
@@ -1113,6 +1192,7 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
         this.slider.setX(x-this.xOffset);
         var year = this.getYear();
         this.input.dom.value = year;
+        this.input.removeClass("x-form-invalid");
         this.fireEvent('change', year);
     }
 });
