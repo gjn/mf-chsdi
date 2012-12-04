@@ -1,8 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'National Map Overview': "",
-    "National Map 100'000": "",
-    "National Map 50'000": "",
-    "National Map 25'000": "",
+    'National Map': "",
     'Export all': "",
     'Print all': "",
     'Choose a topic': "",
