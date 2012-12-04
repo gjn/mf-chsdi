@@ -176,51 +176,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
             return false;
         }
-        var preloadStatusTimer;
-        function anyLayerLoadStart(e){
-            // Show message that layer is loading when a visible layer starts to load
-            if(e.object.opacity>0 || this.preloadingDone===false){
-                clearTimeout(preloadStatusTimer);
-                var timeseriesWidget = this;
-                // Delay message so that no message is shown whilst browser does load from disk cache
-                preloadStatusTimer = setTimeout(function(){
-                    var preloadStatus = timeseriesWidget.clearAndGetPreloadStatusIndicator();
-                    preloadStatus.addClass("timeseriesWidget-preload-status-loading");
-                    preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
-                }, 500);
-            }
-        }
-        function anyLayerLoadEnd(){
-            // Remove spinner when last layer was loaded
-            if(layersCurrentlyLoading()===false){
-                clearTimeout(preloadStatusTimer);
-                var timeseriesWidget = this;
-                // Hide spinner only after a wee delay to prevent flickering whilst instructing OpenLayers to load next layer
-                preloadStatusTimer = setTimeout(function(){
-                    timeseriesWidget.clearAndGetPreloadStatusIndicator();
-                }, 500);
-            }
-        }
-        function anyLayerAdded(e){
-            // Monitor loading status of layer
-            e.layer.events.register('loadstart', this, anyLayerLoadStart);
-            e.layer.events.register('loadend', this, anyLayerLoadEnd);
-        }
-        function anyLayerRemoved(e){
-            // Stop monitoring
-            e.layer.events.unregister('loadstart', this, anyLayerLoadStart);
-            e.layer.events.unregister('loadend', this, anyLayerLoadEnd);
-            
-            anyLayerLoadEnd.call(this);
-        }
-        map.events.register('addlayer', this, anyLayerAdded);
-        map.events.register('removelayer', this, anyLayerRemoved);
-        map.layers.forEach(function(layer){
-            anyLayerAdded.call(this, {
-                layer: layer
-            });
-        }, this);
         
+        map.events.register('zoomend', this, this.changeStatusText);
+       
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
             if(this.animationIsPlaying){
@@ -259,42 +217,43 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         };
     },
-    
-    /** private: method[clearAndGetPreloadStatusIndicator]
-     *  :return: ``HTMLDivElement`` Empty and invisible status indicator.
+
+    /** private: method[changeStatusText]
+     *  Change the text on the right according to the zoom level
      */
-    clearAndGetPreloadStatusIndicator: function(){
-        var preloadStatus = Ext.get(this.contentEl).child('.timeseriesWidget-preload-status');
-        /**
-         * Displays a text in the lower right of the widget
-         * @param {String} textContent Text to display
-         */
-        preloadStatus.setTextContent = function(textContent){
-            if(typeof(this.dom.textContent)==="string"){
-                this.dom.textContent = textContent;
+    changeStatusText: function(e) {
+        var zoom = e.object.zoom;
+        var statusText = Ext.get(this.contentEl).child('.text-status');
+        updateText = function(text) {
+            if (typeof(statusText.dom.textContent)==="string") {
+                statusText.dom.textContent = text;
             } else {
                 // IE
-                this.dom.innerText = textContent;
+                statusText.dom.innerText = text;
             }
-            this.setStyle({
-                visibility: "visible"
-            });
         }
-        preloadStatus.removeClass("timeseriesWidget-preload-status-loading");
-        preloadStatus.setStyle({
-            visibility: "hidden"
-        });
-        return preloadStatus;
+        switch(zoom) {
+            case 6:
+                updateText(OpenLayers.i18n("National Map 100'000"));
+                break;
+            case 7:
+                updateText(OpenLayers.i18n("National Map 50'000"));
+                break;
+            case 8:
+                updateText(OpenLayers.i18n("National Map 25'000"));
+                break;
+            default:
+                updateText(OpenLayers.i18n("National Map Overview"));
+                break;
+        }
     },
-    
+
     /** private: method[playPause]
      *  Starts or stops the animation
      */
     playPause: function(){
         var timeseriesWidget = this;
         var playButtonImage = Ext.get(this.contentEl).child('.play').dom;
-        
-        var preloadStatus = this.clearAndGetPreloadStatusIndicator();
         
         if(this.animationIsPlaying){
             // Pause animation
@@ -320,12 +279,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if(timeseriesWidget.preloadingDone===false){
                 timeseriesWidget.preloadLayersInSequence();
                 // Wait for preloading to finish
-                preloadStatus.addClass("timeseriesWidget-preload-status-loading");
-                preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
                 timeseriesWidget.on("preloadingDone", function(){
-                    preloadStatus.setStyle({
-                        visibility: "hidden"
-                    });
                     // Clean up timers
                     timeseriesWidget.playPause();
                     // Start a new animation
@@ -334,16 +288,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             } else {
                 // Try to start animation
                 this.initAnimationState(function(animationState){
-                    if(animationState===null){
-                        preloadStatus.setTextContent(OpenLayers.i18n("Failed to load animation"));
-                    } else {
-                        timeseriesWidget.animationState = animationState;
+                    timeseriesWidget.animationState = animationState;
                         
-                        // Play / Resume
-                        timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
-                        timeseriesWidget.setAnimationTimer();
-                        //console.log("resumed by click");
-                    }
+                    // Play / Resume
+                    timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
+                    timeseriesWidget.setAnimationTimer();
                 });
             }
             playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
