@@ -60,15 +60,20 @@ class ZeitreihenController(BaseController):
         
         # Manage scale dependent view
         mymodel = Zeitreihen_Metadata_15
+        tolerance = 500
         if c.scale > 50005 and c.scale <= 100005:
             mymodel =  Zeitreihen_Metadata_20
+            tolerance = c.scale/100
         if c.scale > 25005 and c.scale <= 50005:
             mymodel =  Zeitreihen_Metadata_21
+            tolerance = c.scale/100
         if c.scale > 1 and c.scale <= 25005:
             mymodel =  Zeitreihen_Metadata_22
+            tolerance = c.scale/100
+
 
         query = Session.query(mymodel)
-        spatialFilter = mymodel.within_filter(lon, lat, column='the_geom')
+        spatialFilter = mymodel.within_filter(lon, lat, tolerance=tolerance, column='the_geom')
         query = query.filter(spatialFilter)
 
         #Default timestamp
