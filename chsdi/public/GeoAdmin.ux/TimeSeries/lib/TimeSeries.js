@@ -35,7 +35,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
      */
-    fadeTime: 2500,
+    fadeTime: 2000,
     /** private: property[transitionTime]
      * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
      */
