@@ -155,17 +155,6 @@
     width: 600px;
     z-index: 999;
 }
-.timeseriesWidget-preload-status-countdown {
-    background: #313131 url("../img/countdown.gif") center center no-repeat;
-    position: absolute;
-    height: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    width: 100%;
-    z-index:999;
-}
 
 .timeseriesWidget-slider {
     left: 200px;

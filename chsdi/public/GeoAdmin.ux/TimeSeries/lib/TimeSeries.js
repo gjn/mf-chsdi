@@ -274,7 +274,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 visibility: "visible"
             });
         };
-        preloadStatus.removeClass("timeseriesWidget-preload-status-countdown");
         preloadStatus.setStyle({
             visibility: "hidden"
         });
@@ -318,21 +317,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Wait for preloading to finish
                 timeseriesWidget.on("preloadingDone", function(){
                     preloadStatus.hide(true);
-                    
-                    Ext.Element.select(".timeseriesWidget-preload-status-countdown").remove();
-                    var countdown = Ext.get(document.createElement("div"));
-                    countdown.addClass("timeseriesWidget-preload-status-countdown");
-                    countdown.hide();
-                    countdown.appendTo(preloadStatus.parent());
-                    countdown.show(true);
-                    // Start animation after countdown completed
-                    setTimeout(function(){
-                        countdown.hide(true);
-                        // Clean up timers
-                        timeseriesWidget.playPause();
-                        // Start a new animation
-                        timeseriesWidget.playPause();
-                    }, 3000);
+                    // Clean up timers
+                    timeseriesWidget.playPause();
+                    // Start a new animation
+                    timeseriesWidget.playPause();
                 });
             } else {
                 // Try to start animation
@@ -871,7 +859,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear())
                     timeseriesWidget.addLayers([
                         minTimestamp,
-                        maxTimestamp,
+                        maxTimestamp
                     ], []);
                     var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
                     minLayer.setZIndex(100);
