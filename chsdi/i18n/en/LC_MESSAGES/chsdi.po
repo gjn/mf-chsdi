@@ -371,6 +371,9 @@ msgstr "Name Unterregion"
 msgid "biounterregnummer"
 msgstr "Nummer Unterregion"
 
+msgid "blattbezeichnung"
+msgstr "Bibliographical informations"
+
 msgid "blind warning"
 msgstr "This page is a geographic application and is not optimized for blind persons."
 
@@ -998,6 +1001,9 @@ msgstr "Other traffic  VECTOR25"
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Hiking trails  VECTOR25"
 
+msgid "ch.swisstopo.zeitreihen"
+msgstr "Maps - Journay through time"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorial regions"
 
@@ -1272,11 +1278,38 @@ msgstr "Kartenblattname"
 msgid "kartenblattnummer"
 msgstr "Kartenblattnummer"
 
+msgid "kartenwerk"
+msgstr "Map"
+
+msgid "kartenwerk_lk100"
+msgstr "National Maps of Switzerland 1:100’000 (NM100)"
+
+msgid "kartenwerk_lk25"
+msgstr "National Maps of Switzerland 1:25’000 (NM25)"
+
+msgid "kartenwerk_lk50"
+msgstr "National Maps of Switzerland 1:50’000 (NM50)"
+
+msgid "kartenwerk_ta25"
+msgstr "Topographic Atlas of Switzerland 1:25’000 (Siegfried Map)"
+
+msgid "kartenwerk_ta50"
+msgstr "Topographic Atlas of Switzerland 1:50’000 (Siegfried Map)"
+
+msgid "kartenwerk_tk100"
+msgstr "Topographic Map of Switzerland 1:100’000 (Dufour Map)"
+
 msgid "kartiereinheit"
 msgstr "Quartier unit"
 
 msgid "kategorie"
 msgstr "Category"
+
+msgid "kbbez"
+msgstr "Sheet name"
+
+msgid "kbnum"
+msgstr "Sheet number"
 
 msgid "kindofzone"
 msgstr "Reserved zone type"
@@ -1915,7 +1948,7 @@ msgid "nfname"
 msgstr "Name"
 
 msgid "nom_dreieck"
-msgstr "Associated pass points"
+msgstr "Associated TSP"
 
 msgid "nord"
 msgstr "North"
@@ -2006,6 +2039,9 @@ msgstr "Grossraum"
 
 msgid "reisezeit_min"
 msgstr "Reisezeit [Min]"
+
+msgid "release_year"
+msgstr "Data status"
 
 msgid "report problem"
 msgstr "Report problem"
@@ -2555,6 +2591,10 @@ msgstr "Typ von hergestelltem Produkt"
 
 msgid "typ_transpo_produkt"
 msgstr "Typ des in der Leitung transportierten Produkts"
+
+#. TODO
+msgid "type_dreieck"
+msgstr "type_dreieck"
 
 msgid "typnummer"
 msgstr "Typnummer"
