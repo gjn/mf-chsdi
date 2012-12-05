@@ -316,7 +316,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 ], []);
                 var layer = timeseriesWidget.getLayerForTimestamp(this.animationState.getStateRatio().foreground);
                 layer.setOpacity(1);
-                this.animationSlider.setYear(this.animationState.getStateRatio().foreground.substring(0,4));
                 this.discardInvisibleLayers();
             }
         } else {
