@@ -609,6 +609,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                             }
                         }
                         
+                        /**
+                         * Caculate offset between requested year and year of background timestamp.
+                         */
+                        function backgroundYearOffset(){
+                            var state = this.getStateRatio(reverse);
+                            if(state.background===undefined){
+                                return 0;
+                            } else {
+                                var yearsDifference = Math.abs(this.yearFromTimestamp(state.foreground) - this.yearFromTimestamp(state.background));
+                                var timePerYear = fadeTime/yearsDifference;
+                                return timePerYear*Math.abs(this.yearFromTimestamp(state.background)-targetYear);
+                            }
+                        }
                         if(reverse===false){
                             for(var i=0; i<periods.length-1; i++){
                                 var year = this.yearFromTimestamp(periods[i+1]);
@@ -616,26 +629,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
-                            // Caculate offset between requested year and year of background timestamp.
                             // Subtracting is to prevent hitting timestamps exactly which would result in ambiguity of fading/transitioning.
                             start = new Date().getTime()-offset-5;
-                            var state = this.getStateRatio(reverse);
-                            var offsetFromStartYear;
-                            if(state.background===undefined){
-                                offsetFromStartYear = 0;
-                            } else {
-                                var yearsDifference = Math.abs(this.yearFromTimestamp(state.foreground) - this.yearFromTimestamp(state.background));
-                                var timePerYear = fadeTime/yearsDifference;
-                                offsetFromStartYear = timePerYear*(targetYear-this.yearFromTimestamp(state.background));
-                            }
-                            offset = offset + offsetFromStartYear;
+                            offset = offset + backgroundYearOffset.apply(this);
                         } else {
-                            for(var i=periods.length-1; i>=0; i--){
-                                var year = this.yearFromTimestamp(periods[i]);
+                            for(var i=periods.length-1; i>0; i--){
+                                var year = this.yearFromTimestamp(periods[i-1]);
                                 if(targetYear<year){
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
+                            start = new Date().getTime()-offset-5;
+                            offset = offset + backgroundYearOffset.apply(this);
                         }
                         start = new Date().getTime()-offset;
                     };
