@@ -66,6 +66,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
     aerial: null,
     vector: null,
+    /** api: config[vectorStyleMap]
+     * ``OpenLayers.StyleMap`` custom style map the vector layer.
+     */
+    vectorStyleMap: null,
     complementaryLayer: null,
     overviewMapCtrl: null,
 
@@ -148,32 +152,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // set default options
         this.aerial = GeoAdmin.layers.buildLayerByName("ch.swisstopo.swissimage");
 
+        // if vector style map is not defined take the default one
+        var vectorStyleMap = options.vectorStyleMap instanceof OpenLayers.StyleMap ? options.vectorStyleMap : this.defaultVectorStyleMap();
         this.vector = new OpenLayers.Layer.Vector("drawing", {
             displayInLayerSwitcher: false,
-            styleMap: new OpenLayers.StyleMap({
-                "default": new OpenLayers.Style({
-                    pointRadius: "10",
-                    fillColor: "#FFFF00",
-                    fillOpacity: 0.8,
-                    strokeColor: "#FF8000",
-                    strokeOpacity: 0.8,
-                    strokeWidth: 3
-                }),
-                "hover": OpenLayers.Util.applyDefaults({
-                    pointRadius: "10",
-                    fillColor: 'red',
-                    fillOpacity: 1.0,
-                    strokeColor: 'black',
-                    strokeOpacity: 1.0
-                }, OpenLayers.Feature.Vector.style.temporary),
-                "select": new OpenLayers.Style({
-                    pointRadius: "10",
-                    fillColor: 'red',
-                    fillOpacity: 1.0,
-                    strokeColor: 'black',
-                    strokeOpacity: 1.0
-                })
-            })
+            styleMap: vectorStyleMap
         });
 
         OpenLayers.Util.applyDefaults(options, {
@@ -200,6 +183,37 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             this.zoomToMaxExtent();
         }
     },
+    
+    /** api: method[defaultVectorStyleMap]
+     *  :return: ``Object OpenLayers.StyleMap`` the default style map for map.vector layer
+    **/
+    defaultVectorStyleMap: function() {
+        return new OpenLayers.StyleMap({
+            "default": new OpenLayers.Style({
+                pointRadius: "10",
+                fillColor: "#FFFF00",
+                fillOpacity: 0.8,
+                strokeColor: "#FF8000",
+                strokeOpacity: 0.8,
+                strokeWidth: 3
+            }),
+            "hover": OpenLayers.Util.applyDefaults({
+                pointRadius: "10",
+                fillColor: 'red',
+                fillOpacity: 1.0,
+                strokeColor: 'black',
+                strokeOpacity: 1.0
+            }, OpenLayers.Feature.Vector.style.temporary),
+            "select": new OpenLayers.Style({
+                pointRadius: "10",
+                fillColor: 'red',
+                fillOpacity: 1.0,
+                strokeColor: 'black',
+                strokeOpacity: 1.0
+            })
+        });
+    },
+
     getHostname: function(str) {
         return decodeURIComponent(str).match(/:\/\/(.[^/]+)/)[1].toString();
     },
