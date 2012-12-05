@@ -113,7 +113,7 @@
     display:inline-block;
     line-height:25px;
     cursor:default;
-    background: center center #333333;
+    background: center center transparent;
 }
 .timeseriesWidget .button:active {
     border-style:inset;
