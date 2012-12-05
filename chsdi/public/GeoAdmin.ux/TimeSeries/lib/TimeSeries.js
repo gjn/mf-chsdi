@@ -368,40 +368,45 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     repaintAnimation: function(){
         var timeseriesWidget = this;
         
-        function getLayer(timestamp){
-            return timeseriesWidget.getLayerForTimestamp(timestamp);
+        /**
+         * Pauses the animation and loads the tiles for the given timestamp. Resumes animation once tiles are loaded.
+         */
+        function stallAnimationLoadLayer(timestamp){
+            // Load layer if not yet there and wait for it to complete loading
+            map.addLayerByName(timeseriesWidget.layerName, {
+                timestamp: timestamp
+            });
+            var layer = timeseriesWidget.getLayerForTimestamp(timestamp);
+            layer.setOpacity(0);
+            
+            clearInterval(timeseriesWidget.animationTimer);
+            timeseriesWidget.animationTimer = null;
+            timeseriesWidget.animationState.pause();
+            function resume(){
+                layer.events.unregister('loadend', timeseriesWidget, resume);
+                if(timeseriesWidget.animationIsPlaying){
+                    layer.setOpacity(0);
+                    // Continue with animation, now that all tiles are loaded
+                    timeseriesWidget.animationState.recordStart();
+                    timeseriesWidget.repaintAnimation();
+                    timeseriesWidget.setAnimationTimer();
+                }
+            }
+            layer.events.register('loadend', timeseriesWidget, resume);
         }
         
         var state = this.animationState.getStateRatio(timeseriesWidget.state.playDirection==="backwards");
-        var foreground = getLayer(state.foreground);
+        var foreground = timeseriesWidget.getLayerForTimestamp(state.foreground);
         if(!foreground || foreground.loading){
-            // Load foreground layer if not yet there and wait for it to complete loading
-            map.addLayerByName(this.layerName, {
-                timestamp: state.foreground
-            });
-            foreground = getLayer(state.foreground);
-            foreground.setOpacity(0);
-            
-            clearInterval(this.animationTimer);
-            this.animationTimer = null;
-            this.animationState.pause();
-            function resume(){
-                foreground.events.unregister('loadend', this, resume);
-                if(this.animationIsPlaying){
-                    foreground.setOpacity(0);
-                    // Continue with animation, now that all tiles are loaded
-                    this.animationState.recordStart();
-                    this.repaintAnimation();
-                    this.setAnimationTimer();
-                    //console.log("resumed because tiles "+state.foreground+" there");
-                }
-            }
-            foreground.events.register('loadend', this, resume);
+            stallAnimationLoadLayer(state.foreground);
             return;
         }
   
-        var background = getLayer(state.background);
-      
+        var background = timeseriesWidget.getLayerForTimestamp(state.background);
+        if(!background || background.loading){
+            stallAnimationLoadLayer(state.background);
+            return;
+        }
         
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
         map.layers.forEach(function(layer){
@@ -420,20 +425,16 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
              * One could get rid of no longer needed layers.
              * Current OpenLayers versions mess up the layers' z-index when any layer is removed unless a base layer is set.
              */
-            if(background){
-                for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
-                    var layer = map.layers[layerIter];
-                    if(layer!==foreground && layer!==background && layer.layername===timeseriesWidget.layerName){
-                        map.removeLayer(layer);
-                    }
+            for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
+                var layer = map.layers[layerIter];
+                if(layer!==foreground && layer!==background && timeseriesWidget.isTimeSeriesLayer(layer)){
+                    map.removeLayer(layer);
                 }
             }
         }
         foreground.setZIndex(101);
-        if(background){
-            background.setOpacity(1);
-            background.setZIndex(100);
-        }
+        background.setOpacity(1);
+        background.setZIndex(100);
         
         // Update slider but only when needed to keep reflows low
         var currentYear = state.year;
