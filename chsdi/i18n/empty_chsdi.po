@@ -2354,6 +2354,9 @@ msgstr ""
 msgid "ch.swisstopo.vec25-wander"
 msgstr ""
 
+msgid "ch.swisstopo.zeitreihen"
+msgstr ""
+
 msgid "ch.vbs.territorialregionen"
 msgstr ""
 
@@ -2466,6 +2469,39 @@ msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr ""
 
 msgid "abkuerzung"
+msgstr ""
+
+msgid "kartenwerk"
+msgstr ""
+
+msgid "kartenwerk_tk100"
+msgstr ""
+
+msgid "kartenwerk_ta50"
+msgstr ""
+
+msgid "kartenwerk_ta25"
+msgstr ""
+
+msgid "kartenwerk_lk25"
+msgstr ""
+
+msgid "kartenwerk_lk50"
+msgstr ""
+
+msgid "kartenwerk_lk100"
+msgstr ""
+
+msgid "kbnum"
+msgstr ""
+
+msgid "kbbez"
+msgstr ""
+
+msgid "release_year"
+msgstr ""
+
+msgid "blattbezeichnung"
 msgstr ""
 
 msgid "hoehe_ueber_meer"
