@@ -178,7 +178,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
         this.on("preloadingProgress", updatePreloadStatus, this);
         
-        map.events.register('zoomend', this, this.changeStatusText);
+        this.map.events.register('zoomend', this, this.changeStatusText);
        
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
@@ -190,9 +190,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.discardInvisibleLayers();
             this.preloadingDone = false;
         }
-        map.events.register('moveend', this, handleExtentChanged);
-        map.events.register('zoomend', this, handleExtentChanged);
-        map.events.register('click', this, function(e){
+        this.map.events.register('moveend', this, handleExtentChanged);
+        this.map.events.register('zoomend', this, handleExtentChanged);
+        this.map.events.register('click', this, function(e){
             if(e.which===1 || button===0){
                 // Stop animation and preloading on left click
                 handleExtentChanged.apply(this);
@@ -298,8 +298,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationIsPlaying = false;
             this.abortPreloading();
             
-            // animationState is not yet set after preload completes
-            if(this.animationState){
+            // AnimationState is not yet set after preload completes initially,
+            // but do only act after preloading is fully complete to prevent moving
+            // the animation slider when moving map during preload.
+            if(this.animationState && this.preloadingDone){
                 // Show foreground layer only after animation stops
                 this.addLayers([
                     this.animationState.getStateRatio().foreground
@@ -317,7 +319,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.on("preloadingDone", function(){
                     preloadStatus.hide(true);
                     // Clean up timers
-                    timeseriesWidget.playPause();
+                    window.clearInterval(this.animationTimer);
+                    this.animationTimer = null;
+                    this.animationIsPlaying = false;
                     // Start a new animation
                     timeseriesWidget.playPause();
                 });
@@ -581,13 +585,27 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     */
                     this.setYear = function setYear(targetYear, reverse){
                         var offset = transitionTime;
+                        
                         if(reverse===false){
-                            for(var i=0; i<periods.length; i++){
-                                var year = this.yearFromTimestamp(periods[i]);
+                            for(var i=0; i<periods.length-1; i++){
+                                var year = this.yearFromTimestamp(periods[i+1]);
                                 if(year<targetYear){
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
+                            // Caculate offset between requested year and year of background timestamp.
+                            // Subtracting is to prevent hitting timestamps exactly which would result in ambiguity of fading/transitioning.
+                            start = new Date().getTime()-offset-5;
+                            var state = this.getStateRatio(reverse);
+                            var offsetFromStartYear;
+                            if(state.background===undefined){
+                                offsetFromStartYear = 0;
+                            } else {
+                                var yearsDifference = Math.abs(this.yearFromTimestamp(state.foreground) - this.yearFromTimestamp(state.background));
+                                var timePerYear = fadeTime/yearsDifference;
+                                offsetFromStartYear = timePerYear*(targetYear-this.yearFromTimestamp(state.background));
+                            }
+                            offset = offset + offsetFromStartYear;
                         } else {
                             for(var i=periods.length-1; i>=0; i--){
                                 var year = this.yearFromTimestamp(periods[i]);
