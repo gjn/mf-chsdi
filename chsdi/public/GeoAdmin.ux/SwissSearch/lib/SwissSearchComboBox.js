@@ -98,7 +98,7 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
     coordRegExp: /([\d\.']+)[\s,]+([\d\.']+)/,
 
     /*
-     * objectorig to zoom levle
+     * objectorig to zoom level
      */
     objectorig_zoom: {
         'LK500': 4,
@@ -286,6 +286,10 @@ GeoAdmin.SwissSearchComboBox = Ext.extend(Ext.form.ComboBox, {
             zoom = 10;
         } else if (record.data.service === 'swissnames') { 
             zoom = this.objectorig_zoom[record.data.objectorig]; 
+        }
+
+        if (zoom != undefined && zoom > this.map.resolutions.length - 1) {
+            zoom =  this.map.resolutions.length -1;
         }
 
         if (record.data.service === 'attributes' && this.map.vector !== undefined) {
