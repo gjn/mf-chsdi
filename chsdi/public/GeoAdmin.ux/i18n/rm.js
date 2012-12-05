@@ -177,6 +177,8 @@ OpenLayers.Lang.rm= {
 	'MultiPoint':'Multipunct',
 	'MultiPolygon':'Multipoligon',
 	'Name':'Num',
+	'National Map':'Nationalkarte',
+	'National Map Overview':'Nationalkarte Überblick',
 	'Nationales Maps':'Atlas naziunal',
 	'Natürliche Risikozonen':'Territoris cun ristgs natirals',
 	'Next':'Enavant',

@@ -85,11 +85,11 @@ class Zeitreihen_Metadata_15(Base, Queryable):
     the_geom = Column('the_geom', Geometry)
 
     @classmethod
-    def within_filter(cls, lon, lat, column):
+    def within_filter(cls, lon, lat, column, tolerance=0):
         geom = Point(lon, lat)
         wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
         geom_column = cls.__table__.columns.get(column)
-        return functions.within_distance(geom_column, wkb_geometry, 0)
+        return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
 class Zeitreihen_Metadata_20(Base, Queryable):
     # view in a schema
@@ -100,11 +100,11 @@ class Zeitreihen_Metadata_20(Base, Queryable):
     the_geom = Column('the_geom', Geometry)
 
     @classmethod
-    def within_filter(cls, lon, lat, column):
+    def within_filter(cls, lon, lat, column, tolerance=0):
         geom = Point(lon, lat)
         wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
         geom_column = cls.__table__.columns.get(column)
-        return functions.within_distance(geom_column, wkb_geometry, 0)
+        return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
 class Zeitreihen_Metadata_21(Base, Queryable):
     # view in a schema
@@ -115,11 +115,11 @@ class Zeitreihen_Metadata_21(Base, Queryable):
     the_geom = Column('the_geom', Geometry)
 
     @classmethod
-    def within_filter(cls, lon, lat, column):
+    def within_filter(cls, lon, lat, column,tolerance=0):
         geom = Point(lon, lat)
         wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
         geom_column = cls.__table__.columns.get(column)
-        return functions.within_distance(geom_column, wkb_geometry, 0)
+        return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
 class Zeitreihen_Metadata_22(Base, Queryable):
     # view in a schema
@@ -130,10 +130,10 @@ class Zeitreihen_Metadata_22(Base, Queryable):
     the_geom = Column('the_geom', Geometry)
 
     @classmethod
-    def within_filter(cls, lon, lat, column):
+    def within_filter(cls, lon, lat, column,tolerance=0):
         geom = Point(lon, lat)
         wkb_geometry = WKBSpatialElement(buffer(geom.wkb), 21781)
         geom_column = cls.__table__.columns.get(column)
-        return functions.within_distance(geom_column, wkb_geometry, 0)
+        return functions.within_distance(geom_column, wkb_geometry, tolerance)
 
 

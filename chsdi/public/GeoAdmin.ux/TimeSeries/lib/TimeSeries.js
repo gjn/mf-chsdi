@@ -26,16 +26,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[framesPerSecond]
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
-    framesPerSecond: 15,
+    framesPerSecond: 10,
     
-    /** private: property[preloadedFramesRequired]
-     * ``Number`` Number of timestamps that are loaded before animation initially starts
-     */
-    preloadedFramesRequired: 10,
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
      */
-    fadeTime: 2500,
+    fadeTime: 2000,
     /** private: property[transitionTime]
      * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
      */
@@ -166,61 +162,20 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
          * Gets triggered when enough frames have been loaded to start animation
          */
         this.addEvents('preloadingDone');
+        /**
+         * Gets triggered repeatedly during preloading and contains a “ratio” property to state the progress
+         */
+        this.addEvents('preloadingProgress');
         
-        // Track all loads on all layers
-        function layersCurrentlyLoading(){
-            for(var i=0; i<map.layers.length; i++){
-                if(map.layers[i].loading===true){
-                    return true;
-                }
-            }
-            return false;
+        // Update preload progress
+        var preloadStatus = this.clearAndGetPreloadStatusIndicator();
+        function updatePreloadStatus(e){
+            preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" "+Math.round(e.ratio*100)+"%");
         }
-        var preloadStatusTimer;
-        function anyLayerLoadStart(e){
-            // Show message that layer is loading when a visible layer starts to load
-            if(e.object.opacity>0 || this.preloadingDone===false){
-                clearTimeout(preloadStatusTimer);
-                var timeseriesWidget = this;
-                // Delay message so that no message is shown whilst browser does load from disk cache
-                preloadStatusTimer = setTimeout(function(){
-                    var preloadStatus = timeseriesWidget.clearAndGetPreloadStatusIndicator();
-                    preloadStatus.addClass("timeseriesWidget-preload-status-loading");
-                    preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
-                }, 500);
-            }
-        }
-        function anyLayerLoadEnd(){
-            // Remove spinner when last layer was loaded
-            if(layersCurrentlyLoading()===false){
-                clearTimeout(preloadStatusTimer);
-                var timeseriesWidget = this;
-                // Hide spinner only after a wee delay to prevent flickering whilst instructing OpenLayers to load next layer
-                preloadStatusTimer = setTimeout(function(){
-                    timeseriesWidget.clearAndGetPreloadStatusIndicator();
-                }, 500);
-            }
-        }
-        function anyLayerAdded(e){
-            // Monitor loading status of layer
-            e.layer.events.register('loadstart', this, anyLayerLoadStart);
-            e.layer.events.register('loadend', this, anyLayerLoadEnd);
-        }
-        function anyLayerRemoved(e){
-            // Stop monitoring
-            e.layer.events.unregister('loadstart', this, anyLayerLoadStart);
-            e.layer.events.unregister('loadend', this, anyLayerLoadEnd);
-            
-            anyLayerLoadEnd.call(this);
-        }
-        map.events.register('addlayer', this, anyLayerAdded);
-        map.events.register('removelayer', this, anyLayerRemoved);
-        map.layers.forEach(function(layer){
-            anyLayerAdded.call(this, {
-                layer: layer
-            });
-        }, this);
+        this.on("preloadingProgress", updatePreloadStatus, this);
         
+        map.events.register('zoomend', this, this.changeStatusText);
+       
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
             if(this.animationIsPlaying){
@@ -233,6 +188,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
         map.events.register('moveend', this, handleExtentChanged);
         map.events.register('zoomend', this, handleExtentChanged);
+        map.events.register('click', this, function(e){
+            if(e.which===1 || button===0){
+                // Stop animation and preloading on left click
+                handleExtentChanged.apply(this);
+            }
+        });
     },
     
     /** api: method[getState]
@@ -253,12 +214,51 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         };
     },
+
+    /** private: method[changeStatusText]
+     *  Change the text on the right according to the zoom level
+     */
+    changeStatusText: function(e) {
+        var zoom = e.object.zoom;
+        var statusText = Ext.get(this.contentEl).child('.text-status');
+        var updateText = function(text) {
+            if (typeof(statusText.dom.textContent)==="string") {
+                statusText.dom.textContent = text;
+            } else {
+                // IE
+                statusText.dom.innerText = text;
+            }
+        };
+        switch(zoom) {
+            case 6:
+                updateText(OpenLayers.i18n("National Map") + " 100'000");
+                break;
+            case 7:
+                updateText(OpenLayers.i18n("National Map") + " 50'000");
+                break;
+            case 8:
+                updateText(OpenLayers.i18n("National Map") + " 25'000");
+                break;
+            default:
+                updateText(OpenLayers.i18n("National Map Overview"));
+                break;
+        }
+    },
     
     /** private: method[clearAndGetPreloadStatusIndicator]
      *  :return: ``HTMLDivElement`` Empty and invisible status indicator.
      */
     clearAndGetPreloadStatusIndicator: function(){
-        var preloadStatus = Ext.get(this.contentEl).child('.timeseriesWidget-preload-status');
+        var selectorResult = Ext.Element.select('.timeseriesWidget-preload-status');
+        var preloadStatus;
+        if(selectorResult.getCount()===1){
+            preloadStatus = selectorResult.first();
+        } else {
+            preloadStatus = Ext.get(document.createElement("div"));
+            preloadStatus.appendTo(Ext.get(this.contentEl).parent());
+            preloadStatus.addClass('timeseriesWidget-preload-status');
+        }
+        
         /**
          * Displays a text in the lower right of the widget
          * @param {String} textContent Text to display
@@ -273,14 +273,14 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.setStyle({
                 visibility: "visible"
             });
-        }
-        preloadStatus.removeClass("timeseriesWidget-preload-status-loading");
+        };
+        preloadStatus.removeClass("timeseriesWidget-preload-status-countdown");
         preloadStatus.setStyle({
             visibility: "hidden"
         });
         return preloadStatus;
     },
-    
+
     /** private: method[playPause]
      *  Starts or stops the animation
      */
@@ -298,6 +298,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             playButtonImage.src = playButtonImage.src.replace(/pause\.png$/, "play.png");
             playButtonImage.title = OpenLayers.i18n("Play animation (Tooltip)");
             this.animationIsPlaying = false;
+            this.abortPreloading();
             
             // animationState is not yet set after preload completes
             if(this.animationState){
@@ -307,6 +308,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 ], []);
                 var layer = timeseriesWidget.getLayerForTimestamp(this.animationState.getStateRatio().foreground);
                 layer.setOpacity(1);
+                this.animationSlider.setYear(this.animationState.getStateRatio().foreground.substring(0,4));
                 this.discardInvisibleLayers();
             }
         } else {
@@ -314,30 +316,32 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if(timeseriesWidget.preloadingDone===false){
                 timeseriesWidget.preloadLayersInSequence();
                 // Wait for preloading to finish
-                preloadStatus.addClass("timeseriesWidget-preload-status-loading");
-                preloadStatus.setTextContent(OpenLayers.i18n("Loading animation, please wait…"));
                 timeseriesWidget.on("preloadingDone", function(){
-                    preloadStatus.setStyle({
-                        visibility: "hidden"
-                    });
-                    // Clean up timers
-                    timeseriesWidget.playPause();
-                    // Start a new animation
-                    timeseriesWidget.playPause();
+                    preloadStatus.hide(true);
+                    
+                    Ext.Element.select(".timeseriesWidget-preload-status-countdown").remove();
+                    var countdown = Ext.get(document.createElement("div"));
+                    countdown.addClass("timeseriesWidget-preload-status-countdown");
+                    countdown.hide();
+                    countdown.appendTo(preloadStatus.parent());
+                    countdown.show(true);
+                    // Start animation after countdown completed
+                    setTimeout(function(){
+                        countdown.hide(true);
+                        // Clean up timers
+                        timeseriesWidget.playPause();
+                        // Start a new animation
+                        timeseriesWidget.playPause();
+                    }, 3000);
                 });
             } else {
                 // Try to start animation
                 this.initAnimationState(function(animationState){
-                    if(animationState===null){
-                        preloadStatus.setTextContent(OpenLayers.i18n("Failed to load animation"));
-                    } else {
-                        timeseriesWidget.animationState = animationState;
+                    timeseriesWidget.animationState = animationState;
                         
-                        // Play / Resume
-                        timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
-                        timeseriesWidget.setAnimationTimer();
-                        //console.log("resumed by click");
-                    }
+                    // Play / Resume
+                    timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection==="backwards");
+                    timeseriesWidget.setAnimationTimer();
                 });
             }
             playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
@@ -366,7 +370,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     getLayerForTimestamp: function(timestamp){
         var timeseriesWidget = this;
         return map.layers.filter(function(layer){
-            return layer.layername===timeseriesWidget.layerName && layer.timestamp===timestamp;
+            return timeseriesWidget.isTimeSeriesLayer(layer) && layer.timestamp===timestamp;
         })[0];
     },
     
@@ -395,10 +399,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationState.pause();
             function resume(){
                 foreground.events.unregister('loadend', this, resume);
-                foreground.setOpacity(0);
-                // Continue with animation, now that all tiles are loaded
-                this.animationState.recordStart();
                 if(this.animationIsPlaying){
+                    foreground.setOpacity(0);
+                    // Continue with animation, now that all tiles are loaded
+                    this.animationState.recordStart();
                     this.repaintAnimation();
                     this.setAnimationTimer();
                     //console.log("resumed because tiles "+state.foreground+" there");
@@ -694,6 +698,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             var shownLayer = map.layers.filter(function(layer){
                 return timeseriesWidget.isTimeSeriesLayer(layer) && (layer.opacity>0 && layer.getVisibility());// && layer.timestamp===timestampShown;
             }).pop();
+            timeseriesWidget.fireEvent("preloadingProgress", {
+                ratio: 0
+            });
             if(shownLayer.loading){
                 // Preload once currently shown layer is loaded
                 shownLayer.events.register("loadend", timeseriesWidget, function(){
@@ -727,12 +734,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                     function layerPreloaded(){
                         markLayerPreloadDone();
-                        
-                        if(timestampIndex===this.preloadedFramesRequired){
-                            timeseriesWidget.preloadingDone = true;
-                            //console.log("Enough preloading done");
-                            timeseriesWidget.fireEvent("preloadingDone");
-                        }
+                        timeseriesWidget.fireEvent("preloadingProgress", {
+                            ratio: timestampIndex / animationPeriods.length
+                        });
                         delayedPreload(timestampIndex + 1);
                     }
                     if(layer.tileQueue.length>0){
@@ -742,8 +746,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         delayedPreload(timestampIndex + 1);
                     }
                 } else if(timeseriesWidget.preloadingDone===false) {
-                    // Trigger preloadingDone when all frame are loaded
+                    // Trigger preloadingDone when all frames are loaded
                     timeseriesWidget.preloadingDone = true;
+                    timeseriesWidget.fireEvent("preloadingProgress", {
+                        ratio: 1
+                    });
                     timeseriesWidget.fireEvent("preloadingDone");
                 }
             }

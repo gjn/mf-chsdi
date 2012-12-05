@@ -141,11 +141,30 @@
 .timeseriesWidget-loading {
     vertical-align: middle;
 }
-.timeseriesWidget-preload-status-loading {
-    background: url("../img/ajax-loader.gif") no-repeat scroll 2px center transparent;
-    padding-left: 20px;
-    text-align: left;
-    width: 180px;
+
+.timeseriesWidget-preload-status {
+    background: #313131;
+    color: lightgray;
+    font-size: 30px;
+    left: 50%;
+    margin-left: -330px;
+    padding: 1em;
+    position: absolute;
+    text-align: center;
+    top: 140px;
+    width: 600px;
+    z-index: 999;
+}
+.timeseriesWidget-preload-status-countdown {
+    background: #313131 url("../img/countdown.gif") center center no-repeat;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    z-index:999;
 }
 
 .timeseriesWidget-slider {

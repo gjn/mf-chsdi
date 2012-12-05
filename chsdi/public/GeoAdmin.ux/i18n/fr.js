@@ -181,6 +181,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'MultiPoint':'MultiPoint',
 	'MultiPolygon':'MultiPolygone',
 	'Name':'Nom',
+	'National Map':'Carte nationale',
+	'National Map Overview':'Carte nationale vue d\'ensemble',
 	'Nationales Maps':'Cartes nationales',
 	'Natürliche Risikozonen':'Zones à risque naturel',
 	'Next':'Suivant',

@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'National Map Overview': "",
+    'National Map': "",
     'Export all': "",
     'Print all': "",
     'Choose a topic': "",
