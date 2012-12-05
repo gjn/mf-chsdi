@@ -133,10 +133,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Bind buttons on animation tab
         Ext.get(this.contentEl).child('.play').on('click', this.playPause, this);
         Ext.get(this.contentEl).child('.backwards').on('click', function(){
+            if(this.animationIsPlaying){
+                // Stop the animation
+                this.playPause();
+            }
             this.animationSlider.setYear(this.minYear);
             this.addLayers([this.findTimestampNoLaterThan(this.minYear)], []);
         }, this);
         Ext.get(this.contentEl).child('.forwards').on('click', function(){
+            if(this.animationIsPlaying){
+                // Stop the animation
+                this.playPause();
+            }
             this.animationSlider.setYear(this.maxYear);
             this.addLayers([this.findTimestampNoLaterThan(this.maxYear)], []);
         }, this);
@@ -585,6 +593,21 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     */
                     this.setYear = function setYear(targetYear, reverse){
                         var offset = transitionTime;
+                        
+                        // Adjust year so that it does not fall outwit animatable range
+                        if(targetYear>this.yearFromTimestamp(periods[periods.length-1])){
+                            if(reverse){
+                                targetYear = this.yearFromTimestamp(periods[periods.length-1]);
+                            } else {
+                                targetYear = this.yearFromTimestamp(periods[0]);
+                            }
+                        } else if(targetYear< this.yearFromTimestamp(periods[0])){
+                            if(reverse){
+                                targetYear = this.yearFromTimestamp(periods[0]);
+                            } else {
+                                targetYear = this.yearFromTimestamp(periods[periods.length-1]);
+                            }
+                        }
                         
                         if(reverse===false){
                             for(var i=0; i<periods.length-1; i++){
