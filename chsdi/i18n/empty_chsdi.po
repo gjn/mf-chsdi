@@ -1140,6 +1140,9 @@ msgstr ""
 msgid "nr"
 msgstr ""
 
+msgid "type_dreieck"
+msgstr ""
+
 msgid "nom_dreieck"
 msgstr ""
 
