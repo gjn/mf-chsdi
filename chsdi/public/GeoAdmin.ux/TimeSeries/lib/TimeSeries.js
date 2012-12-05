@@ -170,7 +170,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Update preload progress
         var preloadStatus = this.clearAndGetPreloadStatusIndicator();
         function updatePreloadStatus(e){
-            preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" "+Math.round(e.ratio*100)+"%");
+            if (map.getZoom() < 6) {
+              preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" <br> "+Math.round(e.ratio*100)+" % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in in order to better visualize the evolution of the maps."));
+            } else {
+               preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" <br> "+Math.round(e.ratio*100)+" % " + OpenLayers.i18n("done") + "<br>");
+            }
         }
         this.on("preloadingProgress", updatePreloadStatus, this);
         
@@ -264,12 +268,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
          * @param {String} textContent Text to display
          */
         preloadStatus.setTextContent = function(textContent){
-            if(typeof(this.dom.textContent)==="string"){
-                this.dom.textContent = textContent;
-            } else {
-                // IE
-                this.dom.innerText = textContent;
-            }
+            this.dom.innerHTML = textContent;
             this.setStyle({
                 visibility: "visible"
             });
