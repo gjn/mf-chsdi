@@ -32,7 +32,8 @@ The OWSChecker can be used via a HTML form (this will be implemented as a GeoAdm
 -------------
 An example of the HTML form is available at the following address:
 
- * http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/form
+ * `http://api.geo.admin.ch/main/wsgi/owschecker/form </main/wsgi/owschecker/form>`_
+
 
 The form inputs are:
 
@@ -71,7 +72,8 @@ Before the list of all checked rules a "Status" message returns the overall resu
 3.2 Web service
 ----------------
 The OWSChecker can be consumed as web service at the following address:
- * http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/bykvp 
+
+ * `http://api.geo.admin.ch/main/wsgi/owschecker/bykvp </main/wsgi/owschecker/bykvp>`_
 
 using the following Key-Value parameters:
 
@@ -81,7 +83,8 @@ using the following Key-Value parameters:
  * *restful*: same specification as for "Service Restful-Only"
 
 Example: 
- * http://mf-chsdi0t.bgdi.admin.ch/ckarrie/wsgi/owschecker/bykvp?base_url=http://wms.geo.admin.ch/&service=WMS  
+
+ * `http://api.geo.admin.ch/main/wsgi/owschecker/bykvp?base_url=http://wms.geo.admin.ch/&service=WMS </main/wsgi/owschecker/bykvp?base_url=http%3A%2F%2Fwms.geo.admin.ch%2F&service=WMS>`_
 
 4 eCH-0056 Rules 
 ******************
