@@ -44,6 +44,8 @@ class OwscheckerController(BaseController):
     def bykvp(self):
         base_url = request.params.get('base_url', "")
         service = request.params.get('service', "")
+        if base_url == "" or service == "":
+            abort(400, "Required parameters 'base_url' or 'service' are missing")
         restful = request.params.get('restful', False)
         ssurl = request.params.get('ssurl', "")
         if restful:
