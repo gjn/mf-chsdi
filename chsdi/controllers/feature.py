@@ -324,7 +324,6 @@ class FeatureController(BaseController):
                         if layer_name == 'ch.swisstopo.zeitreihen':
                             if counter > 1:
                                if bgdi_order < feature.bgdi_order:
-                                   beurk
                                    continue
                             bgdi_order = feature.bgdi_order
 
