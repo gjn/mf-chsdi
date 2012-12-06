@@ -198,8 +198,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.discardInvisibleLayers();
             this.preloadingDone = false;
         }
+        // Movend is trigger on pan and zoom of the map, thus there is not need to bind to zoomend as well
         this.map.events.register('moveend', this, handleExtentChanged);
-        this.map.events.register('zoomend', this, handleExtentChanged);
         this.map.events.register('click', this, function(e){
             if(e.which===1 || button===0){
                 // Stop animation and preloading on left click
@@ -451,6 +451,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         if(this.lastAnimationYearCache!==currentYear){
             this.animationSlider.setYear(currentYear);
             this.lastAnimationYearCache = currentYear;
+            timeseriesWidget.saveState();
         }
     },
     
@@ -562,7 +563,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         var ratio;
                         if(overlayOffset<=transitionTime){
                             state = "transitioning";
-                            ratio = overlayOffset/transitionTime;
+                            if(transitionTime===0){
+                                ratio = 0;
+                            } else {
+                                ratio = overlayOffset/transitionTime;
+                            }
                         } else {
                             state = "fading";
                             ratio = (overlayOffset-transitionTime)/fadeTime;
@@ -576,9 +581,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         foreground = periods[(reverse && state==="fading") ? (foreground - 1) : foreground];
                         ratio = reverse ? 1 - ratio : ratio;
                         return {
+                            // Timestamp of foreground layer such as 19891231
                             foreground: foreground,
+                            // Timestamp of background layer
                             background: background,
+                            // Either transitioning or fading
                             state: state,
+                            // Progress between foreground and background layer (equals opacity of foreground in case of linear easing)
                             ratio: ratio,
                             // Interpolated year (interpolated in between the visualized timestamps being currently faded)
                             year: (state==="transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio)
@@ -702,15 +711,15 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         timeseriesWidget.getAnimationPeriods(function(animationPeriods){
             var timestamp;
             var year = timeseriesWidget.animationSlider.getYear();
+            if(!(animationPeriods instanceof Array)){
+                // Failed to get periods from server, don't proceed with preloading
+                return;
+            }
             animationPeriods.forEach(function(ts){
                 if(parseInt(ts.substring(0,4), 10)<=year){
                     timestamp = ts;
                 }
             });
-            if(!(animationPeriods instanceof Array)){
-                // Failed to get periods from server, don't proceed with preloading
-                return;
-            }
             
             // Create a clone of the list and sort it so that it contains the timestamps in ascending upcoming order
             animationPeriods = animationPeriods.slice(0).sort();
