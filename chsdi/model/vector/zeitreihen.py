@@ -13,7 +13,7 @@ Base = declarative_base(bind=meta.engines['zeitreihen'])
 
 class Zeitreihen_15(Base, Queryable):
     # view in a schema
-    __tablename__ = 'tooltip_15'
+    __tablename__ = 'tooltip_15_materialized'
     __table_args__ = ({'schema': 'public','autoload': True})
     __template__ = 'tooltips/zeitreihen.mako'
 
@@ -28,7 +28,7 @@ class Zeitreihen_15(Base, Queryable):
 
 class Zeitreihen_20(Base, Queryable):
     # view in a schema
-    __tablename__ = 'tooltip_20'
+    __tablename__ = 'tooltip_20_materialized'
     __table_args__ = ({'schema': 'public','autoload': True})
     __template__ = 'tooltips/zeitreihen.mako'
 
@@ -43,7 +43,7 @@ class Zeitreihen_20(Base, Queryable):
 
 class Zeitreihen_21(Base, Queryable):
     # view in a schema
-    __tablename__ = 'tooltip_21'
+    __tablename__ = 'tooltip_21_materialized'
     __table_args__ = ({'schema': 'public','autoload': True})
     __template__ = 'tooltips/zeitreihen.mako'
 
@@ -58,7 +58,7 @@ class Zeitreihen_21(Base, Queryable):
 
 class Zeitreihen_22(Base, Queryable):
     # view in a schema
-    __tablename__ = 'tooltip_22'
+    __tablename__ = 'tooltip_22_materialized'
     __table_args__ = ({'schema': 'public','autoload': True})
     __template__ = 'tooltips/zeitreihen.mako'
 
