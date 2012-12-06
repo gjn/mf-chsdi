@@ -671,7 +671,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     this.interpolateYears = function(from, to, ratio){
                         var fromYear = this.yearFromTimestamp(from);
                         var toYear = this.yearFromTimestamp(to);
-                        return Math.floor(fromYear + (toYear - fromYear)*ratio);
+                        return Math.round(fromYear + (toYear - fromYear)*ratio);
                     };
                     this.yearFromTimestamp = function(timestamp){
                         return parseInt(timestamp.substring(0, 4), 10);
