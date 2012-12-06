@@ -21,7 +21,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[framesPerSecond]
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
-    framesPerSecond: 10,
+    framesPerSecond: 12,
 
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
@@ -85,7 +85,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         compareSliderMin: null,
         compareSliderMax: null,
         compareTabOpacitySlider: 50,
-        playDirection: "forwards"
+        playDirection: "forwards",
+        fadeTime: 2000
     },
 
     /** private: property[preloadingDone]
@@ -102,6 +103,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
         // Make sure state gets restored
         this.initState();
+
+        this.state.fadeTime = this.state.fadeTime ? this.state.fadeTime : this.fadeTime;
 
         Ext.get(this.contentEl).addClass('timeseriesWidget');
 
@@ -211,6 +214,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 compareSliderMax: this.compareSliderMax ? this.compareSliderMax.getYear() : this.state.compareSliderMax,
                 // Written by handler on slider change
                 compareTabOpacitySlider: this.state.compareTabOpacitySlider,
+                fadeTime: this.state.fadeTime,
                 // Written by handler on slider change
                 playDirection: this.state.playDirection
             }
@@ -523,7 +527,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      * :param onCompletion: ``Function`` Called when available timestamps are known and receives animation state model. The model is ``null`` however if gathering the available timestamps failed.
      */
     initAnimationState: function(onCompletion) {
-        var fadeTime = this.fadeTime;
+        var fadeTime = this.state.fadeTime ? this.state.fadeTime : this.fadeTime;
         var transitionTime = this.transitionTime;
 
         this.getAnimationPeriods(function(periods) {
