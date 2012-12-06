@@ -306,8 +306,11 @@ class FeatureController(BaseController):
                     if time_filter is not None:
                         query = query.filter(time_filter)
                     bodlayer = Session.query(self.bodsearch).get(layer_name)
-
+                    # Make all that for ch.swisstopo.zeitreihen because of the recusvity character of the query
+                    counter = 0
+                    bgdi_order = 0
                     for feature in query.limit(MAX_FEATURES).all():
+                        counter = counter + 1
                         properties = {}
                         feature.compute_template(layer_name, bodlayer)
                         if self.format == 'raw':
@@ -318,6 +321,13 @@ class FeatureController(BaseController):
                         properties['layer_id'] = feature.layer_id
                         properties['preview'] = feature.preview
                         geometry = None if self.no_geom else loads(feature.the_geom.geom_wkb.decode('hex'))
+                        if layer_name == 'ch.swisstopo.zeitreihen':
+                            if counter > 1:
+                               if bgdi_order < feature.bgdi_order:
+                                   beurk
+                                   continue
+                            bgdi_order = feature.bgdi_order
+
                         if layer_name == 'ch.kantone.cadastralwebmap-farbe' or 'print' not in request.params:
                             features.append(Feature(id=feature.id,
                                                     geometry = geometry,
