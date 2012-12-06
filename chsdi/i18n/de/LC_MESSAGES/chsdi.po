@@ -371,6 +371,9 @@ msgstr "Name Unterregion"
 msgid "biounterregnummer"
 msgstr "Nummer Unterregion"
 
+msgid "blattbezeichnung"
+msgstr "Bibliografische Angaben"
+
 msgid "blind warning"
 msgstr "Diese Webpage ist eine geographische Anwendung, und ist leider nicht für Blinde optimiert."
 
@@ -998,6 +1001,9 @@ msgstr "Übriger Verkehr VECTOR25"
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Wanderwege VECTOR25"
 
+msgid "ch.swisstopo.zeitreihen"
+msgstr "Karten - Zeitreise"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorialregionen"
 
@@ -1271,11 +1277,38 @@ msgstr "Kartenblattname"
 msgid "kartenblattnummer"
 msgstr "Kartenblattnummer"
 
+msgid "kartenwerk"
+msgstr "Kartenwerk"
+
+msgid "kartenwerk_lk100"
+msgstr "Landeskarte der Schweiz 1:100’000 (LK100)"
+
+msgid "kartenwerk_lk25"
+msgstr "Landeskarte der Schweiz 1:25’000 (LK25)"
+
+msgid "kartenwerk_lk50"
+msgstr "Landeskarte der Schweiz 1:50’000 (LK50)"
+
+msgid "kartenwerk_ta25"
+msgstr "Topographischer Atlas der Schweiz 1:25’000 (Siegfriedkarte, TA25)"
+
+msgid "kartenwerk_ta50"
+msgstr "Topographischer Atlas der Schweiz 1:50’000 (Siegfriedkarte, TA50)"
+
+msgid "kartenwerk_tk100"
+msgstr "Topographische Karte der Schweiz 1:100’000 (Dufourkarte, TK100)"
+
 msgid "kartiereinheit"
 msgstr "Kartiereinheiten"
 
 msgid "kategorie"
 msgstr "Kategorie"
+
+msgid "kbbez"
+msgstr "Blattbezeichnung"
+
+msgid "kbnum"
+msgstr "Blattnummer"
 
 msgid "kindofzone"
 msgstr "Projektierungszonenart"
@@ -1914,7 +1947,7 @@ msgid "nfname"
 msgstr "Name"
 
 msgid "nom_dreieck"
-msgstr "Zugehörige Transformationsstützpunkte"
+msgstr "Zugehörige TSP"
 
 msgid "nord"
 msgstr "Nord"
@@ -2005,6 +2038,9 @@ msgstr "Grossraum"
 
 msgid "reisezeit_min"
 msgstr "Reisezeit [Min]"
+
+msgid "release_year"
+msgstr "Datenstand"
 
 msgid "report problem"
 msgstr "Problem melden"
@@ -2554,6 +2590,10 @@ msgstr "Typ von hergestelltem Produkt"
 
 msgid "typ_transpo_produkt"
 msgstr "Typ des in der Leitung transportierten Produkts"
+
+#. TODO
+msgid "type_dreieck"
+msgstr "type_dreieck"
 
 msgid "typnummer"
 msgstr "Typnummer"

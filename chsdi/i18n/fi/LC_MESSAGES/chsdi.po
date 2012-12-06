@@ -371,6 +371,9 @@ msgstr "Name Unterregion"
 msgid "biounterregnummer"
 msgstr "Nummer Unterregion"
 
+msgid "blattbezeichnung"
+msgstr "Indicaziuns bibliograficas"
+
 msgid "blind warning"
 msgstr "Questa pagina d'internet è in'applicaziun cartografica e n'è pervia da quai betg optimada per persunas tschorvas."
 
@@ -998,6 +1001,10 @@ msgstr "Ulteriur traffic VECTOR25"
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Sendas da viandar VECTOR25"
 
+#. TODO
+msgid "ch.swisstopo.zeitreihen"
+msgstr "ch.swisstopo.zeitreihen"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Regiuns territorialas"
 
@@ -1271,11 +1278,38 @@ msgstr "Kartenblattname"
 msgid "kartenblattnummer"
 msgstr "Kartenblattnummer"
 
+msgid "kartenwerk"
+msgstr "Kartenwerk"
+
+msgid "kartenwerk_lk100"
+msgstr "Landeskarte der Schweiz 1:100’000 (LK100)"
+
+msgid "kartenwerk_lk25"
+msgstr "Landeskarte der Schweiz 1:25’000 (LK25)"
+
+msgid "kartenwerk_lk50"
+msgstr "Landeskarte der Schweiz 1:50’000 (LK50)"
+
+msgid "kartenwerk_ta25"
+msgstr "Topographischer Atlas der Schweiz 1:25’000 (Siegfriedkarte)"
+
+msgid "kartenwerk_ta50"
+msgstr "Topographischer Atlas der Schweiz 1:50’000 (Siegfriedkarte)"
+
+msgid "kartenwerk_tk100"
+msgstr "Topographische Karte der Schweiz 1:100’000 (Dufourkarte)"
+
 msgid "kartiereinheit"
 msgstr "Kartiereinheiten"
 
 msgid "kategorie"
 msgstr "Categoria"
+
+msgid "kbbez"
+msgstr "Blattbezeichnung"
+
+msgid "kbnum"
+msgstr "Blattnummer"
 
 msgid "kindofzone"
 msgstr "Tip da zona da projectaziun"
@@ -1914,7 +1948,7 @@ msgid "nfname"
 msgstr "Name"
 
 msgid "nom_dreieck"
-msgstr "Appartegnent  basa  da transfurmaziun"
+msgstr "Appartegnent  TSP"
 
 msgid "nord"
 msgstr "Nord"
@@ -2005,6 +2039,9 @@ msgstr "Grossraum"
 
 msgid "reisezeit_min"
 msgstr "Reisezeit [Min]"
+
+msgid "release_year"
+msgstr "Stadi da las datas"
 
 msgid "report problem"
 msgstr "Rapportare problem"
@@ -2554,6 +2591,10 @@ msgstr "Typ von hergestelltem Produkt"
 
 msgid "typ_transpo_produkt"
 msgstr "Typ des in der Leitung transportierten Produkts"
+
+#. TODO
+msgid "type_dreieck"
+msgstr "type_dreieck"
 
 msgid "typnummer"
 msgstr "Typnummer"

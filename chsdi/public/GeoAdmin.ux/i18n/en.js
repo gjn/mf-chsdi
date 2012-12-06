@@ -605,6 +605,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.vec25-strassennetz':'Road network  VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Other traffic  VECTOR25',
 	'ch.swisstopo.vec25-wander':'Hiking trails  VECTOR25',
+	'ch.swisstopo.zeitreihen':'Maps - Journay through time',
 	'ch.vbs':'DDPS',
 	'ch.vbs.territorialregionen':'Territorial regions',
 	'ch.vbs.url':'http://www.vbs.admin.ch/internet/vbs/en/home.html',

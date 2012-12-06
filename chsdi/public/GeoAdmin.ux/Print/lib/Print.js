@@ -258,6 +258,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             }
                         }
                     }
+                    provider.customParams.legends.reverse();
                     //for (var i = 0, len = map.layers.length; i < len;i++) {
                     //   var layer = map.layers[i];
                     //   if (layer.CLASS_NAME == 'OpenLayers.Layer.WMS') {

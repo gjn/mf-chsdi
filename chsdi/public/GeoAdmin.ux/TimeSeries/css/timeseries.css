@@ -113,7 +113,7 @@
     display:inline-block;
     line-height:25px;
     cursor:default;
-    background: center center #333333;
+    background: center center transparent;
 }
 .timeseriesWidget .button:active {
     border-style:inset;
@@ -143,28 +143,18 @@
 }
 
 .timeseriesWidget-preload-status {
-    background: #313131;
-    color: lightgray;
-    font-size: 30px;
+    background: white;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
     left: 50%;
-    margin-left: -330px;
+    margin-left: -300px;
     padding: 1em;
     position: absolute;
     text-align: center;
     top: 140px;
-    width: 600px;
+    width: 570px;
     z-index: 999;
-}
-.timeseriesWidget-preload-status-countdown {
-    background: #313131 url("../img/countdown.gif") center center no-repeat;
-    position: absolute;
-    height: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    width: 100%;
-    z-index:999;
 }
 
 .timeseriesWidget-slider {

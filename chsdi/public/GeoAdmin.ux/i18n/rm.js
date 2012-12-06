@@ -601,6 +601,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
+	'ch.swisstopo.zeitreihen':'ch.swisstopo.zeitreihen', //TODO
 	'ch.vbs':'VBS',
 	'ch.vbs.territorialregionen':'Regiuns territorialas',
 	'ch.vbs.url':'http://www.vbs.admin.ch/internet/vbs/de/home.html',

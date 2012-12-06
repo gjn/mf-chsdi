@@ -605,6 +605,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.vec25-strassennetz':'Rete stradale  VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Altri mezzi di trasporto  VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sentieri VECTROR25',
+	'ch.swisstopo.zeitreihen':'Carte - Viaggio nel tempo',
 	'ch.vbs':'DDPS',
 	'ch.vbs.territorialregionen':'Regioni territoriali',
 	'ch.vbs.url':'http://www.vbs.admin.ch/internet/vbs/it/home.html',

@@ -133,10 +133,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Bind buttons on animation tab
         Ext.get(this.contentEl).child('.play').on('click', this.playPause, this);
         Ext.get(this.contentEl).child('.backwards').on('click', function(){
+            if(this.animationIsPlaying){
+                // Stop the animation
+                this.playPause();
+            }
             this.animationSlider.setYear(this.minYear);
             this.addLayers([this.findTimestampNoLaterThan(this.minYear)], []);
         }, this);
         Ext.get(this.contentEl).child('.forwards').on('click', function(){
+            if(this.animationIsPlaying){
+                // Stop the animation
+                this.playPause();
+            }
             this.animationSlider.setYear(this.maxYear);
             this.addLayers([this.findTimestampNoLaterThan(this.maxYear)], []);
         }, this);
@@ -170,11 +178,15 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Update preload progress
         var preloadStatus = this.clearAndGetPreloadStatusIndicator();
         function updatePreloadStatus(e){
-            preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" "+Math.round(e.ratio*100)+"%");
+            if (map.getZoom() < 6) {
+              preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" <br> "+Math.round(e.ratio*100)+" % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in in order to better visualize the evolution of the maps."));
+            } else {
+               preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!")+" <br> "+Math.round(e.ratio*100)+" % " + OpenLayers.i18n("done") + "<br>");
+            }
         }
         this.on("preloadingProgress", updatePreloadStatus, this);
         
-        map.events.register('zoomend', this, this.changeStatusText);
+        this.map.events.register('zoomend', this, this.changeStatusText);
        
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged(){
@@ -186,9 +198,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.discardInvisibleLayers();
             this.preloadingDone = false;
         }
-        map.events.register('moveend', this, handleExtentChanged);
-        map.events.register('zoomend', this, handleExtentChanged);
-        map.events.register('click', this, function(e){
+        this.map.events.register('moveend', this, handleExtentChanged);
+        this.map.events.register('zoomend', this, handleExtentChanged);
+        this.map.events.register('click', this, function(e){
             if(e.which===1 || button===0){
                 // Stop animation and preloading on left click
                 handleExtentChanged.apply(this);
@@ -264,17 +276,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
          * @param {String} textContent Text to display
          */
         preloadStatus.setTextContent = function(textContent){
-            if(typeof(this.dom.textContent)==="string"){
-                this.dom.textContent = textContent;
-            } else {
-                // IE
-                this.dom.innerText = textContent;
-            }
+            this.dom.innerHTML = textContent;
             this.setStyle({
                 visibility: "visible"
             });
         };
-        preloadStatus.removeClass("timeseriesWidget-preload-status-countdown");
         preloadStatus.setStyle({
             visibility: "hidden"
         });
@@ -300,15 +306,16 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.animationIsPlaying = false;
             this.abortPreloading();
             
-            // animationState is not yet set after preload completes
-            if(this.animationState){
+            // AnimationState is not yet set after preload completes initially,
+            // but do only act after preloading is fully complete to prevent moving
+            // the animation slider when moving map during preload.
+            if(this.animationState && this.preloadingDone){
                 // Show foreground layer only after animation stops
                 this.addLayers([
                     this.animationState.getStateRatio().foreground
                 ], []);
                 var layer = timeseriesWidget.getLayerForTimestamp(this.animationState.getStateRatio().foreground);
                 layer.setOpacity(1);
-                this.animationSlider.setYear(this.animationState.getStateRatio().foreground.substring(0,4));
                 this.discardInvisibleLayers();
             }
         } else {
@@ -318,21 +325,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Wait for preloading to finish
                 timeseriesWidget.on("preloadingDone", function(){
                     preloadStatus.hide(true);
-                    
-                    Ext.Element.select(".timeseriesWidget-preload-status-countdown").remove();
-                    var countdown = Ext.get(document.createElement("div"));
-                    countdown.addClass("timeseriesWidget-preload-status-countdown");
-                    countdown.hide();
-                    countdown.appendTo(preloadStatus.parent());
-                    countdown.show(true);
-                    // Start animation after countdown completed
-                    setTimeout(function(){
-                        countdown.hide(true);
-                        // Clean up timers
-                        timeseriesWidget.playPause();
-                        // Start a new animation
-                        timeseriesWidget.playPause();
-                    }, 3000);
+                    // Clean up timers
+                    window.clearInterval(this.animationTimer);
+                    this.animationTimer = null;
+                    this.animationIsPlaying = false;
+                    // Start a new animation
+                    timeseriesWidget.playPause();
                 });
             } else {
                 // Try to start animation
@@ -380,40 +378,45 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     repaintAnimation: function(){
         var timeseriesWidget = this;
         
-        function getLayer(timestamp){
-            return timeseriesWidget.getLayerForTimestamp(timestamp);
+        /**
+         * Pauses the animation and loads the tiles for the given timestamp. Resumes animation once tiles are loaded.
+         */
+        function stallAnimationLoadLayer(timestamp){
+            // Load layer if not yet there and wait for it to complete loading
+            map.addLayerByName(timeseriesWidget.layerName, {
+                timestamp: timestamp
+            });
+            var layer = timeseriesWidget.getLayerForTimestamp(timestamp);
+            layer.setOpacity(0);
+            
+            clearInterval(timeseriesWidget.animationTimer);
+            timeseriesWidget.animationTimer = null;
+            timeseriesWidget.animationState.pause();
+            function resume(){
+                layer.events.unregister('loadend', timeseriesWidget, resume);
+                if(timeseriesWidget.animationIsPlaying){
+                    layer.setOpacity(0);
+                    // Continue with animation, now that all tiles are loaded
+                    timeseriesWidget.animationState.recordStart();
+                    timeseriesWidget.repaintAnimation();
+                    timeseriesWidget.setAnimationTimer();
+                }
+            }
+            layer.events.register('loadend', timeseriesWidget, resume);
         }
         
         var state = this.animationState.getStateRatio(timeseriesWidget.state.playDirection==="backwards");
-        var foreground = getLayer(state.foreground);
+        var foreground = timeseriesWidget.getLayerForTimestamp(state.foreground);
         if(!foreground || foreground.loading){
-            // Load foreground layer if not yet there and wait for it to complete loading
-            map.addLayerByName(this.layerName, {
-                timestamp: state.foreground
-            });
-            foreground = getLayer(state.foreground);
-            foreground.setOpacity(0);
-            
-            clearInterval(this.animationTimer);
-            this.animationTimer = null;
-            this.animationState.pause();
-            function resume(){
-                foreground.events.unregister('loadend', this, resume);
-                if(this.animationIsPlaying){
-                    foreground.setOpacity(0);
-                    // Continue with animation, now that all tiles are loaded
-                    this.animationState.recordStart();
-                    this.repaintAnimation();
-                    this.setAnimationTimer();
-                    //console.log("resumed because tiles "+state.foreground+" there");
-                }
-            }
-            foreground.events.register('loadend', this, resume);
+            stallAnimationLoadLayer(state.foreground);
             return;
         }
   
-        var background = getLayer(state.background);
-      
+        var background = timeseriesWidget.getLayerForTimestamp(state.background);
+        if(!background || background.loading){
+            stallAnimationLoadLayer(state.background);
+            return;
+        }
         
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
         map.layers.forEach(function(layer){
@@ -432,20 +435,16 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
              * One could get rid of no longer needed layers.
              * Current OpenLayers versions mess up the layers' z-index when any layer is removed unless a base layer is set.
              */
-            if(background){
-                for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
-                    var layer = map.layers[layerIter];
-                    if(layer!==foreground && layer!==background && layer.layername===timeseriesWidget.layerName){
-                        map.removeLayer(layer);
-                    }
+            for(var layerIter=map.layers.length-1; layerIter>=0; layerIter--){
+                var layer = map.layers[layerIter];
+                if(layer!==foreground && layer!==background && timeseriesWidget.isTimeSeriesLayer(layer)){
+                    map.removeLayer(layer);
                 }
             }
         }
         foreground.setZIndex(101);
-        if(background){
-            background.setOpacity(1);
-            background.setZIndex(100);
-        }
+        background.setOpacity(1);
+        background.setZIndex(100);
         
         // Update slider but only when needed to keep reflows low
         var currentYear = state.year;
@@ -593,20 +592,54 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     */
                     this.setYear = function setYear(targetYear, reverse){
                         var offset = transitionTime;
+                        
+                        // Adjust year so that it does not fall outwit animatable range
+                        if(targetYear>this.yearFromTimestamp(periods[periods.length-1])){
+                            if(reverse){
+                                targetYear = this.yearFromTimestamp(periods[periods.length-1]);
+                            } else {
+                                targetYear = this.yearFromTimestamp(periods[0]);
+                            }
+                        } else if(targetYear< this.yearFromTimestamp(periods[0])){
+                            if(reverse){
+                                targetYear = this.yearFromTimestamp(periods[0]);
+                            } else {
+                                targetYear = this.yearFromTimestamp(periods[periods.length-1]);
+                            }
+                        }
+                        
+                        /**
+                         * Caculate offset between requested year and year of background timestamp.
+                         */
+                        function backgroundYearOffset(){
+                            var state = this.getStateRatio(reverse);
+                            if(state.background===undefined){
+                                return 0;
+                            } else {
+                                var yearsDifference = Math.abs(this.yearFromTimestamp(state.foreground) - this.yearFromTimestamp(state.background));
+                                var timePerYear = fadeTime/yearsDifference;
+                                return timePerYear*Math.abs(this.yearFromTimestamp(state.background)-targetYear);
+                            }
+                        }
                         if(reverse===false){
-                            for(var i=0; i<periods.length; i++){
-                                var year = this.yearFromTimestamp(periods[i]);
+                            for(var i=0; i<periods.length-1; i++){
+                                var year = this.yearFromTimestamp(periods[i+1]);
                                 if(year<targetYear){
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
+                            // Subtracting is to prevent hitting timestamps exactly which would result in ambiguity of fading/transitioning.
+                            start = new Date().getTime()-offset-5;
+                            offset = offset + backgroundYearOffset.apply(this);
                         } else {
-                            for(var i=periods.length-1; i>=0; i--){
-                                var year = this.yearFromTimestamp(periods[i]);
+                            for(var i=periods.length-1; i>0; i--){
+                                var year = this.yearFromTimestamp(periods[i-1]);
                                 if(targetYear<year){
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
+                            start = new Date().getTime()-offset-5;
+                            offset = offset + backgroundYearOffset.apply(this);
                         }
                         start = new Date().getTime()-offset;
                     };
@@ -871,7 +904,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear())
                     timeseriesWidget.addLayers([
                         minTimestamp,
-                        maxTimestamp,
+                        maxTimestamp
                     ], []);
                     var minLayer = timeseriesWidget.getLayerForTimestamp(minTimestamp);
                     minLayer.setZIndex(100);
