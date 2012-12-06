@@ -409,7 +409,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     // Correct animation state to account for the time spent waiting
                     timeseriesWidget.animationState.recordStart();
 
-                    timeseriesWidget.repaintAnimation();
                     timeseriesWidget.setAnimationTimer();
                 }
             }
@@ -417,18 +416,17 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
         
         var state = this.animationState.getStateRatio(timeseriesWidget.state.playDirection==="backwards");
+        var background = timeseriesWidget.getLayerForTimestamp(state.background);
+        if(!background || background.loading){
+            stallAnimationLoadLayer(state.background);
+            return;
+        }
         var foreground = timeseriesWidget.getLayerForTimestamp(state.foreground);
         if(!foreground || foreground.loading){
             stallAnimationLoadLayer(state.foreground);
             return;
         }
   
-        var background = timeseriesWidget.getLayerForTimestamp(state.background);
-        if(!background || background.loading){
-            stallAnimationLoadLayer(state.background);
-            return;
-        }
-        
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
         map.layers.forEach(function(layer){
             if(layer!==foreground && layer!==background && layer.layername===timeseriesWidget.layerName){
