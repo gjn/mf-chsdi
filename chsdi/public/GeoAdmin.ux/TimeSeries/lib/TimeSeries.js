@@ -283,7 +283,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      * Retrieves layer matching timestamp as given in options. Adds the layer if not yet present.
      */
     addTimeseriesLayer: function(options){
-        var layer = timeseriesWidget.getLayerForTimestamp(options.timestamp);
+        var layer = this.getLayerForTimestamp(options.timestamp);
         if(layer===undefined){
             return this.map.addLayerByName(this.layerName, options);
         } else if(options.hasOwnProperty("opacity")) {
