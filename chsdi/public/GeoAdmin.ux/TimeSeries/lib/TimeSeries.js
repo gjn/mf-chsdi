@@ -841,7 +841,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             renderTo: 'compareTabOpacitySlider',
             width:120,
             aggressive: true,
-            value: this.state.compareTabOpacitySlider
+            value: this.state.compareTabOpacitySlider,
+            animate: false
         });
         compareTabOpacitySlider.on('changecomplete', function(event, value){
             this.state.compareTabOpacitySlider = value;
@@ -933,7 +934,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 
                 compareSliderPending = setTimeout(function(){
                     var maxTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMax.getYear());
-                    var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear())
+                    var minTimestamp = timeseriesWidget.findTimestampNoLaterThan(timeseriesWidget.compareSliderMin.getYear());
+                    // Save slider value because it gets changed by replacing layers
+                    var originalSliderValue = compareTabOpacitySlider.getValue();
                     timeseriesWidget.addLayers([
                         minTimestamp,
                         maxTimestamp
@@ -943,7 +946,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     minLayer.setOpacity(1);
                     var maxLayer = timeseriesWidget.getLayerForTimestamp(maxTimestamp);
                     maxLayer.setZIndex(101);
-                    maxLayer.setOpacity(compareTabOpacitySlider.getValue()/100);
+                    maxLayer.setOpacity(originalSliderValue/100);
                     compareTabOpacitySlider.setLayer(maxLayer);
                 }, sliderChangeDelay);
                 
