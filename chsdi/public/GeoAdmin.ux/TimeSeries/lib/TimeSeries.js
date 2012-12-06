@@ -243,13 +243,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         };
         switch(zoom) {
             case 6:
-                updateText(OpenLayers.i18n("National Map") + " 100'000");
+                updateText(OpenLayers.i18n("National Map") + " 1:100'000");
                 break;
             case 7:
-                updateText(OpenLayers.i18n("National Map") + " 50'000");
+                updateText(OpenLayers.i18n("National Map") + " 1:50'000");
                 break;
             case 8:
-                updateText(OpenLayers.i18n("National Map") + " 25'000");
+                updateText(OpenLayers.i18n("National Map") + " 1:25'000");
                 break;
             default:
                 updateText(OpenLayers.i18n("National Map Overview"));
