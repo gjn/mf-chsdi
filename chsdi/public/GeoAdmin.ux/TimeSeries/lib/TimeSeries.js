@@ -1059,7 +1059,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
             pendingForDiscard.forEach(function(layer) {
                 if (!(layer instanceof OpenLayers.Layer.Vector) && timeseriesWidget.map.layers.indexOf(layer) >= 0 && layer.layername !== "voidLayer") {
-                    map.removeLayer(layer);
+                    timeseriesWidget.map.removeLayer(layer);
                 }
             });
         }
