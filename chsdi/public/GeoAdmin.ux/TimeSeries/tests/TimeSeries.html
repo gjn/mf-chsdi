@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/timeseries.css">
+    <script type="text/javascript" src="../lib/TimeSeries.js"></script>
+    <script type="text/javascript">
+    function test_slider(t){
+        t.plan(1);
+        var body = document.body.cloneNode(true);
+        
+        var map = new GeoAdmin.Map("map");
+        var timeseriesWidget = new GeoAdmin.TimeSeries({
+            contentEl: 'timeseriesWidget',
+            map: map
+        });
+        timeseriesWidget.animationSlider.draggable.dom.src = "../img/slider-middle.png";
+        
+        setTimeout(function(){
+            timeseriesWidget.animationSlider.setYear(1957);
+            t.eq(timeseriesWidget.animationSlider.getYear(), 1957, "Slider allows setting and getting years");
+            
+            map.destroy();
+            document.documentElement.replaceChild(body, document.body);
+        }, 1000);
+        t.wait_result(2);
+    }
+    
+    function test_animation(t) {
+        t.plan(10);
+        var body = document.body.cloneNode(true);
+        
+        var map = new GeoAdmin.Map("map");
+        var timeseriesWidget = new GeoAdmin.TimeSeries({
+            contentEl: 'timeseriesWidget',
+            map: map
+        });
+        timeseriesWidget.getAnimationPeriods = function(callback){
+            callback(["19381231", "19411231", "19511231", "19531231", "19571231", "19581231", "19691231", "19701231", "19761231", "19811231", "19871231", "19931231", "19981231", "19991231", "20061231", "20071231"]);
+        };
+        timeseriesWidget.initAnimationState(function(animationState){
+            window.as=animationState;
+            animationState.setYear(1938, false);
+            var state = animationState.getStateRatio(false);
+            t.eq(state.foreground, "19381231", "Foreground correct");
+            t.eq(state.year, 1938, "Initial year correct");
+            
+            animationState.setYear(1944, false);
+            setTimeout(function(){
+                var state = animationState.getStateRatio(false);
+                t.eq(state.state, "fading", "Animation state correct");
+                t.eq(state.foreground, "19511231", "Foreground correct");
+                t.eq(state.background, "19411231", "Background correct");
+                // Check year only roughly as it is highly dependent on runtime characteristics
+                t.ok(state.year>=1944 && state.year<=1951, "Year is in expected range");
+                
+                // Check reverse playing
+                animationState.setYear(1999, true);
+                setTimeout(function(){
+                    var state = animationState.getStateRatio(true);
+                    t.eq(state.state, "fading", "Animation state correct");
+                    t.eq(state.foreground, "19981231", "Foreground correct");
+                    t.eq(state.background, "19991231", "Background correct");
+                    // Check year only roughly as it is highly dependent on runtime characteristics
+                    t.ok(state.year>=1998 && state.year<=1999, "Year is in expected range");
+                    
+                    map.destroy();
+                    document.documentElement.replaceChild(body, document.body);
+                }, 100);
+            }, 100);
+        });
+        t.wait_result(1);
+    }
+    
+    function test_layer_management(t){
+        t.plan(4);
+        var body = document.body.cloneNode(true);
+        
+        var map = new GeoAdmin.Map("map");
+        var timeseriesWidget = new GeoAdmin.TimeSeries({
+            contentEl: 'timeseriesWidget',
+            map: map
+        });
+        
+        var layer = timeseriesWidget.addTimeseriesLayer({
+            opacity: 0.4,
+            timestamp: "19511231"
+        });
+        t.ok(layer instanceof OpenLayers.Layer);
+        t.eq(layer.opacity, 0.4, "Initial opacity ok");
+        timeseriesWidget.addTimeseriesLayer({
+            opacity: 0.8,
+            timestamp: "19511231"
+        });
+        t.ok(layer instanceof OpenLayers.Layer);
+        t.eq(layer.opacity, 0.8, "Updated opacity ok");
+        
+        map.destroy();
+        document.documentElement.replaceChild(body, document.body);
+    }
+    </script>
+</head>
+<body>
+    <div style="width: 100px; height: 600px" id="map"></div>
+    <div id="timeseriesWidget">
+        <div id="playTab">
+            <div id="playPeriod"></div>
+            <div class="timeseriesWidget-controls">
+                <div class="timeseriesWidget-controls-left">
+                    <label>
+                        <input type="radio" name="playDirection" value="backwards">
+                        ${_('play backwards')}
+                    </label>
+                    <label>
+                        <input type="radio" name="playDirection" value="forwards" checked="checked">
+                        ${_('play forwards')}
+                    </label>
+                </div>
+                <div class="timeseriesWidget-controls-center">
+                    <img class="button backwards" src="../img/goto-start.png" alt="${_('Start (button image alternative)')}" title="${_('Start (button image alternative)')}">
+                    <img class="button play" src="../img/play.png" alt="${_('Play / Pause (button image alternative)')}" title="${_('Play / Pause (button image alternative)')}">
+                    <img class="button forwards" src="../img/goto-end.png" alt="${_('End (button image alternative)')}" title="${_('End (button image alternative)')}">
+                </div>
+                <div class="timeseriesWidget-controls-right text-status">${_('National Map Overview')}</div>
+            </div>
+        </div>
+        <div id="compareTab">
+            <div id="comparePeriod"></div>
+            <div class="timeseriesWidget-controls">
+                <div class="timeseriesWidget-controls-left">${_('Adjust opacity')}</div>
+                <div class="timeseriesWidget-controls-center"><div id="compareTabOpacitySlider"></div></div>
+                <div class="timeseriesWidget-controls-right"></div>
+            </div>
+        </div>
+        <div id="informationTab"></div>
+    </div>
+</body>
+</html>
