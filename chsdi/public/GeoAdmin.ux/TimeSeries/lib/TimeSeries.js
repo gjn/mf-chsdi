@@ -182,10 +182,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged() {
-            if (this.animationIsPlaying) {
-                // Stop the animation
-                this.playPause();
-            }
+            this.stopAnimation();
             this.abortPreloading();
             this.discardInvisibleLayers();
             this.preloadingDone = false;
@@ -329,6 +326,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                 }, this);
                 timeseriesWidget.animationSlider.setYear(parseInt(foregroundTimestamp.substring(0, 4), 10));
+                timeseriesWidget.saveState();
             }
         } else {
             // Play / Resume
@@ -358,6 +356,16 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
 
             timeseriesWidget.animationIsPlaying = true;
+        }
+    },
+    
+    /** api: method[getState]
+     * Stops the animation. Does not to anything is case animation is not playing.
+     */
+    stopAnimation: function(){
+        if (this.animationIsPlaying) {
+            // Stop the animation
+            this.playPause();
         }
     },
 
@@ -836,10 +844,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     showYearInAnimationMode: function(year) {
         var timeseriesWidget = this;
-        if (timeseriesWidget.animationIsPlaying) {
-            // Stop animation
-            timeseriesWidget.playPause();
-        }
+        timeseriesWidget.stopAnimation();
         var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
         timeseriesWidget.addLayers([timestamp], []);
         timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
@@ -902,11 +907,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
             function changeAnimationSlider() {
                 var year = timeseriesWidget.animationSlider.getYear();
-                if (timeseriesWidget.animationIsPlaying) {
-                    // Stop animation
-                    timeseriesWidget.playPause();
-                    //console.log("stopped animation because slider drag");
-                }
+                timeseriesWidget.stopAnimation();
                 if (animationSliderPending) {
                     clearTimeout(animationSliderPending);
                 }
@@ -1006,10 +1007,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 changeAnimationSlider();
             }
             if (newlyActiveTab.contentEl === "compareTab") {
-                if (timeseriesWidget.animationIsPlaying) {
-                    // Stop the animation
-                    timeseriesWidget.playPause();
-                }
+                timeseriesWidget.stopAnimation();
                 changeAnyCompareSlider();
             }
 
