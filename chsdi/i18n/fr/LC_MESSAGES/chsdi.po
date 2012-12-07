@@ -2592,9 +2592,8 @@ msgstr "Type de produit fabriqué"
 msgid "typ_transpo_produkt"
 msgstr "Type de produit transporté par le pipeline"
 
-#. TODO
 msgid "type_dreieck"
-msgstr "type_dreieck"
+msgstr "Type de maillage triangulaire"
 
 msgid "typnummer"
 msgstr "N° du type"
