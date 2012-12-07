@@ -714,12 +714,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     },
 
     /** private: method[discardInvisibleLayers]
-     * Removes invisible layers from the map where invisible means either the
+     * Removes unused invisible layers from the map where invisible means either the
      * visibility flag is false or a layer is fully transparent.
      */
     discardInvisibleLayers: function() {
+        var compareMin;
+        var compareMax;
+        if(this.getState().state.activeTab==="compareTab"){
+            compareMin = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMin.getYear()));
+            compareMax = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMax.getYear()));
+        }
         this.map.layers.slice(0).forEach(function(layer) {
-            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer)) {
+            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer!==compareMin && layer!==compareMax) {
                 this.map.removeLayer(layer);
             }
         }, this);
