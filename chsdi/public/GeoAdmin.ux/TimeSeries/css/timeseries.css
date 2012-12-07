@@ -172,7 +172,7 @@
     top: 2px;
     width: 44px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .timeseriesWidgetShadow {
@@ -190,4 +190,25 @@
     width: 900px;
     height:56px;
     z-index: 998;
+}
+
+div#Dufourmap {
+    background-image: url(../img/Dufourkarte.jpg);
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 38px;
+}
+
+div#Nationalmap {
+    background-image: url(../img/Landeskarte.jpg);
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 38px;
+}
+
+div#Siegfriedmap {
+    background-image: url(../img/Siegfriedkarte.jpg);
+    background-repeat: no-repeat;
+    width: 140px;
+    height: 38px;
 }

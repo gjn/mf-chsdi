@@ -24,7 +24,7 @@ class Zeitreihen_15(Base, Queryable):
     the_time_timestamp_format = '%Y%m%d'
     the_time_db_format = '%Y'
     __minscale__ = 100005
-    __maxscale__ = 5000005
+    __maxscale__ = 500000005
 
 class Zeitreihen_20(Base, Queryable):
     # view in a schema
