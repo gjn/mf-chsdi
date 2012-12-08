@@ -14,7 +14,7 @@
  */
 GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[layerName]
-     *  ``String`` Name of layer whose versions should be presented
+     *  ``String`` Technical name of layer whose versions should be presented
      */
     layerName: "ch.swisstopo.zeitreihen",
 
