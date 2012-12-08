@@ -2591,9 +2591,8 @@ msgstr "Typ von hergestelltem Produkt"
 msgid "typ_transpo_produkt"
 msgstr "Typ des in der Leitung transportierten Produkts"
 
-#. TODO
 msgid "type_dreieck"
-msgstr "type_dreieck"
+msgstr "Typ der Dreiecksvermaschung"
 
 msgid "typnummer"
 msgstr "Typnummer"

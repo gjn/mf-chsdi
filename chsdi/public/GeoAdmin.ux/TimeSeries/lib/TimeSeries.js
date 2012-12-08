@@ -169,7 +169,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         var preloadStatus = this.clearAndGetPreloadStatusIndicator();
 
         function updatePreloadStatus(e) {
-            if (map.getZoom() < 6) {
+            if (this.map.getZoom() < 6) {
                 preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in in order to better visualize the evolution of the maps."));
             } else {
                 preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>");
@@ -182,10 +182,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
         // Abort animation and preload when shown extent changes (due to zoom or move)
         function handleExtentChanged() {
-            if (this.animationIsPlaying) {
-                // Stop the animation
-                this.playPause();
-            }
+            this.stopAnimation();
             this.abortPreloading();
             this.discardInvisibleLayers();
             this.preloadingDone = false;
@@ -323,12 +320,13 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timestamp: foregroundTimestamp,
                     opacity: 1
                 });
-                map.layers.forEach(function(l) {
+                timeseriesWidget.map.layers.forEach(function(l) {
                     if (l !== layer && this.isTimeSeriesLayer(l)) {
                         l.setOpacity(0);
                     }
                 }, this);
                 timeseriesWidget.animationSlider.setYear(parseInt(foregroundTimestamp.substring(0, 4), 10));
+                timeseriesWidget.saveState();
             }
         } else {
             // Play / Resume
@@ -360,6 +358,16 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             timeseriesWidget.animationIsPlaying = true;
         }
     },
+    
+    /** api: method[getState]
+     * Stops the animation. Does not to anything is case animation is not playing.
+     */
+    stopAnimation: function(){
+        if (this.animationIsPlaying) {
+            // Stop the animation
+            this.playPause();
+        }
+    },
 
     /** private: method[setAnimationTimer]
      *  Queues a call to paint the next animation frame
@@ -379,7 +387,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getLayerForTimestamp: function(timestamp) {
         var timeseriesWidget = this;
-        return map.layers.filter(function(layer) {
+        return timeseriesWidget.map.layers.filter(function(layer) {
             return timeseriesWidget.isTimeSeriesLayer(layer) && layer.timestamp === timestamp;
         })[0];
     },
@@ -431,7 +439,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
 
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
-        map.layers.forEach(function(layer) {
+        timeseriesWidget.map.layers.forEach(function(layer) {
             if (layer !== foreground && layer !== background && layer.layername === timeseriesWidget.layerName) {
                 layer.setOpacity(0);
             }
@@ -447,10 +455,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
              * One could get rid of no longer needed layers.
              * Current OpenLayers versions mess up the layers' z-index when any layer is removed unless a base layer is set.
              */
-            for (var layerIter = map.layers.length - 1; layerIter >= 0; layerIter--) {
-                var layer = map.layers[layerIter];
+            for (var layerIter = timeseriesWidget.map.layers.length - 1; layerIter >= 0; layerIter--) {
+                var layer = timeseriesWidget.map.layers[layerIter];
                 if (layer !== foreground && layer !== background && timeseriesWidget.isTimeSeriesLayer(layer)) {
-                    map.removeLayer(layer);
+                    timeseriesWidget.map.removeLayer(layer);
                 }
             }
         }
@@ -488,10 +496,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getAnimationPeriods: function(onCompletion) {
         var timeseriesWidget = this;
-        var mapCenter = map.getCenter();
+        var mapCenter = timeseriesWidget.map.getCenter();
 
         // URI of service providing the animation timestamps
-        var requestURI = GeoAdmin.webServicesUrl + "/zeitreihen?scale=" + encodeURIComponent(Math.round(map.getScale())) + "&easting=" + encodeURIComponent(mapCenter.lon) + "&northing=" + encodeURIComponent(mapCenter.lat) + "&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
+        var requestURI = GeoAdmin.webServicesUrl + "/zeitreihen?scale=" + encodeURIComponent(Math.round(timeseriesWidget.map.getScale())) + "&easting=" + encodeURIComponent(mapCenter.lon) + "&northing=" + encodeURIComponent(mapCenter.lat) + "&cb=geoAdminTimeSeriesGetAnimationPeriodsCallback";
 
         // See if a request is needed or if the result is already known
         if (timeseriesWidget.animationTimestampsCache.hasOwnProperty(requestURI)) {
@@ -706,12 +714,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     },
 
     /** private: method[discardInvisibleLayers]
-     * Removes invisible layers from the map where invisible means either the
+     * Removes unused invisible layers from the map where invisible means either the
      * visibility flag is false or a layer is fully transparent.
      */
     discardInvisibleLayers: function() {
+        var compareMin;
+        var compareMax;
+        if(this.getState().state.activeTab==="compareTab"){
+            compareMin = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMin.getYear()));
+            compareMax = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMax.getYear()));
+        }
         this.map.layers.slice(0).forEach(function(layer) {
-            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer)) {
+            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer!==compareMin && layer!==compareMax) {
                 this.map.removeLayer(layer);
             }
         }, this);
@@ -757,7 +771,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
 
             var timestampShown = timeseriesWidget.findTimestampNoLaterThan(year);
-            var shownLayer = map.layers.filter(
+            var shownLayer = timeseriesWidget.map.layers.filter(
                 function(layer) {
                     return timeseriesWidget.isTimeSeriesLayer(layer) && (layer.opacity > 0 && layer.getVisibility());// && layer.timestamp===timestampShown;
                 }).pop();
@@ -836,10 +850,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     showYearInAnimationMode: function(year) {
         var timeseriesWidget = this;
-        if (timeseriesWidget.animationIsPlaying) {
-            // Stop animation
-            timeseriesWidget.playPause();
-        }
+        timeseriesWidget.stopAnimation();
         var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
         timeseriesWidget.addLayers([timestamp], []);
         timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
@@ -902,11 +913,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
             function changeAnimationSlider() {
                 var year = timeseriesWidget.animationSlider.getYear();
-                if (timeseriesWidget.animationIsPlaying) {
-                    // Stop animation
-                    timeseriesWidget.playPause();
-                    //console.log("stopped animation because slider drag");
-                }
+                timeseriesWidget.stopAnimation();
                 if (animationSliderPending) {
                     clearTimeout(animationSliderPending);
                 }
@@ -1006,10 +1013,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 changeAnimationSlider();
             }
             if (newlyActiveTab.contentEl === "compareTab") {
-                if (timeseriesWidget.animationIsPlaying) {
-                    // Stop the animation
-                    timeseriesWidget.playPause();
-                }
+                timeseriesWidget.stopAnimation();
                 changeAnyCompareSlider();
             }
 
@@ -1028,6 +1032,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      * Adds layers to map and removes other layers
      */
     addLayers: function(timestampsToAdd, timestampsToKeep) {
+        var timeseriesWidget = this;
         var pendingForDiscard = [];
         var firstAddedLayer;
         // Add layers
@@ -1042,9 +1047,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             timestampsToKeep.push(timestampsToAdd[i]);
         }
         // Mark others for removal
-        for (var i = map.layers.length - 1; i >= 0; i--) {
-            if (timestampsToKeep.indexOf(map.layers[i].timestamp) === -1) {
-                pendingForDiscard.push(map.layers[i]);
+        for (var i = timeseriesWidget.map.layers.length - 1; i >= 0; i--) {
+            if (timestampsToKeep.indexOf(timeseriesWidget.map.layers[i].timestamp) === -1) {
+                pendingForDiscard.push(timeseriesWidget.map.layers[i]);
             }
         }
 
@@ -1053,8 +1058,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 firstAddedLayer.events.unregister('loadend', this, discard);
             }
             pendingForDiscard.forEach(function(layer) {
-                if (!(layer instanceof OpenLayers.Layer.Vector) && map.layers.indexOf(layer) >= 0 && layer.layername !== "voidLayer") {
-                    map.removeLayer(layer);
+                if (!(layer instanceof OpenLayers.Layer.Vector) && timeseriesWidget.map.layers.indexOf(layer) >= 0 && layer.layername !== "voidLayer") {
+                    timeseriesWidget.map.removeLayer(layer);
                 }
             });
         }
