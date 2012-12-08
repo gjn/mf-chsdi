@@ -851,7 +851,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     showYearInAnimationMode: function(year) {
         var timeseriesWidget = this;
         timeseriesWidget.stopAnimation();
-        var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
+        var timestamp = timeseriesWidget.findTimestampNoLaterThan(year);
         timeseriesWidget.addLayers([timestamp], []);
         timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
     },
