@@ -14,7 +14,7 @@
  */
 GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[layerName]
-     *  ``String`` Name of layer whose versions should be presented
+     *  ``String`` Technical name of layer whose versions should be presented
      */
     layerName: "ch.swisstopo.zeitreihen",
 
@@ -851,7 +851,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     showYearInAnimationMode: function(year) {
         var timeseriesWidget = this;
         timeseriesWidget.stopAnimation();
-        var timestamp = timeseriesWidget.findTimestampNoLaterThan(year)
+        var timestamp = timeseriesWidget.findTimestampNoLaterThan(year);
         timeseriesWidget.addLayers([timestamp], []);
         timeseriesWidget.getLayerForTimestamp(timestamp).setOpacity(1);
     },

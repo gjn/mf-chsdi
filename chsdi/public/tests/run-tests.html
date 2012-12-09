@@ -984,6 +984,10 @@ Test.AnotherWay._run_more_tests=function()
 			try {
 				Test.AnotherWay._g_test_iframe[o.name]( o );
 			}catch( e ) {
+                if (console && console.error) {
+                    // Log eror in console, to see them in Firebug
+                    console.error(e);
+                }
 				Test.AnotherWay._handle_exception( o, e, "" );
 			}
 		} // for "jsan" convention, test has run already
@@ -2345,7 +2349,7 @@ onload=function()
 </div>
 </div>
 
-<span style="display:none">
+<span style="visibility:hidden">
 <iframe name="list_iframe" onload="Test.AnotherWay._list_iframe_onload();"></iframe>
 <iframe name="test_iframe" onload="Test.AnotherWay._test_page_onload();"></iframe>
 
