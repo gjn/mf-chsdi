@@ -100,7 +100,12 @@ class ZeitreihenController(BaseController):
 
         counter = 0
         for value in timestamps:
-            timestamps[counter] = int(str(str(timestamps[counter])+'1231'))
+            # TODO: 1231 will be modified if we recreate tiles for some layers
+            day = '1231'
+            # Example
+            if timestamps[counter] == '1938':
+                day = '1231'
+            timestamps[counter] = int(str(str(timestamps[counter])+day))
             counter = counter+1
 
         timestamps.sort()
