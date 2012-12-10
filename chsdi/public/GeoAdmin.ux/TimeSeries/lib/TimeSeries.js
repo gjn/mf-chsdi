@@ -22,6 +22,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
     framesPerSecond: 12,
+    
+    /** api: config[geoAdminRoot]
+     * ``String`` Path to GeoAdmin library.
+     */
+    geoAdminRoot: null,
 
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
@@ -101,6 +106,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
     initComponent: function() {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
+        
+        // Verify required configuration is done
+        if(this.geoAdminRoot === null){
+            throw new Error("Set path to GeoAdmin library by defining geoAdminRoot.");
+        }
+        
         // Make sure state gets restored
         this.initState();
 
@@ -901,7 +912,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }
             ]
         });
-        var sliderImagePath = OpenLayers.Util.getImagesLocation() + "../../../../lib/GeoAdmin.ux/TimeSeries/img/";
+        var sliderImagePath = this.geoAdminRoot + "TimeSeries/img/";
         var timeseriesWidget = this;
 
         /**
