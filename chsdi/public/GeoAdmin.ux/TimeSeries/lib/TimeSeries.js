@@ -809,7 +809,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
              * next key frame when requested frame is fully loaded.
              */
             function delayedPreload(timestampIndex) {
-                if (timestampIndex < animationPeriods.length - 1) {
+                if (timestampIndex < animationPeriods.length) {
                     var preloadTimestamp = animationPeriods[timestampIndex];
                     //console.log(timestampIndex+". Preloading "+preloadTimestamp);
                     var layer = timeseriesWidget.addTimeseriesLayer({
@@ -835,6 +835,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
                         timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {
+                        timeseriesWidget.fireEvent("preloadingProgress", {
+                            ratio: timestampIndex / animationPeriods.length
+                        });
                         delayedPreload(timestampIndex + 1);
                     }
                 } else if (timeseriesWidget.preloadingDone === false) {
