@@ -17,6 +17,9 @@
 
 /** api: example
  *  Sample code to create a tooltip (click with left mouse button or press Ctrl + left click to perform a selection by rectangle)
+ *  See also:
+ *  `Demo Single Click <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#extendedtooltip-single-click>`_
+ *  `Demo Select By Rectangle <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#extendedtooltip-with-box-selection>`_
  *
  *  .. code-block:: javascript
  *
