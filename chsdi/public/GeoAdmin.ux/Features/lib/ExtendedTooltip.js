@@ -210,7 +210,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         var html = [];
 
         for (var i = 0, len = evt.features.length; i < len; i++) {
-            html.push(evt.features[i].attributes.html);
+            html.unshift(evt.features[i].attributes.html);
         }
         var item = [{ xtype: 'box', html: html }];
         return item;
