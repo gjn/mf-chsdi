@@ -489,13 +489,25 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.dreiecksvermaschung"
                     },
                     {
-                        layerId: "ch.swisstopo.fixpunkte-agnes"
-                    },
-                    {
                         layerId: "ch.swisstopo.fixpunkte-lage"
                     },
                     {
                         layerId: "ch.swisstopo.fixpunkte-hoehe"
+                    },
+                    {
+                        layerId: "ch.swisstopo.fixpunkte-lfp1"
+                    },
+                    {
+                        layerId: "ch.swisstopo.fixpunkte-lfp2"
+                    },
+                    {
+                        layerId: "ch.swisstopo.fixpunkte-hfp1"
+                    },
+                    {
+                        layerId: "ch.swisstopo.fixpunkte-hfp2"
+                    },
+                    {
+                        layerId: "ch.swisstopo.fixpunkte-agnes"
                     },
                     {
                         layerId: "ch.swisstopo.koordinatenaenderung"
@@ -1038,6 +1050,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-vernaessung"
                     }
                 ]
             },
@@ -1067,7 +1097,7 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Natürliche Risikozonen',  // Id Inspire 312
                 children: [
-                    /*      FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
+                    /*     FIXME 25.05.2011_ltfoa: maybe not allowed in geoadmin?
                      {
                      layerId: "ch.bafu.gefahren-gefaehrdungszonen"
                      },
@@ -1114,6 +1144,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
                     },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+//                    },
+//                    {
+//                        layerId: "ch.blw.bodeneignung-vernaessung"
+//                    },
                     {
                         layerId: "ch.blw.bewaesserungsbeduerftigkeit"
                     },
