@@ -1836,7 +1836,7 @@ msgid "lagequalitaeten"
 msgstr "Qualità situazionali"
 
 msgid "langtext"
-msgstr "Localité"
+msgstr "Località"
 
 msgid "laubholzanteil"
 msgstr "Proportion de feuillus [%]"
@@ -1986,7 +1986,7 @@ msgid "optionaler_name"
 msgstr "Nom optionel"
 
 msgid "ort"
-msgstr "Localité"
+msgstr "Località"
 
 msgid "ortsbildname"
 msgstr "Insediamento"
@@ -2220,7 +2220,7 @@ msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_startprotectioncommitment"
 msgstr "Début de l'obligation de protection"
 
 msgid "tt_ch.bfe.energieforschung_beauftragter"
-msgstr "Delegato"
+msgstr "Mandatario"
 
 msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Descripzione"
@@ -2229,40 +2229,40 @@ msgid "tt_ch.bfe.energieforschung_beschreibung"
 msgstr "Descripzione"
 
 msgid "tt_ch.bfe.energieforschung_ch_hauptbereich"
-msgstr "Branche principale CH"
+msgstr "Settore principale CH"
 
 msgid "tt_ch.bfe.energieforschung_ch_unterbereich"
-msgstr "Sous-domaine CH"
+msgstr "Sottosettore CH"
 
 msgid "tt_ch.bfe.energieforschung_iea_hauptbereich"
-msgstr "Branche principale IEA"
+msgstr "Settore principale IEA"
 
 msgid "tt_ch.bfe.energieforschung_iea_unterbereich"
-msgstr "Sous-domaine CH"
+msgstr "Sottosettore IEA"
 
 msgid "tt_ch.bfe.energieforschung_installationsort"
-msgstr "Localité de l'installation"
+msgstr "Luogo dell'installazione"
 
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
-msgstr "Contatto UFE"
+msgstr "Persona di contatto"
 
 msgid "tt_ch.bfe.energieforschung_kontaktperson"
-msgstr "Contatto UFE"
+msgstr "Persona di contatto"
 
 msgid "tt_ch.bfe.energieforschung_land"
-msgstr "Land"
+msgstr "Stato"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
-msgstr "Progetto no"
+msgstr "Progetto n°"
 
 msgid "tt_ch.bfe.energieforschung_projekt_nr"
-msgstr "Progetto no"
+msgstr "Progetto n°"
 
 msgid "tt_ch.bfe.energieforschung_projektanfang"
-msgstr "Début du projet"
+msgstr "Inizio del progetto"
 
 msgid "tt_ch.bfe.energieforschung_projektende"
-msgstr "Fin du projet"
+msgstr "Fine del progetto"
 
 msgid "tt_ch.bfe.energieforschung_projektstatus"
 msgstr "Stato del progetto"
@@ -2277,7 +2277,7 @@ msgid "tt_ch.bfe.energieforschung_projekttitel"
 msgstr "Titolo eld progetto"
 
 msgid "tt_ch.bfe.energieforschung_schluesselwoerter"
-msgstr "Parolas chiave"
+msgstr "Parole chiave"
 
 msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Rapporto final"
@@ -2286,7 +2286,7 @@ msgid "tt_ch.bfe.energieforschung_schlussbericht"
 msgstr "Rapporto final"
 
 msgid "tt_ch.bfe.energieforschung_sprachregion"
-msgstr "Zone linguistique"
+msgstr "Regione linguistica"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Mise en service"
@@ -2462,6 +2462,72 @@ msgstr "Tipo di oggetto"
 
 msgid "tt_kbs_statistik"
 msgstr "Statistica"
+
+msgid "tt_kkw_canton"
+msgstr "Cantone"
+
+msgid "tt_kkw_commissioning"
+msgstr "Messa in esercizio"
+
+msgid "tt_kkw_contruction"
+msgstr "Costruzione"
+
+msgid "tt_kkw_cooling_type"
+msgstr "Tipo di raffreddamento"
+
+msgid "tt_kkw_decontamination"
+msgstr "Fase di decontaminazione"
+
+msgid "tt_kkw_dismantling"
+msgstr "Fase di smantellamento"
+
+msgid "tt_kkw_enforcement_1"
+msgstr "Organo legislativo 1"
+
+msgid "tt_kkw_enforcement_2"
+msgstr "Organo legislativo 2"
+
+msgid "tt_kkw_enforcement_3"
+msgstr "Organo legislativo 3"
+
+msgid "tt_kkw_gemeinde"
+msgstr "Comune"
+
+msgid "tt_kkw_grosseloutput"
+msgstr "Potenza elettrica lorda"
+
+msgid "tt_kkw_license"
+msgstr "Licenza d'esercizio"
+
+msgid "tt_kkw_life_phase"
+msgstr "Fase di vita"
+
+msgid "tt_kkw_name"
+msgstr "Nome"
+
+msgid "tt_kkw_neteloutput"
+msgstr "Potenza elettrica netta"
+
+msgid "tt_kkw_nominalthermaloutput"
+msgstr "Potenza termica nominale"
+
+msgid "tt_kkw_operation"
+msgstr "Periodo di esercizio"
+
+msgid "tt_kkw_operator"
+msgstr "Operatore"
+
+msgid "tt_kkw_owner"
+msgstr "Proprietario"
+
+msgid "tt_kkw_reactor_name"
+msgstr "Reattore"
+
+msgid "tt_kkw_reactor_type"
+msgstr "Tipo di reattore"
+
+msgid "tt_kkw_regulatory"
+msgstr "Organo regolatore"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"

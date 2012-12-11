@@ -2498,6 +2498,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bfe",
                 queryable: true
             },
+            "ch.bfe.kernkraftwerke": {
+                name: OpenLayers.i18n("ch.bfe.kernkraftwerke"),
+                layertype: 'wmts',
+                timestamp: ['20120911'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
+
             "ch.blw.klimaeignung-typ": {
                 name: OpenLayers.i18n("ch.blw.klimaeignung-typ"),
                 layertype: 'wmts',

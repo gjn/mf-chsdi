@@ -466,6 +466,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfe':'SFOE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abandonment of hydropower',
 	'ch.bfe.energieforschung':'Energy research',
+	'ch.bfe.kernkraftwerke':'Nuclear Power Plants',
 	'ch.bfe.kleinwasserkraftpotentiale':'Water power potential',
 	'ch.bfe.sachplan-geologie-tiefenlager':'SP Deep Geol. Repositories',
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'SP Deep Geol.Repositories: T.p.',

@@ -12,6 +12,69 @@ msgstr ""
 msgid "tt_ngamapping_provider"
 msgstr ""
 
+msgid "tt_kkw_owner"
+msgstr ""
+
+msgid "tt_kkw_operator"
+msgstr ""
+
+msgid "tt_kkw_enforcement_1"
+msgstr ""
+
+msgid "tt_kkw_enforcement_2"
+msgstr ""
+
+msgid "tt_kkw_enforcement_3"
+msgstr ""
+
+msgid "tt_kkw_regulatory"
+msgstr ""
+
+msgid "tt_kkw_license"
+msgstr ""
+
+msgid "tt_kkw_gemeinde"
+msgstr ""
+
+msgid "tt_kkw_canton"
+msgstr ""
+
+msgid "tt_kkw_reactor_name"
+msgstr ""
+
+msgid "tt_kkw_life_phase"
+msgstr ""
+
+msgid "tt_kkw_reactor_type"
+msgstr ""
+
+msgid "tt_kkw_cooling_type"
+msgstr ""
+
+msgid "tt_kkw_nominalthermaloutput"
+msgstr ""
+
+msgid "tt_kkw_grosseloutput"
+msgstr ""
+
+msgid "tt_kkw_neteloutput"
+msgstr ""
+
+msgid "tt_kkw_contruction"
+msgstr ""
+
+msgid "tt_kkw_commissioning"
+msgstr ""
+
+msgid "tt_kkw_operation"
+msgstr ""
+
+msgid "tt_kkw_decontamination"
+msgstr ""
+
+msgid "tt_kkw_dismantling"
+msgstr ""
+
 msgid "tt_ch.bazl.kartnummer"
 msgstr ""
 
@@ -49,6 +112,9 @@ msgid "tt_ch.bazl.hindernisart"
 msgstr ""
 
 msgid "tt_ch.bazl.markierung"
+msgstr ""
+
+msgid "tt_kkw_name"
 msgstr ""
 
 msgid "est"

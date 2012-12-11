@@ -462,6 +462,7 @@ OpenLayers.Lang.rm= {
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renunzia forza idraulica',
 	'ch.bfe.energieforschung':'Retschertga energia',
+	'ch.bfe.kernkraftwerke':'Kernkraftwerke',
 	'ch.bfe.kleinwasserkraftpotentiale':'Potential idraulica pitschen',
 	'ch.bfe.sachplan-geologie-tiefenlager':'Plan sect. deposit geologic profund',
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'Plan sect. deposit geologic profund',

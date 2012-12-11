@@ -466,6 +466,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bfe':'UFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abbandono dell\'idroelettricitá',
 	'ch.bfe.energieforschung':'Ricerca energetica',
+	'ch.bfe.kernkraftwerke':'Centrali nucleari',
 	'ch.bfe.kleinwasserkraftpotentiale':'Potenz. piccole centr. idraul.',
 	'ch.bfe.sachplan-geologie-tiefenlager':'PS depositi strati geol. profondi',
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'PS depositi strati geol.prof.: p.t.',

@@ -466,6 +466,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Verzicht Wasserkraftnutzung',
 	'ch.bfe.energieforschung':'Energieforschung',
+	'ch.bfe.kernkraftwerke':'Kernkraftwerke',
 	'ch.bfe.kleinwasserkraftpotentiale':'Kleinwasserkraftpotentiale',
 	'ch.bfe.sachplan-geologie-tiefenlager':'SP Geologische Tiefenlager',
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'SP Geologische Tiefenlager: t.D.',

@@ -562,3 +562,14 @@ register('ch.bakom.anbieter-eigenes_festnetz', ngamapping)
 register('ch.bakom.downlink1', ngamapping)
 register('ch.bakom.uplink1', ngamapping)
 register('ch.bakom.verfuegbarkeit-hdtv', ngamapping)
+
+class kernkraftwerke (Base, Queryable):
+	__tablename__ = 'kernkraftwerke'
+	__table_args__ = ({'schema': 'bfe', 'autoload': True})
+	__template__ = 'tooltips/kernkraftwerke.mako'
+	__extended_info__ = True
+	id = Column('plant_id', Integer, primary_key=True)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bfe.kernkraftwerke', kernkraftwerke)
+

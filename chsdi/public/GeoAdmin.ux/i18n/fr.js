@@ -466,6 +466,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bfe':'OFEN',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renonciation force hydraulique',
 	'ch.bfe.energieforschung':'Recherche énergétique',
+	'ch.bfe.kernkraftwerke':'Centrales nucléaires',
 	'ch.bfe.kleinwasserkraftpotentiale':'Potentiel petite hydraulique',
 	'ch.bfe.sachplan-geologie-tiefenlager':'PS dépôts couches géol. profondes',
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':'PS dépôts couches géol.prof.: p.t.',

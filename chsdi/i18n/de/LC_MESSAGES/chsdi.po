@@ -2462,6 +2462,72 @@ msgstr "Objektart"
 msgid "tt_kbs_statistik"
 msgstr "Statistik"
 
+msgid "tt_kkw_canton"
+msgstr "Kanton"
+
+msgid "tt_kkw_commissioning"
+msgstr "Inbetriebnahme"
+
+msgid "tt_kkw_contruction"
+msgstr "Erbauung"
+
+msgid "tt_kkw_cooling_type"
+msgstr "Kühlsystem"
+
+msgid "tt_kkw_decontamination"
+msgstr "Dekontamination"
+
+msgid "tt_kkw_dismantling"
+msgstr "Rückbau"
+
+msgid "tt_kkw_enforcement_1"
+msgstr "Bewilligungsbehörden 1"
+
+msgid "tt_kkw_enforcement_2"
+msgstr "Bewilligungsbehörden 2"
+
+msgid "tt_kkw_enforcement_3"
+msgstr "Bewilligungsbehörden 3"
+
+msgid "tt_kkw_gemeinde"
+msgstr "Gemeinde"
+
+msgid "tt_kkw_grosseloutput"
+msgstr "Elektrische Bruttoleistung"
+
+msgid "tt_kkw_license"
+msgstr "Betriebslizenz"
+
+msgid "tt_kkw_life_phase"
+msgstr "Lebensphase"
+
+msgid "tt_kkw_name"
+msgstr "Name"
+
+msgid "tt_kkw_neteloutput"
+msgstr "Elektrische Nettoleistung"
+
+msgid "tt_kkw_nominalthermaloutput"
+msgstr "Thermische Nennleistung"
+
+msgid "tt_kkw_operation"
+msgstr "Betriebsphase"
+
+msgid "tt_kkw_operator"
+msgstr "Betreiber"
+
+msgid "tt_kkw_owner"
+msgstr "Besitzer"
+
+msgid "tt_kkw_reactor_name"
+msgstr "Reaktor"
+
+msgid "tt_kkw_reactor_type"
+msgstr "Reaktortyp"
+
+msgid "tt_kkw_regulatory"
+msgstr "Aufsichtsbehörde"
+
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
 

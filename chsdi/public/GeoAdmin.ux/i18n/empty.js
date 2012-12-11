@@ -191,6 +191,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.swissimage':"",
 	'ch.swisstopo.treasurehunt':"",
     'ch.bfe.energieforschung':"",
+    'ch.bfe.kernkraftwerke':"",
 	'ch.bfe.sachplan-geologie-tiefenlager':"",
 	'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung':"",
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':"",

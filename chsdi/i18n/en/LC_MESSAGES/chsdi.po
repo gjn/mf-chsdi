@@ -2463,6 +2463,72 @@ msgstr "Type of object"
 msgid "tt_kbs_statistik"
 msgstr "Statistics"
 
+msgid "tt_kkw_canton"
+msgstr "Canton"
+
+msgid "tt_kkw_commissioning"
+msgstr "Commissioning"
+
+msgid "tt_kkw_contruction"
+msgstr "Construction"
+
+msgid "tt_kkw_cooling_type"
+msgstr "Cooling type"
+
+msgid "tt_kkw_decontamination"
+msgstr "Decontamination phase"
+
+msgid "tt_kkw_dismantling"
+msgstr "Dismantling phase"
+
+msgid "tt_kkw_enforcement_1"
+msgstr "Enforcement organization 1"
+
+msgid "tt_kkw_enforcement_2"
+msgstr "Enforcement organization 2"
+
+msgid "tt_kkw_enforcement_3"
+msgstr "Enforcement organization 3"
+
+msgid "tt_kkw_gemeinde"
+msgstr "Commune"
+
+msgid "tt_kkw_grosseloutput"
+msgstr "Gross electrical output"
+
+msgid "tt_kkw_license"
+msgstr "License"
+
+msgid "tt_kkw_life_phase"
+msgstr "Life phase"
+
+msgid "tt_kkw_name"
+msgstr "Name"
+
+msgid "tt_kkw_neteloutput"
+msgstr "Net electric output"
+
+msgid "tt_kkw_nominalthermaloutput"
+msgstr "Nominal thermal output"
+
+msgid "tt_kkw_operation"
+msgstr "Operation phase"
+
+msgid "tt_kkw_operator"
+msgstr "Operator"
+
+msgid "tt_kkw_owner"
+msgstr "Owner"
+
+msgid "tt_kkw_reactor_name"
+msgstr "Reactor"
+
+msgid "tt_kkw_reactor_type"
+msgstr "Reactor type"
+
+msgid "tt_kkw_regulatory"
+msgstr "Regulatory body"
+
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
 

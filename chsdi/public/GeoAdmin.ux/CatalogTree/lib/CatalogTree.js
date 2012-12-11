@@ -876,6 +876,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bfe.energieforschung"
                     },
+                    {
+                        layerId: "ch.bfe.kernkraftwerke"
+                    },
 					{
                         layerId: "ch.bfe.sachplan-geologie-tiefenlager"
                     },
@@ -1358,6 +1361,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bfe.kleinwasserkraftpotentiale"
+                    },
+                    {
+                        layerId: "ch.bfe.kernkraftwerke"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-miscellaneous"
