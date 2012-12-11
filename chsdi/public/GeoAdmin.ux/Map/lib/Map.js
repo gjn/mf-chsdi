@@ -67,7 +67,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     aerial: null,
     vector: null,
     /** api: config[vectorStyleMap]
-     * ``OpenLayers.StyleMap`` custom style map the vector layer.
+     * ``OpenLayers.StyleMap`` custom style map for the vector layer.
      */
     vectorStyleMap: null,
     complementaryLayer: null,

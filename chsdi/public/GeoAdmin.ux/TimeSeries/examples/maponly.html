@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Showing only a map with multiple timestamps</title>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../lib/ext/Ext/resources/css/ext-all.css">
+    <link type="text/css" rel="stylesheet" href="../../Map/css/map.css">
+    <link type="text/css" rel="stylesheet" href="../css/timeseries.css">
+    <script type="text/javascript" src="../lib/TimeSeries.js"></script>
+    <script type="text/javascript">
+    GeoAdmin.webServicesUrl = "http://mf-chsdi.bgdi.admin.ch";
+
+    function render_map(){
+        /**
+         * Prepare your map as usual.
+         */ 
+        var map = new GeoAdmin.Map("map");
+        map.zoomTo(8);
+        
+        /**
+         * Instantiate the TimeSeries widget and bind it to the map.
+         * Note that the widget manages its layers itself. Do not create layers with the same name as given to the widget yourself.
+         */
+        var timeseriesWidget = new GeoAdmin.TimeSeries({
+            // Provide the identifier of the template to use. Creating the template code might seem tedious but allows for fully customized widgets
+            contentEl: 'timeseriesWidget',
+            // Map with baselayer (should have z-index smaller 100) and possibly overlays (should have z-index greater 101).
+            map: map,
+            
+            /** api: config[layerName]
+            *  ``String`` Name of layer whose versions should be presented
+            */
+            layerName: "ch.swisstopo.zeitreihen",
+            
+            /** api: config[geoAdminRoot]
+            * ``String`` Path to GeoAdmin library.
+            */
+            geoAdminRoot: "../../",
+
+            /** api: config[framesPerSecond]
+            *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
+            */
+            framesPerSecond: 12,
+
+            /** private: property[fadeTime]
+            * ``Number`` Duration of fading timestamps [milliseconds]
+            */
+            fadeTime: 2000,
+            /** private: property[transitionTime]
+            * ``Number`` Duration of showing a single timestamp as still image in between fades [milliseconds]
+            */
+            transitionTime: 0
+        });
+        
+        // Set non-default start year
+        timeseriesWidget.animationSlider.setYear(1957);
+    }
+    </script>
+</head>
+<body onload="render_map();">
+    <div style="width: 100%; height: 100%" id="map"></div>
+    <div id="timeseriesWidget">
+        <div id="playTab">
+            <div id="playPeriod"></div>
+            <div class="timeseriesWidget-controls">
+                <div class="timeseriesWidget-controls-left">
+                    <label>
+                        <input type="radio" name="playDirection" value="backwards">
+                        backwards
+                    </label>
+                    <label>
+                        <input type="radio" name="playDirection" value="forwards" checked="checked">
+                        forwards
+                    </label>
+                </div>
+                <div class="timeseriesWidget-controls-center">
+                    <img class="button backwards" src="../img/goto-start.png" alt="Goto start">
+                    <img class="button play" src="../img/play.png" alt="Play / Pause">
+                    <img class="button forwards" src="../img/goto-end.png" alt="Goto end">
+                </div>
+                <div class="timeseriesWidget-controls-right text-status">Sample Information</div>
+            </div>
+        </div>
+        <div id="compareTab">
+            <div id="comparePeriod"></div>
+            <div class="timeseriesWidget-controls">
+                <div class="timeseriesWidget-controls-left">Adjust opacity</div>
+                <div class="timeseriesWidget-controls-center"><div id="compareTabOpacitySlider"></div></div>
+                <div class="timeseriesWidget-controls-right"></div>
+            </div>
+        </div>
+        <div id="informationTab">Sample content for information tab.</div>
+    </div>
+</body>
+</html>

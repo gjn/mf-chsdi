@@ -22,6 +22,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
     framesPerSecond: 12,
+    
+    /** api: config[geoAdminRoot]
+     * ``String`` Path to GeoAdmin library.
+     */
+    geoAdminRoot: null,
 
     /** private: property[fadeTime]
      * ``Number`` Duration of fading timestamps [milliseconds]
@@ -101,6 +106,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
     initComponent: function() {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
+        
+        // Verify required configuration is done
+        if(this.geoAdminRoot === null){
+            throw new Error("Set path to GeoAdmin library by defining geoAdminRoot.");
+        }
+        
         // Make sure state gets restored
         this.initState();
 
@@ -798,7 +809,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
              * next key frame when requested frame is fully loaded.
              */
             function delayedPreload(timestampIndex) {
-                if (timestampIndex < animationPeriods.length - 1) {
+                if (timestampIndex < animationPeriods.length) {
                     var preloadTimestamp = animationPeriods[timestampIndex];
                     //console.log(timestampIndex+". Preloading "+preloadTimestamp);
                     var layer = timeseriesWidget.addTimeseriesLayer({
@@ -824,6 +835,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
                         timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {
+                        timeseriesWidget.fireEvent("preloadingProgress", {
+                            ratio: timestampIndex / animationPeriods.length
+                        });
                         delayedPreload(timestampIndex + 1);
                     }
                 } else if (timeseriesWidget.preloadingDone === false) {
@@ -901,7 +915,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 }
             ]
         });
-        var sliderImagePath = OpenLayers.Util.getImagesLocation() + "../../../../lib/GeoAdmin.ux/TimeSeries/img/";
+        var sliderImagePath = this.geoAdminRoot + "TimeSeries/img/";
         var timeseriesWidget = this;
 
         /**

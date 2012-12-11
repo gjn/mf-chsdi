@@ -10,6 +10,33 @@ Ext.namespace('GeoAdmin');
 /** api: (define)
  *  module =  GeoAdmin
  *  class = Measure
+ *  base_link = `http://docs.sencha.com/ext-js/3-4/#!/api/Ext.Action <http://docs.sencha.com/ext-js/3-4/#!/api/Ext.Action>`_ 
+ */
+
+/** api: example
+ *  Sample code to create a measure widget (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetmeasure.html>`_):
+ *
+ *
+ * .. code-block:: javascript
+ *
+ *  var mappanel, map;
+ *
+ *  function init() {
+ *
+ *  map = new GeoAdmin.Map();
+ *  mappanel = new GeoAdmin.MapPanel({
+ *      renderTo: "mymap",
+ *      width: 450,
+ *      height: 340,
+ *      map: new GeoAdmin.Map(),
+ *      tbar: ["->"]
+ *  });
+ *
+ *  mappanel.getTopToolbar().add(new GeoAdmin.Measure({map: mappanel.map}));
+ *
+ *  }
+ *
+ *
  */
 
 /** api: constructor
@@ -27,8 +54,7 @@ GeoAdmin.Measure = Ext.extend(Ext.Action, {
     measureWindow: null,
     
     map: null,
-    /**
-     */
+
     constructor : function(config) {
 
         this.map = config.map || null;
@@ -53,8 +79,3 @@ GeoAdmin.Measure = Ext.extend(Ext.Action, {
 
 /** api: xtype = ga_measure */
 Ext.reg("ga_measure", GeoAdmin.Measure);
-
-
-
-
-
