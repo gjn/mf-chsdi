@@ -489,12 +489,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.dreiecksvermaschung"
                     },
                     {
-                        layerId: "ch.swisstopo.fixpunkte-lage"
-                    },
-                    {
-                        layerId: "ch.swisstopo.fixpunkte-hoehe"
-                    },
-                    {
                         layerId: "ch.swisstopo.fixpunkte-lfp1"
                     },
                     {
