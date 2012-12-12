@@ -246,7 +246,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             } else {
                 // IE
                 statusText_play.innerText = text;
-                statusText_play.innerText = text;
+                statusText_comp.innerText = text;
             }
         };
         switch (zoom) {
