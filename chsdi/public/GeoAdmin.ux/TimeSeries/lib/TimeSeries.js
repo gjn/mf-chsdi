@@ -1021,6 +1021,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
             }
+            if(newlyActiveTab.contentEl === "informationTab" && playPeriod.sliders.length === 0 && comparePeriod.sliders.length === 0) {
+                timeseriesWidget.showYearInAnimationMode(timeseriesWidget.state.animationSlider);
+            }
 
             // Restore old view on tab change
             if (newlyActiveTab.contentEl === "playTab") {
@@ -1029,9 +1032,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if (newlyActiveTab.contentEl === "compareTab") {
                 timeseriesWidget.stopAnimation();
                 changeAnyCompareSlider();
-            }
-            if(newlyActiveTab.contentEl === "informationTab") {
-                timeseriesWidget.showYearInAnimationMode(timeseriesWidget.state.animationSlider);
             }
 
             // Store state
