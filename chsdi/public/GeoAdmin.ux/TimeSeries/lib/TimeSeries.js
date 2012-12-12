@@ -1030,6 +1030,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.stopAnimation();
                 changeAnyCompareSlider();
             }
+            if(newlyActiveTab.contentEl === "informationTab") {
+                timeseriesWidget.showYearInAnimationMode(timeseriesWidget.state.animationSlider);
+            }
 
             // Store state
             timeseriesWidget.state.activeTab = newlyActiveTab.contentEl;
