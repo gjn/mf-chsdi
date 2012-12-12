@@ -181,7 +181,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'MultiPoint':'Multipunkt',
 	'MultiPolygon':'Multipolygon',
 	'Name':'Name',
-	'National Map': 'Kartenwerke',
+	'National Map':'Kartenwerke',
 	'National Map Overview':'Kartenwerke Überblick',
 	'Nationales Maps':'Schweizerisches Kartenwerk',
 	'Natürliche Risikozonen':'Gebiete mit naturbedingten Risiken',
