@@ -8,7 +8,19 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------+
 | New    | `Nuclear power plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                 |
 +--------+---------------------------------------------------------------------------------------------------------------------+
+| New    | `Fixed Control Points LFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp1>`__ (ch.swisstopo.fixpunkte-lfp1)|
++--------+---------------------------------------------------------------------------------------------------------------------+
+| New    | `Control Points LFP2, LFP3 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp2>`__ (ch.swisstopo.fixpunkte-lfp2)|
++--------+---------------------------------------------------------------------------------------------------------------------+
+| New    | `Fixed Control Points HFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp1>`__ (ch.swisstopo.fixpunkte-hfp1 |
++--------+---------------------------------------------------------------------------------------------------------------------+
+| New    | `Control Points HFP2, HFP3 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp2>`__ (ch.swisstopo.fixpunkte-hfp2 |
++--------+---------------------------------------------------------------------------------------------------------------------+
 | Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)                                |
++--------+---------------------------------------------------------------------------------------------------------------------+
+| Remove | `Lagefixpunkte (LFP) Replaced by 'Fixed Control Points LFP1' and 'Control Points LFP2, LFP3'`                           |
++--------+---------------------------------------------------------------------------------------------------------------------+
+| Remove | `Höhenfixpunkte (HFP) Replaced by 'Fixed Control Points HFP1' and 'Control Points HFP2, HFP3'`                          |
 +--------+---------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
