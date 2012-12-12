@@ -818,6 +818,12 @@ msgstr "MN95 Magliatura triangolare"
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
+msgid "ch.swisstopo.fixpunkte-hfp1"
+msgstr "Punti fissi altimetrici PFA1"
+
+msgid "ch.swisstopo.fixpunkte-hfp2"
+msgstr "Punti fissi alt. PFA2, PFA3"
+
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Punti fissi altitudinali"
 
@@ -826,6 +832,12 @@ msgstr "Punti fissi altitudinali"
 
 msgid "ch.swisstopo.fixpunkte-lage"
 msgstr "Punti fissi planimetrici"
+
+msgid "ch.swisstopo.fixpunkte-lfp1"
+msgstr "Punti fissi planimetrici PFP1"
+
+msgid "ch.swisstopo.fixpunkte-lfp2"
+msgstr "Punti fissi plan. PFP2, PFP3"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Ultimo massimo glaciale"

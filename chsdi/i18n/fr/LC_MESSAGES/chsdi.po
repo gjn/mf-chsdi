@@ -818,6 +818,12 @@ msgstr "MN95 Maillage triangulaire"
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
+msgid "ch.swisstopo.fixpunkte-hfp1"
+msgstr "Points fixes altimétriques PFA1"
+
+msgid "ch.swisstopo.fixpunkte-hfp2"
+msgstr "Points fixes alt. PFA2, PFA3"
+
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Points fixes en altimétrie"
 
@@ -826,6 +832,12 @@ msgstr "Points fixes en altimétrie"
 
 msgid "ch.swisstopo.fixpunkte-lage"
 msgstr "Points fixes en planimétrie"
+
+msgid "ch.swisstopo.fixpunkte-lfp1"
+msgstr "Points fixes planimétriques PFP1"
+
+msgid "ch.swisstopo.fixpunkte-lfp2"
+msgstr "Points fixes plan. PFP2, PFP3"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Dernier maximum glaciaire"
