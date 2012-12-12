@@ -188,7 +188,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
 
         this.on("preloadingProgress", updatePreloadStatus, this);
-
         this.map.events.register('zoomend', this, this.changeStatusText);
 
         // Abort animation and preload when shown extent changes (due to zoom or move)
@@ -207,6 +206,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 handleExtentChanged.apply(this);
             }
         });
+
+        // Init status text
+        this.changeStatusText(this.map.zoom);
     },
 
     /** api: method[getState]
@@ -233,14 +235,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  Change the text on the right according to the zoom level
      */
     changeStatusText: function(e) {
-        var zoom = e.object.zoom;
-        var statusText = Ext.get(this.contentEl).child('.text-status');
+        var zoom = typeof e === "number" ? e : e.object.zoom;
+        var statusText = document.querySelectorAll('div.text-status');
+        var statusText_play = statusText[0];
+        var statusText_comp = statusText[1];
         var updateText = function(text) {
-            if (typeof(statusText.dom.textContent) === "string") {
-                statusText.dom.textContent = text;
+            if (typeof(statusText_play.textContent) === "string") {
+                statusText_play.textContent = text;
+                statusText_comp.textContent = text;
             } else {
                 // IE
-                statusText.dom.innerText = text;
+                statusText_play.innerText = text;
+                statusText_play.innerText = text;
             }
         };
         switch (zoom) {
