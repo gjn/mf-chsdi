@@ -61,5 +61,9 @@ class FIXPUNKTEHOEHE(Base, Queryable):
 
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc __maxscale__ = 150000
 
+register('ch.swisstopo.fixpunkte-lfp1', FIXPUNKTELAGE)
+register('ch.swisstopo.fixpunkte-lfp2', FIXPUNKTELAGE)
+register('ch.swisstopo.fixpunkte-hfp1', FIXPUNKTEHOEHE)
+register('ch.swisstopo.fixpunkte-hfp2', FIXPUNKTEHOEHE)
 register('ch.swisstopo.fixpunkte-lage', FIXPUNKTELAGE)
 register('ch.swisstopo.fixpunkte-hoehe', FIXPUNKTEHOEHE)
