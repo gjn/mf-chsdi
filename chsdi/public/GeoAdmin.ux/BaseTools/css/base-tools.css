@@ -93,8 +93,12 @@
    border-top-width: 0px;
 }
 
-.ext-ie .advanced-menu {
+.ext-ie9 .advanced-menu {
    top: 149px !important;
+}
+
+.ext-ie8 .advanced-menu, .ext-ie7 .advanced-menu {
+   top: 151px; !important;
 }
 
 .advanced-menu .x-menu-item-active, .x-menu-item-active a.x-menu-item {
