@@ -14,9 +14,8 @@
     <link type="text/css" rel="stylesheet" href="../css/timeseries.css">
     <script type="text/javascript" src="../lib/TimeSeries.js"></script>
     <script type="text/javascript">
-    function test_slider(t){
-        t.plan(1);
-        var body = document.body.cloneNode(true);
+    function test_layer_management(t){
+        t.plan(9);
         
         var map = new GeoAdmin.Map("map");
         var timeseriesWidget = new GeoAdmin.TimeSeries({
@@ -24,63 +23,53 @@
             geoAdminRoot: "../../",
             map: map
         });
+        timeseriesWidget.getAnimationPeriods = function(callback){
+            callback(["19381231", "19411231", "19511231"]);
+        };
         
         setTimeout(function(){
-            timeseriesWidget.animationSlider.setYear(1957);
-            t.eq(timeseriesWidget.animationSlider.getYear(), 1957, "Slider allows setting and getting years");
-            
-            map.destroy();
-            document.documentElement.replaceChild(body, document.body);
-        }, 1000);
-        t.wait_result(2);
-    }
-    
-    function test_animation(t) {
-        t.plan(10);
-        var body = document.body.cloneNode(true);
-        
-        var map = new GeoAdmin.Map("map");
-        var timeseriesWidget = new GeoAdmin.TimeSeries({
-            contentEl: 'timeseriesWidget',
-            geoAdminRoot: "../../",
-            map: map
-        });
-        setTimeout(function(){
-            timeseriesWidget.getAnimationPeriods = function(callback){
-                callback(["19381231", "19411231", "19511231", "19531231", "19571231", "19581231", "19691231", "19701231", "19761231", "19811231", "19871231", "19931231", "19981231", "19991231", "20061231", "20071231"]);
-            };
-            timeseriesWidget.initAnimationState(function(animationState){
-                animationState.setYear(1938, false);
-                var state = animationState.getStateRatio(false);
-                t.eq(state.foreground, "19381231", "Foreground correct");
-                t.eq(state.year, 1938, "Initial year correct");
-                
-                animationState.setYear(1944, false);
-                setTimeout(function(){
-                    var state = animationState.getStateRatio(false);
-                    t.eq(state.state, "fading", "Animation state correct");
-                    t.eq(state.foreground, "19511231", "Foreground correct");
-                    t.eq(state.background, "19411231", "Background correct");
-                    // Check year only roughly as it is highly dependent on runtime characteristics
-                    t.ok(state.year>=1944 && state.year<=1951, "Year is in expected range");
-                    
-                    // Check reverse playing
-                    animationState.setYear(1999, true);
-                    setTimeout(function(){
-                        var state = animationState.getStateRatio(true);
-                        t.eq(state.state, "fading", "Animation state correct");
-                        t.eq(state.foreground, "19981231", "Foreground correct");
-                        t.eq(state.background, "19991231", "Background correct");
-                        // Check year only roughly as it is highly dependent on runtime characteristics
-                        t.ok(state.year>=1998 && state.year<=1999, "Year is in expected range");
-                        
-                        map.destroy();
-                        document.documentElement.replaceChild(body, document.body);
-                    }, 100);
-                }, 100);
+            var layer = timeseriesWidget.addTimeseriesLayer({
+                opacity: 0.4,
+                timestamp: "19511231"
             });
-        }, 1000)
-        t.wait_result(2);
+            t.ok(layer instanceof OpenLayers.Layer);
+            t.eq(layer.opacity, 0.4, "Initial opacity ok");
+            timeseriesWidget.addTimeseriesLayer({
+                opacity: 0.8,
+                timestamp: "19511231"
+            });
+            t.ok(layer instanceof OpenLayers.Layer);
+            t.eq(layer.opacity, 0.8, "Updated opacity ok");
+            
+            // Verify that unused layers get dropped on request
+            layer.setOpacity(0);
+            timeseriesWidget.discardInvisibleLayers();
+            var timeseriesLayersCount = 0;
+            for(var i=0; i<map.layers.length; i++){
+                if(timeseriesWidget.isTimeSeriesLayer(map.layers[i])){
+                    timeseriesLayersCount = timeseriesLayersCount + 1;
+                }
+            }
+            t.eq(timeseriesLayersCount, 1, "All but the visible layer have been removed from the map.");
+            
+            // Verify monitoring of preloading works
+            var progressCounter = 0;
+            timeseriesWidget.on("preloadingProgress", function() {
+                progressCounter = progressCounter + 1;
+            });
+            timeseriesWidget.on("preloadingDone", function() {
+                t.ok(progressCounter>=3, "Enough progress updates have been happening");
+                
+                t.ok(true, "Preloading finished");
+                
+                t.ok(timeseriesWidget.getLayerForTimestamp("19411231") instanceof OpenLayers.Layer);
+                t.ok(timeseriesWidget.getLayerForTimestamp("19511231") instanceof OpenLayers.Layer);
+                
+                map.destroy();
+            });
+            timeseriesWidget.preloadLayersInSequence();
+        }, 2000);
+        t.wait_result(30);
     }
     </script>
 </head>

@@ -126,7 +126,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Group consecutive years and retain only latest of each group
         this.timestamps = [];
         var lastYear = null;
-        timestampsAscending.forEach(function(timestamp) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timestampsAscending, function(timestamp) {
             var year = parseInt(timestamp.substring(0, 4), 10);
             if (lastYear === year) {
                 this.timestamps.pop();
@@ -331,7 +331,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timestamp: foregroundTimestamp,
                     opacity: 1
                 });
-                timeseriesWidget.map.layers.forEach(function(l) {
+                GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timeseriesWidget.map.layers, function(l) {
                     if (l !== layer && this.isTimeSeriesLayer(l)) {
                         l.setOpacity(0);
                     }
@@ -398,7 +398,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getLayerForTimestamp: function(timestamp) {
         var timeseriesWidget = this;
-        return timeseriesWidget.map.layers.filter(function(layer) {
+        return GeoAdmin.TimeSeries.prototype.ArrayPrototypeFilter.call(timeseriesWidget.map.layers, function(layer) {
             return timeseriesWidget.isTimeSeriesLayer(layer) && layer.timestamp === timestamp;
         })[0];
     },
@@ -450,7 +450,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
 
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
-        timeseriesWidget.map.layers.forEach(function(layer) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timeseriesWidget.map.layers, function(layer) {
             if (layer !== foreground && layer !== background && layer.layername === timeseriesWidget.layerName) {
                 layer.setOpacity(0);
             }
@@ -735,7 +735,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             compareMin = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMin.getYear()));
             compareMax = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMax.getYear()));
         }
-        this.map.layers.slice(0).forEach(function(layer) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(this.map.layers.slice(0), function(layer) {
             if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer!==compareMin && layer!==compareMax) {
                 this.map.removeLayer(layer);
             }
@@ -760,7 +760,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Failed to get periods from server, don't proceed with preloading
                 return;
             }
-            animationPeriods.forEach(function(ts) {
+            GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(animationPeriods, function(ts) {
                 if (parseInt(ts.substring(0, 4), 10) <= year) {
                     timestamp = ts;
                 }
@@ -782,7 +782,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
 
             var timestampShown = timeseriesWidget.findTimestampNoLaterThan(year);
-            var shownLayer = timeseriesWidget.map.layers.filter(
+            var shownLayer = GeoAdmin.TimeSeries.prototype.ArrayPrototypeFilter.call(timeseriesWidget.map.layers,
                 function(layer) {
                     return timeseriesWidget.isTimeSeriesLayer(layer) && (layer.opacity > 0 && layer.getVisibility());// && layer.timestamp===timestampShown;
                 }).pop();
@@ -794,7 +794,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 shownLayer.events.register("loadend", timeseriesWidget, function() {
                     var indexOfShown = animationPeriods.indexOf(timestamp);
                     var lowPrio = animationPeriods.splice(0, indexOfShown);
-                    lowPrio.forEach(function(preloadTimestamp) {
+                    GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(lowPrio, function(preloadTimestamp) {
                         animationPeriods.push(preloadTimestamp);
                     });
                     //console.log("animationPeriods: "+animationPeriods);
@@ -1071,7 +1071,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if (firstAddedLayer) {
                 firstAddedLayer.events.unregister('loadend', this, discard);
             }
-            pendingForDiscard.forEach(function(layer) {
+            GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(pendingForDiscard, function(layer) {
                 if (!(layer instanceof OpenLayers.Layer.Vector) && timeseriesWidget.map.layers.indexOf(layer) >= 0 && layer.layername !== "voidLayer") {
                     timeseriesWidget.map.removeLayer(layer);
                 }
@@ -1098,6 +1098,84 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         } else {
             return (1 - Math.cos((p * -2 + 2) * Math.PI / 2)) / -2 + 1;
         }
+    },
+    
+    ArrayPrototypeForEach: Array.prototype.forEach || function forEach( callback, thisArg ) {
+        var T, k;
+    
+        if ( this == null ) {
+        throw new TypeError( "this is null or not defined" );
+        }
+    
+        // 1. Let O be the result of calling ToObject passing the |this| value as the argument.
+        var O = Object(this);
+    
+        // 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".
+        // 3. Let len be ToUint32(lenValue).
+        var len = O.length >>> 0; // Hack to convert O.length to a UInt32
+    
+        // 4. If IsCallable(callback) is false, throw a TypeError exception.
+        // See: http://es5.github.com/#x9.11
+        if ( {}.toString.call(callback) !== "[object Function]" ) {
+        throw new TypeError( callback + " is not a function" );
+        }
+    
+        // 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if ( thisArg ) {
+        T = thisArg;
+        }
+    
+        // 6. Let k be 0
+        k = 0;
+    
+        // 7. Repeat, while k < len
+        while( k < len ) {
+    
+        var kValue;
+    
+        // a. Let Pk be ToString(k).
+        //   This is implicit for LHS operands of the in operator
+        // b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
+        //   This step can be combined with c
+        // c. If kPresent is true, then
+        if ( Object.prototype.hasOwnProperty.call(O, k) ) {
+    
+            // i. Let kValue be the result of calling the Get internal method of O with argument Pk.
+            kValue = O[ k ];
+    
+            // ii. Call the Call internal method of callback with T as the this value and
+            // argument list containing kValue, k, and O.
+            callback.call( T, kValue, k, O );
+        }
+        // d. Increase k by 1.
+        k++;
+        }
+        // 8. return undefined
+    },
+    ArrayPrototypeFilter: Array.prototype.filter || function(fun /*, thisp */) {
+        "use strict";
+    
+        if (this == null)
+        throw new TypeError();
+    
+        var t = Object(this);
+        var len = t.length >>> 0;
+        if (typeof fun != "function")
+        throw new TypeError();
+    
+        var res = [];
+        var thisp = arguments[1];
+        for (var i = 0; i < len; i++)
+        {
+        if (i in t)
+        {
+            var val = t[i]; // in case fun mutates this
+            if (fun.call(thisp, val, i, t))
+            res.push(val);
+        }
+        }
+    
+        return res;
     }
 });
 
