@@ -944,30 +944,30 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo.kt",
                 queryable: true
             },
-            "ch.swisstopo.fixpunkte-lage": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage"),
+            "ch.swisstopo.fixpunkte-lfp1": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp1"),
                 layertype: 'aggregate',
-                subLayersName: ['ch.swisstopo.fixpunkte-lage_wmts','ch.swisstopo.fixpunkte-lage_wms'],
+                subLayersName: ['ch.swisstopo.fixpunkte-lfp1_wmts','ch.swisstopo.fixpunkte-lfp1_wms'],
                 queryable: true,
                 type: "point",
                 searchable: true
             },
-            "ch.swisstopo.fixpunkte-lage_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage_wmts"),
+            "ch.swisstopo.fixpunkte-lfp1_wmts": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp1_wmts"),
                 layertype: 'wmts',
-                layer: 'ch.swisstopo.fixpunkte-lage',
-                layername: 'ch.swisstopo.fixpunkte-lage_wmts',
-                timestamp: ['20110509'],
+                layer: 'ch.swisstopo.fixpunkte-lfp1',
+                layername: 'ch.swisstopo.fixpunkte-lfp1_wmts',
+                timestamp: ['20121211'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
                 maxScale: 200001,
                 type: "point"
             },
-            "ch.swisstopo.fixpunkte-lage_wms": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lage_wms"),
+            "ch.swisstopo.fixpunkte-lfp1_wms": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp1_wms"),
                 layertype: 'wms',
-                layers: 'ch.swisstopo.fixpunkte-lage',
+                layers: 'ch.swisstopo.fixpunkte-lfp1',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -975,30 +975,92 @@ GeoAdmin._Layers = OpenLayers.Class({
                 maxScale: 1,
                 type: "point"
             },
-            "ch.swisstopo.fixpunkte-hoehe": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe"),
+            "ch.swisstopo.fixpunkte-lfp2": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp2"),
                 layertype: 'aggregate',
-                subLayersName: ['ch.swisstopo.fixpunkte-hoehe_wmts','ch.swisstopo.fixpunkte-hoehe_wms'],
+                subLayersName: ['ch.swisstopo.fixpunkte-lfp2_wmts','ch.swisstopo.fixpunkte-lfp2_wms'],
                 queryable: true,
                 type: "point",
                 searchable: true
             },
-            "ch.swisstopo.fixpunkte-hoehe_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe_wmts"),
+            "ch.swisstopo.fixpunkte-lfp2_wmts": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp2_wmts"),
                 layertype: 'wmts',
-                layer: 'ch.swisstopo.fixpunkte-hoehe',
-                layername: 'ch.swisstopo.fixpunkte-hoehe_wmts',
-                timestamp: ['20110509'],
+                layer: 'ch.swisstopo.fixpunkte-lfp2',
+                layername: 'ch.swisstopo.fixpunkte-lfp2_wmts',
+                timestamp: ['20121211'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
                 maxScale: 200001,
                 type: "point"
             },
-            "ch.swisstopo.fixpunkte-hoehe_wms": {
-                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hoehe_wms"),
+            "ch.swisstopo.fixpunkte-lfp2_wms": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp2_wms"),
                 layertype: 'wms',
-                layers: 'ch.swisstopo.fixpunkte-hoehe',
+                layers: 'ch.swisstopo.fixpunkte-lfp2',
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false,
+                minScale: 200001,
+                maxScale: 1,
+                type: "point"
+            },
+            "ch.swisstopo.fixpunkte-hfp1": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp1"),
+                layertype: 'aggregate',
+                subLayersName: ['ch.swisstopo.fixpunkte-hfp1_wmts','ch.swisstopo.fixpunkte-hfp1_wms'],
+                queryable: true,
+                type: "point",
+                searchable: true
+            },
+            "ch.swisstopo.fixpunkte-hfp1_wmts": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp1_wmts"),
+                layertype: 'wmts',
+                layer: 'ch.swisstopo.fixpunkte-hfp1',
+                layername: 'ch.swisstopo.fixpunkte-hfp1_wmts',
+                timestamp: ['20121211'],
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false,
+                maxScale: 200001,
+                type: "point"
+            },
+            "ch.swisstopo.fixpunkte-hfp1_wms": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp1_wms"),
+                layertype: 'wms',
+                layers: 'ch.swisstopo.fixpunkte-hfp1',
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false,
+                minScale: 200001,
+                maxScale: 1,
+                type: "point"
+            },
+            "ch.swisstopo.fixpunkte-hfp2": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2"),
+                layertype: 'aggregate',
+                subLayersName: ['ch.swisstopo.fixpunkte-hfp2_wmts','ch.swisstopo.fixpunkte-hfp2_wms'],
+                queryable: true,
+                type: "point",
+                searchable: true
+            },
+            "ch.swisstopo.fixpunkte-hfp2_wmts": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2_wmts"),
+                layertype: 'wmts',
+                layer: 'ch.swisstopo.fixpunkte-hfp2',
+                layername: 'ch.swisstopo.fixpunkte-hfp2_wmts',
+                timestamp: ['20121211'],
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false,
+                maxScale: 200001,
+                type: "point"
+            },
+            "ch.swisstopo.fixpunkte-hfp2_wms": {
+                name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2_wms"),
+                layertype: 'wms',
+                layers: 'ch.swisstopo.fixpunkte-hfp2',
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -2436,6 +2498,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bfe",
                 queryable: true
             },
+            "ch.bfe.kernkraftwerke": {
+                name: OpenLayers.i18n("ch.bfe.kernkraftwerke"),
+                layertype: 'wmts',
+                timestamp: ['20120911'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bfe",
+                queryable: true
+            },
+
             "ch.blw.klimaeignung-typ": {
                 name: OpenLayers.i18n("ch.blw.klimaeignung-typ"),
                 layertype: 'wmts',

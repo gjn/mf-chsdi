@@ -185,6 +185,7 @@ class OWSCheck(object):
         self.checker_times = {}
         self.gc_by_versions = {}
         self.missing_capa = []
+        self.swapcases = False
 
         if restful and self.service != "WMTS":
             self.base_error = True
@@ -493,8 +494,12 @@ class OWSCheck(object):
 
     def build_kvp_url(self, url, data, swapcases=False):
         """
+        Function to build a complete URL containing all KVP (Key-Value-Pair) Parameters based on ``url`` and ``data``.
+        Supports Vendor Specific Parameters (existing GET-Parameter).
+
         :param url: URL to build
-        :param data: Dict to add to URL
+        :param data: KVP Parameter as an dictionary
+        :rtype: URL with all GET-Parameters
         """
         class S(str):
             """
@@ -518,7 +523,21 @@ class OWSCheck(object):
         """
         The method :py:meth:`getResultsOverview` calls the method :py:meth:`next`
         and returns (insted of the result of a single check) all current results in
-        :py:attr:`results_overview`. The following table should clarify
+        :py:attr:`results_overview`.
+
+        If ``aggregate=True``, all checker Results will be aggregated as follow into a dictionary containing following
+        elements:
+
+        * ``status``: 'red', 'green', 'white' and 'yellow' indicates the status of a Richtline
+            * 'red': mandatory Richtlinie not fulfilled
+            * 'green': mandatory or optional Richtline fulfilled
+            * 'white': Richtlinie not checked
+            * 'yellow': optional Richtline not fulfilled
+        * ``msg``: List of Message Results (first Element of the List is taken from ``messages.py``).
+        * ``optional``: Boolean indicates if the Richtlinie is optional or mandatory
+        * ``checked``: Boolean indicates if the Richtline was checked or not
+
+        The following table should clarify
         the structure of :py:attr:`results_overview`:
 
         +-----------+-----------------------------------------------------------+
@@ -570,7 +589,26 @@ class OWSCheck(object):
              'status': [True, True, True, True, True]},
          1: {'name': 'ALLG',
              'rili': {1: {'msg': ['http://...', '...'], 'status': [False]}, ...
-             
+
+        Call Examples with ``aggregate=True``:
+
+        >>> c = OWSCheck(...)
+        >>> c.getResultsOverview(aggregate=True)
+        0: {'msg': ['Checked URL: http://ogo.heig-vd.ch/geoserver/wfs',
+                    'Checked Service: WFS',
+                    'Your Server is not eCH-0056 compliant, following Rules are not fulfilled: ALLG-01, ALLG-04, EXCE-02'],
+            'name': 'Status',
+            'status': 'red'},
+        1: {'name': 'ALLG',
+            'rili': {1: {'checked': True,
+                         'msg': ['The service does not fulfill case sensitivity for parameters values'],
+                         'optional': False,
+                         'status': 'red'},
+                    }
+            }
+        ...
+
+        :param aggregate: :py:func:`bool` to aggreagate all results
         :rtype: :py:func:`dict` of :py:attr:`results_overview`
         """
         self.next()
@@ -855,12 +893,13 @@ class OWSCheck(object):
             * http://www.opengeospatial.org/ogcUrnPolicy
 
         :param list srs_all: List of Spatial Reference Systems
+        :param str for_version: optional Version String of the checked Version. Default ``None``.
         :rtype: status (:py:func:`bool`) and results (:py:func:`list`)
         """
         status_list = []
         anz_crs_rili = len(self.results_overview[8]['rili'].keys())
 
-        if len(srs_all) == 0:
+        if not len(srs_all):
             msg = "No SRS found"
             for i in xrange(anz_crs_rili):
                 self.setResultsOverview("CRS-0%d"%(i+1), False, msg)
@@ -1110,7 +1149,7 @@ class OWSCheck(object):
                'service':self.service,
                'version':self.version}
         
-        req_url = self.build_kvp_url(self.base_url, kvp)
+        req_url = self.build_kvp_url(self.base_url, kvp, self.swapcases)
         #self.base_url + "?" + urllib.urlencode(kvp)
         results.append("Checking URL "+req_url)
         version = self.version + ": "
@@ -1219,12 +1258,20 @@ class OWSCheck(object):
         else:
         
             kvp = {'request':'GetCapabilities',
-                   'service':self.service} 
+                   'service':self.service}
             
             if self.version:
                 kvp.update({'version':self.version})
-                
-            ows_url = self.build_kvp_url(self.base_url, kvp)
+
+            ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
+            gc_file = URL2File(ows_url, auth=self.auth)
+            try:
+                dom.parse(gc_file)
+            except xml.parsers.expat.ExpatError, e:
+                self.swapcases = True
+                ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
+
+
         results = [ows_url]
 
         print "GetCap", ows_url
@@ -1240,7 +1287,6 @@ class OWSCheck(object):
             self.gc_file_info = gc_file.info()
             self.tree = dom.parse(gc_file)
             results.append(self.gc_file_info.gettype())
-            
             if "xml" not in gc_file.info().gettype():
                 msg = "Returned files is not an XML file: %s" %(gc_file.info().gettype())
                 results.append(msg)
@@ -1252,7 +1298,6 @@ class OWSCheck(object):
                     body = node.toxml('utf-8')
                     if has_django: 
                         body = smart_str(body)
-            
             self.gc_dict = xmldict.fromstring(body)
             if gc_file.code == 200:
                 status = True
@@ -1266,10 +1311,8 @@ class OWSCheck(object):
                 if not d.status:
                     msg = 'GetCapabilities: XML-Encoding does not match UTF-8'
                     results.append(msg)
-                
-                hints.append(d.hints)     # = ALLG-04
-                
-                
+                hints.append(d.hints)   # = ALLG-04
+
             else:
                 err_msg = "Request failed: Code %s" %gc_file.code
                 results.append(err_msg)
@@ -1583,7 +1626,7 @@ class OWSCheck(object):
             # Versionstring cant be caseswapped
             kvp.update({'version':version})
 
-        ows_url = self.build_kvp_url(self.base_url, kvp)
+        ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
         results = [ows_url]
         
         # Ursprüngliche, "korrekte" Headerinformationen
@@ -1847,7 +1890,7 @@ class OWSCheck(object):
                    'version': self.version
                    #'language':'de-CH'
             }
-            url = self.build_kvp_url(self.base_url, kvp)
+            url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
         try:
             f = URL2File(url, auth=self.auth)
             for line in f.readlines():
@@ -1932,7 +1975,7 @@ class OWSCheck(object):
             http_300_results = 'Server responded with HTTP status code 300 (multiple choices)'
             
             base_url = self.base_url.replace("/%s/" %(url_lang), "/")
-            url = self.build_kvp_url(base_url, kvp)
+            url = self.build_kvp_url(base_url, kvp, self.swapcases)
             results.append('Checking for URL %s' %(url))
             try:                  
                 f = URL2File(url, auth=self.auth)
@@ -2020,7 +2063,8 @@ class OWSCheck(object):
     
     def vers_MaxService(self):
         """
-        Detects the highest Version supported by the server.
+        Detects the highest Version supported by the server and adds the XML of each
+        detected Version to ``gc_by_version``.
 
         This method sends multiple requests to the server. Each request differs in the `version` parameter and will be
         compared with the latest and highest Version found in GetCapabilities document.
@@ -2097,7 +2141,7 @@ class OWSCheck(object):
                     'service':self.service,
                     'version':version_in_settings
                 }
-                url = self.build_kvp_url(self.base_url, kvp)
+                url = self.build_kvp_url(self.base_url, kvp, self.swapcases)
             
             if DEBUG: print url 
                                             
@@ -2705,6 +2749,8 @@ class OWSCheck(object):
             * :ref:`rili-allg-04`
 
         :param object tree: XML-Tree to check
+        :param str name: Label of what is checked here. Default ``GetCapabilities``.
+        :param bool ignore_rili: If ``True``, :ref:`rili-allg-04` won't be set here. Default ``False``.
         :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
                 of the current method.
         """
@@ -2843,9 +2889,37 @@ class OWSCheck(object):
         self.setResultsOverview("WMS-08", status_vsc, msg)
         return ResponseDict("wms_ServiceMeta", msg, status)
     
+    def wms_getsublayer(self, l0, layers):
+        a = 0
+        b = []
+        if isinstance(l0, dict):
+            if l0.has_key('Layer'):
+                if isinstance(l0.Layer, dict):
+                    layers.append(l0.Layer)
+                    a += 1
+                if isinstance(l0.Layer, list):
+                    for x in range(len(l0.Layer)):
+                        if isinstance(l0.Layer[x], dict):
+                            layers.append(l0.Layer[x])
+                            b.append(x)
+            #else:
+             #   l0.Layer = []
+              #  layers = l0.Layer
+
+        else:
+            pass
+
+        if a > 0:
+            self.wms_getsublayer(l0.Layer, layers)
+
+        if len(b) > 0:
+            for x in range(len(b)):
+                self.wms_getsublayer(l0.Layer[b[x]], layers)
+        return layers, l0
+
     def wms_getLayers(self, version=None):
         """
-        Get a list of WMS Layers listed in GetCapabilites on ``Capability.Layer``.
+        Get a list of WMS Layers listed in GetCapabilites on ``Capability.Layer``. Ignores Layers which have Sublayers.
 
         :returns: List of WMS Layers
         """
@@ -2859,20 +2933,9 @@ class OWSCheck(object):
         else:
             l0 = self.gc_xmlroot.Capability.Layer
         layers = []
-        if isinstance(l0, dict):
-            if l0.has_key('Layer'):
-                if isinstance(l0.Layer, dict):
-                    layers.append(l0.Layer)
-                else:
-                    layers = l0.Layer
-            else:
-                l0.Layer = []
-                layers = l0.Layer
-        if isinstance(l0,list):
-            layers = l0
-        else:
-            pass
-        # Try Root Layer too
+        layers, i0 = self.wms_getsublayer(l0,layers)
+
+            # Try Root Layer too
         layers.append(l0)
         return layers
     
@@ -2946,20 +3009,20 @@ class OWSCheck(object):
         if not isinstance(gc_layer, list):
             gc_layer = [gc_layer]
 
-
         for layer in gc_layer:
             if not isinstance(layer, dict):
                 continue
+
+            #Comment the next two lines out to check the "container" layer
+            if layer.has_key('Layer') and not layer.has_key('Name'):
+                continue
+
             if not layer.has_key('Name'):
                 name = "unnamed"
             else:
                 name = _ns(layer.Name)
 
-            #Comment the next two lines out two check the root layer
-            if layer.has_key('Layer'):
-                continue
-
-            number_layers = number_layers + 1
+            number_layers += 1
             if layer.has_key('Style'):
                 # layer_style_name i.d.R. default
                 try:
@@ -2980,7 +3043,7 @@ class OWSCheck(object):
                     #if DEBUG: print style, layer.Style[key]
                     #if DEBUG: print layer_style_name
                     if key == 'LegendURL':
-                        number_legend_url = number_legend_url + 1
+                        number_legend_url += 1
                         legendurl = _ns(layer.Style[key].OnlineResource.href)
                         #if DEBUG: print legendurl
                         legend_format = _ns(layer.Style[key].Format)
@@ -3013,7 +3076,6 @@ class OWSCheck(object):
         self.layers = layers
         
         results = ["%d of %d layers got a LegendURL" %(number_legend_url,number_layers)]
-
         for r in legends_results:
             results.append(r)
 
@@ -3037,7 +3099,7 @@ class OWSCheck(object):
         metadata_url_status = []
         metadata_urls = []
         gc_layer_v3 = self.wms_getLayers(version='1.3.0')
-        gc_layer = self.wms_getLayers()
+        #gc_layer = self.wms_getLayers()
 
         for layer in gc_layer_v3:
             # META
@@ -3049,8 +3111,8 @@ class OWSCheck(object):
             else:
                 name = _ns(layer.Name)
 
-            #Comment the next two lines out two check the root layer
-            if layer.has_key('Layer'):
+            #Comment the next two lines out to check the "container" layer
+            if layer.has_key('Layer') and not layer.has_key('Name'):
                 continue
 
             try:
@@ -3076,7 +3138,10 @@ class OWSCheck(object):
             metadata_url_status.append(False)
             metadata_urls.append("WMS Version 1.3.0 not supported")
 
-        status = all(metadata_url_status)
+        if len(metadata_url_status):
+            status = all(metadata_url_status)
+        else:
+            status = False
 
         if len(gc_layer_v3):
             self.setResultsOverview("WMS-07", status, metadata_urls)
@@ -3792,7 +3857,6 @@ class OWSCheck(object):
                         srs_all.append(_ns(ft.OtherSRS))
             
             status, results = self.checkCRS(srs_all, for_version=v)
-            print srs_all
         except KeyError,e:
             results = "No Key %s found" %e
         
@@ -3801,6 +3865,8 @@ class OWSCheck(object):
     
     def wfs_GetFeature(self):
         """
+        Checking GetCapabilites document for ``GetFeature`` operation and supported Output Formats.
+
         * :ref:`rili-wfs-03`: Check that the capability document has the required MIME type
         * :ref:`rili-wfs-05`: check ``ows:OperationMetadata`` > ``ows:Operation name=”GetFeature”`` >
                               ``ows:Parameter name=outputFormat”`` > ``ows:Value text/xml, subtype=gml/3.2``
@@ -3821,9 +3887,9 @@ class OWSCheck(object):
         formats = []        
         found_gml = {}
         found_ili = {}
-        
+
         if self.ows_common:
-            #try: 
+            #try:
             for operation in self.gc_xmlroot.OperationsMetadata.Operation:
                 if _ns(operation.name) == "GetFeature":
                     parameter = dict2list(operation.Parameter)
@@ -3863,12 +3929,11 @@ class OWSCheck(object):
                     formats = unify(formats)
 
 
-                    
                     for format in formats:
                         # Check for GML
                         gml_status = False
                         gml_msg = '%s: GML3 not found' %(ft_name)
-                        
+
                         for gmlformat in _value(self.service_settings.Operations.GetFeature.Formats.GML.FormatString):
                             # look, if 'gml3' or 'gml/3.2' is in format
                             if gmlformat in format.lower():
@@ -3877,7 +3942,7 @@ class OWSCheck(object):
                                 gml_msg = u'FeatureType %s supports "%s"' %(ft_name, format)
 
                         found_gml[ft_name].append(gml_status)
-                        
+
                         # Check for Interlis
                         ili_status = False
                         ili_msg = 'Interlis not found'
@@ -3890,17 +3955,20 @@ class OWSCheck(object):
                         
                         found_ili[ft_name].append(ili_status)
 
-
-
                 else:
                     equals = [False]
                     results = "No OutputFormats defined"
         else:
-
             formats.extend(self.gc_xmlroot.Capability.Request.GetFeature.ResultFormat.keys())
             equals = [False]
             results = "Not implemented: should be outputFormat, see <i>OGC WFS 1.1.0 Implementation Specification</i>, page 39 pp"
-        
+
+            #for gml in gmls:
+            #if "text/xml; subtype=gml/3.2" in gml or "application/gml+xml; version=3.2 " in gml:
+            #gml_status = True
+            #found_gml[3.2] = []
+            #found_gml[3.2].append(gml_status)
+
         # Aggregate GML
         gml_results = []
         gml_status = []
@@ -3941,14 +4009,11 @@ class OWSCheck(object):
         else:
             msg = "No Interlis/GML found"
 
-        print formats
-
         has_formats =  bool(len(formats))
         if has_formats:
             supported_formats = ', '.join(formats)
         else:
             supported_formats = 'No supported MIME Types found'
-        print formats
         self.setResultsOverview("WFS-03", status = has_formats, msg=supported_formats)
         return ResponseDict("wfs_GetFeature", results, status)
 
@@ -3983,12 +4048,8 @@ class OWSCheck(object):
         """
         results = []
         status = []
-
-
         ft_in_ssxml = []
         ft_in_gc = []
-
-
 
         def ssxml_check_failed(msg):
             return ResponseDict("wfs_CheckFeatureTypes", msg, False)
@@ -4078,7 +4139,7 @@ class OWSCheck(object):
         .. seealso::
 
             * :ref:`rili-wfs-51`
-            * If Filters are used in the SSXML, OGC Filter Specification is also fulfilled.
+            * If Filters are used in the SSXML, OGC Filter Specification is also fulfilled but not mentioned in the results.
 
         :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
                 of the current method.
@@ -4201,6 +4262,9 @@ class OWSCheck(object):
         return ResponseDict("wfs_CheckGetFeature", results, att_status)
     
     def check_wfs_serviceMeta(self, ExtendedCapabilities, found_ed, found_es):
+        """
+        Helper Function used in :py:meth:`wfs_ServiceMeta <ows_checker._checker.OWSCheck.wfs_ServiceMeta>`.
+        """
         if ExtendedCapabilities.has_key('ExternalDataMetadata'):
             found_ed = True
         if ExtendedCapabilities.has_key('ExternalServiceMetadata'):
@@ -4301,7 +4365,7 @@ class OWSCheck(object):
     
     def wcs_CRS(self):
         """
-        Checks the SRS/CRS given in the GetCapabilities document
+        Checks the SRS/CRS given in the GetCapabilities document for the highest supported Version.
 
         .. code-block:: xml
 
@@ -4411,7 +4475,7 @@ class OWSCheck(object):
 
     def wmts_RESTful(self):
         """
-        If Flat "restful" not set and WMTS-01 is valid, we create a complete new OWSCheck-Instance with restful=True and
+        If Flag ``restful`` not set and WMTS-01 is valid, we create a complete new OWSCheck-Instance with restful=True and
         check for WMTS-01.
 
         .. seealso::
@@ -4568,6 +4632,16 @@ class OWSCheck(object):
         return ResponseDict("wmts_CRS", results, status)
 
     def wmts_TMS(self):
+        """
+        Checks the supported TileMatrixSets.
+
+        .. seealso::
+
+            * :ref:`rili-wmts-07`
+
+        :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
+                of the current method.
+        """
         results = []
         status = []
         wmts_04 = self.getRiliResults("WMTS-04") # EPSG:21781
@@ -4630,7 +4704,7 @@ class OWSCheck(object):
 
         .. seealso::
 
-            * :ref:`rili-csw-02`
+            * :ref:`rili-allg-06`
 
         :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
                 of the current method.
@@ -4681,7 +4755,12 @@ class OWSCheck(object):
                 </ows:Value>
             </ows:Constraint>
 
+        .. seealso::
 
+            * :ref:`rili-csw-02`
+
+        :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
+                of the current method.
         """
         status = False
         results = []
@@ -4710,7 +4789,7 @@ class OWSCheck(object):
     
     def csw_Meta(self):
         """
-        Looking for GM03 in CSW GetCapabilites document.
+        Looking for GM03 in CSW GetCapabilites document. NOT IMPLEMENTED.
 
         .. seealso::
 
