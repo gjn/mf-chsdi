@@ -12,6 +12,7 @@
  *
  *  Paints a time axis from minYear to maxYear and allows to add sliders so that years or ranges can be selected.
  */
+
 GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[layerName]
      *  ``String`` Technical name of layer whose versions should be presented
@@ -161,7 +162,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
                 if (this.animationState) {
                     // Update offset of animation if already running
-                    this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection === "backwards");
+                    this.animationState.applyYear(this.animationSlider.getYear(), this.state.playDirection === "backwards", false);
                 }
             }, this);
         }
@@ -365,7 +366,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timeseriesWidget.animationState = animationState;
 
                     // Play / Resume
-                    timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection === "backwards");
+                    timeseriesWidget.animationState.applyYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection === "backwards", true);
                     timeseriesWidget.setAnimationTimer();
                 });
             }
@@ -565,7 +566,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                  */
                 onCompletion(new (function AnimationStates(fadeTime, transitionTime, periods) {
                     var periodsLength = periods.length;
-                    var totalAnimationDuration = periodsLength * transitionTime + (periodsLength - 1) * fadeTime;
+                    var totalAnimationDuration = periodsLength * (transitionTime + fadeTime);
 
                     var start = new Date().getTime();
                     var pauseStart;
@@ -589,40 +590,48 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                      */
                     this.getStateRatio = function getStateRatio(reverse) {
                         if (reverse !== true && reverse !== false) {
-                            s
                             throw new Error("reverse must be a boolean");
                         }
 
                         var totalOffset = getTotalOffset();
-                        // Limit offset to period length in case of loops
                         var offset = totalOffset % totalAnimationDuration;
-                        var isLastState;
                         if (reverse) {
                             offset = totalAnimationDuration - offset;
-                            isLastState = totalOffset === 0;
-                        } else {
-                            isLastState = totalOffset > 0 && offset === 0;
                         }
+
                         var overlayOffset = offset % (fadeTime + transitionTime);
-                        var ratio;
+                        var ratio = 0;
                         if (overlayOffset <= transitionTime) {
                             state = "transitioning";
-                            if (transitionTime === 0) {
-                                ratio = 0;
-                            } else {
+                            if (transitionTime !== 0) {
                                 ratio = overlayOffset / transitionTime;
                             }
                         } else {
                             state = "fading";
                             ratio = (overlayOffset - transitionTime) / fadeTime;
                         }
-                        if (isLastState) {
-                            ratio = 1;
+
+                        var fgIndex = Math.floor(offset / (transitionTime + fadeTime));
+                        if (state === "fading") {
+                            fgIndex += 1;
                         }
-                        var foreground = isLastState ? periodsLength - 1 : Math.floor(offset / (transitionTime + fadeTime)) + (((offset % (transitionTime + fadeTime)) <= transitionTime) ? 0 : 1);
-                        state = (offset % (transitionTime + fadeTime)) <= transitionTime ? "transitioning" : "fading";
-                        var background = periods[(reverse && state === "fading") ? foreground : (foreground - 1)];
-                        foreground = periods[(reverse && state === "fading") ? (foreground - 1) : foreground];
+                        var bgIndex = fgIndex - 1;
+                        if (reverse && state === "fading") {
+                            bgIndex += 1;
+                            fgIndex -= 1;
+                        }
+                        var inEndToStart = false;
+                        if (bgIndex >= periodsLength) {
+                            bgIndex = 0;
+                            inEndToStart = true;
+                        }
+                        if (fgIndex >= periodsLength) {
+                            fgIndex = 0;
+                            inEndToStart = true;
+                        }
+
+                        var background = periods[bgIndex];
+                        var foreground = periods[fgIndex];
                         ratio = reverse ? 1 - ratio : ratio;
                         return {
                             // Timestamp of foreground layer such as 19891231
@@ -634,7 +643,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                             // Progress between foreground and background layer (equals opacity of foreground in case of linear easing)
                             ratio: ratio,
                             // Interpolated year (interpolated in between the visualized timestamps being currently faded)
-                            year: (state === "transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio)
+                            year: (state === "transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio),
+                            // indicate if we are between end and start
+                            inEndToStart: inEndToStart
                         };
                     };
 
@@ -643,24 +654,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                      * @param {Number} targetYear Year that is displayed / State to which to push animation
                      * @param {boolean} reverse
                      */
-                    this.setYear = function setYear(targetYear, reverse) {
+                    this.applyYear = function applyYear(targetYear, reverse, initialState) {
                         var offset = transitionTime;
 
                         // Adjust year so that it does not fall outwit animatable range
                         if (targetYear > this.yearFromTimestamp(periods[periods.length - 1])) {
-                            if (reverse) {
-                                targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
-                            } else {
-                                targetYear = this.yearFromTimestamp(periods[0]);
-                            }
+                            targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
                         } else if (targetYear < this.yearFromTimestamp(periods[0])) {
-                            if (reverse) {
                                 targetYear = this.yearFromTimestamp(periods[0]);
-                            } else {
-                                targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
-                            }
                         }
-
+                        var inEndToStart = false;
+                        if (initialState === false) {
+                            inEndToStart  = this.getStateRatio(reverse?false:true).inEndToStart;
+                        }
                         /**
                          * Caculate offset between requested year and year of background timestamp.
                          */
@@ -678,7 +684,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         if (reverse === false) {
                             for (var i = 0; i < periods.length - 1; i++) {
                                 var year = this.yearFromTimestamp(periods[i + 1]);
-                                if (year < targetYear) {
+                                if (year < targetYear || inEndToStart) {
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
@@ -686,9 +692,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                             start = new Date().getTime() - offset - 5;
                             offset = offset + backgroundYearOffset.apply(this);
                         } else {
+                            //taking into account fading between end and start in loop
+                            offset = offset + fadeTime + transitionTime;
                             for (var i = periods.length - 1; i > 0; i--) {
                                 var year = this.yearFromTimestamp(periods[i - 1]);
-                                if (targetYear < year) {
+                                if (targetYear < year || inEndToStart) {
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
