@@ -219,10 +219,19 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         provider.customParams.app = 'config';  // default print config
                     }
                     provider.customParams.lang = lang;
-                    // QRCode
+                    // QRCode, use print extent and not map extent
                     var paramsObject = OpenLayers.Util.getParameters(Ext.state.Manager.getProvider().getLink());
+                    var page = pages[0];
+                    if (page && page.center && page.scale && page.scale.data) {
+                        delete paramsObject.zoom;
+                        Ext.apply(paramsObject, {
+                           'X' : page.center.lat,
+                           'Y' : page.center.lon,
+                           'scale' :  page.scale.data.value
+                        })
+                    }
                     var params = OpenLayers.Util.getParameterString(paramsObject);
-                    var qrcodeurl = escape('http://map.geo.admin.ch/?'+params);
+                    var qrcodeurl = escape( (GeoAdmin.protocol || 'http:') + '//map.geo.admin.ch/?'+params);
                     provider.customParams.qrcodeurl = GeoAdmin.webServicesUrl + "/qrcodegenerator?url="+qrcodeurl;
                     provider.customParams.legends = [];
                     if (this.legendCheckbox.pressed == true) {
