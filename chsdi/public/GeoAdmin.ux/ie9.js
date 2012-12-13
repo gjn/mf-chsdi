@@ -59,24 +59,26 @@ Ext.dd.DragTracker.override({
        }
  });
 
-Ext.apply(Ext, {
-    /* Move cursor doesn't disappear within IE9  */
-    removeNode : Ext.isIE6 || Ext.isIE7 ? function(){
-        var d;
-        return function(n){
-            if(n && n.tagName != 'BODY'){
+if (Ext.isIE9) {
+    Ext.apply(Ext, {
+        /* Move cursor doesn't disappear within IE9  */
+        removeNode : Ext.isIE6 || Ext.isIE7 ? function(){
+            var d;
+            return function(n){
+                if(n && n.tagName != 'BODY'){
+                    (Ext.enableNestedListenerRemoval) ? Ext.EventManager.purgeElement(n, true) : Ext.EventManager.removeAll(n);
+                     d = d || DOC.createElement('div');
+                     d.appendChild(n);
+                     d.innerHTML = '';
+                     delete Ext.elCache[n.id];
+                }
+            };
+        }() : function(n){
+            if(n && n.parentNode && n.tagName != 'BODY'){
                 (Ext.enableNestedListenerRemoval) ? Ext.EventManager.purgeElement(n, true) : Ext.EventManager.removeAll(n);
-                 d = d || DOC.createElement('div');
-                 d.appendChild(n);
-                 d.innerHTML = '';
+                 n.parentNode.removeChild(n);
                  delete Ext.elCache[n.id];
             }
-        };
-    }() : function(n){
-        if(n && n.parentNode && n.tagName != 'BODY'){
-            (Ext.enableNestedListenerRemoval) ? Ext.EventManager.purgeElement(n, true) : Ext.EventManager.removeAll(n);
-             n.parentNode.removeChild(n);
-             delete Ext.elCache[n.id];
         }
-    }
-});
+    });
+}

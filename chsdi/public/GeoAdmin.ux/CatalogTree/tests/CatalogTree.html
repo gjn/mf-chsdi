@@ -739,7 +739,7 @@
                         children: [{
                             layerId: 'ch.swisstopo.fixpunkte-agnes'
                         }, {
-                            layerId: 'ch.swisstopo.fixpunkte-lage',
+                            layerId: 'ch.swisstopo.swissboundaries3d-land-flaeche.fill',
                             checked: true
                         }]
                     }]
@@ -748,7 +748,7 @@
                     checked: true
                 }]
             }, {
-                layerId: 'ch.swisstopo.fixpunkte-lage',
+                layerId: 'ch.swisstopo.swissboundaries3d-land-flaeche.fill',
                 checked: false
             }]};
 
@@ -771,13 +771,13 @@
 
             node = rootNode.children[1];
             link = cat.addtreeLayerLink(
-                'ch.swisstopo.fixpunkte-lage',
-                cat.id + '_node_ch.swisstopo.fixpunkte-lage2');
+                'ch.swisstopo.swissboundaries3d-land-flaeche.fill',
+                cat.id + '_node_ch.swisstopo.swissboundaries3d-land-flaeche.fill2');
             t.eq(node.text.indexOf(link), 0, '[2] text as expected');
             t.eq(node.leaf, true, '[2] leaf as expected');
             t.eq(node.checked, false, '[2] checked as expected');
             t.eq(node.cls, 'nodeLT1', '[2] cls as expected');
-            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-lage2',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.swissboundaries3d-land-flaeche.fill2',
                  '[2] id as expected');
 
             node = rootNode.children[0].children[0];
@@ -820,13 +820,13 @@
 
             node = rootNode.children[0].children[0].children[0].children[1];
             link = cat.addtreeLayerLink(
-                'ch.swisstopo.fixpunkte-lage',
-                cat.id + '_node_ch.swisstopo.fixpunkte-lage1');
+                'ch.swisstopo.swissboundaries3d-land-flaeche.fill',
+                cat.id + '_node_ch.swisstopo.swissboundaries3d-land-flaeche.fill1');
             t.eq(node.text.indexOf(link), 0, '[7] text as expected');
             t.eq(node.leaf, true, '[7] leaf as expected');
             t.eq(node.checked, true, '[7] checked as expected');
             t.eq(node.cls, 'nodeLT4', '[7] cls as expected');
-            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-lage1',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.swissboundaries3d-land-flaeche.fill1',
                  '[7] id as expected');
 
             map.destroy();

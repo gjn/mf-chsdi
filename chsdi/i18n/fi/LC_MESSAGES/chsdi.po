@@ -818,6 +818,12 @@ msgstr "LV95 Rait triangulara"
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
+msgid "ch.swisstopo.fixpunkte-hfp1"
+msgstr "Höhenfixpunkte HFP1"
+
+msgid "ch.swisstopo.fixpunkte-hfp2"
+msgstr "Höhenfixpunkte HFP2, HFP3"
+
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Puncts fixs altimetrics"
 
@@ -826,6 +832,12 @@ msgstr "Puncts fixs altimetrics"
 
 msgid "ch.swisstopo.fixpunkte-lage"
 msgstr "Puncts fixs planimetrics"
+
+msgid "ch.swisstopo.fixpunkte-lfp1"
+msgstr "Lagefixpunkte LFP1"
+
+msgid "ch.swisstopo.fixpunkte-lfp2"
+msgstr "Lagefixpunkte LFP2, LFP3"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Maximum da l'ultim temp da glatsch"

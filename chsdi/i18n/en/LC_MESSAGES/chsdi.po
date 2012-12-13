@@ -818,6 +818,12 @@ msgstr "LV95 Triangular network"
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
+msgid "ch.swisstopo.fixpunkte-hfp1"
+msgstr "Fixed height control points HFP1"
+
+msgid "ch.swisstopo.fixpunkte-hfp2"
+msgstr "Height control points HFP2, HFP3"
+
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Vertical control point"
 
@@ -826,6 +832,12 @@ msgstr "Vertical control point"
 
 msgid "ch.swisstopo.fixpunkte-lage"
 msgstr "Horizontal control points"
+
+msgid "ch.swisstopo.fixpunkte-lfp1"
+msgstr "Fixed plan control points LFP1"
+
+msgid "ch.swisstopo.fixpunkte-lfp2"
+msgstr "Plan. control points LFP2, LFP3"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Last glacial maximum"

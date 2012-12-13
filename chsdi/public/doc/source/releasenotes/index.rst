@@ -1,13 +1,29 @@
-Release 201212xx - Day, December xxth 2012
+Release 20121212 - Wednesday, December 12th 2012
 ====================================================
 
 Geodata
 ********
 
 
-+--------+------------------------------------------------------------------------------------------------------+
-| Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)                 |
-+--------+------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `Nuclear power plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                  |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `Fixed Control Points LFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp1>`__ (ch.swisstopo.fixpunkte-lfp1) |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `Control Points LFP2, LFP3 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp2>`__ (ch.swisstopo.fixpunkte-lfp2) |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `Fixed Control Points HFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp1>`__ (ch.swisstopo.fixpunkte-hfp1  |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    | `Control Points HFP2, HFP3 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp2>`__ (ch.swisstopo.fixpunkte-hfp2  |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map <//s.geo.admin.ch/6394b749>`__ (ch.kantone.cadastralwebmap-farbe)                                 |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Update | `ZIP and locations <//s.geo.admin.ch/a2bc6704>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                       |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Remove | `Horizontal control points replaced by 'Fixed Control Points LFP1' and 'Control Points LFP2, LFP3'`                  |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Remove | `Vertical control points replaced by 'Fixed Control Points HFP1' and 'Control Points HFP2, HFP3'`                    |
++--------+----------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
@@ -22,21 +38,27 @@ API
 -------------------------------------
 
 
-+--+--+
-|  |  |
-+--+--+
++--------+-----------------------------------------------------------------+
+| Bugfix | Slider drag in Internet Explorer                                |
++--------+-----------------------------------------------------------------+
+| Bugfix | Support opacity for voidLayer background layer                  |
++--------+-----------------------------------------------------------------+
+| Bugfix | Fix move cursor layout for Internet Explorer                    |
++--------+-----------------------------------------------------------------+
+| New    | Enable custom styleMap definition for GeoAdmin.Map vector layer |
++--------+-----------------------------------------------------------------+
 
-Bugfixing.
+Other minor bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
 
 
-+--+--+
-|  |  |
-+--+--+
++--------+----------------+
+| Update | Use Sencha 2.1 |
++--------+----------------+
 
-Bugfixing.
+Other minor bugfixing.
 
 Mapping Applications
 ********************
@@ -44,22 +66,12 @@ Mapping Applications
 `map.geo.admin.ch <http://map.geo.admin.ch>`__
 --------------------------------------------------
 
-
-+--+--+
-|  |  |
-+--+--+
-
 Bugfixing.
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
-
-+--+--+
-|  |  |
-+--+--+
-
-Bugfixing.
+Other minor bufixing.
 
 Other Applications
 ******************
@@ -69,11 +81,6 @@ Minor bug fixes, documentation and translation improvements.
 Information
 ***********
 The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
-
-
-
-
-
 
 Release 20121128 - Wednesday, November 28th 2012
 ================================================

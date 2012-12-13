@@ -1982,6 +1982,18 @@ msgstr ""
 msgid "No additional information for this object type"
 msgstr ""
 
+msgid "ch.swisstopo.fixpunkte-lfp1"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-lfp2"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-hfp1"
+msgstr ""
+
+msgid "ch.swisstopo.fixpunkte-hfp2"
+msgstr ""
+
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr ""
 

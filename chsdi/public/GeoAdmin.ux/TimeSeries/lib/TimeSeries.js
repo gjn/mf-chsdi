@@ -12,6 +12,7 @@
  *
  *  Paints a time axis from minYear to maxYear and allows to add sliders so that years or ranges can be selected.
  */
+
 GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     /** api: config[layerName]
      *  ``String`` Technical name of layer whose versions should be presented
@@ -126,7 +127,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         // Group consecutive years and retain only latest of each group
         this.timestamps = [];
         var lastYear = null;
-        timestampsAscending.forEach(function(timestamp) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timestampsAscending, function(timestamp) {
             var year = parseInt(timestamp.substring(0, 4), 10);
             if (lastYear === year) {
                 this.timestamps.pop();
@@ -161,7 +162,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
                 if (this.animationState) {
                     // Update offset of animation if already running
-                    this.animationState.setYear(this.animationSlider.getYear(), this.state.playDirection === "backwards");
+                    this.animationState.applyYear(this.animationSlider.getYear(), this.state.playDirection === "backwards", false);
                 }
             }, this);
         }
@@ -188,7 +189,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
 
         this.on("preloadingProgress", updatePreloadStatus, this);
-
         this.map.events.register('zoomend', this, this.changeStatusText);
 
         // Abort animation and preload when shown extent changes (due to zoom or move)
@@ -207,6 +207,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 handleExtentChanged.apply(this);
             }
         });
+
+        // Init status text
+        this.changeStatusText(this.map.zoom);
     },
 
     /** api: method[getState]
@@ -233,14 +236,18 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  Change the text on the right according to the zoom level
      */
     changeStatusText: function(e) {
-        var zoom = e.object.zoom;
-        var statusText = Ext.get(this.contentEl).child('.text-status');
+        var zoom = typeof e === "number" ? e : e.object.zoom;
+        var statusText = document.querySelectorAll('div.text-status');
+        var statusText_play = statusText[0];
+        var statusText_comp = statusText[1];
         var updateText = function(text) {
-            if (typeof(statusText.dom.textContent) === "string") {
-                statusText.dom.textContent = text;
+            if (typeof(statusText_play.textContent) === "string") {
+                statusText_play.textContent = text;
+                statusText_comp.textContent = text;
             } else {
                 // IE
-                statusText.dom.innerText = text;
+                statusText_play.innerText = text;
+                statusText_comp.innerText = text;
             }
         };
         switch (zoom) {
@@ -331,7 +338,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timestamp: foregroundTimestamp,
                     opacity: 1
                 });
-                timeseriesWidget.map.layers.forEach(function(l) {
+                GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timeseriesWidget.map.layers, function(l) {
                     if (l !== layer && this.isTimeSeriesLayer(l)) {
                         l.setOpacity(0);
                     }
@@ -359,7 +366,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timeseriesWidget.animationState = animationState;
 
                     // Play / Resume
-                    timeseriesWidget.animationState.setYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection === "backwards");
+                    timeseriesWidget.animationState.applyYear(timeseriesWidget.animationSlider.getYear(), timeseriesWidget.state.playDirection === "backwards", true);
                     timeseriesWidget.setAnimationTimer();
                 });
             }
@@ -398,7 +405,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      */
     getLayerForTimestamp: function(timestamp) {
         var timeseriesWidget = this;
-        return timeseriesWidget.map.layers.filter(function(layer) {
+        return GeoAdmin.TimeSeries.prototype.ArrayPrototypeFilter.call(timeseriesWidget.map.layers, function(layer) {
             return timeseriesWidget.isTimeSeriesLayer(layer) && layer.timestamp === timestamp;
         })[0];
     },
@@ -450,7 +457,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
 
         // Hide no longer needed layers (DOM tree modifications are deferred until no animation is going on for speed reasons)
-        timeseriesWidget.map.layers.forEach(function(layer) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(timeseriesWidget.map.layers, function(layer) {
             if (layer !== foreground && layer !== background && layer.layername === timeseriesWidget.layerName) {
                 layer.setOpacity(0);
             }
@@ -559,7 +566,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                  */
                 onCompletion(new (function AnimationStates(fadeTime, transitionTime, periods) {
                     var periodsLength = periods.length;
-                    var totalAnimationDuration = periodsLength * transitionTime + (periodsLength - 1) * fadeTime;
+                    var totalAnimationDuration = periodsLength * (transitionTime + fadeTime);
 
                     var start = new Date().getTime();
                     var pauseStart;
@@ -583,40 +590,48 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                      */
                     this.getStateRatio = function getStateRatio(reverse) {
                         if (reverse !== true && reverse !== false) {
-                            s
                             throw new Error("reverse must be a boolean");
                         }
 
                         var totalOffset = getTotalOffset();
-                        // Limit offset to period length in case of loops
                         var offset = totalOffset % totalAnimationDuration;
-                        var isLastState;
                         if (reverse) {
                             offset = totalAnimationDuration - offset;
-                            isLastState = totalOffset === 0;
-                        } else {
-                            isLastState = totalOffset > 0 && offset === 0;
                         }
+
                         var overlayOffset = offset % (fadeTime + transitionTime);
-                        var ratio;
+                        var ratio = 0;
                         if (overlayOffset <= transitionTime) {
                             state = "transitioning";
-                            if (transitionTime === 0) {
-                                ratio = 0;
-                            } else {
+                            if (transitionTime !== 0) {
                                 ratio = overlayOffset / transitionTime;
                             }
                         } else {
                             state = "fading";
                             ratio = (overlayOffset - transitionTime) / fadeTime;
                         }
-                        if (isLastState) {
-                            ratio = 1;
+
+                        var fgIndex = Math.floor(offset / (transitionTime + fadeTime));
+                        if (state === "fading") {
+                            fgIndex += 1;
                         }
-                        var foreground = isLastState ? periodsLength - 1 : Math.floor(offset / (transitionTime + fadeTime)) + (((offset % (transitionTime + fadeTime)) <= transitionTime) ? 0 : 1);
-                        state = (offset % (transitionTime + fadeTime)) <= transitionTime ? "transitioning" : "fading";
-                        var background = periods[(reverse && state === "fading") ? foreground : (foreground - 1)];
-                        foreground = periods[(reverse && state === "fading") ? (foreground - 1) : foreground];
+                        var bgIndex = fgIndex - 1;
+                        if (reverse && state === "fading") {
+                            bgIndex += 1;
+                            fgIndex -= 1;
+                        }
+                        var inEndToStart = false;
+                        if (bgIndex >= periodsLength) {
+                            bgIndex = 0;
+                            inEndToStart = true;
+                        }
+                        if (fgIndex >= periodsLength) {
+                            fgIndex = 0;
+                            inEndToStart = true;
+                        }
+
+                        var background = periods[bgIndex];
+                        var foreground = periods[fgIndex];
                         ratio = reverse ? 1 - ratio : ratio;
                         return {
                             // Timestamp of foreground layer such as 19891231
@@ -628,7 +643,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                             // Progress between foreground and background layer (equals opacity of foreground in case of linear easing)
                             ratio: ratio,
                             // Interpolated year (interpolated in between the visualized timestamps being currently faded)
-                            year: (state === "transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio)
+                            year: (state === "transitioning") ? this.yearFromTimestamp(foreground) : this.interpolateYears(background, foreground, ratio),
+                            // indicate if we are between end and start
+                            inEndToStart: inEndToStart
                         };
                     };
 
@@ -637,24 +654,19 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                      * @param {Number} targetYear Year that is displayed / State to which to push animation
                      * @param {boolean} reverse
                      */
-                    this.setYear = function setYear(targetYear, reverse) {
+                    this.applyYear = function applyYear(targetYear, reverse, initialState) {
                         var offset = transitionTime;
 
                         // Adjust year so that it does not fall outwit animatable range
                         if (targetYear > this.yearFromTimestamp(periods[periods.length - 1])) {
-                            if (reverse) {
-                                targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
-                            } else {
-                                targetYear = this.yearFromTimestamp(periods[0]);
-                            }
+                            targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
                         } else if (targetYear < this.yearFromTimestamp(periods[0])) {
-                            if (reverse) {
                                 targetYear = this.yearFromTimestamp(periods[0]);
-                            } else {
-                                targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
-                            }
                         }
-
+                        var inEndToStart = false;
+                        if (initialState === false) {
+                            inEndToStart  = this.getStateRatio(reverse?false:true).inEndToStart;
+                        }
                         /**
                          * Caculate offset between requested year and year of background timestamp.
                          */
@@ -672,7 +684,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         if (reverse === false) {
                             for (var i = 0; i < periods.length - 1; i++) {
                                 var year = this.yearFromTimestamp(periods[i + 1]);
-                                if (year < targetYear) {
+                                if (year < targetYear || inEndToStart) {
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
@@ -680,9 +692,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                             start = new Date().getTime() - offset - 5;
                             offset = offset + backgroundYearOffset.apply(this);
                         } else {
+                            //taking into account fading between end and start in loop
+                            offset = offset + fadeTime + transitionTime;
                             for (var i = periods.length - 1; i > 0; i--) {
                                 var year = this.yearFromTimestamp(periods[i - 1]);
-                                if (targetYear < year) {
+                                if (targetYear < year || inEndToStart) {
                                     offset = offset + fadeTime + transitionTime;
                                 }
                             }
@@ -735,7 +749,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             compareMin = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMin.getYear()));
             compareMax = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMax.getYear()));
         }
-        this.map.layers.slice(0).forEach(function(layer) {
+        GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(this.map.layers.slice(0), function(layer) {
             if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer!==compareMin && layer!==compareMax) {
                 this.map.removeLayer(layer);
             }
@@ -760,7 +774,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 // Failed to get periods from server, don't proceed with preloading
                 return;
             }
-            animationPeriods.forEach(function(ts) {
+            GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(animationPeriods, function(ts) {
                 if (parseInt(ts.substring(0, 4), 10) <= year) {
                     timestamp = ts;
                 }
@@ -782,7 +796,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
 
             var timestampShown = timeseriesWidget.findTimestampNoLaterThan(year);
-            var shownLayer = timeseriesWidget.map.layers.filter(
+            var shownLayer = GeoAdmin.TimeSeries.prototype.ArrayPrototypeFilter.call(timeseriesWidget.map.layers,
                 function(layer) {
                     return timeseriesWidget.isTimeSeriesLayer(layer) && (layer.opacity > 0 && layer.getVisibility());// && layer.timestamp===timestampShown;
                 }).pop();
@@ -794,7 +808,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 shownLayer.events.register("loadend", timeseriesWidget, function() {
                     var indexOfShown = animationPeriods.indexOf(timestamp);
                     var lowPrio = animationPeriods.splice(0, indexOfShown);
-                    lowPrio.forEach(function(preloadTimestamp) {
+                    GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(lowPrio, function(preloadTimestamp) {
                         animationPeriods.push(preloadTimestamp);
                     });
                     //console.log("animationPeriods: "+animationPeriods);
@@ -1021,6 +1035,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
             }
+            if(newlyActiveTab.contentEl === "informationTab" && playPeriod.sliders.length === 0 && comparePeriod.sliders.length === 0) {
+                timeseriesWidget.showYearInAnimationMode(timeseriesWidget.state.animationSlider);
+            }
 
             // Restore old view on tab change
             if (newlyActiveTab.contentEl === "playTab") {
@@ -1071,7 +1088,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             if (firstAddedLayer) {
                 firstAddedLayer.events.unregister('loadend', this, discard);
             }
-            pendingForDiscard.forEach(function(layer) {
+            GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(pendingForDiscard, function(layer) {
                 if (!(layer instanceof OpenLayers.Layer.Vector) && timeseriesWidget.map.layers.indexOf(layer) >= 0 && layer.layername !== "voidLayer") {
                     timeseriesWidget.map.removeLayer(layer);
                 }
@@ -1098,6 +1115,84 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         } else {
             return (1 - Math.cos((p * -2 + 2) * Math.PI / 2)) / -2 + 1;
         }
+    },
+    
+    ArrayPrototypeForEach: Array.prototype.forEach || function forEach( callback, thisArg ) {
+        var T, k;
+    
+        if ( this == null ) {
+        throw new TypeError( "this is null or not defined" );
+        }
+    
+        // 1. Let O be the result of calling ToObject passing the |this| value as the argument.
+        var O = Object(this);
+    
+        // 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".
+        // 3. Let len be ToUint32(lenValue).
+        var len = O.length >>> 0; // Hack to convert O.length to a UInt32
+    
+        // 4. If IsCallable(callback) is false, throw a TypeError exception.
+        // See: http://es5.github.com/#x9.11
+        if ( {}.toString.call(callback) !== "[object Function]" ) {
+        throw new TypeError( callback + " is not a function" );
+        }
+    
+        // 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
+        if ( thisArg ) {
+        T = thisArg;
+        }
+    
+        // 6. Let k be 0
+        k = 0;
+    
+        // 7. Repeat, while k < len
+        while( k < len ) {
+    
+        var kValue;
+    
+        // a. Let Pk be ToString(k).
+        //   This is implicit for LHS operands of the in operator
+        // b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
+        //   This step can be combined with c
+        // c. If kPresent is true, then
+        if ( Object.prototype.hasOwnProperty.call(O, k) ) {
+    
+            // i. Let kValue be the result of calling the Get internal method of O with argument Pk.
+            kValue = O[ k ];
+    
+            // ii. Call the Call internal method of callback with T as the this value and
+            // argument list containing kValue, k, and O.
+            callback.call( T, kValue, k, O );
+        }
+        // d. Increase k by 1.
+        k++;
+        }
+        // 8. return undefined
+    },
+    ArrayPrototypeFilter: Array.prototype.filter || function(fun /*, thisp */) {
+        "use strict";
+    
+        if (this == null)
+        throw new TypeError();
+    
+        var t = Object(this);
+        var len = t.length >>> 0;
+        if (typeof fun != "function")
+        throw new TypeError();
+    
+        var res = [];
+        var thisp = arguments[1];
+        for (var i = 0; i < len; i++)
+        {
+        if (i in t)
+        {
+            var val = t[i]; // in case fun mutates this
+            if (fun.call(thisp, val, i, t))
+            res.push(val);
+        }
+        }
+    
+        return res;
     }
 });
 
