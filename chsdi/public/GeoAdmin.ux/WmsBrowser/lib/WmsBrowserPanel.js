@@ -200,6 +200,16 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
         this.currentUrl = url;
         var urlDomain = this.getHostname(url);
         var params = OpenLayers.Util.getParameterString(this.capabilitiesParams);
+        if (urlDomain.indexOf("admin.ch") !== -1) {
+            var langCode = OpenLayers.Lang.getCode();
+            if (langCode === "rm")
+                langCode = "de";
+            if (!langCode ||
+                (langCode !== "de" && langCode !== "en" && langCode !== "it" && langCode !== "fr")) {
+                langCode = "de";
+            }
+            params += ("&lang=" + langCode);
+        }
         url = OpenLayers.Util.urlAppend(url, params);
         if (OpenLayers.ProxyHost && OpenLayers.String.startsWith(url, "http")) {
             url = OpenLayers.ProxyHost + encodeURIComponent(url);

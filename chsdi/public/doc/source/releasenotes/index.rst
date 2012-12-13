@@ -1,3 +1,68 @@
+Release 201301xx - Day, January xxth 2013
+====================================================
+
+Geodata
+********
+
+
++--------+----------------------------------------------------------------------------------------------------------------------+
+| New    |                 |
++--------+----------------------------------------------------------------------------------------------------------------------+
+| Remove |                     |
++--------+----------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API:
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+
++-----+----------------------------------------------------------------------------------------+
+| New | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers |
++-----+----------------------------------------------------------------------------------------+
+
+Other minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+
++--------+----------------+
+| Update |  |
++--------+----------------+
+
+Other minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Other minor bufixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+
 Release 20121212 - Wednesday, December 12th 2012
 ====================================================
 
