@@ -47,9 +47,9 @@
             <tr><td valign="top" width="30%">${_('tt_kkw_reactor_type')}</td><td width="70">${type[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_cooling_type')}</td><td width="70">${cooling[x] or '-'}</td></tr>
             </td><td>&nbsp;</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'}</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'} MW</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'} MWe</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'} MWe</td></tr>
             </td><td>&nbsp;</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_contruction')}</td><td width="70">${contruction[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_commissioning')}</td><td width="70">${commissioning[x] or '-'}</td></tr>
@@ -98,9 +98,9 @@
             <tr><td valign="top" width="30%">${_('tt_kkw_reactor_type')}</td><td width="70">${type[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_cooling_type')}</td><td width="70">${cooling[x] or '-'}</td></tr>
             </td><td>&nbsp;</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'}</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'} MW</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'} MWe</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'} MWe</td></tr>
             </td><td>&nbsp;</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_contruction')}</td><td width="70">${contruction[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_commissioning')}</td><td width="70">${commissioning[x] or '-'}</td></tr>
@@ -149,9 +149,9 @@
             <tr><td valign="top" width="30%">${_('tt_kkw_reactor_type')}</td><td width="70">${type[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_cooling_type')}</td><td width="70">${cooling[x] or '-'}</td></tr>
             </td><td>&nbsp;</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'}</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'} MW</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'} MWe</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'} MWe</td></tr>
             </td><td>&nbsp;</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_contruction')}</td><td width="70">${contruction[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_commissioning')}</td><td width="70">${commissioning[x] or '-'}</td></tr>
@@ -200,9 +200,9 @@
             <tr><td valign="top" width="30%">${_('tt_kkw_reactor_type')}</td><td width="70">${type[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_cooling_type')}</td><td width="70">${cooling[x] or '-'}</td></tr>
             </td><td>&nbsp;</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'}</td></tr>
-            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'}</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_nominalthermaloutput')}</td><td width="70">${nominalthermaloutput[x] or '-'} MW</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_grosseloutput')}</td><td width="70">${grosseloutput[x] or '-'} MWe</td></tr>
+            <tr><td valign="top" width="30%">${_('tt_kkw_neteloutput')}</td><td width="70">${neteloutput[x] or '-'} MWe</td></tr>
             </td><td>&nbsp;</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_contruction')}</td><td width="70">${contruction[x] or '-'}</td></tr>
             <tr><td valign="top" width="30%">${_('tt_kkw_commissioning')}</td><td width="70">${commissioning[x] or '-'}</td></tr>
@@ -218,4 +218,5 @@
      </td><td>&nbsp;</td></tr>
 </table>
 <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_kkw/plant${c.feature.id}.jpg" alt="" width="635px" />
+Bild copyright ENSI
 </%def>
