@@ -744,7 +744,7 @@
                         }]
                     }]
                 }, {
-                    layerId: 'ch.swisstopo.fixpunkte-hoehe',
+                    layerId: 'ch.swisstopo.fixpunkte-lfp2_wmts',
                     checked: true
                 }]
             }, {
@@ -790,13 +790,13 @@
 
             node = rootNode.children[0].children[1];
             link = cat.addtreeLayerLink(
-                'ch.swisstopo.fixpunkte-hoehe',
-                cat.id + '_node_ch.swisstopo.fixpunkte-hoehe1');
+                'ch.swisstopo.fixpunkte-lfp2_wmts',
+                cat.id + '_node_ch.swisstopo.fixpunkte-lfp2_wmts1');
             t.eq(node.text.indexOf(link), 0, '[4] text as expected');
             t.eq(node.leaf, true, '[4] leaf as expected');
             t.eq(node.checked, true, '[4] checked as expected');
             t.eq(node.cls, 'nodeLT2', '[4] cls as expected');
-            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-hoehe1',
+            t.eq(node.id, cat.id + '_node_ch.swisstopo.fixpunkte-lfp2_wmts1',
                  '[4] id as expected');
 
             node = rootNode.children[0].children[0].children[0];

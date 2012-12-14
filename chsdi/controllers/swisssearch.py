@@ -16,7 +16,6 @@ from mapfish.decorators import MapFishEncoder, _jsonify
 from chsdi.lib.base import BaseController, cacheable
 from chsdi.model.swisssearch import SwissSearch
 from chsdi.model.meta import Session
-from chsdi.controllers.feature import query_features
 from paste.deploy.converters import asbool
 from pylons.i18n import set_lang
 
@@ -133,6 +132,7 @@ class SwisssearchController(BaseController):
         maxFeaturesGeocoding = MAX_FEATURES_GEOCODING
  
         if layers:
+           from chsdi.controllers.feature import query_features
            maxFeaturesGeocoding = MAX_FEATURES_GEOCODING - 10
            features = list(query_features(self.lang, layers, q))
            allfeatures = list(self.getLayerFeatures(features))

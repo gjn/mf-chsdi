@@ -50,12 +50,12 @@
                 callback(["19381231", "19411231", "19511231", "19531231", "19571231", "19581231", "19691231", "19701231", "19761231", "19811231", "19871231", "19931231", "19981231", "19991231", "20061231", "20071231"]);
             };
             timeseriesWidget.initAnimationState(function(animationState){
-                animationState.setYear(1938, false);
+                animationState.applyYear(1938, false);
                 var state = animationState.getStateRatio(false);
                 t.eq(state.foreground, "19381231", "Foreground correct");
                 t.eq(state.year, 1938, "Initial year correct");
                 
-                animationState.setYear(1944, false);
+                animationState.applyYear(1944, false);
                 setTimeout(function(){
                     var state = animationState.getStateRatio(false);
                     t.eq(state.state, "fading", "Animation state correct");
@@ -65,7 +65,7 @@
                     t.ok(state.year>=1944 && state.year<=1951, "Year is in expected range");
                     
                     // Check reverse playing
-                    animationState.setYear(1999, true);
+                    animationState.applyYear(1999, true);
                     setTimeout(function(){
                         var state = animationState.getStateRatio(true);
                         t.eq(state.state, "fading", "Animation state correct");
@@ -113,7 +113,7 @@
             <div class="timeseriesWidget-controls">
                 <div class="timeseriesWidget-controls-left">${_('Adjust opacity')}</div>
                 <div class="timeseriesWidget-controls-center"><div id="compareTabOpacitySlider"></div></div>
-                <div class="timeseriesWidget-controls-right"></div>
+                <div class="timeseriesWidget-controls-right text-status"></div>
             </div>
         </div>
         <div id="informationTab"></div>
