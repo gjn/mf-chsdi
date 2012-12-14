@@ -213,8 +213,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
                     provider.customParams.date = date.getDate().toString() + '.' + (date.getMonth()+1).toString() + '.' + date.getFullYear().toString(); 
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
-                    if (GeoAdmin.project) {
-                        provider.customParams.app = GeoAdmin.project;
+                    if (GeoAdmin.topic) {
+                        provider.customParams.app = GeoAdmin.topic;
                     } else {
                         provider.customParams.app = 'config';  // default print config
                     }

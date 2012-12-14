@@ -182,9 +182,9 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
         if (current_lang) {
             params.lang = current_lang;
         }
-        var current_project = GeoAdmin.project;
-        if (current_project) {
-            params.project = current_project;
+        var current_topic = GeoAdmin.topic;
+        if (current_topic) {
+            params.topic = current_topic;
         }
 
         // merge params in the URL into the state params
