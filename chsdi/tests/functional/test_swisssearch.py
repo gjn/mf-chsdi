@@ -176,7 +176,7 @@ class TestSwisssearchController(TestController):
 
     def test_attributes(self):
         params = {
-             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
              'query': 'BE0100000001972'
         }
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
@@ -202,7 +202,7 @@ class TestSwisssearchController(TestController):
 
     def test_attributes_raw(self):
         params = {
-             'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+             'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
              'query': 'BE0100000001972',
              'format': 'raw'
         }
@@ -228,7 +228,7 @@ class TestSwisssearchController(TestController):
 
     def test_attributes_cb(self):
          params = {
-           'layers': 'ch.swisstopo.fixpunkte-hoehe,ch.swisstopo.fixpunkte-lage',
+           'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
            'query': 'BE0100000001972',
            'cb': 'Ext.ux.JSONP'
          }
