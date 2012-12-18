@@ -151,6 +151,17 @@ class Bauzonen(Base, Queryable):
 
 register('ch.are.bauzonen-2007', Bauzonen)
 
+class Bauzonen_2012(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'bauzonen_2012'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/bauzonen_2012.mako'
+
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.bauzonen', Bauzonen_2012)
+
 class Reisezeit_Miv(Base, Queryable):
     # view in a schema
     __tablename__ = 'reisezeit_miv_2005'
@@ -170,3 +181,14 @@ class Gemeindetyp(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.are.gemeindetyp-1990-9klassen', Gemeindetyp)
+
+class Gemeindetypen_2012(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'gemeindetypologie_2012'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': True})
+    __template__ = 'tooltips/gemeindetypen_2012.mako'
+
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.are.gemeindetypen', Gemeindetypen_2012)
