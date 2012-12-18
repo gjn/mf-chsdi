@@ -443,6 +443,9 @@ msgstr "Agglomeration and isolated cities"
 msgid "ch.are.alpenkonvention"
 msgstr "Alpine Convention"
 
+msgid "ch.are.bauzonen"
+msgstr "Building zones Switzerland (harm.)"
+
 msgid "ch.are.bauzonen-2007"
 msgstr "Bauzonen Schweiz 2007"
 
@@ -465,6 +468,9 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Bevölkerungsdichte 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
+msgstr "Typology of municipalities ARE"
+
+msgid "ch.are.gemeindetypen"
 msgstr "Typology of municipalities ARE"
 
 msgid "ch.are.gueteklassen_oev"
@@ -2148,6 +2154,30 @@ msgstr "Very weak"
 msgid "tt_bakom_weak"
 msgstr "Weak"
 
+msgid "tt_bauzonen_CH_BEZ_D"
+msgstr "Primary assignment"
+
+msgid "tt_bauzonen_CH_BEZ_F"
+msgstr "Primary assignment"
+
+msgid "tt_bauzonen_CH_Code_HN"
+msgstr "Code primary assignment"
+
+msgid "tt_bauzonen_FLAECHE"
+msgstr "Surface (m2)"
+
+msgid "tt_bauzonen_gemeindetypen_BFS_NO"
+msgstr "FSO nummer"
+
+msgid "tt_bauzonen_gemeindetypen_KT_KZ"
+msgstr "Kanton"
+
+msgid "tt_bauzonen_gemeindetypen_KT_NO"
+msgstr "Kanton nummer"
+
+msgid "tt_bauzonen_gemeindetypen_NAME"
+msgstr "Commune"
+
 msgid "tt_bazl_abortion"
 msgstr "Abortion accomplished"
 
@@ -2459,6 +2489,21 @@ msgstr "Von m."
 
 msgid "tt_freqchan"
 msgstr "Frequency / TV-channel"
+
+msgid "tt_gemeindetypen_FLAECHE_HA"
+msgstr "Surface (ha)"
+
+msgid "tt_gemeindetypen_TYP_BEZ_D"
+msgstr "ARE commune type"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "ARE commune type"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "ARE commune type"
+
+msgid "tt_gemeindetypen_TYP_CODE"
+msgstr "Code type of commune"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Municipality"

@@ -879,6 +879,9 @@ msgstr ""
 msgid "ch.are.bauzonen-2007"
 msgstr ""
 
+msgid "ch.are.bauzonen"
+msgstr ""
+
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr ""
 
@@ -1979,6 +1982,45 @@ msgstr ""
 msgid "Wald"
 msgstr ""
 
+msgid "tt_bauzonen_gemeindetypen_BFS_NO"
+msgstr ""
+
+msgid "tt_bauzonen_CH_BEZ_D"
+msgstr ""
+
+msgid "tt_bauzonen_CH_BEZ_F"
+msgstr ""
+
+msgid "tt_bauzonen_CH_Code_HN"
+msgstr ""
+
+msgid "tt_bauzonen_FLAECHE"
+msgstr ""
+
+msgid "tt_bauzonen_gemeindetypen_KT_KZ"
+msgstr ""
+
+msgid "tt_bauzonen_gemeindetypen_KT_NO"
+msgstr ""
+
+msgid "tt_bauzonen_gemeindetypen_NAME"
+msgstr ""
+
+msgid "tt_gemeindetypen_FLAECHE_HA"
+msgstr ""
+
+msgid "tt_gemeindetypen_TYP_CODE"
+msgstr ""
+
+msgid "tt_gemeindetypen_TYP_BEZ_D"
+msgstr ""
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr ""
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr ""
+
 msgid "No additional information for this object type"
 msgstr ""
 
@@ -2004,6 +2046,9 @@ msgid "ch.are.alpenkonvention"
 msgstr ""
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
+msgstr ""
+
+msgid "ch.are.gemeindetypen"
 msgstr ""
 
 msgid "ch.astra.ausnahmetransportrouten"

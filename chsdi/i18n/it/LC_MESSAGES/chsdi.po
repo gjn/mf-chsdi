@@ -443,6 +443,9 @@ msgstr "Agglomerati e cittá isolate"
 msgid "ch.are.alpenkonvention"
 msgstr "Convenzione delle alpi"
 
+msgid "ch.are.bauzonen"
+msgstr "Zone edificabili Svizzera (armon.)"
+
 msgid "ch.are.bauzonen-2007"
 msgstr "Zone edificabili Svizzera 2007"
 
@@ -465,6 +468,9 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
+msgstr "Tipologia dei comuni ARE"
+
+msgid "ch.are.gemeindetypen"
 msgstr "Tipologia dei comuni ARE"
 
 msgid "ch.are.gueteklassen_oev"
@@ -2147,6 +2153,30 @@ msgstr "Molto debole"
 msgid "tt_bakom_weak"
 msgstr "Debole"
 
+msgid "tt_bauzonen_CH_BEZ_D"
+msgstr "Uso principale"
+
+msgid "tt_bauzonen_CH_BEZ_F"
+msgstr "Uso principale"
+
+msgid "tt_bauzonen_CH_Code_HN"
+msgstr "Codice dell'uso principale"
+
+msgid "tt_bauzonen_FLAECHE"
+msgstr "Superficie (m2)"
+
+msgid "tt_bauzonen_gemeindetypen_BFS_NO"
+msgstr "Numero UFS"
+
+msgid "tt_bauzonen_gemeindetypen_KT_KZ"
+msgstr "Cantone"
+
+msgid "tt_bauzonen_gemeindetypen_KT_NO"
+msgstr "Numero del cantone"
+
+msgid "tt_bauzonen_gemeindetypen_NAME"
+msgstr "Comune"
+
 msgid "tt_bazl_abortion"
 msgstr "Eliminazione effettuata"
 
@@ -2459,6 +2489,21 @@ msgstr "Début tronçon (m)"
 
 msgid "tt_freqchan"
 msgstr "Frequenza / Canale TV"
+
+msgid "tt_gemeindetypen_FLAECHE_HA"
+msgstr "Superficie (ha)"
+
+msgid "tt_gemeindetypen_TYP_BEZ_D"
+msgstr "Tipo di comune ARE"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "Tipo di comune ARE"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "Tipo di comune ARE"
+
+msgid "tt_gemeindetypen_TYP_CODE"
+msgstr "Codice del tipo di comune"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Comune"
