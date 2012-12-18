@@ -3389,6 +3389,28 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+			  "ch.are.bauzonen": {
+                name: OpenLayers.i18n("ch.are.bauzonen"),
+                layers: ["ch.are.bauzonen"],
+                layertype: "wmts",
+				timestamp: ['20120101'],
+                type: "polygon",
+                format: "image/png",
+				opacity: 0.40,
+				queryable: true,
+                datenherr: "ch.are"
+				},
+			"ch.are.gemeindetypen": {
+                name: OpenLayers.i18n("ch.are.gemeindetypen"),
+                layers: ["ch.are.gemeindetypen"],
+                layertype: "wmts",
+				timestamp: ['20120101'],
+                type: "polygon",
+                format: "image/png",
+				opacity: 0.40,
+				queryable: true,
+                datenherr: "ch.are"
+				},
             "org.epsg.grid_21781": {
                 name: OpenLayers.i18n("org.epsg.grid_21781"),
                 layers: ["org.epsg.grid_21781"],
