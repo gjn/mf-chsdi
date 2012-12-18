@@ -469,6 +469,16 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
             }
             that.$slideOverlay.show();
             that.isOpen = true;
+            that.$slidePanel.css({
+                'height': that.windowHeight
+            });
+            that.$slideContent.css({
+                'height': that.windowHeight
+            });
+            that.$slideContentFrame.css({
+                 'height': that.windowHeight
+             });
+            document.getElementById('mapIframe').style.height = that.windowHeight +"px";
         };
 
         this.closeSlider = function () {
