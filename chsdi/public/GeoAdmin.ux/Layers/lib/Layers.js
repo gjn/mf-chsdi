@@ -788,16 +788,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-//            "ch.swisstopo.transformationsgenauigkeit": {
-//                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
-//                layertype: 'wmts',
-//                timestamp: ['20061231'],
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.swisstopo",
-//                hasLegend: false,
-//                queryable: false
-//            },
+            "ch.swisstopo.transformationsgenauigkeit": {
+                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20100531'],
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.swisstopo.treasurehunt": {
                 name: OpenLayers.i18n("ch.swisstopo.treasurehunt"),
                 layertype: 'wmts',
