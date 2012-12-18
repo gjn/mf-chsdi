@@ -357,6 +357,7 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
     $(document).ready(function() {
         'use strict';
         var that = this;
+        this.srcUrl = 'http://map.swisstopo.admin.ch/';
 
         // Hier werden die Selektoren für die Klick-Events erstellt.
         this.$slideOpen = $('.slidePanel a.open');
@@ -407,7 +408,7 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
         // Hier werden die drei verschiedenen Klick events verarbeitet.
         this.$slideOpen.bind('click', function(e) {
             e.preventDefault();
-            var iframeUrl = 'http://mf-swisstopo0i.bgdi.admin.ch/';
+            var iframeUrl = that.srcUrl;
             // Hier muss die URL des iFrame angegeben werden, die dann der Funktion "openSlider" mitgegeben wird.
             that.openSlider(iframeUrl);
         });
@@ -459,39 +460,30 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
             that.isOpen = false;
         };
 
-        // Hier wird der Permalink verarbeitet.
-        var url = $(location).attr('href');
-        var checkUrl = window.location.search.substring(17);
-
-        if(checkUrl.indexOf('?') > -1) {
-            var checkUrlParameter = checkUrl.split('?'),
-                checkUrlParamterFinal = checkUrlParameter[0];
-        } else {
-            var checkUrlParamterFinal = url;
-        }
-
-        // Mit dieser Abfrage wird gewährleistet, dass nur URL's mit dem String "admin" verarbeitet werden.
-        // Es ist also nicht möglich in der "src" den Wert http://www.google.ch mitzugeben
-        if (checkUrlParamterFinal.indexOf('admin') > -1) {
-
-            var split1 = url.split('?'),
-//          flyoutSrc = split1[1] + '?' + split1[2],
-            split2 = flyoutSrc.split('&'),
-            flyout = split2[0],
-            split3 = flyout.split('='),
-            isTrue = split3[1];
-            src = split2[1] + '&' + split2[2] + '&' + split2[3] + '&' + split2[4] + '&' + split2[5],
-//          split4 = src.split('=');
-//          this.srcUrl = split4[1] + '=' + split4[2] + '=' + split4[3] + '=' + split4[4] + '=' + split4[5] + '=' + split4[6];
-						this.srcUrl = split2[1].slice(4);
-						for (i=2; i < split2.length; i++) {
-   					this.srcUrl += '&' + split2[i];
-						}
-
-
-            if (isTrue === 'true') {
-                this.openSlider(this.srcUrl);
+        // Permalink treatment
+        var Request = { 
+           parameter: function(name) {
+              return this.parameters()[name];
+           },                       
+           parameters: function() {
+              var result = {};
+              var url = window.location.href;
+              var parameters = url.slice(url.indexOf('?') + 1).split('&');
+                                                                            
+              for(var i = 0;  i < parameters.length; i++) {
+                 var parameter = parameters[i].split('=');
+                 result[parameter[0]] = parameter[1];
+              }
+              return result;
             }
+        }
+        // Get the flyoutPermalink parameter
+        var flyoutPermalink = Request.parameter('flyoutPermalink');
+        if (flyoutPermalink===undefined) {
+            // Nothing to do
+        } else {
+            this.srcUrl = this.srcUrl + '?' + decodeURI(flyoutPermalink);
+            this.openSlider(this.srcUrl);
         }
 
     });
