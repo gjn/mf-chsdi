@@ -123,6 +123,7 @@
             var tables, format, map_list, url;
             window.GeoAdmin.OpenLayersImgPath="/${c.instanceid}/wsgi/GeoAdmin.ux/Map/img/";
             OpenLayers.Lang.setCode('de');
+            OpenLayers.DOTS_PER_INCH = 96;
             tables = document.querySelectorAll('div.features');
             format = new OpenLayers.Format.GeoJSON({ignoreExtraDims: true});
             map_list = []; 
@@ -160,27 +161,22 @@
                         bounds = new OpenLayers.Bounds(dico[fid]);
                         map = new GeoAdmin.Map('divmap' + fid, { 
                             restrictedExtent: bounds,
-                            ratio: 1
+                            ratio: 1,
+                            resolutions: [26.0]
                         });
                         // Remove zoom control
                         navControl = map.getControlsByClass('OpenLayers.Control.Navigation')[0];
                         navControl.destroy();
 
-                        map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', { opacity: 1 });
+                        map.switchComplementaryLayer('voidLayer', { opacity: 1 });
+                        var pk = new OpenLayers.Layer.WMS("PK 100","http://wms.geo.admin.ch/?lang=xx",{layers: 'ch.swisstopo.pixelkarte-grau-pk100_bazl',format: "image/png"}, {ratio: 1, singleTile: true});
+                        map.addLayer(pk);
                         map.addLayerByName('org.epsg.grid_21781', { ratio: 1 });
                         map.addLayerByName('org.epsg.grid_4326', { ratio: 1 });
                         map.addLayerByName('ch.bazl.luftfahrthindernis', { ratio: 1 } );
         
-                        if (bounds.left === bounds.right) {
-                            center = bounds.getCenterLonLat();
-                            map.setCenter(center, 6);
-                        } else {
-                            map.zoomToExtent(bounds);
-                            // Object might be too small (default zoom set to 7)
-                            if (map.getZoom() > 6) {
-                                map.zoomTo(6);
-                            }
-                        }
+                        center = bounds.getCenterLonLat();
+                        map.setCenter(center);
                         map.addLayer(layer);
                         
                     },
