@@ -54,8 +54,8 @@ RewriteRule ^/${vars:instanceid}/wsgi/legend/(.*)$   ${buildout:directory}/chsdi
 RewriteRule ^${vars:apache-entry-point}legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
 
 # cached urls:
-RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|demo)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
-<LocationMatch /[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux|demo)>
+RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+<LocationMatch /[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux)>
     ExpiresDefault "now plus 1 year"
     Header merge Cache-Control "public"
 </LocationMatch>
