@@ -1047,24 +1047,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-vernaessung"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-vernaessung"
                     }
                 ]
             },
@@ -1141,24 +1141,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
                     },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-vernaessung"
-//                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-vernaessung"
+                    },
                     {
                         layerId: "ch.blw.bewaesserungsbeduerftigkeit"
                     },

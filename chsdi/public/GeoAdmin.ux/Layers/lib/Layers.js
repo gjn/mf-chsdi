@@ -2618,6 +2618,66 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.blw.bodeneignung-gruendigkeit": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-gruendigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-skelettgehalt": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-skelettgehalt"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-wasserspeichervermoegen": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-wasserspeichervermoegen"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-naehrstoffspeichervermoegen": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-naehrstoffspeichervermoegen"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-wasserdurchlaessigkeit": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-wasserdurchlaessigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-vernaessung": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-vernaessung"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.blw.bergprodukte": {
                 name: OpenLayers.i18n("ch.blw.bergprodukte"),
                 layertype: 'wmts',
