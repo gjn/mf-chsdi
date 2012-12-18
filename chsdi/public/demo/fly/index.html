@@ -381,22 +381,34 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
 
         // Hier wird die aktuelle Breite des Browserfensters geladen.
         this.windowWidth = $(window).width();
+        this.windowHeight = $(window).height();
 
         // Hier wird der rechte Abstand beim ersten Laden der Seite gesetzt.
         this.$slidePanel.css({
             'right': -341 + 'px'
         });
 
+
         // Hier werden die Breiten des geschlossenen Sliders nach Änderung der Fensterbreite gesetzt.
         $(window).resize(function() {
             that.windowWidth = ($(window).width());
-
+            that.windowHeight = ($(window).height());
+            //console.log(that.windowHeight);
             if (that.isOpen === true) {
                 that.$slidePanel.css({
                     'width': that.windowWidth,
-                    'right': - that.windowWidth + 960 + 'px'
+                    'right': - that.windowWidth + 960 + 'px',
+                    'height': that.windowHeight
                 });
-                that.$slideContent.css('width', that.windowWidth - 38 + 'px');
+                that.$slideContent.css({
+                    'width': that.windowWidth - 38 + 'px',
+                    'height': that.windowHeight
+                });
+                that.$slideContentFrame.css({
+                    'width': that.windowWidth - 38 + 'px',
+                    'height': that.windowHeight
+                });
+                document.getElementById('mapIframe').style.height = that.windowHeight +"px";
             } else {
                 that.$slidePanel.css({
                     'right': -341 + 'px'
@@ -411,6 +423,20 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
             var iframeUrl = that.srcUrl;
             // Hier muss die URL des iFrame angegeben werden, die dann der Funktion "openSlider" mitgegeben wird.
             that.openSlider(iframeUrl);
+            that.$slidePanel.css({
+                    'width': that.windowWidth,
+                    'right': - that.windowWidth + 960 + 'px',
+                    'height': that.windowHeight
+                });
+                that.$slideContent.css({
+                    'width': that.windowWidth - 38 + 'px',
+                    'height': that.windowHeight
+                });
+                that.$slideContentFrame.css({
+                    'width': that.windowWidth - 38 + 'px',
+                    'height': that.windowHeight
+                });
+            document.getElementById('mapIframe').style.height = that.windowHeight +"px";
         });
 
         this.$slideClose.bind('click', function(e) {
@@ -437,7 +463,7 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
             that.$slideCloseXToggle.show();
 
             if (url !== 'undefined') {
-                that.$slideContentFrame.html('<iframe src="' + url +'" scrolling="no"></iframe>');
+                that.$slideContentFrame.html('<iframe id="mapIframe" src="' + url +'" scrolling="no"></iframe>');
                 // Hier wird die in der Funktion mitgegebene URL in das Attribut "src" des iFrames geladen.
                 // Das Attribut "scrolling" kann je nach Wunsch auf auf "yes" oder "auto" gesetzt werden.
             }
