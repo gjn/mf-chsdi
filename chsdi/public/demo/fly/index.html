@@ -482,7 +482,7 @@ vereinfachte Zugriff auf die HTML-Elemente gewährleistet wird. -->
         if (flyoutPermalink===undefined) {
             // Nothing to do
         } else {
-            this.srcUrl = this.srcUrl + '?' + decodeURI(flyoutPermalink);
+            this.srcUrl = this.srcUrl + '?' + decodeURIComponent(flyoutPermalink);
             this.openSlider(this.srcUrl);
         }
 
