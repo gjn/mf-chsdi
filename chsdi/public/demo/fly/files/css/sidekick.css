@@ -1,0 +1,15 @@
+.sidekick {
+	Z-INDEX: 1000; POSITION: absolute; PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #b2b5c9; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: tahoma; HEIGHT: 100%; FONT-SIZE: 11px; RIGHT: 0px; PADDING-TOP: 0px; TOP: 62px
+}
+.sidekickContent {
+	PADDING-BOTTOM: 8px; BACKGROUND-COLOR: #b2b5c9; PADDING-LEFT: 11px; WIDTH: 230px; FLOAT: left; PADDING-TOP: 7px
+}
+.sidekick-ONOFF-open {
+	BACKGROUND-IMAGE: url(/images/sidekick/SidekickON.jpg); PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND-REPEAT: no-repeat; HEIGHT: 220px; CURSOR: pointer; PADDING-TOP: 0px
+}
+.sidekick-ONOFF-closed {
+	BACKGROUND-IMAGE: url(/images/sidekick/SidekickOFF.jpg); PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND-REPEAT: no-repeat; HEIGHT: 220px; CURSOR: pointer; PADDING-TOP: 0px
+}
+.sidekickONOFF {
+	BACKGROUND-IMAGE: url(/images/sidekick/SidekickBG.jpg); BORDER-BOTTOM: #b4b5ca 2px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 24px; PADDING-RIGHT: 0px; DISPLAY: block; BACKGROUND-REPEAT: repeat-y; HEIGHT: 240px; PADDING-TOP: 0px
+}

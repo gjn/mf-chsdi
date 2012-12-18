@@ -1,0 +1,39 @@
+A:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #ffffff
+}
+A:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #ffffff
+}
+TD A:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #ffffff
+}
+TD A:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #ffffff
+}
+#cartoclientMapLinks .navLevel1div {
+	PADDING-LEFT: 0px; HEIGHT: 20px
+}
+#cartoclientMapLinks UL LI SPAN {
+	PADDING-LEFT: 20px; DISPLAY: block
+}
+A.navGlobal {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal:link {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal:active {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal:link {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal:active {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}
+A.navGlobal:visited {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 11px !important; PADDING-RIGHT: 11px !important; PADDING-TOP: 0px !important
+}

@@ -1,0 +1,1491 @@
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	BORDER-BOTTOM: #333 1px solid; BORDER-LEFT: #333 1px solid; MARGIN: 0px; WIDTH: 99%; COLOR: #303030; BORDER-TOP: #333 1px solid; BORDER-RIGHT: #333 1px solid
+}
+INPUT {
+	BORDER-BOTTOM: #333 1px solid; BORDER-LEFT: #333 1px solid; MARGIN: 0px; WIDTH: 99%; COLOR: #303030; BORDER-TOP: #333 1px solid; BORDER-RIGHT: #333 1px solid
+}
+INPUT.noborder {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none
+}
+* + HTML TEXTAREA {
+	WIDTH: 98.8%
+}
+* + HTML INPUT {
+	WIDTH: 98.8%
+}
+* HTML TEXTAREA {
+	WIDTH: 98.8%
+}
+* HTML INPUT {
+	WIDTH: 98.8%
+}
+.formularZweispaltig TEXTAREA {
+	WIDTH: 98.8%
+}
+.formularZweispaltig INPUT {
+	WIDTH: 98.8%
+}
+* HTML .formularZweispaltig TEXTAREA {
+	WIDTH: 97.5%
+}
+* HTML .formularZweispaltig INPUT {
+	WIDTH: 97.5%
+}
+* + HTML .formularZweispaltig TEXTAREA {
+	WIDTH: 97.5%
+}
+* + HTML .formularZweispaltig INPUT {
+	WIDTH: 97.5%
+}
+SELECT {
+	BORDER-BOTTOM: #5f5353 1px solid; BORDER-LEFT: #5f5353 1px solid; MARGIN: 0px; WIDTH: 99.4%; COLOR: #303030; BORDER-TOP: #5f5353 1px solid; BORDER-RIGHT: #5f5353 1px solid
+}
+* HTML SELECT {
+	WIDTH: 100%
+}
+* + HTML SELECT {
+	WIDTH: 100%
+}
+#sortbyorder {
+	MARGIN-TOP: 0.4em
+}
+INPUT.small {
+	MARGIN: 0px; WIDTH: 45%; COLOR: #303030
+}
+INPUT.namesearch {
+	MARGIN: 0px 20px 0px 0px; WIDTH: 35%; COLOR: #303030
+}
+SELECT.namesearch {
+	MARGIN: 0px 20px 0px 0px; WIDTH: 35%; FLOAT: left; COLOR: #303030
+}
+INPUT.namesearch {
+	MARGIN: 0px 20px 0px 0px; WIDTH: 35%; COLOR: #303030
+}
+SELECT.namesearch {
+	MARGIN: 0px 20px 0px 0px; WIDTH: 35%; FLOAT: left; COLOR: #303030
+}
+INPUT.fullWidth {
+	MARGIN: 0px; WIDTH: 99%; COLOR: #303030
+}
+* HTML INPUT.fullWidth {
+	WIDTH: 98%
+}
+INPUT.flexibleWidth {
+	MARGIN: 0px; WIDTH: auto !important; COLOR: #303030; FONT-SIZE: 0.91em
+}
+* HTML INPUT.flexibleWidth {
+	FONT-SIZE: 1em !important
+}
+* + HTML INPUT.flexibleWidth {
+	FONT-SIZE: 1em !important
+}
+TEXTAREA {
+	FONT-FAMILY: arial, helvetica, sans-serif; HEIGHT: 150px; FONT-SIZE: 1.1em
+}
+* HTML TEXTAREA {
+	OVERFLOW-Y: visible
+}
+TEXTAREA.small {
+	HEIGHT: 80px
+}
+TEXTAREA:focus {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND-COLOR: #ecf3f6; COLOR: #000; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+INPUT[type=text]:focus {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND-COLOR: #ecf3f6; COLOR: #000; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+SELECT:focus {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND-COLOR: #ecf3f6; COLOR: #000; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+TEXTAREA:hover {
+	BACKGROUND-COLOR: #ecf3f6; COLOR: #000
+}
+INPUT[type=text]:hover {
+	BACKGROUND-COLOR: #ecf3f6; COLOR: #000
+}
+INPUT[type='password']:hover {
+	BACKGROUND-COLOR: #ecf3f6; COLOR: #000
+}
+SELECT:hover {
+	BACKGROUND-COLOR: #ecf3f6; COLOR: #000
+}
+INPUT[type=submit]:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+INPUT[type=submit]:focus {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND-COLOR: #069; COLOR: #fff; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+INPUT[type=reset]:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+INPUT[type=reset]:focus {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BACKGROUND-COLOR: #069; COLOR: #fff; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+SELECT.tag {
+	WIDTH: 3em
+}
+SELECT.stunden {
+	WIDTH: 3em
+}
+SELECT.monat {
+	WIDTH: 3.7em
+}
+SELECT.minuten {
+	WIDTH: 3.7em
+}
+SELECT.jahr {
+	WIDTH: 4.5em
+}
+INPUT.sucheSmall {
+	WIDTH: 150px; FLOAT: left
+}
+INPUT.sucheInput {
+	WIDTH: 110px; FLOAT: left
+}
+INPUT.sucheButton {
+	WIDTH: 45px; HEIGHT: 20px; FONT-SIZE: 0.9em
+}
+INPUT.checkbox {
+	BORDER-BOTTOM-STYLE: none; MARGIN: 0px; BORDER-LEFT-STYLE: none; WIDTH: 2em !important; DISPLAY: inline; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.radio {
+	BORDER-BOTTOM-STYLE: none; MARGIN: 0px; BORDER-LEFT-STYLE: none; WIDTH: 2em !important; DISPLAY: inline; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.button {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 125px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.button:hover {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 125px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.button:active {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 125px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.bigButton {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 285px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.bigButton:hover {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 285px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.bigButton:active {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px; WIDTH: 285px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.goButton {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 35px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+#buttonHidden {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; WIDTH: 125px; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.searchButton {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px 0px 8px 19px; WIDTH: 83px; FLOAT: right; HEIGHT: 20px; VERTICAL-ALIGN: middle; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.searchButton:hover {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px 0px 8px 19px; WIDTH: 83px; FLOAT: right; HEIGHT: 20px; VERTICAL-ALIGN: middle; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.searchButton:active {
+	BORDER-BOTTOM: #6a6969 1px solid; BORDER-LEFT: #6a6969 1px solid; BACKGROUND-COLOR: #d4d4d4; MARGIN: 0px 0px 8px 19px; WIDTH: 83px; FLOAT: right; HEIGHT: 20px; VERTICAL-ALIGN: middle; BORDER-TOP: #6a6969 1px solid; BORDER-RIGHT: #6a6969 1px solid; BEHAVIOR: url(/styles/none.htc)
+}
+INPUT.searchSimple {
+	WIDTH: 424px; MARGIN-BOTTOM: 8px; FLOAT: left; VERTICAL-ALIGN: middle
+}
+* HTML INPUT.searchSimple {
+	WIDTH: 422px
+}
+* + HTML INPUT.searchSimple {
+	WIDTH: 422px
+}
+INPUT.frmCheckbox {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 20px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN-LEFT: -3px; BORDER-LEFT-WIDTH: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 16px; BORDER-RIGHT-WIDTH: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-TOP: #999999 1px solid; BORDER-LEFT-WIDTH: 0px; PADDING-TOP: 4px
+}
+LEGEND {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #000; PADDING-TOP: 0px
+}
+LABEL {
+	MARGIN-TOP: 5px; WIDTH: 80%; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+H3 LABEL {
+	MARGIN-TOP: 0px; FONT-WEIGHT: normal
+}
+#formular {
+	MARGIN-TOP: 12px
+}
+#formular .row {
+	MAX-WIDTH: 531px; MARGIN-BOTTOM: 16px; HEIGHT: auto; OVERFLOW: auto; BORDER-TOP: #999 1px solid; PADDING-TOP: 5px
+}
+#formular .half1 .rightContent {
+	WIDTH: auto
+}
+* HTML .wide #formular .half1 .rightContent {
+	WIDTH: auto
+}
+* HTML .wide #formular .row {
+	WIDTH: 531px
+}
+DIV.rightContent {
+	TEXT-ALIGN: right
+}
+* + HTML DIV.rightContent {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 0px !important; WIDTH: 531px; PADDING-RIGHT: 0px !important; PADDING-TOP: 0px !important
+}
+* + HTML .half1 DIV.rightContent {
+	WIDTH: auto
+}
+* + HTML DIV.rightContent INPUT {
+	POSITION: relative; RIGHT: -7px
+}
+#formular LABEL {
+	MARGIN-TOP: 5px; WIDTH: 102px; FLOAT: left; MARGIN-RIGHT: 15px
+}
+FIELDSET .sc {
+	WIDTH: 102px
+}
+FIELDSET .dcLastItem {
+	WIDTH: 411px
+}
+FIELDSET .smallWidth {
+	WIDTH: 227px
+}
+* HTML #glossaryForm .labelDescription {
+	WIDTH: 140px
+}
+#formular .field {
+	MARGIN-TOP: 3px; WIDTH: 411px; FLOAT: left
+}
+#formular .description {
+	PADDING-LEFT: 133px; CLEAR: left
+}
+#formular INPUT.checkbox {
+	MARGIN-LEFT: -5px
+}
+#formular .radioCheckboxContainer {
+	HEIGHT: auto; OVERFLOW: auto
+}
+#formular .radioCheckboxItem {
+	WIDTH: 49.9%
+}
+.formularZweispaltig#formular .field {
+	WIDTH: 230px
+}
+.formularZweispaltig#formular .radioCheckboxItem {
+	WIDTH: 230px
+}
+.missing {
+	BORDER-BOTTOM: red 1px dashed; BORDER-LEFT: red 1px dashed; BORDER-TOP: red 1px dashed; BORDER-RIGHT: red 1px dashed
+}
+.mandatory {
+	PADDING-LEFT: 5px; BACKGROUND: url(../images/list_a_normal.gif) no-repeat left 50%
+}
+#searchForm {
+	MARGIN-BOTTOM: 20px
+}
+#extendedSearch {
+	FONT-SIZE: 0.91em
+}
+#lexikonForm INPUT.flexibleWidth {
+	MARGIN-LEFT: 0.5em
+}
+#skintForm INPUT.flexibleWidth {
+	MARGIN-LEFT: 0.5em
+}
+#portalNewsForm INPUT.flexibleWidth {
+	MARGIN-LEFT: 0.5em
+}
+#lexikonForm2 INPUT.flexibleWidth {
+	MARGIN-LEFT: 0.5em
+}
+#extendedSearch SELECT {
+	FONT-SIZE: 0.8em
+}
+#extendedSearch INPUT {
+	FONT-SIZE: 0.8em
+}
+#katasterForm SELECT {
+	FONT-SIZE: 0.8em
+}
+#katasterForm INPUT {
+	FONT-SIZE: 0.8em
+}
+#katasterResult INPUT {
+	FONT-SIZE: 0.8em
+}
+#lexikonForm INPUT {
+	FONT-SIZE: 0.8em
+}
+#lexikonForm SELECT {
+	FONT-SIZE: 0.8em
+}
+#skintForm INPUT {
+	FONT-SIZE: 0.8em
+}
+#skintForm SELECT {
+	FONT-SIZE: 0.8em
+}
+#portalNewsForm INPUT {
+	FONT-SIZE: 0.8em
+}
+portalNewsForm SELECT {
+	FONT-SIZE: 0.8em
+}
+#lexikonForm2 INPUT {
+	FONT-SIZE: 0.8em
+}
+#lexikonForm2 SELECT {
+	FONT-SIZE: 0.8em
+}
+#katasterFormType INPUT {
+	FONT-SIZE: 0.8em
+}
+#katasterFormType SELECT {
+	FONT-SIZE: 0.8em
+}
+#extendedSearch .row {
+	CLEAR: left
+}
+#formular #extendedSearch .field {
+	MARGIN-TOP: 3px; WIDTH: 70%; FLOAT: left
+}
+#formular #extendedSearch LABEL {
+	WIDTH: 28%
+}
+#formular #extendedSearch SELECT#field_extension {
+	WIDTH: 44%
+}
+#formular #extendedSearch SELECT#queryLanguage {
+	WIDTH: 44%
+}
+#formular #extendedSearch .wai_hide {
+	DISPLAY: none
+}
+* + HTML #lexikonForm INPUT {
+	FONT-SIZE: 1em
+}
+* + HTML #skintForm INPUT {
+	FONT-SIZE: 1em
+}
+* + HTML #portalNewsForm INPUT {
+	FONT-SIZE: 1em
+}
+* + HTML #lexikonForm2 INPUT {
+	FONT-SIZE: 1em
+}
+* HTML #lexikonForm INPUT {
+	WIDTH: 99%; FONT-SIZE: 1em
+}
+* HTML #skintForm INPUT {
+	WIDTH: 99%; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm INPUT {
+	WIDTH: 99%; FONT-SIZE: 1em
+}
+* HTML #lexikonForm2 INPUT {
+	WIDTH: 99%; FONT-SIZE: 1em
+}
+#extendedSearch SELECT {
+	WIDTH: 98.75%
+}
+* + HTML #extendedSearch SELECT {
+	WIDTH: 100%
+}
+* HTML #extendedSearch SELECT {
+	WIDTH: 100%
+}
+* + HTML #extendedSearch SELECT {
+	FONT-SIZE: 1em
+}
+* + HTML #extendedSearch INPUT {
+	FONT-SIZE: 1em
+}
+HTML > BODY #extendedSearch SELECT {
+	FONT-SIZE: 1em
+}
+HTML > BODY #extendedSearch INPUT {
+	FONT-SIZE: 1em
+}
+* HTML #extendedSearch SELECT {
+	FONT-SIZE: 1em
+}
+* HTML #extendedSearch INPUT {
+	FONT-SIZE: 1em
+}
+* + HTML DIV.rightContent INPUT {
+	POSITION: relative; RIGHT: 0px
+}
+* + HTML .half1 DIV.rightContent INPUT {
+	POSITION: relative; RIGHT: 1.4em
+}
+* HTML .half1 DIV.rightContent INPUT {
+	POSITION: relative; RIGHT: 1.4em
+}
+#lexikonForm #prodimaSub {
+	WIDTH: 99%; HEIGHT: 91px; FONT-SIZE: 1em
+}
+#lexikonForm2 #prodimaSub {
+	WIDTH: 99%; HEIGHT: 91px; FONT-SIZE: 1em
+}
+* + HTML #lexikonForm #prodimaSub {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-COLOR: #fff; WIDTH: 93.5%; MARGIN-BOTTOM: -0.55em; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 110px; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; BORDER-LEFT-WIDTH: 0px
+}
+* + HTML #lexikonForm2 #prodimaSub {
+	BORDER-BOTTOM-COLOR: #fff; BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-COLOR: #fff; WIDTH: 93.5%; MARGIN-BOTTOM: -0.55em; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 110px; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff; BORDER-LEFT-WIDTH: 0px
+}
+* HTML #lexikonForm #prodimaSub {
+	WIDTH: 93.5%; MARGIN-BOTTOM: -7px; HEIGHT: 110px
+}
+* HTML #lexikonForm2 #prodimaSub {
+	WIDTH: 93.5%; MARGIN-BOTTOM: -7px; HEIGHT: 110px
+}
+#ortbezeichnungtxt {
+	WIDTH: 98%
+}
+#xkoordinate {
+	WIDTH: 98%
+}
+#ykoordinate {
+	WIDTH: 98%
+}
+* + HTML #ortbezeichnungtxt {
+	WIDTH: 97%; FONT-SIZE: 1em
+}
+#extendedSearch row {
+	WIDTH: 98.9%
+}
+#extendedSearch H2 {
+	MARGIN-TOP: 3em; FONT-SIZE: 1.1em
+}
+#extendedSearch H5 {
+	MARGIN-TOP: 3em
+}
+#extendedSearch INPUT {
+	WIDTH: 98.9%
+}
+#extendedSearch #erweitern {
+	WIDTH: 98.9%
+}
+#extendedSearch SELECT.monat {
+	WIDTH: 4.4em
+}
+#extendedSearch SELECT.jahr {
+	WIDTH: 5.5em
+}
+#extendedSearch #sprache {
+	WIDTH: 16.1em
+}
+#extendedSearch #dateiFormat {
+	WIDTH: 16.1em
+}
+#extendedSearch INPUT.checkbox {
+	MARGIN-LEFT: 0px !important
+}
+#extendedSearch .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#filterForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#portalNewsForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#publikationForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#glossaryForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#nomenclatureForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#institutionenForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#informationForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#katasterForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#eventForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#lexikonForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#skintForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#portalNewsForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#lexikonForm2 .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#pressReleaseForm .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#katasterFormType .row {
+	BORDER-BOTTOM-STYLE: none !important; BORDER-LEFT-STYLE: none !important; BORDER-TOP-STYLE: none !important; MARGIN-BOTTOM: 0.02em !important; HEIGHT: auto; BORDER-RIGHT-STYLE: none !important; OVERFLOW: auto; PADDING-TOP: 0px !important
+}
+#extendedSearch #bttSubmit {
+	MARGIN-TOP: 1.25em; MARGIN-BOTTOM: 1.25em
+}
+#extendedSearch #bttReset {
+	MARGIN-TOP: 1.25em; MARGIN-BOTTOM: 1.25em
+}
+.pagingButton {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 13px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 7px; BORDER-LEFT-WIDTH: 0px
+}
+.pagingRangeButton {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 19px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 7px; BORDER-LEFT-WIDTH: 0px
+}
+.pagingButtonKbS {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 10px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 8px; BORDER-LEFT-WIDTH: 0px
+}
+.pagingButtonFirstKbS {
+	BORDER-RIGHT-WIDTH: 0px; WIDTH: 13px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; HEIGHT: 8px; BORDER-LEFT-WIDTH: 0px
+}
+#filterForm {
+	FONT-SIZE: 0.92em
+}
+#portalNewsForm {
+	FONT-SIZE: 0.92em
+}
+#publikationForm {
+	FONT-SIZE: 0.92em
+}
+#glossaryForm {
+	FONT-SIZE: 0.92em
+}
+#nomenclatureForm {
+	FONT-SIZE: 0.92em
+}
+#institutionenForm {
+	FONT-SIZE: 0.92em
+}
+#informationForm {
+	FONT-SIZE: 0.92em
+}
+#katasterForm {
+	FONT-SIZE: 0.92em
+}
+#lexikonForm {
+	FONT-SIZE: 0.92em
+}
+#skintForm {
+	FONT-SIZE: 0.92em
+}
+#portalNewsForm {
+	FONT-SIZE: 0.92em
+}
+#lexikonForm2 {
+	FONT-SIZE: 0.92em
+}
+#katasterResult {
+	FONT-SIZE: 0.92em
+}
+#eventForm {
+	FONT-SIZE: 0.92em
+}
+#pressReleaseForm {
+	FONT-SIZE: 0.92em
+}
+#katasterFormType {
+	FONT-SIZE: 0.92em
+}
+#lexikonForm #subThema {
+	WIDTH: 99%
+}
+#lexikonForm2 #subThema {
+	WIDTH: 99%
+}
+* HTML #lexikonForm #subThema {
+	WIDTH: 93%
+}
+* HTML #lexikonForm2 #subThema {
+	WIDTH: 93%
+}
+* + HTML #lexikonForm #subThema {
+	WIDTH: 93%
+}
+* + HTML #lexikonForm2 #subThema {
+	WIDTH: 93%
+}
+#filterForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#filterForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#portalNewsForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#portalNewsForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#publikationForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#publikationForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#glossaryForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#glossaryForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#nomenclatureForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#nomenclatureForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#institutionenForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#institutionenForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#informationForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#informationForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#pressReleaseForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#pressReleaseForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#eventForm INPUT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#eventForm SELECT {
+	FLOAT: right; FONT-SIZE: 0.92em
+}
+#filterForm INPUT {
+	WIDTH: 99.5%
+}
+#portalNewsForm INPUT {
+	WIDTH: 99.5%
+}
+#publikationForm INPUT {
+	WIDTH: 99.5%
+}
+#glossaryForm INPUT {
+	WIDTH: 99.5%
+}
+#nomenclatureForm INPUT {
+	WIDTH: 99.5%
+}
+#institutionenForm INPUT {
+	WIDTH: 99.5%
+}
+#informationForm INPUT {
+	WIDTH: 99.5%
+}
+#pressReleaseForm INPUT {
+	WIDTH: 99.5%
+}
+#eventForm INPUT {
+	WIDTH: 99.5%
+}
+#informationForm #bttSubmit {
+	MARGIN-BOTTOM: 1.5em !important
+}
+* HTML #informationForm #bttSubmit {
+	MARGIN-TOP: 0.4em !important; MARGIN-BOTTOM: 0.4em !important
+}
+#filterForm SELECT {
+	WIDTH: 100%
+}
+#portalNewsForm SELECT {
+	WIDTH: 100%
+}
+#publikationForm SELECT {
+	WIDTH: 100%
+}
+#glossaryForm SELECT {
+	WIDTH: 100%
+}
+#nomenclatureForm SELECT {
+	WIDTH: 100%
+}
+#institutionenForm SELECT {
+	WIDTH: 100%
+}
+#informationForm SELECT {
+	WIDTH: 100%
+}
+#pressReleaseForm SELECT {
+	WIDTH: 100%
+}
+#eventForm SELECT {
+	WIDTH: 100%
+}
+* + HTML #filterForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #portalNewsForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #publikationForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #glossaryForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #nomenclatureForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #institutionenForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #informationForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #pressReleaseForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #eventForm INPUT {
+	WIDTH: 98.9%
+}
+* + HTML #faqkeyword {
+	WIDTH: 100%
+}
+* HTML #filterForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #portalNewsForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #publikationForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #glossaryForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #nomenclatureForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #institutionenForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #informationForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #pressReleaseForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #eventForm INPUT {
+	WIDTH: 98.9%
+}
+* HTML #faqkeyword {
+	WIDTH: 100%
+}
+#filterForm LABEL {
+	FONT-WEIGHT: bold
+}
+#portalNewsForm LABEL {
+	FONT-WEIGHT: bold
+}
+#publikationForm LABEL {
+	FONT-WEIGHT: bold
+}
+#glossaryForm LABEL {
+	FONT-WEIGHT: bold
+}
+#nomenclatureForm LABEL {
+	FONT-WEIGHT: bold
+}
+#institutionenForm LABEL {
+	FONT-WEIGHT: bold
+}
+#informationForm LABEL {
+	FONT-WEIGHT: bold
+}
+#pressReleaseForm LABEL {
+	FONT-WEIGHT: bold
+}
+#eventForm LABEL {
+	FONT-WEIGHT: bold
+}
+LABEL SPAN.labelDescription {
+	FONT-WEIGHT: normal
+}
+#filterForm #bttSubmit {
+	MARGIN-BOTTOM: 1em; MARGIN-RIGHT: 29.2em
+}
+* + HTML #filterForm #bttSubmit {
+	MARGIN-RIGHT: 27.7em
+}
+* HTML #filterForm #bttSubmit {
+	POSITION: relative; DISPLAY: block; FLOAT: none; LEFT: 17.8em
+}
+.rightContent INPUT {
+	FLOAT: right
+}
+#bttFilter {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 0px
+}
+* HTML #lexikonForm #bttFilter {
+	FONT-SIZE: 1em
+}
+* HTML #lexikonForm2 #bttFilter {
+	FONT-SIZE: 1em
+}
+* + HTML #lexikonForm #bttFilter {
+	FONT-SIZE: 1em; MARGIN-RIGHT: 0.7em
+}
+* + HTML #lexikonForm2 #bttFilter {
+	FONT-SIZE: 1em; MARGIN-RIGHT: 0.7em
+}
+#portalNewsForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#publikationForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#glossaryForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#nomenclatureForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#institutionenForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#informationForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#pressReleaseForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+#eventForm #bttSubmit {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; MARGIN: 1em 27em 1em 0px; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+* + HTML #portalNewsForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #publikationForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #glossaryForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #nomenclatureForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #institutionenForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #informationForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #informationForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #pressReleaseForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* + HTML #eventForm #bttSubmit {
+	MARGIN-RIGHT: 24.6em
+}
+* HTML #portalNewsForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #publikationForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #glossaryForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #nomenclatureForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #institutionenForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #informationForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #pressReleaseForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+* HTML #eventForm #bttSubmit {
+	DISPLAY: block; MARGIN-LEFT: 16.4em
+}
+#katasterForm DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+#lexikonForm DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+#skintForm DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+#portalNewsForm DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+#lexikonForm2 DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+#katasterFormType DIV.row {
+	MARGIN-BOTTOM: 0.5em !important; CLEAR: both
+}
+* HTML #skintForm DIV.rightContent {
+	MARGIN-BOTTOM: 2.5em !important
+}
+* HTML #portalNewsForm DIV.rightContent {
+	MARGIN-BOTTOM: 2.5em !important
+}
+* + HTML #lexikonForm DIV.row {
+	OVERFLOW: hidden
+}
+* + HTML #skintForm DIV.row {
+	OVERFLOW: hidden
+}
+* + HTML #portalNewsForm DIV.row {
+	OVERFLOW: hidden
+}
+* + HTML #lexikonForm2 DIV.row {
+	OVERFLOW: hidden
+}
+#lexikonForm .width66 {
+	WIDTH: 71%; FLOAT: left; MARGIN-RIGHT: 1em
+}
+#skintForm .width66 {
+	WIDTH: 71%; FLOAT: left; MARGIN-RIGHT: 1em
+}
+#portalNewsForm .width66 {
+	WIDTH: 71%; FLOAT: left; MARGIN-RIGHT: 1em
+}
+#lexikonForm2 .width66 {
+	WIDTH: 71%; FLOAT: left; MARGIN-RIGHT: 1em
+}
+* HTML #lexikonForm .width66 {
+	WIDTH: 66%; MARGIN-RIGHT: 0px
+}
+* HTML #skintForm .width66 {
+	WIDTH: 66%; MARGIN-RIGHT: 0px
+}
+* HTML #portalNewsForm .width66 {
+	WIDTH: 66%; MARGIN-RIGHT: 0px
+}
+* HTML #lexikonForm2 .width66 {
+	WIDTH: 66%; MARGIN-RIGHT: 0px
+}
+* + HTML #lexikonForm .width66 {
+	WIDTH: 66%
+}
+* + HTML #skintForm .width66 {
+	WIDTH: 66%
+}
+* + HTML #portalNewsForm .width66 {
+	WIDTH: 66%
+}
+* + HTML #lexikonForm2 .width66 {
+	WIDTH: 66%
+}
+#lexikonForm .width33 {
+	TEXT-ALIGN: right; WIDTH: 33%; FLOAT: none
+}
+#skintForm .width33 {
+	TEXT-ALIGN: right; WIDTH: 33%; FLOAT: none
+}
+#portalNewsForm .width33 {
+	TEXT-ALIGN: right; WIDTH: 33%; FLOAT: none
+}
+#lexikonForm2 .width33 {
+	TEXT-ALIGN: right; WIDTH: 33%; FLOAT: none
+}
+* HTML #lexikonForm .width33 {
+	WIDTH: 30%
+}
+* HTML #skintForm .width33 {
+	WIDTH: 30%
+}
+* HTML #portalNewsForm .width33 {
+	WIDTH: 30%
+}
+* HTML #lexikonForm2 .width33 {
+	WIDTH: 30%
+}
+* + HTML #lexikonForm .width33 {
+	WIDTH: 28%
+}
+* + HTML #skintForm .width33 {
+	WIDTH: 28%
+}
+* + HTML #portalNewsForm .width33 {
+	WIDTH: 28%
+}
+* + HTML #lexikonForm2 .width33 {
+	WIDTH: 28%
+}
+#lexikonForm .half2 .width66 INPUT {
+	WIDTH: 100%
+}
+#lexikonForm2 .half2 .width66 INPUT {
+	WIDTH: 100%
+}
+#lexikonForm .half2 .width66 SELECT {
+	WIDTH: 101%
+}
+#lexikonForm2 .half2 .width66 SELECT {
+	WIDTH: 101%
+}
+* + HTML .half2#lexikonForm .width66 SELECT {
+	WIDTH: 103%
+}
+* + HTML #lexikonForm2 .half2 .width66 SELECT {
+	WIDTH: 103%
+}
+* HTML #lexikonForm .half2 .width66 SELECT {
+	WIDTH: 103%
+}
+* HTML #lexikonForm2 .half2 .width66 SELECT {
+	WIDTH: 103%
+}
+#katasterForm .radio {
+	FLOAT: left
+}
+#katasterFormType .radio {
+	FLOAT: left
+}
+* + HTML #katasterForm .radio {
+	MARGIN-TOP: -0.2em
+}
+* + HTML #katasterFormType .radio {
+	MARGIN-TOP: -0.2em
+}
+* HTML #katasterForm .radio {
+	MARGIN-TOP: -0.2em
+}
+* HTML #katasterFormType .radio {
+	MARGIN-TOP: -0.2em
+}
+#katasterForm .searchBox LABEL {
+	MARGIN-TOP: 0px
+}
+#lexikonForm .searchBox LABEL {
+	MARGIN-TOP: 0px
+}
+#katasterFormType .searchBox LABEL {
+	MARGIN-TOP: 0px
+}
+#katasterForm .half1 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#katasterForm .half2 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#lexikonForm .half1 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#lexikonForm .half2 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#skintForm .half1 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#skintForm .half2 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#portalNewsForm .half1 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#portalNewsForm .half2 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#lexikonForm2 .half2 LABEL {
+	FLOAT: none; MARGIN-RIGHT: 0px
+}
+#lexikonForm2 INPUT.radio {
+	FLOAT: left
+}
+#lexikonForm2 INPUT.radio {
+	FLOAT: left
+}
+#lexikonForm .half1 INPUT {
+	WIDTH: 99.1%; DISPLAY: block
+}
+#lexikonForm .half1 SELECT {
+	WIDTH: 99.1%; DISPLAY: block
+}
+#lexikonForm2 .half1 INPUT {
+	WIDTH: 99.1%; DISPLAY: block
+}
+#lexikonForm2 .half1 SELECT {
+	WIDTH: 99.1%; DISPLAY: block
+}
+#skintForm .half1 INPUT {
+	WIDTH: 254px; DISPLAY: block
+}
+#skintForm .half1 SELECT {
+	WIDTH: 256px; DISPLAY: block
+}
+#portalNewsForm .half1 INPUT {
+	WIDTH: 254px; DISPLAY: block
+}
+#portalNewsForm .half1 SELECT {
+	WIDTH: 256px; DISPLAY: block
+}
+* HTML #lexikonForm .half1 SELECT {
+	WIDTH: 257px; FONT-SIZE: 1em
+}
+* HTML #lexikonForm .half1 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #skintForm .half1 SELECT {
+	WIDTH: 258px; FONT-SIZE: 1em
+}
+* HTML #skintForm .half1 INPUT {
+	WIDTH: 252px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half1 SELECT {
+	WIDTH: 258px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half1 INPUT {
+	WIDTH: 252px; FONT-SIZE: 1em
+}
+* + HTML #lexikonForm .half1 SELECT {
+	WIDTH: 257px; FONT-SIZE: 1em
+}
+* + HTML #lexikonForm .half1 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* + HTML #skintForm .half1 SELECT {
+	WIDTH: 260px; FONT-SIZE: 1em
+}
+* + HTML #skintForm .half1 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* + HTML #portalNewsForm .half1 SELECT {
+	WIDTH: 260px; FONT-SIZE: 1em
+}
+* + HTML #portalNewsForm .half1 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+#katasterForm .half1 INPUT #katasterForm .half2 INPUT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#katasterForm .half2 SELECT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#lexikonForm .half2 INPUT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#lexikonForm .half2 SELECT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#skintForm .half2 INPUT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#skintForm .half2 SELECT {
+	WIDTH: 256px; DISPLAY: block; FLOAT: left
+}
+#portalNewsForm .half2 INPUT {
+	WIDTH: 254px; DISPLAY: block; FLOAT: left
+}
+#portalNewsForm .half2 SELECT {
+	WIDTH: 256px; DISPLAY: block; FLOAT: left
+}
+#katasterForm .half1 SELECT {
+	WIDTH: 254px; DISPLAY: block
+}
+#lexikonForm2 .half2 INPUT {
+	WIDTH: 254px; DISPLAY: block
+}
+#lexikonForm2 .half2 SELECT {
+	WIDTH: 254px; DISPLAY: block
+}
+* HTML #katasterForm .half1 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #katasterForm .half1 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #katasterForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #katasterForm .half2 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #lexikonForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #skintForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #lexikonForm2 .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #lexikonForm .half2 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #skintForm .half2 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half2 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #lexikonForm2 .half2 SELECT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* + HTML #lexikonForm2 .half2 SELECT {
+	FONT-SIZE: 1em
+}
+* + HTML #lexikonForm .half2 SELECT {
+	FONT-SIZE: 1em
+}
+* HTML #skintForm .half2 SELECT {
+	WIDTH: 258px; FONT-SIZE: 1em
+}
+* HTML #skintForm .half2 INPUT {
+	WIDTH: 252px; FONT-SIZE: 1em
+}
+* + HTML #skintForm .half2 SELECT {
+	WIDTH: 260px; FONT-SIZE: 1em
+}
+* + HTML #skintForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half2 SELECT {
+	WIDTH: 258px; FONT-SIZE: 1em
+}
+* HTML #portalNewsForm .half2 INPUT {
+	WIDTH: 252px; FONT-SIZE: 1em
+}
+* + HTML #portalNewsForm .half2 SELECT {
+	WIDTH: 260px; FONT-SIZE: 1em
+}
+* + HTML #portalNewsForm .half2 INPUT {
+	WIDTH: 254px; FONT-SIZE: 1em
+}
+#kantonTxt {
+	WIDTH: 70px !important; FLOAT: left
+}
+#gemeindeTxt {
+	WIDTH: 70px !important; FLOAT: left
+}
+#parzelleNr {
+	WIDTH: 70px !important; FLOAT: left
+}
+#kantonSelect {
+	WIDTH: 165px !important; MARGIN-LEFT: 89px
+}
+#gemeindeSelect {
+	WIDTH: 165px !important; MARGIN-LEFT: 89px
+}
+#parzelleSelect {
+	WIDTH: 165px !important; MARGIN-LEFT: 89px
+}
+#katasterForm IMG {
+	DISPLAY: block; CLEAR: both
+}
+.resultTable INPUT {
+	BORDER-BOTTOM-STYLE: none; MARGIN: 0px 0.3em 0px 0px; BORDER-LEFT-STYLE: none; WIDTH: auto !important; BORDER-TOP-STYLE: none; FLOAT: left; BORDER-RIGHT-STYLE: none
+}
+* HTML .resultTable INPUT {
+	MARGIN: -0.2em 0.3em 0px 0px
+}
+* + HTML .resultTable INPUT {
+	MARGIN: -0.2em 0.3em 0px 0px
+}
+.sortBox {
+	WHITE-SPACE: nowrap; HEIGHT: 12px
+}
+* + HTML .sortBox {
+	WIDTH: 20px; MARGIN-LEFT: 0.1em; PADDING-TOP: 0.6em
+}
+* HTML .sortBox {
+	WIDTH: 20px; MARGIN-LEFT: 0.1em; PADDING-TOP: 0.6em
+}
+INPUT.sortList {
+	BORDER-BOTTOM-STYLE: none; MARGIN: 0.4em 0px 0px 0.3em; BORDER-LEFT-STYLE: none; WIDTH: 14px; BORDER-TOP-STYLE: none; HEIGHT: 7px; BORDER-RIGHT-STYLE: none; CURSOR: pointer
+}
+INPUT.up.sortList {
+	LINE-HEIGHT: 1px; MARGIN-TOP: 0px !important; TEXT-INDENT: -9999px; WIDTH: 14px; BACKGROUND: url(/images/icons/ico_sortListUpPassive.gif) no-repeat left bottom; HEIGHT: 12px; OVERFLOW: hidden
+}
+INPUT.up.sortList:hover {
+	BACKGROUND: url(/images/icons/ico_sortListUpPassive.gif) no-repeat left bottom
+}
+INPUT.active.up.sortList {
+	MARGIN-TOP: 0px !important; TEXT-INDENT: -9999px; WIDTH: 14px; BACKGROUND: url(/images/icons/ico_sortListUpActive.gif) no-repeat left bottom; HEIGHT: 12px; OVERFLOW: hidden
+}
+INPUT.down.sortList {
+	LINE-HEIGHT: 1px; MARGIN-TOP: 0px !important; TEXT-INDENT: -9999px; WIDTH: 14px; BACKGROUND: url(/images/icons/ico_sortListDownPassive.gif) no-repeat left bottom; HEIGHT: 12px; OVERFLOW: hidden
+}
+INPUT.down.sortList:hover {
+	BACKGROUND: url(/images/icons/ico_sortListDownPassive.gif) no-repeat left bottom
+}
+INPUT.active.down.sortList {
+	MARGIN-TOP: 0px !important; TEXT-INDENT: -9999px; WIDTH: 14px; BACKGROUND: url(/images/icons/ico_sortListDownActive.gif) no-repeat left bottom; HEIGHT: 12px; OVERFLOW: hidden
+}
+#katasterResult INPUT.sortList {
+	WIDTH: 7px; HEIGHT: 4px
+}
+INPUT.sortList:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.resultTable LABEL {
+	MARGIN-TOP: 0px !important; WIDTH: auto !important
+}
+#kontextContainer #loginForm {
+	PADDING-BOTTOM: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 1em
+}
+#kontextContainer #loginForm INPUT {
+	MARGIN: 0.1em 0px 0.5em
+}
+#kontextContainer #loginForm #login {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 1em; WIDTH: auto; PADDING-RIGHT: 1em; FONT-SIZE: 1.1em; PADDING-TOP: 0px
+}
+.filterBox FORM.coperatorForm DIV.field {
+	TEXT-ALIGN: right; WHITE-SPACE: nowrap; MARGIN-LEFT: 183px
+}
+* HTML .filterBox FORM.coperatorForm DIV.field {
+	MARGIN-LEFT: 18px
+}
+FORM.coperatorForm LABEL {
+	WIDTH: 170px; DISPLAY: block; FLOAT: left
+}
+FORM.coperatorForm DIV.county {
+	MARGIN: 8px 0px 0.4em 183px; WIDTH: 348px; DISPLAY: block; FLOAT: left; CLEAR: both
+}
+* + HTML FORM.coperatorForm DIV.county {
+	MARGIN: 8px 0px 10px 183px
+}
+* HTML FORM.coperatorForm DIV.county {
+	MARGIN: 8px 0px 10px 89px; WIDTH: 353px
+}
+FORM.coperatorForm DIV.county LABEL {
+	TEXT-INDENT: -2.1em; PADDING-LEFT: 2em; WIDTH: 149px
+}
+* HTML FORM.coperatorForm DIV.county LABEL {
+	WIDTH: 152px
+}
+FORM.coperatorForm INPUT {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 99%
+}
+FORM.coperatorForm SELECT {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 99%
+}
+FORM.coperatorForm #cantonID {
+	WIDTH: 234px
+}
+FORM.coperatorForm #county {
+	WIDTH: 138px
+}
+* HTML FORM.coperatorForm #county {
+	WIDTH: 150px
+}
+* + HTML FORM.coperatorForm #county {
+	WIDTH: 150px
+}
+FORM.coperatorForm #countyCantonID {
+	WIDTH: 132px; MARGIN-LEFT: 14px
+}
+FORM.coperatorForm .flexibleWidth {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; MARGIN-LEFT: 14px; PADDING-TOP: 0px
+}
+* + HTML FORM.coperatorForm #go {
+	WIDTH: 2em !important
+}
+* HTML FORM.coperatorForm #go {
+	WIDTH: 2em !important
+}
+FORM.coperatorForm LABEL {
+	MARGIN-TOP: 0px
+}
+FORM.coperatorForm .formRow {
+	MARGIN-TOP: 0.5em; DISPLAY: block; MARGIN-BOTTOM: 5px; CLEAR: both; OVERFLOW: auto
+}
+SPAN.labelDescription {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0.4em; LINE-HEIGHT: 1.4em; PADDING-LEFT: 1.3em; WIDTH: 320px; PADDING-RIGHT: 0px; DISPLAY: block; WHITE-SPACE: normal; FONT-SIZE: 0.85em; PADDING-TOP: 0px
+}
+* + HTML SPAN.labelDescription {
+	PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.3em; PADDING-RIGHT: 0px; MARGIN-RIGHT: 2em; PADDING-TOP: 0.2em
+}
+* HTML SPAN.labelDescription {
+	PADDING-BOTTOM: 0.4em; PADDING-LEFT: 0.3em; PADDING-RIGHT: 0px; MARGIN-RIGHT: 2em; PADDING-TOP: 0px
+}
+#publikationForm SPAN.labelDescription {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 93px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#informationForm SPAN.labelDescription {
+	PADDING-BOTTOM: 0.4em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#glossaryForm SPAN.labelDescription {
+	PADDING-BOTTOM: 0.4em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#search4 {
+	MARGIN-TOP: 1em
+}
+.invLabel {
+	POSITION: absolute; TOP: -100%; LEFT: -100%
+}
+.specialChkRadio {
+	MARGIN-TOP: auto !important; FLOAT: none !important; MARGIN-RIGHT: auto !important
+}
+.radioDiv.sc {
+	MARGIN: -0.5em 0px 0.7em; DISPLAY: block; FLOAT: none; CLEAR: both
+}
+.checkDiv.sc {
+	MARGIN: -0.5em 0px 0.7em; DISPLAY: block; FLOAT: none; CLEAR: both
+}
+* HTML .radioDiv.sc {
+	MARGIN-BOTTOM: 1em
+}
+.radioDiv.scLastItem {
+	WIDTH: auto; MARGIN-BOTTOM: -0.7em; FLOAT: none !important; MARGIN-RIGHT: auto
+}
+* HTML .scLastItem.radioDiv {
+	MARGIN-BOTTOM: -0.5em
+}
+.skintDateRangeBlock {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; DISPLAY: block; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none
+}
+.skintDateRangeItem {
+	CLEAR: both
+}
+.skintDateRangeInput {
+	WIDTH: 10%; FLOAT: left; CLEAR: left
+}
+.skintDateRangeText {
+	TEXT-ALIGN: left; WIDTH: 90%; FLOAT: right; CLEAR: right
+}
+* + HTML #skintForm .half1 INPUT.skintDateRange {
+	WIDTH: 100%
+}
+* HTML #skintForm .half1 INPUT.skintDateRange {
+	WIDTH: 103%
+}
+* + HTML #skintForm .half2 INPUT.skintDateRange {
+	WIDTH: 100%
+}
+* HTML #skintForm .half2 INPUT.skintDateRange {
+	WIDTH: 103%
+}
+* + HTML #portalNewsForm .half1 INPUT.skintDateRange {
+	WIDTH: 100%
+}
+* HTML #portalNewsForm .half1 INPUT.skintDateRange {
+	WIDTH: 103%
+}
+* + HTML #portalNewsForm .half2 INPUT.skintDateRange {
+	WIDTH: 100%
+}
+* HTML #portalNewsForm .half2 INPUT.skintDateRange {
+	WIDTH: 103%
+}
+.skintDateRange {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; WIDTH: 100% !important; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none
+}
