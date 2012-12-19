@@ -577,6 +577,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.are.gemeindetyp-1990-9klassen"
                     },
+					{
+                        layerId: "ch.are.gemeindetypen"
+                    },
                     {
                         layerId: "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
                     },
@@ -612,6 +615,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Flurstücke / Grundstücke',  // Id Inspire 16
                 children: [
                     {
+                        layerId: "ch.are.bauzonen"
+                    },
+					{
                         layerId: "ch.kantone.cadastralwebmap-farbe"
                     },
                     {
@@ -1047,24 +1053,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-vernaessung"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-vernaessung"
                     }
                 ]
             },
@@ -1141,24 +1147,24 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.blw.bodeneignung-kulturtyp"
                     },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-gruendigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-skelettgehalt"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
-//                    },
-//                    {
-//                        layerId: "ch.blw.bodeneignung-vernaessung"
-//                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-gruendigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-skelettgehalt"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-wasserdurchlaessigkeit"
+                    },
+                    {
+                        layerId: "ch.blw.bodeneignung-vernaessung"
+                    },
                     {
                         layerId: "ch.blw.bewaesserungsbeduerftigkeit"
                     },
@@ -1269,6 +1275,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.are.agglomerationen_isolierte_staedte-2000"
                     },
+					{
+                        layerId: "ch.are.gemeindetypen"
+                    },
                     {
                         layerId: "ch.are.gemeindetyp-1990-9klassen"
                     }
@@ -1278,6 +1287,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Landnutzung', //Id Inspire 34
                 children: [
                     {
+                        layerId: "ch.are.bauzonen"
+                    },
+					{
                         layerId: "ch.bfs.arealstatistik-hintergrund"
                     },
 					{

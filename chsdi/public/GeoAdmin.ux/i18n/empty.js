@@ -301,6 +301,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-tektonische_karte':"",
     'ch.are.agglomerationen_isolierte_staedte-2000':"",
     'ch.are.alpenkonvention':"",
+	'ch.are.bauzonen':"",
+	'ch.are.gemeindetypen':"",
     'ch.are.gemeindetyp-1990-9klassen':"",
     'ch.astra.ausnahmetransportrouten':"",
     'ch.astra.ivs-nat':"",

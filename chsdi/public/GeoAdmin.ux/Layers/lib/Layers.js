@@ -788,16 +788,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-//            "ch.swisstopo.transformationsgenauigkeit": {
-//                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
-//                layertype: 'wmts',
-//                timestamp: ['20061231'],
-//                type: "raster",
-//                format: "image/png",
-//                datenherr: "ch.swisstopo",
-//                hasLegend: false,
-//                queryable: false
-//            },
+            "ch.swisstopo.transformationsgenauigkeit": {
+                name: OpenLayers.i18n("ch.swisstopo.transformationsgenauigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20100531'],
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.swisstopo.treasurehunt": {
                 name: OpenLayers.i18n("ch.swisstopo.treasurehunt"),
                 layertype: 'wmts',
@@ -2618,6 +2618,66 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.blw.bodeneignung-gruendigkeit": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-gruendigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-skelettgehalt": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-skelettgehalt"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-wasserspeichervermoegen": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-wasserspeichervermoegen"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-naehrstoffspeichervermoegen": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-naehrstoffspeichervermoegen"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-wasserdurchlaessigkeit": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-wasserdurchlaessigkeit"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.bodeneignung-vernaessung": {
+                name: OpenLayers.i18n("ch.blw.bodeneignung-vernaessung"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.blw.bergprodukte": {
                 name: OpenLayers.i18n("ch.blw.bergprodukte"),
                 layertype: 'wmts',
@@ -3329,6 +3389,28 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+			  "ch.are.bauzonen": {
+                name: OpenLayers.i18n("ch.are.bauzonen"),
+                layers: ["ch.are.bauzonen"],
+                layertype: "wmts",
+				timestamp: ['20120101'],
+                type: "polygon",
+                format: "image/png",
+				opacity: 0.40,
+				queryable: true,
+                datenherr: "ch.are"
+				},
+			"ch.are.gemeindetypen": {
+                name: OpenLayers.i18n("ch.are.gemeindetypen"),
+                layers: ["ch.are.gemeindetypen"],
+                layertype: "wmts",
+				timestamp: ['20120101'],
+                type: "polygon",
+                format: "image/png",
+				opacity: 0.40,
+				queryable: true,
+                datenherr: "ch.are"
+				},
             "org.epsg.grid_21781": {
                 name: OpenLayers.i18n("org.epsg.grid_21781"),
                 layers: ["org.epsg.grid_21781"],

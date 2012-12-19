@@ -1,0 +1,1428 @@
+.clearLeft {
+	CLEAR: left
+}
+.clearBoth {
+	CLEAR: both
+}
+* HTML .clearBoth {
+	HEIGHT: 0.1%
+}
+.clearRight {
+	CLEAR: right
+}
+P.clearBoth {
+	MARGIN: 0px; HEIGHT: 0.02em
+}
+* HTML P.clearBoth {
+	LINE-HEIGHT: 1px
+}
+P.clearBothWithContent {
+	MARGIN: 0px; CLEAR: both
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL#skipnav {
+	POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px; TOP: -5em; LEFT: 0px
+}
+#skipnav LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-TOP: 0px
+}
+#skipnav A:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff; FONT-SIZE: 1.2em
+}
+#skipnav A:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff; FONT-SIZE: 1.2em
+}
+#maincontainer {
+	POSITION: relative; WIDTH: 960px; FLOAT: left; TOP: 0px
+}
+#logo {
+	Z-INDEX: 5; POSITION: relative; WIDTH: 246px; FLOAT: left; HEIGHT: 103px; TOP: 0px
+}
+#kopfPortal {
+	BACKGROUND-IMAGE: url(../images/bg_head_portal_545.jpg); BORDER-BOTTOM: #fff 1px solid; WIDTH: 714px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; HEIGHT: 103px; MARGIN-LEFT: 246px
+}
+* HTML #kopfPortal {
+	WIDTH: 711px
+}
+#kopfDepartement {
+	BACKGROUND-IMAGE: url(../images/bg_head_dep_545.jpg); BORDER-BOTTOM: #fff 1px solid; WIDTH: 714px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; HEIGHT: 103px; MARGIN-LEFT: 246px
+}
+#kopfAmt {
+	BACKGROUND-IMAGE: url(../images/bg_head_amt_545.jpg); BORDER-BOTTOM: #fff 1px solid; WIDTH: 714px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; HEIGHT: 103px; MARGIN-LEFT: 246px
+}
+* HTML #kopfAmt {
+	WIDTH: 711px
+}
+* HTML #kopfDepartement {
+	WIDTH: 711px
+}
+#kopfNews {
+	BACKGROUND-IMAGE: url(../images/bg_head_news_545.jpg); WIDTH: 100%; BACKGROUND-REPEAT: no-repeat; MAX-WIDTH: 960px; BACKGROUND-POSITION: right 50%; HEIGHT: 103px
+}
+* HTML #kopfNews {
+	
+}
+#kopfAmt IMG.icoExt {
+	DISPLAY: none
+}
+#kopfDepartement IMG.icoExt {
+	DISPLAY: none
+}
+#kopfNews IMG.icoExt {
+	DISPLAY: none
+}
+#kopfPortal IMG.icoExtinternal {
+	DISPLAY: none
+}
+#kopfAmt IMG.icoExtinternal {
+	DISPLAY: none
+}
+#kopfNews IMG.icoExtinternal {
+	DISPLAY: none
+}
+A IMG:hover {
+	BACKGROUND-COLOR: #fff
+}
+A IMG:focus {
+	BACKGROUND-COLOR: #fff
+}
+#adminCH {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 4px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; BACKGROUND: url(../images/bg_adminlink.jpg) repeat-y right 0px; PADDING-TOP: 3px
+}
+* + HTML #adminCH {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 2px
+}
+* HTML #adminCH {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 1px
+}
+#departement {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 4px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; BACKGROUND: url(../images/BalkenBlau_545x20.jpg) repeat-y right 0px; PADDING-TOP: 3px
+}
+#departement2 {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 4px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; BACKGROUND: url(../images/BalkenBlau_545x20.jpg) repeat-y right 0px; PADDING-TOP: 3px
+}
+#departement2 {
+	BACKGROUND-IMAGE: url(../images/BalkenBlau_545x40.jpg); TEXT-ALIGN: right; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; PADDING-TOP: 0px
+}
+* + HTML #departement2 {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 2px
+}
+* + HTML #departement {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 2px
+}
+* HTML #departement2 {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 1px
+}
+* HTML #departement {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 1px
+}
+#lokalisationPortal {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.32em; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 8px
+}
+#lokalisationDepartement {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.32em; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 8px
+}
+#lokalisationAmt {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.32em; PADDING-LEFT: 0px; PADDING-RIGHT: 20px; PADDING-TOP: 8px
+}
+#navServiceBackground {
+	BORDER-BOTTOM: #fff 1px solid; TEXT-ALIGN: left; BACKGROUND-COLOR: #cccccc; WIDTH: 100%; MAX-WIDTH: 960px; FLOAT: left
+}
+#navServiceBackground UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#navServiceBackground LI {
+	MARGIN: 0px; FLOAT: left
+}
+#navService {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN-TOP: 4px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 16px; COLOR: #000; PADDING-TOP: 0px
+}
+.navServiceDiv {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FLOAT: left; COLOR: #000; BORDER-RIGHT: #000 1px solid; PADDING-TOP: 0px
+}
+.navServiceDivEnd {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FLOAT: left; PADDING-TOP: 0px
+}
+.navServiceColor {
+	COLOR: #000
+}
+.navServiceInactiveColor {
+	LINE-HEIGHT: 1.2em; COLOR: #333; FONT-SIZE: 0.9em
+}
+#langSwitch {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: 4px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; FLOAT: right; HEIGHT: 16px; MARGIN-LEFT: 20px; PADDING-TOP: 0px
+}
+#navGlobalBackground {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: #ccc; WIDTH: 100%; MAX-WIDTH: 960px; FLOAT: left; HEIGHT: 28px
+}
+#navGlobal {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 0px; HEIGHT: 23px; MARGIN-LEFT: 0px; PADDING-TOP: 0px
+}
+#navGlobal LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; FLOAT: left; HEIGHT: 28px; BORDER-RIGHT: #fff 1px solid; PADDING-TOP: 0px; voice-family: inherit
+}
+LI.navGlobal:hover {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalPortal:hover {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobal:focus {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalPortal:focus {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalFirst {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #333; PADDING-LEFT: 22px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalFirstPortal {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #333; PADDING-LEFT: 22px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobal {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #333; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalPortal {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #333; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalFirstAktiv {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #006699; PADDING-LEFT: 22px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalAktiv {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #006699; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalFirstAktivPortal {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ff0000; PADDING-LEFT: 22px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+LI.navGlobalAktivPortal {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ff0000; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; PADDING-TOP: 0px
+}
+#spalteNavigation {
+	MIN-HEIGHT: 120px; WIDTH: 210px; FLOAT: left; PADDING-TOP: 20px
+}
+#contentContainer {
+	FLOAT: left; MARGIN-LEFT: 27px; MARGIN-RIGHT: 0px
+}
+DIV.narrow {
+	WIDTH: 348px
+}
+DIV.norm {
+	WIDTH: 531px; MARGIN-RIGHT: 9px
+}
+* HTML DIV.narrow {
+	OVERFLOW: hidden; MARGIN-RIGHT: 0px
+}
+* HTML DIV.norm {
+	OVERFLOW: hidden; MARGIN-RIGHT: 0px
+}
+DIV.wide {
+	WIDTH: 723px
+}
+#PAGECONTROLL {
+	WIDTH: 723px; DISPLAY: block; FLOAT: left; MARGIN-LEFT: 27px
+}
+#spalteContentHeader {
+	Z-INDEX: 1; POSITION: absolute; PADDING-LEFT: 0px; WIDTH: 531px; PADDING-RIGHT: 0px; MARGIN-LEFT: 235px; MARGIN-RIGHT: 190px; PADDING-TOP: 20px
+}
+.spalteContent {
+	PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; MARGIN-RIGHT: 18px
+}
+.sc {
+	WIDTH: 165px; OVERFLOW: hidden
+}
+.scLastItem {
+	WIDTH: 165px; FLOAT: right; MARGIN-RIGHT: 0pt !important
+}
+* HTML .scLastItem {
+	OVERFLOW: hidden
+}
+.dc {
+	WIDTH: 348px; DISPLAY: block; FLOAT: left
+}
+.dcLastItem {
+	WIDTH: 348px; DISPLAY: block; FLOAT: left; MARGIN-RIGHT: 0px !important
+}
+.dc50 {
+	WIDTH: 256px; MARGIN-RIGHT: 19px !important
+}
+* HTML .dc50 {
+	OVERFLOW-X: hidden
+}
+.dc51 {
+	WIDTH: 256px; FLOAT: right; MARGIN-RIGHT: 0px !important
+}
+* HTML .dc51 {
+	CLEAR: left
+}
+DIV.abo {
+	TEXT-INDENT: -30px; PADDING-LEFT: 30px
+}
+.tc {
+	WIDTH: 540px
+}
+.lastItem {
+	FLOAT: right !important; MARGIN-RIGHT: 0px !important
+}
+#kontextContainer {
+	MARGIN-LEFT: 795px
+}
+.dk {
+	MARGIN-LEFT: 603px !important
+}
+#spalteKontext {
+	WIDTH: 165px; FLOAT: left
+}
+#spalteKontext2 {
+	WIDTH: 165px; FLOAT: left
+}
+.lastKontext {
+	MARGIN-LEFT: 27px
+}
+#contentContainer #spalteKontext {
+	MARGIN-LEFT: 0px !important
+}
+#contentContainer #spalteKontext2 {
+	MARGIN-LEFT: 0px !important
+}
+#spalteSuche {
+	WIDTH: 165px; FLOAT: right
+}
+HTML > BODY #spalteContentPlus {
+	PADDING-LEFT: 0px; WIDTH: 720px; PADDING-RIGHT: 0px; FLOAT: left; MARGIN-LEFT: 237px
+}
+#spalteContentPlus {
+	PADDING-LEFT: 0px; WIDTH: 720px; PADDING-RIGHT: 0px; MARGIN-LEFT: 235px; PADDING-TOP: 20px
+}
+.clear {
+	DISPLAY: block; CLEAR: both
+}
+#spalteNavigation UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; CLEAR: both; PADDING-TOP: 0px
+}
+#navigationList {
+	BORDER-BOTTOM: #ccc 1px solid
+}
+#spalteNavigation UL LI SPAN {
+	DISPLAY: block
+}
+.home #spalteNavigation .text UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px 0px 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV.relatedNavigation UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV.lexikonNavigation UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV.articleNavigation UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#spalteNavigation LI {
+	LINE-HEIGHT: 1em; MARGIN: 0px; DISPLAY: block
+}
+DIV.lexikonNavigation LI {
+	LINE-HEIGHT: 1em; MARGIN: 0px; DISPLAY: block
+}
+DIV.relatedNavigation LI {
+	LINE-HEIGHT: 1em; MARGIN: 0px; DISPLAY: block
+}
+DIV.articleNavigation LI {
+	LINE-HEIGHT: 1em; MARGIN: 0px; DISPLAY: block
+}
+.navLevel1div {
+	TEXT-ALIGN: left; MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid
+}
+.navLevel1divActive {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #069; MARGIN-TOP: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel1divActivePortal {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #f00; MARGIN-TOP: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel1divActivePortal {
+	BACKGROUND-COLOR: #ff0000
+}
+.navLevel2div {
+	TEXT-ALIGN: left; MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid
+}
+* + HTML #spalteNavigation UL LI UL LI UL {
+	MIN-HEIGHT: 20px
+}
+* HTML #spalteNavigation UL LI UL LI UL {
+	HEIGHT: 20px
+}
+.navLevel2divActive {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel2divActivePortal {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel2divActivePortal {
+	BACKGROUND-COLOR: #ff0000
+}
+.navLevel3div {
+	TEXT-ALIGN: left; MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid
+}
+.navLevel3divActive {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel3divActivePortal {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel3divActivePortal {
+	BACKGROUND-COLOR: #ff0000
+}
+.navLevel4div {
+	TEXT-ALIGN: left; MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid
+}
+.navLevel4divActive {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 1px
+}
+.navLevel4divActivePortal {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 1px
+}
+.navLevel4divActivePortal {
+	BACKGROUND-COLOR: #ff0000
+}
+.navLevel5div {
+	TEXT-ALIGN: left; MARGIN-TOP: 0px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid
+}
+.navLevel5divActive {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel5divActivePortal {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #006699; MARGIN-TOP: 0px; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: -1px; MARGIN-LEFT: 0px; BORDER-TOP: #ccc 1px solid; PADDING-TOP: 2px
+}
+.navLevel5divActivePortal {
+	BACKGROUND-COLOR: #ff0000
+}
+#breadcrumb {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #cccccc; MARGIN-TOP: 20px; PADDING-LEFT: 10px; WIDTH: 521px; PADDING-RIGHT: 0px; PADDING-TOP: 2px; voice-family: inherit
+}
+#erweiterteFunktionen {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; MARGIN-TOP: 4px; PADDING-LEFT: 8px; WIDTH: 521px; PADDING-RIGHT: 0px; HEIGHT: 31px; PADDING-TOP: 1px
+}
+* HTML #erweiterteFunktionen {
+	MARGIN-TOP: 5px
+}
+#erweiterteFunktionen .firstItem {
+	BORDER-LEFT-STYLE: none
+}
+#erweiterteFunktionen .lastItem {
+	BORDER-LEFT-STYLE: none; PADDING-RIGHT: 0px
+}
+#erweiterteFunktionen .noBorder {
+	BORDER-LEFT-STYLE: none; PADDING-RIGHT: 0px
+}
+#erweiterteFunktionen .rss {
+	PADDING-LEFT: 21px; BACKGROUND: url(/images/icons/ico_rss.gif) no-repeat 5px 0px
+}
+#erweiterteFunktionen .share {
+	PADDING-LEFT: 21px; DISPLAY: none
+}
+#erweiterteFunktionen .shareBox {
+	DISPLAY: none; FLOAT: right
+}
+#erweiterteFunktionen IMG.icoExtinternal {
+	DISPLAY: none
+}
+#erweiterteFunktionen LI IMG.icoExt {
+	DISPLAY: none
+}
+#erweiterteFunktionen .shareBoxNoScript {
+	FLOAT: right
+}
+#erweiterteFunktionen .funcBox {
+	FLOAT: right
+}
+#erweiterteFunktionen UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#erweiterteFunktionen LI {
+	BORDER-LEFT: #000 1px solid; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FLOAT: left; HEIGHT: 13px; PADDING-TOP: 0px
+}
+#fachkontakt {
+	BORDER-BOTTOM: #000 0px solid; TEXT-ALIGN: left; BORDER-LEFT: #000 0px solid; MARGIN: 1.3em 19px 1.3em 0px; CLEAR: both; BORDER-TOP: #000 0px solid; BORDER-RIGHT: #000 0px solid
+}
+#footer {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 0px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 1.3em; CLEAR: both; FONT-SIZE: 0.9em; BORDER-TOP: #000 1px solid; MARGIN-RIGHT: 0px; BORDER-RIGHT: #000 0px solid; PADDING-TOP: 5px
+}
+.sitemap {
+	BORDER-BOTTOM: #000 1px solid; LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: square; WIDTH: auto; FONT-SIZE: 1em
+}
+.sitemapLevel00 {
+	LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: none; WIDTH: auto; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.sitemapLevel02 {
+	LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: none; WIDTH: auto; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.sitemapLevel00 {
+	FONT-WEIGHT: bold
+}
+.sitemapLevel01 {
+	LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: square; MARGIN-TOP: -1.3em; WIDTH: auto; MARGIN-LEFT: 150px; FONT-SIZE: 1em
+}
+#webSitemapDiv UL {
+	PADDING-BOTTOM: 0pt; LIST-STYLE-TYPE: none; MARGIN: 0pt; PADDING-LEFT: 0pt; PADDING-RIGHT: 0pt; PADDING-TOP: 0pt
+}
+#webSitemapDiv LI.firstLevelClass {
+	BORDER-TOP-STYLE: none
+}
+#webSitemapDiv UL UL UL {
+	LIST-STYLE-TYPE: square; MARGIN-TOP: -1.3em
+}
+#webSitemapDiv UL UL UL UL {
+	LIST-STYLE-TYPE: none !important; MARGIN-TOP: 0px
+}
+#webSitemapDiv LI {
+	MARGIN-TOP: 10px; BORDER-TOP: #000000 1px solid
+}
+#webSitemapDiv LI LI LI {
+	MARGIN-TOP: 0pt; MARGIN-LEFT: 183px; BORDER-TOP: #000000 0px solid; voice-family: inherit
+}
+HTML > BODY #webSitemapDiv LI LI LI {
+	MARGIN-TOP: 0pt
+}
+#webSitemapDiv LI LI LI LI {
+	MARGIN-LEFT: 20px
+}
+#webSitemapDiv A {
+	COLOR: #006699; TEXT-DECORATION: underline
+}
+#webSitemapDiv A:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+#webSitemapDiv A:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+.webSitemapBox {
+	MARGIN-TOP: -17px; FLOAT: right; voice-family: inherit
+}
+HTML > BODY .webSitemapBox {
+	MARGIN-TOP: -12px
+}
+#webSitemapDiv LI DIV {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; CLEAR: right; PADDING-TOP: 1px
+}
+.webSitemapLevelOneDiv {
+	DISPLAY: inline
+}
+.webSitemapLevelTwoDiv {
+	DISPLAY: inline
+}
+.webSitemapLevelThreeDiv {
+	DISPLAY: inline
+}
+.webSitemapLevelFourDiv {
+	DISPLAY: inline
+}
+.webSitemapLevelZero:link {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.webSitemapLevelZero:active {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.webSitemapLevelZero:visited {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.webSitemapLevelZero:hover {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.webSitemapLevelOne:link {
+	COLOR: #000 !important; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: none !important
+}
+.webSitemapLevelOne:active {
+	COLOR: #000 !important; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: none !important
+}
+.webSitemapLevelOne:visited {
+	COLOR: #000 !important; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: none !important
+}
+.webSitemapLevelOne:hover {
+	COLOR: #000 !important; FONT-SIZE: 1em; FONT-WEIGHT: bold; TEXT-DECORATION: none !important
+}
+.webSitemapLevelTwo:link {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelTwo:active {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelTwo:visited {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelTwo:hover {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelThree:link {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelThree:active {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelThree:visited {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelThree:hover {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelFour:link {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelFour:active {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelFour:visited {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.webSitemapLevelFour:hover {
+	COLOR: #006699; FONT-SIZE: 1em; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.contentNavigationResultate {
+	BORDER-BOTTOM: #000 1px solid; MARGIN-TOP: 1.45em; WIDTH: auto; MARGIN-BOTTOM: 1.3em; HEIGHT: 18px; CLEAR: both; BORDER-TOP: #000 1px solid
+}
+.lexikonNavigationResultate {
+	HEIGHT: 18px; CLEAR: both; MARGIN-RIGHT: 0px !important
+}
+.anzahlSeitenPaging {
+	FONT-SIZE: 0.92em
+}
+.contentSuchtext {
+	BORDER-BOTTOM: #000 1px solid; MARGIN-TOP: 2px; WIDTH: auto; MARGIN-BOTTOM: 1.3em; BORDER-TOP: #000 1px solid
+}
+.contentPromoLinks {
+	BORDER-BOTTOM: #000 1px solid; MARGIN-TOP: 2px; WIDTH: auto; MARGIN-BOTTOM: 1.3em; BORDER-TOP: #000 1px solid
+}
+.contentSuchtext H2 {
+	MARGIN-TOP: 0.12em; FONT-SIZE: 1.1em
+}
+.AnzahlSeiten {
+	LINE-HEIGHT: 1.3em; WIDTH: auto; CLEAR: both; FONT-SIZE: 1em
+}
+.AnzahlTreffer {
+	LINE-HEIGHT: 1.2em; MARGIN-TOP: -1.3em; WIDTH: auto; FLOAT: right; FONT-SIZE: 0.9em
+}
+.resultat {
+	LINE-HEIGHT: 1.3em; WIDTH: auto; MARGIN-BOTTOM: 1.3em; FONT-SIZE: 1em
+}
+.quelle EM.pfad {
+	FONT-STYLE: normal; COLOR: #666666
+}
+#searchBox {
+	WIDTH: 165px; FLOAT: right
+}
+#schnellSucheTitel {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 19px; PADDING-TOP: 1px; voice-family: inherit
+}
+#schnellSucheInput {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 100%; PADDING-RIGHT: 0px; HEIGHT: 10px; PADDING-TOP: 0px; voice-family: inherit
+}
+.inputSchnellsuche {
+	WIDTH: 53%; FLOAT: left
+}
+#erweiterteSuche {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; MARGIN-TOP: 6px; PADDING-LEFT: 0px; PADDING-RIGHT: 8px; PADDING-TOP: 0px
+}
+* HTML #erweiterteSuche {
+	MARGIN-TOP: 3px
+}
+* + HTML #erweiterteSuche {
+	MARGIN-TOP: 13px
+}
+.buttonSchnellSuche {
+	TEXT-ALIGN: center; MARGIN-TOP: 0px; WIDTH: 6em; FLOAT: right; HEIGHT: 2em; FONT-SIZE: 0.91em
+}
+* HTML .buttonSchnellSuche {
+	HEIGHT: 1.8em; FONT-SIZE: 1em
+}
+* + HTML .buttonSchnellSuche {
+	HEIGHT: 1.8em; FONT-SIZE: 1em
+}
+#boxright {
+	BORDER-BOTTOM: #fa0 0px solid; TEXT-ALIGN: left; BORDER-LEFT: #fa0 0px solid; MARGIN-BOTTOM: 10px; BORDER-TOP: #fa0 0px solid; BORDER-RIGHT: #fa0 0px solid
+}
+#boxright2 {
+	BORDER-BOTTOM: #fa0 0px solid; TEXT-ALIGN: left; BORDER-LEFT: #fa0 0px solid; MARGIN-BOTTOM: 10px; BORDER-TOP: #fa0 0px solid; BORDER-RIGHT: #fa0 0px solid
+}
+#content {
+	MAX-WIDTH: 960px
+}
+#contentNavigation {
+	BORDER-BOTTOM: #ccc 1px solid; MARGIN-TOP: 2px; MIN-HEIGHT: 18px; MARGIN-BOTTOM: 1.3em; BORDER-TOP: #cccccc 1px solid; MARGIN-RIGHT: 19px
+}
+* HTML #contentNavigation {
+	HEIGHT: 18px
+}
+.wide #contentNavigation {
+	MARGIN-RIGHT: 0px
+}
+.spacerTop {
+	MARGIN-BOTTOM: 1em; PADDING-TOP: 0.1em
+}
+.noSpacerTop {
+	MARGIN-BOTTOM: 1em
+}
+* HTML .spacerTop {
+	MARGIN-BOTTOM: 0.6em
+}
+* + HTML .spacerTop {
+	MIN-HEIGHT: 0.5em
+}
+.infoblock {
+	WIDTH: auto
+}
+.infoblock UL {
+	MARGIN: 0px; PADDING-LEFT: 15px
+}
+DIV.downloadPar {
+	MARGIN-BOTTOM: 14px
+}
+UL.download {
+	LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 10px
+}
+UL.download LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 5px 16px; PADDING-LEFT: 0px
+}
+* HTML UL.download LI {
+	MARGIN: 0px 0px 5px 6px; PADDING-LEFT: 9px
+}
+* + HTML UL.download LI {
+	MARGIN: 0px 0px 5px 6px; PADDING-LEFT: 9px
+}
+.tender UL.tenderDownload LI {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: 1.2em; MARGIN-BOTTOM: 5px
+}
+* HTML UL.tenderDownload LI {
+	MARGIN: 1.2em 0px 5px; PADDING-LEFT: 9px
+}
+* + HTML UL.tenderDownload LI {
+	MARGIN: 1.2em 0px 5px; PADDING-LEFT: 9px
+}
+* HTML #spalteKontext UL.download LI {
+	PADDING-LEFT: 10px
+}
+* HTML #spalteKontext2 UL.download LI {
+	PADDING-LEFT: 10px
+}
+UL.download LI P STRONG {
+	DISPLAY: block
+}
+* + HTML UL.download LI P STRONG {
+	LINE-HEIGHT: 1.8em; MARGIN-BOTTOM: 0.5em
+}
+* HTML UL.download LI P STRONG {
+	LINE-HEIGHT: 1.8em; MARGIN-BOTTOM: 0.5em
+}
+.infoblock LI.extern {
+	MARGIN: 0px 0px 0px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/ico_extern.gif)
+}
+.infoblock LI.intern {
+	MARGIN: 0px 0px 0px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.doku {
+	MARGIN: 0px 0px 0px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/ico_doku.gif)
+}
+.infoblock LI.top {
+	MARGIN: 1.3em 0px 10px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/ico_top.gif)
+}
+.infoblock LI.externLinie {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/ico_extern.gif)
+}
+.infoblock LI.internLinie {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.dokuLinie {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/ico_doku.gif)
+}
+LI.edit_redir {
+	PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px; LIST-STYLE-IMAGE: url(/images/icons/ico_edit_redir.gif)
+}
+LI.acrobat {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_acrobat.gif)
+}
+.infoblock LI.acrobat {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_acrobat.gif)
+}
+LI.avi {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_avi.gif)
+}
+.infoblock LI.avi {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_avi.gif)
+}
+LI.director {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_director.gif)
+}
+.infoblock LI.director {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_director.gif)
+}
+LI.doc {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_doc.gif)
+}
+.infoblock LI.doc {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_doc.gif)
+}
+LI.doku {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_doku.gif)
+}
+.infoblock LI.doku {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_doku.gif)
+}
+.infoblock LI.edit_redir {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_edit_redir.gif)
+}
+LI.excel {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_excel.gif)
+}
+.infoblock LI.excel {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_excel.gif)
+}
+LI.flash {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_flash.gif)
+}
+.infoblock LI.flash {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_flash.gif)
+}
+LI.html {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_html.gif)
+}
+.infoblock LI.html {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_html.gif)
+}
+LI.media {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_media.gif)
+}
+.infoblock LI.media {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_media.gif)
+}
+LI.movie {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_movie.gif)
+}
+.infoblock LI.movie {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_movie.gif)
+}
+LI.movie2 {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_movie2.gif)
+}
+.infoblock LI.movie2 {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_movie2.gif)
+}
+LI.mp3 {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_mp3.gif)
+}
+.infoblock LI.mp3 {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_mp3.gif)
+}
+LI.mpg {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_mpg.gif)
+}
+.infoblock LI.mpg {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_mpg.gif)
+}
+LI.pdf {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_pdf.gif)
+}
+.infoblock LI.pdf {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_pdf.gif)
+}
+LI.powerpoint {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_powerpoint.gif)
+}
+.infoblock LI.powerpoint {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_powerpoint.gif)
+}
+LI.ppt {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_ppt.gif)
+}
+.infoblock LI.ppt {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_ppt.gif)
+}
+LI.premiere {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_premiere.gif)
+}
+.infoblock LI.premiere {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_premiere.gif)
+}
+LI.quicktime {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_quicktime.gif)
+}
+.infoblock LI.quicktime {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_quicktime.gif)
+}
+LI.realaudio {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_realaudio.gif)
+}
+.infoblock LI.realaudio {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_realaudio.gif)
+}
+LI.realvideo {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_realvideo.gif)
+}
+.infoblock LI.realvideo {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_realvideo.gif)
+}
+LI.restricted {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_restricted.gif)
+}
+.infoblock LI.restricted {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_restricted.gif)
+}
+LI.rss {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_rss.gif)
+}
+.infoblock LI.rss {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_rss.gif)
+}
+LI.rtf {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_rtf.gif)
+}
+.infoblock LI.rtf {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_rtf.gif)
+}
+LI.text {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_text.gif)
+}
+.infoblock LI.text {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_text.gif)
+}
+LI.vdo {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_vdo.gif)
+}
+.infoblock LI.vdo {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_vdo.gif)
+}
+LI.wav {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_wav.gif)
+}
+.infoblock LI.wav {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_wav.gif)
+}
+LI.word {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_word.gif)
+}
+.infoblock LI.word {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_word.gif)
+}
+LI.wstrm {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_wstrm.gif)
+}
+.infoblock LI.wstrm {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_wstrm.gif)
+}
+LI.xls {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_xls.gif)
+}
+.infoblock LI.xls {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_xls.gif)
+}
+LI.zip {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_zip.gif)
+}
+.infoblock LI.zip {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_zip.gif)
+}
+LI.psd {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_psd.gif)
+}
+.infoblock LI.psd {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_psd.gif)
+}
+LI.def {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_def.gif)
+}
+.infoblock LI.def {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_def.gif)
+}
+LI.zipexe {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_zipexe.gif)
+}
+.infoblock LI.zipexe {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_zipexe.gif)
+}
+LI.exe {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_exe.gif)
+}
+.infoblock LI.exe {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_exe.gif)
+}
+LI.xml {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_xml.gif)
+}
+.infoblock LI.xml {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_xml.gif)
+}
+LI.csv {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_csv.gif)
+}
+.infoblock LI.csv {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_csv.gif)
+}
+LI.unknown {
+	LIST-STYLE-IMAGE: url(/images/icons/ico_unknown.gif)
+}
+.infoblock LI.acrobat {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.avi {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.director {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.avi {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.director {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.doc {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.doku {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.edit_redir {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.excel {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.flash {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.html {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.media {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.movie {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.movie2 {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.mp3 {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.mpg {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.pdf {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.powerpoint {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.ppt {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.premiere {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.quicktime {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.realaudio {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.realvideo {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.restricted {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.rss {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.rtf {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.text {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.vdo {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.wav {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.word {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.wstrm {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.xls {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.zip {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.psd {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.zipexe {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.exe {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.xml {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+.infoblock LI.csv {
+	BORDER-BOTTOM: #ccc 1px solid; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 5px; PADDING-LEFT: 5px
+}
+* HTML .infoblock LI.acrobat {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.avi {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.director {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.avi {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.director {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.doc {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.doku {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.edit_redir {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.excel {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.flash {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.html {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.media {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.movie {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.movie2 {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.mp3 {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.mpg {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.pdf {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.powerpoint {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.ppt {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.premiere {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.quicktime {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.realaudio {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.realvideo {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.restricted {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.rtf {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.text {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.vdo {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.wav {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.word {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.wstrm {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.xls {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.zip {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.psd {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.zipexe {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.exe {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.xml {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.csv {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.extern {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.intern {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.doku {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.top {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.externLinie {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.internLinie {
+	MARGIN-LEFT: 0px
+}
+* HTML .infoblock LI.dokuLinie {
+	MARGIN-LEFT: 0px
+}
+* HTML LI.edit_redir {
+	MARGIN-LEFT: 0px
+}
+.formular {
+	WIDTH: 100%
+}
+.formularSpalte1 {
+	LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: none; WIDTH: 150px; FLOAT: left; HEIGHT: auto; FONT-SIZE: 1em
+}
+.formularSpalte2 {
+	LINE-HEIGHT: 1.3em; LIST-STYLE-TYPE: none; WIDTH: auto; FLOAT: left; HEIGHT: auto; FONT-SIZE: 1em; FONT-WEIGHT: normal
+}
+.formularZeile {
+	BORDER-BOTTOM: #fff 1px solid; WIDTH: 100%; MARGIN-BOTTOM: 5px
+}
+.formularzeileZusatzinfos {
+	PADDING-BOTTOM: 5px; MARGIN-TOP: 15px; PADDING-LEFT: 5px; WIDTH: 100%; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 15px; PADDING-TOP: 5px
+}
+DIV.imageClear {
+	CLEAR: both
+}
+DL {
+	FLOAT: none; CLEAR: both
+}
+DL.imgLeft {
+	MARGIN: 0px 10px 1.3em 0px; PADDING-RIGHT: 0px; FLOAT: left; CLEAR: none
+}
+* HTML DL.imgLeft {
+	MARGIN-BOTTOM: 0.65em
+}
+* HTML DL.oversized {
+	PADDING-RIGHT: 0px; MARGIN-RIGHT: -10px
+}
+* HTML DL.oversized IMG {
+	WIDTH: 723px
+}
+* HTML DL.w723 {
+	PADDING-RIGHT: 0px; MARGIN-RIGHT: -10px
+}
+DL.w90 {
+	WIDTH: 90px
+}
+* HTML DL.w90 {
+	WIDTH: 90px; MARGIN-RIGHT: 10px
+}
+DL.w165 {
+	WIDTH: 165px
+}
+* HTML DL.w165 {
+	WIDTH: 165px; MARGIN-RIGHT: 10px
+}
+DL.w256 {
+	WIDTH: 256px
+}
+DL.w348 {
+	WIDTH: 348px
+}
+DL.imgRight {
+	MARGIN: 0px 0px 0px 10px; PADDING-LEFT: 10px; FLOAT: right
+}
+DL.imgRight DT.img {
+	TEXT-ALIGN: right
+}
+DL.noSpacing {
+	PADDING-LEFT: 0px !important; PADDING-RIGHT: 0px !important; MARGIN-LEFT: 0px; MARGIN-RIGHT: 0px
+}
+DT.img {
+	MARGIN: 0px
+}
+DT.img A:hover {
+	BACKGROUND-COLOR: transparent
+}
+DT.img A:focus {
+	BACKGROUND-COLOR: transparent
+}
+A.img_link:hover {
+	BACKGROUND-COLOR: transparent
+}
+A.img_link:focus {
+	BACKGROUND-COLOR: transparent
+}
+DD.img {
+	BORDER-BOTTOM: #000 1px solid; PADDING-BOTTOM: 3px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 3px; COLOR: #000; FONT-SIZE: 0.9em; PADDING-TOP: 3px
+}
+#spalteNavigation IMG.legende {
+	MAX-WIDTH: 210px
+}
+* HTML #spalteNavigation {
+	OVERFLOW-X: hidden
+}
+#spalteNavigation DL {
+	WIDTH: 210px; BACKGROUND: #faf7ff
+}
+IMG.legende {
+	MARGIN: 0px
+}
+#printBackTop {
+	DISPLAY: none
+}
+#printBackBottom {
+	DISPLAY: none
+}
+.img A IMG.icoExt {
+	DISPLAY: none
+}
+#cartoclientMapLinks {
+	WIDTH: 22em; MARGIN-BOTTOM: 1em
+}
+#navmaptoolbar {
+	POSITION: relative; TOP: 0px; LEFT: 0px
+}
+#cartoclientMapLinks UL {
+	BORDER-BOTTOM: #cccccc 1px solid; LIST-STYLE-TYPE: none; MARGIN-TOP: 0px; PADDING-LEFT: 0px; WIDTH: 22em; MARGIN-BOTTOM: 0px
+}
+#toolbar {
+	POSITION: absolute !important; BOTTOM: -3pt !important; RIGHT: 15pt !important; TOP: auto !important; LEFT: auto !important
+}
+* + HTML #toolbar {
+	BOTTOM: 5pt !important
+}
+* HTML #toolbar {
+	POSITION: relative !important; MARGIN-BOTTOM: -27px !important; FLOAT: right; TOP: -27pt !important
+}
+#map-container {
+	POSITION: relative; TOP: 0px; LEFT: 0px
+}
+* + HTML #cartoclientMapLinks UL {
+	MARGIN: 0px
+}
+* HTML #cartoclientMapLinks UL {
+	MARGIN: 0px
+}
+#mapDiv {
+	PADDING-BOTTOM: 1em !important; PADDING-LEFT: 0px !important; PADDING-RIGHT: 1em !important; MARGIN-BOTTOM: 1.5em; PADDING-TOP: 0em !important
+}
+#cartoclientMapLinks UL LI SPAN {
+	PADDING-LEFT: 1em; DISPLAY: block
+}
+#legendContainer {
+	POSITION: absolute !important; BOTTOM: 0.2em !important; LEFT: 0px !important
+}
+#mainDHTMLDiv {
+	POSITION: absolute !important; TOP: 0px; LEFT: 0px
+}
+TD.viewer_mainmap {
+	POSITION: relative; TOP: 0px; LEFT: 0px
+}
+.floatswitcher {
+	RIGHT: auto !important; TOP: auto !important
+}
+#floatlegend {
+	TOP: -63px !important; LEFT: -1px !important
+}
+* + HTML #floatlegend {
+	TOP: -64px !important
+}
+* HTML #floatlegend {
+	TOP: -64px !important
+}
+#floatkeymap {
+	RIGHT: -1px !important; TOP: -1px !important
+}
+DIV.chartAppPar {
+	MARGIN-BOTTOM: 1.8em
+}
+DIV.chartAppParDataTable {
+	MARGIN-LEFT: 1.8em
+}
+* HTML DIV.chartAppPar IMG {
+	MARGIN: 0px
+}
+* HTML DIV.chartAppPar A {
+	MARGIN: 0px
+}
+DIV.mediaPar {
+	MARGIN-BOTTOM: 1.8em
+}
+.nsbComponent {
+	MARGIN-TOP: -4px
+}
+* HTML .nsbComponent {
+	MARGIN-TOP: -5px
+}
+* + HTML .nsbComponent {
+	MARGIN-TOP: -5px
+}
+UL.search-results {
+	LIST-STYLE-TYPE: none; PADDING-LEFT: 0px
+}
+UL.search-results LI {
+	BORDER-BOTTOM: #d4d4d4 1px solid; PADDING-BOTTOM: 5px; MARGIN-BOTTOM: 10px
+}
+UL.search-results LI A.title {
+	FONT-WEIGHT: bold
+}
+UL.search-results LI P {
+	MARGIN-TOP: 0px
+}
+DIV.number-of-results {
+	BORDER-BOTTOM: #000 1px solid; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 10px; BACKGROUND: #e9e9e9; BORDER-TOP: #000 1px solid; PADDING-TOP: 5px
+}
+DIV.search-result-paging {
+	BORDER-BOTTOM: black 1px solid; POSITION: relative; PADDING-BOTTOM: 10px; OVERFLOW: hidden
+}
+DIV.search-result-paging A {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; COLOR: #000; PADDING-TOP: 2px
+}
+DIV.search-result-paging A.active {
+	FONT-WEIGHT: bold
+}
+DIV.search-result-paging A.back-link {
+	BORDER-BOTTOM: #6a6969 1px solid; POSITION: absolute; BORDER-LEFT: #6a6969 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: block; BACKGROUND: #d4d4d4; FLOAT: left; COLOR: black; BORDER-TOP: #6a6969 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #6a6969 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px; TOP: 0px; LEFT: 0px
+}
+DIV.search-result-paging A.next-link {
+	BORDER-BOTTOM: #6a6969 1px solid; POSITION: absolute; BORDER-LEFT: #6a6969 1px solid; PADDING-BOTTOM: 2px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; DISPLAY: block; BACKGROUND: #d4d4d4; FLOAT: right; COLOR: black; BORDER-TOP: #6a6969 1px solid; RIGHT: 0px; FONT-WEIGHT: bold; BORDER-RIGHT: #6a6969 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px; TOP: 0px
+}
+DIV.page-numbers {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; MARGIN: 0px 85px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}

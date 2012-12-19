@@ -107,7 +107,36 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
     initComponent: function() {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
-        
+      
+        var bind = function(scope, fn) {
+           return function () {
+              fn.apply(scope, arguments);
+           };
+        };
+
+        document.addEventListener("keydown",bind(this, function(evt) {
+           if (this.state.activeTab == "playTab") {
+              if (evt.keyCode == 37) {
+                this.stopAnimation();
+                 var previousYear = this.animationSlider.getYear() - 1;
+                 if (previousYear < this.minYear) {
+                     previousYear = this.minYear;
+                  }
+                  this.showYearInAnimationMode(previousYear);
+                  this.animationSlider.setYear(previousYear);
+              }
+              if (evt.keyCode == 39) {
+                  this.stopAnimation();
+                  var nextYear =  this.animationSlider.getYear() + 1;
+                  if (nextYear > this.maxYear) {
+                      nextYear = this.maxYear;
+                  }
+                  this.showYearInAnimationMode(nextYear);
+                  this.animationSlider.setYear(nextYear);
+              }
+           }
+        }), false); 
+
         // Verify required configuration is done
         if(this.geoAdminRoot === null){
             throw new Error("Set path to GeoAdmin library by defining geoAdminRoot.");

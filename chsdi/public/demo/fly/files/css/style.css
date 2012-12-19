@@ -1,0 +1,1203 @@
+HTML {
+	FONT-FAMILY: arial, helvetica, sans-serif; COLOR: #000; FONT-SIZE: 76%
+}
+BODY {
+	FONT-FAMILY: arial, helvetica, sans-serif; COLOR: #000; FONT-SIZE: 76%
+}
+TABLE {
+	FONT-FAMILY: arial, helvetica, sans-serif; COLOR: #000; FONT-SIZE: 76%
+}
+BODY {
+	LINE-HEIGHT: 1.3em; FONT-SIZE: 1em
+}
+TABLE {
+	LINE-HEIGHT: 1.3em; FONT-SIZE: 1em
+}
+P.lead {
+	PADDING-BOTTOM: 1em; LINE-HEIGHT: 1.3em; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.nsbComponent .downloadDescription {
+	MARGIN-TOP: 0.2em; FONT-SIZE: 11px
+}
+.downloadDescription {
+	MARGIN-TOP: 0.2em; FONT-SIZE: 11px
+}
+H1 {
+	LINE-HEIGHT: 23px; MARGIN-TOP: 0px; COLOR: #000; FONT-SIZE: 1.5em; FONT-WEIGHT: bold
+}
+SPAN.bfsSubtitle {
+	BORDER-BOTTOM: #cccccc 1px solid; WIDTH: 100%; DISPLAY: block; COLOR: #555555
+}
+H1.special {
+	BORDER-BOTTOM: #9e9e9e 1px solid; MARGIN-BOTTOM: 0px; COLOR: #9e9e9e
+}
+.bfs .home H1 {
+	DISPLAY: none
+}
+H2 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-BOTTOM: 0em; COLOR: #000; FONT-SIZE: 1.4em; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.imgBox H2 {
+	PADDING-BOTTOM: 2px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 3px; FONT-FAMILY: arial,helvetica,sans-serif; MARGIN-BOTTOM: 0px; COLOR: #000000; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+H3 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-BOTTOM: 0em; COLOR: #000; FONT-SIZE: 1.3em; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 0.9em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-BOTTOM: 0em; COLOR: #000; FONT-SIZE: 1.23em; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 1.2em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-BOTTOM: 0.2em; COLOR: #000; FONT-SIZE: 1.1em; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.title H5 {
+	MARGIN-BOTTOM: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; MARGIN-TOP: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-BOTTOM: 0em; COLOR: #000; FONT-SIZE: 1em; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+P {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 0.5em
+}
+#contentContainer .title H2 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .titletxtfloat H2 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .title H3 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .titletxtfloat H3 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .title H4 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .titletxtfloat H4 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.58em
+}
+#contentContainer .titletxtfloat H5 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.68em
+}
+#contentContainer .title H5 {
+	LINE-HEIGHT: normal; MARGIN-TOP: 0px; MARGIN-BOTTOM: 0.68em
+}
+* HTML #contentContainer .titletxtfloat H2 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .titletxtfloat H3 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .titletxtfloat H4 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .title H2 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .title H3 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .title H4 {
+	MARGIN-TOP: -0.2em
+}
+* HTML #contentContainer .titletxtfloat H5 {
+	MARGIN-TOP: 0px
+}
+* HTML #contentContainer .title H5 {
+	MARGIN-TOP: 0px
+}
+.titletxtfloat H2:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.titletxtfloat H3:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.titletxtfloat H4:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.titletxtfloat H5:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.title H2:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.title H3:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.title H4:first-line {
+	LINE-HEIGHT: 0.8em
+}
+.title H5:first-line {
+	LINE-HEIGHT: 0.8em
+}
+P.leadin {
+	MARGIN-TOP: 0.5em; MARGIN-BOTTOM: 1.81em
+}
+DIV.titleimg {
+	MARGIN-BOTTOM: 0.7em; CLEAR: left
+}
+HR {
+	LINE-HEIGHT: 1px; BACKGROUND-COLOR: #000; HEIGHT: 1px; MARGIN-LEFT: 0px
+}
+.titleImg HR {
+	BORDER-BOTTOM-COLOR: #fff; BACKGROUND-COLOR: #fff; BORDER-TOP-COLOR: #fff; MARGIN: 0px; COLOR: #fff; BORDER-RIGHT-COLOR: #fff; BORDER-LEFT-COLOR: #fff
+}
+IMG {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+OBJECT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-SIZE: 0px; PADDING-TOP: 0px
+}
+EMBED {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-SIZE: 0px; PADDING-TOP: 0px
+}
+A {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+A:link {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+A:active {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+TD A:active {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+A:visited {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+TD A:visited {
+	LINE-HEIGHT: 1.3em; COLOR: #069; FONT-SIZE: 1em; TEXT-DECORATION: underline
+}
+A:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+TD A:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+TD A:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.collapseTitlePassive:hover {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+A.collapseTitlePassive:focus {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+TD A.collapseTitlePassive:hover {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+TD A.collapseTitlePassive:focus {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+A.collapseTitleActive:hover {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+A.collapseTitleActive:focus {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+TD A.collapseTitleActive:hover {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+TD A.collapseTitleActive:focus {
+	BACKGROUND-COLOR: #fff; COLOR: #006699
+}
+* + HTML UL.download LI A {
+	LINE-HEIGHT: 1.8em !important
+}
+* HTML UL.download LI A {
+	LINE-HEIGHT: 1.3em !important
+}
+A.adminCHlink {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlink:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlink:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlink:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlink:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.adminCHlink:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.adminCHlinkPortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlinkPortal:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlinkPortal:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlinkPortal:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.adminCHlinkPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.adminCHlinkPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.departementlink {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.departementlink:link {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.departementlink:active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.departementlink:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.departementlink:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.collapseTitlePassive {
+	PADDING-LEFT: 1.3em
+}
+A.collapseTitleActive {
+	PADDING-LEFT: 1.3em
+}
+#lokalisationPortal {
+	COLOR: #000; FONT-SIZE: 1.23em; FONT-WEIGHT: bold
+}
+#lokalisationPrint {
+	COLOR: #000; FONT-SIZE: 1.23em; FONT-WEIGHT: bold
+}
+#lokalisationAmt {
+	COLOR: #fff; FONT-SIZE: 1.23em; FONT-WEIGHT: bold
+}
+#lokalisationDepartement {
+	COLOR: #fff; FONT-SIZE: 1.23em; FONT-WEIGHT: bold
+}
+navServiceTxt {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxt {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxt:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxt:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxt:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+contentNavigation {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigation {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigation:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigation:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigation:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+contentNavigationResultateTxt {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxt {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxt:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxt:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxt:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxt:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.contentNavigation:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navServiceTxt:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.contentNavigation:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.contentNavigationResultateTxt {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxt:link {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxt:active {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxt:visited {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+navServiceTxtActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActive:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActive:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActive:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActive:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+contentNavigationResultateTxtActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActive:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActive:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActive:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+navServiceTxtPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxtPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxtPortal:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxtPortal:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxtPortal:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+contentNavigationPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationPortal:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationPortal:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationPortal:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+contentNavigationResultateTxtPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtPortal:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtPortal:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtPortal:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; TEXT-DECORATION: none
+}
+A.navServiceTxtPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.contentNavigationPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navServiceTxtPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.contentNavigationPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.contentNavigationResultateTxtPortal {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxtPortal:link {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxtPortal:active {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+A.contentNavigationResultateTxtPortal:visited {
+	DISPLAY: inline; TEXT-DECORATION: underline
+}
+navServiceTxtActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActivePortal:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActivePortal:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActivePortal:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navServiceTxtActivePortal:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+contentNavigationResultateTxtActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActivePortal:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActivePortal:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.contentNavigationResultateTxtActivePortal:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.lang {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.lang {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.lang:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.lang:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.lang:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.lang:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.lang:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+.langActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActive {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActive:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActive:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActive:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActive:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.langPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.langPortal {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.langPortal:link {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.langPortal:active {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.langPortal:visited {
+	MARGIN-TOP: -1px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A.langPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.langPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+.langActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActivePortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActivePortal:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActivePortal:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActivePortal:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.langActivePortal:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navGlobal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobal:link {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobal:active {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobal:visited {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobal:hover {
+	BACKGROUND-COLOR: #069
+}
+A.navGlobal:focus {
+	BACKGROUND-COLOR: #069
+}
+A.navGlobalPortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobalPortal:link {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobalPortal:active {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobalPortal:visited {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 28px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; DISPLAY: block; HEIGHT: 28px; COLOR: #fff; FONT-SIZE: 1.239em; VERTICAL-ALIGN: middle; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navGlobalPortal:hover {
+	BACKGROUND-COLOR: #f00
+}
+A.navGlobalPortal:focus {
+	BACKGROUND-COLOR: #f00
+}
+A.navLevel1Portal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1Portal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1Portal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2Portal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2Portal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2Portal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3Portal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3Portal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3Portal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4Portal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4Portal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4Portal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5Portal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5Portal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5Portal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1Portal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel2Portal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel3Portal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel4Portal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel5Portal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel1Portal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel2Portal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel3Portal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel4Portal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel5Portal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel1divPortal .navLevel1ActivePortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel2divPortal .navLevel2ActivePortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #f00; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel3divPortal .navLevel3ActivePortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #f00; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel4divPortal .navLevel4ActivePortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #f00; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel5divPortal .navLevel5ActivePortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #f00; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel1divPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel1divPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel1ActivePortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel1ActivePortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel2divPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel2divPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel2ActivePortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel2ActivePortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel3divPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel3divPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel3ActivePortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel3ActivePortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel4divPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel4divPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel4ActivePortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel4ActivePortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel5divPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel5divPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel5ActivePortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+.navLevel5ActivePortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel1ActivePortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navLevel2ActivePortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navLevel3ActivePortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navLevel4ActivePortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navLevel5ActivePortal {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.3em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+A.navLevel1 {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2 {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3 {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel3:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4 {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel4:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5 {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel5:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel2:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel3:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel4:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel5:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel1:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel2:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel3:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel4:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.navLevel5:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+.navLevel1div .navLevel1Active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel2div .navLevel2Active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel3div .navLevel3Active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel4div .navLevel4Active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel5div .navLevel5Active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 76px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #069; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.navLevel1div:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel1div:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel1Active:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel1Active:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel2div:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel2div:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel2Active:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel2Active:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel3div:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel3div:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel3Active:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel3Active:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel4div:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel4div:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel4Active:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel4Active:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel5div:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel5div:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel5Active:hover {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+.navLevel5Active:focus {
+	BACKGROUND-COLOR: #006699; COLOR: #fff !important
+}
+A.navLevel1Active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel2Active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel3Active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel4Active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel5Active {
+	LINE-HEIGHT: 1.2em; COLOR: #fff; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel1SubOpenPortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1SubOpenPortal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1SubOpenPortal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1PortalSubOpenPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel1PortalSubOpenPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff !important
+}
+A.navLevel1PortalSubOpenPortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1PortalSubOpenPortal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1PortalSubOpenPortal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 20px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel1SubOpenPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel1SubOpenPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel2PortalSubOpenPortal {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2PortalSubOpenPortal:active {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2PortalSubOpenPortal:visited {
+	PADDING-BOTTOM: 4px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 34px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+A.navLevel2PortalSubOpenPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel2PortalSubOpenPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel3PortalSubOpenPortal {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+A.navLevel3PortalSubOpenPortal:active {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+A.navLevel3PortalSubOpenPortal:visited {
+	PADDING-BOTTOM: 3px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 62px; PADDING-RIGHT: 0px; DISPLAY: block; COLOR: #ff0000; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none; PADDING-TOP: 1px
+}
+A.navLevel3PortalSubOpenPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel3PortalSubOpenPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.navLevel1SubOpen {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel2SubOpen {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel3SubOpen {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel1SubOpen:active {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel1SubOpen:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel1SubOpen:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel2SubOpen:active {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel2SubOpen:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel2SubOpen:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel3SubOpen:active {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel3SubOpen:hover {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.navLevel3SubOpen:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #006699; FONT-SIZE: 0.9em; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+#breadcrumb {
+	FONT-SIZE: 0.9em
+}
+A.breadcrumb {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumb:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumb:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumb:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumb:hover {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+A.breadcrumb:focus {
+	BACKGROUND-COLOR: #069; COLOR: #fff
+}
+#breadcrumbPortal {
+	FONT-SIZE: 0.9em
+}
+A.breadcrumbPortal {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumbPortal:link {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumbPortal:active {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumbPortal:visited {
+	LINE-HEIGHT: 1.2em; COLOR: #000; TEXT-DECORATION: none
+}
+A.breadcrumbPortal:hover {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+A.breadcrumbPortal:focus {
+	BACKGROUND-COLOR: #f00; COLOR: #fff
+}
+#boxright {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal
+}
+#boxright2 {
+	LINE-HEIGHT: 1.2em; COLOR: #000; FONT-SIZE: 0.9em; FONT-WEIGHT: normal
+}
+#boxrightTitel {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; BACKGROUND-COLOR: #ccc; PADDING-LEFT: 8px; PADDING-RIGHT: 0px; COLOR: #000; BORDER-TOP: #000 1px solid; FONT-WEIGHT: bold; PADDING-TOP: 1px
+}
+#boxrightContent {
+	PADDING-BOTTOM: 0px; MARGIN-TOP: 8px; PADDING-LEFT: 8px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/QuadratKontext_10x9.gif) no-repeat 0px 3px; COLOR: #000; PADDING-TOP: 1px
+}
+#boxrightContentList {
+	LIST-STYLE-POSITION: outside; LIST-STYLE-TYPE: square; MARGIN-TOP: 0px; MARGIN-LEFT: 15px
+}
+.footerText1 {
+	FLOAT: left; COLOR: #666666
+}
+.footerText2 {
+	COLOR: #ee1c25
+}
+.footerText3 {
+	TEXT-ALIGN: right; DISPLAY: block; RIGHT: 1px
+}
+#schnellSucheTitel {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#schnellSucheInput {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#erweiterteFunktionen {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#erweiterteFunktionenOben {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#erweiterteFunktionenUnten {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#url {
+	COLOR: #000; FONT-SIZE: 0.9em
+}
+#erweiterteSuche {
+	LINE-HEIGHT: 20px; HEIGHT: 31px; COLOR: #000; FONT-SIZE: 0.9em
+}
+DIV.websiteConfigBox {
+	BORDER-BOTTOM: #666 1px solid; PADDING-BOTTOM: 4px; BACKGROUND-COLOR: #eee; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; MARGIN-BOTTOM: 10px; BORDER-TOP: #666 1px solid; PADDING-TOP: 4px
+}
+DIV.websiteConfigBox TABLE.data {
+	MARGIN-TOP: 4px; BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+DIV.websiteConfigBox TABLE.data TH {
+	BORDER-BOTTOM: #666 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #666 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid; PADDING-TOP: 1px
+}
+DIV.websiteConfigBox TABLE.data TD {
+	BORDER-BOTTOM: #666 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #666 1px solid; PADDING-BOTTOM: 1px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; BORDER-TOP: #666 1px solid; BORDER-RIGHT: #666 1px solid; PADDING-TOP: 1px
+}
+DIV.websiteConfigBox TABLE.data TH {
+	BACKGROUND-COLOR: #ddd
+}
+DIV.websiteConfigBox TABLE.data .configName {
+	WIDTH: 170px
+}
+DIV.websiteConfigBox TABLE.data .configValue {
+	WIDTH: 360px
+}
+DIV.websiteConfigBox TABLE.data .configCache {
+	WIDTH: 360px
+}
+#redirectNotification {
+	PADDING-BOTTOM: 3px; MARGIN: 20px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; COLOR: red; PADDING-TOP: 3px
+}
+.red {
+	COLOR: red
+}
+.resultat H5 {
+	LINE-HEIGHT: 1em; MARGIN-BOTTOM: 0.12em; FONT-SIZE: 1em
+}
+.resultat H3 A {
+	COLOR: #006699; TEXT-DECORATION: underline
+}
+.resultat H2 {
+	LINE-HEIGHT: 1em; MARGIN-BOTTOM: 0.12em; FONT-SIZE: 1em
+}
+.filterBox {
+	MARGIN-TOP: 1.45em; MARGIN-BOTTOM: 1.45em; BORDER-TOP: #999 1px solid
+}
+.noBottomBorder {
+	BORDER-BOTTOM-STYLE: none !important
+}
+DIV.article {
+	MARGIN-BOTTOM: 1.4em
+}
+.article H5 {
+	MARGIN-TOP: 0px
+}
+P.articleDescription {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; FONT-SIZE: 11px
+}
+.article P.leadin {
+	MARGIN-TOP: 0px
+}
+.article UL.download LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 18px; PADDING-LEFT: 0px
+}
+* + HTML .article UL.download LI {
+	PADDING-BOTTOM: 2px; MARGIN: 0px 0px 2px 8px; PADDING-LEFT: 3px
+}
+* HTML .article UL.download LI {
+	PADDING-BOTTOM: 5px; MARGIN: 0px 0px 5px 8px; PADDING-LEFT: 8px
+}
+.article H6 {
+	MARGIN-TOP: 0px; COLOR: #006699; FONT-WEIGHT: normal
+}
+DIV.websiteConfigBox TABLE.data TD.leftColumn {
+	WIDTH: 170px; VERTICAL-ALIGN: top
+}
+.infodocumenttable {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-RIGHT: #000000 1px solid
+}
+.infodocumenttable TD {
+	BORDER-LEFT: #000000 1px solid; BORDER-TOP: #000000 1px solid
+}
+.infodocumenttable UL {
+	LIST-STYLE-TYPE: square
+}
+.infodocumenttable LI {
+	MARGIN-LEFT: -18px
+}
+.wai_hide {
+	POSITION: absolute; WIDTH: 1px; HEIGHT: 1px; OVERFLOW: hidden; TOP: -5000px; LEFT: 0px
+}
+#flashcontent {
+	Z-INDEX: 1; POSITION: absolute; WIDTH: 410px; HEIGHT: 210px; VISIBILITY: hidden; TOP: 265px; LEFT: 295px
+}

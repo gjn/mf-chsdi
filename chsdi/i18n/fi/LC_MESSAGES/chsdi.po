@@ -443,6 +443,9 @@ msgstr "Aglomeraziuns e citads isoladas"
 msgid "ch.are.alpenkonvention"
 msgstr "Convenziun da las Alps"
 
+msgid "ch.are.bauzonen"
+msgstr "Bauzonen Schweiz (harmonisiert)"
+
 msgid "ch.are.bauzonen-2007"
 msgstr "Bauzonen Schweiz 2007"
 
@@ -466,6 +469,9 @@ msgstr "Bevölkerungsdichte 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Tipologia da las vischnancas ARE"
+
+msgid "ch.are.gemeindetypen"
+msgstr "Gemeindetypologie ARE"
 
 msgid "ch.are.gueteklassen_oev"
 msgstr "ÖV-Güteklassen ARE"
@@ -2148,6 +2154,30 @@ msgstr "Sehr klein"
 msgid "tt_bakom_weak"
 msgstr "Klein"
 
+msgid "tt_bauzonen_CH_BEZ_D"
+msgstr "Hauptnutzung"
+
+msgid "tt_bauzonen_CH_BEZ_F"
+msgstr "Hauptnutzung"
+
+msgid "tt_bauzonen_CH_Code_HN"
+msgstr "Code Hauptnutzung"
+
+msgid "tt_bauzonen_FLAECHE"
+msgstr "Fläche (m2)"
+
+msgid "tt_bauzonen_gemeindetypen_BFS_NO"
+msgstr "BFS-Nummer"
+
+msgid "tt_bauzonen_gemeindetypen_KT_KZ"
+msgstr "Kanton"
+
+msgid "tt_bauzonen_gemeindetypen_KT_NO"
+msgstr "Kantonsnummer"
+
+msgid "tt_bauzonen_gemeindetypen_NAME"
+msgstr "Gemeinde"
+
 msgid "tt_bazl_abortion"
 msgstr "Abbruch ausgeführt"
 
@@ -2459,6 +2489,21 @@ msgstr "Von m."
 
 msgid "tt_freqchan"
 msgstr "Frequenz / TV-Kanal"
+
+msgid "tt_gemeindetypen_FLAECHE_HA"
+msgstr "Fläche (ha)"
+
+msgid "tt_gemeindetypen_TYP_BEZ_D"
+msgstr "Gemeindetyp ARE"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "Gemeindetyp ARE"
+
+msgid "tt_gemeindetypen_TYP_BEZ_F"
+msgstr "Gemeindetyp ARE"
+
+msgid "tt_gemeindetypen_TYP_CODE"
+msgstr "Code Gemeindetyp"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Gemeinde"
