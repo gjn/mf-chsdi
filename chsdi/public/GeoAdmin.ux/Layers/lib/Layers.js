@@ -2107,7 +2107,16 @@ GeoAdmin._Layers = OpenLayers.Class({
              "ch.swisstopo-karto.skitouren": {
              name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
              layertype: 'wmts',
-             timestamp: ['20111219','20101101'],
+             timestamp: ['20121101','20111219','20101101'],
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: false
+             },
+             "ch.swisstopo-karto.schneeschuhrouten": {
+             name: OpenLayers.i18n("ch.swisstopo-karto.schneeschuhrouten"),
+             layertype: 'wmts',
+             timestamp: ['20121101'],
              type: "raster",
              format: "image/png",
              datenherr: "ch.swisstopo",
