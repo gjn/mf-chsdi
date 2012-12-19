@@ -23,7 +23,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  ``Number`` Maximum number of frames per second to render during fading. Will possibly replaced by a call to window.requestAnimationFrame once the function's API has stabilized across browsers.
      */
     framesPerSecond: 12,
-    
+
     /** api: config[geoAdminRoot]
      * ``String`` Path to GeoAdmin library.
      */
@@ -107,41 +107,48 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
     initComponent: function() {
         GeoAdmin.TimeSeries.superclass.initComponent.call(this);
-      
-        var bind = function(scope, fn) {
-           return function () {
-              fn.apply(scope, arguments);
-           };
-        };
 
-        document.addEventListener("keydown",bind(this, function(evt) {
-           if (this.state.activeTab == "playTab") {
-              if (evt.keyCode == 37) {
-                this.stopAnimation();
-                 var previousYear = this.animationSlider.getYear() - 1;
-                 if (previousYear < this.minYear) {
-                     previousYear = this.minYear;
-                  }
-                  this.showYearInAnimationMode(previousYear);
-                  this.animationSlider.setYear(previousYear);
-              }
-              if (evt.keyCode == 39) {
-                  this.stopAnimation();
-                  var nextYear =  this.animationSlider.getYear() + 1;
-                  if (nextYear > this.maxYear) {
-                      nextYear = this.maxYear;
-                  }
-                  this.showYearInAnimationMode(nextYear);
-                  this.animationSlider.setYear(nextYear);
-              }
-           }
-        }), false); 
+        var bind = function(scope, fn) {
+            return function () {
+                fn.apply(scope, arguments);
+            };
+        };
+        var keyHandler = function(evt) {
+            if (this.state.activeTab == "playTab") {
+                if (evt.keyCode == 37) {
+                    this.stopAnimation();
+                    var previousYear = this.animationSlider.getYear() - 1;
+                    if (previousYear < this.minYear) {
+                        previousYear = this.minYear;
+                    }
+                    this.showYearInAnimationMode(previousYear);
+                    this.animationSlider.setYear(previousYear);
+                }
+                if (evt.keyCode == 39) {
+                    this.stopAnimation();
+                    var nextYear = this.animationSlider.getYear() + 1;
+                    if (nextYear > this.maxYear) {
+                        nextYear = this.maxYear;
+                    }
+                    this.showYearInAnimationMode(nextYear);
+                    this.animationSlider.setYear(nextYear);
+                }
+            }
+        };
+        if (document.addEventListener) {
+            document.addEventListener("keydown",
+                bind(this, keyHandler),
+                false);
+        } else {
+            document.attachEvent("onkeydown",
+                bind(this, keyHandler));
+        }
 
         // Verify required configuration is done
-        if(this.geoAdminRoot === null){
+        if (this.geoAdminRoot === null) {
             throw new Error("Set path to GeoAdmin library by defining geoAdminRoot.");
         }
-        
+
         // Make sure state gets restored
         this.initState();
 
@@ -405,11 +412,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             timeseriesWidget.animationIsPlaying = true;
         }
     },
-    
+
     /** api: method[getState]
      * Stops the animation. Does not to anything is case animation is not playing.
      */
-    stopAnimation: function(){
+    stopAnimation: function() {
         if (this.animationIsPlaying) {
             // Stop the animation
             this.playPause();
@@ -690,11 +697,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         if (targetYear > this.yearFromTimestamp(periods[periods.length - 1])) {
                             targetYear = this.yearFromTimestamp(periods[periods.length - 1]);
                         } else if (targetYear < this.yearFromTimestamp(periods[0])) {
-                                targetYear = this.yearFromTimestamp(periods[0]);
+                            targetYear = this.yearFromTimestamp(periods[0]);
                         }
                         var inEndToStart = false;
                         if (initialState === false) {
-                            inEndToStart  = this.getStateRatio(reverse?false:true).inEndToStart;
+                            inEndToStart = this.getStateRatio(reverse ? false : true).inEndToStart;
                         }
                         /**
                          * Caculate offset between requested year and year of background timestamp.
@@ -774,12 +781,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
     discardInvisibleLayers: function() {
         var compareMin;
         var compareMax;
-        if(this.getState().state.activeTab==="compareTab"){
+        if (this.getState().state.activeTab === "compareTab") {
             compareMin = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMin.getYear()));
             compareMax = this.getLayerForTimestamp(this.findTimestampNoLaterThan(this.compareSliderMax.getYear()));
         }
         GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(this.map.layers.slice(0), function(layer) {
-            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer!==compareMin && layer!==compareMax) {
+            if ((layer.opacity === 0 || layer.getVisibility() === false) && this.isTimeSeriesLayer(layer) && layer !== compareMin && layer !== compareMax) {
                 this.map.removeLayer(layer);
             }
         }, this);
@@ -1064,7 +1071,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
             }
-            if(newlyActiveTab.contentEl === "informationTab" && playPeriod.sliders.length === 0 && comparePeriod.sliders.length === 0) {
+            if (newlyActiveTab.contentEl === "informationTab" && playPeriod.sliders.length === 0 && comparePeriod.sliders.length === 0) {
                 timeseriesWidget.showYearInAnimationMode(timeseriesWidget.state.animationSlider);
             }
 
@@ -1145,82 +1152,80 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             return (1 - Math.cos((p * -2 + 2) * Math.PI / 2)) / -2 + 1;
         }
     },
-    
-    ArrayPrototypeForEach: Array.prototype.forEach || function forEach( callback, thisArg ) {
+
+    ArrayPrototypeForEach: Array.prototype.forEach || function forEach(callback, thisArg) {
         var T, k;
-    
-        if ( this == null ) {
-        throw new TypeError( "this is null or not defined" );
+
+        if (this == null) {
+            throw new TypeError("this is null or not defined");
         }
-    
+
         // 1. Let O be the result of calling ToObject passing the |this| value as the argument.
         var O = Object(this);
-    
+
         // 2. Let lenValue be the result of calling the Get internal method of O with the argument "length".
         // 3. Let len be ToUint32(lenValue).
         var len = O.length >>> 0; // Hack to convert O.length to a UInt32
-    
+
         // 4. If IsCallable(callback) is false, throw a TypeError exception.
         // See: http://es5.github.com/#x9.11
-        if ( {}.toString.call(callback) !== "[object Function]" ) {
-        throw new TypeError( callback + " is not a function" );
+        if ({}.toString.call(callback) !== "[object Function]") {
+            throw new TypeError(callback + " is not a function");
         }
-    
+
         // 5. If thisArg was supplied, let T be thisArg; else let T be undefined.
-        if ( thisArg ) {
-        T = thisArg;
+        if (thisArg) {
+            T = thisArg;
         }
-    
+
         // 6. Let k be 0
         k = 0;
-    
+
         // 7. Repeat, while k < len
-        while( k < len ) {
-    
-        var kValue;
-    
-        // a. Let Pk be ToString(k).
-        //   This is implicit for LHS operands of the in operator
-        // b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
-        //   This step can be combined with c
-        // c. If kPresent is true, then
-        if ( Object.prototype.hasOwnProperty.call(O, k) ) {
-    
-            // i. Let kValue be the result of calling the Get internal method of O with argument Pk.
-            kValue = O[ k ];
-    
-            // ii. Call the Call internal method of callback with T as the this value and
-            // argument list containing kValue, k, and O.
-            callback.call( T, kValue, k, O );
-        }
-        // d. Increase k by 1.
-        k++;
+        while (k < len) {
+
+            var kValue;
+
+            // a. Let Pk be ToString(k).
+            //   This is implicit for LHS operands of the in operator
+            // b. Let kPresent be the result of calling the HasProperty internal method of O with argument Pk.
+            //   This step can be combined with c
+            // c. If kPresent is true, then
+            if (Object.prototype.hasOwnProperty.call(O, k)) {
+
+                // i. Let kValue be the result of calling the Get internal method of O with argument Pk.
+                kValue = O[ k ];
+
+                // ii. Call the Call internal method of callback with T as the this value and
+                // argument list containing kValue, k, and O.
+                callback.call(T, kValue, k, O);
+            }
+            // d. Increase k by 1.
+            k++;
         }
         // 8. return undefined
     },
     ArrayPrototypeFilter: Array.prototype.filter || function(fun /*, thisp */) {
         "use strict";
-    
+
         if (this == null)
-        throw new TypeError();
-    
+            throw new TypeError();
+
         var t = Object(this);
         var len = t.length >>> 0;
         if (typeof fun != "function")
-        throw new TypeError();
-    
+            throw new TypeError();
+
         var res = [];
         var thisp = arguments[1];
-        for (var i = 0; i < len; i++)
-        {
-        if (i in t)
-        {
-            var val = t[i]; // in case fun mutates this
-            if (fun.call(thisp, val, i, t))
-            res.push(val);
+        for (var i = 0; i < len; i++) {
+            if (i in t) {
+                var val = t[i]; // in case fun mutates this
+                if (fun.call(thisp, val, i, t))
+                    res.push(val);
+            }
         }
-        }
-    
+
         return res;
     }
 });
