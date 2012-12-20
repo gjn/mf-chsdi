@@ -825,7 +825,7 @@ msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
 
 msgid "ch.swisstopo.fixpunkte-hfp1"
-msgstr "Fixed height control points HFP1"
+msgstr "Height control points HFP1"
 
 msgid "ch.swisstopo.fixpunkte-hfp2"
 msgstr "Height control points HFP2, HFP3"
@@ -840,7 +840,7 @@ msgid "ch.swisstopo.fixpunkte-lage"
 msgstr "Horizontal control points"
 
 msgid "ch.swisstopo.fixpunkte-lfp1"
-msgstr "Fixed plan control points LFP1"
+msgstr "Planimetric control points LFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
 msgstr "Plan. control points LFP2, LFP3"
@@ -906,10 +906,10 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "National boundaries GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
-msgstr "Dufour Map"
+msgstr "Dufour Map First edition"
 
 msgid "ch.swisstopo.hiks-siegfried"
-msgstr "Siegfried Map"
+msgstr "Siegfried Map First edition"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Aerial imagery"

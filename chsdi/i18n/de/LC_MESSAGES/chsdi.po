@@ -906,10 +906,10 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Landesgrenzen GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
-msgstr "Dufourkarte"
+msgstr "Dufourkarte Erstausgabe"
 
 msgid "ch.swisstopo.hiks-siegfried"
-msgstr "Siegfriedkarte"
+msgstr "Siegfriedkarte Erstausgabe"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Luftbild"
