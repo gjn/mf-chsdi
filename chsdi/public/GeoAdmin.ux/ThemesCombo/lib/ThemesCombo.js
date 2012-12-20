@@ -46,6 +46,10 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
 
         this.emptyText = OpenLayers.i18n('Choose a topic');
 
+        // Clear field when layer added or removed
+        this.map.events.register('addlayer', this, this.clearField);
+        this.map.events.register('removelayer', this, this.clearField);
+
         this.on('select', function (combo, record, index) {
             var state, i, len, layername;
             this.map.vector.removeAllFeatures();
@@ -70,6 +74,10 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
                 '</div></tpl>'
             ).compile();
         }
+    },
+
+    clearField: function(event) {
+        this.reset();
     }
 
 });
