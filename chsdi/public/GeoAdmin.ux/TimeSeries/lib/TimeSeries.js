@@ -218,7 +218,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
         function updatePreloadStatus(e) {
             if (this.map.getZoom() < 6) {
-                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in in order to better visualize the evolution of the maps."));
+                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in order to better visualize the evolution of the maps."));
             } else {
                 preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>");
             }
