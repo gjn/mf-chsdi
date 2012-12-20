@@ -512,6 +512,15 @@ class spannungsarmeGebiete(Base, Queryable):
 
 register('ch.swisstopo-vd.spannungsarme-gebiete',spannungsarmeGebiete)
 
+class transformationsgenauigkeit(Base, Queryable):
+       __tablename__ = 'spannungsarme_gebiete'
+       __table_args__ = ({'schema': 'vd', 'autoload': True})
+       __template__ = 'tooltips/spannungsarme_gebiete.mako'
+       id = Column('identifier', Text, primary_key=True)
+       the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.transformationsgenauigkeit',transformationsgenauigkeit)
+
 class geologieGeotopePunkte(Base, Queryable):
      __tablename__ = 'geotope_punkte'
      __table_args__ = ({'schema': 'geol', 'autoload': True})
