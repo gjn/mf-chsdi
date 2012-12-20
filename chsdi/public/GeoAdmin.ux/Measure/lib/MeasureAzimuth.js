@@ -1,8 +1,7 @@
 /*
- * @requires GeoExt.ux/Measure.js
  * @requires OpenLayers/Handler/Path.js
  * @requires OpenLayers/Control/Measure.js
- *
+ * @requires Measure/lib/MeasurePanel.js
  *
  */
 
@@ -13,25 +12,26 @@ GeoAdmin.Segment = OpenLayers.Class(OpenLayers.Handler.Path, {
     target: null,
     circle: null,
     _drawing: false,
-    initialize: function(control, callbacks, options) {
+    initialize: function (control, callbacks, options) {
         options = options || {};
         options.maxVertices = 2;
         options.persist = true;
         options.freehandToggle = null;
         OpenLayers.Handler.Path.prototype.initialize.apply(this, [control, callbacks, options]);
     },
-    addPoint: function() {
+    addPoint: function () {
         OpenLayers.Handler.Path.prototype.addPoint.apply(this, arguments);
-        var numVertices = this.line.geometry.components.length;
-        if (numVertices == 2) {
-            var feature = this.origin = new OpenLayers.Feature.Vector(this.line.geometry.components[0].clone());
+        var numVertices, feature;
+        numVertices = this.line.geometry.components.length;
+        if (numVertices === 2) {
+            feature = this.origin = new OpenLayers.Feature.Vector(this.line.geometry.components[0].clone());
             this.layer.addFeatures([feature], {
                 silent: true
             });
             this._drawing = true;
         }
     },
-    finishGeometry: function() {
+    finishGeometry: function () {
         var components = this.line.geometry.components;
         this.target = new OpenLayers.Feature.Vector(components[components.length - 2].clone());
         this.layer.addFeatures([this.target], {
@@ -40,7 +40,7 @@ GeoAdmin.Segment = OpenLayers.Class(OpenLayers.Handler.Path, {
         this._drawing = false;
         OpenLayers.Handler.Path.prototype.finishGeometry.apply(this, arguments);
     },
-    destroyPersistedFeature: function() {
+    destroyPersistedFeature: function () {
         OpenLayers.Handler.Path.prototype.destroyPersistedFeature.apply(this, arguments);
         if (this.layer) {
             if (this.origin) {
@@ -59,7 +59,7 @@ GeoAdmin.Segment = OpenLayers.Class(OpenLayers.Handler.Path, {
         var azimuthEl = Ext.fly('measure');
         if (azimuthEl) azimuthEl.update('', false);
     },
-    modifyFeature: function() {
+    modifyFeature: function () {
         OpenLayers.Handler.Path.prototype.modifyFeature.apply(this, arguments);
         if (this._drawing) {
             if (this.circle) {
@@ -72,14 +72,14 @@ GeoAdmin.Segment = OpenLayers.Class(OpenLayers.Handler.Path, {
             });
         }
     },
-    deactivate: function() {
+    deactivate: function () {
         if (OpenLayers.Handler.Path.prototype.deactivate.call(this)) {
             this._drawing = false;
             return true;
         }
         return false;
     },
-    dblclick: function() {
+    dblclick: function () {
     }
 });
 
@@ -88,9 +88,10 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
     persist: true,
     elevationServiceUrl: null,
     elevations: null,
-    measuring: false,
-    initialize: function(options) {
+    drawing: false,
+    initialize: function (options) {
         var handler = GeoAdmin.Segment;
+        this.elevations = new Array(2);
         this.callbacks = {
             point: this.startMeasuring,
             modify: this.measureDrawing,
@@ -99,14 +100,13 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         };
         OpenLayers.Control.Measure.prototype.initialize.call(this, handler, options);
     },
-    startMeasuring: function() {
-        this.measuring = true;
+    startMeasuring: function () {
+        this.drawing = true;
     },
-    measureDrawing: function(point, feature) {
-        if (this.measuring) {
+    measureDrawing: function (point, feature) {
+        if (this.drawing) {
             var geometry = feature.geometry.clone();
             this.measure(geometry);
-            this.elevations = new Array(2);
         }
     },
     measureDone: function(geometry) {
@@ -127,7 +127,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
             });
         }
 
-        this.measuring = false;
+        this.drawing = false;
         for (var i = 0; i <= 1; i++) {
             Ext.ux.JSONP.request(this.elevationServiceUrl, {
                 callbackKey: "cb",
@@ -141,7 +141,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
         }
     },
     measureCancel: function(geometry) {
-        this.measuring = false;
+        this.drawing = false;
     },
     measure: function(geometry) {
         var stat = this.getBestLength(geometry),
@@ -171,7 +171,7 @@ GeoAdmin.SegmentMeasure = OpenLayers.Class(OpenLayers.Control.Measure, {
 
 Ext.namespace("GeoAdmin");
 
-GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
+GeoAdmin.MeasureAzimuth = Ext.extend(GeoAdmin.MeasureControl, {
 
     /** api: config[handlerClass]
      *  ``Function`` The handler class to pass to the measure control,
@@ -207,13 +207,63 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
         arguments.callee.superclass.constructor.call(this, config);
     },
 
-    createControl: function(handlerClass, styleMap, controlOptions) {
+    measurepartial: function (e) {
+        this.intermediateSketch = this.control.map.getLayersByName('OpenLayers.Handler.Path');
+        if (e.distance === 0) {
+            return
+        } else if (this.intermediateSketch.length > 0) {
+            this.control.drawing = true;
+            if (this.control.drawing) {
+                var units = e.units;
+                var distance = OpenLayers.i18n('Distance: ') + e.distance.toFixed(3) + " " + units;
+                var azimut = OpenLayers.i18n('Azimut: ') + e.azimut + '&deg;';
+                var out = [distance, azimut];
+                this.tip.update(out.join(', '), false);
+            }
+        }
+    },
+
+    measure: function (e) {
+       if (this.tip !== undefined) {
+           var units = e.units;
+           var distance = OpenLayers.i18n('Distance: ') + e.distance.toFixed(3) + " " + units;
+           var azimut = OpenLayers.i18n('Azimut: ') + e.azimut + '&deg;';
+           var out = [distance, azimut];
+           var elevations = e.object.elevations;
+           if (elevations && !isNaN(elevations[0]) && !isNaN(elevations[1])) {
+               var elevationDifference = Math.round(elevations[1] - elevations[0], 2);
+               if (elevationDifference >=0) {
+                   out.push(OpenLayers.i18n('Climb: ') + Math.abs(elevationDifference) + " m");
+               } else {
+                   out.push(OpenLayers.i18n('Descent: ') + Math.abs(elevationDifference) + " m");
+               }
+           }
+           this.tip.update(out.join(', '), false);
+       }
+       this.control.drawing = false;
+    },
+
+    deactivate: function (e) {
+        this.control.drawing = false;
+        this.cleanup();
+    },
+
+    cleanup: function() {
+        if(this.tip) {
+            this.tip.destroy();
+            this.tip = null;
+        }
+    },
+
+    createControl: function (handlerClass, styleMap, controlOptions) {
         controlOptions = Ext.apply({
             persist: true,
+            drawing: false,
+            partialDelay: 0,
             eventListeners: {
                 "measure": this.display,
+                "measurepartial": this.display,
                 "deactivate": this.cleanup,
-                "measurepartial": this.cleanup,
                 scope: this
             },
             handlerOptions: {
@@ -258,79 +308,23 @@ GeoAdmin.MeasureAzimuth = Ext.extend(GeoExt.ux.Measure, {
                     styleMap: styleMap
                 }
             }
-        });
-        
-        function measurepartial(e) {
-            var units = e.units;
-            var distance = OpenLayers.i18n('Distance: ') + e.distance.toFixed(3) + " " + units;
-            var azimut = OpenLayers.i18n('Azimut: ') + e.azimut + '&deg;';
-            var elevations = e.elevations;
-            var out = [distance, azimut];
-            if (elevations && !isNaN(elevations[0]) && !isNaN(elevations[1])) {
-                var elevationDifference = Math.round(elevations[1] - elevations[0], 2);
-                if (elevationDifference >=0) {
-                    out.push(OpenLayers.i18n('Climb: ') + Math.abs(elevationDifference) + " m");
-                } else {
-                    out.push(OpenLayers.i18n('Descent: ') + Math.abs(elevationDifference) + " m");
-                }
-            }
-            if (this.popup && this.finalSketch !== this.control.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString()) { this.popup.destroy(); }
-            var azimuthEl = Ext.fly('measure');
-            if (azimuthEl) azimuthEl.update(out.join(', '), false);
+        }, controlOptions);
 
-            return out;
-        }
-        
-        function measure(e) {
-        	
-            var out = measurepartial(e);
-            if (this.popup) {
-                this.popup.destroy();
-            }
-            this.popup = new Ext.Tip({
-                title: OpenLayers.i18n('Measure.MeasureAzimuth'),
-                closable: true,
-                draggable: false,
-                html: out.join('<br/>'),
-                width: 150,
-                listeners: {
-                     hide: function() {
-                         this.control.handler.destroyPersistedFeature();
-                         if (this.autoDeactivate === true) {
-                             this.control.deactivate();
-                         }
-                    },
-                    scope: this
-                }
-            });
-            this.finalSketch = this.control.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString();
-            var bound = new OpenLayers.Bounds();
-            bound.extend(this.control.components[0]); 
-            bound.extend(this.control.components[1]);
-            var center = bound.getCenterLonLat();
-            var pixelCoordinates = this.control.map.getPixelFromLonLat(center);
-            this.popup.showAt([pixelCoordinates.x,pixelCoordinates.y]);
-        }
-        
         this.control.events.on({
-            "activate": function() {
-                this.mousePosition && this.mousePosition.deactivate();
-                this.elevation && this.elevation.deactivate();
+            "deactivate": function (event) {
+                 this.deactivate(event);
+             },
+            "measure": function (event) {
+                this.display();
+                this.measure(event);
             },
-            "deactivate": function() {
-                this.mousePosition && this.mousePosition.activate();
-                this.elevation && this.elevation.activate();
-                var azimuthEl = Ext.fly('measure');
-                if (azimuthEl) azimuthEl.update('', false);
-                if (this.popup) { 	 
-	                  this.popup.hide();
-	                  this.popup = undefined; 	 
-	              }
+            "measurepartial": function (event) {
+                this.display();
+                this.measurepartial(event);
             },
-            "measure": measure,
-            "measurepartial": measurepartial,
             scope: this
         });
+
         return this.control;
     }
 });

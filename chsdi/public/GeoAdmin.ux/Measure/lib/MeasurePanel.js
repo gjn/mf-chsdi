@@ -1,8 +1,6 @@
 /*global GeoAdmin:true, OpenLayers: true, Ext:true */
 
-
 /**
-
  * @include OpenLayers/Request.js
  * @include OpenLayers/Request/XMLHttpRequest.js
  * @include OpenLayers/Control/DrawFeature.js
@@ -11,8 +9,6 @@
  * @include OpenLayers/Handler/Polygon.js
  * @include OpenLayers/Control/Measure.js
  * @include OpenLayers/Rule.js
- * @include GeoExt.ux/MeasureArea.js
- * @include GeoExt.ux/MeasureLength.js
  * @requires GeoExt.ux/Measure.js
  * @include Measure/lib/MeasureAzimuth.js
  */
@@ -21,85 +17,20 @@ Ext.namespace('GeoAdmin');
 
 GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
 
-    constructor: function(config) {
+    constructor: function (config) {
 
-        GeoExt.ux.Measure.prototype.display = function(event) {
-            this.cleanup();
-            this.tip = new Ext.Tip({
-                title: OpenLayers.i18n("Measure"),
-                html: this.makeString(event),
-                closable: true,
-                draggable: false,
-                listeners: {
-                    hide: function() {
-                        this.control.measuring = true;
-                        this.control.cancel();
-                        if (this.autoDeactivate === true) {
-                            this.control.deactivate();
-                        }
-                        this.cleanup();
-                    },
-                    scope: this
-                }
-            });
-            function findPos(obj) {
-                 var curleft = curtop = 0;
-                if (obj.offsetParent) {
-                    do {
-                        curleft += obj.offsetLeft;
-                        curtop += obj.offsetTop;
-                    } while (obj = obj.offsetParent);
-                    return [curleft,curtop];
-                }
-            }
-            // Opening popup on the last point of the geometry
-            var last = null;
-            var cmpnt = event.geometry.components.pop(); 
-            if (cmpnt instanceof OpenLayers.Geometry.LinearRing) {
-                var cmpnts = cmpnt.components;
-                if (cmpnts.length > 1) last = cmpnts[cmpnts.length -2];
-            } else {
-                last = cmpnt;
-            }
-            var lastLonLat = new OpenLayers.LonLat(last.x, last.y);
-            var px = this.control.handler.map.getPixelFromLonLat(lastLonLat);
-            var mapPx = findPos(this.control.handler.map.div);
-            this.tip.showAt([mapPx[0] + px.x,mapPx[1] + px.y]);
-        };
-        GeoExt.ux.Measure.prototype.createControl = function(handlerClass, styleMap, controlOptions) {
-            controlOptions = Ext.apply({
-                partialDelay: 0,
-                measuring: true,
-                persist: true,
-                eventListeners: {
-                    "measure": this.display,
-                    "deactivate": this.cleanup,
-                    scope: this
-                },
-                handlerOptions: {
-                    layerOptions: {
-                        styleMap: styleMap
-                    }
-                },
-                callbacks: {
-            	    modify: function(point, feature) {
-            	        this.measurePartial(point, feature.geometry);
-            	    }
-            	  }
-            }, controlOptions);
+        // style declaration and buttons
+        var updateStyle, sketchSymbolizers, styleMap, buttonConfig, measureToolbar;
 
-            return new OpenLayers.Control.Measure(handlerClass, controlOptions);
-        };
-        var updateStyle = function(btn, evt) {
+        updateStyle = function (btn, evt) {
             if (true) {
                 btn.el.parent().addClass('pressed');
             } else {
                 btn.el.parent().removeClass('pressed');
             }
         };
-        this.measureLive = undefined;
 
-        var sketchSymbolizers = {
+        sketchSymbolizers = {
             "Point": {
                 pointRadius: 4,
                 graphicName: "square",
@@ -110,8 +41,8 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 strokeColor: "#FF0000"
             },
             "Line": {
-                strokeWidth: 2,
-                strokeOpacity: 1,
+                strokeWidth: 3,
+                strokeOpacity: 0.7,
                 strokeColor: "#FF0000",
                 strokeDashstyle: "dash"
             },
@@ -123,18 +54,18 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 fillOpacity: 0.4
             }
         };
-        var styleMap = new OpenLayers.StyleMap({
+        styleMap = new OpenLayers.StyleMap({
             "default": new OpenLayers.Style(null, {
                 rules: [new OpenLayers.Rule({symbolizer: sketchSymbolizers})]
             })
         });
 
-        var buttonConfig = {
+        buttonConfig = {
             autoDeactivate: true,
             map: config.map,
             cls: 'measureTools',
             width: 50,
-            height:70,
+            height: 70,
             toggleGroup:  'measure_tools',
             scale: 'large',
             iconAlign: 'top',
@@ -142,79 +73,43 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             styleMap: styleMap
         };
 
-        var measureArea = new Ext.Button(
-            new GeoExt.ux.MeasureArea(Ext.apply({
-                iconCls: 'gx-map-measurearea',
-                tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
-                text: OpenLayers.i18n("Measure.MeasureArea")
-            }, buttonConfig)));
-
-        var measureLength = new Ext.Button(
-            new GeoExt.ux.MeasureLength(Ext.apply({
+        this.measureLength = new Ext.Button(
+            new GeoAdmin.MeasureControl.Length(Ext.apply({
                 iconCls: 'gx-map-measurelength',
                 tooltip: OpenLayers.i18n("Measure.MeasureLength.ToolTip"),
-                text: OpenLayers.i18n("Measure.MeasureLength")
-            }, buttonConfig)));
-
-        var measureAzimuth = new Ext.Button(
+                text: OpenLayers.i18n("Measure.MeasureLength"),
+            }, buttonConfig))
+        );
+        this.measureArea = new Ext.Button(
+            new GeoAdmin.MeasureControl.Area(Ext.apply({
+                iconCls: 'gx-map-measurearea',
+                tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
+                text: OpenLayers.i18n("Measure.MeasureArea"),
+            }, buttonConfig))
+        );
+        this.measureAzimuth = new Ext.Button(
             new GeoAdmin.MeasureAzimuth(Ext.apply({
                 iconCls: 'gx-map-measureazimuth',
                 tooltip: OpenLayers.i18n("Measure.MeasureAzimuth.ToolTip"),
                 text: OpenLayers.i18n("Measure.MeasureAzimuth")
-            }, buttonConfig)));  
+            }, buttonConfig))
+        );
 
-        var measureToolbar = new Ext.Toolbar({
-            width: 600,
+        measureToolbar = new Ext.Toolbar({
             height: 100,
-            items: [measureLength, measureArea, measureAzimuth]
+            items: [this.measureLength, this.measureArea, this.measureAzimuth]
         });
-        measureLength.scope.control.events.on({
-            "measurepartial": function(event) {
-                if (measureLength.scope.control.measuring == false && measureLength.scope.tip) {
-                    if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.toString()) { 
-                        measureLength.scope.control.measuring = true;
-                        measureLength.scope.tip.destroy();
-                        if (this.measureLive) { this.measureLive.update("") };
-                    }
-                }
-                if (!this.measureLive) { this.measureLive = Ext.get('measure'); } 
-                if (this.measureLive &&  measureLength.scope.control.measuring == true) {
-                    this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units); 
-                }
-            },
-            "measure": function(event) {
-                if(this.measureLive) { this.measureLive.update(OpenLayers.i18n("Measure.MeasureLength") + ': ' + roundNumber(event.measure,2) + ' ' + event.units) };
-                measureLength.scope.control.measuring = false;
-                this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Path')[0].features[0].geometry.clone().toString();
-            },
-            "deactivate": function(event) {
-                if (this.measureLive) { this.measureLive.update("") };
-            }
-        });           
-            	
-        measureArea.scope.control.events.on({
-            "measurepartial": function(event) {
-                if (measureArea.scope.control.measuring == false && measureArea.scope.tip) {
-                    if (this.finalSketch !== this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.toString()) {
-                        measureArea.scope.control.measuring = true;
-                        measureArea.scope.tip.destroy();
-                        if (this.measureLive) { this.measureLive.update("") };
-                    }
-                }
-                if (!this.measureLive) { this.measureLive = Ext.get('measure'); }
-                if (this.measureLive && measureArea.scope.control.measuring == true) { 
-                    this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>'); 
-                }
-            },
-            "measure": function(event) {
-                if (this.measureLive) { this.measureLive.update(OpenLayers.i18n("Measure.MeasureArea") + ': ' + roundNumber(event.measure,2) + " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>') };
-                measureArea.scope.control.measuring = false;
-                this.finalSketch = this.map.getLayersByName('OpenLayers.Handler.Polygon')[0].features[0].geometry.clone().toString();
-            },
-            "deactivate": function(event) {
-                if (this.measureLive) { this.measureLive.update("") };                
-            }
-        });
+
+        this.measureLive = undefined;
+
+        // init listeners
+        this.measureLength.scope.control.events.register("measurepartial", this, this.getPartialMeasure);
+        this.measureLength.scope.control.events.register("measure", this, this.measureEnd);
+        this.measureLength.scope.control.events.register("deactivate", this, this.deactivateMeasure);
+
+        this.measureArea.scope.control.events.register("measurepartial", this, this.getPartialMeasure);
+        this.measureArea.scope.control.events.register("measure", this, this.measureEnd);
+        this.measureArea.scope.control.events.register("deactivate", this, this.deactivateMeasure);
 
         var measurePanel = new Ext.Panel({
             layout: 'hbox',
@@ -234,10 +129,184 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
                 measurePanel
             ]
         }, config);
-        function roundNumber(num, dec) {
-            var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
-            return result;
-        }
+
         GeoAdmin.MeasurePanel.superclass.constructor.call(this, config);
+    },
+
+    roundNumber: function(num, dec) {
+        var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+        return result;
+    },
+
+    getPartialMeasure: function(event) {
+        var textMeasure;
+        if (event.measure === 0) {
+            return
+        } else if (this.measureLength.pressed) {
+            this.intermediateSketch = this.map.getLayersByName('OpenLayers.Handler.Path');
+            this.measureLive = this.measureLength.scope.tip;
+            textMeasure = OpenLayers.i18n("Measure.MeasureLength") + ': ' + this.roundNumber(event.measure, 2) + ' ' + event.units;
+        } else if (this.measureArea.pressed) {
+            this.intermediateSketch = this.map.getLayersByName('OpenLayers.Handler.Polygon');
+            this.measureLive = this.measureArea.scope.tip;
+            textMeasure = OpenLayers.i18n("Measure.MeasureArea") + ': ' + this.roundNumber(event.measure, 2) 
+            textMeasure += " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>';
+        }
+        if (this.intermediateSketch.length > 0) {
+            this.drawing = true;
+            if (this.drawing) {
+                this.measureLive.update(textMeasure);
+            } 
+        }
+    },
+
+    measureEnd: function(event) {
+        var textMeasure;
+        if (this.measureLength.pressed) {
+            this.measureLive = this.measureLength.scope.tip;
+            textMeasure = OpenLayers.i18n("Measure.MeasureLength") + ': ' + this.roundNumber(event.measure, 2);
+            textMeasure += ' ' + event.units;
+        } else if (this.measureArea.pressed) {
+            this.measureLive = this.measureArea.scope.tip;
+            textMeasure = OpenLayers.i18n("Measure.MeasureArea") + ': ' + this.roundNumber(event.measure, 2);
+            textMeasure += " " + event.units + '<sup' + ' style="font-size: 7px;' + '">2</sup>';
+        }
+        if (this.measureLive !== undefined) {
+            this.measureLive.update(textMeasure);
+        }
+        this.drawing = false;
+    },
+
+    deactivateMeasure: function(event) {
+        delete(this.measureLive);
+        this.drawing = false;
     }
+});
+
+GeoAdmin.MeasureToolTip = Ext.extend(Ext.ToolTip, {
+
+    map: null,
+
+    initComponent: function () {
+        this.id = 'measure-tooltip';
+        this.autoHide = false;
+        this.autoWidth = true;
+        this.target = map.div;
+        this.trackMouse = true;
+        this.html = OpenLayers.i18n('Start Measuring');
+        GeoAdmin.MeasureToolTip.superclass.initComponent.call(this);
+    }
+});
+
+
+GeoAdmin.MeasureControl = Ext.extend(GeoExt.ux.Measure, {
+                
+        display: function (event) {
+            if (this.tip !== undefined && this.tip !== null) {
+                if (this.tip.hidden) {
+                    this.tip.show();
+                }
+            } else if (this.tip === undefined || this.tip === null) {
+                this.tip = new GeoAdmin.MeasureToolTip({map: this.control.map});
+            }
+        },
+
+        createControl: function (handlerClass, styleMap, controlOptions) {
+            controlOptions = Ext.apply({
+                partialDelay: 0,
+                persist: true,
+                eventListeners: {
+                    "measure": this.display,
+                    "measurepartial": this.display,
+                    "deactivate": this.cleanup,
+                    scope: this
+                },
+                handlerOptions: {
+                    layerOptions: {
+                        styleMap: styleMap
+                    }
+                },
+                callbacks: {
+                    modify: function (point, feature) {
+                        this.measurePartial(point, feature.geometry);
+                    }
+                }
+            }, controlOptions);
+
+            return new OpenLayers.Control.Measure(handlerClass, controlOptions);
+        }
+});
+
+GeoAdmin.MeasureControl.Length = Ext.extend(GeoAdmin.MeasureControl, {
+
+    /** api: config[handlerClass]
+     *  ``Function`` The handler class to pass to the measure control,
+     *  Defaults to ``OpenLayers.Handler.Path``. 
+     */
+
+    /** api: config[iconCls]
+     *  ``String`` The CSS class selector that specifies a background image 
+     *  to be used as the header icon for all components using this action 
+     *  Defaults to 'gx-map-measurelength'. 
+     */
+    
+    /** api: config[template]
+     *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
+     *  to display the measure. Optional.
+     */
+
+    /** api: config[tooltip]
+     *  ``String`` The tooltip for the button. Defaults to "Length measurement".
+     */
+    tooltip: 'Length measurement',
+
+    /** private: method[constructor]
+     */
+    constructor: function(config) {
+        config = Ext.apply({
+            handlerClass: OpenLayers.Handler.Path,
+            iconCls: 'gx-map-measurelength',
+            tooltip: this.tooltip,
+            template: '<p>{[values.measure.toFixed(this.decimals)]}&nbsp;'+
+                '{units}</p>'
+        }, config);
+        arguments.callee.superclass.constructor.call(this, config);
+    }
+});
+
+GeoAdmin.MeasureControl.Area = Ext.extend(GeoAdmin.MeasureControl, {
+
+    /** api: config[handlerClass]
+     *  ``Function`` The handler class to pass to the measure control,
+     *  Defaults to ``OpenLayers.Handler.Polygon``. 
+     */
+
+    /** api: config[iconCls]
+     *  ``String`` The CSS class selector that specifies a background image 
+     *  to be used as the header icon for all components using this action 
+     *  Defaults to 'gx-map-measurearea'. 
+     */
+    
+    /** api: config[template]
+     *  ``String`` | ``Ext.XTemplate`` HTML template, or Ext.XTemplate used
+     *  to display the measure. Optional.
+     */
+
+    /** api: config[tooltip]
+     *  ``String`` The tooltip for the button. Defaults to "Area measurement".
+     */
+    tooltip: 'Area measurement',
+
+    /** private: method[constructor]
+     */
+    constructor: function(config) {
+        config = Ext.apply({
+            handlerClass: OpenLayers.Handler.Polygon,
+            iconCls: 'gx-map-measurearea',
+            tooltip: this.tooltip,
+            template: '<p>{[values.measure.toFixed(this.decimals)]}&nbsp;'+
+                '{units}<sup>2</sup></p>'
+        }, config);
+        arguments.callee.superclass.constructor.call(this, config);
+    }     
 });
