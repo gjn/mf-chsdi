@@ -906,10 +906,10 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.hiks-dufour"
-msgstr "Carta Dufour"
+msgstr "Carta Dufour Prima edizione"
 
 msgid "ch.swisstopo.hiks-siegfried"
-msgstr "Carta Siegfried"
+msgstr "Carta Siegfried Prima edizione"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Veduta aerea"
@@ -1056,7 +1056,7 @@ msgid "descriptionText"
 msgstr "Descrizione"
 
 msgid "disclaimer title"
-msgstr "Copyright e  dicariazione della protezione dei diritti d'autore"
+msgstr "Copyright e dicariazione della protezione dei diritti d'autore"
 
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"

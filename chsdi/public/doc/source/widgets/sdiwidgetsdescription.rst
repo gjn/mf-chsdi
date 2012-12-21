@@ -54,6 +54,13 @@ This widget contains a tree structure according to INSPIRE with the available la
 
 See example: :ref:`catalog-tree`
 
+Custom Catalog Tree
+*******************
+
+This wiget structure and parametrization can be cutomized
+
+See example: :ref:`custom-catalog-tree`
+
 Context Popup
 *************
 

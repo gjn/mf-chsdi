@@ -271,7 +271,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
         );
 
         var store = new FeatureGroupingStore({
-            features: evt.features,
+            features: evt.features.reverse(),
             groupField: 'layer_id',
             fields: [
                 'layer_id',

@@ -507,6 +507,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.koordinatenaenderung"
                     },
                     {
+                        layerId: "ch.swisstopo.transformationsgenauigkeit"
+                    },
+                    {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]

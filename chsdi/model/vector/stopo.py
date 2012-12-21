@@ -511,6 +511,7 @@ class spannungsarmeGebiete(Base, Queryable):
        the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo-vd.spannungsarme-gebiete',spannungsarmeGebiete)
+register('ch.swisstopo.transformationsgenauigkeit',spannungsarmeGebiete)
 
 class geologieGeotopePunkte(Base, Queryable):
      __tablename__ = 'geotope_punkte'

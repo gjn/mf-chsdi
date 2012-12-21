@@ -125,7 +125,7 @@ ExtendedTooltip Single Click
 
     <a id="showRef8" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
     <a id="hideRef8" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
-    <div id="codeBlock7" style="margin:10px !important;">
+    <div id="codeBlock8" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -163,9 +163,9 @@ ExtendedTooltip With Box Selection
 
 .. raw:: html
 
-    <a id="showRef9" href="javascript:showdiv('codeBlock8','showRef8','hideRef8')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
-    <a id="hideRef9" href="javascript:hidediv('codeBlock8','showRef8','hideRef8')" style="margin:10px !important;">Hide code</a>
-    <div id="codeBlock7" style="margin:10px !important;">
+    <a id="showRef9" href="javascript:showdiv('codeBlock9','showRef9','hideRef9')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef9" href="javascript:hidediv('codeBlock9','showRef9','hideRef9')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock9" style="margin:10px !important;">
 
 .. code-block:: html
 
@@ -208,8 +208,8 @@ Catalog Tree
 
 .. raw:: html
 
-    <a id="showRef10" href="javascript:showdiv('codeBlock8','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
-    <a id="hideRef10" href="javascript:hidediv('codeBlock8','showRef10','hideRef10')" style="margin:10px !important;">Hide code</a>
+    <a id="showRef10" href="javascript:showdiv('codeBlock10','showRef10','hideRef10')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef10" href="javascript:hidediv('codeBlock10','showRef10','hideRef10')" style="margin:10px !important;">Hide code</a>
     <div id="codeBlock10" style="margin:10px !important;">
 
 .. code-block:: html
@@ -232,16 +232,16 @@ Catalog Tree
 
     </div>
 
-.. _mouse-position:
+.. _custom-catalog-tree:
 
-Mouse Position
---------------
+Custom Catalog Tree
+-------------------
 
 .. raw:: html
 
    <body>
-      <div id="mymap11" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="mymouseposition11" style="margin:10px !important;;height:25px"></div>
+      <div id="mycatalogtree11" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap11" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
@@ -251,21 +251,60 @@ Mouse Position
     <a id="hideRef11" href="javascript:hidediv('codeBlock11','showRef11','hideRef11')" style="margin:10px !important;">Hide code</a>
     <div id="codeBlock11" style="margin:10px !important;">
 
+
 .. code-block:: html
 
    <script type="text/javascript">
       var map11;
       function init() {
          map11 = new GeoAdmin.Map("mymap11", {doZoomToMaxExtent: true});
-         var mouseposition11  = new GeoAdmin.MousePositionBox({
-                renderTo: "mymouseposition11",
-                map: map11
+         var customCatalog = [{
+            text: 'My Custom Catalog 1.0',
+            expanded: true,
+            children: [{
+                text: 'My Custom Catalog 1.1',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.babs.kulturgueter'
+                    }]
+                }, {
+                text: 'My Custom Catalog 1.2',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.astra.ivs-nat'
+                    }, {
+                        layerId: 'ch.astra.ivs-reg_loc'
+                    }]
+                }]
+            }, {
+            text: 'My Custom Catalog 2.0',
+            expanded: true,
+            children: [{
+                text: 'My Custom Catalog 2.1',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.bafu.bundesinventare-bln'
+                    }, {
+                        layerId: 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
+                    }]
+                }]
+            }];
+         var tree11 = new GeoAdmin.CatalogTree({
+            renderTo: "mycatalogtree11", 
+            map: map11,
+            configCatalog: customCatalog,
+            singleUnfold: false, // avoid closing the branch when anotherone is selected
+            sortCatalog: false, // do not sort catalog leafs automatically
+            limitLayers: 50 // increase the number of layers one can add at the same time
          });
       }
    </script>
    <body onload="init();">
-      <div id="mymap11" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="mymouseposition11" style="margin:10px !important;height:25px"></div>
+      <div id="mycatalogtree11" style="float: left; margin:10px !important;width:280px;"></div>
+      <div id="mymap11" style="float: right; width:400px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -273,16 +312,16 @@ Mouse Position
 
     </div>
 
-.. _navigation-history:
+.. _mouse-position:
 
-Navigation History
-------------------
+Mouse Position
+--------------
 
 .. raw:: html
 
    <body>
-      <div id="mynavigationhistory12" style="margin:10px !important;"></div>
       <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition12" style="margin:10px !important;;height:25px"></div>
       <div id="myclear" style="clear: both;"></div>
    </body>
 
@@ -298,15 +337,56 @@ Navigation History
       var map12;
       function init() {
          map12 = new GeoAdmin.Map("mymap12", {doZoomToMaxExtent: true});
-         var navigationhistory12  = new GeoAdmin.NavigationHistory({
-                renderTo: "mynavigationhistory12",
+         var mouseposition11  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition12",
                 map: map12
          });
       }
    </script>
    <body onload="init();">
-      <div id="mynavigationhistory12" style="margin:10px !important;"></div>
       <div id="mymap12" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="mymouseposition12" style="margin:10px !important;height:25px"></div>
+      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
+   </body>
+
+.. raw:: html
+
+    </div>
+
+.. _navigation-history:
+
+Navigation History
+------------------
+
+.. raw:: html
+
+   <body>
+      <div id="mynavigationhistory13" style="margin:10px !important;"></div>
+      <div id="mymap13" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+      <div id="myclear" style="clear: both;"></div>
+   </body>
+
+.. raw:: html
+
+    <a id="showRef13" href="javascript:showdiv('codeBlock13','showRef13','hideRef13')" style="display: none; visibility: hidden; margin:10px !important;">Show code</a>
+    <a id="hideRef13" href="javascript:hidediv('codeBlock13','showRef13','hideRef13')" style="margin:10px !important;">Hide code</a>
+    <div id="codeBlock13" style="margin:10px !important;">
+
+.. code-block:: html
+
+   <script type="text/javascript">
+      var map13;
+      function init() {
+         map13 = new GeoAdmin.Map("mymap13", {doZoomToMaxExtent: true});
+         var navigationhistory13  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory13",
+                map: map13
+         });
+      }
+   </script>
+   <body onload="init();">
+      <div id="mynavigationhistory13" style="margin:10px !important;"></div>
+      <div id="mymap13" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
       <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -325,7 +405,7 @@ Navigation History
 .. raw:: html
 
    <script type="text/javascript">
-      var map6, map7, map8, map9, map10, map11, map12;
+      var map6, map7, map8, map9, map10, map11, map12, map13;
       function init() {
          OpenLayers.Lang.setCode(OpenLayers.Util.getParameters().lang || "de");
          
@@ -374,15 +454,60 @@ Navigation History
          var tree = new GeoAdmin.CatalogTree({renderTo: "mycatalogtree10", map: map10});
 
          map11 = new GeoAdmin.Map("mymap11", {doZoomToMaxExtent: true});
-         var mouseposition11  = new GeoAdmin.MousePositionBox({
-                renderTo: "mymouseposition11",
-                map: map11
+         var customCatalog = [{
+            text: 'My Custom Catalog 1.0',
+            expanded: true,
+            children: [{
+                text: 'My Custom Catalog 1.1',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.babs.kulturgueter'
+                    }]
+                }, {
+                text: 'My Custom Catalog 1.2',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.astra.ivs-nat'
+                    }, {
+                        layerId: 'ch.astra.ivs-reg_loc'
+                    }]
+                }]
+            }, {
+            text: 'My Custom Catalog 2.0',
+            expanded: true,
+            children: [{
+                text: 'My Custom Catalog 2.1',
+                expanded: true,
+                children: [
+                    {
+                        layerId: 'ch.bafu.bundesinventare-bln'
+                    }, {
+                        layerId: 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
+                    }]
+                }]
+            }];
+
+         var tree11 = new GeoAdmin.CatalogTree({
+            renderTo: "mycatalogtree11", 
+            map: map11,
+            configCatalog: customCatalog,
+            singleUnfold: false, // avoid closing the branch when anotherone is selected
+            sortCatalog: false, // do not sort catalog automatically
+            limitLayers: 50 // increase the number of layers one can add at the same time
          });
 
          map12 = new GeoAdmin.Map("mymap12", {doZoomToMaxExtent: true});
-         var navigationhistory12  = new GeoAdmin.NavigationHistory({
-                renderTo: "mynavigationhistory12",
+         var mouseposition12  = new GeoAdmin.MousePositionBox({
+                renderTo: "mymouseposition12",
                 map: map12
+         });
+
+         map13 = new GeoAdmin.Map("mymap13", {doZoomToMaxExtent: true});
+         var navigationhistory13  = new GeoAdmin.NavigationHistory({
+                renderTo: "mynavigationhistory13",
+                map: map13
          });
 
       }

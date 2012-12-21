@@ -36,3 +36,15 @@
     background-image: none;
     border-color: #FF0000 !important;
 }
+
+#measure-tooltip {
+    background-color: white;
+    padding: 3px;
+    font: 12px arial,tahoma,helvetica,sans-serif;
+    border-style: solid;
+    border-width: 1px;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    border: 0 0 0 0;
+    padding: 0 0 0 0;
+}
