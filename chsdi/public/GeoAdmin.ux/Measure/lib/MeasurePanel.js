@@ -77,14 +77,14 @@ GeoAdmin.MeasurePanel = Ext.extend(Ext.Panel, {
             new GeoAdmin.MeasureControl.Length(Ext.apply({
                 iconCls: 'gx-map-measurelength',
                 tooltip: OpenLayers.i18n("Measure.MeasureLength.ToolTip"),
-                text: OpenLayers.i18n("Measure.MeasureLength"),
+                text: OpenLayers.i18n("Measure.MeasureLength")
             }, buttonConfig))
         );
         this.measureArea = new Ext.Button(
             new GeoAdmin.MeasureControl.Area(Ext.apply({
                 iconCls: 'gx-map-measurearea',
                 tooltip: OpenLayers.i18n("Measure.MeasureArea.ToolTip"),
-                text: OpenLayers.i18n("Measure.MeasureArea"),
+                text: OpenLayers.i18n("Measure.MeasureArea")
             }, buttonConfig))
         );
         this.measureAzimuth = new Ext.Button(
