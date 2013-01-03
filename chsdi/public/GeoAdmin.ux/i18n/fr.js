@@ -262,6 +262,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Shorten':'URL abrégée',
 	'Shorten URL':'URL abrégée',
 	'Sorting_order':'Trier',
+	'Start Measuring':'Start Measuring', //TODO
 	'Statistische Einheiten':'Unités statistiques',
 	'Style':'Style',
 	'Subject':'Sujet',

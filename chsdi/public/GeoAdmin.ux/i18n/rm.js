@@ -258,6 +258,7 @@ OpenLayers.Lang.rm= {
 	'Shorten':'URL curt',
 	'Shorten URL':'URL curt',
 	'Sorting_order':'Zavrar',
+	'Start Measuring':'Start Measuring', //TODO
 	'Statistische Einheiten':'Unitads statisticas',
 	'Style':'Stil',
 	'Subject':'Object',
