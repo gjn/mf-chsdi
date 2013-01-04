@@ -293,7 +293,7 @@ OpenLayers.Lang.rm= {
 	'WmsBrowserWindow':'Agiuntar in servetsch da WMS',
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
-	'You can add only 5 layers in the layer tree.':'Vus pudais agiuntar mo 5 stresas en il bostg da stresas.',
+	'The maximum number of layers you can add to the layer tree has been reached.':'Vus pudais agiuntar mo x stresas en il bostg da stresas.',
 	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Voss computer da sustegna betg il transferiment da datotecas. Utilisai p.pl. http://map.revision.admin.ch/ cun in computer empè da quest servetsch per ans trametter maletgs u rutas GPS.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs.',
 	'Your description exceeeds the maximum permitted length.':'La lunghezza maximala è da 200 segns',

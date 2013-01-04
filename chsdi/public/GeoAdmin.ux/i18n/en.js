@@ -297,7 +297,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'WmsBrowserWindow':'Add a WMS service',
 	'Yes':'Yes',
 	'You are using Internet Explorer 6.':'Are you crazy ? You are using Internet Explorer 6.',
-	'You can add only 5 layers in the layer tree.':'You can add only 5 layers in the layer tree.',
+	'The maximum number of layers you can add to the layer tree has been reached.':'The maximum number of layers you can add to the layer tree has been reached.',
 	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Your device does not support the integration of attachments. Please use a computer instead of this service if you intend to send pictures or GPS tracks along with your report (http://map.revision.admin.ch/).',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Your data will exclusively be used for our internal production and will not be forwarded to others.',
 	'Your description exceeeds the maximum permitted length.':'Maximum length is 200 characters',
