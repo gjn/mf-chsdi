@@ -1,4 +1,5 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Start Measuring': "",
     'National Map Overview': "",
     'National Map': "",
     'Export all': "",
