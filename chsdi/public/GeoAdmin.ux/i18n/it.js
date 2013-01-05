@@ -297,7 +297,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'WmsBrowserWindow':'Aggiungere un servizio WMS',
 	'Yes':'Si',
 	'You are using Internet Explorer 6.':'State utilizzando Explorer 6',
-	'You can add only 5 layers in the layer tree.':'Potete solamente aggiungere 5 strati di piani nell\'albero dei piani.',
+	'The maximum number of layers you can add to the layer tree has been reached.':'Il numero massimo di strati di piani è stato raggiunto.',
 	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Il suo terminale non supporta il trasferimento di allegati. La preghiamo di utilizzare http://map.revision.admin.ch/ da un PC se desidera inviarci immagini o tracce GPS in allegato.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'I suoi dati saranno usati esclusivamente nell\'ambito della produzione interna e non saranno messi a disposizione di terzi.',
 	'Your description exceeeds the maximum permitted length.':'Lunghezza massima 200 caratteri',

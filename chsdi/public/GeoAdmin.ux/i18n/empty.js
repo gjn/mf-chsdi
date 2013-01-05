@@ -398,7 +398,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Warning Internet Explorer 6':"",
     'You are using Internet Explorer 6.':"",
     'We recommend to upgrade to a newer release.':"",
-    'You can add only 5 layers in the layer tree.':"",
+    'The maximum number of layers you can add to the layer tree has been reached.':"",
     'Your email (optional)':"",
     'Your email':"",
     'Your feedback about current map extent':"",

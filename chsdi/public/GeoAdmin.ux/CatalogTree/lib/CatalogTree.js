@@ -125,7 +125,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
                     this.suspendEvents();
                     node.getUI().toggleCheck(false);
                     this.updateCustomizedCheckbox(node, false);
-                    alert(OpenLayers.i18n('You can add only 5 layers in the layer tree.'));
+                    alert(OpenLayers.i18n('The maximum number of layers you can add to the layer tree has been reached.') + ' (' + this.limitLayers + ')');
                     this.resumeEvents();
                 } else {
                     this.updateCustomizedCheckbox(node, true);
