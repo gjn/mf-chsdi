@@ -10,7 +10,7 @@
  * @include OpenLayers/Control/Measure.js
  * @include OpenLayers/Rule.js
  * @requires GeoExt.ux/Measure.js
- * @include Measure/lib/MeasureAzimuth.js
+ * @requires Measure/lib/MeasureAzimuth.js
  */
 
 Ext.namespace('GeoAdmin');
