@@ -73,6 +73,16 @@ Ext.onReady( function () {
         var mapDiv1 = document.getElementById('mymap1');
         var mapDiv2 = document.getElementById('mymap2');
 
+        var treeDiv1 = document.getElementById('mycatalogtree1');
+        var treeDiv2 = document.getElementById('mycatalogtree2');
+
+        var layerTreeDiv1 = document.getElementById('mylayertree1');
+        var layerTreeDiv2 = document.getElementById('mylayertree2');
+
+        treeDiv1.style.display = 'block';
+        treeDiv2.style.display = 'none';
+        layerTreeDiv1.style.display = 'block';
+        layerTreeDiv2.style.display = 'none';
         mapDiv1.style.width = 600;
         mapDiv2.style.display = 'none';
         mapDiv1.style.borderWidth = 0;
