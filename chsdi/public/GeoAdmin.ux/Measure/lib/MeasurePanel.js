@@ -191,7 +191,7 @@ GeoAdmin.MeasureToolTip = Ext.extend(Ext.ToolTip, {
         this.id = 'measure-tooltip';
         this.autoHide = false;
         this.autoWidth = true;
-        this.target = map.div;
+        this.target = this.map.div;
         this.trackMouse = true;
         this.html = OpenLayers.i18n('Start Measuring');
         GeoAdmin.MeasureToolTip.superclass.initComponent.call(this);

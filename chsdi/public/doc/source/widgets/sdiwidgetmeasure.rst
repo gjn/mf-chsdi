@@ -51,7 +51,7 @@ The Measure widget allows you to measure distances and surfaces.
    function init() {
 
        map14 = new GeoAdmin.Map();
-       mappane14 = new GeoAdmin.MapPanel({
+       mappanel14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
            width: 450,
            height: 340,
@@ -59,8 +59,8 @@ The Measure widget allows you to measure distances and surfaces.
            tbar: ["->"]
        });
 
-       mappane14.getTopToolbar().add(new GeoAdmin.Measure({map: mappane14.map}));
-       mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+       mappanel14.getTopToolbar().add(new GeoAdmin.Measure({map: mappanel14.map}));
+       mappanel14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
    }
    </script>
@@ -84,7 +84,7 @@ The Measure widget allows you to measure distances and surfaces.
    function init() {
 
        map14 = new GeoAdmin.Map();
-       mappane14 = new GeoAdmin.MapPanel({
+       mappanel14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
            width: 450,
            height: 340,
@@ -92,8 +92,8 @@ The Measure widget allows you to measure distances and surfaces.
            tbar: ["->"]
        });
 
-       mappane14.getTopToolbar().add(new GeoAdmin.Measure({map: mappane14.map}));
-       mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+       mappanel14.getTopToolbar().add(new GeoAdmin.Measure({map: mappanel14.map}));
+       mappanel14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
    }
    </script>
