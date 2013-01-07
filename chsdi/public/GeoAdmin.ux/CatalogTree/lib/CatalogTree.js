@@ -36,6 +36,21 @@
 
 Ext.namespace("GeoAdmin");
 
+Ext.sequence(Ext.tree.DefaultSelectionModel.prototype, 'onKeyDown', function(e) {
+    if (e.getKey() === e.ENTER)  {
+        var node = this.selNode || this.lastSelNode;
+        if (node.leaf && this.tree instanceof GeoAdmin.CatalogTree) {
+            if (!node.attributes.checked) {
+                this.tree.updateCustomizedCheckbox(node, true);
+                this.tree.addLayer(node.id);
+            } else {
+                this.tree.updateCustomizedCheckbox(node, false);
+                this.tree.destroyLayer(node.id);
+            }
+        }
+    }
+});
+
 GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
 
     cls: "geoadmin-catalog-tree",
@@ -460,6 +475,7 @@ GeoAdmin.CatalogTree = Ext.extend(Ext.tree.TreePanel, {
             this.root.children =  config;
         }
         this.adaptNodeConfig(this.root);
+
         GeoAdmin.CatalogTree.superclass.initComponent.call(this);
 
         this.addEvents("afterselection");
