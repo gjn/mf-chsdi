@@ -83,9 +83,9 @@
         config = {layers: 'ch.swisstopo.fixpunkte-lage-euref'};
         layers.extendConfigFromCapabilities(config, caps);
 
-        t.eq(config.minScale, 75000000,
+        t.eq(config.minScale, 74999809.5001,
              'ch.swisstopo.fixpunkte-lage-euref minScale as expected');
-        t.eq(config.maxScale, 0.75,
+        t.eq(config.maxScale, 0.749998095001,
              'ch.swisstopo.fixpunkte-lage-euref maxScale as expected');
         expectedExtent = OpenLayers.Bounds.fromArray(
                 [100000, 50000, 850000, 400000]);
