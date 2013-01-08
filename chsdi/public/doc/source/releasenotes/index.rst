@@ -5,11 +5,23 @@ Geodata
 ********
 
 
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit) |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remove |                                                                                                                                                 |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Gründigkeit` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-gruendigkeit>`__ (ch.blw.bodeneignung-gruendigkeit)                                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Nährstoffspeichervermögen` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-naehrstoffspeichervermoegen>`__ (ch.blw.bodeneignung-naehrstoffspeichervermoegen) |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Skelettgehalt` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-skelettgehalt>`__ (ch.blw.bodeneignung-skelettgehalt)                                         | 
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Vernässung` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-vernaessung>`__ (ch.blw.bodeneignung-vernaessung)                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Wasserdurchlässigkeit` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserdurchlaessigkeit>`__ (ch.blw.bodeneignung-wasserdurchlaessigkeit)               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Wasserspeichervermögen` <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserspeichervermoegen>`__ (ch.blw.bodeneignung-wasserspeichervermoegen)            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Remove |                                                                                                                                                                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
