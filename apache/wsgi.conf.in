@@ -103,14 +103,13 @@ WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/mod
     WSGIApplicationGroup %{GLOBAL}
 </Location>
 
-# never cache the api loader
-<Location /${vars:instanceid}/wsgi/loader.js>
+# never cache loader.js, demos, tests and everthing diretly accessed in GeoAdmin.ux (useful for unit tests)
+<Location ~ "/${vars:instanceid}/wsgi/(loader.js|demo|tests|GeoAdmin.ux)(.*)?$">
     ExpiresDefault "access"
     Header merge Cache-Control "no-cache"
     Header unset ETag
     Header unset Last-Modified
 </Location>
-
 
 # Some services are not "free": TODO THIS IS A PROVISORY SOLUTION
 SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"      GOODREF
