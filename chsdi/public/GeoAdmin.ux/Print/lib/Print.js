@@ -329,7 +329,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             getAbsoluteUrl: function(url) {
                 var a;
                 // Fix for IE10
-                if (Ext.isIE && !(Ext.isIE9 || (parseFloat(navigator.appVersion.split("MSIE")[1].split(';')[0]) == 10))) {
+                if (Ext.isIE && !(Ext.isIE9 || Ext.isIE10)) {
                     a = document.createElement("<a href='" + url + "'/>");
                     a.style.display = "none";
                     document.body.appendChild(a);
