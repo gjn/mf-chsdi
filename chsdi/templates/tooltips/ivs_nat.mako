@@ -4,7 +4,7 @@
 
 <%def name="table_body()">
     <tr><td width="150">${_('ivs_objekt')}</td><td>${self.preview()}</td></tr>
-    <tr><td width="150">${_('beschreibung')}</td>
+    <tr><td width="150">${_('ivs_signatur')}</td>
 % if c.lang =='fr':
     <td>${c.feature.ivs_signatur_fr}</td></tr>
 % elif c.lang == 'it':
@@ -15,8 +15,14 @@
     <tr><td width="150">${_('gemkanton')}</td><td>${c.feature.ivs_kanton}</td></tr>
     <tr><td width="150">${_('ivs_nat_historischen')}</td><td>${c.feature.ivs_sladatehist or '-'}</td></tr>
     <tr><td width="150">${_('ivs_nat_morphologischen')}</td><td>${c.feature.ivs_sladatemorph}</td></tr>
-    <tr><td width="150">${_('ivs_bedeutung_short')}</td><td>${_('national')}</td></tr>
-    <tr><td width="150">${_('ivs_name_objektes')}</td><td>${c.feature.ivs_slaname}</td></tr> 
+% if c.feature.ivs_slabedeutung =='3':
+    <tr><td width="150">${_('ivs_slabedeutung')}</td><td>${_('national')}</td></tr>
+% elif c.feature.ivs_slabedeutung =='2':
+    <tr><td width="150">${_('ivs_slabedeutung')}</td><td>${_('regional')}</td></tr>
+% elif c.feature.ivs_slabedeutung =='1':
+    <tr><td width="150">${_('ivs_slabedeutung')}</td><td>${_('lokal')}</td></tr>
+% endif
+    <tr><td width="150">${_('ivs_slaname')}</td><td>${c.feature.ivs_slaname}</td></tr> 
     <tr><td width="150" valign="top">${_('ivs_documentation')}</td>
 <%
     from urllib2 import urlopen
