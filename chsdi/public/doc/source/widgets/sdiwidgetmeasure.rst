@@ -33,7 +33,6 @@ The Measure widget allows you to measure distances and surfaces.
   <body>
        <div id="mymap4" style="float: left; width:450px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
        <div id="myclear" style="clear: both;"></div>
-       <div id="measure"></div>
    </body>
 
 .. raw:: html
@@ -51,7 +50,7 @@ The Measure widget allows you to measure distances and surfaces.
    function init() {
 
        map14 = new GeoAdmin.Map();
-       mappane14 = new GeoAdmin.MapPanel({
+       mappanel14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
            width: 450,
            height: 340,
@@ -59,15 +58,14 @@ The Measure widget allows you to measure distances and surfaces.
            tbar: ["->"]
        });
 
-       mappane14.getTopToolbar().add(new GeoAdmin.Measure({map: mappane14.map}));
-       mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+       mappanel14.getTopToolbar().add(new GeoAdmin.Measure({map: mappanel14.map}));
+       mappanel14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
    }
    </script>
    <body onload="init();">
       <div id="mytreepanel4" style="float: left; margin:10px !important;width:285px;height: 340px;"></div>
       <div id="mymap4" style="float: left; width:450px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
-      <div id="measure"></div>
      <script type="text/javascript" src="https://api.geo.admin.ch/loader.js"></script>
    </body>
 
@@ -84,7 +82,7 @@ The Measure widget allows you to measure distances and surfaces.
    function init() {
 
        map14 = new GeoAdmin.Map();
-       mappane14 = new GeoAdmin.MapPanel({
+       mappanel14 = new GeoAdmin.MapPanel({
            renderTo: "mymap4",
            width: 450,
            height: 340,
@@ -92,8 +90,8 @@ The Measure widget allows you to measure distances and surfaces.
            tbar: ["->"]
        });
 
-       mappane14.getTopToolbar().add(new GeoAdmin.Measure({map: mappane14.map}));
-       mappane14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
+       mappanel14.getTopToolbar().add(new GeoAdmin.Measure({map: mappanel14.map}));
+       mappanel14.map.switchComplementaryLayer("ch.swisstopo.pixelkarte-farbe", {opacity: 1});
 
    }
    </script>
