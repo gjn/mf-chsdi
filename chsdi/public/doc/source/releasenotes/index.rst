@@ -1,4 +1,4 @@
-Release 201301xx - Day, January xxth 2013
+Release 20130109 - Wednesday, January 9th 2013
 ====================================================
 
 Geodata
@@ -21,7 +21,7 @@ Geodata
 | New    | `Bodeneignung: Wasserspeichervermögen <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserspeichervermoegen>`__ (ch.blw.bodeneignung-wasserspeichervermoegen)             |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Listing all publicly available layers of the Geoadmin API:
+Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
 
@@ -180,8 +180,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------+
 | Update | `IVS National <http://s.geo.admin.ch/8284974a>`__ (ch.astra.ivs-nat)                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ZIP and locations <//s.geo.admin.ch/aa2d01ec>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)       |
-+--------+------------------------------------------------------------------------------------------------------+
+| Update | `ZIP and locations <//s.geo.admin.ch/aa2d01ec>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
