@@ -289,7 +289,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 // check if the layer is already loaded
                 for (var i=0, len = self.layers.length; i<len; i++) {
                     if (self.layers[i].layername === layer.layername) {
-                        self.layers[i].addOptions(options);
+                        if (options) {
+                           self.layers[i].addOptions(options);
+                        }
                         return null;
                     }
                 }

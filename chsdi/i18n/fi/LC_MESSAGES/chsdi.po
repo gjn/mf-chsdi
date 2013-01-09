@@ -1261,19 +1261,28 @@ msgid "ivs_nat_abschnitt"
 msgstr "Abschnitt"
 
 msgid "ivs_nat_historischen"
-msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
+msgstr "Geschichte"
 
 msgid "ivs_nat_linienfuehrung"
 msgstr "Linienführung"
 
 msgid "ivs_nat_morphologischen"
-msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
+msgstr "Gelände"
 
 msgid "ivs_nat_strecke"
 msgstr "Strecke"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
+
+msgid "ivs_signatur"
+msgstr "Substanzgrad"
+
+msgid "ivs_slabedeutung"
+msgstr "Bedeutung nach NHG"
+
+msgid "ivs_slaname"
+msgstr "Strecke"
 
 msgid "jahrezeitenrythmus"
 msgstr "Jahreszeitenrythmus"

@@ -828,7 +828,7 @@ msgid "ch.swisstopo.fixpunkte-hfp1"
 msgstr "Points fixes altimétriques PFA1"
 
 msgid "ch.swisstopo.fixpunkte-hfp2"
-msgstr "Points fixes alt. PFA2, PFA3"
+msgstr "Points fixes altimétriques PFA2"
 
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Points fixes en altimétrie"
@@ -843,7 +843,7 @@ msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr "Points fixes planimétriques PFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
-msgstr "Points fixes plan. PFP2, PFP3"
+msgstr "Points fixes planimétriques PFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Dernier maximum glaciaire"
@@ -1260,19 +1260,28 @@ msgid "ivs_nat_abschnitt"
 msgstr "Segment"
 
 msgid "ivs_nat_historischen"
-msgstr "Date final du travail descriptive du tracé historique"
+msgstr "Histoire"
 
 msgid "ivs_nat_linienfuehrung"
 msgstr "Tronçons"
 
 msgid "ivs_nat_morphologischen"
-msgstr "Date final du travail descriptive du tracé morphologique"
+msgstr "Terrain"
 
 msgid "ivs_nat_strecke"
 msgstr "Itinéraire"
 
 msgid "ivs_objekt"
 msgstr "Object IVS"
+
+msgid "ivs_signatur"
+msgstr "Substance"
+
+msgid "ivs_slabedeutung"
+msgstr "Importance (LPN)"
+
+msgid "ivs_slaname"
+msgstr "Tracé"
 
 msgid "jahrezeitenrythmus"
 msgstr "Rythme saisonnier"

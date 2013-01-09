@@ -828,7 +828,7 @@ msgid "ch.swisstopo.fixpunkte-hfp1"
 msgstr "Height control points HFP1"
 
 msgid "ch.swisstopo.fixpunkte-hfp2"
-msgstr "Height control points HFP2, HFP3"
+msgstr "Height control points HFP2"
 
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Vertical control point"
@@ -843,7 +843,7 @@ msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr "Planimetric control points LFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
-msgstr "Plan. control points LFP2, LFP3"
+msgstr "Fixed plan control points LFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Last glacial maximum"
@@ -1261,19 +1261,28 @@ msgid "ivs_nat_abschnitt"
 msgstr "Segment"
 
 msgid "ivs_nat_historischen"
-msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
+msgstr "History"
 
 msgid "ivs_nat_linienfuehrung"
 msgstr "Sections"
 
 msgid "ivs_nat_morphologischen"
-msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
+msgstr "Terrain"
 
 msgid "ivs_nat_strecke"
 msgstr "Route"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
+
+msgid "ivs_signatur"
+msgstr "Substance"
+
+msgid "ivs_slabedeutung"
+msgstr "Importance LPN"
+
+msgid "ivs_slaname"
+msgstr "Route"
 
 msgid "jahrezeitenrythmus"
 msgstr "Jahreszeitenrythmus"

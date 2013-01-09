@@ -828,7 +828,7 @@ msgid "ch.swisstopo.fixpunkte-hfp1"
 msgstr "Höhenfixpunkte HFP1"
 
 msgid "ch.swisstopo.fixpunkte-hfp2"
-msgstr "Höhenfixpunkte HFP2, HFP3"
+msgstr "Höhenfixpunkte HFP2"
 
 msgid "ch.swisstopo.fixpunkte-hoehe"
 msgstr "Höhenfixpunkte"
@@ -843,7 +843,7 @@ msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr "Lagefixpunkte LFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
-msgstr "Lagefixpunkte LFP2, LFP3"
+msgstr "Lagefixpunkte LFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Letzteiszeitliches Maximum"
@@ -1260,19 +1260,28 @@ msgid "ivs_nat_abschnitt"
 msgstr "Abschnitt"
 
 msgid "ivs_nat_historischen"
-msgstr "Datum des Abschluss der Arbeit am historischen Streckenbeschrieb"
+msgstr "Geschichte"
 
 msgid "ivs_nat_linienfuehrung"
 msgstr "Linienführung"
 
 msgid "ivs_nat_morphologischen"
-msgstr "Datum des Abschluss der Arbeit am morphologischen Streckenbeschrieb"
+msgstr "Gelände"
 
 msgid "ivs_nat_strecke"
 msgstr "Strecke"
 
 msgid "ivs_objekt"
 msgstr "IVS-Objekt"
+
+msgid "ivs_signatur"
+msgstr "Substanzgrad"
+
+msgid "ivs_slabedeutung"
+msgstr "Bedeutung nach NHG"
+
+msgid "ivs_slaname"
+msgstr "Strecke"
 
 msgid "jahrezeitenrythmus"
 msgstr "Jahreszeitenrythmus"

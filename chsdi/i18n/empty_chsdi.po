@@ -1410,6 +1410,15 @@ msgstr ""
 msgid "ivs_objekt"
 msgstr ""
 
+msgid "ivs_slaname"
+msgstr ""
+
+msgid "ivs_signatur"
+msgstr ""
+
+msgid "ivs_slabedeutung"
+msgstr ""
+
 msgid "ivs_gis"
 msgstr ""
 

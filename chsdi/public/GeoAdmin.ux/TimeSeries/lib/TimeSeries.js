@@ -881,7 +881,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         delayedPreload(timestampIndex + 1);
                     }
 
-                    if (layer.tileQueue.length > 0) {
+                    if (layer.numLoadingTiles > 0) {
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
                         timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {

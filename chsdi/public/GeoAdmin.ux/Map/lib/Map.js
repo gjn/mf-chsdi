@@ -479,7 +479,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                         }
                     }
                     if (self.layers[i].layername === layer.layername && sameTimestamp) {
-                        self.layers[i].addOptions(options);
+                        if (options) {
+                           self.layers[i].addOptions(options);
+                        }
                         return null;
                     }
                 }

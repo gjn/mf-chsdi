@@ -5,11 +5,21 @@ Geodata
 ********
 
 
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit) |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Remove |                                                                                                                                                 |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Gründigkeit <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-gruendigkeit>`__ (ch.blw.bodeneignung-gruendigkeit)                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Nährstoffspeichervermögen <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-naehrstoffspeichervermoegen>`__ (ch.blw.bodeneignung-naehrstoffspeichervermoegen)  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Skelettgehalt <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-skelettgehalt>`__ (ch.blw.bodeneignung-skelettgehalt)                                          | 
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Vernässung <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-vernaessung>`__ (ch.blw.bodeneignung-vernaessung)                                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Wasserdurchlässigkeit <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserdurchlaessigkeit>`__ (ch.blw.bodeneignung-wasserdurchlaessigkeit)                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bodeneignung: Wasserspeichervermögen <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserspeichervermoegen>`__ (ch.blw.bodeneignung-wasserspeichervermoegen)             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 
@@ -23,10 +33,11 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-
-+-----+----------------------------------------------------------------------------------------+
-| New | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers |
-+-----+----------------------------------------------------------------------------------------+
++--------+------------------------------------------------------------------------------------------------------+
+| New    | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers               |
++--------+------------------------------------------------------------------------------------------------------+
+| Update | Improved speed of `SwissSearch <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html>`__ |
++--------+------------------------------------------------------------------------------------------------------+
 
 Other minor bugfixing.
 
@@ -91,9 +102,9 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------+
 | Update | `ZIP and locations <//s.geo.admin.ch/a2bc6704>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                       |
 +--------+----------------------------------------------------------------------------------------------------------------------+
-| Remove | `Horizontal control points replaced by 'Fixed Control Points LFP1' and 'Control Points LFP2, LFP3'`                  |
+| Remove | Horizontal control points replaced by 'Fixed Control Points LFP1' and 'Control Points LFP2, LFP3'                    |
 +--------+----------------------------------------------------------------------------------------------------------------------+
-| Remove | `Vertical control points replaced by 'Fixed Control Points HFP1' and 'Control Points HFP2, HFP3'`                    |
+| Remove | Vertical control points replaced by 'Fixed Control Points HFP1' and 'Control Points HFP2, HFP3'                      |
 +--------+----------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:

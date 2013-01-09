@@ -29,15 +29,16 @@ if (Ext) {
     Ext.apply(Ext, {
         isIE6: isIE && ieVer <= 6,
         isIE7:  isIE && ieVer == 7,
-        isIE8: isIE && ieVer >= 8,
-        isIE9:  isIE && ieVer == 9
+        isIE8: isIE && ieVer == 8,
+        isIE9:  isIE && ieVer == 9,
+        isIE10: isIE && ieVer == 10
     });
 }
 
 Ext.dd.DragTracker.override({
     onMouseMove: function(e, target){
     // HACK: IE hack to see if button was released outside of window. */
-        if(this.active && Ext.isIE && !e.browserEvent.button && !Ext.isIE9){
+        if(this.active && Ext.isIE && !e.browserEvent.button && !(Ext.isIE9 || Ext.isIE10)){
             e.preventDefault();
             this.onMouseUp(e);
             return;
@@ -59,7 +60,7 @@ Ext.dd.DragTracker.override({
        }
  });
 
-if (Ext.isIE9) {
+if (Ext.isIE9 || Ext.isIE10) {
     Ext.apply(Ext, {
         /* Move cursor doesn't disappear within IE9  */
         removeNode : Ext.isIE6 || Ext.isIE7 ? function(){
