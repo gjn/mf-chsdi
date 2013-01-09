@@ -33,21 +33,18 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-+--------+------------------------------------------------------------------------------------------------------+
-| New    | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers               |
-+--------+------------------------------------------------------------------------------------------------------+
-| Update | Improved speed of `SwissSearch <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html>`__ |
-+--------+------------------------------------------------------------------------------------------------------+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers                                                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Improved speed of `SwissSearch <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html>`__                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Improved Measure tooltips with `real-time tracking of values <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#custom-catalog-tree>`__ |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Other minor bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
-
-
-+--------+--+
-| Update |  |
-+--------+--+
 
 Other minor bugfixing.
 
