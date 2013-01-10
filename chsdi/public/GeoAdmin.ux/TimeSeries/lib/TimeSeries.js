@@ -256,7 +256,6 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
      *  :return: ``Object`` Serializable widget state to be used by permalink provider
      */
     getState: function() {
-        console.log(this.animationSlider.getYear());
         return {
             state: {
                 // Written by handler on tab change
