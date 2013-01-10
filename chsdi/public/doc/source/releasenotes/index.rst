@@ -1,4 +1,4 @@
-Release 201301xx - Day, January xxth 2013
+Release 20130109 - Wednesday, January 9th 2013
 ====================================================
 
 Geodata
@@ -21,7 +21,7 @@ Geodata
 | New    | `Bodeneignung: Wasserspeichervermögen <//map.geo.admin.ch/?layers=ch.blw.bodeneignung-wasserspeichervermoegen>`__ (ch.blw.bodeneignung-wasserspeichervermoegen)             |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Listing all publicly available layers of the Geoadmin API:
+Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
 
@@ -33,21 +33,18 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-+--------+------------------------------------------------------------------------------------------------------+
-| New    | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers               |
-+--------+------------------------------------------------------------------------------------------------------+
-| Update | Improved speed of `SwissSearch <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html>`__ |
-+--------+------------------------------------------------------------------------------------------------------+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | Wms Browser is now sensitive to the active language when querying admin.ch WMS servers                                                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Improved speed of `SwissSearch <//api.geo.admin.ch/main/wsgi/doc/build/services/sdiservices.html>`__                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Improved Measure tooltips with `real-time tracking of values <//api.geo.admin.ch/main/wsgi/doc/build/widgets/sdiwidgetsexamples2.html#custom-catalog-tree>`__ |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Other minor bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
-
-
-+--------+--+
-| Update |  |
-+--------+--+
 
 Other minor bugfixing.
 
@@ -180,8 +177,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------+
 | Update | `IVS National <http://s.geo.admin.ch/8284974a>`__ (ch.astra.ivs-nat)                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ZIP and locations <//s.geo.admin.ch/aa2d01ec>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)       |
-+--------+------------------------------------------------------------------------------------------------------+
+| Update | `ZIP and locations <//s.geo.admin.ch/aa2d01ec>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API:
 

@@ -20,3 +20,7 @@
 .ext-ie7 div#mouseposition {
     left: 125px !important;
 }
+
+.box-projection-selector .x-form-arrow-trigger {
+    position: relative !important;
+}
