@@ -54,7 +54,7 @@ def checkURL(function):
             abort(400, 'Could not determine hostname')
 
         domain = ".".join(hostname.split(".")[-2:])
-        if not 'admin.ch' in domain:
+        if (not 'admin.ch' in domain) and (not 'swisstopo.ch' in domain):
             abort(400, 'Shortener can only be used for admin.ch domain')
 
         return function(self)

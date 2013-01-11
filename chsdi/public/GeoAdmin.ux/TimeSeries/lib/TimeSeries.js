@@ -123,6 +123,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                     this.showYearInAnimationMode(previousYear);
                     this.animationSlider.setYear(previousYear);
+                    this.saveState();
                 }
                 if (evt.keyCode == 39) {
                     this.stopAnimation();
@@ -132,6 +133,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                     this.showYearInAnimationMode(nextYear);
                     this.animationSlider.setYear(nextYear);
+                    this.saveState();
                 }
             }
         };
@@ -181,10 +183,12 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         Ext.get(this.contentEl).child('.backwards').on('click', function() {
             this.showYearInAnimationMode(this.minYear);
             this.animationSlider.setYear(this.minYear);
+            this.saveState();
         }, this);
         Ext.get(this.contentEl).child('.forwards').on('click', function() {
             this.showYearInAnimationMode(this.maxYear);
             this.animationSlider.setYear(this.maxYear);
+            this.saveState();
         }, this);
 
         var playDirectionHolder = Ext.get('playTab').child('.timeseriesWidget-controls-left');

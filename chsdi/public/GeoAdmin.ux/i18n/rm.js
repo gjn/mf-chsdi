@@ -271,6 +271,7 @@ OpenLayers.Lang.rm= {
 	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
 	'Thanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.':'Voss messadi è vegnì tramess a la persuna responsabla. Grazia che Vus ans gidais d\'actualisar e d\'optimar noss products.',
 	'The following URL will be transferred:':'Trametter Link:',
+	'The maximum number of layers you can add to the layer tree has been reached.':'The maximum number of layers you can add to the layer tree has been reached.', //TODO
 	'The permalink you use contains reference to third party data. Would you load these data ?':'Dieser Permalink zeigt möglicherweise auf Daten eines Drittanbieters. Wollen Sie diese Daten dennoch laden?',
 	'The url address entered is not valid.':'URL na valid',
 	'Third party data warning':'Warnung- Diese Daten kommen von einem Drittanbieter',
@@ -293,7 +294,6 @@ OpenLayers.Lang.rm= {
 	'WmsBrowserWindow':'Agiuntar in servetsch da WMS',
 	'Yes':'Gea',
 	'You are using Internet Explorer 6.':'Vus duvrais Internet Explorer 6.',
-	'The maximum number of layers you can add to the layer tree has been reached.':'Vus pudais agiuntar mo x stresas en il bostg da stresas.',
 	'Your browser or device does not support file tranfers. Please use http://map.revision.admin.ch/ with a computer instead of this service if you intend to send pictures or GPS tracks along with your report.':'Voss computer da sustegna betg il transferiment da datotecas. Utilisai p.pl. http://map.revision.admin.ch/ cun in computer empè da quest servetsch per ans trametter maletgs u rutas GPS.',
 	'Your data will exclusively be used for our internal production and will not be forwarded to others.':'Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs.',
 	'Your description exceeeds the maximum permitted length.':'La lunghezza maximala è da 200 segns',
