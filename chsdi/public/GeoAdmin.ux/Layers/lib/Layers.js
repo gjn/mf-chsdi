@@ -2352,6 +2352,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true,
+                url: ['http://wmts10.prod.bgdi.ch/','http://wmts11.prod.bgdi.ch','http://wmts12.prod.bgdi.ch','http://wmts13.prod.bgdi.ch','http://wmts14.prod.bgdi.ch'],
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
             },
             "ch.swisstopo.pixelkarte-farbe-pk200.noscale": {
