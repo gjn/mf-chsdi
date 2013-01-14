@@ -549,8 +549,8 @@ class sil_planning_raster_k(Base, Queryable):
 	
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
 
-class ngamapping (Base, Queryable):
-	__tablename__ = 'ngamapping'
+class nga_anbieter (Base, Queryable):
+	__tablename__ = 'nga_anbieter'
 	__table_args__ = ({'schema': 'bakom', 'autoload': True})
 	__template__ = 'tooltips/ngamapping.mako'
 	id = Column('cellid', Integer, primary_key=True)
@@ -558,10 +558,194 @@ class ngamapping (Base, Queryable):
 	fdaurl = Column('fdaurl', Text)
 	the_geom = Column('the_geom',Geometry(21781))
 
-register('ch.bakom.anbieter-eigenes_festnetz', ngamapping)
-register('ch.bakom.downlink1', ngamapping)
-register('ch.bakom.uplink1', ngamapping)
-register('ch.bakom.verfuegbarkeit-hdtv', ngamapping)
+register('ch.bakom.anbieter-eigenes_festnetz', nga_anbieter)
+
+class nga_coax (Base, Queryable):
+	__tablename__ = 'nga_coax'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.anschlussart-koaxialkabel', nga_coax)
+
+class nga_copper (Base, Queryable):
+	__tablename__ = 'nga_copper'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.anschlussart-kupferdraht', nga_copper)
+
+class nga_d1 (Base, Queryable):
+	__tablename__ = 'nga_d1'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink1', nga_d1)
+
+class nga_d10 (Base, Queryable):
+	__tablename__ = 'nga_d10'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink10', nga_d10)
+
+class nga_d100 (Base, Queryable):
+	__tablename__ = 'nga_d100'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink100', nga_d100)
+
+class nga_d2 (Base, Queryable):
+	__tablename__ = 'nga_d2'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink2', nga_d2)
+
+class nga_d20 (Base, Queryable):
+	__tablename__ = 'nga_d20'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink20', nga_d20)
+
+class nga_d50 (Base, Queryable):
+	__tablename__ = 'nga_d50'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.downlink50', nga_d50)
+
+class nga_fiber (Base, Queryable):
+	__tablename__ = 'nga_fiber'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.anschlussart-glasfaser', nga_fiber)
+
+class nga_hdtv (Base, Queryable):
+	__tablename__ = 'nga_hdtv'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.verfuegbarkeit-hdtv', nga_hdtv)
+
+class nga_tv (Base, Queryable):
+	__tablename__ = 'nga_tv'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.verfuegbarkeit-tv', nga_tv)
+
+class nga_u01 (Base, Queryable):
+	__tablename__ = 'nga_u01'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink1', nga_u01)
+
+class nga_u10 (Base, Queryable):
+	__tablename__ = 'nga_u10'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink10', nga_u10)
+
+class nga_u100 (Base, Queryable):
+	__tablename__ = 'nga_u100'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink100', nga_u100)
+
+class nga_u2 (Base, Queryable):
+	__tablename__ = 'nga_u2'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink2', nga_u2)
+
+class nga_u20 (Base, Queryable):
+	__tablename__ = 'nga_u20'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink20', nga_u20)
+
+class nga_u50 (Base, Queryable):
+	__tablename__ = 'nga_u50'
+	__table_args__ = ({'schema': 'bakom', 'autoload': True})
+	__template__ = 'tooltips/ngamapping.mako'
+	id = Column('cellid', Integer, primary_key=True)
+	alias = Column('alias', Text)
+	fdaurl = Column('fdaurl', Text)
+	the_geom = Column('the_geom',Geometry(21781))
+
+register('ch.bakom.uplink50', nga_u50)
 
 class kernkraftwerke (Base, Queryable):
 	__tablename__ = 'kernkraftwerke'

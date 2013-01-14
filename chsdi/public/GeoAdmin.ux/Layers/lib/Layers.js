@@ -2213,7 +2213,37 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bakom.anbieter-eigenes_festnetz": {
                 name: OpenLayers.i18n("ch.bakom.anbieter-eigenes_festnetz"),
                 layertype: 'wmts',
-                timestamp: ['20121128'],
+                timestamp: ['20121221'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.anschlussart-glasfaser": {
+                name: OpenLayers.i18n("ch.bakom.anschlussart-glasfaser"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.anschlussart-koaxialkabel": {
+                name: OpenLayers.i18n("ch.bakom.anschlussart-koaxialkabel"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.anschlussart-kupferdraht": {
+                name: OpenLayers.i18n("ch.bakom.anschlussart-kupferdraht"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bakom",
@@ -2223,7 +2253,57 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bakom.downlink1": {
                 name: OpenLayers.i18n("ch.bakom.downlink1"),
                 layertype: 'wmts',
-                timestamp: ['20121128'],
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink10": {
+                name: OpenLayers.i18n("ch.bakom.downlink10"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink100": {
+                name: OpenLayers.i18n("ch.bakom.downlink100"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink2": {
+                name: OpenLayers.i18n("ch.bakom.downlink2"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink20": {
+                name: OpenLayers.i18n("ch.bakom.downlink20"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.downlink50": {
+                name: OpenLayers.i18n("ch.bakom.downlink50"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bakom",
@@ -2233,7 +2313,57 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bakom.uplink1": {
                 name: OpenLayers.i18n("ch.bakom.uplink1"),
                 layertype: 'wmts',
-                timestamp: ['20121128'],
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink10": {
+                name: OpenLayers.i18n("ch.bakom.uplink10"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink100": {
+                name: OpenLayers.i18n("ch.bakom.uplink100"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink2": {
+                name: OpenLayers.i18n("ch.bakom.uplink2"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink20": {
+                name: OpenLayers.i18n("ch.bakom.uplink20"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.uplink50": {
+                name: OpenLayers.i18n("ch.bakom.uplink50"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bakom",
@@ -2243,7 +2373,17 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bakom.verfuegbarkeit-hdtv": {
                 name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-hdtv"),
                 layertype: 'wmts',
-                timestamp: ['20121128'],
+                timestamp: ['20121220'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bakom.verfuegbarkeit-tv": {
+                name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-tv"),
+                layertype: 'wmts',
+                timestamp: ['20121220'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bakom",

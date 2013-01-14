@@ -741,7 +741,21 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bak.schutzgebiete-unesco_weltkulturerbe':"",
     'Please deactivate "Private browsing". Some functionalities have been deactivated.': "",
 	'ch.bakom.anbieter-eigenes_festnetz':"",
+	'ch.bakom.anschlussart-glasfaser':"",
+	'ch.bakom.anschlussart-koaxialkabel':"",
+	'ch.bakom.anschlussart-kupferdraht':"",
 	'ch.bakom.downlink1':"",
+	'ch.bakom.downlink10':"",
+	'ch.bakom.downlink100':"",
+	'ch.bakom.downlink2':"",
+	'ch.bakom.downlink20':"",
+	'ch.bakom.downlink50':"",
 	'ch.bakom.uplink1':"",
-	'ch.bakom.verfuegbarkeit-hdtv':""
+	'ch.bakom.uplink10':"",
+	'ch.bakom.uplink100':"",
+	'ch.bakom.uplink2':"",
+	'ch.bakom.uplink20':"",
+	'ch.bakom.uplink50':"",
+	'ch.bakom.verfuegbarkeit-hdtv':"",
+	'ch.bakom.verfuegbarkeit-tv':""
 });
