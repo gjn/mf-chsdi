@@ -494,7 +494,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             if ((options && options.timestamp !== undefined) || config.timestamp !== undefined) {
                wmsParams.time = options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp;
             }
-            GeoAdmin.wmsServiceUrl = GeoAdmin.wmsServiceUrl ? GeoAdmin.wmsServiceUrl :((GeoAdmin.protocol ? GeoAdmin.protocol : 'http') + 'wms.geo.admin.ch/');
+            GeoAdmin.wmsServiceUrl = GeoAdmin.wmsServiceUrl ? GeoAdmin.wmsServiceUrl :((GeoAdmin.protocol ? GeoAdmin.protocol : 'http') + '//wms.geo.admin.ch/');
             return new OpenLayers.Layer.WMS(config.name, config.url || GeoAdmin.wmsServiceUrl,
                 wmsParams,
                 layer_options_wms);
