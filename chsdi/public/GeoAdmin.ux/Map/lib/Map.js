@@ -72,6 +72,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     vectorStyleMap: null,
     complementaryLayer: null,
     overviewMapCtrl: null,
+    fallThrough: true,
 
     EVENT_TYPES: ["changecomplementarylayer"],
 
