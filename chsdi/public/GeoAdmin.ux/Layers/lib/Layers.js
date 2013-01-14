@@ -2038,26 +2038,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
-            "ch.are.bauzonen-2007": {
-                name: OpenLayers.i18n("ch.are.bauzonen-2007"),
-                layertype: 'wmts',
-                timestamp: ['20070101'],
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.are",
-                opacity: 0.75,
-                queryable: true
-            },
-            "ch.are.gemeindetyp-1990-9klassen": {
-                name: OpenLayers.i18n("ch.are.gemeindetyp-1990-9klassen"),
-                layertype: 'wmts',
-                timestamp: ['20090101'],
-                type: "polygon",
-                format: "image/png",
-                datenherr: "ch.are",
-                opacity: 0.4,
-                queryable: true
-            },
             "ch.bav.kataster-belasteter-standorte-oev": {
                 name: OpenLayers.i18n("ch.bav.kataster-belasteter-standorte-oev"),
                 layertype: 'wms',
