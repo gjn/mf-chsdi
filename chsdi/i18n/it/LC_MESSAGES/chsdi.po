@@ -378,7 +378,7 @@ msgid "blind warning"
 msgstr "Questa pagina Web è una  applicazione geografica, purtroppo non è ottimizata per le persone videolese."
 
 msgid "blw_farbe_0"
-msgstr "Enclavi"
+msgstr "Non classificato"
 
 msgid "blw_farbe_1"
 msgstr "Cerealicoltura, foraggicoltura: ++; sarchiate: +/++"
@@ -387,7 +387,7 @@ msgid "blw_farbe_10"
 msgstr "Prati naturali: +; prati artificiali: +/-"
 
 msgid "blw_farbe_11"
-msgstr "Pascolo bestiame minuto: +; foraggicoltura, pascolo bestiame giovane: +/-"
+msgstr "Pascolo bestiame minuto: +; foraggicoltura, pascolo be-stiame giovane: +/-"
 
 msgid "blw_farbe_12"
 msgstr "Pascolo bestiame grosso: +; foraggicoltura: +/-"
@@ -411,7 +411,7 @@ msgid "blw_farbe_18"
 msgstr "Pascolo bestiame minuto: +/-"
 
 msgid "blw_farbe_19"
-msgstr "Zone con insediamenti, rocce, ghiacciai"
+msgstr "Non classificato"
 
 msgid "blw_farbe_2"
 msgstr "Foraggicoltura: +/++; campicoltura: +"
@@ -420,19 +420,19 @@ msgid "blw_farbe_3"
 msgstr "Campicoltura, prati naturali: +; prati artificiali: +/-"
 
 msgid "blw_farbe_4"
-msgstr "Foraggicoltura: ++; cerealicoltura: +; sarchiate: +/-"
+msgstr "cerealicoltura: +; Foraggicoltura: ++; sarchiate: +/-"
 
 msgid "blw_farbe_5"
 msgstr "Cerealicoltura, prati naturali, pascolo bestiame grosso: +/-"
 
 msgid "blw_farbe_6"
-msgstr "Pascolo bestiame grosso: ++; foraggicoltura: +; cerealicoltura: +/-"
+msgstr "foraggicoltura: +; cerealicoltura: +/; Pascolo bestiame grosso: ++;"
 
 msgid "blw_farbe_7"
 msgstr "Forragicoltura, pascolo bestiame grosso: +; cerealicoltura: +/-"
 
 msgid "blw_farbe_8"
-msgstr "Prati naturali, pascolo bestiame grosso: +; prati artificiali, cerealicoltura: +/-"
+msgstr "Prati naturali: +; prati artificiali, cerealicoltura: +/-"
 
 msgid "blw_farbe_9"
 msgstr "Prati naturali:+; prati artificiali, cerealicoltura: +/-; pascolo bestiame grosso: -"
