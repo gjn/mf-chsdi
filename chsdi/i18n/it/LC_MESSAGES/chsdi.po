@@ -45,7 +45,7 @@ msgid "Coordinates"
 msgstr "Coordinate"
 
 msgid "Datenbezug"
-msgstr "Procacciamento dei dati"
+msgstr "Distribuzione dei dati"
 
 msgid "Datenstand"
 msgstr "Stato d'attualità"

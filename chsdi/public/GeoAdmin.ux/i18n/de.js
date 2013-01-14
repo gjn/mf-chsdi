@@ -436,6 +436,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.wrz-jagdbanngebiete_select':'Jagdbanngebiete - select',
 	'ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen':'WRZ Portal - Wege und Routen',
 	'ch.bafu.wrz-wildruhezonen_portal':'Wildruhezonen - Portal',
+	'ch.bag':'BAG',
+	'ch.bag.url':'http://www.bag.admin.ch/index.html?lang=de',
 	'ch.bag.zecken-lyme':'Borreliose Risikogebiete',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Bundesinventar ISOS',

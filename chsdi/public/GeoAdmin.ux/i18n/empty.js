@@ -757,5 +757,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bakom.uplink20':"",
 	'ch.bakom.uplink50':"",
 	'ch.bakom.verfuegbarkeit-hdtv':"",
-	'ch.bakom.verfuegbarkeit-tv':""
+	'ch.bakom.verfuegbarkeit-tv':"",
+    'ch.bag':"",
+    'ch.bag.url':""
 });
