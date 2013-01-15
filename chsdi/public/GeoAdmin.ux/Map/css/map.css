@@ -110,3 +110,6 @@ div.olControlMousePosition {
   max-height: 280px !important;
 }
 
+.olLayerGridSingleTile .olTileReplacing {
+    display: block !important;
+}
