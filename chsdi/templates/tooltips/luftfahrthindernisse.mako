@@ -57,7 +57,7 @@
         <tr>
             <td>
                 <div style="float: left; font-weight: bold; font-size: 14px;">${_('tt_ch.bazl.registrationnummer')}: ${c.feature.registrationnumber}</div>
-                <div style="float: right; text-align: right;">${_('tt_ch.bazl.hindernisart')}: ${c.feature.obstacletype}</div>
+                <div style="float: right; text-align: right; padding-right: 16px;">${_('tt_ch.bazl.hindernisart')}: ${c.feature.obstacletype}</div>
             </td>
         </tr>
         <tr>
@@ -110,7 +110,7 @@
             <td style="padding-left: 200px;">${sanctiontext}</td>
         </tr>
         <tr>
-            <td style="text-align: right; font-weight: bold;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
+            <td style="text-align: right; font-weight: bold; padding-right: 19px;">${_('tt_ch.bazl.kartnummer')}: ${c.feature.lk100}</td>
         </tr>
         <tr>
             <td><div id="${c.feature.id}" class="features" style="width=600px; height=400px;"></div></td>
@@ -140,12 +140,12 @@
                             displayInLayerSwitcher: false,
                             styleMap: new OpenLayers.StyleMap({
                                 "default": new OpenLayers.Style({
-                                    pointRadius: "7",
-                                    fillColor: "#ffff80",
-                                    fillOpacity: 0.8,
-                                    strokeColor: "#feea00",
-                                    strokeOpacity: 1,
-                                    strokeWidth: 5
+                                pointRadius: "5",
+                                strokeColor: "#feea00",
+                                strokeWidth: 2,
+                                strokeOpacity: 1,
+                                fillColor: "#feea00",
+                                fillOpacity: 0
                                 })
                             })
                         });
@@ -168,8 +168,8 @@
                         navControl = map.getControlsByClass('OpenLayers.Control.Navigation')[0];
                         navControl.destroy();
 
-                        map.switchComplementaryLayer('voidLayer', { opacity: 1 });
-                        var pk = new OpenLayers.Layer.WMS("PK 100","http://wms.geo.admin.ch/?lang=xx",{layers: 'ch.swisstopo.pixelkarte-grau-pk100_bazl',format: "image/png"}, {ratio: 1, singleTile: true});
+                        map.switchComplementaryLayer('voidLayer', { ratio: 1, opacity: 1 });
+                        var pk = new OpenLayers.Layer.WMS("PK 100","http://wms.geo.admin.ch/?",{layers: 'ch.swisstopo.pixelkarte-grau-pk100_bazl',format: "image/png"}, {ratio: 1, singleTile: true});
                         map.addLayer(pk);
                         map.addLayerByName('org.epsg.grid_21781', { ratio: 1 });
                         map.addLayerByName('org.epsg.grid_4326', { ratio: 1 });

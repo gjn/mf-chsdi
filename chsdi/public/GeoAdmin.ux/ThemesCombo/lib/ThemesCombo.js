@@ -52,6 +52,7 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
 
         this.on('select', function (combo, record, index) {
             var state, i, len, layername;
+            this.themeSelected = true;
             this.map.vector.removeAllFeatures();
             state = this.map.getState();
             // Remove the previous layers
@@ -60,6 +61,7 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
                 this.map.removeLayerByName(layername);
             }
             this.map.applyState(record.data.state);
+            this.themeSelected = false;
         });
 
         GeoAdmin.ThemesCombo.superclass.initComponent.call(this);
@@ -77,7 +79,9 @@ GeoAdmin.ThemesCombo = Ext.extend(Ext.form.ComboBox, {
     },
 
     clearField: function(event) {
-        this.reset();
+        if (!this.themeSelected) {
+            this.reset();
+        }
     }
 
 });

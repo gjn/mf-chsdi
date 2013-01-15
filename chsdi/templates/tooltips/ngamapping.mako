@@ -3,17 +3,17 @@
 <%def name="preview()">${c.feature.id or '-'}</%def>
 
 <%def name="table_body()">
-    <% c.stable_id = True %>
-	% if c.feature.nbofprovider:
+	% if c.feature.nbofprovider > 0:
+    <tr>
         <%        
             i=c.feature.nbofprovider
             aliasarr=[unicode(a) for a in c.feature.alias.split(';')]
             urlarr=[unicode(b) for b in c.feature.fdaurl.split(';')]
         %>
         % for x in xrange(0,i):
-            <tr><td width="150">${_('tt_ngamapping_provider')}</td>    <td><a href="${urlarr[x] or '-'}" target="_blank">${aliasarr[x] or '-'}</a></td></tr>
+                <td><a href="${urlarr[x] or '-'}" target="_blank">${aliasarr[x] or '-'}</a></td></tr>
 	    % endfor
     % else:
-       <tr><td width="150">${_('tt_ngamapping_provider')}</td>    <td> - </td></tr>
+       <td> - </td>
 	% endif
 </%def>
