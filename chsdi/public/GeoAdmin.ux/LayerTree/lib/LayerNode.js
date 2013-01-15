@@ -24,6 +24,10 @@ GeoAdmin.LayerNode = Ext.extend(GeoExt.tree.LayerNode, {
         }else{
             config.iconCls = 'tree-layer-icon';
         }
+        // String has a max length of 30
+        var layerName = config.layer.name;
+        config.layer.name = layerName.length > 30 ? layerName.substring(0, 30) + '...' : layerName;
+
         // This could be done also in createLayer from Layers.js
         if (config.layer.timestamp) {
             if (!config.layer.isActualTimestamp(config.layer.timestamp)) {
