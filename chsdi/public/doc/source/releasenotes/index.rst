@@ -1,17 +1,65 @@
-
 Release 20130121 - Monday, January 21th 2013
 ====================================================
 
 Geodata
 ********
 
++-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `National Map 1:1 million (colour) <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale) |
++-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `National Map 1:1 million (colour) <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale)              |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Listing all publicly available layers of the Geoadmin API :
 
+- `List only <//s.geo.admin.ch/5d5d40a>`__
 
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
++-----+-------------------+
+| New | Add stuff here... |
++-----+-------------------+
+
+Other minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Other minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++--------+-------------------+
+| Update | Add stuff here... |
++--------+-------------------+
+
+Other minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++--------+--------------------------------------------------------------------+
+| Update | Information Windows for Layers now support all existing languages. |
++--------+--------------------------------------------------------------------+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
 
 Release 20130109 - Wednesday, January 9th 2013
 ====================================================
@@ -80,7 +128,7 @@ Bugfixing.
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
-Other minor bufixing.
+Other minor bugfixing.
 
 Other Applications
 ******************
@@ -165,7 +213,7 @@ Bugfixing.
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
 
-Other minor bufixing.
+Other minor bugfixing.
 
 Other Applications
 ******************
