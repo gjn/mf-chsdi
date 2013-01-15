@@ -2494,6 +2494,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.pixelkarte-farbe-pk1000.noscale": {
+                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk1000.noscale"),
+                layertype: 'wmts',
+                timestamp: ['20120809','20111027'],
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.astra.ausnahmetransportrouten": {
                 name: OpenLayers.i18n("ch.astra.ausnahmetransportrouten"),
                 layertype: 'wmts',
