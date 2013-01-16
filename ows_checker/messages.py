@@ -39,7 +39,7 @@ messages = {
     },
     'LANG-02': {},
     'LANG-03': {
-        t: 'The following language code has been found in service URL',
+        t: "The following language code '%(code)s' has been found in service URL",
         f: 'No language code found in service URL'
     },
     'LANG-04': {

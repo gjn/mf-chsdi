@@ -46,6 +46,12 @@ div.sphinxsidebar input {
     border: 1px solid #CCCCCC;
 }
 
+div.section {
+    border: 1px solid black;
+    background-color: #EEE;
+    padding: 0.5em;
+}
+
 div.section ul {
     padding: 0px 0px 0px 40px !important;
     list-style: square !important;
