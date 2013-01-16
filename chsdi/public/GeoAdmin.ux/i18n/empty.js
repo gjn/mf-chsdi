@@ -292,6 +292,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-geodaesie-isostatische_anomalien':"",
     'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz': "",
     'ch.swisstopo.geologie-geophysik-geothermie':"",
+    'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura':"",
     'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz':"",
     'ch.swisstopo.geologie-eiszeit-lgm-raster':"",
     'ch.swisstopo.geologie-quartaermaechtigkeit': "",
