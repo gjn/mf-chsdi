@@ -239,8 +239,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             this.preloadingDone = false;
         }
 
-        // Movend is trigger on pan and zoom of the map, thus there is not need to bind to zoomend as well
-        this.map.events.register('moveend', this, handleExtentChanged);
+        // Movestart is trigger on pan and zoom of the map, thus there is not need to bind to zoomend as well
+        // After update in openlayers, we had to change from moveend to movestart
+        this.map.events.register('movestart', this, handleExtentChanged);
         this.map.events.register('click', this, function(e) {
             if (e.which === 1 || button === 0) {
                 // Stop animation and preloading on left click
@@ -885,7 +886,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                         delayedPreload(timestampIndex + 1);
                     }
 
-                    if (layer.tileQueue.length > 0) {
+                    if (layer.numLoadingTiles > 0) {
                         layer.events.register("loadend", timeseriesWidget, layerPreloaded);
                         timeseriesWidget.abortPreloading = markLayerPreloadDone;
                     } else {
