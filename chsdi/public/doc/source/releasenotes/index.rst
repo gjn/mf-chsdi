@@ -4,9 +4,11 @@ Release 20130121 - Monday, January 21th 2013
 Geodata
 ********
 
-+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New | `National Map 1:1 million (colour) <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale) |
-+-----+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `Aeromagnetic Plateau/Jura <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura>`__ (ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura) |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `National Map 1:1 million (colour) <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale)                     |
++-----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
