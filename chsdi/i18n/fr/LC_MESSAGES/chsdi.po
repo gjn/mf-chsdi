@@ -378,64 +378,64 @@ msgid "blind warning"
 msgstr "Cette page est une application cartographique et n'est donc pas optimisée pour les aveugles."
 
 msgid "blw_farbe_0"
-msgstr "Enclaves"
+msgstr "Hors classement"
 
 msgid "blw_farbe_1"
-msgstr "Céréales, prairies: ++; cultures sarclées: +/++"
+msgstr "Cultures céréalières, Cultures fourragères:++ ; Cultures sarclées: +/++"
 
 msgid "blw_farbe_10"
-msgstr "Prairies permanentes: +; prairies temporaires: +/-"
+msgstr "Cultures fourragères naturelles: + ; Cultures fourragères artificielles: +/-"
 
 msgid "blw_farbe_11"
-msgstr "Pâturage de chèvres et moutons: +; prairies, pâturage du jeune bétail: +/-"
+msgstr "Pâturages à menu bétail: + ; Cultures fourragères, Pâturages à jeune bétail: +/-"
 
 msgid "blw_farbe_12"
-msgstr "Pâturage du gros bétail: +; prairies: +/-"
+msgstr "Pâturages à gros bétail: +; Cultures fourragères: +/-"
 
 msgid "blw_farbe_13"
-msgstr "Pâturage du jeune bétail: +; pâturage du gros bétail, prairies permanentes: +/-"
+msgstr "Pâturages à jeune bétail: + ; Pâturages à gros bétail, Cultures fourragères naturelles: +/-"
 
 msgid "blw_farbe_14"
-msgstr "Pâturage du jeune bétail: ++; prairies permanentes: +; pâturage du gros bétail: +/-"
+msgstr "Pâturages à jeune bétail: ++; Cultures fourragères naturelles: + ; Pâturages à gros bétail: +/-"
 
 msgid "blw_farbe_15"
-msgstr "Pâturage des chèvres et moutons: ++; pâturage du jeune bétail: +; pâturage du gros bétail: +/-"
+msgstr "Pâturages à menu bétail: ++ ; Pâturages à jeune bétail: +; Pâturages à gros bétail: +/- "
 
 msgid "blw_farbe_16"
-msgstr "Pâturage des chèvres et moutons: +; pâturage du jeune bétail: +/-; pâturage du gros bétail: -"
+msgstr "Pâturages à menu bétail: + ; Pâturages à jeune bétail: +/- ; Pâturages à gros bétail: -"
 
 msgid "blw_farbe_17"
-msgstr "Pâturage des chèvres et moutons: +; pâturage du jeune bétail: +/-"
+msgstr "Pâturages à menu bétail: + ; Pâturages à jeune bétail: +/- "
 
 msgid "blw_farbe_18"
-msgstr "Pâturage des chèvres et moutons: +/-"
+msgstr "Pâturages à menu bétail: +/-"
 
 msgid "blw_farbe_19"
-msgstr "Surfaces construites, rochers, glaciers"
+msgstr "Hors classement"
 
 msgid "blw_farbe_2"
-msgstr "Prairies: +/++; grandes cultures: +"
+msgstr "Cultures fourragères: +/++ ; Grandes cultures: +"
 
 msgid "blw_farbe_3"
-msgstr "Grandes cultures, prairies permanentes: +; prairies temporaires: +/-"
+msgstr "Grandes cultures, Cultures fourragères naturelles: + ; Cultures fourragères artificielles: +/-"
 
 msgid "blw_farbe_4"
-msgstr "Prairies: ++; céréales: +; cultures sarclées: +/-"
+msgstr "Cultures céréalières: + ; Cultures fourragères: ++ ; Cultures sarclées: +/-"
 
 msgid "blw_farbe_5"
-msgstr "Céréales, prairies permanentes, pâturages du gros bétail: +/-"
+msgstr "Cultures céréalières, Cultures fourragères naturelles, Pâturages à gros bétail: +/-"
 
 msgid "blw_farbe_6"
-msgstr "Pâturage du gros bétail: ++; prairies: +; céréales: +/-"
+msgstr "Cultures fourragères: +; Cultures céréalières: +/-; Pâturages à gros bétail: ++"
 
 msgid "blw_farbe_7"
-msgstr "Prairies, pâturages du gros bétail: +; céréales: +/-"
+msgstr "Cultures fourragères, Pâturages à gros bétail: + ; Cultures céréalières: +/"
 
 msgid "blw_farbe_8"
-msgstr "Prairies permanentes, pâturages du gros bétail: +; prairies temporaires, céréales: +/-"
+msgstr "Cultures fourragères naturelles: +; Cultures fourragères artificielles, Cultures céréalières: +/-"
 
 msgid "blw_farbe_9"
-msgstr "Prairies permanentes: +; prairies temporaires, céréales: +/-; pâturage du gros bétail: -"
+msgstr "Cultures fourragères naturelles:+; Cultures fourragères artificielles, Cultures céréalières: +/-, Pâturages à gros bétail: -"
 
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomérations et villes isolées"

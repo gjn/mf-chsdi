@@ -564,6 +564,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.geologie-geologische_karte':'Geology 1:500 000',
 	'ch.swisstopo.geologie-geologischer_atlas':'Geological Atlas 1:25 000',
 	'ch.swisstopo.geologie-geomorphologie':'ch.swisstopo.geologie-geomorphologie', //TODO
+	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura':'Aeromagnetic Plateau/Jura',
 	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz':'Aeromagnetic',
 	'ch.swisstopo.geologie-geophysik-deklination':'Declination',
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geothermal energy',

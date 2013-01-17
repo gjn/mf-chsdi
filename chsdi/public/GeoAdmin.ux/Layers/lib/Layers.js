@@ -1240,6 +1240,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
+            "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"),
+                layertype: 'wmts',
+                timestamp: ['19831231'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"),
                 layertype: 'wmts',

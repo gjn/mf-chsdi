@@ -11,7 +11,9 @@ This document describes the service OWSChecker in terms of implementation and ut
 
 2.1 eCH-0056
 ------------
-The Swiss norm eCH-0056 defines a "geoservices application profile". The main objective of the norm is to enable interoperability in geoservices chaining, in the framework of the Swiss National Spatial Data Infrastructure. The norm contains mandatory and optional rules for services implementation.
+The Swiss norm eCH-0056 [1]_ defines a "geoservices application profile". The main objective of the norm is to enable interoperability in geoservices chaining, in the framework of the Swiss National Spatial Data Infrastructure. The norm contains mandatory and optional rules for services implementation.
+
+.. [1] http://www.ech.ch/vechweb/page?p=dossier&documentNumber=eCH-0056&documentVersion=2.00
 
 2.2 OWSChecker
 --------------
@@ -23,7 +25,6 @@ The OWSChecker is implemented within the swisstopo infrastructure: to enable thi
 The service retrieves a GetCapabilities document, and all possible checks are done analyzing the capabilities document.
 The stateless requirement partially constraints the OWSChecker, and it has not been possible to check some (few) eCH-0056 rules.     
 
-
 3 OWSChecker howto 
 ******************
 The OWSChecker can be used via a HTML form (this will be implemented as a GeoAdmin API widget and will be also available within the swisstopo web infrastructure) and as a web service.
@@ -32,8 +33,7 @@ The OWSChecker can be used via a HTML form (this will be implemented as a GeoAdm
 -------------
 An example of the HTML form is available at the following address:
 
- * `http://api.geo.admin.ch/main/wsgi/owschecker/form </main/wsgi/owschecker/form>`_
-
+ * http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/form
 
 The form inputs are:
 
@@ -72,8 +72,7 @@ Before the list of all checked rules a "Status" message returns the overall resu
 3.2 Web service
 ----------------
 The OWSChecker can be consumed as web service at the following address:
-
- * `http://api.geo.admin.ch/main/wsgi/owschecker/bykvp </main/wsgi/owschecker/bykvp>`_
+ * http://mf-chsdi0i.bgdi.admin.ch/main/wsgi/owschecker/bykvp 
 
 using the following Key-Value parameters:
 
@@ -83,8 +82,7 @@ using the following Key-Value parameters:
  * *restful*: same specification as for "Service Restful-Only"
 
 Example: 
-
- * `http://api.geo.admin.ch/main/wsgi/owschecker/bykvp?base_url=http://wms.geo.admin.ch/&service=WMS </main/wsgi/owschecker/bykvp?base_url=http%3A%2F%2Fwms.geo.admin.ch%2F&service=WMS>`_
+ * http://mf-chsdi0t.bgdi.admin.ch/ckarrie/wsgi/owschecker/bykvp?base_url=http://wms.geo.admin.ch/&service=WMS  
 
 4 eCH-0056 Rules 
 ******************
@@ -136,6 +134,155 @@ As far as language is concerned, the following codes are checked:
  * *Rumantsch*: roh, rm
  * *English*: en, eng, en-US, en-GB, en-CA
 
+4.1 *e* CH-0056 compliance
+--------------------------------
+The following table shows, per service type, which rules are considered in the evaluation of the compliance towards eCH-0056. The meaning of the text is as follows:
+ * True: the rule is checked and should return “True”
+ * Neutral: the rule is checked, but, it does not matter the result, it has no impact on the final evaluation of the eCH-0056 compliance (see text above and ‘Constraints and limitations’)
+ * Not checked: the rule is not checked (see text above and ‘Constraints and limitations’)
+
++------------+------------+-----------+-----------+------------+-----------+ 
+| Rule       | WMS        | WMTS      | WFS       | WCS        | CSW       |
++============+============+===========+===========+============+===========+ 
+|**ALLG-01** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**ALLG-02** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+ 
+|**ALLG-03** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**ALLG-04** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|ALLG-05     | Neutral    | Neutral   | Neutral   | Neutral    | Neutral   |
++------------+------------+-----------+-----------+------------+-----------+
+|ALLG-06     | Not checked|Not checked|Not checked|Not checked | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|SECU-01     | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|SECU-02     | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|SECU-03     | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**LANG-01** | Neutral    | Neutral   | Neutral   | Neutral    | Neutral   |
++------------+------------+-----------+-----------+------------+-----------+
+|LANG-02     | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|LANG-03     | Neutral    | Neutral   | Neutral   | Neutral    | Neutral   |
++------------+------------+-----------+-----------+------------+-----------+
+|LANG-04     | Neutral    | Neutral   | Neutral   | Neutral    | Neutral   |
++------------+------------+-----------+-----------+------------+-----------+
+|**CAPA-01** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**CAPA-02** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**EXCE-01** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**EXCE-02** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|**VERS-01** | True       | True      | True      | True       | True      |
++------------+------------+-----------+-----------+------------+-----------+
+|META-01     | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**CRS-01**  | True       | True      | True      | True       |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**CRS-02**  | True       | Neutral   | True      | True       |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**CRS-03**  | True       | True      | True      | True       |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**CRS-04**  | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|CRS-05      | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|CRS-06      | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|CRS-07      | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|CRS-08      | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|CRS-09      | Neutral    | Neutral   | Neutral   | Neutral    |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMS-01**  |True        |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMS-02**  |True        |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMS-03**  |Not checked |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMS-04**  |True        |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-05      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-06      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-07      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-08      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-09      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-10      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-11      |Neutral     |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMTS-01** |Not checked |True       |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMTS-02** |Not checked |True       |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMTS-03** |Not checked |True       |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WMTS-04** |Not checked |True       |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMTS-05     |Not checked |Neutral    |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMTS-06     |Not checked |Neutral    |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMTS-07     |Not checked |Neutral    |Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WFS-01**  |Not checked |Not checked|True       |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WFS-02**  |Not checked |Not checked|True       |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WFS-03**  |Not checked |Not checked|True       |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-04      |Not checked |Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-05      |Not checked |Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-06      |Not checked |Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-07      |Not checked |Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-08      |Not checked |Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**WCS-01**  |Not checked |Not checked|Not checked|True        |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WCS-02      |Not checked |Not checked|Not checked|Neutral     |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|**CSW-01**  |Not checked |Not checked|Not checked|Not checked |True       |
++------------+------------+-----------+-----------+------------+-----------+
+|**CSW-02**  |Not checked |Not checked|Not checked|Not checked |True       |
++------------+------------+-----------+-----------+------------+-----------+
+|SE-01       | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|SLD-01      | Neutral    |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|FE-01       | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|POS-01      | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|POS-02      | Not checked|Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-50      | Neutral    |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WMS-51      | Neutral    |Not checked|Not checked|Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-50      | Not checked|Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+|WFS-51      | Not checked|Not checked|Neutral    |Not checked |Not checked|
++------------+------------+-----------+-----------+------------+-----------+
+
+ .. note:: In **bold** mandatory rules according to eCH-0056 
+
+
+
 5 Constraints and limitations 
 ********************************
 
@@ -143,11 +290,11 @@ As far as language is concerned, the following codes are checked:
 ----------------
 The rule states that language specifications should follow IETF RFC 5646. Anyway when  the test of this rule return "false" not necessarily the service can be considered not eCH-0056 compliant; in fact it can easily be the case that a service is just available in one language and does not support multilingualism.
 
-For this reason, the rules is considered neutral for the overall evaluation of the eCH-0056 compliance of a service. 
+For this reason, the rules is considered **neutral** for the overall evaluation of the eCH-0056 compliance of a service. 
 
 5.2	CAPA-02
 ----------------
-The rule states that information about the service, the service provider and the service usage must be given as long as enabled by a specific standard; this can lead to different interpretations. In order to constraint the interpretation, the following has been taken into account:
+The rule states that information about the service, the service provider and the service usage must be given **as long as** enabled by a specific standard; this can lead to different interpretations. In order to constraint the interpretation, the following has been taken into account:
 
  * WMS-04: defines in details, for a WMS service, the elements that have to be taken in-to consideration for the service, service provider and service usage information
  * Section A 2.1 of eCH-0056: similar information
@@ -163,12 +310,12 @@ As a result the following set of elements has been defined:
  * Fees
  * Access Constraints   
 
-This set of elements has been considered as a good balance among different requirements (OWS Common, service specific specifications, eCH-0056), and is taken as reference for the implementation of CAPA-02. With the only exception of WFS 1.0.0: no contact information elements are available for this version of WFS. 
+This set of elements has been considered as a good balance among different requirements (OWS Common, service specific specifications, eCH-0056), and is taken as reference for the implementation of CAPA-02. **With the only exception of WFS 1.0.0: no contact information elements are available for this version of WFS**.
 
 5.3	CRS-04&07&08
 ------------------------
 CRS-04, 07, and 08 are coordinate reference systems for tridimensional data. The OWS-Checker just verifies the presence/absence of these reference systems: the result is by no way related to the availability of 3D data.
-More specifically, CRS-04 is considered neutral for the overall evaluation (eCH-0056 compli-ance) of a service. It is often the case that a service does not provide 3D data, so a non-compliance result cannot be given for this rule.  
+More specifically, CRS-04 is considered **neutral** for the overall evaluation (eCH-0056 compliance) of a service. It is often the case that a service does not provide 3D data, so a non-compliance result cannot be given for this rule.  
 
 5.4	WMS-06&07
 ---------------------
@@ -192,11 +339,11 @@ In '*'-01, instead, it is checked that the service supports all mandatory operat
 
 5.7	CRS and WCS
 -----------------------
-For WCS services the CRS information are given about the highest WCS version supported by a server, and not the **MUST** version. WCS version 1.0.0 (mandatory for eCH:0056) does not support spatial reference systems information in the capabilities document.
+For WCS services the CRS information are given about the highest WCS version supported by a server, and not the **MUST** version. WCS version 1.0.0 (mandatory for eCH-0056) does not support spatial reference systems information in the capabilities document.
 
 5.8	CRS and WFS
 -----------------------
-For WFS services the CRS information are given about the highest WFS version supported by a server, and not the **MUST** version. WFS version 1.0.0 (mandatory for eCH:0056) supports only one spatial reference system at a time, so that CRS-01 and CRS-02 would never be both true.
+For WFS services the CRS information are given about the highest WFS version supported by a server, and not the **MUST** version. WFS version 1.0.0 (mandatory for eCH-0056) supports only one spatial reference system at a time, so that CRS-01 and CRS-02 would never be both true.
 
 6 Check thematic content 
 **************************
@@ -204,9 +351,9 @@ For WFS services the CRS information are given about the highest WFS version sup
 In addition to the rules in eCH-0056 the OWSChecker performs two more types of test, in or-der to verify the thematic content of WMS and WFS services. These tests corresponds to the following rules:
 
  * WMS-50: tests the layer structure of a WMS in terms of completeness and naming
- * WMS-51: tests the content on a GetFeatureInfo request at a reference point 
+ * WMS-51: tests the content on a GetFeatureInfo request at a reference point. INFO_FORMAT should be set to text/xml. 
  * WFS-50: tests the layer structure of a WFS in terms of completeness and naming
- * WFS-51: tests the content on a GetFeature request at a reference point (unlike Get-FeatureInfo, the GetFeature request does not foresee the use of XY coordinates to specify a point of interest. As a workaround, a spatial filter with BBOX (bounding box) is used. 
+ * WFS-51: tests the content on a GetFeature request at a reference point (unlike Get-FeatureInfo, the GetFeature request does not foresee the use of XY coordinates to specify a point of interest. As a workaround, a spatial filter with BBOX (bounding box) is used. OUTPUTFORMAT should be set to GML2.
 
 These tests are performed against a server settings XML file, which has to be created by the user and has to be a web accessible resource. Examples of server settings files are in Annex A.
 
@@ -220,6 +367,8 @@ Server Settings file for WMS
 
 This file can be tested against the server: http://lidarserver.com/sandiego 
 
+ .. note:: If you want to create your own server settings file, copy/paste the example file and change the information according to your service. For more details on this have a look at the API documentation: http://api.geo.admin.ch/main/wsgi/doc/build/owschecker/. Take into consideration that: 'Request' must be set to 'GetFeatureInfo', 'INFO_FORMAT' to 'text/xml' and 'EXCEPTIONS' to 'application/vnd.ogc.se_xml'.
+
 
 
 Server Settings file for WFS
@@ -227,3 +376,5 @@ Server Settings file for WFS
 `http://api.geo.admin.ch/main/wsgi/demo/owschecker/ssurl/ssurl_wfs.xml </main/wsgi/demo/owschecker/ssurl/ssurl_wfs.xml>`_
 
 This file can be tested against the server: http://v2.suite.opengeo.org/geoserver/ows 
+
+ .. note:: If you want to create your own server settings file, copy/paste the example file and change the information according to your service. For more details on this have a look at the API documentation: http://api.geo.admin.ch/main/wsgi/doc/build/owschecker/. Take into consideration that: 'Request' must be set to 'GetFeature' and 'OUTPUTFORMAT' to 'GML2'.

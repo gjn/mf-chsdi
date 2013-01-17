@@ -564,6 +564,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geologische_karte':'Geologia 1:500 000',
 	'ch.swisstopo.geologie-geologischer_atlas':'Atlante geologico 1:25 000',
 	'ch.swisstopo.geologie-geomorphologie':'ch.swisstopo.geologie-geomorphologie', //TODO
+	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura':'Aeromagnetismo Altipiano/Giura',
 	'ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz':'Aeromagnetismo',
 	'ch.swisstopo.geologie-geophysik-deklination':'Declinazione',
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',

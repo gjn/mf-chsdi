@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ServerSettings>
-<ServerCapabilities>
-<Security>
-<SSL></SSL>
-<SSLCertificate></SSLCertificate>
-<SwissID></SwissID>
-<HTTPSLogin>
-<Username></Username>
-<Password></Password>
-</HTTPSLogin>
-</Security>
-</ServerCapabilities>
-
-
     <WMS>
         <Layers>
             <Layer status="must">Points</Layer>

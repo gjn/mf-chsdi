@@ -355,10 +355,10 @@ class OWSCheck(object):
                 # Removed GetMap due to stateless (too slow)
                 #["wms_GetMap",            None, False, {}],
                 ["wms_SLD",               None, False, {}],
-                ["wms_GetFeatureInfo",    None, False, {}],
                 ["wms_GetFeatureInfoMIME",None, False, {}],
+                ["wms_GetFeatureInfo",    None, False, {}],
             ]
-            
+
         elif self.service == 'WFS':
             self.service_specific_workflow += [
                 ["wfs_CheckGetFeature",None, False, {}],
@@ -1249,88 +1249,110 @@ class OWSCheck(object):
                  "ALLG-02"]
         
         xmldict = xml2dict.XML2Dict()
-        
-        if self.restful:
-            service_gc = self.service_settings.REST.GetCapabilities
-            ows_url = self.build_kvp_url(urllib.basejoin(self.base_url, service_gc), {})
-            if DEBUG: print ows_url
-            
-        else:
-        
-            kvp = {'request':'GetCapabilities',
-                   'service':self.service}
-            
-            if self.version:
-                kvp.update({'version':self.version})
-
-            ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
-            gc_file = URL2File(ows_url, auth=self.auth)
-            try:
-                dom.parse(gc_file)
-            except xml.parsers.expat.ExpatError, e:
-                self.swapcases = True
-                ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
-
-
-        results = [ows_url]
-
-        print "GetCap", ows_url
-
         try:
-            gc_file = URL2File(ows_url, auth=self.auth)
-            if ows_url.ssp:
-                self.setResultsOverview("ALLG-02", False, "URL contains Vendor Specific Parameters")
-            else:
-                self.setResultsOverview("ALLG-02", True, "URL contains no Vendor Specific Parameters")
-            self.setResultsOverview("ALLG-03", True, "Anfrage erhalten")
-            hints.append("ALLG-03")
-            self.gc_file_info = gc_file.info()
-            self.tree = dom.parse(gc_file)
-            results.append(self.gc_file_info.gettype())
-            if "xml" not in gc_file.info().gettype():
-                msg = "Returned files is not an XML file: %s" %(gc_file.info().gettype())
-                results.append(msg)
-                self.setResultsOverview("Status", False, msg)
-                return ResponseDict("_base_GetCapHandler", gc_file.info().gettype(), False) 
-            
-            for node in self.tree.childNodes:
-                if node.nodeType == dom.Node.ELEMENT_NODE:
-                    body = node.toxml('utf-8')
-                    if has_django: 
-                        body = smart_str(body)
-            self.gc_dict = xmldict.fromstring(body)
-            if gc_file.code == 200:
-                status = True
-                d = self.xml_Encoding(self.tree, name="GetCapabilites")
-                # ALLG-04
-                # self.setResultsOverview("ALLG-04", d.status, d.results)
-                # wird in self.xml_Encoding erledigt
-                # Don't stop at non UTF-8
-                # status = d.status
-                results.append(d.results)
-                if not d.status:
-                    msg = 'GetCapabilities: XML-Encoding does not match UTF-8'
-                    results.append(msg)
-                hints.append(d.hints)   # = ALLG-04
+            if self.restful:
+                service_gc = self.service_settings.REST.GetCapabilities
+                ows_url = self.build_kvp_url(urllib.basejoin(self.base_url, service_gc), {})
+                if DEBUG: print ows_url
 
             else:
-                err_msg = "Request failed: Code %s" %gc_file.code
-                results.append(err_msg)
-                self.setResultsOverview("Status", status, err_msg)
-            gc_file.close()
-            
+
+                kvp = {'request':'GetCapabilities',
+                       'service':self.service}
+
+                if self.version:
+                    kvp.update({'version':self.version})
+
+                ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
+                gc_file = URL2File(ows_url, auth=self.auth)
+                try:
+                    dom.parse(gc_file)
+                except xml.parsers.expat.ExpatError, e:
+                    self.swapcases = True
+                    ows_url = self.build_kvp_url(self.base_url, kvp, swapcases=self.swapcases)
+
+
+            results = [ows_url]
+
+            print "GetCap", ows_url
+
+            try:
+                gc_file = URL2File(ows_url, auth=self.auth)
+                if ows_url.ssp:
+                    self.setResultsOverview("ALLG-02", False, "URL contains Vendor Specific Parameters")
+                else:
+                    self.setResultsOverview("ALLG-02", True, "URL contains no Vendor Specific Parameters")
+                self.setResultsOverview("ALLG-03", True, "Anfrage erhalten")
+                hints.append("ALLG-03")
+                self.gc_file_info = gc_file.info()
+                self.tree = dom.parse(gc_file)
+                results.append(self.gc_file_info.gettype())
+                if "xml" not in gc_file.info().gettype():
+                    msg = "Returned files is not an XML file: %s" %(gc_file.info().gettype())
+                    results.append(msg)
+                    self.setResultsOverview("Status", False, msg)
+                    return ResponseDict("_base_GetCapHandler", gc_file.info().gettype(), False)
+
+                for node in self.tree.childNodes:
+                    if node.nodeType == dom.Node.ELEMENT_NODE:
+                        body = node.toxml('utf-8')
+                        if has_django:
+                            body = smart_str(body)
+                self.gc_dict = xmldict.fromstring(body)
+                if gc_file.code == 200:
+                    status = True
+                    d = self.xml_Encoding(self.tree, name="GetCapabilites")
+                    # ALLG-04
+                    # self.setResultsOverview("ALLG-04", d.status, d.results)
+                    # wird in self.xml_Encoding erledigt
+                    # Don't stop at non UTF-8
+                    # status = d.status
+                    results.append(d.results)
+                    if not d.status:
+                        msg = 'GetCapabilities: XML-Encoding does not match UTF-8'
+                        results.append(msg)
+                    hints.append(d.hints)   # = ALLG-04
+
+                else:
+                    err_msg = "Request failed: Code %s" %gc_file.code
+                    results.append(err_msg)
+                    self.setResultsOverview("Status", status, err_msg)
+                gc_file.close()
+
+            except urllib2.HTTPError, e:
+                # Wird in folgenden Fällen aufgerufen
+                # - Netzwerk nicht erreichbar
+                # - Authentifizierung erforderlich
+                ex_msg = u"HTTP-Error: %s %s" %(e.code, e.msg)
+                results.append(ex_msg)
+                self.setResultsOverview("ALLG-02", False, ex_msg)
+                self.setResultsOverview("ALLG-03", True, ex_msg)
+                self.setResultsOverview("Status", False, ex_msg)
+
+            except urllib2.URLError, e:
+                ex_msg = str(e.reason)
+                results.append(ex_msg)
+                self.setResultsOverview("Status", False, ex_msg)
+
+            except socket.timeout, e:
+                ex_msg = "Time Out"
+                results.append(ex_msg)
+                self.setResultsOverview("Status", False, ex_msg)
+
+            except xml.parsers.expat.ExpatError, e:
+                ex_msg = "GetCapabilities not well-formed: %s" %str(e)
+                results.append(ex_msg)
+                self.setResultsOverview("Status", False, ex_msg)
+
         except urllib2.HTTPError, e:
-            # Wird in folgenden Fällen aufgerufen
-            # - Netzwerk nicht erreichbar
-            # - Authentifizierung erforderlich
-            ex_msg = u"HTTP-Error: %s %s" %(e.code, e.msg)
-            results.append(ex_msg)
-            self.setResultsOverview("ALLG-02", False, ex_msg)
-            self.setResultsOverview("ALLG-03", True, ex_msg)
+            ex_msg = "HttpError"
             self.setResultsOverview("Status", False, ex_msg)
-       
+            results = []
+            results.append(e.msg)
+
         except urllib2.URLError, e:
-            ex_msg = str(e.reason)
+            ex_msg = "URL Error %s" %(e)
+            results = []
             results.append(ex_msg)
             self.setResultsOverview("Status", False, ex_msg)
 
@@ -1338,13 +1360,7 @@ class OWSCheck(object):
             ex_msg = "Time Out"
             results.append(ex_msg)
             self.setResultsOverview("Status", False, ex_msg)
-            
-        except xml.parsers.expat.ExpatError, e:
-            ex_msg = "GetCapabilities not well-formed: %s" %str(e)
-            results.append(ex_msg)
-            self.setResultsOverview("Status", False, ex_msg)
 
-        
         if self.gc_dict:    
             if self.gc_dict.has_key('ServiceExceptionReport') or self.gc_dict.has_key('ExceptionReport'):
                 exceptionmsg = "(no exception msg)"
@@ -1664,46 +1680,7 @@ class OWSCheck(object):
     
     def base_SSXMLHandler(self):
         """
-        Gets and parses the Server Settings XML document and validates the base structure. Fallback
-        structure:
-
-        .. code-block:: python
-
-            'ServerCapabilities' : {
-                        'Security': {
-                            'HTTPSLogin': {
-                                'Username':'',
-                                'Password':''
-                            },
-                            'SSL': '0',
-                            'SSLCertificate': '',
-                            'SwissID':''
-                        }
-                    }
-                })
-
-        Fallback structure in XML:
-
-        .. code-block:: xml
-
-            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-            <ServerSettings>
-                <ServerCapabilities>
-                    <Security>
-                        <SSL>0</SSL>
-                        <SSLCertificate></SSLCertificate>
-                        <SwissID></SwissID>
-                        <HTTPSLogin>
-                            <Username></Username>
-                            <Password></Password>
-                        </HTTPSLogin>
-                    </Security>
-                </ServerCapabilities>
-                <!-- here stars the service dependent part -->
-                <WMS>
-                ...
-                </WMS>
-            </ServerSettings>
+        Gets and parses the Server Settings XML document and validates the base structure.
 
         .. seealso::
 
@@ -1715,11 +1692,12 @@ class OWSCheck(object):
                 of the current method.
         """
         _ss = xml2dict.XML2Dict()
-        status = False
+        status = True
         msg = 'Error reading ServerSetting file: '
         if self.ssurl:
             r = self.base_URLSyntax(self.ssurl)
             if r['status']:
+
                 try:
                     # Convert URL to a File Object
                     f = URL2File(self.ssurl)
@@ -1732,17 +1710,42 @@ class OWSCheck(object):
                     # Convert XML to a dict
                     self.ssxml = _ss.fromstring(body)['ServerSettings']
                     # check for Content
-                    sc = self.ssxml['ServerCapabilities']['Security']['HTTPSLogin'].keys()
-                    compare = all([v in ['Password', 'Username', 'value'] for v in sc])
+                    #sc = self.ssxml['ServerCapabilities']['Security']['HTTPSLogin'].keys()
+                    #compare = all([v in ['Password', 'Username', 'value'] for v in sc])
                     
                     # Weitere dienstspezifische Überprüfungen erfolgen in der
                     # entsprechenden Methode
                     # WMS: wms_GetFeatureInfo
                                 
                     # Setzte auf okay:
-                    status = compare
-                    
-                    
+                    #status = compare
+                    if self.service == 'WMS':
+                        status = False
+                        try:
+                            wms = dict2list(self.ssxml.WMS)
+                            for w in wms:
+                                if w.has_key('GetFeatureInfo'):
+                                    features = dict2list(w.GetFeatureInfo.Feature)
+                                if w.has_key('Layers'):
+                                    layers_in_ssxml = dict2list(w.Layers.Layer)
+
+                            for feat in features:
+                                must_params = ['REQUEST', 'CRS', 'FORMAT', 'WIDTH',
+                                               'HEIGHT', 'BBOX', 'QUERY_LAYERS',
+                                               'LAYERS', 'STYLES', 'I', 'J',
+                                               'FEATURE_COUNT', 'INFO_FORMAT',
+                                               'EXCEPTIONS', 'value']
+                                for param in must_params:
+                                    a = feat.Params[param]
+
+                            ssxml_valid = True
+                            status = True
+
+                        except (KeyError, AttributeError), e:
+                            e = str(e)
+                            temp = e.split(" ")
+                            msg += 'Element %s not found' % temp[len(temp) - 1]
+
                 except KeyError, e:
                     element = str(e)
                     msg += 'Element %(element)s not found!' % locals()
@@ -1752,7 +1755,7 @@ class OWSCheck(object):
                     msg += 'URL-Error: %s' %(e.reason)
                 except xml.parsers.expat.ExpatError, e:
                     msg += 'XML not well formed: %s' %(str(e))
-                
+
                 if not status:    
                     if DEBUG: print msg
                 
@@ -2016,8 +2019,8 @@ class OWSCheck(object):
         # Anzahl > 0 der gefundenen übereinstimmenden Sprachangaben erfüllt LANG-01
         equal_langs = ["'%s'" %l for l in equal_langs]
         self.setResultsOverview("LANG-01", status, results, data={'code':', '.join(equal_langs)})
-        self.setResultsOverview("LANG-03", url_status, url_results)
-        
+        self.setResultsOverview("LANG-03", url_status, url_results, data={'code':url_lang})
+
         #status = any([status, url_status, http_300, langs_in_param_found])
         status = any([status, url_status, http_300])
         return ResponseDict('language_GetCapLang', results, status, hints)
@@ -2837,17 +2840,16 @@ class OWSCheck(object):
                 lengths.append(len(S.ContactInformation.ContactPersonPrimary.ContactOrganization))
                 if len(S.ContactInformation.ContactPersonPrimary.ContactOrganization) < 2:
                     not_found.append("'ContactOrganization'")
-            except KeyError, e:
-                print e
+            except (KeyError, AttributeError), e:
                 descr = e
-                not_found.append(str(e))
+                not_found.append("'ContactOrganization'")
             try:
                 lengths.append(len(S.ContactInformation.ContactElectronicMailAddress))
                 if len(S.ContactInformation.ContactElectronicMailAddress) < 2:
                     not_found.append("'ContactElectronicMailAddress'")
-            except KeyError, e:
+            except (KeyError, AttributeError), e:
                 descr = e
-                not_found.append(str(e))
+                not_found.append('ContactElectronicMailAddress')
         except KeyError, e:
             descr = e
             not_found.append(str(e))
@@ -2890,6 +2892,9 @@ class OWSCheck(object):
         return ResponseDict("wms_ServiceMeta", msg, status)
     
     def wms_getsublayer(self, l0, layers):
+        """
+        Recursive function to search the hole layerstructur
+        """
         a = 0
         b = []
         if isinstance(l0, dict):
@@ -2919,7 +2924,7 @@ class OWSCheck(object):
 
     def wms_getLayers(self, version=None):
         """
-        Get a list of WMS Layers listed in GetCapabilites on ``Capability.Layer``. Ignores Layers which have Sublayers.
+        Get a list of WMS Layers listed in GetCapabilites on ``Capability.Layer``.
 
         :returns: List of WMS Layers
         """
@@ -3009,7 +3014,13 @@ class OWSCheck(object):
         if not isinstance(gc_layer, list):
             gc_layer = [gc_layer]
 
+        a = 0
         for layer in gc_layer:
+            a += 1
+            #Comment the next two lines out to check the "root" layer
+            if a == len(gc_layer):
+                continue
+
             if not isinstance(layer, dict):
                 continue
 
@@ -3101,8 +3112,13 @@ class OWSCheck(object):
         gc_layer_v3 = self.wms_getLayers(version='1.3.0')
         #gc_layer = self.wms_getLayers()
 
+        a = 0
         for layer in gc_layer_v3:
             # META
+            a += 1
+            #Comment the next two lines out to check the "root" layer
+            if a == len(gc_layer_v3):
+                continue
 
             if not isinstance(layer, dict):
                 continue
@@ -3676,8 +3692,9 @@ class OWSCheck(object):
                 for param in must_params:
                     a = feat.Params[param]
                 for att in feat.Attribute:
-                    a = att.xpath
-                    a = att.value
+                    if isinstance(att, dict):
+                        a = att.xpath
+                        a = att.value
 
             ssxml_valid = True
         except KeyError, e:
@@ -4088,50 +4105,37 @@ class OWSCheck(object):
         Like :py:meth:`wms_GetFeatureInfo <ows_checker._checker.OWSCheck.wms_GetFeatureInfo>` it checks the
         Content of SSXML document and validates the given Attributes.
 
-        Structure of the ``WMS``-Part:
+        Structure of the ``WFS``-Part:
 
         .. code-block:: xml
 
             <WFS>
                 <FeatureTypes>
-                    <FeatureType>kgcc:1901-1925</FeatureType>
-                    <FeatureType>kgcc:1976-2000</FeatureType>
-                    <FeatureType>kgcc:2001-2025_b1</FeatureType>
+                    <FeatureType>medford:bikelanes</FeatureType>
+                    <FeatureType>medford:buildings</FeatureType>
+                    <FeatureType>medford:citylimits</FeatureType>
+                    <FeatureType>usa:states</FeatureType>
                 </FeatureTypes>
                 <GetFeature>
-                    <Feature fid="resultat_20050925_ea_vorlage1.fid-685f5afe_1343d472bc2_71cd">
+                    <Feature fid="states.17">
                         <Params>
                             <REQUEST>GetFeature</REQUEST>
-                            <TYPENAME>sovote:resultat_20050925_ea_vorlage1</TYPENAME>
+                            <TYPENAME>usa:states</TYPENAME>
                             <MAXFEATURES>1</MAXFEATURES>
                             <OUTPUTFORMAT>GML2</OUTPUTFORMAT>
                             <Filter>
-                                <PropertyIsEqualTo>
-                                    <PropertyName>gid</PropertyName>
-                                    <Literal>2559</Literal>
-                                </PropertyIsEqualTo>
+                                <BBOX>
+                                    <PropertyName>the_geom</PropertyName>
+                                    <Envelope srsName="EPSG:4326">
+                                        <lowerCorner>-88.169921588558 32.597655642372</lowerCorner>
+                                        <upperCorner>-87.291015338558 33.476561892372</upperCorner>
+                                    </Envelope>
+                                </BBOX>
                             </Filter>
                         </Params>
-                        <Attribute xpath="gml:featureMember/sovote:resultat_20050925_ea_vorlage1/sovote:gid/text()">2559</Attribute>
-                        <Attribute xpath="gml:featureMember/sovote:resultat_20050925_ea_vorlage1/sovote:gem_name/text()">Zullwil</Attribute>
-                        <Attribute fid="1" xpath="gml:featureMember/sovote:resultat_20050925_ea_vorlage1/@fid">resultat_20050925_ea_vorlage1.fid-685f5afe_1343d472bc2_71cd</Attribute>
-                    </Feature>
-                    <Feature fid="control_point.1">
-                        <Params>
-                            <REQUEST>GetFeature</REQUEST>
-                            <TYPENAME>catais:control_point</TYPENAME>
-                            <MAXFEATURES>1</MAXFEATURES>
-                            <OUTPUTFORMAT>GML2</OUTPUTFORMAT>
-                            <Filter>
-                                <PropertyIsEqualTo>
-                                    <PropertyName>number</PropertyName>
-                                    <Literal>GO1</Literal>
-                                </PropertyIsEqualTo>
-                            </Filter>
-                        </Params>
-                        <Attribute xpath="gml:featureMember/catais:control_point/catais:number/text()">GO1</Attribute>
-                        <Attribute xpath="gml:featureMember/catais:control_point/catais:x/text()">32.889894298611097</Attribute>
-                        <Attribute xpath="gml:featureMember/catais:control_point/@fid">ortschaften.784746</Attribute>
+                        <Attribute xpath="gml:featureMember/usa:states/@fid">states.17</Attribute>
+                        <Attribute xpath="gml:featureMember/usa:states/usa:HOUSHOLD/text()">1506790.0</Attribute>
+                        <Attribute xpath="gml:featureMember/usa:states/usa:STATE_NAME/text()">Alabama</Attribute>
                     </Feature>
                 </GetFeature>
             </WFS>
@@ -4172,9 +4176,6 @@ class OWSCheck(object):
             # Download and parse url
             tree = etree.parse(URL2File(url))
             root = tree.getroot()
-            print dir(root)
-            print root.nsmap
-            print url
             
             # Use Namespaces
             ns = root.nsmap

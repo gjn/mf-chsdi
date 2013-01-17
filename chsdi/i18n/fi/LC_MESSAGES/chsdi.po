@@ -378,22 +378,22 @@ msgid "blind warning"
 msgstr "Questa pagina d'internet è in'applicaziun cartografica e n'è pervia da quai betg optimada per persunas tschorvas."
 
 msgid "blw_farbe_0"
-msgstr "Seen, Enklaven"
+msgstr "Keine Klassierung"
 
 msgid "blw_farbe_1"
-msgstr "Getreidebau, Futterbau: ++, Hackfruchtbau: +/++"
+msgstr "Getreidebau, Futterbau: ++; Hackfruchtbau: +/++"
 
 msgid "blw_farbe_10"
-msgstr "Naturfutterbau: + Kunstfutterbau: +/-"
+msgstr "Naturfutterbau: +; Kunstfutterbau: +/-"
 
 msgid "blw_farbe_11"
 msgstr "Kleinviehweide: +; Futterbau, Jungviehweide: +/-"
 
 msgid "blw_farbe_12"
-msgstr "Grossviehweide: + Futterbau: +/-"
+msgstr "Grossviehweide: +; Futterbau: +/-"
 
 msgid "blw_farbe_13"
-msgstr "Jungviehweide: + Grossviehweide: +/- Naturfutterbau: +/-"
+msgstr "Jungviehweide: +; Grossviehweide, Naturfutterbau: +/-"
 
 msgid "blw_farbe_14"
 msgstr "Jungviehweide: ++; Naturfutterbau: +; Grossviehweide: +/-"
@@ -411,22 +411,22 @@ msgid "blw_farbe_18"
 msgstr "Kleinviehweide: +/-"
 
 msgid "blw_farbe_19"
-msgstr "Siedlungsgebiete, Fels, Gletscher"
+msgstr "Keine Klassierung"
 
 msgid "blw_farbe_2"
-msgstr "Futterbau: +/++; Getreidebau: +"
+msgstr "Futterbau: +/++; Ackerbau: +"
 
 msgid "blw_farbe_3"
-msgstr "Getreidebau: + Naturfutterbau: + Kunstfutterbau: +/-"
+msgstr "Ackerbau, Naturfutterbau: +; Kunstfutterbau: +/-"
 
 msgid "blw_farbe_4"
-msgstr "Getreidebau: + Futterbau: ++ Hackfruchtbau: +/-"
+msgstr "Getreidebau: +; Futterbau: ++; Hackfruchtbau: +/-"
 
 msgid "blw_farbe_5"
-msgstr "Getreidebau: +/- Naturfutterbau: +/- Grossviehweide: +/-"
+msgstr "Getreidebau, Naturfutterbau, Grossviehweide: +/-"
 
 msgid "blw_farbe_6"
-msgstr "Futterbau: + Getreidebau: +/- Grossviehweide: ++"
+msgstr "Futterbau: +; Getreidebau: +/- Grossviehweide: ++"
 
 msgid "blw_farbe_7"
 msgstr "Futterbau, Grossviehweide: +; Getreidebau: +/-"
@@ -807,10 +807,10 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans da zonas protecziun d'urgenza"
 
 msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Lavurs currents"
+msgstr "Territoris cun lavurs en curs"
 
 msgid "ch.swisstopo-vd.geometa-standav"
-msgstr "Stadi da la MU"
+msgstr "Stadi da las mesiraziuns uffizialas"
 
 msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "NPVischnancas"
