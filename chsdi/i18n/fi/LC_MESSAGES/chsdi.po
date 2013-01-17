@@ -860,6 +860,9 @@ msgstr "Geologia 1:500000"
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlas geologic 1:25000"
 
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
+msgstr "Eromagnetica Bassa/Giura"
+
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Eromagnetica"
 
@@ -1094,6 +1097,9 @@ msgstr "Epizentrale Zone"
 
 msgid "est"
 msgstr "Ost"
+
+msgid "et_fromatt"
+msgstr "Aeromagnet. Anomal. Alpenvorland/Jura[nT]"
 
 msgid "fassung"
 msgstr "Versiun"

@@ -2327,6 +2327,9 @@ msgstr ""
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr ""
 
@@ -2601,6 +2604,9 @@ msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
 msgstr ""
 
 msgid "abkuerzung"
+msgstr ""
+
+msgid "et_fromatt"
 msgstr ""
 
 msgid "kartenwerk"
