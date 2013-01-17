@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+<%def name="getBaseUrl()">
+    % if len(c.baseUrl) > 0:
+    &baseUrl=${c.baseUrl}
+    % endif
+</%def>
+
 % if c.html_type == 'preview':
    ${self.preview()}
 % endif

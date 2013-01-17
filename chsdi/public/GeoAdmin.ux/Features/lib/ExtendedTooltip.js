@@ -141,6 +141,7 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 layers: this.queryable.join(","),
                 timestamps: this.timestamps.join(","),
                 bbox: bounds.toBBOX(),
+                baseUrl: window.location.toString().split("?")[0],
                 scale: Math.round(this.map.getScale()/100) * 100
             };
             
