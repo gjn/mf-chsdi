@@ -593,9 +593,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.are.alpenkonvention"
                     },
-                    {
-                        layerId: "ch.are.gemeindetyp-1990-9klassen"
-                    },
 					{
                         layerId: "ch.are.gemeindetypen"
                     },
