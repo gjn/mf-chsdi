@@ -860,6 +860,9 @@ msgstr "Geology 1:500 000"
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Geological Atlas 1:25 000"
 
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
+msgstr "Aeromagnetic Plateau/Jura"
+
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aeromagnetic"
 
@@ -1094,6 +1097,9 @@ msgstr "Epizentrale Zone"
 
 msgid "est"
 msgstr "East"
+
+msgid "et_fromatt"
+msgstr "Aeromagnetic anomalies Plateau/Jura [nT]"
 
 msgid "fassung"
 msgstr "Version"

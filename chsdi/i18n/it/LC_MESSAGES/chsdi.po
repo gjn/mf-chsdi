@@ -860,6 +860,9 @@ msgstr "Geologia 1:500 000"
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlante geologico 1:25 000"
 
+msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
+msgstr "Aeromagnetismo Altipiano/Giura"
+
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aeromagnetismo"
 
@@ -1093,6 +1096,9 @@ msgstr "Zone épicentrale"
 
 msgid "est"
 msgstr "Ovest"
+
+msgid "et_fromatt"
+msgstr "Anomalie aeromagnet. Altipiano/Giura [nT]"
 
 msgid "fassung"
 msgstr "Stesura"
