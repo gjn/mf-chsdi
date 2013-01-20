@@ -1,0 +1,16 @@
+.olControlSwipe {
+    background-color: orange;
+    display: none;
+}
+.olControlSwipeHover {
+    cursor: move;
+    background-color: #ff0000;
+}
+.olControlSwipeMousedown {
+    cursor: move;
+    background-color: #ff0000;
+}
+.olControlSwipeDrag {
+    cursor: move;
+    background-color: #ff0000;
+}

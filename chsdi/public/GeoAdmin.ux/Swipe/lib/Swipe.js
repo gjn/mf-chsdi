@@ -4,8 +4,8 @@
  */
 
 /* The following globals are for JSLint */
-/*jslint browser: true, vars: true*/
-/*global GeoAdmin, OpenLayers, escape */
+/* jslint browser: true, vars: true */
+/* global GeoAdmin, OpenLayers, escape */
 
 /** api: (define)
  *  module =  GeoAdmin
@@ -32,13 +32,25 @@
  *
  *  Add a swipe control in the map
  */
-GeoAdmin.Swipe = OpenLayers.Class(OpenLayers.Control, {
+OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     /** api: config[map]
      *  ``OpenLayers.Map``
      *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
      */
     map: null,
+
+    width: 25,
+
+    swipeRatio: null,
+
+    swipeLayer: null,
+
+    /**
+     * Property: divEvents
+     * {<OpenLayers.Events>}
+     */
+    divEvents: null,
 
     initialize: function (options) {
         "use strict";
@@ -47,41 +59,263 @@ GeoAdmin.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this,
             arguments
         );
+        // Manage position of swipe
+        if (!this.swipeRatio) {
+            this.swipeRatio = 1;
+        }
+        this.map.addControl(this);
+        this.activate();
+    },
+
+    /**
+     * Method: destroy
+     * Destroy control.
+     */
+    destroy: function() {
+        this.map.events.un({
+            "addlayer": this.handleAddLayer,
+            "removelayer": this.handleRemoveLayer,
+            "changelayer": this.handleChangeLayer,
+            "updatesize": this.handleUpdateSize,
+            "scope": this
+        });
+        OpenLayers.Control.prototype.destroy.apply(this, arguments);
+    },
+
+    /**
+     * Method: draw
+     * Initialize control.
+     *
+     * Returns:
+     * {DOMElement} A reference to the DIV DOMElement containing the control
+     */
+    draw: function() {
+        OpenLayers.Control.prototype.draw.apply(this, arguments);
 
         this.map.events.on({
             "addlayer": this.handleAddLayer,
             "removelayer": this.handleRemoveLayer,
             "changelayer": this.handleChangeLayer,
+            "updatesize": this.handleUpdateSize,
             "scope": this
         });
+        OpenLayers.Control.prototype.draw.apply(this, arguments);
+        this.div.style.height = this.map.size.h + 'px';
+        this.div.style.width = this.width + 'px';
+        this.moveTo(this.computePosition());
+        this.clipFirstLayer();
 
-        this.map.addControl(this);
-        this.activate();
+        this.divEvents = new OpenLayers.Events(this, this.div, null, true, {includeXY: true});
+
+        this.divEvents.on({
+            "touchstart": this.divDown,
+            "touchmove": this.divDrag,
+            "touchend": this.divUp,
+            "mousedown": this.divDown,
+            "mousemove": this.divDrag,
+            "mouseup": this.divUp,
+            "mouseover": this.divMouseOver,
+            "mouseout": this.divMouseOut,
+            scope: this
+        });
+
+        return this.div;
     },
+
+    divMouseOver: function(ev) {
+        OpenLayers.Element.addClass(
+            ev.target,
+            'olControlSwipeHover'
+        );
+    },
+
+    divMouseOut: function(ev) {
+        OpenLayers.Element.removeClass(
+            ev.target,
+            'olControlSwipeHover'
+        );
+    },
+
+    /**
+     * Method: passEventToDiv
+     * This function is used to pass events that happen on the map,
+     * through to the div, which then does its moving thing.
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
+    passEventToDiv:function(evt) {
+        this.divEvents.handleBrowserEvent(evt);
+    },
+
+    /*
+     * Method: divDown
+     * event listener for clicks on the div
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
+    divDown:function(evt) {
+        if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
+            return;
+        }
+        this.map.events.on({
+            "touchmove": this.passEventToDiv,
+            "mousemove": this.passEventToDiv,
+            "mouseup": this.passEventToDiv,
+            scope: this
+        });
+        this.mouseDragStart = evt.xy.clone();
+        OpenLayers.Element.addClass(
+            evt.target,
+            'olControlSwipeDrag'
+        );
+        OpenLayers.Event.stop(evt);
+    },
+
+    /*
+     * Method: divDrag
+     * This is what happens when a click has occurred, and the client is
+     * dragging.  Here we must ensure that the div doesn't go beyond the
+     * bottom/top of the zoombar div, as well as moving the div to its new
+     * visual location
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
+    divDrag:function(evt) {
+        if (this.mouseDragStart != null) {
+            var deltaX = this.mouseDragStart.x - evt.xy.x;
+            var left = parseInt(this.div.style.left);
+            if ((left - deltaX) >= 0 &&
+                (left - deltaX) <= (this.map.size.w - this.width)) {
+                this.swipeRatio = (left - deltaX) / (this.map.size.w - this.width);
+                this.moveTo(this.computePosition());
+                this.clipFirstLayer();
+                this.mouseDragStart = evt.xy.clone();
+            }
+            OpenLayers.Event.stop(evt);
+        }
+    },
+
+    /*
+     * Method: divUp
+     * Perform cleanup when a mouseup event is received
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
+    divUp:function(evt) {
+        if (!OpenLayers.Event.isLeftClick(evt) && evt.type !== "touchend") {
+            return;
+        }
+        if (this.mouseDragStart) {
+            this.map.events.un({
+                "touchmove": this.passEventToDiv,
+                "mouseup": this.passEventToDiv,
+                "mousemove": this.passEventToDiv,
+                scope: this
+            });
+            this.mouseDragStart = null;
+            OpenLayers.Element.removeClass(
+                evt.target,
+                'olControlSwipeDrag'
+            );
+            OpenLayers.Event.stop(evt);
+        }
+    },
+
+    clipFirstLayer: function() {
+        if (this.swipeLayer) {
+            this.swipeLayer.div.style.clip = 'auto';
+        }
+        this.swipeLayer = this.getFirstLayerInLayerSwitcher();
+        if (this.swipeLayer) {
+            var width = this.map.getCurrentSize().w;
+            var height = this.map.getCurrentSize().h;
+            // slider position in pixels
+            var s = parseInt(width * this.swipeRatio * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w));
+            // slider position on the viewport
+            var t = this.map.getViewPortPxFromLayerPx(new OpenLayers.Pixel(s, height));
+            // cliping rectangle
+            var top = -this.map.layerContainerOriginPx.y;
+            var bottom = top + height;
+            var left = -this.map.layerContainerOriginPx.x;
+            var right = left + s;
+            //Syntax for clip "rect(top,right,bottom,left)"
+            var clip = "rect(" + top + "px " + right + "px " + bottom + "px " + left + "px)";
+            this.swipeLayer.div.style.clip = clip;
+        }
+
+    },
+
+    moveToRatio: function(ratio) {
+        this.swipeRatio = ratio;
+        this.moveTo(this.computePosition());
+    },
+
     handleAddLayer: function (object) {
-        console.log("addLayer");
-        console.log(object);
-        console.log(this);
+        if (this.isLayersInLayerSwitcher()) {
+            this.div.style.display = 'block';
+            this.clipFirstLayer();
+        } else {
+            this.div.style.display = 'none';
+        }
     },
+
     handleRemoveLayer: function (object) {
-        console.log("removeLayer");
-        console.log(object);
-        console.log(this);
+        if (this.isLayersInLayerSwitcher()) {
+            this.div.style.display = 'block';
+            this.clipFirstLayer();
+        } else {
+            this.div.style.display = 'none';
+        }
     },
+
     handleChangeLayer: function (object) {
-        console.log("changeLayer");
+        if (object.property == 'order') {
+            if (this.isLayersInLayerSwitcher()) {
+                this.div.style.display = 'block';
+                this.clipFirstLayer();
+            } else {
+                this.div.style.display = 'none';
+            }
+        }
+    },
+
+    handleUpdateSize: function (object) {
+        console.log("updateSize");
         console.log(object);
         console.log(this);
     },
-    getLayersInLayerSwitcher: function() {
+
+    computePosition: function() {
+        var y = 0;
+        var x = this.swipeRatio * (this.map.size.w - this.width);
+        return new OpenLayers.Pixel(x, y);
+    },
+
+    getFirstLayerInLayerSwitcher: function() {
+        for (var i = this.map.layers.length - 1; i >= 0; i--) {
+            var layer = this.map.layers[i];
+            if (layer.displayInLayerSwitcher) {
+                return layer;
+            }
+        }
+        return null;
+    },
+
+    isLayersInLayerSwitcher: function() {
         var layers = [];
         for (var i = 0, len = this.map.layers.length; i < len; i++) {
             var layer = this.map.layers[i];
             if (layer.displayInLayerSwitcher) {
-                layers.push(layer);
+                return true;
             }
         }
-        return layers;
-    }
+        return false;
+    },
+
+    CLASS_NAME: "OpenLayers.Control.Swipe"
 });
 

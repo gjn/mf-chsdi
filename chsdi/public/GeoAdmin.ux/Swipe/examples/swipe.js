@@ -8,11 +8,8 @@ function init() {
 
     map.zoomToMaxExtent();
 
-    swipe = new GeoAdmin.Swipe({map: map});
-
-    console.log(swipe.getLayersInLayerSwitcher());
+    swipe = new OpenLayers.Control.Swipe({map: map});
 
     map.addLayerByName("ch.swisstopo.fixpunkte-agnes");
 
-    console.log(swipe.getLayersInLayerSwitcher());
 }
