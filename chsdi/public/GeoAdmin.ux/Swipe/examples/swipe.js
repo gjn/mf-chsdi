@@ -1,6 +1,6 @@
 GeoAdmin.OpenLayersImgPath = "../../Map/img/";
 
-var map;
+var map, swipe;
 
 function init() {
 
@@ -8,5 +8,11 @@ function init() {
 
     map.zoomToMaxExtent();
 
-    var Swipe = new GeoAdmin.Swipe({map: map});
+    swipe = new GeoAdmin.Swipe({map: map});
+
+    console.log(swipe.getLayersInLayerSwitcher());
+
+    map.addLayerByName("ch.swisstopo.fixpunkte-agnes");
+
+    console.log(swipe.getLayersInLayerSwitcher());
 }

@@ -48,8 +48,40 @@ GeoAdmin.Swipe = OpenLayers.Class(OpenLayers.Control, {
             arguments
         );
 
+        this.map.events.on({
+            "addlayer": this.handleAddLayer,
+            "removelayer": this.handleRemoveLayer,
+            "changelayer": this.handleChangeLayer,
+            "scope": this
+        });
+
         this.map.addControl(this);
         this.activate();
+    },
+    handleAddLayer: function (object) {
+        console.log("addLayer");
+        console.log(object);
+        console.log(this);
+    },
+    handleRemoveLayer: function (object) {
+        console.log("removeLayer");
+        console.log(object);
+        console.log(this);
+    },
+    handleChangeLayer: function (object) {
+        console.log("changeLayer");
+        console.log(object);
+        console.log(this);
+    },
+    getLayersInLayerSwitcher: function() {
+        var layers = [];
+        for (var i = 0, len = this.map.layers.length; i < len; i++) {
+            var layer = this.map.layers[i];
+            if (layer.displayInLayerSwitcher) {
+                layers.push(layer);
+            }
+        }
+        return layers;
     }
 });
 
