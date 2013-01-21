@@ -11,4 +11,5 @@ function init() {
         height: 600,
         map: new GeoAdmin.Map()});
     var contextPopup = new GeoAdmin.ContextPopup({map: mapPanel.map});
+    mapPanel.map.addControl(contextPopup);
 }
