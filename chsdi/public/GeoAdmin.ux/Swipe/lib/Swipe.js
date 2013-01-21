@@ -63,7 +63,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         if (!this.swipeRatio) {
             this.swipeRatio = 1;
         }
-        this.map.addControl(this);
         this.activate();
     },
 
@@ -97,11 +96,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             "removelayer": this.handleRemoveLayer,
             "changelayer": this.handleChangeLayer,
             "updatesize": this.handleUpdateSize,
+            "move": this.handleMove,
             "scope": this
         });
         OpenLayers.Control.prototype.draw.apply(this, arguments);
-        this.div.style.height = this.map.size.h + 'px';
-        this.div.style.width = this.width + 'px';
+        this.resize();
         this.moveTo(this.computePosition());
         this.clipFirstLayer();
 
@@ -171,6 +170,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlSwipeDrag'
         );
         OpenLayers.Event.stop(evt);
+        return false;
+
     },
 
     /*
@@ -196,6 +197,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             }
             OpenLayers.Event.stop(evt);
         }
+        return false;
     },
 
     /*
@@ -206,23 +208,25 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * evt - {<OpenLayers.Event>}
      */
     divUp:function(evt) {
+        this.map.events.un({
+            "touchmove": this.passEventToDiv,
+            "mousemove": this.passEventToDiv,
+            "mouseup": this.passEventToDiv,
+            scope: this
+        });
         if (!OpenLayers.Event.isLeftClick(evt) && evt.type !== "touchend") {
             return;
         }
         if (this.mouseDragStart) {
-            this.map.events.un({
-                "touchmove": this.passEventToDiv,
-                "mouseup": this.passEventToDiv,
-                "mousemove": this.passEventToDiv,
-                scope: this
-            });
             this.mouseDragStart = null;
             OpenLayers.Element.removeClass(
                 evt.target,
                 'olControlSwipeDrag'
             );
-            OpenLayers.Event.stop(evt);
+
         }
+        OpenLayers.Event.stop(evt);
+        return false;
     },
 
     clipFirstLayer: function() {
@@ -241,7 +245,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
             var left = -this.map.layerContainerOriginPx.x;
-            var right = left + s;
+            var right = left + s + 1;
             //Syntax for clip "rect(top,right,bottom,left)"
             var clip = "rect(" + top + "px " + right + "px " + bottom + "px " + left + "px)";
             this.swipeLayer.div.style.clip = clip;
@@ -249,14 +253,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     },
 
-    moveToRatio: function(ratio) {
-        this.swipeRatio = ratio;
-        this.moveTo(this.computePosition());
-    },
-
     handleAddLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
+            this.moveTo(this.computePosition());
             this.clipFirstLayer();
         } else {
             this.div.style.display = 'none';
@@ -266,9 +266,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     handleRemoveLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
+            this.moveTo(this.computePosition());
             this.clipFirstLayer();
         } else {
             this.div.style.display = 'none';
+            this.swipeLayer = null;
         }
     },
 
@@ -276,6 +278,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         if (object.property == 'order') {
             if (this.isLayersInLayerSwitcher()) {
                 this.div.style.display = 'block';
+                this.moveTo(this.computePosition());
                 this.clipFirstLayer();
             } else {
                 this.div.style.display = 'none';
@@ -284,11 +287,18 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     handleUpdateSize: function (object) {
-        console.log("updateSize");
-        console.log(object);
-        console.log(this);
+        this.resize();
     },
 
+    handleMove: function (object) {
+        this.clipFirstLayer();
+    },
+    resize: function() {
+        this.div.style.height = this.map.size.h + 'px';
+        this.div.style.width = this.width + 'px';
+        this.moveTo(this.computePosition());
+        this.clipFirstLayer();
+    },
     computePosition: function() {
         var y = 0;
         var x = this.swipeRatio * (this.map.size.w - this.width);
