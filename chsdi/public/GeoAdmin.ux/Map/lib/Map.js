@@ -17,6 +17,7 @@
  * @include OpenLayers/Format/KML.js
  * @include OpenLayers/Projection.js
  * @include OpenLayers/Lang.js
+ * @include OpenLayers/TileManager.js
  *
  * @require GeoAdmin.js
  * @include ie9.js
@@ -73,6 +74,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     complementaryLayer: null,
     overviewMapCtrl: null,
     fallThrough: true,
+    tileManager: null,
 
     EVENT_TYPES: ["changecomplementarylayer"],
 
@@ -170,6 +172,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             GeoAdmin.Map.prototype.EVENT_TYPES.concat(
                 OpenLayers.Map.prototype.EVENT_TYPES
             );
+        this.tileManager = new OpenLayers.TileManager({zoomDelay: 333});
+
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
