@@ -190,6 +190,9 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     
     // private methode triggers only when the map is clicked, used to parametrize the window
     selectClick: function (evt) {
+        if (evt.target.id.indexOf("Swipe") !== -1) {
+            return false;
+        }
         OpenLayers.Control.GetFeature.prototype.selectClick.apply(this, arguments);
         this.clicked = true;
     },
