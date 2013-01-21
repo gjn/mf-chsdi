@@ -280,6 +280,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         return state;
     },
 
+
     /** api: method[applyState]
      *  :param state: ``Object`` The state to apply.
      *
@@ -403,6 +404,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // assert layers.length === 0 || layers.length === 1
         return layers[0];
     },
+
+
 
     /*
      * assert that vector layers are always on top.

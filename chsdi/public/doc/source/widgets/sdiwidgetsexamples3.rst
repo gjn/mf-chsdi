@@ -188,6 +188,7 @@ A context popup provide information on the map right mouse click
       function init() {
          var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          var contextPopup = new GeoAdmin.ContextPopup({map: map13});
+         map13.addControl(contextPopup);
       }
    </script>
    <body onload="init();">
@@ -288,6 +289,7 @@ Map Panel
          ]);
          var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
          var contextPopup = new GeoAdmin.ContextPopup({map: map13});
+         map13.addControl(contextPopup);
 
          var map14 = new GeoAdmin.Map();
          var mappane14 = new GeoAdmin.MapPanel({renderTo: "mymap4", map:map14, width: 500, height:340});

@@ -25,7 +25,7 @@
  *
  *     var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
  *     var contextPopup = new GeoAdmin.ContextPopup({map: map13});
- *     contextPopup.activate();
+ *     map13.addControl(contextPopup);;
  *
  */
 
