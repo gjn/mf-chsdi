@@ -40,7 +40,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     map: null,
 
-    width: 25,
+    width: 16,
 
     swipeRatio: null,
 
@@ -101,7 +101,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         });
         OpenLayers.Control.prototype.draw.apply(this, arguments);
         this.resize();
-        this.moveTo(this.computePosition());
         this.clipFirstLayer();
 
         this.divEvents = new OpenLayers.Events(this, this.div, null, true, {includeXY: true});
@@ -260,6 +259,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.clipFirstLayer();
         } else {
             this.div.style.display = 'none';
+            this.swipeLayer = null;
         }
     },
 
@@ -282,6 +282,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
                 this.clipFirstLayer();
             } else {
                 this.div.style.display = 'none';
+                this.swipeLayer = null;
             }
         }
     },
@@ -324,6 +325,18 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             }
         }
         return false;
+    },
+
+    updateRatio: function(ratio) {
+        this.swipeRatio = ratio;
+        if (this.isLayersInLayerSwitcher()) {
+            this.div.style.display = 'block';
+            this.moveTo(this.computePosition());
+            this.clipFirstLayer();
+        } else {
+            this.div.style.display = 'none';
+            this.swipeLayer = null;
+        }
     },
 
     CLASS_NAME: "OpenLayers.Control.Swipe"

@@ -1,16 +1,17 @@
+/* http://www.patternify.com/ */
 .olControlSwipe {
-    background-color: orange;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/ff2Nj4////v37z0AGBwAIqy+zyf4TowAAAABJRU5ErkJggg==) repeat;
     display: none;
 }
 .olControlSwipeHover {
     cursor: move;
-    background-color: #ff0000;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
 }
 .olControlSwipeMousedown {
     cursor: move;
-    background-color: #ff0000;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
 }
 .olControlSwipeDrag {
     cursor: move;
-    background-color: #ff0000;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
 }
