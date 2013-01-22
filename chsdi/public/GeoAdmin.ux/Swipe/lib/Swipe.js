@@ -42,6 +42,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     width: 16,
 
+    /** api: config[swipeRatio]
+     *  ``Number``
+     *  A number between 0 and 1 defining the position of the swipe relative to the map (from right to left)
+     */
     swipeRatio: null,
 
     swipeLayer: null,
@@ -120,6 +124,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         return this.div;
     },
 
+    /*
+     * Method: divMouseOver
+     * event listener for onmouseover event
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
     divMouseOver: function(ev) {
         OpenLayers.Element.addClass(
             ev.target,
@@ -127,6 +138,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         );
     },
 
+    /*
+     * Method: divMouseOut
+     * event listener for onmouseout event
+     *
+     * Parameters:
+     * evt - {<OpenLayers.Event>}
+     */
     divMouseOut: function(ev) {
         OpenLayers.Element.removeClass(
             ev.target,
@@ -228,6 +246,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         return false;
     },
 
+    /*
+     * Method: clipFirstLayer
+     * Clip the first layer present in the layer switcher
+     */
     clipFirstLayer: function() {
         if (this.swipeLayer) {
             if (this.swipeLayer.layers) {
@@ -270,6 +292,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     },
 
+    /*
+     * Method: handleAddLayer
+     * Triggered when a new layer is added
+     *
+     * Parameters:
+     * object - {<OpenLayers.Event>}
+     */
     handleAddLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
@@ -281,6 +310,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
     },
 
+    /*
+     * Method: handleRemoveLayer
+     * Triggered when a new layer is removed
+     *
+     * Parameters:
+     * object - {<OpenLayers.Event>}
+     */
     handleRemoveLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
@@ -292,6 +328,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
     },
 
+    /*
+     * Method: handleChangeLayer
+     * Triggered when the layer order is changed
+     *
+     * Parameters:
+     * object - {<OpenLayers.Event>}
+     */
     handleChangeLayer: function (object) {
         if (object.property == 'order') {
             if (this.isLayersInLayerSwitcher()) {
@@ -305,25 +348,53 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
     },
 
+    /*
+     * Method: handleUpdateSize
+     * Triggered when the map size changed. In this case the swipe control is updated accordingly.
+     *
+     * Parameters:
+     * object - {<OpenLayers.Event>}
+     */
     handleUpdateSize: function (object) {
         this.resize();
     },
 
+    /*
+     * Method: handleMove
+     * Triggered when the map is moved. In this case, the clip ares has to be updated
+     *
+     * Parameters:
+     * object - {<OpenLayers.Event>}
+     */
     handleMove: function (object) {
         this.clipFirstLayer();
     },
+
+    /*
+     * Method: resize
+     * Resize the swipe and update the first layer clipping
+     */
     resize: function() {
         this.div.style.height = this.map.size.h + 'px';
         this.div.style.width = this.width + 'px';
         this.moveTo(this.computePosition());
         this.clipFirstLayer();
     },
+
+    /*
+     * Method: computePosition
+     * Recompute the position of the swipe acording  to swipeRatio and the size of the map
+     */
     computePosition: function() {
         var y = 0;
         var x = this.swipeRatio * (this.map.size.w - this.width);
         return new OpenLayers.Pixel(x, y);
     },
 
+    /*
+     * Method: getFirstLayerInLayerSwitcher
+     * Get the first layer visible in the layer switcher
+     */
     getFirstLayerInLayerSwitcher: function() {
         for (var i = this.map.layers.length - 1; i >= 0; i--) {
             var layer = this.map.layers[i];
@@ -334,6 +405,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         return null;
     },
 
+    /*
+     * Method: isLayersInLayerSwitcher
+     * Check the presence of a layer in the layer switcher
+     */
     isLayersInLayerSwitcher: function() {
         var layers = [];
         for (var i = 0, len = this.map.layers.length; i < len; i++) {
@@ -345,6 +420,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         return false;
     },
 
+    /*
+     * Method: updateRatio
+     * Update the swipeRatio and update the swipe control accordingly
+     */
     updateRatio: function(ratio) {
         this.swipeRatio = ratio;
         if (this.isLayersInLayerSwitcher()) {

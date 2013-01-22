@@ -34,7 +34,39 @@
             t.ok(swipe instanceof OpenLayers.Control.Swipe,
                     "ctor returns a OpenLayers.Control.Swipe");
             t.ok((swipe.swipeRatio === 1),
-                    "swipeRatio is per default 1")
+                    "swipeRatio is per default 1");
+        }
+
+        function test_addLayer(t) {
+            t.plan(2);
+
+            var map, swipe;
+
+            map = new GeoAdmin.Map("map");
+            var nrControl = map.controls.length;
+            swipe = new OpenLayers.Control.Swipe({map: map});
+            map.addControl(swipe);
+
+            t.ok((swipe.swipeLayer == null),
+                    "per default, swipeLayer is null");
+            map.addLayerByName("ch.swisstopo.fixpunkte-agnes");
+            t.ok((swipe.swipeLayer != null),
+                    "if a layer is added, swipeLayer is not nul");
+        }
+
+        function test_ratio(t) {
+            t.plan(1);
+
+            var map, swipe;
+
+            map = new GeoAdmin.Map("map");
+            var nrControl = map.controls.length;
+            swipe = new OpenLayers.Control.Swipe({map: map});
+            map.addControl(swipe);
+            swipe.updateRatio(0.67);
+            t.ok((swipe.swipeRatio == 0.67),
+                    "ratio has been correctly updated to 0.67");
+            map.addLayerByName("ch.swisstopo.fixpunkte-agnes")
         }
 
     </script>
