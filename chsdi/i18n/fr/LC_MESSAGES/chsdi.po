@@ -576,7 +576,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classes de sol de fondation"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Zones de risque sismique"
+msgstr "Zones d’aléa sismique"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Séismes historiques"
