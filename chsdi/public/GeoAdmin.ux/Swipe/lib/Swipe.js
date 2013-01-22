@@ -233,7 +233,9 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             if (this.swipeLayer.layers) {
                 for (var i = this.swipeLayer.layers.length - 1; i >= 0; i--) {
                     var layer = this.swipeLayer.layers[i];
-                    layer.div.style.clip = 'auto';
+                    if (layer.div) {
+                        layer.div.style.clip = 'auto';
+                    }
                 }
             } else {
                 this.swipeLayer.div.style.clip = 'auto';
@@ -257,7 +259,9 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             if (this.swipeLayer.layers) {
                 for (var i = this.swipeLayer.layers.length - 1; i >= 0; i--) {
                     var layer = this.swipeLayer.layers[i];
-                    layer.div.style.clip = clip;
+                    if (layer.div) {
+                        layer.div.style.clip = clip;
+                    }
                 }
             } else {
                 this.swipeLayer.div.style.clip = clip;
