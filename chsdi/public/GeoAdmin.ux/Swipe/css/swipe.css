@@ -1,17 +1,17 @@
 /* http://www.patternify.com/ */
 .olControlSwipe {
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/ff2Nj4////v37z0AGBwAIqy+zyf4TowAAAABJRU5ErkJggg==) repeat;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFUlEQVQImWM0MjLyYcACGBkZNyPzAStsAZpnO07JAAAAAElFTkSuQmCC) repeat;
     display: none;
 }
 .olControlSwipeHover {
     cursor: move;
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWM0MjLyYcACzp47txmZDwBPZQQAVTAqpgAAAABJRU5ErkJggg==) repeat;
 }
 .olControlSwipeMousedown {
     cursor: move;
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFUlEQVQImWM0MjLyYcACGBkZNyPzAStsAZpnO07JAAAAAElFTkSuQmCC) repeat;
 }
 .olControlSwipeDrag {
     cursor: move;
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAGUlEQVQImWP49+/f//8MDP///fv3n4EMDgBPZDGx1INM8AAAAABJRU5ErkJggg==) repeat;
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWM0MjLyYcACzp47txmZDwBPZQQAVTAqpgAAAABJRU5ErkJggg==) repeat;
 }

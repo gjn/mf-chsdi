@@ -230,7 +230,14 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     clipFirstLayer: function() {
         if (this.swipeLayer) {
-            this.swipeLayer.div.style.clip = 'auto';
+            if (this.swipeLayer.layers) {
+                for (var i = this.swipeLayer.layers.length - 1; i >= 0; i--) {
+                    var layer = this.swipeLayer.layers[i];
+                    layer.div.style.clip = 'auto';
+                }
+            } else {
+                this.swipeLayer.div.style.clip = 'auto';
+            }
         }
         this.swipeLayer = this.getFirstLayerInLayerSwitcher();
         if (this.swipeLayer) {
@@ -244,10 +251,17 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
             var left = -this.map.layerContainerOriginPx.x;
-            var right = left + s + 1;
+            var right = left + s + 6;
             //Syntax for clip "rect(top,right,bottom,left)"
             var clip = "rect(" + top + "px " + right + "px " + bottom + "px " + left + "px)";
-            this.swipeLayer.div.style.clip = clip;
+            if (this.swipeLayer.layers) {
+                for (var i = this.swipeLayer.layers.length - 1; i >= 0; i--) {
+                    var layer = this.swipeLayer.layers[i];
+                    layer.div.style.clip = clip;
+                }
+            } else {
+                this.swipeLayer.div.style.clip = clip;
+            }
         }
 
     },
