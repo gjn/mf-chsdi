@@ -10,6 +10,8 @@ function init() {
 
     swipe = new OpenLayers.Control.Swipe({map: map});
 
+    map.addControl(swipe);
+
     map.addLayerByName("ch.swisstopo.fixpunkte-agnes");
 
 }
