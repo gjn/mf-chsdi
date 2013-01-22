@@ -3371,7 +3371,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-baugrundklassen": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-baugrundklassen"),
                 layertype: 'wmts',
-                timestamp: ['20110906'],
+                timestamp: ['20121219','20110906'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3381,7 +3381,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-mikrozonierung": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-mikrozonierung"),
                 layertype: 'wmts',
-                timestamp: ['20110906'],
+                timestamp: ['20121219','20110906'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3391,7 +3391,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-spektral": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-spektral"),
                 layertype: 'wmts',
-                timestamp: ['20110607'],
+                timestamp: ['20121219','20110607'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
