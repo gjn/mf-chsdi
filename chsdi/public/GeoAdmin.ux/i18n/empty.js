@@ -27,6 +27,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureProfile.ToolTip': "",
     'Edit': "",
     'Line': "",
+    'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200': "",
     'ch.swisstopo.geologie-geotechnik-gk500-genese': "",
     'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung': "",
     'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen': "",
