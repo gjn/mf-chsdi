@@ -142,7 +142,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     divMouseOver: function(ev) {
         OpenLayers.Element.addClass(
-            ev.target,
+            this.div,
             'olControlSwipeHover'
         );
         this.viewLayerTitle();
@@ -157,7 +157,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     divMouseOut: function(ev) {
         OpenLayers.Element.removeClass(
-            ev.target,
+            this.div,
             'olControlSwipeHover'
         );
         this.hideLayerTitle();
@@ -193,10 +193,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             scope: this
         });
         this.mouseDragStart = evt.xy.clone();
-        OpenLayers.Element.addClass(
-            evt.target,
-            'olControlSwipeDrag'
-        );
         OpenLayers.Event.stop(evt);
         return false;
 
@@ -247,10 +243,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
         if (this.mouseDragStart) {
             this.mouseDragStart = null;
-            OpenLayers.Element.removeClass(
-                evt.target,
-                'olControlSwipeDrag'
-            );
 
         }
         OpenLayers.Event.stop(evt);
@@ -286,7 +278,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
             var left = -this.map.layerContainerOriginPx.x;
-            var right = left + s + 6;
+            var right = left + s + 7;
             //Syntax for clip "rect(top,right,bottom,left)"
             var clip = "rect(" + top + "px " + right + "px " + bottom + "px " + left + "px)";
             if (this.swipeLayer.layers) {
@@ -322,7 +314,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     viewLayerTitle: function() {
-        this.elementLayer.innerHTML = this.swipeLayer.name;
+        this.elementLayer.innerHTML = "&nbsp" + " <- " + this.swipeLayer.name;
         OpenLayers.Element.addClass(
             this.elementLayer,
             'olControlSwipeLayerView'
