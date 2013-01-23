@@ -111,6 +111,25 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.elementLayer,
             'olControlSwipeLayerHide'
         );
+        this.elementLeft = document.createElement("div");
+        this.div.appendChild(this.elementLeft);
+        OpenLayers.Element.addClass(
+            this.elementLeft,
+            'olControlArrowLeft'
+        );
+
+        this.elementRight = document.createElement("div");
+        this.div.appendChild(this.elementRight);
+        OpenLayers.Element.addClass(
+            this.elementRight,
+            'olControlArrowRight'
+        );
+
+        var self = this;
+        setTimeout(function() {
+            self.hideBigArrow();
+        }, 10000);
+
         OpenLayers.Control.prototype.draw.apply(this, arguments);
         this.resize();
         this.clipFirstLayer();
@@ -146,6 +165,12 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlSwipeHover'
         );
         this.viewLayerTitle();
+        this.hideBigArrow();
+    },
+
+    hideBigArrow: function() {
+        this.elementLeft.style.display = "none";
+        this.elementRight.style.display = "none";
     },
 
     /*
@@ -243,8 +268,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
         if (this.mouseDragStart) {
             this.mouseDragStart = null;
-
         }
+        this.map.events.triggerEvent("changelayer", {
+            layer: this.swipeLayer,
+            property: "name"
+        });
         OpenLayers.Event.stop(evt);
         return false;
     },
@@ -314,7 +342,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     viewLayerTitle: function() {
-        this.elementLayer.innerHTML = "&nbsp" + " <- " + this.swipeLayer.name;
+        this.elementLayer.innerHTML = "&nbsp&nbsp&nbsp&nbsp" + this.swipeLayer.name;
         OpenLayers.Element.addClass(
             this.elementLayer,
             'olControlSwipeLayerView'
@@ -406,6 +434,9 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         this.div.style.width = this.width + 'px';
         this.moveTo(this.computePosition());
         this.clipFirstLayer();
+        var topPosition = (this.map.size.h / 2) - 32;
+        this.elementLeft.style.marginTop = topPosition + 'px';
+        this.elementRight.style.marginTop = topPosition + 'px';
     },
 
     /*
@@ -449,10 +480,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     setSwipeRatio: function(ratio) {
         this.map.swipeRatio = ratio;
-        this.map.events.triggerEvent("changelayer", {
-            layer: this.swipeLayer,
-            property: "name"
-        });
     },
 
     getSwipeRatio: function() {

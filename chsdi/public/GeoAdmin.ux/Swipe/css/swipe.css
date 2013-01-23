@@ -10,19 +10,39 @@
 
 .olControlSwipeLayerView {
     background-color: white;
-    height: 18px;
+    height: 16px;
     width: 250px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: -260px;
     display: block;
     font-size: 11px;
     font-family: Tahoma;
     font-weight: 700;
-    padding-top: 2px;
+    padding-top: 1px;
+    background-image: url(../img/arrow_left.png);
+    background-repeat: no-repeat;
+    position: absolute;
 }
 
 .olControlSwipeLayerHide {
     display: none;
+}
+
+.olControlArrowLeft {
+    width: 31px;
+    height: 63px;
+    margin-left: -31px;
+    background-image: url(../img/bigarrow_left.png);
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.olControlArrowRight {
+    width: 31px;
+    height: 63px;
+    margin-left: 16px;
+    background-image: url(../img/bigarrow_right.png);
+    background-repeat: no-repeat;
+    position: absolute;
 }
 
 

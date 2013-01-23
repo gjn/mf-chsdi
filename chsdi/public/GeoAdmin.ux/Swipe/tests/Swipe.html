@@ -33,7 +33,7 @@
                     "swipe control has been added to the map");
             t.ok(swipe instanceof OpenLayers.Control.Swipe,
                     "ctor returns a OpenLayers.Control.Swipe");
-            t.ok((swipe.swipeRatio === 1),
+            t.ok((swipe.map.swipeRatio === 1),
                     "swipeRatio is per default 1");
         }
 
@@ -64,7 +64,7 @@
             swipe = new OpenLayers.Control.Swipe({map: map});
             map.addControl(swipe);
             swipe.updateRatio(0.67);
-            t.ok((swipe.swipeRatio == 0.67),
+            t.ok((swipe.map.swipeRatio == 0.67),
                     "ratio has been correctly updated to 0.67");
             map.addLayerByName("ch.swisstopo.fixpunkte-agnes")
         }
