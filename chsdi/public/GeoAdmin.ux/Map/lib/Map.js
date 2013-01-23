@@ -73,6 +73,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     complementaryLayer: null,
     overviewMapCtrl: null,
     fallThrough: true,
+    swipeRatio: 1.0,
 
     EVENT_TYPES: ["changecomplementarylayer"],
 
@@ -247,7 +248,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 layername: this.complementaryLayer.layername,
                 opacity: this.complementaryLayer.opacity
             },
-            layers: []
+            layers: [],
+            swipeRatio: this.swipeRatio
         };
 
         for (var i = 0, len = this.layers.length; i < len; i++) {
@@ -381,6 +383,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 }
             }
 
+        }
+
+        if (state.swipeRatio) {
+            this.swipeRatio = state.swipeRatio;
         }
     },
     /** api: method[destroy]

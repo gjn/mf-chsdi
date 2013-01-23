@@ -5,7 +5,7 @@
 }
 
 .olControlSwipeHover {
-    cursor: move;
+    cursor: w-resize;
 }
 
 .olControlSwipeLayerView {
