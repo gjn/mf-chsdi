@@ -3,6 +3,21 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "Bounding Box - Coordinates"
+msgstr ""
+
+msgid "Lower left corner"
+msgstr ""
+
+msgid "Upper left corner"
+msgstr ""
+
+msgid "Lower right corner"
+msgstr ""
+
+msgid "Upper right corner"
+msgstr ""
+
 msgid "print"
 msgstr ""
 

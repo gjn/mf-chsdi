@@ -32,6 +32,9 @@ msgstr "Bauernhof"
 msgid "Berghuette"
 msgstr "Berghütte"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Koordinaten"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -115,6 +118,12 @@ msgstr "Legende"
 
 msgid "Link to object"
 msgstr "Link zum Objekt"
+
+msgid "Lower left corner"
+msgstr "Ecke unten links"
+
+msgid "Lower right corner"
+msgstr "Ecke unten rechts"
 
 msgid "Man-made"
 msgstr "Künstlich"
@@ -232,6 +241,12 @@ msgstr "Untergrund"
 
 msgid "Unknown"
 msgstr "Unbekannt"
+
+msgid "Upper left corner"
+msgstr "Ecke oben links"
+
+msgid "Upper right corner"
+msgstr "Ecke oben rechts"
 
 msgid "Verarbeitungsanlage"
 msgstr "Verarbeitungsanlage"

@@ -32,6 +32,9 @@ msgstr "Ferme"
 msgid "Berghuette"
 msgstr "Cabane de montagne"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Coordinate"
+
 msgid "Campingplatz"
 msgstr "Camping"
 
@@ -115,6 +118,12 @@ msgstr "Legenda"
 
 msgid "Link to object"
 msgstr "Link verso l'oggetto"
+
+msgid "Lower left corner"
+msgstr "Angolo in basso a sinistra"
+
+msgid "Lower right corner"
+msgstr "Angolo in basso a destra"
 
 msgid "Man-made"
 msgstr "Artificielle"
@@ -232,6 +241,12 @@ msgstr "Souterrain"
 
 msgid "Unknown"
 msgstr "Inconnu"
+
+msgid "Upper left corner"
+msgstr "Angolo in alto a sinistra"
+
+msgid "Upper right corner"
+msgstr "Angolo in alto a destra"
 
 msgid "Verarbeitungsanlage"
 msgstr "Usine de traitement"

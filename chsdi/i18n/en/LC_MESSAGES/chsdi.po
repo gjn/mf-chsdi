@@ -32,6 +32,9 @@ msgstr "Bauernhof"
 msgid "Berghuette"
 msgstr "Berghütte"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Coordinate"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -115,6 +118,12 @@ msgstr "Legend"
 
 msgid "Link to object"
 msgstr "Link to object"
+
+msgid "Lower left corner"
+msgstr "Lower left corner"
+
+msgid "Lower right corner"
+msgstr "Lower right corner"
 
 msgid "Man-made"
 msgstr "Künstlich"
@@ -232,6 +241,12 @@ msgstr "Underground"
 
 msgid "Unknown"
 msgstr "Unknown"
+
+msgid "Upper left corner"
+msgstr "Upper left corner"
+
+msgid "Upper right corner"
+msgstr "Upper right corner"
 
 msgid "Verarbeitungsanlage"
 msgstr "Verarbeitungsanlage"
@@ -2125,7 +2140,7 @@ msgid "stationsnr"
 msgstr "Station number"
 
 msgid "status"
-msgstr "State"
+msgstr "Status"
 
 msgid "strasse"
 msgstr "Street"
@@ -2194,7 +2209,7 @@ msgid "tt_bauzonen_gemeindetypen_NAME"
 msgstr "Commune"
 
 msgid "tt_bazl_abortion"
-msgstr "Abortion accomplished"
+msgstr "Removal accomplished"
 
 msgid "tt_ch.bakom.leistung"
 msgstr "Radiated power (ERP)"
