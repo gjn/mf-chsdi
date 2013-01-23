@@ -105,6 +105,12 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             "move": this.handleMove,
             "scope": this
         });
+        this.elementLayer = document.createElement("div");
+        this.div.appendChild(this.elementLayer);
+        OpenLayers.Element.addClass(
+            this.elementLayer,
+            'olControlSwipeLayerHide'
+        );
         OpenLayers.Control.prototype.draw.apply(this, arguments);
         this.resize();
         this.clipFirstLayer();
@@ -123,6 +129,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             scope: this
         });
 
+
         return this.div;
     },
 
@@ -138,6 +145,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             ev.target,
             'olControlSwipeHover'
         );
+        this.viewLayerTitle();
     },
 
     /*
@@ -152,6 +160,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             ev.target,
             'olControlSwipeHover'
         );
+        this.hideLayerTitle();
     },
 
     /**
@@ -312,6 +321,30 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         }
     },
 
+    viewLayerTitle: function() {
+        this.elementLayer.innerHTML = this.swipeLayer.name;
+        OpenLayers.Element.addClass(
+            this.elementLayer,
+            'olControlSwipeLayerView'
+        );
+        OpenLayers.Element.removeClass(
+            this.elementLayer,
+            'olControlSwipeLayerHide'
+        );
+    },
+
+    hideLayerTitle: function() {
+        this.elementLayer.innerHTML = '';
+        OpenLayers.Element.addClass(
+            this.elementLayer,
+            'olControlSwipeLayerHide'
+        );
+        OpenLayers.Element.removeClass(
+            this.elementLayer,
+            'olControlSwipeLayerView'
+        );
+    },
+
     /*
      * Method: handleRemoveLayer
      * Triggered when a new layer is removed
@@ -423,11 +456,15 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     setSwipeRatio: function(ratio) {
-       this.map.swipeRatio = ratio;
+        this.map.swipeRatio = ratio;
+        this.map.events.triggerEvent("changelayer", {
+            layer: this.swipeLayer,
+            property: "name"
+        });
     },
 
     getSwipeRatio: function() {
-       return this.map.swipeRatio;
+        return this.map.swipeRatio;
     },
 
     /*

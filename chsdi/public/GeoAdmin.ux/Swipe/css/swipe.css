@@ -15,3 +15,27 @@
     cursor: move;
     background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWM0MjLyYcACzp47txmZDwBPZQQAVTAqpgAAAABJRU5ErkJggg==) repeat;
 }
+
+.olControlSwipeLayerView {
+    background-color: white;
+    height: 18px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: -310px;
+    display: block;
+    font-size: 11px;
+    font-family: Tahoma;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.olControlSwipeLayerHide {
+    background-color: red;
+    height: 18px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: -110px;
+    display: none;
+}
+
+
