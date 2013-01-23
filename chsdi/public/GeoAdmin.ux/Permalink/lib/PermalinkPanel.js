@@ -199,7 +199,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         });
         this.sharePipe5.addClass("hideBlock");
         // Permalink Field
-        this.permalinkField = new GeoAdmin.PermalinkField({width: 280});
+        this.permalinkField = new GeoAdmin.PermalinkField({width: 330});
         var buttonShorten = new Ext.Button({
             cls: "shorten-button",
             text: OpenLayers.i18n('Shorten'),
@@ -216,23 +216,8 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
                 });
             }
         });
-        var buttonMultimap = new Ext.Button({
-            cls: "multimap-button",
-            text: OpenLayers.i18n('Multimap'),
-            tooltip: OpenLayers.i18n('Multimap tooltip'),
-            scope: this,
-            handler: function () { 
-                var link = Ext.state.Manager.getProvider().getLink();
-                link = link.split('?');
-                if (link[1].indexOf('layers=') < 0) {
-                    alert(OpenLayers.i18n('Multimap works with at least one layer. Please add one'));
-                } else {
-                    window.open(GeoAdmin.webServicesUrl + "/maps?" + link[1], '_new');
-                }
-            }
-        });
 
-        this.items = [this.permalinkField, buttonShorten, buttonMultimap];
+        this.items = [this.permalinkField, buttonShorten];
         if (this.mail) {
             this.tbar = ["->", this.shareText, this.shareTextOpen, this.buttonShare ,this.buttonQrcode, this.sharePipe1, this.buttonTwitter, this.sharePipe2, this.buttonFacebook, this.sharePipe3, this.buttonGooglePlus, this.sharePipe4, this.buttonMail, this.sharePipe5, this.buttonClose, {
                 iconCls: "close-button",
