@@ -1,4 +1,4 @@
-Release 20130121 - Monday, January 21th 2013
+Release 20130123 - Wednesday, January 23th 2013
 ====================================================
 
 Geodata
@@ -22,16 +22,16 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-+-----+-------------------+
-| New | Add stuff here... |
-+-----+-------------------+
++-------+--------------------------------------------------------+
+| Fixed | Bug resulting in delayed drawing of WMS based objects. |
++-------+--------------------------------------------------------+
 
-Other minor bugfixing.
+Minor bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
 
-Other minor bugfixing.
+Minor bugfixing.
 
 Mapping Applications
 ********************
@@ -39,11 +39,7 @@ Mapping Applications
 `map.geo.admin.ch <http://map.geo.admin.ch>`__
 --------------------------------------------------
 
-+--------+-------------------+
-| Update | Add stuff here... |
-+--------+-------------------+
-
-Other minor bugfixing.
+Minor bugfixing.
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------
