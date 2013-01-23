@@ -258,6 +258,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Sending feedback....':'Envoi du rapport....',
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Partager',
+	'Share position':'Partager position',
+	'Share position with crosshair':'Partager position avec marqueur',
 	'Share:':'Partager:',
 	'Shorten':'URL abrégée',
 	'Shorten URL':'URL abrégée',

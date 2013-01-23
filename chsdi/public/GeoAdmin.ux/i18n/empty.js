@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Share position': "",
+    'Share position with crosshair': "",
     'Start Measuring': "",
     'National Map Overview': "",
     'National Map': "",

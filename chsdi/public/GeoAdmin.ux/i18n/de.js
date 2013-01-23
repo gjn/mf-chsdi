@@ -258,6 +258,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Sending feedback....':'Bericht senden....',
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Share',
+	'Share position':'Teile Position',
+	'Share position with crosshair':'Teile Position mit Fadenkreuz',
 	'Share:':'Share:',
 	'Shorten':'Kurze URL',
 	'Shorten URL':'Kurze URL',

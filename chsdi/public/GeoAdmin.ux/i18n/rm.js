@@ -254,6 +254,8 @@ OpenLayers.Lang.rm= {
 	'Sending feedback....':'Rapportar il problem....',
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Share',
+	'Share position':'Parte poisziun',
+	'Share position with crosshair':'Parte poisziun cun cruschera',
 	'Share:':'Share:',
 	'Shorten':'URL curt',
 	'Shorten URL':'URL curt',
@@ -569,7 +571,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origin da crap',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificaziun da mineral',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppa litologia principal',
-	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200', //TODO
+	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'Resursa d\'energia mineral',
 	'ch.swisstopo.geologie-geotope':'Geotop da impurtanza naziunala',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Resursas d\'aua sutterrana',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabladad da l\'aua sutterrana',

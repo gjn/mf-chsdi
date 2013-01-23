@@ -258,6 +258,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'Sending feedback....':'Sending report....',
 	'Sending your email...':'Sending your email...', //TODO
 	'Share':'Share',
+	'Share position':'Share position',
+	'Share position with crosshair':'Share position with crosshair',
 	'Share:':'Share:',
 	'Shorten':'Short URL',
 	'Shorten URL':'Short URL',
@@ -573,7 +575,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Rocks origin',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classification of rocks',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Main lithological groups',
-	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'Mineral resources',
+	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'Mineral first resources',
 	'ch.swisstopo.geologie-geotope':'Geotopes of national importance',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Groundwater resources',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Groundwater vulnerability',
