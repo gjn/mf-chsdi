@@ -65,9 +65,10 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         );
         // Manage position of swipe
         if (!this.swipeRatio) {
-            this.swipeRatio = 1;
+            this.setSwipeRatio(1);
+        } else {
+            this.setSwipeRatio(this.swipeRatio);
         }
-        this.map.swipeRatio = this.swipeRatio;
         this.activate();
     },
 
@@ -208,8 +209,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var left = parseInt(this.div.style.left);
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
-                this.swipeRatio = (left - deltaX) / (this.map.size.w - this.width);
-                this.map.swipeRatio = this.swipeRatio;
+                this.setSwipeRatio((left - deltaX) / (this.map.size.w - this.width));
                 this.moveTo(this.computePosition());
                 this.clipFirstLayer();
                 this.mouseDragStart = evt.xy.clone();
@@ -270,7 +270,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var width = this.map.getCurrentSize().w;
             var height = this.map.getCurrentSize().h;
             // slider position in pixels
-            var s = parseInt(width * this.swipeRatio * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w));
+            var s = parseInt(width * this.getSwipeRatio() * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w));
             // slider position on the viewport
             var t = this.map.getViewPortPxFromLayerPx(new OpenLayers.Pixel(s, height));
             // cliping rectangle
@@ -389,7 +389,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     computePosition: function() {
         var y = 0;
-        var x = this.swipeRatio * (this.map.size.w - this.width);
+        var x = this.getSwipeRatio() * (this.map.size.w - this.width);
         return new OpenLayers.Pixel(x, y);
     },
 
@@ -422,13 +422,20 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         return false;
     },
 
+    setSwipeRatio: function(ratio) {
+       this.map.swipeRatio = ratio;
+    },
+
+    getSwipeRatio: function() {
+       return this.map.swipeRatio;
+    },
+
     /*
      * Method: updateRatio
      * Update the swipeRatio and update the swipe control accordingly
      */
     updateRatio: function(ratio) {
-        this.swipeRatio = ratio;
-        this.map.swipeRatio = ratio;
+        this.setSwipeRatio(ratio);
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
             this.moveTo(this.computePosition());
