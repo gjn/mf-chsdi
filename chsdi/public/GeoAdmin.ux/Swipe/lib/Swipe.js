@@ -67,6 +67,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         if (!this.swipeRatio) {
             this.swipeRatio = 1;
         }
+        this.map.swipeRatio = this.swipeRatio;
         this.activate();
     },
 
@@ -208,6 +209,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
                 this.swipeRatio = (left - deltaX) / (this.map.size.w - this.width);
+                this.map.swipeRatio = this.swipeRatio;
                 this.moveTo(this.computePosition());
                 this.clipFirstLayer();
                 this.mouseDragStart = evt.xy.clone();
@@ -426,6 +428,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     updateRatio: function(ratio) {
         this.swipeRatio = ratio;
+        this.map.swipeRatio = ratio;
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
             this.moveTo(this.computePosition());
