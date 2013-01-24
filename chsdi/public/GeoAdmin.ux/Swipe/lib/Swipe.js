@@ -50,6 +50,9 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     swipeLayer: null,
 
+    divHasBeenViewed: false,
+
+
     /**
      * Property: divEvents
      * {<OpenLayers.Events>}
@@ -125,11 +128,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlArrowRight'
         );
 
-        var self = this;
-        setTimeout(function() {
-            self.hideBigArrow();
-        }, 10000);
-
         OpenLayers.Control.prototype.draw.apply(this, arguments);
         this.resize();
         this.clipFirstLayer();
@@ -165,14 +163,22 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlSwipeHover'
         );
         this.viewLayerTitle();
-        this.hideBigArrow();
+        this.hideBigArrowImmediately();
     },
 
-    hideBigArrow: function() {
+    hideBigArrowImmediately: function() {
         this.elementLeft.style.display = "none";
         this.elementRight.style.display = "none";
     },
 
+    hideBigArrow: function() {
+        if (!this.divHasBeenViewed) {
+            var self = this;
+            setTimeout(function() {
+                self.hideBigArrowImmediately();
+            }, 10000);
+        }
+    },
     /*
      * Method: divMouseOut
      * event listener for onmouseout event
@@ -337,6 +343,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     handleAddLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
+            this.hideBigArrow();
+            this.divHasBeenViewed = true;
             this.moveTo(this.computePosition());
             this.clipFirstLayer();
         } else {
@@ -379,6 +387,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     handleRemoveLayer: function (object) {
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
+            this.hideBigArrow();
+            this.divHasBeenViewed = true;
             this.moveTo(this.computePosition());
             this.clipFirstLayer();
         } else {
@@ -398,6 +408,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         if (object.property == 'order') {
             if (this.isLayersInLayerSwitcher()) {
                 this.div.style.display = 'block';
+                this.hideBigArrow();
+                this.divHasBeenViewed = true;
                 this.moveTo(this.computePosition());
                 this.clipFirstLayer();
             } else {
@@ -498,6 +510,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         this.setSwipeRatio(ratio);
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
+            this.hideBigArrow();
+            this.divHasBeenViewed = true;
             this.moveTo(this.computePosition());
             this.clipFirstLayer();
         } else {
