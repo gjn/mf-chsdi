@@ -239,7 +239,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var left = parseInt(this.div.style.left);
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
-                this.setSwipeRatio((left - deltaX) / (this.map.size.w - this.width));
+                var delta = 0;
+                if (OpenLayers.BROWSER_NAME == "msie") {
+                    delta = -1;
+                }
+                this.setSwipeRatio((left - deltaX) / (this.map.size.w - this.width + delta));
                 this.moveTo(this.computePosition());
                 this.clipFirstLayer();
                 this.mouseDragStart = evt.xy.clone();
