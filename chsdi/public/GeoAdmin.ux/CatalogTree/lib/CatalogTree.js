@@ -577,6 +577,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
                      },
                      {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
+                     },
+                     {
                         layerId: "ch.swisstopo.vec200-names-namedlocation"
                      },
                      {
@@ -995,6 +998,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
