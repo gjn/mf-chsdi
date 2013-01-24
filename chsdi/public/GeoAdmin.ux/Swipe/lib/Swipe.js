@@ -163,6 +163,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlSwipeHover'
         );
         this.hideBigArrowImmediately();
+        this.viewLayerTitle();
     },
 
     hideBigArrowImmediately: function() {
@@ -190,6 +191,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.div,
             'olControlSwipeHover'
         );
+        this.hideLayerTitle();
     },
 
     /**
