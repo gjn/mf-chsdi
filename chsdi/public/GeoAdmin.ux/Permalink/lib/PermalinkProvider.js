@@ -180,7 +180,7 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 delete params.layers_visibility;
             }
             if (this.state.map.swipeRatio < 1.0) {
-                params.swipe_ratio = this.state.map.swipeRatio;
+                params.swipe_ratio = this.state.map.swipeRatio.toFixed(2);
             }
         }
         var current_lang = OpenLayers.Lang.getCode();
