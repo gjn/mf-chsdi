@@ -7,18 +7,8 @@
 
     </script>
     <style type="text/css">
-    
-        .Table_Main {
-            width: 723px;
-            margin-left: -2px;  
-        }
-        .input_url {
-            width: 70%;
-        }
         td {
-            font-family: arial, helvetica, sans-serif;
-            font-size: 12px;
-            border-bottom: 1px solid #dddddd;
+            border-bottom: 1px solid #000000;
             vertical-align: top;
             padding: 15px;
         }
@@ -28,28 +18,20 @@
             font-style: italic;
         }
         th {
-            font-family: arial, helvetica, sans-serif;          
             text-align: left;
             padding: 15px 0;
             border-bottom: 1px solid #000000;
         }
         form {
             margin-bottom: 20px;
-            border: 2px solid black;
-           
+            border: 3px solid black;
+            padding: 15px;
         }
         td ul {
-            font-family: arial, helvetica, sans-serif;
-            margin: 0;
-        }
-        H2 {
-            font-family: arial, helvetica, sans-serif;
-            font-size: 20px;
-        }
+            margin: 0;        }
     </style>
 </head>
 <body>
-    <h2>OWS Checker</h2>
     <div id="form">
         <form action="#" method="get" name="form_checker" id="form_checker">
             <table>
@@ -144,8 +126,8 @@
                         </td>
                     </tr>
                 <tr>
-                    <th>Richtlinie</th>
-                    <th>Ausgabe</th>
+                    <th>Rule</th>
+                    <th>Result</th>
                 </tr>
                 % else:
                     % for riliid, riliresults in results['rili'].items():
