@@ -435,7 +435,15 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * object - {<OpenLayers.Event>}
      */
     handleUpdateSize: function (object) {
-        this.resize();
+        //we have to delay this on Android devices
+        if (Ext.os.is.Android) {
+            var self = this;
+            setTimeout(function() {
+                self.resize();
+            }, 10);
+        } else {
+            this.resize();
+        }
     },
 
     /*
@@ -454,11 +462,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * Resize the swipe and update the first layer clipping
      */
     resize: function() {
-        this.div.style.height = this.map.size.h + 'px';
+        this.div.style.height = this.map.getCurrentSize().h + 'px';
         this.div.style.width = this.width + 'px';
         this.moveTo(this.computePosition());
         this.clipFirstLayer();
-        var topPosition = (this.map.size.h / 2) - 32;
+        var topPosition = (this.div.style.height / 2) - 32;
         this.elementLeft.style.marginTop = topPosition + 'px';
         this.elementRight.style.marginTop = topPosition + 'px';
     },
