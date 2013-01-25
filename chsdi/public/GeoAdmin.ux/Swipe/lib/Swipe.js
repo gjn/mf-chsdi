@@ -436,7 +436,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     handleUpdateSize: function (object) {
         //we have to delay this on Android devices
-        if (Ext.os.is.Android) {
+        if (Ext && Ext.os && Ext.os.is && Ext.os.is.Android) {
             var self = this;
             setTimeout(function() {
                 self.resize();
