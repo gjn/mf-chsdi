@@ -7,8 +7,18 @@
 
     </script>
     <style type="text/css">
+    
+        .Table_Main {
+            width: 723px;
+            margin-left: -2px;  
+        }
+        .input_url {
+            width: 70%;
+        }
         td {
-            border-bottom: 1px solid #000000;
+            font-family: arial, helvetica, sans-serif;
+            font-size: 12px;
+            border-bottom: 1px solid #dddddd;
             vertical-align: top;
             padding: 15px;
         }
@@ -18,18 +28,26 @@
             font-style: italic;
         }
         th {
+            font-family: arial, helvetica, sans-serif;          
             text-align: left;
             padding: 15px 0;
             border-bottom: 1px solid #000000;
         }
         form {
             margin-bottom: 20px;
-            border: 3px solid black;
-            padding: 15px;
+            border: 2px solid black;
+           
         }
         td ul {
-            margin: 0;        }
+            font-family: arial, helvetica, sans-serif;
+            margin: 0;
+        }
+        H2 {
+            font-family: arial, helvetica, sans-serif;
+            font-size: 20px;
+        }
     </style>
+
 </head>
 <body>
     <div id="form">
