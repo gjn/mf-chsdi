@@ -28,13 +28,14 @@
             var nrControl = map.controls.length;
             swipe = new OpenLayers.Control.Swipe({map: map});
             map.addControl(swipe);
+            swipe.activate();
 
             t.ok((nrControl + 1 === map.controls.length),
                     "swipe control has been added to the map");
             t.ok(swipe instanceof OpenLayers.Control.Swipe,
                     "ctor returns a OpenLayers.Control.Swipe");
-            t.ok((swipe.map.swipeRatio === 1),
-                    "swipeRatio is per default 1");
+            t.ok((swipe.map.swipeRatio === 0.5),
+                    "swipeRatio is per default 0.5");
         }
 
         function test_addLayer(t) {
@@ -46,6 +47,7 @@
             var nrControl = map.controls.length;
             swipe = new OpenLayers.Control.Swipe({map: map});
             map.addControl(swipe);
+            swipe.activate();
 
             t.ok((swipe.swipeLayer == null),
                     "per default, swipeLayer is null");
@@ -62,6 +64,7 @@
             map = new GeoAdmin.Map("map");
             var nrControl = map.controls.length;
             swipe = new OpenLayers.Control.Swipe({map: map});
+            swipe.activate();
             map.addControl(swipe);
             swipe.updateRatio(0.67);
             t.ok((swipe.map.swipeRatio == 0.67),
