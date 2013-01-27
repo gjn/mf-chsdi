@@ -313,13 +313,13 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * evt - {<OpenLayers.Event>}
      */
     divDrag:function(evt) {
-        if (this.mouseDragStart != null) {
+        if (this.mouseDragStart !== null) {
             var deltaX = this.mouseDragStart.x - evt.xy.x;
-            var left = parseInt(this.div.style.left);
+            var left = parseInt(this.div.style.left,10);
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
                 var delta = 0;
-                if (OpenLayers.BROWSER_NAME == "msie" || OpenLayers.BROWSER_NAME == "safari") {
+                if (OpenLayers.BROWSER_NAME === "msie" || OpenLayers.BROWSER_NAME === "safari") {
                     delta = -1;
                 }
                 this.setSwipeRatio((left - deltaX) / (this.map.size.w - this.width + delta));
@@ -368,7 +368,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     clipFirstLayer: function() {
         var newFirstLayer = this.getFirstLayerInLayerSwitcher();
         if (this.swipeLayer) {
-            if (newFirstLayer.id != this.swipeLayer.id) {
+            if (newFirstLayer.id !== this.swipeLayer.id) {
                 if (this.swipeLayer.layers) {
                     for (var i = this.swipeLayer.layers.length - 1; i >= 0; i--) {
                         var layer = this.swipeLayer.layers[i];
@@ -386,9 +386,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var width = this.map.getCurrentSize().w;
             var height = this.map.getCurrentSize().h;
             // slider position in pixels
-            var s = parseInt(width * this.getSwipeRatio() * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w));
-            // slider position on the viewport
-            var t = this.map.getViewPortPxFromLayerPx(new OpenLayers.Pixel(s, height));
+            var s = parseInt(width * this.getSwipeRatio() * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w),10);
             // cliping rectangle
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
@@ -487,7 +485,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * object - {<OpenLayers.Event>}
      */
     handleChangeLayer: function (object) {
-        if (object.property == 'order') {
+        if (object.property === 'order') {
             if (this.isLayersInLayerSwitcher()) {
                 this.div.style.display = 'block';
                 this.moveTo(this.computePosition());
@@ -572,7 +570,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * Check the presence of a layer in the layer switcher
      */
     isLayersInLayerSwitcher: function() {
-        var layers = [];
         for (var i = 0, len = this.map.layers.length; i < len; i++) {
             var layer = this.map.layers[i];
             if (layer.displayInLayerSwitcher) {
