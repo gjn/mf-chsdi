@@ -29,17 +29,17 @@
 }
 
 .olControlArrowLeft {
-    width: 31px;
-    height: 63px;
-    margin-left: -23px;
+    width: 16px;
+    height: 32px;
+    margin-left: -1px;
     background-image: url(../img/bigarrow_left.png);
     background-repeat: no-repeat;
     position: absolute;
 }
 .olControlArrowRight {
-    width: 31px;
-    height: 63px;
-    margin-left: 24px;
+    width: 16px;
+    height: 32px;
+    margin-left: 19px;
     background-image: url(../img/bigarrow_right.png);
     background-repeat: no-repeat;
     position: absolute;
