@@ -62,14 +62,15 @@
             var map, swipe;
 
             map = new GeoAdmin.Map("map");
-            var nrControl = map.controls.length;
+
             swipe = new OpenLayers.Control.Swipe({map: map});
-            swipe.activate();
+
             map.addControl(swipe);
+            swipe.activate();
+
             swipe.updateRatio(0.67);
             t.ok((swipe.map.swipeRatio == 0.67),
                     "ratio has been correctly updated to 0.67");
-            map.addLayerByName("ch.swisstopo.fixpunkte-agnes")
         }
 
     </script>
