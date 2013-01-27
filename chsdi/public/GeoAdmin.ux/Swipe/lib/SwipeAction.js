@@ -43,6 +43,15 @@ GeoAdmin.SwipeAction = Ext.extend(Ext.Action, {
                     this.setText(OpenLayers.i18n('Compare'));
                 } else {
                     this.swipe.activate();
+                    if (!this.swipe.isLayersInLayerSwitcher()) {
+                        Ext.MessageBox.show({
+                            title:OpenLayers.i18n('Information'),
+                            msg: OpenLayers.i18n('The first layer is swiped. In order to use the compare tool, you need to add at least one layer.'),
+                            modal:true,
+                            icon:Ext.MessageBox.INFO,
+                            buttons:Ext.MessageBox.OK
+                        });
+                    }
                     this.setText(OpenLayers.i18n('Stop compare'));
                 }
             },

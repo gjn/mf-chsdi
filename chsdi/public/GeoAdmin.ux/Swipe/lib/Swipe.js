@@ -40,7 +40,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     map: null,
 
-    width: 16,
+    width: 32,
 
     /** api: config[swipeRatio]
      *  ``Number``
@@ -51,6 +51,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     swipeLayer: null,
 
     isTitleVisible: false,
+
+    isDragging: false,
 
 
     /**
@@ -225,13 +227,17 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     hideBigArrow: function() {
-        this.elementLeft.style.display = "none";
-        this.elementRight.style.display = "none";
+        if (!this.isDragging) {
+            this.elementLeft.style.display = "none";
+            this.elementRight.style.display = "none";
+        }
     },
 
     viewBigArrow: function() {
-        this.elementLeft.style.display = "block";
-        this.elementRight.style.display = "block";
+        if (!this.isDragging) {
+            this.elementLeft.style.display = "block";
+            this.elementRight.style.display = "block";
+        }
     },
 
     /*
@@ -283,6 +289,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         OpenLayers.Event.stop(evt);
         this.viewLayerTitle();
         this.hideBigArrow();
+        this.isDragging = true;
         return false;
     },
 
@@ -303,7 +310,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
                 var delta = 0;
-                if (OpenLayers.BROWSER_NAME == "msie") {
+                if (OpenLayers.BROWSER_NAME == "msie" || OpenLayers.BROWSER_NAME == "safari") {
                     delta = -1;
                 }
                 this.setSwipeRatio((left - deltaX) / (this.map.size.w - this.width + delta));
@@ -336,8 +343,11 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         if (this.mouseDragStart) {
             this.mouseDragStart = null;
         }
-        this.hideLayerTitle();
+        this.isDragging = false;
         this.viewBigArrow();
+        if (evt.type === "touchend") {
+            this.hideLayerTitle();
+        }
         OpenLayers.Event.stop(evt);
         return false;
     },
@@ -374,7 +384,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
             var left = -this.map.layerContainerOriginPx.x;
-            var right = left + s + 7;
+            var right = left + s + Math.ceil((this.width-1)/2);
             //Syntax for clip "rect(top,right,bottom,left)"
             var clip = "rect(" + top + "px " + right + "px " + bottom + "px " + left + "px)";
             this.swipeLayer = newFirstLayer;
@@ -411,7 +421,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     viewLayerTitle: function() {
-        if (!this.isTitleVisible) {
+        if (!this.isTitleVisible && !this.isDragging) {
             if (this.swipeLayer) {
                 this.elementLayer.innerHTML = "&nbsp&nbsp&nbsp&nbsp" + this.swipeLayer.name;
             }
@@ -428,16 +438,18 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     hideLayerTitle: function() {
-        this.elementLayer.innerHTML = '';
-        this.isTitleVisible = false;
-        OpenLayers.Element.addClass(
-            this.elementLayer,
-            'olControlSwipeLayerHide'
-        );
-        OpenLayers.Element.removeClass(
-            this.elementLayer,
-            'olControlSwipeLayerView'
-        );
+        if (!this.isDragging) {
+            this.elementLayer.innerHTML = '';
+            this.isTitleVisible = false;
+            OpenLayers.Element.addClass(
+                this.elementLayer,
+                'olControlSwipeLayerHide'
+            );
+            OpenLayers.Element.removeClass(
+                this.elementLayer,
+                'olControlSwipeLayerView'
+            );
+        }
     },
 
     /*
