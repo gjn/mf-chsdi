@@ -50,6 +50,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
 
     swipeLayer: null,
 
+    isTitleVisible: false,
+
 
     /**
      * Property: divEvents
@@ -102,8 +104,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         });
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
-            this.moveTo(this.computePosition());
-            this.clipFirstLayer();
+            this.viewBigArrow();
         }
         this.resize();
 
@@ -131,7 +132,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             "move": this.handleMove,
             "scope": this
         });
-        this.hideBigArrowImmediately();
+        this.hideBigArrow();
         this.hideLayerTitle();
         this.div.style.display = 'none';
         if (this.swipeLayer) {
@@ -219,13 +220,18 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.div,
             'olControlSwipeHover'
         );
-        this.hideBigArrowImmediately();
+        this.hideBigArrow();
         this.viewLayerTitle();
     },
 
-    hideBigArrowImmediately: function() {
+    hideBigArrow: function() {
         this.elementLeft.style.display = "none";
         this.elementRight.style.display = "none";
+    },
+
+    viewBigArrow: function() {
+        this.elementLeft.style.display = "block";
+        this.elementRight.style.display = "block";
     },
 
     /*
@@ -241,6 +247,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             'olControlSwipeHover'
         );
         this.hideLayerTitle();
+        this.viewBigArrow();
     },
 
     /**
@@ -275,6 +282,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
         this.mouseDragStart = evt.xy.clone();
         OpenLayers.Event.stop(evt);
         this.viewLayerTitle();
+        this.hideBigArrow();
         return false;
     },
 
@@ -289,7 +297,6 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * evt - {<OpenLayers.Event>}
      */
     divDrag:function(evt) {
-        this.hideBigArrowImmediately();
         if (this.mouseDragStart != null) {
             var deltaX = this.mouseDragStart.x - evt.xy.x;
             var left = parseInt(this.div.style.left);
@@ -330,6 +337,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.mouseDragStart = null;
         }
         this.hideLayerTitle();
+        this.viewBigArrow();
         OpenLayers.Event.stop(evt);
         return false;
     },
@@ -403,21 +411,25 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     },
 
     viewLayerTitle: function() {
-        if (this.swipeLayer) {
-            this.elementLayer.innerHTML = "&nbsp&nbsp&nbsp&nbsp" + this.swipeLayer.name;
+        if (!this.isTitleVisible) {
+            if (this.swipeLayer) {
+                this.elementLayer.innerHTML = "&nbsp&nbsp&nbsp&nbsp" + this.swipeLayer.name;
+            }
+            OpenLayers.Element.addClass(
+                this.elementLayer,
+                'olControlSwipeLayerView'
+            );
+            OpenLayers.Element.removeClass(
+                this.elementLayer,
+                'olControlSwipeLayerHide'
+            );
         }
-        OpenLayers.Element.addClass(
-            this.elementLayer,
-            'olControlSwipeLayerView'
-        );
-        OpenLayers.Element.removeClass(
-            this.elementLayer,
-            'olControlSwipeLayerHide'
-        );
+        this.isTitleVisible = true;
     },
 
     hideLayerTitle: function() {
         this.elementLayer.innerHTML = '';
+        this.isTitleVisible = false;
         OpenLayers.Element.addClass(
             this.elementLayer,
             'olControlSwipeLayerHide'
@@ -475,7 +487,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      */
     handleUpdateSize: function (object) {
         //we have to delay this on Android devices
-        if (Ext && Ext.os && Ext.os.is && Ext.os.is.Android) {
+        if (navigator.userAgent.toLowerCase().indexOf("android") > 0) {
             var self = this;
             setTimeout(function() {
                 self.resize();
