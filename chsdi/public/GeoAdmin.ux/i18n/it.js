@@ -51,6 +51,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Climb: ':'Salita : ',
 	'Close':'Chiudere',
 	'Close this window':'Chiudere questa finestra',
+	'Compare':'Confronto',
 	'Complete your report':'Completare',
 	'Connect':'Connessione',
 	'Contact':'Contatto',
@@ -266,6 +267,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Sorting_order':'Ordinare',
 	'Start Measuring':'Avviare la misurazione',
 	'Statistische Einheiten':'Unità statistiche',
+	'Stop compare':'Stop confronto',
 	'Style':'Stile',
 	'Subject':'Soggetto',
 	'Success':'Il rapporto è stato inviato',
@@ -276,6 +278,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'Thanks':'Grazie',
 	'Thanks a lot for your feedback !':'Grazie mille per il suo rapporto !',
 	'Thanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.':'Il suo rapporto è stato inviato alla persona responsabile. Grazie per averci aiutato a mantenere aggiornati e corretti i nostri prodotti. Il suo rapporto entrerà in linea di conto per la prossima revisione del prodotto.',
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':'Il primo layer è conforntato con gli altri. Per utilizzare questa funzione, selezionare almeno un layer.',
 	'The following URL will be transferred:':'Il seguente URL verrá inviato:',
 	'The maximum number of layers you can add to the layer tree has been reached.':'The maximum number of layers you can add to the layer tree has been reached.', //TODO
 	'The permalink you use contains reference to third party data. Would you load these data ?':'Il permalink usato fa riferimento possibilmente a dati di terze parti. Volete veramente caricare questi dati?',

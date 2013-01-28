@@ -51,6 +51,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Climb: ':'Montée :  ',
 	'Close':'Fermer',
 	'Close this window':'Fermer cette fenêtre',
+	'Compare':'Comparer',
 	'Complete your report':'Compléter',
 	'Connect':'Connect',
 	'Contact':'Contact',
@@ -266,6 +267,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Sorting_order':'Trier',
 	'Start Measuring':'Commencez à mesurer',
 	'Statistische Einheiten':'Unités statistiques',
+	'Stop compare':'Stop comparer',
 	'Style':'Style',
 	'Subject':'Sujet',
 	'Success':'Envoi effectué avec succès',
@@ -276,6 +278,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'Thanks':'Merci beaucoup',
 	'Thanks a lot for your feedback !':'Merci beaucoup pour votre retour',
 	'Thanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.':'Merci pour vos informations qui ont été transférées à la personne responsable. Votre annonce nous aide à améliorer l\'actualité de nos produits.',
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':'La première couche est comparée avec les autres. Pour utiliser cette fonction, ajouter au moins une couche de données.',
 	'The following URL will be transferred:':'L\'Url suivante va être transférée :',
 	'The maximum number of layers you can add to the layer tree has been reached.':'The maximum number of layers you can add to the layer tree has been reached.', //TODO
 	'The permalink you use contains reference to third party data. Would you load these data ?':'Le permalien que vous utilisez contient peut-être des références à des données tierces ne provenant pas de map.geo.admin.ch. Voulez-vous également visualiser ces données sachant que map.geo.admin.ch ne prend aucune responsabilité quant à ces données ?',

@@ -763,5 +763,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bakom.verfuegbarkeit-hdtv':"",
 	'ch.bakom.verfuegbarkeit-tv':"",
     'ch.bag':"",
-    'ch.bag.url':""
+    'ch.bag.url':"",
+	'Stop compare':"",
+	'Compare':"",
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':""
 });

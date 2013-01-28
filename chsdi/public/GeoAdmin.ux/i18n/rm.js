@@ -47,6 +47,7 @@ OpenLayers.Lang.rm= {
 	'Climb: ':'Muntada : ',
 	'Close':'Serrar',
 	'Close this window':'Serrar questa fanestra',
+	'Compare':'Confruntar',
 	'Complete your report':'Cumplettar',
 	'Connect':'Connectar',
 	'Contact':'Contact',
@@ -262,6 +263,7 @@ OpenLayers.Lang.rm= {
 	'Sorting_order':'Zavrar',
 	'Start Measuring':'Starten Sie die Messung',
 	'Statistische Einheiten':'Unitads statisticas',
+	'Stop compare':'Stop confruntar',
 	'Style':'Stil',
 	'Subject':'Object',
 	'Success':'Rapport tramess cun success',
@@ -272,6 +274,7 @@ OpenLayers.Lang.rm= {
 	'Thanks':'Grazia fitg',
 	'Thanks a lot for your feedback !':'Grazia fitg per Voss rapport!',
 	'Thanks very much for your report that was forwarded to the responsible person. Your report will help us to update our products and will possibly be considered in the next revision.':'Voss messadi è vegnì tramess a la persuna responsabla. Grazia che Vus ans gidais d\'actualisar e d\'optimar noss products.',
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':'Confruntar datas: Tscherni l\'emprim in u plirs nivels da la glista',
 	'The following URL will be transferred:':'Trametter Link:',
 	'The maximum number of layers you can add to the layer tree has been reached.':'The maximum number of layers you can add to the layer tree has been reached.', //TODO
 	'The permalink you use contains reference to third party data. Would you load these data ?':'Dieser Permalink zeigt möglicherweise auf Daten eines Drittanbieters. Wollen Sie diese Daten dennoch laden?',
