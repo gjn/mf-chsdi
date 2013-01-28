@@ -20,6 +20,7 @@
  *
  *     var map = new GeoAdmin.Map("mymap", {doZoomToMaxExtent: true});
  *     var Swipe = new GeoAdmin.Swipe({map: map});
+ *     Swipe.activate();
  *
  */
 
@@ -53,6 +54,8 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     isTitleVisible: false,
 
     isDragging: false,
+
+    mouseDragStart: null,
 
 
     /**
@@ -313,7 +316,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
      * evt - {<OpenLayers.Event>}
      */
     divDrag:function(evt) {
-        if (this.mouseDragStart !== null) {
+        if (this.mouseDragStart && this.isDragging) {
             var deltaX = this.mouseDragStart.x - evt.xy.x;
             var left = parseInt(this.div.style.left,10);
             if ((left - deltaX) >= 0 &&

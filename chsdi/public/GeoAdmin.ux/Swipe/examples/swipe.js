@@ -12,6 +12,8 @@ function init() {
 
     map.addControl(swipe);
 
+    swipe.activate();
+
     map.addLayerByName("ch.swisstopo.fixpunkte-agnes");
 
 }

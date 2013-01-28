@@ -1,6 +1,7 @@
 /*global Ext, OpenLayers, GeoExt, GeoAdmin*/ 
 
-var mainPanel, mapPanel, permalinkPanel1, permalinkPanel2, llayer="ch.swisstopo.fixpunkte-agnes";
+var mainPanel, mapPanel, permalinkPanel1, llayer="ch.swisstopo.fixpunkte-agnes";
+GeoAdmin.OpenLayersImgPath = "../../Map/img/";
 
 
 Ext.onReady(function() {
@@ -36,10 +37,11 @@ Ext.onReady(function() {
     mapPanel.map.zoomToMaxExtent();
 
 
-    swipe = new OpenLayers.Control.Swipe({map: mapPanel.map,
-                                          swipeRatio: mapPanel.map.swipeRatio});
+    swipe = new OpenLayers.Control.Swipe({map: mapPanel.map});
 
     mapPanel.map.addControl(swipe);
+
+    swipe.activate();
 
     if (mapPanel.map.getLayerByLayerName(llayer)) {
         mapPanel.map.removeLayerByName(llayer);
