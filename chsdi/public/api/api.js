@@ -56,6 +56,7 @@
  * @include Measure/lib/Measure.js
  * @include WmsBrowser/lib/WmsBrowser.js
  * @include Geocoder/lib/Geocoder.js
+ * @include Swipe/lib/SwipeAction.js
  *
  * @include OpenLayers/Lang.js
  * @include i18n/de.js

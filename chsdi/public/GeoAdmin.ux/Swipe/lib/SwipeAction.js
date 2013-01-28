@@ -3,33 +3,14 @@
 
 /**
  * @requires OpenLayers/Control.js
- * @requires Swipe/Lib/Swipe.js
+ * @requires Swipe/lib/Swipe.js
  *
  */
 
 Ext.namespace('GeoAdmin');
 
-/** api: (define)
- *  module =  GeoAdmin
- *  class = SwipeAction
- */
-
-/** api: constructor
- *  .. class:: SwipeAction(config)
- *
- *  :param config: ``Object`` config
- *
- *  :return:  ``GeoAdmin.SwipeAction``
- *
- *  Create a swipe action used to activate and deactivate the swipe function
- */
-
 GeoAdmin.SwipeAction = Ext.extend(Ext.Action, {
 
-    /** api: config[map]
-     *  ``OpenLayers.Map``
-     *  A `OpenLayers.Map <http://dev.openlayers.org/docs/files/OpenLayers/Map-js.html>`_ instance
-     */
     map: null,
 
     constructor : function(config) {
@@ -70,5 +51,4 @@ GeoAdmin.SwipeAction = Ext.extend(Ext.Action, {
     }
 });
 
-/** api: xtype = ga_swipeaction */
 Ext.reg("ga_swipeaction", GeoAdmin.SwipeAction);
