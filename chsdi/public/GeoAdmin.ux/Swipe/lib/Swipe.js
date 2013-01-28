@@ -8,7 +8,7 @@
 /* global GeoAdmin, OpenLayers, escape */
 
 /** api: (define)
- *  module =  GeoAdmin
+ *  module =  OpenLayers.Control
  *  class = Swipe
  *  base_link = `OpenLayers.Control <http://dev.openlayers.org/apidocs/files/OpenLayers/Control-js.html>`_
  */
@@ -29,7 +29,7 @@
  *
  *  :param options: ``Object`` options
  *
- *  :return:  ``GeoAdmin.Swipe``
+ *  :return:  ``OpenLayers.Control.Swipe``
  *
  *  Add a swipe control in the map
  */
