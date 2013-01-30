@@ -858,7 +858,7 @@ msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr "Planimetric control points LFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
-msgstr "Fixed plan control points LFP2"
+msgstr "Planimetric control points LFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Last glacial maximum"

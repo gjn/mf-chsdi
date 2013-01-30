@@ -2198,7 +2198,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
-            //FIXME ltfoa: those layers are to TEST the ngamapping application.
             "ch.bakom.anbieter-eigenes_festnetz": {
                 name: OpenLayers.i18n("ch.bakom.anbieter-eigenes_festnetz"),
                 layertype: 'wmts',
@@ -2217,7 +2216,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.anschlussart-koaxialkabel": {
                 name: OpenLayers.i18n("ch.bakom.anschlussart-koaxialkabel"),
@@ -2227,7 +2226,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.anschlussart-kupferdraht": {
                 name: OpenLayers.i18n("ch.bakom.anschlussart-kupferdraht"),
@@ -2237,7 +2236,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink1": {
                 name: OpenLayers.i18n("ch.bakom.downlink1"),
@@ -2247,7 +2246,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink10": {
                 name: OpenLayers.i18n("ch.bakom.downlink10"),
@@ -2257,7 +2256,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink100": {
                 name: OpenLayers.i18n("ch.bakom.downlink100"),
@@ -2267,7 +2266,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink2": {
                 name: OpenLayers.i18n("ch.bakom.downlink2"),
@@ -2277,7 +2276,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink20": {
                 name: OpenLayers.i18n("ch.bakom.downlink20"),
@@ -2287,7 +2286,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink50": {
                 name: OpenLayers.i18n("ch.bakom.downlink50"),
@@ -2297,7 +2296,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink1": {
                 name: OpenLayers.i18n("ch.bakom.uplink1"),
@@ -2307,7 +2306,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink10": {
                 name: OpenLayers.i18n("ch.bakom.uplink10"),
@@ -2317,7 +2316,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink100": {
                 name: OpenLayers.i18n("ch.bakom.uplink100"),
@@ -2327,7 +2326,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink2": {
                 name: OpenLayers.i18n("ch.bakom.uplink2"),
@@ -2337,7 +2336,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink20": {
                 name: OpenLayers.i18n("ch.bakom.uplink20"),
@@ -2347,7 +2346,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink50": {
                 name: OpenLayers.i18n("ch.bakom.uplink50"),
@@ -2357,7 +2356,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.verfuegbarkeit-hdtv": {
                 name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-hdtv"),
@@ -2367,7 +2366,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.verfuegbarkeit-tv": {
                 name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-tv"),
@@ -2377,9 +2376,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
-            // FIXME ltfoa END
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
