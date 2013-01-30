@@ -30,6 +30,7 @@
     font-family: Tahoma, Arial;
     font-weight: 700;
     white-space: pre;
+    position: absolute;
 }
 
 .olControlSwipeLayerHide {
