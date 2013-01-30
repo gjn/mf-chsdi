@@ -190,6 +190,12 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             this.elementLayer,
             'olControlSwipeLayerHide'
         );
+        this.elementLayerSpan = document.createElement("span");
+        this.div.appendChild(this.elementLayerSpan);
+        OpenLayers.Element.addClass(
+            this.elementLayerSpan,
+            'olControlSwipeLayerSpan'
+        );
         this.elementLeft = document.createElement("div");
         this.div.appendChild(this.elementLeft);
         OpenLayers.Element.addClass(
@@ -318,7 +324,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     divDrag:function(evt) {
         if (this.mouseDragStart && this.isDragging) {
             var deltaX = this.mouseDragStart.x - evt.xy.x;
-            var left = parseInt(this.div.style.left,10);
+            var left = parseInt(this.div.style.left, 10);
             if ((left - deltaX) >= 0 &&
                 (left - deltaX) <= (this.map.size.w - this.width)) {
                 var delta = 0;
@@ -389,7 +395,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             var width = this.map.getCurrentSize().w;
             var height = this.map.getCurrentSize().h;
             // slider position in pixels
-            var s = parseInt(width * this.getSwipeRatio() * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w),10);
+            var s = parseInt(width * this.getSwipeRatio() * ((this.map.getCurrentSize().w - this.width) / this.map.getCurrentSize().w), 10);
             // cliping rectangle
             var top = -this.map.layerContainerOriginPx.y;
             var bottom = top + height;
@@ -433,16 +439,23 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
     viewLayerTitle: function() {
         if (!this.isTitleVisible && !this.isDragging) {
             if (this.swipeLayer) {
-                this.elementLayer.innerHTML = "&nbsp&nbsp&nbsp&nbsp" + this.swipeLayer.name;
+                var content = "&nbsp&nbsp&nbsp&nbsp " + this.swipeLayer.name;
+                this.elementLayer.innerHTML = content;
+                this.elementLayerSpan.innerHTML = content;
+                OpenLayers.Element.addClass(
+                    this.elementLayer,
+                    'olControlSwipeLayerView'
+                );
+                OpenLayers.Element.removeClass(
+                    this.elementLayer,
+                    'olControlSwipeLayerHide'
+                );
+                var width = parseInt(this.elementLayerSpan.offsetWidth) + 5;
+                this.elementLayer.style.width = width + "px";
+                this.elementLayer.style.marginLeft =  "-" + width + "px";
+
             }
-            OpenLayers.Element.addClass(
-                this.elementLayer,
-                'olControlSwipeLayerView'
-            );
-            OpenLayers.Element.removeClass(
-                this.elementLayer,
-                'olControlSwipeLayerHide'
-            );
+
         }
         this.isTitleVisible = true;
     },

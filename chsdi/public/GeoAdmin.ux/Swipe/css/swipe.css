@@ -16,12 +16,20 @@
     margin-left: -230px;
     display: block;
     font-size: 11px;
-    font-family: Tahoma;
+    font-family: Tahoma, Arial;
     font-weight: 700;
-    padding-top: 1px;
+    padding-top: 2px;
     background-image: url(../img/arrow_left.png);
     background-repeat: no-repeat;
     position: absolute;
+}
+
+.olControlSwipeLayerSpan {
+    visibility: hidden;
+    font-size: 11px;
+    font-family: Tahoma, Arial;
+    font-weight: 700;
+    white-space: pre;
 }
 
 .olControlSwipeLayerHide {
