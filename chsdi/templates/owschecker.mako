@@ -35,8 +35,6 @@
         }
         form {
             margin-bottom: 20px;
-            border: 2px solid black;
-           
         }
         td ul {
             font-family: arial, helvetica, sans-serif;
