@@ -129,7 +129,10 @@ class LayersController(BaseController):
             pass
         elif 'prod' in Geodata_staging and self.mode in ['all','legend','bodsearch','preview','mobile']:
             query = query.filter(self.BodLayer.staging == 'prod')
-     
+        
+        if self.mode in ['bodsearch']:
+            query = query.filter(self.BodLayer.bodsearch == 'true')
+             
         # Filter by layer_id
         if layer_id[0] != 'all':
             list_layers = []

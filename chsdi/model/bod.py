@@ -1,7 +1,7 @@
 import os
 
 from sqlalchemy.ext.declarative import declarative_base
-
+ 
 from pylons import config
 
 from chsdi.lib.base import render, c
@@ -36,6 +36,7 @@ class BodLayer(object):
     fk_geobasisdaten_sammlung_bundesrecht = Column('fk_geobasisdaten_sammlung_bundesrecht', Text)
     volltextsuche = Column('volltextsuche', Text)
     staging = Column('staging', Text)
+    bodsearch = Column('bodsearch', Text)
 
     def json(self, hilight, rawjson=False):
         c.hilight = hilight
