@@ -20,7 +20,7 @@
             font-size: 12px;
             border-bottom: 1px solid #dddddd;
             vertical-align: top;
-            padding: 15px;
+            padding: 10px;
         }
         .hint {
             color: #6E6E6E;
