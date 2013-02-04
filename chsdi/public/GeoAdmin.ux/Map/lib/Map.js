@@ -702,7 +702,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 maximizable: false,
                 collapsible: false,
                 anchorPosition: 'auto',
-                ancCls: 'auto'
+                ancCls: 'auto',
+                listeners: {
+                    hide: function(evt) {
+                        if(this.map && this.map.selectControl && this.map.selectControl.CLASS_NAME === 'OpenLayers.Control.SelectFeature') {
+                            this.map.selectControl.unselectAll();
+                        }
+                    }
+                },
+                scope: this
             });
 
             this.KMLpopup.show();
