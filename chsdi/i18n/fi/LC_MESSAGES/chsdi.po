@@ -942,7 +942,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Charta naziunala 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
-msgstr "Charta naziunala 1:1 milliun (colurus)"
+msgstr "Charta naziunala 1:1 milliun"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "Charta naziunala 1:200'000"
