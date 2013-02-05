@@ -398,7 +398,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.landesforstinventar-baumarten':'Essences (IFN)',
 	'ch.bafu.landesforstinventar-totholz':'Bois mort (IFN)',
 	'ch.bafu.landesforstinventar-waldanteil':'Taux de boisement (IFN)',
-	'ch.bafu.moose':'Rote Liste Moose',
+	'ch.bafu.moose':'Liste rouge mousses',
 	'ch.bafu.nabelstationen':'Qualité de l\'air: Stations NABEL',
 	'ch.bafu.permafrost':'Carte indicative du Pergélisol',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN  Zones agricoles extensives',

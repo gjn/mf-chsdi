@@ -398,7 +398,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.landesforstinventar-baumarten':'Specie arboree (IFN)',
 	'ch.bafu.landesforstinventar-totholz':'Legno morto (IFN)',
 	'ch.bafu.landesforstinventar-waldanteil':'Percentuale di bosco (IFN)',
-	'ch.bafu.moose':'Rote Liste Moose',
+	'ch.bafu.moose':'Liste rosse muschi',
 	'ch.bafu.nabelstationen':'Qualità dell\'aria: stazioni NABEL',
 	'ch.bafu.permafrost':'Cartina indicativa del permafrost',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN zona di agricoltura estensiva',

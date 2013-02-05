@@ -398,7 +398,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bafu.landesforstinventar-baumarten':'Tree species (NFI)',
 	'ch.bafu.landesforstinventar-totholz':'Dead wood (NFI)',
 	'ch.bafu.landesforstinventar-waldanteil':'Percentage of forest area (NFI)',
-	'ch.bafu.moose':'Rote Liste Moose',
+	'ch.bafu.moose':'Red list bryophytes',
 	'ch.bafu.nabelstationen':'Air pollution: NABEL Stations',
 	'ch.bafu.permafrost':'Potential permafrost distribution',
 	'ch.bafu.ren-extensive_landwirtschaftsgebiete':'REN extensive agricultural area',
