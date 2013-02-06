@@ -1,3 +1,72 @@
+Release 20130206 - Wednesday, February 6thth 2013
+====================================================
+
+Geodata
+********
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Federal Inventory ISOS <//map.geo.admin.ch/?layers.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ .swisstopo.swissboundaries3d-land-flaeche.fill)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | `Expert tool Swipe <http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.pixelkarte-farbe-pk25.noscale1&Y=601151.5&X=198109&zoom=8&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale&layers_opacity=1&layers_visibility=true&swipe_ratio=0.52&lang=en>`__ to compare layers with the use of a vertical sliding bar. You can activate this functionality through the Tools menu. |
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fixed | Feature Information Box does not pop up in IE8.                                                                                                                                                                                                                                                                                                                                                                                      |
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `Expert tool Swipe <http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.pixelkarte-farbe-pk25.noscale1&Y=601151.5&X=198109&zoom=8&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale&layers_opacity=1&layers_visibility=true&swipe_ratio=0.52&lang=en>`__ to compare layers with the use of a vertical sliding bar. You can activate this functionality through the Tools menu. |
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
 Release 20130123 - Wednesday, January 23th 2013
 ====================================================
 
