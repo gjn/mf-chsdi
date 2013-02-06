@@ -406,6 +406,17 @@ class Geologischer_Inklination(Base, Queryable):
 
 register('ch.swisstopo.geologie-geophysik-inklination',Geologischer_Inklination)
 
+class Geologischer_Aeromagnetik_Jura(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gravimetrie_aeromagnetik_jura'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/aeromagnetik_jura.mako'
+        id = Column('gid', Integer, primary_key=True)
+        fid = Column ('id', Integer)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
+
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'wanderwege_swissmap'
