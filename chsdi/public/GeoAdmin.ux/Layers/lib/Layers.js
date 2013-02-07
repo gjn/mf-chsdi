@@ -1822,7 +1822,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.swissprtr": {
                 name: OpenLayers.i18n("ch.bafu.swissprtr"),
                 layertype: 'wmts',
-                timestamp: ['20120404','20110222'],
+                timestamp: ['20130207','20120404','20110222'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
