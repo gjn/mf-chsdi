@@ -3168,18 +3168,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-// Attente protocole pour activer nouveau layer (ltalp)
-//            "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
-//                name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
-//                layertype: 'wms',
-//                layers: ['ch.bak.schutzgebiete-unesco_weltkulturerbe'],
-//                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.bak",
-//                opacity: 0.75,
-//                queryable: true
-//            },
+            "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
+                name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
+                layertype: 'wmts',
+                timestamp: ['20120202'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bak",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.bafu.fischerei-aeschen_verbreitungsgebiet": {
                 name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_verbreitungsgebiet"),
                 layertype: 'wmts',

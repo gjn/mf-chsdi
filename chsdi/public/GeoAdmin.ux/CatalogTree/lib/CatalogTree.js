@@ -986,10 +986,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },*/
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
-//                    },
-// Put in comment before commit : ltalp (wait protocole)
-//                    {
-//                        layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+                    },
+                    {
+                        layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
                     }
                 ]
             },
