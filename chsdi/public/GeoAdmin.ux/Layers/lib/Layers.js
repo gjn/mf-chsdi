@@ -3171,7 +3171,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
                 name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
                 layertype: 'wmts',
-                timestamp: ['20120202'],
+                timestamp: ['20120203'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bak",
