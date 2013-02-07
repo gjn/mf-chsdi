@@ -145,7 +145,7 @@
                 % else:
                     % for riliid, riliresults in results['rili'].items():
                         <tr>
-                            <td>
+                            <td style="width:50px;">
                                 % if riliid < 10:
                                     ${results['name']}-0${riliid}
                                 % else:
