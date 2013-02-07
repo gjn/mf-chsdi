@@ -20,7 +20,7 @@
             font-size: 12px;
             border-bottom: 1px solid #dddddd;
             vertical-align: top;
-            padding: 10px;
+            padding: 15px;
         }
         .hint {
             color: #6E6E6E;
@@ -44,6 +44,9 @@
             font-family: arial, helvetica, sans-serif;
             font-size: 20px;
         }
+        .noborder {
+            border: none;
+        }
     </style>
 
 </head>
@@ -52,12 +55,12 @@
         <form action="#" method="get" name="form_checker" id="form_checker">
             <table>
                 <tr>
-                    <td>
+                    <td style="width:150px;">
                         <label for="base_url">Service URL:</label>
                     </td>
                     <td>
-                        <input type="text" title="base_url" id="base_url" name="base_url" value="${base_url}"><br />
-                        <p class="hint">Hint: Don't use tailing "?" here, just put the base URL i.e.: http://lidarserver.com/sandiego</p>
+                        <input type="text" title="base_url" id="base_url" name="base_url" value="${base_url}">
+                        <span class="hint">&nbsp;&nbsp;Hint: Don't use tailing "?" here, just put the base URL</span>
 
                     </td>
                 </tr>
@@ -93,13 +96,7 @@
                                 % endif
                                     title="WMTS" value="WMTS">WMTS</option>
                         </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="ssurl">Server Settings URL:</label>
-                    </td>
-                    <td>
+                        <label for="ssurl">&nbsp;&nbsp;Server Settings URL:</label>
                         <input type="text" title="ssurl" name="ssurl" id="ssurl" value="${ssurl}">
                     </td>
                 </tr>
@@ -113,7 +110,7 @@
                                 checked="checked"
                             % endif
                             >
-                        <p class="hint">Hint: Only for WMTS</p>
+                        <span class="hint"> Only for WMTS</span>
                     </td>
                 </tr>
                 <tr>
