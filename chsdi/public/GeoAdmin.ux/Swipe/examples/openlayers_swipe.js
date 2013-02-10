@@ -19,5 +19,7 @@ var dm_wms = new OpenLayers.Layer.WMS(
 );
 
 map.addLayers([ol_wms, dm_wms]);
-map.addControl(new OpenLayers.Control.LayerSwitcher());
+var swipe = new OpenLayers.Control.Swipe({map: map});
+map.addControls([new OpenLayers.Control.LayerSwitcher(),swipe]);
+swipe.activate();
 map.zoomToMaxExtent();

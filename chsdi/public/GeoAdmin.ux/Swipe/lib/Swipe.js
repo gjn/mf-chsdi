@@ -18,8 +18,9 @@
  *
  *  .. code-block:: javascript
  *
- *     var map = new GeoAdmin.Map("mymap", {doZoomToMaxExtent: true});
+ *     var map = new new OpenLayers.Map("mymap");
  *     var Swipe = new OpenLayers.Control.Swipe({map: map});
+ *     map.addControls([swipe]);
  *     Swipe.activate();
  *
  */
@@ -107,6 +108,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
             "move": this.handleMove,
             "scope": this
         });
+
         if (this.isLayersInLayerSwitcher()) {
             this.div.style.display = 'block';
             this.viewBigArrow();
@@ -452,7 +454,7 @@ OpenLayers.Control.Swipe = OpenLayers.Class(OpenLayers.Control, {
                 );
                 var width = parseInt(this.elementLayerSpan.offsetWidth) + 5;
                 this.elementLayer.style.width = width + "px";
-                this.elementLayer.style.marginLeft =  "-" + width + "px";
+                this.elementLayer.style.marginLeft = "-" + width + "px";
 
             }
 
