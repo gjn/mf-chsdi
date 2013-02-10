@@ -5,7 +5,7 @@
 
 /* The following globals are for JSLint */
 /* jslint browser: true, vars: true */
-/* global GeoAdmin, OpenLayers, escape */
+/* global OpenLayers, escape */
 
 /** api: (define)
  *  module =  OpenLayers.Control
@@ -14,12 +14,12 @@
  */
 
 /** api: example
- *  Sample code to add a swipe control (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/TODO>`_)
+ *  Sample code to add a swipe control
  *
  *  .. code-block:: javascript
  *
  *     var map = new GeoAdmin.Map("mymap", {doZoomToMaxExtent: true});
- *     var Swipe = new GeoAdmin.Swipe({map: map});
+ *     var Swipe = new OpenLayers.Control.Swipe({map: map});
  *     Swipe.activate();
  *
  */
