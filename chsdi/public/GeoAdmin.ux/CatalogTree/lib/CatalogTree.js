@@ -1274,10 +1274,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bafu.fauna-steinbockkolonien"
-// ltalp (stand by with ch.bafu.moose)
-//                    },
-//                    {
-//                        layerId: "ch.bafu.moose"
+                    },
+                    {
+                        layerId: "ch.bafu.moose"
                     }
                 ]
             },

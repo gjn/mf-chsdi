@@ -1338,17 +1338,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-// (ltalp) ch.bafu.moose pour la PROD 
-//            "ch.bafu.moose": {
-//                name: OpenLayers.i18n("ch.bafu.moose"),
-//                layertype: 'wmts',
-//                timestamp: ['20120416'],
-//                type: "mixed",
-//                format: "image/png",
-//                datenherr: "ch.bafu",
-//                opacity: 0.75,
-//                queryable: true
-//            },
+            "ch.bafu.moose": {
+                name: OpenLayers.i18n("ch.bafu.moose"),
+                layertype: 'wmts',
+                timestamp: ['20120416'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),
                 layertype: 'wmts',
