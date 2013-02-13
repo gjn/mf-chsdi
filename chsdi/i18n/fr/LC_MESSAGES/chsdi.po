@@ -984,7 +984,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "Parcs nationaux VECTOR200"
+msgstr "Sites protégés VECTOR200"
 
 msgid "ch.swisstopo.vec200-building"
 msgstr "Bâtiments gén. VECTOR200"
@@ -1183,6 +1183,84 @@ msgstr "Numéro GEWISS"
 
 msgid "gin_nummer"
 msgstr "Numéro GIN attribué"
+
+msgid "gk500-lit_haupt_10"
+msgstr "Argiles, silts, sables"
+
+msgid "gk500-lit_haupt_12"
+msgstr "Sables, graviers, galets"
+
+msgid "gk500-lit_haupt_14"
+msgstr "Blocs, galets"
+
+msgid "gk500-lit_haupt_20"
+msgstr "Marnes, parfois grès"
+
+msgid "gk500-lit_haupt_22"
+msgstr "Grès, parfois marnes"
+
+msgid "gk500-lit_haupt_24"
+msgstr "Conglomérats, brèches"
+
+msgid "gk500-lit_haupt_30"
+msgstr "Argilites, schistes argileux"
+
+msgid "gk500-lit_haupt_32"
+msgstr "Phyllites marneux, schistes cal-caires"
+
+msgid "gk500-lit_haupt_40"
+msgstr "Calcaires, parfois marnes"
+
+msgid "gk500-lit_haupt_42"
+msgstr "Radiolarites, silex"
+
+msgid "gk500-lit_haupt_44"
+msgstr "Argilites, évaporites, corgneules"
+
+msgid "gk500-lit_haupt_47"
+msgstr "Dolomies"
+
+msgid "gk500-lit_haupt_48"
+msgstr "Marbres calcaires et dolomitiques"
+
+msgid "gk500-lit_haupt_49"
+msgstr "Quartzites"
+
+msgid "gk500-lit_haupt_50"
+msgstr "Granites, syénites"
+
+msgid "gk500-lit_haupt_52"
+msgstr "Porphyrites, porphyres quartzi-fères"
+
+msgid "gk500-lit_haupt_53"
+msgstr "Roches basiques"
+
+msgid "gk500-lit_haupt_54"
+msgstr "Roches volcaniques"
+
+msgid "gk500-lit_haupt_60"
+msgstr "Gneiss"
+
+msgid "gk500-lit_haupt_61"
+msgstr "Phyllites quartzifères"
+
+msgid "gk500-lit_haupt_62"
+msgstr "Micaschistes, gneiss"
+
+msgid "gk500-lit_haupt_70"
+msgstr "Amphibolites"
+
+msgid "gk500-lit_haupt_72"
+msgstr "Roches basiques"
+
+msgid "gk500-lit_haupt_74"
+msgstr "Roches ultrabasiques"
+
+msgid "gk500-lit_haupt_80"
+msgstr "Eaux, lacs"
+
+msgid "gk500-lit_haupt_90"
+msgstr "Glacier, névé"
 
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"
