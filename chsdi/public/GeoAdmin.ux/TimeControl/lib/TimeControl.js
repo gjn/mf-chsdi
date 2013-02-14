@@ -13,6 +13,19 @@
  *  base_link = `OpenLayers.Control <http://dev.openlayers.org/apidocs/files/OpenLayers/Control-js.html>`_
  */
 
+OpenLayers.Layer.prototype.getTimestamps = function() {
+    if (this.timeEnabled && this.timestamps !== 'undefined') {
+        var timestamps = [];
+        for (var i=0; i<this.timestamps.length; i++) {
+            var t = parseInt(this.timestamps[i].substr(0,4),0);
+                if (!isNaN(t)) {timestamps[i] = t};
+        }
+        return timestamps;
+    } else {
+        return false
+   }
+};
+
 /** api: example
  *  Sample code to add a time control (see also `demo <//api.geo.admin.ch/main/wsgi/doc/build/widgets/TODO>`_)
  *
@@ -60,6 +73,7 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
             "changedisplayall": this.onChangeTimestampYear,
             "scope": this
         });
+        
 
         this.displayAll = false;
         this.updateTimestamps();
