@@ -35,11 +35,8 @@
     <input type="checkbox" name="layername" value="lubis_bilder"  onclick="toggleAddRemoveLayer(this.value)">Lubis
     
     <h2>Change displayed year</h2>
-    <select onchange="tc.setMapYear(parseInt(this.value))">
-        <option value="2013">2013</option>
-        <option value="2000">2000</option>
-        <option value="1980">1980</option>
-        <option value="1960">1960</option>
+    <select id="timestamps" onchange="tc.setMapYear(parseInt(this.value))">
+        <option value="">---</option>
     </select>
 
 <div class="map" id="map"></div><br />

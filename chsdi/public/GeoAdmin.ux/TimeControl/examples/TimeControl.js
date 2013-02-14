@@ -65,6 +65,31 @@ var config =
         }
 };
 
+
+function updateCombo(timestamps) {
+    var cb = document.getElementById('timestamps');
+    
+    while (cb.hasChildNodes()) {
+        cb.removeChild(cb.lastChild);
+    }
+    
+    for (var i=0; i < timestamps.length; i++) {
+        var ts = timestamps[i];
+        
+        var option = document.createElement("option");
+        option.text = ts;
+        option.value = ts;
+        try {
+            combo.add(option, null); 
+        }catch(error) {
+            cb.add(option);
+        }
+    }
+    tc.setMapYear(parseInt(timestamps[0]))
+}
+    
+    
+
 function toggleAddRemoveLayer(layername) {
     var lyr = map.getLayerByLayerName(layername);
     if (lyr) { map.removeLayer(lyr); } else {
@@ -93,7 +118,11 @@ Ext.onReady(function() {
     
     tc = new GeoAdmin.TimeControl({map: map});
     
-    tc.map.events.on({'changeavailabletimestamps': function(evt) { log( "--" +evt.type + "<br>current year: " + evt.year + "<br />timestamps: "+ evt.timestamps.toString())}});
+    tc.events.on({'changeavailabletimestamps': function(evt) {
+            updateCombo(evt.timestamps);
+            log( "--" +evt.type + "<br>current year: " + evt.year + "<br />timestamps: "+ evt.timestamps.toString());
+        
+    }});
     
     tc.map.events.on({'changetimestampyear': function(evt) { log("--" +evt.type +"<br>current year: " + evt.year)}});
 
