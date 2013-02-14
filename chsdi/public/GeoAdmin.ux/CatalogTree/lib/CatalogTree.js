@@ -933,6 +933,60 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.bergprodukte"
+                    },
+                    {
+                        layerId: "ch.bakom.anbieter-eigenes_festnetz"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-glasfaser"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-koaxialkabel"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-kupferdraht"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink1"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink10"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink100"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink2"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink20"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink50"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink1"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink10"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink100"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink2"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink20"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink50"
+                    },
+                    {
+                        layerId: "ch.bakom.verfuegbarkeit-hdtv"
+                    },
+                    {
+                        layerId: "ch.bakom.verfuegbarkeit-tv"
                     }
                 ]
 
