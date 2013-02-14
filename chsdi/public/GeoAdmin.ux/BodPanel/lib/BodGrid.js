@@ -885,7 +885,7 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             bbar: bbar,
             border: false,
             store: bodStore,
-            //colModel: bodGridColModel,
+            colModel: bodGridColModel,
             plugins: [filters, 'autosizecolumns'],
             stripeRows: true,
             sm: new Ext.grid.RowSelectionModel({singleSelect: true}),
