@@ -1184,84 +1184,6 @@ msgstr "GEWISS-Nummer"
 msgid "gin_nummer"
 msgstr "Zugeordnete GIN-Nummer"
 
-msgid "gk500-lit_haupt_10"
-msgstr "Tone, Silte, Sande"
-
-msgid "gk500-lit_haupt_12"
-msgstr "Sande, Kiese, Gerölle"
-
-msgid "gk500-lit_haupt_14"
-msgstr "Blöcke, Gerölle"
-
-msgid "gk500-lit_haupt_20"
-msgstr "Mergel, z.T. Sandstein"
-
-msgid "gk500-lit_haupt_22"
-msgstr "Sandsteine, z.T. Mergel"
-
-msgid "gk500-lit_haupt_24"
-msgstr "Konglomerate, Brekzien"
-
-msgid "gk500-lit_haupt_30"
-msgstr "Tongesteine, Tonschiefer"
-
-msgid "gk500-lit_haupt_32"
-msgstr "Mergelschiefer, Kalkphyllite"
-
-msgid "gk500-lit_haupt_40"
-msgstr "Kalksteine, z.T. Mergel"
-
-msgid "gk500-lit_haupt_42"
-msgstr "Radiolarite, Hornsteine"
-
-msgid "gk500-lit_haupt_44"
-msgstr "Tone, Rauwacken"
-
-msgid "gk500-lit_haupt_47"
-msgstr "Dolomite"
-
-msgid "gk500-lit_haupt_48"
-msgstr "Dolomit- und Kalkmarmore"
-
-msgid "gk500-lit_haupt_49"
-msgstr "Quarzite"
-
-msgid "gk500-lit_haupt_50"
-msgstr "Granite, Syenite"
-
-msgid "gk500-lit_haupt_52"
-msgstr "Porphyrite, Quarzporphyre"
-
-msgid "gk500-lit_haupt_53"
-msgstr "Basische Gesteine"
-
-msgid "gk500-lit_haupt_54"
-msgstr "Vulkanite"
-
-msgid "gk500-lit_haupt_60"
-msgstr "Gneise"
-
-msgid "gk500-lit_haupt_61"
-msgstr "Quarzphyllite"
-
-msgid "gk500-lit_haupt_62"
-msgstr "Glimmerschiefer, Gneise"
-
-msgid "gk500-lit_haupt_70"
-msgstr "Amphibolite"
-
-msgid "gk500-lit_haupt_72"
-msgstr "Basische Gesteine"
-
-msgid "gk500-lit_haupt_74"
-msgstr "Ultrabasische Gesteine"
-
-msgid "gk500-lit_haupt_80"
-msgstr "Gewässer, Seen"
-
-msgid "gk500-lit_haupt_90"
-msgstr "Gletscher, Firn"
-
 msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"
 
@@ -2611,6 +2533,9 @@ msgstr "Gemeindetyp ARE"
 
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code Gemeindetyp"
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr "Lithologischpetrographische Beschreibung"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Gemeinde"
