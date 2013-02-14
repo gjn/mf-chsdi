@@ -713,8 +713,8 @@ Input parameters
 ^^^^^^^^^^^^^^^^
 - base_url: url of service to test (mandatory)
 - service: type of service to test, one of WMS, WFS, WMTS, WCS or CSW (mandatory)
-- ssurl: serveur setting url (optional)
-- cb: callback name (optional)
+- ssurl: server setting url (optional)
+- restful: restful-only service (optional)
 
 Result
 ^^^^^^
