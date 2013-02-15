@@ -41,10 +41,11 @@ class CmslayerController(BaseController):
         self.klass = hasattr(bod,subclass) and getattr(bod,subclass) or bod.CmsLayerDe
 
     def index(self):
-            layers = []
+            layers = list()
+            topic = request.params.get('topic','geoadmin')
             format = request.params.get('format','json')
             # any better way to detect layer group ?
-            query = Session.query(self.klass).filter(self.klass.kurzbezeichnung != None).order_by(self.klass.kurzbezeichnung)
+            query = Session.query(self.klass).filter(self.klass.kurzbezeichnung != None).filter(self.klass.projekte.ilike('%%%s%%' % topic)).order_by(self.klass.kurzbezeichnung)
 
             if 'inspire_id' in request.params:
                 inspire_id = request.params.get('inspire_id')
