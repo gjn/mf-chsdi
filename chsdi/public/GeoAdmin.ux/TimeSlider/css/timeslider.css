@@ -5,3 +5,18 @@
 .timeSliderPause {
     background-image: url(../img/pause.png);
 }
+
+.x-slider-thumb {
+  z-index: 2000;
+}
+
+.timeslider-tick {
+    position: absolute;
+    background-color: #666699;
+    zIndex: 1000;
+    height: 10px;
+    width: 10px;
+    top: 7px;
+    opacity: 0.6;
+    margin-left: 4px;
+}
