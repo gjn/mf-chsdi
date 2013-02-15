@@ -269,6 +269,9 @@ msgstr "Vent"
 msgid "Yes"
 msgstr "Si"
 
+msgid "abfluss"
+msgstr "Portata m3/s"
+
 msgid "abfrage"
 msgstr "Requête de données"
 
@@ -1064,6 +1067,9 @@ msgstr "Ct."
 msgid "date"
 msgstr "Data"
 
+msgid "date_time"
+msgstr "Data/Ora"
+
 msgid "datumactu"
 msgstr "Date de la dernière mise à jour"
 
@@ -1246,6 +1252,9 @@ msgstr "http://map.geo.admin.ch/?lang=it"
 
 msgid "hydrografische_herkunft"
 msgstr "Origine hydrographique"
+
+msgid "hydromessstationen_graph"
+msgstr "3 giorno Livelli d'acqua/Portata"
 
 msgid "id_arealstatistik_85"
 msgstr "Catégorie de base de la statistique de la superficie 1979/85"
@@ -2765,6 +2774,12 @@ msgstr "molta sostanza"
 
 msgid "waldanteil"
 msgstr "Taux de boisement [%]"
+
+msgid "wasserstand"
+msgstr "Livelli d'acqua m s. m."
+
+msgid "wassertemperatur"
+msgstr "Temperature dell'acqua °C"
 
 msgid "wenig_sub"
 msgstr "tracciato storico"

@@ -269,6 +269,9 @@ msgstr "Wind"
 msgid "Yes"
 msgstr "Gea"
 
+msgid "abfluss"
+msgstr "Deflussiun m3/s"
+
 msgid "abfrage"
 msgstr "Datenbfrage"
 
@@ -1065,6 +1068,9 @@ msgstr "Kt."
 msgid "date"
 msgstr "Datum"
 
+msgid "date_time"
+msgstr "Data/ura"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -1247,6 +1253,9 @@ msgstr "http://map.geo.admin.ch/?lang=rm"
 
 msgid "hydrografische_herkunft"
 msgstr "Hydrografische Herkunft"
+
+msgid "hydromessstationen_graph"
+msgstr "3 di Livel da l'aura/Deflussiun"
 
 msgid "id_arealstatistik_85"
 msgstr "Grundkategorie Arealstatistik 1979/85"
@@ -2765,6 +2774,12 @@ msgstr "Historischer Verlauf mit viel Substanz"
 
 msgid "waldanteil"
 msgstr "Waldanteil [%]"
+
+msgid "wasserstand"
+msgstr "Livel da l'aua m.s.m"
+
+msgid "wassertemperatur"
+msgstr "Temperatura da l'aua °C"
 
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"
