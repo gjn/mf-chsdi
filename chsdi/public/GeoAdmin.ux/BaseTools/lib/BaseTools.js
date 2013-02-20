@@ -29,6 +29,9 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
 
     noHeader: false,
 
+    /* Define whether the default list of urls is customed.*/
+    WMSCustomList: null,
+
     constructor : function(config) {
         Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
@@ -105,7 +108,7 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                         menu.push(new GeoAdmin.Measure({map: this.mapPanel.map}));
                         break;
                     case 'wms':
-                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers, map: this.mapPanel.map}));
+                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers, map: this.mapPanel.map, WMSCustomList: this.WMSCustomList}));
                         break;
                     case 'redlining':
                         menu.push(new GeoAdmin.Redlining({map: this.mapPanel.map}));

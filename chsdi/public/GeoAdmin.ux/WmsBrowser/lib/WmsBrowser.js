@@ -9,18 +9,44 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
     
     map: null,
 
+    /* If the custom list is not null, use it. */
+    WMSCustomList: null,
+
     /**
      */
     constructor : function(config) {
-        this.map = config.map|| null;
+        this.map = config.map || null;
+        this.WMSCustomList = config.WMSCustomList !== null ? config.WMSCustomList : this.defaultWMSList();
 
         var serverStore = new Ext.data.SimpleStore({
             fields: ['url'],
-            data: [
+            data: this.WMSCustomList 
+        });
+        
+        config = Ext.apply({
+            allowDepress: false,
+            iconCls: 'wms-browser',
+            text: OpenLayers.i18n('WmsBrowser'),
+            handler: function() {
+                WmsBrowserWindow.show();
+            }
+        }, config);
+
+        var WmsBrowserWindow = new GeoAdmin.WmsBrowserWindow({serverStore: serverStore, layerStore: config.layerStore, map: this.map});
+        
+        GeoAdmin.WmsBrowser.superclass.constructor.call(this, config);
+    },
+
+
+    /** api: method[defaultWMSList]
+     * :return: the default list of WMS servers
+    **/
+    defaultWMSList: function() {
+        return  [
                 ['http://wms.geo.admin.ch/'],
                 ['http://ogc.heig-vd.ch/mapserver/wms?'],
                 ['http://www.wms.stadt-zuerich.ch/WMS-ZH-STZH-OGD/MapServer/WMSServer?'],
-                ['http://geo.gl.ch/wms/Public?'], 
+                ['http://geo.gl.ch/wms/Public?'],
                 ['http://mapserver1.gr.ch/wms/admineinteilung?'],
                 ['http://mapserver1.gr.ch/wms/belastetestandorte?'],
                 ['http://mapserver1.gr.ch/wms/beweidbareflaechen?'],
@@ -71,22 +97,7 @@ GeoAdmin.WmsBrowser = Ext.extend(Ext.Action, {
                 ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/Vettoriali/Rete_ferroviaria.map'],
                 ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/Vettoriali/Rete_stradale.map'],
                 ['http://wms.pcn.minambiente.it/ogc?map=/ms_ogc/WMS_v1.3/raster/ortofoto_colore_06.map']
-            ]
-        });
-        
-        
-        config = Ext.apply({
-            allowDepress: false,
-            iconCls: 'wms-browser',
-            text: OpenLayers.i18n('WmsBrowser'),
-            handler: function() {
-                WmsBrowserWindow.show();
-            }
-        }, config);
-
-        var WmsBrowserWindow = new GeoAdmin.WmsBrowserWindow({serverStore: serverStore, layerStore: config.layerStore, map: this.map});
-        
-        GeoAdmin.WmsBrowser.superclass.constructor.call(this, config);
+            ]; 
     }
 });
 
