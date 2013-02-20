@@ -525,7 +525,7 @@ OpenLayers.Lang.rm= {
 	'ch.blw.klimaeignung-zwischenfruchtbau':'Klima - Zwischenfruchtbau',
 	'ch.blw.landwirtschaftliche-zonengrenzen':'Cunfin da zona agricultura',
 	'ch.blw.niederschlagshaushalt':'Niederschlagshaushalt',
-	'ch.blw.steil_terrassenlagen_rebbau':'Viticultura en spundivs e terrassas',
+	'ch.blw.steil_terrassenlagen_rebbau':'Steillagen Reben',
 	'ch.blw.url':'http://www.blw.admin.ch/index.html?lang=de',
 	'ch.blw.ursprungsbezeichnungen-fleisch':'IGP products da charn',
 	'ch.blw.ursprungsbezeichnungen-kaese':'DOP chaschiel',
@@ -571,6 +571,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',
 	'ch.swisstopo.geologie-geophysik-inklination':'Inclinaziun',
 	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Intensitad dal champ magnetic',
+	'ch.swisstopo.geologie-geotechnik-gk200':'ch.swisstopo.geologie-geotechnik-gk200', //TODO
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origin da crap',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificaziun da mineral',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppa litologia principal',
