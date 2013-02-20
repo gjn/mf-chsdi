@@ -49,7 +49,10 @@
         function test_layer_outofrange(t) {
             t.plan(2);
 
-            var map = new GeoAdmin.Map("map");
+            //on 14.2.2013, an animation for the zoomTo action was added by openlayers. This breaks the last unit test here.
+            //when specifying zoomMethod: null, the animation is deactivated for the map
+            //see commit 4b163e04826236ad37baa591bca6c381f60c7c85 in openlayers repository.
+            var map = new GeoAdmin.Map("map", {zoomMethod: null});
             var tree = new GeoAdmin.LayerTree(
                 {renderTo: "tree", map: map}
             );
