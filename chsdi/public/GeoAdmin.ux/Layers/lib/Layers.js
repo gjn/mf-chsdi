@@ -676,7 +676,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.bfs.gebaeude_wohnungs_register',
                 layername: 'ch.bfs.gebaeude_wohnungs_register_wmts',
-                timestamp: ['20110509'],
+                timestamp: ['20130212'],
                 format: "image/png",
                 datenherr: "ch.bfs",
                 queryable: false,
