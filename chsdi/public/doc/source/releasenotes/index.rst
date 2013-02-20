@@ -1,4 +1,112 @@
-Release 20130206 - Wednesday, February 6thth 2013
+Release 20130220 - Wednesday, February 20th 2013
+====================================================
+
+Geodata
+********
+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Optical fibre <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1>`__ (ch.bakom.downlink1)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink2>`__ (ch.bakom.downlink2)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink20>`__ (ch.bakom.downlink20)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink50>`__ (ch.bakom.downlink50)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink2>`__ (ch.bakom.uplink2)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Availability HDTV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-hdtv>`__ (ch.bakom.verfuegbarkeit-hdtv)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Availability TV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-tv>`__ (ch.bakom.verfuegbarkeit-tv)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Red list bryophytes <//map.geo.admin.ch/?layers=ch.bafu.moose>`__ (ch.bafu.moose)                                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Register of Buildings and Dwellings <//map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register>`__ (ch.bfs.gebaeude_wohnungs_register)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy research <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
++-----+-------------------------------------------------------------+
+| New | Share current map via Facebook, Twitter, Google+ and EMail. |
++-----+-------------------------------------------------------------+
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `New Tooltip for Hydrological gauging stations containing live information for selected stations. <//map.geo.admin.ch/?Y=655549&X=184094&zoom=2&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.bafu.hydrologie-hydromessstationen&layers_opacity=1&layers_visibility=true>`__ |
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++-----+-------------------------------------------------------------+
+| New | Share current map via Facebook, Twitter, Google+ and EMail. |
++-----+-------------------------------------------------------------+
+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+
+
+Release 20130206 - Wednesday, February 6th 2013
 ====================================================
 
 Geodata
