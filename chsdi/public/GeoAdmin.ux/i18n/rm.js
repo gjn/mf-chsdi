@@ -571,7 +571,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',
 	'ch.swisstopo.geologie-geophysik-inklination':'Inclinaziun',
 	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Intensitad dal champ magnetic',
-	'ch.swisstopo.geologie-geotechnik-gk200':'ch.swisstopo.geologie-geotechnik-gk200', //TODO
+	'ch.swisstopo.geologie-geotechnik-gk200':'Geotechnik Rohstoffe Gesteine',
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origin da crap',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificaziun da mineral',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppa litologia principal',
