@@ -2768,6 +2768,9 @@ msgstr ""
 msgid "tt_gk_500_LithoHaupt"
 msgstr ""
 
+msgid "tt_geotechnik_gk200"
+msgstr ""
+
 msgid "blw_farbe_0"
 msgstr ""
 

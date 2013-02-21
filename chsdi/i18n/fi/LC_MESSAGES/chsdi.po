@@ -2544,6 +2544,9 @@ msgstr "Gemeindetyp ARE"
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code Gemeindetyp"
 
+msgid "tt_geotechnik_gk200"
+msgstr "Link zur Legende"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologischpetrographische Beschreibung"
 
