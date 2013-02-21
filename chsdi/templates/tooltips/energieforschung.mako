@@ -41,7 +41,7 @@
 % endif
 
 <tr><td width="150" valign="top">${_('tt_ch.bfe.energieforschung_kontaktperson')}</td><td>${c.feature.kontaktperson_bfe or '-'}</td></tr>
-<tr><td width="150" valign="top"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}${self.getBaseUrl()}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
+<tr><td width="150" valign="top"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}&baseUrl=${c.baseUrl}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 
 
 </%def>
