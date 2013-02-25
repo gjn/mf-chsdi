@@ -396,6 +396,36 @@ class GeologischerAtlasPK(Base, Queryable):
 
 register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)
 
+class GeologieMineralischeRohstoffe200(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_mineralische_rohstoffe200'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/geotechnik_mineralische_rohstoffe200.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200',GeologieMineralischeRohstoffe200)
+
+class GeologieGeotechnikGk200(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_gk200_lgd'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/geotechnik_gk200.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk200',GeologieGeotechnikGk200)
+
+class Gk500_lithologie_hauptgruppen(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gk500_lithologie_hauptgruppen'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/lithologie_hauptgruppen.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen',Gk500_lithologie_hauptgruppen)
+
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_inklination'

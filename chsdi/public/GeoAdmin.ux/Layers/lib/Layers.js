@@ -1201,12 +1201,12 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"),
                 layertype: 'wmts',
-                timestamp: ['20000101'],
+                timestamp: ['20060304'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
