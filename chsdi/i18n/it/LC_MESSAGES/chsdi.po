@@ -1148,6 +1148,15 @@ msgstr "Surface [m2]"
 msgid "fliessgewaesser"
 msgstr "Cours d'eau"
 
+msgid "fp_E95_N95"
+msgstr "Coordinate MN95 (E / N)"
+
+msgid "fp_H02"
+msgstr "Altimetrica (H)"
+
+msgid "fp_Y03_X03"
+msgstr "Coordinate MN03 (Y / X)"
+
 msgid "frame"
 msgstr "Cadre de référence"
 
@@ -2149,6 +2158,9 @@ msgstr "Numéro de la station"
 
 msgid "status"
 msgstr "Stato"
+
+msgid "status_fp"
+msgstr "Nome ufficiale (se esistente)"
 
 msgid "strasse"
 msgstr "Rue"

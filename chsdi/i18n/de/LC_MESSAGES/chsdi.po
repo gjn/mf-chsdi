@@ -1148,6 +1148,15 @@ msgstr "Fläche [m2]"
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
+msgid "fp_E95_N95"
+msgstr "LV95-Koordinaten (E / N)"
+
+msgid "fp_H02"
+msgstr "Höhe (H)"
+
+msgid "fp_Y03_X03"
+msgstr "LV03-Koordinaten (Y / X)"
+
 msgid "frame"
 msgstr "Bezugsrahmen"
 
@@ -2148,6 +2157,9 @@ msgid "stationsnr"
 msgstr "Stationsnummer"
 
 msgid "status"
+msgstr "Status"
+
+msgid "status_fp"
 msgstr "Status"
 
 msgid "strasse"

@@ -1308,6 +1308,18 @@ msgstr ""
 msgid "status"
 msgstr ""
 
+msgid "fp_Y03_X03"
+msgstr ""
+
+msgid "fp_E95_N95"
+msgstr ""
+
+msgid "fp_H02"
+msgstr ""
+
+msgid "status_fp"
+msgstr ""
+
 msgid "zugang"
 msgstr ""
 
