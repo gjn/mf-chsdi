@@ -107,10 +107,24 @@
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
          <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
      </tr>
+% if c.feature.link_uri is not None:
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
          <td style="width: 300px; float: left;"><a href="${c.feature.link_uri or ''}">${c.feature.link_title or ''}</a></td>
      </tr>
+% endif
+% if c.feature.link_2_uri is not None:
+     <tr>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
+         <td style="width: 300px; float: left;"><a href="${c.feature.link_2_uri or ''}">${c.feature.link_2_title or ''}</a></td>
+     </tr>
+% endif
+% if c.feature.link_3_uri is not None:
+     <tr>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
+         <td style="width: 300px; float: left;"><a href="${c.feature.link_3_uri or ''}">${c.feature.link_3_title or ''}</a></td>
+     </tr>
+% endif
 </table>
 
 % if c.first == True:
