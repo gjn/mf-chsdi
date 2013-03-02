@@ -70,7 +70,7 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
             "addlayer": this.onAddLayer,
             "removelayer": this.onRemoveLayer,
             "changetimestampyear": this.onChangeTimestampYear,
-            "changedisplayall": this.onChangeTimestampYear,
+            "changedisplayall": this.onChangeDisplayAll,
             "scope": this
         });
         
@@ -151,23 +151,26 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
 
     },
 
-    getClosestYear: function(year, timestamps) {
-        var lo,
-        hi;
+    getClosestTimestamp: function(year, timestamps) {
+        var lo, hi;
+        if (!OpenLayers.Util.isArray(timestamps)) {
+            return false;
+        }
+        var sorted = timestamps.sort();
         if (year == 0) {
-            return timestamps[0];
+            return sorted[0];
         }
-        if (year < this._yearFromString(timestamps[0])) {
-            return timestamps[0];
+        if (year < this._yearFromString(sorted[0])) {
+            return sorted[0];
         }
-        if (year > this._yearFromString(timestamps[timestamps.length - 1])) {
-            return timestamps[timestamps.length]
+        if (year > this._yearFromString(sorted[sorted.length - 1])) {
+            return sorted[sorted.length -1]
             }
-        for (var i = timestamps.length; i--;) {
-            if (this._yearFromString(timestamps[i]) <= year && (lo === undefined || lo < this._yearFromString(timestamps[i])))
-                lo = timestamps[i];
-            if (this._yearFromString(timestamps[i]) >= year && (hi === undefined || hi > this._yearFromString(timestamps[i])))
-                hi = timestamps[i];
+        for (var i = sorted.length; i--;) {
+            if (this._yearFromString(sorted[i]) <= year && (lo === undefined || lo < this._yearFromString(sorted[i])))
+                lo = sorted[i];
+            if (this._yearFromString(sorted[i]) >= year && (hi === undefined || hi > this._yearFromString(sorted[i])))
+                hi = sorted[i];
         };
         if ((year - this._yearFromString(lo)) > (this._yearFromString(hi) - year)) {
             return hi;
@@ -177,22 +180,28 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
     },
 
     setLayerTimestamps: function(layer, year) {
-        var year = year || new Date().getFullYear();
+        var tentativeYear = year || new Date().getFullYear();
         if (layer.timeEnabled) {
             switch (layer.CLASS_NAME) {
             case 'OpenLayers.Layer.WMS':
-                if (layer.allTimeEnabled && this.displayAll) {
+                if (layer.allTimeEnabled && this.displayAll) { 
                     delete layer.params["TIME"];
                 } else {
-                    var ts = year;
+                    var ts = this.getClosestTimestamp(tentativeYear, layer.timestamps);
                     layer.params["TIME"] = ts;
+                    layer.timestamp = ts; 
 
                 };
                 break;
 
             case 'OpenLayers.Layer.WMTS':
-                var ts = year + "1231";
-                layer.params["TIME"] = ts;
+                if (this.displayAll) {
+                    var ts = this.getClosestTimestamp(new Date().getFullYear(), layer.timestamps);
+                    layer.params["TIME"] = ts;
+                } else {
+                    var ts = this.getClosestTimestamp(this.map.year, layer.timestamps);
+                    layer.params["TIME"] = ts;
+                };
                 break;
             default:
                 break;
@@ -207,7 +216,8 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
             var layer = this.map.layers[i];
 
             if (layer.timeEnabled) {
-                this.setLayerTimestamps(layer);
+                var closestYear =  this.getClosestTimestamp( this.map.year, layer.timestamps);
+                this.setLayerTimestamps(layer, closestYear);
                 layer.redraw();
             };
         }
