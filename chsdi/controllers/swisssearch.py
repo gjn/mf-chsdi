@@ -89,26 +89,26 @@ class SwisssearchController(BaseController):
 
             # Try to optimize search if initial search doesn't return something. It results in an additional query
             # Remove all numbers with more than 3 characters (in order to solve the postcode issue)
-            if query.limit(1).count() == 0:
-               terms2 = ' '.join([('' if term.isdigit() and len(term) > 3 else term+('' if term.isdigit() else ':*'))  for term in terms])
-               terms2 = terms2.split()
-               if len(terms2) == 1:
-                  onlyOneTerm = True
-               terms2 = ' & '.join([term for term in terms2])
-               terms2 =  terms2.replace("'", "''").replace('"', '\"')
-               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
-               query = Session.query(SwissSearch).filter(ftsFilter)
+#            if query.limit(1).count() == 0:
+#               terms2 = ' '.join([('' if term.isdigit() and len(term) > 3 else term+('' if term.isdigit() else ':*'))  for term in terms])
+#               terms2 = terms2.split()
+#               if len(terms2) == 1:
+#                  onlyOneTerm = True
+#               terms2 = ' & '.join([term for term in terms2])
+#               terms2 =  terms2.replace("'", "''").replace('"', '\"')
+#               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms2)s'))" %{'tsvector': tsvector, 'terms2': terms2}
+#               query = Session.query(SwissSearch).filter(ftsFilter)
 
             # Remove all strings starting with a number
-            if query.limit(1).count() == 0:
-               terms3 = ' '.join([('' if term[0].isdigit() else term+('' if term.isdigit() else ':*'))  for term in terms])
-               terms3 = terms3.split()
-               if len(terms3) == 1:
-                  onlyOneTerm = True
-               terms3 = ' & '.join([term for term in terms3])
-               terms3 =  terms3.replace("'", "''").replace('"', '\"')
-               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
-               query = Session.query(SwissSearch).filter(ftsFilter)
+#            if query.limit(1).count() == 0:
+#               terms3 = ' '.join([('' if term[0].isdigit() else term+('' if term.isdigit() else ':*'))  for term in terms])
+#               terms3 = terms3.split()
+#               if len(terms3) == 1:
+#                  onlyOneTerm = True
+#               terms3 = ' & '.join([term for term in terms3])
+#               terms3 =  terms3.replace("'", "''").replace('"', '\"')
+#               ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms3)s'))" %{'tsvector': tsvector, 'terms3': terms3}
+#               query = Session.query(SwissSearch).filter(ftsFilter)
 
         # If only one search term is used, this can't be a parcel or an address
         if onlyOneTerm:
