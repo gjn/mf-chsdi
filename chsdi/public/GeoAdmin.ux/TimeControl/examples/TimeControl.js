@@ -88,7 +88,11 @@ function updateCombo(timestamps) {
     tc.setMapYear(parseInt(timestamps[0]))
 }
     
-    
+
+function toggleDisplayAll(button) {
+    var displayAll = button.value.toLowerCase() === 'true';
+    tc.setDisplayAll(displayAll);
+};
 
 function toggleAddRemoveLayer(layername) {
     var lyr = map.getLayerByLayerName(layername);
