@@ -26,7 +26,7 @@ register('ch.astra.ivs-reg_loc', IVS_REG_LOC)
 class KANTONE_REG_LOC(Base, Queryable):
     __tablename__ = 'kanton_reg_loc'
     __table_args__ = ({'schema': 'astra', 'autoload': True})
-    __template__ = 'tooltips/ivs_reg_loc.mako'
+    __template__ = 'tooltips/kantone.ivs-reg_loc.mako'
     __queryable_attributes__ = ['ivs_slaname','ivs_nummer','ivs_signatur']
     id = Column('reg_loc_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
