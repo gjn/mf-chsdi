@@ -717,6 +717,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.vec200-landcover"
                     },
                     {
+                        layerId: "ch.swisstopo.vec200-landcover-wald"
+                    },
+                    {
                         layerId: "ch.swisstopo.vec25-heckenbaeume"
                     },
                     {
