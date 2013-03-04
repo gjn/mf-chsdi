@@ -645,7 +645,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.babs.kulturgueter": {
                 name: OpenLayers.i18n("ch.babs.kulturgueter"),
                 layertype: 'wmts',
-                timestamp: ['20091127'],
+                timestamp: ['20130219','20091127'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.babs",
@@ -3469,7 +3469,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
-                timestamp: ['20120308'],
+                timestamp: ['20130225','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
@@ -3488,7 +3488,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.segelflugkarte": {
                 name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
                 layertype: 'wmts',
-                timestamp: ['20120308'],
+                timestamp: ['20130225','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
