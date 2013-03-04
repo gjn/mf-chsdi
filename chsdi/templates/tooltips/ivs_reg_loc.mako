@@ -72,13 +72,7 @@
       % endif
     % endif
 % else:
-    % if c.lang =='fr':
-      <a href="${default_pdf_link}" target="_blank">Canton ${c.feature.ivs_kanton.replace(' ','')}</a> 
-    % elif c.lang == 'it':
-      <a href="${default_pdf_link}" target="_blank">Cantone ${c.feature.ivs_kanton.replace(' ','')}</a>
-    % else:
-      <a href="${default_pdf_link}" target="_blank">Kanton ${c.feature.ivs_kanton.replace(' ','')}</a>
-    % endif
+    -
 % endif
   </td></tr>
 
