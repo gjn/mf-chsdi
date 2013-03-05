@@ -207,6 +207,9 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
                 break;
 
             }
+            this.map.events.triggerEvent("changelayer", {
+                layer: layer, property: 'timestamp'
+            });
             layer.redraw();
         }
 
