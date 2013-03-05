@@ -507,13 +507,13 @@ msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Percorsi trasporti eccezionali"
 
 msgid "ch.astra.ivs-gelaendekarte"
-msgstr "IVS carta del territorio"
+msgstr "IVS Carta del territorio"
 
 msgid "ch.astra.ivs-nat"
 msgstr "IVS Nazionale"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "VCS regionali e locali"
+msgstr "IVS regionali e locali"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circolazione stradale (regionale)"
