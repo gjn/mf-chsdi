@@ -1,10 +1,3 @@
-.timeSliderPlay {
-    background-image: url(../img/play.png);
-}
-
-.timeSliderPause {
-    background-image: url(../img/pause.png);
-}
 
 .x-slider-thumb {
   z-index: 2000;
@@ -19,4 +12,30 @@
     top: 7px;
     opacity: 0.6;
     margin-left: 4px;
+}
+
+.time-on {
+   background: url(../images/time_on.png) no-repeat 0 0 !important;
+}
+
+.time-off {
+     background: url(../images/time_off.png) no-repeat  0 0 !important;
+}
+
+.x-btn-no-over .x-btn-tl, .x-btn-no-over .x-btn-tc, .x-btn-no-over .x-btn-tr,
+.x-btn-no-over .x-btn-ml, .x-btn-no-over .x-btn-mc, .x-btn-no-over .x-btn-mr,
+.x-btn-no-over .x-btn-bl, .x-btn-no-over .x-btn-bc, .x-btn-no-over .x-btn-br {
+   background-image: none;
+}
+
+#timeslider .x-btn-icon .x-btn-small .x-btn-text {
+     height: 30px;
+     width: 30px;
+}
+
+#geoadmin-timeslider .x-item-disabled {
+    opacity: 0.3;
+}
+#geoadmin-timeslider .x-slider-inner {
+    height: 30px;
 }

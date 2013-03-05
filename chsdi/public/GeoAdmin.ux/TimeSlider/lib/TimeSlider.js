@@ -54,17 +54,30 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
     layout: 'column',
 
     div: null,
+    
+    divEvents: null,
+    
+    _slider: null,
 
     initComponent: function() {
 
         this.div = OpenLayers.Util.createAlphaImageDiv('timeslider', null, null, null, 'relative');
         this.div.style.display = 'none';
-        this.div.style.width = '400px';
+        this.div.style.width = '650px';
         this.div.style.height = '80px';
         this.div.style.left = '100px';
         this.div.style.backgroundColor = '#ffffff';
         this.div.style.opacity = 1.0;
         this.div.style.zIndex = 2000;
+        
+        this.divEvents = new OpenLayers.Events(this, this.div, null, true, {includeXY: true});
+  
+        this.divEvents.on({
+                "mousedown": this.divDown,
+                "mouseup": this.divUp,
+                "mousemove": this.divDrag,
+                scope: this
+            });
         
 
         this._timecontrol = this.timecontrol;
@@ -79,23 +92,40 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
             changeavailabletimestamps: this.onChangeTimestampYear,
             scope: this
         });
+        
+        this._slider.setValue(this._timecontrol.map.year);
 
         this._slider.on({
-            "change": function(slider, newValue, thumb) {
-                var slider = this.findParentByType('ga_timeslider');
-                slider._timecontrol.setMapYear(newValue);
+            "changecomplete": function(slider, newValue, thumb) {
+                var timeslider = this.findParentByType('ga_timeslider');
+                timeslider._timecontrol.setMapYear(newValue); 
                 
             }
         });
+        
+        var image = new Ext.BoxComponent({autoEl: {tag: 'div', class: 'time-off', width: 30, height: 30}});
+      
         this.items = [
-                         this.createLabel(this._slider.minValue), 
-                         this._slider, this.createLabel(this._slider.maxValue), 
+                         //this.createLabel(this._slider.minValue), 
+                         this._slider, 
+                         //this.createLabel(this._slider.maxValue), 
                          new Ext.Button({
-                             icon: '../images/time.png'
-                         })
+                              id: 'timeslider-displayall-toggle',
+                              cls: 'x-btn-no-over',
+                              width:30,
+                              height: 30,
+                              iconCls: 'time-off',
+                              enableToggle: true,
+                              toggleHandler: function(btn, state) {
+                                  this.toggleDisplayAll(state);
+                              }, 
+                              
+                              scope: this 
+                         })  
         ];
         GeoAdmin.TimeSlider.superclass.initComponent.apply(this, arguments);
     },
+    
     createSlider: function(options) {
         options = Ext.apply({}, options);
 
@@ -103,13 +133,13 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
 
         return new Ext.TimeSlider({
             id: 'geoadmin-timeslider',
-            width: 300,
+            width: 530,
             increment: 1,
-            //increments: [1938,1947,1960,1974,1990,2006,2012],
-            minValue: 1938,
+            increments: [2013],
+            minValue: 1838,
             maxValue: currentYear,
             value: currentYear,
-            plugins: new Ext.slider.Tip()
+            plugins: new Ext.slider.Tip(),
             })
         },
 
@@ -126,7 +156,7 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
         var increments = this._timecontrol.getTimestamps();
         for (var i = 0; i < increments.length; i++) {
             var incr = increments[i];
-            var px = Math.round((incr - min) / (max - min) * 286 - 5);
+            var px = Math.round((incr - min) / (max - min) * 518 - 5); //width of x-slider-inner
             var e = el.createChild({
                 id: incr,
                 cls: 'timeslider-tick',
@@ -142,15 +172,69 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
             parentNode.removeChild(el.elements[i]);
         }
     },
+    
+    toggleDisplayAll: function(state) {
+ 
+            var but = this.items.get(1);
+            if (state) {
+                but.setIconClass('time-on');
+                this._timecontrol.setDisplayAll(true);
+                this._slider.disable();
+            } else {
+                but.setIconClass('time-off');
+                this._timecontrol.setDisplayAll(false);
+                this._slider.enable();
+            };
+    },
+    
+  
+    divDown: function(evt) {
+       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
+            return;
+        }
+        this.mouseDragStart = evt.xy.clone();  
+        this._slider.map.events.on({
+            "mousemove": this.passEventToDiv,
+            "mouseup": this.passEventToDiv,
+            scope: this
+        });
+        OpenLayers.Event.stop(evt);
+    },
+    
+    divUp: function(evt) {
+       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
+            return;
+        }
+        if (this.mouseDragStart) {  
+            this._slider.map.events.un({
+                "mousemove": this.passEventToDiv,
+                "mouseup": this.passEventToDiv,
+                scope: this
+            });
+            this.mouseDragStart = null;
+        }
+        OpenLayers.Event.stop(evt);
+    },
+    divDrag: function(evt) {
+         if (this.mouseDragStart != null) {
+             OpenLayers.Event.stop(evt);   
+         }
+    },
+   
+    passEventToDiv:function(evt) {
+        this.divEvents.handleBrowserEvent(evt);
+    },
 
     onChangeTimestampYear: function(evt) {
-        this._slider.increments = evt.timestamps;
+        this._slider.increments = evt.timestamps; 
         this._slider.syncThumb();
         this.removeTicks();
         this.createTicks();
+      
 
         if (this._slider.increments.length > 0) {
             this.div.style.display = 'block';
+            this._slider.setValue(this._slider.doSnap(evt.year));
         } else {
             this.div.style.display = 'none';
         }
