@@ -580,7 +580,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificazione delle rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppi litologici principali',
 	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'Materie prime minerali',
-	'ch.swisstopo.geologie-geotope':'Geotopi svizzero',
+	'ch.swisstopo.geologie-geotope':'Geotopi svizzeri',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Riserve acquifere',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabilitá delle falde acquifere',
 	'ch.swisstopo.geologie-quartaermaechtigkeit':'Spessore quaternario',
