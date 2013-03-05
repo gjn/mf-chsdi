@@ -2028,7 +2028,7 @@ msgid "num_dreieck"
 msgstr "Numero di triangolo"
 
 msgid "nummer"
-msgstr "Numéro"
+msgstr "Numero"
 
 msgid "nummer_terreg"
 msgstr "Numéro de la région territoriale"
