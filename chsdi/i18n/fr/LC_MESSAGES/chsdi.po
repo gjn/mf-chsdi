@@ -507,7 +507,7 @@ msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Itinéraires convois exceptionnels"
 
 msgid "ch.astra.ivs-gelaendekarte"
-msgstr "IVS carte de terrain"
+msgstr "IVS Carte de terrain"
 
 msgid "ch.astra.ivs-nat"
 msgstr "IVS National"
