@@ -29,7 +29,8 @@ var config =
         "minScale": 10000000,
         "maxScale": 1,
         "timestamp": ['1946', '1950', '1960', '1990', '1998', '1999'],
-    	"timeEnabled": true
+    	"timeEnabled": true,
+        "allTimeEnabled": true
 },
 "wmts": {
         "layer": "ch.swisstopo.zeitreihen",
@@ -99,6 +100,6 @@ Ext.onReady(function() {
           width: 300
       });
     
-    map.zoomToMaxExtent();
+    map.zoomTo(2);
     timeSlider._slider.setValue(1969);
 });
