@@ -571,12 +571,12 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',
 	'ch.swisstopo.geologie-geophysik-inklination':'Inclinaziun',
 	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Intensitad dal champ magnetic',
-	'ch.swisstopo.geologie-geotechnik-gk200':'Geotechnik Rohstoffe Gesteine',
+	'ch.swisstopo.geologie-geotechnik-gk200':'ch.swisstopo.geologie-geotechnik-gk200', //TODO
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origin da crap',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificaziun da mineral',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppa litologia principal',
 	'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200':'Resursa d\'energia mineral',
-	'ch.swisstopo.geologie-geotope':'Geotop da impurtanza naziunala',
+	'ch.swisstopo.geologie-geotope':'Geotop Svizra',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Resursas d\'aua sutterrana',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabladad da l\'aua sutterrana',
 	'ch.swisstopo.geologie-quartaermaechtigkeit':'ch.swisstopo.geologie-quartaermaechtigkeit', //TODO
