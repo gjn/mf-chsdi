@@ -1935,6 +1935,9 @@ msgstr "Link tar portal chantunala"
 msgid "link to geoportal"
 msgstr "Link to portal"
 
+msgid "link2dok"
+msgstr "Link zum Dokument"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 

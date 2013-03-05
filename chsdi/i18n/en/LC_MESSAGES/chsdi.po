@@ -1935,6 +1935,9 @@ msgstr "Link to the portal of canton"
 msgid "link to geoportal"
 msgstr "Link to the portal"
 
+msgid "link2dok"
+msgstr "Link to the document"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 

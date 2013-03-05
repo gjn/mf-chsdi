@@ -1934,6 +1934,9 @@ msgstr "Link verso il portale cantonale"
 msgid "link to geoportal"
 msgstr "Link verso il portale"
 
+msgid "link2dok"
+msgstr "Link al documento"
+
 msgid "linkzurbeschreibung"
 msgstr "Description detaillee"
 

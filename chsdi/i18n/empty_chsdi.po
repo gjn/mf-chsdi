@@ -1281,6 +1281,9 @@ msgstr ""
 msgid "gemeinde"
 msgstr ""
 
+msgid "link2dok"
+msgstr ""
+
 msgid "x"
 msgstr ""
 
