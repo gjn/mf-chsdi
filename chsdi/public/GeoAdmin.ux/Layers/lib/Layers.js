@@ -1310,7 +1310,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geotope": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotope"),
                 layertype: 'wmts',
-                timestamp: ['20110201'],
+                timestamp: ['20130107','20110201'],
                 type: 'mixed',
                 format: 'image/png',
                 datenherr: 'ch.swisstopo',
