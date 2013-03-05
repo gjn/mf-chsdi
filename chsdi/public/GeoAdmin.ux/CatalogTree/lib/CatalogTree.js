@@ -1046,6 +1046,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotope"
                     }
                 ]
             },
