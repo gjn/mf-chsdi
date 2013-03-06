@@ -12,10 +12,10 @@ var config =
         "layer": "WMS",
         "name": "LUBIS Bilder",
         "layertype": "wms",
-        "layers": "lubis_bilder",
+        "layers": "ch.swisstopo.lubis-luftbilder",
         "alternate_title": "Main lithological groups (WMS)",
         "copyright": "swisstopo",
-        "url": "http://wms-test0i.bgdi.admin.ch/lubis",
+        "url": "http://wms-bod0t.bgdi.admin.ch",
         "copyright_link": "http://www.bafu.admin.ch/index.html?lang=de",
         "id": "lubis_bilderr",
         "hasLegend": true,
@@ -87,8 +87,10 @@ Ext.onReady(function() {
     
 
     map = new GeoAdmin.Map("map");
-    map.switchComplementaryLayer("voidLayer");
+    map.switchComplementaryLayer("ch.swisstopo.pixelkarte-grau", {opacity: 1});
     tc = new GeoAdmin.TimeControl({map: map});
+    map.addControl(tc);
+    tc.activate();
     timeSlider = new GeoAdmin.TimeSlider({
         timecontrol: tc,
         renderTo: 'timeslider',
