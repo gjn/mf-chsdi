@@ -1,4 +1,4 @@
-Release 20130306 - Thursday, March 6th 2013
+Release 20130306 - Wednesday, March 6th 2013
 ====================================================
 
 Geodata
