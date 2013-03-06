@@ -7,6 +7,8 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million <//map.geo.admin.ch/>`__ (ch.swisstopo.pixelkarte-farbe)                                                       |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Geotopes <//map.geo.admin.ch/>`__ (ch.swisstopo.geologie-geotope)                                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)    |
