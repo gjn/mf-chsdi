@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+   var map, popup;
+   function init() {
+      map = new GeoAdmin.Map("mymap", {doZoomToMaxExtent: true});
+      map.switchComplementaryLayer('ch.swisstopo.pixelkarte-farbe',{opacity: 100});
+
+      // Create vector layer
+      var vector = new OpenLayers.Layer.Vector("Locations", {
+      });
+
+      // Create dynamically a list of features in a for loop for instance and attach attributes to the features
+      var feature = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.Point(660018, 184470), {
+          attributes: {att1: 'attribute 1', att2: 'attribute 2'}
+      });
+      // Add features
+      vector.addFeatures([feature]);
+      
+      map.addLayers([vector]);
+      
+      // attach a hover control on the points for the popup
+      var hover = new OpenLayers.Control.SelectFeature(vector, {
+          hover: true,
+          highlightOnly: true,
+          eventListeners: {
+              featurehighlighted: function(data) {
+                  popup = new OpenLayers.Popup.FramedCloud("preview",
+                      new OpenLayers.LonLat(data.feature.geometry.x, data.feature.geometry.y),
+                      new OpenLayers.Size(40,20),
+                      "<p>" + data.feature.attributes.attributes.att1 + " " + data.feature.attributes.attributes.att2 + "</p>",
+                      null,
+                      false
+                      );
+                  map.addPopup(popup); 
+              },
+              featureunhighlighted: function() {
+                  map.removePopup(popup);
+              }
+          }
+      });
+
+      // add the control to the map
+      map.addControls([hover]);
+
+      hover.activate();
+ 
+   }
+</script>
+<body onload="init();">
+   <div id="mymap" style="width:500px;height:340px;border:1px solid grey;padding: 0 0 0 0;margin:10px !important;"></div>
+   <script type="text/javascript" src="http://mf-chsdi0t.bgdi.admin.ch/ltgal/wsgi/loader.js?mode=light"></script>
+</body>
