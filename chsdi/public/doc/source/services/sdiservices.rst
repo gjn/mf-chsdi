@@ -700,6 +700,25 @@ Usage Example
     </div>
 
 
+OWSChecker: check conformity with ech-0056
+------------------------------------------
+This service check the conformity of various OGC services with the swiss ech-0056 profile.
+See `OWSChecker Documentation <../owschecker>`_ for more details.
+
+URL
+^^^
+https://api.geo.admin.ch/main/wsgi/owschecker/bykvp
+
+Input parameters
+^^^^^^^^^^^^^^^^
+- base_url: url of service to test (mandatory)
+- service: type of service to test, one of WMS, WFS, WMTS, WCS or CSW (mandatory)
+- ssurl: server setting url (optional)
+- restful: restful-only service (optional)
+
+Result
+^^^^^^
+A JSON file containing all the tests and their status.
 
 GcSearch: metadata access
 -------------------------

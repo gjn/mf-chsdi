@@ -124,7 +124,11 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 }
             });
         } else {
-            navigationControl = new OpenLayers.Control.Navigation();
+            navigationControl = new OpenLayers.Control.Navigation({
+                mouseWheelOptions: {
+                    interval: 0
+                }
+            });
         }
 
         options = OpenLayers.Util.extend(options, {
@@ -170,6 +174,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             GeoAdmin.Map.prototype.EVENT_TYPES.concat(
                 OpenLayers.Map.prototype.EVENT_TYPES
             );
+
         OpenLayers.Map.prototype.initialize.apply(this, [div, options]);
 
         this.events.on({
@@ -242,7 +247,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 layername: this.complementaryLayer.layername,
                 opacity: this.complementaryLayer.opacity
             },
-            layers: []
+            layers: [],
+            swipeRatio: this.swipeRatio,
+            swipeActive: this.swipeActive
         };
 
         for (var i = 0, len = this.layers.length; i < len; i++) {
@@ -274,6 +281,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         return state;
     },
+
 
     /** api: method[applyState]
      *  :param state: ``Object`` The state to apply.
@@ -376,6 +384,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
             }
 
         }
+        if (state.swipeRatio) {
+           this.swipeRatio = state.swipeRatio;
+           this.swipeActivate = true;
+        }
     },
     /** api: method[destroy]
      *
@@ -398,6 +410,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         // assert layers.length === 0 || layers.length === 1
         return layers[0];
     },
+
+
 
     /*
      * assert that vector layers are always on top.
@@ -688,7 +702,15 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 maximizable: false,
                 collapsible: false,
                 anchorPosition: 'auto',
-                ancCls: 'auto'
+                ancCls: 'auto',
+                listeners: {
+                    hide: function(evt) {
+                        if(this.map && this.map.selectControl && this.map.selectControl.CLASS_NAME === 'OpenLayers.Control.SelectFeature') {
+                            this.map.selectControl.unselectAll();
+                        }
+                    }
+                },
+                scope: this
             });
 
             this.KMLpopup.show();

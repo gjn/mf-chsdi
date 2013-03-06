@@ -4,6 +4,8 @@
  * @include Measure/lib/Measure.js
  * @include KmlSelector/lib/KmlSelector.js
  * @include Redlining/lib/Redlining.js
+ * @include Swipe/lib/SwipeAction.js
+ * @include Swipe/lib/Swipe.js
  * @include OpenLayers/Lang.js
  * @requires Permalink/lib/Permalink.js
  * @requires Print/lib/Print.js
@@ -27,10 +29,13 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
 
     noHeader: false,
 
+    /* Define whether the default list of urls is customed.*/
+    WMSCustomList: null,
+
     constructor : function(config) {
         Ext.apply(this, config);
         this.mapPanel = config.mapPanel;
-        Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms', 'redlining']});
+        Ext.applyIf(config, {menuItems: ['kml', 'measure', 'wms', 'redlining','swipe']});
 
         if (OpenLayers.Util.getParameters().noHeader) {
             this.noHeader = OpenLayers.Util.getParameters().noHeader;
@@ -103,10 +108,13 @@ GeoAdmin.BaseTools = Ext.extend(Ext.Container, {
                         menu.push(new GeoAdmin.Measure({map: this.mapPanel.map}));
                         break;
                     case 'wms':
-                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers, map: this.mapPanel.map}));
+                        menu.push(new GeoAdmin.WmsBrowser({layerStore: this.mapPanel.layers, map: this.mapPanel.map, WMSCustomList: this.WMSCustomList}));
                         break;
                     case 'redlining':
                         menu.push(new GeoAdmin.Redlining({map: this.mapPanel.map}));
+                       break;
+                    case 'swipe':
+                        menu.push(new GeoAdmin.SwipeAction({map: this.mapPanel.map}));
                        break;
                 }
             }

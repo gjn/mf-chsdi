@@ -25,7 +25,7 @@
  *
  *     var map13 = new GeoAdmin.Map("mymap3", {doZoomToMaxExtent: true});
  *     var contextPopup = new GeoAdmin.ContextPopup({map: map13});
- *
+ *     map13.addControl(contextPopup);;
  *
  */
 
@@ -191,7 +191,6 @@ GeoAdmin.ContextPopup = OpenLayers.Class(OpenLayers.Control, {
             }
         };
 
-        this.map.addControl(this);
         this.activate();
     }
 });

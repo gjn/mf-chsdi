@@ -577,6 +577,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
                      },
                      {
+                        layerId: "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
+                     },
+                     {
                         layerId: "ch.swisstopo.vec200-names-namedlocation"
                      },
                      {
@@ -592,9 +595,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.are.alpenkonvention"
-                    },
-                    {
-                        layerId: "ch.are.gemeindetyp-1990-9klassen"
                     },
 					{
                         layerId: "ch.are.gemeindetypen"
@@ -715,6 +715,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.vec200-landcover"
+                    },
+                    {
+                        layerId: "ch.swisstopo.vec200-landcover-wald"
                     },
                     {
                         layerId: "ch.swisstopo.vec25-heckenbaeume"
@@ -933,6 +936,60 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.blw.bergprodukte"
+                    },
+                    {
+                        layerId: "ch.bakom.anbieter-eigenes_festnetz"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-glasfaser"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-koaxialkabel"
+                    },
+                    {
+                        layerId: "ch.bakom.anschlussart-kupferdraht"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink1"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink10"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink100"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink2"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink20"
+                    },
+                    {
+                        layerId: "ch.bakom.downlink50"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink1"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink10"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink100"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink2"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink20"
+                    },
+                    {
+                        layerId: "ch.bakom.uplink50"
+                    },
+                    {
+                        layerId: "ch.bakom.verfuegbarkeit-hdtv"
+                    },
+                    {
+                        layerId: "ch.bakom.verfuegbarkeit-tv"
                     }
                 ]
 
@@ -986,10 +1043,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },*/
                     {
                         layerId: "ch.bafu.unesco-weltnaturerbe"
-//                    },
-// Put in comment before commit : ltalp (wait protocole)
-//                    {
-//                        layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+                    },
+                    {
+                        layerId: "ch.bak.schutzgebiete-unesco_weltkulturerbe"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotope"
                     }
                 ]
             },
@@ -998,6 +1057,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
@@ -1272,10 +1334,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.bafu.fauna-steinbockkolonien"
-// ltalp (stand by with ch.bafu.moose)
-//                    },
-//                    {
-//                        layerId: "ch.bafu.moose"
+                    },
+                    {
+                        layerId: "ch.bafu.moose"
                     }
                 ]
             },

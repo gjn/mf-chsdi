@@ -64,9 +64,17 @@
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_objektart')}:</td>
          <td style="width: 300px; float: left;">
+<% counter = 0 %>
 % for objart in objektart:
-<% obj = 'kultur' + objart %>
-     ${_(obj)}
+<% 
+    obj = 'kultur' + objart
+    counter += 1
+%>
+% if counter == len(objektart):
+    ${_(obj)}
+% else:
+    ${_(obj)} /
+% endif
 % endfor
          </td>
      </tr>
@@ -75,12 +83,12 @@
          <td style="width: 300px; float: left;">${c.feature.id or '-'}</td>
      </tr>
      <tr>
-         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('nfadresse')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('grundadresse')}:</td>
          <td style="width: 300px; float: left;">${c.feature.adresse or ''}  ${c.feature.hausnr or ''}</td>
      </tr>
      <tr>
-         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')} / ${_('tt_kbs_gemeinde_ehemalige')}:</td>
-         <td style="width: 300px; float: left;">${c.feature.gemeinde or '-'} / ${c.feature.gemeinde_ehemalig or '-'}</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('tt_kbs_gemeinde')} (${_('tt_kbs_gemeinde_ehemalige')}):</td>
+         <td style="width: 300px; float: left;">${c.feature.gemeinde or '-'} (${c.feature.gemeinde_ehemalig or '-'})</td>
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Coordinates')}:</td>
@@ -98,13 +106,24 @@
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
          <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
      </tr>
+% if c.feature.link_uri is not None:
      <tr>
-         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('official object webpage')}:</td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
          <td style="width: 300px; float: left;"><a href="${c.feature.link_uri or ''}">${c.feature.link_title or ''}</a></td>
      </tr>
+% endif
+% if c.feature.link_2_uri is not None:
      <tr>
-         <td><a href="http://kgs.admin.ch/kgs_inventar/statistik.pdf">${_('tt_kbs_statistik')}</a></td>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
+         <td style="width: 300px; float: left;"><a href="${c.feature.link_2_uri or ''}">${c.feature.link_2_title or ''}</a></td>
      </tr>
+% endif
+% if c.feature.link_3_uri is not None:
+     <tr>
+         <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('legalregulationlink')}:</td>
+         <td style="width: 300px; float: left;"><a href="${c.feature.link_3_uri or ''}">${c.feature.link_3_title or ''}</a></td>
+     </tr>
+% endif
 </table>
 
 % if c.first == True:
@@ -149,11 +168,11 @@
         meta = list()
         for i in d:
             e = i.split(';')
-            if e[0] == parser.pattern and e[len(e)-1] not in meta:
+            if e[0] == parser.pattern:
                 meta.append(e[len(e)-1])
-            endif
-            if e[0] == parser.pattern and e[len(e)-2] not in meta and len(e[len(e)-2]) != 0:
-                meta.append(e[len(e)-2])
+                if e[0] == parser.pattern and len(e[len(e)-2]) != 0:
+                    meta[len(meta)-1] += e[len(e)-2]
+                endif
             endif
         hpictures[str(fid)] = parser.filesMatched
         hpdfs[str(fid)] = parser2.filesMatched
@@ -191,9 +210,7 @@
                     var a = document.createElement('A');
                     a.className = 'lightbox';
                     a.href = url + pic;
-                    for (var m = 0; m < meta.length; m++) {
-                         title = title + meta[m].replace("/","");
-                    }
+                    title = meta[n].replace("/","");
                     a.title = title;
                     var img = document.createElement('IMG');
                     img.width = 100;

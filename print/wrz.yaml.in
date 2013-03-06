@@ -272,7 +272,7 @@ layouts:
         height: 42
         items:
           - !columns
-            widths: [20, 20, 33, 20]
+            widths: [16, 16, 22, 20]
             items:
               - !image
                 condition: langde
@@ -324,18 +324,18 @@ layouts:
                         Zone di tranquillità e siti di protezione della fauna selvatica Svizzera
               - !image
                 condition: langde
-                align: left
                 maxHeight: 28
+                align: left
                 url: "${buildout:directory}/print/wrz_legend_de.png"
               - !image
                 condition: langfr
-                align: left
                 maxHeight: 28
+                align: left
                 url: "${buildout:directory}/print/wrz_legend_fr.png"
               - !image
                 condition: langit
-                align: left
                 maxHeight: 28
+                align: left
                 url: "${buildout:directory}/print/wrz_legend_it.png"
 
       items:

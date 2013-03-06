@@ -32,6 +32,9 @@ msgstr "Bauernhof"
 msgid "Berghuette"
 msgstr "Berghütte"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Coordinate"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -115,6 +118,12 @@ msgstr "Legend"
 
 msgid "Link to object"
 msgstr "Link to object"
+
+msgid "Lower left corner"
+msgstr "Lower left corner"
+
+msgid "Lower right corner"
+msgstr "Lower right corner"
 
 msgid "Man-made"
 msgstr "Künstlich"
@@ -233,6 +242,12 @@ msgstr "Underground"
 msgid "Unknown"
 msgstr "Unknown"
 
+msgid "Upper left corner"
+msgstr "Upper left corner"
+
+msgid "Upper right corner"
+msgstr "Upper right corner"
+
 msgid "Verarbeitungsanlage"
 msgstr "Verarbeitungsanlage"
 
@@ -253,6 +268,9 @@ msgstr "Wind"
 
 msgid "Yes"
 msgstr "Yes"
+
+msgid "abfluss"
+msgstr "Discharge m3/s"
 
 msgid "abfrage"
 msgstr "Datenbfrage"
@@ -843,7 +861,7 @@ msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr "Planimetric control points LFP1"
 
 msgid "ch.swisstopo.fixpunkte-lfp2"
-msgstr "Fixed plan control points LFP2"
+msgstr "Planimetric control points LFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
 msgstr "Last glacial maximum"
@@ -927,7 +945,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "National Map 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
-msgstr "National Map 1:1 million (colour)"
+msgstr "National Map 1:1 million"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "National Map 1:200'000"
@@ -969,7 +987,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "National parks VECTOR200"
+msgstr "Protected Areas VECTOR200"
 
 msgid "ch.swisstopo.vec200-building"
 msgstr "Building generalized VECTOR200"
@@ -1049,6 +1067,9 @@ msgstr "Ct."
 msgid "date"
 msgstr "Date"
 
+msgid "date_time"
+msgstr "Date/Time"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -1059,7 +1080,7 @@ msgid "descriptionText"
 msgstr "Description"
 
 msgid "disclaimer title"
-msgstr "Copyright & Data protection"
+msgstr "Copyright & data protection"
 
 msgid "disclaimer url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/contact.html#copyright"
@@ -1127,6 +1148,15 @@ msgstr "Area [m2]"
 
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
+
+msgid "fp_E95_N95"
+msgstr "Coordinates MN95 (E / N)"
+
+msgid "fp_H02"
+msgstr "Altitude (H)"
+
+msgid "fp_Y03_X03"
+msgstr "Coordinates LV03 (Y / X)"
 
 msgid "frame"
 msgstr "Bezugsramen"
@@ -1232,6 +1262,9 @@ msgstr "http://map.geo.admin.ch/?lang=en"
 
 msgid "hydrografische_herkunft"
 msgstr "Hydrografische Herkunft"
+
+msgid "hydromessstationen_graph"
+msgstr "3 days Water level/Discharge"
 
 msgid "id_arealstatistik_85"
 msgstr "ID area statistic 1979/85"
@@ -1902,6 +1935,9 @@ msgstr "Link to the portal of canton"
 msgid "link to geoportal"
 msgstr "Link to the portal"
 
+msgid "link2dok"
+msgstr "Link to the document"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 
@@ -2125,7 +2161,10 @@ msgid "stationsnr"
 msgstr "Station number"
 
 msgid "status"
-msgstr "State"
+msgstr "Status"
+
+msgid "status_fp"
+msgstr "Official name (when existing)"
 
 msgid "strasse"
 msgstr "Street"
@@ -2194,7 +2233,7 @@ msgid "tt_bauzonen_gemeindetypen_NAME"
 msgstr "Commune"
 
 msgid "tt_bazl_abortion"
-msgstr "Abortion accomplished"
+msgstr "Removal accomplished"
 
 msgid "tt_ch.bakom.leistung"
 msgstr "Radiated power (ERP)"
@@ -2520,6 +2559,12 @@ msgstr "ARE commune type"
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code type of commune"
 
+msgid "tt_geotechnik_gk200"
+msgstr "Link to the legend"
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr "Lithologic / petrographic characterization"
+
 msgid "tt_kbs_gemeinde"
 msgstr "Municipality"
 
@@ -2747,6 +2792,12 @@ msgstr "Historischer Verlauf mit viel Substanz"
 
 msgid "waldanteil"
 msgstr "Waldanteil [%]"
+
+msgid "wasserstand"
+msgstr "Water level m o. s."
+
+msgid "wassertemperatur"
+msgstr "Water temperature °C"
 
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"

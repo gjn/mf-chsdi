@@ -1,6 +1,7 @@
 .svn
 print/*.war
 print/*.yaml
+*.swp
 .installed.cfg
 *.pyc
 apache/*.conf

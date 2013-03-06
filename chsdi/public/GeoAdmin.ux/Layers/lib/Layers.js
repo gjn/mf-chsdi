@@ -1,4 +1,3 @@
-
 /*
  * @include OpenLayers/Layer/WMS.js
  * @include OpenLayers/Layer/WMTS.js
@@ -441,32 +440,32 @@ GeoAdmin._Layers = OpenLayers.Class({
         if (config.layertype === "wms") {
             // Workaround to avoid problem when a WMS is a sub layer of an aggregated layer
             /*OpenLayers.Layer.WMS.prototype.moveGriddedTiles = function() {
-                var shifted = true;
-                var buffer = this.buffer || 1;
-                if (this.grid[0]) {
-                    var tlLayer = this.grid[0][0].position;
-                    var offsetX = parseInt(this.map.layerContainerDiv.style.left);
-                    var offsetY = parseInt(this.map.layerContainerDiv.style.top);
-                    var tlViewPort = tlLayer.add(offsetX, offsetY);
-                    if (tlViewPort.x > -this.tileSize.w * (buffer - 1)) {
-                        this.shiftColumn(true);
-                    } else if (tlViewPort.x < -this.tileSize.w * buffer) {
-                        this.shiftColumn(false);
-                    } else if (tlViewPort.y > -this.tileSize.h * (buffer - 1)) {
-                        this.shiftRow(true);
-                    } else if (tlViewPort.y < -this.tileSize.h * buffer) {
-                        this.shiftRow(false);
-                    } else {
-                        shifted = false;
-                    }
-                    if (shifted) {
-                        // we may have other row or columns to shift, schedule it
-                        // with a setTimeout, to give the user a chance to sneak
-                        // in moveTo's
-                        this.timerId = window.setTimeout(this._moveGriddedTiles, 0);
-                    }
-                }
-            };*/
+             var shifted = true;
+             var buffer = this.buffer || 1;
+             if (this.grid[0]) {
+             var tlLayer = this.grid[0][0].position;
+             var offsetX = parseInt(this.map.layerContainerDiv.style.left);
+             var offsetY = parseInt(this.map.layerContainerDiv.style.top);
+             var tlViewPort = tlLayer.add(offsetX, offsetY);
+             if (tlViewPort.x > -this.tileSize.w * (buffer - 1)) {
+             this.shiftColumn(true);
+             } else if (tlViewPort.x < -this.tileSize.w * buffer) {
+             this.shiftColumn(false);
+             } else if (tlViewPort.y > -this.tileSize.h * (buffer - 1)) {
+             this.shiftRow(true);
+             } else if (tlViewPort.y < -this.tileSize.h * buffer) {
+             this.shiftRow(false);
+             } else {
+             shifted = false;
+             }
+             if (shifted) {
+             // we may have other row or columns to shift, schedule it
+             // with a setTimeout, to give the user a chance to sneak
+             // in moveTo's
+             this.timerId = window.setTimeout(this._moveGriddedTiles, 0);
+             }
+             }
+             };*/
             var layer_options_wms = OpenLayers.Util.extend({
                 layer: config.layer || name,
                 layername: name,
@@ -484,7 +483,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 ratio: 1.1,
                 transitionEffect: myTransitionEffect,
                 timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp,
-                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp]
+                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp],
+                timeEnabled: config.timeEnabled === true,
+                allTimeEnabled: config.allTimeEnabled === true
             }, options);
             var wmsParams = {
                 layers: config.layers,
@@ -492,9 +493,9 @@ GeoAdmin._Layers = OpenLayers.Class({
                 transparent: config.transparent || true
             };
             if ((options && options.timestamp !== undefined) || config.timestamp !== undefined) {
-               wmsParams.time = options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp;
+                wmsParams.time = options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp;
             }
-            GeoAdmin.wmsServiceUrl = GeoAdmin.wmsServiceUrl ? GeoAdmin.wmsServiceUrl :((GeoAdmin.protocol ? GeoAdmin.protocol : 'http') + '//wms.geo.admin.ch/');
+            GeoAdmin.wmsServiceUrl = GeoAdmin.wmsServiceUrl ? GeoAdmin.wmsServiceUrl : ((GeoAdmin.protocol ? GeoAdmin.protocol : 'http') + '//wms.geo.admin.ch/');
             return new OpenLayers.Layer.WMS(config.name, config.url || GeoAdmin.wmsServiceUrl,
                 wmsParams,
                 layer_options_wms);
@@ -551,7 +552,10 @@ GeoAdmin._Layers = OpenLayers.Class({
                 serverResolutions: config.serverResolutions || [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5],
                 minScale: config.minScale,
                 timestamp: options && options.timestamp !== undefined ? options.timestamp : this.isArray(config.timestamp) ? config.timestamp[0] : config.timestamp,
-                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp]
+                timestamps: this.isArray(config.timestamp) ? config.timestamp : [config.timestamp],
+                timeEnabled: config.timeEnabled === true,
+                allTimeEnabled: config.allTimeEnabled === true
+
             }, options);
 
             return new OpenLayers.Layer.WMTS(layer_options_wmts);
@@ -569,7 +573,7 @@ GeoAdmin._Layers = OpenLayers.Class({
     },
 
     isArray: function(obj) {
-       return Object.prototype.toString.call(obj) === '[object Array]';
+        return Object.prototype.toString.call(obj) === '[object Array]';
     },
 
     init: function() {
@@ -592,7 +596,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111206','20111027','20110401'],
+                timestamp: ['20130213','20120809','20111206','20111027','20110401'],
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -602,7 +606,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111206','20111027','20110401'],
+                timestamp: ['20130213','20120809','20111206','20111027','20110401'],
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
@@ -641,7 +645,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.babs.kulturgueter": {
                 name: OpenLayers.i18n("ch.babs.kulturgueter"),
                 layertype: 'wmts',
-                timestamp: ['20091127'],
+                timestamp: ['20130219','20091127'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.babs",
@@ -672,7 +676,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.bfs.gebaeude_wohnungs_register',
                 layername: 'ch.bfs.gebaeude_wohnungs_register_wmts',
-                timestamp: ['20110509'],
+                timestamp: ['20130212'],
                 format: "image/png",
                 datenherr: "ch.bfs",
                 queryable: false,
@@ -693,40 +697,40 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bfe.sachplan-geologie-tiefenlager": {
                 name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager"),
                 layertype: 'wms',
-                layers: ['ch.bfe.sachplan-geologie-tiefenlager'],                   
+                layers: ['ch.bfe.sachplan-geologie-tiefenlager'],
                 format: "image/png",
                 datenherr: "ch.bfe",
                 queryable: true,
-	        opacity: 0.75,				
+                opacity: 0.75,
                 type: "point"
             },
             "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung": {
                 name: OpenLayers.i18n("ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"),
                 layertype: 'wms',
-                layers: ['ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'],                   
+                layers: ['ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'],
                 format: "image/png",
                 datenherr: "ch.bfe",
                 queryable: true,
-                opacity: 0.75,				
+                opacity: 0.75,
                 type: "point"
             },
             "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
                 name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
                 layertype: 'wms',
-                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],                   
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'],
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: true,
-		type: "point"
+                type: "point"
             },
-	    "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
+            "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung": {
                 name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"),
                 layertype: 'wms',
-                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],                   
+                layers: ['ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'],
                 format: "image/png",
                 datenherr: "ch.bazl",
                 queryable: true,
-		type: "point"
+                type: "point"
             },
             "ch.swisstopo.hiks-dufour": {
                 name: OpenLayers.i18n("ch.swisstopo.hiks-dufour"),
@@ -807,7 +811,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true,
-		        serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
+                serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
             },
             "ch.swisstopo.vec25-primaerflaechen": {
                 name: OpenLayers.i18n("ch.swisstopo.vec25-primaerflaechen"),
@@ -903,7 +907,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"),
                 layertype: 'wmts',
-                timestamp: ['20120101'],
+                timestamp: ['20130101','20120101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -912,7 +916,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"),
                 layertype: 'wmts',
-                timestamp: ['20120101'],
+                timestamp: ['20130101','20120101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -921,7 +925,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissboundaries3d-kanton-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-kanton-flaeche.fill"),
                 layertype: 'wmts',
-                timestamp: ['20120101'],
+                timestamp: ['20130101','20120101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -930,7 +934,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissboundaries3d-land-flaeche.fill": {
                 name: OpenLayers.i18n("ch.swisstopo.swissboundaries3d-land-flaeche.fill"),
                 layertype: 'wmts',
-                timestamp: ['20120101'],
+                timestamp: ['20130101','20120101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1197,12 +1201,12 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"),
                 layertype: 'wmts',
-                timestamp: ['20000101'],
+                timestamp: ['20060304','20000101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
@@ -1306,7 +1310,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geotope": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotope"),
                 layertype: 'wmts',
-                timestamp: ['20110201'],
+                timestamp: ['20130107','20110201'],
                 type: 'mixed',
                 format: 'image/png',
                 datenherr: 'ch.swisstopo',
@@ -1339,17 +1343,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-// (ltalp) ch.bafu.moose pour la PROD 
-//            "ch.bafu.moose": {
-//                name: OpenLayers.i18n("ch.bafu.moose"),
-//                layertype: 'wmts',
-//                timestamp: ['20120416'],
-//                type: "mixed",
-//                format: "image/png",
-//                datenherr: "ch.bafu",
-//                opacity: 0.75,
-//                queryable: true
-//            },
+            "ch.bafu.moose": {
+                name: OpenLayers.i18n("ch.bafu.moose"),
+                layertype: 'wmts',
+                timestamp: ['20120416'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.bafu.bundesinventare-amphibien": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-amphibien"),
                 layertype: 'wmts',
@@ -1619,7 +1622,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.kt.bafu",
                 queryable: false,
                 transitionEffect: "no"
-            },			
+            },
             "ch.bafu.wildruhezonen-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.wildruhezonen-jagdbanngebiete"),
                 layertype: 'wmts',
@@ -1823,7 +1826,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.swissprtr": {
                 name: OpenLayers.i18n("ch.bafu.swissprtr"),
                 layertype: 'wmts',
-                timestamp: ['20120404','20110222'],
+                timestamp: ['20130207','20120404','20110222'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2149,33 +2152,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-           "ch.bakom.radio-fernsehsender": {
-               name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
-               layers: ["ch.bakom.radio-fernsehsender"],
-               layertype: "wms",
-               type: "point",
-               format: "image/png",
-               datenherr: "ch.bakom",
-               queryable: true,
-               searchable: true
-           },
-           "ch.bakom.mobil-antennenstandorte-gsm": {
-               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
-               layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
-               layertype: "wms",
-               type: "point",
-               format: "image/png",
-               datenherr: "ch.bakom",
-               queryable: true
-           },
-           "ch.bakom.mobil-antennenstandorte-umts": {
-               name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-umts"),
-               layers: ["ch.bakom.mobil-antennenstandorte-umts"],
-               layertype: "wms",
-               type: "point",
-               format: "image/png",
-               datenherr: "ch.bakom",
-               queryable: true
+            "ch.bakom.radio-fernsehsender": {
+                name: OpenLayers.i18n("ch.bakom.radio-fernsehsender"),
+                layers: ["ch.bakom.radio-fernsehsender"],
+                layertype: "wms",
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true,
+                searchable: true
+            },
+            "ch.bakom.mobil-antennenstandorte-gsm": {
+                name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-gsm"),
+                layers: ["ch.bakom.mobil-antennenstandorte-gsm"],
+                layertype: "wms",
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
+            "ch.bakom.mobil-antennenstandorte-umts": {
+                name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-umts"),
+                layers: ["ch.bakom.mobil-antennenstandorte-umts"],
+                layertype: "wms",
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
             },
             "ch.bakom.versorgungsgebiet-tv": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-tv"),
@@ -2199,7 +2202,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
-            //FIXME ltfoa: those layers are to TEST the ngamapping application.
             "ch.bakom.anbieter-eigenes_festnetz": {
                 name: OpenLayers.i18n("ch.bakom.anbieter-eigenes_festnetz"),
                 layertype: 'wmts',
@@ -2218,7 +2220,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.anschlussart-koaxialkabel": {
                 name: OpenLayers.i18n("ch.bakom.anschlussart-koaxialkabel"),
@@ -2228,7 +2230,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.anschlussart-kupferdraht": {
                 name: OpenLayers.i18n("ch.bakom.anschlussart-kupferdraht"),
@@ -2238,7 +2240,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink1": {
                 name: OpenLayers.i18n("ch.bakom.downlink1"),
@@ -2248,7 +2250,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink10": {
                 name: OpenLayers.i18n("ch.bakom.downlink10"),
@@ -2258,7 +2260,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink100": {
                 name: OpenLayers.i18n("ch.bakom.downlink100"),
@@ -2268,7 +2270,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink2": {
                 name: OpenLayers.i18n("ch.bakom.downlink2"),
@@ -2278,7 +2280,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink20": {
                 name: OpenLayers.i18n("ch.bakom.downlink20"),
@@ -2288,7 +2290,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.downlink50": {
                 name: OpenLayers.i18n("ch.bakom.downlink50"),
@@ -2298,7 +2300,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink1": {
                 name: OpenLayers.i18n("ch.bakom.uplink1"),
@@ -2308,7 +2310,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink10": {
                 name: OpenLayers.i18n("ch.bakom.uplink10"),
@@ -2318,7 +2320,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink100": {
                 name: OpenLayers.i18n("ch.bakom.uplink100"),
@@ -2328,7 +2330,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink2": {
                 name: OpenLayers.i18n("ch.bakom.uplink2"),
@@ -2338,7 +2340,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink20": {
                 name: OpenLayers.i18n("ch.bakom.uplink20"),
@@ -2348,7 +2350,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.uplink50": {
                 name: OpenLayers.i18n("ch.bakom.uplink50"),
@@ -2358,7 +2360,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.verfuegbarkeit-hdtv": {
                 name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-hdtv"),
@@ -2368,7 +2370,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.bakom.verfuegbarkeit-tv": {
                 name: OpenLayers.i18n("ch.bakom.verfuegbarkeit-tv"),
@@ -2378,9 +2380,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bakom",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
-            // FIXME ltfoa END
             "ch.swisstopo.pixelkarte-pk100.metadata": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-pk100.metadata"),
                 layers: ["ch.swisstopo.pixelkarte-pk100.metadata"],
@@ -2417,63 +2418,63 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-           "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
+            "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk25.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111027'],
+                timestamp: ['20130213','20120809','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true
-           },
+            },
             "ch.swisstopo.pixelkarte-farbe-pk50.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk50.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111027'],
+                timestamp: ['20130213','20120809','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true
-           },
+            },
             "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111206','20111027'],
+                timestamp: ['20130213','20120809','20111206','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
 //  AKTUEL JPEG <-> NEW PNG !!!
-/*
-           "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk25.noscale"),
-                layertype: 'wmts',
-                timestamp: ['20111231','20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231','19531231','19521231'],
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-farbe-pk50.noscale": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk50.noscale"),
-                layertype: 'wmts',
-                timestamp: ['20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231','19531231','19521231','19511231','19501231','19491231','19481231','19471231','19461231','19451231','19441231','19431231','19421231','19411231','19401231','19391231','19381231'],
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-            "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
-                layertype: 'wmts',
-                timestamp: ['20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231'],
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.swisstopo",
-                queryable: true
-            },
-*/
+            /*
+             "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk25.noscale"),
+             layertype: 'wmts',
+             timestamp: ['20111231','20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231','19531231','19521231'],
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-farbe-pk50.noscale": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk50.noscale"),
+             layertype: 'wmts',
+             timestamp: ['20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231','19531231','19521231','19511231','19501231','19491231','19481231','19471231','19461231','19451231','19441231','19431231','19421231','19411231','19401231','19391231','19381231'],
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
+             name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
+             layertype: 'wmts',
+             timestamp: ['20101231','20091231','20081231','20071231','20061231','20051231','20041231','20031231','20021231','20011231','20001231','19991231','19981231','19971231','19961231','19951231','19941231','19931231','19921231','19911231','19901231','19891231','19881231','19871231','19861231','19851231','19841231','19831231','19821231','19811231','19801231','19791231','19781231','19771231','19761231','19751231','19741231','19731231','19721231','19711231','19701231','19691231','19681231','19671231','19661231','19651231','19641231','19631231','19621231','19611231','19601231','19591231','19581231','19571231','19561231','19551231','19541231'],
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: true
+             },
+             */
             "ch.swisstopo.zeitreihen": {
                 name: OpenLayers.i18n("ch.swisstopo.zeitreihen"),
                 layertype: 'wmts',
@@ -2482,7 +2483,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
                 queryable: true,
-                url: ['http://wmts10.prod.bgdi.ch/','http://wmts11.prod.bgdi.ch','http://wmts12.prod.bgdi.ch','http://wmts13.prod.bgdi.ch','http://wmts14.prod.bgdi.ch'],
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5]
             },
             "ch.swisstopo.pixelkarte-farbe-pk200.noscale": {
@@ -2863,15 +2863,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.blw",
                 opacity: 0.75
             },
-            "ch.blw.erosion-mit_bergzonen": { 	 
-	         name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"), 	 
-	         layertype: 'wmts', 	 
-	         timestamp: ['20100101'], 	 
-	         type: "polygon", 	 
-	         format: "image/png", 	 
-	         datenherr: "ch.blw", 	 
-	         opacity: 0.75
-	    },
+            "ch.blw.erosion-mit_bergzonen": {
+                name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"),
+                layertype: 'wmts',
+                timestamp: ['20100101'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75
+            },
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
                 layertype: 'wmts',
@@ -3140,7 +3140,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.bafu",
                 opacity: 0.75,
-                queryable: true 
+                queryable: true
             },
             "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden"),
@@ -3172,25 +3172,23 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-// Attente protocole pour activer nouveau layer (ltalp)
-//            "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
-//                name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
-//                layertype: 'wms',
-//                layers: ['ch.bak.schutzgebiete-unesco_weltkulturerbe'],
-//                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.bak",
-//                opacity: 0.75,
-//                queryable: true
-//            },
+            "ch.bak.schutzgebiete-unesco_weltkulturerbe": {
+                name: OpenLayers.i18n("ch.bak.schutzgebiete-unesco_weltkulturerbe"),
+                layertype: 'wmts',
+                timestamp: ['20120203'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bak",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.bafu.fischerei-aeschen_verbreitungsgebiet": {
                 name: OpenLayers.i18n("ch.bafu.fischerei-aeschen_verbreitungsgebiet"),
                 layertype: 'wmts',
                 timestamp: ['20110905'],
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.bafu",                
+                datenherr: "ch.bafu",
                 queryable: false
             },
             "ch.bafu.fischerei-aeschen_kernzonen": {
@@ -3199,7 +3197,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: ['20110829'],
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.bafu",                
+                datenherr: "ch.bafu",
                 queryable: false
             },
             "ch.bafu.fischerei-aeschen_larvenhabitate": {
@@ -3208,7 +3206,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: ['20110829'],
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.bafu",                
+                datenherr: "ch.bafu",
                 queryable: false
             },
             "ch.bafu.fischerei-aeschen_laichplaetze": {
@@ -3217,7 +3215,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: ['20110829'],
                 type: "line",
                 format: "image/png",
-                datenherr: "ch.bafu",              
+                datenherr: "ch.bafu",
                 queryable: false
             },
             "ch.bafu.fischerei-nasenlaichplaetze": {
@@ -3226,7 +3224,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 timestamp: ['20060220'],
                 type: "point",
                 format: "image/png",
-                datenherr: "ch.bafu",                
+                datenherr: "ch.bafu",
                 queryable: false
             },
             "ch.bafu.fischerei-krebspest": {
@@ -3373,7 +3371,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-baugrundklassen": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-baugrundklassen"),
                 layertype: 'wmts',
-                timestamp: ['20110906'],
+                timestamp: ['20121219','20110906'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3383,7 +3381,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-mikrozonierung": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-mikrozonierung"),
                 layertype: 'wmts',
-                timestamp: ['20110906'],
+                timestamp: ['20121219','20110906'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3393,7 +3391,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.gefahren-spektral": {
                 name: OpenLayers.i18n("ch.bafu.gefahren-spektral"),
                 layertype: 'wmts',
-                timestamp: ['20110607'],
+                timestamp: ['20121219','20110607'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3442,7 +3440,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bak.bundesinventar-schuetzenswerte-ortsbilder": {
                 name: OpenLayers.i18n("ch.bak.bundesinventar-schuetzenswerte-ortsbilder"),
                 layertype: 'wmts',
-                timestamp: ['20120510','20110915'],
+                timestamp: ['20121218','20120510','20110915'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bak",
@@ -3471,7 +3469,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
-                timestamp: ['20120308'],
+                timestamp: ['20130225','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
@@ -3490,7 +3488,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.segelflugkarte": {
                 name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
                 layertype: 'wmts',
-                timestamp: ['20120308'],
+                timestamp: ['20130225','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
@@ -3535,28 +3533,28 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
-			  "ch.are.bauzonen": {
+            "ch.are.bauzonen": {
                 name: OpenLayers.i18n("ch.are.bauzonen"),
                 layers: ["ch.are.bauzonen"],
                 layertype: "wmts",
-				timestamp: ['20120101'],
+                timestamp: ['20120101'],
                 type: "polygon",
                 format: "image/png",
-				opacity: 0.60,
-				queryable: true,
+                opacity: 0.60,
+                queryable: true,
                 datenherr: "ch.are"
-				},
-			"ch.are.gemeindetypen": {
+            },
+            "ch.are.gemeindetypen": {
                 name: OpenLayers.i18n("ch.are.gemeindetypen"),
                 layers: ["ch.are.gemeindetypen"],
                 layertype: "wmts",
-				timestamp: ['20120101'],
+                timestamp: ['20120101'],
                 type: "polygon",
                 format: "image/png",
-				opacity: 0.60,
-				queryable: true,
+                opacity: 0.60,
+                queryable: true,
                 datenherr: "ch.are"
-				},
+            },
             "org.epsg.grid_21781": {
                 name: OpenLayers.i18n("org.epsg.grid_21781"),
                 layers: ["org.epsg.grid_21781"],

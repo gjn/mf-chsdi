@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel=stylesheet type=text/css href=../../../build/api.css>
+    <link rel=stylesheet type=text/css href=../css/timeslider.css>
+    <style>
+        .map {
+            position: absolute;
+            top: 70px;
+            left: 350px;
+            width: 800px;
+            height: 650px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        #timeslider {
+            margin: 20px;
+        }
+        .layertree {
+            position: absolute;
+            top: 70px;
+            left: 10px;
+            width: 300px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TimeSlider Example</h1>
+    <!-- <div  id="timeslider"></div><div id="time"></div>  -->
+
+    <p>Add/remove layer</p>
+    <input type="checkbox" name="layername" value="ch.swisstopo.zeitreihen" onclick="toggleAddRemoveLayer(this.value)">Zeitreihen
+    <input type="checkbox" name="layername" value="lubis_bilder"  onclick="toggleAddRemoveLayer(this.value)">Lubis
+
+<div class="map" id="map"></div>
+<div class="layertree" id="layertree"></div>
+
+<link rel="stylesheet" type="text/css" href="../../TimeControl/css/timecontrol.css"></script>
+
+<script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+<script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+<script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+<script type="text/javascript" src="../../GeoAdmin.js"></script>
+<script type="text/javascript" src="../../Map/lib/Map.js"></script>
+<script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+<script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+<script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+<script type="text/javascript" src="../../LayerTree/lib/ComponentMixin.js"></script>
+<script type="text/javascript" src="../../LayerTree/lib/ActionsMixin.js"></script>
+<script type="text/javascript" src="../../LayerTree/lib/LayerNode.js"></script>
+<script type="text/javascript" src="../../LayerTree/lib/LayerTree.js"></script>
+<script type="text/javascript" src="../../TimeControl/lib/TimeControl.js"></script>
+<script type="text/javascript" src="../lib/TimeSlider.js"></script>
+<script type="text/javascript" src="TimeSlider.js"></script>
+</body>
+</html>

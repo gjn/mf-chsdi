@@ -1,4 +1,248 @@
-Release 20130121 - Monday, January 21th 2013
+Release 20130306 - Wednesday, March 6th 2013
+====================================================
+
+Geodata
+********
+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division National Map 1:1 million <//map.geo.admin.ch/>`__ (ch.swisstopo.pixelkarte-farbe)                                                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
++--------+---------------------------------------------------+
+| New    | New map for two first zoom levels of national map |
++--------+---------------------------------------------------+
+| Update | Improve performance of swisssearch                |
++--------+---------------------------------------------------+
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-----+------------------------------------------------------+
+| New | Zoom events are now animated (thanks to OpenLayers). |
++-----+------------------------------------------------------+
+| New | Increased performance when zooming with mousewheel.  |
++-----+------------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+Release 20130220 - Wednesday, February 20th 2013
+====================================================
+
+Geodata
+********
+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Optical fibre <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1>`__ (ch.bakom.downlink1)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink2>`__ (ch.bakom.downlink2)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink20>`__ (ch.bakom.downlink20)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Download ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink50>`__ (ch.bakom.downlink50)                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink2>`__ (ch.bakom.uplink2)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upload ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Availability HDTV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-hdtv>`__ (ch.bakom.verfuegbarkeit-hdtv)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Availability TV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-tv>`__ (ch.bakom.verfuegbarkeit-tv)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Red list bryophytes <//map.geo.admin.ch/?layers=ch.bafu.moose>`__ (ch.bafu.moose)                                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Register of Buildings and Dwellings <//map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register>`__ (ch.bfs.gebaeude_wohnungs_register)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy research <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
++-----+-------------------------------------------------------------+
+| New | Share current map via Facebook, Twitter, Google+ and EMail. |
++-----+-------------------------------------------------------------+
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `New Tooltip for Hydrological gauging stations containing live information for selected stations. <//map.geo.admin.ch/?Y=655549&X=184094&zoom=2&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.bafu.hydrologie-hydromessstationen&layers_opacity=1&layers_visibility=true>`__ |
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++-----+-------------------------------------------------------------+
+| New | Share current map via Facebook, Twitter, Google+ and EMail. |
++-----+-------------------------------------------------------------+
+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+
+
+Release 20130206 - Wednesday, February 6th 2013
+====================================================
+
+Geodata
+********
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Federal Inventory ISOS <//map.geo.admin.ch/?layers.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ .swisstopo.swissboundaries3d-land-flaeche.fill)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New   | `Expert tool Swipe <http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.pixelkarte-farbe-pk25.noscale1&Y=601151.5&X=198109&zoom=8&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale&layers_opacity=1&layers_visibility=true&swipe_ratio=0.52&lang=en>`__ to compare layers with the use of a vertical sliding bar. You can activate this functionality through the Tools menu. |
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Fixed | Feature Information Box does not pop up in IE8.                                                                                                                                                                                                                                                                                                                                                                                      |
++-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `Expert tool Swipe <http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.pixelkarte-farbe-pk25.noscale1&Y=601151.5&X=198109&zoom=8&bgOpacity=0&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale&layers_opacity=1&layers_visibility=true&swipe_ratio=0.52&lang=en>`__ to compare layers with the use of a vertical sliding bar. You can activate this functionality through the Tools menu. |
++-----+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
+Release 20130123 - Wednesday, January 23th 2013
 ====================================================
 
 Geodata
@@ -22,16 +266,16 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-+-----+-------------------+
-| New | Add stuff here... |
-+-----+-------------------+
++-------+--------------------------------------------------------+
+| Fixed | Bug resulting in delayed drawing of WMS based objects. |
++-------+--------------------------------------------------------+
 
-Other minor bugfixing.
+Minor bugfixing.
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
 
-Other minor bugfixing.
+Minor bugfixing.
 
 Mapping Applications
 ********************
@@ -39,11 +283,7 @@ Mapping Applications
 `map.geo.admin.ch <http://map.geo.admin.ch>`__
 --------------------------------------------------
 
-+--------+-------------------+
-| Update | Add stuff here... |
-+--------+-------------------+
-
-Other minor bugfixing.
+Minor bugfixing.
 
 `mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
 ------------------------------------------------------------

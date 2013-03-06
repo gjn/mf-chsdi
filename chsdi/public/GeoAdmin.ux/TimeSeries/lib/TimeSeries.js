@@ -212,6 +212,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
          * Gets triggered when enough frames have been loaded to start animation
          */
         this.addEvents('preloadingDone');
+         /**
+         * Gets triggered when preloading fails for some reason (usual, not enough timestamps available or zeiteihen service does not respond)
+         */
+        this.addEvents('preloadingFailed');
         /**
          * Gets triggered repeatedly during preloading and contains a “ratio” property to state the progress
          */
@@ -222,9 +226,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
 
         function updatePreloadStatus(e) {
             if (this.map.getZoom() < 6) {
-                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>" + OpenLayers.i18n("We recommend to zoom in order to better visualize the evolution of the maps."));
+                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br><span style='font-size: 14px;padding:2px;'>" + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "</span><br>" + OpenLayers.i18n("We recommend to zoom in order to better visualize the evolution of the maps."));
             } else {
-                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br> " + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "<br>");
+                preloadStatus.setTextContent(OpenLayers.i18n("Your journey through time is being prepared. Thanks for your patience and enjoy the trip!") + " <br><span style='font-size: 14px;padding:2px;'>" + Math.round(e.ratio * 100) + " % " + OpenLayers.i18n("done") + "</span><br>");
             }
         }
 
@@ -350,6 +354,22 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         }
     },
 
+    /** private: method[preloadingDoneListener]
+     *  Listener function called when preloading was successfull
+     */
+    preloadingDoneListener: null,
+
+    /** private: method[preloadingFailedListener]
+     *  Listenr function called when preloading failed
+     */
+    preloadingFailedListener: null,
+
+    /** private: variable[switchButtonStates]
+     *  State variable to handle correct Play button state in synch/async environment
+     */
+    switchButtonStates: true,
+
+
     /** private: method[playPause]
      *  Starts or stops the animation
      */
@@ -389,18 +409,35 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             }
         } else {
             // Play / Resume
+            timeseriesWidget.switchButtonStates = true;
             if (timeseriesWidget.preloadingDone === false) {
+                // Set up listeners for preloading
+                if (timeseriesWidget.preloadingDoneListener === null) {
+                    timeseriesWidget.preloadingDoneListener = function() {
+                        preloadStatus.hide(true);
+                        // Clean up timers
+                        window.clearInterval(timeseriesWidget.animationTimer);
+                        timeseriesWidget.animationTimer = null;
+                        timeseriesWidget.animationIsPlaying = false;
+                        // Start a new animation
+                        timeseriesWidget.playPause();
+                    }
+                    timeseriesWidget.on("preloadingDone", timeseriesWidget.preloadingDoneListener);
+                }
+
+                if (timeseriesWidget.preloadingFailedListener === null) {
+                    timeseriesWidget.preloadingFailedListener = function () {
+                        timeseriesWidget.switchButtonStates = false;
+                        if (!timeseriesWidget.animationIsPlaying) {
+                            playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
+                            playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
+                            timeseriesWidget.animationIsPlaying = true;
+                        }
+                        timeseriesWidget.playPause();
+                    }
+                    timeseriesWidget.on("preloadingFailed", timeseriesWidget.preloadingFailedListener);
+                }
                 timeseriesWidget.preloadLayersInSequence();
-                // Wait for preloading to finish
-                timeseriesWidget.on("preloadingDone", function() {
-                    preloadStatus.hide(true);
-                    // Clean up timers
-                    window.clearInterval(this.animationTimer);
-                    this.animationTimer = null;
-                    this.animationIsPlaying = false;
-                    // Start a new animation
-                    timeseriesWidget.playPause();
-                });
             } else {
                 // Try to start animation
                 this.initAnimationState(function(animationState) {
@@ -411,10 +448,11 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     timeseriesWidget.setAnimationTimer();
                 });
             }
-            playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
-            playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
-
-            timeseriesWidget.animationIsPlaying = true;
+            if (timeseriesWidget.switchButtonStates) {
+                playButtonImage.src = playButtonImage.src.replace(/play\.png$/, "pause.png");
+                playButtonImage.title = OpenLayers.i18n("Pause animation (Tooltip)");
+                timeseriesWidget.animationIsPlaying = true;
+            }
         }
     },
 
@@ -598,7 +636,8 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         var transitionTime = this.transitionTime;
 
         this.getAnimationPeriods(function(periods) {
-            if (!(periods instanceof Array)) {
+            if (!(periods instanceof Array) ||
+                periods.length <= 1) {
                 // Report failure to get timestamps of animation
                 onCompletion(null);
             } else {
@@ -811,8 +850,10 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         timeseriesWidget.getAnimationPeriods(function(animationPeriods) {
             var timestamp;
             var year = timeseriesWidget.animationSlider.getYear();
-            if (!(animationPeriods instanceof Array)) {
+            if (!(animationPeriods instanceof Array) ||
+                animationPeriods.length <= 1) {
                 // Failed to get periods from server, don't proceed with preloading
+                timeseriesWidget.fireEvent("preloadingFailed");
                 return;
             }
             GeoAdmin.TimeSeries.prototype.ArrayPrototypeForEach.call(animationPeriods, function(ts) {

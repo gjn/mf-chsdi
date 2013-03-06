@@ -279,10 +279,13 @@ class FeatureController(BaseController):
             except ValueError:
                 abort(400, "Parameter 'extent' is invalid. Use extent=656430,254350,657930,25585 for instance.")
         else:
-            resolution = 1 / ((1 / (c.scale > 0 or 1000.0)) * 39.3701 * 72)
-            meters = 300 * resolution
+            if c.scale is not None:
+                meters = 200 * (0.0254/96) * (c.scale)
+            else:
+                meters = 1000
+
             cx, cy = c.bbox[0:2]
-            extent = (cx - meters, cy - meters, cx + meters, cy + meters)
+            extent = (cx - meters, cy - meters/2, cx + meters, cy + meters/2)
 
         c.extent = Polygon(((extent[0], extent[1]), (extent[0], extent[3]),
                                 (extent[2], extent[3]), (extent[2], extent[1]),
@@ -307,10 +310,10 @@ class FeatureController(BaseController):
                         query = query.filter(time_filter)
                     bodlayer = Session.query(self.bodsearch).get(layer_name)
                     # Make all that for ch.swisstopo.zeitreihen because of the recusvity character of the query
-                    counter = 0
+                    c.counter = 0
                     bgdi_order = 0
                     for feature in query.limit(MAX_FEATURES).all():
-                        counter = counter + 1
+                        c.counter = c.counter + 1
                         properties = {}
                         feature.compute_template(layer_name, bodlayer)
                         if self.format == 'raw':
@@ -322,7 +325,7 @@ class FeatureController(BaseController):
                         properties['preview'] = feature.preview
                         geometry = None if self.no_geom else loads(feature.the_geom.geom_wkb.decode('hex'))
                         if layer_name == 'ch.swisstopo.zeitreihen':
-                            if counter > 1:
+                            if c.counter > 1:
                                if bgdi_order < feature.bgdi_order:
                                    continue
                             bgdi_order = feature.bgdi_order

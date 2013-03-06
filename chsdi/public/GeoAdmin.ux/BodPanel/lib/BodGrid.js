@@ -687,10 +687,10 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
              }
              */
         ]);
-        var bufferview = new Ext.ux.grid.BufferView({
+
+        var myView = new GeoAdmin.LockingBufferView({
             scrolldelay: false
         });
-        //var lockingView = new Ext.ux.grid.LockingGridView();
 
         var bodLoadMask = new Ext.LoadMask(Ext.getBody(), {msg:"Loading data..."});
         bodLoadMask.show();
@@ -885,12 +885,11 @@ GeoAdmin.BodGrid = Ext.extend(Ext.grid.GridPanel, {
             bbar: bbar,
             border: false,
             store: bodStore,
-            //colModel: bodGridColModel,
+            colModel: bodGridColModel,
             plugins: [filters, 'autosizecolumns'],
             stripeRows: true,
             sm: new Ext.grid.RowSelectionModel({singleSelect: true}),
-            //view: lockingView,
-            view: bufferview,
+            view: myView,
             height: 200,
             split: true,
             region: 'north',

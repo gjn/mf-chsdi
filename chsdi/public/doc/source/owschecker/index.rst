@@ -9,8 +9,8 @@ Welcome to OWS Checker's documentation!
 Hi. This is the documentation of the OWS Checker.
 
 The first developement was done in the Bachelor Thesis `Konformitätsprüfung nach eCH-0056`
-by `Christian Karrié <http://g2007.ch/aboutus/christian-karrie>`_ and
-`Michel Würsten <http://g2007.ch/aboutus/michael-wuersten>`_ in 2010 at
+by _Christian Karrie_ and
+_Michel Würsten_ in 2010 at
 the `FHNW Nordwestschweiz <http://www.fhnw.ch>`_ and
 improved for production by Christian Karrié in 2012.
 
@@ -20,11 +20,6 @@ How to start
 * Try to read the :ref:`api`
 * Try to understand the :ref:`the-workflow`
 * List of Error Messages in the :ref:`rili`
-
-.. seealso::
-
-    * Page of G2007: http://g2007.ch/
-    * Page of FHNW IVGI: http://www.fhnw.ch/ivgi/
 
 .. _the-workflow:
 

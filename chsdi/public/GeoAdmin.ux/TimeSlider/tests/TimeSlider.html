@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="../../../lib/ext/Ext/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/ext-all-debug.js"></script>
+    <script type="text/javascript" src="../../../lib/ext/Ext/src/ext-core/examples/jsonp/jsonp.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/geoext/lib/GeoExt.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/proj4js.js"></script>
+    <script type="text/javascript" src="../../../lib/proj4js/proj4js/lib/defs/EPSG21781.js"></script>
+    <script type="text/javascript" src="../../Map/lib/EPSG2056.js"></script>
+    <script type="text/javascript" src="../../GeoAdmin.js"></script>
+    <script type="text/javascript" src="../../Map/lib/Map.js"></script>
+    <script type="text/javascript" src="../../Map/lib/MapPanel.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/Layers.js"></script>
+    <script type="text/javascript" src="../../Map/lib/OverviewMap.js"></script>
+    <script type="text/javascript" src="../../Layers/lib/VoidLayer.js"></script>
+    <script type="text/javascript" src="../../Permalink/lib/PermalinkProvider.js"></script>
+    <script type="text/javascript" src="../../Permalink/lib/Permalink.js"></script>
+    <script type="text/javascript" src="../../TimeControl/lib/TimeControl.js"></script>
+    <script type="text/javascript" src="../lib/TimeSlider.js"></script>
+    <script type="text/javascript">
+    
+
+var config = 
+{
+    "wms": {
+        "layer": "WMS",
+        "name": "LUBIS Bilder",
+        "layertype": "wms",
+        "layers": "lubis_bilder",
+        "alternate_title": "Main lithological groups (WMS)",
+        "copyright": "swisstopo",
+        "url": "http://dummy.bgdi.admin.ch/lubis",
+        "copyright_link": "http://www.bafu.admin.ch/index.html?lang=de",
+        "id": "lubis_bilderr",
+        "hasLegend": true,
+        "isBgLayer": false,
+        "datenehrr": "swisstopo",
+        "opacity": 0.75,
+        "transparent": true,
+        "queryable": false,
+        "searchable": false,
+        "type": "polygon",
+        "minScale": 10000000,
+        "maxScale": 1,
+        "timestamp": ['1946', '1950', '1960', '1990', '1998', '1999'],
+        "timeEnabled": true
+    },
+    "wmts": {
+        "layer": "ch.swisstopo.zeitreihen",
+        layername: "ch.swisstopo.zeitreihen",
+        layertype: "wmts",
+        "alternate_title": "Geological Atlas 1:25 000 (WMTS)",
+        "datenherr": "swisstopo",
+        "copyright_link": "http://www.bafu.admin.ch/index.html?lang=de",
+        "layertype": "wmts",
+        "layerinfo_url": "http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/products/maps/geology/atlas.print.html",
+        "id": "wmts-custom-layer",
+        "hasLegend": true,
+        "requestEncoding": "REST",
+        dimensions: ['TIME'],
+        "url": ['http://wmts0.geo.admin.ch/'],
+        matrixSet: "21781",
+        //matrixIds: matrixIds,
+        format: "image/png",
+        name: OpenLayers.i18n("ch.swisstopo.zeitreihen"),
+        timestamp: ['20111231', '20001231', '19991231', '19981231', '19971231', '19881231', '19731231', '19691231', '19591231', '19531231', '19441231', '19411231'],
+        type: "raster",
+        format: "image/jpeg",
+        datenherr: "ch.swisstopo",
+        queryable: true,
+        serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0, 2.5],
+        opacity: 1.0,
+        isBgLayer: false,
+        "queryable": true,
+        "searchable": false,
+        "timeEnabled": true
+    }
+};
+
+function test_ctor(t) {
+    t.plan(2);
+
+    var map,tc, ts;
+
+    map = new GeoAdmin.Map("map");
+    var nrControl = map.controls.length;
+    tc = new GeoAdmin.TimeControl({map: map});
+    ts = new GeoAdmin.TimeSlider({ timecontrol: tc   });
+
+    t.ok(ts instanceof GeoAdmin.TimeSlider, "ctor returns a GeoAdmin.TimeSlider");
+    t.ok((tc.getMapYear() === new Date().getFullYear()), "year is per default current year");
+    //map.destroy();
+}
+
+       
+    </script>
+</head>
+<body>
+<div style="width: 100px; height: 600px" id="map"></div>
+<div id="tbar"></div>
+</body>
+</html>

@@ -32,6 +32,9 @@ msgstr "Ferme"
 msgid "Berghuette"
 msgstr "Cabane de montagne"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Coordonnées"
+
 msgid "Campingplatz"
 msgstr "Camping"
 
@@ -115,6 +118,12 @@ msgstr "Légende"
 
 msgid "Link to object"
 msgstr "Lien vers l'objet"
+
+msgid "Lower left corner"
+msgstr "Coin en bas à gauche"
+
+msgid "Lower right corner"
+msgstr "Coin en bas à droite"
 
 msgid "Man-made"
 msgstr "Artificielle"
@@ -233,6 +242,12 @@ msgstr "Souterrain"
 msgid "Unknown"
 msgstr "Inconnu"
 
+msgid "Upper left corner"
+msgstr "Coin en haut à gauche"
+
+msgid "Upper right corner"
+msgstr "Coin en haut à droite"
+
 msgid "Verarbeitungsanlage"
 msgstr "Usine de traitement"
 
@@ -253,6 +268,9 @@ msgstr "Vent"
 
 msgid "Yes"
 msgstr "Oui"
+
+msgid "abfluss"
+msgstr "Débit m3/s"
 
 msgid "abfrage"
 msgstr "Requête de données"
@@ -489,7 +507,7 @@ msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Itinéraires convois exceptionnels"
 
 msgid "ch.astra.ivs-gelaendekarte"
-msgstr "IVS carte de terrain"
+msgstr "IVS Carte de terrain"
 
 msgid "ch.astra.ivs-nat"
 msgstr "IVS National"
@@ -576,7 +594,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classes de sol de fondation"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Zones de risque sismique"
+msgstr "Zones d’aléa sismique"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Séismes historiques"
@@ -927,7 +945,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Carte nationale 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
-msgstr "Carte nationale 1:1 million (couleur)"
+msgstr "Carte nationale 1:1 million"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "Carte nationale 1:200'000"
@@ -969,7 +987,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "Parcs nationaux VECTOR200"
+msgstr "Sites protégés VECTOR200"
 
 msgid "ch.swisstopo.vec200-building"
 msgstr "Bâtiments gén. VECTOR200"
@@ -1049,6 +1067,9 @@ msgstr "Ct."
 msgid "date"
 msgstr "Date"
 
+msgid "date_time"
+msgstr "Date/Heure"
+
 msgid "datumactu"
 msgstr "Date de la dernière mise à jour"
 
@@ -1126,6 +1147,15 @@ msgstr "Surface [m2]"
 
 msgid "fliessgewaesser"
 msgstr "Cours d'eau"
+
+msgid "fp_E95_N95"
+msgstr "Coordonnées MN95 (E / N)"
+
+msgid "fp_H02"
+msgstr "Altitude (H)"
+
+msgid "fp_Y03_X03"
+msgstr "Coordonnées MN03 (Y / X)"
 
 msgid "frame"
 msgstr "Cadre de référence"
@@ -1231,6 +1261,9 @@ msgstr "http://map.geo.admin.ch/?lang=fr"
 
 msgid "hydrografische_herkunft"
 msgstr "Origine hydrographique"
+
+msgid "hydromessstationen_graph"
+msgstr "3 jours Niveau d'eau/Débit"
 
 msgid "id_arealstatistik_85"
 msgstr "Catégorie de base de la statistique de la superficie 1979/85"
@@ -1901,6 +1934,9 @@ msgstr "Lien sur le géoportail cantonal"
 msgid "link to geoportal"
 msgstr "Lien vers le géoportail"
 
+msgid "link2dok"
+msgstr "Lien vers le document"
+
 msgid "linkzurbeschreibung"
 msgstr "Description détaillée"
 
@@ -2125,6 +2161,9 @@ msgstr "Numéro de la station"
 
 msgid "status"
 msgstr "Statut"
+
+msgid "status_fp"
+msgstr "Nom officiel (si existant)"
 
 msgid "strasse"
 msgstr "Rue"
@@ -2520,6 +2559,12 @@ msgstr "Type de commune ARE"
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code Type de commune"
 
+msgid "tt_geotechnik_gk200"
+msgstr "Lien vers la légende"
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr "Caractérisation lithologique pétrographique"
+
 msgid "tt_kbs_gemeinde"
 msgstr "Municipalité"
 
@@ -2747,6 +2792,12 @@ msgstr "Beaucoup de substance"
 
 msgid "waldanteil"
 msgstr "Taux de boisement [%]"
+
+msgid "wasserstand"
+msgstr "Niveau d'eau m s. m"
+
+msgid "wassertemperatur"
+msgstr "Température de l'eau °C"
 
 msgid "wenig_sub"
 msgstr "Tracé historique"

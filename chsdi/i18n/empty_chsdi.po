@@ -3,6 +3,36 @@
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
+msgid "date_time"
+msgstr ""
+
+msgid "abfluss"
+msgstr ""
+
+msgid "wasserstand"
+msgstr ""
+
+msgid "wassertemperatur"
+msgstr ""
+
+msgid "hydromessstationen_graph"
+msgstr ""
+
+msgid "Bounding Box - Coordinates"
+msgstr ""
+
+msgid "Lower left corner"
+msgstr ""
+
+msgid "Upper left corner"
+msgstr ""
+
+msgid "Lower right corner"
+msgstr ""
+
+msgid "Upper right corner"
+msgstr ""
+
 msgid "print"
 msgstr ""
 
@@ -1251,6 +1281,9 @@ msgstr ""
 msgid "gemeinde"
 msgstr ""
 
+msgid "link2dok"
+msgstr ""
+
 msgid "x"
 msgstr ""
 
@@ -1276,6 +1309,18 @@ msgid "punktname"
 msgstr ""
 
 msgid "status"
+msgstr ""
+
+msgid "fp_Y03_X03"
+msgstr ""
+
+msgid "fp_E95_N95"
+msgstr ""
+
+msgid "fp_H02"
+msgstr ""
+
+msgid "status_fp"
 msgstr ""
 
 msgid "zugang"
@@ -2733,6 +2778,12 @@ msgid "bak_unesco_weltkulturerbe_name"
 msgstr ""
 
 msgid "bak_unesco_weltkulturerbe_flaeche"
+msgstr ""
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr ""
+
+msgid "tt_geotechnik_gk200"
 msgstr ""
 
 msgid "blw_farbe_0"

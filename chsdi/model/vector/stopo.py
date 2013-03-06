@@ -396,6 +396,36 @@ class GeologischerAtlasPK(Base, Queryable):
 
 register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)
 
+class GeologieMineralischeRohstoffe200(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_mineralische_rohstoffe200'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/geotechnik_mineralische_rohstoffe200.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200',GeologieMineralischeRohstoffe200)
+
+class GeologieGeotechnikGk200(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_gk200_lgd'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/geotechnik_gk200.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk200',GeologieGeotechnikGk200)
+
+class Gk500_lithologie_hauptgruppen(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gk500_lithologie_hauptgruppen'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/lithologie_hauptgruppen.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen',Gk500_lithologie_hauptgruppen)
+
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_inklination'
@@ -405,6 +435,17 @@ class Geologischer_Inklination(Base, Queryable):
         the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geophysik-inklination',Geologischer_Inklination)
+
+class Geologischer_Aeromagnetik_Jura(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gravimetrie_aeromagnetik_jura'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/aeromagnetik_jura.mako'
+        id = Column('gid', Integer, primary_key=True)
+        fid = Column ('id', Integer)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
 
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
@@ -514,24 +555,18 @@ register('ch.swisstopo-vd.spannungsarme-gebiete',spannungsarmeGebiete)
 register('ch.swisstopo.transformationsgenauigkeit',spannungsarmeGebiete)
 
 class geologieGeotopePunkte(Base, Queryable):
-     __tablename__ = 'geotope_punkte'
+     __tablename__ = 'geotope_pkt'
      __table_args__ = ({'schema': 'geol', 'autoload': True})
      __template__ = 'tooltips/geotope.mako'
-     id = Column('gid', Integer, primary_key=True)
+     id = Column('objectid', Integer, primary_key=True)
      the_geom = Column(Geometry(21781))
-
-     code = Column('code', Text)
-     nom = Column('nom', Text)
 
 class geologieGeotopeFlaechen(Base, Queryable):
-     __tablename__ = 'geotope_flaechen'
+     __tablename__ = 'geotope_plg'
      __table_args__ = ({'schema': 'geol', 'autoload': True})
      __template__ = 'tooltips/geotope.mako'
-     id = Column('gid', Integer, primary_key=True)
+     id = Column('objectid', Integer, primary_key=True)
      the_geom = Column(Geometry(21781))
      
-     code = Column('code', Text)
-     nom = Column('nom', Text)
-
 register('ch.swisstopo.geologie-geotope',geologieGeotopePunkte)
 register('ch.swisstopo.geologie-geotope',geologieGeotopeFlaechen)

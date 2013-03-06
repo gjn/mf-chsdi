@@ -19,13 +19,19 @@
     <tr><td width="170">${_('tt_ch.bazl.startofconstruction')}</td><td>${c.feature.startofconstruction or '-'}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.abortionaccomplished')}</td><td>${c.feature.duration or '-'}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.markierung')}</td><td>${sanctiontext}</td></tr>
-    <tr><td width="170"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 </%def>
 
 <%def name="body()">
 <% 
    startofconstruction = str(c.feature.startofconstruction.day) + '.' + str(c.feature.startofconstruction.month) + '.' + str(c.feature.startofconstruction.year)
 %>
+
+% if c.feature.geometry.bounds[0] != c.feature.geometry.bounds[2]:
+<% bbox = True %>
+% else:
+<% bbox = False %>
+% endif
+
 % if c.feature.abortionaccomplished is not None:
 <%
    abortionaccomplished = str(c.feature.abortionaccomplished.day) + '.' + str(c.feature.abortionaccomplished.month) + '.' + str(c.feature.abortionaccomplished.year)
@@ -35,11 +41,13 @@
    abortionaccomplished = '-'
 %>
 % endif
+
 % if c.feature.sanctiontext == 'VOID':
 <% sanctiontext = '-' %>
 % else:
 <% sanctiontext = c.feature.sanctiontext %>
 % endif
+
 % if c.last == True:
 <script type="text/javascript" src="/${c.instanceid}/wsgi/build/api-light.js"></script>
 <link rel="stylesheet" type="text/css" href="/${c.instanceid}/wsgi/build/api-light.css">
@@ -47,6 +55,7 @@
 % else:
 <div class="object" style="height: auto; page-break-after: always;">
 % endif
+
     <script type="text/javascript">
         if (typeof dico === "undefined") {
             dico = {};
@@ -84,24 +93,35 @@
         <tr>
             <td style="padding-left: 200px;">${_('tt_ch.bazl.totallength')}: ${c.feature.totallength}</td>
         </tr>
+% if bbox == True and c.feature.geomtype != 'line':
+        <tr>
+            <td style="font-weight: bold; font-size: 13px; width:100%;">${_('Bounding Box - Coordinates')} [CH1903]:</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;"><p style="float: left; padding-right: 18px;">${_('Lower left corner')}</p> ${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;"><p style="float: left; padding-right: 18px;">${_('Upper left corner')}</p> ${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;"><p style="float: left; padding-right: 10px;">${_('Lower right corner')}</p> ${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
+        </tr>
+        <tr>
+            <td style="padding-left: 200px;"><p style="float: left; padding-right: 10px;">${_('Upper right corner')}</p> ${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
+        </tr>
+
+% else:
         <tr>
             <td style="font-weight: bold; font-size: 13px; width:100%;">${_('Coordinates')} [CH1903]:</td>
         </tr>
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
         </tr>
-% if c.feature.geometry.bounds[0] != c.feature.geometry.bounds[2]:
-% if c.feature.geomtype != 'line':
-        <tr>
-            <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[0]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
-        </tr>
-        <tr>
-            <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[1]}</td>
-        </tr>
-% endif
+% if c.feature.geomtype == 'line':
         <tr>
             <td style="padding-left: 200px;">${_('est')}=${c.feature.geometry.bounds[2]}    ${_('nord')}=${c.feature.geometry.bounds[3]}</td>
         </tr>
+% endif
 % endif
         <tr>
             <td style="font-weight: bold; font-size: 13px; width:100%;">${_('tt_ch.bazl.markierung')}:</td>

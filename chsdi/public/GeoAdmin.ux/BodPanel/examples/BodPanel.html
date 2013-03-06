@@ -25,25 +25,27 @@
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarDroppable.js"></script>
     <script type="text/javascript" src="../../../lib/ext/Ext/examples/ux/ToolbarReorderer.js"></script>
     <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers.js"></script>
+    <script type="text/javascript" src="../../../lib/openlayers/lib/OpenLayers/Lang/fr.js"></script>
 
     <script type="text/javascript" src="../../GeoAdmin.js"></script>
 
 
     <!-- page specific -->
-    <script type="text/javascript" src="../lib/BodDetailPanel.js"></script>
+    <script type="text/javascript" src="../../../GeoAdmin.ux/i18n/fr.js"></script>
+    <script type="text/javascript" src="../lib/LockingBufferView.js"></script>
     <script type="text/javascript" src="../lib/BodGrid.js"></script>
-    <script type="text/javascript" src="../lib/BodPanel.js"></script>
-    <script type="text/javascript" src="../../../GeoAdmin.ux/i18n/en.js"></script>
 
 </head>
 <body>
 
 <script type="text/javascript">
+
     Ext.onReady(function() {
-        new GeoAdmin.BodPanel({renderTo:'bodPanel_div', width:1200});
+        OpenLayers.Lang.code = 'fr';
+        new GeoAdmin.BodGrid({renderTo:'bodPanel_div', width:1700});
     });
 </script>
-<div id="bodPanel_div"></div>
+<div id="bodPanel_div" style="height: 100%;"></div>
 
 </body>
 </html>

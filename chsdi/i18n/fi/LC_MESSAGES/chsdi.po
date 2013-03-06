@@ -32,6 +32,9 @@ msgstr "Bauernhof"
 msgid "Berghuette"
 msgstr "Berghütte"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Koordinaten"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -115,6 +118,12 @@ msgstr "Legenda"
 
 msgid "Link to object"
 msgstr "Link tar l'object"
+
+msgid "Lower left corner"
+msgstr "Ecke unten links"
+
+msgid "Lower right corner"
+msgstr "Ecke unten rechts"
 
 msgid "Man-made"
 msgstr "Künstlich"
@@ -233,6 +242,12 @@ msgstr "Untergrund"
 msgid "Unknown"
 msgstr "Unbekannt"
 
+msgid "Upper left corner"
+msgstr "Ecke oben links"
+
+msgid "Upper right corner"
+msgstr "Ecke oben rechts"
+
 msgid "Verarbeitungsanlage"
 msgstr "Verarbeitungsanlage"
 
@@ -253,6 +268,9 @@ msgstr "Wind"
 
 msgid "Yes"
 msgstr "Gea"
+
+msgid "abfluss"
+msgstr "Deflussiun m3/s"
 
 msgid "abfrage"
 msgstr "Datenbfrage"
@@ -789,7 +807,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Cunfin da zona agricultura"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Viticultura en spundivs e terrassas"
+msgstr "Steillagen Reben"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP products da charn"
@@ -816,7 +834,7 @@ msgid "ch.swisstopo-vd.ortschaftenverzeichnis_plz"
 msgstr "NPVischnancas"
 
 msgid "ch.swisstopo-vd.spannungsarme-gebiete"
-msgstr "Territori cun tensiun pover"
+msgstr "Territori cun tensiun povra"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "LV95 Rait triangulara"
@@ -927,7 +945,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Charta naziunala 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
-msgstr "Charta naziunala 1:1 milliun (colurus)"
+msgstr "Charta naziunala 1:1 milliun"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "Charta naziunala 1:200'000"
@@ -945,7 +963,7 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta en alv e nair"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisiun carta naziunala 1:100'000"
+msgstr "Divisiun charta naziunala 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Divisiun charta naziunala 1:1'000'000"
@@ -1050,6 +1068,9 @@ msgstr "Kt."
 msgid "date"
 msgstr "Datum"
 
+msgid "date_time"
+msgstr "Data/ura"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -1128,26 +1149,35 @@ msgstr "Fläche [m2]"
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
+msgid "fp_E95_N95"
+msgstr "LV95-Koordinaten (E / N)"
+
+msgid "fp_H02"
+msgstr "Höhe (H)"
+
+msgid "fp_Y03_X03"
+msgstr "LV03-Koordinaten (Y / X)"
+
 msgid "frame"
 msgstr "Bezugsramen"
 
 msgid "gembfs"
-msgstr "BFS-Nr."
+msgstr "Nr. UST"
 
 msgid "gemdarstellung"
-msgstr "Kantonales Geoportal"
+msgstr "Geportal chantunal"
 
 msgid "gemeinde"
 msgstr "Gemeinde"
 
 msgid "gemflaeche"
-msgstr "Gemeindefläche (ha)"
+msgstr "Surfatscha da la vischnanca (ha)"
 
 msgid "gemgemeinde"
-msgstr "Gemeindename"
+msgstr "Vischnanca"
 
 msgid "gemkanton"
-msgstr "Kanton"
+msgstr "Chantun"
 
 msgid "geobasisdatensatz"
 msgstr "ID d'acta da geobasisdatas"
@@ -1156,7 +1186,7 @@ msgid "geometalink"
 msgstr "Nachführungsgeometer"
 
 msgid "geompdf_liste"
-msgstr "Detailinformationen"
+msgstr "Infurmaziuns detagliadas"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
@@ -1174,25 +1204,25 @@ msgid "gmde"
 msgstr "BFS-Gemeindenummer (Stand 2006)"
 
 msgid "grundadresse"
-msgstr "Adresse"
+msgstr "Adressa"
 
 msgid "grundfuehrung"
-msgstr "Grundbuchführung"
+msgstr "Stadi dal register funsil"
 
 msgid "grundgemeinde"
-msgstr "Gemeindename"
+msgstr "Vischnanca"
 
 msgid "grundkreis"
-msgstr "Grundbuchkreis"
+msgstr "Responsabel per il register funsil"
 
 msgid "grundlage"
 msgstr "Grundlage"
 
 msgid "grundtel"
-msgstr "Telefono"
+msgstr "Telefon"
 
 msgid "grundurl"
-msgstr "E-Mail / Web"
+msgstr "E-mail / internet"
 
 msgid "help title"
 msgstr "Agid"
@@ -1232,6 +1262,9 @@ msgstr "http://map.geo.admin.ch/?lang=rm"
 
 msgid "hydrografische_herkunft"
 msgstr "Hydrografische Herkunft"
+
+msgid "hydromessstationen_graph"
+msgstr "3 di Livel da l'aura/Deflussiun"
 
 msgid "id_arealstatistik_85"
 msgstr "Grundkategorie Arealstatistik 1979/85"
@@ -1902,6 +1935,9 @@ msgstr "Link tar portal chantunala"
 msgid "link to geoportal"
 msgstr "Link to portal"
 
+msgid "link2dok"
+msgstr "Link zum Dokument"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 
@@ -1912,25 +1948,25 @@ msgid "lokal"
 msgstr "lokal"
 
 msgid "losactivite"
-msgstr "Art der Tätigkeit"
+msgstr "Tip d’activitad"
 
 msgid "losarea"
-msgstr "Fläche (ha)"
+msgstr "Surfatscha (ha)"
 
 msgid "losbezungsramen"
-msgstr "Bezugsrahmen"
+msgstr "Quader da referiment"
 
 msgid "losentreprise"
-msgstr "Operatsname"
+msgstr "Num dal lavurant"
 
 msgid "losidentifikator"
-msgstr "Identifikator"
+msgstr "Identificatur"
 
 msgid "losnummer"
-msgstr "Losnummer"
+msgstr "Nr. da la parcella"
 
 msgid "losquality"
-msgstr "Qualitätsstandard"
+msgstr "Standards qualitativs"
 
 msgid "mehrinformationen"
 msgstr "Abmessung des Lichtraumprofils"
@@ -1975,10 +2011,10 @@ msgid "national"
 msgstr "national"
 
 msgid "nffirmenname"
-msgstr "Firma / Amt"
+msgstr "Societad / uffizi"
 
 msgid "nfname"
-msgstr "Name"
+msgstr "Num"
 
 msgid "nom_dreieck"
 msgstr "Appartegnent  TSP"
@@ -2077,7 +2113,7 @@ msgid "release_year"
 msgstr "Stadi da las datas"
 
 msgid "report problem"
-msgstr "Rapportare problem"
+msgstr "Rapportar in problem"
 
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
@@ -2125,6 +2161,9 @@ msgid "stationsnr"
 msgstr "Stationsnummer"
 
 msgid "status"
+msgstr "Status"
+
+msgid "status_fp"
 msgstr "Status"
 
 msgid "strasse"
@@ -2520,6 +2559,12 @@ msgstr "Gemeindetyp ARE"
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code Gemeindetyp"
 
+msgid "tt_geotechnik_gk200"
+msgstr "Link zur Legende"
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr "Lithologisch-petrographische Beschreibung"
+
 msgid "tt_kbs_gemeinde"
 msgstr "Gemeinde"
 
@@ -2747,6 +2792,12 @@ msgstr "Historischer Verlauf mit viel Substanz"
 
 msgid "waldanteil"
 msgstr "Waldanteil [%]"
+
+msgid "wasserstand"
+msgstr "Livel da l'aua m.s.m"
+
+msgid "wassertemperatur"
+msgstr "Temperatura da l'aua °C"
 
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"

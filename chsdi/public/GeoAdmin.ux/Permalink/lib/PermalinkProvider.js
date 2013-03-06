@@ -105,6 +105,8 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k == 'swisssearch') {
                     swisssearch_state.use_swisssearch = true;
                     swisssearch_state.swisssearch = params.swisssearch;
+                } else if (k == 'swipe_ratio') {
+                    map_state.swipeRatio = params[k];
                 } else if (k !== 'lang' && k !== 'noHeader' && k !== 'layers_timestamp' &&
                            k !== 'layers_opacity' && k !== 'layers_visibility' && k !== 'layers_indices' && k !== 'mobile') {
                     // probably a layer to recenter on
@@ -176,6 +178,11 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 delete params.layers;
                 delete params.layers_opacity;
                 delete params.layers_visibility;
+            }
+            if (this.state.map.swipeActive) {
+                params.swipe_ratio = parseFloat(this.state.map.swipeRatio).toFixed(2);
+            } else {
+                delete params.swipe_ratio;
             }
         }
         var current_lang = OpenLayers.Lang.getCode();

@@ -247,12 +247,14 @@ layers_visibility              Toggle the visibility of layers present in the tr
 layers_timestamp               Layers timestamps.                                            http://map.geo.admin.ch/?layers=ch.kantone.cadastralwebmap-farbe&layers_timestamp=20120501
                                Only for WMS and WMTS services.
                                This parameter is only read and is never set.
-selectedNode                   Selected node in INSPIRE Catalog tree                         http://map.geo.admin.ch?selectedNode=LT2_3
-<layer bod id>                 Layer bod id (:ref:`available_layers`) from which             http://map.geo.admin.ch?ch.bafu.bundesinventare-moorlandschaften=212,213
+selectedNode                   Selected node in INSPIRE Catalog tree                         http://map.geo.admin.ch/?selectedNode=LT2_3
+<layer bod id>                 Layer bod id (:ref:`available_layers`) from which             http://map.geo.admin.ch/?ch.bafu.bundesinventare-moorlandschaften=212,213
                                to highlight feature(s) with id                               
-crosshair                      crosshair=<type>, possible type: cross, circle, bowl and      http://map.geo.admin.ch?Y=538700&X=165890&zoom=6&crosshair=circle
+crosshair                      crosshair=<type>, possible type: cross, circle, bowl and      http://map.geo.admin.ch/?Y=538700&X=165890&zoom=6&crosshair=circle
                                point                                                         
-swisssearch                    swisssearch=<query string>                                    http://map.geo.admin.ch?swisssearch=berges%2037%20payerne 
+swisssearch                    swisssearch=<query string>                                    http://map.geo.admin.ch/?swisssearch=berges%2037%20payerne
+swipe_ratio                    Value between 0 and 1 defining the relative position of       http://map.geo.admin.ch/?swipe_ratio=0.5
+                               the swipe elements visible in the compare mode
 ===================            ==========================================================    =========================================================
 
 How can I define the language ?

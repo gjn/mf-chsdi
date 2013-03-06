@@ -143,8 +143,8 @@
 }
 
 .timeseriesWidget-preload-status {
-    background: white;
-    color: black;
+    background: #747474;
+    color: #e6e6e6;
     font-size: 12px;
     font-weight: bold;
     left: 50%;
@@ -155,6 +155,8 @@
     top: 140px;
     width: 570px;
     z-index: 999;
+    font-family: tahoma,arial,verdana;
+    opacity: 0.8;
 }
 
 .timeseriesWidget-slider {

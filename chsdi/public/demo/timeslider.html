@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Time Slider Example</title>
+    <link rel="stylesheet" type="text/css" href="../lib/ext/Ext/resources/css/ext-all.css">
+</head>
+<body onload="init();">
+<div id="time"></div><br>
+<div id="slider"></div>
+<script type="text/javascript" src="../lib/ext/Ext/adapter/ext/ext-base-debug.js"></script>
+<script type="text/javascript" src="../lib/ext/Ext/ext-all-debug.js"></script>
+<script type="text/javascript">
+    function init() {
+       Ext.TimeSlider = Ext.extend(Ext.Slider, {
+           doSnap: function(value) {
+              if (this.increments) {
+                  return this.getClosestIncrement(value);
+              } else {
+                  alert("A TimeSlider needs an increments property...");
+              }
+           },
+           getClosestIncrement: function(value) {
+               var lo, hi;
+               if (value == 0) {
+                   return this.increments[0];
+               }
+               if (value < this.increments[0]) {
+                   return this.increments[0];
+               }
+               if (value > this.increments[this.increments.length]) {
+                   return this.increments[this.increments.length]
+               }
+               for (var i = this.increments.length; i--;) {
+                  if (this.increments[i] <= value && (lo === undefined || lo < this.increments[i])) lo = this.increments[i];
+                  if (this.increments[i] >= value && (hi === undefined || hi > this.increments[i])) hi = this.increments[i];
+               };
+               if ((value - lo) > (hi - value)) {
+                   return hi;
+               } else {
+                   return lo;
+               }
+           }
+       });
+       var myTimeSlider = new Ext.TimeSlider({
+          renderTo: 'slider',
+          width: 214,
+          increments: [1938,1947,1960,1974,1990,2006,2012],
+          minValue: 1938,
+          maxValue: 2012,
+          plugins: new Ext.slider.Tip(),
+          listeners: {
+            change: function(slider, newValue, thumb) {
+                document.getElementById("time").innerHTML = newValue;
+            }
+         }
+       });
+    }
+</script>
+
+
+</body>
+</html>

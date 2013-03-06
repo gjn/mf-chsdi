@@ -190,6 +190,15 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
     
     // private methode triggers only when the map is clicked, used to parametrize the window
     selectClick: function (evt) {
+        var targetElement = null;
+        if (typeof evt.target != 'undefined') {
+            targetElement = evt.target;
+        } else {
+            targetElement = evt.srcElement;
+        }
+        if (targetElement.id.indexOf("Swipe") !== -1) {
+            return false;
+        }
         OpenLayers.Control.GetFeature.prototype.selectClick.apply(this, arguments);
         this.clicked = true;
     },
@@ -463,11 +472,12 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 qtip: OpenLayers.i18n('Export all'),
                 handler: function(evt, toolEl, panel, tc) {
                     var layers = this.params.layers.split(',');
+                    var host = GeoAdmin.protocol + '//' + window.location.host;
                     for (var i = 0; i < layers.length; i++) {
                         var url = this.url.split('search')[0];
                         var layer = layers[i];
                         if (this.list_fid.hasOwnProperty(layer)) {
-                            var par = encodeURIComponent(this.list_fid[layer] + '.html?layer=' + layer + '&lang=' + this.params.lang);
+                            var par = encodeURIComponent(this.list_fid[layer] + '.html?layer=' + layer + '&lang=' + this.params.lang + '&baseUrl=') + host;
                             url = url + par;
                             window.open(url, '_blank');
                         }

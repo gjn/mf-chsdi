@@ -4,99 +4,183 @@
  * @include OpenLayers/Lang.js
  */
 
-GeoAdmin.TimeSlider = OpenLayers.Class({
+Ext.TimeSlider = Ext.extend(Ext.Slider, {
 
-    map: null,
-
-    items: null,
-
-    slider: null,
-
-    layerToAdd: null,
-
-    layerToRemove: null,
-
-    initialize: function(options) {
-        this.map = options.map;
-        this.items = [
-            this.buildTimeSlider(options),
-            this.buildVideoButton()
-        ];
-        if (options.renderTo) {
-            new Ext.Toolbar(OpenLayers.Util.extend(options, {
-                items: this.items
-            }));
+    doSnap: function(value) {
+        if (this.increments) {
+            return this.getClosestIncrement(value);
         }
-        // FIXME: not nice to use global variables
-        window.timeSlider = this;
     },
-
-    switchLayer: function() {
-        if (this.layerToAdd.opacity < 1) {
-            this.layerToAdd.setOpacity(this.layerToAdd.opacity + 0.1);
-            this.layerToRemove.setOpacity(this.layerToRemove.opacity - 0.1);
-            window.setTimeout("window.timeSlider.switchLayer()", 100);
+    getClosestIncrement: function(value) {
+        var lo,
+        hi;
+        if (value == 0) {
+            return this.increments[0];
+        }
+        if (value < this.increments[0]) {
+            return this.increments[0];
+        }
+        if (value > this.increments[this.increments.length]) {
+            return this.increments[this.increments.length]
+            }
+        for (var i = this.increments.length; i--;) {
+            if (this.increments[i] <= value && (lo === undefined || lo < this.increments[i]))
+                lo = this.increments[i];
+            if (this.increments[i] >= value && (hi === undefined || hi > this.increments[i]))
+                hi = this.increments[i];
+        };
+        if ((value - lo) > (hi - value)) {
+            return hi;
         } else {
-            this.layerToAdd.setOpacity(1);
-            this.map.removeLayer(this.layerToRemove);
+            return lo;
         }
-    },
-
-    buildTimeSlider: function(options) {
-
-        this.slider = new Ext.Slider({
-            width: 214,
-            minValue: 1,
-            maxValue: options.layerList.length,
-            layerList: options.layerList
-        });
-
-        // Add initial layer
-        this.slider.currentLayer = this.slider.layerList[0][1];
-        this.map.addLayerByName(this.slider.currentLayer);
-
-
-        this.slider.on({
-            'changecomplete': {
-                fn: function(slider, newValue) {
-                    var layer = slider.layerList[slider.getValue() - 1][1];
-                    // Get current layer
-                    this.layerToRemove = this.map.getLayersByName(slider.currentLayer)[0];
-
-                    // Add new layer
-                    this.layerToAdd = this.map.addLayerByName(layer, {
-                        opacity: 0
-                    });
-
-                    // Switch between old and new layer with a fading effect
-                    this.switchLayer();
-                },
-                scope: this
-            },'beforechange': {
-                fn: function(slider, newValue) {
-                    if (slider.getValue() > 0) {
-                        var layer = slider.layerList[slider.getValue() - 1][1];
-                        slider.currentLayer = layer;
-                    }
-                },
-                scope: this
-            }
-        });
-
-        return this.slider;
-    },
-
-    buildVideoButton: function() {
-        var box = new Ext.BoxComponent({
-            autoEl: {
-                id: 'playIcon',
-                tag: 'img',
-                src: '../img/play.png'
-            }
-        });
-        box.addListener('click', function(event, element) {
-            alert('clik');
-        });
-        return box;
     }
 });
+
+/** api: constructor
+ *  .. class:: TimeSlider(options)
+ *
+ *  :param options: ``Object`` options
+ *
+ *  :return:  ``GeoAdmin.TimeSlider
+ *
+ *  Add a time slider to the map, will be displayed if time enabled layers are present
+ */
+
+GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
+
+    timecontrol: null,
+
+    layout: 'column',
+
+    div: null,
+    
+    divEvents: null,
+    
+    _slider: null,
+
+    initComponent: function() {
+
+        this._timecontrol = this.timecontrol;
+        delete this.timecontrol;
+
+        this._slider = this.createSlider();
+
+        this._slider.map = this._timecontrol.map;
+        this._timecontrol.events.on({
+            changeavailabletimestamps: this.onChangeTimestampYear,
+            scope: this
+        });
+        
+        this._slider.setValue(this._timecontrol.map.year);
+
+        this._slider.on({
+            "changecomplete": function(slider, newValue, thumb) {
+                var timeslider = this.findParentByType('ga_timeslider');
+                timeslider._timecontrol.setMapYear(newValue); 
+                
+            }
+        });
+        
+        var image = new Ext.BoxComponent({autoEl: {tag: 'div', class: 'time-off', width: 30, height: 30}});
+      
+        this.items = [
+                         //this.createLabel(this._slider.minValue), 
+                         this._slider, 
+                         //this.createLabel(this._slider.maxValue), 
+                         new Ext.Button({
+                              id: 'timeslider-displayall-toggle',
+                              cls: 'x-btn-no-over',
+                              width:30,
+                              height: 30,
+                              iconCls: 'time-off',
+                              enableToggle: true,
+                              toggleHandler: function(btn, state) {
+                                  this.toggleDisplayAll(state);
+                              }, 
+                              
+                              scope: this 
+                         })  
+        ];
+        GeoAdmin.TimeSlider.superclass.initComponent.apply(this, arguments);
+    },
+    
+    createSlider: function(options) {
+        options = Ext.apply({}, options);
+
+        var currentYear = new Date().getFullYear();
+
+        return new Ext.TimeSlider({
+            id: 'geoadmin-timeslider',
+            width: 530,
+            increment: 1,
+            increments: [2013],
+            minValue: 1838,
+            maxValue: currentYear,
+            value: currentYear,
+            plugins: new Ext.slider.Tip(),
+            })
+        },
+
+    createLabel: function(label) {
+        return new Ext.BoxComponent({
+            html: '<span class="geoadmin-timeslider-label x-unselectable">' + label + '</span>'
+        });
+    },
+
+    createTicks: function() {
+        var el = this._slider.getEl().select('.x-slider-inner');
+        var min = this._slider.minValue;
+        var max = this._slider.maxValue
+        var increments = this._timecontrol.getTimestamps();
+        for (var i = 0; i < increments.length; i++) {
+            var incr = increments[i];
+            var px = Math.round((incr - min) / (max - min) * 518 - 5); //width of x-slider-inner
+            var e = el.createChild({
+                id: incr,
+                cls: 'timeslider-tick',
+                style: "left: " + px + 'px' + "; right: auto;"
+            });
+        }
+
+    },
+    removeTicks: function() {
+        var el = this._slider.getEl().select('.timeslider-tick');
+        for (var i = 0; i < el.elements.length; i++) {
+            var parentNode = el.elements[i].parentNode;
+            parentNode.removeChild(el.elements[i]);
+        }
+    },
+    
+    toggleDisplayAll: function(state) {
+ 
+            var but = this.items.get(1);
+            if (state) {
+                but.setIconClass('time-on');
+                this._timecontrol.setDisplayAll(true);
+                this._slider.disable();
+            } else {
+                but.setIconClass('time-off');
+                this._timecontrol.setDisplayAll(false);
+                this._slider.enable();
+            };
+    },
+  
+    onChangeTimestampYear: function(evt) {
+        this._slider.increments = evt.timestamps; 
+        this._slider.syncThumb();
+        this.removeTicks();
+        this.createTicks();
+      
+
+        if (this._slider.increments.length > 0) {
+            this._timecontrol.div.style.display = 'block';
+            this._slider.setValue(this._slider.doSnap(evt.year));
+        } else {
+            this._timecontrol.div.style.display = 'none';
+        }
+
+    }
+});
+/** api: xtype = ga_timeslider */
+Ext.reg("ga_timeslider", GeoAdmin.TimeSlider);

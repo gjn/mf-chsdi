@@ -32,6 +32,9 @@ msgstr "Bauernhof"
 msgid "Berghuette"
 msgstr "Berghütte"
 
+msgid "Bounding Box - Coordinates"
+msgstr "Bounding Box - Koordinaten"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -115,6 +118,12 @@ msgstr "Legende"
 
 msgid "Link to object"
 msgstr "Link zum Objekt"
+
+msgid "Lower left corner"
+msgstr "Ecke unten links"
+
+msgid "Lower right corner"
+msgstr "Ecke unten rechts"
 
 msgid "Man-made"
 msgstr "Künstlich"
@@ -233,6 +242,12 @@ msgstr "Untergrund"
 msgid "Unknown"
 msgstr "Unbekannt"
 
+msgid "Upper left corner"
+msgstr "Ecke oben links"
+
+msgid "Upper right corner"
+msgstr "Ecke oben rechts"
+
 msgid "Verarbeitungsanlage"
 msgstr "Verarbeitungsanlage"
 
@@ -253,6 +268,9 @@ msgstr "Wind"
 
 msgid "Yes"
 msgstr "Ja"
+
+msgid "abfluss"
+msgstr "Abfluss m3/s"
 
 msgid "abfrage"
 msgstr "Datenbfrage"
@@ -927,7 +945,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Landeskarte 1:100'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
-msgstr "Landeskarte 1:1 Mio. (farbig)"
+msgstr "Landeskarte 1:1 Mio."
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk200.noscale"
 msgstr "Landeskarte 1:200'000"
@@ -969,7 +987,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "Nationalparks VECTOR200"
+msgstr "Schutzgebiete VECTOR200"
 
 msgid "ch.swisstopo.vec200-building"
 msgstr "Einzelgebäude gen. VECTOR200"
@@ -1049,6 +1067,9 @@ msgstr "Kt."
 msgid "date"
 msgstr "Datum"
 
+msgid "date_time"
+msgstr "Datum/Zeit"
+
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
 
@@ -1126,6 +1147,15 @@ msgstr "Fläche [m2]"
 
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
+
+msgid "fp_E95_N95"
+msgstr "LV95-Koordinaten (E / N)"
+
+msgid "fp_H02"
+msgstr "Höhe (H)"
+
+msgid "fp_Y03_X03"
+msgstr "LV03-Koordinaten (Y / X)"
 
 msgid "frame"
 msgstr "Bezugsrahmen"
@@ -1231,6 +1261,9 @@ msgstr "http://map.geo.admin.ch/?lang=de"
 
 msgid "hydrografische_herkunft"
 msgstr "Hydrografische Herkunft"
+
+msgid "hydromessstationen_graph"
+msgstr "3 Tage Wassenstand/Abfluss"
 
 msgid "id_arealstatistik_85"
 msgstr "Grundkategorie Arealstatistik 1979/85"
@@ -1901,6 +1934,9 @@ msgstr "Link zum kantonalen Portal"
 msgid "link to geoportal"
 msgstr "Link zum Geoportal"
 
+msgid "link2dok"
+msgstr "Link zum Dokument"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 
@@ -2124,6 +2160,9 @@ msgid "stationsnr"
 msgstr "Stationsnummer"
 
 msgid "status"
+msgstr "Status"
+
+msgid "status_fp"
 msgstr "Status"
 
 msgid "strasse"
@@ -2519,6 +2558,12 @@ msgstr "Gemeindetyp ARE"
 msgid "tt_gemeindetypen_TYP_CODE"
 msgstr "Code Gemeindetyp"
 
+msgid "tt_geotechnik_gk200"
+msgstr "Link zur Legende"
+
+msgid "tt_gk_500_LithoHaupt"
+msgstr "Lithologisch-petrographische Beschreibung"
+
 msgid "tt_kbs_gemeinde"
 msgstr "Gemeinde"
 
@@ -2746,6 +2791,12 @@ msgstr "Historischer Verlauf mit viel Substanz"
 
 msgid "waldanteil"
 msgstr "Waldanteil [%]"
+
+msgid "wasserstand"
+msgstr "Wasserstand m ü. M"
+
+msgid "wassertemperatur"
+msgstr "Wassertemperatur °C"
 
 msgid "wenig_sub"
 msgstr "Historischer Verlauf"

@@ -1,4 +1,6 @@
 OpenLayers.Util.extend(OpenLayers.Lang.de, {
+    'Share position': "",
+    'Share position with crosshair': "",
     'Start Measuring': "",
     'National Map Overview': "",
     'National Map': "",
@@ -27,6 +29,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'Measure.MeasureProfile.ToolTip': "",
     'Edit': "",
     'Line': "",
+    'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200': "",
+    'ch.swisstopo.geologie-geotechnik-gk200': "",
     'ch.swisstopo.geologie-geotechnik-gk500-genese': "",
     'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung': "",
     'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen': "",
@@ -760,5 +764,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bakom.verfuegbarkeit-hdtv':"",
 	'ch.bakom.verfuegbarkeit-tv':"",
     'ch.bag':"",
-    'ch.bag.url':""
+    'ch.bag.url':"",
+	'Stop compare':"",
+	'Compare':"",
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':""
 });

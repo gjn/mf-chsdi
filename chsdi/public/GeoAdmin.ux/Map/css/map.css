@@ -109,7 +109,3 @@ div.olControlMousePosition {
   height: expression( this.scrollHeight > 279 ? "280px" : "auto" ) !important;
   max-height: 280px !important;
 }
-
-.olLayerGridSingleTile .olTileReplacing {
-    display: block !important;
-}

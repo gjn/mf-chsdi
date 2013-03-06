@@ -24,3 +24,4 @@ API Examples
     meteoswiss
     swissimagelevel27
     panoramio
+    swipe
