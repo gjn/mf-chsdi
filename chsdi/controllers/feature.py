@@ -279,10 +279,9 @@ class FeatureController(BaseController):
             except ValueError:
                 abort(400, "Parameter 'extent' is invalid. Use extent=656430,254350,657930,25585 for instance.")
         else:
-            resolution = 1 / ((1 / (c.scale > 0 or 1000.0)) * 39.3701 * 72)
-            meters = 300 * resolution
+            meters = 200 * (0.0254/96) * c.scale
             cx, cy = c.bbox[0:2]
-            extent = (cx - meters, cy - meters, cx + meters, cy + meters)
+            extent = (cx - meters, cy - meters/2, cx + meters, cy + meters/2)
 
         c.extent = Polygon(((extent[0], extent[1]), (extent[0], extent[3]),
                                 (extent[2], extent[3]), (extent[2], extent[1]),

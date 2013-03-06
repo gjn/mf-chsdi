@@ -7,7 +7,7 @@
     % if c.feature.ak in ['D','I','F','AUT']:
         <tr><td width="150">${_('No info outside CH and FL')}</td><td></td></tr>
     % elif c.feature.ak == 'AG':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.ag.ch/geoportal/agisviewer/viewer.aspx?PageWidth=1000&PageHeight=700&map=va_avdaten&Benutzergruppe=3&xmin=${c.extent.bounds[0]}&ymin=${c.extent.bounds[1]}&xmax=${c.extent.bounds[2]}&ymax=${c.extent.bounds[3]}" target="_blank">AG</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="https://www.ag.ch/app/agisviewer4/v1/html/agisviewer.htm?config=agis_geoportal_fs.json&basemap=base_landeskarten_sw&thema=176&xmin=${c.extent.bounds[0]}&ymin=${c.extent.bounds[1]}&xmax=${c.extent.bounds[2]}&ymax=${c.extent.bounds[3]}" target="_blank">AG</a></td></tr>
     % elif c.feature.ak == 'BS':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.stadtplan.bs.ch/geoviewer/index.php?theme=258&extent=${','.join(map(str,c.extent.bounds))}&layers=parzplan_vektor_grau_1000,av_parzellen_labels" target="_blank">BS</a></td></tr>
     % elif c.feature.ak == 'BE':
