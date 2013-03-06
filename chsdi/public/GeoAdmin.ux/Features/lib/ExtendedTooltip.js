@@ -472,11 +472,12 @@ GeoAdmin.ExtendedTooltip = OpenLayers.Class(OpenLayers.Control.GetFeature, {
                 qtip: OpenLayers.i18n('Export all'),
                 handler: function(evt, toolEl, panel, tc) {
                     var layers = this.params.layers.split(',');
+                    var host = GeoAdmin.protocol + '//' + window.location.host;
                     for (var i = 0; i < layers.length; i++) {
                         var url = this.url.split('search')[0];
                         var layer = layers[i];
                         if (this.list_fid.hasOwnProperty(layer)) {
-                            var par = encodeURIComponent(this.list_fid[layer] + '.html?layer=' + layer + '&lang=' + this.params.lang);
+                            var par = encodeURIComponent(this.list_fid[layer] + '.html?layer=' + layer + '&lang=' + this.params.lang + '&baseUrl=') + host;
                             url = url + par;
                             window.open(url, '_blank');
                         }
