@@ -105,6 +105,22 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
     draw: function() {
         OpenLayers.Control.prototype.draw.apply(this, arguments);
 
+        this.div = document.createElement('div');
+        this.div.id = "timeslider";
+        OpenLayers.Element.addClass(
+            this.div,
+            'olControlTimeControl'
+        );
+        this.divEvents = new OpenLayers.Events(this, this.div, null, true, {includeXY: true});
+
+        this.divEvents.on({
+            "mousedown": this.divDown,
+            "mouseup": this.divUp,
+            "mousemove": this.divDrag,
+            scope: this
+        });
+
+
         return this.div;
     },
 
@@ -270,8 +286,44 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
 
         return allTimestamps;
 
+     },
+    divDown: function(evt) {
+       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
+            return;
+        }
+        this.mouseDragStart = evt.xy.clone();
+        this.map.events.on({
+            "mousemove": this.passEventToDiv,
+            "mouseup": this.passEventToDiv,
+            scope: this
+        });
+        OpenLayers.Event.stop(evt);
     },
 
+    divUp: function(evt) {
+       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
+            return;
+        }
+        if (this.mouseDragStart) {
+            this.map.events.un({
+                "mousemove": this.passEventToDiv,
+                "mouseup": this.passEventToDiv,
+                scope: this
+            });
+            this.mouseDragStart = null;
+        }
+        OpenLayers.Event.stop(evt);
+    },
+    divDrag: function(evt) {
+         if (this.mouseDragStart != null) {
+             OpenLayers.Event.stop(evt);
+         }
+    },
+
+    passEventToDiv:function(evt) {
+        this.divEvents.handleBrowserEvent(evt);
+    },
+ 
     /*
      * Method: onAddLayer
      * Triggered when a new layer is added

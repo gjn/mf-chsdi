@@ -61,29 +61,8 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
 
     initComponent: function() {
 
-        this.div = OpenLayers.Util.createAlphaImageDiv('timeslider', null, null, null, 'relative');
-        this.div.style.display = 'none';
-        this.div.style.width = '650px';
-        this.div.style.height = '80px';
-        this.div.style.left = '100px';
-        this.div.style.backgroundColor = '#ffffff';
-        this.div.style.opacity = 1.0;
-        this.div.style.zIndex = 2000;
-        
-        this.divEvents = new OpenLayers.Events(this, this.div, null, true, {includeXY: true});
-  
-        this.divEvents.on({
-                "mousedown": this.divDown,
-                "mouseup": this.divUp,
-                "mousemove": this.divDrag,
-                scope: this
-            });
-        
-
         this._timecontrol = this.timecontrol;
         delete this.timecontrol;
-
-        this._timecontrol.map.viewPortDiv.appendChild(this.div);
 
         this._slider = this.createSlider();
 
@@ -186,45 +165,7 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
                 this._slider.enable();
             };
     },
-    
   
-    divDown: function(evt) {
-       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
-            return;
-        }
-        this.mouseDragStart = evt.xy.clone();  
-        this._slider.map.events.on({
-            "mousemove": this.passEventToDiv,
-            "mouseup": this.passEventToDiv,
-            scope: this
-        });
-        OpenLayers.Event.stop(evt);
-    },
-    
-    divUp: function(evt) {
-       if (!OpenLayers.Event.isLeftClick(evt) && !OpenLayers.Event.isSingleTouch(evt)) {
-            return;
-        }
-        if (this.mouseDragStart) {  
-            this._slider.map.events.un({
-                "mousemove": this.passEventToDiv,
-                "mouseup": this.passEventToDiv,
-                scope: this
-            });
-            this.mouseDragStart = null;
-        }
-        OpenLayers.Event.stop(evt);
-    },
-    divDrag: function(evt) {
-         if (this.mouseDragStart != null) {
-             OpenLayers.Event.stop(evt);   
-         }
-    },
-   
-    passEventToDiv:function(evt) {
-        this.divEvents.handleBrowserEvent(evt);
-    },
-
     onChangeTimestampYear: function(evt) {
         this._slider.increments = evt.timestamps; 
         this._slider.syncThumb();
@@ -233,10 +174,10 @@ GeoAdmin.TimeSlider = Ext.extend(Ext.Container, {
       
 
         if (this._slider.increments.length > 0) {
-            this.div.style.display = 'block';
+            this._timecontrol.div.style.display = 'block';
             this._slider.setValue(this._slider.doSnap(evt.year));
         } else {
-            this.div.style.display = 'none';
+            this._timecontrol.div.style.display = 'none';
         }
 
     }
