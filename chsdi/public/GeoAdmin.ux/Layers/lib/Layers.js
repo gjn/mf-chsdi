@@ -606,7 +606,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111206','20111027','20110401'],
+                timestamp: ['20130213','20120809','20111206','20111027','20110401'],
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
