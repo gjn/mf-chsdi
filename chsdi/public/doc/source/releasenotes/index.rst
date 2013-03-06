@@ -1,4 +1,4 @@
-Release 201303xx - day, March xxth 2013
+Release 20130306 - Thursday, March 6th 2013
 ====================================================
 
 Geodata
@@ -26,7 +26,11 @@ API
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
-Minor bugfixing.
++--------+---------------------------------------------------+
+| New    | New map for two first zoom levels of national map |
++--------+---------------------------------------------------+
+| Update | Improve performance of swisssearch                |
++--------+---------------------------------------------------+
 
 `Mobile <http://mobile.api.geo.admin.ch>`__
 -------------------------------------------
@@ -40,7 +44,7 @@ Mapping Applications
 --------------------------------------------------
 
 +-----+------------------------------------------------------+
-| New | Zoom events are now animated (thanks to openlayers). |
+| New | Zoom events are now animated (thanks to OpenLayers). |
 +-----+------------------------------------------------------+
 | New | Increased performance when zooming with mousewheel.  |
 +-----+------------------------------------------------------+
@@ -60,11 +64,6 @@ Minor bug fixes, documentation and translation improvements.
 Information
 ***********
 The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
-
-
-
-
-
 
 Release 20130220 - Wednesday, February 20th 2013
 ====================================================
