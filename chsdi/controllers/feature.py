@@ -279,7 +279,11 @@ class FeatureController(BaseController):
             except ValueError:
                 abort(400, "Parameter 'extent' is invalid. Use extent=656430,254350,657930,25585 for instance.")
         else:
-            meters = 200 * (0.0254/96) * (c.scale > 0 or 1000.0)
+            if c.scale is not None:
+                meters = 200 * (0.0254/96) * (c.scale)
+            else:
+                meters = 1000
+
             cx, cy = c.bbox[0:2]
             extent = (cx - meters, cy - meters/2, cx + meters, cy + meters/2)
 
