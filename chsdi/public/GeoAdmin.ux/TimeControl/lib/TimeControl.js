@@ -55,8 +55,6 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
 
     layerTimestamps: null,
 
-    displayAll: null,
-
     initialize: function(options) {
         "use strict";
 
@@ -75,7 +73,7 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
         });
         
 
-        this.displayAll = false;
+        this.map.displayAll = false;
         this.updateTimestamps();
         this.activate();
     },
@@ -154,10 +152,10 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
     },
 
     setDisplayAll: function(displayAll) {
-        this.displayAll = displayAll || false;
+        this.map.displayAll = displayAll || false;
 
         this.map.events.triggerEvent('changedisplayall', {
-            displayall: this.displayAll
+            displayall: this.map.displayAll
         });
 
     },
@@ -200,7 +198,7 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
         if (layer.timeEnabled) {
             switch (layer.CLASS_NAME) {
             case 'OpenLayers.Layer.WMS':
-                if (layer.allTimeEnabled && this.displayAll) { 
+                if (layer.allTimeEnabled && this.map.displayAll) { 
                     delete layer.params["TIME"];
                 } else {
                     var ts = this.getClosestTimestamp(tentativeYear, layer.timestamps);
@@ -211,7 +209,7 @@ GeoAdmin.TimeControl = OpenLayers.Class(OpenLayers.Control, {
                 break;
 
             case 'OpenLayers.Layer.WMTS':
-                if (this.displayAll) {
+                if (this.map.displayAll) {
                     var ts = this.getClosestTimestamp(new Date().getFullYear(), layer.timestamps);
                     layer.params["TIME"] = ts;
                 } else {
