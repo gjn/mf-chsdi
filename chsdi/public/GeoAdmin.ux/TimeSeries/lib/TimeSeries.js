@@ -992,6 +992,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             renderTo: 'comparePeriod'
         });
 
+        //make sure that preloadstatus exists, because it should be draggable too
+        var preloadStatus = this.clearAndGetPreloadStatusIndicator();
+
         var dragHandler = new (function DragHandler(dragElements) {
             var self = this;
             this.startCoord = {};
@@ -1033,7 +1036,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     el.div.setStyle('margin-left', '0px');
                 }
             }
-        })([this.contentEl, 'timeseriesWidgetShadow', 'timeseriesWidgetShadowTop']);
+        })([this.contentEl, 'timeseriesWidgetShadow', 'timeseriesWidgetShadowTop', preloadStatus.id]);
 
         var tabs = new Ext.TabPanel({
             draggable: {
