@@ -991,7 +991,40 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             maxYear: this.maxYear,
             renderTo: 'comparePeriod'
         });
+
+        var dragHandler = new (function DragHandler(contentEl) {
+            var self = this;
+            this.startCoord = {};
+            this.startPos = {};
+            this.divEl = null;
+
+            this.startDrag = function(x, y) {
+                if (self.divEl === null) {
+                    self.divEl = Ext.get(contentEl);
+                }
+                self.startPos.top = self.divEl.getTop();
+                self.startPos.left = self.divEl.getLeft();
+                self.startCoord.x = x;
+                self.startCoord.y = y;
+            }
+
+            this.endDrag = function(e) {
+                if (self.divEl === null) {
+                    return;
+                }
+                var newPosLeft = self.startPos.left + e.xy[0] - self.startCoord.x;
+                var newPosTop = self.startPos.top + e.xy[1] - self.startCoord.y;
+                self.divEl.setStyle('left', newPosLeft + 'px');
+                self.divEl.setStyle('top', newPosTop + 'px');
+                self.divEl.setStyle('margin-left', '0px');
+            }
+        })(this.contentEl);
+
         var tabs = new Ext.TabPanel({
+            draggable: {
+                startDrag: dragHandler.startDrag,
+                endDrag: dragHandler.endDrag
+            },
             renderTo: this.contentEl,
             activeTab: ["playTab", "compareTab", "informationTab"].indexOf(this.state.activeTab),
             plain: true,
