@@ -105,6 +105,10 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k == 'swisssearch') {
                     swisssearch_state.use_swisssearch = true;
                     swisssearch_state.swisssearch = params.swisssearch;
+                } else if (k == 'time_current') {
+                    map_state.year = parseInt(params[k]) || new Date().getFullYear();
+                } else if (k == 'time_enabled') {
+                    map_state.displayAll = params[k].toLowerCase() === 'true';
                 } else if (k == 'swipe_ratio') {
                     map_state.swipeRatio = params[k];
                 } else if (k !== 'lang' && k !== 'noHeader' && k !== 'layers_timestamp' &&
