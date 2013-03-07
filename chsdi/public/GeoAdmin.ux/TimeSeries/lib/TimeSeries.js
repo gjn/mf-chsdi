@@ -992,33 +992,48 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             renderTo: 'comparePeriod'
         });
 
-        var dragHandler = new (function DragHandler(contentEl) {
+        var dragHandler = new (function DragHandler(dragElements) {
             var self = this;
             this.startCoord = {};
-            this.startPos = {};
-            this.divEl = null;
+            this.els = [];
+
+            var initElement = function (id) {
+                var el = {};
+                el.id = id;
+                el.div = Ext.get(id);
+                if (!el.div) {
+                    return null;
+                }
+                el.startPos = {};
+                return el;
+            }
+            for (var i = 0; i < dragElements.length; i += 1) {
+                var tmp = initElement(dragElements[i]);
+                if (tmp) {
+                    this.els.push(tmp);
+                }
+            }
 
             this.startDrag = function(x, y) {
-                if (self.divEl === null) {
-                    self.divEl = Ext.get(contentEl);
-                }
-                self.startPos.top = self.divEl.getTop();
-                self.startPos.left = self.divEl.getLeft();
                 self.startCoord.x = x;
                 self.startCoord.y = y;
-            }
-
-            this.endDrag = function(e) {
-                if (self.divEl === null) {
-                    return;
+                for (var i = 0; i < self.els.length; i += 1) {
+                    var el = self.els[i];
+                    el.startPos.left = el.div.getLeft();
+                    el.startPos.top = el.div.getTop();
                 }
-                var newPosLeft = self.startPos.left + e.xy[0] - self.startCoord.x;
-                var newPosTop = self.startPos.top + e.xy[1] - self.startCoord.y;
-                self.divEl.setStyle('left', newPosLeft + 'px');
-                self.divEl.setStyle('top', newPosTop + 'px');
-                self.divEl.setStyle('margin-left', '0px');
             }
-        })(this.contentEl);
+            this.endDrag = function(e) {
+                var correctionLeft = e.xy[0] - self.startCoord.x;
+                var correctionTop = e.xy[1] - self.startCoord.y;
+                for (var i = 0; i < self.els.length; i += 1) {
+                    var el = self.els[i];
+                    el.div.setStyle('left', el.startPos.left + correctionLeft + 'px');
+                    el.div.setStyle('top', el.startPos.top + correctionTop + 'px');
+                    el.div.setStyle('margin-left', '0px');
+                }
+            }
+        })([this.contentEl, 'timeseriesWidgetShadow', 'timeseriesWidgetShadowTop']);
 
         var tabs = new Ext.TabPanel({
             draggable: {
