@@ -6,7 +6,7 @@
     margin-left:-300px;
     font: 11px tahoma,arial,helvetica;
     /* Paint over map layers */
-    z-index:999;
+    z-index: 200000;
 }
 .timeseriesWidget .x-tab-panel-header, .timeseriesWidget ul.x-tab-strip-top {
     background: transparent;
@@ -154,7 +154,7 @@
     text-align: center;
     top: 140px;
     width: 570px;
-    z-index: 999;
+    z-index: 200000;
     font-family: tahoma,arial,verdana;
     opacity: 0.8;
 }
@@ -162,7 +162,7 @@
 .timeseriesWidget-slider {
     left: 200px;
     position: absolute;
-    z-index: 1;
+    z-index: 190000;
     cursor: ew-resize;
     top:5px;
 }
@@ -184,14 +184,14 @@
     top: 11px;
     width: 612px;
     height:118px;
-    z-index: 998;
+    z-index: 199998;
 }
 .timeseriesWidgetShadowTop {
     position: absolute;
     top: 11px;
     width: 900px;
     height:56px;
-    z-index: 998;
+    z-index: 199998;
 }
 
 div#Dufourmap {
