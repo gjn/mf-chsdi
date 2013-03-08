@@ -89,10 +89,10 @@
 }
 .period > div.marked:after {
     width:2px;
-    border-left-color:#999;
+    border-left-color: RGB(86,86,86);
 }
 .period > div[title]:after {
-    border-left-color: #999;
+    border-left-color: RGB(86,86,86);
     height: 15px;
     width: 2px;
 }
