@@ -73,8 +73,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
     complementaryLayer: null,
     overviewMapCtrl: null,
     fallThrough: true,
+    currentTime: null,
+    activeTime: false,
 
-    EVENT_TYPES: ["changecomplementarylayer"],
+    EVENT_TYPES: ["changecomplementarylayer","changecurrenttime","changeactivetime"],
 
     initialize: function (div, options) {
         OpenLayers.DOTS_PER_INCH = 254;
@@ -143,7 +145,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.overviewMapCtrl
             ],
             theme: false,
-            allOverlays: true
+            allOverlays: true,
+            currentTime: options.currentTime || new Date().getFullYear()
         });
 
         if (options.scale) {
@@ -248,8 +251,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 opacity: this.complementaryLayer.opacity
             },
             layers: [],
-            time_current: this.year || new Date().getFullYear(),
-            time_enabled: this.displayAll || false,
+            time_current: this.isLatestTime()? 'latest' : this.currentTime,
+            time_active: this.activeTime,
             swipeRatio: this.swipeRatio,
             swipeActive: this.swipeActive
         };
@@ -390,9 +393,9 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
            this.swipeRatio = state.swipeRatio;
            this.swipeActivate = true;
         }
-        if (state.time_current && state.time_enabled != undefined) {
-            this.year = state.time_current;
-            this.displayAll = state.time_enabled;
+        if (state.time_current && state.time_active != undefined) {
+            this.currentTime = state.time_current;
+            this.activeTime = state.time_active;
         }
     },
     /** api: method[destroy]
@@ -835,6 +838,26 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (scale == 1000) return 12;
         if (scale == 500) return 13;
         return null;
+    },
+    isLatestTime: function() {
+        var latest = new Date().getFullYear();
+        
+        return this.currentTime === latest;
+    },
+    setCurrentTime: function(year) {
+        var yr = year || new Date().getFullYear();
+        this.currentTime = yr;
+        this.events.triggerEvent("changecurrenttime", {
+            currentTime: this.currentTime
+        });
+    },
+    
+    setActiveTime: function(active) {
+        this.activeTime = active || false;
+
+        this.events.triggerEvent("changeactivetime", {
+            activeTime: this.activeTime
+        });
     }
 });
 
