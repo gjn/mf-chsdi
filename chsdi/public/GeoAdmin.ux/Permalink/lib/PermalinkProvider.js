@@ -105,6 +105,10 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 } else if (k == 'swisssearch') {
                     swisssearch_state.use_swisssearch = true;
                     swisssearch_state.swisssearch = params.swisssearch;
+                } else if (k == 'time_current') {
+                    map_state.time_current = parseInt(params[k]) || new Date().getFullYear();
+                } else if (k == 'time_enabled') {
+                    map_state.time_enabled = params[k].toLowerCase() === 'true';
                 } else if (k == 'swipe_ratio') {
                     map_state.swipeRatio = params[k];
                 } else if (k !== 'lang' && k !== 'noHeader' && k !== 'layers_timestamp' &&
@@ -183,6 +187,14 @@ GeoAdmin.PermalinkProvider = Ext.extend(GeoExt.state.PermalinkProvider, {
                 params.swipe_ratio = parseFloat(this.state.map.swipeRatio).toFixed(2);
             } else {
                 delete params.swipe_ratio;
+            }
+            if (this.state.map.time_current) {
+                params.time_current = this.state.map.time_current;
+            } else {
+               delete params.time_current;
+            }
+            if (this.state.map.time_enabled != undefined) {
+                params.time_enabled = this.state.map.time_enabled  || false;
             }
         }
         var current_lang = OpenLayers.Lang.getCode();

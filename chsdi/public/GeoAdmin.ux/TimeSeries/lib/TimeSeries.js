@@ -991,7 +991,58 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
             maxYear: this.maxYear,
             renderTo: 'comparePeriod'
         });
+
+        //make sure that preloadstatus exists, because it should be draggable too
+        var preloadStatus = this.clearAndGetPreloadStatusIndicator();
+
+        var dragHandler = new (function DragHandler(dragElements) {
+            var self = this;
+            this.startCoord = {};
+            this.els = [];
+
+            var initElement = function (id) {
+                var el = {};
+                el.id = id;
+                el.div = Ext.get(id);
+                if (!el.div) {
+                    return null;
+                }
+                el.startPos = {};
+                return el;
+            }
+            for (var i = 0; i < dragElements.length; i += 1) {
+                var tmp = initElement(dragElements[i]);
+                if (tmp) {
+                    this.els.push(tmp);
+                }
+            }
+
+            this.startDrag = function(x, y) {
+                self.startCoord.x = x;
+                self.startCoord.y = y;
+                for (var i = 0; i < self.els.length; i += 1) {
+                    var el = self.els[i];
+                    el.startPos.left = el.div.getLeft();
+                    el.startPos.top = el.div.getTop();
+                }
+            }
+            this.endDrag = function(e) {
+                var correctionLeft = e.xy[0] - self.startCoord.x;
+                var correctionTop = e.xy[1] - self.startCoord.y;
+                for (var i = 0; i < self.els.length; i += 1) {
+                    var el = self.els[i];
+                    el.div.setStyle('left', el.startPos.left + correctionLeft + 'px');
+                    el.div.setStyle('top', el.startPos.top + correctionTop + 'px');
+                    el.div.setStyle('margin-left', '0px');
+                }
+            }
+        })([this.contentEl, 'timeseriesWidgetShadow', 'timeseriesWidgetShadowTop', preloadStatus.id]);
+
         var tabs = new Ext.TabPanel({
+            draggable: {
+                startDrag: dragHandler.startDrag,
+                endDrag: dragHandler.endDrag
+            },
             renderTo: this.contentEl,
             activeTab: ["playTab", "compareTab", "informationTab"].indexOf(this.state.activeTab),
             plain: true,

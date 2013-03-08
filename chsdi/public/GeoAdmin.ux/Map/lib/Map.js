@@ -248,6 +248,8 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 opacity: this.complementaryLayer.opacity
             },
             layers: [],
+            time_current: this.year || new Date().getFullYear(),
+            time_enabled: this.displayAll || false,
             swipeRatio: this.swipeRatio,
             swipeActive: this.swipeActive
         };
@@ -387,6 +389,10 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (state.swipeRatio) {
            this.swipeRatio = state.swipeRatio;
            this.swipeActivate = true;
+        }
+        if (state.time_current && state.time_enabled != undefined) {
+            this.year = state.time_current;
+            this.displayAll = state.time_enabled;
         }
     },
     /** api: method[destroy]
