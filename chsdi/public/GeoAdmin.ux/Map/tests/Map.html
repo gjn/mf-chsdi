@@ -106,6 +106,25 @@
 
             map.destroy();
         }
+        
+         function test_timeRelated(t) {
+            t.plan(5);
+            var map = new GeoAdmin.Map("map");
+            var latest = new Date().getFullYear();
+            t.ok(latest === map.currentTime, "default currentTime is current year "+latest );
+            t.ok(map.isLatestTime() === true, "currentTime is the latest time");
+
+            var year = 1960;
+            map.setCurrentTime(year);
+            t.ok(year === map.currentTime, "currentTime is correctly set to " + year);
+            
+            t.ok(map.isLatestTime() === false, "currentTime is not latest time");
+
+            map.setActiveTime(true);
+            t.ok(map.activeTime === true, "activeTime correctly set");
+           
+            map.destroy();
+         }
     </script>
 </head>
 <body>

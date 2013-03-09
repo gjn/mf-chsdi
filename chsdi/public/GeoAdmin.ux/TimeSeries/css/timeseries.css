@@ -1,12 +1,12 @@
 .timeseriesWidget {
     position: absolute;
-    top:16px;
+    top: 16px;
     left:50%;
     width:600px;
     margin-left:-300px;
     font: 11px tahoma,arial,helvetica;
     /* Paint over map layers */
-    z-index:999;
+    z-index: 999;
 }
 .timeseriesWidget .x-tab-panel-header, .timeseriesWidget ul.x-tab-strip-top {
     background: transparent;
@@ -89,10 +89,10 @@
 }
 .period > div.marked:after {
     width:2px;
-    border-left-color:#999;
+    border-left-color: RGB(86,86,86);
 }
 .period > div[title]:after {
-    border-left-color: #999;
+    border-left-color: RGB(86,86,86);
     height: 15px;
     width: 2px;
 }
