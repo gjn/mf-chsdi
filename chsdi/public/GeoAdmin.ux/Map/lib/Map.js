@@ -83,6 +83,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         if (GeoAdmin.OpenLayersImgPath != null) {
             OpenLayers.ImgPath = GeoAdmin.OpenLayersImgPath;
         }
+        var options = options || {};
         OpenLayers.IMAGE_RELOAD_ATTEMPTS = 0;
 
         var zoom_max = new OpenLayers.Control.ZoomToMaxExtent({
