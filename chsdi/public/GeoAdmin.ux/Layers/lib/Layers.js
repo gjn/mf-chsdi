@@ -1185,7 +1185,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
-
+            "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"),
+                layertype: 'wmts',
+                timestamp: ['19900101'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.swisstopo.geologie-geotechnik-gk500-genese": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-genese"),
                 layertype: 'wmts',

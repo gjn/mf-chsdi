@@ -1055,6 +1055,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Geologie',  // Id Inspire 24
                 children: [
+                   // {
+                   //     layerId: "ch.swisstopo.geologie-geotechnik-gk200"
+                   // },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
+                    },
                     {
                         layerId: "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
                     },
@@ -1341,8 +1347,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 ]
             },
             {
-                text: 'Mineralische Bodenschätze',
-                hidden: true
+                text: 'Mineralische Bodenschätze', // Id Inspire 321
+                children: [
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
+                   // },
+                   // {
+                   //     layerId: "ch.swisstopo.geologie-geotechnik-gk200"
+                    }
+                ]
             }
         ]
     },
