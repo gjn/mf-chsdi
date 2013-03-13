@@ -962,7 +962,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-lfp1',
                 layername: 'ch.swisstopo.fixpunkte-lfp1_wmts',
-                timestamp: ['20121211'],
+                timestamp: ['20121212'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -973,6 +973,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp1_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-lfp1',
+                //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -993,7 +995,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-lfp2',
                 layername: 'ch.swisstopo.fixpunkte-lfp2_wmts',
-                timestamp: ['20121211'],
+                timestamp: ['20121212'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1004,6 +1006,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp2_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-lfp2',
+                //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TESTS (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1024,7 +1028,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-hfp1',
                 layername: 'ch.swisstopo.fixpunkte-hfp1_wmts',
-                timestamp: ['20121211'],
+                timestamp: ['20121212'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1035,6 +1039,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp1_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-hfp1',
+                //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1055,7 +1061,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 layer: 'ch.swisstopo.fixpunkte-hfp2',
                 layername: 'ch.swisstopo.fixpunkte-hfp2_wmts',
-                timestamp: ['20121211'],
+                timestamp: ['20121212'],
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1066,6 +1072,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-hfp2',
+                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
