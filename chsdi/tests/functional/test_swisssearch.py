@@ -177,7 +177,7 @@ class TestSwisssearchController(TestController):
     def test_attributes(self):
         params = {
              'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
-             'query': 'BE0100000001972'
+             'query': 'CH0200'
         }
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
                  params=params
@@ -185,7 +185,7 @@ class TestSwisssearchController(TestController):
         assert 'results' in resp
         assert 'bbox' in resp
         assert 'attributes' in resp
-        assert 'BE0100000001972' in resp
+        assert 'CH0200' in resp
     
     def test_attributes_quote(self):
         params = {
@@ -203,7 +203,7 @@ class TestSwisssearchController(TestController):
     def test_attributes_raw(self):
         params = {
              'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
-             'query': 'BE0100000001972',
+             'query': 'CH0200',
              'format': 'raw'
         }
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
@@ -212,12 +212,12 @@ class TestSwisssearchController(TestController):
         assert 'FeatureCollection' in resp
         assert 'geometry' in resp
         assert 'properties' in resp
-        assert 'BE0100000001972' in resp
+        assert 'CH0200' in resp
 
     def test_attributes_non_queryable_layer(self):
         params = {
              'layers': 'ch.swisstopo.pixelkarte-farbe',
-             'query': 'BE0100000001972'
+             'query': 'CH0200'
         }
         resp = self.app.get(url(controller='swisssearch', action='geocoding'),
                  params=params
@@ -229,13 +229,13 @@ class TestSwisssearchController(TestController):
     def test_attributes_cb(self):
          params = {
            'layers': 'ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2',
-           'query': 'BE0100000001972',
+           'query': 'CH0200',
            'cb': 'Ext.ux.JSONP'
          }
          resp = self.app.get(url(controller='swisssearch', action='geocoding'),
                  params=params
          )
-         assert 'BE0100000001972' in resp
+         assert 'CH0200' in resp
          assert 'Ext.ux.JSONP' in resp
 
     def test_reversegeocoding_with_cb_raw(self):
