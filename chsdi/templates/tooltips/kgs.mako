@@ -234,7 +234,7 @@
             }
         }
     var disclamer = document.querySelector('.disclamer');
-    disclamer.setAttribute("href","http://www.disclamer.admin.ch")
+    disclamer.setAttribute("href","http://www.disclaimer.admin.ch")
     }
 </script>
 % endif
