@@ -396,6 +396,26 @@ class GeologischerAtlasPK(Base, Queryable):
 
 register('ch.swisstopo.geologie-geologischer_atlas',GeologischerAtlasPK)
 
+class GeologischeKarteLine(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'geologische_karte_line'
+    __table_args__ = ({'schema': 'geol', 'autoload': True})
+    __template__ = 'tooltips/geologische_karte_line.mako'
+    id = Column('fid', Text, primary_key=True)
+    gid = Column ('id', Integer)
+    the_geom = Column(Geometry(21781))
+
+class GeologischeKartePlg(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'geologische_karte_plg'
+    __table_args__ = ({'schema': 'geol', 'autoload': True})
+    __template__ = 'tooltips/geologische_karte_plg.mako'
+    id = Column('id', Text, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geologische_karte',GeologischeKarteLine)
+register('ch.swisstopo.geologie-geologische_karte',GeologischeKartePlg)
+
 class GeologieMineralischeRohstoffe200(Base, Queryable):
         # view in a schema
         __tablename__ = 'geotechnik_mineralische_rohstoffe200'
