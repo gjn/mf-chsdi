@@ -1626,8 +1626,10 @@ class OWSCheck(object):
         :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results
                 of the current method.
         """
-        if self.restful:
-            return ResponseDict("base_SwapCases", ['Skipped, is restful'], True)
+        #if self.restful:
+        #    return ResponseDict("base_SwapCases", ['Skipped, is restful'], True)
+        if True:
+            return ResponseDict("base_SwapCases", ['Not checked'], True)
         
         service = self.service
         version = self.version

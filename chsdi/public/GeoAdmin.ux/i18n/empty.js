@@ -267,6 +267,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bakom.radio-fernsehsender':"",
     'ch.bakom.mobil-antennenstandorte-gsm':"",
     'ch.bakom.mobil-antennenstandorte-umts':"",
+    'ch.bakom.mobil-antennenstandorte-lte':"",
     'ch.bakom.versorgungsgebiet-tv':"",
     'ch.bakom.versorgungsgebiet-ukw':"",
     'ch.bazl.luftfahrtkarten-icao':"",

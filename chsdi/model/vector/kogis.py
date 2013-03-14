@@ -41,7 +41,7 @@ class FIXPUNKTE_LFP1(Base, Queryable):
     __tablename__ = 'punkt_lage_lfp1'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
-    __queryable_attributes__ = ['nbident','nummer','punktname','status','zugang','pointid']
+    __queryable_attributes__ = ['nbident']
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
@@ -51,7 +51,7 @@ class FIXPUNKTE_LFP2(Base, Queryable):
     __tablename__ = 'punkt_lage_lfp2'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
-    __queryable_attributes__ = ['nbident','nummer','punktname','status','zugang','pointid']
+    __queryable_attributes__ = ['nbident']
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
@@ -61,7 +61,7 @@ class FIXPUNKTE_HFP1(Base, Queryable):
     __tablename__ = 'punkt_hoehe_hfp1'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
-    __queryable_attributes__ = ['nbident','nummer','punktname','status','zugang','pointid']
+    __queryable_attributes__ = ['nbident']
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
@@ -71,7 +71,7 @@ class FIXPUNKTE_HFP2(Base, Queryable):
     __tablename__ = 'punkt_hoehe_hfp2'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
-    __queryable_attributes__ = ['nbident','nummer','punktname','status','zugang','pointid']
+    __queryable_attributes__ = ['nbident']
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)

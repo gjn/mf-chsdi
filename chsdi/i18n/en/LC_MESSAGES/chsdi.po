@@ -2086,7 +2086,7 @@ msgid "print"
 msgstr "Print"
 
 msgid "protokoll"
-msgstr "Protocoll"
+msgstr "Protocol"
 
 msgid "publikationsjahr_1_2"
 msgstr "Year of publication 1 | 2"
