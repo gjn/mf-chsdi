@@ -668,6 +668,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'georeferenzdaten_bool': "",
     'url_download': "",
     'geocat': "",
+    'geol_f': "",
+    'id_objekt': "",
     'geobasisdaten_tech_number': "",
     'rechtsgrundlage': "",
     'geoadmin_inspire_theme': "",

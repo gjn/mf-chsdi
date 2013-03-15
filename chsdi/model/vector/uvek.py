@@ -146,6 +146,15 @@ class bakomumts(Base, Queryable):
 
 register('ch.bakom.mobil-antennenstandorte-umts', bakomumts)
 
+class bakomlte(Base, Queryable):
+    __tablename__ = 'nisdb_lte'
+    __table_args__ = ({'schema': 'bakom', 'autoload': True})
+    __template__ = 'tooltips/bakomlte.mako'
+    id = Column('id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bakom.mobil-antennenstandorte-lte', bakomlte)
+
 class bakomtv(Base, Queryable):
     __tablename__ = 'tv_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': True})
