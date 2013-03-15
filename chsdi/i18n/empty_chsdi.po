@@ -282,6 +282,12 @@ msgstr ""
 msgid "descriptionText"
 msgstr ""
 
+msgid "id_objekt"
+msgstr ""
+
+msgid "geol_f"
+msgstr ""
+
 msgid "kindofzone"
 msgstr ""
 

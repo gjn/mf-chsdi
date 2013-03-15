@@ -1182,6 +1182,9 @@ msgstr "Canton"
 msgid "geobasisdatensatz"
 msgstr "Basic geodata ID"
 
+msgid "geol_f"
+msgstr "Unit"
+
 msgid "geometalink"
 msgstr "Nachführungsgeometer"
 
@@ -1271,6 +1274,9 @@ msgstr "ID area statistic 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "ID area statistic 1992/97"
+
+msgid "id_objekt"
+msgstr "Object"
 
 msgid "identificator"
 msgstr "Identificator"
