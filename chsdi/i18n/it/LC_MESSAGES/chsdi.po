@@ -750,7 +750,7 @@ msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Ubicazione antenne GSM"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
-msgstr "Ubicazione antenne UMTS"
+msgstr "Ubicazione antenne 3G (UMTS)"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
