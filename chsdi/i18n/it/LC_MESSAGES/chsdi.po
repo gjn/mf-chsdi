@@ -750,7 +750,7 @@ msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Ubicazione antenne GSM"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
-msgstr "Ubicazione antenne UMTS"
+msgstr "Ubicazione antenne 3G (UMTS)"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
@@ -1181,6 +1181,9 @@ msgstr "Cantone"
 msgid "geobasisdatensatz"
 msgstr "ID geodati di base"
 
+msgid "geol_f"
+msgstr "Unità"
+
 msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
@@ -1270,6 +1273,9 @@ msgstr "Catégorie de base de la statistique de la superficie 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "Catégorie de base de la statistique de la superficie 1992/97"
+
+msgid "id_objekt"
+msgstr "Oggetto"
 
 msgid "identificator"
 msgstr "Identifiant"

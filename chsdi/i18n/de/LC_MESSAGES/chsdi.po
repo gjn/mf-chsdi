@@ -750,7 +750,7 @@ msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Antennenstandorte GSM"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
-msgstr "Antennenstandorte UMTS"
+msgstr "Antennenstandorte 3G (UMTS)"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Radio- und Fernsehsender"
@@ -1181,6 +1181,9 @@ msgstr "Kanton"
 msgid "geobasisdatensatz"
 msgstr "ID Geobasisdatensatz"
 
+msgid "geol_f"
+msgstr "Einheit"
+
 msgid "geometalink"
 msgstr "Nachführungsgeometer, Grundbuch und andere Metadata"
 
@@ -1270,6 +1273,9 @@ msgstr "Grundkategorie Arealstatistik 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "Grundkategorie Arealstatistik 1992/97"
+
+msgid "id_objekt"
+msgstr "Objekt"
 
 msgid "identificator"
 msgstr "Identifikator"

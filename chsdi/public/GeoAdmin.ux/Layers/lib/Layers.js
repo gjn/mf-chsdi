@@ -1318,11 +1318,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geologische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geologische_karte"),
                 layertype: 'wmts',
-                timestamp: ['20051231'],
+                timestamp: ['20080630','20051231'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geotope": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotope"),
