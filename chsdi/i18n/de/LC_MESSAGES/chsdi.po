@@ -2243,29 +2243,24 @@ msgstr "Gemeinde"
 msgid "tt_bazl_abortion"
 msgstr "Abbruch ausgeführt"
 
-#. TODO
 msgid "tt_bildstreifen_Aufloesung"
-msgstr "tt_bildstreifen_Aufloesung"
+msgstr "Auflösung"
 
-#. TODO
 msgid "tt_bildstreifen_Flugdatum"
-msgstr "tt_bildstreifen_Flugdatum"
+msgstr "Flugdatum"
 
-#. TODO
 msgid "tt_bildstreifen_Link "
-msgstr "tt_bildstreifen_Link "
+msgstr "Commander"
 
 #. TODO
 msgid "tt_bildstreifen_Quickview "
 msgstr "tt_bildstreifen_Quickview "
 
-#. TODO
 msgid "tt_bildstreifen_ebkey"
-msgstr "tt_bildstreifen_ebkey"
+msgstr "Bildstreifennummer"
 
-#. TODO
 msgid "tt_bildstreifen_line_id"
-msgstr "tt_bildstreifen_line_id"
+msgstr "Fluglinie"
 
 msgid "tt_ch.bakom.leistung"
 msgstr "Sendeleistung (ERP)"
@@ -2573,33 +2568,26 @@ msgstr "Von"
 msgid "tt_emission_von_m"
 msgstr "Von m."
 
-#. TODO
 msgid "tt_firmen_Filmart"
-msgstr "tt_firmen_Filmart"
+msgstr "Filmart"
 
-#. TODO
 msgid "tt_firmen_Firma"
-msgstr "tt_firmen_Firma"
+msgstr "Firma"
 
-#. TODO
 msgid "tt_firmen_Flugdatum"
-msgstr "tt_firmen_Flugdatum"
+msgstr "Flugdatum"
 
-#. TODO
 msgid "tt_firmen_Link "
-msgstr "tt_firmen_Link "
+msgstr "Bestellen"
 
-#. TODO
 msgid "tt_firmen_Quickview "
-msgstr "tt_firmen_Quickview "
+msgstr "Quickview"
 
-#. TODO
 msgid "tt_firmen_ebkey"
-msgstr "tt_firmen_ebkey"
+msgstr "Bildnummer"
 
-#. TODO
 msgid "tt_firmen_line_id"
-msgstr "tt_firmen_line_id"
+msgstr "Fluglinie"
 
 msgid "tt_freqchan"
 msgstr "Frequenz / TV-Kanal"
@@ -2625,33 +2613,27 @@ msgstr "Link zur Legende"
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
 
-#. TODO
 msgid "tt_kantone_Filmart"
-msgstr "tt_kantone_Filmart"
+msgstr "Filmart"
 
 #. TODO
 msgid "tt_kantone_Firma"
 msgstr "tt_kantone_Firma"
 
-#. TODO
 msgid "tt_kantone_Flugdatum"
-msgstr "tt_kantone_Flugdatum"
+msgstr "Flugdatum"
 
-#. TODO
 msgid "tt_kantone_Link "
-msgstr "tt_kantone_Link "
+msgstr "Bestellen"
 
-#. TODO
 msgid "tt_kantone_Quickview "
-msgstr "tt_kantone_Quickview "
+msgstr "Quickview"
 
-#. TODO
 msgid "tt_kantone_ebkey"
-msgstr "tt_kantone_ebkey"
+msgstr "Bildnummer"
 
-#. TODO
 msgid "tt_kantone_line_id"
-msgstr "tt_kantone_line_id"
+msgstr "Fluglinie"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Gemeinde"
@@ -2734,29 +2716,23 @@ msgstr "Reaktortyp"
 msgid "tt_kkw_regulatory"
 msgstr "Aufsichtsbehörde"
 
-#. TODO
 msgid "tt_luftbilder_Filmart"
-msgstr "tt_luftbilder_Filmart"
+msgstr "Filmart"
 
-#. TODO
 msgid "tt_luftbilder_Flugdatum"
-msgstr "tt_luftbilder_Flugdatum"
+msgstr "Flugdatum"
 
-#. TODO
 msgid "tt_luftbilder_Link"
-msgstr "tt_luftbilder_Link"
+msgstr "Bestellen"
 
-#. TODO
 msgid "tt_luftbilder_Quickview"
-msgstr "tt_luftbilder_Quickview"
+msgstr "Quickview"
 
-#. TODO
 msgid "tt_luftbilder_ebkey"
-msgstr "tt_luftbilder_ebkey"
+msgstr "Bildnummer"
 
-#. TODO
 msgid "tt_luftbilder_line_id"
-msgstr "tt_luftbilder_line_id"
+msgstr "Fluglinie"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
