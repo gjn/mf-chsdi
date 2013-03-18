@@ -938,6 +938,9 @@ msgstr "Aerial imagery"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Tiling SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "Aerial images swisstopo"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Color map"
 

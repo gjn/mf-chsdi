@@ -938,6 +938,9 @@ msgstr "Luftbild"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Kachelung SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "Luftbilder swisstopo"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Karte farbig"
 

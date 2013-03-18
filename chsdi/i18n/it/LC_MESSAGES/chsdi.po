@@ -938,6 +938,9 @@ msgstr "Veduta aerea"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisione in tiles SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "Immagini aeree swisstopo"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Carta a colori"
 

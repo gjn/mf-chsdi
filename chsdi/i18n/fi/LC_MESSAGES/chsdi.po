@@ -938,6 +938,9 @@ msgstr "Fotografia or da l'aria"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun tiles SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "TODO"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Charta en colur"
 

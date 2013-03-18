@@ -938,6 +938,9 @@ msgstr "Photo aérienne"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage en tuile SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "Photographies aériennes swisstopo"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Cartes couleurs"
 
