@@ -2209,6 +2209,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bakom",
                 queryable: true
             },
+            "ch.bakom.mobil-antennenstandorte-lte": {
+                name: OpenLayers.i18n("ch.bakom.mobil-antennenstandorte-lte"),
+                layers: ["ch.bakom.mobil-antennenstandorte-lte"],
+                layertype: "wms",
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bakom",
+                queryable: true
+            },
             "ch.bakom.versorgungsgebiet-tv": {
                 name: OpenLayers.i18n("ch.bakom.versorgungsgebiet-tv"),
                 layertype: 'wmts',
@@ -3498,7 +3507,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
-                timestamp: ['20130225','20120308'],
+                timestamp: ['20130307','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
@@ -3517,7 +3526,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.segelflugkarte": {
                 name: OpenLayers.i18n("ch.bazl.segelflugkarte"),
                 layertype: 'wmts',
-                timestamp: ['20130225','20120308'],
+                timestamp: ['20130307','20120308'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",

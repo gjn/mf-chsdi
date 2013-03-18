@@ -926,6 +926,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bakom.mobil-antennenstandorte-umts"
                     },
                     {
+                        layerId: "ch.bakom.mobil-antennenstandorte-lte"
+                    },
+                    {
                         layerId: "ch.bakom.versorgungsgebiet-tv"
                     },
                     {
