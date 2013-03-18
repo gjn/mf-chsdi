@@ -26,15 +26,16 @@ Ext.namespace('GeoAdmin');
 // Override unselectAll
 
 OpenLayers.Control.SelectFeature.prototype.unselectAll = function(options) {
+    'use strict';
     // we'll want an option to supress notification here
     var layers = this.layers || [this.layer];
     var layer, feature;
-    for (var l = 0; l < layers.length; ++l) {
+    for (var l = 0; l < layers.length; l+=1) {
         layer = layers[l];
         if (layer.selectedFeatures) {
-            for (var i = layer.selectedFeatures.length - 1; i >= 0; --i) {
+            for (var i = layer.selectedFeatures.length - 1; i >= 0; i-=1) {
                 feature = layer.selectedFeatures[i];
-                if (!options || options.except != feature) {
+                if (!options || options.except !== feature) {
                     this.unselect(feature);
                 }
             }
@@ -43,12 +44,12 @@ OpenLayers.Control.SelectFeature.prototype.unselectAll = function(options) {
 };
 
 GeoAdmin.KmlSelector = Ext.extend(Ext.Action, {
-    
+
     map: null,
     /**
      */
     constructor : function(config) {
-
+        'use strict';
         this.map = config.map || null;
         var kmlSelectorWindow = new GeoAdmin.KmlSelectorWindow(Ext.apply({
             renderTo: Ext.getBody(),
@@ -69,7 +70,7 @@ GeoAdmin.KmlSelector = Ext.extend(Ext.Action, {
 });
 
 /** api: xtype = ga_kmlselector */
-Ext.reg("ga_kmlselector", GeoAdmin.KmlSelector);
+Ext.reg('ga_kmlselector', GeoAdmin.KmlSelector);
 
 
 
