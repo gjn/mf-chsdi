@@ -2854,3 +2854,81 @@ msgstr ""
 
 msgid "blw_farbe_19"
 msgstr ""
+
+msgid "tt_bildstreifen_Aufloesung"
+msgstr ""
+
+msgid "tt_bildstreifen_Flugdatum"
+msgstr ""
+
+msgid "tt_bildstreifen_Link "
+msgstr ""
+
+msgid "tt_bildstreifen_Quickview "
+msgstr ""
+
+msgid "tt_bildstreifen_ebkey"
+msgstr ""
+
+msgid "tt_bildstreifen_line_id"
+msgstr ""
+
+msgid "tt_luftbilder_Filmart"
+msgstr ""
+
+msgid "tt_luftbilder_Flugdatum"
+msgstr ""
+
+msgid "tt_luftbilder_Link"
+msgstr ""
+
+msgid "tt_luftbilder_Quickview"
+msgstr ""
+
+msgid "tt_luftbilder_ebkey"
+msgstr ""
+
+msgid "tt_luftbilder_line_id"
+msgstr ""
+
+msgid "tt_firmen_Filmart"
+msgstr ""
+
+msgid "tt_firmen_Firma"
+msgstr ""
+
+msgid "tt_firmer_Flugdatum"
+msgstr ""
+
+msgid "tt_firmen_Link "
+msgstr ""
+
+msgid "tt_firmen_Quickview "
+msgstr ""
+
+msgid "tt_firmen_ebkey"
+msgstr ""
+
+msgid "tt_firmen_line_id"
+msgstr ""
+
+msgid "tt_kantone_Filmart"
+msgstr ""
+
+msgid "tt_kantone_Firma"
+msgstr ""
+
+msgid "tt_kantone_Flugdatum"
+msgstr ""
+
+msgid "tt_kantone_Link "
+msgstr ""
+
+msgid "tt_kantone_Quickview "
+msgstr ""
+
+msgid "tt_kantone_ebkey"
+msgstr ""
+
+msgid "tt_kantone_line_id"
+msgstr ""

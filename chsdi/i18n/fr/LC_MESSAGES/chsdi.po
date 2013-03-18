@@ -2243,6 +2243,30 @@ msgstr "Commune"
 msgid "tt_bazl_abortion"
 msgstr "Démontage effectué"
 
+#. TODO
+msgid "tt_bildstreifen_Aufloesung"
+msgstr "tt_bildstreifen_Aufloesung"
+
+#. TODO
+msgid "tt_bildstreifen_Flugdatum"
+msgstr "tt_bildstreifen_Flugdatum"
+
+#. TODO
+msgid "tt_bildstreifen_Link "
+msgstr "tt_bildstreifen_Link "
+
+#. TODO
+msgid "tt_bildstreifen_Quickview "
+msgstr "tt_bildstreifen_Quickview "
+
+#. TODO
+msgid "tt_bildstreifen_ebkey"
+msgstr "tt_bildstreifen_ebkey"
+
+#. TODO
+msgid "tt_bildstreifen_line_id"
+msgstr "tt_bildstreifen_line_id"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Puissance rayonnée (ERP)"
 
@@ -2550,6 +2574,34 @@ msgstr "de"
 msgid "tt_emission_von_m"
 msgstr "Début tronçon (m)"
 
+#. TODO
+msgid "tt_firmen_Filmart"
+msgstr "tt_firmen_Filmart"
+
+#. TODO
+msgid "tt_firmen_Firma"
+msgstr "tt_firmen_Firma"
+
+#. TODO
+msgid "tt_firmen_Link "
+msgstr "tt_firmen_Link "
+
+#. TODO
+msgid "tt_firmen_Quickview "
+msgstr "tt_firmen_Quickview "
+
+#. TODO
+msgid "tt_firmen_ebkey"
+msgstr "tt_firmen_ebkey"
+
+#. TODO
+msgid "tt_firmen_line_id"
+msgstr "tt_firmen_line_id"
+
+#. TODO
+msgid "tt_firmer_Flugdatum"
+msgstr "tt_firmer_Flugdatum"
+
 msgid "tt_freqchan"
 msgstr "Fréquence / Canal TV"
 
@@ -2573,6 +2625,34 @@ msgstr "Lien vers la légende"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caractérisation lithologique pétrographique"
+
+#. TODO
+msgid "tt_kantone_Filmart"
+msgstr "tt_kantone_Filmart"
+
+#. TODO
+msgid "tt_kantone_Firma"
+msgstr "tt_kantone_Firma"
+
+#. TODO
+msgid "tt_kantone_Flugdatum"
+msgstr "tt_kantone_Flugdatum"
+
+#. TODO
+msgid "tt_kantone_Link "
+msgstr "tt_kantone_Link "
+
+#. TODO
+msgid "tt_kantone_Quickview "
+msgstr "tt_kantone_Quickview "
+
+#. TODO
+msgid "tt_kantone_ebkey"
+msgstr "tt_kantone_ebkey"
+
+#. TODO
+msgid "tt_kantone_line_id"
+msgstr "tt_kantone_line_id"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Municipalité"
@@ -2654,6 +2734,30 @@ msgstr "Type de réacteur"
 
 msgid "tt_kkw_regulatory"
 msgstr "Organe régulateur"
+
+#. TODO
+msgid "tt_luftbilder_Filmart"
+msgstr "tt_luftbilder_Filmart"
+
+#. TODO
+msgid "tt_luftbilder_Flugdatum"
+msgstr "tt_luftbilder_Flugdatum"
+
+#. TODO
+msgid "tt_luftbilder_Link"
+msgstr "tt_luftbilder_Link"
+
+#. TODO
+msgid "tt_luftbilder_Quickview"
+msgstr "tt_luftbilder_Quickview"
+
+#. TODO
+msgid "tt_luftbilder_ebkey"
+msgstr "tt_luftbilder_ebkey"
+
+#. TODO
+msgid "tt_luftbilder_line_id"
+msgstr "tt_luftbilder_line_id"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
