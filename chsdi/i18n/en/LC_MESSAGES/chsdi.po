@@ -2583,6 +2583,10 @@ msgid "tt_firmen_Firma"
 msgstr "tt_firmen_Firma"
 
 #. TODO
+msgid "tt_firmen_Flugdatum"
+msgstr "tt_firmen_Flugdatum"
+
+#. TODO
 msgid "tt_firmen_Link "
 msgstr "tt_firmen_Link "
 
@@ -2597,10 +2601,6 @@ msgstr "tt_firmen_ebkey"
 #. TODO
 msgid "tt_firmen_line_id"
 msgstr "tt_firmen_line_id"
-
-#. TODO
-msgid "tt_firmer_Flugdatum"
-msgstr "tt_firmer_Flugdatum"
 
 msgid "tt_freqchan"
 msgstr "Frequency / TV-channel"
