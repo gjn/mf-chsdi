@@ -938,6 +938,9 @@ msgstr "Veduta aerea"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisione in tiles SWISSIMAGE"
 
+msgid "ch.swisstopo.lubis-luftbilder"
+msgstr "Immagini aeree swisstopo"
+
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Carta a colori"
 
@@ -2240,6 +2243,25 @@ msgstr "Comune"
 msgid "tt_bazl_abortion"
 msgstr "Eliminazione effettuata"
 
+msgid "tt_bildstreifen_Aufloesung"
+msgstr "Risoluzione"
+
+msgid "tt_bildstreifen_Flugdatum"
+msgstr "Data del volo"
+
+msgid "tt_bildstreifen_Link "
+msgstr "Ordinare"
+
+#. TODO
+msgid "tt_bildstreifen_Quickview "
+msgstr "tt_bildstreifen_Quickview "
+
+msgid "tt_bildstreifen_ebkey"
+msgstr "Numero strisciata"
+
+msgid "tt_bildstreifen_line_id"
+msgstr "Linea di volo"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Potenza irradiata (ERP)"
 
@@ -2547,6 +2569,27 @@ msgstr "de"
 msgid "tt_emission_von_m"
 msgstr "Début tronçon (m)"
 
+msgid "tt_firmen_Filmart"
+msgstr "Emulsione"
+
+msgid "tt_firmen_Firma"
+msgstr "Azienda"
+
+msgid "tt_firmen_Flugdatum"
+msgstr "Data del volo"
+
+msgid "tt_firmen_Link "
+msgstr "Ordinare"
+
+msgid "tt_firmen_Quickview "
+msgstr "Quickview"
+
+msgid "tt_firmen_ebkey"
+msgstr "Numero immagine"
+
+msgid "tt_firmen_line_id"
+msgstr "Linea di volo"
+
 msgid "tt_freqchan"
 msgstr "Frequenza / Canale TV"
 
@@ -2570,6 +2613,28 @@ msgstr "Link alla legenda"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caratterizzazione litologica petrografica"
+
+msgid "tt_kantone_Filmart"
+msgstr "Emulsione"
+
+#. TODO
+msgid "tt_kantone_Firma"
+msgstr "tt_kantone_Firma"
+
+msgid "tt_kantone_Flugdatum"
+msgstr "Data del volo"
+
+msgid "tt_kantone_Link "
+msgstr "Ordinare"
+
+msgid "tt_kantone_Quickview "
+msgstr "Quickview"
+
+msgid "tt_kantone_ebkey"
+msgstr "Numero immagine"
+
+msgid "tt_kantone_line_id"
+msgstr "Linea di volo"
 
 msgid "tt_kbs_gemeinde"
 msgstr "Comune"
@@ -2651,6 +2716,24 @@ msgstr "Tipo di reattore"
 
 msgid "tt_kkw_regulatory"
 msgstr "Organo regolatore"
+
+msgid "tt_luftbilder_Filmart"
+msgstr "Emulsione"
+
+msgid "tt_luftbilder_Flugdatum"
+msgstr "Data del volo"
+
+msgid "tt_luftbilder_Link"
+msgstr "Ordinare"
+
+msgid "tt_luftbilder_Quickview"
+msgstr "Quickview"
+
+msgid "tt_luftbilder_ebkey"
+msgstr "Numero immagine"
+
+msgid "tt_luftbilder_line_id"
+msgstr "Linea aerea"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"

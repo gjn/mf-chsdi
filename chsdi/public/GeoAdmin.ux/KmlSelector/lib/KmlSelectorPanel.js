@@ -7,14 +7,15 @@
  * @include Ext/examples/ux/fileuploadfield/FileUploadField.js
  */
 
-Ext.namespace("GeoAdmin");
+Ext.namespace('GeoAdmin');
 
 GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
 
-    vector: null, 
+    vector: null,
 
     constructor: function(config) {
-
+        'use strict';
+        var configuration;
         var urlField = {
                 xtype: 'textfield',
                 width: 388,
@@ -25,7 +26,7 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                 validator: this.urlValidator,
                 invalidText: OpenLayers.i18n('The url address entered is not valid.'),
                 'emptyText': OpenLayers.i18n('Input the KML address (URL)')
-        };
+            };
         var loadFromURL = {
                 xtype: 'button',
                 cls: 'load-button',
@@ -48,11 +49,10 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                     if (this.map.addKmlLayer) {
                         this.map.addKmlLayer(url, true, 1, true);
                     }
-                    Ext.getCmp('kmlurl').setValue("");
+                    Ext.getCmp('kmlurl').setValue('');
                     this.closeWindow();
                 }
-        };
-        
+            };
 
         if (window.File && window.FileReader && window.FileList && window.Blob && !Ext.isIE) {
             var fileUpload = new Ext.ux.form.FileUploadField({
@@ -72,15 +72,15 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                                 if (evt.target.readyState === FileReader.DONE) {
                                     format = new OpenLayers.Format.KML();
                                     features = format.read(reader.result);
-                                    for (var j = 0; j < features.length; j++) {
-                                        features[j].geometry.transform("EPSG:4326","EPSG:21781");
+                                    for (var j=0; j < features.length; j+=1) {
+                                        features[j].geometry.transform('EPSG:4326','EPSG:21781');
                                     }
                                     vector.addFeatures(features);
                                 }
-                            }
+                            };
                         } else {
-                            alert(OpenLayers.i18n('The file you are trying to load is not a KML file'))
-                        }   
+                            alert(OpenLayers.i18n('The file you are trying to load is not a KML file'));
+                        }
                     }
                 },
                 emptyText: OpenLayers.i18n('Select a KML file'),
@@ -88,19 +88,19 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
                 id: 'kmllocal'
             });
             var localLoadButton = {
-                   xtype: 'button',
-                   cls: 'load-button',
-                   text: OpenLayers.i18n('Load KML'),
-                   tooltip: OpenLayers.i18n('KMLTooltip'),
-                   scope: this,
-                   handler: function (b, e) {
-                       var vector = fileUpload.vector;
-                       if (vector !== null) {
-                            this.map.addLayer(vector);
-                        }
-                   }
+                xtype: 'button',
+                cls: 'load-button',
+                text: OpenLayers.i18n('Load KML'),
+                tooltip: OpenLayers.i18n('KMLTooltip'),
+                scope: this,
+                handler: function (b, e) {
+                    var vector = fileUpload.vector;
+                    if (vector !== null) {
+                        this.map.addLayer(vector);
+                    }
+                }
             };
-            var configuration = [{
+            configuration = [{
                 xtype: 'tabpanel',
                 activeTab: 0,
                 items: [{
@@ -114,14 +114,14 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
             }];
 
         } else {
-            var configuration = [urlField, loadFromURL];
+            configuration = [urlField, loadFromURL];
         }
 
         var kmlSelectorPanel = new Ext.FormPanel({
             scope: this,
             labelWidth: 75,
-            frame:true,
-            bodyStyle:'padding:5px 5px 0',
+            frame: true,
+            bodyStyle: 'padding:5px 5px 0',
             width: 412,
             defaults: {width: 390},
             defaultType: 'textfield',
@@ -141,9 +141,11 @@ GeoAdmin.KmlSelectorPanel = Ext.extend(Ext.Panel, {
         GeoAdmin.KmlSelectorPanel.superclass.constructor.call(this, config);
     },
     urlValidator: function(url) {
+        'use strict';
         return Ext.form.VTypes.url(url);
     },
     closeWindow: function() {
+        'use strict';
         this.ownerCt.hide();
     }
 });

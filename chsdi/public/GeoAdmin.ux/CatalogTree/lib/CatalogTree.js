@@ -926,6 +926,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bakom.mobil-antennenstandorte-umts"
                     },
                     {
+                        layerId: "ch.bakom.mobil-antennenstandorte-lte"
+                    },
+                    {
                         layerId: "ch.bakom.versorgungsgebiet-tv"
                     },
                     {
@@ -1055,9 +1058,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
             {
                 text: 'Geologie',  // Id Inspire 24
                 children: [
-                   // {
-                   //     layerId: "ch.swisstopo.geologie-geotechnik-gk200"
-                   // },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-gk200"
+                    },
                     {
                         layerId: "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
                     },
@@ -1351,9 +1354,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 children: [
                     {
                         layerId: "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
-                   // },
-                   // {
-                   //     layerId: "ch.swisstopo.geologie-geotechnik-gk200"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-geotechnik-gk200"
                     }
                 ]
             }
