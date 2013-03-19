@@ -560,7 +560,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             scope: this
         });
 
-        arguments.callee.superclass.constructor.call(this, this.config);
+        GeoAdmin.Print.superclass.constructor.call(this, this.config);
     },
 
     /** private: method[initPanel]
