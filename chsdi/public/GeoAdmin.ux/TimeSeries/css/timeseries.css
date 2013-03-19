@@ -214,3 +214,13 @@ div#Siegfriedmap {
     width: 140px;
     height: 38px;
 }
+
+
+.x-slider-horz, .x-slider-horz .x-slider-end, .x-slider-horz .x-slider-inner {
+    background-image: url(../img/slider-bg.png);
+    width: 106px;
+}
+
+.x-slider-horz {
+    padding-left: 1px;
+}
