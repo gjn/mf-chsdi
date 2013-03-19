@@ -129,12 +129,33 @@
     
     margin-bottom:6px;
 }
+
 .timeseriesWidget-controls-left, .timeseriesWidget-controls-right {
     display:inline-block;
     width:200px;
     vertical-align:top;
     padding: 1px 0;
 }
+
+#compareTab .timeseriesWidget-controls-left, .timeseriesWidget-controls-right {
+    width: 150px;
+}
+
+.timeseriesWidget-controls-left-compare, .timeseriesWidget-controls-right-compare {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+    padding: 1px 0;
+}
+
+.timeseriesWidget-controls-left-compare {
+    text-align: right;
+}
+
+.timeseriesWidget-controls-right-compare {
+    text-align: left;
+}
+
 .timeseriesWidget-controls-center {
     display:inline-block;
 }
