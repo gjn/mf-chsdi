@@ -129,7 +129,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
         } else {
             navigationControl = new OpenLayers.Control.Navigation({
                 mouseWheelOptions: {
-                    interval: 0
+                    interval: 50
                 }
             });
         }
