@@ -129,12 +129,33 @@
     
     margin-bottom:6px;
 }
+
 .timeseriesWidget-controls-left, .timeseriesWidget-controls-right {
     display:inline-block;
     width:200px;
     vertical-align:top;
     padding: 1px 0;
 }
+
+#compareTab .timeseriesWidget-controls-left, .timeseriesWidget-controls-right {
+    width: 150px;
+}
+
+.timeseriesWidget-controls-left-compare, .timeseriesWidget-controls-right-compare {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+    padding: 1px 0;
+}
+
+.timeseriesWidget-controls-left-compare {
+    text-align: right;
+}
+
+.timeseriesWidget-controls-right-compare {
+    text-align: left;
+}
+
 .timeseriesWidget-controls-center {
     display:inline-block;
 }
@@ -174,7 +195,7 @@
     top: 2px;
     width: 44px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .timeseriesWidgetShadow {
@@ -213,4 +234,14 @@ div#Siegfriedmap {
     background-repeat: no-repeat;
     width: 140px;
     height: 38px;
+}
+
+
+.x-slider-horz, .x-slider-horz .x-slider-end, .x-slider-horz .x-slider-inner {
+    background-image: url(../img/slider-bg.png);
+    width: 106px;
+}
+
+.x-slider-horz {
+    padding-left: 4px;
 }

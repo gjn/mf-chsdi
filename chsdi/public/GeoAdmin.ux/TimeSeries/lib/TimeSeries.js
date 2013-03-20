@@ -1161,9 +1161,9 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
                     }
                 }
 
-                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath + "slider-right.png", 6);
+                timeseriesWidget.compareSliderMax = comparePeriod.addSlider(sliderImagePath + "slider-right.png", 6, "compareMaxYear");
                 timeseriesWidget.compareSliderMax.setYear(timeseriesWidget.state.compareSliderMax || timeseriesWidget.maxYear);
-                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath + "slider-left.png", 69);
+                timeseriesWidget.compareSliderMin = comparePeriod.addSlider(sliderImagePath + "slider-left.png", 69, "compareMinYear");
                 timeseriesWidget.compareSliderMin.setYear(timeseriesWidget.state.compareSliderMin || timeseriesWidget.minYear);
                 timeseriesWidget.compareSliderMin.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMin);
                 timeseriesWidget.compareSliderMax.on('change', changeAnyCompareSlider, timeseriesWidget.compareSliderMax);
@@ -1403,10 +1403,11 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
      * :param imageSrc: ``string`` Filename
      * :return: ``GeoAdmin.TimeSeries.YearSlider`` Slider including API of getYear and setYear calls
      */
-    addSlider: function(imageSrc, xOffset) {
+    addSlider: function(imageSrc, xOffset, extDivId) {
         var slider = new GeoAdmin.TimeSeries.YearSlider({
             imageSrc: imageSrc,
             xOffset: xOffset,
+            externalDivId: extDivId,
             renderTo: this.contentEl
         });
 
@@ -1487,11 +1488,16 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
      *  ``Number`` Distance of arrow to left image edge
      */
     xOffset: null,
+    /** api: config[externalDivId]
+     * ``String`` id of an external div Element to update the text with the current year. Does nothing if empty
+     */
+    externalDivId: null,
 
     slider: null,
     draggable: null,
     input: null,
     tracker: null,
+    externaldiv: null,
 
     initComponent: function() {
         this.slider = Ext.get(document.createElement('div'));
@@ -1514,6 +1520,10 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
 
         this.contentEl = this.slider;
 
+        if (this.externalDivId) {
+            this.externaldiv = Ext.get(this.externalDivId).dom;
+        }
+
         this.addEvents('change');
     },
 
@@ -1534,5 +1544,13 @@ GeoAdmin.TimeSeries.YearSlider = Ext.extend(Ext.Component, {
         this.input.dom.value = year;
         this.input.removeClass("x-form-invalid");
         this.fireEvent('change', year);
+
+        if (this.externaldiv) {
+            if (typeof(this.externaldiv.textContent) === "string") {
+                this.externaldiv.textContent = year;
+            } else { //IE
+                this.externaldiv.innerText = year;
+            }
+        }
     }
 });
