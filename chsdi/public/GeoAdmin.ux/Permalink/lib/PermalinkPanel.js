@@ -149,7 +149,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
         this.buttonFacebook.addClass("hideBlock");
         this.buttonGooglePlus = new Ext.Button({
             cls: "googleplus-button",
-            tooltip: "Google Bookmarks",
+            tooltip: "Google Plus",
             scope: this,
             handler: function () {
                 this.httpShare('googleplus');
@@ -254,7 +254,7 @@ GeoAdmin.PermalinkPanel = Ext.extend(Ext.form.FormPanel, {
             var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(permalink) + "&text=" + encodeURIComponent(document.title);
             window.open(url, '_blank');
         } else if (j === "googleplus") {
-            var url = "https://www.google.com/bookmarks/mark?op=edit&bkmk=" + encodeURIComponent(permalink) + "&title=" + encodeURIComponent(document.title);
+            var url = "https://plus.google.com/share?url=" + encodeURIComponent(permalink);
             window.open(url, '_blank');
         } else if (j === "qrcode") {
             var url = GeoAdmin.webServicesUrl + "/qrcodegenerator?url=" + encodeURIComponent(Ext.state.Manager.getProvider().getLink());
