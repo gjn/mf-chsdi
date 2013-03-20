@@ -579,7 +579,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geophysik-geothermie':'Geotermia',
 	'ch.swisstopo.geologie-geophysik-inklination':'Inclinazione',
 	'ch.swisstopo.geologie-geophysik-totalintensitaet':'Intensità campo magnetico',
-	'ch.swisstopo.geologie-geotechnik-gk200':'Classificazione delle rocce',
+	'ch.swisstopo.geologie-geotechnik-gk200':'Geotecnica e rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-genese':'Origine delle rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung':'Classificazione delle rocce',
 	'ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen':'Gruppi litologici principali',
