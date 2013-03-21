@@ -1,12 +1,88 @@
-Release 20130321 - Wednesday, March 21th 2013
+Release 20130321 - Thursday, March 21th 2013
 ====================================================
 
 Geodata
 ********
 
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geology 1:500 000 <//map.geo.admin.ch/>`__ (ch.swisstopo.geologie-geologische_karte)                                                             |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Mineral first resources <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200>`__ (ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Classification of rocks <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotechnik-gk200>`__ (ch.swisstopo.geologie-geotechnik-gk200)                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `4G antenna locations (LTE) <//map.geo.admin.ch/?layers=ch.bakom.mobil-antennenstandorte-lte>`__ (ch.bakom.mobil-antennenstandorte-lte)                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geology 1:500 000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologische_karte>`__ (ch.swisstopo.geologie-geologische_karte)                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Planimetric control points LFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp1>`__ (ch.swisstopo.fixpunkte-lfp1)                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Planimetric control points LFP2 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp2>`__ (ch.swisstopo.fixpunkte-lfp2)                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Height control points HFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp1>`__ (ch.swisstopo.fixpunkte-hfp1)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Height control points HFP2 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp2>`__ (ch.swisstopo.fixpunkte-hfp2)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP areonautical infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPAI in consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
++--------+----------------------------------------------------------------------------------+
+| Update | Zooming and panning is now reasonably slower supressing ugly effect on Mac Books |
++--------+----------------------------------------------------------------------------------+
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
++--------+-----------------------------+
+| Update | Sencha Mobile version 2.1.1 |
++--------+-----------------------------+
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-------+------------------------------------------------+
+| Udate | Google Bookmarks replaced to link with Google+ |
++-------+------------------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++--------+-----------------------------+
+| Update | Sencha Mobile version 2.1.1 |
++--------+-----------------------------+
+
+Other minor bugfixing.
+
+Other Applications
+******************
+
+Minor bug fixes, documentation and translation improvements.
+
+Information
+***********
+The projects are built with the trunk version of GeoExt, GXM and OpenLayers at the time of deploy.
+
 
 
 
