@@ -151,11 +151,11 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      */
     mapLogo: null,
 
+
     /** private: method[constructor]
      *  Private constructor override.
      */
     constructor: function(config) {
-        "use strict";
         this.config = Ext.apply({
             scope: this,
             // text: OpenLayers.i18n('print'),
@@ -163,10 +163,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             windowOptions: {}
         }, config);
         if (!this.config.printBaseUrl) {
-            if (GeoAdmin.webServicesUrl !== null) {
-                this.config.printBaseUrl = GeoAdmin.webServicesUrl + "/print";
+            if (GeoAdmin.webServicesUrl != null) {
+                this.config.printBaseUrl = GeoAdmin.webServicesUrl + '/print';
             } else {
-                this.config.printBaseUrl = "/print";
+                this.config.printBaseUrl = '/print';
             }
         }
 
@@ -199,7 +199,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         var pdfLayerNames = [];
         var pdfFormat = [];
-        var secondPageNeeded = false;
 
         this.printProvider = new GeoExt.data.PrintProvider({
             baseParams: {
@@ -212,12 +211,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     var lang = OpenLayers.Lang.getCode();
                     var date = new Date();
                     provider.customParams.enhableLegends = this.legendCheckbox.pressed;
-                    provider.customParams.date = date.getDate().toString() + "." + (date.getMonth()+1).toString() + "." + date.getFullYear().toString();
+                    provider.customParams.date = date.getDate().toString() + '.' + (date.getMonth()+1).toString() + '.' + date.getFullYear().toString(); 
                     provider.customParams.rotation = -this.printPanel.printExtent.control.rotation;
                     if (GeoAdmin.topic) {
                         provider.customParams.app = GeoAdmin.topic;
                     } else {
-                        provider.customParams.app = "config";  // default print config
+                        provider.customParams.app = 'config';  // default print config
                     }
                     provider.customParams.lang = lang;
                     // QRCode, use print extent and not map extent
@@ -226,21 +225,21 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     if (page && page.center && page.scale && page.scale.data) {
                         delete paramsObject.zoom;
                         Ext.apply(paramsObject, {
-                            "X" : page.center.lat,
-                            "Y" : page.center.lon,
-                            "scale" :  page.scale.data.value
-                        });
+                           'X' : page.center.lat,
+                           'Y' : page.center.lon,
+                           'scale' :  page.scale.data.value
+                        })
                     }
                     var params = OpenLayers.Util.getParameterString(paramsObject);
-                    var qrcodeurl = escape( (GeoAdmin.protocol || "http:") + "//map.geo.admin.ch/?"+params);
+                    var qrcodeurl = escape( (GeoAdmin.protocol || 'http:') + '//map.geo.admin.ch/?'+params);
                     provider.customParams.qrcodeurl = GeoAdmin.webServicesUrl + "/qrcodegenerator?url="+qrcodeurl;
                     provider.customParams.legends = [];
-                    if (this.legendCheckbox.pressed === true) {
+                    if (this.legendCheckbox.pressed == true) {
                         var pdfCounter = 0;
-                        for (var i = 0; i < map.layers.length; i++) {
+                        for (var i = 0, len = map.layers.length; i < len; i++) {
                             var layer = map.layers[i];
                             var LegendFormat = lang + ".png";
-                            for (var k = 0; k < pdfLegendList.length; k++) {
+                            for (k = 0,lenp = pdfLegendList.length; k < lenp; k++) {
                                 if (layer.layer === pdfLegendList[k]) {
                                     LegendFormat = "big.pdf";
                                     if (!secondPageNeeded) {
@@ -253,12 +252,12 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                             }
                             if (layer.displayInLayerSwitcher && layer.hasLegend !== false) {
                                 if (LegendFormat !== "big.pdf") {
-                                    secondPageNeeded = true;
+                                    var secondPageNeeded = true;
                                     provider.customParams.enhableLegends = true;
                                     provider.customParams.legends.push({
                                         classes: [
                                             {
-                                                name: "",
+                                                name: '',
                                                 icon: GeoAdmin.webServicesUrl + "/legend/" + layer.layer + "_" + LegendFormat
                                             }
                                         ],
@@ -281,7 +280,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                         dataOwner: map.attribution().replace(/<(?:.|\s)*?>/g, '').replace(/\&amp;/g, '&')
                     };
                     overrides['lang' + lang] = true;
-                    overrides.customLogo = this.config.mapLogo ? true : false;
+                    overrides['customLogo'] = this.config.mapLogo ? true : false;
                     Ext.apply(pages[0].customParams, overrides);
                 },
                 scope: this
@@ -456,7 +455,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }
         });
         // Open pdf legends after the print event
-        this.printProvider.on("print", function () {
+        this.printProvider.on('print', function () {
             for (var l = 0; l < pdfLayerNames.length; l++) {
                 window.open(GeoAdmin.webServicesUrl + "/legend/" + pdfLayerNames[l] + "_" + OpenLayers.Lang.getCode() + "_" + pdfFormat[l]);
             }
@@ -466,7 +465,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         this.printProvider.encoders.layers.WMTS = function(layer) {
             var enc = this.encoders.layers.HTTPRequest.call(this, layer);
             return Ext.apply(enc, {
-                type: "WMTS",
+                type: 'WMTS',
                 layer: layer.layer,
                 version: layer.version,
                 requestEncoding: layer.requestEncoding,
@@ -476,7 +475,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                 formatSuffix: layer.formatSuffix,
                 dimensions: layer.dimensions,
                 params: layer.params,
-                maxExtent: (layer.tileFullExtent !== null) ? layer.tileFullExtent.toArray() : layer.maxExtent.toArray(),
+                maxExtent: (layer.tileFullExtent != null) ? layer.tileFullExtent.toArray() : layer.maxExtent.toArray(),
                 matrixSet: layer.matrixSet,
                 zoomOffset: 0,
                 resolutions: layer.serverResolutions
@@ -500,10 +499,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             for (var i = 0, len = features.length; i < len; ++i) {
                 feature = features[i];
                 // Manage wrong geometries
-                if (feature.geometry.CLASS_NAME === "OpenLayers.Geometry.LineString" && feature.geometry.getLength() <= 0) {
+                if (feature.geometry.CLASS_NAME == 'OpenLayers.Geometry.LineString' && feature.geometry.getLength() <= 0) {
                     continue;
                 }
-                if (feature.geometry.CLASS_NAME === "OpenLayers.Geometry.Polygon" && feature.geometry.getArea() <= 0) {
+                if (feature.geometry.CLASS_NAME == 'OpenLayers.Geometry.Polygon' && feature.geometry.getArea() <= 0) {
                     continue;
                 }
                 style = feature.style || layer.style ||
@@ -518,7 +517,9 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
                     //new style
                     styleDict[dictKey] = styleName = nextId++;
                     if (style.externalGraphic) {
-                        encStyles[styleName] = Ext.applyIf({externalGraphic: this.getAbsoluteUrl(style.externalGraphic)}, style);
+                        encStyles[styleName] = Ext.applyIf({
+                            externalGraphic: this.getAbsoluteUrl(
+                                style.externalGraphic)}, style);
                     } else {
                         encStyles[styleName] = style;
                     }
@@ -534,20 +535,20 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             }
             var enc = this.encoders.layers.Layer.call(this, layer);
             return Ext.apply(enc, {
-                type: "Vector",
+                type: 'Vector',
                 styles: encStyles,
-                styleProperty: "_gx_style",
+                styleProperty: '_gx_style',
                 geoJson: {
                     type: "FeatureCollection",
                     features: encFeatures
                 },
                 name: layer.name,
-                opacity: (layer.opacity !== null) ? layer.opacity : 1.0
+                opacity: (layer.opacity != null) ? layer.opacity : 1.0
             });
         };
 
         var translate_name = function(record) {
-            record.set("label", OpenLayers.i18n(record.get("name")));
+            record.set('label', OpenLayers.i18n(record.get('name')));
         };
         // Makes sure the print capabilities are fully loaded before rendering
         // the print interface.
@@ -560,14 +561,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             scope: this
         });
 
-        GeoAdmin.Print.superclass.constructor.call(this, this.config);
+        arguments.callee.superclass.constructor.call(this, this.config);
     },
 
     /** private: method[initPanel]
      * Creates the print tool interface.
      */
     initPanel: function() {
-        "use strict";
         var scope = this;
         this.printLayer = new OpenLayers.Layer.Vector(null, {
             displayInLayerSwitcher: false,
@@ -628,8 +628,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             defaults: {
                 width: 200
             },
-            labelAlign: "top",
-            buttonAlign: "right",
+            labelAlign: 'top',
+            buttonAlign: 'right',
             dpiText: OpenLayers.i18n("DPI"),
             layoutText: OpenLayers.i18n("mf.print.layout"),
             scaleText: OpenLayers.i18n("mf.print.scale"),
@@ -694,6 +694,8 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         this.legendCheckbox = new GeoAdmin.LegendButton({hidden: !this.config.configureLegend});
         this.printPanel.add(this.legendCheckbox);
+        //this.printPanel.insert(1, this.legendCheckbox);
+
         this.printPanel.hideExtent();
 
         // If a renderTo config is provided, the print panel is rendered
@@ -703,10 +705,10 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             this.windowOptions = Ext.apply({
                 height: 240,
                 width: 225,
-                bodyStyle: "padding: 5px; background-color: #FFFFFF;",
-                title: OpenLayers.i18n("print"),
+                bodyStyle: 'padding: 5px; background-color: #FFFFFF;',
+                title: OpenLayers.i18n('print'),
                 layout: "fit",
-                closeAction: "hide",
+                closeAction: 'hide',
                 items: [ this.printPanel ]
             }, this.config.windowOptions);
             this.printPanel.hideExtent();
@@ -722,7 +724,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
      * Displays/hides the print form
      */
     pHandler: function() {
-        "use strict";
         if (!this.capabilitiesLoaded) {
             // TODO add an alert message ?
             return;
@@ -734,7 +735,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
         if (this.showWindow) {
             if (!this.popup) {
                 this.popup = new Ext.Window(this.windowOptions);
-                this.popup.on("hide", function() {
+                this.popup.on('hide', function() {
                     this.printPanel.hideExtent();
                     this.printLayer.setVisibility(false);
                 }, this);
@@ -764,7 +765,6 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
     },
 
     setDisabled: function(disabled){
-        "use strict";
         Ext.Action.prototype.setDisabled.call(this, disabled);
         if(this.printPanel){
             // Make sure dialog is invisible whenever printing gets disabled
@@ -780,7 +780,6 @@ GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
     pressed: false,
     hidden: false,
     initComponent: function() {
-        "use strict";
         Ext.apply(this, {
             boxMaxHeight: 15,
             boxMaxWidth: 15,
@@ -791,7 +790,7 @@ GeoAdmin.LegendButton = Ext.extend(Ext.Button, {
             iconCls: this.visibility ? "visibility_on" : "visibility_off",
             scope: this,
             handler: function() {
-                if (this.pressed === false) {
+                if (this.pressed == false) {
                     this.setIconClass("visibility_on");
                     this.pressed = true;
                 } else {

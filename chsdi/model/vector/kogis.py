@@ -46,6 +46,8 @@ class FIXPUNKTE_LFP1(Base, Queryable):
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
+register('ch.swisstopo.fixpunkte-lfp1', FIXPUNKTE_LFP1)
+
 class FIXPUNKTE_LFP2(Base, Queryable):
     # view in a schema
     __tablename__ = 'punkt_lage_lfp2'
@@ -55,6 +57,8 @@ class FIXPUNKTE_LFP2(Base, Queryable):
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
+
+register('ch.swisstopo.fixpunkte-lfp2', FIXPUNKTE_LFP2)
 
 class FIXPUNKTE_HFP1(Base, Queryable):
     # view in a schema
@@ -66,6 +70,8 @@ class FIXPUNKTE_HFP1(Base, Queryable):
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
+register('ch.swisstopo.fixpunkte-hfp1', FIXPUNKTE_HFP1)
+
 class FIXPUNKTE_HFP2(Base, Queryable):
     # view in a schema
     __tablename__ = 'punkt_hoehe_hfp2'
@@ -76,7 +82,4 @@ class FIXPUNKTE_HFP2(Base, Queryable):
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
 
-register('ch.swisstopo.fixpunkte-lfp1', FIXPUNKTE_LFP1)
-register('ch.swisstopo.fixpunkte-lfp2', FIXPUNKTE_LFP2)
-register('ch.swisstopo.fixpunkte-hfp1', FIXPUNKTE_HFP1)
 register('ch.swisstopo.fixpunkte-hfp2', FIXPUNKTE_HFP2)

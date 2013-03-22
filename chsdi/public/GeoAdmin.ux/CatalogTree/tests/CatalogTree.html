@@ -291,9 +291,11 @@
             }
 
             // 'Mineralische Bodenschätze'
-            // node does not currently exist
-            t.ok(tree.getNodeById(tree.id + '_LT2_27') == null,
-                 'LT2_27 does not exist');
+            n = tree.getNodeById(tree.id + '_LT2_27');
+            if (n != null) {
+                t.eq(n.attributes._text, 'Mineralische Bodenschätze',
+                     'LT2_27 is Mineralische Bodenschätze');
+            }
 
             // 'Statistische Einheiten'
             n = tree.getNodeById(tree.id + '_LT2_28');
