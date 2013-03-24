@@ -358,7 +358,7 @@ The GeoAdmin Light API can be loaded by calling:
 
 .. code-block:: html
 
-   <script type="text/javascript" src="https://api.geo.admin.ch/loader.jsi?mode=light"></script>
+   <script type="text/javascript" src="https://api.geo.admin.ch/loader.js?mode=light"></script>
 
 If you want to be in debug mode, then load it with:
 
