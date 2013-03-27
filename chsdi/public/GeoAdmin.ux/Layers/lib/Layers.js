@@ -1237,6 +1237,69 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            "ch.swisstopo.geologie-geotechnik-steinbrueche_1915": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-steinbrueche_1915"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-steinbrueche_1965": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-steinbrueche_1965"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-steinbrueche_1980": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-steinbrueche_1980"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-steinbrueche_1995": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-steinbrueche_1995"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-ziegeleien_1907": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1907"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-ziegeleien_1965": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1965"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-ziegeleien_1995": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1995"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
                 layertype: 'wmts',
@@ -1362,6 +1425,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false
+            },
+            "ch.swisstopo.geologie-rohstoffe-industrieminerale": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-industrieminerale"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geologie-rohstoffe-vererzungen": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-vererzungen"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
             },
             "ch.swisstopo.geologie-tektonische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-tektonische_karte"),
