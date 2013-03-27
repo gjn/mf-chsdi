@@ -1280,7 +1280,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-geotechnik-ziegeleien_1965": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1965"),
@@ -1289,7 +1290,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-geotechnik-ziegeleien_1995": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1995"),
@@ -1298,7 +1300,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
@@ -1433,7 +1436,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"),
@@ -1442,7 +1446,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-rohstoffe-vererzungen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-vererzungen"),
@@ -1451,7 +1456,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.swisstopo.geologie-tektonische_karte": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-tektonische_karte"),
