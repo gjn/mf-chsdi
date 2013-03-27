@@ -917,11 +917,29 @@ msgstr "Cave 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Cave 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
+msgstr "Mattonifici 1907"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1965"
+msgstr "Mattonifici 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995"
+msgstr "Mattonifici 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Riserve acquifere"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Vulnerabilitá delle falde acquifere"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
+msgstr "Minerali industriali"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr "Materie prime energetiche"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
+msgstr "Mineralizzazioni"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tettonica 1:500 000"
@@ -945,7 +963,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carta Siegfried Prima edizione"
 
 msgid "ch.swisstopo.images-swissimage"
-msgstr "Veduta aerea"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisione in tiles SWISSIMAGE"
