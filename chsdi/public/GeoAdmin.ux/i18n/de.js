@@ -605,7 +605,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.gg25-land-flaeche.fill':'Landesgrenzen GG25',
 	'ch.swisstopo.hiks-dufour':'Dufourkarte Erstausgabe',
 	'ch.swisstopo.hiks-siegfried':'Siegfriedkarte Erstausgabe',
-	'ch.swisstopo.images-swissimage':'Luftbild',
+	'ch.swisstopo.images-swissimage':'SWISSIMAGE',
 	'ch.swisstopo.images-swissimage.metadata':'Kachelung SWISSIMAGE',
 	'ch.swisstopo.koordinatenaenderung':'LV95 Koordinatenänderung',
 	'ch.swisstopo.kt':'swisstopo, Kt.',
