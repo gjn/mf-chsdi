@@ -28,7 +28,7 @@
 					<ows:AdministrativeArea>BE</ows:AdministrativeArea>
 					<ows:PostalCode>3084</ows:PostalCode>
 					<ows:Country>Switzerland</ows:Country>
-					<ows:ElectronicMailAddress/>
+					<ows:ElectronicMailAddress>webgis@swisstopo.ch<ows:ElectronicMailAddress/>
 				</ows:Address>
 			</ows:ContactInfo>
 		</ows:ServiceContact>
