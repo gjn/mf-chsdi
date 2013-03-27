@@ -2985,7 +2985,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.erosion": {
                 name: OpenLayers.i18n("ch.blw.erosion"),
                 layertype: 'wmts',
-                timestamp: ['20100102'],
+                timestamp: ['20100103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -2994,7 +2994,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.erosion-mit_bergzonen": {
                 name: OpenLayers.i18n("ch.blw.erosion-mit_bergzonen"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20100103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
