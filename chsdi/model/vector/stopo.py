@@ -446,6 +446,76 @@ class Gk500_lithologie_hauptgruppen(Base, Queryable):
 
 register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen',Gk500_lithologie_hauptgruppen)
 
+class GeologieGeotechnikSteinbrueche1915(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_steinbrueche_1915'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/steinbrueche_1915.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-steinbrueche_1915',GeologieGeotechnikSteinbrueche1915)
+
+class GeologieGeotechnikSteinbrueche1965(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_steinbrueche_1965'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/steinbrueche_1965.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-steinbrueche_1965',GeologieGeotechnikSteinbrueche1965)
+
+class GeologieGeotechnikSteinbrueche1980(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_steinbrueche_1980'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/steinbrueche_1980.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-steinbrueche_1980',GeologieGeotechnikSteinbrueche1980)
+
+class GeologieGeotechnikSteinbrueche1995(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_steinbrueche_1995'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/steinbrueche_1995.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995',GeologieGeotechnikSteinbrueche1995)
+
+class GeologieGeotechnikZiegeleien1907(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_ziegeleien_1907'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/ziegeleien_1907.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-ziegeleien_1907',GeologieGeotechnikZiegeleien1907)
+
+class GeologieGeotechnikZiegeleien1965(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_ziegeleien_1965'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/ziegeleien_1965.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-ziegeleien_1965',GeologieGeotechnikZiegeleien1965)
+
+class GeologieGeotechnikZiegeleien1995(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_ziegeleien_1995'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/ziegeleien_1995.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-ziegeleien_1995',GeologieGeotechnikZiegeleien1995)
+
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_inklination'
@@ -466,6 +536,36 @@ class Geologischer_Aeromagnetik_Jura(Base, Queryable):
         the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
+
+class GeologieRohstoffeIndustrieminerale(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'rohstoffe_industrieminerale'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/rohstoffe_industrieminerale.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-rohstoffe-industrieminerale',GeologieRohstoffeIndustrieminerale)
+
+class GeologieRohstoffeKohlenBitumenErdgas(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'rohstoffe_kohlen_bitumen_erdgas'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/rohstoffe_kohlen_bitumen_erdgas.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas',GeologieRohstoffeKohlenBitumenErdgas)
+
+class GeologieRohstoffeVererzungen(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'rohstoffe_vererzungen'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/rohstoffe_vererzungen.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-rohstoffe-vererzungen',GeologieRohstoffeVererzungen)
 
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
