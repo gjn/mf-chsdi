@@ -2040,6 +2040,9 @@ msgstr "Nadelholzanteil [%]"
 msgid "name"
 msgstr "Name"
 
+msgid "name_ads"
+msgstr "Site"
+
 msgid "name_bazl"
 msgstr "Name"
 
@@ -2130,6 +2133,9 @@ msgstr "Zip"
 msgid "print"
 msgstr "Print"
 
+msgid "produkt"
+msgstr "Product"
+
 msgid "protokoll"
 msgstr "Protocol"
 
@@ -2162,6 +2168,9 @@ msgstr "Report problem"
 
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
+
+msgid "rohstoff"
+msgstr "Raw material"
 
 msgid "routentypid"
 msgstr "Routentyp ID für Ausnahmetransporte"
@@ -2974,6 +2983,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "ziegeleien"
+msgstr "Name of brick manufacture"
 
 msgid "zielhafen"
 msgstr "Zielhafen"

@@ -1868,6 +1868,9 @@ msgstr ""
 msgid "typ_kraftwerk"
 msgstr ""
 
+msgid "produkt"
+msgstr ""
+
 msgid "typ_produkt"
 msgstr ""
 
@@ -2775,6 +2778,15 @@ msgid "gesteinsgr"
 msgstr ""
 
 msgid "gestein"
+msgstr ""
+
+msgid "ziegeleien"
+msgstr ""
+
+msgid "rohstoff"
+msgstr ""
+
+msgid "name_ads"
 msgstr ""
 
 msgid "ivs_nat_historischen"

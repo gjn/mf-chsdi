@@ -2039,6 +2039,9 @@ msgstr "Proportion de résineux [%]"
 msgid "name"
 msgstr "Nom"
 
+msgid "name_ads"
+msgstr "Localité"
+
 msgid "name_bazl"
 msgstr "Désignation"
 
@@ -2129,6 +2132,9 @@ msgstr "NPA"
 msgid "print"
 msgstr "Impression"
 
+msgid "produkt"
+msgstr "Produit"
+
 msgid "protokoll"
 msgstr "Protocole"
 
@@ -2161,6 +2167,9 @@ msgstr "Annoncer un problème"
 
 msgid "richtungsgetrennt"
 msgstr "Directions séparées"
+
+msgid "rohstoff"
+msgstr "Matières premières"
 
 msgid "routentypid"
 msgstr "Genre d'itinéraires pour convois exceptionnels"
@@ -2974,6 +2983,9 @@ msgstr "Poste de comptage"
 
 msgid "zeitraum"
 msgstr "Période de protection"
+
+msgid "ziegeleien"
+msgstr "Nom de la Briqueterie"
 
 msgid "zielhafen"
 msgstr "Destination"

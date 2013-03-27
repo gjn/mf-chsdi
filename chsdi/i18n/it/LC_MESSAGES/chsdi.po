@@ -2039,6 +2039,9 @@ msgstr "Proportion de résineux [%]"
 msgid "name"
 msgstr "Nome"
 
+msgid "name_ads"
+msgstr "Località"
+
 msgid "name_bazl"
 msgstr "Denominazione"
 
@@ -2129,6 +2132,9 @@ msgstr "NPA"
 msgid "print"
 msgstr "Stampa"
 
+msgid "produkt"
+msgstr "Prodotto"
+
 msgid "protokoll"
 msgstr "Protocollo"
 
@@ -2161,6 +2167,9 @@ msgstr "Segnala un problema"
 
 msgid "richtungsgetrennt"
 msgstr "A carregiate separate"
+
+msgid "rohstoff"
+msgstr "Materia prima"
 
 msgid "routentypid"
 msgstr "ID tipo di percorso per trasporti eccesionali"
@@ -2974,6 +2983,9 @@ msgstr "Poste de comptage"
 
 msgid "zeitraum"
 msgstr "Période de protection"
+
+msgid "ziegeleien"
+msgstr "Nome della fabbrica da quadrels"
 
 msgid "zielhafen"
 msgstr "Destination"
