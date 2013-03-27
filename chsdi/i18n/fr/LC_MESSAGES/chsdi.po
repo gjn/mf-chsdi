@@ -2647,6 +2647,12 @@ msgstr "Code Type de commune"
 msgid "tt_geotechnik_gk200"
 msgstr "Lien vers la légende"
 
+msgid "tt_gk500-genese"
+msgstr "La genèse des roches"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Classification des roches"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caractérisation lithologique pétrographique"
 

@@ -2647,6 +2647,12 @@ msgstr "Code Gemeindetyp"
 msgid "tt_geotechnik_gk200"
 msgstr "Link zur Legende"
 
+msgid "tt_gk500-genese"
+msgstr "Rock genesis"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Rock classification"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
 

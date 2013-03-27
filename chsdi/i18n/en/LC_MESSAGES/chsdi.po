@@ -2647,6 +2647,12 @@ msgstr "Code type of commune"
 msgid "tt_geotechnik_gk200"
 msgstr "Link to the legend"
 
+msgid "tt_gk500-genese"
+msgstr "Genese der Gesteine"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Gesteinsklassierung"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologic / petrographic characterization"
 

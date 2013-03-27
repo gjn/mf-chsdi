@@ -2828,6 +2828,12 @@ msgstr ""
 msgid "tt_gk_500_LithoHaupt"
 msgstr ""
 
+msgid "tt_gk500-genese" 
+msgstr ""
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr ""
+
 msgid "tt_geotechnik_gk200"
 msgstr ""
 
