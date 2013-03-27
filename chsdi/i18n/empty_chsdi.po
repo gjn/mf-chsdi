@@ -2405,6 +2405,18 @@ msgstr ""
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr ""
 
@@ -2739,6 +2751,12 @@ msgid "FL"
 msgstr ""
 
 msgid "No info outside CH and FL"
+msgstr ""
+
+msgid "gesteinsgr"
+msgstr ""
+
+msgid "gestein"
 msgstr ""
 
 msgid "ivs_nat_historischen"

@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Système de mise en réseau faune"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "Corridors faunistiques de Suisse"
+msgstr "Corridors faunistiques suprarégional"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Peste de l'écrevisse"
@@ -905,6 +905,18 @@ msgstr "Classification des roches"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Groupes lithologiques"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Carrières 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Carrières 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Carrières 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Carrières 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères"
 
@@ -1195,6 +1207,12 @@ msgstr "Informations détaillées"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
+
+msgid "gestein"
+msgstr "Roche"
+
+msgid "gesteinsgr"
+msgstr "Groupe de roche"
 
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"

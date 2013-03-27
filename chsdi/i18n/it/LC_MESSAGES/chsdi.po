@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Sistema di collegamento fauna"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "Corridoi faunistici nazionali"
+msgstr "Corridoi faunistici sovraregionale"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Peste del gambero"
@@ -905,6 +905,18 @@ msgstr "Classificazione delle rocce"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Gruppi litologici principali"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Cave 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Cave 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Cave 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Cave 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Riserve acquifere"
 
@@ -1195,6 +1207,12 @@ msgstr "Informazioni di dettaglio"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
+
+msgid "gestein"
+msgstr "Rocce"
+
+msgid "gesteinsgr"
+msgstr "Tipo di rocce"
 
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"

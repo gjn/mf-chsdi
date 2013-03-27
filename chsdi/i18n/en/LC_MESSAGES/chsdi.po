@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Wildlife network system"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "National wildlife corridor"
+msgstr "Interregional wildlife corridor"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Crayfish plague"
@@ -905,6 +905,18 @@ msgstr "Classification of rocks"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Main lithological groups"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Quarries 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Quarries 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Quarries 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Quarries 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Groundwater resources"
 
@@ -1196,6 +1208,12 @@ msgstr "Details"
 
 msgid "gesamtflaeche_ha"
 msgstr "Total area [ha]"
+
+msgid "gestein"
+msgstr "Rock"
+
+msgid "gesteinsgr"
+msgstr "Rock type"
 
 msgid "gewaessername"
 msgstr "Gewässername"

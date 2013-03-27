@@ -905,6 +905,18 @@ msgstr "Classificaziun da mineral"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Gruppa litologia principal"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Crapperas 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Crapperas 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Crapperas 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Crapperas 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Resursas d'aua sutterrana"
 
@@ -1196,6 +1208,12 @@ msgstr "Infurmaziuns detagliadas"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
+
+msgid "gestein"
+msgstr "Gestein"
+
+msgid "gesteinsgr"
+msgstr "Gesteinsgruppe"
 
 msgid "gewaessername"
 msgstr "Gewässername"

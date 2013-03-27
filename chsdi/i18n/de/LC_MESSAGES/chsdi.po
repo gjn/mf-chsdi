@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Vernetzungssystem Wildtiere"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "Wildtierkorridore National"
+msgstr "Wildtierkorridore Überregional"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Krebspest"
@@ -905,6 +905,18 @@ msgstr "Gesteinklassierung"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Lithologie-Hauptgruppen"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Steinbrüche 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Steinbrüche 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Steinbrüche 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Steinbrüche 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Grundwasservorkommen"
 
@@ -1195,6 +1207,12 @@ msgstr "Detailinformationen"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
+
+msgid "gestein"
+msgstr "Gestein"
+
+msgid "gesteinsgr"
+msgstr "Gesteinsgruppe"
 
 msgid "gewaessername"
 msgstr "Gewässername"
