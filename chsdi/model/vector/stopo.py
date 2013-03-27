@@ -491,6 +491,7 @@ class GeologieGeotechnikZiegeleien1907(Base, Queryable):
         __tablename__ = 'geotechnik_ziegeleien_1907'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/ziegeleien_1907.mako'
+        __queryable_attributes__ = ['ziegelei_2']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
@@ -501,6 +502,7 @@ class GeologieGeotechnikZiegeleien1965(Base, Queryable):
         __tablename__ = 'geotechnik_ziegeleien_1965'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/ziegeleien_1965.mako'
+        __queryable_attributes__ = ['ziegelei']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
@@ -511,6 +513,7 @@ class GeologieGeotechnikZiegeleien1995(Base, Queryable):
         __tablename__ = 'geotechnik_ziegeleien_1995'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/ziegeleien_1995.mako'
+        __queryable_attributes__ = ['ziegeleien']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
@@ -542,6 +545,7 @@ class GeologieRohstoffeIndustrieminerale(Base, Queryable):
         __tablename__ = 'rohstoffe_industrieminerale'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/rohstoffe_industrieminerale.mako'
+        __queryable_attributes__ = ['name_ads']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
@@ -552,6 +556,7 @@ class GeologieRohstoffeKohlenBitumenErdgas(Base, Queryable):
         __tablename__ = 'rohstoffe_kohlen_bitumen_erdgas'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/rohstoffe_kohlen_bitumen_erdgas.mako'
+        __queryable_attributes__ = ['name_ads']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
@@ -562,6 +567,7 @@ class GeologieRohstoffeVererzungen(Base, Queryable):
         __tablename__ = 'rohstoffe_vererzungen'
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/rohstoffe_vererzungen.mako'
+        __queryable_attributes__ = ['name_ads']
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
