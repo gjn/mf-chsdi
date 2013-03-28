@@ -1868,6 +1868,9 @@ msgstr ""
 msgid "typ_kraftwerk"
 msgstr ""
 
+msgid "produkt"
+msgstr ""
+
 msgid "typ_produkt"
 msgstr ""
 
@@ -2405,10 +2408,40 @@ msgstr ""
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1965"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
@@ -2741,6 +2774,21 @@ msgstr ""
 msgid "No info outside CH and FL"
 msgstr ""
 
+msgid "gesteinsgr"
+msgstr ""
+
+msgid "gestein"
+msgstr ""
+
+msgid "ziegeleien"
+msgstr ""
+
+msgid "rohstoff"
+msgstr ""
+
+msgid "name_ads"
+msgstr ""
+
 msgid "ivs_nat_historischen"
 msgstr ""
 
@@ -2790,6 +2838,12 @@ msgid "bak_unesco_weltkulturerbe_flaeche"
 msgstr ""
 
 msgid "tt_gk_500_LithoHaupt"
+msgstr ""
+
+msgid "tt_gk500-genese" 
+msgstr ""
+
+msgid "tt_gk500-gesteinsklassierung"
 msgstr ""
 
 msgid "tt_geotechnik_gk200"

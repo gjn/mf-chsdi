@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Vernetzungssystem Wildtiere"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "Wildtierkorridore National"
+msgstr "Wildtierkorridore Überregional"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Krebspest"
@@ -905,11 +905,41 @@ msgstr "Gesteinklassierung"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Lithologie-Hauptgruppen"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Steinbrüche 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Steinbrüche 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Steinbrüche 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Steinbrüche 1995"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
+msgstr "Ziegeleien 1907"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1965"
+msgstr "Ziegeleien 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995"
+msgstr "Ziegeleien 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Grundwasservorkommen"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Grundwasservulnerabilität"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
+msgstr "Industrieminerale"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr "Mineralische Energierohstoffe"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
+msgstr "Vererzungen"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tektonik 1:500000"
@@ -933,7 +963,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfriedkarte Erstausgabe"
 
 msgid "ch.swisstopo.images-swissimage"
-msgstr "Luftbild"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Kachelung SWISSIMAGE"
@@ -1195,6 +1225,12 @@ msgstr "Detailinformationen"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
+
+msgid "gestein"
+msgstr "Gestein"
+
+msgid "gesteinsgr"
+msgstr "Gesteinsgruppe"
 
 msgid "gewaessername"
 msgstr "Gewässername"
@@ -2003,6 +2039,9 @@ msgstr "Nadelholzanteil [%]"
 msgid "name"
 msgstr "Name"
 
+msgid "name_ads"
+msgstr "Lokalität"
+
 msgid "name_bazl"
 msgstr "Bezeichnung"
 
@@ -2093,6 +2132,9 @@ msgstr "PLZ"
 msgid "print"
 msgstr "Drucken"
 
+msgid "produkt"
+msgstr "Produkt"
+
 msgid "protokoll"
 msgstr "Protokoll"
 
@@ -2125,6 +2167,9 @@ msgstr "Problem melden"
 
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
+
+msgid "rohstoff"
+msgstr "Rohstoff"
 
 msgid "routentypid"
 msgstr "Routentyp ID für Ausnahmetransporte"
@@ -2610,6 +2655,12 @@ msgstr "Code Gemeindetyp"
 msgid "tt_geotechnik_gk200"
 msgstr "Link zur Legende"
 
+msgid "tt_gk500-genese"
+msgstr "Genese der Gesteine"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Gesteinsklassierung"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
 
@@ -2931,6 +2982,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "ziegeleien"
+msgstr "Name der Ziegelei"
 
 msgid "zielhafen"
 msgstr "Zielhafen"

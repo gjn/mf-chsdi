@@ -605,7 +605,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.gg25-land-flaeche.fill':'Frontières nationales GG25',
 	'ch.swisstopo.hiks-dufour':'Carte Dufour Première édition',
 	'ch.swisstopo.hiks-siegfried':'Carte Siegfried Première édition',
-	'ch.swisstopo.images-swissimage':'Photo aérienne',
+	'ch.swisstopo.images-swissimage':'SWISSIMAGE',
 	'ch.swisstopo.images-swissimage.metadata':'Découpage en tuile SWISSIMAGE',
 	'ch.swisstopo.koordinatenaenderung':'MN95 Changements de coordonnées',
 	'ch.swisstopo.kt':'swisstopo, ct.',

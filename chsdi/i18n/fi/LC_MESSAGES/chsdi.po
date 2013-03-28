@@ -905,11 +905,41 @@ msgstr "Classificaziun da mineral"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Gruppa litologia principal"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Crapperas 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Crapperas 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Crapperas 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Crapperas 1995"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
+msgstr "Fabricas da quadrels 1907"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1965"
+msgstr "Fabricas da quadrels 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995"
+msgstr "Fabricas da quadrels 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Resursas d'aua sutterrana"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Vulnerabladad da l'aua sutterrana"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
+msgstr "Minerals industrials"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr "Resursa d'energia minerala"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
+msgstr "Metallisaziuns"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonica 1:500000"
@@ -1196,6 +1226,12 @@ msgstr "Infurmaziuns detagliadas"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
+
+msgid "gestein"
+msgstr "Gestein"
+
+msgid "gesteinsgr"
+msgstr "Gesteinsgruppe"
 
 msgid "gewaessername"
 msgstr "Gewässername"
@@ -2004,6 +2040,9 @@ msgstr "Nadelholzanteil [%]"
 msgid "name"
 msgstr "Num"
 
+msgid "name_ads"
+msgstr "Localitad"
+
 msgid "name_bazl"
 msgstr "Designaziun"
 
@@ -2094,6 +2133,9 @@ msgstr "PLZ"
 msgid "print"
 msgstr "Stampar"
 
+msgid "produkt"
+msgstr "Produkt"
+
 msgid "protokoll"
 msgstr "Protokoll"
 
@@ -2126,6 +2168,9 @@ msgstr "Rapportar in problem"
 
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
+
+msgid "rohstoff"
+msgstr "Materia prima"
 
 msgid "routentypid"
 msgstr "Routentyp ID für Ausnahmetransporte"
@@ -2611,6 +2656,12 @@ msgstr "Code Gemeindetyp"
 msgid "tt_geotechnik_gk200"
 msgstr "Link zur Legende"
 
+msgid "tt_gk500-genese"
+msgstr "Rock genesis"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Rock classification"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
 
@@ -2932,6 +2983,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "ziegeleien"
+msgstr "Name der Ziegelei"
 
 msgid "zielhafen"
 msgstr "Zielhafen"

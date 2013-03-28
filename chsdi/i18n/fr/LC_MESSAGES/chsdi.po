@@ -573,7 +573,7 @@ msgid "ch.bafu.fauna-vernetzungsachsen_national"
 msgstr "Système de mise en réseau faune"
 
 msgid "ch.bafu.fauna-wildtierkorridor_national"
-msgstr "Corridors faunistiques de Suisse"
+msgstr "Corridors faunistiques suprarégional"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Peste de l'écrevisse"
@@ -905,11 +905,41 @@ msgstr "Classification des roches"
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
 msgstr "Groupes lithologiques"
 
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
+msgstr "Carrières 1915"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1965"
+msgstr "Carrières 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1980"
+msgstr "Carrières 1980"
+
+msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
+msgstr "Carrières 1995"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
+msgstr "Briqueteries 1907"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1965"
+msgstr "Briqueteries 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995"
+msgstr "Briqueteries 1995"
+
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
 msgstr "Vulnérabilité des aquifères"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
+msgstr "Minéraux industriels"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr "Matières premières énergétiques"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
+msgstr "Minéralisations"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonique 1:500000"
@@ -933,7 +963,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carte Siegfried Première édition"
 
 msgid "ch.swisstopo.images-swissimage"
-msgstr "Photo aérienne"
+msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage en tuile SWISSIMAGE"
@@ -1195,6 +1225,12 @@ msgstr "Informations détaillées"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
+
+msgid "gestein"
+msgstr "Roche"
+
+msgid "gesteinsgr"
+msgstr "Groupe de roche"
 
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"
@@ -2003,6 +2039,9 @@ msgstr "Proportion de résineux [%]"
 msgid "name"
 msgstr "Nom"
 
+msgid "name_ads"
+msgstr "Localité"
+
 msgid "name_bazl"
 msgstr "Désignation"
 
@@ -2093,6 +2132,9 @@ msgstr "NPA"
 msgid "print"
 msgstr "Impression"
 
+msgid "produkt"
+msgstr "Produit"
+
 msgid "protokoll"
 msgstr "Protocole"
 
@@ -2125,6 +2167,9 @@ msgstr "Annoncer un problème"
 
 msgid "richtungsgetrennt"
 msgstr "Directions séparées"
+
+msgid "rohstoff"
+msgstr "Matières premières"
 
 msgid "routentypid"
 msgstr "Genre d'itinéraires pour convois exceptionnels"
@@ -2611,6 +2656,12 @@ msgstr "Code Type de commune"
 msgid "tt_geotechnik_gk200"
 msgstr "Lien vers la légende"
 
+msgid "tt_gk500-genese"
+msgstr "La genèse des roches"
+
+msgid "tt_gk500-gesteinsklassierung"
+msgstr "Classification des roches"
+
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caractérisation lithologique pétrographique"
 
@@ -2932,6 +2983,9 @@ msgstr "Poste de comptage"
 
 msgid "zeitraum"
 msgstr "Période de protection"
+
+msgid "ziegeleien"
+msgstr "Nom de la Briqueterie"
 
 msgid "zielhafen"
 msgstr "Destination"
