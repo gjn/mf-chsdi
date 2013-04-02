@@ -436,6 +436,27 @@ class GeologieGeotechnikGk200(Base, Queryable):
 
 register('ch.swisstopo.geologie-geotechnik-gk200',GeologieGeotechnikGk200)
 
+class Gk500_Gensese (Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gk500_genese' 
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/gk500-genese.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk500-genese',Gk500_Gensese)
+
+#class Gk500_Gesteinsklassierung (Base, Queryable):
+#        # view in a schema
+#        # LTALP remplacer la table _update
+#        __tablename__ = 'gk500_gesteinsklassierung_update' 
+#        __table_args__ = ({'schema': 'geol', 'autoload': True})
+#        __template__ = 'tooltips/gk500-gesteinsklassierung.mako'
+#         id = Column('bgdi_id', Integer, primary_key=True)
+#        the_geom = Column(Geometry(21781))
+#
+#register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung',Gk500_Gesteinsklassierung)
+
 class Gk500_lithologie_hauptgruppen(Base, Queryable):
         # view in a schema
         __tablename__ = 'gk500_lithologie_hauptgruppen'
@@ -445,26 +466,6 @@ class Gk500_lithologie_hauptgruppen(Base, Queryable):
         the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen',Gk500_lithologie_hauptgruppen)
-
-class GeologieGeotechnikSteinbrueche1915(Base, Queryable):
-        # view in a schema
-        __tablename__ = 'geotechnik_steinbrueche_1915'
-        __table_args__ = ({'schema': 'geol', 'autoload': True})
-        __template__ = 'tooltips/steinbrueche_1915.mako'
-        id = Column('id', Integer, primary_key=True)
-        the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1915',GeologieGeotechnikSteinbrueche1915)
-
-class GeologieGeotechnikSteinbrueche1965(Base, Queryable):
-        # view in a schema
-        __tablename__ = 'geotechnik_steinbrueche_1965'
-        __table_args__ = ({'schema': 'geol', 'autoload': True})
-        __template__ = 'tooltips/steinbrueche_1965.mako'
-        id = Column('id', Integer, primary_key=True)
-        the_geom = Column(Geometry(21781))
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1965',GeologieGeotechnikSteinbrueche1965)
 
 class GeologieGeotechnikSteinbrueche1980(Base, Queryable):
         # view in a schema
