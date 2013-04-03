@@ -5,8 +5,48 @@ Geodata
 ********
 
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update  | `swissALTI3d Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)                                |                                                                                                                    |
+| Update  | `swissALTI3d Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)                                |  
 +---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update  | `Rock origin <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotechnik-gk500-genese>`__ (ch.swisstopo.geologie-geotechnik-gk500-genese)                                      |  
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update  | `Erosion risk 1 <//map.geo.admin.ch/?layers=ch.blw.erosion>`__ (ch.blw.erosion)                                                                                                 |  
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update  | `Erosion risk 2 <//map.geo.admin.ch/?layers=ch.blw.erosion-mit_bergzonen>`__ (ch.blw.erosion-mit_bergzonen)                                                                     |  
++---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Other minor bugfixing.
+
+
 
 Release 20130321 - Thursday, March 21th 2013
 ====================================================
