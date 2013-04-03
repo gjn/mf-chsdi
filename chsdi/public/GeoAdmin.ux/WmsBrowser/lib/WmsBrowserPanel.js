@@ -46,7 +46,7 @@ GeoAdmin.WmsBrowserPanel = Ext.extend(Ext.Panel, {
     defaultCapabilitiesParams: {
         'SERVICE': "WMS",
         'REQUEST': "GetCapabilities",
-        'VERSION': '1.1.1'
+        'VERSION': '1.3.0'
     },
     gridPanelOptions: {
         'height': 200
