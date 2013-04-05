@@ -177,7 +177,8 @@
     width: 570px;
     z-index: 999;
     font-family: tahoma,arial,verdana;
-    opacity: 0.8;
+    opacity: 0.8 !important;
+    filter: alpha(opacity=80);
 }
 
 .timeseriesWidget-slider {
