@@ -1199,6 +1199,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         var timeseriesWidget = this;
         var pendingForDiscard = [];
         var firstAddedLayer;
+        timestampsToAdd.reverse();
         // Add layers
         for (var i = 0; i < timestampsToAdd.length; i++) {
             var addedLayer = this.addTimeseriesLayer({
