@@ -1072,7 +1072,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-hfp2',
-                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
                 //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
