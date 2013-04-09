@@ -45,9 +45,9 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
             [OpenLayers.i18n('white'), {fillColor: 'white', strokeColor: 'white', strokeWidth: 2, strokeOpacity: 0.75}],
             [OpenLayers.i18n('black'), {fillColor: 'black', strokeColor: 'black', strokeWidth: 2, strokeOpacity: 0.75}],
             [OpenLayers.i18n('gray'), {fillColor: 'gray', strokeColor: 'gray', strokeWidth: 2, strokeOpacity: 0.75}]
-        ]
-    }
-};
+            ]
+        }
+    };
 
     if (feature.isLabel) {
         oGroupItems.push({
@@ -78,9 +78,7 @@ GeoExt.ux.form.FeaturePanel.prototype.initMyItems = function() {
     }
 
     oGroup.items = oGroupItems;
-
     oItems.push(oGroup);
-
     Ext.apply(this, {items: oItems});
 };
 
@@ -265,4 +263,81 @@ GeoExt.ux.form.RedLiningPanel.prototype.initControler = function() {
             strokeOpacity: 0.75
         }
     });
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.onFeatureAdded = function(event) {
+    var feature, drawControl;
+
+    feature = event.feature;
+    feature.state = OpenLayers.State.INSERT;
+    drawControl = this.getActiveDrawControl();
+    if (drawControl) {
+        drawControl.deactivate();
+        this.lastDrawControl = drawControl;
+    }
+    this.featureControl.activate();
+    this.getSelectControl().beforeSelectFeature(feature);
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.getSelectControl = function() {
+    var control = false;
+
+    switch (this.featureControl.CLASS_NAME) {
+        case "OpenLayers.Control.SelectFeature":
+            control = this.featureControl;
+            break;
+        case "OpenLayers.Control.ModifyFeature":
+            control = this.featureControl;
+            break;
+        case "OpenLayers.Control.DeleteFeature":
+            control = this.featureControl.selectControl;
+            break;
+    }
+
+    return control;
+};
+
+GeoExt.ux.FeatureEditingControler.prototype.onModificationStart = function(event) {
+    var feature = (event.geometry) ? event : event.feature;
+    var drawControl = this.getActiveDrawControl();
+    if (drawControl) {
+        drawControl.deactivate();
+        this.featureControl.activate();
+    }
+
+    var options = {
+        autoSave: this.autoSave,
+        features: [feature],
+        controler: this,
+        useIcons: this.useIcons,
+    };
+    if(this['export'] === true) {
+        options['plugins'] = [new GeoExt.ux.ExportFeature(), new GeoExt.ux.CloseFeatureDialog()];
+    }
+
+    clazz = this.featurePanelClass || GeoExt.ux.form.FeaturePanel;
+    this.featurePanel = new clazz(options);
+    popupOptions = {
+        location: feature,
+        feature: feature,
+        controler: this,
+        items: [this.featurePanel]
+    };
+    popupOptions = OpenLayers.Util.applyDefaults(popupOptions, this.popupOptions);
+    popupOptions = OpenLayers.Util.applyDefaults(popupOptions, {
+        title: OpenLayers.i18n('Edit Feature'),
+        layout: 'fit',
+        width: 280
+    });
+    var popup = new GeoExt.Popup(popupOptions);
+    feature.popup = popup;
+    this.popup = popup;
+    popup.on({
+        close: function() {
+            if (OpenLayers.Util.indexOf(this.controler.activeLayer.selectedFeatures, this.feature) > -1) {
+                this.controler.getSelectControl().unselectFeature(this.feature);
+            }
+        }
+    });
+    popup.show();
 };
