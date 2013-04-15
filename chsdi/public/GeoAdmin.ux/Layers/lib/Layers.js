@@ -645,11 +645,12 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.babs.kulturgueter": {
                 name: OpenLayers.i18n("ch.babs.kulturgueter"),
                 layertype: 'wmts',
-                timestamp: ['20130219','20091127'],
+                timestamp: ['20130220','20091127'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.babs",
                 queryable: true,
+                opacity: 0.75,
                 searchable: true
             },
             "ch.kantone.cadastralwebmap-farbe": {
