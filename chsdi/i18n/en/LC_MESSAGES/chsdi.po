@@ -282,7 +282,7 @@ msgid "abgmagn"
 msgstr "Abgeschätzte Magnitude"
 
 msgid "abk_meter_ueber_meer"
-msgstr "m.a.s.l."
+msgstr "m a.s.l."
 
 msgid "abkuerzung"
 msgstr "Abkürzung"
@@ -2506,23 +2506,26 @@ msgstr "WASTA-Number"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "WASTA-Number"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
-msgstr "Kronenlänge"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_aufsichtstart"
+msgstr "Start Supervision"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
-msgstr "Kronenlänge"
+msgstr "Crest Length"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr "Crest Length"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
-msgstr "Kronenkote"
+msgstr "Crest Level"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
-msgstr "Kronenkote"
+msgstr "Crest Level"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Sprerrenhöhe"
+msgstr "Dam Height"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Sprerrenhöhe"
+msgstr "Dam Height"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
@@ -2530,11 +2533,36 @@ msgstr "Name"
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Sperrentyp"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype"
+msgstr "Dam Type"
 
+#. TODO
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Sperrentyp"
+msgstr "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_inbetriebabnahme"
+msgstr "Beginning Of Operation"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_sperre"
+msgstr "Dam"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
+msgstr "Facility"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauhoehe"
+msgstr "Storage Level"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraum"
+msgstr "Reservoir"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraumvolume"
+msgstr "Impoundment Volume"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote"
+msgstr "Impoundment Level"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_zweck"
+msgstr "Aim"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
 msgstr "Detaillierte Beschreibung"

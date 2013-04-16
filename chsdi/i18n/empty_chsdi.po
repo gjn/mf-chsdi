@@ -42,6 +42,33 @@ msgstr ""
 msgid "tt_ngamapping_provider"
 msgstr ""
 
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_inbetriebabnahme"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_zweck"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_aufsichtstart"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraum"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraumvolume"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauhoehe"
+msgstr ""
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_sperre"
+msgstr ""
+
 msgid "tt_kkw_owner"
 msgstr ""
 
@@ -1751,7 +1778,7 @@ msgstr ""
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr ""
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype"
 msgstr ""
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"

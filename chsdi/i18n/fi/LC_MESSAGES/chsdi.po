@@ -282,7 +282,7 @@ msgid "abgmagn"
 msgstr "Abgeschätzte Magnitude"
 
 msgid "abk_meter_ueber_meer"
-msgstr "m.ü.M."
+msgstr "m ü.M."
 
 msgid "abkuerzung"
 msgstr "Abkürzung"
@@ -2506,6 +2506,9 @@ msgstr "WASTA-Nummer"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "WASTA-Nummer"
 
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_aufsichtstart"
+msgstr "Start Aufsichtsperiode"
+
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
 msgstr "Kronenlänge"
 
@@ -2519,10 +2522,10 @@ msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
 msgstr "Kronenkote"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Sprerrenhöhe"
+msgstr "Sperrenhöhe"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Sprerrenhöhe"
+msgstr "Sperrenhöhe"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
@@ -2530,11 +2533,36 @@ msgstr "Name"
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Name"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype"
 msgstr "Sperrentyp"
 
+#. TODO
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Sperrentyp"
+msgstr "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_inbetriebabnahme"
+msgstr "Inbetriebnahme der Anlage"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_sperre"
+msgstr "Sperre"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
+msgstr "Stauanlage"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauhoehe"
+msgstr "Stauhöhe"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraum"
+msgstr "Stauraum"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraumvolume"
+msgstr "Stauraumvolumen"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote"
+msgstr "Kote des Stauziels"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_zweck"
+msgstr "Zweck der Anlage"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
 msgstr "Detaillierte Beschreibung"
