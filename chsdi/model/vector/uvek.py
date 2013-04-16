@@ -100,10 +100,10 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Queryable):
 register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
 
 class STAUANLAGENBUNDESAUFSICHT(Base, Queryable):
-    __tablename__ = 'stauanlagen_bundesaufsicht_dam'
+    __tablename__ = 'stauanlagen_bundesaufsicht'
     __table_args__ = ({'schema': 'bfe', 'autoload': True})
     __template__ = 'tooltips/stauanlagenbundesaufsicht.mako'
-    id = Column('tid', Integer, primary_key=True)
+    id = Column('dam_stabil_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
