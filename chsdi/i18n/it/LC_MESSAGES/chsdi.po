@@ -282,7 +282,7 @@ msgid "abgmagn"
 msgstr "Magnitude estimée"
 
 msgid "abk_meter_ueber_meer"
-msgstr "m.s.l.m."
+msgstr "m s.l.m."
 
 msgid "abkuerzung"
 msgstr "Abréviation"
@@ -2505,35 +2505,63 @@ msgstr "Numéro SAHE"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "Numéro SAHE"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
-msgstr "Longueur du couronnement"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_aufsichtstart"
+msgstr "Inizio del periodo di vigilanza"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
-msgstr "Longueur du couronnement"
+msgstr "Lunghezza del coronamento"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
+msgstr "Lunghezza del coronamento"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
-msgstr "Niveau du couronnement"
+msgstr "Livello del coronamento"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel"
-msgstr "Niveau du couronnement"
+msgstr "Livello del coronamento"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Hauteur du barrage"
+msgstr "Altezza dell'opera di sbarramento"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damheight"
-msgstr "Hauteur du barrage"
+msgstr "Altezza dell'opera di sbarramento"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
-msgstr "Nom"
+msgstr "Nome"
 
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
-msgstr "Nom"
+msgstr "Nome"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Type de barrage"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype"
+msgstr "Tipo dell'opera di sbarramento"
 
+#. TODO
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Type de barrage"
+msgstr "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_inbetriebabnahme"
+msgstr "Messa in esercizio dell'impianto"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_sperre"
+msgstr "Opera di sbarramento"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
+msgstr "Impianto di accumulazione"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauhoehe"
+msgstr "Altezza d'invaso"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraum"
+msgstr "Ritenuta"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraumvolume"
+msgstr "Volume di ritenuta"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote"
+msgstr "Livello normale di ritenuta"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_zweck"
+msgstr "Scopo dell'impianto"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
 msgstr "Descrizione dettagliata "

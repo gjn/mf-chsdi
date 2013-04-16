@@ -282,7 +282,7 @@ msgid "abgmagn"
 msgstr "Magnitude estimée"
 
 msgid "abk_meter_ueber_meer"
-msgstr "m.s.m."
+msgstr "m s.m."
 
 msgid "abkuerzung"
 msgstr "Abréviation"
@@ -2505,6 +2505,9 @@ msgstr "Numéro SAHE"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "Numéro SAHE"
 
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_aufsichtstart"
+msgstr "Début de la période de surveillance"
+
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength"
 msgstr "Longueur du couronnement"
 
@@ -2529,11 +2532,36 @@ msgstr "Nom"
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damname"
 msgstr "Nom"
 
-msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype"
 msgstr "Type de barrage"
 
+#. TODO
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
-msgstr "Type de barrage"
+msgstr "tt_ch.bfe.stauanlagen-bundesaufsicht_damtype_de"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_inbetriebabnahme"
+msgstr "Mise en service de l'ouvrage"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_sperre"
+msgstr "Ouvrage de retenue"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
+msgstr "Ouvrage d'accumulation"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauhoehe"
+msgstr "Hauteur de retenue"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraum"
+msgstr "Bassin de retenue"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauraumvolume"
+msgstr "Volume de retenue"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote"
+msgstr "Niveau normal de retenue"
+
+msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_zweck"
+msgstr "But de l'ouvrage d'accumulation"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung"
 msgstr "Description détaillée"
