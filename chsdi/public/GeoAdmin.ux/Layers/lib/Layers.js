@@ -975,7 +975,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-lfp1',
                 //url: 'http://wms-bgdi0i.bgdi.admin.ch/?lang=de', // WMS-BGDI (DE) ONLY FOR TEST (LTALP)
-                url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // WMS-BOD (DE) ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // WMS-BOD (DE) ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false,
@@ -1007,7 +1007,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-lfp2_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-lfp2',
-                url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
                 //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TESTS (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1040,7 +1040,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp1_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-hfp1',
-                url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
                 //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1073,7 +1073,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-hfp2_wms"),
                 layertype: 'wms',
                 layers: 'ch.swisstopo.fixpunkte-hfp2',
-                url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
+                //url: 'http://wms-bod0i.bgdi.admin.ch/?lang=de', // ONLY FOR TEST (LTALP)
                 //url: 'http://wms-bod0t.bgdi.admin.ch', // ONLY FOR TEST (LTALP)
                 format: "image/png",
                 datenherr: "ch.swisstopo",
