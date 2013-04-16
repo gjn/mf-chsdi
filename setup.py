@@ -27,10 +27,6 @@ setup(
     include_package_data = True,
     test_suite = 'nose.collector',
     package_data = {'chsdi': ['i18n/*/LC_MESSAGES/*.mo']},
-    message_extractors={'chsdi': [
-           ('**.py', 'python', None),
-           ('templates/**.mako', 'mako', {'input_encoding': 'utf-8'}),
-           ('public/**', 'ignore', None)]},
     zip_safe = False,
     #paster_plugins=['MapFish', 'PasteScript', 'Pylons', 'chsdi'],
     entry_points = """
