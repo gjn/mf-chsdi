@@ -119,7 +119,7 @@
 % if c.feature.has_picture == 200:
     <table border="0" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
         <tr><td valign="top">
-        <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_energieforschung/${c.feature.facility_stabil_id}.jpg" alt="" width="300px" />
+        <img src="https://dav0.bgdi.admin.ch/bfe_pub/images_stauanlagen/${c.feature.facility_stabil_id}.jpg"/>
         </td><td>&nbsp;</td></tr>
     </table>
 % endif 

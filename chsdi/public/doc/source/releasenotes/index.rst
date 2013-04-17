@@ -1,3 +1,58 @@
+Release 20130417 - Wednesday, April 17th 2013
+====================================================
+
+Geodata
+********
+
++--------+------------------------------------------------------------------------------------------------------------------------+
+| Update | `Protection of cultural property inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter) |
++--------+------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dam <//map.geo.admin.ch/?layers=ch.bfe.stauanlagen-bundesaufsicht>`__ (ch.bfe.stauanlagen-bundesaufsicht)             |
++--------+------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++-------+---------------------------------------------------------------------------------+
+| New   | `Topic for protection of cultural properties <//map.geo.admin.ch/?topic=kgs>`__ |
++-------+---------------------------------------------------------------------------------+
+| Fixed | Editing of redlining features.                                                  |
++-------+---------------------------------------------------------------------------------+
+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
++-------+-------------------------------------------------------+
+| Fixed | Zooming and Panning problems on older Android phones. |
++-------+-------------------------------------------------------+
+
+Other minor bugfixing.
+
 Release 20130403 - Wednesday, April 3rd 2013
 ====================================================
 
