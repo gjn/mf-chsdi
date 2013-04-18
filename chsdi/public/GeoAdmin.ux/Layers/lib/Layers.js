@@ -1476,7 +1476,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                opacity: 0.75,
                 queryable: true
             },
             "ch.bafu.bundesinventare-amphibien": {
