@@ -1821,7 +1821,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1831,7 +1831,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_rutschungen"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1841,7 +1841,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1851,7 +1851,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_lawinen"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1861,7 +1861,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_hochwasser"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1871,7 +1871,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_rutschungen"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1881,7 +1881,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1891,7 +1891,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_lawinen"),
                 layertype: 'wmts',
-                timestamp: ['20120101','20100101'],
+                timestamp: ['20130101','20120101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
