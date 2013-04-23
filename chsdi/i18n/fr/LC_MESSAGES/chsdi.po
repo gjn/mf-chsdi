@@ -1347,7 +1347,7 @@ msgid "ivs_nat_historischen"
 msgstr "Histoire"
 
 msgid "ivs_nat_linienfuehrung"
-msgstr "Tronçons"
+msgstr "Tronçon"
 
 msgid "ivs_nat_morphologischen"
 msgstr "Terrain"
@@ -1356,7 +1356,7 @@ msgid "ivs_nat_strecke"
 msgstr "Itinéraire"
 
 msgid "ivs_objekt"
-msgstr "Object IVS"
+msgstr "Objet IVS"
 
 msgid "ivs_signatur"
 msgstr "Substance"

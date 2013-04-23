@@ -1989,7 +1989,7 @@ msgid "linkzurlegende"
 msgstr "Lien vers la légende"
 
 msgid "lokal"
-msgstr "importanza locale"
+msgstr "Importanza locale"
 
 msgid "losactivite"
 msgstr "Tipo di attività"
@@ -2055,7 +2055,7 @@ msgid "name_terreg"
 msgstr "Nom de la région territoriale"
 
 msgid "national"
-msgstr "importanza nazionale"
+msgstr "Importanza nazionale"
 
 msgid "nffirmenname"
 msgstr "Società / ufficio"
@@ -2151,7 +2151,7 @@ msgid "raeumliche_qualitaeten"
 msgstr "Qualità spaziali"
 
 msgid "regional"
-msgstr "importanza regionale"
+msgstr "Importanza regionale"
 
 msgid "regname"
 msgstr "Région"
