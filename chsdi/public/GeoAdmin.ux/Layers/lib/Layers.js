@@ -1415,20 +1415,20 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"),
                 layertype: 'wmts',
-                timestamp: ['20070101'],
+                timestamp: ['20081103','20070101'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"),
                 layertype: 'wmts',
-                timestamp: ['20070914'],
+                timestamp: ['20081016','20070914'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-rohstoffe-industrieminerale": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-rohstoffe-industrieminerale"),
@@ -3089,7 +3089,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-vd.ortschaftenverzeichnis_plz": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
                 layertype: 'wmts',
-                timestamp: ['20121102','20120501','20111101','20110502'],
+                timestamp: ['20130501','20121102','20120501','20111101','20110502'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
