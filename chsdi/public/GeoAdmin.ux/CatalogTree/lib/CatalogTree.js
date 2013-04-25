@@ -765,6 +765,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bag.zecken-lyme"
                     },
                     {
+                        layerId: "ch.bag.zecken-fsme-faelle"
+                    },
+                    {
+                        layerId: "ch.bag.zecken-fsme-impfung"
+                    },
+                    {
                         layerId: "ch.bav.laerm-emissionplan_eisenbahn_2015"
                     },
                     {

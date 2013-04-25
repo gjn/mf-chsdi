@@ -872,7 +872,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swisstlm3d-wanderwege": {
                 name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-wanderwege"),
                 layertype: 'wmts',
-                timestamp: ['20050101'],
+                timestamp: ['20130101'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1678,7 +1678,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"),
                 layertype: 'wmts',
-                timestamp: ['20121023','20120127','20110103'],
+                timestamp: ['20130415','20121023','20120127','20110103'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3666,6 +3666,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bag",
                 opacity: 0.75,
                 queryable: false
+            },
+            'ch.bag.zecken-fsme-faelle': {
+                name: OpenLayers.i18n('ch.bag.zecken-fsme-faelle'),
+                layertype: 'wmts',
+                timestamp: ['20121231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bag",
+                opacity: 0.75,
+                queryable: true
+            },
+            'ch.bag.zecken-fsme-impfung': {
+                name: OpenLayers.i18n('ch.bag.zecken-fsme-impfung'),
+                layertype: 'wmts',
+                timestamp: ['20121231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bag",
+                opacity: 0.75,
+                queryable: true
             },
             "ch.are.bauzonen": {
                 name: OpenLayers.i18n("ch.are.bauzonen"),
