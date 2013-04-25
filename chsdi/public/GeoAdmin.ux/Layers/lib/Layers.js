@@ -3667,6 +3667,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            'ch.bag.zecken-fsme-faelle': {
+                name: OpenLayers.i18n('ch.bag.zecken-fsme-faelle'),
+                layertype: 'wmts',
+                timestamp: ['20121231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bag",
+                opacity: 0.75,
+                queryable: true
+            },
+            'ch.bag.zecken-fsme-impfung': {
+                name: OpenLayers.i18n('ch.bag.zecken-fsme-impfung'),
+                layertype: 'wmts',
+                timestamp: ['20121231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bag",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.are.bauzonen": {
                 name: OpenLayers.i18n("ch.are.bauzonen"),
                 layers: ["ch.are.bauzonen"],
