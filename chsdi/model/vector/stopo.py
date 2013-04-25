@@ -519,6 +519,26 @@ class GeologieGeotechnikZiegeleien1995(Base, Queryable):
 
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1995',GeologieGeotechnikZiegeleien1995)
 
+class GeologieHydroKarteGrundwasservorkommen(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'grundwasservorkommen'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/grundwasservorkommen.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen',GeologieHydroKarteGrundwasservorkommen)
+
+class GeologieHydroKarteGrundwasservulneabilitaet(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'grundwasservorkommen_plg'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/grundwasservulnerabilitaet.mako'
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet',GeologieHydroKarteGrundwasservulneabilitaet)
+
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_inklination'
