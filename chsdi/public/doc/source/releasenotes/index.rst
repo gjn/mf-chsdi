@@ -4,9 +4,13 @@ Release 20130501 - Wednesday, May 1st 2013
 Geodata
 ********
 
-+--------+------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege) |
-+--------+------------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Groundwater resources <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen>`__ (ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen)                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Groundwater vulnerability <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet>`__ (ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet) |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
