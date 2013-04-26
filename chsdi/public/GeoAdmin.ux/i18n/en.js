@@ -446,6 +446,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bafu.wrz-wildruhezonen_portal':'Wildlife sanctuary zones - portal',
 	'ch.bag':'FOPH',
 	'ch.bag.url':'http://www.bag.admin.ch/index.html?lang=en',
+	'ch.bag.zecken-fsme-faelle':'TBE: cluster',
+	'ch.bag.zecken-fsme-impfung':'TBE: recommendation of vaccination',
 	'ch.bag.zecken-lyme':'Borreliosis regions at risk',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Federal Inventory ISOS',

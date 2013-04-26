@@ -2666,6 +2666,18 @@ msgstr "Linea di volo"
 msgid "tt_freqchan"
 msgstr "Frequenza / Canale TV"
 
+msgid "tt_fsme_bezirknr"
+msgstr "Numero di distretto secondo UST"
+
+msgid "tt_fsme_gemname"
+msgstr "Comune"
+
+msgid "tt_fsme_gemnr"
+msgstr "Numero di comune secondo UST"
+
+msgid "tt_fsme_kantonsnr"
+msgstr "Numero di cantone secondo UST"
+
 msgid "tt_gemeindetypen_FLAECHE_HA"
 msgstr "Superficie (ha)"
 

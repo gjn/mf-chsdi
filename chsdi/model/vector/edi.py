@@ -29,3 +29,25 @@ class Arealstatistik1997(Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.bfs.arealstatistik-1997', Arealstatistik1997)
+
+class fsme_faelle(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'fsme_faelle'
+    __table_args__ = ({'schema': 'bag', 'autoload': True})
+    __template__ = 'tooltips/fsme.mako'
+
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bag.zecken-fsme-faelle', fsme_faelle)
+
+class fsme_impfung(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'fsme_impfung'
+    __table_args__ = ({'schema': 'bag', 'autoload': True})
+    __template__ = 'tooltips/fsme.mako'
+
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bag.zecken-fsme-impfung', fsme_impfung)
