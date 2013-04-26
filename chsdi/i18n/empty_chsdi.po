@@ -36,6 +36,18 @@ msgstr ""
 msgid "print"
 msgstr ""
 
+msgid "tt_fsme_gemname"
+msgstr ""
+
+msgid "tt_fsme_gemnr"
+msgstr ""
+
+msgid "tt_fsme_bezirknr"
+msgstr ""
+
+msgid "tt_fsme_kantonsnr"
+msgstr ""
+
 msgid "tt_bazl_abortion"
 msgstr ""
 

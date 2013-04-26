@@ -262,6 +262,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.wildruhezonen-jagdbanngebiete' :"",
     'ch.bafu.wege-wildruhezonen-jagdbanngebiete':"",
     'ch.bag.zecken-lyme':"",
+    'ch.bag.zecken-fsme-faelle':"",
+    'ch.bag.zecken-fsme-impfung':"",
     'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':"",
     'ch.bakom':"",
     'ch.bakom.radio-fernsehsender':"",

@@ -2666,6 +2666,18 @@ msgstr "Ligne aérienne"
 msgid "tt_freqchan"
 msgstr "Fréquence / Canal TV"
 
+msgid "tt_fsme_bezirknr"
+msgstr "Numéro de district selon OFS"
+
+msgid "tt_fsme_gemname"
+msgstr "Commune"
+
+msgid "tt_fsme_gemnr"
+msgstr "Numéro de commune selon OFS"
+
+msgid "tt_fsme_kantonsnr"
+msgstr "Numéro de canton selon OFS"
+
 msgid "tt_gemeindetypen_FLAECHE_HA"
 msgstr "Surface (ha)"
 

@@ -2666,6 +2666,18 @@ msgstr "Flying line"
 msgid "tt_freqchan"
 msgstr "Frequency / TV-channel"
 
+msgid "tt_fsme_bezirknr"
+msgstr "Discrict number according to FSO"
+
+msgid "tt_fsme_gemname"
+msgstr "Municipality"
+
+msgid "tt_fsme_gemnr"
+msgstr "Municipality number according to FSO"
+
+msgid "tt_fsme_kantonsnr"
+msgstr "Canton number according to FSO"
+
 msgid "tt_gemeindetypen_FLAECHE_HA"
 msgstr "Surface (ha)"
 

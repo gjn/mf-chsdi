@@ -446,6 +446,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.wrz-wildruhezonen_portal':'Zones de tranquillité - portail',
 	'ch.bag':'OFSP',
 	'ch.bag.url':'http://www.bag.admin.ch/index.html?lang=fr',
+	'ch.bag.zecken-fsme-faelle':'MEVE - zones à fréquence accrue',
+	'ch.bag.zecken-fsme-impfung':'MEVE - vaccination recommandée',
 	'ch.bag.zecken-lyme':'Zones à risque de Borréliose',
 	'ch.bak':'OFC',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventaire fédéral ISOS',

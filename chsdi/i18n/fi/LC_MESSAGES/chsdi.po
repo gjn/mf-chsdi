@@ -2666,6 +2666,18 @@ msgstr "Fluglinie"
 msgid "tt_freqchan"
 msgstr "Frequenz / TV-Kanal"
 
+msgid "tt_fsme_bezirknr"
+msgstr "Bezirksnummer gem. BFS"
+
+msgid "tt_fsme_gemname"
+msgstr "Gemeindename"
+
+msgid "tt_fsme_gemnr"
+msgstr "Gemeindenummer gem. BFS"
+
+msgid "tt_fsme_kantonsnr"
+msgstr "Kantonsnummer gem. BFS"
+
 msgid "tt_gemeindetypen_FLAECHE_HA"
 msgstr "Fläche (ha)"
 

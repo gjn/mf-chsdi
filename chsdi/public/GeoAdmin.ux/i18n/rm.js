@@ -442,6 +442,8 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.wrz-wildruhezonen_portal':'Wildruhezonen - Portal',
 	'ch.bag':'BAG',
 	'ch.bag.url':'http://www.bag.admin.ch/index.html?lang=de',
+	'ch.bag.zecken-fsme-faelle':'FSME - Lokale Häufungen',
+	'ch.bag.zecken-fsme-impfung':'FSME - Impfempfehlung',
 	'ch.bag.zecken-lyme':'Borreliose',
 	'ch.bak':'BAK',
 	'ch.bak.bundesinventar-schuetzenswerte-ortsbilder':'Inventari federal ISOS',
