@@ -65,7 +65,7 @@ class FIXPUNKTE_HFP1(Base, Queryable):
     __tablename__ = 'punkt_hoehe_hfp1'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'tooltips/fixpunkte.mako'
-    __queryable_attributes__ = ['pointid','nummer']
+    __queryable_attributes__ = ['pointid','nummer','bgdi_label']
 
     id = Column('pointid', Text, primary_key=True)
     the_geom = Column(Geometry)
