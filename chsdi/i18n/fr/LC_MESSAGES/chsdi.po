@@ -2307,6 +2307,12 @@ msgstr "No de la bande"
 msgid "tt_bildstreifen_line_id"
 msgstr "Ligne aérienne"
 
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
+msgstr "Numéro du couloir"
+
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
+msgstr "État"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Puissance rayonnée (ERP)"
 

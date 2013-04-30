@@ -54,6 +54,12 @@ msgstr ""
 msgid "tt_ngamapping_provider"
 msgstr ""
 
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
+msgstr ""
+
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
+msgstr ""
+
 msgid "tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage"
 msgstr ""
 

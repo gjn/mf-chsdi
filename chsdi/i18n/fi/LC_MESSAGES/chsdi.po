@@ -2308,6 +2308,12 @@ msgstr "Bildstreifennummer"
 msgid "tt_bildstreifen_line_id"
 msgstr "Fluglinie"
 
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
+msgstr "Korridor Nummer"
+
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
+msgstr "Zustand"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Sendeleistung (ERP)"
 

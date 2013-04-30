@@ -2009,7 +2009,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-bahnlaerm_tag": {
                 name: OpenLayers.i18n("ch.bafu.laerm-bahnlaerm_tag"),
                 layertype: 'wmts',
-                timestamp: ['20101109'],
+                timestamp: ['20101110'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2019,7 +2019,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-bahnlaerm_nacht": {
                 name: OpenLayers.i18n("ch.bafu.laerm-bahnlaerm_nacht"),
                 layertype: 'wmts',
-                timestamp: ['20101109'],
+                timestamp: ['20101110'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2029,7 +2029,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-strassenlaerm_tag": {
                 name: OpenLayers.i18n("ch.bafu.laerm-strassenlaerm_tag"),
                 layertype: 'wmts',
-                timestamp: ['20101109'],
+                timestamp: ['20101110'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2039,7 +2039,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-strassenlaerm_nacht": {
                 name: OpenLayers.i18n("ch.bafu.laerm-strassenlaerm_nacht"),
                 layertype: 'wmts',
-                timestamp: ['20101109'],
+                timestamp: ['20101110'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3391,16 +3391,16 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.fauna-wildtierkorridor_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-wildtierkorridor_national"),
                 layertype: 'wmts',
-                timestamp: ['20080721'],
+                timestamp: ['20130219','20080721'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: true
             },
             "ch.bafu.fauna-vernetzungsachsen_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-vernetzungsachsen_national"),
                 layertype: 'wmts',
-                timestamp: ['20080721'],
+                timestamp: ['20130219','20080721'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bafu",
