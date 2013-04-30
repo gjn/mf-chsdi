@@ -2308,6 +2308,12 @@ msgstr "Strip number"
 msgid "tt_bildstreifen_line_id"
 msgstr "Flying line"
 
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
+msgstr "Corridor number"
+
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
+msgstr "Conservation status"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Radiated power (ERP)"
 

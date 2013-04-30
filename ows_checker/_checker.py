@@ -4303,6 +4303,7 @@ class OWSCheck(object):
         found_ec = False
         found_ed = False
         found_es = False
+        msg_ec = ""
         #has_metadata = []
         #ftl = dict2list(self.gc_xmlroot.FeatureTypeList.FeatureType)
         #for ft in ftl:

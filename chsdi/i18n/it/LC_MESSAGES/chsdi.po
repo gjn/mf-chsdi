@@ -2307,6 +2307,12 @@ msgstr "Numero strisciata"
 msgid "tt_bildstreifen_line_id"
 msgstr "Linea di volo"
 
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
+msgstr "Numero del corridoio"
+
+msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
+msgstr "Stato di conservazione"
+
 msgid "tt_ch.bakom.leistung"
 msgstr "Potenza irradiata (ERP)"
 

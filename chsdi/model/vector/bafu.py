@@ -484,4 +484,13 @@ class wrzportal(Base, Queryable):
     the_geom = Column(Geometry)
 register('ch.bafu.wrz-wildruhezonen_portal', wrzportal)
 
+class wildtier(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wildtierkorridore'
+    __table_args__ = ({'schema': 'fauna', 'autoload': True})
+    __template__ = 'tooltips/wildtierkorridor.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+register('ch.bafu.fauna-wildtierkorridor_national', wildtier)
+
 
