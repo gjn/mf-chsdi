@@ -70,6 +70,7 @@
 <% 
     obj = 'kultur' + objart
     counter += 1
+    nb_pdf = len(c.feature.pdf_list.split('##'))
 %>
 % if counter == len(objektart):
     ${_(obj)}
@@ -107,7 +108,9 @@
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
+% for i in range(nb_pdf):
          <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
+% endfor
      </tr>
 % if c.feature.link_uri is not None:
      <tr>
@@ -151,8 +154,6 @@
     s = f.read()
     
     url2 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/matrizen/'
-    f2 = urlopen(url2)
-    s2 = f2.read()
     
     url3 = 'http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/bilder/meta.txt'
     f3 = urlopen(url3)
@@ -165,9 +166,7 @@
     hmeta = {}
     for fid in c.fid_list:
         parser = MyHTMLParser(flayer='kgs',fid=str(fid))
-        parser2 = MyHTMLParser(flayer='kgs',fid=str(fid))
         parser.feed(s)
-        parser2.feed(s2)
         meta = list()
         for i in d:
             e = i.split(';')
@@ -178,7 +177,7 @@
                 endif
             endif
         hpictures[str(fid)] = parser.filesMatched
-        hpdfs[str(fid)] = parser2.filesMatched
+        hpdfs[str(fid)] = c.feature.pdf_list.split('##')
         hmeta[str(fid)] = meta 
         endfor
     endfor
@@ -231,7 +230,7 @@
             var fid = a.id;
             var pdfs = hpdfs[fid];
             if (pdfs.length !== 0) {
-                a.href = url2 + pdfs[0];
+                a.href = url2 + pdfs[i] + '.pdf';
             } else {
                 a.innerHTML = '-';
             }
