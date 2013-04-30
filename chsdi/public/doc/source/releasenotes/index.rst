@@ -11,6 +11,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Groundwater vulnerability <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet>`__ (ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet) |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz) |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
