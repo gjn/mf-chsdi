@@ -5,39 +5,79 @@ Geodata
 ********
 
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Groundwater resources <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen>`__ (ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen)                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Groundwater vulnerability <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet>`__ (ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet) |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz) 									|
+| Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Parks <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung) 								|
+| Update | `Parks <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: rockfall <//s.geo.admin.ch/ecc8813c>`__ (ch.bafu.showme-kantone_sturzprozesse) 														|
+| Update | `ShowMe cantons: rockfall <//s.geo.admin.ch/ecc8813c>`__ (ch.bafu.showme-kantone_sturzprozesse)                                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: landslides <//s.geo.admin.ch/cd956cac>`__ (ch.bafu.showme-kantone_rutschungen) 														|
+| Update | `ShowMe cantons: landslides <//s.geo.admin.ch/cd956cac>`__ (ch.bafu.showme-kantone_rutschungen)                                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: avalanches <//s.geo.admin.ch/3d0f1557>`__ (ch.bafu.showme-kantone_lawinen) 															|
+| Update | `ShowMe cantons: avalanches <//s.geo.admin.ch/3d0f1557>`__ (ch.bafu.showme-kantone_lawinen)                                                                                                                  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: floods <//s.geo.admin.ch/d672256d>`__ (ch.bafu.showme-kantone_hochwasser) 															|
+| Update | `ShowMe cantons: floods <//s.geo.admin.ch/d672256d>`__ (ch.bafu.showme-kantone_hochwasser)                                                                                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: rockfall <//s.geo.admin.ch/76667a0f>`__ (ch.bafu.showme-gemeinden_sturzprozesse) 														|
+| Update | `ShowMe communes: rockfall <//s.geo.admin.ch/76667a0f>`__ (ch.bafu.showme-gemeinden_sturzprozesse)                                                                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: landslides <//s.geo.admin.ch/9091ec29>`__ (ch.bafu.showme-gemeinden_rutschungen) 														|
+| Update | `ShowMe communes: landslides <//s.geo.admin.ch/9091ec29>`__ (ch.bafu.showme-gemeinden_rutschungen)                                                                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: avalanches <//s.geo.admin.ch/6dbd0a7a>`__ (ch.bafu.showme-gemeinden_lawinen) 														|
+| Update | `ShowMe communes: avalanches <//s.geo.admin.ch/6dbd0a7a>`__ (ch.bafu.showme-gemeinden_lawinen)                                                                                                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: floods <//s.geo.admin.ch/9c850600>`__ (ch.bafu.showme-gemeinden_hochwasser) 														|
+| Update | `ShowMe communes: floods <//s.geo.admin.ch/9c850600>`__ (ch.bafu.showme-gemeinden_hochwasser)                                                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise levels from railway traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise levels from railway traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-bahnlaerm_tag)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise levels from road traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-strassenlaerm_nacht>`__ (ch.bafu.laerm-strassenlaerm_nacht)                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise levels from road traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-strassenlaerm_day)                                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
-| Update | ` <//URL>`__ (MY_LAYER) 								|
-
 - `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | Migrate to Sencha Touch 2.2. Improvement of support of Windows Phone 8 and Microsoft Surface support. |
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | Use OpenLayers trunk                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------+
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
 
 Release 20130417 - Wednesday, April 17th 2013
 ====================================================

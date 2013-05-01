@@ -701,7 +701,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'imprint 2':'<b>Betrieb</b> <br> geo.admin.ch c/o Bundesamt für Landestopografie swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
 	'imprint 3':'<b>Datenherr</b> <br> Eidgenossenschaft, vertreten durch entsprechendes Bundesamt',
 	'imprint 4':'<b>Rechtliches</b> <br> Für geo.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
-	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint logo':'<img src="http://www.admin.ch/images/logo_suisse.jpg" width="228" height="66"/>',
 	'imprint revision overall data controller':'<b>Datenherr </b> <br>Bundesamt für Landestopografie <br>Seftigenstrasse 264 <br>Postfach 3084 Wabern <br>Telefon +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
 	'imprint revision terms and conditions':'<b>Rechtliches</b> <br> Für map.revision.admin.ch gelten die Allgemeinen Bestimmungen gemäss<a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>. Ihre Daten werden ausschliesslich für unsere interne Produktion verwendet und nicht an Dritte weitergeleitet.',
 	'indigo':'Indigo',

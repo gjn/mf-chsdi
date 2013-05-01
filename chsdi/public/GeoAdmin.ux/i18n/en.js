@@ -701,7 +701,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'imprint 2':'<b>Operation</b> <br> geo.admin.ch c/o Federal Office of Topography swisstopo <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
 	'imprint 3':'<b>Overall data controller</b> <br> The Confederation, represented by the relevant Federal Office',
 	'imprint 4':'<b>Terms and conditions</b> <br> geo.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>',
-	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint logo':'<img src="http://www.admin.ch/images/logo_suisse.jpg" width="228" height="66">',
 	'imprint revision overall data controller':'<b>Overall data controller</b> <br>Federal Office of Topography <br>Seftigenstrasse 264 <br>P.O. Box 3084 Wabern <br>Telephone +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
 	'imprint revision terms and conditions':'<b>Terms and conditions</b> <br> map.revision.admin.ch is covered by the general conditions in accordance with <a href="http://www.disclaimer.admin.ch/"> www.disclaimer.admin.ch</a>. Your data will exclusively be used for our internal production and will not be forwarded to others.',
 	'indigo':'indigo',
