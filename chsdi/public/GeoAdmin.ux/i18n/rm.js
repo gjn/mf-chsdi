@@ -697,7 +697,7 @@ OpenLayers.Lang.rm= {
 	'imprint 2':'<b>Manaschi</b> <br> geo.admin.ch c/o Uffizi federal da topografia swisstopo   <a href="http://www.geo.admin.ch/"> geo.admin.ch</a>',
 	'imprint 3':'<b>Possessura da las datas</b> <br /> La confederaziun, represchentada da l\'uffizi federal correspundent',
 	'imprint 4':'<b>Infurmaziuns giuridicas</b> <br /> Per geo.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>',
-	'imprint logo':'<img src="http://www.hermes.admin.ch/welcome/logo.jpg" width="241" height="103"/>',
+	'imprint logo':'<img src="http://www.admin.ch/images/logo_suisse.jpg" width="228" height="66">',
 	'imprint revision overall data controller':'<b>Possessura da las datas</b> <br>Bundesamt für Landestopografie <br>Seftigenstrasse 264 <br>Postfach 3084 Wabern <br>Telefon +41 31 963 21 11 <br>Telefax +41 31 963 24 59 <br>info@swisstopo.ch',
 	'imprint revision terms and conditions':'<b>Infurmaziuns giuridicas</b> <br /> Per map.revision.admin.ch valan las disposiziuns generalas tenor<a href="http://www.disclaimer.admin.ch/">www.disclaimer.admin.ch</a>. Vossas datas vegnan duvradas exclusivamain per diever intern e na vegnan betg messas a disposiziun a terzs.',
 	'indigo':'indigo',
