@@ -26,7 +26,7 @@ def shorten(myUrl):
         # The current time is hashed and then, only the seven first characters are used.
     if dontExist:
         try:
-            shorturl = hashlib.md5(str(datetime.now())).hexdigest()[:8]
+            shorturl = hashlib.md5(str(datetime.now())).hexdigest()[:9]
             shortUrlObject = ShortUrl(url_short=shorturl, url=myUrl)
             Session.add(shortUrlObject)
             Session.commit()
