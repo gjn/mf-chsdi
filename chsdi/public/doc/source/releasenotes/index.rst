@@ -44,18 +44,40 @@ Geodata
 | Update | `Noise levels from road traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-strassenlaerm_day)                                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
 API
 ***
 
 `Desktop <//api.geo.admin.ch>`__
 -------------------------------------
 
+Minor bugfixing.
 
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
 
-Listing all publicly available layers of the Geoadmin API :
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | Migrate to Sencha Touch 2.2. Improvement of support of Windows Phone 8 and Microsoft Surface support. |
++--------+-------------------------------------------------------------------------------------------------------+
+| Update | Use OpenLayers trunk                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------+
 
-- `List only <//s.geo.admin.ch/5d5d40a>`__
-- `With Preview <//s.geo.admin.ch/ebae1145>`__
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
 
 Release 20130417 - Wednesday, April 17th 2013
 ====================================================
