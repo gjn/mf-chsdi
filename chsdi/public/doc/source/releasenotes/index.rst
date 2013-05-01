@@ -17,40 +17,44 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)                                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Parks <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                             	|
+| Update | `Parks <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: rockfall <//s.geo.admin.ch/ecc8813c>`__ (ch.bafu.showme-kantone_sturzprozesse) 												                                                        		|
+| Update | `ShowMe cantons: rockfall <//s.geo.admin.ch/ecc8813c>`__ (ch.bafu.showme-kantone_sturzprozesse)                                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: landslides <//s.geo.admin.ch/cd956cac>`__ (ch.bafu.showme-kantone_rutschungen) 												                                                        		|
+| Update | `ShowMe cantons: landslides <//s.geo.admin.ch/cd956cac>`__ (ch.bafu.showme-kantone_rutschungen)                                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: avalanches <//s.geo.admin.ch/3d0f1557>`__ (ch.bafu.showme-kantone_lawinen) 														                                                           	|
+| Update | `ShowMe cantons: avalanches <//s.geo.admin.ch/3d0f1557>`__ (ch.bafu.showme-kantone_lawinen)                                                                                                                  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: floods <//s.geo.admin.ch/d672256d>`__ (ch.bafu.showme-kantone_hochwasser) 													                                                          		|
+| Update | `ShowMe cantons: floods <//s.geo.admin.ch/d672256d>`__ (ch.bafu.showme-kantone_hochwasser)                                                                                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: rockfall <//s.geo.admin.ch/76667a0f>`__ (ch.bafu.showme-gemeinden_sturzprozesse) 													                                                    	|
+| Update | `ShowMe communes: rockfall <//s.geo.admin.ch/76667a0f>`__ (ch.bafu.showme-gemeinden_sturzprozesse)                                                                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: landslides <//s.geo.admin.ch/9091ec29>`__ (ch.bafu.showme-gemeinden_rutschungen) 												                                                    		|
+| Update | `ShowMe communes: landslides <//s.geo.admin.ch/9091ec29>`__ (ch.bafu.showme-gemeinden_rutschungen)                                                                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: avalanches <//s.geo.admin.ch/6dbd0a7a>`__ (ch.bafu.showme-gemeinden_lawinen) 													                                                          	|
+| Update | `ShowMe communes: avalanches <//s.geo.admin.ch/6dbd0a7a>`__ (ch.bafu.showme-gemeinden_lawinen)                                                                                                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe communes: floods <//s.geo.admin.ch/9c850600>`__ (ch.bafu.showme-gemeinden_hochwasser) 													                                                        	|
+| Update | `ShowMe communes: floods <//s.geo.admin.ch/9c850600>`__ (ch.bafu.showme-gemeinden_hochwasser)                                                                                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Noise levels from railway traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                                                  | 
+| Update | `Noise levels from railway traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                                                  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Noise levels from railway traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-bahnlaerm_tag)                                                                        | 
+| Update | `Noise levels from railway traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-bahnlaerm_tag)                                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Noise levels from road traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-strassenlaerm_nacht>`__ (ch.bafu.laerm-strassenlaerm_nacht)                                                             | 
+| Update | `Noise levels from road traffic (Lr_night) <//map.geo.admin.ch/?layers=ch.bafu.laerm-strassenlaerm_nacht>`__ (ch.bafu.laerm-strassenlaerm_nacht)                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Noise levels from road traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-strassenlaerm_day)                                                                       | 
+| Update | `Noise levels from road traffic (Lr_day) <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-strassenlaerm_day)                                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
 
 
 
 Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
-| Update | ` <//URL>`__ (MY_LAYER) 								|
-
 - `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 Release 20130417 - Wednesday, April 17th 2013
