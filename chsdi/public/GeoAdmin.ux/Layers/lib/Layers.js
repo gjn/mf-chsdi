@@ -944,7 +944,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.fixpunkte-agnes": {
                 name: OpenLayers.i18n("ch.swisstopo.fixpunkte-agnes"),
                 layertype: 'wmts',
-                timestamp: ['20120621','20110509'],
+                timestamp: ['20120622','20110509'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo.kt",
