@@ -70,7 +70,6 @@
 <% 
     obj = 'kultur' + objart
     counter += 1
-    nb_pdf = len(c.feature.pdf_list.split('##'))
 %>
 % if counter == len(objektart):
     ${_(obj)}
@@ -108,9 +107,6 @@
      </tr>
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
-% for i in range(nb_pdf):
-         <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
-% endfor
      </tr>
 % if c.feature.link_uri is not None:
      <tr>
@@ -177,8 +173,12 @@
                 endif
             endif
         hpictures[str(fid)] = parser.filesMatched
-        hpdfs[str(fid)] = c.feature.pdf_list.split('##')
-        hmeta[str(fid)] = meta 
+        if c.feature.pdf_list is not None:
+            hpdfs[str(fid)] = c.feature.pdf_list.split('##')
+        else:
+            hpdfs[str(fid)] = []
+        endif
+        hmeta[str(fid)] = meta
         endfor
     endfor
     hpictures = json.dumps(hpictures)
@@ -229,11 +229,7 @@
             var a = aels[i];
             var fid = a.id;
             var pdfs = hpdfs[fid];
-            if (pdfs.length !== 0) {
-                a.href = url2 + pdfs[i] + '.pdf';
-            } else {
-                a.innerHTML = '-';
-            }
+            a.innerHTML = '-';
         }
     var disclamer = document.querySelector('.disclamer');
     disclamer.setAttribute("href","http://www.disclaimer.admin.ch")
