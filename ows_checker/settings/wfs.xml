@@ -1,7 +1,7 @@
 <wfs>
 	<minVersion>1.0.0</minVersion>
 	<!-- Sollte Version, bisher nicht genutzt -->
-	<currVersion>1.1.0</currVersion>
+	<currVersion>2.0.0</currVersion>
 	<XML>
 		<Encoding>UTF-8</Encoding>
 	</XML>
@@ -29,7 +29,17 @@
 		<Exception>text/xml</Exception>
 		<Exception>application/xml</Exception>
 	</Version>
-	<RefSys>
+    <Version num="2.0.0">
+        <MIME>text/xml</MIME>
+        <MIME>application/xml</MIME>
+        <Schema>http://schemas.opengis.net/wfs/2.0/wfs.xsd</Schema>
+        <OWS_Common>1</OWS_Common>
+        <Schema_local>schemas/wfs_2_0_0.xsd</Schema_local>
+        <Exception>application/vnd.ogc.se_xml</Exception>
+        <Exception>text/xml</Exception>
+        <Exception>application/xml</Exception>
+    </Version>
+    <RefSys>
 		<CRS status="must" rili="CRS-01">EPSG:21781</CRS>
 		<CRS status="must" rili="CRS-02">EPSG:4326</CRS>
 		<CRS status="not" rili="CRS-03">EPSG:9814</CRS>
