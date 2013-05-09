@@ -111,3 +111,12 @@
         font-weight: bold;
     }
     .disclaimer {color: red; font-weight: bold;}
+
+/**
+ * Map Examples Specific
+ */
+.smallmap {
+    width: 550px;
+    height: 350px;
+    border: 1px solid #ccc;
+}
