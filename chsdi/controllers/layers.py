@@ -223,7 +223,7 @@ class LayersController(BaseController):
                 else:
                     return results
         elif self.mode == 'wmts':
-            response.headers['Content-Type'] = mimetypes.types_map['.xml']
+            response.headers['Content-Type'] = 'text/xml'
             response.headers['Pragma'] = 'public'
             response.headers['Expires'] = '0'
             response.headers['Cache-Control'] = 'no-cache'
