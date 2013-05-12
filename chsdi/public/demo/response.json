@@ -1,0 +1,1905 @@
+{
+   "took": 6405,
+   "timed_out": false,
+   "_shards": {
+      "total": 15,
+      "successful": 15,
+      "failed": 0
+   },
+   "hits": {
+      "total": 33730,
+      "max_score": 1,
+      "hits": [
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "-iyfbue-QuKLilCyUhuGfg",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:26:26 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/26/845/2097.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "26"
+                  ],
+                  "gis.row": [
+                     "845"
+                  ],
+                  "gis.col": [
+                     "2097"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 688480,
+                  "gis.lv03_y": 241776,
+                  "gis.wgs84_lat": 47.3268645863111,
+                  "gis.wgs84_lng": 8.60901468807149,
+                  "gis.wgs84_latlng": "47.3268645863111,8.60901468807149"
+               },
+               "@timestamp": "2013-05-07T06:26:26.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:26:26 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/26/845/2097.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "-i-5EClITveI9d0Ti5t-rA",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:27:36 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/23/213/521.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "23"
+                  ],
+                  "gis.row": [
+                     "213"
+                  ],
+                  "gis.col": [
+                     "521"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 687008,
+                  "gis.lv03_y": 240688,
+                  "gis.wgs84_lat": 47.317077808711105,
+                  "gis.wgs84_lng": 8.589335433958832,
+                  "gis.wgs84_latlng": "47.317077808711105,8.589335433958832"
+               },
+               "@timestamp": "2013-05-07T06:27:36.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:27:36 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/23/213/521.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "r1GjOmbiRla3OZIMCN4gcg",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:27:49 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/26/848/2084.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     200
+                  ],
+                  "bytes": [
+                     8858
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "26"
+                  ],
+                  "gis.row": [
+                     "848"
+                  ],
+                  "gis.col": [
+                     "2084"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 686816,
+                  "gis.lv03_y": 241392,
+                  "gis.wgs84_lat": 47.3234104295111,
+                  "gis.wgs84_lng": 8.586932739375591,
+                  "gis.wgs84_latlng": "47.3234104295111,8.586932739375591"
+               },
+               "@timestamp": "2013-05-07T06:27:49.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:27:49 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/26/848/2084.png HTTP/1.1\" 200 8858 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "k0WKQI4xR5mm_z9NbBEhiA",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:27:52 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/425/1043.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "425"
+                  ],
+                  "gis.col": [
+                     "1043"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 687136,
+                  "gis.lv03_y": 241072,
+                  "gis.wgs84_lat": 47.32053196551111,
+                  "gis.wgs84_lng": 8.591102581326927,
+                  "gis.wgs84_latlng": "47.32053196551111,8.591102581326927"
+               },
+               "@timestamp": "2013-05-07T06:27:52.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:27:52 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/425/1043.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "b8IajDexQMybEfjhoMi20g",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:27:52 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/424/1041.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     200
+                  ],
+                  "bytes": [
+                     5778
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "424"
+                  ],
+                  "gis.col": [
+                     "1041"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 686624,
+                  "gis.lv03_y": 241328,
+                  "gis.wgs84_lat": 47.3228347367111,
+                  "gis.wgs84_lng": 8.584381193255314,
+                  "gis.wgs84_latlng": "47.3228347367111,8.584381193255314"
+               },
+               "@timestamp": "2013-05-07T06:27:52.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:27:52 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/424/1041.png HTTP/1.1\" 200 5778 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "z01Rkx-FSveD_pxO7bpqAw",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "193.134.202.252"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:28:18 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/426/1038.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "426"
+                  ],
+                  "gis.col": [
+                     "1038"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "3",
+                     "minor": "5",
+                     "patch": "2"
+                  },
+                  "geoip": {
+                     "ip": "193.134.202.252",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 685856,
+                  "gis.lv03_y": 240816,
+                  "gis.wgs84_lat": 47.31822919431111,
+                  "gis.wgs84_lng": 8.574126560334042,
+                  "gis.wgs84_latlng": "47.31822919431111,8.574126560334042"
+               },
+               "@timestamp": "2013-05-07T06:28:18.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "193.134.202.252 - - [07/May/2013:08:28:18 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/426/1038.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "DFIEOY6ASBuJtudEWt_NQQ",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "62.2.49.2"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:28:45 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/530/1201.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "530"
+                  ],
+                  "gis.col": [
+                     "1201"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "4",
+                     "minor": "0",
+                     "patch": "1"
+                  },
+                  "geoip": {
+                     "ip": "62.2.49.2",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 727584,
+                  "gis.lv03_y": 214192,
+                  "gis.wgs84_lat": 47.078740989511104,
+                  "gis.wgs84_lng": 9.118327128667566,
+                  "gis.wgs84_latlng": "47.078740989511104,9.118327128667566"
+               },
+               "@timestamp": "2013-05-07T06:28:45.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "62.2.49.2 - - [07/May/2013:08:28:45 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/530/1201.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "Jlqz1I29SsK9fL7-M9tBcg",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "62.2.49.2"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:28:45 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/529/1201.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     204
+                  ],
+                  "bytes": [
+                     0
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "529"
+                  ],
+                  "gis.col": [
+                     "1201"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "4",
+                     "minor": "0",
+                     "patch": "1"
+                  },
+                  "geoip": {
+                     "ip": "62.2.49.2",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 727584,
+                  "gis.lv03_y": 214448,
+                  "gis.wgs84_lat": 47.081043760711104,
+                  "gis.wgs84_lng": 9.118399276513118,
+                  "gis.wgs84_latlng": "47.081043760711104,9.118399276513118"
+               },
+               "@timestamp": "2013-05-07T06:28:45.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "62.2.49.2 - - [07/May/2013:08:28:45 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/529/1201.png HTTP/1.1\" 204 0 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "Ql3CRbRfTr23N2DlhgonRQ",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "62.2.49.2"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:28:45 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/532/1201.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     200
+                  ],
+                  "bytes": [
+                     7455
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "25"
+                  ],
+                  "gis.row": [
+                     "532"
+                  ],
+                  "gis.col": [
+                     "1201"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "4",
+                     "minor": "0",
+                     "patch": "1"
+                  },
+                  "geoip": {
+                     "ip": "62.2.49.2",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 727584,
+                  "gis.lv03_y": 213680,
+                  "gis.wgs84_lat": 47.074135447111104,
+                  "gis.wgs84_lng": 9.118182851176321,
+                  "gis.wgs84_latlng": "47.074135447111104,9.118182851176321"
+               },
+               "@timestamp": "2013-05-07T06:28:45.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "62.2.49.2 - - [07/May/2013:08:28:45 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/25/532/1201.png HTTP/1.1\" 200 7455 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\"",
+               "@type": "varnish"
+            }
+         },
+         {
+            "_index": "logstash-2013.05.07",
+            "_type": "varnish",
+            "_id": "_ef6CoUASVW56kcvBQEnow",
+            "_score": 1,
+            "_source": {
+               "@source": "file://ip-10-55-94-19//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@tags": [
+                  "wmts.geo.admin.ch",
+                  "foo"
+               ],
+               "@fields": {
+                  "clientip": [
+                     "62.2.49.2"
+                  ],
+                  "ident": [
+                     "-"
+                  ],
+                  "auth": [
+                     "-"
+                  ],
+                  "timestamp": [
+                     "07/May/2013:08:28:35 +0200"
+                  ],
+                  "verb": [
+                     "GET"
+                  ],
+                  "request": [
+                     "http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/22/214/482.png"
+                  ],
+                  "httpversion": [
+                     "1.1"
+                  ],
+                  "response": [
+                     200
+                  ],
+                  "bytes": [
+                     4216
+                  ],
+                  "referrer": [
+                     "\"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\""
+                  ],
+                  "agent": [
+                     "\"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\""
+                  ],
+                  "gis.version": [
+                     "1.0.0"
+                  ],
+                  "gis.layer": [
+                     "ch.swisstopo.swisstlm3d-wanderwege"
+                  ],
+                  "gis.release": [
+                     "20130101"
+                  ],
+                  "gis.reference-system": [
+                     "21781"
+                  ],
+                  "gis.zoomlevel": [
+                     "22"
+                  ],
+                  "gis.row": [
+                     "214"
+                  ],
+                  "gis.col": [
+                     "482"
+                  ],
+                  "gis.filetype": [
+                     "png"
+                  ],
+                  "ua": {
+                     "name": "Firefox",
+                     "os": "Windows XP",
+                     "device": "Other",
+                     "major": "4",
+                     "minor": "0",
+                     "patch": "1"
+                  },
+                  "geoip": {
+                     "ip": "62.2.49.2",
+                     "country_code2": "CH",
+                     "country_code3": "CHE",
+                     "country_name": "Switzerland",
+                     "continent_code": "EU",
+                     "region_name": "",
+                     "city_name": "",
+                     "postal_code": "",
+                     "latitude": 47,
+                     "longitude": 8,
+                     "dma_code": null,
+                     "area_code": null,
+                     "timezone": "Europe/Zurich"
+                  },
+                  "latlng": [
+                     "47.0,8.0"
+                  ],
+                  "gis.lv03_x": 728800,
+                  "gis.lv03_y": 212720,
+                  "gis.wgs84_lat": 47.06550005511111,
+                  "gis.wgs84_lng": 9.133912663889985,
+                  "gis.wgs84_latlng": "47.06550005511111,9.133912663889985"
+               },
+               "@timestamp": "2013-05-07T06:28:35.000Z",
+               "@source_host": "ip-10-55-94-19",
+               "@source_path": "//mnt/logs/wmts3.geo.admin.ch/2013-05-07.log",
+               "@message": "62.2.49.2 - - [07/May/2013:08:28:35 +0200] \"GET http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-wanderwege/default/20130101/21781/22/214/482.png HTTP/1.1\" 200 4216 \"http://map.geo.admin.ch/?selectedNode=node_ch.swisstopo.swisstlm3d-wanderwege1&Y=740718.40625&X=219405.875&zoom=5&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=1&layers_visibility=true&lang=de\" \"Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1\"",
+               "@type": "varnish"
+            }
+         }
+      ]
+   },
+   "facets": {
+      "locations": {
+         "_type": "terms",
+         "missing": 0,
+         "total": 33730,
+         "other": 32736,
+         "terms": [
+            {
+               "term": "46.092579223111116,9.029261540271385",
+               "count": 16
+            },
+            {
+               "term": "46.1098500071111,9.021490711118503",
+               "count": 11
+            },
+            {
+               "term": "46.098336151111106,9.029429233107358",
+               "count": 10
+            },
+            {
+               "term": "46.60494581511111,7.131655818341579",
+               "count": 9
+            },
+            {
+               "term": "46.599188887111104,7.131688489166162",
+               "count": 9
+            },
+            {
+               "term": "46.1098500071111,9.00494256729727",
+               "count": 9
+            },
+            {
+               "term": "47.66422056711111,8.914578051471016",
+               "count": 8
+            },
+            {
+               "term": "47.658463639111105,8.897385284750447",
+               "count": 8
+            },
+            {
+               "term": "47.65270671111111,8.914257918826479",
+               "count": 8
+            },
+            {
+               "term": "47.50302658311111,9.385571114073885",
+               "count": 8
+            },
+            {
+               "term": "47.47999887111111,9.401700089990754",
+               "count": 8
+            },
+            {
+               "term": "47.4512142311111,8.38266441796544",
+               "count": 8
+            },
+            {
+               "term": "46.599188887111104,7.140040753355603",
+               "count": 8
+            },
+            {
+               "term": "46.38042562311111,8.513766878018766",
+               "count": 8
+            },
+            {
+               "term": "46.374668695111104,8.50533664547775",
+               "count": 8
+            },
+            {
+               "term": "46.1040930791111,9.029596962509286",
+               "count": 8
+            },
+            {
+               "term": "46.1040930791111,9.021323817795443",
+               "count": 8
+            },
+            {
+               "term": "47.66997749511111,8.940292489672595",
+               "count": 7
+            },
+            {
+               "term": "47.66997749511111,8.889183547746867",
+               "count": 7
+            },
+            {
+               "term": "47.66422056711111,8.897543519551121",
+               "count": 7
+            },
+            {
+               "term": "47.658463639111105,8.905901643117623",
+               "count": 7
+            },
+            {
+               "term": "47.65270671111111,8.931288623120956",
+               "count": 7
+            },
+            {
+               "term": "47.646949783111104,8.90558342380447",
+               "count": 7
+            },
+            {
+               "term": "47.41379419911111,7.668870590593118",
+               "count": 7
+            },
+            {
+               "term": "47.39537202951111,7.66879105057047",
+               "count": 7
+            },
+            {
+               "term": "47.39076648711111,7.702676497764163",
+               "count": 7
+            },
+            {
+               "term": "47.25547867911111,7.838130764577039",
+               "count": 7
+            },
+            {
+               "term": "46.38042562311111,8.505449708655005",
+               "count": 7
+            },
+            {
+               "term": "47.66997749511111,8.906219993478599",
+               "count": 6
+            },
+            {
+               "term": "47.66422056711111,8.940129601354988",
+               "count": 6
+            },
+            {
+               "term": "47.66422056711111,8.931612451380436",
+               "count": 6
+            },
+            {
+               "term": "47.66422056711111,8.889026204563473",
+               "count": 6
+            },
+            {
+               "term": "47.658463639111105,8.931450520584416",
+               "count": 6
+            },
+            {
+               "term": "47.658463639111105,8.888868893761634",
+               "count": 6
+            },
+            {
+               "term": "47.65270671111111,8.939803925288034",
+               "count": 6
+            },
+            {
+               "term": "47.65270671111111,8.922773287570273",
+               "count": 6
+            },
+            {
+               "term": "47.64119285511111,8.905424363290829",
+               "count": 6
+            },
+            {
+               "term": "47.51454043911111,9.36901012129082",
+               "count": 6
+            },
+            {
+               "term": "47.47999887111111,9.350786154513296",
+               "count": 6
+            },
+            {
+               "term": "47.46272808711111,8.38286850536393",
+               "count": 6
+            },
+            {
+               "term": "47.4512142311111,9.341271564516532",
+               "count": 6
+            },
+            {
+               "term": "47.4512142311111,8.39963407900452",
+               "count": 6
+            },
+            {
+               "term": "47.4230052839111,7.696051054197274",
+               "count": 6
+            },
+            {
+               "term": "47.41379419911111,7.675654591798083",
+               "count": 6
+            },
+            {
+               "term": "47.40918865671111,9.215191035055817",
+               "count": 6
+            },
+            {
+               "term": "47.40918865671111,7.668850700630082",
+               "count": 6
+            },
+            {
+               "term": "47.382131095111106,7.805180119367222",
+               "count": 6
+            },
+            {
+               "term": "47.284263319111105,7.846805302556583",
+               "count": 6
+            },
+            {
+               "term": "47.27850639111111,7.855219703486019",
+               "count": 6
+            },
+            {
+               "term": "47.27850639111111,7.82984454155911",
+               "count": 6
+            },
+            {
+               "term": "47.27274946311111,7.846717357230081",
+               "count": 6
+            },
+            {
+               "term": "47.27274946311111,7.838259881113051",
+               "count": 6
+            },
+            {
+               "term": "47.27274946311111,7.829802395995303",
+               "count": 6
+            },
+            {
+               "term": "47.26699253511111,7.838216833280762",
+               "count": 6
+            },
+            {
+               "term": "47.26699253511111,7.829760259228248",
+               "count": 6
+            },
+            {
+               "term": "47.25778145031111,7.555743387975268",
+               "count": 6
+            },
+            {
+               "term": "47.2497217511111,7.8380877437056045",
+               "count": 6
+            },
+            {
+               "term": "47.2266940391111,9.451518066250985",
+               "count": 6
+            },
+            {
+               "term": "47.1403401191111,8.090364375218106",
+               "count": 6
+            },
+            {
+               "term": "46.386182551111105,8.572106505275379",
+               "count": 6
+            },
+            {
+               "term": "46.374668695111104,8.51365293325728",
+               "count": 6
+            },
+            {
+               "term": "46.35739791111111,8.521624866020002",
+               "count": 6
+            },
+            {
+               "term": "46.3516409831111,8.513197400044886",
+               "count": 6
+            },
+            {
+               "term": "46.1098500071111,9.02976472847717",
+               "count": 6
+            },
+            {
+               "term": "46.092579223111116,9.020990140276595",
+               "count": 6
+            },
+            {
+               "term": "47.6757344231111,8.889340923311817",
+               "count": 5
+            },
+            {
+               "term": "47.66997749511111,8.92325630796182",
+               "count": 5
+            },
+            {
+               "term": "47.66422056711111,8.871991477485235",
+               "count": 5
+            },
+            {
+               "term": "47.658463639111105,8.87183601468107",
+               "count": 5
+            },
+            {
+               "term": "47.646949783111104,8.939641137538693",
+               "count": 5
+            },
+            {
+               "term": "47.646949783111104,8.9226123470578",
+               "count": 5
+            },
+            {
+               "term": "47.646949783111104,8.914097901932445",
+               "count": 5
+            },
+            {
+               "term": "47.64119285511111,8.913937917990566",
+               "count": 5
+            },
+            {
+               "term": "47.64119285511111,8.896910775778961",
+               "count": 5
+            },
+            {
+               "term": "47.44545730311111,9.493704661983877",
+               "count": 5
+            },
+            {
+               "term": "47.4183997415111,7.702813385703692",
+               "count": 5
+            },
+            {
+               "term": "47.4183997415111,7.69602881254031",
+               "count": 5
+            },
+            {
+               "term": "47.40458311431111,7.7027449246707",
+               "count": 5
+            },
+            {
+               "term": "47.40458311431111,7.682396468864109",
+               "count": 5
+            },
+            {
+               "term": "47.29002024711111,7.82992885907698",
+               "count": 5
+            },
+            {
+               "term": "47.284263319111105,7.855264592183478",
+               "count": 5
+            },
+            {
+               "term": "47.284263319111105,7.838346003738484",
+               "count": 5
+            },
+            {
+               "term": "47.284263319111105,7.8298866959196705",
+               "count": 5
+            },
+            {
+               "term": "47.26699253511111,7.855129954193154",
+               "count": 5
+            },
+            {
+               "term": "47.26699253511111,7.84667339833256",
+               "count": 5
+            },
+            {
+               "term": "47.261235607111104,7.846629448612189",
+               "count": 5
+            },
+            {
+               "term": "47.261235607111104,7.829718131257944",
+               "count": 5
+            },
+            {
+               "term": "47.25778145031111,7.554052326593403",
+               "count": 5
+            },
+            {
+               "term": "47.25547867911111,7.846585508068969",
+               "count": 5
+            },
+            {
+               "term": "47.25547867911111,7.82967601208439",
+               "count": 5
+            },
+            {
+               "term": "47.2497217511111,7.8549954005089955",
+               "count": 5
+            },
+            {
+               "term": "47.2497217511111,7.829633901707591",
+               "count": 5
+            },
+            {
+               "term": "47.24396482311111,7.83804473182112",
+               "count": 5
+            },
+            {
+               "term": "47.0039009255111,8.737429672005586",
+               "count": 5
+            },
+            {
+               "term": "46.62221659911111,7.1566252481846915",
+               "count": 5
+            },
+            {
+               "term": "46.41496719111111,8.497806112680951",
+               "count": 5
+            },
+            {
+               "term": "46.409210263111106,8.506015390438609",
+               "count": 5
+            },
+            {
+               "term": "46.374668695111104,8.521969196415814",
+               "count": 5
+            },
+            {
+               "term": "46.35739791111111,8.513311246472954",
+               "count": 5
+            },
+            {
+               "term": "47.6757344231111,8.90637921780202",
+               "count": 4
+            },
+            {
+               "term": "47.6757344231111,8.89786008686774",
+               "count": 4
+            },
+            {
+               "term": "47.66997749511111,8.93177441550901",
+               "count": 4
+            },
+            {
+               "term": "47.66997749511111,8.88066527613904",
+               "count": 4
+            },
+            {
+               "term": "47.66422056711111,8.92309526802228",
+               "count": 4
+            },
+            {
+               "term": "47.66422056711111,8.880508857144681",
+               "count": 4
+            },
+            {
+               "term": "47.658463639111105,8.939966746560131",
+               "count": 4
+            },
+            {
+               "term": "47.65270671111111,8.905742517080068",
+               "count": 4
+            },
+            {
+               "term": "47.65270671111111,8.89722708252153",
+               "count": 4
+            },
+            {
+               "term": "47.65270671111111,8.888711615341354",
+               "count": 4
+            },
+            {
+               "term": "47.65270671111111,8.871680583878058",
+               "count": 4
+            },
+            {
+               "term": "47.646949783111104,8.956669793723213",
+               "count": 4
+            },
+            {
+               "term": "47.646949783111104,8.948155482513247",
+               "count": 4
+            },
+            {
+               "term": "47.646949783111104,8.931126758990048",
+               "count": 4
+            },
+            {
+               "term": "47.646949783111104,8.888554369302627",
+               "count": 4
+            },
+            {
+               "term": "47.64119285511111,8.956505192640156",
+               "count": 4
+            },
+            {
+               "term": "47.64119285511111,8.939478383312107",
+               "count": 4
+            },
+            {
+               "term": "47.64119285511111,8.922451439687688",
+               "count": 4
+            },
+            {
+               "term": "47.64119285511111,8.871369818275507",
+               "count": 4
+            },
+            {
+               "term": "47.560595863111104,9.413174823383708",
+               "count": 4
+            },
+            {
+               "term": "47.560595863111104,9.362183924885011",
+               "count": 4
+            },
+            {
+               "term": "47.52605429511111,9.394906914367642",
+               "count": 4
+            },
+            {
+               "term": "47.49784534791111,9.138349691651504",
+               "count": 4
+            },
+            {
+               "term": "47.456971159111106,8.382766451084809",
+               "count": 4
+            },
+            {
+               "term": "47.4512142311111,9.5278481893088",
+               "count": 4
+            },
+            {
+               "term": "47.43970037511111,9.501961158469946",
+               "count": 4
+            },
+            {
+               "term": "47.42761082631111,7.696073299548682",
+               "count": 4
+            },
+            {
+               "term": "47.4230052839111,9.22243353044659",
+               "count": 4
+            },
+            {
+               "term": "47.422429591111104,7.695200137757799",
+               "count": 4
+            },
+            {
+               "term": "47.40918865671111,9.221971149351159",
+               "count": 4
+            },
+            {
+               "term": "47.3936449511111,7.779829153262445",
+               "count": 4
+            },
+            {
+               "term": "47.3763741671111,8.008512471682742",
+               "count": 4
+            },
+            {
+               "term": "47.3763741671111,7.669556485757552",
+               "count": 4
+            },
+            {
+               "term": "47.3222590439111,8.590293486111626",
+               "count": 4
+            },
+            {
+               "term": "47.3222590439111,8.588600730924695",
+               "count": 4
+            },
+            {
+               "term": "47.29002024711111,7.85530949024829",
+               "count": 4
+            },
+            {
+               "term": "47.29002024711111,7.8383890785316295",
+               "count": 4
+            },
+            {
+               "term": "47.27850639111111,7.87213643151296",
+               "count": 4
+            },
+            {
+               "term": "47.27850639111111,7.846761325304758",
+               "count": 4
+            },
+            {
+               "term": "47.27850639111111,7.8383029379322915",
+               "count": 4
+            },
+            {
+               "term": "47.27274946311111,7.855174824155911",
+               "count": 4
+            },
+            {
+               "term": "47.261235607111104,7.855085093597749",
+               "count": 4
+            },
+            {
+               "term": "47.261235607111104,7.8381737944354235",
+               "count": 4
+            },
+            {
+               "term": "47.25547867911111,7.559120319842568",
+               "count": 4
+            },
+            {
+               "term": "47.251448829511105,7.565029249469283",
+               "count": 4
+            },
+            {
+               "term": "47.2497217511111,7.86344921493339",
+               "count": 4
+            },
+            {
+               "term": "47.2497217511111,7.846541576702901",
+               "count": 4
+            },
+            {
+               "term": "47.24396482311111,7.854950568015645",
+               "count": 4
+            },
+            {
+               "term": "47.24396482311111,7.8464976545139855",
+               "count": 4
+            },
+            {
+               "term": "47.24396482311111,7.829591800127541",
+               "count": 4
+            },
+            {
+               "term": "47.23820789511111,7.854905744889647",
+               "count": 4
+            },
+            {
+               "term": "47.23820789511111,7.846453741502221",
+               "count": 4
+            },
+            {
+               "term": "47.220937111111105,7.026727748660836",
+               "count": 4
+            },
+            {
+               "term": "47.1921524711111,7.00161516549784",
+               "count": 4
+            },
+            {
+               "term": "46.86400757511111,8.51503409910637",
+               "count": 4
+            },
+            {
+               "term": "46.71432744711112,7.541172181660217",
+               "count": 4
+            },
+            {
+               "term": "46.69820804871111,8.357787717398926",
+               "count": 4
+            },
+            {
+               "term": "46.6279735271111,7.123168361043694",
+               "count": 4
+            },
+            {
+               "term": "46.6279735271111,7.089741618454947",
+               "count": 4
+            },
+            {
+               "term": "46.60494581511111,7.089890161202388",
+               "count": 4
+            },
+            {
+               "term": "46.507078039111114,6.531899763256521",
+               "count": 4
+            },
+            {
+               "term": "46.41496719111111,8.522773501080454",
+               "count": 4
+            },
+            {
+               "term": "46.38042562311111,8.497132514860732",
+               "count": 4
+            },
+            {
+               "term": "46.363154839111104,8.56331174486621",
+               "count": 4
+            },
+            {
+               "term": "46.3343701991111,8.537786225819453",
+               "count": 4
+            },
+            {
+               "term": "46.3343701991111,8.496235739799229",
+               "count": 4
+            },
+            {
+               "term": "46.3286132711111,8.512742260166164",
+               "count": 4
+            },
+            {
+               "term": "46.322856343111106,7.766462442828017",
+               "count": 4
+            },
+            {
+               "term": "46.31940218631111,7.796354923206227",
+               "count": 4
+            },
+            {
+               "term": "46.28831477511111,8.943668837334286",
+               "count": 4
+            },
+            {
+               "term": "47.75633141511111,8.558771298432612",
+               "count": 3
+            },
+            {
+               "term": "47.6757344231111,8.957493307685846",
+               "count": 3
+            },
+            {
+               "term": "47.6757344231111,8.93193641297014",
+               "count": 3
+            },
+            {
+               "term": "47.6757344231111,8.914898315924177",
+               "count": 3
+            },
+            {
+               "term": "47.6757344231111,8.880821727324754",
+               "count": 3
+            },
+            {
+               "term": "47.66997749511111,8.957328537087006",
+               "count": 3
+            },
+            {
+               "term": "47.66997749511111,8.914738167221518",
+               "count": 3
+            },
+            {
+               "term": "47.66422056711111,8.906060801917132",
+               "count": 3
+            },
+            {
+               "term": "47.658463639111105,8.956999097598798",
+               "count": 3
+            },
+            {
+               "term": "47.658463639111105,8.948482938961757",
+               "count": 3
+            },
+            {
+               "term": "47.658463639111105,8.91441796867267",
+               "count": 3
+            },
+            {
+               "term": "47.658463639111105,8.880352470341679",
+               "count": 3
+            },
+            {
+               "term": "47.65270671111111,8.948319193881023",
+               "count": 3
+            },
+            {
+               "term": "47.65270671111111,8.880196115730033",
+               "count": 3
+            },
+            {
+               "term": "47.646949783111104,8.871525185076205",
+               "count": 3
+            },
+            {
+               "term": "47.646949783111104,8.863010544792505",
+               "count": 3
+            },
+            {
+               "term": "47.560595863111104,9.370682516825973",
+               "count": 3
+            },
+            {
+               "term": "47.543325079111106,8.817744718698915",
+               "count": 3
+            },
+            {
+               "term": "47.53181122311111,8.851431481708234",
+               "count": 3
+            },
+            {
+               "term": "47.52029736711111,9.190875032008803",
+               "count": 3
+            },
+            {
+               "term": "47.50245089031111,9.15547748199322",
+               "count": 3
+            },
+            {
+               "term": "47.50245089031111,9.152081355790294",
+               "count": 3
+            },
+            {
+               "term": "47.49093703431111,9.141524506274877",
+               "count": 3
+            },
+            {
+               "term": "47.4886342631111,9.141450837772084",
+               "count": 3
+            },
+            {
+               "term": "47.485755799111104,7.627573557747493",
+               "count": 3
+            },
+            {
+               "term": "47.468485015111106,7.771820022590711",
+               "count": 3
+            },
+            {
+               "term": "47.468485015111106,7.7463540819641095",
+               "count": 3
+            },
+            {
+               "term": "47.46272808711111,9.528299933325684",
+               "count": 3
+            },
+            {
+               "term": "47.46272808711111,8.37438180846744",
+               "count": 3
+            },
+            {
+               "term": "47.456971159111106,9.528074037898863",
+               "count": 3
+            },
+            {
+               "term": "47.456971159111106,9.519592842279387",
+               "count": 3
+            }
+         ]
+      }
+   }
+}
