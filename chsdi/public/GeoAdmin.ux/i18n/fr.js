@@ -576,6 +576,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.fixpunkte-lage':'Points fixes en planimétrie',
 	'ch.swisstopo.fixpunkte-lfp1':'Points fixes planimétriques PFP1',
 	'ch.swisstopo.fixpunkte-lfp2':'Points fixes planimétriques PFP2',
+	'ch.swisstopo.geoidmodell-ch1903':'Géoïde en CH1903',
+	'ch.swisstopo.geoidmodell-etrs89':'Géoïde en ETRS89',
 	'ch.swisstopo.geologie-eiszeit-lgm-raster':'Dernier maximum glaciaire',
 	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Anomalies de Bouguer',
 	'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz':'Le géoïde',

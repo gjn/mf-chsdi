@@ -576,6 +576,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.fixpunkte-lage':'Punti fissi planimetrici',
 	'ch.swisstopo.fixpunkte-lfp1':'Punti fissi planimetrici PFP1',
 	'ch.swisstopo.fixpunkte-lfp2':'Punti fissi planimetrici PFP2',
+	'ch.swisstopo.geoidmodell-ch1903':'Geoide in CH1903',
+	'ch.swisstopo.geoidmodell-etrs89':'Geoide in ETRS89',
 	'ch.swisstopo.geologie-eiszeit-lgm-raster':'Ultimo massimo glaciale',
 	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Anomalia di Bouguer',
 	'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz':'Il geoide',

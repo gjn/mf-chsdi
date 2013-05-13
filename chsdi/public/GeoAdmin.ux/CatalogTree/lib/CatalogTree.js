@@ -520,6 +520,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.fixpunkte-agnes"
                     },
                     {
+                        layerId: "ch.swisstopo.geoidmodell-ch1903"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geoidmodell-etrs89"
+                    },
+                    {
                         layerId: "ch.swisstopo.koordinatenaenderung"
                     },
                     {
@@ -692,6 +698,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bazl.segelflugkarte"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geoidmodell-ch1903"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geoidmodell-etrs89"
                     },
                     {
                         layerId: "ch.swisstopo.swissalti3d-reliefschattierung"
