@@ -791,6 +791,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo.geoidmodell-ch1903": {
@@ -800,6 +801,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                opacity: 0.75,
                 queryable: true
             },
             "ch.swisstopo.koordinatenaenderung": {
