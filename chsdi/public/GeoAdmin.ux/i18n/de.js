@@ -576,6 +576,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.fixpunkte-lage':'Lagefixpunkte',
 	'ch.swisstopo.fixpunkte-lfp1':'Lagefixpunkte LFP1',
 	'ch.swisstopo.fixpunkte-lfp2':'Lagefixpunkte LFP2',
+	'ch.swisstopo.geoidmodell-ch1903':'Geoidmodell in CH1903',
+	'ch.swisstopo.geoidmodell-etrs89':'Geoidmodell in ETRS89',
 	'ch.swisstopo.geologie-eiszeit-lgm-raster':'Letzteiszeitliches Maximum',
 	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Bouguer-Anomalien',
 	'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz':'Das Geoid',

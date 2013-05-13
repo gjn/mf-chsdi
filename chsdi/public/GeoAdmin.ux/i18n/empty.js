@@ -179,6 +179,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.fixpunkte-hoehe':"",
     'ch.swisstopo.hiks-dufour':"",
     'ch.swisstopo.hiks-siegfried':"",
+    'ch.swisstopo.geoidmodell-etrs89':"",
+    'ch.swisstopo.geoidmodell-ch1903':"",
     'ch.swisstopo.gg25-land-flaeche.fill':"",
     'ch.swisstopo.gg25-kanton-flaeche.fill':"",
     'ch.swisstopo.gg25-bezirk-flaeche.fill':"",
