@@ -784,6 +784,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.geoidmodell-etrs89": {
+                name: OpenLayers.i18n("ch.swisstopo.geoidmodell-etrs89"),
+                layertype: 'wmts',
+                timestamp: ['20041231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
+            "ch.swisstopo.geoidmodell-ch1903": {
+                name: OpenLayers.i18n("ch.swisstopo.geoidmodell-ch1903"),
+                layertype: 'wmts',
+                timestamp: ['20041231'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true
+            },
             "ch.swisstopo.koordinatenaenderung": {
                 name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
                 layertype: 'wmts',
