@@ -2668,7 +2668,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',
-                timestamp: ['20100415','20100414','20070712'],
+                timestamp: ['20100416','20100414','20070712'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
