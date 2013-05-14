@@ -19,8 +19,8 @@ class TestWmtsController(TestController):
         resp = self.app.get(url(controller='wmts', action='index'), )
 
         dom = xml.dom.minidom.parseString( resp.response.body )
-
-        assert resp.response.content_type == "application/xml"
+        print resp.response.content_type
+        assert resp.response.content_type == "text/xml"
         assert 'TileMatrixSet' in resp
 
     def test_validate_getcapabilities(self):
@@ -44,5 +44,5 @@ class TestWmtsController(TestController):
         resp = self.app.get(url(controller='wmts', action='index'), )
 
         dom = xml.dom.minidom.parseString( resp.response.body )
-
-        assert resp.response.content_type == "application/xml"
+        print  resp.response.content_type
+        assert resp.response.content_type == "text/xml"
