@@ -2678,7 +2678,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat-verlaeufe": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat-verlaeufe"),
                 layertype: 'wmts',
-                timestamp: ['20100415'],
+                timestamp: ['20100416'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -2698,7 +2698,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-reg_loc": {
                 name: OpenLayers.i18n("ch.astra.ivs-reg_loc"),
                 layertype: 'wmts',
-                timestamp: ['20100415','20070712'],
+                timestamp: ['20100416','20070712'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
