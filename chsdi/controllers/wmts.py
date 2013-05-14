@@ -37,7 +37,7 @@ class WmtsController(BaseController):
     def index(self, format='html'):
         """GET /wmts: GetCapabilities document"""
 
-        response.headers['Content-Type'] = 'test/xml'
+        response.headers['Content-Type'] = 'text/xml'
         response.headers['Pragma'] = 'public'
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
@@ -102,7 +102,7 @@ class WmtsController(BaseController):
 
         # http://testmapfish-swisstopo.camptocamp.net:5000/wmts/WMTSCapabilities.xml
         if (id == 'WMTSCapabilities' and format == 'xml'):
-           response.headers['Content-Type'] = 'test/xml'
+           response.headers['Content-Type'] = 'text/xml'
            response.charset = 'utf8'
            return render('/WMTSCapabilities.mako')         
 

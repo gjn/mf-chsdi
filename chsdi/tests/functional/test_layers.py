@@ -90,7 +90,7 @@ class TestLayersController(TestController):
 
         dom = xml.dom.minidom.parseString( resp.response.body )
 
-        assert resp.response.content_type == "application/xml"
+        assert resp.response.content_type == "text/xml"
         assert 'TileMatrixSet' in resp
         
     def test_validate_getcapabilities(self):
