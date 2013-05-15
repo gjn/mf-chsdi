@@ -4,13 +4,46 @@ Release 20130515 - Wednesday, May 15th 2013
 Geodata
 ********
 
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| New    | `Geoid in CH1903 <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-ch1903>`__ (ch.swisstopo.geoidmodell-ch1903)   |
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| New    | `Geoid in ETRS89 <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-etrs89>`__ (ch.swisstopo.geoidmodell-etrs89)   |
-+--------+----------------------------------------------------------------------------------------------------------------------+
-| Update | `Swissimage <//s.geo.admin.ch/b0df48dde>`__ (ch.swisstopo.swissimage)                                                |
-+--------+----------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------+
+| New    | `Geoid in CH1903 <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-ch1903>`__ (ch.swisstopo.geoidmodell-ch1903) |
++--------+--------------------------------------------------------------------------------------------------------------------+
+| New    | `Geoid in ETRS89 <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-etrs89>`__ (ch.swisstopo.geoidmodell-etrs89) |
++--------+--------------------------------------------------------------------------------------------------------------------+
+| Update | `Swissimage <//s.geo.admin.ch/b0df48dde>`__ (ch.swisstopo.swissimage)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------+
+| Update | `AGNES <//s.geo.admin.ch/4ac95da34>`__ (ch.swisstopo.fixpunkte-agnes)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
 
 
 Release 20130501 - Wednesday, May 1st 2013

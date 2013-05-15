@@ -330,6 +330,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.ivs-nat':"",
     'ch.astra.ivs-nat-verlaeufe':"",
     'ch.astra.ivs-reg_loc' :"",
+    'ch.astra.ivs-reg_loc.sub' :"",
     'ch.astra.ivs-nat_abgrenzungen' :"",
     'ch.astra.ivs-nat_wegbegleiter' :"",
     'ch.astra.ivs-gelaendekarte':"",
