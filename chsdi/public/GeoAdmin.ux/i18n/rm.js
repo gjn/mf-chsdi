@@ -342,6 +342,7 @@ OpenLayers.Lang.rm= {
 	'ch.astra.ivs-nat_abgrenzungen':'IVS, cunfinaziun',
 	'ch.astra.ivs-nat_wegbegleiter':'IVS, Elements cuntrada da vias',
 	'ch.astra.ivs-reg_loc':'IVS regiunal & local',
+	'ch.astra.ivs-reg_loc.sub':'IVS Kanton Bern',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Posts da quintar il traffic locals',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Posts da quintar il traffic surordinads',
 	'ch.astra.url':'http://www.astra.admin.ch/index.html?lang=de',

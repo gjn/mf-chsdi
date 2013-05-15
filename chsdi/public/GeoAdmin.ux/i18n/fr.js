@@ -346,6 +346,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.astra.ivs-nat_abgrenzungen':'IVS Délimitations',
 	'ch.astra.ivs-nat_wegbegleiter':'IVS Eléments du paysage routier',
 	'ch.astra.ivs-reg_loc':'IVS régional et local',
+	'ch.astra.ivs-reg_loc.sub':'IVS Régional et local',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Circulation routière (régional)',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Circulation routière (principal)',
 	'ch.astra.url':'http://www.astra.admin.ch/index.html?lang=fr',

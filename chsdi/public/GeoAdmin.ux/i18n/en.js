@@ -346,6 +346,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.astra.ivs-nat_abgrenzungen':'IHR Boundaries',
 	'ch.astra.ivs-nat_wegbegleiter':'IHR Elements of landscape',
 	'ch.astra.ivs-reg_loc':'IHR regional & local',
+	'ch.astra.ivs-reg_loc.sub':'IHR regional & local',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Traffic counting locations local',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Traffic counting locations principal',
 	'ch.astra.url':'http://www.astra.admin.ch/index.html?lang=en',

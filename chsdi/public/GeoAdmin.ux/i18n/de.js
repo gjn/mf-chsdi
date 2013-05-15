@@ -346,6 +346,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.astra.ivs-nat_abgrenzungen':'IVS Abgrenzungen',
 	'ch.astra.ivs-nat_wegbegleiter':'IVS Wegbegleiter',
 	'ch.astra.ivs-reg_loc':'IVS Regional und Lokal',
+	'ch.astra.ivs-reg_loc.sub':'IVS Regional und Lokal',
 	'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal':'Verkehrszählung (Regional)',
 	'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet':'Verkehrszählung (Übergeordnet)',
 	'ch.astra.url':'http://www.astra.admin.ch/index.html?lang=de',
