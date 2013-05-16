@@ -432,37 +432,12 @@ class sil_planning_a(Base, Queryable):
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_a)
 
-class sil_planning_raster_a(Base, Queryable):
-    __tablename__ = 'sachplan_inf_luft_plmeasures_r_anhorung'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'tooltips/sil_planning.mako'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    measuretype_text_de = Column('measuretype_text_de', Text)
-    measuretype_text_fr = Column('measuretype_text_fr', Text)
-    measuretype_text_it = Column('measuretype_text_it', Text)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Text)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Text)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Text)
-    planningstatus_text_de = Column('planningstatus_text_de', Text)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Text)
-    planningstatus_text_it = Column('planningstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_text_de = Column('description_text_de', Text)
-    description_text_fr = Column('description_text_fr', Text)
-    description_text_it = Column('description_text_it', Text)
-    document_web = Column('document_web', Text)
-    bgdi_created = Column('bgdi_created', Text)
+class sil_planning_raster_a(sil_planning_a):
     __maxscale__ = 50005
     __minscale__ = 1	
-    the_geom = Column('the_geom',Geometry(21781))
-	
+    the_geom_old = Column('the_geom',Geometry(21781))
+    the_geom = Column('the_geom_raster',Geometry(21781))
+
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_raster_a)
 
 class sil_facilities_k(Base, Queryable):
@@ -521,41 +496,16 @@ class sil_planning_k(Base, Queryable):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 50005	
     __maxscale__ = 1000005	
-    the_geom = Column(Geometry(21781))
+    the_geom = Column('the_geom', Geometry(21781))
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_k)
 
-class sil_planning_raster_k(Base, Queryable):
-    __tablename__ = 'sachplan_inf_luft_plmeasures_r_kraft'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'tooltips/sil_planning.mako'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    measuretype_text_de = Column('measuretype_text_de', Text)
-    measuretype_text_fr = Column('measuretype_text_fr', Text)
-    measuretype_text_it = Column('measuretype_text_it', Text)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Text)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Text)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Text)
-    planningstatus_text_de = Column('planningstatus_text_de', Text)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Text)
-    planningstatus_text_it = Column('planningstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_text_de = Column('description_text_de', Text)
-    description_text_fr = Column('description_text_fr', Text)
-    description_text_it = Column('description_text_it', Text)
-    document_web = Column('document_web', Text)
-    bgdi_created = Column('bgdi_created', Text)
+class sil_planning_raster_k(sil_planning_k):
     __maxscale__ = 50005
-    __minscale__ = 1	
-    the_geom = Column('the_geom',Geometry(21781))
-	
+    __minscale__ = 1
+    the_geom_old = Column('the_geom', Geometry(21781))
+    the_geom = Column('the_geom_raster',Geometry(21781))
+
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
 
 class nga_anbieter (Base, Queryable):
