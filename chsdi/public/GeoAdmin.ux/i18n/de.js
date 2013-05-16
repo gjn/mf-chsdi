@@ -396,6 +396,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bafu.holzvorrat':'Holzvorrat (LFI)',
 	'ch.bafu.holzzuwachs':'Holzzuwachs (LFI)',
 	'ch.bafu.hydrologie-hydromessstationen':'Hydrologische Messstationen',
+	'ch.bafu.hydrologie-wassertemperaturmessstationen':'Messstationen Wassertemperatur',
 	'ch.bafu.laerm-bahnlaerm_nacht':'Eisenbahnlärm (Lr_Nacht)',
 	'ch.bafu.laerm-bahnlaerm_tag':'Eisenbahnlärm (Lr_Tag)',
 	'ch.bafu.laerm-strassenlaerm_nacht':'Strassenlärm (Lr_Nacht)',

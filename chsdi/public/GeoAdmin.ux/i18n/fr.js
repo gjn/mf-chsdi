@@ -396,6 +396,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.bafu.holzvorrat':'Volume de bois (IFN)',
 	'ch.bafu.holzzuwachs':'Accroissement annuel de bois (IFN)',
 	'ch.bafu.hydrologie-hydromessstationen':'Stations hydrométriques',
+	'ch.bafu.hydrologie-wassertemperaturmessstationen':'Stations de mesure Température de l’eau',
 	'ch.bafu.laerm-bahnlaerm_nacht':'Bruit ferroviaire (Lr_nuit)',
 	'ch.bafu.laerm-bahnlaerm_tag':'Bruit ferroviaire (Lr_jour)',
 	'ch.bafu.laerm-strassenlaerm_nacht':'Bruit routier (Lr_nuit)',
