@@ -34,6 +34,9 @@ layers:
     - name: osm
       title: OpenStreetMap
       sources: [osm_cache]
+    - name: ch.swisstopo.swisstlm3d-karte
+      title: TLM
+      sources: [tlm] 
 
 caches:
   swissimage:
@@ -58,6 +61,11 @@ caches:
       font_size: 14
       opacity: 100
       color: [0,0,0]
+  tlm:
+    grids: [swisstopo-tlm]
+    sources: [tlm-tiles]
+    format: image/jpeg
+    disable_storage: true 
 
 sources:
   swissimage-tiles:
@@ -66,14 +74,14 @@ sources:
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20120809/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20130422/21781/%(z)d/%(y)d/%(x)d.jpeg
   pixelkarte-farbe-tiles:
     type: tile
     grid: swisstopo-pixelkarte
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20120809/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20130213/21781/%(z)d/%(y)d/%(x)d.jpeg
   osm_tms:
     type: tile
     grid: global_mercator_osm
@@ -81,6 +89,18 @@ sources:
     coverage:
       bbox: [420000,30000,900000,350000]
       bbox_srs: EPSG:21781
+  tlm-tiles:
+    type: tile
+    grid: swisstopo-tlm
+    transparent: true
+    on_error:
+      other:
+        response: transparent
+        cache: false
+    http:
+      headers:
+        Referer: http://www.geoportail.gouv.fr/
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swisstlm3d-karte/default/20120401/21781/%(z)d/%(y)d/%(x)d.png
 
 grids:
   swisstopo-swissimage:
@@ -101,6 +121,13 @@ grids:
     base: GLOBAL_MERCATOR
     num_levels: 18
     origin: nw
+  swisstopo-tlm:
+    res: [4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5]
+    bbox: [420000,30000,900000,350000]
+    bbox_srs: EPSG:21781
+    srs: EPSG:21781
+    origin: nw
+    stretch_factor: 1.0
 
 globals:
   cache:
