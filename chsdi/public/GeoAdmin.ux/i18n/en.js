@@ -395,6 +395,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bafu.holznutzung':'Wood harvesting and mortality (NFI)',
 	'ch.bafu.holzvorrat':'Standing volume (NFI)',
 	'ch.bafu.holzzuwachs':'Wood increment (NFI)',
+	'ch.bafu.hydrologie-gewaesserzustandsmessstationen':'Water status monitoring stations',
 	'ch.bafu.hydrologie-hydromessstationen':'Hydrological gauging stations',
 	'ch.bafu.hydrologie-wassertemperaturmessstationen':'Temperature monitoring stations',
 	'ch.bafu.laerm-bahnlaerm_nacht':'Railway noise (Lr_night)',

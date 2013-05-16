@@ -391,6 +391,7 @@ OpenLayers.Lang.rm= {
 	'ch.bafu.holznutzung':'Explotaziun dal guaud e mortalitad (IFN)',
 	'ch.bafu.holzvorrat':'Reserva da laina (IFN)',
 	'ch.bafu.holzzuwachs':'Creschientscha annuala da laina (IFN)',
+	'ch.bafu.hydrologie-gewaesserzustandsmessstationen':'Messstandorte Gewässerzustand',
 	'ch.bafu.hydrologie-hydromessstationen':'Staziuns idrometricas',
 	'ch.bafu.hydrologie-wassertemperaturmessstationen':'Messstationen Wassertemperatur',
 	'ch.bafu.laerm-bahnlaerm_nacht':'Canera da viafier (Lr_notg)',

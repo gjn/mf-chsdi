@@ -227,6 +227,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bafu.ren-wald':"",
     'ch.bafu.hydrologie-hydromessstationen':"",
     'ch.bafu.hydrologie-wassertemperaturmessstationen':"",
+    'ch.bafu.hydrologie-gewaesserzustandsmessstationen':"",
     'ch.bafu.bundesinventare-auen':"",
     'ch.bafu.bundesinventare-bln':"",
     'ch.bafu.bundesinventare-flachmoore':"",

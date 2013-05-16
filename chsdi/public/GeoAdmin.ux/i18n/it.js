@@ -395,6 +395,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bafu.holznutzung':'Utilizzo e mortalità di legno (IFN)',
 	'ch.bafu.holzvorrat':'Provvigione di legname (IFN)',
 	'ch.bafu.holzzuwachs':'Incremento del legno (IFN)',
+	'ch.bafu.hydrologie-gewaesserzustandsmessstationen':'Siti misurazione stato delle acque',
 	'ch.bafu.hydrologie-hydromessstationen':'Stazioni idrologiche',
 	'ch.bafu.hydrologie-wassertemperaturmessstationen':'Stazioni misurazione temperatura',
 	'ch.bafu.laerm-bahnlaerm_nacht':'Rumore ferroviario (Lr_notte)',
