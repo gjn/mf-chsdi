@@ -66,6 +66,8 @@ caches:
     sources: [tlm-tiles]
     format: image/jpeg
     disable_storage: true 
+    image:
+      resampling_method: nearest
 
 sources:
   swissimage-tiles:
