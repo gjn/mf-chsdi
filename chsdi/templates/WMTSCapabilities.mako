@@ -66,10 +66,22 @@
 				<Value>${timestamp}</Value>
 				% endfor
 			</Dimension>
+			% if layer.id == 'ch.swisstopo.swissimage':
 			<TileMatrixSetLink>
+				<TileMatrixSet>21781_27</TileMatrixSet>
+			</TileMatrixSetLink>
+			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/1.0.0/${layer.id|x,trim}/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+			% elif layer.id == 'ch.kantone.cadastralwebmap-farbe':
+			<TileMatrixSetLink>
+				<TileMatrixSet>21781_28</TileMatrixSet>
+			</TileMatrixSetLink>
+			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/1.0.0/${layer.id|x,trim}/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+			% else:
+		    <TileMatrixSetLink>
 				<TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}</TileMatrixSet>
 			</TileMatrixSetLink>
 			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/1.0.0/${layer.id|x,trim}/default/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
+			%endif
       ## <ResourceURL format="application/gml+xml; version=3.1" resourceType="FeatureInfo" template="${c.onlineressource}/1.0.0/{Time}/${str(layer.tile_matrix_set_id).split(',')[0]}/{TileMatrix}/{TileRow}/{TileCol}/{J}/{I}.xml"/>
 		</Layer>
   % endfor
@@ -80,7 +92,22 @@
 
             <%include file="TileMatrixSet.mako"/>
 
-            
+	</TileMatrixSet>
+	<TileMatrixSet>
+			<ows:Identifier>21781_27</ows:Identifier>
+			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
+
+            <%include file="TileMatrixSet.mako"/>
+            <%include file="TileMatrixSet_27.mako"/>
+
+	</TileMatrixSet>
+    <TileMatrixSet>
+			<ows:Identifier>21781_28</ows:Identifier>
+			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
+
+            <%include file="TileMatrixSet.mako"/>
+            <%include file="TileMatrixSet_27.mako"/>
+            <%include file="TileMatrixSet_28.mako"/>
 
 	</TileMatrixSet>
 	</Contents>
@@ -108,7 +135,7 @@
 		% for i in range(len(layers)):
 		    % if used_layers[i] == 't' and c.is_swisstopowmts:
 			<LayerRef>${layers[i]}</LayerRef>
-			  %endif
+			%endif
 		% endfor
       </Theme>
       ## No overflow
