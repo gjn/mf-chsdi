@@ -1,5 +1,3 @@
-<!-- This tileMatrixSet in **only** for tiles generated through TileGenerator ! -->
-
 <TileMatrix>
     <ows:Identifier>0</ows:Identifier>
     <ScaleDenominator>14285750.5715</ScaleDenominator>
