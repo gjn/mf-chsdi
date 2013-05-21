@@ -792,7 +792,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.swisstopo.geoidmodell-ch1903": {
                 name: OpenLayers.i18n("ch.swisstopo.geoidmodell-ch1903"),
@@ -802,7 +802,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: true
+                queryable: false
             },
             "ch.swisstopo.koordinatenaenderung": {
                 name: OpenLayers.i18n("ch.swisstopo.koordinatenaenderung"),
