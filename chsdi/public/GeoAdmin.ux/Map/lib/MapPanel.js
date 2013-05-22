@@ -43,6 +43,7 @@ GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
     },
 
     applyState: function(state) {
+        var tmp = null;
         if (state.x != null && state.y != null) {
             this.center = new OpenLayers.LonLat(state.x, state.y);
         }
@@ -50,7 +51,10 @@ GeoAdmin.MapPanel = Ext.extend(GeoExt.MapPanel, {
              this.zoom = state.zoom;
         }
         if (state.scale != null) {
-            this.zoom = this.map._getZoomFromScale(state.scale, true);
+            tmp = this.map._getZoomFromScale(state.scale, true);
+            if (tmp != null) {
+                this.zoom = tmp;
+            }
         }
         this.map.applyState(state);
     }
