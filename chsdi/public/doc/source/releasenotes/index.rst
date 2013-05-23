@@ -1,3 +1,54 @@
+Release 20130529 - Wednesday, May 29th 2013
+====================================================
+
+Geodata
+********
+
++------+---------------------------------------------------------------------------------------------------------+
+| TODO | `Text <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-ch1903>`__ (ch.swisstopo.geoidmodell-ch1903) |
++------+---------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+
++--------+----------------------------------------+
+| Update | Ext library updated to version 3.4.1.1 |
++--------+----------------------------------------+
+
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
++--------+----------------------------------------+
+| Update | Ext library updated to version 3.4.1.1 |
++--------+----------------------------------------+
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
+
+
+
 Release 20130515 - Wednesday, May 15th 2013
 ====================================================
 
