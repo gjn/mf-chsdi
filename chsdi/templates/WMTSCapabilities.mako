@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">
+<%!
+    def validate_tilematrixset(id):
+        if int(id) in [18,21,26,27,28]:
+            return id
+        return '26'
+%>
 	<!-- Revision: $Rev$ -->
 	% if c.is_swisstopowmts:
 	    <%include file="swisstopoHeader.mako"/>
@@ -67,7 +73,7 @@
 				% endfor
 			</Dimension>
 			<TileMatrixSetLink>
-				<TileMatrixSet>21781_${layer.zoomlevel_max}</TileMatrixSet>
+				<TileMatrixSet>21781_${layer.zoomlevel_max|validate_tilematrixset}</TileMatrixSet>
 			</TileMatrixSetLink>
 			<ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${c.onlineressource}/1.0.0/${layer.id|x,trim}/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
 
