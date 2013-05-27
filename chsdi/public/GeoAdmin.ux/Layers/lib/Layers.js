@@ -2029,7 +2029,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-bahnlaerm_tag": {
                 name: OpenLayers.i18n("ch.bafu.laerm-bahnlaerm_tag"),
                 layertype: 'wmts',
-                timestamp: ['20101110'],
+                timestamp: ['20101111'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2039,7 +2039,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-bahnlaerm_nacht": {
                 name: OpenLayers.i18n("ch.bafu.laerm-bahnlaerm_nacht"),
                 layertype: 'wmts',
-                timestamp: ['20101110'],
+                timestamp: ['20101111'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2049,7 +2049,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-strassenlaerm_tag": {
                 name: OpenLayers.i18n("ch.bafu.laerm-strassenlaerm_tag"),
                 layertype: 'wmts',
-                timestamp: ['20101110'],
+                timestamp: ['20101111'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2059,7 +2059,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.laerm-strassenlaerm_nacht": {
                 name: OpenLayers.i18n("ch.bafu.laerm-strassenlaerm_nacht"),
                 layertype: 'wmts',
-                timestamp: ['20101110'],
+                timestamp: ['20101111'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bafu",
