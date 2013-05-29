@@ -4,10 +4,6 @@ Release 20130529 - Wednesday, May 29th 2013
 Geodata
 ********
 
-+------+---------------------------------------------------------------------------------------------------------+
-| TODO | `Text <//map.geo.admin.ch/?layers=ch.swisstopo.geoidmodell-ch1903>`__ (ch.swisstopo.geoidmodell-ch1903) |
-+------+---------------------------------------------------------------------------------------------------------+
-
 Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
