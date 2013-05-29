@@ -12,22 +12,22 @@ msgstr ""
 msgid "wasserstand"
 msgstr ""
 
-msgid "wassertemperatur_nr"
+msgid "wassertemp_nr"
 msgstr ""
 
-msgid "wassertemperatur_name"
+msgid "wassertemp_name"
 msgstr ""
 
-msgid "wassertemperatur_url"
+msgid "wassertemp_url"
 msgstr ""
 
-msgid "wassertemperatur_3tagtemp"
+msgid "wassertemp_3tagtemp"
 msgstr ""
 
-msgid "wassertemperatur_datum"
+msgid "wassertemp_datum"
 msgstr ""
 
-msgid "wassertemperatur_temp"
+msgid "wassertemp_temp"
 msgstr ""
 
 msgid "wassertemperatur"
