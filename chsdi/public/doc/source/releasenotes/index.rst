@@ -4,6 +4,10 @@ Release 20130529 - Wednesday, May 29th 2013
 Geodata
 ********
 
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cadastral Web Map now contains data that is updated daily <//map.geo.admin.ch/?layers=ch.kantone.cadastralwebmap-farbe>`__ (ch.kantone.cadastralwebmap-farbe) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Listing all publicly available layers of the Geoadmin API :
 
 - `List only <//s.geo.admin.ch/5d5d40a>`__
