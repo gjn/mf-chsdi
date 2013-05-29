@@ -653,17 +653,37 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 searchable: true
             },
+            //"ch.kantone.cadastralwebmap-farbe": {
+            //    name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
+            //    layer: 'ch.kantone.cadastralwebmap-farbe',
+            //    layername: 'ch.kantone.cadastralwebmap-farbe',
+            //    layertype: 'wmts',
+            //    timestamp: ['20121201','20121101','20121001','20120901','20120801','20120701','20120601','20120501'],
+            //    type: "raster",
+            //    format: "image/png",
+            //    datenherr: "ch.kanton.av",
+            //    queryable: true,
+            //    serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
+            //},
             "ch.kantone.cadastralwebmap-farbe": {
                 name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe"),
-                layer: 'ch.kantone.cadastralwebmap-farbe',
-                layername: 'ch.kantone.cadastralwebmap-farbe',
-                layertype: 'wmts',
-                timestamp: ['20121201','20121101','20121001','20120901','20120801','20120701','20120601','20120501'],
-                type: "raster",
-                format: "image/png",
-                datenherr: "ch.kanton.av",
+                layertype: 'aggregate',
+                subLayersName: ['ch.kantone.cadastralwebmap-farbe_external_wms','ch.swisstopo.tml3d-hintergrund-karte'],
+                type: "polygon",
                 queryable: true,
+                datenherr: "ch.swisstopo",
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25, 0.1]
+            },
+            "ch.kantone.cadastralwebmap-farbe_external_wms": {
+                name: OpenLayers.i18n("ch.kantone.cadastralwebmap-farbe_external_wms"),
+                layertype: 'wms',
+                layers: 'ch.kantone.cadastralwebmap-farbe',
+                layername: 'ch.kantone.cadastralwebmap-farbe_external_wms',
+                //url: 'http://wms-bgdi0i.bgdi.admin.ch/?',
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                singleTile: false,
+                type: "polygon"
             },
             "ch.bfs.gebaeude_wohnungs_register": {
                 name: OpenLayers.i18n("ch.bfs.gebaeude_wohnungs_register"),
