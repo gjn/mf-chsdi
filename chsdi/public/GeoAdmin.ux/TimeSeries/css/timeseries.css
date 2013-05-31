@@ -4,7 +4,7 @@
     left:50%;
     width:600px;
     margin-left:-300px;
-    font: 11px tahoma,arial,helvetica;
+    font: 11px arial,helvetica,tahoma;
     /* Paint over map layers */
     z-index: 999;
 }
@@ -176,7 +176,7 @@
     top: 140px;
     width: 570px;
     z-index: 999;
-    font-family: tahoma,arial,verdana;
+    font-family: arial,tahoma,verdana;
     opacity: 0.8 !important;
     filter: alpha(opacity=80);
 }
