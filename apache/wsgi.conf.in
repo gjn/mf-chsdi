@@ -45,7 +45,7 @@ RewriteRule ^${vars:apache-entry-point}$ https://%{SERVER_NAME}/${vars:instancei
 Header always set Cache-Control "no-store, no-cache, must-revalidate" env=nocache
 
 # non cached urls:
-RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
+RewriteRule ^/${vars:instanceid}/wsgi/(build|lib|GeoAdmin.ux|api|tests|doc|tileforge-doc|demo|capabilities)/(.*)$  ${buildout:directory}/chsdi/public/$1/$2
 # demo
 RewriteRule ^${vars:apache-entry-point}demo/(.*)$  ${buildout:directory}/chsdi/public/demo/$1 [L]
 
@@ -82,6 +82,10 @@ RewriteRule ^${vars:apache-entry-point}wmts/WMTSCapabilities\.xml - [G,L]
 # GetCapabilities for WMTS (used by swissmap online)
 RewriteCond %{HTTP_HOST}   ^wmts.swisstopo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts?mode=swisstopowmts [PT,NC,QSA,L]
+# Frozen Capabilities, for swissmaponline 
+RewriteCond %{QUERY_STRING} lang=(de|fr|it|en) [NC] 
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v(.*)\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.%1.xml [NC,QSA,L]
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v(.*)\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.de.xml [NC,QSA,L]
 # RewriteCond %{HTTP_HOST}   ^wmts[01234]?
 RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA,L]
 RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1

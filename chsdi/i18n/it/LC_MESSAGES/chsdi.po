@@ -1232,6 +1232,9 @@ msgstr "Rocce"
 msgid "gesteinsgr"
 msgstr "Tipo di rocce"
 
+msgid "gewaesser"
+msgstr "Nome del corso d’acqua"
+
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"
 
@@ -2014,6 +2017,9 @@ msgstr "Standard qualitativi"
 
 msgid "mehrinformationen"
 msgstr "Dimensions du gabarit d'espace libre"
+
+msgid "messstandort_name"
+msgstr "Nome del sito di prova"
 
 msgid "messstellentyp"
 msgstr "Type"
@@ -2950,7 +2956,7 @@ msgid "twitter url"
 msgstr "http://www.twitter.com/swiss_geoportal"
 
 msgid "typ"
-msgstr "Type"
+msgstr "Tipo"
 
 msgid "typ_kraftwerk"
 msgstr "Type de d’usine électrique"
@@ -2981,6 +2987,24 @@ msgstr "Taux de boisement [%]"
 
 msgid "wasserstand"
 msgstr "Livelli d'acqua m s. m."
+
+msgid "wassertemp_3tagtemp"
+msgstr "Temperatura dell’acqua degli ultimi 3 giorni"
+
+msgid "wassertemp_datum"
+msgstr "Data/ora"
+
+msgid "wassertemp_name"
+msgstr "Nome della stazione"
+
+msgid "wassertemp_nr"
+msgstr "Numero della stazione"
+
+msgid "wassertemp_temp"
+msgstr "Temperatura dell’acqua"
+
+msgid "wassertemp_url"
+msgstr "Dati attuali e storici"
 
 msgid "wassertemperatur"
 msgstr "Temperature dell'acqua °C"
