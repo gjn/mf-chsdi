@@ -1232,6 +1232,9 @@ msgstr "Roche"
 msgid "gesteinsgr"
 msgstr "Groupe de roche"
 
+msgid "gewaesser"
+msgstr "Nom du cours d’eau"
+
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"
 
@@ -2014,6 +2017,9 @@ msgstr "Norme de qualité"
 
 msgid "mehrinformationen"
 msgstr "Dimensions du gabarit d'espace libre"
+
+msgid "messstandort_name"
+msgstr "Nom du site d’essai"
 
 msgid "messstellentyp"
 msgstr "Type"
@@ -2981,6 +2987,24 @@ msgstr "Taux de boisement [%]"
 
 msgid "wasserstand"
 msgstr "Niveau d'eau m s. m"
+
+msgid "wassertemp_3tagtemp"
+msgstr "3 jours Température de l’eau"
+
+msgid "wassertemp_datum"
+msgstr "Date/Heure"
+
+msgid "wassertemp_name"
+msgstr "Nom de la station"
+
+msgid "wassertemp_nr"
+msgstr "Numéro de la station"
+
+msgid "wassertemp_temp"
+msgstr "Température de l’eau"
+
+msgid "wassertemp_url"
+msgstr "Donnée actuelles et historiques"
 
 msgid "wassertemperatur"
 msgstr "Température de l'eau °C"

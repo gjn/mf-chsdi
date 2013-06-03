@@ -1232,6 +1232,9 @@ msgstr "Gestein"
 msgid "gesteinsgr"
 msgstr "Gesteinsgruppe"
 
+msgid "gewaesser"
+msgstr "Gewässername"
+
 msgid "gewaessername"
 msgstr "Gewässername"
 
@@ -2014,6 +2017,9 @@ msgstr "Qualitätsstandard"
 
 msgid "mehrinformationen"
 msgstr "Abmessung des Lichtraumprofils"
+
+msgid "messstandort_name"
+msgstr "Name Messstandort"
 
 msgid "messstellentyp"
 msgstr "Messstellentyp"
@@ -2980,6 +2986,24 @@ msgstr "Waldanteil [%]"
 
 msgid "wasserstand"
 msgstr "Wasserstand m ü. M"
+
+msgid "wassertemp_3tagtemp"
+msgstr "3 Tage Wassertemperatur"
+
+msgid "wassertemp_datum"
+msgstr "Datum/Zeit"
+
+msgid "wassertemp_name"
+msgstr "Stationsname"
+
+msgid "wassertemp_nr"
+msgstr "Stationsnummer"
+
+msgid "wassertemp_temp"
+msgstr "Wassertemperatur °C"
+
+msgid "wassertemp_url"
+msgstr "Aktuelle und historische Daten"
 
 msgid "wassertemperatur"
 msgstr "Wassertemperatur °C"

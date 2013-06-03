@@ -903,7 +903,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classificaziun da mineral"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Gruppa litologia principal"
+msgstr "Gruppas principalas da litologia"
 
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
 msgstr "Crapperas 1915"
@@ -1232,6 +1232,9 @@ msgstr "Gestein"
 
 msgid "gesteinsgr"
 msgstr "Gesteinsgruppe"
+
+msgid "gewaesser"
+msgstr "Name of the surface waters"
 
 msgid "gewaessername"
 msgstr "Gewässername"
@@ -2015,6 +2018,9 @@ msgstr "Standards qualitativs"
 
 msgid "mehrinformationen"
 msgstr "Abmessung des Lichtraumprofils"
+
+msgid "messstandort_name"
+msgstr "Name of trial spot"
 
 msgid "messstellentyp"
 msgstr "Messstellentyp"
@@ -2981,6 +2987,24 @@ msgstr "Waldanteil [%]"
 
 msgid "wasserstand"
 msgstr "Livel da l'aua m.s.m"
+
+msgid "wassertemp_3tagtemp"
+msgstr "3 Tage Wassertemperatur"
+
+msgid "wassertemp_datum"
+msgstr "Datum/Zeit"
+
+msgid "wassertemp_name"
+msgstr "Stationsname"
+
+msgid "wassertemp_nr"
+msgstr "Stationsnummer"
+
+msgid "wassertemp_temp"
+msgstr "Wassertemperatur °C"
+
+msgid "wassertemp_url"
+msgstr "Aktuelle und historische Daten"
 
 msgid "wassertemperatur"
 msgstr "Temperatura da l'aua °C"
