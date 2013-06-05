@@ -127,8 +127,11 @@ class LayersController(BaseController):
         # If one if these 3 layers are in the list do not filter by staging mode 
         if 'ch.swisstopo.pixelkarte-farbe' in layer_id or 'ch.swisstopo.pixelkarte-grau' in layer_id or 'ch.swisstopo.tml3d-hintergrund-karte' in layer_id and self.mode == 'legend':
             pass
-        elif 'prod' in Geodata_staging and self.mode in ['all','legend','bodsearch','preview','mobile']:
-            query = query.filter(self.BodLayer.staging == 'prod')
+        elif self.mode in ['all','legend','bodsearch','preview','mobile']:
+            if 'integration' in Geodata_staging:
+                query = query.filter(or_(self.BodLayer.staging == 'integration', self.BodLayer.staging == 'prod'))
+            elif 'prod' in Geodata_staging:
+                query = query.filter(self.BodLayer.staging == 'prod')
         
         if self.mode in ['bodsearch']:
             query = query.filter(self.BodLayer.bodsearch == 'true')

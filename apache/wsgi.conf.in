@@ -84,11 +84,16 @@ RewriteCond %{HTTP_HOST}   ^wmts.swisstopo.admin.ch$
 RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts?mode=swisstopowmts [PT,NC,QSA,L]
 # Frozen Capabilities, for swissmaponline 
 RewriteCond %{QUERY_STRING} lang=(de|fr|it|en) [NC] 
-RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v(.*)\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.%1.xml [NC,QSA,L]
-RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v(.*)\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.de.xml [NC,QSA,L]
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v([0-9]{8})\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.%1.xml [NC,QSA,L]
+RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities_v([0-9]{8})\.xml$ ${buildout:directory}/chsdi/public/capabilities/$1/WMTSCapabilities.de.xml [NC,QSA,L]
 # RewriteCond %{HTTP_HOST}   ^wmts[01234]?
 RewriteRule ^${vars:apache-entry-point}1.0.0/WMTSCapabilities\.xml$ /${vars:instanceid}/wsgi/wmts [PT,NC,QSA,L]
 RewriteRule ^${vars:apache-entry-point}1.0.0/legend/(.*)$  ${buildout:directory}/chsdi/public/legend/$1
+
+# RE3 previews
+RewriteRule ^${vars:apache-entry-point}preview(.*) http://${vars:re3_host}$1 [P]
+ProxyPassReverse ${vars:apache-entry-point}preview http://${vars:re3_host}
+
 
 # print
 RewriteRule ^${vars:apache-entry-point}print/(.*)$ /main/wsgi/print/$1 [PT]
@@ -150,3 +155,9 @@ SetEnvIf X-Forwarded-For "46.51.190.137"                 GOODIP
    Allow from env=GOODREF
 
 </LocationMatch>
+
+<LocationMatch "^${vars:apache-entry-point}preview">
+    Order Deny,Allow
+    Allow from all
+</LocationMatch>
+
