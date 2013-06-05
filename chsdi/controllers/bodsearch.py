@@ -6,7 +6,7 @@ from pylons import config
 from pylons.controllers.util import abort
 
 from mapfish.decorators import _jsonify
-from sqlalchemy import func
+from sqlalchemy import func, or_
 from datetime import date
 
 from chsdi.lib.base import BaseController, render
@@ -40,7 +40,9 @@ class BodsearchController(BaseController):
 
         query = Session.query(self.BodLayer).order_by(self.BodLayer.kurzbezeichnung).order_by(self.BodLayer.bezeichnung).order_by(self.BodLayer.geobasisdatensatz_name)
         
-        if 'test_integration' not in self.Geodata_staging:
+        if 'integration' in self.Geodata_staging:
+            query = query.filter(or_(self.BodLayer.staging == 'integration', self.BodLayer.staging == 'prod'))
+        elif 'prod' in self.Geodata_staging:
             query = query.filter(self.BodLayer.staging == 'prod')
 
         query = query.filter(self.BodLayer.volltextsuche.ilike('%' + q + '%')).filter(self.BodLayer.projekte.op('~')(p + '(,|\s|$)'))
