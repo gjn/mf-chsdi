@@ -3,7 +3,6 @@
 
   <p class='bod-title'><span style="font-weight:bold;">${h.hilight(c.layer.bezeichnung, c.hilight)}</span> (${h.hilight(c.layer.datenherr, c.hilight) | trim})</p>
   <p class='office-provider'>${h.hilight(c.layer.inspire_themes, c.hilight)}</p>
-
 % if not c.full:
   <p>${h.hilight(c.layer.short_abstract, c.hilight)}</p>
 % else:
@@ -110,6 +109,13 @@
     </tr>
 
     <tr><td>${_('Datenstand')}</td>
+% if c.layer.bod_layer_id == "ch.kantone.cadastralwebmap-farbe":
+<%
+   import time
+   date_of_day = time.strftime('%d.%m.%Y',time.localtime())
+%>
+    <td>${date_of_day}</td>
+% else:
 %if c.legend.datenstand:
 % if len(c.legend.datenstand) ==4:
     <td>${c.legend.datenstand}</td>
@@ -126,6 +132,7 @@
 %endif
 %else:
     <td>-</td>
+% endif
 % endif
  </tr>    
   </table>
