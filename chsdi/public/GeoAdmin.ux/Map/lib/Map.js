@@ -2,6 +2,7 @@
 
 /*
  * @requires OpenLayers/Map.js
+ * @requires OpenLayers/TileManager.js
  * @requires OpenLayers/Kinetic.js
  * @include OpenLayers/Control/TouchNavigation.js
  * @include OpenLayers/Control/Navigation.js
