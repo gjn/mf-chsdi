@@ -18,7 +18,8 @@ from shapely.geometry.polygon import Polygon
 from chsdi.lib.base import render, c
 from chsdi.model import meta
 from chsdi.model.meta import Session
-from time import strptime, strftime
+from time import strptime,strftime
+import datetime
 
 def init_model(key, engine):
     if key not in meta.engines:
@@ -75,10 +76,70 @@ class Queryable(object):
         myFilter = None
         if cls.the_time is not None:
            if cls.the_time_operator == '==':
-              myFilter = cls.__table__.columns[cls.the_time] == strftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
+              myFilter = cls.__table__.columns[cls.the_time] == cls.myStrftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
            if cls.the_time_operator == '<=':
-              myFilter = cls.__table__.columns[cls.the_time] <= strftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
+              myFilter = cls.__table__.columns[cls.the_time] <= cls.myStrftime(cls.the_time_db_format,strptime(str(timestamp),cls.the_time_timestamp_format))
         return myFilter
+
+    @classmethod
+    def myStrftime(cls, fmt, dt):
+        if dt.tm_year < 1900:
+            fmt_element = fmt.split('%')
+            result = ''
+            for elem in fmt_element:
+                if elem == 'a':
+                    raise Exception('strftime not supported')
+                elif elem == 'A':
+                    raise Exception('strftime not supported')
+                elif elem == 'b':
+                    raise Exception('strftime not supported')
+                elif elem == 'B':
+                    raise Exception('strftime not supported')
+                elif elem == 'd':
+                    result = result + str(dt.tm_mday)
+                elif elem == 'f':
+                    raise Exception('strftime not supported')
+                elif elem == 'H':
+                    result = result + str(dt.tm_hour)
+                elif elem == 'I':
+                    raise Exception('strftime not supported')
+                elif elem == 'j':
+                    result = result + str(dt.tm_yday)
+                elif elem == 'm':
+                    result = result + str(dt.tm_mon)
+                elif elem == 'M':
+                    result = result + str(dt.tm_min)
+                elif elem == 'p':
+                    raise Exception('strftime not supported')
+                elif elem == 'S':
+                    result = result + str(dt.tm_sec)
+                elif elem == 'U':
+                    raise Exception('strftime not supported')
+                elif elem == 'w':
+                    result = result + str(dt.tm_wday)
+                elif elem == 'W':
+                    raise Exception('strftime not supported')
+                elif elem == 'x':
+                    raise Exception('strftime not supported')
+                elif elem == 'X':
+                    raise Exception('strftime not supported')
+                elif elem == 'y':
+                    raise Exception('strftime not supported')
+                elif elem == 'Y':
+                    result = result + str(dt.tm_year)
+                elif elem == 'X':
+                    raise Exception('strftime not supported')
+                elif elem == 'y':
+                    raise Exception('strftime not supported')
+                elif elem == 'z':
+                    raise Exception('strftime not supported')
+                elif elem == 'Z':
+                    raise Exception('strftime not supported')
+                else:
+                    result = result + elem
+            return result
+        else:
+            return strftime(fmt,dt)
 
     @classmethod
     def geometry_column(cls):
