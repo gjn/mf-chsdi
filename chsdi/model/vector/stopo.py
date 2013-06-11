@@ -593,10 +593,20 @@ class GeologieRohstoffeVererzungen(Base, Queryable):
 
 register('ch.swisstopo.geologie-rohstoffe-vererzungen',GeologieRohstoffeVererzungen)
 
+class Swisstlm3dWanderwege(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'wanderwege_swissmap'
+    __table_args__ = ({'schema': 'karto', 'autoload': True})
+    __template__ = 'tooltips/swissmap_online_wanderwege.mako'
+    id = Column('nr', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.swisstlm3d-wanderwege',Swisstlm3dWanderwege)
+
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'wanderwege_swissmap'
- 	__table_args__ = ({'schema': 'karto', 'autoload': True})
+ 	__table_args__ = ({'schema': 'karto', 'autoload': True, 'extend_existing': True})
  	__template__ = 'tooltips/swissmap_online_wanderwege.mako'
  	id = Column('nr', Integer, primary_key=True)
  	the_geom = Column(Geometry(21781))
