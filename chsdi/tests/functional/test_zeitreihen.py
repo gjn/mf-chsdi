@@ -48,13 +48,13 @@ class TestZeitreihenController(TestController):
         resp = self.check_with_exception({"easting": "600000", "northing": "200000", "scale": "25000"}, True)
         timestamps = self.get_timestamp_list(resp.body)
         #we must have 14 results. needs adaption if underlying data changes
-        assert 14 == len(timestamps)
+        assert 25 == len(timestamps)
 
         #let's see if we have duplicates
         seen = set()
         seen_add = seen.add
         seen_twice = set( x for x in timestamps if x in seen or seen_add(x) )
-        assert 14 == len(seen)
+        assert 25 == len(seen)
         assert 0 == len(seen_twice)
 
     def test_zeitreihen_parameters_outofscope(self):
