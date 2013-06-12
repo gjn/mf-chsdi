@@ -75,7 +75,7 @@ Examples:
 - Addresses with city number: `https://api.geo.admin.ch/swisssearch/geocoding?bfsnr=5514&query=saug <../../../swisssearch/geocoding?bfsnr=5514&query=saug>`_ 
 - Search only swissnames: `https://api.geo.admin.ch/swisssearch/geocoding?query=Beau&services=swissnames <../../../swisssearch/geocoding?query=Beau&services=swissnames>`_
 - Search for addresses without the geometry: `https://api.geo.admin.ch/swisssearch/geocoding?query=Beaulieustr&services=address <../../../swisssearch/geocoding?query=Beaulieustr&services=address&no_geom=true>`_
-- Search for a feature within a layer: `https://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hoehe&query=CH0200000VDE119a>`_
+- Search for a feature within a layer: `https://api.geo.admin.ch/swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hfp1&query=CH0200000VDE119a <../../../swisssearch/geocoding?layers=ch.swisstopo.fixpunkte-hfp1&query=CH0200000VDE119a>`_
 
 Note: In French, search for "leopold robert", not only for "robert"
 
