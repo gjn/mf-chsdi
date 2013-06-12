@@ -84,7 +84,7 @@ class SwisssearchController(BaseController):
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
             tsvector = 'to_tsvector(\'english\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
-            ftsFilter = "%(tsvector)s @@ to_tsquery('english', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
+            ftsFilter = "%(tsvector)s @@ to_tsquery('simple_nostop', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
             query = Session.query(SwissSearch).filter(ftsFilter)
 
             # Try to optimize search if initial search doesn't return something. It results in an additional query
