@@ -82,7 +82,7 @@ class SwisssearchController(BaseController):
             if len(terms) == 1:
                onlyOneTerm = True
             terms1 = ' & '.join([term + ('' if term.isdigit() else ':*')  for term in terms])
-            tsvector = 'to_tsvector(\'english\',search_name)'
+            tsvector = 'to_tsvector(\'simple_nostop\',search_name)'
             terms1 =  terms1.replace("'", "''").replace('"', '\"')
             ftsFilter = "%(tsvector)s @@ to_tsquery('simple_nostop', remove_accents('%(terms1)s'))" %{'tsvector': tsvector, 'terms1': terms1}
             query = Session.query(SwissSearch).filter(ftsFilter)
