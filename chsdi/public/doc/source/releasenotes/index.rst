@@ -1,3 +1,34 @@
+Release 20130626 - Wednesday, June 26th 2013
+====================================================
+
+Geodata
+********
+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Building generalized VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-building>`__ (ch.swisstopo.vec200-building)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Elevations VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`__ (ch.swisstopo.vec200-miscellaneous-geodpoint)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Hydrology VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-hydrography>`__ (ch.swisstopo.vec200-hydrography)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Land cover VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover>`__ (ch.swisstopo.vec200-landcover)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Names VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-names-namedlocation>`__ (ch.swisstopo.vec200-names-namedlocation)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Public Transportation VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`__ (ch.swisstopo.vec200-transportation-oeffentliche-verkehr)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Road system VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-strassennetz>`__ (ch.swisstopo.vec200-transportation-strassennetz)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Single objects VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous>`__ (ch.swisstopo.vec200-miscellaneous)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Update | `Forested areas <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover-wald>`__ (ch.swisstopo.vec200-landcover-wald)
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
 Release 20130612 - Wednesday, June 12th 2013
 ====================================================
 

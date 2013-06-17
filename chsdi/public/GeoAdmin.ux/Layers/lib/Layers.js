@@ -1146,7 +1146,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-transportation-oeffentliche-verkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-oeffentliche-verkehr"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1155,7 +1155,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-transportation-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-strassennetz"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1164,7 +1164,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-adminboundaries-protectedarea": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-adminboundaries-protectedarea"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1174,7 +1174,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-building": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-building"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1184,7 +1184,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-hydrography": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-hydrography"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1193,7 +1193,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-landcover": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-landcover"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1203,7 +1203,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-miscellaneous": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1212,7 +1212,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-miscellaneous-geodpoint": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous-geodpoint"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1221,7 +1221,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-names-namedlocation": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-names-namedlocation"),
                 layertype: 'wmts',
-                timestamp: ['20100101'],
+                timestamp: ['20130101'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -2040,7 +2040,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-landcover-wald": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-landcover-wald"),
                 layertype: 'wmts',
-                timestamp: ['20090430'],
+                timestamp: ['20130101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",

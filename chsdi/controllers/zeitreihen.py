@@ -82,7 +82,7 @@ class ZeitreihenController(BaseController):
         timestamps = ['1938','1950','1960','1970','1980','1990','2000','2010']
         counter = 0
         minYear = 2020
-        minTimestamp = 1844
+        minTimestamp = 1938
 
         # Fill the array in time descending direction
         for f in query.all():
