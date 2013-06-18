@@ -95,6 +95,7 @@ class ShortenerController(BaseController):
 
 
     def decode(self, id=None):
+        url = None
         if id is None or id == 'robots.txt':
             abort(400, 'A short url is required')
         else:
@@ -102,4 +103,6 @@ class ShortenerController(BaseController):
             query = query.filter(ShortUrl.url_short == '' + id)
             for r in query:
                 url = r.url
-            redirect(url)
+            if url is not None:
+                redirect(url)
+            abort(404, 'No long url correspond to given short url.')

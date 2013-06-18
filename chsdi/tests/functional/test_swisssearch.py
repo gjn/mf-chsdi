@@ -98,6 +98,20 @@ class TestSwisssearchController(TestController):
         for r in results:
             assert r['bbox'] == None
 
+    def test_geocoding_unaccurate_address(self):
+        params = {
+            'lang': 'de',
+            'services': 'cities,swissnames,districts,cantons,postalcodes,address',
+            'query': 'rue des berge 2',
+            'no_geom' : 'true'
+        }
+        resp = self.app.get(url(controller='swisssearch', action='geocoding'),
+            params=params
+        )
+        response = simplejson.loads(resp.response.body)['results']
+        assert resp.response.content_type == "application/json"
+        assert 'Ruelle des Berges 2' in response[0]['name']
+        assert len(response) != 0
 
     def test_reversegeocoding(self):
         resp = self.app.get(url(controller='swisssearch', action='reversegeocoding'),

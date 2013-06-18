@@ -806,7 +806,7 @@ GeoAdmin.TimeSeries = Ext.extend(Ext.Component, {
         if (this.state.animationSlider) {
             return this.state.animationSlider;
         }
-        return 1938;
+        return 1864;
         //return Math.floor((this.minYear+this.maxYear)/2);
     },
 
@@ -1385,6 +1385,11 @@ GeoAdmin.TimeSeries.PeriodDisplay = Ext.extend(Ext.BoxComponent, {
             }
             if (year === this.minYear || year === this.maxYear || this.isMajorPeriod(year)) {
                 // Show year label
+                if (year !== 1850) {
+                    periodYearElement.title = year;
+                }
+            }
+            if (year === 1860) {
                 periodYearElement.title = year;
             }
             if (year === this.maxYear) {
