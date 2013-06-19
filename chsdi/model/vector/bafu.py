@@ -41,6 +41,28 @@ class LHG(Base, Queryable):
 
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
 
+class Temperaturmessnetz(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'temperaturmessnetz'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
+    __template__ = 'tooltips/temperaturmessnetz.mako'
+    __queryable_attributes__ = ['nr','name']
+    id = Column('bgdi_id', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bafu.hydrologie-wassertemperaturmessstationen', Temperaturmessnetz)
+
+class Gewaesserzustandst (Base, Queryable):
+    # view in a schema
+    __tablename__ = 'dbgz'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
+    __template__ = 'tooltips/gewaesserzustandsmessstationen.mako'
+    __queryable_attributes__ = ['nr','name','gewaesser']
+    id = Column('bgdi_id', Text, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst)
+
 class AU(Base, Queryable):
     # view in a schema
     __tablename__ = 'au'

@@ -768,12 +768,18 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.laerm-strassenlaerm_tag"
                     },
                     {
+                        layerId: "ch.bafu.hydrologie-wassertemperaturmessstationen"
+                    },
+                    //{
+                    //    layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
+                    //},
+                    {
                         layerId: "ch.bafu.nabelstationen"
                     },
                     {
                         layerId: "ch.bafu.swissprtr"
                     },
-					{
+                    {
                         layerId: "ch.bag.zecken-lyme"
                     },
                     {
@@ -1194,6 +1200,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.hydrologie-hydromessstationen"
                     },
+                    {
+                        layerId: "ch.bafu.hydrologie-wassertemperaturmessstationen"
+                    },
+                    //{
+                    //    layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
+                    //},
                     {
                         layerId: "ch.bafu.wasser-entnahme"
                     },

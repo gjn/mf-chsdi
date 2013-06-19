@@ -2,7 +2,7 @@
     position: absolute;
     top: 16px;
     left:50%;
-    width:600px;
+    width:630px;
     margin-left:-300px;
     font: 11px arial,helvetica,tahoma;
     /* Paint over map layers */
@@ -204,7 +204,7 @@
     margin-left: -304px;
     position: absolute;
     top: 11px;
-    width: 612px;
+    width: 642px;
     height:118px;
     z-index: 998;
 }
