@@ -30,14 +30,8 @@
             image = None
             
     %>
-    <tr><td width="200">${_('wassertemp_nr')}</td>   <td>${c.feature.nr or '-'()}</td></tr>
-    <tr><td>${_('wassertemp_name')}</td>    <td>${c.feature.name or '-'}</td></tr>
-% if c.lang == 'de' or c.lang == 'rm' :
-    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/de/${c.feature.edv_nr4}.html">${_('url') or '-'}</a></td></tr>
-% else :
-    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/${c.lang}/${c.feature.url}">${_('url') or '-'}</a></td></tr>
-% endif
-
+    <tr><td width="200">${_('wassertemp_name')}</td>    <td>${c.feature.name or '-'}</td></tr>
+    <tr><td>${_('wassertemp_nr')}</td>   <td>${c.feature.nr or '-'()}</td></tr>
     <tr><td style="vertical-align: top;">${_('wassertemp_3tagtemp')}</td>
         <td>
 % if image is not None:
@@ -46,7 +40,14 @@
             -
 % endif
         </td>
-<tr><td width="150">${_('date_time')}</td>   <td>${html_attr['date_time']}</td></tr>
-<tr><td width="150">${_('wassertemperatur')}</td>    <td>${html_attr['wassertemperatur']}</td></tr>
+   </tr>
+   <tr><td>${_('date_time')}</td>   <td>${html_attr['date_time']}</td></tr>
+   <tr><td>${_('wassertemperatur')}</td>    <td>${html_attr['wassertemperatur']}</td></tr>
+
+% if c.lang == 'de' or c.lang == 'rm' :
+    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/de/${c.feature.edv_nr4}.html">${_('url') or '-'}</a></td></tr>
+% else :
+    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/${c.lang}/${c.feature.url}">${_('url') or '-'}</a></td></tr>
+% endif
 
 </%def>
