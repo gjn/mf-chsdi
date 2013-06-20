@@ -1267,7 +1267,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"),
