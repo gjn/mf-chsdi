@@ -1262,12 +1262,12 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"),
                 layertype: 'wmts',
-                timestamp: ['20000101'],
+                timestamp: ['20060304','20000101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"),
@@ -3441,7 +3441,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.fauna-wildtierkorridor_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-wildtierkorridor_national"),
                 layertype: 'wmts',
-                timestamp: ['20130219','20080721'],
+                timestamp: ['20130528','20130219','20080721'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3450,7 +3450,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.fauna-vernetzungsachsen_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-vernetzungsachsen_national"),
                 layertype: 'wmts',
-                timestamp: ['20130219','20080721'],
+                timestamp: ['20130528','20130219','20080721'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bafu",
