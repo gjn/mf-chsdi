@@ -451,7 +451,7 @@ class Gk500_Gesteinsklassierung (Base, Queryable):
         __tablename__ = 'gk500_gesteinsklassierung' 
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/gk500-gesteinsklassierung.mako'
-         id = Column('bgdi_id', Integer, primary_key=True)
+        id = Column('bgdi_id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung',Gk500_Gesteinsklassierung)
