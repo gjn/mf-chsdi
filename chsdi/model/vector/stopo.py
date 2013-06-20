@@ -446,15 +446,15 @@ class Gk500_Gensese (Base, Queryable):
 
 register('ch.swisstopo.geologie-geotechnik-gk500-genese',Gk500_Gensese)
 
-#class Gk500_Gesteinsklassierung (Base, Queryable):
-#        # view in a schema
-#        __tablename__ = 'gk500_gesteinsklassierung' 
-#        __table_args__ = ({'schema': 'geol', 'autoload': True})
-#        __template__ = 'tooltips/gk500-gesteinsklassierung.mako'
-#         id = Column('bgdi_id', Integer, primary_key=True)
-#        the_geom = Column(Geometry(21781))
-#
-#register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung',Gk500_Gesteinsklassierung)
+class Gk500_Gesteinsklassierung (Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gk500_gesteinsklassierung' 
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/gk500-gesteinsklassierung.mako'
+         id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung',Gk500_Gesteinsklassierung)
 
 class Gk500_lithologie_hauptgruppen(Base, Queryable):
         # view in a schema
