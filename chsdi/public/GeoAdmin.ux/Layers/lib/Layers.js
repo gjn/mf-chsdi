@@ -3109,7 +3109,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.landwirtschaftliche-zonengrenzen": {
                 name: OpenLayers.i18n("ch.blw.landwirtschaftliche-zonengrenzen"),
                 layertype: 'wmts',
-                timestamp: ['20111214','20111010'],
+                timestamp: ['20130531','20111214','20111010'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
