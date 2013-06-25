@@ -3456,6 +3456,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: false
             },
+            "ch.bafu.naqua-grundwasser_nitrat": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_nitrat"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
+            "ch.bafu.naqua-grundwasser_psm": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_psm"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
+            "ch.bafu.naqua-grundwasser_voc": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_voc"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
             "ch.bafu.biogeographische_regionen": {
                 name: OpenLayers.i18n("ch.bafu.biogeographische_regionen"),
                 layertype: 'wmts',
