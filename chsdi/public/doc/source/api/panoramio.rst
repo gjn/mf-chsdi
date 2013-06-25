@@ -49,9 +49,10 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
        function init() {
            api = new GeoAdmin.API();
     
-           api.createMapPanel({
-               renderTo: "mymap",
-               height: 340
+           api.createMap({
+               div: "mymap",
+               height: 340,
+               bgLayer: "ch.swisstopo.tml3d-hintergrund-karte"
            });
            api.map.events.register('moveend', api.map, moveEnd);
 
@@ -80,7 +81,6 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
            });
            api.map.addControls([hoverControl]);
 
-           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
            var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
            api.map.zoomToExtent(bounds); 
        }
@@ -156,9 +156,10 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
        function init() {
            api = new GeoAdmin.API();
     
-           api.createMapPanel({
-               renderTo: "mymap",
-               height: 340
+           api.createMap({
+               div: "mymap",
+               height: 340,
+               bgLayer: "ch.swisstopo.tml3d-hintergrund-karte"
            });
            api.map.events.register('moveend', api.map, moveEnd);
 
@@ -187,9 +188,8 @@ This example integrates the GeoAdmin API with the Panoramio REST service. The 20
            });
            api.map.addControls([hoverControl]);
 
-           api.map.switchComplementaryLayer('ch.swisstopo.tml3d-hintergrund-karte');
            var bounds = new OpenLayers.Bounds(598115, 197640, 603095, 201020);
-           api.map.zoomToExtent(bounds); 
+           api.map.zoomToExtent(bounds);
        }
 
        // Function handling the response from the get request

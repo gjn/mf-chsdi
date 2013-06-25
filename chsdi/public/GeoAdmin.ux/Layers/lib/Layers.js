@@ -3109,7 +3109,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.landwirtschaftliche-zonengrenzen": {
                 name: OpenLayers.i18n("ch.blw.landwirtschaftliche-zonengrenzen"),
                 layertype: 'wmts',
-                timestamp: ['20111214','20111010'],
+                timestamp: ['20130531','20111214','20111010'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -3452,6 +3452,33 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 timestamp: ['20130528','20130219','20080721'],
                 type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
+            "ch.bafu.naqua-grundwasser_nitrat": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_nitrat"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
+            "ch.bafu.naqua-grundwasser_psm": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_psm"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: false
+            },
+            "ch.bafu.naqua-grundwasser_voc": {
+                name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_voc"),
+                layertype: 'wmts',
+                timestamp: ['20130305'],
+                type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: false
