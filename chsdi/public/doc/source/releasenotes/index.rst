@@ -23,6 +23,18 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Forested areas <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover-wald>`__ (ch.swisstopo.vec200-landcover-wald)                                                            |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Agricultural zones boundaries <//map.geo.admin.ch/?layers=ch.blw.landwirtschaftliche-zonengrenzen>`__ (ch.blw.landwirtschaftliche-zonengrenzen)                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife network system <//map.geo.admin.ch/?layers=ch.bafu.fauna-vernetzungsachsen_national>`__ (ch.bafu.fauna-vernetzungsachsen_national)                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Interregional wildlife corridor <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierkorridor_national>`__ (ch.bafu.fauna-wildtierkorridor_national)                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Classification of rocks <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung>`__ (ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung)   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Temperature monitoring stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-wassertemperaturmessstationen>`__ (ch.bafu.hydrologie-wassertemperaturmessstationen)               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+ch.blw.landwirtschaftliche-zonengrenzen
 
 Listing all publicly available layers of the Geoadmin API :
 
