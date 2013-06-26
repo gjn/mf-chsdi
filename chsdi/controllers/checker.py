@@ -58,7 +58,7 @@ class CheckerController(BaseController):
             # Test WMTS GetCapabilities
             check = self._checkUrl('WMTS GetCapabilities',
                                    'http://'+serviceUrl+'/1.0.0/WMTSCapabilities.xml',
-                                   '<TileMatrixSet>21781</TileMatrixSet>', request.host)
+                                   '<TileMatrixSet>21781_26</TileMatrixSet>', request.host)
             if  (check != 'OK'):
                 response.status='500'
                 return check
