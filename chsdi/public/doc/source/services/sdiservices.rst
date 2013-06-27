@@ -668,7 +668,7 @@ Usage Example
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
-                   params: {'time': '20130213'},
+                   //params: {'time': '20130213'}, // no need to specify the timestamp if you only want the latest available one
                    formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
@@ -835,7 +835,7 @@ A JSON content is sent back with the following content
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
-                   params: {'time': '20130213'},
+                   //params: {'time': '20130213'}, // No need to specify the timestamp if you only want the latest available one
                    formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
