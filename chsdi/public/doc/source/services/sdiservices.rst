@@ -663,16 +663,13 @@ Usage Example
 
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
-                   matrixSet: "21781",
-                   format: "image/jpeg",
                    opacity: 1.0,
                    isBaseLayer: false,
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
-                   params: {'time': '20110401'},
-                   formatSuffix: 'jpeg',
-                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
+                   //params: {'time': '20130213'}, // no need to specify the timestamp if you only want the latest available one
+                   formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
            },
@@ -833,16 +830,13 @@ A JSON content is sent back with the following content
                var capabilities = format.read(doc);
                var layer = format.createLayer(capabilities, {
                    layer: "ch.swisstopo.pixelkarte-farbe",
-                   matrixSet: "21781",
-                   format: "image/jpeg",
                    opacity: 1.0,
                    isBaseLayer: false,
                    requestEncoding: "REST",
                    style: "default" ,  // must be provided
                    dimensions: ['Time'],
-                   params: {'time': '20110401'},
-                   formatSuffix: 'jpeg',
-                   serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5]
+                   //params: {'time': '20130213'}, // No need to specify the timestamp if you only want the latest available one
+                   formatSuffix: 'jpeg'
                });
                map.addLayer(layer);
            },
