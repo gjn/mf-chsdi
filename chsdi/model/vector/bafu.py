@@ -68,6 +68,7 @@ class AU(Base, Queryable):
     __tablename__ = 'au'
     __table_args__ = ({'schema': 'bundinv', 'autoload': True})
     __template__ = 'tooltips/au.mako'
+    __queryable_attributes__ = ['nr','name']
     id = Column('gid', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
