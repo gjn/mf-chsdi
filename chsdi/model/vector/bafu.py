@@ -47,7 +47,7 @@ class Temperaturmessnetz(Base, Queryable):
     __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
     __template__ = 'tooltips/temperaturmessnetz.mako'
     __queryable_attributes__ = ['nr','name']
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.bafu.hydrologie-wassertemperaturmessstationen', Temperaturmessnetz)
@@ -58,7 +58,7 @@ class Gewaesserzustandst (Base, Queryable):
     __table_args__ = ({'schema': 'hydrologie', 'autoload': True})
     __template__ = 'tooltips/gewaesserzustandsmessstationen.mako'
     __queryable_attributes__ = ['nr','name','gewaesser']
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry)
 
 register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst)
