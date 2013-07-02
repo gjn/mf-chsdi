@@ -45,7 +45,7 @@
    <tr><td>${_('wassertemperatur')}</td>    <td>${html_attr['wassertemperatur']}</td></tr>
 
 % if c.lang == 'de' or c.lang == 'rm' :
-    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/de/${c.feature.url}.html">${_('url') or '-'}</a></td></tr>
+    <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/de/${c.feature.url}">${_('url') or '-'}</a></td></tr>
 % else :
     <tr><td>${_('aktuelle_daten')}</td>    <td><a target="_blank" href="http://www.hydrodaten.admin.ch/${c.lang}/${c.feature.url}">${_('url') or '-'}</a></td></tr>
 % endif
