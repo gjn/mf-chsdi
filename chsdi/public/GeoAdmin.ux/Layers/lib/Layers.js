@@ -1227,6 +1227,26 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+            "ch.swisstopo.verschiebungsvektoren-tsp1": {
+                name: OpenLayers.i18n("ch.swisstopo.verschiebungsvektoren-tsp1"),
+                layertype: 'wmts',
+                timestamp: ['20061231'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true,
+                searchable: true
+            },
+            "ch.swisstopo.verschiebungsvektoren-tsp2": {
+                name: OpenLayers.i18n("ch.swisstopo.verschiebungsvektoren-tsp2"),
+                layertype: 'wmts',
+                timestamp: ['20061231'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true,
+                searchable: true
+            },
             "ch.swisstopo.geologie-geotechnik-gk200": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk200"),
                 layertype: 'wmts',

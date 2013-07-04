@@ -673,6 +673,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.vec25-strassennetz':'Strassennetz VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Übriger Verkehr VECTOR25',
 	'ch.swisstopo.vec25-wander':'Wanderwege VECTOR25',
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'LV95 Verschiebungsvektoren TSP1',
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'LV95 Verschiebungsvektoren TSP2',
 	'ch.swisstopo.zeitreihen':'Karten - Zeitreise',
 	'ch.vbs':'VBS',
 	'ch.vbs.territorialregionen':'Territorialregionen',

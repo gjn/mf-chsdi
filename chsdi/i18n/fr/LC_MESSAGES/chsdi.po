@@ -47,6 +47,12 @@ msgstr "Chimique"
 msgid "Coordinates"
 msgstr "Coordonnées"
 
+msgid "DE"
+msgstr "Déplacement Ouest-Est [m]"
+
+msgid "DN"
+msgstr "Déplacement sud-nord [m]"
+
 msgid "Datenbezug"
 msgstr "Distribution des données"
 
@@ -67,6 +73,9 @@ msgstr "Double"
 
 msgid "FL"
 msgstr "Principauté du Liechstenstein"
+
+msgid "FS"
+msgstr "Norme du vecteur de déplacement [m]"
 
 msgid "Feature tooltip"
 msgstr "Information sur l'objet"
@@ -513,7 +522,7 @@ msgid "ch.astra.ivs-nat"
 msgstr "IVS National"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IVS régional et local"
+msgstr "IVS Régional et local"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circulation routière (régional)"
@@ -798,7 +807,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registre des bâtiments et des logements"
 
 msgid "ch.blw.erosion"
-msgstr "Risque d’érosion 1"
+msgstr "Risque d’érosion qualitatif 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terrains en pente et en forte pente"
@@ -807,7 +816,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limites des zones agricoles"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Vignobles en forte pente"
+msgstr "Vignobles en pente"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP produits à base de viande"
@@ -1072,6 +1081,12 @@ msgstr "Autres transports VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Chemins de randonnée VECTOR25"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
+msgstr "MN95 Vecteurs de déformation PAT1"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
+msgstr "MN95 Vecteurs de déformation PAT2"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Cartes - Voyage dans le temps"
@@ -2104,6 +2119,9 @@ msgstr "Public"
 
 msgid "official object webpage"
 msgstr "Page officielle de l'objet"
+
+msgid "offizielpktnummer"
+msgstr "Numéro officiel du point"
 
 msgid "optionaler_name"
 msgstr "Nom optionel"

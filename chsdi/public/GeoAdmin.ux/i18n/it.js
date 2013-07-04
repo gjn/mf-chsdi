@@ -673,6 +673,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.vec25-strassennetz':'Rete stradale  VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Altri mezzi di trasporto  VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sentieri VECTROR25',
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'MN95 Vettori di spostamento PAT1',
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'MN95 Vettori di spostamento PAT2',
 	'ch.swisstopo.zeitreihen':'Carte - Viaggio nel tempo',
 	'ch.vbs':'DDPS',
 	'ch.vbs.territorialregionen':'Regioni territoriali',

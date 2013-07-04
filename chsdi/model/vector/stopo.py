@@ -603,6 +603,28 @@ class Swisstlm3dWanderwege(Base, Queryable):
 
 register('ch.swisstopo.swisstlm3d-wanderwege',Swisstlm3dWanderwege)
 
+class VerschiebungsvektorenTsp1(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'verschiebungsvektoren_tsp1'
+        __table_args__ = ({'schema': 'geodaesie', 'autoload': True})
+        __template__ = 'tooltips/verschiebungsvektoren_tps1.mako'
+        __queryable_attributes__ = ['name']
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.verschiebungsvektoren-tsp1',VerschiebungsvektorenTsp1)
+
+class VerschiebungsvektorenTsp2(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'verschiebungsvektoren_tsp2'
+        __table_args__ = ({'schema': 'geodaesie', 'autoload': True})
+        __template__ = 'tooltips/verschiebungsvektoren_tps2.mako'
+        __queryable_attributes__ = ['name']
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.verschiebungsvektoren-tsp2',VerschiebungsvektorenTsp2)
+
 class SwissmapOnlineWanderwege(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'wanderwege_swissmap'

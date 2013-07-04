@@ -673,6 +673,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.vec25-strassennetz':'Road network  VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Other traffic  VECTOR25',
 	'ch.swisstopo.vec25-wander':'Hiking trails  VECTOR25',
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'LV95 Displacement vectors TSP1',
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'LV95 Displacement vectors TSP2',
 	'ch.swisstopo.zeitreihen':'Maps - Journay through time',
 	'ch.vbs':'DDPS',
 	'ch.vbs.territorialregionen':'Territorial regions',
