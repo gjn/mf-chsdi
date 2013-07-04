@@ -47,6 +47,12 @@ msgstr "Chemical"
 msgid "Coordinates"
 msgstr "Coordinates"
 
+msgid "DE"
+msgstr "Displacement easting [m]"
+
+msgid "DN"
+msgstr "Displacement northing [m]"
+
 msgid "Datenbezug"
 msgstr "Order data"
 
@@ -67,6 +73,9 @@ msgstr "Double"
 
 msgid "FL"
 msgstr "Liechstenstein"
+
+msgid "FS"
+msgstr "Length of the displacement vector [m]"
 
 msgid "Feature tooltip"
 msgstr "Object information"
@@ -468,7 +477,7 @@ msgid "ch.are.bauzonen-2007"
 msgstr "Bauzonen Schweiz 2007"
 
 msgid "ch.are.belastung-gueterverkehr-bahn-2008"
-msgstr "Güterverkehr 2008"
+msgstr "Freight traffic 2008"
 
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr "Schwerer Güterverkehr 2008"
@@ -1072,6 +1081,12 @@ msgstr "Other traffic  VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Hiking trails  VECTOR25"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
+msgstr "LV95 Displacement vectors TSP1"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
+msgstr "LV95 Displacement vectors TSP2"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Maps - Journay through time"
@@ -2105,6 +2120,9 @@ msgstr "Öffentlich"
 
 msgid "official object webpage"
 msgstr "Official object webpage"
+
+msgid "offizielpktnummer"
+msgstr "Official point  number"
 
 msgid "optionaler_name"
 msgstr "Optionaler Name"

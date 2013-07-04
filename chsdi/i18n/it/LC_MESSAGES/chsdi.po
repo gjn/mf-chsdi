@@ -47,6 +47,12 @@ msgstr "Chimique"
 msgid "Coordinates"
 msgstr "Coordinate"
 
+msgid "DE"
+msgstr "Spostamento ovest-est [m]"
+
+msgid "DN"
+msgstr "Spostamento sud-nord [m]"
+
 msgid "Datenbezug"
 msgstr "Distribuzione dei dati"
 
@@ -67,6 +73,9 @@ msgstr "Double"
 
 msgid "FL"
 msgstr "Liechstenstein"
+
+msgid "FS"
+msgstr "Lunghezza del vettore di spostamento [m]"
 
 msgid "Feature tooltip"
 msgstr "Informazioni sull'oggetto"
@@ -468,7 +477,7 @@ msgid "ch.are.bauzonen-2007"
 msgstr "Zone edificabili Svizzera 2007"
 
 msgid "ch.are.belastung-gueterverkehr-bahn-2008"
-msgstr "Trafic marchandises 2008"
+msgstr "Traffico merci 2008"
 
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr "Trafic marchandises poids lourds 2008"
@@ -513,7 +522,7 @@ msgid "ch.astra.ivs-nat"
 msgstr "IVS Nazionale"
 
 msgid "ch.astra.ivs-reg_loc"
-msgstr "IVS regionali e locali"
+msgstr "IVS Regionali e locali"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circolazione stradale (regionale)"
@@ -798,7 +807,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e delle abitazioni"
 
 msgid "ch.blw.erosion"
-msgstr "Rischio di erosione 1"
+msgstr "Rischio erosione qualitativo 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terreni in pendio e in forte pendenza"
@@ -807,7 +816,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limiti delle zone agricole"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Vigneti zone forte pendenza"
+msgstr "Vigneti in zone declive"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP Prodotto a base di carne"
@@ -1072,6 +1081,12 @@ msgstr "Altri mezzi di trasporto  VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Sentieri VECTROR25"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
+msgstr "MN95 Vettori di spostamento PAT1"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
+msgstr "MN95 Vettori di spostamento PAT2"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Carte - Viaggio nel tempo"
@@ -2104,6 +2119,9 @@ msgstr "Öffentlich"
 
 msgid "official object webpage"
 msgstr "Pagina ufficiale dell'oggetto"
+
+msgid "offizielpktnummer"
+msgstr "Numero ufficiale di punto"
 
 msgid "optionaler_name"
 msgstr "Nom optionel"

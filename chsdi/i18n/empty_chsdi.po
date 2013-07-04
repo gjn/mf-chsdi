@@ -1392,6 +1392,18 @@ msgstr ""
 msgid "fp_E95_N95"
 msgstr ""
 
+msgid "offizielpktnummer"
+msgstr ""
+
+msgid "DE"
+msgstr ""
+
+msgid "DN"
+msgstr ""
+
+msgid "FS"
+msgstr ""
+
 msgid "fp_H02"
 msgstr ""
 
@@ -2643,6 +2655,12 @@ msgid "ch.swisstopo.vec25-uebrigerverkehr"
 msgstr ""
 
 msgid "ch.swisstopo.vec25-wander"
+msgstr ""
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
+msgstr ""
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
 msgstr ""
 
 msgid "ch.swisstopo.zeitreihen"

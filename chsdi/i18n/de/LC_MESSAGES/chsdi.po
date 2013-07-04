@@ -47,6 +47,12 @@ msgstr "Chemikalie"
 msgid "Coordinates"
 msgstr "Koordinaten"
 
+msgid "DE"
+msgstr "Verschiebung West-Ost [m]"
+
+msgid "DN"
+msgstr "Verschiebung Süd-Nord [m]"
+
 msgid "Datenbezug"
 msgstr "Datenbezug"
 
@@ -67,6 +73,9 @@ msgstr "Doppelt"
 
 msgid "FL"
 msgstr "Fürstentum Liechstenstein"
+
+msgid "FS"
+msgstr "Betrag des Verschiebungsvektors [m]"
 
 msgid "Feature tooltip"
 msgstr "Objektinformation"
@@ -798,7 +807,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Gebäude- und Wohnungsregister"
 
 msgid "ch.blw.erosion"
-msgstr "Erosionsrisiko 1"
+msgstr "Erosionsrisiko qualitativ 1"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Hang- und Steillagen"
@@ -807,7 +816,7 @@ msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Landwirtschaftliche Zonengrenzen"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
-msgstr "Steillagen Reben"
+msgstr "Rebflächen in Hanglagen"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "GGA Fleischware"
@@ -1072,6 +1081,12 @@ msgstr "Übriger Verkehr VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Wanderwege VECTOR25"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
+msgstr "LV95 Verschiebungsvektoren TSP1"
+
+msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
+msgstr "LV95 Verschiebungsvektoren TSP2"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Karten - Zeitreise"
@@ -2104,6 +2119,9 @@ msgstr "Öffentlich"
 
 msgid "official object webpage"
 msgstr "Offizielle Objektseite"
+
+msgid "offizielpktnummer"
+msgstr "Offizielle Punktnummer"
 
 msgid "optionaler_name"
 msgstr "Optionaler Name"
