@@ -196,6 +196,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.vec200-transportation-oeffentliche-verkehr':"",
     'ch.swisstopo.vec200-miscellaneous-geodpoint':"",
     'ch.swisstopo.vec200-names-namedlocation':"",
+    'ch.swisstopo.verschiebungsvektoren-tsp1':"",
+    'ch.swisstopo.verschiebungsvektoren-tsp2':"", 
     'ch.swisstopo.swissimage':"",
 	'ch.swisstopo.treasurehunt':"",
     'ch.bfe.energieforschung':"",
