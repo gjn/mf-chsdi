@@ -531,6 +531,12 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.swisstopo.transformationsgenauigkeit"
                     },
+                   {
+                        layerId: "ch.swisstopo.verschiebungsvektoren-tsp1"
+                    },
+                   {
+                        layerId: "ch.swisstopo.verschiebungsvektoren-tsp2"
+                    },
                     {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
