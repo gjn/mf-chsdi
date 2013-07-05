@@ -137,6 +137,7 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
 
         options = OpenLayers.Util.extend(options, {
             projection: new OpenLayers.Projection("EPSG:21781"),
+            tileManager: null,  //FIXME not using the tileManager for now
             units: "m",
             controls: [
                 navigationControl,
