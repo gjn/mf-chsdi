@@ -1060,6 +1060,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.bundesinventare-moorlandschaften"
                     },
                     {
+                        layerId: "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
+                    },
+                    {
                         layerId: "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
                     },
                     {
@@ -1359,6 +1362,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-moorlandschaften"
+                    },
+                    {
+                        layerId: "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
                     },
                     {
                         layerId: "ch.bafu.ren-trockenstandorte"
