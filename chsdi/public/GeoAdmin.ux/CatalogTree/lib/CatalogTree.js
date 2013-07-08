@@ -776,9 +776,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.hydrologie-wassertemperaturmessstationen"
                     },
-                    //{
-                    //    layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
-                    //},
+                    {
+                        layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
+                    },
                     {
                         layerId: "ch.bafu.nabelstationen"
                     },
@@ -1060,6 +1060,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bafu.bundesinventare-moorlandschaften"
                     },
                     {
+                        layerId: "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
+                    },
+                    {
                         layerId: "ch.bafu.schutzgebiete-schweizerischer_nationalpark"
                     },
                     {
@@ -1209,9 +1212,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.hydrologie-wassertemperaturmessstationen"
                     },
-                    //{
-                    //    layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
-                    //},
+                    {
+                        layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
+                    },
                     {
                         layerId: "ch.bafu.wasser-entnahme"
                     },
@@ -1359,6 +1362,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bafu.bundesinventare-moorlandschaften"
+                    },
+                    {
+                        layerId: "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
                     },
                     {
                         layerId: "ch.bafu.ren-trockenstandorte"
