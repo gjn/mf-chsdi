@@ -776,9 +776,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     {
                         layerId: "ch.bafu.hydrologie-wassertemperaturmessstationen"
                     },
-                    //{
-                    //    layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
-                    //},
+                    {
+                        layerId: "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
+                    },
                     {
                         layerId: "ch.bafu.nabelstationen"
                     },

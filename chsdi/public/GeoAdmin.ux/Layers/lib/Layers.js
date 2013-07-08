@@ -1635,6 +1635,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: true
             },
+            "ch.bafu.hydrologie-gewaesserzustandsmessstationen": {
+                name: OpenLayers.i18n("ch.bafu.hydrologie-gewaesserzustandsmessstationen"),
+                layertype: 'wmts',
+                timestamp: ['20130301'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+            },
             "ch.bfs.arealstatistik-waldmischungsgrad": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-waldmischungsgrad"),
                 layertype: 'wmts',
