@@ -50,9 +50,35 @@ Geodata
 | Update | `Upload >= 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                                      |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Listing all publicly available layers of the Geoadmin API :
 
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
+API
+***
 
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+- Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
 
 Release 20130626 - Wednesday, June 26th 2013
 ====================================================
@@ -89,8 +115,6 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Temperature monitoring stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-wassertemperaturmessstationen>`__ (ch.bafu.hydrologie-wassertemperaturmessstationen)               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-ch.blw.landwirtschaftliche-zonengrenzen
 
 Listing all publicly available layers of the Geoadmin API :
 
