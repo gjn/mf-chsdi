@@ -31,8 +31,6 @@ class BodLayer(object):
     url_portale = Column('url_portale', Text)
     wms_resource = Column('wms_resource', Text)
     datenstand = Column('datenstand', Text)
-    dataset_query = Column('dataset_query', Text)
-    dataset_label = Column('dataset_label', Text)
     fk_geobasisdaten_sammlung_bundesrecht = Column('fk_geobasisdaten_sammlung_bundesrecht', Text)
     volltextsuche = Column('volltextsuche', Text)
     staging = Column('staging', Text)
