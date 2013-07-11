@@ -318,6 +318,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-quartaermaechtigkeit': "",
     'ch.swisstopo.geologie-geomorphologie': "",
     'ch.swisstopo.geologie-geologischer_atlas':"",
+    'ch.swisstopo.geologie-geolkarten500.metadata':"",
     'ch.swisstopo.geologie-geologische_karte':"",
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':"",
     'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':"",
