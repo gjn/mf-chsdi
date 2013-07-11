@@ -581,6 +581,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Anomalias da Bouguer',
 	'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz':'Das Geoid',
 	'ch.swisstopo.geologie-geodaesie-isostatische_anomalien':'Anomalia isostatica',
+	'ch.swisstopo.geologie-geolkarten500.metadata':'Blatteinteilung GeoKarten 500',
 	'ch.swisstopo.geologie-geologische_karte':'Geologia 1:500000',
 	'ch.swisstopo.geologie-geologischer_atlas':'Atlas geologic 1:25000',
 	'ch.swisstopo.geologie-geomorphologie':'ch.swisstopo.geologie-geomorphologie', //TODO
@@ -669,8 +670,8 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
-	'ch.swisstopo.verschiebungsvektoren-tsp1':'LV95 Verschiebungsvektoren TSP1',
-	'ch.swisstopo.verschiebungsvektoren-tsp2':'LV95 Verschiebungsvektoren TSP2',
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'ch.swisstopo.verschiebungsvektoren-tsp1', //TODO
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'ch.swisstopo.verschiebungsvektoren-tsp2', //TODO
 	'ch.swisstopo.zeitreihen':'ch.swisstopo.zeitreihen', //TODO
 	'ch.vbs':'VBS',
 	'ch.vbs.territorialregionen':'Regiuns territorialas',

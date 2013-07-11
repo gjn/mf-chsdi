@@ -585,6 +585,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geodaesie-bouguer_anomalien':'Anomalia di Bouguer',
 	'ch.swisstopo.geologie-geodaesie-geoid_der_schweiz':'Il geoide',
 	'ch.swisstopo.geologie-geodaesie-isostatische_anomalien':'Anomalie isostatiche',
+	'ch.swisstopo.geologie-geolkarten500.metadata':'Suddivisione GeoCarte 500',
 	'ch.swisstopo.geologie-geologische_karte':'Geologia 1:500 000',
 	'ch.swisstopo.geologie-geologischer_atlas':'Atlante geologico 1:25 000',
 	'ch.swisstopo.geologie-geomorphologie':'ch.swisstopo.geologie-geomorphologie', //TODO

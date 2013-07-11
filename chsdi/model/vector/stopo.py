@@ -386,6 +386,16 @@ class GridstandSwissimage(Base, Queryable):
 
 register('ch.swisstopo.images-swissimage.metadata',GridstandSwissimage)
 
+class GeolKarten500Metadata(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'geolkarten500_meta'
+    __table_args__ = ({'schema': 'geol', 'autoload': True})
+    __template__ = 'tooltips/geolkarten500_metadata.mako'
+    id = Column('prod_id', Text, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geolkarten500.metadata',GeolKarten500Metadata)
+
 class GeologischerAtlasPK(Base, Queryable):
  	# view in a schema
  	__tablename__ = 'kv_ga25_pk'

@@ -1247,6 +1247,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
+            "ch.swisstopo.geologie-geolkarten500.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geolkarten500.metadata"),
+                layertype: 'wmts',
+                timestamp: ['20070425'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true,
+                searchable: false
+            },
             "ch.swisstopo.geologie-geotechnik-gk200": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk200"),
                 layertype: 'wmts',
@@ -3492,7 +3503,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.naqua-grundwasser_psm": {
                 name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_psm"),
@@ -3501,7 +3513,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.naqua-grundwasser_voc": {
                 name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_voc"),
@@ -3510,7 +3523,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.biogeographische_regionen": {
                 name: OpenLayers.i18n("ch.bafu.biogeographische_regionen"),
