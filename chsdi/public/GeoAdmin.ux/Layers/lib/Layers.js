@@ -1247,6 +1247,17 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: true,
                 searchable: true
             },
+            "ch.swisstopo.geologie-geolkarten500.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geolkarten500.metadata"),
+                layertype: 'wmts',
+                timestamp: ['20070425'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true,
+                searchable: false
+            },
             "ch.swisstopo.geologie-geotechnik-gk200": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-gk200"),
                 layertype: 'wmts',
