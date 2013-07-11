@@ -3492,7 +3492,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.naqua-grundwasser_psm": {
                 name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_psm"),
@@ -3501,7 +3502,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.naqua-grundwasser_voc": {
                 name: OpenLayers.i18n("ch.bafu.naqua-grundwasser_voc"),
@@ -3510,7 +3512,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bafu",
-                queryable: false
+                queryable: false,
+                opacity: 0.75
             },
             "ch.bafu.biogeographische_regionen": {
                 name: OpenLayers.i18n("ch.bafu.biogeographische_regionen"),
