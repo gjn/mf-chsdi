@@ -670,8 +670,8 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
-	'ch.swisstopo.verschiebungsvektoren-tsp1':'ch.swisstopo.verschiebungsvektoren-tsp1', //TODO
-	'ch.swisstopo.verschiebungsvektoren-tsp2':'ch.swisstopo.verschiebungsvektoren-tsp2', //TODO
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'LV95 Verschiebungsvektoren TSP1',
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'LV95 Verschiebungsvektoren TSP2',
 	'ch.swisstopo.zeitreihen':'ch.swisstopo.zeitreihen', //TODO
 	'ch.vbs':'VBS',
 	'ch.vbs.territorialregionen':'Regiuns territorialas',
