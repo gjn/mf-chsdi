@@ -1110,6 +1110,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/rm/tools/contact.html"
 msgid "contour"
 msgstr "Inclinaziun [°]"
 
+msgid "contour_totalintensitaet"
+msgstr "Totalintensität [nT]"
+
 msgid "ct"
 msgstr "Kt."
 
@@ -2259,8 +2262,14 @@ msgstr "Historischer Verlauf mit Substanz"
 msgid "substanzgrad"
 msgstr "Substanzgrad"
 
+msgid "teilezgfla"
+msgstr "Fläche Teileinzugsgebiet [km2]"
+
 msgid "teilobjektnr"
 msgstr "Teilobjektnr."
+
+msgid "tezgnr40"
+msgstr "Teileinzugsgebiets-Nummer"
 
 msgid "tilenumber"
 msgstr "Blattnummer"

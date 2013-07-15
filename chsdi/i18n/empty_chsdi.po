@@ -39,6 +39,12 @@ msgstr ""
 msgid "wassertemperatur"
 msgstr ""
 
+msgid "tezgnr40"
+msgstr ""
+
+msgid "teilezgfla"
+msgstr ""
+
 msgid "hydromessstationen_graph"
 msgstr ""
 
@@ -865,6 +871,9 @@ msgid "tt_program"
 msgstr ""
 
 msgid "contour"
+msgstr ""
+
+msgid "contour_totalintensitaet"
 msgstr ""
 
 msgid "tt_freqchan"

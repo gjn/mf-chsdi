@@ -1379,11 +1379,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
                 layertype: 'wmts',
-                timestamp: ['19791231'],
+                timestamp: ['19800101','19791231'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-inklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
@@ -2011,6 +2011,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layertype: 'wmts',
                 timestamp: ['20040101'],
                 type: "point",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+            },
+            "ch.bafu.wasser-teileinzugsgebiete_40": {
+                name: OpenLayers.i18n("ch.bafu.wasser-teileinzugsgebiete_40"),
+                layertype: 'wmts',
+                timestamp: ['20120701'],
+                type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
                 queryable: true

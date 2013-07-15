@@ -1109,6 +1109,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/it/tools/contact.html"
 msgid "contour"
 msgstr "Inclinazione [°]"
 
+msgid "contour_totalintensitaet"
+msgstr "Intensità totale [nT]"
+
 msgid "ct"
 msgstr "Ct."
 
@@ -2258,8 +2261,14 @@ msgstr "sostanza"
 msgid "substanzgrad"
 msgstr "sostanza"
 
+msgid "teilezgfla"
+msgstr "Superficie del bacino idrografico [km2]"
+
 msgid "teilobjektnr"
 msgstr "Numero del sotto-oggetto"
+
+msgid "tezgnr40"
+msgstr "Numero del bacino idrografico"
 
 msgid "tilenumber"
 msgstr "Numero di foglio"

@@ -1109,6 +1109,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/en/tools/contact.html"
 msgid "contour"
 msgstr "Inclination [°]"
 
+msgid "contour_totalintensitaet"
+msgstr "Total intensity [nT]"
+
 msgid "ct"
 msgstr "Ct."
 
@@ -2259,8 +2262,14 @@ msgstr "Historischer Verlauf mit Substanz"
 msgid "substanzgrad"
 msgstr "Substanzgrad"
 
+msgid "teilezgfla"
+msgstr "Sub-catchment area size [km2]"
+
 msgid "teilobjektnr"
 msgstr "Area of the partial object"
+
+msgid "tezgnr40"
+msgstr "Sub-catchment area number"
 
 msgid "tilenumber"
 msgstr "Sheet number"

@@ -1109,6 +1109,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/fr/tools/contact.html"
 msgid "contour"
 msgstr "Inclinaison [°]"
 
+msgid "contour_totalintensitaet"
+msgstr "Intensité totale [nT]"
+
 msgid "ct"
 msgstr "Ct."
 
@@ -2258,8 +2261,14 @@ msgstr "Substance"
 msgid "substanzgrad"
 msgstr "Substance"
 
+msgid "teilezgfla"
+msgstr "Superficie du bassin versant partiel [km2]"
+
 msgid "teilobjektnr"
 msgstr "Numéro du sous-objet"
+
+msgid "tezgnr40"
+msgstr "N° du bassin versant partiel"
 
 msgid "tilenumber"
 msgstr "Numéro de feuille"

@@ -30,9 +30,7 @@
             image = None
             
     %>
-    <tr><td width="200">${_('wassertemp_name')}</td>    <td>${c.feature.name or '-'}</td></tr>
-    <tr><td>${_('wassertemp_nr')}</td>   <td>${c.feature.nr or '-'()}</td></tr>
-    <tr><td style="vertical-align: top;">${_('wassertemp_3tagtemp')}</td>
+    <tr><td width="200" style="vertical-align: top;">${_('wassertemp_3tagtemp')}</td>
         <td>
 % if image is not None:
             <img src="${image}"/>
@@ -41,6 +39,8 @@
 % endif
         </td>
    </tr>
+   <tr><td width="200">${_('wassertemp_name')}</td>    <td>${c.feature.name or '-'}</td></tr>
+   <tr><td>${_('wassertemp_nr')}</td>   <td>${c.feature.nr or '-'()}</td></tr>
    <tr><td>${_('date_time')}</td>   <td>${html_attr['date_time']}</td></tr>
    <tr><td>${_('wassertemperatur')}</td>    <td>${html_attr['wassertemperatur']}</td></tr>
 
