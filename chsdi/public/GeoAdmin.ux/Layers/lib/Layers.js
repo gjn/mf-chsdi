@@ -1383,7 +1383,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-inklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-inklination"),
