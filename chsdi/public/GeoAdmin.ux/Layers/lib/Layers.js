@@ -2015,6 +2015,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: true
             },
+            "ch.bafu.wasser-teileinzugsgebiete_40": {
+                name: OpenLayers.i18n("ch.bafu.wasser-teileinzugsgebiete_40"),
+                layertype: 'wmts',
+                timestamp: ['20120701'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+            },
             // *********************************
             // *********************************
             // *********************************
