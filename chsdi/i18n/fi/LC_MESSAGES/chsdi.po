@@ -1110,6 +1110,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/rm/tools/contact.html"
 msgid "contour"
 msgstr "Inclinaziun [°]"
 
+msgid "contour_totalintensitaet"
+msgstr "Totalintensität [nT]"
+
 msgid "ct"
 msgstr "Kt."
 
