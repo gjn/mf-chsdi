@@ -867,6 +867,9 @@ msgstr ""
 msgid "contour"
 msgstr ""
 
+msgid "contour_totalintensitaet"
+msgstr ""
+
 msgid "tt_freqchan"
 msgstr ""
 

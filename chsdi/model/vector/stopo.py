@@ -570,6 +570,16 @@ class Geologischer_Aeromagnetik_Jura(Base, Queryable):
 
 register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
 
+class GeologieGeophysikTotalintensitaet(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geophysik_totalintensitaet'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/totalintensitaet.mako'
+        id = Column('gid', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-totalintensitaet',GeologieGeophysikTotalintensitaet)
+
 class GeologieRohstoffeIndustrieminerale(Base, Queryable):
         # view in a schema
         __tablename__ = 'rohstoffe_industrieminerale'
