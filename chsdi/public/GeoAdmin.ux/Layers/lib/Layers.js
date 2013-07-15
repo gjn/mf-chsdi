@@ -1379,7 +1379,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geophysik-totalintensitaet": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-totalintensitaet"),
                 layertype: 'wmts',
-                timestamp: ['19791231'],
+                timestamp: ['19800101','19791231'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
