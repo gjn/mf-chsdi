@@ -576,6 +576,7 @@ class GeologieGeophysikTotalintensitaet(Base, Queryable):
         __table_args__ = ({'schema': 'geol', 'autoload': True})
         __template__ = 'tooltips/totalintensitaet.mako'
         id = Column('gid', Integer, primary_key=True)
+        fid = Column ('id', Integer)
         the_geom = Column(Geometry(21781))
 
 register('ch.swisstopo.geologie-geophysik-totalintensitaet',GeologieGeophysikTotalintensitaet)
