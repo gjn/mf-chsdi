@@ -2261,8 +2261,14 @@ msgstr "sostanza"
 msgid "substanzgrad"
 msgstr "sostanza"
 
+msgid "teilezgfla"
+msgstr "Superficie del bacino idrografico [km2]"
+
 msgid "teilobjektnr"
 msgstr "Numero del sotto-oggetto"
+
+msgid "tezgnr40"
+msgstr "Numero del bacino idrografico"
 
 msgid "tilenumber"
 msgstr "Numero di foglio"

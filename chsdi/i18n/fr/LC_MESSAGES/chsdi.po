@@ -2261,8 +2261,14 @@ msgstr "Substance"
 msgid "substanzgrad"
 msgstr "Substance"
 
+msgid "teilezgfla"
+msgstr "Superficie du bassin versant partiel [km2]"
+
 msgid "teilobjektnr"
 msgstr "Numéro du sous-objet"
+
+msgid "tezgnr40"
+msgstr "N° du bassin versant partiel"
 
 msgid "tilenumber"
 msgstr "Numéro de feuille"

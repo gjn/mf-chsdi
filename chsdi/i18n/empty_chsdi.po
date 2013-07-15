@@ -39,6 +39,12 @@ msgstr ""
 msgid "wassertemperatur"
 msgstr ""
 
+msgid "tezgnr40"
+msgstr ""
+
+msgid "teilezgfla"
+msgstr ""
+
 msgid "hydromessstationen_graph"
 msgstr ""
 
