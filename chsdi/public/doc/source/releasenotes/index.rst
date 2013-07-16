@@ -7,7 +7,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division GeoMaps 500 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geolkarten500.metadata>`__ (ch.swisstopo.geologie-geolkarten500.metadata)                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
+| Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
