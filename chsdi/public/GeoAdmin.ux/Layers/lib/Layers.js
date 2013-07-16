@@ -2019,6 +2019,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.bafu.wasser-teileinzugsgebiete_2"),
                 layertype: 'wmts',
                 timestamp: ['20120701'],
+                opacity: 0.75,
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
