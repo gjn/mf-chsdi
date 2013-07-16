@@ -2024,6 +2024,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bafu",
                 queryable: true
             },
+            "ch.bafu.wasser-vorfluter": {
+                name: OpenLayers.i18n("ch.bafu.wasser-vorfluter"),
+                layertype: 'wmts',
+                timestamp: ['20120701'],
+                type: "line",
+                format: "image/png",
+                datenherr: "ch.bafu",
+                queryable: true
+            },
             // *********************************
             // *********************************
             // *********************************
