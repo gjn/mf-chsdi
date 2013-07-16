@@ -2282,6 +2282,9 @@ msgstr "Péage"
 msgid "totholz"
 msgstr "Volume total de bois mort [m3/ha]"
 
+msgid "tt_anteil_ch"
+msgstr "Pourcentage du b.v. en Suisse"
+
 msgid "tt_bakom_middle"
 msgstr "Moyenne"
 
@@ -2320,6 +2323,9 @@ msgstr "Commune"
 
 msgid "tt_bazl_abortion"
 msgstr "Démontage effectué"
+
+msgid "tt_bebautefl"
+msgstr "Surfaces bâties"
 
 msgid "tt_bildstreifen_Aufloesung"
 msgstr "Résolution"
@@ -2687,6 +2693,9 @@ msgstr "Adresse d’arrivée (kilométrage d’eau)"
 msgid "tt_ezgflaeche"
 msgstr "Superficie du bassin versant complet [km2]"
 
+msgid "tt_feuchtflae"
+msgstr "Zones humides"
+
 msgid "tt_firmen_Filmart"
 msgstr "Emulsion"
 
@@ -2752,6 +2761,9 @@ msgstr "Classification des roches"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caractérisation lithologique pétrographique"
+
+msgid "tt_kanal"
+msgstr "Type de cours d’eau"
 
 msgid "tt_kantone_Filmart"
 msgstr "Emulsion"
@@ -2856,6 +2868,9 @@ msgstr "Type de réacteur"
 msgid "tt_kkw_regulatory"
 msgstr "Organe régulateur"
 
+msgid "tt_landwirtsc"
+msgstr "Surfaces agricoles"
+
 msgid "tt_luftbilder_Filmart"
 msgstr "Emulsion"
 
@@ -2874,11 +2889,20 @@ msgstr "No de l'image"
 msgid "tt_luftbilder_line_id"
 msgstr "Ligne aérienne"
 
+msgid "tt_maxalt"
+msgstr "Altitude maximale"
+
+msgid "tt_meanalt"
+msgstr "Altitude moyenne"
+
 msgid "tt_measure"
 msgstr "Adresse de départ (kilométrage d’eau)"
 
 msgid "tt_measure_2"
 msgstr "Adresse (’kilométrage d’eau’)"
+
+msgid "tt_mq_jahr"
+msgstr "Débit moyen modelisé annuel [m3/s]"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -2945,6 +2969,12 @@ msgstr "Détails de l’établissement"
 
 msgid "tt_swissprtr_ort"
 msgstr "Lieu"
+
+msgid "tt_wald_natur"
+msgstr "Forêts et autres surfaces naturelles"
+
+msgid "tt_wasserflae"
+msgstr "Surfaces en eau"
 
 msgid "tt_wrz_portal_beschluss"
 msgstr "Année de décision"

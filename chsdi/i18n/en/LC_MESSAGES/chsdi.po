@@ -2283,6 +2283,9 @@ msgstr "Toll"
 msgid "totholz"
 msgstr "Totholzvolumen [m3/ha]"
 
+msgid "tt_anteil_ch"
+msgstr "Catchment areas percentage in Switzerland"
+
 msgid "tt_bakom_middle"
 msgstr "Medium"
 
@@ -2321,6 +2324,9 @@ msgstr "Commune"
 
 msgid "tt_bazl_abortion"
 msgstr "Removal accomplished"
+
+msgid "tt_bebautefl"
+msgstr "Artificial surfaces"
 
 msgid "tt_bildstreifen_Aufloesung"
 msgstr "Resolution"
@@ -2687,6 +2693,9 @@ msgstr "Finish address (’waterbody kilometre’)"
 msgid "tt_ezgflaeche"
 msgstr "Catchment area size [km2]"
 
+msgid "tt_feuchtflae"
+msgstr "Wetlands"
+
 msgid "tt_firmen_Filmart"
 msgstr "Film type"
 
@@ -2752,6 +2761,9 @@ msgstr "Gesteinsklassierung"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologic / petrographic characterization"
+
+msgid "tt_kanal"
+msgstr "Waterbody type"
 
 msgid "tt_kantone_Filmart"
 msgstr "Film type"
@@ -2856,6 +2868,9 @@ msgstr "Reactor type"
 msgid "tt_kkw_regulatory"
 msgstr "Regulatory body"
 
+msgid "tt_landwirtsc"
+msgstr "Agricultural areas"
+
 msgid "tt_luftbilder_Filmart"
 msgstr "Film type"
 
@@ -2874,11 +2889,20 @@ msgstr "Picture number"
 msgid "tt_luftbilder_line_id"
 msgstr "Flying line"
 
+msgid "tt_maxalt"
+msgstr "Maximum elevation"
+
+msgid "tt_meanalt"
+msgstr "Mean elevation"
+
 msgid "tt_measure"
 msgstr "Start address (’waterbody kilometre’)"
 
 msgid "tt_measure_2"
 msgstr "Address (’waterbody kilometre’)"
+
+msgid "tt_mq_jahr"
+msgstr "Mean annual discharge, modelled [m3/s]"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -2945,6 +2969,12 @@ msgstr "Facility details"
 
 msgid "tt_swissprtr_ort"
 msgstr "Town"
+
+msgid "tt_wald_natur"
+msgstr "Forest and semi natural areas"
+
+msgid "tt_wasserflae"
+msgstr "Waterbodies"
 
 msgid "tt_wrz_portal_beschluss"
 msgstr "Decision year"

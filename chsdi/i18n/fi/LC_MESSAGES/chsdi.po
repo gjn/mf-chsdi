@@ -2283,6 +2283,9 @@ msgstr "Strassenbenutzungsgebühr"
 msgid "totholz"
 msgstr "Totholzvolumen [m3/ha]"
 
+msgid "tt_anteil_ch"
+msgstr "Flächenanteil in der Schweiz"
+
 msgid "tt_bakom_middle"
 msgstr "Mittel"
 
@@ -2321,6 +2324,9 @@ msgstr "Gemeinde"
 
 msgid "tt_bazl_abortion"
 msgstr "Abbruch ausgeführt"
+
+msgid "tt_bebautefl"
+msgstr "Bebaute Flächen"
 
 msgid "tt_bildstreifen_Aufloesung"
 msgstr "Auflösung"
@@ -2687,6 +2693,9 @@ msgstr "Endadresse (’Gewässerkilometer’)"
 msgid "tt_ezgflaeche"
 msgstr "Fläche Gesamteinzugsgebiet [km2]"
 
+msgid "tt_feuchtflae"
+msgstr "Feuchtflächen"
+
 msgid "tt_firmen_Filmart"
 msgstr "Filmart"
 
@@ -2752,6 +2761,9 @@ msgstr "Rock classification"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
+
+msgid "tt_kanal"
+msgstr "Gewässertyp"
 
 msgid "tt_kantone_Filmart"
 msgstr "Filmart"
@@ -2856,6 +2868,9 @@ msgstr "Reaktortyp"
 msgid "tt_kkw_regulatory"
 msgstr "Aufsichtsbehörde"
 
+msgid "tt_landwirtsc"
+msgstr "Landwirtschaft"
+
 msgid "tt_luftbilder_Filmart"
 msgstr "Filmart"
 
@@ -2874,11 +2889,20 @@ msgstr "Bildnummer"
 msgid "tt_luftbilder_line_id"
 msgstr "Fluglinie"
 
+msgid "tt_maxalt"
+msgstr "Maximale Meereshöhe"
+
+msgid "tt_meanalt"
+msgstr "Mittlere Meereshöhe"
+
 msgid "tt_measure"
 msgstr "Anfangsadresse (’Gewässerkilometer’)"
 
 msgid "tt_measure_2"
 msgstr "Adresse (’Gewässerkilometer’)"
+
+msgid "tt_mq_jahr"
+msgstr "Mittl. jährl. Abfluss [m3/s], modelliert"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -2945,6 +2969,12 @@ msgstr "Details Betrieb"
 
 msgid "tt_swissprtr_ort"
 msgstr "Ort"
+
+msgid "tt_wald_natur"
+msgstr "Naturnahe Flächen, Wald"
+
+msgid "tt_wasserflae"
+msgstr "Wasserflächen"
 
 msgid "tt_wrz_portal_beschluss"
 msgstr "Beschlussjahr"

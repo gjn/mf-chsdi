@@ -2282,6 +2282,9 @@ msgstr "Péage"
 msgid "totholz"
 msgstr "Volume total de bois mort [m3/ha]"
 
+msgid "tt_anteil_ch"
+msgstr "Percentuale della superficie in Svizzera"
+
 msgid "tt_bakom_middle"
 msgstr "Media"
 
@@ -2320,6 +2323,9 @@ msgstr "Comune"
 
 msgid "tt_bazl_abortion"
 msgstr "Eliminazione effettuata"
+
+msgid "tt_bebautefl"
+msgstr "Superfici costruite"
 
 msgid "tt_bildstreifen_Aufloesung"
 msgstr "Risoluzione"
@@ -2687,6 +2693,9 @@ msgstr "Indirizzo d’arrivo (chilometraggio dell’acqua)"
 msgid "tt_ezgflaeche"
 msgstr "Superficie del bacino idrografico completo [km2]"
 
+msgid "tt_feuchtflae"
+msgstr "Zone umide"
+
 msgid "tt_firmen_Filmart"
 msgstr "Emulsione"
 
@@ -2752,6 +2761,9 @@ msgstr "Classificazione delle rocce"
 
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caratterizzazione litologica petrografica"
+
+msgid "tt_kanal"
+msgstr "Tipo del corso d’acqua"
 
 msgid "tt_kantone_Filmart"
 msgstr "Emulsione"
@@ -2856,6 +2868,9 @@ msgstr "Tipo di reattore"
 msgid "tt_kkw_regulatory"
 msgstr "Organo regolatore"
 
+msgid "tt_landwirtsc"
+msgstr "Superfici agricole"
+
 msgid "tt_luftbilder_Filmart"
 msgstr "Emulsione"
 
@@ -2874,11 +2889,20 @@ msgstr "Numero immagine"
 msgid "tt_luftbilder_line_id"
 msgstr "Linea aerea"
 
+msgid "tt_maxalt"
+msgstr "Altitudine massima"
+
+msgid "tt_meanalt"
+msgstr "Altitudine media"
+
 msgid "tt_measure"
 msgstr "Indirizzo di partenza (chilometraggio dell’acqua)"
 
 msgid "tt_measure_2"
 msgstr "Indirizzo (chilometraggio dell’acqua)"
+
+msgid "tt_mq_jahr"
+msgstr "Deflusso medio annuale, modellizzato [m3/s]"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -2945,6 +2969,12 @@ msgstr "Informazioni dettagliate sul complesso/azienda"
 
 msgid "tt_swissprtr_ort"
 msgstr "Luogo"
+
+msgid "tt_wald_natur"
+msgstr "Foreste ed alter superfici naturali"
+
+msgid "tt_wasserflae"
+msgstr "Superfici acquatiche"
 
 msgid "tt_wrz_portal_beschluss"
 msgstr "Anno della decisione"
