@@ -1397,11 +1397,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geophysik-deklination": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-deklination"),
                 layertype: 'wmts',
-                timestamp: ['19791231'],
+                timestamp: ['20011203','19791231'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-geothermie": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-geothermie"),
