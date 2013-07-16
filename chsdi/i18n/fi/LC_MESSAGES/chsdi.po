@@ -2684,6 +2684,9 @@ msgstr "Von m."
 msgid "tt_endmeasure"
 msgstr "Endadresse (’Gewässerkilometer’)"
 
+msgid "tt_ezgflaeche"
+msgstr "Fläche Gesamteinzugsgebiet [km2]"
+
 msgid "tt_firmen_Filmart"
 msgstr "Filmart"
 
@@ -2704,6 +2707,9 @@ msgstr "Bildnummer"
 
 msgid "tt_firmen_line_id"
 msgstr "Fluglinie"
+
+msgid "tt_flussgb"
+msgstr "Flussgebietsname (HADES)"
 
 msgid "tt_freqchan"
 msgstr "Frequenz / TV-Kanal"
@@ -2870,6 +2876,9 @@ msgstr "Fluglinie"
 
 msgid "tt_measure"
 msgstr "Anfangsadresse (’Gewässerkilometer’)"
+
+msgid "tt_measure_2"
+msgstr "Adresse (’Gewässerkilometer’)"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"

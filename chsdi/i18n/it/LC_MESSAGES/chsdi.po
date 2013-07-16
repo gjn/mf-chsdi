@@ -2684,6 +2684,9 @@ msgstr "Début tronçon (m)"
 msgid "tt_endmeasure"
 msgstr "Indirizzo d’arrivo (chilometraggio dell’acqua)"
 
+msgid "tt_ezgflaeche"
+msgstr "Superficie del bacino idrografico completo [km2]"
+
 msgid "tt_firmen_Filmart"
 msgstr "Emulsione"
 
@@ -2704,6 +2707,9 @@ msgstr "Numero immagine"
 
 msgid "tt_firmen_line_id"
 msgstr "Linea di volo"
+
+msgid "tt_flussgb"
+msgstr "Nome del bacino fluviale (HADES)"
 
 msgid "tt_freqchan"
 msgstr "Frequenza / Canale TV"
@@ -2870,6 +2876,9 @@ msgstr "Linea aerea"
 
 msgid "tt_measure"
 msgstr "Indirizzo di partenza (chilometraggio dell’acqua)"
+
+msgid "tt_measure_2"
+msgstr "Indirizzo (chilometraggio dell’acqua)"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"

@@ -30,6 +30,15 @@ msgstr ""
 msgid "tt_endmeasure"
 msgstr ""
 
+msgid "tt_measure_2"
+msgstr ""
+
+msgid "tt_ezgflaeche"
+msgstr ""
+
+msgid "tt_flussgb"
+msgstr ""
+
 msgid "tt_regimenr"
 msgstr ""
 

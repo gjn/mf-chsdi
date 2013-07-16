@@ -2684,6 +2684,9 @@ msgstr "Début tronçon (m)"
 msgid "tt_endmeasure"
 msgstr "Adresse d’arrivée (kilométrage d’eau)"
 
+msgid "tt_ezgflaeche"
+msgstr "Superficie du bassin versant complet [km2]"
+
 msgid "tt_firmen_Filmart"
 msgstr "Emulsion"
 
@@ -2704,6 +2707,9 @@ msgstr "No de l'image"
 
 msgid "tt_firmen_line_id"
 msgstr "Ligne aérienne"
+
+msgid "tt_flussgb"
+msgstr "Nom du bassin fluvial (HADES)"
 
 msgid "tt_freqchan"
 msgstr "Fréquence / Canal TV"
@@ -2870,6 +2876,9 @@ msgstr "Ligne aérienne"
 
 msgid "tt_measure"
 msgstr "Adresse de départ (kilométrage d’eau)"
+
+msgid "tt_measure_2"
+msgstr "Adresse (’kilométrage d’eau’)"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
