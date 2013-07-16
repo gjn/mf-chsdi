@@ -63,6 +63,16 @@ class Gewaesserzustandst (Base, Queryable):
 
 register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst)
 
+class Teileinzugsgebiete2 (Base, Queryable):
+    # view in a schema
+    __tablename__ = 'ebene_2km'
+    __table_args__ = ({'schema': 'wasser', 'autoload': True})
+    __template__ = 'tooltips/teileinzugsgebiete2.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bafu.wasser-teileinzugsgebiete_2', Teileinzugsgebiete2)
+
 class Teileinzugsgebiete40 (Base, Queryable):
     # view in a schema
     __tablename__ = 'ebene_40km'
@@ -72,6 +82,16 @@ class Teileinzugsgebiete40 (Base, Queryable):
     the_geom = Column(Geometry)
 
 register('ch.bafu.wasser-teileinzugsgebiete_40', Teileinzugsgebiete40)
+
+class Vorfluter (Base, Queryable):
+    # view in a schema
+    __tablename__ = 'vorfluter'
+    __table_args__ = ({'schema': 'wasser', 'autoload': True})
+    __template__ = 'tooltips/vorfluter.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bafu.wasser-vorfluter', Vorfluter)
 
 class AU(Base, Queryable):
     # view in a schema

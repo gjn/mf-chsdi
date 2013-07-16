@@ -24,6 +24,57 @@ msgstr ""
 msgid "gewaesser"
 msgstr ""
 
+msgid "tt_measure"
+msgstr ""
+
+msgid "tt_endmeasure"
+msgstr ""
+
+msgid "tt_measure_2"
+msgstr ""
+
+msgid "tt_anteil_ch"
+msgstr ""
+
+msgid "tt_kanal"
+msgstr ""
+
+msgid "tt_meanalt"
+msgstr ""
+
+msgid "tt_maxalt"
+msgstr ""
+
+msgid "tt_mq_jahr"
+msgstr ""
+
+msgid "tt_feuchtflae"
+msgstr ""
+
+msgid "tt_wasserflae"
+msgstr ""
+
+msgid "tt_bebautefl"
+msgstr ""
+
+msgid "tt_landwirtsc"
+msgstr ""
+
+msgid "tt_wald_natur"
+msgstr ""
+
+msgid "tt_ezgflaeche"
+msgstr ""
+
+msgid "tt_flussgb"
+msgstr ""
+
+msgid "tt_regimenr"
+msgstr ""
+
+msgid "tt_regimetyp"
+msgstr ""
+
 msgid "wassertemp_url"
 msgstr ""
 
