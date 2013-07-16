@@ -690,9 +690,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.vec25-gewaessernetz"
-                    },
-                    {
-                        layerId: "ch.bafu.wasser-teileinzugsgebiete_40"
                     }
                 ]
             },
@@ -1229,9 +1226,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bafu.wasser-rueckgabe"
-                    },
-                    {
-                        layerId: "ch.bafu.wasser-teileinzugsgebiete_40"
                     }
                 ]
             },
