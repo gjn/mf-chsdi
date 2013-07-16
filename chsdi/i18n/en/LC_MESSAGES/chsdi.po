@@ -1453,7 +1453,7 @@ msgid "klasse"
 msgstr "Klasse"
 
 msgid "klwkp_gwlnr"
-msgstr "Gewässerlauf-Nummer"
+msgstr "Waterbody number"
 
 msgid "klwkp_kwprometer"
 msgstr "Theoretisches hydroelektrisches Potential [kW/m]"
