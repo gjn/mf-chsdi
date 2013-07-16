@@ -24,6 +24,18 @@ msgstr ""
 msgid "gewaesser"
 msgstr ""
 
+msgid "tt_measure"
+msgstr ""
+
+msgid "tt_endmeasure"
+msgstr ""
+
+msgid "tt_regimenr"
+msgstr ""
+
+msgid "tt_regimetyp"
+msgstr ""
+
 msgid "wassertemp_url"
 msgstr ""
 

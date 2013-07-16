@@ -1452,7 +1452,7 @@ msgid "klasse"
 msgstr "Classe"
 
 msgid "klwkp_gwlnr"
-msgstr "Numéro de cours d’eau"
+msgstr "Numero del corso d’acqua"
 
 msgid "klwkp_kwprometer"
 msgstr "Potentiel théorique hydro-électrique [kW/m]"
@@ -2681,6 +2681,9 @@ msgstr "de"
 msgid "tt_emission_von_m"
 msgstr "Début tronçon (m)"
 
+msgid "tt_endmeasure"
+msgstr "Indirizzo d’arrivo (chilometraggio dell’acqua)"
+
 msgid "tt_firmen_Filmart"
 msgstr "Emulsione"
 
@@ -2865,11 +2868,20 @@ msgstr "Numero immagine"
 msgid "tt_luftbilder_line_id"
 msgstr "Linea aerea"
 
+msgid "tt_measure"
+msgstr "Indirizzo di partenza (chilometraggio dell’acqua)"
+
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
 
 msgid "tt_program"
 msgstr "Programma"
+
+msgid "tt_regimenr"
+msgstr "Numero del regime di scorrimento"
+
+msgid "tt_regimetyp"
+msgstr "Tipo del regime di scorrimento"
 
 msgid "tt_sachplan_beschreibung"
 msgstr "Descrizione"
