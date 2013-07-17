@@ -1128,6 +1128,9 @@ msgstr "Datum der letzten Aktualisierung"
 msgid "datumzeit"
 msgstr "Datum und Zeit"
 
+msgid "deklination"
+msgstr "Declinaziun [°]"
+
 msgid "descriptionText"
 msgstr "Descripziun"
 
@@ -1241,6 +1244,9 @@ msgstr "Nachführungsgeometer"
 
 msgid "geompdf_liste"
 msgstr "Infurmaziuns detagliadas"
+
+msgid "geothermie"
+msgstr "Wärmestromdichte [mW/m2]"
 
 msgid "gesamtflaeche_ha"
 msgstr "Gesamtfläche [ha]"
