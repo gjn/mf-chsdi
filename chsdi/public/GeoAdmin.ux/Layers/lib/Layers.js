@@ -1146,7 +1146,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-transportation-oeffentliche-verkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-oeffentliche-verkehr"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1155,7 +1155,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-transportation-strassennetz": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-strassennetz"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1164,7 +1164,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-adminboundaries-protectedarea": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-adminboundaries-protectedarea"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1174,7 +1174,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-building": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-building"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1184,7 +1184,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-hydrography": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-hydrography"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1193,7 +1193,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-landcover": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-landcover"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1203,7 +1203,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-miscellaneous": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1212,7 +1212,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-miscellaneous-geodpoint": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-miscellaneous-geodpoint"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1221,7 +1221,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.vec200-names-namedlocation": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-names-namedlocation"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20100101'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1778,7 +1778,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.schutzgebiete-ramsar": {
                 name: OpenLayers.i18n("ch.bafu.schutzgebiete-ramsar"),
                 layertype: 'wmts',
-                timestamp: ['20110830'],
+                timestamp: ['20110830','20050202'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1911,7 +1911,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_hochwasser"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1921,7 +1921,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_rutschungen"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1931,7 +1931,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1941,7 +1941,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-kantone_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-kantone_lawinen"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1951,7 +1951,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_hochwasser": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_hochwasser"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1961,7 +1961,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_rutschungen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_rutschungen"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1971,7 +1971,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_sturzprozesse": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_sturzprozesse"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -1981,7 +1981,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.showme-gemeinden_lawinen": {
                 name: OpenLayers.i18n("ch.bafu.showme-gemeinden_lawinen"),
                 layertype: 'wmts',
-                timestamp: ['20130101','20120101','20100101'],
+                timestamp: ['20130101','20120101','20110101','20100101'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -2276,7 +2276,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.are.gueteklassen_oev": {
                 name: OpenLayers.i18n("ch.are.gueteklassen_oev"),
                 layertype: 'wmts',
-                timestamp: ['20101213'],
+                timestamp: ['20101213','20091213'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.are",
@@ -2380,7 +2380,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.swissalti3d-reliefschattierung": {
                 name: OpenLayers.i18n("ch.swisstopo.swissalti3d-reliefschattierung"),
                 layertype: 'wmts',
-                timestamp: ['20130101'],
+                timestamp: ['20130101','20110101','20000101'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -2795,7 +2795,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.astra.ivs-nat": {
                 name: OpenLayers.i18n("ch.astra.ivs-nat"),
                 layertype: 'wmts',
-                timestamp: ['20100416','20100414','20070712'],
+                timestamp: ['20100416','20070712'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.astra",
@@ -3406,7 +3406,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.bundesinventare-trockenwiesen_trockenweiden": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-trockenwiesen_trockenweiden"),
                 layertype: 'wmts',
-                timestamp: ['20130624','20120312'],
+                timestamp: ['20130624','20120312','20100201'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3518,7 +3518,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.fauna-wildtierkorridor_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-wildtierkorridor_national"),
                 layertype: 'wmts',
-                timestamp: ['20130528','20130219','20080721'],
+                timestamp: ['20130528','20080721'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3527,7 +3527,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.fauna-vernetzungsachsen_national": {
                 name: OpenLayers.i18n("ch.bafu.fauna-vernetzungsachsen_national"),
                 layertype: 'wmts',
-                timestamp: ['20130528','20130219','20080721'],
+                timestamp: ['20130528','20080721'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bafu",
@@ -3760,7 +3760,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.luftfahrtkarten-icao": {
                 name: OpenLayers.i18n("ch.bazl.luftfahrtkarten-icao"),
                 layertype: 'wmts',
-                timestamp: ['20130307','20120308'],
+                timestamp: ['20130307','20120308','20110310'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.bazl",
