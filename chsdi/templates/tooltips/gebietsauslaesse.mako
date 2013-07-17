@@ -45,7 +45,7 @@
     <tr><td class="row title" valign="middle" width="30%">${_('tt_ezgnr')}</td"><td width="70" class="row">${self.preview()}</td></tr>
     <tr><td class="row title" valign="middle">${_('klwkp_gwlnr')}</td><td class="row">${c.feature.gwlnr or '-'}</td></tr>
     <tr><td class="row title" valign="middle">${_('tt_measure_2')}</td><td class="row">${c.feature.measure or '-'}</td></tr>
-    <tr><td class="row title" valign="middle">${_('tt_ezgflaeche')}</td><td class="row">${c.featureamtflae bis_abkz or '-'}</td></tr>
+    <tr><td class="row title" valign="middle">${_('tt_ezgflaeche')}</td><td class="row">${c.feature.gesamtflae or '-'}</td></tr>
     <tr><td class="row title" valign="middle">${_('tt_anteil_ch')}</td><td class="row">${c.feature.anteil_ch or '-'}</td></tr>
     <tr><td class="row title" valign="middle">${_('gewaesser')}</td><td class="row">${c.feature.gewaessern or '-'}</td></tr>
     % if c.lang == 'de':
