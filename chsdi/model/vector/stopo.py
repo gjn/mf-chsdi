@@ -549,6 +549,27 @@ class GeologieHydroKarteGrundwasservulneabilitaet(Base, Queryable):
 
 register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet',GeologieHydroKarteGrundwasservulneabilitaet)
 
+class GeologieGeothermie(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geophysik_geothermie'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/geothermie.mako'
+        id = Column('gid', Integer, primary_key=True)
+        fid = Column ('id', Integer)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-geothermie',GeologieGeothermie)
+
+class Geologischer_Deklination(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geophysik_deklination'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/deklination.mako'
+        id = Column('gid', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geophysik-inklination',Geologischer_Inklination)
+
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_inklination'
