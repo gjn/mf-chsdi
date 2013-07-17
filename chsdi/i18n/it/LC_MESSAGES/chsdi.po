@@ -2693,6 +2693,9 @@ msgstr "Indirizzo d’arrivo (chilometraggio dell’acqua)"
 msgid "tt_ezgflaeche"
 msgstr "Superficie del bacino idrografico completo [km2]"
 
+msgid "tt_ezgnr"
+msgstr "Numero del bacino idrografico completo"
+
 msgid "tt_feuchtflae"
 msgstr "Zone umide"
 

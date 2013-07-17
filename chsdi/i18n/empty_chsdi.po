@@ -24,6 +24,9 @@ msgstr ""
 msgid "gewaesser"
 msgstr ""
 
+msgid "tt_ezgnr"
+msgstr ""
+
 msgid "tt_measure"
 msgstr ""
 

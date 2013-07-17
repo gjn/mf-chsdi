@@ -2693,6 +2693,9 @@ msgstr "Finish address (’waterbody kilometre’)"
 msgid "tt_ezgflaeche"
 msgstr "Catchment area size [km2]"
 
+msgid "tt_ezgnr"
+msgstr "Catchment area number"
+
 msgid "tt_feuchtflae"
 msgstr "Wetlands"
 

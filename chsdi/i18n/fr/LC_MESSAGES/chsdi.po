@@ -2693,6 +2693,9 @@ msgstr "Adresse d’arrivée (kilométrage d’eau)"
 msgid "tt_ezgflaeche"
 msgstr "Superficie du bassin versant complet [km2]"
 
+msgid "tt_ezgnr"
+msgstr "N° du bassin versant complet"
+
 msgid "tt_feuchtflae"
 msgstr "Zones humides"
 

@@ -2693,6 +2693,9 @@ msgstr "Endadresse (’Gewässerkilometer’)"
 msgid "tt_ezgflaeche"
 msgstr "Fläche Gesamteinzugsgebiet [km2]"
 
+msgid "tt_ezgnr"
+msgstr "Gesamteinzugsgebietsnummer"
+
 msgid "tt_feuchtflae"
 msgstr "Feuchtflächen"
 
