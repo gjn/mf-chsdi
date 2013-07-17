@@ -1127,6 +1127,9 @@ msgstr "Datum der letzten Aktualisierung"
 msgid "datumzeit"
 msgstr "Datum und Zeit"
 
+msgid "deklination"
+msgstr "Declination [°]"
+
 msgid "descriptionText"
 msgstr "Description"
 
@@ -1241,6 +1244,9 @@ msgstr "Nachführungsgeometer"
 
 msgid "geompdf_liste"
 msgstr "Details"
+
+msgid "geothermie"
+msgstr "Wärmestromdichte [mW/m2]"
 
 msgid "gesamtflaeche_ha"
 msgstr "Total area [ha]"
@@ -2692,6 +2698,9 @@ msgstr "Finish address (’waterbody kilometre’)"
 
 msgid "tt_ezgflaeche"
 msgstr "Catchment area size [km2]"
+
+msgid "tt_ezgnr"
+msgstr "Catchment area number"
 
 msgid "tt_feuchtflae"
 msgstr "Wetlands"

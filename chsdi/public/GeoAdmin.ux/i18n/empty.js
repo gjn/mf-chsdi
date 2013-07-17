@@ -345,6 +345,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.astra.ivs-gelaendekarte':"",
     'ch.bav.kataster-belasteter-standorte-oev':"",
     'ch.blw.erosion' :"",
+    'ch.blw.erosion-quantitativ' :"",
     'ch.blw.erosion-mit_bergzonen' :"",
     'ch.blw.klimaeignung-typ' :"",
     'ch.blw.klimaeignung-spezialkulturen' :"",

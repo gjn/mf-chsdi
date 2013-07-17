@@ -24,6 +24,9 @@ msgstr ""
 msgid "gewaesser"
 msgstr ""
 
+msgid "tt_ezgnr"
+msgstr ""
+
 msgid "tt_measure"
 msgstr ""
 
@@ -1110,6 +1113,9 @@ msgstr ""
 msgid "contact title"
 msgstr ""
 
+msgid "deklination"
+msgstr ""
+
 msgid "parcel"
 msgstr ""
 
@@ -1783,6 +1789,9 @@ msgid "gemdarstellung"
 msgstr ""
 
 msgid "gemflaeche"
+msgstr ""
+
+msgid "geothermie"
 msgstr ""
 
 msgid "grundgemeinde"

@@ -1127,6 +1127,9 @@ msgstr "Date de la dernière mise à jour"
 msgid "datumzeit"
 msgstr "Date et heure"
 
+msgid "deklination"
+msgstr "Déclinaison [°]"
+
 msgid "descriptionText"
 msgstr "Description"
 
@@ -1240,6 +1243,9 @@ msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
 msgid "geompdf_liste"
 msgstr "Informations détaillées"
+
+msgid "geothermie"
+msgstr "Densité de flux thermique [mW/m2]"
 
 msgid "gesamtflaeche_ha"
 msgstr "Surface totale [ha]"
@@ -2692,6 +2698,9 @@ msgstr "Adresse d’arrivée (kilométrage d’eau)"
 
 msgid "tt_ezgflaeche"
 msgstr "Superficie du bassin versant complet [km2]"
+
+msgid "tt_ezgnr"
+msgstr "N° du bassin versant complet"
 
 msgid "tt_feuchtflae"
 msgstr "Zones humides"
