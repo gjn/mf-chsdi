@@ -568,7 +568,7 @@ class Geologischer_Deklination(Base, Queryable):
         id = Column('gid', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
 
-register('ch.swisstopo.geologie-geophysik-inklination',Geologischer_Inklination)
+register('ch.swisstopo.geologie-geophysik-deklination',Geologischer_Deklination)
 
 class Geologischer_Inklination(Base, Queryable):
         # view in a schema
