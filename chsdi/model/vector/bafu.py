@@ -93,6 +93,16 @@ class Vorfluter (Base, Queryable):
 
 register('ch.bafu.wasser-vorfluter', Vorfluter)
 
+class Gebietsauslaesse (Base, Queryable):
+    # view in a schema
+    __tablename__ = 'outlets'
+    __table_args__ = ({'schema': 'wasser', 'autoload': True})
+    __template__ = 'tooltips/gebietsauslaesse.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bafu.wasser-gebietsauslaesse', Gebietsauslaesse)
+
 class AU(Base, Queryable):
     # view in a schema
     __tablename__ = 'au'
