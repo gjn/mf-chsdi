@@ -1406,11 +1406,11 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geophysik-geothermie": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-geothermie"),
                 layertype: 'wmts',
-                timestamp: ['19821231'],
+                timestamp: ['20111121','19821231'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"),
