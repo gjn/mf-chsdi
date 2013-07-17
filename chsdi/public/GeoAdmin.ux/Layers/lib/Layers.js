@@ -3115,6 +3115,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: false
             },
+            "ch.blw.erosion-quantitativ": {
+                name: OpenLayers.i18n("ch.blw.erosion-quantitativ"),
+                layertype: 'wmts',
+                timestamp: ['20100601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75
+            },
             "ch.blw.erosion": {
                 name: OpenLayers.i18n("ch.blw.erosion"),
                 layertype: 'wmts',
