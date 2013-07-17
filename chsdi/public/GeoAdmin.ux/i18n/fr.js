@@ -537,6 +537,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.blw.bodeneignung-wasserspeichervermoegen':'Capacité de rétention hydrique',
 	'ch.blw.erosion':'Risque d’érosion qualitatif 1',
 	'ch.blw.erosion-mit_bergzonen':'Risque d’érosion qualitatif 2',
+	'ch.blw.erosion-quantitativ':'Risque d’érosion quantitatif',
 	'ch.blw.hang_steillagen':'Terrains en pente et en forte pente',
 	'ch.blw.klimaeignung-futterbau':'Climat - culture fourragère',
 	'ch.blw.klimaeignung-getreidebau':'Climat - cultures céréalières',

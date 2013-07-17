@@ -533,6 +533,7 @@ OpenLayers.Lang.rm= {
 	'ch.blw.bodeneignung-wasserspeichervermoegen':'Wasserspeichervermögen',
 	'ch.blw.erosion':'Erosionsrisiko',
 	'ch.blw.erosion-mit_bergzonen':'Erosionsrisiko',
+	'ch.blw.erosion-quantitativ':'Erosionsrisiko quantitativ',
 	'ch.blw.hang_steillagen':'Costas e spundas',
 	'ch.blw.klimaeignung-futterbau':'Klimaeignung für Futterbau',
 	'ch.blw.klimaeignung-getreidebau':'Klimaeignung für Getreidebau',

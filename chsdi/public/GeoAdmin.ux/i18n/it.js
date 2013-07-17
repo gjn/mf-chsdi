@@ -537,6 +537,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.blw.bodeneignung-wasserspeichervermoegen':'Capacità di stoccaggio idrico',
 	'ch.blw.erosion':'Rischio erosione qualitativo 1',
 	'ch.blw.erosion-mit_bergzonen':'Rischio erosione qualitativo 2',
+	'ch.blw.erosion-quantitativ':'Rischio erosione quantitativo',
 	'ch.blw.hang_steillagen':'Terreni in pendio e in forte pendenza',
 	'ch.blw.klimaeignung-futterbau':'Clima - foraggicoltura',
 	'ch.blw.klimaeignung-getreidebau':'Clima - cerealicoltura',
