@@ -536,9 +536,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                    {
                         layerId: "ch.swisstopo.verschiebungsvektoren-tsp2"
-                    },
-                    {
-                        layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     }
                 ]
             },
