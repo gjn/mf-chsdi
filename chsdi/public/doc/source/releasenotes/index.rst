@@ -3,7 +3,16 @@ Release 20130724 - Wednesday, July 24th 2013
 
 Geodata
 ********
-
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `40km2 catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_40>`__ (ch.bafu.wasser-teileinzugsgebiete_40)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Receiving watercourses <//map.geo.admin.ch/?layers=ch.bafu.wasser-vorfluter>`__ (ch.bafu.wasser-vorfluter)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `2km2 catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Area outlets <//map.geo.admin.ch/?layers=ch.bafu.wasser-gebietsauslaesse>`__  (ch.bafu.wasser-gebietsauslaesse)                                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division GeoMaps 500 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geolkarten500.metadata>`__ (ch.swisstopo.geologie-geolkarten500.metadata)                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -13,6 +22,39 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-------------------------------------
+Minor bugfixing.
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+
+Minor bugfixing.
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+
+Minor bugfixing.
+
 
 
 
