@@ -8,11 +8,11 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division GeoMaps 500 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geolkarten500.metadata>`__ (ch.swisstopo.geologie-geolkarten500.metadata)                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Declination <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-deklination>`__ (ch.swisstopo.geologie-geophysik-deklination)                                             |
+| Update | `Declination <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-deklination>`__ (ch.swisstopo.geologie-geophysik-deklination)                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geothermal energy <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-geothermie>`__ (ch.swisstopo.geologie-geophysik-geothermie)                                         |
+| Update | `Geothermal energy <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-geothermie>`__ (ch.swisstopo.geologie-geophysik-geothermie)                                         |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
+| Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
