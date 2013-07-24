@@ -6,21 +6,13 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Erosion risk quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `40km2 catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_40>`__ (ch.bafu.wasser-teileinzugsgebiete_40)                                                 |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Receiving watercourses <//map.geo.admin.ch/?layers=ch.bafu.wasser-vorfluter>`__ (ch.bafu.wasser-vorfluter)                                                                        |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `2km2 catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                                                    |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Area outlets <//map.geo.admin.ch/?layers=ch.bafu.wasser-gebietsauslaesse>`__  (ch.bafu.wasser-gebietsauslaesse)                                                                   |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division GeoMaps 500 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geolkarten500.metadata>`__ (ch.swisstopo.geologie-geolkarten500.metadata)                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Declination <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-deklination>`__ (ch.swisstopo.geologie-geophysik-deklination)                                             |
+| Update | `Declination <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-deklination>`__ (ch.swisstopo.geologie-geophysik-deklination)                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geothermal energy <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-geothermie>`__ (ch.swisstopo.geologie-geophysik-geothermie)                                         |
+| Update | `Geothermal energy <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-geothermie>`__ (ch.swisstopo.geologie-geophysik-geothermie)                                         |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geopyhsik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
+| Update | `Magnetic field strength <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geophysik-totalintensitaet>`__ (ch.swisstopo.geologie-geophysik-totalintensitaet)                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 

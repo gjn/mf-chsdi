@@ -2,18 +2,26 @@
 
 LIBDIRS=chsdi/public/lib
 
-
-
 for lib in openlayers geoext
 do
     if [ -d ${LIBDIRS}/${lib}/.git ]
     then
         cd ${LIBDIRS}/${lib}
-        git pull origin master
+        if [ ${lib} == openlayers ]
+        then
+            git checkout 26111d00b0e499ec4d07deb0fb0b9e31aa1bb6dd
+        else
+            git pull origin master
+        fi
     else
         cd ${LIBDIRS}
         rm -rf ${lib}
         git clone https://github.com/${lib}/${lib}.git
+        if [ ${lib} == openlayers ]
+        then
+            cd ${lib}
+            git checkout 26111d00b0e499ec4d07deb0fb0b9e31aa1bb6dd
+        fi
     fi
     cd -
     if [ -O ${LIBDIRS}/${lib} ]
