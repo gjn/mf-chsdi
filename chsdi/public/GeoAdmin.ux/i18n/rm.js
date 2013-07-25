@@ -650,6 +650,8 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.swissbuildings3d':'3D- Edifizis simplifitgà',
 	'ch.swisstopo.swissimage':'Fotografia or da l\'aria',
 	'ch.swisstopo.swisstlm3d-karte':'Model cuntrada topo.',
+	'ch.swisstopo.swisstlm3d-karte-farbe':'Model cuntrada topo. (colur)',
+	'ch.swisstopo.swisstlm3d-karte-grau':'Model cuntrada topo.(grisch)',
 	'ch.swisstopo.swisstlm3d-wanderwege':'Sendas da viandar',
 	'ch.swisstopo.tml3d-hintergrund-karte':'swissTLM-Map',
 	'ch.swisstopo.transformationsgenauigkeit':'LV95 Precisiun da transfurmaziun',

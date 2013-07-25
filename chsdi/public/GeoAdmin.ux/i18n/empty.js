@@ -723,6 +723,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.swissbuildings3d': "",
     'ch.swisstopo.swisstlm3d-wanderwege': "",
     'ch.swisstopo.swisstlm3d-karte': "",
+    'ch.swisstopo.swisstlm3d-karte-grau': "",
+    'ch.swisstopo.swisstlm3d-karte-farbe': "",
     'ch.kanton.av': "",
     'ch.kanton.av.url': "",
     'imprint revision overall data controller': "",
