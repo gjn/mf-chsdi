@@ -592,7 +592,10 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.vec200-names-namedlocation"
                      },
                      {
-                        layerId: "ch.swisstopo.swisstlm3d-karte"
+                        layerId: "ch.swisstopo.swisstlm3d-karte-farbe"
+                     },
+                     {
+                        layerId: "ch.swisstopo.swisstlm3d-karte-grau"
                      }
                 ]
             },

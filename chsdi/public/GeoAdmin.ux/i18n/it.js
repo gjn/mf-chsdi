@@ -654,6 +654,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.swissbuildings3d':'Gli edifici semplificati in 3D',
 	'ch.swisstopo.swissimage':'SWISSIMAGE',
 	'ch.swisstopo.swisstlm3d-karte':'Modello topo. del paesaggio',
+	'ch.swisstopo.swisstlm3d-karte-farbe':'Modello topo. del paesaggio(colori)',
+	'ch.swisstopo.swisstlm3d-karte-grau':'Modello topo. del paesaggio(grigio)',
 	'ch.swisstopo.swisstlm3d-wanderwege':'percorsi escursionistici',
 	'ch.swisstopo.tml3d-hintergrund-karte':'swissTLM-Map',
 	'ch.swisstopo.transformationsgenauigkeit':'MN95 Precisione di trasformazione',
