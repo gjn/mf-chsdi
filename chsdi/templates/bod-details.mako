@@ -47,6 +47,24 @@
 % elif c.layer.bod_layer_id == "ch.swisstopo.swisstlm3d-karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte_${c.lang}_big.png" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk1000.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk1000.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk500.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk500.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk200.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk200.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk100.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk100.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk50.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk50.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+% elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk25.noscale":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk25.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.legend:
   <span style="font-weight:bold;">${_('Legend')}</span><br>
   <img src="${c.host + c.layer.legend}" alt="layer legend img" /><br>

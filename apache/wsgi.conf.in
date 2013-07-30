@@ -161,3 +161,8 @@ SetEnvIf X-Forwarded-For "46.51.190.137"                 GOODIP
     Allow from all
 </LocationMatch>
 
+<Location "${vars:apache-entry-point}legend">
+    SetEnvIf Request_URI "${vars:apache-entry-point}legend/(.*\.pdf)$" FILENAME=$1
+    Header set "Content-Disposition" "attachment; filename=%{FILENAME}e"
+    UnsetEnv FILENAME
+</Location>

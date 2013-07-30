@@ -593,75 +593,37 @@ GeoAdmin._Layers = OpenLayers.Class({
                 queryable: false,
                 serverResolutions: [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250, 1000, 750, 650.0, 500.0, 250.0, 100.0, 50.0, 20.0, 10.0, 5.0 ,2.5, 2.0, 1.5, 1.0, 0.5, 0.25]
             },
-            "ch.swisstopo.pixelkarte-farbe_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
-                layer: 'ch.swisstopo.pixelkarte-farbe',
-                layertype: 'wmts',
-                timestamp: ['20130213','20120809','20111206','20111027','20110401'],
-                isBgLayer: true,
-                type: "raster",
-                format: "image/jpeg",
-                //  bis und mit zoomstufe 22 / resolution 2.5
-                maxScale: 20001, 
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
-            "ch.swisstopo.swisstlm3d-karte-farbe_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-karte-farbe"),
-                layer: 'ch.swisstopo.swisstlm3d-karte-farbe',
-                layertype: 'wmts',
-                timestamp: ['20130401'],
-                isBgLayer: true,
-                type: "raster",
-                format: "image/png",
-                minScale: 20000,
-                maxScale: 1,
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
             "ch.swisstopo.pixelkarte-farbe": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
-                layertype: 'aggregate',
-                subLayersName: ['ch.swisstopo.pixelkarte-farbe_wmts','ch.swisstopo.swisstlm3d-karte-farbe_wmts'],
-                isBgLayer: true,
-                queryable: false,
-                type: "polygon",
-                searchable: false
-            },
-            "ch.swisstopo.pixelkarte-grau_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
-                layer: 'ch.swisstopo.pixelkarte-grau',
                 layertype: 'wmts',
                 timestamp: ['20130213','20120809','20111206','20111027','20110401'],
                 isBgLayer: true,
                 type: "raster",
                 format: "image/jpeg",
-                maxScale: 20001,
-                datenherr: "ch.swisstopo",
-                queryable: false
-            },
-            "ch.swisstopo.swisstlm3d-karte-grau_wmts": {
-                name: OpenLayers.i18n("ch.swisstopo.swisstlm3d-karte-grau"),
-                layer: 'ch.swisstopo.swisstlm3d-karte-grau',
-                layertype: 'wmts',
-                timestamp: ['20130401'],
-                isBgLayer: true,
-                type: "raster",
-                format: "image/png",
-                minScale: 20000,
-                maxScale: 1,
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
             "ch.swisstopo.pixelkarte-grau": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
-                layertype: 'aggregate',
-                subLayersName: ['ch.swisstopo.pixelkarte-grau_wmts','ch.swisstopo.swisstlm3d-karte-grau_wmts'],
+                layertype: 'wmts',
+                timestamp: ['20130213','20120809','20111206','20111027','20110401'],
                 isBgLayer: true,
-                queryable: false,
-                type: "polygon",
-                searchable: false
+                type: "raster",
+                format: "image/jpeg",
+                datenherr: "ch.swisstopo",
+                queryable: false
             },
+            "ch.kantone.hintergrund-farbe": {
+                name: OpenLayers.i18n("ch.kantone.hintergrund-farbe"),
+                layers: 'ch.swisstopo.swisstlm3d-karte-farbe.mapproxy,ch.kantone.cadastralwebmap-farbe',
+                layername: 'ch.kantone.hintergrund-farbe',
+                isBgLayer: true,
+                layertype: 'wms',
+                type: "polygon",
+                format: "image/jpeg",
+                datenherr: "ch.kanton.av",
+                singleTile: false
+            },            
             "voidLayer": {
                 name: OpenLayers.i18n("voidLayer"),
                 isBgLayer: true
@@ -3102,7 +3064,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.bergprodukte": {
                 name: OpenLayers.i18n("ch.blw.bergprodukte"),
                 layertype: 'wmts',
-                timestamp: ['20081024'],
+                timestamp: ['20130531','20081024'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -3112,7 +3074,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.alpprodukte": {
                 name: OpenLayers.i18n("ch.blw.alpprodukte"),
                 layertype: 'wmts',
-                timestamp: ['20081024'],
+                timestamp: ['20130531','20081024'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",

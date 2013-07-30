@@ -195,7 +195,13 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen",
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet",
             "ch.swisstopo.geologie-tektonische_karte",
-            "ch.kantone.cadastralwebmap-farbe"];
+            "ch.kantone.cadastralwebmap-farbe",
+            "ch.swisstopo.pixelkarte-farbe-pk1000.noscale",
+            "ch.swisstopo.pixelkarte-farbe-pk500.noscale",
+            "ch.swisstopo.pixelkarte-farbe-pk200.noscale",
+            "ch.swisstopo.pixelkarte-farbe-pk100.noscale",
+            "ch.swisstopo.pixelkarte-farbe-pk50.noscale",
+            "ch.swisstopo.pixelkarte-farbe-pk25.noscale"];
 
         var pdfLayerNames = [];
         var pdfFormat = [];
