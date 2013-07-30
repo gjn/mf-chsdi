@@ -3064,7 +3064,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.bergprodukte": {
                 name: OpenLayers.i18n("ch.blw.bergprodukte"),
                 layertype: 'wmts',
-                timestamp: ['20081024'],
+                timestamp: ['20130531','20081024'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -3074,7 +3074,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.alpprodukte": {
                 name: OpenLayers.i18n("ch.blw.alpprodukte"),
                 layertype: 'wmts',
-                timestamp: ['20081024'],
+                timestamp: ['20130531','20081024'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
