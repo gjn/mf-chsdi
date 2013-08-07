@@ -9,6 +9,40 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Topo. landscape model (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alpine products <//map.geo.admin.ch/?layers=ch.blw.alpprodukte>`__ (ch.blw.alpprodukte)                                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Moutain products <//map.geo.admin.ch/?layers=ch.blw.bergprodukte>`__ (ch.blw.bergprodukte)                                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-----------------------------------
+Minor bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+Add MN95 elevation in context info panel (tap for 2 sec.)
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+Minor bugfixing.
 
 
 Release 20130724 - Wednesday, July 24th 2013
