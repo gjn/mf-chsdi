@@ -388,8 +388,8 @@ register('ch.swisstopo.images-swissimage.metadata',GridstandSwissimage)
 
 class GeolKarten500Metadata(Base, Queryable):
     # view in a schema
-    __tablename__ = 'geolkarten500_meta'
-    __table_args__ = ({'schema': 'geol', 'autoload': True})
+    __tablename__ = 'gk500'
+    __table_args__ = ({'schema': 'public', 'autoload': True})
     __template__ = 'tooltips/geolkarten500_metadata.mako'
     id = Column('prod_id', Text, primary_key=True)
     the_geom = Column(Geometry(21781))
