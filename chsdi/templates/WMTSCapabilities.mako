@@ -21,6 +21,7 @@
 						<ows:Constraint name="GetEncoding">
 							<ows:AllowedValues>
 								<ows:Value>REST</ows:Value>
+								<ows:Value>RESTful</ows:Value>
 							</ows:AllowedValues>
 						</ows:Constraint>
 					</ows:Get>
@@ -34,6 +35,7 @@
 						<ows:Constraint name="GetEncoding">
 							<ows:AllowedValues>
 								<ows:Value>REST</ows:Value>
+								<ows:Value>RESTful</ows:Value>
 							</ows:AllowedValues>
 						</ows:Constraint>
 					</ows:Get>
