@@ -926,6 +926,12 @@ msgstr "Steinbrüche 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Steinbrüche 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr "Zementindustrie 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr "Zementindustrie 1995"
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Ziegeleien 1907"
 
@@ -2251,6 +2257,9 @@ msgstr "Status"
 
 msgid "status_fp"
 msgstr "Status"
+
+msgid "stoff"
+msgstr "Produktion"
 
 msgid "strasse"
 msgstr "Strasse"

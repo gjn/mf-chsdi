@@ -926,6 +926,12 @@ msgstr "Carrières 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Carrières 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr "Industrie des ciments 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr "Industrie des ciments 1995"
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Briqueteries 1907"
 
@@ -2251,6 +2257,9 @@ msgstr "Statut"
 
 msgid "status_fp"
 msgstr "Nom officiel (si existant)"
+
+msgid "stoff"
+msgstr "Production"
 
 msgid "strasse"
 msgstr "Rue"

@@ -926,6 +926,12 @@ msgstr "Quarries 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Quarries 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr "Cement industry 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr "Cement industry 1995"
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Brick manufactures 1907"
 
@@ -2252,6 +2258,9 @@ msgstr "Status"
 
 msgid "status_fp"
 msgstr "Official name (when existing)"
+
+msgid "stoff"
+msgstr "Production"
 
 msgid "strasse"
 msgstr "Street"

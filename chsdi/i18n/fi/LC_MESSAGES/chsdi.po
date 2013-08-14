@@ -926,6 +926,12 @@ msgstr "Crapperas 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Crapperas 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr "Industria da cements 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr "Industria da cements 1995"
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Fabricas da quadrels 1907"
 
@@ -1082,11 +1088,13 @@ msgstr "Ulteriur traffic VECTOR25"
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Sendas da viandar VECTOR25"
 
+#. TODO
 msgid "ch.swisstopo.verschiebungsvektoren-tsp1"
-msgstr "LV95 Verschiebungsvektoren TSP1"
+msgstr "ch.swisstopo.verschiebungsvektoren-tsp1"
 
+#. TODO
 msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
-msgstr "LV95 Verschiebungsvektoren TSP2"
+msgstr "ch.swisstopo.verschiebungsvektoren-tsp2"
 
 #. TODO
 msgid "ch.swisstopo.zeitreihen"
@@ -2252,6 +2260,9 @@ msgstr "Status"
 
 msgid "status_fp"
 msgstr "Status"
+
+msgid "stoff"
+msgstr "Produktion"
 
 msgid "strasse"
 msgstr "Strasse"
