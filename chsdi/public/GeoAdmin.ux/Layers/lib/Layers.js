@@ -1319,7 +1319,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true,
-                searchable: true
             },
             "ch.swisstopo.geologie-geotechnik-zementindustrie_1995": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-zementindustrie_1995"),
@@ -1329,7 +1328,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true,
-                searchable: true
             },
             "ch.swisstopo.geologie-geotechnik-ziegeleien_1907": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1907"),
