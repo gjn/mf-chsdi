@@ -609,6 +609,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1965':'Cave 1965',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1980':'Cave 1980',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1995':'Cave 1995',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1965':'Industria dei cementi 1965',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1995':'Industria dei cementi 1995',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1907':'Mattonifici 1907',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Mattonifici 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Mattonifici 1995',
