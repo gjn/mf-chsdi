@@ -926,6 +926,12 @@ msgstr "Cave 1980"
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Cave 1995"
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr "Industria dei cementi 1965"
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr "Industria dei cementi 1995"
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Mattonifici 1907"
 
@@ -2251,6 +2257,9 @@ msgstr "Stato"
 
 msgid "status_fp"
 msgstr "Nome ufficiale (se esistente)"
+
+msgid "stoff"
+msgstr "Produzione"
 
 msgid "strasse"
 msgstr "Rue"

@@ -605,6 +605,8 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1965':'Crapperas 1965',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1980':'Crapperas 1980',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1995':'Crapperas 1995',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1965':'Industria da cements 1965',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1995':'Industria da cements 1995',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1907':'Fabricas da quadrels 1907',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Fabricas da quadrels 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Fabricas da quadrels 1995',
@@ -677,8 +679,8 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.vec25-strassennetz':'Rait da vias VECTOR25',
 	'ch.swisstopo.vec25-uebrigerverkehr':'Ulteriur traffic VECTOR25',
 	'ch.swisstopo.vec25-wander':'Sendas da viandar VECTOR25',
-	'ch.swisstopo.verschiebungsvektoren-tsp1':'LV95 Verschiebungsvektoren TSP1',
-	'ch.swisstopo.verschiebungsvektoren-tsp2':'LV95 Verschiebungsvektoren TSP2',
+	'ch.swisstopo.verschiebungsvektoren-tsp1':'ch.swisstopo.verschiebungsvektoren-tsp1', //TODO
+	'ch.swisstopo.verschiebungsvektoren-tsp2':'ch.swisstopo.verschiebungsvektoren-tsp2', //TODO
 	'ch.swisstopo.zeitreihen':'ch.swisstopo.zeitreihen', //TODO
 	'ch.vbs':'VBS',
 	'ch.vbs.territorialregionen':'Regiuns territorialas',

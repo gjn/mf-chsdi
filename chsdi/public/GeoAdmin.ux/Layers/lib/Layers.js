@@ -613,17 +613,6 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: false
             },
-            "ch.kantone.hintergrund-farbe": {
-                name: OpenLayers.i18n("ch.kantone.hintergrund-farbe"),
-                layers: 'ch.swisstopo.swisstlm3d-karte-farbe.mapproxy,ch.kantone.cadastralwebmap-farbe',
-                layername: 'ch.kantone.hintergrund-farbe',
-                isBgLayer: true,
-                layertype: 'wms',
-                type: "polygon",
-                format: "image/jpeg",
-                datenherr: "ch.kanton.av",
-                singleTile: false
-            },            
             "voidLayer": {
                 name: OpenLayers.i18n("voidLayer"),
                 isBgLayer: true
@@ -1321,6 +1310,24 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: true
+            },
+            "ch.swisstopo.geologie-geotechnik-zementindustrie_1965": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-zementindustrie_1965"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true,
+            },
+            "ch.swisstopo.geologie-geotechnik-zementindustrie_1995": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-zementindustrie_1995"),
+                layertype: 'wmts',
+                timestamp: ['20060304'],
+                type: "point",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: true,
             },
             "ch.swisstopo.geologie-geotechnik-ziegeleien_1907": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geotechnik-ziegeleien_1907"),

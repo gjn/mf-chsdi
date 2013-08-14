@@ -315,6 +315,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-geotechnik-steinbrueche_1965':"",
     'ch.swisstopo.geologie-geotechnik-steinbrueche_1980':"",
     'ch.swisstopo.geologie-geotechnik-steinbrueche_1995':"",
+    'ch.swisstopo.geologie-geotechnik-zementindustrie_1965':"",
+    'ch.swisstopo.geologie-geotechnik-zementindustrie_1995':"",
     'ch.swisstopo.geologie-geotechnik-ziegeleien_1907':"",
     'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':"",
     'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':"",

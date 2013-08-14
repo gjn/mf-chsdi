@@ -496,6 +496,26 @@ class GeologieGeotechnikSteinbrueche1995(Base, Queryable):
 
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995',GeologieGeotechnikSteinbrueche1995)
 
+class GeologieGeotechnikZementindustrie1965(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_zementindustrie'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/zementindustrie_1965.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-zementindustrie_1965',GeologieGeotechnikZementindustrie1965)
+
+class GeologieGeotechnikZementindustrie1995(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geotechnik_zementindustrie'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/zementindustrie_1995.mako'
+        id = Column('id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-zementindustrie_1995',GeologieGeotechnikZementindustrie1995)
+
 class GeologieGeotechnikZiegeleien1907(Base, Queryable):
         # view in a schema
         __tablename__ = 'geotechnik_ziegeleien_1907'

@@ -2570,6 +2570,12 @@ msgstr ""
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr ""
 
@@ -2940,6 +2946,9 @@ msgid "ziegeleien"
 msgstr ""
 
 msgid "rohstoff"
+msgstr ""
+
+msgid "stoff"
 msgstr ""
 
 msgid "name_ads"

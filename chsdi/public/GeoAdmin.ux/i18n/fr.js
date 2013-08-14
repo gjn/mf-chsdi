@@ -609,6 +609,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1965':'Carrières 1965',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1980':'Carrières 1980',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1995':'Carrières 1995',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1965':'Industrie des ciments 1965',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1995':'Industrie des ciments 1995',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1907':'Briqueteries 1907',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Briqueteries 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Briqueteries 1995',

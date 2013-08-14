@@ -609,6 +609,8 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1965':'Steinbrüche 1965',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1980':'Steinbrüche 1980',
 	'ch.swisstopo.geologie-geotechnik-steinbrueche_1995':'Steinbrüche 1995',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1965':'Zementindustrie 1965',
+	'ch.swisstopo.geologie-geotechnik-zementindustrie_1995':'Zementindustrie 1995',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1907':'Ziegeleien 1907',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Ziegeleien 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Ziegeleien 1995',

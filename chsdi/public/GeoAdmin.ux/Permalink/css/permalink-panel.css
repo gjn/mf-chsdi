@@ -11,7 +11,7 @@
 }
 .permalink-panel .x-toolbar {
     border: 0 none !important;
-	background-color: transparent;
+	  background-color: transparent;
     float: right;
     margin-right: -10px;
     margin-top: -33px;
@@ -63,16 +63,16 @@
     padding-right: 10px;
 }
 
-.shareText , .shareTextOpen {
+.shareText, .shareTextOpen {
     margin-top: 3px;
+}
+
+.ext-ie .permalink-panel .sharepipe {
+    margin-top: 5px;
 }
 
 .shareText {
     font-weight: bold !important;
-}
-
-.ext-ie .shareText, .ext-ie .shareTextOpen  {
-    margin-top: 0px;
 }
 
 .facebook-button .x-btn-text, .qrcode-button .x-btn-text, .twitter-button .x-btn-text, .googleplus-button .x-btn-text, .close-share-button .x-btn-text, .mail-button .x-btn-text {
@@ -86,17 +86,20 @@
 .hideBlock {
     display: none
 }
+
 .permalink-panel .x-menu-item-active {
     background: #FFFFFF;
     color: #FF0000;
     border-color: #FFFFFF !important;
 }
+
 .x-menu-item-active .shareTextOpen {
     color: #000000;
 }
+
 .permalink-panel .sharepipe {
-  width: 1px;
-  height: 12px !important;
-  margin-top: 2px;
-  background-color: black;
+    width: 1px;
+    height: 12px !important;
+    margin-top: 2px;
+    background-color: black;
 }
