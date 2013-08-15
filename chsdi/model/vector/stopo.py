@@ -509,7 +509,7 @@ register('ch.swisstopo.geologie-geotechnik-zementindustrie_1965',GeologieGeotech
 class GeologieGeotechnikZementindustrie1995(Base, Queryable):
         # view in a schema
         __tablename__ = 'geotechnik_zementindustrie'
-        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __table_args__ = ({'schema': 'geol', 'autoload': True, 'extend_existing': True})
         __template__ = 'tooltips/zementindustrie_1995.mako'
         id = Column('id', Integer, primary_key=True)
         the_geom = Column(Geometry(21781))
