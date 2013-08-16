@@ -19,6 +19,9 @@
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-geologische_karte":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.swisstopo.geologie-geologische_karte_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
+% elif c.layer.bod_layer_id == "ch.swisstopo.geologie-gravimetrischer_atlas":
+    <span style="font-weight:bold;">${_('Legend')}</span><br>
+    <a href="${c.host}/legend/ch.swisstopo.geologie-gravimetrischer_atlas_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
 % elif c.layer.bod_layer_id == "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br>
