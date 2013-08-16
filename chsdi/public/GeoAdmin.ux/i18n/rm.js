@@ -611,6 +611,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Fabricas da quadrels 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Fabricas da quadrels 1995',
 	'ch.swisstopo.geologie-geotope':'Geotop Svizzer',
+	'ch.swisstopo.geologie-gravimetrischer_atlas':'Gravimetrischer Atlas',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Resursas d\'aua sutterrana',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabladad da l\'aua sutterrana',
 	'ch.swisstopo.geologie-quartaermaechtigkeit':'ch.swisstopo.geologie-quartaermaechtigkeit', //TODO

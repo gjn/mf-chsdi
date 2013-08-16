@@ -615,6 +615,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Ziegeleien 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Ziegeleien 1995',
 	'ch.swisstopo.geologie-geotope':'Schweizerische Geotope',
+	'ch.swisstopo.geologie-gravimetrischer_atlas':'Gravimetrischer Atlas',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Grundwasservorkommen',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Grundwasservulnerabilität',
 	'ch.swisstopo.geologie-quartaermaechtigkeit':'Quartärmächtigkeit',

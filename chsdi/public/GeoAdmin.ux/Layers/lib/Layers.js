@@ -1467,6 +1467,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: 'ch.swisstopo',
                 queryable: true
             },
+            "ch.swisstopo.geologie-gravimetrischer_atlas": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-gravimetrischer_atlas"),
+                layertype: 'wmts',
+                timestamp: ['20021231'],
+                type: "raster",
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                queryable: false
+            },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"),
                 layertype: 'wmts',
