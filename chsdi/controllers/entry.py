@@ -19,5 +19,10 @@ class EntryController(BaseController):
         response.content_type = 'text/x-cross-domain-policy'
         return render("crossdomain.xml")
 
+    def clientaccesspolicy(self):
+        c.wsgi_base = request.environ["SCRIPT_NAME"]
+        response.content_type = 'text/x-cross-domain-policy'
+        return render("clientaccesspolicy.xml")
+
     def do_not_exist(self):
         abort(404)
