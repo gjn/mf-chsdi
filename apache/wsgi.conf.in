@@ -61,7 +61,7 @@ RewriteRule ^/[0-9a-fA-F]*/${vars:instanceid}/wsgi/(build|lib|api|GeoAdmin.ux)/(
 </LocationMatch>
 
 # loader.js & crossdomaini.xml:
-RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml)$ /${vars:instanceid}/wsgi/$1$2 [PT]
+RewriteRule ^${vars:apache-entry-point}(loader.js|crossdomain.xml|clientaccesspolicy.xml)$ /${vars:instanceid}/wsgi/$1$2 [PT]
 
 
 # web services:
