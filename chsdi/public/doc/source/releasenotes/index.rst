@@ -8,6 +8,36 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-----------------------------------
+- Removed 'ch.kantone.cadastralwebmap-farbe' from background layers
+- Minor bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+- Removed 'ch.kantone.cadastralwebmap-farbe' and 'ch.swisstopo.tml3d-hintergrund-karte' from background layers
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+- Nothing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+- Fixing OpenLayers version.
+
+
+
 Release 20130807 - Wednesday, August 7th 2013
 ====================================================
 
