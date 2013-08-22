@@ -637,7 +637,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layername: 'ch.kantone.cadastralwebmap-farbe',
                 //url: 'http://wms-bgdi0i.bgdi.admin.ch/?',
                 format: "image/jpeg",
-                datenherr: "ch.swisstopo",
+                datenherr: "ch.kanton.av",
                 singleTile: false,
                 type: "polygon",
                 queryable: true
