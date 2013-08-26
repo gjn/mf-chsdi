@@ -1166,6 +1166,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bav.kataster-belasteter-standorte-oev"
                     },
                     {
+                        layerId: "ch.blw.feldblockkarte"
+                    },
+                    {
+                        layerId: "ch.blw.gewaesseranschlusskarte"
+                    },
+                    {
+                        layerId: "ch.blw.gewaesseranschlusskarte-direkt"
+                    },
+                    {
                         layerId: "ch.blw.erosion"
                     },
                     {
