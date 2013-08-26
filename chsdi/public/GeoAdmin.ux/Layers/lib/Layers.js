@@ -2915,36 +2915,36 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bfe",
                 queryable: true
             },
-//            "ch.blw.feldblockkarte": {
-//                name: OpenLayers.i18n("ch.blw.feldblockkarte"),
-//                layertype: 'wmts',
-//                timestamp: ['20120601'],
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.blw",
-//                opacity: 0.75,
-//                queryable: false
-//            },
-//            "ch.blw.gewaesseranschlusskarte": {
-//                name: OpenLayers.i18n("ch.blw.gewaesseranschlusskarte"),
-//                layertype: 'wmts',
-//                timestamp: ['20121201'],
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.blw",
-//                opacity: 0.75,
-//                queryable: false
-//            },
-//            "ch.blw.gewaesseranschlusskarte-direkt": {
-//                name: OpenLayers.i18n("ch.blw.gewaesseranschlusskarte-direkt"),
-//                layertype: 'wmts',
-//                timestamp: ['20121201'],
-//                type: "polygon",
-//                format: "image/png",
-//                datenherr: "ch.blw",
-//                opacity: 0.75,
-//                queryable: false
-//            },
+            "ch.blw.feldblockkarte": {
+                name: OpenLayers.i18n("ch.blw.feldblockkarte"),
+                layertype: 'wmts',
+                timestamp: ['20120601'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.gewaesseranschlusskarte": {
+                name: OpenLayers.i18n("ch.blw.gewaesseranschlusskarte"),
+                layertype: 'wmts',
+                timestamp: ['20121201'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
+            "ch.blw.gewaesseranschlusskarte-direkt": {
+                name: OpenLayers.i18n("ch.blw.gewaesseranschlusskarte-direkt"),
+                layertype: 'wmts',
+                timestamp: ['20121201'],
+                type: "polygon",
+                format: "image/png",
+                datenherr: "ch.blw",
+                opacity: 0.75,
+                queryable: false
+            },
             "ch.blw.klimaeignung-typ": {
                 name: OpenLayers.i18n("ch.blw.klimaeignung-typ"),
                 layertype: 'wmts',
