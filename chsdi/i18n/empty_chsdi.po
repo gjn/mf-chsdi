@@ -1422,6 +1422,12 @@ msgstr ""
 msgid "gemeinde"
 msgstr ""
 
+msgid "betrgemeinde"
+msgstr ""
+
+msgid "bazlrechtstatus"
+msgstr ""
+
 msgid "link2dok"
 msgstr ""
 

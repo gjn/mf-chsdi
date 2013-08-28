@@ -344,6 +344,9 @@ msgstr "Name"
 msgid "band_1_2"
 msgstr "Band 1 | 2"
 
+msgid "bazlrechtstatus"
+msgstr "Rechtsstatus"
+
 msgid "bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
 
@@ -367,6 +370,9 @@ msgstr "Beschreibung"
 
 msgid "bestimmung"
 msgstr "Bestimmungen"
+
+msgid "betrgemeinde"
+msgstr "Betroffene Gemeinde"
 
 msgid "betrieb"
 msgstr "Betrieb"
