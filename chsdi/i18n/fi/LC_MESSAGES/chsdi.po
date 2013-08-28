@@ -344,6 +344,9 @@ msgstr "Name"
 msgid "band_1_2"
 msgstr "Volum 1 | 2"
 
+msgid "bazlrechtstatus"
+msgstr "Rechtsstatus"
+
 msgid "bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
 
@@ -367,6 +370,9 @@ msgstr "Beschreibung"
 
 msgid "bestimmung"
 msgstr "Bestimmungen"
+
+msgid "betrgemeinde"
+msgstr "Betroffene Gemeinde"
 
 msgid "betrieb"
 msgstr "Betrieb"
@@ -1350,7 +1356,7 @@ msgid "id_arealstatistik_97"
 msgstr "Grundkategorie Arealstatistik 1992/97"
 
 msgid "id_objekt"
-msgstr "Objekt"
+msgstr "Object"
 
 msgid "identificator"
 msgstr "Identifikator"

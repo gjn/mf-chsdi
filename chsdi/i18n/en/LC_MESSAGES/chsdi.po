@@ -344,6 +344,9 @@ msgstr "Name"
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
+msgid "bazlrechtstatus"
+msgstr "Legal status"
+
 msgid "bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
 
@@ -367,6 +370,9 @@ msgstr "Description"
 
 msgid "bestimmung"
 msgstr "Bestimmungen"
+
+msgid "betrgemeinde"
+msgstr "Concerned municipalities"
 
 msgid "betrieb"
 msgstr "Facility"

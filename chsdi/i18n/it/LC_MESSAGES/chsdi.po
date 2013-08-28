@@ -344,6 +344,9 @@ msgstr "Nome"
 msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
+msgid "bazlrechtstatus"
+msgstr "Stato legale"
+
 msgid "bearbeitungsjahr"
 msgstr "Année de mise à jour"
 
@@ -367,6 +370,9 @@ msgstr "Description"
 
 msgid "bestimmung"
 msgstr "Dispositions"
+
+msgid "betrgemeinde"
+msgstr "Comuni toccati"
 
 msgid "betrieb"
 msgstr "Complesso/azienda"
@@ -1185,7 +1191,7 @@ msgid "fassung"
 msgstr "Stesura"
 
 msgid "feature"
-msgstr "Oggeto"
+msgstr "Oggetto"
 
 msgid "federal administration"
 msgstr "Amministrazione federale admin.ch"

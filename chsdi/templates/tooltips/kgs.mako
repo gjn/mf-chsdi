@@ -112,7 +112,7 @@
      <tr>
          <td style="width: 300px; font-weight: bold; font-size: 13px; vertical-align: top;">${_('Feature tooltip')}:</td>
 % for i in range(nb_pdf):
-        <td style="width: 300px; float: left;"><a class="pdf" id="${c.feature.id}">PDF</a></td>
+         <td style="width: 300px; float: left;"><a href="http://dav0.bgdi.admin.ch/kogis_web/downloads/kgs/matrizen/${c.feature.pdf_list.split('##')[i]}.pdf" target="_blank">${c.feature.pdf_list.split('##')[i]}</a></td>
 % endfor
      </tr>
 % if c.feature.link_uri is not None:
