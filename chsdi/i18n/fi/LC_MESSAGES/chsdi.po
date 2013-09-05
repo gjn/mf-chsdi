@@ -345,7 +345,7 @@ msgid "band_1_2"
 msgstr "Volum 1 | 2"
 
 msgid "bazlrechtstatus"
-msgstr "Rechtsstatus"
+msgstr "Status da dregt"
 
 msgid "bearbeitungsjahr"
 msgstr "Bearbeitungsjahr"
@@ -372,7 +372,7 @@ msgid "bestimmung"
 msgstr "Bestimmungen"
 
 msgid "betrgemeinde"
-msgstr "Betroffene Gemeinde"
+msgstr "Vischanca affectá"
 
 msgid "betrieb"
 msgstr "Betrieb"
