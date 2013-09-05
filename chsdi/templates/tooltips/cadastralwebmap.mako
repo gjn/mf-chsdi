@@ -51,7 +51,7 @@
     % elif c.feature.ak == 'ZH':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.gis.zh.ch/gb/gb.asp?app=GB-AV&vn=4$11&rn=7$8$12&start=${c.bbox[0]}$${c.bbox[1]}&Massstab=500" target="_blank">ZH</a></td></tr>
     % elif c.feature.ak == 'BL':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.geo.bl.ch" target="_blank">BL</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://geoview.bl.ch/?map_x=${2000000 + c.bbox[0]}&map_y=${1000000 + c.bbox[1]}&map_zoom=11" target="_blank">BL</a></td></tr>
     % elif c.feature.ak == 'ZG':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.zugmap.ch" target="_blank">ZG</a></td></tr>
     % elif c.feature.ak == 'FL':

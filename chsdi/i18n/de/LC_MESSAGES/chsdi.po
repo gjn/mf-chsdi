@@ -372,7 +372,7 @@ msgid "bestimmung"
 msgstr "Bestimmungen"
 
 msgid "betrgemeinde"
-msgstr "Betroffene Gemeinde"
+msgstr "Betroffene Gemeinden"
 
 msgid "betrieb"
 msgstr "Betrieb"
