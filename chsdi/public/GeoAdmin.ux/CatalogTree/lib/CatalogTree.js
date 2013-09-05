@@ -664,9 +664,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo-vd.geometa-nfgeom"
                     },
                     {
-                        layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
-                    },
-                    {
                         layerId: "ch.swisstopo-vd.spannungsarme-gebiete"
                     },
                     {
@@ -881,6 +878,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.bazl.segelflugkarte"
+                    },
+                    {
+                        layerId: "ch.bazl.projektierungszonen-flughafenanlagen"
                     },
                     {
                         layerId: "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
