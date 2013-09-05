@@ -3808,7 +3808,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bazl.projektierungszonen-flughafenanlagen": {
                 name: OpenLayers.i18n("ch.bazl.projektierungszonen-flughafenanlagen"),
                 layertype: 'wmts',
-                timestamp: ['20080723'],
+                timestamp: ['20130822'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bazl",
