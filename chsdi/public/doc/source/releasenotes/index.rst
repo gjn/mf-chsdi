@@ -1,3 +1,26 @@
+Release 20130911 - Wednesday, September 11th 2013
+====================================================
+
+Geodata
+********
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division National Map 1:1 million (grey) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division National Map 1:1 million (color) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+
 Release 20130821 - Wednesday, August 21th 2013
 ====================================================
 
