@@ -6,7 +6,7 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million (grey) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)            |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division National Map 1:1 million (color) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)                                               |
+| Update | `Division National Map 1:1 million (color) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)         |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale) |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
