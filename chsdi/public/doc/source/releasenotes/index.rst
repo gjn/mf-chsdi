@@ -4,6 +4,12 @@ Release 20130911 - Wednesday, September 11th 2013
 Geodata
 ********
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Feldblockkarte <//map.geo.admin.ch/?layers=ch.blw.feldblockkarte>`__ (ch.blw.feldblockkarte)                                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gewässeranschluss <//map.geo.admin.ch/?layers=ch.blw.gewaesseranschlusskarte>`__ (ch.blw.gewaesseranschlusskarte)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gewässeranschluss erweitert <//map.geo.admin.ch/?layers=ch.blw.gewaesseranschlusskarte-direkt>`__ (ch.blw.gewaesseranschlusskarte-direkt)        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million (grey) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)            |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million (color) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)         |
