@@ -351,10 +351,15 @@ GeoAdmin._Layers = OpenLayers.Class({
      *  Read the legend URM from the layer's capabilities.
      */
     getLegendURL: function(layer) {
-        var legend = layer.styles && layer.styles.length > 0 &&
-            layer.styles[0].legend;
-        if (legend) {
-            return legend.href;
+        var styles = layer.styles;
+        //WMS has one legend, but WMTS can have multiple now
+        //See https://github.com/openlayers/openlayers/commit/b099931cd033ed21db15b1cee42b29c2a54409d2
+        if (styles && styles.length > 0) {
+          if (styles[0].legend) {
+            return styles[0].legend.href;
+          } else if (styles[0].legends && styles[0].legends[0]) {
+            return  styles[0].legends[0].href;
+          }
         }
     },
 
