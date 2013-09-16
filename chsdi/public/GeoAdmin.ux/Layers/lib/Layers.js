@@ -1545,7 +1545,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.bafu.moose": {
                 name: OpenLayers.i18n("ch.bafu.moose"),

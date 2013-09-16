@@ -1,5 +1,5 @@
 <%inherit file="base.mako"/>
-<%def name="preview()">${c.feature.id or '-'}</%def>
+<%def name="preview()">${c.feature.line_id or '-'}</%def>
 
 <%def name="table_body()">
        <tr><td width="150" valign="top">${_('geol_f')}</td><td>${c.feature.line_id or '-'}</td></tr>
