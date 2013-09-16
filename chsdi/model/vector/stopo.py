@@ -655,6 +655,25 @@ class GeologieRohstoffeVererzungen(Base, Queryable):
 
 register('ch.swisstopo.geologie-rohstoffe-vererzungen',GeologieRohstoffeVererzungen)
 
+class GeologieTektonischeKarteLine(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'tektonische_karte_line'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/tektonische_karte_line.mako'
+        id = Column('fid', Text, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+class GeologieTektonischeKartePoly(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'tektonische_karte_flaechen'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/tektonische_karte_poly.mako'
+        id = Column('fid', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-tektonische_karte',GeologieTektonischeKarteLine)
+register('ch.swisstopo.geologie-tektonische_karte',GeologieTektonischeKartePoly)
+
 class Swisstlm3dWanderwege(Base, Queryable):
     # view in a schema
     __tablename__ = 'wanderwege_swissmap'
