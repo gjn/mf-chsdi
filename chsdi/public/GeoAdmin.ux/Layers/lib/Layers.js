@@ -2551,7 +2551,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.bakom.downlink100"),
                 //layertype: 'wms',
                 layers: ["ch.bakom.downlink100"],
-                url: 'http://wms-bgdi0i.bgdi.admin.ch/?',
+                //url: 'http://wms-bgdi0i.bgdi.admin.ch/?',
                 layertype: 'wmts',
                 timestamp: ['20130901','20130601','20121222'],
                 type: "polygon",
