@@ -43,10 +43,10 @@ def load_environment(global_conf, app_conf):
 
     # Setup the SQLAlchemy database engine
     # FIXME: convert_unicode=True ?
-    init_model('bod', engine_from_config(config, 'sqlalchemy.bod.', pool_recycle = 55))
+    init_model('bod', engine_from_config(config, 'sqlalchemy.bod.', pool_recycle = 20, max_overflow = -1, pool_size = 20))
     init_model('stopo', engine_from_config(config, 'sqlalchemy.stopo.', pool_recycle = 55))
     init_model('edi', engine_from_config(config, 'sqlalchemy.edi.', pool_recycle = 55))
-    init_model('search', engine_from_config(config, 'sqlalchemy.search.', pool_recycle = 20, pool_size=20))
+    init_model('search', engine_from_config(config, 'sqlalchemy.search.', pool_recycle = 20, max_overflow = -1, pool_size = 20))
     init_model('bafu', engine_from_config(config, 'sqlalchemy.bafu.', pool_recycle = 55))
     init_model('kogis', engine_from_config(config, 'sqlalchemy.kogis.', pool_recycle = 55))
     init_model('vbs', engine_from_config(config, 'sqlalchemy.vbs.', pool_recycle = 55))
