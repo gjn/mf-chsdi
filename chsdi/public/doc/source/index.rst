@@ -33,7 +33,7 @@ Welcome to GeoAdmin API's documentation!
 
     <div class="warning"i style="background-color: #ffffff; padding: 5px; border: 1px solid black;color:red;">
     
-IMPORTANT ANNOUNCEMENT: `GeoAdmin API v3 <http://www.geo.admin.ch/internet/geoportal/en/home/current.html>`_.
+IMPORTANT ANNOUNCEMENT: `GeoAdmin API v3 <http://www.geo.admin.ch/internet/geoportal/en/home/current/news20130920.html>`_.
 
 This GeoAdmin API is available until 31.6.2014.
 
