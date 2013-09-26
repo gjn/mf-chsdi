@@ -1,4 +1,4 @@
-Release 20130925 - Wednesday, September 25th 2013
+Release 20130926 - Thursday, September 26th 2013
 ====================================================
 
 Geodata
@@ -45,6 +45,10 @@ Geodata
 | Update | `Swissimage <//s.geo.admin.ch/603df7767>`__ (ch.swisstopo.swissimage)                                                                             |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 
 Release 20130911 - Wednesday, September 11th 2013
