@@ -1,4 +1,4 @@
-Release 20130925 - Wednesday, September 25th 2013
+Release 20130926 - Thursday, September 26th 2013
 ====================================================
 
 Geodata
