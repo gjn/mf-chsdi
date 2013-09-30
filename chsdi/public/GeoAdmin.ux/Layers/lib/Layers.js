@@ -706,6 +706,25 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 type: "point"
             },
+            "ch.bav.sachplan-infrastruktur-schiene_anhorung": {
+                name: OpenLayers.i18n("ch.bav.sachplan-infrastruktur-schiene_anhorung"),
+                layertype: 'wms',
+                url: 'http://wms-test0i.bgdi.admin.ch/', 
+                layers: ['ch.bav.sachplan-infrastruktur-schiene_anhorung'],
+                format: "image/png",
+                datenherr: "ch.bav",
+                queryable: true
+            },
+            "ch.bav.test_notransp": {
+                name: OpenLayers.i18n("ch.bav.test_notransp"),
+                layertype: 'wms',
+                url: 'http://wms-test0i.bgdi.admin.ch/', 
+                layers: ['test_transp'],
+                format: "image/png",
+                datenherr: "ch.bav",
+                queryable: false,
+                opacity: 0.75
+            },
             "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft": {
                 name: OpenLayers.i18n("ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"),
                 layertype: 'wms',
