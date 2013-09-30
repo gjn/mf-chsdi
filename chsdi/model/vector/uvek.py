@@ -558,6 +558,198 @@ class sil_planning_raster_k(Base, Queryable):
 	
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
 
+class sis_facilities_a(Base, Queryable):
+    __tablename__ = 'sis_fac_anhorung'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_facilities.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    fackind_text_de = Column('fackind_text_de', Text)
+    fackind_text_fr = Column('fackind_text_fr', Text)
+    fackind_text_it = Column('fackind_text_it', Text)
+    facstatus_text_de = Column('facstatus_text_de', Text)
+    facstatus_text_fr = Column('facstatus_text_fr', Text)
+    facstatus_text_it = Column('facstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    description_text_de = Column('objdescription_de', Text)
+    description_text_fr = Column('objdescription_fr', Text)
+    description_text_it = Column('objdescription_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    objectname_text_de = Column('objname_de', Text)
+    objectname_text_fr = Column('objname_fr', Text)
+    objectname_text_it = Column('objname_it', Text)
+    bgdi_created = Column('bgdi_created', Text)	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_facilities_a)
+
+class sis_planning_a(Base, Queryable):
+    __tablename__ = 'sis_pl_anhorung'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    measuretype_text_de = Column('meastype_text_de', Text)
+    measuretype_text_fr = Column('meastype_text_fr', Text)
+    measuretype_text_it = Column('meastype_text_it', Text)
+    coordinationlevel_text_de = Column('coordlevel_text_de', Text)
+    coordinationlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordinationlevel_text_it = Column('coordlevel_text_it', Text)
+    planningstatus_text_de = Column('plstatus_text_de', Text)
+    planningstatus_text_fr = Column('plstatus_text_fr', Text)
+    planningstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_text_de = Column('description_de', Text)
+    description_text_fr = Column('description_fr', Text)
+    description_text_it = Column('description_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __minscale__ = 50005	
+    __maxscale__ = 1000005	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_a)
+
+class sis_planning_raster_a(Base, Queryable):
+    __tablename__ = 'sis_pl_r_anhorung'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    measuretype_text_de = Column('meastype_text_de', Text)
+    measuretype_text_fr = Column('meastype_text_fr', Text)
+    measuretype_text_it = Column('meastype_text_it', Text)
+    coordinationlevel_text_de = Column('coordlevel_text_de', Text)
+    coordinationlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordinationlevel_text_it = Column('coordlevel_text_it', Text)
+    planningstatus_text_de = Column('plstatus_text_de', Text)
+    planningstatus_text_fr = Column('plstatus_text_fr', Text)
+    planningstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_text_de = Column('description_de', Text)
+    description_text_fr = Column('description_fr', Text)
+    description_text_it = Column('description_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __maxscale__ = 50005
+    __minscale__ = 1	
+    the_geom = Column('the_geom',Geometry(21781))
+	
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_raster_a)
+
+class sis_facilities_k(Base, Queryable):
+    __tablename__ = 'sis_fac_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_facilities.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    fackind_text_de = Column('fackind_text_de', Text)
+    fackind_text_fr = Column('fackind_text_fr', Text)
+    fackind_text_it = Column('fackind_text_it', Text)
+    facstatus_text_de = Column('facstatus_text_de', Text)
+    facstatus_text_fr = Column('facstatus_text_fr', Text)
+    facstatus_text_it = Column('facstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    description_text_de = Column('objdescription_de', Text)
+    description_text_fr = Column('objdescription_fr', Text)
+    description_text_it = Column('objdescription_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    objectname_text_de = Column('objname_de', Text)
+    objectname_text_fr = Column('objname_fr', Text)
+    objectname_text_it = Column('objname_it', Text)
+    bgdi_created = Column('bgdi_created', Text)	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_facilities_k)
+
+class sis_planning_k(Base, Queryable):
+    __tablename__ = 'sis_pl_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    measuretype_text_de = Column('meastype_text_de', Text)
+    measuretype_text_fr = Column('meastype_text_fr', Text)
+    measuretype_text_it = Column('meastype_text_it', Text)
+    coordinationlevel_text_de = Column('coordlevel_text_de', Text)
+    coordinationlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordinationlevel_text_it = Column('coordlevel_text_it', Text)
+    planningstatus_text_de = Column('plstatus_text_de', Text)
+    planningstatus_text_fr = Column('plstatus_text_fr', Text)
+    planningstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_text_de = Column('description_de', Text)
+    description_text_fr = Column('description_fr', Text)
+    description_text_it = Column('description_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __minscale__ = 50005	
+    __maxscale__ = 1000005	
+    the_geom = Column(Geometry(21781))
+
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_k)
+
+class sis_planning_raster_k(Base, Queryable):
+    __tablename__ = 'sis_pl_r_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'tooltips/sis_planning.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    measuretype_text_de = Column('meastype_text_de', Text)
+    measuretype_text_fr = Column('meastype_text_fr', Text)
+    measuretype_text_it = Column('meastype_text_it', Text)
+    coordinationlevel_text_de = Column('coordlevel_text_de', Text)
+    coordinationlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordinationlevel_text_it = Column('coordlevel_text_it', Text)
+    planningstatus_text_de = Column('plstatus_text_de', Text)
+    planningstatus_text_fr = Column('plstatus_text_fr', Text)
+    planningstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_text_de = Column('description_de', Text)
+    description_text_fr = Column('description_fr', Text)
+    description_text_it = Column('description_it', Text)
+    document_web = Column('doc_web', Text)
+    document_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __maxscale__ = 50005
+    __minscale__ = 1	
+    the_geom = Column('the_geom',Geometry(21781))
+	
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_raster_k)
+
 class nga_anbieter (Base, Queryable):
 	__tablename__ = 'nga_anbieter'
 	__table_args__ = ({'schema': 'bakom', 'autoload': True})
