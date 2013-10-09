@@ -562,6 +562,7 @@ class sis_facilities_a(Base, Queryable):
     __tablename__ = 'sis_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_facilities.mako'
+    __queryable_attributes__ = ['facname_de','facname_fr','facname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
@@ -590,6 +591,7 @@ class sis_planning_a(Base, Queryable):
     __tablename__ = 'sis_pl_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_planning.mako'
+    __queryable_attributes__ = ['plname_de','plname_fr','plname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
@@ -624,6 +626,7 @@ class sis_planning_raster_a(Base, Queryable):
     __tablename__ = 'sis_pl_r_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_planning.mako'
+    __queryable_attributes__ = ['plname_de','plname_fr','plname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
@@ -658,6 +661,7 @@ class sis_facilities_k(Base, Queryable):
     __tablename__ = 'sis_fac_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_facilities.mako'
+    __queryable_attributes__ = ['facname_de','facname_fr','facname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
@@ -686,6 +690,7 @@ class sis_planning_k(Base, Queryable):
     __tablename__ = 'sis_pl_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_planning.mako'
+    __queryable_attributes__ = ['plname_de','plname_fr','plname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
@@ -720,6 +725,7 @@ class sis_planning_raster_k(Base, Queryable):
     __tablename__ = 'sis_pl_r_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'tooltips/sis_planning.mako'
+    __queryable_attributes__ = ['plname_de','plname_fr','plname_it','doc_title']
     id = Column('stabil_id', Integer, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)

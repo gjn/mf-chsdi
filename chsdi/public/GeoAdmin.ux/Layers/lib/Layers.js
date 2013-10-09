@@ -713,7 +713,8 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ['ch.bav.sachplan-infrastruktur-schiene_anhorung'],
                 format: "image/png",
                 datenherr: "ch.bav",
-                queryable: true
+                queryable: true,
+                searchable: true
             },
             "ch.bav.test_notransp": {
                 name: OpenLayers.i18n("ch.bav.test_notransp"),
