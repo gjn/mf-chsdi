@@ -1,3 +1,14 @@
+Release 20131017 - Thursday, October 17th 2013
+====================================================
+
+Geodata
+********
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bouguer-Anomalies <//map.geo.admin.ch/?bgLayer=ch.swisstopo.geologie-geodaesie-bouguer_anomalien>`__ (ch.swisstopo.geologie-geodaesie-bouguer_anomalien)             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Isostatic anomalies <//map.geo.admin.ch/?bgLayer=ch.swisstopo.geologie-geodaesie-isostatische_anomalien>`__ (ch.swisstopo.geologie-geodaesie-isostatische_anomalien) |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Release 20131010 - Thursday, October 10th 2013
 ====================================================
 

@@ -1190,6 +1190,12 @@ msgstr "Ost"
 msgid "et_fromatt"
 msgstr "Aeromagnet. Anomal. Alpenvorland/Jura[nT]"
 
+msgid "et_fromatt_anom"
+msgstr "Anomalies isostatiques [mGal]"
+
+msgid "et_fromatt_bouguer"
+msgstr "Bouguer Anomalie [mGal]"
+
 msgid "fassung"
 msgstr "Versiun"
 

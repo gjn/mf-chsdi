@@ -492,7 +492,7 @@ msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Trafic voyageurs 2008"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
-msgstr "Charge annuelle du réseau routier suisse 2008 (trafic voyageurs)"
+msgstr "Trafic voyageurs 2008"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Densité de l`emploi 2008"
@@ -744,10 +744,10 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restitution"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Zones de tranquillité - routes"
+msgstr "Zones tranquillité portal - routes"
 
 msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr "Zones de tranquillité - Districts francs"
+msgstr "Zones de tranquillité - portail"
 
 msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
 msgstr "Inventaire fédéral ISOS"
@@ -816,7 +816,7 @@ msgid "ch.blw.erosion"
 msgstr "Risque d’érosion qualitatif 1"
 
 msgid "ch.blw.hang_steillagen"
-msgstr "Terrains en pente et en forte pente"
+msgstr "Surfaces en pente"
 
 msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limites des zones agricoles"
@@ -879,7 +879,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2"
 msgstr "Points fixes planimétriques PFP2"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
-msgstr "Dernier maximum glaciaire"
+msgstr "Maximum glaciaire"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalies de Bouguer"
@@ -1038,7 +1038,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE"
+msgstr "Photo aérienne"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Sites protégés VECTOR200"
@@ -1186,6 +1186,12 @@ msgstr "Est"
 
 msgid "et_fromatt"
 msgstr "Anomalies aéromagnet. Plateau/Jura [nT]"
+
+msgid "et_fromatt_anom"
+msgstr "Anomalies isostatiques [mGal]"
+
+msgid "et_fromatt_bouguer"
+msgstr "Anomalies de Bouguer [mGal]"
 
 msgid "fassung"
 msgstr "Version"
