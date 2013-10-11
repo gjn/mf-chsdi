@@ -1454,7 +1454,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-geodaesie-bouguer_anomalien": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-bouguer_anomalien"),
@@ -1463,7 +1463,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
-                queryable: false
+                queryable: true
             },
             "ch.swisstopo.geologie-eiszeit-lgm-raster": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-eiszeit-lgm-raster"),

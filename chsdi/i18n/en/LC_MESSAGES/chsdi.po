@@ -486,19 +486,19 @@ msgid "ch.are.belastung-gueterverkehr-bahn-2008"
 msgstr "Freight traffic 2008"
 
 msgid "ch.are.belastung-gueterverkehr-strasse-2008"
-msgstr "Schwerer Güterverkehr 2008"
+msgstr "Heavy goods traffic 2008"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Passenger traffic 2008"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
-msgstr "Jährliche Belastung des schweizerischen Strassennetzes 2008 (Personenverkehr)"
+msgstr "Passenger traffic 2008"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
-msgstr "Beschäftigtendichte 2008"
+msgstr "Density of employment 2008"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
-msgstr "Bevölkerungsdichte 2000"
+msgstr "Population density 2000"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typology of municipalities ARE"
@@ -507,7 +507,7 @@ msgid "ch.are.gemeindetypen"
 msgstr "Typology of municipalities ARE"
 
 msgid "ch.are.gueteklassen_oev"
-msgstr "ÖV-Güteklassen ARE"
+msgstr "Public transport connection quality ARE"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Landschaftstypologie Schweiz"
@@ -744,10 +744,10 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Return flows"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Wildlife sanctuary zones - tracks"
+msgstr "Wildlife sanctuary zones Portal - tracks"
 
 msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr "Wildlife sanctuary zones - no hunting areas"
+msgstr "Wildlife sanctuary zones - portal"
 
 msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
 msgstr "Federal Inventory ISOS"
@@ -780,7 +780,7 @@ msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Aeronautical Chart ICAO"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
-msgstr "Reserved zones: Airports"
+msgstr "Planning zones: Airports"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Glider Chart"
@@ -1038,7 +1038,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE"
+msgstr "Aerial imagery"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Protected Areas VECTOR200"
@@ -1187,6 +1187,12 @@ msgstr "East"
 
 msgid "et_fromatt"
 msgstr "Aeromagnetic anomalies Plateau/Jura [nT]"
+
+msgid "et_fromatt_anom"
+msgstr "Isostatic anomaly [mGal]"
+
+msgid "et_fromatt_bouguer"
+msgstr "Bouguer anomaly [mGal]"
 
 msgid "fassung"
 msgstr "Version"

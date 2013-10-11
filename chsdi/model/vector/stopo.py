@@ -611,6 +611,27 @@ class Geologischer_Aeromagnetik_Jura(Base, Queryable):
 
 register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
 
+class GeologieIsostatischeAnomalien(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'schwerekarte_isostatische_anomalien'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/isostatische_anomalien.mako'
+        id = Column('gid', Integer, primary_key=True)
+        fid = Column ('id', Integer)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geodaesie-isostatische_anomalien',GeologieIsostatischeAnomalien)
+
+class GeologieBouguerAnomalien(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'geodaesie_bouguer_anomalien'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/bouguer_anomalien.mako'
+        id = Column('gid', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geodaesie-bouguer_anomalien',GeologieBouguerAnomalien)
+
 class GeologieGeophysikTotalintensitaet(Base, Queryable):
         # view in a schema
         __tablename__ = 'geophysik_totalintensitaet'
