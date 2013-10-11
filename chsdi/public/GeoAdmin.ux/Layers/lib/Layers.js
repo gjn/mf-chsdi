@@ -1450,7 +1450,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geodaesie-isostatische_anomalien": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-isostatische_anomalien"),
                 layertype: 'wmts',
-                timestamp: ['19791231'],
+                timestamp: ['20101019','19791231'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
@@ -1459,7 +1459,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.geologie-geodaesie-bouguer_anomalien": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-geodaesie-bouguer_anomalien"),
                 layertype: 'wmts',
-                timestamp: ['19791231'],
+                timestamp: ['20110406','19791231'],
                 type: "raster",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
