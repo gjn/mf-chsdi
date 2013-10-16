@@ -1276,10 +1276,10 @@ msgid "gesteinsgr"
 msgstr "Rock type"
 
 msgid "gewaesser"
-msgstr "Gewässername"
+msgstr "Waterbody name"
 
 msgid "gewaessername"
-msgstr "Gewässername"
+msgstr "Waterbody name"
 
 msgid "gewissnr"
 msgstr "GEWISS number"
