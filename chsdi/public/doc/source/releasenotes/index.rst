@@ -9,6 +9,34 @@ Geodata
 | Update | `Isostatic anomalies <//map.geo.admin.ch/?bgLayer=ch.swisstopo.geologie-geodaesie-isostatische_anomalien>`__ (ch.swisstopo.geologie-geodaesie-isostatische_anomalien) |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+API
+***
+
+`Desktop <//api.geo.admin.ch>`__
+-----------------------------------
+Minor bugfixing
+
+`Mobile <http://mobile.api.geo.admin.ch>`__
+-------------------------------------------
+Minor bugfixing
+
+Mapping Applications
+********************
+
+`map.geo.admin.ch <http://map.geo.admin.ch>`__
+--------------------------------------------------
+Minor bugfixing.
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+Minor bugfixing.
+
+
 Release 20131010 - Thursday, October 10th 2013
 ====================================================
 
