@@ -15,13 +15,13 @@
       <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_fr or '-'}</td></tr>
       <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_fr or '-'}</td></tr>
     % elif c.lang == 'it':
-      <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_it or '-'}</td></tr>
-      <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_it or '-'}</td></tr>
+      <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_it or c.feature.typ2_fr or '-'}</td></tr>
+      <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_it or c.feature.flussgb_fr or '-'}</td></tr>
     % elif c.lang == 'en':
       <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_en or '-'}</td></tr>
       <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_en or '-'}</td></tr>
     % elif c.lang == 'rm':
-      <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_rm or '-'}</td></tr>
-      <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_rm or '-'}</td></tr>
+      <tr><td>${_('typ')}</td>                        <td>${c.feature.typ2_rm or c.feature.typ2_de or '-'}</td></tr>
+      <tr><td>${_('tt_flussgb')}</td>                 <td>${c.feature.flussgb_rm or c.feature.flussgb_de or '-'}</td></tr>
     % endif
 </%def>
