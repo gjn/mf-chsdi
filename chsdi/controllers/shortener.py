@@ -38,6 +38,7 @@ def shorten(myUrl):
     absoluteUrl = absoluteUrl.replace('/main/wsgi', '')
     absoluteUrl = absoluteUrl.replace('/wsgi', '')
     absoluteUrl = absoluteUrl.replace('api.geo.admin.ch/shorten', 's.geo.admin.ch')
+    absoluteUrl = absoluteUrl.replace('api3.geo.admin.ch/shorten', 's.geo.admin.ch')
     return absoluteUrl
 
 #decorator function to check if url is valid for the shortener service
