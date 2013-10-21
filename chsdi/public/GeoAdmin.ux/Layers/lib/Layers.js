@@ -3217,7 +3217,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.steil_terrassenlagen_rebbau": {
                 name: OpenLayers.i18n("ch.blw.steil_terrassenlagen_rebbau"),
                 layertype: 'wmts',
-                timestamp: ['20100501'],
+                timestamp: ['20121231','20100501'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
@@ -3254,7 +3254,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.blw.hang_steillagen": {
                 name: OpenLayers.i18n("ch.blw.hang_steillagen"),
                 layertype: 'wmts',
-                timestamp: ['20100501'],
+                timestamp: ['20121231','20100501'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.blw",
