@@ -2063,7 +2063,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.wasser-vorfluter": {
                 name: OpenLayers.i18n("ch.bafu.wasser-vorfluter"),
                 layertype: 'wmts',
-                timestamp: ['20120701'],
+                timestamp: ['20120702'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.bafu",
