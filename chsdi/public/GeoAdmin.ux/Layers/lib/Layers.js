@@ -3344,7 +3344,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-vd.ortschaftenverzeichnis_plz": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
                 layertype: 'wmts',
-                timestamp: ['20130501','20121102','20120501','20111101','20110502'],
+                timestamp: ['20131101','20130501','20121102','20120501','20111101','20110502'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
