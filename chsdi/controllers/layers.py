@@ -230,7 +230,7 @@ class LayersController(BaseController):
             response.headers['Pragma'] = 'public'
             response.headers['Expires'] = '0'
             response.headers['Cache-Control'] = 'no-cache'
-            response.charset = 'utf8'
+            response.charset = 'utf-8'
             return render('/WMTSCapabilities.mako')
         elif self.mode == 'all':
             if cb_name is not None:
