@@ -4,6 +4,10 @@ Release 20131130 - Wednesday, October 30th 2013
 Geodata
 ********
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hillside and steep slopes situation <//map.geo.admin.ch/?layers=ch.blw.hang_steillagen>`__ (ch.blw.hang_steillagen)                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Viticulture in steep areas <//map.geo.admin.ch/?layers=ch.blw.steil_terrassenlagen_rebbau>`__ (ch.blw.steil_terrassenlagen_rebbau)               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)        |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Subsoul classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                            |

@@ -485,7 +485,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bakom.uplink10':'Upload ≥ 10 Mbit/s',
 	'ch.bakom.uplink100':'Upload ≥ 100 Mbit/s',
 	'ch.bakom.uplink2':'Upload ≥ 2 Mbit/s',
-	'ch.bakom.uplink20':'Uploqe ≥ 20 Mbit/s',
+	'ch.bakom.uplink20':'Upload ≥ 20 Mbit/s',
 	'ch.bakom.uplink50':'Upload ≥ 50 Mbit/s',
 	'ch.bakom.verfuegbarkeit-hdtv':'Availability HDTV fixed netw.',
 	'ch.bakom.verfuegbarkeit-tv':'Availability TV fixed network',

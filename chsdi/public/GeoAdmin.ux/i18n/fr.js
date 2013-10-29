@@ -541,7 +541,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.blw.feldblockkarte':'Carte de blocs de parcelles',
 	'ch.blw.gewaesseranschlusskarte':'Surface en connection des eaux',
 	'ch.blw.gewaesseranschlusskarte-direkt':'Surface en connection élargie',
-	'ch.blw.hang_steillagen':'Surfaces en pente',
+	'ch.blw.hang_steillagen':'Terrains en pente',
 	'ch.blw.klimaeignung-futterbau':'Climat - culture fourragère',
 	'ch.blw.klimaeignung-getreidebau':'Climat - cultures céréalières',
 	'ch.blw.klimaeignung-kartoffeln':'Climat - pommes de terre',
