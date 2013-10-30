@@ -141,6 +141,7 @@ SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
 SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*unine.ch"       GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*cscf.ch"        GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-c.ch"       GOODREF
 SetEnvIf Referer ".admin.ch"                             GOODREF
 SetEnvIf Referer "^http://localhost"                     GOODREF
 
