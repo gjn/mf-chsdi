@@ -141,12 +141,15 @@ SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
 SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*unine.ch"       GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*cscf.ch"        GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-c.ch"       GOODREF
 SetEnvIf Referer ".admin.ch"                             GOODREF
 SetEnvIf Referer "^http://localhost"                     GOODREF
 
 SetEnvIf X-Forwarded-For "10.226.126.116"                GOODIP
 SetEnvIf X-Forwarded-For "10.227.67.80"                  GOODIP
 SetEnvIf X-Forwarded-For "46.51.190.137"                 GOODIP
+# Request from 30.10.2013 - postauto.ch
+SetEnvIf X-Forwarded-For "82.197.166.34"                 GOODIP
 
 <LocationMatch "^/${vars:instanceid}/wsgi/(profile.csv|height)">
 

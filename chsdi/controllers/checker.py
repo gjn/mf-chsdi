@@ -134,7 +134,7 @@ class CheckerController(BaseController):
 
     def _checkUrl(self, checkName, url, checkString, requestHost):
 
-        req = urllib2.Request(url,headers={'Host':requestHost})
+        req = urllib2.Request(url,headers={'Host':requestHost, 'Referer': 'http://admin.ch'})
 
         httpresponses = {
         100: ('Continue', 'Request received, please continue'),

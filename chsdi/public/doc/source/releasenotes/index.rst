@@ -10,9 +10,9 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ZIP and locations <//map.geo.admin.ch/?layers=ch.swisstopo-vd.ortschaftenverzeichnis_plz>`__ (ch.swisstopo-vd.ortschaftenverzeichnis_plz)        |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Subsoul classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                            |
+| Update | `Spectral micro-zoning <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                      |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Subsoul classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                              |
+| Update | `Subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                              |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
