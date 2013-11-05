@@ -2,6 +2,18 @@ from chsdi.model import *
 
 Base = declarative_base(bind=meta.engines['stopo'])
 
+class HistorischeNamen(Base, Queryable):
+        # view in public schema
+        __tablename__ = 'view_historische_topo_namen'
+        __table_args__ = ({'schema': 'public', 'autoload': True})
+        __template__ = 'tooltips/historische_namen.mako'
+        __queryable_attributes__ = ['topographic_name','relation_identifier','category','year_from']
+        id = Column('bgdi_id', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.kantone.historische-topografische-namen',HistorischeNamen)
+
+
 class SwissboundariesBezirk(Base, Queryable):
     # view in a schema
     __tablename__ = 'swissboundaries_bezirke'
