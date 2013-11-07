@@ -41,7 +41,7 @@ class WmtsController(BaseController):
         response.headers['Pragma'] = 'public'
         response.headers['Expires'] = '0'
         response.headers['Cache-Control'] = 'no-cache'
-        response.charset = 'utf8'  
+        response.charset = 'utf-8'  
 
 
         http_host = request.environ.get("HTTP_HOST")
