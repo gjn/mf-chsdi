@@ -3354,7 +3354,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo-vd.spannungsarme-gebiete": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.spannungsarme-gebiete"),
                 layertype: 'wmts',
-                timestamp: ['20121102','20111216'],
+                timestamp: ['20131028','20121102','20111216'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
