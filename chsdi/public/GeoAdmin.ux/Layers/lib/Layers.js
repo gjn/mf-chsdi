@@ -3859,7 +3859,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bak.bundesinventar-schuetzenswerte-ortsbilder": {
                 name: OpenLayers.i18n("ch.bak.bundesinventar-schuetzenswerte-ortsbilder"),
                 layertype: 'wmts',
-                timestamp: ['20121218','20120510','20110915'],
+                timestamp: ['20130911','20121218','20120510','20110915'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bak",
