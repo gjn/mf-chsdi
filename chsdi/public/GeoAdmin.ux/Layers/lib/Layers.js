@@ -707,7 +707,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bav.sachplan-infrastruktur-schiene_anhorung": {
                 name: OpenLayers.i18n("ch.bav.sachplan-infrastruktur-schiene_anhorung"),
                 layertype: 'wms',
-                url: 'http://wms-test0i.bgdi.admin.ch/', 
+                url: 'http://wms-test0t.bgdi.admin.ch/', 
                 layers: ['ch.bav.sachplan-infrastruktur-schiene_anhorung'],
                 format: "image/png",
                 datenherr: "ch.bav",
@@ -717,7 +717,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bav.test_notransp": {
                 name: OpenLayers.i18n("ch.bav.test_notransp"),
                 layertype: 'wms',
-                url: 'http://wms-test0i.bgdi.admin.ch/', 
+                url: 'http://wms-test0t.bgdi.admin.ch/', 
                 layers: ['test_transp'],
                 format: "image/png",
                 datenherr: "ch.bav",
@@ -3859,7 +3859,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bak.bundesinventar-schuetzenswerte-ortsbilder": {
                 name: OpenLayers.i18n("ch.bak.bundesinventar-schuetzenswerte-ortsbilder"),
                 layertype: 'wmts',
-                timestamp: ['20130911','20121218','20120510','20110915'],
+                timestamp: ['20131113','20121218','20120510','20110915'],
                 type: "point",
                 format: "image/png",
                 datenherr: "ch.bak",
