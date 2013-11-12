@@ -2388,7 +2388,7 @@ GeoAdmin._Layers = OpenLayers.Class({
              "ch.swisstopo-karto.skitouren": {
              name: OpenLayers.i18n("ch.swisstopo-karto.skitouren"),
              layertype: 'wmts',
-             timestamp: ['20121101','20111219','20101101'],
+             timestamp: ['20131011','20121101'],
              type: "raster",
              format: "image/png",
              datenherr: "ch.swisstopo",
