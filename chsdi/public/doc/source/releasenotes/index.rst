@@ -9,6 +9,19 @@ Geodata
 | Update | `Isos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)         |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
+Mapping Applications
+********************
+
+`mobile.map.geo.admin.ch <http://mobile.map.geo.admin.ch>`__
+------------------------------------------------------------
+Bugfixing.
+
+
 Release 20131030 - Wednesday, October 30th 2013
 ====================================================
 
