@@ -469,6 +469,7 @@ GeoAdmin.Print = Ext.extend(Ext.Action, {
 
         // Workaround to support the fact that we have an unused zoom level !! we update a private variable !!
         this.printProvider.encoders.layers.WMTS = function(layer) {
+            layer.updateMatrixProperties();
             var enc = this.encoders.layers.HTTPRequest.call(this, layer);
             return Ext.apply(enc, {
                 type: 'WMTS',
