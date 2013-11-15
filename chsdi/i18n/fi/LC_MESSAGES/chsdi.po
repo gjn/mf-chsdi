@@ -990,7 +990,7 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun tiles SWISSIMAGE"
 
 msgid "ch.swisstopo.lubis-luftbilder"
-msgstr "TODO"
+msgstr "Luftbilder swisstopo"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Charta en colur"
@@ -1102,9 +1102,8 @@ msgstr "ch.swisstopo.verschiebungsvektoren-tsp1"
 msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
 msgstr "ch.swisstopo.verschiebungsvektoren-tsp2"
 
-#. TODO
 msgid "ch.swisstopo.zeitreihen"
-msgstr "ch.swisstopo.zeitreihen"
+msgstr "Karten - Zeitreise"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Regiuns territorialas"
@@ -2363,8 +2362,9 @@ msgstr "Auflösung"
 msgid "tt_bildstreifen_Flugdatum"
 msgstr "Flugdatum"
 
+#. TODO
 msgid "tt_bildstreifen_Link "
-msgstr "Bestellen"
+msgstr "tt_bildstreifen_Link "
 
 #. TODO
 msgid "tt_bildstreifen_Quickview "

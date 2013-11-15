@@ -816,7 +816,7 @@ msgid "ch.blw.erosion"
 msgstr "Risque d’érosion qualitatif 1"
 
 msgid "ch.blw.hang_steillagen"
-msgstr "Surfaces en pente"
+msgstr "Terrains en pente"
 
 msgid "ch.blw.landwirtschaftliche-zonengrenzen"
 msgstr "Limites des zones agricoles"
@@ -2360,8 +2360,9 @@ msgstr "Résolution"
 msgid "tt_bildstreifen_Flugdatum"
 msgstr "Date du vol"
 
+#. TODO
 msgid "tt_bildstreifen_Link "
-msgstr "Bestellen"
+msgstr "tt_bildstreifen_Link "
 
 #. TODO
 msgid "tt_bildstreifen_Quickview "

@@ -1101,7 +1101,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
 msgstr "LV95 Displacement vectors TSP2"
 
 msgid "ch.swisstopo.zeitreihen"
-msgstr "Maps - Journay through time"
+msgstr "Maps - Journey through time"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorial regions"
@@ -2361,8 +2361,9 @@ msgstr "Resolution"
 msgid "tt_bildstreifen_Flugdatum"
 msgstr "Flight date"
 
+#. TODO
 msgid "tt_bildstreifen_Link "
-msgstr "Order"
+msgstr "tt_bildstreifen_Link "
 
 #. TODO
 msgid "tt_bildstreifen_Quickview "
