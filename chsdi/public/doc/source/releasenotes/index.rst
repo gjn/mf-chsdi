@@ -1,3 +1,19 @@
+Release 20131120 - Wednesday, November 20th 2013
+====================================================
+
+Geodata
+********
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swissimage <//s.geo.admin.ch/e7c613e30>`__ (ch.swisstopo.swissimage)                                                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `LV95 Displacement vectors TSP2 <//map.geo.admin.ch/?layers=ch.swisstopo.verschiebungsvektoren-tsp2>`__ (ch.swisstopo.verschiebungsvektoren-tsp2) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
 Release 20131113 - Wednesday, November 13th 2013
 ====================================================
 

@@ -2360,8 +2360,9 @@ msgstr "Auflösung"
 msgid "tt_bildstreifen_Flugdatum"
 msgstr "Flugdatum"
 
+#. TODO
 msgid "tt_bildstreifen_Link "
-msgstr "Commander"
+msgstr "tt_bildstreifen_Link "
 
 #. TODO
 msgid "tt_bildstreifen_Quickview "
