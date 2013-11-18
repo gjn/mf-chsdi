@@ -517,6 +517,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bfe.stauanlagen-bundesaufsicht':'Stauanlagen',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=de',
 	'ch.bfs':'BFS',
+	'ch.bfs.arealstatistik':'Arealstatistik 2004/09 NOAS04',
 	'ch.bfs.arealstatistik-1985':'Arealstatistik 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Arealstatistik 1992/1997',
 	'ch.bfs.arealstatistik-hintergrund':'Vereinfachte Bodennutzung',

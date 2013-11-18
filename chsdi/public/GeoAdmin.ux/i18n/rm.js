@@ -513,6 +513,7 @@ OpenLayers.Lang.rm= {
 	'ch.bfe.stauanlagen-bundesaufsicht':'Implant electric',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=de',
 	'ch.bfs':'BFS',
+	'ch.bfs.arealstatistik':'Statistica da la surfatscha 2004/2009',
 	'ch.bfs.arealstatistik-1985':'Statistica da la surfatscha 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Statistica da la surfatscha 1992/1997',
 	'ch.bfs.arealstatistik-hintergrund':'Utilisaziun dal terren simplifitgada',

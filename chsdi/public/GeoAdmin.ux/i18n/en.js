@@ -517,6 +517,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bfe.stauanlagen-bundesaufsicht':'Dam',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=en',
 	'ch.bfs':'FSO',
+	'ch.bfs.arealstatistik':'Area statistics 2004/2009',
 	'ch.bfs.arealstatistik-1985':'Area statistics 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Area statistics 1992/1997',
 	'ch.bfs.arealstatistik-hintergrund':'Simplified land occupancy',
