@@ -209,6 +209,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bfe.stauanlagen-bundesaufsicht':"",
     'ch.bfe.abgeltung-wasserkraftnutzung':"",
     'ch.bfe.statistik-wasserkraftanlagen':"",
+    'ch.bfs.arealstatistik':"",
     'ch.bfs.arealstatistik-1985':"",
     'ch.bfs.arealstatistik-1997':"",
     'ch.bfs.arealstatistik-waldmischungsgrad':"",

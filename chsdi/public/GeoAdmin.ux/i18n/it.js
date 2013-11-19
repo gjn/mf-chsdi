@@ -517,6 +517,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bfe.stauanlagen-bundesaufsicht':'Impianti di sbarramento',
 	'ch.bfe.url':'http://www.bfe.admin.ch/index.html?lang=it',
 	'ch.bfs':'UST',
+	'ch.bfs.arealstatistik':'Statistica di superficie 2004/2009',
 	'ch.bfs.arealstatistik-1985':'Statistica di superficie 1979/1985',
 	'ch.bfs.arealstatistik-1997':'Statistica di superficie 1992/1997',
 	'ch.bfs.arealstatistik-hintergrund':'Utilizzo semplificato del suolo',

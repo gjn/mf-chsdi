@@ -717,6 +717,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                 text: 'Bodenbedeckung',  // Id Inspire 22
                 children: [
                     {
+                        layerId: "ch.bfs.arealstatistik"
+                    },
+                    {
                         layerId: "ch.bfs.arealstatistik-1985"
                     },
                     {
