@@ -1135,7 +1135,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bfs.arealstatistik": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik"),
                 layertype: 'wmts',
-                timestamp: ['20131030'],
+                timestamp: ['20131121'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -1145,7 +1145,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bfs.arealstatistik-1985": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-1985"),
                 layertype: 'wmts',
-                timestamp: ['20131030','19790101'],
+                timestamp: ['20131121','19790101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
@@ -1155,7 +1155,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bfs.arealstatistik-1997": {
                 name: OpenLayers.i18n("ch.bfs.arealstatistik-1997"),
                 layertype: 'wmts',
-                timestamp: ['20131030','19920101'],
+                timestamp: ['20131121','19920101'],
                 type: "mixed",
                 format: "image/png",
                 datenherr: "ch.bfs",
