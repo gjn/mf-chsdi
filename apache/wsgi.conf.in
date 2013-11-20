@@ -142,6 +142,11 @@ SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*unine.ch"       GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*cscf.ch"        GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-c.ch"       GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-swisstopo.ch"                                 GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-implenia-management-AG.ch"                    GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-gymnasium-kirchenfeld.ch"                     GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-bodenackerschulhaus-muenchenbuchsee.ch"       GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-emchberger-bern.ch"                           GOODREF
 SetEnvIf Referer ".admin.ch"                             GOODREF
 SetEnvIf Referer "^http://localhost"                     GOODREF
 

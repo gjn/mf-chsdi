@@ -4,6 +4,12 @@ Release 20131120 - Wednesday, November 20th 2013
 Geodata
 ********
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Area statistics 2004/2009 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Area statistics 1992/1997 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-1997>`__ (ch.bfs.arealstatistik-1997)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Area statistics 1979/1985 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-1985>`__ (ch.bfs.arealstatistik-1985)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Swissimage <//s.geo.admin.ch/e7c613e30>`__ (ch.swisstopo.swissimage)                                                                             |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `LV95 Displacement vectors TSP2 <//map.geo.admin.ch/?layers=ch.swisstopo.verschiebungsvektoren-tsp2>`__ (ch.swisstopo.verschiebungsvektoren-tsp2) |
