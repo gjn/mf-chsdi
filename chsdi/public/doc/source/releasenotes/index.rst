@@ -1,3 +1,17 @@
+Release 20131204 - Wednesday, December 4th 2013
+====================================================
+
+Geodata
+********
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
+
 Release 20131120 - Wednesday, November 20th 2013
 ====================================================
 
