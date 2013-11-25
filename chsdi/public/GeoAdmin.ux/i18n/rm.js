@@ -627,6 +627,7 @@ OpenLayers.Lang.rm= {
 	'ch.swisstopo.gg25-gemeinde-flaeche.fill':'Cunfins communals GG25',
 	'ch.swisstopo.gg25-kanton-flaeche.fill':'Cunfins chantunals GG25',
 	'ch.swisstopo.gg25-land-flaeche.fill':'Cunfins naziunals GG25',
+	'ch.swisstopo.hangneigung-ueber_30':'Pendenza dapli che 30°',
 	'ch.swisstopo.hiks-dufour':'Charta Dufour',
 	'ch.swisstopo.hiks-siegfried':'Charta Siegfried',
 	'ch.swisstopo.images-swissimage':'Fotografia or da l\'aria',

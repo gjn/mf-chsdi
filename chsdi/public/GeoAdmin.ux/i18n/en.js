@@ -631,6 +631,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.gg25-gemeinde-flaeche.fill':'Municipal boundaries GG25',
 	'ch.swisstopo.gg25-kanton-flaeche.fill':'Cantonal boundaries GG25',
 	'ch.swisstopo.gg25-land-flaeche.fill':'National boundaries GG25',
+	'ch.swisstopo.hangneigung-ueber_30':'Slopes over 30°',
 	'ch.swisstopo.hiks-dufour':'Dufour Map First edition',
 	'ch.swisstopo.hiks-siegfried':'Siegfried Map First edition',
 	'ch.swisstopo.images-swissimage':'SWISSIMAGE',

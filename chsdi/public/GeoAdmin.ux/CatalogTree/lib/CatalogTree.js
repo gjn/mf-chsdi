@@ -709,6 +709,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geoidmodell-etrs89"
                     },
                     {
+                        layerId: "ch.swisstopo.hangneigung-ueber_30"
+                    },
+                    {
                         layerId: "ch.swisstopo.swissalti3d-reliefschattierung"
                     }
                 ]

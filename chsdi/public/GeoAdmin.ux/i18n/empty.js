@@ -334,6 +334,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas':"",
     'ch.swisstopo.geologie-rohstoffe-vererzungen':"",
     'ch.swisstopo.geologie-tektonische_karte':"",
+    'ch.swisstopo.hangneigung-ueber_30':"",
     'ch.are.agglomerationen_isolierte_staedte-2000':"",
     'ch.are.alpenkonvention':"",
     'ch.are.bauzonen':"",
