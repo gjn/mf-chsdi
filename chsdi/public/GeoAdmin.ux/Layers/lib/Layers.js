@@ -2376,6 +2376,15 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.swisstopo",
                 queryable: true
             },
+             "ch.swisstopo.hangneigung-ueber_30": {
+             name: OpenLayers.i18n("ch.swisstopo.hangneigung-ueber_30"),
+             layertype: 'wmts',
+             timestamp: ['20130101'],
+             type: "raster",
+             format: "image/png",
+             datenherr: "ch.swisstopo",
+             queryable: false
+             },
             /* only used in SwissMap online
              "ch.swisstopo-karto.wanderwege": {
              name: OpenLayers.i18n("ch.swisstopo-karto.wanderwege"),
