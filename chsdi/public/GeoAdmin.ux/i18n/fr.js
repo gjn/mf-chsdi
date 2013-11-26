@@ -631,6 +631,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.gg25-gemeinde-flaeche.fill':'Limites de communes GG25',
 	'ch.swisstopo.gg25-kanton-flaeche.fill':'Limites cantonales GG25',
 	'ch.swisstopo.gg25-land-flaeche.fill':'Frontières nationales GG25',
+	'ch.swisstopo.hangneigung-ueber_30':'Pentes de plus de 30°',
 	'ch.swisstopo.hiks-dufour':'Carte Dufour Première édition',
 	'ch.swisstopo.hiks-siegfried':'Carte Siegfried Première édition',
 	'ch.swisstopo.images-swissimage':'SWISSIMAGE',
