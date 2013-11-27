@@ -49,10 +49,10 @@
     <a href="${c.host}/legend/ch.kantone.cadastralwebmap-farbe_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.swisstopo.swisstlm3d-karte-farbe":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte-farbe_${c.lang}_big.png" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+    <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte-farbe_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.swisstopo.swisstlm3d-karte-grau":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
-    <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte-grau_${c.lang}_big.png" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
+    <a href="${c.host}/legend/ch.swisstopo.swisstlm3d-karte-grau_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
 % elif c.layer.bod_layer_id == "ch.swisstopo.pixelkarte-farbe-pk1000.noscale":
     <span style="font-weight:bold;">${_('Legend')}</span><br>
     <a href="${c.host}/legend/ch.swisstopo.pixelkarte-farbe-pk1000.noscale_${c.lang}_big.pdf" target="_blank"><img src="${c.host + c.layer.legend}"></img></a><br> 
