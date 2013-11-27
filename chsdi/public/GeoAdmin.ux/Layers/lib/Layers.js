@@ -2383,6 +2383,7 @@ GeoAdmin._Layers = OpenLayers.Class({
              type: "raster",
              format: "image/png",
              datenherr: "ch.swisstopo",
+             opacity: 0.75,
              queryable: false
              },
             /* only used in SwissMap online
