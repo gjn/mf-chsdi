@@ -40,52 +40,33 @@
 % else:
     <tr><td>${_('status')}</td><td>${c.feature.legalstatus_de or '-'}</td></tr>
 % endif
-<%
-   if c.feature.valid_from is not None:
-      validfrom = (c.feature.valid_from.split('##'))
-      todel =[]
-      def unique(validfrom):
-        seen = set()
-        for i in xrange(len(validfrom)-1, -1, -1):
-          it = validfrom[i]
-          if it in seen:
-            del validfrom[i]
-            
-          else:
-            seen.add(it)
 
-      date = len(c.feature.valid_from.split('##'))
-   else:
-      date = 0
-%>
-% for i in range(date):
-        <tr><td>${_('validity')}</td><td>${c.feature.valid_from.split('##')[i] or '-'}</td></tr>
-% endfor
+
 
 <%
    if c.feature.weblink is not None:
-      weblink_nb = len(c.feature.weblink.split('##'))
+      weblink = c.feature.weblink.split('##')
+      doctitle = c.feature.title.split('##')
+      nb=len(weblink)
+      doctitle_new = []
+      weblink_new = []
+      todel = []
+      i = 0
+      while i < nb:
+        if weblink[i] not in weblink_new:
+          weblink_new.append(weblink[i])
+          doctitle_new.append(doctitle[i])
+        endif
+        i = i+1
+      
+      arr_len = len(weblink_new)
+      
    else:  
-      date = 0
+      weblink_nb = 0
 %>
-% for i in range(date):
-        <tr><td>${_('weblink')}</td><td>${c.feature.weblink.split('##')[i] or '-'}</td></tr>
+% for i in range(arr_len):
+ <tr><td width="150">${_('tt_document')}</td>    <td><a href=${weblink_new[i]} target="_blank">${doctitle_new[i]}</a></td></tr>
 % endfor
-
-<%
-   if c.feature.doc_description is not None:
-      doc_nb = len(c.feature.doc_description.split('##'))
-   else:
-      date = 0
-%>
-% for i in range(date):
-        <tr><td>${_('doc_description')}</td><td>${c.feature.doc_description.split('##')[i] or '-'}</td></tr>
-% endfor
-</table>
-<table border="1" frame="box" rules="all" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
-<tr><td class="row title" valign="middle" width="30%" bgcolor="C0C0C0">${_('validity')}</td"><td class="row title" valign="middle" width="30%" bgcolor="C0C0C0">${_('web_link')}</td"></tr>
-<tr><td>${_('validity')}</td><td>${c.feature.valid_from.split('##')[i] or '-'}</td></tr>
- <tr><td>${_('weblink')}</td><td>${c.feature.weblink.split('##')[i] or '-'}</td></tr>
 </table>
 </%def>
 
