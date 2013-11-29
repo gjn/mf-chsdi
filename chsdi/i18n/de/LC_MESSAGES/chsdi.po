@@ -1014,10 +1014,10 @@ msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Stauanlagen"
 
 msgid "ch.bfs.arealstatistik-1985"
-msgstr "Arealstatistik 1979/1985"
+msgstr "Arealstatistik 1979/85 NOAS04"
 
 msgid "ch.bfs.arealstatistik-1997"
-msgstr "Arealstatistik 1992/1997"
+msgstr "Arealstatistik 1992/97 NOAS04"
 
 msgid "ch.bfs.arealstatistik-hintergrund"
 msgstr "Vereinfachte Bodennutzung"
@@ -2597,7 +2597,7 @@ msgid "tt_bildstreifen_line_id"
 msgstr "Fluglinie"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
-msgstr "Korrido Nummer"
+msgstr "Korridor Nummer"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_zustand"
 msgstr "Zustand"
