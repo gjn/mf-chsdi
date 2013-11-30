@@ -345,7 +345,7 @@ msgid "band_1_2"
 msgstr "Volume 1 | 2"
 
 msgid "bazlrechtstatus"
-msgstr "État legal"
+msgstr "Statut juridique"
 
 msgid "bearbeitungsjahr"
 msgstr "Année de mise à jour"
@@ -372,7 +372,7 @@ msgid "bestimmung"
 msgstr "Dispositions"
 
 msgid "betrgemeinde"
-msgstr "Communes touchés"
+msgstr "Communes concernées"
 
 msgid "betrieb"
 msgstr "Établissement"
@@ -1014,10 +1014,10 @@ msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Ouvrages d’accumulation"
 
 msgid "ch.bfs.arealstatistik-1985"
-msgstr "Statistique de la superficie 1979/1985"
+msgstr "Stat. superficie 1979/85 NOAS04"
 
 msgid "ch.bfs.arealstatistik-1997"
-msgstr "Statistique de la superficie 1992/1997"
+msgstr "Stat. superficie 1992/97 NOAS04"
 
 msgid "ch.bfs.arealstatistik-hintergrund"
 msgstr "Utilisation simplifiée du sol"
@@ -1419,7 +1419,7 @@ msgid "federal administration"
 msgstr "Administration fédérale admin.ch"
 
 msgid "fj09"
-msgstr "Vue arienne pour la statistique de la superficie 2004/09 prise en"
+msgstr "Vue aérienne pour la statistique de la superficie 2004/09 prise en"
 
 msgid "fj85"
 msgstr "Vue aérienne pour la statistique de la superficie 1979/85 prise en"
@@ -1572,7 +1572,7 @@ msgid "hydromessstationen_graph"
 msgstr "3 jours Niveau d'eau/Débit"
 
 msgid "id_arealstatistik_09"
-msgstr "Catgorie de base de la statistique de la superficie 2004/09"
+msgstr "Catégorie de base de la statistique de la superficie 2004/09"
 
 msgid "id_arealstatistik_85"
 msgstr "Catégorie de base de la statistique de la superficie 1979/85"

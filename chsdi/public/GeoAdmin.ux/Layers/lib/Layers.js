@@ -1866,7 +1866,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.wrz-wildruhezonen_portal": {
                 name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen_portal"),
                 layertype: 'wmts',
-                timestamp: ['20130111'],
+                timestamp: ['20131118','20130111'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
@@ -1877,7 +1877,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen": {
                 name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"),
                 layertype: 'wmts',
-                timestamp: ['20130111'],
+                timestamp: ['20131107','20130111'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
