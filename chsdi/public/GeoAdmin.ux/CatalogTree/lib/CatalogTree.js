@@ -865,6 +865,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.astra.ivs-nat"
                     },
                     {
+                        layerId: "ch.bazl.sicherheitszonenplan"
+                    },
+                    {
                         layerId: "ch.astra.ivs-nat-verlaeufe"
                     },
                     {
