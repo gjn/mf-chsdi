@@ -106,6 +106,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Queryable):
     id = Column('dam_stabil_id', Integer, primary_key=True)
     the_geom = Column(Geometry(21781))
 
+
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
 
 class kleinwasserkraftpotentiale(Base, Queryable):
@@ -183,6 +184,15 @@ class ProjFlughafenanlagen(Base, Queryable):
     the_geom = Column(Geometry(21781))
 
 register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
+
+class sicherheitszonen (Base, Queryable):
+    __tablename__ = 'sichereitszonen'
+    __table_args__ = ({'schema': 'bazl', 'autoload': True})
+    __template__ = 'tooltips/sicherheitszonen.mako'
+    id = Column('stabil_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(21781))
+
+register('ch.bazl.sicherheitszonenplan',sicherheitszonen)
 
 class Luftfahrthindernis(Base, Queryable):
     __tablename__ = 'luftfahrthindernis'
