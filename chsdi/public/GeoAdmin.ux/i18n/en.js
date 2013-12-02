@@ -505,6 +505,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':'SPAI in consultation',
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'SP aeronautical infrastructure',
 	'ch.bazl.segelflugkarte':'Glider Chart',
+	'ch.bazl.sicherheitszonenplan':'Safety zone plan',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=en',
 	'ch.bfe':'SFOE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abandonment of hydropower',
