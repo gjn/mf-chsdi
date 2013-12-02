@@ -311,6 +311,9 @@ msgstr "map.geo.admin.ch"
 msgid "applicant"
 msgstr "Requirent"
 
+msgid "approval_date"
+msgstr "Genehmigungsdatum"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Qualitads istoricas-architectonicas"
 
@@ -319,6 +322,9 @@ msgstr "Nummer Geologischer Atlas"
 
 msgid "ausgabejahr"
 msgstr "Ausgabejahr"
+
+msgid "autor"
+msgstr "Autur"
 
 msgid "bafu_NHVText"
 msgstr "NHV Status"
@@ -1480,6 +1486,9 @@ msgstr "Einheit"
 msgid "geometalink"
 msgstr "Nachführungsgeometer"
 
+msgid "geometry_type"
+msgstr "Sicherheitszonentyp"
+
 msgid "geompdf_liste"
 msgstr "Infurmaziuns detagliadas"
 
@@ -2293,6 +2302,9 @@ msgstr "Messstellentyp"
 msgid "modif_validfrom"
 msgstr "Data da conclus"
 
+msgid "municipality"
+msgstr "Betroffene Gemeinden"
+
 msgid "nabeltyp"
 msgstr "Lage"
 
@@ -2377,6 +2389,9 @@ msgstr "Offizielle Punktnummer"
 msgid "optionaler_name"
 msgstr "Optionaler Name"
 
+msgid "originator"
+msgstr "Name des Antragstellers"
+
 msgid "ort"
 msgstr "Ort"
 
@@ -2457,6 +2472,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/rm/home/current.enhRSS.html"
 
 msgid "rwknr"
 msgstr "Restwasserkarte Nr."
+
+msgid "safety_zone"
+msgstr "Bezeichnung"
 
 msgid "schiffbarkeit"
 msgstr "Schiffbarkeit des Gewässers"
@@ -2880,6 +2898,9 @@ msgstr "Standorttyp"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
 msgstr "Untersuchungsstand gemäss AltIV"
+
+msgid "tt_document"
+msgstr "Weitere Informationen "
 
 msgid "tt_emission_bis_abkz"
 msgstr "Bis (Kürzel)"
