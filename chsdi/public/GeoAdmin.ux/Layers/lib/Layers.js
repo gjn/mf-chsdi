@@ -704,6 +704,18 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 type: "point"
             },
+            "ch.bazl.sicherheitszonenplan": {
+                name: OpenLayers.i18n("ch.bazl.sicherheitszonenplan"),
+                layertype: 'wms',
+                layers: ['ch.bazl.sicherheitszonenplan'],
+                format: "image/png",
+                datenherr: "ch.bazl",
+                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
+                queryable: true,
+                opacity: 0.75,
+                type: "polygon"
+            },                                                                                                                                                    
+
             "ch.bav.sachplan-infrastruktur-schiene_anhorung": {
                 name: OpenLayers.i18n("ch.bav.sachplan-infrastruktur-schiene_anhorung"),
                 layertype: 'wms',
@@ -1529,6 +1541,16 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 queryable: false
+
+            },
+            "ch.swisstopo.geologie-gravimetrischer_atlas.metadata": {
+                name: OpenLayers.i18n("ch.swisstopo.geologie-gravimetrischer_atlas.metadata"),
+                layertype: 'wmts',
+                timestamp: ['20021231'],
+                format: "image/png",
+                datenherr: "ch.swisstopo",
+                opacity: 0.75,
+                queryable: true
             },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
                 name: OpenLayers.i18n("ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"),
