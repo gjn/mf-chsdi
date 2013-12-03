@@ -1397,6 +1397,9 @@ msgstr "Nombre d’habitants (fourchette, seulement pour Siedl)"
 msgid "einwohnerzahl_s"
 msgstr "Nombre d’habitants (seulement pour Siedl.)"
 
+msgid "energiebedarf_motoren"
+msgstr "Besoin énergetique des moteurs"
+
 msgid "ent_gew"
 msgstr "Cours d'eau"
 
@@ -2243,6 +2246,12 @@ msgstr "Lien vers la description détaillée des données"
 msgid "legalregulationlink"
 msgstr "Autres informations"
 
+msgid "leistung"
+msgstr "Puissance"
+
+msgid "leistungsaufnahme_pumpen"
+msgstr "Besoin énergetique des moteurs"
+
 msgid "length_km"
 msgstr "Longueur [km]"
 
@@ -2423,6 +2432,9 @@ msgstr "Impression"
 msgid "produkt"
 msgstr "Produit"
 
+msgid "produktionserwartung"
+msgstr "Production attendue"
+
 msgid "protokoll"
 msgstr "Protocole"
 
@@ -2527,6 +2539,9 @@ msgstr "Substance"
 
 msgid "substanzgrad"
 msgstr "Substance"
+
+msgid "technische_angaben"
+msgstr "Données techniques"
 
 msgid "teilezgfla"
 msgstr "Superficie du bassin versant partiel [km2]"
@@ -2787,9 +2802,6 @@ msgstr "Mise hors service"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Mise hors service"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
-msgstr "Statut opérationnel"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
 msgstr "Statut opérationnel"
@@ -3337,6 +3349,9 @@ msgstr "Beaucoup de substance"
 msgid "waldanteil"
 msgstr "Taux de boisement [%]"
 
+msgid "wasserkraftanlagen"
+msgstr "Installations hydroélectriques"
+
 msgid "wasserstand"
 msgstr "Niveau d'eau m s. m"
 
@@ -3405,6 +3420,9 @@ msgstr "Poste de comptage"
 
 msgid "zeitraum"
 msgstr "Période de protection"
+
+msgid "zentrale"
+msgstr "Centrale hydroélectrique"
 
 msgid "ziegeleien"
 msgstr "Nom de la Briqueterie"
