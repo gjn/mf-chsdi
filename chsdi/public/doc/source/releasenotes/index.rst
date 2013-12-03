@@ -3,9 +3,11 @@ Release 20131204 - Wednesday, December 4th 2013
 
 Geodata
 ********
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Planning zones: Airports <//map.geo.admin.ch/?layers=ch.bazl.projektierungszonen-flughafenanlagen>`__ (ch.bazl.projektierungszonen-flughafenanlagen)    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
