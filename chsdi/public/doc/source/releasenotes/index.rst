@@ -8,6 +8,10 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Planning zones: Airports <//map.geo.admin.ch/?layers=ch.bazl.projektierungszonen-flughafenanlagen>`__ (ch.bazl.projektierungszonen-flughafenanlagen)    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `IHR national <//map.geo.admin.ch/?layers=ch.astra.ivs-nat>`__ (ch.astra.ivs-nat)                                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Inventory historical routes terrain map <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
