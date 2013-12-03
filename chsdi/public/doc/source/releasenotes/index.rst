@@ -12,6 +12,12 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Inventory historical routes terrain map <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Topographical landscape model <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Topographical landscape model <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Slopes over 30° <//map.geo.admin.ch/?layers=ch.swisstopo.hangneigung-ueber_30>`__ (ch.swisstopo.hangneigung-ueber_30)                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
