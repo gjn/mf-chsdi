@@ -1398,6 +1398,9 @@ msgstr "Einwohnerzahl (Bandbreite, nur für Siedl.)"
 msgid "einwohnerzahl_s"
 msgstr "Einwohnerzahl (nur für Siedl.)"
 
+msgid "energiebedarf_motoren"
+msgstr "Energy need of motors"
+
 msgid "ent_gew"
 msgstr "River"
 
@@ -2244,6 +2247,12 @@ msgstr "Link to description"
 msgid "legalregulationlink"
 msgstr "Further information"
 
+msgid "leistung"
+msgstr "Power"
+
+msgid "leistungsaufnahme_pumpen"
+msgstr "Energy need of pumps"
+
 msgid "length_km"
 msgstr "Länge [km]"
 
@@ -2424,6 +2433,9 @@ msgstr "Print"
 msgid "produkt"
 msgstr "Product"
 
+msgid "produktionserwartung"
+msgstr "Expected production"
+
 msgid "protokoll"
 msgstr "Protocol"
 
@@ -2528,6 +2540,9 @@ msgstr "Historischer Verlauf mit Substanz"
 
 msgid "substanzgrad"
 msgstr "Substanzgrad"
+
+msgid "technische_angaben"
+msgstr "Technical data"
 
 msgid "teilezgfla"
 msgstr "Sub-catchment area size [km2]"
@@ -2788,9 +2803,6 @@ msgstr "End of operation"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "End of operation"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
-msgstr "Status"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
 msgstr "Status"
@@ -3337,6 +3349,9 @@ msgstr "Historischer Verlauf mit viel Substanz"
 msgid "waldanteil"
 msgstr "Waldanteil [%]"
 
+msgid "wasserkraftanlagen"
+msgstr "Wasserkraftanlagen"
+
 msgid "wasserstand"
 msgstr "Water level m o. s."
 
@@ -3405,6 +3420,9 @@ msgstr "Zählstelle"
 
 msgid "zeitraum"
 msgstr "Schutzzeit"
+
+msgid "zentrale"
+msgstr "Powerplant"
 
 msgid "ziegeleien"
 msgstr "Name of brick manufacture"
