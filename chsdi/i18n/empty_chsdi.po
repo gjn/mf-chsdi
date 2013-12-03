@@ -9,6 +9,24 @@ msgstr ""
 msgid "abfluss"
 msgstr ""
 
+msgid "approval_date"
+msgstr ""
+
+msgid "geometry_type"
+msgstr ""
+
+msgid "municipality"
+msgstr ""
+
+msgid "originator"
+msgstr ""
+
+msgid "safety_zone"
+msgstr ""
+
+msgid "tt_document"
+msgstr ""
+
 msgid "wasserstand"
 msgstr ""
 
@@ -346,6 +364,9 @@ msgid "tt_ch.bazl.geometriedaten"
 msgstr ""
 
 msgid "tt_ch.bazl.abortionaccomplished"
+msgstr ""
+
+msgid "autor"
 msgstr ""
 
 msgid "tt_ch.bazl.startofconstruction"

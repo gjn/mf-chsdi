@@ -505,6 +505,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':'PSIA Consultazione',
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'PS infrastruttura aeronautica',
 	'ch.bazl.segelflugkarte':'Carta volo a vela',
+	'ch.bazl.sicherheitszonenplan':'Piano delle zone di sicurezza',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=it',
 	'ch.bfe':'UFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Abbandono dell\'idroelettricitá',

@@ -311,6 +311,9 @@ msgstr "map.geo.admin.ch"
 msgid "applicant"
 msgstr "Requérant"
 
+msgid "approval_date"
+msgstr "Date de l'autorisation"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Qualités hist.-arch."
 
@@ -319,6 +322,9 @@ msgstr "Numéro du atlas géologique"
 
 msgid "ausgabejahr"
 msgstr "Année de publication"
+
+msgid "autor"
+msgstr "Auteur"
 
 msgid "bafu_NHVText"
 msgstr "Statut OPN"
@@ -1478,6 +1484,9 @@ msgstr "Unité"
 msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
+msgid "geometry_type"
+msgstr "Type de zone de sécurité"
+
 msgid "geompdf_liste"
 msgstr "Informations détaillées"
 
@@ -2291,6 +2300,9 @@ msgstr "Type"
 msgid "modif_validfrom"
 msgstr "Date de l'arrêt"
 
+msgid "municipality"
+msgstr "Communes concernées"
+
 msgid "nabeltyp"
 msgstr "Emplacement"
 
@@ -2375,6 +2387,9 @@ msgstr "Numéro officiel du point"
 msgid "optionaler_name"
 msgstr "Nom optionel"
 
+msgid "originator"
+msgstr "Nom du requérant"
+
 msgid "ort"
 msgstr "Localité"
 
@@ -2455,6 +2470,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/fr/home/current.enhRSS.html"
 
 msgid "rwknr"
 msgstr "Débit résiduel N°"
+
+msgid "safety_zone"
+msgstr "Désignation"
 
 msgid "schiffbarkeit"
 msgstr "Naviguabilité du cours d’eau"
@@ -2879,6 +2897,9 @@ msgstr "Type de site"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
 msgstr "Phase d'investigation selon OSites"
+
+msgid "tt_document"
+msgstr "Autres informations"
 
 msgid "tt_emission_bis_abkz"
 msgstr "à (abrév.)"

@@ -501,6 +501,7 @@ OpenLayers.Lang.rm= {
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':'PSIA in audiziun',
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'PS infrastructura aviatica',
 	'ch.bazl.segelflugkarte':'Charta da sgol senza motor',
+	'ch.bazl.sicherheitszonenplan':'ch.bazl.sicherheitszonenplan', //TODO
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=rm',
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Renunzia forza idraulica',

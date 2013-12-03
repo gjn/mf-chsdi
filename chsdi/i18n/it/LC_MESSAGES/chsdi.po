@@ -311,6 +311,9 @@ msgstr "map.geo.admin.ch"
 msgid "applicant"
 msgstr "Richiedente"
 
+msgid "approval_date"
+msgstr "Data di approvazione"
+
 msgid "arch__hist__qualitaeten"
 msgstr "Qualità storico-arch."
 
@@ -319,6 +322,9 @@ msgstr "Numéro du atlas géologique"
 
 msgid "ausgabejahr"
 msgstr "Année de publication"
+
+msgid "autor"
+msgstr "Autore"
 
 msgid "bafu_NHVText"
 msgstr "Stato OPN"
@@ -1478,6 +1484,9 @@ msgstr "Unità"
 msgid "geometalink"
 msgstr "Géomètre-conservateur, registre foncier, autres métadonnées"
 
+msgid "geometry_type"
+msgstr "Tipo di zona di sicurezza"
+
 msgid "geompdf_liste"
 msgstr "Informazioni di dettaglio"
 
@@ -2291,6 +2300,9 @@ msgstr "Type"
 msgid "modif_validfrom"
 msgstr "Data della decisione"
 
+msgid "municipality"
+msgstr "Comuni toccati"
+
 msgid "nabeltyp"
 msgstr "Emplacement"
 
@@ -2375,6 +2387,9 @@ msgstr "Numero ufficiale di punto"
 msgid "optionaler_name"
 msgstr "Nom optionel"
 
+msgid "originator"
+msgstr "Nome del richiedente"
+
 msgid "ort"
 msgstr "Località"
 
@@ -2455,6 +2470,9 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/current.enhRSS.html"
 
 msgid "rwknr"
 msgstr "Débit résiduel N°"
+
+msgid "safety_zone"
+msgstr "Denominazione"
 
 msgid "schiffbarkeit"
 msgstr "Naviguabilité du cours d’eau"
@@ -2879,6 +2897,9 @@ msgstr "Tipo di sito"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand"
 msgstr "Stato di avanzamento dei lavori OSiti"
+
+msgid "tt_document"
+msgstr "Altre informazioni"
 
 msgid "tt_emission_bis_abkz"
 msgstr "à (abrév.)"

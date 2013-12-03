@@ -865,6 +865,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.astra.ivs-nat"
                     },
                     {
+                        layerId: "ch.bazl.sicherheitszonenplan"
+                    },
+                    {
                         layerId: "ch.astra.ivs-nat-verlaeufe"
                     },
                     {
@@ -1159,6 +1162,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
+                    },
+                    {
+                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-tektonische_karte"

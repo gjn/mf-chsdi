@@ -816,5 +816,6 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
     'ch.bag.url':"",
 	'Stop compare':"",
 	'Compare':"",
-	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':""
+	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':"",
+    'ch.bazl.sicherheitszonenplan':""
 });

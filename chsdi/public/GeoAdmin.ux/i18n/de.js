@@ -505,6 +505,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung':'SIL Anhörung',
 	'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft':'SP Infrastruktur Luftfahrt',
 	'ch.bazl.segelflugkarte':'Segelflugkarte',
+	'ch.bazl.sicherheitszonenplan':'Sicherheitszonenplan',
 	'ch.bazl.url':'http://www.bazl.admin.ch/index.html?lang=de',
 	'ch.bfe':'BFE',
 	'ch.bfe.abgeltung-wasserkraftnutzung':'Verzicht Wasserkraftnutzung',
