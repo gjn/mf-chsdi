@@ -148,6 +148,7 @@ SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-gymnasium-kirchenfeld.ch"          
 SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-bodenackerschulhaus-muenchenbuchsee.ch"       GOODREF
 SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-emchberger-bern.ch"                           GOODREF
 SetEnvIf Referer ".admin.ch"                             GOODREF
+SetEnvIf Referer "^http(s)?://([^./]*\.)*bgdi.ch"        GOODREF
 SetEnvIf Referer "^http://localhost"                     GOODREF
 
 SetEnvIf X-Forwarded-For "10.226.126.116"                GOODIP
