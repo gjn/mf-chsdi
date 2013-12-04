@@ -1551,6 +1551,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 format: "image/png",
                 datenherr: "ch.swisstopo",
                 opacity: 0.75,
+                searchable: true,
                 queryable: true
             },
             "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen": {
