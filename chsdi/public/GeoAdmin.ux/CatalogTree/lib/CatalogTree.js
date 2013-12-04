@@ -1116,6 +1116,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
                     },
                     {
+                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
+                    },
+                    {
                         layerId: "ch.swisstopo.geologie-geolkarten500.metadata"
                     },
                     {
