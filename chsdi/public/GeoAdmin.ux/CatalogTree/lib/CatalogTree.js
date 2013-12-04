@@ -1164,9 +1164,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
                     },
                     {
-                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-                    },
-                    {
                         layerId: "ch.swisstopo.geologie-tektonische_karte"
                     }
                 ]
