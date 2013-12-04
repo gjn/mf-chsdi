@@ -9,6 +9,15 @@ msgstr ""
 msgid "abfluss"
 msgstr ""
 
+msgid "zentrale"
+msgstr ""
+
+msgid "wasserkraftanlagen"
+msgstr ""
+
+msgid "energiebedarf_motoren"
+msgstr ""
+
 msgid "approval_date"
 msgstr ""
 
@@ -21,7 +30,13 @@ msgstr ""
 msgid "originator"
 msgstr ""
 
+msgid "produktionserwartung"
+msgstr ""
+
 msgid "safety_zone"
+msgstr ""
+
+msgid "technische_angaben"
 msgstr ""
 
 msgid "tt_document"
@@ -1090,6 +1105,12 @@ msgid "feature"
 msgstr ""
 
 msgid "tt_ch.bakom.leistung"
+msgstr ""
+
+msgid "leistung"
+msgstr ""
+
+msgid "leistungsaufnahme_pumpen"
 msgstr ""
 
 msgid "tt_ch.bakom.versorgungsgebiet_prog"
@@ -2853,9 +2874,6 @@ msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr ""
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
-msgstr ""
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
 msgstr ""
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"

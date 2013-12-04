@@ -3,9 +3,23 @@ Release 20131204 - Wednesday, December 4th 2013
 
 Geodata
 ********
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Planning zones: Airports <//map.geo.admin.ch/?layers=ch.bazl.projektierungszonen-flughafenanlagen>`__ (ch.bazl.projektierungszonen-flughafenanlagen)    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `IHR national <//map.geo.admin.ch/?layers=ch.astra.ivs-nat>`__ (ch.astra.ivs-nat)                                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Inventory historical routes terrain map <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Topographical landscape model <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Topographical landscape model <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Slopes over 30° <//map.geo.admin.ch/?layers=ch.swisstopo.hangneigung-ueber_30>`__ (ch.swisstopo.hangneigung-ueber_30)                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
 
