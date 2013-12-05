@@ -42,7 +42,7 @@ data_path = /var/local/cartoweb/
 buildout_path = ${buildout:directory}
 
 # Allowed referers for address search service
-address_search_referers = localhost,admin.ch,awk.ch,cadastre.ch,rspp.ch,rollstuhlparkplatz.ch,placehandicape.ch,parcheggiodisabili.ch,zh.ch,gl.ch
+address_search_referers = localhost,bgdi.ch,admin.ch,awk.ch,cadastre.ch,rspp.ch,rollstuhlparkplatz.ch,placehandicape.ch,parcheggiodisabili.ch,zh.ch,gl.ch
 
 # Staging for geodata
 geodata_staging = ${geodata_staging} 

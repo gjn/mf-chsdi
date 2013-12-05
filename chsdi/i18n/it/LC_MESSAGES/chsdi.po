@@ -321,7 +321,7 @@ msgid "atlassheetnumber"
 msgstr "Numéro du atlas géologique"
 
 msgid "ausgabejahr"
-msgstr "Année de publication"
+msgstr "Anno di pubblicazione"
 
 msgid "autor"
 msgstr "Autore"

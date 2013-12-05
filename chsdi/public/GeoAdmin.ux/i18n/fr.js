@@ -621,6 +621,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.fr, {
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Briqueteries 1995',
 	'ch.swisstopo.geologie-geotope':'Géotopes suisses',
 	'ch.swisstopo.geologie-gravimetrischer_atlas':'Atlas gravimétrique',
+	'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':'Découpage atlas gravimétrique',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Réservoirs aquifères',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnérabilité des aquifères',
 	'ch.swisstopo.geologie-quartaermaechtigkeit':'Epaisseur Quaternaire',

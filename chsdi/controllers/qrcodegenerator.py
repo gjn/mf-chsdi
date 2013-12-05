@@ -20,7 +20,7 @@ class QrcodegeneratorController(BaseController):
         if url is None:
            abort(400, 'A url parameter is required')
         # Check that admin.ch is part of the longurl
-        if not 'admin.ch' in url:
+        if not 'admin.ch' in url or not 'bgdi.ch' in url:
            response.status = '406'
            return 'Can be used only for admin.ch URls'
 

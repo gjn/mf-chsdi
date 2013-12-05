@@ -1116,6 +1116,9 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
                     },
                     {
+                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
+                    },
+                    {
                         layerId: "ch.swisstopo.geologie-geolkarten500.metadata"
                     },
                     {
@@ -1132,9 +1135,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geotope"
-                    },
-                    {
-                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
@@ -1162,9 +1162,6 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                     },
                     {
                         layerId: "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-                    },
-                    {
-                        layerId: "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
                     },
                     {
                         layerId: "ch.swisstopo.geologie-tektonische_karte"
