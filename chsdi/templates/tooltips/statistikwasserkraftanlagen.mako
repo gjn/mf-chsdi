@@ -55,14 +55,19 @@
      <tr><td valign="top">${_('leistungsaufnahme_pumpen')}</td><td>${c.feature.leistungsaufnahme_pumpen or '-'}&nbsp;MW</td></tr>
      <tr><td valign="top">${_('energiebedarf_motoren')}</td><td>${c.feature.energiebedarf_motore or '-'}&nbsp;GWh</td></tr>
      <tr><td width="100%" valign="top" colspan="2">&nbsp;</td></tr>
+<%
+import urllib2
+has_picture = True
+try:
+    xml_file == urllib2.urlopen("http://dav0.bgdi.admin.ch/bfe_pub/images_wasserkraftanlagen/%d.jpg" % c.feature.id )
+except:
+    has_picture = False
 
- 
-% if c.feature.has_picture == 200:
-     <table border="0" cellspacing="0" cellpadding="1" width="100%" style="font-size: 100%;" padding="1 1 1 1">
-         <tr><td valign="top">
-         <img src="http://dav0.bgdi.admin.ch/bfe_pub/images_wasserkraftanlagen/${c.feature.id}.jpg"/
-         </td><td>&nbsp;</td></tr>
-     </table>
+%>
+% if has_picture:
+         <tr>
+         <td colspan="2"><img src="http://dav0.bgdi.admin.ch/bfe_pub/images_wasserkraftanlagen/${c.feature.id}.jpg"><td/>
+         </tr>
 % endif
+</table>         
  </%def>
-                                             
