@@ -27,7 +27,7 @@
     % elif c.feature.ak == 'SO':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.sogis1.so.ch/sogis/internet/pmapper/somap.php?karte=ortsplan&extent=${','.join(map(str,c.extent.bounds))}" target="_blank">SO</a></td></tr>
     % elif c.feature.ak == 'TI':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.sitinfo.ti.ch/WebsiteProd/htmlviewer/mu93pubblicoe?Box=${':'.join(map(str,c.extent.bounds))}" target="_blank">TI</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.sitmap.ti.ch/mue" target="_blank">TI</a></td></tr>
     % elif c.feature.ak == 'VD':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.geoplanet.vd.ch/index.php?reset_session&linkit=1&switch_id=switch_cadastre&layer_select=complement_vd2,fond_continu_gris,canton_select,gc_mensuration_select,cad_parv_select,cad_parv_numero_select,ddp_select,ddp_npcs_select,cad_parv_plim_select,cad_bat_hs_cadastre_select,cad_bat_ss_select,npcs_bat_hs_select,npcs_bat_ss_select,couverture_sol,cad_cs_dur,cad_cs_vert,cad_cs_bois,cad_cs_eau,cad_cs_div&recenter_bbox=${','.join(map(str,c.extent.bounds))}&mapSize=4" target="_blank">VD</a></td></tr>
     % elif c.feature.ak == 'TG':
