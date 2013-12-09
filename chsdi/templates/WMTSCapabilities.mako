@@ -2,7 +2,7 @@
 <Capabilities xmlns="http://www.opengis.net/wmts/1.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.opengis.net/wmts/1.0 http://schemas.opengis.net/wmts/1.0/wmtsGetCapabilities_response.xsd" version="1.0.0">
 <%!
     def validate_tilematrixset(id):
-        if int(id) in range(18, 29):
+        if int(id) in (18,20,21,26,27,28):
             return id
         return '26'
 %>
@@ -83,13 +83,22 @@
 		</Layer>
   % endfor
   ## End main loop
-    <TileMatrixSet>
+  <TileMatrixSet>
+
 			<ows:Identifier>21781_18</ows:Identifier>
 			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-
             <%include file="TileMatrixSet.mako"/>
 
 	</TileMatrixSet>
+  <TileMatrixSet>
+
+      <ows:Identifier>21781_20</ows:Identifier>
+      <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
+            <%include file="TileMatrixSet.mako"/>
+            <%include file="TileMatrixSet_19.mako"/>
+            <%include file="TileMatrixSet_20.mako"/>
+
+  </TileMatrixSet>
 	<TileMatrixSet>
 			<ows:Identifier>21781_21</ows:Identifier>
 			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
@@ -100,7 +109,7 @@
             <%include file="TileMatrixSet_21.mako"/>
 
 	</TileMatrixSet>
-    <TileMatrixSet>
+  <TileMatrixSet>
 			<ows:Identifier>21781_26</ows:Identifier>
 			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
 
@@ -131,7 +140,7 @@
             <%include file="TileMatrixSet_27.mako"/>
 
 	</TileMatrixSet>
-    <TileMatrixSet>
+  <TileMatrixSet>
 			<ows:Identifier>21781_28</ows:Identifier>
 			<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
 
