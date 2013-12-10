@@ -33,7 +33,7 @@
     % elif c.feature.ak == 'TG':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://geo.tg.ch/mapbender/frames/login.php?gui_id=Amtliche%20Vermessung&mb_myBBOX=${','.join(map(str,c.extent.bounds))}" target="_blank">TG</a></td></tr>
     % elif c.feature.ak == 'NE':
-        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/mapfish/cadastre?map_x=${c.bbox[0]}&map_y=${c.bbox[1]}&map_zoom=12" target="_blank">NE</a></td></tr>
+        <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/theme/cadastre?map_x=${c.bbox[0]}&map_y=${c.bbox[1]}&map_zoom=12" target="_blank">NE</a></td></tr>
     % elif c.feature.ak == 'LU':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://www.geo.lu.ch/map/grundbuchplan/" target="_blank">LU</a></td></tr>
     % elif c.feature.ak == 'OW':
