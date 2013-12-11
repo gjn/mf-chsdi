@@ -1798,7 +1798,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.bundesinventare-jagdbanngebiete": {
                 name: OpenLayers.i18n("ch.bafu.bundesinventare-jagdbanngebiete"),
                 layertype: 'wmts',
-                timestamp: ['20100801'],
+                timestamp: ['20131202'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.bafu",
