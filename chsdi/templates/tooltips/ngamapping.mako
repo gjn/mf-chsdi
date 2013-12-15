@@ -7,8 +7,8 @@
     <tr>
         <%        
             i=c.feature.nbofprovider
-            aliasarr=[unicode(a) for a in c.feature.alias.split(';')]
-            urlarr=[unicode(b) for b in c.feature.fdaurl.split(';')]
+            aliasarr=sorted([unicode(a) for a in c.feature.alias.split(';')])
+            urlarr=sorted([unicode(b) for b in c.feature.fdaurl.split(';')])
         %>
         % for x in xrange(0,i):
                 <td><a href="${urlarr[x] or '-'}" target="_blank">${aliasarr[x] or '-'}</a></td></tr>
