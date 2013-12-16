@@ -623,6 +623,16 @@ class Geologischer_Aeromagnetik_Jura(Base, Queryable):
 
 register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura',Geologischer_Aeromagnetik_Jura)
 
+class Gravimetrischer_atlas_metadata(Base, Queryable):
+        # view in a schema
+        __tablename__ = 'gravimetrie_atlas_metadata'
+        __table_args__ = ({'schema': 'geol', 'autoload': True})
+        __template__ = 'tooltips/gravimetrischer_atlas_metadata.mako'
+        id = Column('nr', Integer, primary_key=True)
+        the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata',Gravimetrischer_atlas_metadata)
+
 class GeologieIsostatischeAnomalien(Base, Queryable):
         # view in a schema
         __tablename__ = 'schwerekarte_isostatische_anomalien'
