@@ -42,8 +42,13 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Safety zone plan <//http://map.geo.admin.ch/?layers=ch.bazl.sicherheitszonenplan>`__ (ch.bazl.sicherheitszonenplan)                                                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Division of the Gravimetric Atlas of Switzerland 1:100000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata >`__ (ch.swisstopo.geologie-gravimetrischer_atlas.metadata)|
+| New    | `Division of the Gravimetric Atlas of Switzerland 1:100000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__  (ch.swisstopo.geologie-gravimetrischer_atlas.metadata)|
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Listing all publicly available layers of the Geoadmin API :
+
+- `List only <//s.geo.admin.ch/5d5d40a>`__
+- `With Preview <//s.geo.admin.ch/ebae1145>`__
 
 Release 20131204 - Wednesday, December 4th 2013
 ====================================================
