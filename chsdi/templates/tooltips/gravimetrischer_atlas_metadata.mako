@@ -9,9 +9,9 @@
     <tr><td width="150">${_('ausgabejahr')}</td><td>${c.feature.jahr or '-'}</td></tr>
     <tr><td width="150">${_('autor')}</td><td>${c.feature.autor or '-'}</td></tr>
 % if c.lang=='fr' or c.lang=='it':
-    <tr><td width="150">${_('Format')}</td><td>${c.feature.formate_fr}</td></tr>
+    <tr><td width="150">${_('format_fr')}</td><td>${c.feature.formate_fr}</td></tr>
 % else:
-    <tr><td width="150">${_('Format')}</td><td>${c.feature.formate_de}</td></tr>
+    <tr><td width="150">${_('format_de')}</td><td>${c.feature.formate_de}</td></tr>
 % endif
     </%def>
 
