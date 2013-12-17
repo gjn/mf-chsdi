@@ -1449,6 +1449,9 @@ msgstr "Area [m2]"
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
+msgid "format_de"
+msgstr "Available formats"
+
 msgid "fp_E95_N95"
 msgstr "Coordinates MN95 (E / N)"
 
@@ -3431,7 +3434,7 @@ msgid "zielhafen"
 msgstr "Zielhafen"
 
 msgid "zone"
-msgstr "Zone"
+msgstr "zone"
 
 msgid "zugang"
 msgstr "Access"
