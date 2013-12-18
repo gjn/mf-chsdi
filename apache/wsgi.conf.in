@@ -120,50 +120,12 @@ WSGIScriptAlias /${vars:instanceid}/wsgi ${buildout:directory/buildout/parts/mod
     Header unset Last-Modified
 </Location>
 
-# Some services are not "free": TODO THIS IS A PROVISORY SOLUTION
-SetEnvIf Referer "^http://mf-chmobil.bgdi.admin.ch"      GOODREF
-SetEnvIf Referer "^http://mf-chmobil0i.bgdi.admin.ch"    GOODREF
-SetEnvIf Referer "^http://mf-chmobil0t.bgdi.admin.ch"    GOODREF
-SetEnvIf Referer "^http://mf-chmobil0t.lt.admin.ch"      GOODREF
-SetEnvIf Referer "^http://mf-chsdi0i.bgdi.admin.ch"      GOODREF
-SetEnvIf Referer "^http://mf-chsdi0t.bgdi.admin.ch"      GOODREF
-SetEnvIf Referer "^http://mf-chsdi0t.lt.admin.ch"        GOODREF
-SetEnvIf Referer "^http://mf-geoadmin2.bgdi.admin.ch"    GOODREF
-SetEnvIf Referer "^http://mf-geoadmin20i.bgdi.admin.ch"  GOODREF
-SetEnvIf Referer "^http://mf-geoadmin20t.bgdi.admin.ch"  GOODREF
-SetEnvIf Referer "^http://mf-geoadmin20t.lt.admin.ch"    GOODREF
-SetEnvIf Referer "^http://map.schweizmobil.ch"           GOODREF
-SetEnvIf Referer "^http://map.wanderland.ch"             GOODREF
-SetEnvIf Referer "^http://map.veloland.ch"               GOODREF
-SetEnvIf Referer "^http://map.mountainbikeland.ch"       GOODREF
-SetEnvIf Referer "^http://map.kanuland.ch"               GOODREF
-SetEnvIf Referer "^http://map.skatingland.ch"            GOODREF
-SetEnvIf Referer "^http://dev.geoext.org"                GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*unine.ch"       GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*cscf.ch"        GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-c.ch"       GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-swisstopo.ch"                                 GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-implenia-management-AG.ch"                    GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-gymnasium-kirchenfeld.ch"                     GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-bodenackerschulhaus-muenchenbuchsee.ch"       GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*smo-emchberger-bern.ch"                           GOODREF
-SetEnvIf Referer ".admin.ch"                             GOODREF
-SetEnvIf Referer "^http(s)?://([^./]*\.)*bgdi.ch"        GOODREF
-SetEnvIf Referer "^http://localhost"                     GOODREF
 
-SetEnvIf X-Forwarded-For "10.226.126.116"                GOODIP
-SetEnvIf X-Forwarded-For "10.227.67.80"                  GOODIP
-SetEnvIf X-Forwarded-For "46.51.190.137"                 GOODIP
-# Request from 30.10.2013 - postauto.ch
-SetEnvIf X-Forwarded-For "82.197.166.34"                 GOODIP
-
+# Access to services is done at varnish level 
 <LocationMatch "^/${vars:instanceid}/wsgi/(profile.csv|height)">
 
    Order Deny,Allow
-   Deny from all
-
-   Allow from env=GOODIP
-   Allow from env=GOODREF
+   Allow from all
 
 </LocationMatch>
 
