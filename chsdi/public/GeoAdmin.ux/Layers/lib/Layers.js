@@ -710,7 +710,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 layers: ['ch.bazl.sicherheitszonenplan'],
                 format: "image/png",
                 datenherr: "ch.bazl",
-                url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
+                //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
                 queryable: true,
                 searchable: true,
                 opacity: 0.75,
