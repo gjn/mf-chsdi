@@ -5,26 +5,21 @@
 <%def name="table_body()">
 <% c.stable_id = True %>
     <tr><td width="150">${_('safety_zone')}</td><td>${c.feature.zone_name or '-'}</td></tr>
-    <tr><td width="150">${_('originator')}</td><td>${c.feature.originator or '-'}</td></tr>
-    <tr><td width="150">${_('canton')}</td><td>${c.feature.canton or '-'}</td></tr>
-    <tr><td width="150">${_('municipality')}</td><td>${c.feature.municipality or '-'}</td></tr>
 % if c.lang=='fr':
     <tr><td width="150">${_('geometry_type')}</td><td>${c.feature.zonetype_fr or '-'}</td></tr>
 % elif c.lang=='it':
     <tr><td width="150">${_('geometry_type')}</td><td>${c.feature.zonetype_it or '-'}</td></tr>
 % else:
     <tr><td width="150">${_('geometry_type')}</td><td>${c.feature.zonetype_de or '-'}</td></tr>
-% endif 
+% endif
+    <tr><td width="150">${_('originator')}</td><td>${c.feature.originator or '-'}</td></tr> 
+    <tr><td width="150">${_('kanton')}</td><td>${c.feature.canton or '-'}</td></tr>
     <tr><td width="170"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}&baseUrl=http://map.geo.admin.ch?topic=kgs" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 </%def>
 
 <%def name="body()">
     <table>
-<% c.stable_id = True %>
     <tr><td width="150">${_('safety_zone')}</td><td>${c.feature.zone_name or '-'}</td></tr>
-    <tr><td width="150">${_('originator')}</td><td>${c.feature.originator or '-'}</td></tr>
-    <tr><td width="150">${_('canton')}</td><td>${c.feature.canton or '-'}</td></tr>
-    <tr><td width="150">${_('municipality')}</td><td>${c.feature.municipality or '-'}</td></tr>
 % if c.lang=='fr':
     <tr><td width="150">${_('geometry_type')}</td><td>${c.feature.zonetype_fr or '-'}</td></tr>
 % elif c.lang=='it':
@@ -32,17 +27,27 @@
 % else:
     <tr><td width="150">${_('geometry_type')}</td><td>${c.feature.zonetype_de or '-'}</td></tr>
 % endif
-    <tr><td>${_('approval_date')}</td><td>${c.feature.approval_date or '-'}</td></tr>
+    <tr><td width="150">${_('originator')}</td><td>${c.feature.originator or '-'}</td></tr>
+    <tr><td width="150">${_('kanton')}</td><td>${c.feature.canton or '-'}</td></tr>
+<%
+   if c.feature.municipality is not None:
+      nb_municipality = ", ".join(c.feature.municipality.split(','))
+      i = 0
+   else:
+      municipality = 0
+   endif
+%>    
+    <tr><td width="150">${_('municipality')}</td><td>${nb_municipality or '-'}</td></tr>
 % if c.lang=='fr':
-    <tr><td>${_('status')}</td><td>${c.feature.legalstatus_fr or '-'}</td></tr>
+    <tr><td>${_('bazlrechtstatus')}</td><td>${c.feature.legalstatus_fr or '-'}</td></tr>
 % elif c.lang=='it':
-    <tr><td>${_('status')}</td><td>${c.feature.legalstatus_it or '-'}</td></tr>
+    <tr><td>${_('bazlrechtstatus')}</td><td>${c.feature.legalstatus_it or '-'}</td></tr>
 % else:
-    <tr><td>${_('status')}</td><td>${c.feature.legalstatus_de or '-'}</td></tr>
+    <tr><td>${_('bazlrechtstatus')}</td><td>${c.feature.legalstatus_de or '-'}</td></tr>
 % endif
-
-
-
+    <table>
+<% c.stable_id = True %>
+    <tr><td>${_('approval_date')}</td><td>${c.feature.approval_date or '-'}</td></tr>
 <%
    if c.feature.weblink is not None:
       weblink = c.feature.weblink.split('##')

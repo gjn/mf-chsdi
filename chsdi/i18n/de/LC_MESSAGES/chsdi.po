@@ -1448,6 +1448,9 @@ msgstr "Fläche [m2]"
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
 
+msgid "format_de"
+msgstr "Lieferbare Formate"
+
 msgid "fp_E95_N95"
 msgstr "LV95-Koordinaten (E / N)"
 

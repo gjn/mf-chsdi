@@ -1448,6 +1448,9 @@ msgstr "Surface [m2]"
 msgid "fliessgewaesser"
 msgstr "Cours d'eau"
 
+msgid "format_de"
+msgstr "Formati disponibili"
+
 msgid "fp_E95_N95"
 msgstr "Coordinate MN95 (E / N)"
 
@@ -3431,7 +3434,7 @@ msgid "zielhafen"
 msgstr "Destination"
 
 msgid "zone"
-msgstr "Zona"
+msgstr "zona"
 
 msgid "zugang"
 msgstr "Accessible"

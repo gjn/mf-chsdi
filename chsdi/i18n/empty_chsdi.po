@@ -2291,6 +2291,9 @@ msgstr ""
 msgid "No additional information for this object type"
 msgstr ""
 
+msgid "format_de"
+msgstr ""
+
 msgid "ch.swisstopo.fixpunkte-lfp1"
 msgstr ""
 

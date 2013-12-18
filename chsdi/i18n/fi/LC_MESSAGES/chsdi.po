@@ -1212,7 +1212,7 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun tiles SWISSIMAGE"
 
 msgid "ch.swisstopo.lubis-luftbilder"
-msgstr "Luftbilder swisstopo"
+msgstr "TODO"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Charta en colur"
@@ -1449,6 +1449,9 @@ msgstr "Fläche [m2]"
 
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
+
+msgid "format_de"
+msgstr "Lieferbare Formate"
 
 msgid "fp_E95_N95"
 msgstr "LV95-Koordinaten (E / N)"
@@ -3432,7 +3435,7 @@ msgid "zielhafen"
 msgstr "Zielhafen"
 
 msgid "zone"
-msgstr "Zone"
+msgstr "zone"
 
 msgid "zugang"
 msgstr "Zugang"
