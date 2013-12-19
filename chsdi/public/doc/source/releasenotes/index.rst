@@ -4,6 +4,10 @@ Release 20131218 -  Wednesday, December 18th 2013
 Geodata
 ********
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Safety zone plan <//map.geo.admin.ch/?layers=ch.bazl.sicherheitszonenplan>`__ (ch.bazl.sicherheitszonenplan)                                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division of the Gravimetric Atlas of Switzerland 1:100000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__  (ch.swisstopo.geologie-gravimetrischer_atlas.metadata)|
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Upload >= 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Upload >= 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                                                                             |
@@ -40,9 +44,7 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Safety zone plan <//http://map.geo.admin.ch/?layers=ch.bazl.sicherheitszonenplan>`__ (ch.bazl.sicherheitszonenplan)                                                                                   |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Division of the Gravimetric Atlas of Switzerland 1:100000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__  (ch.swisstopo.geologie-gravimetrischer_atlas.metadata)|
+| Update | `Federal Inventory of Swiss Game Reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                            |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
