@@ -599,6 +599,225 @@ msgstr "Terrains attenants aux immeubles résidentiels"
 msgid "bfs_noas04_9"
 msgstr "Bâtiments publics"
 
+msgid "bfs_nolc_11"
+msgstr "Surfaces compactées"
+
+msgid "bfs_nolc_12"
+msgstr "Bâtiments"
+
+msgid "bfs_nolc_13"
+msgstr "Serres"
+
+msgid "bfs_nolc_14"
+msgstr "Structures des cultures en planches"
+
+msgid "bfs_nolc_15"
+msgstr "Gazon"
+
+msgid "bfs_nolc_16"
+msgstr "Arbres sur terrains aménagés"
+
+msgid "bfs_nolc_17"
+msgstr "Petites structures mixtes"
+
+msgid "bfs_nolc_21"
+msgstr "Végétation herbacée"
+
+msgid "bfs_nolc_31"
+msgstr "Buissons"
+
+msgid "bfs_nolc_32"
+msgstr "Surfaces embroussaillées"
+
+msgid "bfs_nolc_33"
+msgstr "Arbres fruitiers à basses tiges"
+
+msgid "bfs_nolc_34"
+msgstr "Vignes"
+
+msgid "bfs_nolc_35"
+msgstr "Cultures horticoles permanentes"
+
+msgid "bfs_nolc_41"
+msgstr "Peuplements d´arbres denses"
+
+msgid "bfs_nolc_42"
+msgstr "Coins de forêt"
+
+msgid "bfs_nolc_43"
+msgstr "Bandes de forêt"
+
+msgid "bfs_nolc_44"
+msgstr "Peuplements d´arbres clairsemés"
+
+msgid "bfs_nolc_45"
+msgstr "Peuplements de forêt buissonnante"
+
+msgid "bfs_nolc_46"
+msgstr "Peuplements d´arbres linéaires"
+
+msgid "bfs_nolc_47"
+msgstr "Groupes d´arbres"
+
+msgid "bfs_nolc_51"
+msgstr "Rochers saillants"
+
+msgid "bfs_nolc_52"
+msgstr "Pierres meubles"
+
+msgid "bfs_nolc_53"
+msgstr "Surfaces pierreuses"
+
+msgid "bfs_nolc_61"
+msgstr "Plans d´eau"
+
+msgid "bfs_nolc_62"
+msgstr "Glaciers, névés"
+
+msgid "bfs_nolc_63"
+msgstr "Biotopes humides"
+
+msgid "bfs_nolc_64"
+msgstr "Roselières"
+
+msgid "bfs_nolu_101"
+msgstr "Aires de bâtiments et aires industrielles > 1 ha"
+
+msgid "bfs_nolu_102"
+msgstr "Aires de bâtiments et aires industrielles < 1 ha"
+
+msgid "bfs_nolu_103"
+msgstr "Aires de maisons individuelles et de maisons de 2 logements"
+
+msgid "bfs_nolu_104"
+msgstr "Aires de maisons alignées et en terrasses"
+
+msgid "bfs_nolu_105"
+msgstr "Aires d´immeubles résidentiels"
+
+msgid "bfs_nolu_106"
+msgstr "Aires de bâtiments publics"
+
+msgid "bfs_nolu_107"
+msgstr "Aires de bâtiments agricoles"
+
+msgid "bfs_nolu_108"
+msgstr "Aires de bâtiments non déterminés"
+
+msgid "bfs_nolu_121"
+msgstr "Aires autoroutières"
+
+msgid "bfs_nolu_122"
+msgstr "Aires routières"
+
+msgid "bfs_nolu_123"
+msgstr "Aires de stationnement"
+
+msgid "bfs_nolu_124"
+msgstr "Aires ferroviaires"
+
+msgid "bfs_nolu_125"
+msgstr "Aérodromes"
+
+msgid "bfs_nolu_141"
+msgstr "Installations d´approvisionnement en énergie"
+
+msgid "bfs_nolu_142"
+msgstr "Stations d´épuration des eaux usées"
+
+msgid "bfs_nolu_143"
+msgstr "Autres installations d´approvisionnement et d´élimination"
+
+msgid "bfs_nolu_144"
+msgstr "Décharges"
+
+msgid "bfs_nolu_145"
+msgstr "Extraction de matériaux"
+
+msgid "bfs_nolu_146"
+msgstr "Chantiers"
+
+msgid "bfs_nolu_147"
+msgstr "Friches industrielles et bâtiments désaffectés"
+
+msgid "bfs_nolu_161"
+msgstr "Parcs publics"
+
+msgid "bfs_nolu_162"
+msgstr "Installations de sport"
+
+msgid "bfs_nolu_163"
+msgstr "Terrains de golf"
+
+msgid "bfs_nolu_164"
+msgstr "Terrains de camping"
+
+msgid "bfs_nolu_165"
+msgstr "Jardins familiaux"
+
+msgid "bfs_nolu_166"
+msgstr "Cimetières"
+
+msgid "bfs_nolu_201"
+msgstr "Arboriculture"
+
+msgid "bfs_nolu_202"
+msgstr "Viticulture"
+
+msgid "bfs_nolu_203"
+msgstr "Horticulture"
+
+msgid "bfs_nolu_221"
+msgstr "Terres arables au sens large"
+
+msgid "bfs_nolu_222"
+msgstr "Prairies naturelles au sens large"
+
+msgid "bfs_nolu_223"
+msgstr "Pâturages locaux au sens large"
+
+msgid "bfs_nolu_241"
+msgstr "Alpages fauchés au sens large"
+
+msgid "bfs_nolu_242"
+msgstr "Alpages pâturés au sens large"
+
+msgid "bfs_nolu_243"
+msgstr "Alpes à moutons au sens large"
+
+msgid "bfs_nolu_301"
+msgstr "Peuplements forestiers"
+
+msgid "bfs_nolu_302"
+msgstr "Aires afforestées"
+
+msgid "bfs_nolu_303"
+msgstr "Coupes de bois"
+
+msgid "bfs_nolu_304"
+msgstr "Surfaces forestières dévastées"
+
+msgid "bfs_nolu_401"
+msgstr "Lacs"
+
+msgid "bfs_nolu_402"
+msgstr "Rivières, ruisseaux"
+
+msgid "bfs_nolu_403"
+msgstr "Ouvrages de protection contre les crues"
+
+msgid "bfs_nolu_421"
+msgstr "Aucune utilisation"
+
+msgid "bfs_nolu_422"
+msgstr "Ouvrages de protection (pierres, avalanches)"
+
+msgid "bfs_nolu_423"
+msgstr "Infrastructure de sports alpins"
+
+msgid "bfs_nolu_424"
+msgstr "Interventions dans le paysage"
+
 msgid "bfsnr"
 msgstr "Numéro OFS"
 

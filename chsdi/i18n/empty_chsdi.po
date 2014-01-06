@@ -3290,6 +3290,225 @@ msgstr ""
 msgid "bfs_noas04_72"
 msgstr ""
 
+msgid "bfs_nolc_11"
+msgstr ""
+
+msgid "bfs_nolc_12"
+msgstr ""
+
+msgid "bfs_nolc_13"
+msgstr ""
+
+msgid "bfs_nolc_14"
+msgstr ""
+
+msgid "bfs_nolc_15"
+msgstr ""
+
+msgid "bfs_nolc_16"
+msgstr ""
+
+msgid "bfs_nolc_17"
+msgstr ""
+
+msgid "bfs_nolc_21"
+msgstr ""
+
+msgid "bfs_nolc_31"
+msgstr ""
+
+msgid "bfs_nolc_32"
+msgstr ""
+
+msgid "bfs_nolc_33"
+msgstr ""
+
+msgid "bfs_nolc_34"
+msgstr ""
+
+msgid "bfs_nolc_35"
+msgstr ""
+
+msgid "bfs_nolc_41"
+msgstr ""
+
+msgid "bfs_nolc_42"
+msgstr ""
+
+msgid "bfs_nolc_43"
+msgstr ""
+
+msgid "bfs_nolc_44"
+msgstr ""
+
+msgid "bfs_nolc_45"
+msgstr ""
+
+msgid "bfs_nolc_46"
+msgstr ""
+
+msgid "bfs_nolc_47"
+msgstr ""
+
+msgid "bfs_nolc_51"
+msgstr ""
+
+msgid "bfs_nolc_52"
+msgstr ""
+
+msgid "bfs_nolc_53"
+msgstr ""
+
+msgid "bfs_nolc_61"
+msgstr ""
+
+msgid "bfs_nolc_62"
+msgstr ""
+
+msgid "bfs_nolc_63"
+msgstr ""
+
+msgid "bfs_nolc_64"
+msgstr ""
+
+msgid "bfs_nolu_101"
+msgstr ""
+
+msgid "bfs_nolu_102"
+msgstr ""
+
+msgid "bfs_nolu_103"
+msgstr ""
+
+msgid "bfs_nolu_104"
+msgstr ""
+
+msgid "bfs_nolu_105"
+msgstr ""
+
+msgid "bfs_nolu_106"
+msgstr ""
+
+msgid "bfs_nolu_107"
+msgstr ""
+
+msgid "bfs_nolu_108"
+msgstr ""
+
+msgid "bfs_nolu_121"
+msgstr ""
+
+msgid "bfs_nolu_122"
+msgstr ""
+
+msgid "bfs_nolu_123"
+msgstr ""
+
+msgid "bfs_nolu_124"
+msgstr ""
+
+msgid "bfs_nolu_125"
+msgstr ""
+
+msgid "bfs_nolu_141"
+msgstr ""
+
+msgid "bfs_nolu_142"
+msgstr ""
+
+msgid "bfs_nolu_143"
+msgstr ""
+
+msgid "bfs_nolu_144"
+msgstr ""
+
+msgid "bfs_nolu_145"
+msgstr ""
+
+msgid "bfs_nolu_146"
+msgstr ""
+
+msgid "bfs_nolu_147"
+msgstr ""
+
+msgid "bfs_nolu_161"
+msgstr ""
+
+msgid "bfs_nolu_162"
+msgstr ""
+
+msgid "bfs_nolu_163"
+msgstr ""
+
+msgid "bfs_nolu_164"
+msgstr ""
+
+msgid "bfs_nolu_165"
+msgstr ""
+
+msgid "bfs_nolu_166"
+msgstr ""
+
+msgid "bfs_nolu_201"
+msgstr ""
+
+msgid "bfs_nolu_202"
+msgstr ""
+
+msgid "bfs_nolu_203"
+msgstr ""
+
+msgid "bfs_nolu_221"
+msgstr ""
+
+msgid "bfs_nolu_222"
+msgstr ""
+
+msgid "bfs_nolu_223"
+msgstr ""
+
+msgid "bfs_nolu_241"
+msgstr ""
+
+msgid "bfs_nolu_242"
+msgstr ""
+
+msgid "bfs_nolu_243"
+msgstr ""
+
+msgid "bfs_nolu_301"
+msgstr ""
+
+msgid "bfs_nolu_302"
+msgstr ""
+
+msgid "bfs_nolu_303"
+msgstr ""
+
+msgid "bfs_nolu_304"
+msgstr ""
+
+msgid "bfs_nolu_401"
+msgstr ""
+
+msgid "bfs_nolu_402"
+msgstr ""
+
+msgid "bfs_nolu_403"
+msgstr ""
+
+msgid "bfs_nolu_421"
+msgstr ""
+
+msgid "bfs_nolu_422"
+msgstr ""
+
+msgid "bfs_nolu_423"
+msgstr ""
+
+msgid "bfs_nolu_424"
+msgstr ""
+
 msgid "blw_farbe_0"
 msgstr ""
 

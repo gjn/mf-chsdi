@@ -599,6 +599,225 @@ msgstr "Umschwung von Mehrfamilienhäusern"
 msgid "bfs_noas04_9"
 msgstr "Öffentliche Gebäude"
 
+msgid "bfs_nolc_11"
+msgstr "Befestigte Flächen"
+
+msgid "bfs_nolc_12"
+msgstr "Gebäude"
+
+msgid "bfs_nolc_13"
+msgstr "Treibhäuser"
+
+msgid "bfs_nolc_14"
+msgstr "Beetstrukturen"
+
+msgid "bfs_nolc_15"
+msgstr "Rasen"
+
+msgid "bfs_nolc_16"
+msgstr "Bäume auf künstlich angelegten Flächen"
+
+msgid "bfs_nolc_17"
+msgstr "Gemischte Kleinstrukturen"
+
+msgid "bfs_nolc_21"
+msgstr "Gras-, Krautvegetation"
+
+msgid "bfs_nolc_31"
+msgstr "Gebüsch"
+
+msgid "bfs_nolc_32"
+msgstr "Verbuschte Flächen"
+
+msgid "bfs_nolc_33"
+msgstr "Niederstammobst"
+
+msgid "bfs_nolc_34"
+msgstr "Reben"
+
+msgid "bfs_nolc_35"
+msgstr "Gärtnerische Dauerkulturen"
+
+msgid "bfs_nolc_41"
+msgstr "Geschlossene Baumbestände"
+
+msgid "bfs_nolc_42"
+msgstr "Waldecken"
+
+msgid "bfs_nolc_43"
+msgstr "Waldstreifen"
+
+msgid "bfs_nolc_44"
+msgstr "Aufgelöste Baumbestände"
+
+msgid "bfs_nolc_45"
+msgstr "Gebüschwaldbestände"
+
+msgid "bfs_nolc_46"
+msgstr "Lineare Baumbestände"
+
+msgid "bfs_nolc_47"
+msgstr "Baumgruppen"
+
+msgid "bfs_nolc_51"
+msgstr "Anstehender Fels"
+
+msgid "bfs_nolc_52"
+msgstr "Lockergestein"
+
+msgid "bfs_nolc_53"
+msgstr "Versteinte Flächen"
+
+msgid "bfs_nolc_61"
+msgstr "Wasser"
+
+msgid "bfs_nolc_62"
+msgstr "Gletscher, Firn"
+
+msgid "bfs_nolc_63"
+msgstr "Nassstandorte"
+
+msgid "bfs_nolc_64"
+msgstr "Schilfbestände"
+
+msgid "bfs_nolu_101"
+msgstr "Industrie- und Gewerbeareal > 1 ha"
+
+msgid "bfs_nolu_102"
+msgstr "Industrie- und Gewerbeareal < 1 ha"
+
+msgid "bfs_nolu_103"
+msgstr "Ein- und Zweifamilienhausareal"
+
+msgid "bfs_nolu_104"
+msgstr "Reihen- und Terrassenhausareal"
+
+msgid "bfs_nolu_105"
+msgstr "Mehrfamilienhausareal"
+
+msgid "bfs_nolu_106"
+msgstr "Öffentliches Gebäudeareal"
+
+msgid "bfs_nolu_107"
+msgstr "Landwirtschaftliches Gebäudeareal"
+
+msgid "bfs_nolu_108"
+msgstr "Nicht spezifiziertes Gebäudeareal"
+
+msgid "bfs_nolu_121"
+msgstr "Autobahnareal"
+
+msgid "bfs_nolu_122"
+msgstr "Strassenareal"
+
+msgid "bfs_nolu_123"
+msgstr "Parkplatzareal"
+
+msgid "bfs_nolu_124"
+msgstr "Bahnareal"
+
+msgid "bfs_nolu_125"
+msgstr "Flugplatzareal"
+
+msgid "bfs_nolu_141"
+msgstr "Energieversorgungsanlagen"
+
+msgid "bfs_nolu_142"
+msgstr "Abwasserreinigungsanlagen"
+
+msgid "bfs_nolu_143"
+msgstr "Übrige Ver- und Entsorgungsanlagen"
+
+msgid "bfs_nolu_144"
+msgstr "Deponien"
+
+msgid "bfs_nolu_145"
+msgstr "Abbau"
+
+msgid "bfs_nolu_146"
+msgstr "Baustellen"
+
+msgid "bfs_nolu_147"
+msgstr "Bau- und Siedlungsbrachen"
+
+msgid "bfs_nolu_161"
+msgstr "Öffentliche Parkanlagen"
+
+msgid "bfs_nolu_162"
+msgstr "Sportanlagen"
+
+msgid "bfs_nolu_163"
+msgstr "Golfplätze"
+
+msgid "bfs_nolu_164"
+msgstr "Campingplätze"
+
+msgid "bfs_nolu_165"
+msgstr "Schrebergärten"
+
+msgid "bfs_nolu_166"
+msgstr "Friedhöfe"
+
+msgid "bfs_nolu_201"
+msgstr "Obstbau"
+
+msgid "bfs_nolu_202"
+msgstr "Rebbau"
+
+msgid "bfs_nolu_203"
+msgstr "Gartenbau"
+
+msgid "bfs_nolu_221"
+msgstr "Ackerland i.w.S."
+
+msgid "bfs_nolu_222"
+msgstr "Naturwiesen i.w.S."
+
+msgid "bfs_nolu_223"
+msgstr "Heimweiden i.w.S."
+
+msgid "bfs_nolu_241"
+msgstr "Alpwiesen i.w.S."
+
+msgid "bfs_nolu_242"
+msgstr "Alp- und Juraweiden i.w.S."
+
+msgid "bfs_nolu_243"
+msgstr "Schafalpen i.w.S."
+
+msgid "bfs_nolu_301"
+msgstr "Waldbestände"
+
+msgid "bfs_nolu_302"
+msgstr "Aufforstungen"
+
+msgid "bfs_nolu_303"
+msgstr "Holzschläge"
+
+msgid "bfs_nolu_304"
+msgstr "Waldschäden"
+
+msgid "bfs_nolu_401"
+msgstr "Seen"
+
+msgid "bfs_nolu_402"
+msgstr "Flüsse, Bäche"
+
+msgid "bfs_nolu_403"
+msgstr "Hochwasserverbauungen"
+
+msgid "bfs_nolu_421"
+msgstr "Keine Nutzung"
+
+msgid "bfs_nolu_422"
+msgstr "Lawinen- und Steinschlagverbauungen"
+
+msgid "bfs_nolu_423"
+msgstr "Alpine Sportinfrastruktur"
+
+msgid "bfs_nolu_424"
+msgstr "Landschaftseingriffe"
+
 msgid "bfsnr"
 msgstr "BFS-Nummer"
 
