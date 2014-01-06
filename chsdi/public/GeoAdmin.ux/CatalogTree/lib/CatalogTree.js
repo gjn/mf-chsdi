@@ -729,6 +729,15 @@ GeoAdmin.CatalogTree.createDefaultConfig = function() {
                         layerId: "ch.bfs.arealstatistik-1997"
                     },
                     {
+                        layerId: "ch.bfs.arealstatistik-bodenbedeckung"
+                    },
+                    {
+                        layerId: "ch.bfs.arealstatistik-bodenbedeckung-1997"
+                    },
+                    {
+                        layerId: "ch.bfs.arealstatistik-bodenbedeckung-1985"
+                    },
+                    {
                         layerId: "ch.bfs.arealstatistik-hintergrund"
                     },
                     {

@@ -1175,6 +1175,36 @@ GeoAdmin._Layers = OpenLayers.Class({
                 opacity: 0.75,
                 queryable: true
             },
+            "ch.bfs.arealstatistik-bodenbedeckung": {
+                name: OpenLayers.i18n("ch.bfs.arealstatistik-bodenbedeckung"),
+                layertype: 'wmts',
+                timestamp: ['20131121'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bfs",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bfs.arealstatistik-bodenbedeckung-1997": {
+                name: OpenLayers.i18n("ch.bfs.arealstatistik-bodenbedeckung-1997"),
+                layertype: 'wmts',
+                timestamp: ['20131121'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bfs",
+                opacity: 0.75,
+                queryable: true
+            },
+            "ch.bfs.arealstatistik-bodenbedeckung-1985": {
+                name: OpenLayers.i18n("ch.bfs.arealstatistik-bodenbedeckung-1985"),
+                layertype: 'wmts',
+                timestamp: ['20131121'],
+                type: "mixed",
+                format: "image/png",
+                datenherr: "ch.bfs",
+                opacity: 0.75,
+                queryable: true
+            },
             "ch.swisstopo.vec200-transportation-oeffentliche-verkehr": {
                 name: OpenLayers.i18n("ch.swisstopo.vec200-transportation-oeffentliche-verkehr"),
                 layertype: 'wmts',
