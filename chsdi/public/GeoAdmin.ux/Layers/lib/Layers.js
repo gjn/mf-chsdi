@@ -3417,14 +3417,16 @@ GeoAdmin._Layers = OpenLayers.Class({
             },
             "ch.swisstopo-vd.ortschaftenverzeichnis_plz": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.ortschaftenverzeichnis_plz"),
-                layertype: 'wmts',
-                timestamp: ['20131101','20130501','20121102','20120501','20111101','20110502'],
+                layers: ["ch.swisstopo-vd.ortschaftenverzeichnis_plz"],
+                layertype: "wms",
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.swisstopo",
+                singleTile: false,
                 opacity: 0.75,
                 queryable: true
             },
+            
             "ch.swisstopo-vd.spannungsarme-gebiete": {
                 name: OpenLayers.i18n("ch.swisstopo-vd.spannungsarme-gebiete"),
                 layertype: 'wmts',
