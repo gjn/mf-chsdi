@@ -44,6 +44,42 @@ class Arealstatistik1997(Base, Queryable):
 
 register('ch.bfs.arealstatistik-1997', Arealstatistik1997)
 
+class ArealstatistikBodenbedeckung2009(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'arealstatistik_nolc_2009'
+    __table_args__ = ({'schema': 'bfs', 'autoload': True})
+    __template__ = 'tooltips/arealstatistik_nolc.mako'
+   # __minscale__ = 5001
+    __maxscale__ = 50000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung2009)
+
+class ArealstatistikBodenbedeckung1997(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'arealstatistik_nolc_1997'
+    __table_args__ = ({'schema': 'bfs', 'autoload': True})
+    __template__ = 'tooltips/arealstatistik_nolc.mako'
+   # __minscale__ = 5001
+    __maxscale__ = 50000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bfs.arealstatistik-bodenbedeckung-1997', ArealstatistikBodenbedeckung1997)
+
+class ArealstatistikBodenbedeckung1985(Base, Queryable):
+    # view in a schema
+    __tablename__ = 'arealstatistik_nolc_1985'
+    __table_args__ = ({'schema': 'bfs', 'autoload': True})
+    __template__ = 'tooltips/arealstatistik_nolc.mako'
+   # __minscale__ = 5001
+    __maxscale__ = 50000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry)
+
+register('ch.bfs.arealstatistik-bodenbedeckung-1985', ArealstatistikBodenbedeckung1985)
+
 class fsme_faelle(Base, Queryable):
     # view in a schema
     __tablename__ = 'fsme_faelle'
