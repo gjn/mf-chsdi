@@ -4,6 +4,12 @@ Release 20140115 -  Wednesday, January 15th 2014
 Geodata
 ********
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Arealstatistik 2004/09 NOLC04 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung>`__ (ch.bfs.arealstatistik-bodenbedeckung)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Arealstatistik 1992/97 NOLC04 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung-1997>`__ (ch.bfs.arealstatistik-bodenbedeckung-1997)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Arealstatistik 1979/85 NOLC04 <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung-1985>`__ (ch.bfs.arealstatistik-bodenbedeckung-1985)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million (grey) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)                                          |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division National Map 1:1 million (color) <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)                                       |
