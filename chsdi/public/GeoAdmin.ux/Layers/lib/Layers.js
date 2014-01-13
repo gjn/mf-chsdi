@@ -2846,7 +2846,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe-pk25.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk25.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20130903','20130213','20120809','20111027'],
+                timestamp: ['20140106', '20130903','20130213','20120809','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
@@ -2855,7 +2855,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe-pk50.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk50.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20130903','20130213','20120809','20111027'],
+                timestamp: ['20140106', '20130903','20130213','20120809','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
@@ -2864,7 +2864,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe-pk100.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk100.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20130903','20130213','20120809','20111206','20111027'],
+                timestamp: ['20140106', '20130903','20130213','20120809','20111206','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
@@ -2931,7 +2931,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.swisstopo.pixelkarte-farbe-pk1000.noscale": {
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe-pk1000.noscale"),
                 layertype: 'wmts',
-                timestamp: ['20120809','20111027'],
+                timestamp: ['20140106','20120809','20111027'],
                 type: "raster",
                 format: "image/jpeg",
                 datenherr: "ch.swisstopo",
@@ -4114,7 +4114,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-farbe"),
                 layer: 'ch.swisstopo.pixelkarte-farbe',
                 layertype: 'wmts',
-                timestamp: ['20130903','20130213','20120809','20111206','20111027','20110401'],
+                timestamp: ['20140106', '20130903','20130213','20120809','20111206','20111027','20110401'],
                 type: "raster",
                 format: "image/jpeg",
                 // bis und mit zoomstufe 22 / resolution 2.5
@@ -4126,7 +4126,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 name: OpenLayers.i18n("ch.swisstopo.pixelkarte-grau"),
                 layer: 'ch.swisstopo.pixelkarte-grau',
                 layertype: 'wmts',
-                timestamp: ['20130903','20130213','20120809','20111206','20111027','20110401'],
+                timestamp: ['20140106', '20130903','20130213','20120809','20111206','20111027','20110401'],
                 type: "raster",
                 format: "image/jpeg",
                 // bis und mit zoomstufe 22 / resolution 2.5
