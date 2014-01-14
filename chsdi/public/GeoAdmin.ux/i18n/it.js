@@ -623,7 +623,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.it, {
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Mattonifici 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Mattonifici 1995',
 	'ch.swisstopo.geologie-geotope':'Geotopi svizzeri',
-	'ch.swisstopo.geologie-gravimetrischer_atlas':'Atlas gravimétrique',
+	'ch.swisstopo.geologie-gravimetrischer_atlas':'Atlante gravimetrico',
 	'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':'Divisione Atlante gravimetrico',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Riserve acquifere',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Vulnerabilitá delle falde acquifere',
