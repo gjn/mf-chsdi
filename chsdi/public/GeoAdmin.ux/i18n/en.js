@@ -623,7 +623,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.en, {
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1965':'Brick manufactures 1965',
 	'ch.swisstopo.geologie-geotechnik-ziegeleien_1995':'Brick manufactures 1995',
 	'ch.swisstopo.geologie-geotope':'Swiss Geotopes',
-	'ch.swisstopo.geologie-gravimetrischer_atlas':'Gravimetrischer Atlas',
+	'ch.swisstopo.geologie-gravimetrischer_atlas':'Gravimetric Atlas',
 	'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':'Division Gravimetric Atlas',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen':'Groundwater resources',
 	'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet':'Groundwater vulnerability',
