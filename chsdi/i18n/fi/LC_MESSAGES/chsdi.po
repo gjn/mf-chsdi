@@ -3271,6 +3271,24 @@ msgstr "Rock classification"
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologisch-petrographische Beschreibung"
 
+msgid "tt_gsk_meta_author"
+msgstr "Autor(en)"
+
+msgid "tt_gsk_meta_formate"
+msgstr "Verfügbare Formate"
+
+msgid "tt_gsk_meta_massstab"
+msgstr "Massstab"
+
+msgid "tt_gsk_meta_name"
+msgstr "Kartenname"
+
+msgid "tt_gsk_meta_nummer"
+msgstr "Blattnummer"
+
+msgid "tt_gsk_meta_publikation"
+msgstr "Publikationsjahr"
+
 msgid "tt_kanal"
 msgstr "Gewässertyp"
 
@@ -3472,6 +3490,36 @@ msgstr "Weitere Informationen"
 
 msgid "tt_service"
 msgstr "Funkdienst"
+
+msgid "tt_shb_abbauort"
+msgstr "Abbauort"
+
+msgid "tt_shb_alter"
+msgstr "Alter"
+
+msgid "tt_shb_bemerkung"
+msgstr "Bemerkung"
+
+msgid "tt_shb_gart"
+msgstr "Gesteinart"
+
+msgid "tt_shb_link"
+msgstr "Link zur pdf"
+
+msgid "tt_shb_objekt"
+msgstr "Objekt"
+
+msgid "tt_shb_objteil"
+msgstr "Objektteil"
+
+msgid "tt_shb_objtyp"
+msgstr "Objekttyp"
+
+msgid "tt_shb_ort"
+msgstr "Ort"
+
+msgid "tt_shb_ref"
+msgstr "Referenz"
 
 msgid "tt_swissprtr_detaildaten"
 msgstr "Details Betrieb"

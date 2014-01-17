@@ -1431,7 +1431,7 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Tiling SWISSIMAGE"
 
 msgid "ch.swisstopo.lubis-luftbilder"
-msgstr "Aerial images swisstopo"
+msgstr "Aerial Images swisstopo"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Color map"
@@ -3270,6 +3270,24 @@ msgstr "Gesteinsklassierung"
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Lithologic / petrographic characterization"
 
+msgid "tt_gsk_meta_author"
+msgstr "Author(s)"
+
+msgid "tt_gsk_meta_formate"
+msgstr "Available formats"
+
+msgid "tt_gsk_meta_massstab"
+msgstr "Scale"
+
+msgid "tt_gsk_meta_name"
+msgstr "Name of the map"
+
+msgid "tt_gsk_meta_nummer"
+msgstr "Map number"
+
+msgid "tt_gsk_meta_publikation"
+msgstr "Publication year"
+
 msgid "tt_kanal"
 msgstr "Waterbody type"
 
@@ -3471,6 +3489,36 @@ msgstr "More information"
 
 msgid "tt_service"
 msgstr "Radio Service"
+
+msgid "tt_shb_abbauort"
+msgstr "Exploitation site"
+
+msgid "tt_shb_alter"
+msgstr "Age"
+
+msgid "tt_shb_bemerkung"
+msgstr "Comment"
+
+msgid "tt_shb_gart"
+msgstr "Rock type"
+
+msgid "tt_shb_link"
+msgstr "Link to pdf"
+
+msgid "tt_shb_objekt"
+msgstr "Object"
+
+msgid "tt_shb_objteil"
+msgstr "Part of object"
+
+msgid "tt_shb_objtyp"
+msgstr "Object type"
+
+msgid "tt_shb_ort"
+msgstr "Site"
+
+msgid "tt_shb_ref"
+msgstr "Reference"
 
 msgid "tt_swissprtr_detaildaten"
 msgstr "Facility details"
