@@ -873,3 +873,22 @@ class geologieGeotopeFlaechen(Base, Queryable):
      
 register('ch.swisstopo.geologie-geotope',geologieGeotopePunkte)
 register('ch.swisstopo.geologie-geotope',geologieGeotopeFlaechen)
+
+class spezialkarten_metadata(Base, Queryable):
+     __tablename__ = 'grid_gsk_update'
+     __table_args__ = ({'schema': 'public', 'autoload': True})
+     __template__ = 'tooltips/geol_spezialkarten_metadata.mako'
+     id = Column('gid', Integer, primary_key=True)
+     the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata',spezialkarten_metadata)
+
+class steine_hist_bauwerke(Base, Queryable):
+     __tablename__ = 'geotechnik_steine_historische_bauwerke'
+     __table_args__ = ({'schema': 'geol', 'autoload': True})
+     __template__ = 'tooltips/geol_steine_hist_bauwerke.mako'
+     id = Column('bgdi_id', Integer, primary_key=True)
+     the_geom = Column(Geometry(21781))
+
+register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke',steine_hist_bauwerke)
+
