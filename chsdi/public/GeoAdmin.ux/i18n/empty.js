@@ -821,5 +821,7 @@ OpenLayers.Util.extend(OpenLayers.Lang.de, {
 	'Stop compare':"",
 	'Compare':"",
 	'The first layer is swiped. In order to use the compare tool, you need to add at least one layer.':"",
-    'ch.bazl.sicherheitszonenplan':""
+    'ch.bazl.sicherheitszonenplan':"",
+    'ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke':"",
+    'ch.swisstopo.geologie-spezialkarten_schweiz.metadata':""
 });
