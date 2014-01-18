@@ -13,15 +13,6 @@
 <%def name="table_body()">
     <% c.stable_id = True %>
     <tr><td width="150">${_('tt_sachplan_planning_name')}</td>    <td>${self.preview()}</td></tr>
-	<tr><td width="150">${_('tt_sachplan_beschreibung')}</td>
-      % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
-           <td>${c.feature.description_text_de or '-'}</td>
-      % elif c.lang == 'fr':
-           <td>${c.feature.description_text_fr or '-'}</td>
-	  % elif c.lang == 'it':
-           <td>${c.feature.description_text_it or '-'}</td>   
-      % endif
-    </tr>
     <tr><td width="150">${_('tt_sachplan_planning_typ')}</td>
       % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
            <td>${c.feature.measuretype_text_de or '-'}</td>
@@ -49,7 +40,17 @@
            <td>${c.feature.planningstatus_text_it or '-'}</td>   
       % endif
     </tr>
-	<tr><td width="150">${_('tt_sachplan_planning_von')}</td> <td>${c.feature.validfrom or '-'}</td></tr>
+    <tr><td width="150">${_('tt_sachplan_planning_von')}</td> <td>${c.feature.validfrom or '-'}</td></tr>
+    <tr><td width="150">${_('tt_sachplan_planning_bis')}</td> <td>${c.feature.validuntil or '-'}</td></tr>
+    <tr><td width="150">${_('tt_sachplan_beschreibung')}</td>
+      % if c.lang == 'de' or c.lang == 'rm' or c.lang == 'en':
+           <td>${c.feature.description_text_de or '-'}</td>
+      % elif c.lang == 'fr':
+           <td>${c.feature.description_text_fr or '-'}</td>
+      % elif c.lang == 'it':
+           <td>${c.feature.description_text_it or '-'}</td>
+      % endif
+    </tr>
     <tr><td width="150">${_('tt_sachplan_objektblatt')}</td>
       % if c.feature.document_web is None:
            <td> - </td>

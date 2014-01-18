@@ -1431,7 +1431,7 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage en tuile SWISSIMAGE"
 
 msgid "ch.swisstopo.lubis-luftbilder"
-msgstr "Photographies aériennes swisstopo"
+msgstr "Images aér. swisstopo"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Cartes couleurs"
@@ -3270,6 +3270,24 @@ msgstr "Classification des roches"
 msgid "tt_gk_500_LithoHaupt"
 msgstr "Caractérisation lithologique pétrographique"
 
+msgid "tt_gsk_meta_author"
+msgstr "Auteur(s)"
+
+msgid "tt_gsk_meta_formate"
+msgstr "Formats disponibles"
+
+msgid "tt_gsk_meta_massstab"
+msgstr "Échelle"
+
+msgid "tt_gsk_meta_name"
+msgstr "Nom de feuille"
+
+msgid "tt_gsk_meta_nummer"
+msgstr "Numéro de feuille"
+
+msgid "tt_gsk_meta_publikation"
+msgstr "Année de publication"
+
 msgid "tt_kanal"
 msgstr "Type de cours d’eau"
 
@@ -3471,6 +3489,36 @@ msgstr "Autres informations"
 
 msgid "tt_service"
 msgstr "Service radio"
+
+msgid "tt_shb_abbauort"
+msgstr "Lieu d'exploitation"
+
+msgid "tt_shb_alter"
+msgstr "Époque"
+
+msgid "tt_shb_bemerkung"
+msgstr "Remarques"
+
+msgid "tt_shb_gart"
+msgstr "Espèce de roche"
+
+msgid "tt_shb_link"
+msgstr "Lien vers le pdf"
+
+msgid "tt_shb_objekt"
+msgstr "Objet"
+
+msgid "tt_shb_objteil"
+msgstr "Partie d'objet"
+
+msgid "tt_shb_objtyp"
+msgstr "Type d'objet"
+
+msgid "tt_shb_ort"
+msgstr "Lieu"
+
+msgid "tt_shb_ref"
+msgstr "Référence"
 
 msgid "tt_swissprtr_detaildaten"
 msgstr "Détails de l’établissement"
