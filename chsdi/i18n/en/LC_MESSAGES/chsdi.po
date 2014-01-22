@@ -680,143 +680,53 @@ msgstr "Wetlands"
 msgid "bfs_nolc_64"
 msgstr "Reedy marshes"
 
-msgid "bfs_nolu_101"
-msgstr "Area industriale e artigianale > 1 ha"
+msgid "bfs_nolu_100"
+msgstr "Building areas"
 
-msgid "bfs_nolu_102"
-msgstr "Area industriale e artigianale < 1 ha"
+msgid "bfs_nolu_120"
+msgstr "Transport surfaces"
 
-msgid "bfs_nolu_103"
-msgstr "Area di case unifamiliari e bifamiliari"
+msgid "bfs_nolu_140"
+msgstr "Special urban areas"
 
-msgid "bfs_nolu_104"
-msgstr "Area di case a schiera e a terrazza"
-
-msgid "bfs_nolu_105"
-msgstr "Area di case plurifamiliari"
-
-msgid "bfs_nolu_106"
-msgstr "Area di edifici pubblici"
-
-msgid "bfs_nolu_107"
-msgstr "Area di edifici agricoli"
-
-msgid "bfs_nolu_108"
-msgstr "Area di edifici non specificati"
-
-msgid "bfs_nolu_121"
-msgstr "Area autostradale"
-
-msgid "bfs_nolu_122"
-msgstr "Area stradale"
-
-msgid "bfs_nolu_123"
-msgstr "Parcheggi"
-
-msgid "bfs_nolu_124"
-msgstr "Area ferroviaria"
-
-msgid "bfs_nolu_125"
-msgstr "Area aeroportuale"
-
-msgid "bfs_nolu_141"
-msgstr "Impianti di approvvigionamento energetico"
-
-msgid "bfs_nolu_142"
-msgstr "Impianti di depurazione delle acque"
-
-msgid "bfs_nolu_143"
-msgstr "Impianti di approvvigionamento e smaltimento"
-
-msgid "bfs_nolu_144"
-msgstr "Discariche"
-
-msgid "bfs_nolu_145"
-msgstr "Cave"
-
-msgid "bfs_nolu_146"
-msgstr "Cantieri"
-
-msgid "bfs_nolu_147"
-msgstr "Aree d´insediamento dismesse"
-
-msgid "bfs_nolu_161"
-msgstr "Parchi pubblici"
-
-msgid "bfs_nolu_162"
-msgstr "Istallazioni sportive"
-
-msgid "bfs_nolu_163"
-msgstr "Terreni da golf"
-
-msgid "bfs_nolu_164"
-msgstr "Campeggi"
-
-msgid "bfs_nolu_165"
-msgstr "Orti familiari"
-
-msgid "bfs_nolu_166"
-msgstr "Cimiteri"
+msgid "bfs_nolu_160"
+msgstr "Recreational areas and cemeteries"
 
 msgid "bfs_nolu_201"
-msgstr "Frutticoltura"
+msgstr "Orchards"
 
 msgid "bfs_nolu_202"
-msgstr "Viticoltura"
+msgstr "Vineyards"
 
 msgid "bfs_nolu_203"
-msgstr "Orticoltura"
+msgstr "Horticulture"
 
 msgid "bfs_nolu_221"
-msgstr "Campi in senso lato"
+msgstr "Arable land, in general"
 
 msgid "bfs_nolu_222"
-msgstr "Prati naturali in senso lato"
+msgstr "Semi-natural grassland, in general"
 
 msgid "bfs_nolu_223"
-msgstr "Pascoli locali in senso lato"
+msgstr "Farm pastures, in general"
 
 msgid "bfs_nolu_241"
-msgstr "Prati alpestri in senso lato"
+msgstr "Alpine meadows, in general"
 
 msgid "bfs_nolu_242"
-msgstr "Pascoli alpestri in senso lato"
+msgstr "Alpine pastures, in general"
 
 msgid "bfs_nolu_243"
-msgstr "Alpi per ovini in senso lato"
+msgstr "Alpine sheep grazing pastures, in general"
 
-msgid "bfs_nolu_301"
-msgstr "Superfici boscate"
+msgid "bfs_nolu_300"
+msgstr "Forest (not used for agricultural purposes)"
 
-msgid "bfs_nolu_302"
-msgstr "Rimboschimenti"
+msgid "bfs_nolu_400"
+msgstr "Lakes and rivers"
 
-msgid "bfs_nolu_303"
-msgstr "Superfici con alberi abbattuti"
-
-msgid "bfs_nolu_304"
-msgstr "Superfici boscate danneggiate"
-
-msgid "bfs_nolu_401"
-msgstr "Laghi"
-
-msgid "bfs_nolu_402"
-msgstr "Fiumi, ruscelli"
-
-msgid "bfs_nolu_403"
-msgstr "Ripari contro le piene"
-
-msgid "bfs_nolu_421"
-msgstr "Nessuna utilizzazione"
-
-msgid "bfs_nolu_422"
-msgstr "Ripari antivalanghe e contro la caduta di sassi"
-
-msgid "bfs_nolu_423"
-msgstr "Infrastruttura sportiva alpina"
-
-msgid "bfs_nolu_424"
-msgstr "Interventi sul paesaggio"
+msgid "bfs_nolu_420"
+msgstr "Unproductive land"
 
 msgid "bfsnr"
 msgstr "BFS-Nummer"
@@ -1814,6 +1724,24 @@ msgstr "ID area statistic 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "ID area statistic 1992/97"
+
+msgid "id_arealstatistik_lc_09"
+msgstr "Kategorie Bodenbedeckung 2004/09"
+
+msgid "id_arealstatistik_lc_85"
+msgstr "Kategorie Bodenbedeckung 1979/85"
+
+msgid "id_arealstatistik_lc_97"
+msgstr "Kategorie Bodenbedeckung 1992/97"
+
+msgid "id_arealstatistik_lu_09"
+msgstr "Kategorie Bodennutzung 2004/09"
+
+msgid "id_arealstatistik_lu_85"
+msgstr "Kategorie Bodennutzung 1979/85"
+
+msgid "id_arealstatistik_lu_97"
+msgstr "Kategorie Bodennutzung 1992/97"
 
 msgid "id_objekt"
 msgstr "Object"

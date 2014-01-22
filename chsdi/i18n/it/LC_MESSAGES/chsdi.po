@@ -680,143 +680,53 @@ msgstr "Biotopi umidi"
 msgid "bfs_nolc_64"
 msgstr "Canneti"
 
-msgid "bfs_nolu_101"
-msgstr "Industrial and commercial areas > 1 ha"
+msgid "bfs_nolu_100"
+msgstr "Area edificata"
 
-msgid "bfs_nolu_102"
-msgstr "Industrial and commercial areas < 1 ha"
+msgid "bfs_nolu_120"
+msgstr "Superfici del traffico"
 
-msgid "bfs_nolu_103"
-msgstr "Residential areas (one and two-family houses)"
+msgid "bfs_nolu_140"
+msgstr "Superfici d´insediamenti speciali"
 
-msgid "bfs_nolu_104"
-msgstr "Residential areas (terraced houses)"
-
-msgid "bfs_nolu_105"
-msgstr "Residential areas (blocks of flats)"
-
-msgid "bfs_nolu_106"
-msgstr "Public buildings and surroundings"
-
-msgid "bfs_nolu_107"
-msgstr "Agricultural buildings and surroundings"
-
-msgid "bfs_nolu_108"
-msgstr "Unspecified buildings and surroundings"
-
-msgid "bfs_nolu_121"
-msgstr "Motorways"
-
-msgid "bfs_nolu_122"
-msgstr "Roads"
-
-msgid "bfs_nolu_123"
-msgstr "Parking areas"
-
-msgid "bfs_nolu_124"
-msgstr "Railway surfaces"
-
-msgid "bfs_nolu_125"
-msgstr "Airports and airfields"
-
-msgid "bfs_nolu_141"
-msgstr "Energy supply plants"
-
-msgid "bfs_nolu_142"
-msgstr "Waste water treatment plants"
-
-msgid "bfs_nolu_143"
-msgstr "Other supply or waste treatment plants"
-
-msgid "bfs_nolu_144"
-msgstr "Dumps"
-
-msgid "bfs_nolu_145"
-msgstr "Quarries, mines"
-
-msgid "bfs_nolu_146"
-msgstr "Construction sites"
-
-msgid "bfs_nolu_147"
-msgstr "Unexploited urban areas"
-
-msgid "bfs_nolu_161"
-msgstr "Public parks"
-
-msgid "bfs_nolu_162"
-msgstr "Sports facilities"
-
-msgid "bfs_nolu_163"
-msgstr "Golf courses"
-
-msgid "bfs_nolu_164"
-msgstr "Camping areas"
-
-msgid "bfs_nolu_165"
-msgstr "Garden allotments"
-
-msgid "bfs_nolu_166"
-msgstr "Cemeteries"
+msgid "bfs_nolu_160"
+msgstr "Zone verdi e di riposo"
 
 msgid "bfs_nolu_201"
-msgstr "Orchards"
+msgstr "Frutticoltura"
 
 msgid "bfs_nolu_202"
-msgstr "Vineyards"
+msgstr "Viticoltura"
 
 msgid "bfs_nolu_203"
-msgstr "Horticulture"
+msgstr "Orticoltura"
 
 msgid "bfs_nolu_221"
-msgstr "Arable land, in general"
+msgstr "Campi in senso lato"
 
 msgid "bfs_nolu_222"
-msgstr "Semi-natural grassland, in general"
+msgstr "Prati naturali in senso lato"
 
 msgid "bfs_nolu_223"
-msgstr "Farm pastures, in general"
+msgstr "Pascoli locali in senso lato"
 
 msgid "bfs_nolu_241"
-msgstr "Alpine meadows, in general"
+msgstr "Prati alpestri in senso lato"
 
 msgid "bfs_nolu_242"
-msgstr "Alpine pastures, in general"
+msgstr "Pascoli alpestri in senso lato"
 
 msgid "bfs_nolu_243"
-msgstr "Alpine sheep grazing pastures, in general"
+msgstr "Alpi per ovini in senso lato"
 
-msgid "bfs_nolu_301"
-msgstr "Forest"
+msgid "bfs_nolu_300"
+msgstr "Bosco (senza superfici agricole utili)"
 
-msgid "bfs_nolu_302"
-msgstr "Afforestation"
+msgid "bfs_nolu_400"
+msgstr "Laghi e fiumi"
 
-msgid "bfs_nolu_303"
-msgstr "Lumbering areas"
-
-msgid "bfs_nolu_304"
-msgstr "Damaged forest"
-
-msgid "bfs_nolu_401"
-msgstr "Lakes"
-
-msgid "bfs_nolu_402"
-msgstr "Rivers, streams"
-
-msgid "bfs_nolu_403"
-msgstr "Flood protection structures"
-
-msgid "bfs_nolu_421"
-msgstr "Unused"
-
-msgid "bfs_nolu_422"
-msgstr "Avalanche and rockfall protection structures"
-
-msgid "bfs_nolu_423"
-msgstr "Alpine sports facilities"
-
-msgid "bfs_nolu_424"
-msgstr "Landscape interventions"
+msgid "bfs_nolu_420"
+msgstr "Superfici improduttive"
 
 msgid "bfsnr"
 msgstr "Numéro OFS"
@@ -1813,6 +1723,24 @@ msgstr "Catégorie de base de la statistique de la superficie 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "Catégorie de base de la statistique de la superficie 1992/97"
+
+msgid "id_arealstatistik_lc_09"
+msgstr "Catégorie de la couverture du sol 2004/09"
+
+msgid "id_arealstatistik_lc_85"
+msgstr "Catégorie de la couverture du sol 1979/85"
+
+msgid "id_arealstatistik_lc_97"
+msgstr "Catégorie de la couverture du sol 1992/97"
+
+msgid "id_arealstatistik_lu_09"
+msgstr "Catégorie de l’utilisation du sol 2004/09"
+
+msgid "id_arealstatistik_lu_85"
+msgstr "Catégorie de l’utilisation du sol 1979/85"
+
+msgid "id_arealstatistik_lu_97"
+msgstr "Catégorie de l’utilisation du sol 1992/97"
 
 msgid "id_objekt"
 msgstr "Oggetto"
