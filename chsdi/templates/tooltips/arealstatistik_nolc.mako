@@ -11,9 +11,9 @@
 %>
     <% c.stable_id = True %>
     <tr><td width="320">${_('fj85')}</td>       <td>${c.feature.fj85 or '-'}</td></tr>
-    <tr><td>${_('id_arealstatistik_85')}</td>   <td>${_(Key_To_Translate_85)}</td></tr>
+    <tr><td>${_('id_arealstatistik_lc_85')}</td>   <td>${_(Key_To_Translate_85)}</td></tr>
     <tr><td>${_('fj97')}</td>                   <td>${c.feature.fj97 or '-'}</td></tr>
-    <tr><td>${_('id_arealstatistik_97')}</td>   <td>${_(Key_To_Translate_97)}</td></tr>
+    <tr><td>${_('id_arealstatistik_lc_97')}</td>   <td>${_(Key_To_Translate_97)}</td></tr>
     <tr><td>${_('fj09')}</td>                   <td>${c.feature.fj09 or '-'}</td></tr>
-    <tr><td>${_('id_arealstatistik_09')}</td>   <td>${_(Key_To_Translate_09)}</td></tr>
+    <tr><td>${_('id_arealstatistik_lc_09')}</td>   <td>${_(Key_To_Translate_09)}</td></tr>
 </%def>
