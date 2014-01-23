@@ -680,83 +680,17 @@ msgstr "Biotopes humides"
 msgid "bfs_nolc_64"
 msgstr "Roselières"
 
-msgid "bfs_nolu_101"
-msgstr "Aires de bâtiments et aires industrielles > 1 ha"
+msgid "bfs_nolu_100"
+msgstr "Aires de bâtiments"
 
-msgid "bfs_nolu_102"
-msgstr "Aires de bâtiments et aires industrielles < 1 ha"
+msgid "bfs_nolu_120"
+msgstr "Surfaces de transport"
 
-msgid "bfs_nolu_103"
-msgstr "Aires de maisons individuelles et de maisons de 2 logements"
+msgid "bfs_nolu_140"
+msgstr "Surfaces d´infrastructure spéciale"
 
-msgid "bfs_nolu_104"
-msgstr "Aires de maisons alignées et en terrasses"
-
-msgid "bfs_nolu_105"
-msgstr "Aires d´immeubles résidentiels"
-
-msgid "bfs_nolu_106"
-msgstr "Aires de bâtiments publics"
-
-msgid "bfs_nolu_107"
-msgstr "Aires de bâtiments agricoles"
-
-msgid "bfs_nolu_108"
-msgstr "Aires de bâtiments non déterminés"
-
-msgid "bfs_nolu_121"
-msgstr "Aires autoroutières"
-
-msgid "bfs_nolu_122"
-msgstr "Aires routières"
-
-msgid "bfs_nolu_123"
-msgstr "Aires de stationnement"
-
-msgid "bfs_nolu_124"
-msgstr "Aires ferroviaires"
-
-msgid "bfs_nolu_125"
-msgstr "Aérodromes"
-
-msgid "bfs_nolu_141"
-msgstr "Installations d´approvisionnement en énergie"
-
-msgid "bfs_nolu_142"
-msgstr "Stations d´épuration des eaux usées"
-
-msgid "bfs_nolu_143"
-msgstr "Autres installations d´approvisionnement et d´élimination"
-
-msgid "bfs_nolu_144"
-msgstr "Décharges"
-
-msgid "bfs_nolu_145"
-msgstr "Extraction de matériaux"
-
-msgid "bfs_nolu_146"
-msgstr "Chantiers"
-
-msgid "bfs_nolu_147"
-msgstr "Friches industrielles et bâtiments désaffectés"
-
-msgid "bfs_nolu_161"
-msgstr "Parcs publics"
-
-msgid "bfs_nolu_162"
-msgstr "Installations de sport"
-
-msgid "bfs_nolu_163"
-msgstr "Terrains de golf"
-
-msgid "bfs_nolu_164"
-msgstr "Terrains de camping"
-
-msgid "bfs_nolu_165"
-msgstr "Jardins familiaux"
-
-msgid "bfs_nolu_166"
-msgstr "Cimetières"
+msgid "bfs_nolu_160"
+msgstr "Espaces verts et lieux de détente"
 
 msgid "bfs_nolu_201"
 msgstr "Arboriculture"
@@ -785,38 +719,14 @@ msgstr "Alpages pâturés au sens large"
 msgid "bfs_nolu_243"
 msgstr "Alpes à moutons au sens large"
 
-msgid "bfs_nolu_301"
-msgstr "Peuplements forestiers"
+msgid "bfs_nolu_300"
+msgstr "Forêt (exploitation agricole non comprise)"
 
-msgid "bfs_nolu_302"
-msgstr "Aires afforestées"
+msgid "bfs_nolu_400"
+msgstr "Lacs et cours d´eau"
 
-msgid "bfs_nolu_303"
-msgstr "Coupes de bois"
-
-msgid "bfs_nolu_304"
-msgstr "Surfaces forestières dévastées"
-
-msgid "bfs_nolu_401"
-msgstr "Lacs"
-
-msgid "bfs_nolu_402"
-msgstr "Rivières, ruisseaux"
-
-msgid "bfs_nolu_403"
-msgstr "Ouvrages de protection contre les crues"
-
-msgid "bfs_nolu_421"
-msgstr "Aucune utilisation"
-
-msgid "bfs_nolu_422"
-msgstr "Ouvrages de protection (pierres, avalanches)"
-
-msgid "bfs_nolu_423"
-msgstr "Infrastructure de sports alpins"
-
-msgid "bfs_nolu_424"
-msgstr "Interventions dans le paysage"
+msgid "bfs_nolu_420"
+msgstr "Terres improductives"
 
 msgid "bfsnr"
 msgstr "Numéro OFS"
@@ -1813,6 +1723,24 @@ msgstr "Catégorie de base de la statistique de la superficie 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "Catégorie de base de la statistique de la superficie 1992/97"
+
+msgid "id_arealstatistik_lc_09"
+msgstr "Catégorie de la couverture du sol 2004/09"
+
+msgid "id_arealstatistik_lc_85"
+msgstr "Catégorie de la couverture du sol 1979/85"
+
+msgid "id_arealstatistik_lc_97"
+msgstr "Catégorie de la couverture du sol 1992/97"
+
+msgid "id_arealstatistik_lu_09"
+msgstr "Catégorie de l’utilisation du sol 2004/09"
+
+msgid "id_arealstatistik_lu_85"
+msgstr "Catégorie de l’utilisation du sol 1979/85"
+
+msgid "id_arealstatistik_lu_97"
+msgstr "Catégorie de l’utilisation du sol 1992/97"
 
 msgid "id_objekt"
 msgstr "Objet"

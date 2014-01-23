@@ -1386,6 +1386,24 @@ msgstr ""
 msgid "id_arealstatistik_09"
 msgstr ""
 
+msgid "id_arealstatistik_lc_85"
+msgstr ""
+
+msgid "id_arealstatistik_lc_97"
+msgstr ""
+
+msgid "id_arealstatistik_lu_09"
+msgstr ""
+
+msgid "id_arealstatistik_lu_85"
+msgstr ""
+
+msgid "id_arealstatistik_lu_97"
+msgstr ""
+
+msgid "id_arealstatistik_lc_09"
+msgstr ""
+
 msgid "bereich"
 msgstr ""
 
@@ -3371,82 +3389,16 @@ msgstr ""
 msgid "bfs_nolc_64"
 msgstr ""
 
-msgid "bfs_nolu_101"
+msgid "bfs_nolu_100"
 msgstr ""
 
-msgid "bfs_nolu_102"
+msgid "bfs_nolu_120"
 msgstr ""
 
-msgid "bfs_nolu_103"
+msgid "bfs_nolu_140"
 msgstr ""
 
-msgid "bfs_nolu_104"
-msgstr ""
-
-msgid "bfs_nolu_105"
-msgstr ""
-
-msgid "bfs_nolu_106"
-msgstr ""
-
-msgid "bfs_nolu_107"
-msgstr ""
-
-msgid "bfs_nolu_108"
-msgstr ""
-
-msgid "bfs_nolu_121"
-msgstr ""
-
-msgid "bfs_nolu_122"
-msgstr ""
-
-msgid "bfs_nolu_123"
-msgstr ""
-
-msgid "bfs_nolu_124"
-msgstr ""
-
-msgid "bfs_nolu_125"
-msgstr ""
-
-msgid "bfs_nolu_141"
-msgstr ""
-
-msgid "bfs_nolu_142"
-msgstr ""
-
-msgid "bfs_nolu_143"
-msgstr ""
-
-msgid "bfs_nolu_144"
-msgstr ""
-
-msgid "bfs_nolu_145"
-msgstr ""
-
-msgid "bfs_nolu_146"
-msgstr ""
-
-msgid "bfs_nolu_147"
-msgstr ""
-
-msgid "bfs_nolu_161"
-msgstr ""
-
-msgid "bfs_nolu_162"
-msgstr ""
-
-msgid "bfs_nolu_163"
-msgstr ""
-
-msgid "bfs_nolu_164"
-msgstr ""
-
-msgid "bfs_nolu_165"
-msgstr ""
-
-msgid "bfs_nolu_166"
+msgid "bfs_nolu_160"
 msgstr ""
 
 msgid "bfs_nolu_201"
@@ -3476,37 +3428,13 @@ msgstr ""
 msgid "bfs_nolu_243"
 msgstr ""
 
-msgid "bfs_nolu_301"
+msgid "bfs_nolu_300"
 msgstr ""
 
-msgid "bfs_nolu_302"
+msgid "bfs_nolu_400"
 msgstr ""
 
-msgid "bfs_nolu_303"
-msgstr ""
-
-msgid "bfs_nolu_304"
-msgstr ""
-
-msgid "bfs_nolu_401"
-msgstr ""
-
-msgid "bfs_nolu_402"
-msgstr ""
-
-msgid "bfs_nolu_403"
-msgstr ""
-
-msgid "bfs_nolu_421"
-msgstr ""
-
-msgid "bfs_nolu_422"
-msgstr ""
-
-msgid "bfs_nolu_423"
-msgstr ""
-
-msgid "bfs_nolu_424"
+msgid "bfs_nolu_420"
 msgstr ""
 
 msgid "blw_farbe_0"

@@ -252,7 +252,6 @@ class ServiceMetadataFr(Base):
     fk_contactorganisation_id = Column('fk_contactorganisation_id', Integer)
     abkuerzung = Column('abkuerzung', Text)
     name = Column('name', Text)
-    fk_dataset_id = Column('fk_dataset_id', Text)
 
 class CmsLayer(object):
     def toDict(self):

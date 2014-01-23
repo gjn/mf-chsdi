@@ -680,83 +680,17 @@ msgstr "Nassstandorte"
 msgid "bfs_nolc_64"
 msgstr "Schilfbestände"
 
-msgid "bfs_nolu_101"
-msgstr "Industrie- und Gewerbeareal > 1 ha"
+msgid "bfs_nolu_100"
+msgstr "Gebäudeareal"
 
-msgid "bfs_nolu_102"
-msgstr "Industrie- und Gewerbeareal < 1 ha"
+msgid "bfs_nolu_120"
+msgstr "Verkehrsflächen"
 
-msgid "bfs_nolu_103"
-msgstr "Ein- und Zweifamilienhausareal"
+msgid "bfs_nolu_140"
+msgstr "Besondere Siedlungsflächen"
 
-msgid "bfs_nolu_104"
-msgstr "Reihen- und Terrassenhausareal"
-
-msgid "bfs_nolu_105"
-msgstr "Mehrfamilienhausareal"
-
-msgid "bfs_nolu_106"
-msgstr "Öffentliches Gebäudeareal"
-
-msgid "bfs_nolu_107"
-msgstr "Landwirtschaftliches Gebäudeareal"
-
-msgid "bfs_nolu_108"
-msgstr "Nicht spezifiziertes Gebäudeareal"
-
-msgid "bfs_nolu_121"
-msgstr "Autobahnareal"
-
-msgid "bfs_nolu_122"
-msgstr "Strassenareal"
-
-msgid "bfs_nolu_123"
-msgstr "Parkplatzareal"
-
-msgid "bfs_nolu_124"
-msgstr "Bahnareal"
-
-msgid "bfs_nolu_125"
-msgstr "Flugplatzareal"
-
-msgid "bfs_nolu_141"
-msgstr "Energieversorgungsanlagen"
-
-msgid "bfs_nolu_142"
-msgstr "Abwasserreinigungsanlagen"
-
-msgid "bfs_nolu_143"
-msgstr "Übrige Ver- und Entsorgungsanlagen"
-
-msgid "bfs_nolu_144"
-msgstr "Deponien"
-
-msgid "bfs_nolu_145"
-msgstr "Abbau"
-
-msgid "bfs_nolu_146"
-msgstr "Baustellen"
-
-msgid "bfs_nolu_147"
-msgstr "Bau- und Siedlungsbrachen"
-
-msgid "bfs_nolu_161"
-msgstr "Öffentliche Parkanlagen"
-
-msgid "bfs_nolu_162"
-msgstr "Sportanlagen"
-
-msgid "bfs_nolu_163"
-msgstr "Golfplätze"
-
-msgid "bfs_nolu_164"
-msgstr "Campingplätze"
-
-msgid "bfs_nolu_165"
-msgstr "Schrebergärten"
-
-msgid "bfs_nolu_166"
-msgstr "Friedhöfe"
+msgid "bfs_nolu_160"
+msgstr "Erholungs- und Grünanlagen"
 
 msgid "bfs_nolu_201"
 msgstr "Obstbau"
@@ -785,38 +719,14 @@ msgstr "Alp- und Juraweiden i.w.S."
 msgid "bfs_nolu_243"
 msgstr "Schafalpen i.w.S."
 
-msgid "bfs_nolu_301"
-msgstr "Waldbestände"
+msgid "bfs_nolu_300"
+msgstr "Wald (ohne landwirtschaftliche Nutzung)"
 
-msgid "bfs_nolu_302"
-msgstr "Aufforstungen"
+msgid "bfs_nolu_400"
+msgstr "Seen und Flüsse"
 
-msgid "bfs_nolu_303"
-msgstr "Holzschläge"
-
-msgid "bfs_nolu_304"
-msgstr "Waldschäden"
-
-msgid "bfs_nolu_401"
-msgstr "Seen"
-
-msgid "bfs_nolu_402"
-msgstr "Flüsse, Bäche"
-
-msgid "bfs_nolu_403"
-msgstr "Hochwasserverbauungen"
-
-msgid "bfs_nolu_421"
-msgstr "Keine Nutzung"
-
-msgid "bfs_nolu_422"
-msgstr "Lawinen- und Steinschlagverbauungen"
-
-msgid "bfs_nolu_423"
-msgstr "Alpine Sportinfrastruktur"
-
-msgid "bfs_nolu_424"
-msgstr "Landschaftseingriffe"
+msgid "bfs_nolu_420"
+msgstr "Unproduktives Land"
 
 msgid "bfsnr"
 msgstr "BFS-Nummer"
@@ -1813,6 +1723,24 @@ msgstr "Grundkategorie Arealstatistik 1979/85"
 
 msgid "id_arealstatistik_97"
 msgstr "Grundkategorie Arealstatistik 1992/97"
+
+msgid "id_arealstatistik_lc_09"
+msgstr "Kategorie Bodenbedeckung 2004/09"
+
+msgid "id_arealstatistik_lc_85"
+msgstr "Kategorie Bodenbedeckung 1979/85"
+
+msgid "id_arealstatistik_lc_97"
+msgstr "Kategorie Bodenbedeckung 1992/97"
+
+msgid "id_arealstatistik_lu_09"
+msgstr "Kategorie Bodennutzung 2004/09"
+
+msgid "id_arealstatistik_lu_85"
+msgstr "Kategorie Bodennutzung 1979/85"
+
+msgid "id_arealstatistik_lu_97"
+msgstr "Kategorie Bodennutzung 1992/97"
 
 msgid "id_objekt"
 msgstr "Objekt"
