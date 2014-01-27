@@ -712,7 +712,7 @@ GeoAdmin._Layers = OpenLayers.Class({
                 datenherr: "ch.bazl",
                 //url: 'http://wms-bod0t.bgdi.admin.ch/?lang=de',
                 queryable: true,
-                searchable: true,
+                searchable: false,
                 opacity: 0.75,
                 type: "polygon"
             },                                                                                                                                                    
@@ -1906,10 +1906,11 @@ GeoAdmin._Layers = OpenLayers.Class({
              queryable: true,
              transitionEffect: "no"
              }, */
+            
             "ch.bafu.wrz-jagdbanngebiete_select": {
                 name: OpenLayers.i18n("ch.bafu.wrz-jagdbanngebiete_select"),
                 layertype: 'wmts',
-                timestamp: ['20100801'],
+                timestamp: ['20140107','20100801'],
                 type: "polygon",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
@@ -1931,7 +1932,7 @@ GeoAdmin._Layers = OpenLayers.Class({
             "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen": {
                 name: OpenLayers.i18n("ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"),
                 layertype: 'wmts',
-                timestamp: ['20131107','20130111'],
+                timestamp: ['20140107','20131107','20130111'],
                 type: "line",
                 format: "image/png",
                 datenherr: "ch.kt.bafu",
