@@ -21,7 +21,7 @@ beaker.session.type = memory
 beaker.cache.type = memory
 
 # SQLAlchemy database URL
-sqlalchemy.bod.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bod
+sqlalchemy.bod.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/bod_re2
 sqlalchemy.stopo.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/stopo
 sqlalchemy.edi.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/edi
 sqlalchemy.search.url = postgresql://${vars:dbuser}:${vars:dbpassword}@${vars:dbhost}:${vars:dbport}/search
