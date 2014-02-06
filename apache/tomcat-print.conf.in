@@ -5,7 +5,7 @@
 
 # # stateful cookies
 <Location /${vars:instanceid}/wsgi/print/>
-    Header set Set-Cookie "SRV=${hostname-digest}; path=/${vars:instanceid}/wsgi/print/"
+    Header set Set-Cookie "SRV_GEO3=${hostname-digest}; path=/${vars:instanceid}/wsgi/print/"
 </Location>
 
 ProxyPass        /${vars:instanceid}/wsgi/print/ ajp://localhost:8009/print-chsdi${instanceid}/pdf/
