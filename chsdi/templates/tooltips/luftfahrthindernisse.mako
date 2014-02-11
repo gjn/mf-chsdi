@@ -19,6 +19,7 @@
     <tr><td width="170">${_('tt_ch.bazl.startofconstruction')}</td><td>${c.feature.startofconstruction or '-'}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.abortionaccomplished')}</td><td>${c.feature.duration or '-'}</td></tr>
     <tr><td width="170">${_('tt_ch.bazl.markierung')}</td><td>${sanctiontext}</td></tr>
+    <tr><td width="170"></td><td><a href="${c.path_url}/../${c.feature.id}.html?layer=${c.feature.layer_id}&lang=${c.lang}&baseUrl=${c.path_url}" target="_blank">${_('zusatzinfo')}<img src="http://www.swisstopo.admin.ch/images/ico_extern.gif" /></a></td></tr>
 </%def>
 
 <%def name="body()">
@@ -188,9 +189,7 @@
                         navControl = map.getControlsByClass('OpenLayers.Control.Navigation')[0];
                         navControl.destroy();
 
-                        map.switchComplementaryLayer('voidLayer', { ratio: 1, opacity: 1 });
-                        var pk = new OpenLayers.Layer.WMS("PK 100","http://wms.geo.admin.ch/?",{layers: 'ch.swisstopo.pixelkarte-grau-pk100_bazl',format: "image/png"}, {ratio: 1, singleTile: true});
-                        map.addLayer(pk);
+                        map.switchComplementaryLayer('ch.swisstopo.pixelkarte-grau', { ratio: 1, opacity: 1 });
                         map.addLayerByName('org.epsg.grid_21781', { ratio: 1 });
                         map.addLayerByName('org.epsg.grid_4326', { ratio: 1 });
                         map.addLayerByName('ch.bazl.luftfahrthindernis', { ratio: 1 } );
