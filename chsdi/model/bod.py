@@ -294,7 +294,6 @@ class CmsLayerDe(Base, CmsLayer):
     url_geodatenmodell = Column('url_geodatenmodell', Text)
     staging = Column('staging', Text)
     projekte = Column('projekte', Text)
-    fk_dataset_id = Column('fk_dataset_id', Text)
 
 class CmsLayerFr(Base, CmsLayer):
     __tablename__ = 'view_bod_export_cms_fr'
