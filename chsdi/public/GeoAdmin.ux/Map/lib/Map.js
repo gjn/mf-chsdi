@@ -761,8 +761,12 @@ GeoAdmin.Map = OpenLayers.Class(OpenLayers.Map, {
                 this.layers[i].arrayOrder = 2;
             } else if (this.layers[i].layername && this.layers[i].layername == 'ch.kantone.hintergrund-farbe') {
                 this.layers[i].arrayOrder = 3;
-            } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.pixelkarte-farbe_wmts') {
                 this.layers[i].arrayOrder = 4;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'ch.swisstopo.swisstlm3d-karte-farbe_wmts') {
+                this.layers[i].arrayOrder = 5;
+            } else if (this.layers[i].layername && this.layers[i].layername == 'voidLayer') {
+                this.layers[i].arrayOrder = 6;
             } else {
                 this.layers[i].arrayOrder = 100 + i;
             }
