@@ -26,16 +26,18 @@
    }
    </script>
 
-Welcome to GeoAdmin API's documentation!
-========================================
+Welcome to GeoAdmin API's documentation (DEPRECATED)!
+=====================================================
 
 .. raw:: html 
 
-    <div class="warning"i style="background-color: #ffffff; padding: 5px; border: 1px solid black;color:red;">
-    
-IMPORTANT ANNOUNCEMENT: `GeoAdmin API v3 <http://www.geo.admin.ch/internet/geoportal/en/home/current/news20130920.html>`_.
+    <div class="warning" style="background-color: #ffffff; padding: 5px; border: 1px solid black;color:red;">
+This GeoAdmin API v2 is now officially DEPRECATED, but remains available until 31.6.2014.
 
-This GeoAdmin API is available until 31.6.2014.
+Please, use `GeoAdmin API v3 <http://api3.geo.admin.ch>`_.
+    
+See the `official announcement <http://www.geo.admin.ch/internet/geoportal/en/home/current/news20130920.html>`_.
+
 
 .. raw:: html
 
